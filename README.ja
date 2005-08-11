@@ -1,0 +1,60 @@
+Gnus の Info マニュアルの全訳です。No Gnus v0.4 に対応します。
+
+＊ とてもじゃないけれど、まだ全部を訳し終わっていません。(←後で消す)
+
+インストール
+============
+% ./configure
+% make
+% make install
+
+次のように、使う Emacs とインストール先のディレクトリを指定できます。
+
+% ./configure --with-emacs=EMACS --infodir=INFODIR
+
+ディフォルト値は、引数無しで configure を実行するとできる Makefile の
+中身を見て下さい。EMACS の値を /usr/local/bin/emacs のように絶対パス名
+にすることはできません。あらかじめ PATH 環境変数を設定して下さい。例:
+
+% ./configure --with-emacs=emacs-21.4 --infodir=/usr/local/info
+
+Gnus の版
+=========
+Emacs に含まれているものではなく、Gnus タワーからリリースされる版に対
+応します。同時期に複数の Gnus の版がリリースされる場合は、より開発色の
+強い版が対象になるでしょう。
+
+リリースされた日本語マニュアルの取得場所
+========================================
+(どこか)
+
+リリースされた Gnus の tarball である xgnus-m.n.tar.gz に対応する Info
+マニュアルの日本語版の tarball は xgnus-m.n-doc-ja.tar.gz です。
+
+匿名 CVS
+========
+次のようにして、翻訳作業中のマニュアルを取得することができます。
+
+% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
+最初だけ必要です。パスワードを尋ねられたら単に RET キーを押して下さい。
+
+% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout gnus-doc-ja
+
+翻訳作業への参加
+================
+どなたでも歓迎します。作業を行なっている場所は
+
+% CVS_RSH=ssh cvs -d :ext:cvs@cvs.m17n.org:/cvs/root
+
+で、リポジトリの名前は gnus-doc-ja です。アカウントを取得するには、希
+望するユーザ名と ssh2 の公開鍵をそえて、<cvs@cvs.m17n.org> 宛てに平文
+のメールを送って下さい。
+
+＊注意＊
+用語や和英混在文の分かち書きなどに関して、多くの暗黙の流儀があります。
+すでに翻訳されているものをよく眺めて、できる限り、従来のやり方に従って
+下さい。
+
+連絡場所
+========
+当面 semi-gnus-ja メーリングリストを使います。

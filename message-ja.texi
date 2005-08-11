@@ -1,0 +1,2237 @@
+\input texinfo
+
+@setfilename message-ja
+@settitle Message Manual
+@synindex fn cp
+@synindex vr cp
+@synindex pg cp
+@copying
+This file documents Message, the Emacs message composition mode.
+
+このファイルは Emacs のメッセージ作成モードである Message に関する説明文
+書です。
+
+Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005
+Free Software Foundation, Inc.
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover texts being ``A GNU
+Manual'', and with the Back-Cover Texts as in (a) below.  A copy of the
+license is included in the section entitled ``GNU Free Documentation
+License''.
+
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.1 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。「A GNU Manual」は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「Emacs manual」の「GNU フリー文書利用許諾契約書」という章に含まれていま
+す。
+
+(a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
+this GNU Manual, like GNU software.  Copies published by the Free
+Software Foundation raise funds for GNU development.''
+
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を GNU ソフトウェア
+のように複製したり変更する自由があります。複製はフリーソフトウェア財団に
+よって出版されました。(フリーソフトウェア財団は) GNU の開発のために必要
+な資金を集めています。」
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license.
+
+この文書は「GNU フリー文書利用許諾契約書」に基づいて配布された収集著作物
+の一部です。もしあなたがこの文書を収集著作物から分離して配布したいときは、
+契約書の第 6 項に記述されているように、文書に契約書の複写を付加すること
+によって、行なうことができます。
+@end quotation
+@end copying
+
+@dircategory Emacs
+@direntry
+* Message-ja: (message-ja).     Mail and news composition mode that goes
+                                with Gnus (Japanese).
+@end direntry
+@iftex
+@finalout
+@end iftex
+@setchapternewpage odd
+
+@titlepage
+@title Message Manual
+
+@author by Lars Magne Ingebrigtsen
+@page
+
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+@page
+
+@node Top
+@top Message
+
+Gnus の全てのメッセージの作成 (メールとニュースの両方) はメッセージモー
+ドバッファで行われます。
+
+@menu
+* Interface::         メッセージバッファを設定する
+* Commands::          メッセージモードバッファで実行できる命令
+* Variables::         メッセージバッファをカスタマイズする
+* Compatibility::     メッセージを下位互換にする
+* Appendices::        もっと技術的な事
+* Index::             変数、関数、概念の索引
+* Key Index::         メッセージモードキーの一覧
+@end menu
+
+このマニュアルは Message v5.10.6 に対応します。Message はこのマニュアル
+と同じ版番号の Gnus の配布と共に配布されます。
+
+@node Interface
+@chapter 界面
+
+プログラム (もしくは人) がメッセージに反応したいとき---返答、フォローアッ
+プ、転送、取り消し---そのプログラム (もしくは人) はメッセージがあるバッ
+ファにポイントを入れて必要な命令を呼び出すだけで良いべきです。そうする
+と @code{Message} は新しい @code{message} モードバッファを適切なヘッダー
+を入れて作り出し、利用者はメッセージを送る前にそれを編集できます。
+
+@menu
+* New News Message::     全く新しいニュースメッセージを編集する
+* Reply::                メールで返答する
+* Wide Reply::           全ての人にメールで応答する
+* Followup::             ニュースでフォローアップする
+* Canceling News::       新しい記事を取り消す
+* Superseding::          メッセージの代替
+* Forwarding::           メッセージをニュースもしくはメールで転送する
+* Resending::            メールメッセージを再送する
+* Bouncing::             メールメッセージの失敗を再送する
+* Mailing Lists::        メーリングリストにメールを送る
+@end menu
+
+@node New Mail Message
+@section 新しいメールメッセージ
+
+@findex message-mail
+@code{message-mail} 命令は新しいバッファを作り表示します。
+
+2つの選択自由な引数が受け付けられます: 最初のものは @code{To} ヘッダーと
+して、2番目は @code{Subject} ヘッダーとして使われる。もしこれら
+が @code{nil} であるなら、それらの2つのヘッダーは空になります。
+
+@node New News Message
+@section 新しいニュースメッセージ
+
+@findex message-news
+命令 @code{message-news} は新しいメッセージバッファを作り、表示します。
+
+この関数は2つの選択自由な引数を受け付けます。最初のもの
+は @code{Newsgroups} ヘッダーとして、2つめのものは @code{Subject} ヘッダー
+として使われます。もしこれらが @code{nil} であるなら、それらの2つのヘッ
+ダーは空になります。
+
+@node Reply
+@section 返答
+
+@findex message-reply
+関数 @code{message-reply} は現在のバッファのメッセージへの返答のメッセー
+ジバッファを作り、表示します。
+
+@vindex message-reply-to-function
+Message は何処に返答が行くかを普通の方法 (@pxref{Responses}) で決定しま
+すが、変数 @code{message-reply-to-function} を弄することであなたの要求に
+合うようにその振る舞いを変える事ができます。
+
+@code{From} の代わりに @code{Sender} に返答を送りたいのであれば、このよ
+うな事ができます:
+
+@lisp
+(setq message-reply-to-function
+      (lambda ()
+       (cond ((equal (mail-fetch-field "from") "somebody")
+               (list (cons 'To (mail-fetch-field "sender"))))
+             (t
+              nil))))
+@end lisp
+
+この関数はそれが返答しようとする記事のヘッダー部分に限定された範囲で呼ば
+れます。
+
+ご覧の通り、この関数はリストを返さなければなりません。この場合、To ヘッ
+ダーがそうなるべきだと判断されれば @code{((To . "Whom"))} を返します。も
+しそうでなければ、それは @code{nil} を返すだけで、そうすれば To ヘッダー
+を決定する普通の方法が使われるでしょう。
+
+リストのそれぞれの要素は cons セルで、@sc{car} はヘッダーの名
+前 (例 @code{Cc})、@sc{cdr} はヘッダーの
+値 (例 @samp{larsi@@ifi.uio.no}) です。これらすべてのヘッダーは出て行く
+メールのヘッダーに挿入されます。
+
+@node Wide Reply
+@section 広く返答
+
+@findex message-wide-reply
+@code{message-wide-reply} は現在のバッファのメッセージへの広い返答のメッ
+セージバッファを作って表示します。@dfn{広い返答} は @code{To}、
+@code{From}、(もしくは @code{Reply-to}) と @code{Cc} ヘッダーに挙げられ
+ている全ての人々に届く返答です。
+
+@vindex message-wide-reply-to-function
+Message は返答が何処に行くかを決定するために普通の方法を使いますが、
+@code{message-wide-reply} を弄る事で、振る舞いをあなたの要求に合うように
+変更する事ができます。それは @code{message-reply-to-function} と同じよう
+に使われます (@pxref{Reply})。
+
+@vindex message-dont-reply-to-names
+正規表現 @code{rmail-dont-reply-to-names} に合致するアドレスは @code{Cc}
+ヘッダーから取り除かれます。
+
+@vindex message-wide-reply-confirm-recipients
+@code{message-wide-reply-confirm-recipients} が非-@code{nil} だったら、
+複数の受取人に返信するかどうかの確認を求められます。ディフォルト
+は @code{nil} です。
+
+@node Followup
+@section フォローアップ
+
+@findex message-followup
+命令 @code{message-followup} は現在のバッファのメッセージへのフォローアッ
+プであるメッセージバッファを作り表示します。
+
+@vindex message-followup-to-function
+Message はフォローアップがどこに行くかを普通の方法を使って決定しますが、
+@code{message-followup-to-function} を弄る事で、あなたの要求に合うように
+振る舞いを変更する事ができます。それは @code{message-reply-to-function}
+と同じように使われます (@pxref{Reply})。
+
+@vindex message-use-followup-to
+変数 @code{message-use-followup-to} は @code{Followup-To} ヘッダーに関し
+てどうするかを指定します。それが @code{use} であれば、いつも値を使います。
+もしそれが @code{ask} であれば (これが初期設定です)、値を使うかどうかを
+尋ねます。もし @code{t} であると、それが @samp{投稿者} でない限り、値を
+使います。@code{nil} であれば、値を使いません。
+
+@node Canceling News
+@section ニュースを取り消す
+
+@findex message-cancel-news
+命令 @code{message-cancel-news} は現在のバッファの記事を取り消します。
+
+@vindex message-cancel-message
+@code{message-cancel-message} の値が取り消し記事の本文に挿入されます。ディ
+フォルトは @samp{I am canceling my own article.} です。
+
+@cindex Cancel Locks
+@vindex message-insert-canlock
+@cindex canlock
+Message がニュース記事をポストするとき、ディフォルト
+で @code{Cancel-Lock} ヘッダーを挿入します。これは暗号化されたヘッダーで、
+あなた自身が書いたメーッセージをあなただけが取り消すことができることを保
+証する、すぐれものです。欠点は、@file{.emacs} ファイル (Gnus が秘密
+の cancel lock パスワード (最初のこの機能を使うときに自動的に生成され
+る) を格納する場所) をなくしてしまうと、メッセージを取り消すことができな
+いであろうことです。自分でパスワードを管理したいならば、以下のようなもの
+を @file{~/.gnus.el} ファイルに入れて下さい:
+
+@lisp
+(setq canlock-password "geheimnis"
+      canlock-password-for-verify canlock-password)
+@end lisp
+
+そのヘッダーを挿入するかどうかは、@code{message-insert-canlock} 変数によっ
+て制御されます。
+
+まだ多くのニュースサーバーが @code{Cancel-Lock} ヘッダーを重要視していま
+せんが、将来は変わることが期待されます。
+
+@node Superseding
+@section 代替
+
+@findex message-supersede
+命令 @code{message-supersede} は現在のバッファのメッセージを代替するメッ
+セージバッファを作り表示します。
+
+@vindex message-ignored-supersede-headers
+@code{message-ignored-supersedes-headers} に合致するヘッダーは新しいメッ
+セージバッファを作り上げる前に取り除かれます。初期値
+は @*@samp{^Path:\\|^Date\\|^NNTP-Posting-Host:\\|^Xref:\\|^Lines:\\|@*
+^Received:\\|^X-From-Line:\\|Return-Path:\\|^Supersedes:} です。
+
+@node Forwarding
+@section 転送
+
+@findex message-forward
+命令 @code{message-forward} は現在のバッファのメッセージを転送するための
+メッセージバッファを作り表示します。もし接頭引数を与えられると、転送は
+ニュースを使います。
+
+@table @code
+@item message-forward-ignored-headers
+@vindex message-forward-ignored-headers
+この正規表現に合致するすべてのヘッダーが、転送されるメッセージから削除さ
+れます。
+
+@c TRANSLATEME
+@item message-make-forward-subject-function
+@vindex message-make-forward-subject-function
+A list of functions that are called to generate a subject header for
+forwarded messages.  The subject generated by the previous function is
+passed into each successive function.
+
+The provided functions are:
+
+@table @code
+@item message-forward-subject-author-subject
+@findex message-forward-subject-author-subject
+Source of article (author or newsgroup), in brackets followed by the
+subject.
+
+@item message-forward-subject-fwd
+Subject of article with @samp{Fwd:} prepended to it.
+@end table
+
+@item message-wash-forwarded-subjects
+@vindex message-wash-forwarded-subjects
+If this variable is @code{t}, the subjects of forwarded messages have
+the evidence of previous forwards (such as @samp{Fwd:}, @samp{Re:},
+@samp{(fwd)}) removed before the new subject is
+constructed.  The default value is @code{nil}.
+
+@item message-forward-as-mime
+@vindex message-forward-as-mime
+If this variable is @code{t} (the default), forwarded messages are
+included as inline @acronym{MIME} RFC822 parts.  If it's @code{nil}, forwarded
+messages will just be copied inline to the new message, like previous,
+non @acronym{MIME}-savvy versions of Gnus would do.
+
+@item message-forward-before-signature
+@vindex message-forward-before-signature
+非-@code{nil} だったら署名の前に、それ以外だったら後に、転送するメッセー
+ジを置きます。
+@end table
+
+@node Resending
+@section 再送
+
+@findex message-resend
+命令 @code{message-resend} は利用者にアドレスの入力を促進し、現在のバッ
+ファのメッセージをそのアドレスに再送します。
+
+@vindex message-ignored-resent-headers
+正規表現 @code{message-ignored-resent-headers} に合致するヘッダーはメッ
+セージを送る前に取り除かれます。
+
+@node Bouncing
+@section 失敗
+
+@findex message-bounce
+命令 @code{message-bounce} は、もし現在のバッファが失敗したメールメッセー
+ジであれば、失敗情報を取り除いたメッセージバッファを作り表示します。
+@dfn{失敗メッセージ} は普通は @code{mailer-daemon} から配送不可として返
+送されたメールです。
+
+@vindex message-ignored-bounced-headers
+正規表現 @code{message-ignored-bounced-headers} に合致するヘッダーはバッ
+ファを作り上げる前に取り除かれます。初期値
+は @samp{^\\(Received\\|Return-Path\\):} です。
+
+@node Mailing Lists
+@section メーリングリスト
+
+@cindex Mail-Followup-To
+メーリングリストに投稿するとき、投稿する人がその記事に対するフォローアッ
+プ記事の宛先を指定したいことがあります。Mail-Followup-To (MFT) はまさに
+これを可能にするために作られました。これが役に立つ場合の例を二つ:
+
+@itemize @bullet
+@item
+メーリングリストに投稿する人は、返事を投稿者を含めずに単にメーリングリス
+トだけに送信すべきであることを、MFT を使って表現することができます。これ
+は、投稿者がすでにそのメーリングリストを購読している場合が該当します。
+
+@item
+メーリングリストに投稿する人は、返事をメーリングリストと投稿者にも送信す
+べきであることを、MFT を使って表現することができます。これは、投稿者がそ
+のメーリングリストを購読していない場合が該当します。
+
+@item
+メッセージがいくつかのメーリングリストに投稿されている場合に、それ以降の
+議論を一つのメーリングリストだけで行なうことを指定するためにも MFT は使
+われます。議論がいくつかのメーリングリストで行なわれてしまうとばらばらに
+なりやすいし、フォローするのが難しくなってしまいますから。
+@end itemize
+
+Gnus は他の人のメッセージにある MFT ヘッダーを尊重し (すなわち、だれか別
+の人の投稿にフォローアップするとき)、また、外に出ていくメッセージのため
+に、道理にかなった MFT ヘッダーを作成することのサポートも提供します。
+
+@c @menu
+@c * Honoring an MFT post::        What to do when one already exists
+@c * Composing with a MFT header:: Creating one from scratch.
+@c @end menu
+
+@c @node Composing with a MFT header
+@subsection  正しい MFT ヘッダーを自動的に作る
+
+投稿する記事に対して Gnus が自動的に MFT ヘッダーを作ってくれるようにす
+るために行なうことの第一歩は、あなたが購読しているメーリングリストのアド
+レスのリストを Gnus に与えることです。一つ以上の方法でこれを行なうことが
+できます。以下の変数が手ごろでしょう。
+
+@table @code
+@vindex message-subscribed-addresses
+@item message-subscribed-addresses
+これは購読しているメーリングリストのアドレスのリストでなければなりません。
+ディフォルト値は @code{nil} です。例:
+
+@lisp
+(setq message-subscribed-addresses
+      '("ding@@gnus.org" "bing@@noose.org"))
+@end lisp
+
+@vindex message-subscribed-regexps
+@item message-subscribed-regexps
+これは購読しているメーリングリストのアドレスを示す正規表現のリストでなけ
+ればなりません。ディフォルト値は @code{nil} です。上記と同じ結果を成し遂
+げたい場合の例:
+
+@lisp
+(setq message-subscribed-regexps
+      '("\\(ding@@gnus\\)\\|\\(bing@@noose\\)\\.org")
+@end lisp
+
+@vindex message-subscribed-address-functions
+@item message-subscribed-address-functions
+これは MFT ヘッダーの値を決めるために (一度に一回!!) 呼ばれる関数のリス
+トであることができます。それらの関数には引数が無いことを忠告しておきます。
+ディフォルト値は @code{nil} です。
+
+Gnus にはこの変数の好適な候補であるところの、あらかじめ定義されている関
+数があります。関数 @code{gnus-find-subscribed-addresses} は、
+@code{subscribed} (@pxref{Group Parameters, ,グループパラメータ,
+gnus-ja, The Gnus Manual}) グループパラメータが非-@code{nil} に設定され
+ているグループに対応するアドレスのリストを返します。こんなふうにしましょ
+う。
+
+@lisp
+(setq message-subscribed-address-functions
+      '(gnus-find-subscribed-addresses))
+@end lisp
+
+@vindex message-subscribed-address-file
+@item message-subscribed-address-file
+あなたはもしかしたら酔狂な人 (原典: one organized human freak) で、購読
+しているすべてのメーリングリストのアドレスのリストを別ファイルで持ってい
+るかもしれません! そうならば、単にこの変数をそのファイル名にすることによっ
+て、人生は良きものになるでしょう。
+@end table
+
+上記以外に一つ以上の変数を使うことができます。すべてそれらの値は何らかの
+方法で「加えられる」ことで動作します :-)
+
+さあ用意ができました。いつものようにメッセージの作成を始めましょう。そし
+ていつも通りに送信しましょう。メッセージが送出される直前
+に Gnus の MFT を作る仕掛けが動作して、メッセージがすでに MFT フィールド
+を持っているかどうかを調べます。もしそれが一つなら、それは放っておかれま
+す (ただしその場合にそれが空っぽだったら、そのフィールドは削除され自動生
+成されたもので置き換えられることもありません。これは個々のメッセージにつ
+いて MFT の生成を禁止させる基本です)。無かった場合は受取人のアドレスのリ
+スト (To: と Cc: ヘッダーにある) を、それらの一つが購読しているメーリン
+グリストのアドレスかどうかを調べます。それらのどれもがメーリングリストの
+アドレスでなかったら、MFT は作られません。それ以外の場合には MFT がその
+他のヘッダーに付け加えられ、その値は To: と Cc: にあるすべてのアドレスに
+設定されます。
+
+@kindex C-c C-f C-a
+@findex message-generate-unsubscribed-mail-followup-to
+@kindex C-c C-f C-m
+@findex message-goto-mail-followup-to
+うーむ。そうするとあなたは「購読していないメーリングリストにメールを送信
+するときはどうなるの?  私は余分のコピーが欲しいことを MFT で言いたい」と
+尋ねますね (たぶん他の人は MFT が無かった場合と同様に処理してしまうだろ
+うけれど、誰かの to-address グループパラメータを上書きするために、明示的
+な MFT を使うことができるのです)。関
+数 @code{message-generate-unsubscribed-mail-followup-to} が役に立つこと
+があるでしょう。これはディフォルトで @kbd{C-c C-f C-a} に割り当てられて
+います。どんな場合でも、あなたは自分が選んだ MFT を挿入することができま
+す; それを始めるの
+に @kbd{C-c C-f C-m} (@code{message-goto-mail-followup-to}) が助けてくれ
+るでしょう。
+
+@c @node Honoring an MFT post
+@subsection MFT 投稿の尊重
+
+@vindex message-use-mail-followup-to
+メーリングリストに投稿された記事にフォローアップするとき、その記事
+が MFT ヘッダーを持っていたら、Gnus の動作は変
+数 @code{message-use-mail-followup-to} の値によって決まります。この値は
+以下のどれかになります:
+
+@table @code
+@item use
+常に MFT を尊重します。フォローアップ記事の To: と Cc: ヘッダーは、元の
+記事の MFT ヘッダーから引き出します。これがディフォルトです。
+
+@item nil
+常に MFT を尊重しません (完璧に無視)。
+
+@item ask
+どうするか尋ねます。
+@end table
+
+MFT を尊重することは良いネチケット (netiquette) であると考えられています。
+それは、どこにフォローアップする必要があるかを、メッセージを投稿した人は
+あなたよりよく知っている、と思われるからです。
+
+@node Commands
+@chapter 命令
+
+@menu
+* Buffer Entry::        メッセージバッファに入った後の命令
+* Header Commands::     ヘッダーに移動またはヘッダーを変更するための命令
+* Movement::            メッセージバッファを動き回る
+* Insertion::           メッセージバッファに物事を挿入する
+* MIME::                @acronym{MIME} に関する考察
+* IDNA::                非-@acronym{ASCII} ドメイン名に関する考察
+* Security::            メッセージへの署名と暗号化
+* Various Commands::    いろいろな事
+* Sending::             実際にメッセージを送る
+* Mail Aliases::        どのようにしてメールの別名を使うか
+* Spelling::            Emacs にスペルチェックさせる
+@end menu
+
+@node Buffer Entry
+@section バッファに入る
+@cindex undo
+@kindex C-_
+
+何か他のメッセージに返答するとき、たいていはメッセージバッファで書き上げ
+ますよね。Message は多くの引用文を扱い、署名の削除や文章の整形をしたり、
+あるいはあなたが使っている設定に依存しています。Message は普通はうまく動
+作しますが、ときどき間違えもします。それらの間違いをユーザが正すことがで
+きるように、Message はそれぞれ主要な動作を行なう前にアンドゥの境界を設定
+します。何回かアンドゥのキー (通常 @kbd{C-_}) を押せば、未編集のメッセー
+ジに戻すことができます。
+
+@node Header Commands
+@section ヘッダー命令
+
+@subsection ヘッダーに移動するための命令
+
+以下の命令は当のヘッダーに移動します。存在しなければ挿入されます。
+
+@table @kbd
+
+@item C-c ?
+@kindex C-c ?
+@findex describe-mode
+メッセージモードの記述です。
+
+@item C-c C-r C-t
+@kindex C-c C-f C-t
+@findex message-goto-to
+@code{To} ヘッダーに行きます (@code{message-goto-to})。
+
+@item C-c C-f C-o
+@kindex C-c C-f C-o
+@findex message-goto-from
+@code{From} ヘッダーに行きます (@code{message-goto-from})。(キーバインド
+中の ``o'' は創作者 (Originator) に由来しています。)
+
+@item C-c C-f C-b
+@kindex C-c C-f C-b
+@findex message-goto-bcc
+@code{Bcc} ヘッダーに行きます (@code{message-goto-bcc})。
+
+@item C-c C-f C-f
+@kindex C-c C-f C-f
+@findex message-goto-fcc
+@code{Fcc} ヘッダーに行きます (@code{message-goto-fcc})。
+
+@item C-c C-f C-c
+@kindex C-c C-f C-c
+@findex message-goto-cc
+@code{Cc} ヘッダーに行きます (@code{message-goto-cc})。
+
+@item C-c C-f C-s
+@kindex C-c C-f C-s
+@findex message-goto-subject
+@code{Subject} ヘッダーに行きます (@code{message-goto-subject})。
+
+@item C-c C-f C-r
+@kindex C-c C-f C-r
+@findex message-goto-reply-to
+@code{Reply-To} ヘッダーに行きます (@code{message-goto-reply-to})。
+
+@item C-c C-f C-n
+@kindex C-c C-f C-n
+@code{Neswsgroups} ヘッダーに行きます (@code{message-goto-newsgroups})。
+
+@item C-c C-f C-d
+@kindex C-c C-f C-d
+@findex message-goto-distribution
+@code{Distribution} ヘッダーに行きま
+す (@code{message-goto-distribution})。
+
+@item C-c C-f C-o
+@kindex C-c C-f C-o
+@findex message-goto-followup-to
+@code{Followup-To} ヘッダーに行きます (@code{message-goto-followup-to})。
+
+@item C-c C-f C-k
+@kindex C-c C-f C-k
+@findex message-goto-keywords
+@code{Keywords} ヘッダーに行きます (@code{message-goto-keywords})。
+
+@item C-c C-f C-u
+@kindex C-c C-f C-u
+@findex message-goto-summary
+@code{Summary} ヘッダーに行きます (@code{message-goto-summary})。
+
+@item C-c C-f C-i
+@kindex C-c C-f C-i
+@findex message-insert-or-toggle-importance
+値 @samp{high} を持つ @samp{Importance:} ヘッダーを挿入します。このヘッ
+ダーは受信者にそのメッセージの重要性を知らせるために使われるものです。も
+しバッファにすでにこのヘッダーがある場合は、RFC 1376 に準じた三つの
+値 @samp{low}、@samp{normal} および @samp{high} を循環させます。
+
+@item C-c C-f C-a
+@kindex C-c C-f C-a
+@findex message-generate-unsubscribed-mail-followup-to
+講読していないメーリングリストに投稿する場合に見合っ
+た @samp{Mail-Followup-To:} ヘッダーを挿入します。講読していないメーリン
+グリストに本記事を投稿するときは、@samp{Mail-Followup-To:} を手で書かな
+ければなりません。内容は、ふつうはメーリングリストのアドレスとあなた自身
+のアドレスです。この関数はそのようなヘッダーを自動的に挿入します。これは
+現在のメールのバッファから @samp{To:} ヘッダーの内容を抜き出し、それに現
+在の @code{user-mail-address} を追加します。
+
+任意の引数である @code{include-cc} が非-@code{nil} だった場合は、
+@samp{Cc:} ヘッダーにあるアドレスも @samp{Mail-Followup-To:} ヘッダーに
+置かれます。
+@end table
+
+@subsection ヘッダーを変更するための命令
+
+@table @kbd
+
+@item C-c C-o
+@kindex C-c C-o
+@findex message-sort-headers
+@vindex message-header-format-alist
+@code{message-header-format-alist} に従ってヘッダーを並べ替えま
+す (@code{message-sort-headers})。
+
+@item C-c C-t
+@kindex C-c C-t
+@findex message-insert-to
+フォローアップしようとするメッセージの @code{Reply-To} もしく
+は @code{From} ヘッダーを含む @code{To} ヘッダーを挿入しま
+す (@code{message-insert-to})。
+
+@item C-c C-n
+@kindex C-c C-n
+@findex message-insert-newsgroups
+返答している記事の @code{Followup-To} もしくは、@code{Nesgroups} ヘッダー
+を反映した @code{Newsgroups} ヘッダーを挿入しま
+す (@code{message-insert-newsgroups})。
+
+@item C-c C-l
+@kindex C-c C-l
+@findex message-to-list-only
+メーリングリスト宛てだけにメッセージを送ります。
+@code{To:} と @code{Cc:} ヘッダーから、そのメーリングリスト以外のアドレ
+スを削除します。
+
+@item C-c M-n
+@kindex C-c M-n
+@findex message-insert-disposition-notification-to
+開封確認要求を挿入します。
+(@code{message-insert-disposition-notification-to})。これは、もし受信者
+が RFC 2298 をサポートしていたら、彼女にそのメッセージを受け取ったことを
+知らせて欲しいことを意味します。
+
+@item M-x message-insert-importance-high
+@kindex M-x message-insert-importance-high
+@findex message-insert-importance-high
+@cindex Importance
+値 @samp{high} を持つ @samp{Importance} ヘッダーを挿入します。必要な
+ら (すでにある) ヘッダーを消去してから。
+
+@item M-x message-insert-importance-low
+@kindex M-x message-insert-importance-low
+@findex message-insert-importance-low
+@cindex Importance
+値 @samp{low} を持つ @samp{Importance} ヘッダーを挿入します。必要な
+ら (すでにある) ヘッダーを消去してから。
+
+@item C-c C-f s
+@kindex C-c C-f s
+@findex message-change-subject
+@cindex Subject
+現在の @samp{Subject} ヘッダーを変更します。新しい @samp{Subject} を尋ね
+て @samp{(was: <古い題名>)} を追加します。古い題名は返信するときに削除す
+ることができます。@code{message-subject-trailing-was-query}
+(@pxref{Message Headers}) を見て下さい。
+
+@item C-c C-f x
+@kindex C-c C-f x
+@findex message-cross-post-followup-to
+@vindex message-cross-post-default
+@cindex X-Post
+@cindex cross-post
+クロスポストするために追加す
+る @samp{Newsgroups} と @samp{FollowUp-To} を尋ねます。
+@code{message-cross-post-followup-to} は @samp{FollowUp-To} およ
+び @samp{Newsgroups} を、グループを指し示すように切り裂きます。
+@code{message-cross-post-default} が @code{nil} だったり接頭引
+数 @samp{Follow-Up} 付きで呼ばれると、メッセージはクロスポストされませ
+ん。
+
+@item C-c C-f t
+@kindex C-c C-f t
+@findex message-reduce-to-to-cc
+@samp{To} ヘッダーの内容を @samp{Cc} か @samp{Bcc} ヘッダーの内容で置き
+換えます。
+
+@item C-c C-f w
+@kindex C-c C-f w
+@findex message-insert-wide-reply
+広い返答をしたように @samp{To} と @samp{Cc} ヘッダーを挿入します。
+
+@item C-c C-f a
+@kindex C-c C-f a
+@findex message-add-archive-header
+@vindex message-archive-header
+@vindex message-archive-note
+@cindex X-No-Archive
+@samp{X-No-Archive: Yes} をヘッダーに挿入して、本文に注意書きを入れます。
+ヘッダーと注意書き
+は @code{message-archive-header} と @code{message-archive-note} でカスタ
+マイズすることができます。接頭引数付きで呼ばれると、挿入するテキストを要
+求します。本文に注意書きを入れたくない場合は、
+@code{message-archive-note} を @code{nil} にして下さい。
+@end table
+
+@node Movement
+@section 移動
+
+@table @kbd
+@item C-c C-b
+@kindex C-c C-b
+@findex message-goto-body
+メッセージの本体の先頭に移動します (@code{message-goto-body})。
+
+@item C-c C-i
+@kindex C-c C-i
+@findex message-goto-signature
+メッセージの署名に移動します (@code{message-goto-signature})。
+
+@item C-a
+@kindex C-a
+@findex message-beginning-of-line
+@vindex message-beginning-of-line
+ヘッダーの値のところにいるときは行の先頭に移動し、そうでないときはヘッダー
+の値の先頭に移動します。(ヘッダーの値はヘッダー名とコロンの後に来ま
+す。) この動作は変数 @code{message-beginning-of-line} をトグルすることに
+よって無効にすることができます。
+@end table
+
+@node Insertion
+@section 挿入
+
+@table @kbd
+
+@item C-c C-y
+@kindex C-c C-y
+@findex message-yank-original
+バッファ @code{gnus-article-copy} にあるメッセージをメッセージバッファに
+貼り付けます。普通は @code{gnus-article-copy} は返答しようとしているメッ
+セージです (@code{messsage-yank-original})。
+
+@item C-c C-M-y
+@kindex C-c C-M-y
+@findex message-yank-buffer
+バッファ名を尋ねて、そのバッファの内容をメッセージバッファに貼り付けま
+す (@code{message-yank-buffer})。
+
+@item C-c C-q
+@kindex C-c C-q
+@findex message-fill-yanked-message
+貼り付けられたメッセージを折り返しま
+す (@code{message-fill-yanked-message})。警告: もし、引用の習慣が変であ
+るなら、貼り付けられた文章をひどくぐちゃぐちゃにしてしまうかもしれません。
+それが安全であると知ると、すぐに人心地つくでしょうが。とにかく、
+@kbd{C-x u} (@code{undo}) が使用可能で、大丈夫であると言う事を覚えておい
+て下さい。
+
+@item C-c C-w
+@kindex C-c C-w
+@findex message-insert-signature
+バッファの最後に署名を挿入します (@code{message-insert-signature})。
+
+@item C-c M-h
+@kindex C-c M-h
+@findex message-insert-headers
+メッセージのヘッダーを挿入します (@code{message-insert-headers})。
+
+@item C-c M-m
+@kindex C-c M-m
+@findex message-mark-inserted-region
+現在の記事のいくつかの領域を、それらを囲むためのタグで印を付けます。
+@code{message-mark-insert-begin} と @code{message-mark-insert-end} を見
+て下さい。
+
+@item C-c M-f
+@kindex C-c M-f
+@findex message-mark-insert-file
+現在の記事に、タグで囲まれたファイルを挿入します。
+@code{message-mark-insert-begin} と @code{message-mark-insert-end} を見
+て下さい。
+@end table
+
+@c TRANSLATEME
+@node MIME
+@section MIME
+@cindex MML
+@cindex MIME
+@cindex multipart
+@cindex attachment
+
+Message is a @acronym{MIME}-compliant posting agent.  The user generally
+doesn't have to do anything to make the @acronym{MIME} happen---Message will
+automatically add the @code{Content-Type} and
+@code{Content-Transfer-Encoding} headers.
+
+The most typical thing users want to use the multipart things in
+@acronym{MIME} for is to add ``attachments'' to mail they send out.  This can
+be done with the @kbd{C-c C-a} command, which will prompt for a file
+name and a @acronym{MIME} type.  If your Emacs supports drag
+and drop, you can also drop the file in the Message buffer.
+
+You can also create arbitrarily complex multiparts using the @acronym{MML}
+language (@pxref{Composing, , Composing, emacs-mime, The Emacs MIME
+Manual}).
+
+@node IDNA
+@section 国際化ドメイン名
+@cindex IDNA
+@cindex internationalized domain names
+@cindex non-ascii domain names
+
+Message は @acronym{IDNA} に準拠した送信エージェントです。ユーザ
+は @acronym{IDNA} のために一般には何もする必要がありません。
+Message は @code{From}、@code{To} および @code{Cc} ヘッダーにある
+非-@acronym{ASCII} ドメイン名を自動的にエンコードします。
+
+もっと @acronym{IDNA} が有名になるまでは、実際にドメイン名
+を @acronym{IDNA} エンコードすべき場合でも Message は確認を求めます。現
+在ではドメイン名に非-@acronym{ASCII} 文字を含むことができることにユーザ
+の幾人かは気づいていないかもしれないので、彼らが偶然に
+非-@acronym{ASCII} ドメイン名をタイプしてしまったときのために安全ネット
+を張っているわけです。
+
+@vindex message-use-idna
+変数 @code{message-use-idna} は @acronym{IDNA} を使うかどうかを制御しま
+す。この変数が @code{nil} だったら @acronym{IDNA} エンコードは行なわれま
+せん。シンボル @code{ask} に設定されている (ディフォルト) とユーザは確認
+を求められます。そして @code{t} に設定されていると、自動的
+に @acronym{IDNA} エンコードが行なわれます。
+
+@findex message-idna-to-ascii-rhs
+実験的に @acronym{IDNA} エンコードを行ないたいならば、(エンコードされた
+非-@acronym{ASCII} ドメイン名を得るために) メッセージの編集中
+に @kbd{M-x message-idna-to-ascii-rhs RET} をタイプして下さい。
+
+この機能を使うには @uref{http://www.gnu.org/software/libidn/, GNU
+Libidn} をインストールしておく必要があります。
+
+@c TRANSLATEME
+@node Security
+@section Security
+@cindex Security
+@cindex S/MIME
+@cindex PGP
+@cindex PGP/MIME
+@cindex sign
+@cindex encrypt
+@cindex secure
+
+Using the @acronym{MML} language, Message is able to create digitally
+signed and digitally encrypted messages.  Message (or rather
+@acronym{MML}) currently support @acronym{PGP} (RFC 1991),
+@acronym{PGP/MIME} (RFC 2015/3156) and @acronym{S/MIME}.  Instructing
+@acronym{MML} to perform security operations on a @acronym{MIME} part is
+done using the @kbd{C-c C-m s} key map for signing and the @kbd{C-c C-m
+c} key map for encryption, as follows.
+
+@table @kbd
+
+@item C-c C-m s s
+@kindex C-c C-m s s
+@findex mml-secure-message-sign-smime
+
+Digitally sign current message using @acronym{S/MIME}.
+
+@item C-c C-m s o
+@kindex C-c C-m s o
+@findex mml-secure-message-sign-pgp
+
+Digitally sign current message using @acronym{PGP}.
+
+@item C-c C-m s p
+@kindex C-c C-m s p
+@findex mml-secure-message-sign-pgpmime
+
+Digitally sign current message using @acronym{PGP/MIME}.
+
+@item C-c C-m c s
+@kindex C-c C-m c s
+@findex mml-secure-message-encrypt-smime
+
+Digitally encrypt current message using @acronym{S/MIME}.
+
+@item C-c C-m c o
+@kindex C-c C-m c o
+@findex mml-secure-message-encrypt-pgp
+
+Digitally encrypt current message using @acronym{PGP}.
+
+@item C-c C-m c p
+@kindex C-c C-m c p
+@findex mml-secure-message-encrypt-pgpmime
+
+Digitally encrypt current message using @acronym{PGP/MIME}.
+
+@item C-c C-m C-n
+@kindex C-c C-m C-n
+@findex mml-unsecure-message
+Remove security related @acronym{MML} tags from message.
+
+@end table
+
+These commands do not immediately sign or encrypt the message, they
+merely insert the proper @acronym{MML} secure tag to instruct the
+@acronym{MML} engine to perform that operation when the message is
+actually sent.  They may perform other operations too, such as locating
+and retrieving a @acronym{S/MIME} certificate of the person you wish to
+send encrypted mail to.  When the mml parsing engine converts your
+@acronym{MML} into a properly encoded @acronym{MIME} message, the secure
+tag will be replaced with either a part or a multipart tag.  If your
+message contains other mml parts, a multipart tag will be used; if no
+other parts are present in your message a single part tag will be used.
+This way, message mode will do the Right Thing (TM) with
+signed/encrypted multipart messages.
+
+Since signing and especially encryption often is used when sensitive
+information is sent, you may want to have some way to ensure that your
+mail is actually signed or encrypted.  After invoking the above
+sign/encrypt commands, it is possible to preview the raw article by
+using @kbd{C-u C-c RET P} (@code{mml-preview}).  Then you can
+verify that your long rant about what your ex-significant other or
+whomever actually did with that funny looking person at that strange
+party the other night, actually will be sent encrypted.
+
+@emph{Note!}  Neither @acronym{PGP/MIME} nor @acronym{S/MIME} encrypt/signs
+RFC822 headers.  They only operate on the @acronym{MIME} object.  Keep this
+in mind before sending mail with a sensitive Subject line.
+
+By default, when encrypting a message, Gnus will use the
+``signencrypt'' mode, which means the message is both signed and
+encrypted.  If you would like to disable this for a particular
+message, give the @code{mml-secure-message-encrypt-*} command a prefix
+argument, e.g., @kbd{C-u C-c C-m c p}.
+
+Actually using the security commands above is not very difficult.  At
+least not compared with making sure all involved programs talk with each
+other properly.  Thus, we now describe what external libraries or
+programs are required to make things work, and some small general hints.
+
+@subsection Using S/MIME
+
+@emph{Note!}  This section assume you have a basic familiarity with
+modern cryptography, @acronym{S/MIME}, various PKCS standards, OpenSSL and
+so on.
+
+The @acronym{S/MIME} support in Message (and @acronym{MML}) require
+OpenSSL.  OpenSSL performs the actual @acronym{S/MIME} sign/encrypt
+operations.  OpenSSL can be found at @uref{http://www.openssl.org/}.
+OpenSSL 0.9.6 and later should work.  Version 0.9.5a cannot extract mail
+addresses from certificates, and it insert a spurious CR character into
+@acronym{MIME} separators so you may wish to avoid it if you would like
+to avoid being regarded as someone who send strange mail.  (Although by
+sending @acronym{S/MIME} messages you've probably already lost that
+contest.)
+
+To be able to send encrypted mail, a personal certificate is not
+required.  Message (@acronym{MML}) need a certificate for the person to whom you
+wish to communicate with though.  You're asked for this when you type
+@kbd{C-c C-m c s}.  Currently there are two ways to retrieve this
+certificate, from a local file or from DNS.  If you chose a local
+file, it need to contain a X.509 certificate in @acronym{PEM} format.
+If you chose DNS, you're asked for the domain name where the
+certificate is stored, the default is a good guess.  To my belief,
+Message (@acronym{MML}) is the first mail agent in the world to support
+retrieving @acronym{S/MIME} certificates from DNS, so you're not
+likely to find very many certificates out there.  At least there
+should be one, stored at the domain @code{simon.josefsson.org}.  LDAP
+is a more popular method of distributing certificates, support for it
+is planned.  (Meanwhile, you can use @code{ldapsearch} from the
+command line to retrieve a certificate into a file and use it.)
+
+As for signing messages, OpenSSL can't perform signing operations
+without some kind of configuration.  Especially, you need to tell it
+where your private key and your certificate is stored.  @acronym{MML}
+uses an Emacs interface to OpenSSL, aptly named @code{smime.el}, and it
+contain a @code{custom} group used for this configuration.  So, try
+@kbd{M-x customize-group RET smime RET} and look around.
+
+Currently there is no support for talking to a CA (or RA) to create
+your own certificate.  None is planned either.  You need to do this
+manually with OpenSSL or using some other program.  I used Netscape
+and got a free @acronym{S/MIME} certificate from one of the big CA's on the
+net.  Netscape is able to export your private key and certificate in
+PKCS #12 format.  Use OpenSSL to convert this into a plain X.509
+certificate in PEM format as follows.
+
+@example
+$ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
+@end example
+
+The @file{key+cert.pem} file should be pointed to from the
+@code{smime-keys} variable.  You should now be able to send signed mail.
+
+@emph{Note!}  Your private key is now stored unencrypted in the file,
+so take care in handling it.  Storing encrypted keys on the disk are
+supported, and Gnus will ask you for a passphrase before invoking
+OpenSSL.  Read the OpenSSL documentation for how to achieve this.  If
+you use unencrypted keys (e.g., if they are on a secure storage, or if
+you are on a secure single user machine) simply press @code{RET} at
+the passphrase prompt.
+
+@subsection Using PGP/MIME
+
+@acronym{PGP/MIME} requires an external OpenPGP implementation, such
+as @uref{http://www.gnupg.org/, GNU Privacy Guard}.  Pre-OpenPGP
+implementations such as PGP 2.x and PGP 5.x are also supported.  One
+Emacs interface to the PGP implementations, PGG (@pxref{Top, ,PGG,
+pgg, PGG Manual}), is included, but Mailcrypt and Florian Weimer's
+@code{gpg.el} are also supported.
+
+@vindex gpg-temp-directory
+Note, if you are using the @code{gpg.el} you must make sure that the
+directory specified by @code{gpg-temp-directory} have permissions
+0700.
+
+Creating your own key is described in detail in the documentation of
+your PGP implementation, so we refer to it.
+
+If you have imported your old PGP 2.x key into GnuPG, and want to send
+signed and encrypted messages to your fellow PGP 2.x users, you'll
+discover that the receiver cannot understand what you send. One
+solution is to use PGP 2.x instead (i.e., if you use @code{pgg}, set
+@code{pgg-default-scheme} to @code{pgp}).  If you do want to use
+GnuPG, you can use a compatibility script called @code{gpg-2comp}
+available from
+@uref{http://muppet.faveve.uni-stuttgart.de/~gero/gpg-2comp/}.  You
+could also convince your fellow PGP 2.x users to convert to GnuPG.
+@vindex mml-signencrypt-style-alist
+As a final workaround, you can make the sign and encryption work in
+two steps; separately sign, then encrypt a message.  If you would like
+to change this behavior you can customize the
+@code{mml-signencrypt-style-alist} variable.  For example:
+
+@lisp
+(setq mml-signencrypt-style-alist '(("smime" separate)
+                                    ("pgp" separate)
+                                    ("pgpauto" separate)
+                                    ("pgpmime" separate)))
+@end lisp
+
+This causes to sign and encrypt in two passes, thus generating a
+message that can be understood by PGP version 2.
+
+(Refer to @uref{http://www.gnupg.org/gph/en/pgp2x.html} for more
+information about the problem.)
+
+@node Various Commands
+@section いろいろな命令
+
+@table @kbd
+
+@item C-c C-r
+@kindex C-c C-r
+@findex message-caesar-buffer-body
+現在のメッセージをシーザー変換 (別名 rot13) しま
+す (@code{message-caesar-buffer-body})。もし範囲限定が実行されていたら、
+バッファの見える部分だけを変換します。数値接頭引数は文をどのくらい回転さ
+せるかを指定します。初期値は 13 です。
+
+@item C-c C-e
+@kindex C-c C-e
+@findex message-elide-region
+@vindex message-elide-ellipsis
+ポイントとマークの間の文を省きます (@code{message-elide-region})。文章は
+切られて (killed) 変数 @code{message-elide-ellipsis} の値で置き換えられ
+ます。ディフォルトの省略符号として使われる値は (@samp{[...]}) です。
+
+@item C-c M-k
+@kindex C-c M-k
+@findex message-kill-address
+現在位置のアドレスを削除します。
+
+@item C-c C-z
+@kindex C-c C-x
+@findex message-kill-to-signature
+署名までか、それが無ければ記事の最後までの全ての文を切りま
+す (@code{message-kill-to-signature})。
+
+@item C-c C-v
+@kindex C-c C-v
+@findex message-delete-not-region
+メッセージの本体のリージョンの外の全ての文を消去しま
+す (@code{message-delete-not-region})。
+
+@item M-RET
+@kindex M-RET
+@findex message-newline-and-reformat
+4つの新しい行を挿入し、もしポイントが引用文の間にあるならば、再整形しま
+す。
+
+これは例です:
+
+@example
+> これは何かの引用文です。 そして、ここにはもっと引用文があります。
+@end example
+
+もし、ポイントが @samp{そして} の前にあり、@kbd{M-RET} を押したなら、以
+下のようなものを得ます:
+
+@example
+> これは何かの引用文です。
+
+*
+
+> そして、ここにはもっと引用文があります。
+@end example
+
+@samp{*} はポイントが置かれている場所です。
+
+@item C-c M-r
+@kindex C-c M-r
+@findex message-rename-buffer
+バッファの名前を変更します (@code{message-rename-buffer})。接頭引数を与
+えられれば、新しいバッファ名の入力を促進します。
+
+@item TAB
+@kindex TAB
+@findex message-tab
+@vindex message-tab-body-function
+@code{message-tab-body-function} に設定されている関数を実行します。さも
+なければ (それが @code{nil} だったら)、
+@code{text-mode-map} か @code{global-map} の @kbd{TAB} キーに割り当てら
+れているコマンドを使います。
+@end table
+
+@node Sending
+@section 送信
+
+@table @kbd
+@item C-c C-c
+@kindex C-c C-c
+@findex message-send-and-exit
+メッセージを送信し、現在のバッファを埋めま
+す (@code{message-send-and-exit})。
+
+@item C-c C-s
+@kindex C-c C-s
+@findex message-send
+メッセージを送信します (@code{message-send})。
+
+@item C-c C-d
+@kindex C-c C-d
+@findex message-dong-send
+メッセージバッファを埋めて終了します (@code{message-dont-send})。
+
+@item C-c C-k
+@kindex C-c C-k
+@findex message-kill-buffer
+@vindex message-kill-buffer-and-remove-file
+メッセージバッファを切って終了します (@code{message-kill-buffer})。その
+フレームがメッセージ専用に作られたものだった場合は、フレームを削除します。
+@code{message-kill-buffer-and-remove-file} が非-@code{nil} で、かつバッ
+クアップファイルができていたら、ユーザに確認してからそれも削除します。
+
+@item C-x k
+@kindex C-x k
+@findex message-mimic-kill-buffer
+@vindex message-kill-buffer-and-remove-file
+@code{kill-buffer} のイミテーションで
+す (@code{message-mimic-kill-buffer})。
+@code{message-kill-buffer-and-remove-file} を一時的に @code{nil} に束縛
+して @code{message-kill-buffer} を呼びます。
+@end table
+
+@node Mail Aliases
+@section メール別名
+@cindex mail aliases
+@cindex aliases
+
+@vindex message-mail-alias-type
+変数 @code{message-mail-alias-type} はどのような型のメール別名 (mail
+alias) 伸張を使うかを制御します。現在では、一つの様式だけが使用可能で
+す---Message はメール別名を扱うために @code{mailabbrev} を使います。もし
+この変数が @code{nil} であるなら、メール別名伸張は実行されません。
+
+@code{Mailabbrev} は @file{/etc/mailrc} と @file{~/.mailrc} ファイルを解
+析する事により動作します。ファイルは次のようになっています:
+
+@example
+alias lmi "Lars Magne Ingebrigtsen <larsi@@ifi.uio.no>"
+alias ding "ding@@ifi.uio.no (ding mailing list)"
+@end example
+
+このような行を @file{~/.mailrc} ファイルに追加した後で、
+@code{To} や @code{Cc} (等など) のヘッダーで @samp{lmi} と書いて、
+@kbd{SPC} を押すだけで別名を伸張します。
+
+メッセージを送るときには伸張は行われません---全ての伸張は明示的に行われ
+なくてはなりません。
+
+@node Spelling
+@section Emacs にスペルチェックさせる
+@cindex spelling
+@findex ispell-message
+
+Emacs でスペルチェックするために普及している二つの方法、
+@code{ispell} と @code{flyspell} があります。@code{ispell} の方は昔から
+あって、たぶんより一般的なパッケージです。あなたは例によって最初にメッセー
+ジを書いてから全体を @code{ispell} に通し、すべての書き損じを修正します。
+メッセージを送信するときにそれを自動的に行なうためには、.emacs ファイル
+に以下のようなものを入れて下さい。
+
+@lisp
+(add-hook 'message-send-hook 'ispell-message)
+@end lisp
+
+@vindex ispell-message-dictionary-alist
+もしあなたが違う言語で書く習慣ならば、それは変
+数 @code{ispell-message-dictionary-alist} で制御できます。
+
+@lisp
+(setq ispell-message-dictionary-alist
+      '(("^Newsgroups:.*\\bde\\." . "deutsch8")
+        (".*" . "default")))
+@end lisp
+
+@code{ispell} はインストールされた @samp{ispell} コマンドに依存していま
+す。
+
+もう一方の普及している方法は @code{flyspell} を使うことです。このパッケー
+ジはあなたが書いている最中にスペルチェックを行ない、いろんな方法で間違っ
+たスペルの語を指摘してくれます。
+
+@code{flyspell} を使うには、以下のようなものを .emacs ファイルに入れて下
+さい。
+
+@lisp
+(defun my-message-setup-routine ()
+  (flyspell-mode 1))
+(add-hook 'message-setup-hook 'my-message-setup-routine)
+@end lisp
+
+@code{flyspell} はインストールされた @samp{ispell} コマンドに依存してい
+ます。
+
+@node Variables
+@chapter 変数
+
+@menu
+* Message Headers::             一般的なメッセージヘッダーのようなもの
+* Mail Headers::                メールヘッダーをカスタマイズする
+* Mail Variables::              他のメール変数
+* News Headers::                ニュースヘッダーをカスタマイズする
+* News Variables::              他のニュース変数
+* Insertion Variables::         挿入のされ方をカスタマイズする
+* Various Message Variables::   他のメッセージ変数
+* Sending Variables::           送信するための変数
+* Message Buffers::             Message がそのバッファの名前を付ける方法
+* Message Actions::             終了するときに実行される動作
+@end menu
+
+@node Message Headers
+@section メッセージヘッダー
+
+Message はメッセージ作成部分に関しては非常に積極的です。それは次のようで
+なければなりません---それはニュースとメールの複合代理です。複合メッセー
+ジを送る事ができるように、また、それはメッセージのメールとニュースの複製
+が十分に同じように見えるように、全てのヘッダーをそれ自身で作成します。
+
+@table @code
+
+@item message-generate-headers-first
+@vindex message-generate-headers-first
+@code{t} ならば、メッセージの作成を始める前に全ての必要なヘッダーを作成
+します。これは作成するヘッダーのリストであることもできます:
+
+@lisp
+(setq message-generate-headers-first
+      '(References))
+@end lisp
+
+@vindex message-required-headers
+変数 @code{message-required-headers}、
+@code{message-required-mail-headers} およ
+び @code{message-required-news-headers} で、どのヘッダーが必要かを指定し
+ます。
+
+いくつかのヘッダーは、送信する前に消されたり作り直されたりします。これに
+は変数 @code{message-deletable-headers} (後述) が関係します。
+
+@item message-draft-headers
+@vindex message-draft-headers
+Message が Gnus 上で走っている場合、メッセージバッファはドラフトグループ
+と関連付けられています。@code{message-draft-headers} は、そのドラフトグ
+ループにドラフトが記録されるときに、どのヘッダーが作成されるべきかを指示
+します。
+
+@item message-from-style
+@vindex message-from-style
+@code{From} ヘッダーがどのように見えるかを指定します。以下の４つの値が使
+えます:
+
+@table @code
+@item nil
+アドレスだけです---@samp{king@@grassland.com}.
+
+@item parens
+@samp{king@@granssland.com (Elvis Parsley)}.
+
+@item angles
+@samp{Elvis Parsley <king@@grassland.com>}.
+
+@item default
+それが引用符号を要求しなければ @code{angles} のように見え、もし引用符号
+が要求される場合は @code{parens} のように見えます。@code{parens} が引用
+符号を要求したとしても、とにかく @code{angles} を使います。
+@end table
+
+@item message-deletable-headers
+@vindex message-deletable-headers
+このリストにある、以前に Message により作成されたヘッダーは投稿する前に
+削除されます。記事を投稿するとしましょう。それから、わんぱく坊主なあなた
+はそれを何か他のグループに再び投稿する事に決定したので、
+@code{*post-buf*} バッファに戻り、@code{Newsgroups} 行を編集し、再び送り
+出したとします。初期設定では、この変数は前に作成された古
+い @code{Message-ID} が取り除かれ、新しいものが作成される事を確実にして
+います。もしこれがなされないと、帝国全体はおそらく崩壊し、無政府主義が浸
+透し、猫が2本の足で歩き始め、世界を支配するでしょう。聞くところに依れば。
+
+@item message-default-headers
+@vindex message-default-headers
+この文字列は全てのメッセージバッファのヘッダーの最後に挿入されます。
+
+@item message-subject-re-regexp
+@vindex message-subject-re-regexp
+@cindex Aw
+@cindex Sv
+@cindex Re
+メッセージへの応答は @samp{Re: } で始まります。これは英語
+の ``response'' の略では @emph{ありません} が、ラテン語で、``それに応答
+して'' (in response to) と言う意味です。いくつかの無学の馬鹿はこの事実を
+得る事に失敗し、彼らのソフトウェアを忌まわし
+い @samp{Aw: } (``antwort'') や @samp{Sv: } (``svar'') を代わりに使うよ
+うに ``国際化'' しました。それは意味が無く、邪悪です。しかし、これらの邪
+悪な道具を使った利用者を扱わなければならないかもしれませんので、そのよう
+な場合はこの変数をこれらの接頭語に合うような正規表現に設定するでしょう。
+私自身は、そのような規格に従わないメールはただ捨て去っているだけです。
+
+これは、返事をするときにこれらのヘッダーを処理する値の例です:
+
+@lisp
+(setq message-subject-re-regexp
+      (concat
+       "^[ \t]*"
+         "\\("
+           "\\("
+             "[Aa][Nn][Tt][Ww]\\.?\\|"     ; antw
+             "[Aa][Ww]\\|"                 ; aw
+             "[Ff][Ww][Dd]?\\|"            ; fwd
+             "[Oo][Dd][Pp]\\|"             ; odp
+             "[Rr][Ee]\\|"                 ; re
+             "[Rr][\311\351][Ff]\\.?\\|"   ; ref
+             "[Ss][Vv]"                    ; sv
+           "\\)"
+           "\\(\\[[0-9]*\\]\\)"
+           "*:[ \t]*"
+         "\\)"
+       "*[ \t]*"
+       ))
+@end lisp
+
+@item message-subject-trailing-was-query
+@vindex message-subject-trailing-was-query
+@vindex message-subject-trailing-was-ask-regexp
+@vindex message-subject-trailing-was-regexp
+題名の行に続ける @samp{(was: <古い題名>)} をどうするかを制御します。
+@code{nil} だったら題名をそのままにしておきます。@code{ask} というシンボ
+ルだったら、どうするかをユーザに尋ねます。題名
+が @code{message-subject-trailing-was-ask-regexp} に合致する場合だけです
+が。@code{message-subject-trailing-was-query} が @code{t} だったら、常に
+ぶら下がった古い題名をはぎ取ります。その場合
+は @code{message-subject-trailing-was-regexp} が使われます。
+
+@item message-alternative-emails
+@vindex message-alternative-emails
+代わりのメールアドレスに合致する正規表現です。最初にマッチした (第一義で
+はない) アドレスが @code{From} フィールドで使われます。
+(訳注: To か Cc にあるアドレスで、最初にこの正規表現に合致し、
+かつ @code{user-mail-address} とは違うものが、@code{From} フィールドのメー
+ルアドレスとして使われます。)
+
+@item message-allow-no-recipients
+@vindex message-allow-no-recipients
+@code{Gcc} と @code{Fcc} 以外に受取人がいなかった場合に、何をするかを設
+定します。@code{always} だったらとにかく送信し、@code{never} だったら送
+信しません。@code{ask} (それがディフォルト) だったら、どうするか尋ねられ
+ます。
+
+@item message-hidden-headers
+@vindex message-hidden-headers
+正規表現、正規表現のリスト、または最初の要素が @code{not} で残りが正規表
+現であるリスト。メッセージの作成中にどのヘッダーを隠したままにしておくか
+を決めます。
+
+@lisp
+(setq message-hidden-headers
+      '(not "From" "Subject" "To" "Cc" "Newsgroups"))
+@end lisp
+
+ヘッダーは narrowing を使って隠されます。それらをバッファで露出させるた
+めに @kbd{M-x widen} を使うことができます。
+
+@item message-header-synonyms
+@vindex message-header-synonyms
+ヘッダー同意語リストのリスト。例えばこのリスト
+が @code{Cc} と @code{To} のメンバー・リストを含んでいると、メッセージが
+すでに受信者に @code{Cc} されている場合、
+@code{message-carefully-insert-headers} は @code{To} ヘッダーを挿入しま
+せん。
+@end table
+
+@node Mail Headers
+@section メールヘッダー
+
+@table @code
+@item message-required-mail-headers
+@vindex message-required-mail-headers
+この変数の構文を知りたければ、@xref{News Headers} を参照して下さい。それ
+の初期値は @code{(From Date Subject (optional . In-Reply-To) Message-ID
+Lines (optional . User-Agent))} です。
+
+@item message-ignored-mail-headers
+@vindex message-ignored-mail-headers
+メールを出す前に取り除かれるヘッダーの正規表現です。初期値
+は @samp{^[GF]cc:\\|^Resent-Fcc:\\|^Xref:\\|^X-Draft-From:} です。
+
+@item message-default-mail-headers
+@vindex message-default-mail-headers
+この文字列はメールとして初期化された全てのメッセージバッファのヘッダーの
+最後の挿入されます。
+
+@item message-generate-hashcash
+@vindex message-generate-hashcash
+メッセージに @samp{X-Hashcash} ヘッダーを付加すべきかどうかを指示するブー
+ル (値が @code{nil} か非-@code{nil} の) 変数です。@xref{Hashcash,
+,Hashcash,gnus-ja,The Gnus Manual}.
+@end table
+
+@node Mail Variables
+@section メール変数
+
+@table @code
+@item message-send-mail-function
+@vindex message-send-mail-function
+@findex message-send-mail-with-sendmail
+@findex message-send-mail-with-mh
+@findex message-send-mail-with-qmail
+@findex message-send-mail-with-smtp
+@findex message-smtpmail-send-it
+@findex smtpmail-send-it
+@findex feedmail-send-it
+現在のバッファをメールとして送るために使われる関数です。初期値
+は @code{message-send-mail-with-sendmail}、またはシステムによって
+は @code{smtpmail-send-it} です。他に @code{message-send-mail-with-mh},
+@code{message-send-mail-with-qmail}, @code{message-send-mail-with-smtp},
+@code{message-smtpmail-send-it} および @code{feedmail-send-it} が使えま
+す。
+
+@item message-mh-deletable-headers
+@vindex message-mh-deletable-headers
+ほとんどの版の MH はこの変数のヘッダーを含むメッセージを食わされるのを嫌
+います。この変数が @code{nil} でないなら (これが初期設定ですが)、これら
+のヘッダーは MH を使ってメッセージを送っているときには取り除かれます。あ
+なたの MH がこれらのヘッダーを扱えるのであれば、それを @code{nil} に設定
+して下さい。
+
+@item message-qmail-inject-program
+@vindex message-qmail-inject-program
+@cindex qmail
+qmail-inject プログラムです。
+
+@item message-qmail-inject-args
+@vindex message-qmail-inject-args
+qmail-inject プログラムに渡す引数です。これは文字列のリストで、それぞれ
+の引数は一つの文字列でなければなりません。これは関数でも良いです。
+
+例えば、正しい場所に跳ね返したり、メーリングリストの慣習に従うため
+に envelope sender のアドレスを設定したい場合は、この変数
+を @code{'("-f" "you@@some.where")} に設定すれば良いでしょう。
+
+@item message-sendmail-f-is-evil
+@vindex message-sendmail-f-is-evil
+@cindex sendmail
+非-@code{nil} で sendmail のコマンド行に @samp{-f username} を付加しませ
+ん。そうすることは、付加しないより邪悪ですらあるでしょう。
+
+@item message-sendmail-envelope-from
+@vindex message-sendmail-envelope-from
+@code{message-sendmail-f-is-evil} が @code{nil} のとき、これ
+で @acronym{SMTP} エンベロープで使うアドレスを指定します。@code{nil} だっ
+たら @code{user-mail-address} を使います。シンボル @code{header} だった
+ら、メッセージの @samp{From} ヘッダーを使います。
+
+@item message-mailer-swallows-blank-line
+@vindex message-mailer-swallows-blank-line
+システムのメイラーがヘッダーと本文を一緒にしてしまう場合は、
+非-@code{nil} に設定して下さい。(SunOS 4 で sendmail がリモートモードで
+動作する場合が該当します。) 値は、障害が実際に起きるかどうかをテストする
+ための式にすべきです。
+
+@item message-send-mail-partially-limit
+@vindex message-send-mail-partially-limit
+@cindex split large message
+message/partial として送信されるメッセージの制限。
+それを越えたらメッセージを分割して送るべき、メッセージの大きさの下限を、
+文字数で換算した値です (訳注: 日本語的には「下限」ではなく「上限」)。
+@code{nil} だったら、サイズは無制限になります。
+@end table
+
+@node News Headers
+@section ニュースヘッダー
+
+@vindex message-required-news-headers
+@code{message-required-news-headers} はヘッダーシンボルのリストです。こ
+れらのヘッダーは自動的に作成されるか、もしくはそれが不可能であれば、入力
+を促進します。以下のシンボルが使えます:
+
+@table @code
+
+@item From
+@cindex From
+@findex user-full-name
+@findex user-mail-address
+この必要なヘッダーは関数 @code{message-make-from} 関数の結果により作られ、
+それは変数 @code{message-from-style}, @code{user-full-name},
+@code{user-mail-address} に依存します。
+
+@item Subject
+@cindex Subject
+この必要なヘッダーは、まだ存在しない場合は入力を促進されます。
+
+@item Newsgroups
+@cindex Newsgroups
+この必要なヘッダーはどのニュースグループに記事が投稿される事になるかを指
+定します。もしまだ存在していないなら、入力を促進されます。
+
+@item Organization
+@cindex organization
+@vindex message-user-organization
+@vindex message-user-organization-file
+この選択任意なヘッダーは変数 @code{message-user-organization} に依存して
+作成されます。もしこの変数が @code{t} であれば、
+@code{message-user-organization-file} が使われます。この変数は文字列であ
+る事もでき (その場合はその文字列が使われます)、関数である事もできま
+す (その関数は引数無しで呼ばれ、使われる文字列を返す必要があります)。
+
+@item Lines
+@cindex Lines
+この選択任意なヘッダーは Message により計算されます。
+
+@item Message-ID
+@cindex Message-ID
+@vindex message-user-fqdn
+@vindex mail-host-address
+@vindex user-mail-address
+@findex system-name
+@cindex Sun
+@cindex i-did-not-set--mail-host-address--so-tickle-me
+この必要なヘッダーは Message により作成されます。日付、時刻、ユーザ
+名 (ローカルパート) およびドメインパートに基づいたユニークな ID が作成さ
+れます。ドメインパートについては、有効な FQDN (完全に条件を満たしたドメ
+イン名) らしいものが見つからない場合、
+message は @code{message-user-fqdn}, @code{system-name},
+@code{mail-host-address} および @code{message-user-mail-address} (すなわ
+ち @code{user-mail-address}) を (この順で) 探します。
+
+@item User-Agent
+@cindex User-Agent
+この選択自由なヘッダーはローカル変数 @code{message-newsreader} にしたがっ
+て作られます。
+
+@item In-Reply-To
+この選択自由なヘッダーは返答している記事の @code{Date} と @code{From} ヘッ
+ダーを使って作られます。
+
+@item Expires
+@cindex Expires
+@vindex message-expires
+この非常に選択自由なヘッダーは変数 @code{message-expires} にしたがって挿
+入されます。これは自分が何をしているかを知らない限り、使用は全く勧められ
+ません。
+
+@item Distribution
+@cindex Distribution
+@vindex message-distribution-function
+この選択自由なヘッダーは変数 @code{message-distribution-function} にした
+がって作られます。それは非推奨で、非常に誤解されたヘッダーです。
+
+@item Path
+@cindex path
+@vindex message-user-path
+この非常に選択自由なヘッダーはおそらく決して使われてはならないでしょう。
+しかしいくつかの @emph{とても} 古いサーバーはこのヘッダーが存在する事を
+要求します。@code{message-user-path} がこの @code{Path} ヘッダーがどのよ
+うに見えるかをさらに制御します。もしそれが @code{nil} であれば、サーバー
+名を leaf 節として使います。もしそれが文字列であれば、その文字列を使いま
+す。もしそれが文字列でも @code{nil} でもなければ、利用者の名前だけを使い
+ます。しかし、何らかの形でこの変数を弄らなければならない必要性は非常に少
+ないでしょう。
+@end table
+
+@findex yow
+@cindex Mime-Version
+加えて cons をリストに入れる事ができます。この cons の @sc{car} はシンボ
+ルであるべきです。このシンボル名はヘッダー名で、@sc{cdr} はこのヘッダー
+の値としてそのまま入れられることになる文字列か、呼ばれる関数のどちらかで
+ある事ができます。例えば、もし @code{Mime-Version: 1.0} を挿入したいなら、
+@code{(Mime-Version . "1.0")} をリストに入れるべきでしょう。もしおもしろ
+い引用を挿入したいなら、@code{(X-Yow . yow)} のようなものをリストに入れ
+る事ができるでしょう。関数 @code{yow} はその後で引数無しで呼ばれます。
+
+もしリストが cons の @sc{car} が @code{optional} である cons を含んでい
+るなら、この cons の @sc{cdr} は @code{nil} でないときだけ挿入されます。
+
+このリストからある項目を消したいならば、以下の Lisp の切れ端が役に立つで
+しょう。他の要素を削除したいときはそれに合わせて下さい。
+
+@lisp
+(setq message-required-news-headers
+      (delq 'Message-ID message-required-news-headers))
+@end lisp
+
+出て行くニュース記事をカスタマイズするための他の変数:
+
+@table @code
+
+@item message-syntax-checks
+@vindex message-syntax-checks
+@code{nil} でなければ、Message は投稿の前に、ヘッダーと他のものの合法性
+を調べます。このリストに要素を付け加えたり取り除いたりする事で、調べる粒
+の大きさを制御する事ができます。使える要素は:
+
+@table @code
+@item subject-cmsg
+命令のための表題を調べます。
+@item sender
+@cindex Sender
+@code{From} ヘッダーが変に見えれば、新しい @code{Sender} ヘッダーを挿入
+します。
+@item multiple-headers
+複数の等価なヘッダーの存在を調べます。
+@item sendsys
+@cindex sendsys
+版番号と sendsys 命令の存在を調べます。
+@item message-id
+@code{Message-ID} が大丈夫かどうか調べます。
+@item from
+@code{From} ヘッダーがよく見えるかどうかを調べます。
+@item long-lines
+あまりに長い行を調べます。
+@item control-chars
+使ってはいけない文字を調べます。
+@item size
+過剰な大きさを調べます。
+@item new-text
+メッセージに新しい文があるかどうかを調べます。
+@item signature
+署名の長さを調べます。
+@item approved
+@cindex approved
+記事が @code{Approved} ヘッダーを持っているかどうかを調べます。それは司
+会者だけが含むべき物です。
+@item empty
+記事が空かどうかを調べます。
+@item invisible-text
+バッファに不可視のテキストがあるかどうかを調べます。
+@item empty-headers
+ヘッダーのどれかが空であるかを調べます。
+@item existing-newsgroups
+@code{Newsgroups} と @code{Follouup-to} で書かれているニュースグループが
+存在するかどうかを調べます。
+@item valid-newsgroups
+@code{Newsgroups} と @code{Followup-to} ヘッダーが構文的に正しいかを調べ
+ます。
+@item repeated-newsgroups
+@code{Newsgroups} と @code{Followup-to} ヘッダーに繰り返されたグループ名
+が無いかを調べます。
+@item shorten-followup-to
+投稿するグループの数を @code{Followup-to} ヘッダーを付け加える事で少なく
+するかを調べます。
+@end table
+
+これら全ての状態は初期設定では調べられます。
+
+@item message-ignored-news-headers
+@vindex message-ignored-news-headers
+投稿する前に取り除かれるヘッダーの正規表現です。初期値は @*
+@samp{^NNTP-Posting-Host:\\|^Xref:\\|^[BGF]cc:\\|^Resent-Fcc:\\|^X-Draft-From:}
+です。
+
+@item message-default-news-headers
+@vindex message-default-news-headers
+この文字列はニュースとして初期化されたすべてのメッセージバッファのヘッダー
+の最後に挿入されます。
+@end table
+
+@node News Variables
+@section 新しい変数
+
+@table @code
+@item message-send-news-function
+@vindex message-send-news-function
+現在のバッファをニュースとして送るために使われる関数です。初期値
+は @code{mesage-send-news} です。
+
+@item message-post-method
+@vindex message-post-method
+準備されたニュースメッセージを投稿するのに使われる Gnus の @dfn{選択方法}
+(詳細は Gnus マニュアルを見て下さい) です。
+@end table
+
+@node Insertion Variables
+@section 挿入するための変数
+
+@table @code
+@item message-ignored-cited-headers
+この正規表現に合致する全てのヘッダーは貼り付けられたメッセージから取り除
+かれます。初期値は @samp{.} で、これは全てのヘッダーが取り除かれると言う
+事です。
+
+@item message-cite-prefix-regexp
+@vindex message-cite-prefix-regexp
+ある行が取り得る最大の引用接頭語に合致する正規表現です。
+
+@item message-citation-line-function
+@vindex message-citation-line-function
+@cindex attribution line
+引用行を挿入するために呼ばれる関数です。初期値
+は @code{message-insert-citation-line} で、これは引用行を次のようにしま
+す:
+
+@example
+Hallvard B Furuseth <h.b.furuseth@@usit.uio.no> writes:
+@end example
+
+この関数が呼ばれたとき、ポイントはメッセージの本体の先頭にあるでしょう。
+
+なお Gnus には、`writes:' の上でクリックすると引用されたテキストを隠す機
+能があります。もしあなたが度を越して引用行を変更してしまうと、それを読む
+人たちも彼らの Gnus を対応させなければならなくなるでしょう。変
+数 @code{gnus-cite-attribution-suffix} を参照して下さい。詳細
+は @xref{Article Highlighting, , 記事のハイライト, gnus-ja, The Gnus
+Manual}, にあります。
+
+@item message-yank-prefix
+@vindex message-yank-prefix
+@cindex yanking
+@cindex quoting
+記事に返答かフォローアップをするときは、普通はあなたが応答している人のも
+のに引用符を付けたいでしょう。引用文の挿入は @dfn{貼り付け} によってなさ
+れ (すでに @code{message-yank-cited-prefix} を使って引用符が付いている行
+と、@code{message-yank-empty-prefix} が付けられた空行は対象外;
+@code{message-yank-cited-prefix} を参照のこと)、それぞれの貼り付けられた
+行はその前に @code{message-yank-prefix} を付けられます。初期値
+は @samp{> } です。
+
+@item message-yank-cited-prefix
+@vindex message-yank-cited-prefix
+@cindex yanking
+@cindex cited
+@cindex quoting
+記事から引用されたテキストがすでに引用されたものだった場合、それぞれの行
+にはこの変数の値が前置されます。初期値は @samp{>} です。
+@code{message-yank-prefix} も参照して下さい。
+
+@item message-yank-empty-prefix
+@vindex message-yank-empty-prefix
+@cindex yanking
+@cindex quoting
+記事からテキストを引用するとき、それぞれの空行にこの変数の値が前置されま
+す。初期値は @samp{>} です。この変数を空文字に設定することによって、引用
+されたテキストを自動的に段落分けすることができます。
+@code{message-yank-prefix} も参照して下さい。
+
+@item message-indentation-spaces
+@vindex message-indentation-spaces
+貼り付けられたメッセージを字下げするための空白の数です。
+
+@item message-cite-function
+@vindex message-cite-function
+@findex message-cite-original
+@findex sc-cite-original
+@findex message-cite-original-without-signature
+@cindex Supercite
+本記事を引用するための関数です。初期値は @code{message-cite-original} で、
+これは単純にもとのメッセージを挿入し、それぞれの行の頭に @samp{> } をくっ
+つけます。@code{message-cite-original-without-signature} は同様の事をし
+ますが、署名は省きます。Supercite を使うために、それ
+を @code{sc-cite-original} に設定する事もできます。
+
+@item message-indent-citation-function
+@vindex message-indent-citation-function
+ちょうどメールバッファに挿入された引用文を修正するための関数です。これは
+関数のリストである事もできます。それぞれの関数
+は @code{(point)} と @code{(mark t)} の間で引用を発見する事ができます。
+そして、それぞれの関数は引用文が修正されると、その周りにポイントとマーク
+を残さなければなりません。
+
+@item message-mark-insert-begin
+@vindex message-mark-insert-begin
+いくつかの挿入されたテキストの始まりに印を付けるための文字列です。
+
+@item message-mark-insert-end
+@vindex message-mark-insert-end
+いくつかの挿入されたテキストの終りに印を付けるための文字列です。
+
+@item message-signature
+@vindex message-signature
+メッセージバッファの最後に挿入される文字列です。もし @code{t} (これが初
+期設定です) であれば、ファイル @code{message-signature-file} が代わりに
+挿入されます。もし関数であれば、関数の結果が代わりに使われます。もし式で
+あれば、式の結果が変わりに使われます。この変数が @code{nil} であれば、署
+名は全く挿入されません。
+
+@item message-signature-file
+@vindex message-signature-file
+バッファの最後に挿入される署名の入っているファイルです。初期値
+は @file{~/.signature} です。
+
+@item message-signature-insert-empty-line
+@vindex message-signature-insert-empty-line
+@code{t} (ディフォルト) だったら、署名と本体を分離する記号の前に空行が挿
+入されます。
+@end table
+
+RFC1036bis は、署名はその前に @samp{-- } の3文字だけの行があるべきである
+と言っている事に注意して下さい。これは受け手が自動的に署名を認識して、処
+理をする事を簡単にするためです。ですから、あなたの美しいデザインをそれが、
+あの、完全に破壊していると感じてもそれらの文字を取り除かないでください。
+
+署名は4行より多くなるべきでは無いと言う事も注意して下さい。
+@acronym{ASCII} の絵を入れる事は、皆にあなたが馬鹿で何も重要な事は言わな
+いという事を信じさせるための効果的な方法です。
+
+@node Various Message Variables
+@section いろいろなメッセージ変数
+
+@table @code
+@c TRANSLATEME
+@item message-default-charset
+@vindex message-default-charset
+@cindex charset
+Symbol naming a @acronym{MIME} charset.  Non-@acronym{ASCII}
+characters in messages are assumed to be encoded using this charset.
+The default is @code{nil}, which means ask the user.  (This variable
+is used only on non-@sc{mule} Emacsen.  @xref{Charset Translation, ,
+Charset Translation, emacs-mime, Emacs MIME Manual}, for details on
+the @sc{mule}-to-@acronym{MIME} translation process.
+
+@item message-signature-separator
+@vindex message-signature-separator
+署名と本体を分離する記号に合致する正規表現です。初期値
+は @samp{^-- *$} です。
+
+@item mail-header-separator
+@vindex mail-header-separator
+ヘッダーを本体から分けるのに使われる文字列です。初期値は @samp{--text
+follows this line--} です。
+
+@item message-directory
+@vindex message-directory
+多くのメールのものから使われるディレクトリーです。初期値
+は @file{~/Mail/} です。
+
+@item message-auto-save-directory
+@vindex message-auto-save-directory
+Gnus が動作していないときに Message がバッファを自動保存するディレクトリ
+です。@code{nil} だったら Message は自動保存を行ないません。ディフォルト
+は @file{~/Mail/drafts/} です。
+
+@item message-signature-setup-hook
+@vindex message-signature-setup-hook
+メッセージバッファを初期化するときに実行されるフックです。それはヘッダー
+が挿入されているが、署名が挿入される前に実行されます。
+
+@item message-setup-hook
+@vindex message-setup-hook
+メッセージバッファが初期化されたときの最後ですが、貼り付けられる文章が挿
+入される前に実行されるフックです。
+
+@item message-header-setup-hook
+@vindex message-header-setup-hook
+ヘッダーを初期化した後に、ヘッダーに範囲を限定して呼ばれるフックです。
+
+例えば、Gnus を実行していて、すべてのニュース記事とメーリングリストに送
+る全てのメッセージに @samp{Mail-Copies-To} ヘッダーを挿入したいのであれ
+ば、以下のような事ができます:
+
+@lisp
+(defun my-message-header-setup-hook ()
+  (let ((group (or gnus-newsgroup-name "")))
+    (when (or (message-fetch-field "newsgroups")
+              (gnus-group-find-parameter group 'to-address)
+              (gnus-group-find-parameter group 'to-list))
+      (insert "Mail-Copies-To: never\n"))))
+
+(add-hook 'message-header-setup-hook
+          'my-message-header-setup-hook)
+@end lisp
+
+@item message-send-hook
+@vindex message-send-hook
+メッセージを送る前に実行されるフックです。
+
+もし送る前に特定のヘッダーを加えたいのであれば、関
+数 @code{message-add-header} をこのフックに使う事ができます。例えば:
+@findex message-add-header
+
+@lisp
+(add-hook 'message-send-hook 'my-message-add-content)
+(defun my-message-add-content ()
+  (message-add-header "X-In-No-Sense: Nonsense")
+  (message-add-header "X-Whatever: no"))
+@end lisp
+
+この関数は、ヘッダーが既に存在している場合はヘッダーを加えません。
+
+@item message-send-mail-hook
+@vindex message-send-mail-hook
+メールメッセージを送る前に実行されるフックです。このフックは非常に遅い時
+期 - メッセージがメールとして実際に送信される直前 -- に実行されます。
+
+@item message-send-news-hook
+@vindex message-send-news-hook
+ニュースメッセージを送る前に実行されるフックです。このフックは非常に遅い
+時期 - メッセージがニュースとして実際に送信される直前 -- に実行されます。
+
+@item message-sent-hook
+@vindex message-sent-hook
+メッセージを送る後に実行されるフックです。
+
+@item message-cancel-hook
+@vindex message-cancel-hook
+ニュース記事を取り消すときに実行されるフックです。
+
+@item message-mode-syntax-table
+@vindex message-mode-syntax-table
+メッセージモードバッファで使われる構文テーブルです。
+
+@item message-cite-articles-with-x-no-archive
+@vindex message-cite-articles-with-x-no-archive
+非-@code{nil} だったら、@samp{X-No-Archive} を設定した記事から引用された
+テキストを取り除きません。この変数がセットされていなくても、
+@code{undo} のキー操作を行なうことによって取り除かれた引用されたテキスト
+を元に戻すことができます。
+
+@item message-strip-special-text-properties
+@vindex message-strip-special-text-properties
+Emacs はメッセージ作成をいろいろに壊してしまうことができる多くのテキスト
+属性 (text properties) を持っています。これが設定されていると message は
+それらの属性をメッセージを作成するバッファから剥ぎ取ります。しかしいくつ
+かのパッケージは、動作するためにそれらの属性があることが必要です。それら
+のパッケージの一つを使うならば、このオプションを off にして、メッセージ
+が壊れてしまわないことを祈って下さい。
+
+@item message-send-method-alist
+@vindex message-send-method-alist
+
+出て行くメッセージを送るための方法の連想リストです。それぞれの要素は次の
+式を持っています
+
+@lisp
+(@var{type} @var{predicate} @var{function})
+@end lisp
+
+@table @var
+@item type
+方法を指定するシンボルです。
+
+@item predicate
+メッセージは @var{type} のメッセージであるかどうかを決定するために引数無
+しで呼ばれる関数です。
+
+@item function
+@var{predicate} が @code{nil} でない値を帰したときに呼ばれる関数です。
+@var{function} は一つの引数---接頭辞---と共に呼ばれます。
+@end table
+
+@lisp
+((news message-news-p message-send-via-news)
+ (mail message-mail-p message-send-via-mail))
+@end lisp
+@end table
+
+@node Sending Variables
+@section 送るための変数
+
+@table @code
+
+@item message-fcc-handler-function
+@vindex message-fcc-handler-function
+出ていく記事を保存するために呼ばれる関数です。この関数は記事を蓄積するた
+めのファイル名と共に呼ばれます。初期設定の関数は @code{message-output}
+で、それは Unix mailbox 様式で保存します。
+
+@item message-courtesy-message
+@vindex messsage-courtesy-messsage
+複合メッセージを送るときは、この文字列はメールで送られた複製の方の最初に
+挿入されます。もしその文字列が書法仕様指定 @samp{%s} を含んでいれば、記
+事が投稿されたニュースグループがそこに挿入されます。もしこの変数
+が @code{nil} であれば、そのような親切メッセージは加えられません。初期値
+は @samp{"The following message is a courtesy copy of an article\nthat has
+been posted to %s as well.\n\n"} です。
+
+@item message-fcc-externalize-attachments
+@vindex message-fcc-externalize-attachments
+@code{nil} だったら、Fcc で保存するメッセージのコピーに通常の部品として
+ファイルを添付します。非-@code{nil} だった場合は、外部部品としてローカル
+ファイルを添付します。
+
+@item message-interactive
+@vindex message-interactive
+非-@code{nil} で、メッセージを送信するときにエラーが出るのを待ってを表示
+します。@code{nil} だったら、メイラーにエラーの報告をメールで行なわせま
+す。
+@end table
+
+@node Message Buffers
+@section メッセージバッファ
+
+Message はあなたがメッセージバッファを要求したときに、他に無い唯一のバッ
+ファ名で新しいバッファをつくります。メッセージを送ったときに、バッファは
+普通は削除されません。その名前は変更されて、特定の数の古いメッセージバッ
+ファは生きたままになります。
+
+@table @code
+@item message-generate-new-buffers
+@vindex message-generate-new-buffers
+@code{nil} でなければ、新しいバッファを作成します。初期値は @code{t} で
+す。もしこれが関数なら、その関数を3つの引数と共に呼びます: 型、送り先ア
+ドレス、グループ名 です。 (これらのどれでも @code{nil} であるかもしれま
+せん。) 関数は新しいバッファ名を返すべきです。
+
+@item message-use-multi-frames
+@vindex message-use-multi-frames
+@code{nil} でなければ、新しいフレームを作成します。初期値は @code{nil}
+です。
+
+@item message-delete-frame-on-exit
+@vindex messgae-delete-frame-on-exit
+変数 @code{message-delete-frame-on-exit} はメッセージを送信したときと、
+バッファを切ったときにフレームを消去するかを決定します。@code{nil} であ
+れば、(これが初期設定ですが) フレームを消去しません。@code{ask} であれば、
+消去するかどうかを利用者に尋ねます。@code{t} であれば、常に消去します。
+
+@item message-max-buffers
+@vindex message-max-buffers
+この変数はどのくらい古いメッセージバッファを保っておくかを指定します。こ
+れより多いメッセージバッファがあれば、一番古いバッファが削除されます。初
+期値は10です。この変数が @code{nil} であると、古いメッセージバッファは削
+除されません。
+
+@item message-send-rename-function
+@vindex message-send-rename-function
+メッセージを送った後で、バッファの名前は、例えば、@samp{*reply to Lars*}
+から @samp{*sent reply to Lars*} に変更されます。もしこれを好まないなら、
+この変数をあなたの好きな方法でバッファの名前を変更する関数に設定して下さ
+い。そもそもバッファ名を変更する事を好まないのであれば、次のようにできま
+す:
+
+@lisp
+(setq message-send-rename-function 'ignore)
+@end lisp
+
+@item message-kill-buffer-on-exit
+@vindex message-kill-buffer-on-exit
+@code{nil} でなければ、終了時にすぐにバッファを削除します。
+
+@item message-kill-buffer-query-function
+@vindex message-kill-buffer-query-function
+@findex message-kill-buffer
+@findex message-mimic-kill-buffer
+コマン
+ド @code{message-kill-buffer} や @code{message-mimic-kill-buffer} で、バッ
+ファを削除するかどうかをユーザに尋ねるときに使う関数の指定です。ディフォ
+ルトは @code{yes-or-no-p} ですが、
+@code{y-or-n-p} や @code{nnheader-Y-or-n-p} などを使うこともできます。
+@code{t} にすると無条件にバッファを削除します。
+
+@item message-kill-buffer-and-remove-file
+@vindex message-kill-buffer-and-remove-file
+@findex message-kill-buffer
+@findex message-mimic-kill-buffer
+非-@code{nil} だったら、バッファを削除した後でもしバックアップファイルが
+あったら、ユーザに確認してからそれも削除します。@code{nil} ではファイル
+を削除しません。ディフォルトは @code{t} です。ただし、コマン
+ド @code{message-mimic-kill-buffer} はこれが @code{nil} であるものとして
+動作します。
+@end table
+
+@node Message Actions
+@section メッセージの動作
+
+Message がニュース/メールリーダーから使われたとき、リーダーはメッセージ
+が送られた後の何らかの仕事を実行したがる傾向があります。おそらく、前のウィ
+ンドウ設定に戻るか、記事に返答されたと言う印を付けるなどをしたいのでしょ
+う。
+
+@vindex message-kill-actions
+@vindex message-postpone-actions
+@vindex message-exit-actions
+@vindex message-send-actions
+利用者はいろいろな方法でメッセージバッファから出るかもしれません。一番良
+くあるのは @kbd{C-c C-c} で、それはメッセージを送って終了します。他の可
+能性には @kbd{C-c C-s} があり、これはメッセージを送るだけであり、
+@kbd{C-c C-d} はメッセージの編集を先に延ばしてメッセージバッファを埋め、
+@kbd{C-c C-k} はメッセージバッファを削除します。これらの動作はそれぞれそ
+れと関連付けられたリストを持っていて、それは実行される動作を含んでいます:
+@code{message-send-actions}, @code{message-exit-actions},
+@code{message-postpone-actions}, and @code{message-kill-actions} です。
+
+Message はこれらのリストと作用する関数を提供しています:
+@code{message-add-action} です。最初の引数は加えられる動作で、残りの引数
+はどのリストにこの動作を加えるかです。これは Gnus からの例です:
+
+@lisp
+  (message-add-action
+   `(set-window-configuration ,(current-window-configuration))
+   'exit 'postpone 'kill)
+@end lisp
+
+これは、メッセージバッファが削除、延期、終了されたときに Gnus のウィン
+ドウ設定を復活させます。
+
+@dfn{動作} は次のどれかです: 普通の関数、もしくは @code{car} が関数で、
+@sc{cdr} が引数のリストであるリストか、@code{評価} される式です。
+
+@node Compatibility
+@chapter 互換性
+@cindex compatibility
+
+Message は事実上、それ自身の変数しか使いません---古い @code{mail-} の変
+数は考慮されません。Message にこれらの変数を計算に入れさせたいのであれば、
+以下のものを @file{.emacs} ファイルに入れる事ができます:
+
+@lisp
+(require 'messcompat)
+@end lisp
+
+これは多くの Message 変数を対応するメール変数から初期化します。
+
+@node Appendices
+@chapter 付記
+
+@menu
+* Responses:: 応答が何処に行くかを決定する標準の法則。
+@end menu
+
+@node Responses
+@section 応答
+
+メッセージが何処に行くかを決定するために、初期設定では以下のアルゴリズム
+が使われます。
+
+@table @dfn
+@item reply
+@dfn{返答} (reply) はメッセージを送った人 @emph{だけ} にメールで応答した
+いときのものです。受取人は一人しかいません。受取人が誰であるかを決定する
+ために、以下のヘッダーが順番に考慮されます:
+
+@table @code
+@item Reply-To
+
+@item From
+@end table
+
+@item wide reply
+@dfn{広い返答} (wide reply) は応答しようとしているメッセージに書かれてい
+た @emph{全ての} 実体を含むメールによる応答です。以下のヘッダーからの全
+てのメールボックスが連結されて、出ていく @code{To}/@code{Cc} ヘッダーを
+つくります:
+
+@table @code
+@item From
+(@code{Reply-To} が無い限り、これが使われ、それがある場合はそれが代わり
+に使われます)。
+
+@item Cc
+
+@item To
+@end table
+
+@code{Mail-Copies-To} ヘッダーが存在していると、それもメールボックスのリ
+ストに加えられるでしょう。このヘッダーが @samp{never} であれば、それ
+は @code{From} (もしくは @code{Reply-To}) メールボックスが抑制されると言
+う事です。
+
+@item followup
+@dfn{フォローアップ} (followup) はニュースによる応答です。以下のヘッ
+ダー (優先順位の高いものから挙げられています) が何処に応答が送られるかを
+決定します:
+
+@table @code
+
+@item Followup-To
+
+@item Newsgroups
+@end table
+
+もし @code{Mail-Copies-To} ヘッダーが存在すると、それが @samp{never} で
+なければ、新しい @code{Cc} ヘッダーの基として使われます。
+@end table
+
+@node Index
+@chapter Index
+@printindex cp
+
+@node Key Index
+@chapter Key Index
+@printindex ky
+
+@summarycontents
+@contents
+@bye
+
+@c Local Variables:
+@c coding: iso-2022-7bit
+@c fill-column: 72
+@c mode: texinfo
+@c use-kuten-for-period: t
+@c use-touten-for-comma: t
+@c End:

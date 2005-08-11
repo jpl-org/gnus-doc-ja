@@ -1,0 +1,58 @@
+EMACS=@EMACS@
+EMACSINFO=$(EMACS) -batch -q -no-site-file -l infohack.el -f batch-makeinfo
+INFO_DEPS=gnus-ja.info message-ja.info emacs-mime-ja.info\
+ pgg-ja.info sasl-ja.info sieve-ja.info
+INSTALL=@INSTALL@
+INSTALL_DATA=@INSTALL_DATA@
+INSTALL_INFO=install-info
+JBIBTEX=@JBIBTEX@
+PTEX=@PTEX@
+SHELL=/bin/sh
+TEXI2DVI=@TEXI2DVI@
+prefix=@prefix@
+infodir=@infodir@
+
+.SUFFIXES: .texi
+
+all: $(INFO_DEPS)
+
+.texi.info:
+	@texi=$<; rm -f $@ $@-[0-9] $@-[0-9][0-9]; $(EMACSINFO) $$texi t
+
+install: all
+	$(SHELL) ./mkinstalldirs $(infodir)
+	@list='$(INFO_DEPS)';\
+	for file in $$list; do\
+	  for ifile in `echo $$file $$file-[0-9] $$file-[0-9][0-9]`; do\
+	    if test -f $$ifile; then\
+	      echo " $(INSTALL_DATA) $$ifile $(infodir)/$$ifile";\
+	      $(INSTALL_DATA) $$ifile $(infodir)/$$ifile;\
+	    else : ; fi;\
+	  done;\
+	done
+	@if $(SHELL) -c $(INSTALL_INFO)' --version| sed 1q\
+		| fgrep -s -v -i debian'>/dev/null 2>&1; then\
+	  list='$(INFO_DEPS)';\
+	  for file in $$list; do\
+	    if test -f $(infodir)/$$file; then\
+	      echo " $(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/$$file";\
+	      $(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/$$file || :;\
+	    else : ; fi\
+	  done;\
+	else : ; fi
+
+dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi\
+ pgg-ja.dvi sasl-ja.dvi sieve-ja.dvi
+
+.texi.dvi:
+	sed -e '/@iflatex/,/@end iflatex/d' $< > gnustmp.texi
+	env TEX=$(PTEX) BIBTEX=$(JBIBTEX) $(TEXI2DVI) -l ja -o $@ gnustmp.texi
+	rm -f gnustmp.*
+
+clean:
+	rm -f *.dvi *.info *.info-[0-9] *.info-[0-9][0-9] *.orig *~\
+	gnustmp.* missfont.log
+
+distclean: clean
+	rm -fr autom4te.cache
+	rm -f Makefile config.*

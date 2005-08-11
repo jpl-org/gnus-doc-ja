@@ -1,0 +1,18 @@
+2005-08-08  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* gnus-doc-ja: The project has started.
+
+	We aim to translate all the Info manuals of Gnus into Japanese.
+	Fortunately, we have the inheritance of the Semi-gnus project, of
+	which Yoshiki Hayashi and the volunteers made the Japanese manuals
+	being specialized to Semi-gnus.  Don't forget that Kazuyuki Ienaga
+	translated the Gnus v5.0.15 manual into Japanese for the first
+	time.  Let's start translating, making full use of those fortunes.
+
+	There were the following files in the CVS trunk initially:
+
+	.cvsignore ChangeLog Makefile.in README.ja TRANSLATION.ja
+	configure configure.ac doclicense.texi emacs-mime-ja.texi
+	gnus-faq-ja.texi gnus-ja.texi gnus-news-ja.texi gnus-terms.ja
+	infohack.el install-sh message-ja.texi mkinstalldirs pgg-ja.texi
+	ptexinfmt.el sasl-ja.texi sieve-ja.texi

@@ -1,0 +1,33 @@
+This file was written when the project to make the Semi-gnus manual
+in Japanese was in progress.  Now we succeed to the project, changing
+the target into the Gnus manual.  We are deeply grateful to Kazuyuki
+IENAGA who had translated the Gnus v5.0.15 manual into Japanese first,
+Yoshiki Hayashi who had started the previous project, and volunteers.
+Their great achievements will be praised through all eternity.
+
+This file documents about translation policy.
+There is an ongoing project to make gnus-ja.texi.
+Any volunteers are welcomed.
+
+日本語訳に関する流儀を説明するファイルです。
+gnus-ja.texi を作成するプロジェクトが進行中です。
+プロジェクト参加者を募集しています。
+参加希望者は Semi-gnus マニュアルプロジェクトのページ
+http://www.komaba.ecc.u-tokyo.ac.jp/%7Eg740685/Semi-gnus/index.html
+を読んでください。
+
+以下の2つは訳者の一人かつプロジェクトの主宰者 (であるらしい)
+Yoshiki Hayashi <g740685@komaba.ecc.u-tokyo.ac.jp> の翻訳に関する規則
+です。この規則はより良いと思われるものが見つかった場合には変更される可
+能性があります。また、より良い案や、他の規則を付け加えたい場合は、
+semi-gnus-ja メーリングリストにその案を書くか、jaist の Open CVS に書
+き込み権限を持っている方は直接書き込みをしてください。(CVS の場合でも、
+semi-gnus-ja で変更の告知をする事が望ましいです。) semi-gnus-ja メーリ
+ングリストの加入の仕方に付いても、上記の URI を参照してください。
+
+1. なるべくカタカナは使わないようにする。
+   (日本語にできるところはなるべく日本語にする。
+    場合によっては新しい語を定義する事もある。)
+
+2. 英語を付加した方が分かりやすいと思われる語句は、
+   日本語の直後に括弧の中に入れる。

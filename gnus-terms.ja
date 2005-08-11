@@ -1,0 +1,177 @@
+原文と訳語のリストです。検討不十分な点もあります。
+変更される可能性は大いにあります。
+
+単語				訳語
+
+active				作動する、作動している
+active file			現状ファイル、アクティブファイル
+adapt				適用
+adaptive			適応性
+address				アドレス
+agent				エージェント
+alist				連想リスト
+alternate			代替
+anything group			なんでもグループ
+archive				アーカイブ
+asterisk			アスタリスク
+auto-save file			自動保存ファイル
+back end			バックエンド
+batch				一括
+bogus group			偽グループ
+browse				ブラウズ、参照、概観
+buffer				バッファ
+buggy				故障がち
+category			分類
+collapsed group	name		短縮グループ名
+combined groups			結合グループ
+command				命令
+command line			コマンド行
+configure (shell script)	環境設定
+copy				コピー、複写
+crosspost			相互投稿、クロスポスト
+current				現在の
+customize			カスタマイズ
+default				初期設定/初期設定値 (ディフォルト)?
+directory			ディレクトリー
+dormant article			保留記事
+dotted pair			ドットペア、ドット対
+download			ダウンロード
+draft				下書き
+dribble file			ドリブルファイル
+duplicate suppression		重複抑制
+entry				登録、登録項目
+expire				期限切れ消去、期限切れ削除
+expunge				消去
+field				フィールド
+firewall			防壁
+flush cache			キャッシュを書き込む
+follow up			フォローアップ
+foreign				外部
+format				様式、フォーマット
+frame				フレーム 
+gateway				ゲートウェイ
+global				グローバル
+Gnus				gnus
+group buffer			グループバッファ
+header				ヘッダー
+highlight			ハイライト
+history				履歴
+home score file			ホームスコアファイル
+hook				フック
+inbox				インボックス
+indentation			字下げ
+interactive command		対話命令
+interface			インターフェース
+kiboze				kiboze
+key (alist)			キー
+keymap				キーマップ
+kiboze				kiboze
+kill				削除、切る、キル
+kill file			削除ファイル、(消去ファイル)
+level				レベル
+load				ロード
+local variable			局所変数、ローカル変数
+lower lebel			小さいレベル
+mail				メール
+mailbox				メールボックス
+mail-to-news gateway		メールからニューズへのゲートウェイ
+mark				印
+meta-variable			メタ変数
+message				メッセージ
+method				方法
+minor mode			マイナーモード
+modeline			モード行
+moderated			モデレーテッド、修正された
+native				基本
+native method			基本方法
+native server			基本サーバー
+news				ニュース (ニューズ)
+newsgroup			ニュースグループ (ニューズグループ)
+news reader			ニュースリーダ
+numeric prefix			数字接頭引数
+operator			作用子
+outgoing			差出用
+overview			概観ファイル
+pack				梱包する
+parameter			パラメータ
+plugged				差し込み
+point				ポイント、カーソル位置
+predicate function		述語関数
+prefix				接頭引数
+process				プロセス
+process mark			(プロセスマーク)、プロセス印
+process/prefix convention	プロセス/接頭引数の習慣 (プロセスマーク・プレフィックスルール)
+prompt				入力促進
+rank				ランク
+region				(リージョン)
+release				リリース
+remote system			遠隔システム
+reply packet			返信パケット
+response packet			返信パケット
+startup file			起動ファイル
+score				スコア
+score entry			スコア登録
+secondary server		二次サーバー
+select method			選択方法
+server				サーバー
+sesssion			セッション
+shortcut			短縮打鍵
+solid group			固定グループ
+sort				ソート 並べ替え
+SOUP packets			SOUP パケット
+startup file			起動ファイル
+sub-topic			副トピック
+submap				サブマップ
+subscribe			購読
+subscribedness			購読度
+summary buffer			概略バッファ
+superseding			代替
+syntax table			文法表
+text properties			テキスト属性
+thread				スレッド
+ticked article			(印付き記事)
+toggle				トグル 切り替え
+token
+topic				トピック
+unplugged			切り離し
+unsubscribe			非購読
+user				利用者
+value (alist)			値
+web				ウェブ
+Web browser			ウェブブラウザー
+Web search			ウェブ検索
+yank				貼り付け
+zombie				ゾンビ
+
+summary				概略
+body				ボディ
+head				ヘッダー
+subject				表題
+match				マッチ
+encode				符号化
+character set			文字集合
+hook				フック
+keystroke			キー操作
+reply				返信
+button				ボタン
+buttonizing			ボタン機能
+syntax table			シンタックステーブル
+format				様式
+wash				洗濯
+page breaking			改頁
+page delimiter			頁区切り文字
+page				頁
+
+directory			ディレクトリー
+SOUP packets			SOUP パケット
+auto-save file			自動保存ファイル
+predicate function		述語関数
+news reader			ニュースリーダ
+native server			基本サーバー
+
+secondary server		二次サーバー
+pack				梱包する
+active file			アクティブファイル
+incoming			入ってくる・入ってきた
+response packet			返信パケット
+reply packet			返信パケット

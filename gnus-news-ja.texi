@@ -1,0 +1,148 @@
+@c -*-texinfo-*-
+
+@c Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+
+@c    Permission is granted to anyone to make or distribute verbatim copies
+@c    of this document as received, in any medium, provided that the
+@c    copyright notice and this permission notice are preserved,
+@c    thus giving the recipient permission to redistribute in turn.
+
+@c    Permission is granted to distribute modified versions
+@c    of this document, or of portions of it,
+@c    under the above conditions, provided also that they
+@c    carry prominent notices stating who last changed them.
+
+@c This file contains a list of news features Gnus.  It is supposed to be
+@c included in `gnus.texi'.  `GNUS-NEWS' is automatically generated from
+@c this file (see `gnus-news.el').
+
+@itemize @bullet
+
+@item Upgrading from previous (stable) version if you have used No Gnus.
+
+If you have tried No Gnus (the unstable Gnus branch leading to this
+release) but went back to a stable version, be careful when upgrading
+to this version.  In particular, you will probably want to remove the
+@file{~/News/marks} directory (perhaps selectively), so that flags are
+read from your @file{~/.newsrc.eld} instead of from the stale marks
+file, where this release will store flags for nntp.  See a later entry
+for more information about nntp marks.  Note that downgrading isn't
+safe in general.
+
+@item The nntp back end store article marks in @file{~/News/marks}.
+
+The directory can be changed using the (customizable) variable
+@code{nntp-marks-directory}, and marks can be disabled using the
+(back end) variable @code{nntp-marks-is-evil}.  The advantage of this
+is that you can copy @file{~/News/marks} (using rsync, scp or
+whatever) to another Gnus installation, and it will realize what
+articles you have read and marked.  The data in @file{~/News/marks}
+has priority over the same data in @file{~/.newsrc.eld}.
+
+@item
+Picons can be displayed right from the textual address, see
+@code{gnus-picon-style}.  @ref{Picons}.
+
+@item
+You can import and export your @acronym{RSS} subscriptions from
+@acronym{OPML} files.  @xref{RSS}.
+
+@item
+The option @code{mm-fill-flowed} can be used to disable treatment of
+format=flowed messages.  Also, flowed text is disabled when sending
+inline @acronym{PGP} signed messages.
+
+@item You can now drag and drop attachments to the Message buffer.
+
+@item The option @code{message-yank-empty-prefix} now controls how
+empty lines are prefixed in cited text.
+@xref{(message)Insertion Variables}.
+
+@item @acronym{ANSI} @acronym{SGR} control sequences can be transformed
+using @kbd{W A}.
+
+@acronym{ANSI} sequences are used in some Chinese hierarchies for
+highlighting articles (@code{gnus-article-treat-ansi-sequences}).
+
+@item International host names (@acronym{IDNA}) can now be decoded
+inside article bodies using @kbd{W i}
+(@code{gnus-summary-idna-message}).  This require that GNU Libidn
+(@url{http://www.gnu.org/software/libidn/}) has been installed.
+
+@item Gnus includes an Emacs Lisp @acronym{SASL} library.
+
+This provide a clean @acronym{API} to @acronym{SASL} mechanisms from
+within Emacs.  The user visible aspects of this, compared to the earlier
+situation, include support for @acronym{DIGEST}-@acronym{MD5} and
+@acronym{NTLM}.
+
+@item ManageSieve connections uses the @acronym{SASL} library by default.
+
+The primary change this brings is support for @acronym{DIGEST-MD5} and
+@acronym{NTLM}, when the server support it.
+
+@item Gnus include a password cache mechanism in password.el.
+
+It is enabled by default (see @code{password-cache}), with a short
+timeout of 16 seconds (see @code{password-cache-expiry}).  If
+@acronym{PGG} is used as the @acronym{PGP} back end, the @acronym{PGP}
+passphrase is managed by this mechanism.  Passwords for ManageSieve
+connections are managed by this mechanism, after quering the user about
+whether to do so.
+
+@item @acronym{IMAP} identity (@acronym{RFC} 2971) is supported.
+
+By default, Gnus do not send any information about itself, but you can
+customize it using the variable @code{nnimap-id}.
+
+@item The @file{all.SCORE} file can be edited from the group buffer
+using @kbd{W e}.
+
+@item Gnus now MIME decode articles even when they lack "MIME-Version" header.
+This changes the default of @code{gnus-article-loose-mime}.
+
+@item Gnus now view DNS master files sent as text/dns using dns-mode.
+
+@item Gnus now support the ``hashcash'' client puzzle anti-spam idea.
+See the Gnus manual, section Hashcash, for more information.  Use
+@code{(setq message-generate-hashcash t)} to enable.
+
+@item Gnus supports new limiting commands in the Summary buffer:
+@kbd{/ r} (@code{gnus-summary-limit-to-replied}) and @kbd{/ R}
+(@code{gnus-summary-limit-to-recipient}).  @ref{Limiting}.
+
+@item Gnus supports a new sort command in the Summary buffer:
+@kbd{C-c C-s C-t} (@code{gnus-summary-sort-by-recipient}).  @ref{Summary
+Sorting}.
+
+@item The @code{nnrss} back end now supports multilingual text.
+Non-@acronym{ASCII} group names for the @code{nnrss} groups are also
+supported.  @xref{RSS}.
+
+@item URLs inside OpenPGP: headers are retrieved and imported to your
+PGP key ring when you click on them.
+
+@item Gnus uses narrowing to hide headers in Message buffers.
+The @code{References} header is hidden by default.  To make all
+headers visible, use @code{(setq message-hidden-headers nil)}.
+
+@item @code{gnus-decay-scores} can be a regexp matching score files.
+This allows to decay only adaptive score files.  @ref{Score Decays}.
+
+@item @acronym{S/MIME} now feature @acronym{LDAP} user certificate searches.
+You need to configure the server in @code{smime-ldap-host-list}.
+
+@item Strings prefixed to the @code{To} and @code{Newsgroup} headers in
+summary lines when using @code{gnus-ignored-from-addresses} can be
+customized with @code{gnus-summary-to-prefix} and
+@code{gnus-summary-newsgroup-prefix}.  @ref{To From Newsgroups}.
+
+@end itemize
+
+@c Local Variables:
+@c coding: iso-2022-7bit
+@c fill-column: 72
+@c mode: texinfo
+@c use-kuten-for-period: t
+@c use-touten-for-comma: t
+@c End:
