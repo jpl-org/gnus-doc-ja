@@ -793,7 +793,6 @@ MFT $B$rB:=E$9$k$3$H$ONI$$%M%A%1%C%H(B (netiquette) $B$G$"$k$H9M$($i$l$F$$$^$
 $B$F2<$5$$!#(B
 @end table
 
-@c TRANSLATEME
 @node MIME
 @section MIME
 @cindex MML
@@ -801,20 +800,20 @@ MFT $B$rB:=E$9$k$3$H$ONI$$%M%A%1%C%H(B (netiquette) $B$G$"$k$H9M$($i$l$F$$$^$
 @cindex multipart
 @cindex attachment
 
-Message is a @acronym{MIME}-compliant posting agent.  The user generally
-doesn't have to do anything to make the @acronym{MIME} happen---Message will
-automatically add the @code{Content-Type} and
-@code{Content-Transfer-Encoding} headers.
+Message $B$O(B @acronym{MIME} $B$KBP1~$7$?!"Aw?.MQ$N%(!<%8%'%s%H$G$9!#$U$D$&%f!<(B
+$B%6$O!"(B@acronym{MIME} $B$K$9$k$?$a$K2?$+$9$kI,MW$O$"$j$^$;$s!#(BMessage $B$O<+(B
+$BF0E*$K(B @code{Content-Type} $B$*$h$S(B @code{Content-Transfer-Encoding} $B%X%C(B
+$B%@!<$rIU2C$7$^$9!#(B
 
-The most typical thing users want to use the multipart things in
-@acronym{MIME} for is to add ``attachments'' to mail they send out.  This can
-be done with the @kbd{C-c C-a} command, which will prompt for a file
-name and a @acronym{MIME} type.  If your Emacs supports drag
-and drop, you can also drop the file in the Message buffer.
+$B%f!<%6$,(B @acronym{MIME} $B$G%^%k%A%Q!<%H$r;H$$$?$$:G$bE57?E*$J$b$N$O!"Aw=P(B
+$B$9$k%a!<%k$K!VE:IU!W$rIU$12C$($k$3$H$G$9!#$3$l$O(B @kbd{C-c C-a} $B%3%^%s%I(B
+$B$G9T$J$&$3$H$,$G$-!"$=$N:]%U%!%$%kL>$H(B @acronym{MIME} $B%?%$%W$,?R$M$i$l$^(B
+$B$9!#$"$J$?$N(B Emacs $B$,%I%i%C%0!u%I%m%C%W$r%5%]!<%H$7$F$$$l$P!"(BMessage $B%P%C(B
+$B%U%!$K%U%!%$%k$r%I%m%C%W$9$k$3$H$b$G$-$^$9!#(B
 
-You can also create arbitrarily complex multiparts using the @acronym{MML}
-language (@pxref{Composing, , Composing, emacs-mime, The Emacs MIME
-Manual}).
+$B$5$i$K(B @acronym{MML} $B8@8l(B (@pxref{Composing, , Composing, emacs-mime-ja,
+The Emacs MIME Manual}) $B$r;H$($P!"J#;($J%^%k%A%Q!<%H$r>!<j5$$^$^$K:n$k$3(B
+$B$H$b$G$-$^$9!#(B
 
 @node IDNA
 @section $B9q:]2=%I%a%$%sL>(B
@@ -1018,7 +1017,7 @@ the passphrase prompt.
 as @uref{http://www.gnupg.org/, GNU Privacy Guard}.  Pre-OpenPGP
 implementations such as PGP 2.x and PGP 5.x are also supported.  One
 Emacs interface to the PGP implementations, PGG (@pxref{Top, ,PGG,
-pgg, PGG Manual}), is included, but Mailcrypt and Florian Weimer's
+pgg-ja, PGG Manual}), is included, but Mailcrypt and Florian Weimer's
 @code{gpg.el} are also supported.
 
 @vindex gpg-temp-directory
@@ -1857,7 +1856,7 @@ Symbol naming a @acronym{MIME} charset.  Non-@acronym{ASCII}
 characters in messages are assumed to be encoded using this charset.
 The default is @code{nil}, which means ask the user.  (This variable
 is used only on non-@sc{mule} Emacsen.  @xref{Charset Translation, ,
-Charset Translation, emacs-mime, Emacs MIME Manual}, for details on
+Charset Translation, emacs-mime-ja, Emacs MIME Manual}, for details on
 the @sc{mule}-to-@acronym{MIME} translation process.
 
 @item message-signature-separator
