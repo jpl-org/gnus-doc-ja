@@ -1,60 +1,60 @@
-Gnus ¤Î Info ¥Þ¥Ë¥å¥¢¥ë¤ÎÁ´Ìõ¤Ç¤¹¡£No Gnus v0.4 ¤ËÂÐ±þ¤·¤Þ¤¹¡£
+Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BNo Gnus v0.4 $B$KBP1~$7$^$9!#(B
 
-¡ö ¤È¤Æ¤â¤¸¤ã¤Ê¤¤¤±¤ì¤É¡¢¤Þ¤ÀÁ´Éô¤òÌõ¤·½ª¤ï¤Ã¤Æ¤¤¤Þ¤»¤ó¡£(¢«¸å¤Ç¾Ã¤¹)
+$B!v(B $B$H$F$b$8$c$J$$$1$l$I!"$^$@A4It$rLu$7=*$o$C$F$$$^$;$s!#(B($B"+8e$G>C$9(B)
 
-¥¤¥ó¥¹¥È¡¼¥ë
+$B%$%s%9%H!<%k(B
 ============
 % ./configure
 % make
 % make install
 
-¼¡¤Î¤è¤¦¤Ë¡¢»È¤¦ Emacs ¤È¥¤¥ó¥¹¥È¡¼¥ëÀè¤Î¥Ç¥£¥ì¥¯¥È¥ê¤ò»ØÄê¤Ç¤­¤Þ¤¹¡£
+$B<!$N$h$&$K!";H$&(B Emacs $B$H%$%s%9%H!<%k@h$N%G%#%l%/%H%j$r;XDj$G$-$^$9!#(B
 
 % ./configure --with-emacs=EMACS --infodir=INFODIR
 
-¥Ç¥£¥Õ¥©¥ë¥ÈÃÍ¤Ï¡¢°ú¿ôÌµ¤·¤Ç configure ¤ò¼Â¹Ô¤¹¤ë¤È¤Ç¤­¤ë Makefile ¤Î
-Ãæ¿È¤ò¸«¤Æ²¼¤µ¤¤¡£EMACS ¤ÎÃÍ¤ò /usr/local/bin/emacs ¤Î¤è¤¦¤ËÀäÂÐ¥Ñ¥¹Ì¾
-¤Ë¤¹¤ë¤³¤È¤Ï¤Ç¤­¤Þ¤»¤ó¡£¤¢¤é¤«¤¸¤á PATH ´Ä¶­ÊÑ¿ô¤òÀßÄê¤·¤Æ²¼¤µ¤¤¡£Îã:
+$B%G%#%U%)%k%HCM$O!"0z?tL5$7$G(B configure $B$r<B9T$9$k$H$G$-$k(B Makefile $B$N(B
+$BCf?H$r8+$F2<$5$$!#(BEMACS $B$NCM$r(B /usr/local/bin/emacs $B$N$h$&$K@dBP%Q%9L>(B
+$B$K$9$k$3$H$O$G$-$^$;$s!#$"$i$+$8$a(B PATH $B4D6-JQ?t$r@_Dj$7$F2<$5$$!#Nc(B:
 
 % ./configure --with-emacs=emacs-21.4 --infodir=/usr/local/info
 
-Gnus ¤ÎÈÇ
+Gnus $B$NHG(B
 =========
-Emacs ¤Ë´Þ¤Þ¤ì¤Æ¤¤¤ë¤â¤Î¤Ç¤Ï¤Ê¤¯¡¢Gnus ¥¿¥ï¡¼¤«¤é¥ê¥ê¡¼¥¹¤µ¤ì¤ëÈÇ¤ËÂÐ
-±þ¤·¤Þ¤¹¡£Æ±»þ´ü¤ËÊ£¿ô¤Î Gnus ¤ÎÈÇ¤¬¥ê¥ê¡¼¥¹¤µ¤ì¤ë¾ì¹ç¤Ï¡¢¤è¤ê³«È¯¿§¤Î
-¶¯¤¤ÈÇ¤¬ÂÐ¾Ý¤Ë¤Ê¤ë¤Ç¤·¤ç¤¦¡£
+Emacs $B$K4^$^$l$F$$$k$b$N$G$O$J$/!"(BGnus $B%?%o!<$+$i%j%j!<%9$5$l$kHG$KBP(B
+$B1~$7$^$9!#F1;~4|$KJ#?t$N(B Gnus $B$NHG$,%j%j!<%9$5$l$k>l9g$O!"$h$j3+H/?'$N(B
+$B6/$$HG$,BP>]$K$J$k$G$7$g$&!#(B
 
-¥ê¥ê¡¼¥¹¤µ¤ì¤¿ÆüËÜ¸ì¥Þ¥Ë¥å¥¢¥ë¤Î¼èÆÀ¾ì½ê
+$B%j%j!<%9$5$l$?F|K\8l%^%K%e%"%k$N<hF@>l=j(B
 ========================================
-(¤É¤³¤«)
+($B$I$3$+(B)
 
-¥ê¥ê¡¼¥¹¤µ¤ì¤¿ Gnus ¤Î tarball ¤Ç¤¢¤ë xgnus-m.n.tar.gz ¤ËÂÐ±þ¤¹¤ë Info
-¥Þ¥Ë¥å¥¢¥ë¤ÎÆüËÜ¸ìÈÇ¤Î tarball ¤Ï xgnus-m.n-doc-ja.tar.gz ¤Ç¤¹¡£
+$B%j%j!<%9$5$l$?(B Gnus $B$N(B tarball $B$G$"$k(B xgnus-m.n.tar.gz $B$KBP1~$9$k(B Info
+$B%^%K%e%"%k$NF|K\8lHG$N(B tarball $B$O(B xgnus-m.n-doc-ja.tar.gz $B$G$9!#(B
 
-Æ¿Ì¾ CVS
+$BF?L>(B CVS
 ========
-¼¡¤Î¤è¤¦¤Ë¤·¤Æ¡¢ËÝÌõºî¶ÈÃæ¤Î¥Þ¥Ë¥å¥¢¥ë¤ò¼èÆÀ¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£
+$B<!$N$h$&$K$7$F!"K]Lu:n6HCf$N%^%K%e%"%k$r<hF@$9$k$3$H$,$G$-$^$9!#(B
 
 % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
-ºÇ½é¤À¤±É¬Í×¤Ç¤¹¡£¥Ñ¥¹¥ï¡¼¥É¤ò¿Ò¤Í¤é¤ì¤¿¤éÃ±¤Ë RET ¥­¡¼¤ò²¡¤·¤Æ²¼¤µ¤¤¡£
+$B:G=i$@$1I,MW$G$9!#%Q%9%o!<%I$r?R$M$i$l$?$iC1$K(B RET $B%-!<$r2!$7$F2<$5$$!#(B
 
 % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout gnus-doc-ja
 
-ËÝÌõºî¶È¤Ø¤Î»²²Ã
+$BK]Lu:n6H$X$N;22C(B
 ================
-¤É¤Ê¤¿¤Ç¤â´¿·Þ¤·¤Þ¤¹¡£ºî¶È¤ò¹Ô¤Ê¤Ã¤Æ¤¤¤ë¾ì½ê¤Ï
+$B$I$J$?$G$b4?7^$7$^$9!#:n6H$r9T$J$C$F$$$k>l=j$O(B
 
 % CVS_RSH=ssh cvs -d :ext:cvs@cvs.m17n.org:/cvs/root
 
-¤Ç¡¢¥ê¥Ý¥¸¥È¥ê¤ÎÌ¾Á°¤Ï gnus-doc-ja ¤Ç¤¹¡£¥¢¥«¥¦¥ó¥È¤ò¼èÆÀ¤¹¤ë¤Ë¤Ï¡¢´õ
-Ë¾¤¹¤ë¥æ¡¼¥¶Ì¾¤È ssh2 ¤Î¸ø³«¸°¤ò¤½¤¨¤Æ¡¢<cvs@cvs.m17n.org> °¸¤Æ¤ËÊ¿Ê¸
-¤Î¥á¡¼¥ë¤òÁ÷¤Ã¤Æ²¼¤µ¤¤¡£
+$B$G!"%j%]%8%H%j$NL>A0$O(B gnus-doc-ja $B$G$9!#%"%+%&%s%H$r<hF@$9$k$K$O!"4u(B
+$BK>$9$k%f!<%6L>$H(B ssh2 $B$N8x3+80$r$=$($F!"(B<cvs@cvs.m17n.org> $B08$F$KJ?J8(B
+$B$N%a!<%k$rAw$C$F2<$5$$!#(B
 
-¡öÃí°Õ¡ö
-ÍÑ¸ì¤äÏÂ±Ñº®ºßÊ¸¤ÎÊ¬¤«¤Á½ñ¤­¤Ê¤É¤Ë´Ø¤·¤Æ¡¢Â¿¤¯¤Î°ÅÌÛ¤ÎÎ®µ·¤¬¤¢¤ê¤Þ¤¹¡£
-¤¹¤Ç¤ËËÝÌõ¤µ¤ì¤Æ¤¤¤ë¤â¤Î¤ò¤è¤¯Ä¯¤á¤Æ¡¢¤Ç¤­¤ë¸Â¤ê¡¢½¾Íè¤Î¤ä¤êÊý¤Ë½¾¤Ã¤Æ
-²¼¤µ¤¤¡£
+$B!vCm0U!v(B
+$BMQ8l$dOB1Q:.:_J8$NJ,$+$A=q$-$J$I$K4X$7$F!"B?$/$N0EL[$NN.57$,$"$j$^$9!#(B
+$B$9$G$KK]Lu$5$l$F$$$k$b$N$r$h$/D/$a$F!"$G$-$k8B$j!"=>Mh$N$d$jJ}$K=>$C$F(B
+$B2<$5$$!#(B
 
-Ï¢Íí¾ì½ê
+$BO"Mm>l=j(B
 ========
-ÅöÌÌ semi-gnus-ja ¥á¡¼¥ê¥ó¥°¥ê¥¹¥È¤ò»È¤¤¤Þ¤¹¡£
+$BEvLL(B semi-gnus-ja $B%a!<%j%s%0%j%9%H$r;H$$$^$9!#(B
