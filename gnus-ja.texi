@@ -10282,79 +10282,77 @@ Gnus $B$K$$$D$G$b@5$7$$(B @code{Xref} $B$r<hF@$9$k$h$&$K$5$;$?$$$N$G$"$l$P!"
 @code{gnus-save-duplicate-list} $B$r(B @code{nil} $B$K@_Dj$9$k$Y$-$G$"$k$H$$$&(B
 $B;v$K$J$j$^$9!#$&!<$`!#;d$O$"$J$?$,$I$&$9$k$+$KG$$;$?$$!"$H;W$$$^$9!#(B
 
-@c TRANSLATEME
 @node Security
-@section Security
+@section $B%;%-%e%j%F%#!<(B
 
-Gnus is able to verify signed messages or decrypt encrypted messages.
-The formats that are supported are @acronym{PGP}, @acronym{PGP/MIME}
-and @acronym{S/MIME}, however you need some external programs to get
-things to work:
+Gnus $B$O=pL>$5$l$?%a%C%;!<%8$r8!>Z$7$?$j!"0E9f2=$5$l$?%a%C%;!<%8$rI|9f$9(B
+$B$k$3$H$,$G$-$^$9!#(B@acronym{PGP}, @acronym{PGP/MIME} $B$*$h(B
+$B$S(B @acronym{S/MIME} $B$N7A<0$r%5%]!<%H$7$^$9$,!"$=$l$i$rF0:n$5$;$k$?$a$K$O!"(B
+$B$$$/$D$+$N30It%W%m%0%i%`$rI,MW$H$7$^$9(B:
 
 @enumerate
 @item
-To handle @acronym{PGP} and @acronym{PGP/MIME} messages, you have to
-install an OpenPGP implementation such as GnuPG.  The Lisp interface
-to GnuPG included with Gnus is called PGG (@pxref{Top, ,PGG, pgg-ja, PGG
-Manual}), but Mailcrypt and gpg.el are also supported.
+@acronym{PGP} $B$H(B @acronym{PGP/MIME} $B$N%a%C%;!<%8$r07$&$K$O!"(BOpenPGP $B$N<B(B
+$BAu$G$"$k(B GnuPG $B$N$h$&$J$b$N$r%$%s%9%H!<%k$7$J$1$l$P$J$j$^$;$s!#(BGnus $B$K4^(B
+$B$^$l$F$$$k(B GnuPG $B$X$N%$%s%?!<%U%'!<%9$O(B PGG $B$H$$$&$b$N(B (@pxref{Top,
+,PGG, pgg-ja, PGG Manual}) $B$G$9$,!"(BMailcrypt $B$H(B gpg.el $B$b%5%]!<%H$7$^$9!#(B
 
 @item
-To handle @acronym{S/MIME} message, you need to install OpenSSL.  OpenSSL 0.9.6
-or newer is recommended.
-
+@acronym{S/MIME} $B$N%a%C%;!<%8$r07$&$K$O!"(BOpenSSL $B$r%$%s%9%H!<%k$9$kI,MW(B
+$B$,$"$j$^$9!#(BOpenSSL 0.9.6 $B$+!"$=$l$h$j?7$7$$$b$N$,$*4+$a$G$9!#(B
 @end enumerate
 
-More information on how to set things up can be found in the message
-manual (@pxref{Security, ,Security, message-ja, Message Manual}).
+$B$=$l$i$r$I$&$d$C$F@_Dj$9$k$+$K$D$$$F$N$b$C$H>\$7$$>pJs$,!"(Bmessage $B%^%K%e(B
+$B%"%k(B (@pxref{Security, ,Security, message-ja, Message Manual}) $B$G8+$D$+(B
+$B$k$G$7$g$&!#(B
 
 @table @code
 @item mm-verify-option
 @vindex mm-verify-option
-Option of verifying signed parts.  @code{never}, not verify;
-@code{always}, always verify; @code{known}, only verify known
-protocols.  Otherwise, ask user.
+$B=pL>$5$l$?%Q!<%H$r8!>Z$9$k$?$a$N%*%W%7%g%s!#(B@code{never} $B$O8!>Z$7$J$$!"(B
+@code{always} $B$O$$$D$b8!>Z$9$k!"(B@code{known} $B$OCN$i$l$?%W%m%H%3%k$N>l9g(B
+$B$@$18!>Z$9$k!"$N0UL#$G$9!#$=$l$i0J30$N>l9g$O!"$I$&$9$k$+$r%f!<%6$K?R$M$^(B
+$B$9!#(B
 
 @item mm-decrypt-option
 @vindex mm-decrypt-option
-Option of decrypting encrypted parts.  @code{never}, no decryption;
-@code{always}, always decrypt; @code{known}, only decrypt known
-protocols.  Otherwise, ask user.
+$B0E9f2=$5$l$?%Q!<%H$rI|9f$9$k$?$a$N%*%W%7%g%s!#(B@code{never} $B$OI|9f$7$J$$!"(B
+@code{always} $B$O$$$D$bI|9f$9$k!"(B@code{known} $B$OCN$i$l$?%W%m%H%3%k$N>l9g(B
+$B$@$1I|9f$9$k!"$N0UL#$G$9!#$=$l$i0J30$N>l9g$O!"$I$&$9$k$+$r%f!<%6$K?R$M$^(B
+$B$9!#(B
 
 @item mml1991-use
 @vindex mml1991-use
-Symbol indicating elisp interface to OpenPGP implementation for
-@acronym{PGP} messages.  The default is @code{pgg}, but
-@code{mailcrypt} and @code{gpg} are also supported although
-deprecated.
+@acronym{PGP} $B$N%a%C%;!<%8$N$?$a$N!"(BOpenPGP $B$N<BAu$X$N(B elisp $B%$%s%?!<%U%'!<(B
+$B%9$r<($9%7%s%\%k$G$9!#%G%#%U%)%k%H$O(B @code{pgg} $B$G$9$,!"H?O@$,$"$k$b$N(B
+$B$N(B @code{mailcrypt} $B$H(B @code{gpg} $B$b%5%]!<%H$7$^$9!#(B
 
 @item mml2015-use
 @vindex mml2015-use
-Symbol indicating elisp interface to OpenPGP implementation for
-@acronym{PGP/MIME} messages.  The default is @code{pgg}, but
-@code{mailcrypt} and @code{gpg} are also supported although
-deprecated.
-
+@acronym{PGP/MIME} $B$N%a%C%;!<%8$N$?$a$N!"(BOpenPGP $B$N<BAu$X$N(B elisp $B%$%s%?!<(B
+$B%U%'!<%9$r<($9%7%s%\%k$G$9!#%G%#%U%)%k%H$O(B @code{pgg} $B$G$9$,!"H?O@$,$"$k(B
+$B$b$N$N(B @code{mailcrypt} $B$H(B @code{gpg} $B$b%5%]!<%H$7$^$9!#(B
 @end table
 
 @cindex snarfing keys
 @cindex importing PGP keys
 @cindex PGP key ring import
-Snarfing OpenPGP keys (i.e., importing keys from articles into your
-key ring) is not supported explicitly through a menu item or command,
-rather Gnus do detect and label keys as @samp{application/pgp-keys},
-allowing you to specify whatever action you think is appropriate
-through the usual @acronym{MIME} infrastructure.  You can use a
-@file{~/.mailcap} entry (@pxref{mailcap, , mailcap, emacs-mime-ja, The
-Emacs MIME Manual}) such as the following to import keys using GNU
-Privacy Guard when you click on the @acronym{MIME} button
-(@pxref{Using MIME}).
+$B%a%K%e!<9`L\$d%3%^%s%I$+$i(B OpenPGP $B$N80$r<hF@(B (snarf) $B$9$k(B ($B$9$J$o$A!"5-(B
+$B;v$+$i80$r80B+$KM"F~(B (import) $B$9$k(B) $B5!G=$O!"L@<(E*$K$O%5%]!<%H$5$l$^$;$s!#(B
+$B$H$$$&$h$j$O$`$7$m!"$"$J$?$,E,@Z$@$H;W$&$I$s$JF0:n$r$bDL>o(B
+$B$N(B @acronym{MIME} $B$N5!9=$r2p$7$F;XDj$G$-$k$h$&$K!"(B
+Gnus $B$O(B @samp{application/pgp-keys} $B$H$7$F80$r8!=P$7!"%i%Y%k$rIU$1$^$9!#(B
+@acronym{MIME} $B%\%?%s$r%/%j%C%/(B (@pxref{Using MIME}) $B$7$?$H$-$K!"(BGNU
+Privacy Guard $B$r;H$C$F80$rM"F~$7$F$/$l$k$h$&$K$9$k$K$O!"0J2<$N$h$&$J9T(B
+$B$r(B @file{~/.mailcap} $B%U%!%$%k(B (@pxref{mailcap, ,mailcap, emacs-mime-ja,
+The Emacs MIME Manual}) $B$K5-F~$7$F2<$5$$!#(B
 
 @example
 application/pgp-keys; gpg --import --interactive --verbose; needsterminal
 @end example
 
-This happens to also be the default action defined in
-@code{mailcap-mime-data}.
+$B$3$l$O!"$?$^$?$^(B @code{mailcap-mime-data} $B$G$9$G$KDj5A$5$l$F$$$k!"%G%#%U%)(B
+$B%k%H$NF0:n$G$b$"$j$^$9!#(B
 
 @node Mailing List
 @section $B%a!<%j%s%0%j%9%H(B
