@@ -11597,80 +11597,79 @@ from date id references chars lines xref extra の各ヘッダーから成るベク
 ます。サーバーが戻ってきたなら、普通はそのグループに入って全ての記事を送
 ります。
 
-@c TRANSLATEME
 @node Signing and encrypting
-@section Signing and encrypting
+@section 署名と暗号化
 @cindex using gpg
 @cindex using s/mime
 @cindex using smime
 
-Gnus can digitally sign and encrypt your messages, using vanilla
-@acronym{PGP} format or @acronym{PGP/MIME} or @acronym{S/MIME}.  For
-decoding such messages, see the @code{mm-verify-option} and
-@code{mm-decrypt-option} options (@pxref{Security}).
+素の @acronym{PGP} 形式、@acronym{PGP/MIME} または @acronym{S/MIME} を使っ
+て、Gnus はメッセージに電子署名したり暗号化することができます。そのよう
+なメッセージのデコードに関しては、@code{mm-verify-option} およ
+び @code{mm-decrypt-option} オプション (@pxref{Security}) を参照して下さ
+い。
 
 @vindex gnus-message-replysign
 @vindex gnus-message-replyencrypt
 @vindex gnus-message-replysignencrypted
-Often, you would like to sign replies to people who send you signed
-messages.  Even more often, you might want to encrypt messages which
-are in reply to encrypted messages.  Gnus offers
-@code{gnus-message-replysign} to enable the former, and
-@code{gnus-message-replyencrypt} for the latter.  In addition, setting
-@code{gnus-message-replysignencrypted} (on by default) will sign
-automatically encrypted messages.
+署名したメッセージを送ってきた人たちに、署名した返信を返したいことが、し
+ばしばあります。さらに、暗号化されたメッセージへの返信を暗号化したいこと
+は、もっとたびたびあるかもしれません。Gnus は前者のために
+は @code{gnus-message-replysign} の機能を、後者のために
+は @code{gnus-message-replyencrypt} の機能を提供します。さらに、
+@code{gnus-message-replysignencrypted} でもって、暗号化したメッセージに
+自動的に署名もします (ディフォルトで on)。
 
-Instructing @acronym{MML} to perform security operations on a
-@acronym{MIME} part is done using the @kbd{C-c C-m s} key map for
-signing and the @kbd{C-c C-m c} key map for encryption, as follows.
+@acronym{MIME} パートにセキュリティーのための操作を行なうために、以下の
+ように、署名の場合は @kbd{C-c C-m s} キーマップを使って、暗号化の場合
+は @kbd{C-c C-m c} キーマップを使って、@acronym{MML} への指示が行なわれ
+ます。
 
 @table @kbd
-
 @item C-c C-m s s
-@kindex C-c C-m s s (Message)
+@kindex C-c C-m s s (メッセージ)
 @findex mml-secure-message-sign-smime
 
-Digitally sign current message using @acronym{S/MIME}.
+@acronym{S/MIME} を使って、現在のメッセージに電子書名します。
 
 @item C-c C-m s o
-@kindex C-c C-m s o (Message)
+@kindex C-c C-m s o (メッセージ)
 @findex mml-secure-message-sign-pgp
 
-Digitally sign current message using @acronym{PGP}.
+@acronym{PGP} を使って、現在のメッセージに電子書名します。
 
 @item C-c C-m s p
-@kindex C-c C-m s p (Message)
+@kindex C-c C-m s p (メッセージ)
 @findex mml-secure-message-sign-pgp
 
-Digitally sign current message using @acronym{PGP/MIME}.
+@acronym{PGP/MIME} を使って、現在のメッセージに電子書名します。
 
 @item C-c C-m c s
-@kindex C-c C-m c s (Message)
+@kindex C-c C-m c s (メッセージ)
 @findex mml-secure-message-encrypt-smime
 
-Digitally encrypt current message using @acronym{S/MIME}.
+@acronym{S/MIME} を使って、現在のメッセージを暗号化します。
 
 @item C-c C-m c o
-@kindex C-c C-m c o (Message)
+@kindex C-c C-m c o (メッセージ)
 @findex mml-secure-message-encrypt-pgp
 
-Digitally encrypt current message using @acronym{PGP}.
+@acronym{PGP} を使って、現在のメッセージを暗号化します。
 
 @item C-c C-m c p
-@kindex C-c C-m c p (Message)
+@kindex C-c C-m c p (メッセージ)
 @findex mml-secure-message-encrypt-pgpmime
 
-Digitally encrypt current message using @acronym{PGP/MIME}.
+@acronym{PGP/MIME} を使って、現在のメッセージを暗号化します。
 
 @item C-c C-m C-n
-@kindex C-c C-m C-n (Message)
+@kindex C-c C-m C-n (メッセージ)
 @findex mml-unsecure-message
-Remove security related @acronym{MML} tags from message.
-
+メッセージから、セキュリティー関連の @acronym{MML} タグを外します。
 @end table
 
-@xref{Security, ,Security, message-ja, Message Manual}, for more
-information.
+もっと詳しいことは @xref{Security, ,Security, message-ja, Message
+Manual}, を参照して下さい。
 
 @node Select Methods
 @chapter 選択方法
