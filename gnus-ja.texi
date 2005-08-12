@@ -2018,13 +2018,13 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 
 @item M-n
 @kindex M-n ($B%0%k!<%W(B)
-@findex gnus-group-prev-unread-group-same-level
+@findex gnus-group-next-unread-group-same-level
 $B0l$DA0$NF1$8%l%Y%k(B ($B$b$7$/$O$=$l$h$j>.$5$$%l%Y%k(B) $B$NL$FI%0%k!<%W$K0\F0$7(B
 $B$^$9(B (@code{gnus-group-prev-unread-group-same-level})$B!#(B
 
 @item M-p
 @kindex M-p ($B%0%k!<%W(B)
-@findex gnus-group-next-unread-group-same-level
+@findex gnus-group-prev-unread-group-same-level
 $B<!$NF1$8%l%Y%k(B($B$b$7$/$O$=$l$h$j>.$5$$%l%Y%k(B)$B$NL$FI%0%k!<%W$K0\F0$7$^(B
 $B$9(B (@code{gnus-group-next-unread-group-same-level})$B!#(B
 @end table
@@ -4418,7 +4418,6 @@ if address "sender" "owner-ding@@hpc.uh.edu" @{
 * Summary Highlighting::        $B35N,%P%C%U%!$r$-$l$$$GAGE($K$9$k(B
 @end menu
 
-@findex std11-extract-address-components
 @findex mail-extract-address-components
 @findex gnus-extract-address-components
 @vindex gnus-extract-address-components
@@ -5272,7 +5271,7 @@ Gnus $B$O$=$N%a!<%k$r<hF@$7$F!"$=$l$N%X%C%@!<$N@:L)D4::$,$G$-$k$h$&$K2hLL(B
 
 @item S O m
 @kindex S O m ($B35N,(B)
-@findex gnus-summary-digest-mail-forward
+@findex gnus-uu-digest-mail-forward
 $B8=:_$N0lO"$N5-;v(B (@pxref{Decoding Articles}) $B$NMWLs$r:n$j!"%a!<%k$G$=$N(B
 $B7k2L$rAw$j$^$9(B (@code{gnus-summary-digest-mail-forward})$B!#$3$NL?Na$O%W%m(B
 $B%;%9(B/$B@\F,0z?t$N=,47$K=>$$$^$9(B (@pxref{Process/Prefix})$B!#(B
@@ -5358,7 +5357,7 @@ Manual}, $B$K$5$i$J$k>pJs$,$"$j$^$9!#(B
 
 @item S O p
 @kindex S O p ($B35N,(B)
-@findex gnus-summary-digest-post-forward
+@findex gnus-uu-digest-post-forward
 @cindex digests
 @cindex making digests
 $B8=:_$N0lO"$N5-;v$rMWLs$7$F!"$=$N7k2L$r%K%e!<%9%0%k!<%W$KAw$j$^(B
@@ -5803,6 +5802,14 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @findex gnus-summary-mark-as-dormant
 $B8=:_$N5-;v$KJ]N15-;v0u$rIU$1$^(B
 $B$9(B (@code{gnus-summary-mark-as-read-forward})$B!#(B@xref{Article Caching}.
+
+@item M d
+@itemx d
+@kindex M d ($B35N,(B)
+@kindex d ($B35N,(B)
+@findex gnus-summary-mark-as-read-forward
+$B8=:_$N5-;v$K4{FI$N0u$rIU$1$^(B
+$B$9(B (@code{gnus-summary-mark-as-read-forward})$B!#(B
 
 @item D
 @kindex D ($B35N,(B)
@@ -6374,7 +6381,7 @@ Gnus $B$O<B:]$K$O$I$N5-;v$b?F$K$O$;$:!"C1$K:G=i$N8I;y$r=|$$$F$9$Y$F$N8I;y(B
 $B$N$,<h$j=|$+$l$k!"@55,I=8=$N%j%9%H$G$"$k$3$H$,$G$-$^$9!#(B
 
 @item gnus-simplify-ignored-prefixes
-@vindex gnus-simplify-igonored-prefixes
+@vindex gnus-simplify-ignored-prefixes
 $B$b$7(B @code{gnus-summary-gather-subject-limit} $B$r(B 10 $B$/$i$$$KDc$/@_Dj$7$?(B
 $B$J$i$P!"$3$NJQ?t$r2?$+0UL#$N$"$k$b$N$K@_Dj$9$k$3$H$r9M$($k$G$7$g$&(B:
 
@@ -6442,7 +6449,7 @@ Gnus $B$O<B:]$K$O$I$N5-;v$b?F$K$O$;$:!"C1$K:G=i$N8I;y$r=|$$$F$9$Y$F$N8I;y(B
 $B%U%)%k%H$O(B @samp{^ *$\\|^(none)$} $B$G$9!#(B
 
 @item gnus-summary-thread-gathering-function
-@vindex gnus-summmary-thread-gathering-function
+@vindex gnus-summary-thread-gathering-function
 Gnus $B$O(B @code{Subject} $BMs$r8+$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O!"(B
 $B7k2LE*$KA4$/4X78$NL5$$5-;v$,F1$8!X%9%l%C%I!Y$K4^$^$l$k$3$H$,$"$k$H$$$&$3(B
 $B$H$G!"$3$l$O:.Mp$N85$G$9!#BeBX<jCJ$O!"9gCW$9$k$b$N$r8+$D$1$k$?$a(B
@@ -6457,6 +6464,7 @@ Gnus $B$O(B @code{Subject} $BMs$r8+$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O!"
 $B$3$N4X?t$O%G%#%U%)%k%H$N<}=84X?t$G!"GSB>E*$K(B @code{Subject} $B$r8+$^$9!#(B
 
 @item gnus-gather-threads-by-references
+@findex gnus-gather-threads-by-references
 $B$3$N4X?t$OGSB>E*$K(B @code{References} $BMs$r8+$^$9!#(B
 @end table
 
@@ -6643,6 +6651,7 @@ Gnus $B$OA4$F$N5-;v$N40A4$J(B @code{References} $BMs$r8+$F!"F1$8%9%l%C%I$KB0$
 @item T i
 @kindex T i ($B35N,(B)
 @kindex gnus-summary-raise-thread
+@findex gnus-summary-raise-thread
 $B8=:_$N(B ($BItJ,(B) $B%9%l%C%I$N%9%3%"$r>e$2$^(B
 $B$9(B (@code{gnus-summary-raise-thread})$B!#(B
 
@@ -7492,7 +7501,7 @@ Gnus $B$O0J2<$N4JC1$J5,B'$KB'$C$F$I$N5-;v$,72$KB0$9$k$N$+$r?dB,$7$^$9(B: $BI=
 
 @item X v P
 @kindex X v P ($B35N,(B)
-@findex gnus-uu-decode-ostscript-and-save-view
+@findex gnus-uu-decode-postscript-and-save-view
 $B8=:_$N%]%9%H%9%/%j%W%H72$rI=<($7J]B8$7$^(B
 $B$9(B (@code{gnus-uu-decode-postscript-and-save-view})$B!#(B
 @end table
@@ -7863,7 +7872,7 @@ Fonts})$B!#F1$8%a%C%;!<%8$NCf$KJ#?t$N5-;v$+$i$N0zMQ$,$"$k$H!"(BGnus $B$O$=$l$
 @cindex emphasis
 @cindex article emphasis
 
-@cindex gnus-article-emphasize
+@findex gnus-article-emphasize
 @kindex W e ($B35N,(B)
 $B?M!9$O$h$/%K%e!<%9$N5-;v$G(B @samp{_$B$3$l(B_} $B$d(B @samp{*$B$3$l(B*} $B$^$?(B
 $B$O(B @samp{/$B$3$l(B/} $B$N$h$&$J$b$N$r;H$C$FC18l$r6/D4$7$^$9!#(BGnus $B$O5-;v$rL?(B
@@ -8029,11 +8038,10 @@ Yoo-hoo!?} $B$N$h$&$J$b$N$,$"$k>l9g!"0J2<$NMWAG$G$=$l$i$r>C$9$3$H$,$G$-$^(B
 $B$k$$$/$D$+$NJQ?t$O(B:
 
 @table @code
-@item gnus-cited-opend-text-button-line-format
+@item gnus-cited-opened-text-button-line-format
 @itemx gnus-cited-closed-text-button-line-format
 @vindex gnus-cited-closed-text-button-line-format
-@vindex gnus-cited-opend-text-button-line-format
-
+@vindex gnus-cited-opened-text-button-line-format
 Gnus $B$O$I$3$N0zMQJ8$,1#$5$l$F$$$k$+$r<($9$?$a$K%\%?%s$rIU$12C$(!"J8>O$N(B
 $B1#JC$r@Z$jBX$($i$l$k$h$&$K$7$^$9!#$3$NJQ?t$NMM<0$O$3$l$i$N%U%)!<%^%C%H$N(B
 $B$h$&$JJQ?t$K$h$C$F;XDj$5$l$^$9(B (@pxref{Formatting Variables})$B!#<!$N;XDj(B
@@ -8052,7 +8060,27 @@ Gnus $B$O$I$3$N0zMQJ8$,1#$5$l$F$$$k$+$r<($9$?$a$K%\%?%s$rIU$12C$(!"J8>O$N(B
 
 @item gnus-cited-lines-visible
 @vindex gnus-cited-lines-visible
-$B0zMQJ8$N:G=i$+$i$NI=<($5$l$k9T?t$G$9!#(B
+$B1#$5$:$KI=<($9$k!"0zMQJ8$N@hF,$+$i$N9T?t$G$9!#$3$l$O!"1#$5$:$KI=<($9$k@h(B
+$BF,$+$i$N9T$H!"1#$5$:$KI=<($9$kKvHx$+$i$N9T$N!"$=$l$>$l$N?t$N(B cons $B%;%k$G(B
+$B$"$k$3$H$b$G$-$^$9!#(B
+@end table
+
+@item W W C-c
+@kindex W W C-c ($B35N,(B)
+@findex gnus-article-hide-citation-maybe
+$B0J2<$NFs$D$NJQ?t$K0MB8$7$F!"0zMQJ8$r1#$7$^(B
+$B$9(B (@code{gnus-article-hide-citation-maybe}):
+
+@table @code
+@item gnus-cite-hide-percentage
+@vindex gnus-cite-hide-percentage
+$B0zMQJ8$N3d9g$N%Q!<%;%s%F!<%8$,!"$3$NJQ?t(B ($B=i4|CM$O(B 50) $B$h$jBg$-$+$C$?$i!"(B
+$B0zMQJ8$r1#$7$^$9!#(B
+
+@item gnus-cite-hide-absolute
+@vindex gnus-cite-hide-absolute
+$B1#$5$l$kA0$K!"0zMQJ8$O>/$J$/$H$b$3$ND9$5(B ($B=i4|CM$O(B 10) $B$G$J$1$l$P$^$j$^(B
+$B$;$s!#(B
 @end table
 
 @item W W C
@@ -8168,12 +8196,6 @@ IDNA $B%(%s%3!<%I$5$l$?%I%a%$%sL>$O(B @samp{xn--bar} $B$N$h$&$K8+$($^$9!#$3$l
 @findex gnus-summary-verbose-headers
 $B5-;v%P%C%U%!$K$9$Y$F$N%X%C%@!<$r1J1s$KI=<($9$k$+$I$&$+$r@Z$jBX$($^(B
 $B$9(B (@code{gnus-summary-verbose-headers})$B!#(B
-
-@item W m
-@kindex W m ($B35N,(B)
-@findex gnus-summary-toggle-mime
-$BI=<($9$kA0$K5-;v$K(B @acronym{MIME} $B=hM}$r<B9T$9$k$+$I$&$+$r@Z$j49$($^(B
-$B$9(B (@code{gnus-summary-toggle-mime})$B!#(B
 
 @item W o
 @kindex W o ($B35N,(B)
@@ -8671,7 +8693,7 @@ UT ($BJLL>(B GMT, ZULU) $B$GF|IU$rI=<($7$^$9(B (@code{gnus-article-date-ut})
 
 @item W T i
 @kindex W T i ($B35N,(B)
-@findex gnus-article-date-iso-8601
+@findex gnus-article-date-iso8601
 @cindex ISO 8601
 $BF|IU$r9q:]E*$J7A<0!"(BISO 8601 $B$GI=<($7$^(B
 $B$9(B (@code{gnus-article-date-iso8601})$B!#(B
@@ -9212,7 +9234,7 @@ Gnus $B8GM-$G$O$J$$$1$l$I!"Lr$KN)$D$+$b$7$l$J$$J8;z%;%C%H$K4X$9$kB>$NHk7m(B:
 @cindex PostScript
 @cindex printing
 @kindex A P ($B35N,(B)
-@vindex gnus-ps-print-article
+@vindex gnus-ps-print-hook
 @findex gnus-summary-print-article
 $B5-;v%P%C%U%!$N%]%9%H%9%/%j%W%H(B (PostScript) $B%$%a!<%8$r:n@.$7$F0u:~$7$^(B
 $B$9(B (@code{gnus-summary-print-article})$B!#(B@code{gnus-ps-print-hook} $B$,%P%C(B
@@ -9400,7 +9422,7 @@ Gnus $B8GM-$G$O$J$$$1$l$I!"Lr$KN)$D$+$b$7$l$J$$J8;z%;%C%H$K4X$9$kB>$NHk7m(B:
 $BN,%P%C%U%!$GFI$_$?$$5-;v$K0u$rIU$1$^$9!#$=$l$+$i!"5-;v%P%C%U%!$@$1$rI=<((B
 $B$7$F5-;v$rFI$_$^$9!#(B
 
-@vindex gnus-pick-mode
+@findex gnus-pick-mode
 @kindex M-x gnus-pick-mode
 Gnus $B$O$3$l$r$9$k$?$a$N35N,%P%C%U%!%^%$%J!<%b!<%I$rDs6!$7$^$9!=!=(B
 @code{gnus-pick-mode} $B$G$9!#$3$l$O4pK\E*$K$O4JC1$K0u$rIU$1$i$l$k$h$&$K>/(B
@@ -9461,6 +9483,10 @@ Gnus $B$O$3$l$r$9$k$?$a$N35N,%P%C%U%!%^%$%J!<%b!<%I$rDs6!$7$^$9!=!=(B
 @vindex gnus-pick-mode-hook
 @code{gnus-pick-minor-mode-hook} $B$O(B pick $B%^%$%J!<%b!<%I%P%C%U%!$G<B9T$5(B
 $B$l$^$9!#(B
+
+@vindex gnus-mark-unpicked-articles-as-read
+@code{gnus-mark-unpicked-articles-as-read} $B$,Hs(B-@code{nil} $B$@$C$?$i!"A*(B
+$BBr$5$l$J$+$C$?$9$Y$F$N5-;v$K4{FI$N0u$rIU$1$^$9!#=i4|CM$O(B @code{nil} $B$G$9!#(B
 
 @vindex gnus-summary-pick-line-format
 pick $B%b!<%I$G$N35N,9T$NMM<0$OI8=`$NMM<0$H$O>/$70c$$$^$9!#$=$l$>$l$N9T$N(B
@@ -9563,7 +9589,7 @@ Line Formatting})$B!#%G%#%U%)%k%H$O(B @samp{Gnus: %%b %S %Z} $B$G$9!#;HMQ2DG=
 @end table
 
 @item gnus-tree-minimize-window
-@vindex gnus-tree-minimize-winodw
+@vindex gnus-tree-minimize-window
 $B$b$7$3$NJQ?t$,(B @code{nil} $B$G$J$$$H!"B>$N(B Gnus $B%&%#%s%I%&$,$b$C$H>l=j$r<h(B
 $B$l$k$h$&$K(B Gnus $B$OLZ%P%C%U%!$r$G$-$k$@$1>.$5$/$7$^$9!#$b$7$3$NJQ?t$,?t;z(B
 $B$G$"$k$H!"LZ%P%C%U%!$O$=$N?t;z$h$jBg$-$/$J$k;v$O$"$j$^$;$s!#%G%#%U%)%k%H(B
@@ -9827,7 +9853,7 @@ Line Formatting})$B!#%G%#%U%)%k%H$O(B @samp{Gnus: %%b %S %Z} $B$G$9!#;HMQ2DG=
 $B$JJ}K!$G9T$r%O%$%i%$%H$7$?$j!"%P%C%U%!$N8+$(J}$r=$@5$7$?$j$9$k$N$K;H$C$?(B
 $B$j$9$k$+$bCN$l$^$;$s!#(B
 
-@vindex gnus-summary-prepared-hooi
+@vindex gnus-summary-prepared-hook
 @item gnus-summary-prepared-hook
 $B35N,%P%C%U%!$,:n@.$5$l$?8e$G0lHV:G8e$K8F$P$l$k%U%C%/$G$9!#(B
 
@@ -10004,7 +10030,7 @@ Gnus $B$N(B info $B$N@a(B (node) $B$K0\F0$7$^$9(B (@code{gnus-info-find-no
 
 @item C-t
 @kindex C-t ($B35N,(B)
-@findex gnus-summary-togle-truncation
+@findex gnus-summary-toggle-truncation
 $B35N,9T$N@ZCG$r@Z$jBX$($^$9(B (@code{gnus-summary-toggle-truncation})$B!#$3$l(B
 $B$O$*$=$i$/35N,%P%C%U%!$N9TCf1{I=<(4X?t$r:.Mp$5$;$^$9$N$G!"5-;v$rFI$s$G$$(B
 $B$k4V$K@ZCG$r@Z$C$F$$$k$N$ONI$$9M$($G$O$J$$$G$7$g$&!#(B
@@ -10043,7 +10069,7 @@ Parameters}) $B$rJT=8$7$^$9(B (@code{gnus-summary-edit-parameters})$B!#(B
 @itemx q
 @kindex Z Z ($B35N,(B)
 @kindex Z Q ($B35N,(B)
-@findex q ($B35N,(B)
+@kindex q ($B35N,(B)
 @findex gnus-summary-exit
 @vindex gnus-summary-exit-hook
 @vindex gnus-summary-prepare-exit-hook
@@ -10060,7 +10086,7 @@ Parameters}) $B$rJT=8$7$^$9(B (@code{gnus-summary-edit-parameters})$B!#(B
 @item Z E
 @itemx Q
 @kindex Z E ($B35N,(B)
-@findex Q ($B35N,(B)
+@kindex Q ($B35N,(B)
 @findex gnus-summary-exit-no-update
 $B%0%k!<%W$N$I$N>pJs$b99?7$;$:$K8=:_$N%0%k!<%W$rH4$1=P$^(B
 $B$9(B (@code{gnus-summary-exit-no-update})$B!#(B
@@ -10546,51 +10572,155 @@ Gnus $B$O%X%C%@!<$NJB$YBX$((B (sort) $B$b9T$$$^$9(B ($B$3$l$O%G%#%U%)%k%H$G
 @section MIME $B$r;H$&(B
 @cindex @acronym{MIME}
 
-$B%Q%s%H%^%$%`(B (mime) $B$H$O!"0UL#$bL5$/6uCf$G<j$r?6$k$b$N$H$7$F9-$/(B
-$BCN$i$l$F$*$j!"$=$N4V4Q5R$O$"$/$S$r$7$J$,$i$\$s$d$j$H$7$F$^$9!#(B
+$B%Q%s%H%^%$%`(B (mime) $B$H$O!"4Q5R$O$"$/$S$r$7$J$,$i$\$s$d$j$7$F$$$?$H$7$F$b!"(B
+$B0UL#$bL5$/6uCf$G<j$r?6$k$b$N$H$7$F9-$/CN$i$l$F$$$^$9!#(B
 
-$B0lJ}!"(B@acronym{MIME} $B$H$O!"0UL#$bL5$/5-;v$rId9f2=$9$kI8=`$G$"$j!"$=$N(B
-$B$?$a$KA4$F$N%K%e!<%9%j!<%@$,62I]$G;`$s$G$7$^$&$b$N$G$9!#(B
+$B0lJ}(B @acronym{MIME} $B$H$O!"$=$N$?$a$KA4$F$N%K%e!<%9%j!<%@$,62I]$G;`$s$G$7(B
+$B$^$&$H$7$F$b!"0UL#$bL5$/5-;v$rId9f2=$9$kI8=`$G$9!#(B
 
-@acronym{MIME} $B$O$=$N5-;v$,$I$s$JJ8;z=89g$r;HMQ$7$F$$$k$+!"$=$NJ8;z$r$I(B
-$B$&Id9f2=$7$F$$$k$+$r;XDj$9$k$3$H$,$G$-!"$5$i$K$O3($d$=$NB>$N$_$@$i$J$b$N(B
-$B$rL5<Y5$$J3J9%$N5-;v$KKd$a9~$`$3$H$5$(2DG=$K$7$^$9!#(B
+@acronym{MIME} $B$O5-;v$,$I$s$JJ8;z=89g$r;H$&$+!"J8;z$r$I$&Id9f2=$9$k$+$r(B
+$B;XDj$9$k$3$H$,$G$-!"$5$i$K$O3($d$=$NB>$N$_$@$i$J$b$N$rL5<Y5$$J3J9%$N5-;v(B
+$B$KKd$a9~$`$3$H$5$(2DG=$K$7$^$9!#(B
 
-@vindex gnus-show-mime
-@vindex gnus-article-display-method-for-mime
-@findex gnus-article-display-mime-message
-Gnus $B$O(B @code{gnus-article-display-method-for-mime} $B$K5-;v$r2!$7IU$1$k$3(B
-$B$H$G(B @acronym{MIME} $B$r07$$$^$9!#$3$N=i4|CM(B
-$B$O(B @code{gnus-article-display-mime-message} $B$G$9!#$3$N4X?t(B
-$B$O(B @acronym{SEMI} MIME-View $B%W%m%0%i%`$r8F$S=P$7$F<B:]$N=hM}$r9T$$$^$9!#(B
-@acronym{SEMI} MIME-View $B$K4X$9$k>\$7$$>pJs$O!"%^%K%e%"%k$r;2>H$7$F$/$@(B
-$B$5$$(B ($B$^$@$J$$$1$I(B (;_;))$B!#(B
+@c TRANSLATEME
+@vindex gnus-display-mime-function
+@findex gnus-display-mime
+Gnus pushes @acronym{MIME} articles through @code{gnus-display-mime-function}
+to display the @acronym{MIME} parts.  This is @code{gnus-display-mime} by
+default, which creates a bundle of clickable buttons that can be used to
+display, save and manipulate the @acronym{MIME} objects.
 
-@acronym{MIME} $B$r>o$K;HMQ$7$?$1$l$P!"(B
-@code{gnus-show-mime} $B$r(B @code{t} $B$K@_Dj$7$F$/$@$5$$!#(B
-@code{gnus-show-mime} $B$r@_Dj$7$F$$$k$H!"1?$,0-$$$H5-;v%P%C%U%!$K$O8N>c$7(B
-$B$?$h$&$J2hLL$,8+$($k$3$H$b$"$k$G$7$g$&!#$3$l$OHr$1$h$&$,$"$j$^$;$s!#(B
+The following commands are available when you have placed point over a
+@acronym{MIME} button:
 
-GNUS $B$d(B Gnus $B$G$O!"$3$N$?$A$N0-$$LdBj$G6C$+$5$l$J$$$h$&$K$9$k$K$O!"35N,(B
-$B%P%C%U%!$K$*$$$F@Z$jBX$(5!G=$r;H$&$H$$$&$N$,:GA1$+$bCN$l$^$;$s(B ($BNc$($P!"(B
-@samp{alt.sing-a-long} $B%0%k!<%W$KF~$k$H!"$"$J$?$N5$$E$+$J$$$&$A(B
-$B$K(B @acronym{MIME} $B$O5-;vCf$N%5%&%s%I%U%!%$%k$rI|9f$7$F!"2?$d$i2x$7$2$JD9(B
-$B$$D9$$2N$,$"$J$?$N%9%T!<%+!<$+$iBg2;6A$GN.$l=P$7!"$"$J$?$O%\%j%e!<%`%\%?(B
-$B%s$r8+$D$1$i$l$:!"$H$$$&$N$O$=$s$J$b$N$O$b$H$b$H$D$$$F$J$$$+$i$G!"$_$s$J(B
-$B$O$"$J$?$NJ}$rbK$_$O$8$a!"$"$J$?$O%W%m%0%i%`$r;_$a$h$&$H$9$k$1$I$G$-$J$/(B
-$B$F!"%\%j%e!<%`$r@)8f$9$k%W%m%0%i%`$b8+$D$1$i$l$J$/$F!"$=$7$FIt20Cf$NA40w(B
-$B$OFMA3$"$J$?$N$3$H$r7ZJN$N4c:9$7$G8+$k$h$&$K$J$C$F$7$^$$!"$"$J$?$O$A$g$C(B
-$B$HLLGr$/$J$$;W$$$r$9$k!"$H$+(B)$B!#(B
+@table @kbd
+@findex gnus-article-press-button
+@item RET (Article)
+@kindex RET (Article)
+@itemx BUTTON-2 (Article)
+Toggle displaying of the @acronym{MIME} object
+(@code{gnus-article-press-button}).  If built-in viewers can not display
+the object, Gnus resorts to external viewers in the @file{mailcap}
+files.  If a viewer has the @samp{copiousoutput} specification, the
+object is displayed inline.
 
-$B8=<B$N=PMh;v$H<B:_$N?MJ*$KN`;w$7$F$$$k$+$b$7$l$^$;$s$,!"$3$l$OA4$F%[%s%H(B
-$B$N$3$H$G$9!#$2$[$2$[!#(B
+@findex gnus-mime-view-part
+@item M-RET (Article)
+@kindex M-RET (Article)
+@itemx v (Article)
+Prompt for a method, and then view the @acronym{MIME} object using this
+method (@code{gnus-mime-view-part}).
 
-$B$^$"!"$=$&$$$&Lu$G!"(BGnus $B$G$O(B @code{metamail-buffer} $B$r;H$&$N$r;_$a$?Lu(B
-$B$G$9!#$=$&$$$&Lu$G!":#$G$O>o$K(B @code{gnus-show-mime} $B$r(B @code{nil} $B0J30(B
-$B$K$7$F$*$-!"<~$j$K?M$,$$$J$$;~$r8+7W$i$C$F5-;v%P%C%U%!$K8=$o$l$k%\%?%s$r(B
-$B2!$7$^$7$g$&!#(B
+@findex gnus-mime-view-part-as-type
+@item t (Article)
+@kindex t (Article)
+View the @acronym{MIME} object as if it were a different @acronym{MIME} media type
+(@code{gnus-mime-view-part-as-type}).
 
-@ref{MIME Commands} $B$b;2>H$7$F2<$5$$!#(B
+@findex gnus-mime-view-part-as-charset
+@item C (Article)
+@kindex C (Article)
+Prompt for a charset, and then view the @acronym{MIME} object using this
+charset (@code{gnus-mime-view-part-as-charset}).
+
+@findex gnus-mime-save-part
+@item o (Article)
+@kindex o (Article)
+Prompt for a file name, and then save the @acronym{MIME} object
+(@code{gnus-mime-save-part}).
+
+@findex gnus-mime-save-part-and-strip
+@item C-o (Article)
+@kindex C-o (Article)
+Prompt for a file name, then save the @acronym{MIME} object and strip it from
+the article.  Then proceed to article editing, where a reasonable
+suggestion is being made on how the altered article should look
+like.  The stripped @acronym{MIME} object will be referred via the
+message/external-body @acronym{MIME} type.
+(@code{gnus-mime-save-part-and-strip}).
+
+@findex gnus-mime-delete-part
+@item d (Article)
+@kindex d (Article)
+Delete the @acronym{MIME} object from the article and replace it with some
+information about the removed @acronym{MIME} object
+(@code{gnus-mime-delete-part}).
+
+@findex gnus-mime-copy-part
+@item c (Article)
+@kindex c (Article)
+Copy the @acronym{MIME} object to a fresh buffer and display this buffer
+(@code{gnus-mime-copy-part}).  If given a prefix, copy the raw contents
+without decoding.  If given a numerical prefix, you can do semi-manual
+charset stuff (see @code{gnus-summary-show-article-charset-alist} in
+@ref{Paging the Article}).  Compressed files like @file{.gz} and
+@file{.bz2} are automatically decompressed if
+@code{auto-compression-mode} is enabled (@pxref{Compressed Files,,
+Accessing Compressed Files, emacs, The Emacs Editor}).
+
+@findex gnus-mime-print-part
+@item p (Article)
+@kindex p (Article)
+Print the @acronym{MIME} object (@code{gnus-mime-print-part}).  This
+command respects the @samp{print=} specifications in the
+@file{.mailcap} file.
+
+@findex gnus-mime-inline-part
+@item i (Article)
+@kindex i (Article)
+Insert the contents of the @acronym{MIME} object into the buffer
+(@code{gnus-mime-inline-part}) as text/plain.  If given a prefix, insert
+the raw contents without decoding.  If given a numerical prefix, you can
+do semi-manual charset stuff (see
+@code{gnus-summary-show-article-charset-alist} in @ref{Paging the
+Article}).  Compressed files like @file{.gz} and @file{.bz2} are
+automatically decompressed depending on @code{jka-compr} regardless of
+@code{auto-compression-mode} (@pxref{Compressed Files,, Accessing
+Compressed Files, emacs, The Emacs Editor}).
+
+@findex gnus-mime-view-part-internally
+@item E (Article)
+@kindex E (Article)
+View the @acronym{MIME} object with an internal viewer.  If no internal
+viewer is available, use an external viewer
+(@code{gnus-mime-view-part-internally}).
+
+@findex gnus-mime-view-part-externally
+@item e (Article)
+@kindex e (Article)
+View the @acronym{MIME} object with an external viewer.
+(@code{gnus-mime-view-part-externally}).
+
+@findex gnus-mime-pipe-part
+@item | (Article)
+@kindex | (Article)
+Output the @acronym{MIME} object to a process (@code{gnus-mime-pipe-part}).
+
+@findex gnus-mime-action-on-part
+@item . (Article)
+@kindex . (Article)
+Interactively run an action on the @acronym{MIME} object
+(@code{gnus-mime-action-on-part}).
+
+@end table
+
+Gnus will display some @acronym{MIME} objects automatically.  The way Gnus
+determines which parts to do this with is described in the Emacs
+@acronym{MIME} manual.
+
+It might be best to just use the toggling functions from the article
+buffer to avoid getting nasty surprises.  (For instance, you enter the
+group @samp{alt.sing-a-long} and, before you know it, @acronym{MIME} has
+decoded the sound file in the article and some horrible sing-a-long song
+comes screaming out your speakers, and you can't find the volume button,
+because there isn't one, and people are starting to look at you, and you
+try to stop the program, but you can't, and you can't find the program
+to control the volume, and everybody else in the room suddenly decides
+to look at you disdainfully, and you'll feel rather stupid.)
+
+Any similarity to real events and people is purely coincidental.  Ahem.
+
+Also @pxref{MIME Commands}.
 
 @node Customizing Articles
 @section $B5-;v$N%+%9%?%^%$%:(B
@@ -11626,43 +11756,43 @@ from date id references chars lines xref extra $B$N3F%X%C%@!<$+$i@.$k%Y%/(B
 
 @table @kbd
 @item C-c C-m s s
-@kindex C-c C-m s s ($B%a%C%;!<%8(B)
+@kindex C-c C-m s s (Message)
 @findex mml-secure-message-sign-smime
 
 @acronym{S/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$KEE;R=qL>$7$^$9!#(B
 
 @item C-c C-m s o
-@kindex C-c C-m s o ($B%a%C%;!<%8(B)
+@kindex C-c C-m s o (Message)
 @findex mml-secure-message-sign-pgp
 
 @acronym{PGP} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$KEE;R=qL>$7$^$9!#(B
 
 @item C-c C-m s p
-@kindex C-c C-m s p ($B%a%C%;!<%8(B)
+@kindex C-c C-m s p (Message)
 @findex mml-secure-message-sign-pgp
 
 @acronym{PGP/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$KEE;R=qL>$7$^$9!#(B
 
 @item C-c C-m c s
-@kindex C-c C-m c s ($B%a%C%;!<%8(B)
+@kindex C-c C-m c s (Message)
 @findex mml-secure-message-encrypt-smime
 
 @acronym{S/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
 
 @item C-c C-m c o
-@kindex C-c C-m c o ($B%a%C%;!<%8(B)
+@kindex C-c C-m c o (Message)
 @findex mml-secure-message-encrypt-pgp
 
 @acronym{PGP} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
 
 @item C-c C-m c p
-@kindex C-c C-m c p ($B%a%C%;!<%8(B)
+@kindex C-c C-m c p (Message)
 @findex mml-secure-message-encrypt-pgpmime
 
 @acronym{PGP/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
 
 @item C-c C-m C-n
-@kindex C-c C-m C-n ($B%a%C%;!<%8(B)
+@kindex C-c C-m C-n (Message)
 @findex mml-unsecure-message
 $B%a%C%;!<%8$+$i!"%;%-%e%j%F%#!<4XO"$N(B @acronym{MML} $B%?%0$r30$7$^$9!#(B
 @end table
@@ -12062,9 +12192,15 @@ Manual}, $B$r;2>H$7$F2<$5$$!#(B
 $B8=:_$N%5!<%P!<$K@\B3IT2DG=$N0u$rIU$1$^(B
 $B$9(B (@code{gnus-server-open-all-server})$B!#(B
 
+@item M-o
+@kindex M-o ($B%5!<%P!<(B)
+@findex gnus-server-open-all-servers
+$B%P%C%U%!$K$"$kA4$F$N%5!<%P!<$H$N@\B3$r%*!<%W%s$7$^(B
+$B$9(B (@code{gnus-server-open-all-servers})$B!#(B
+
 @item M-c
 @kindex M-c ($B%5!<%P!<(B)
-@findex gnus-server-close-to-all-servers
+@findex gnus-server-close-all-servers
 $B%P%C%U%!$K$"$kA4$F$N%5!<%P!<$H$N@\B3$rJD$8$^(B
 $B$9(B (@code{gnus-server-close-all-servers})$B!#(B
 
@@ -12115,7 +12251,7 @@ Gnus $B$,$I$l$+$N%5!<%P!<$+$i@\B35qH]$r<u$1$?$+$I$&$+$NA4$F$N0u$r>C5n$7$^(B
 
 @table @code
 @item nntp-server-opened-hook
-@vindex gnus-server-opend-hook
+@vindex nntp-server-opened-hook
 @cindex @sc{mode reader}
 @cindex authinfo
 @cindex authentification
@@ -12129,7 +12265,7 @@ Gnus $B$,$I$l$+$N%5!<%P!<$+$i@\B35qH]$r<u$1$?$+$I$&$+$NA4$F$N0u$r>C5n$7$^(B
 
 @item nntp-authinfo-function
 @vindex nntp-authinfo-function
-@findex nntp-send-authoinfo
+@findex nntp-send-authinfo
 @vindex nntp-authinfo-file
 $B$3$N4X?t$O(B @acronym{NNTP} $B%5!<%P!<$K(B @samp{AUTHINFO} $B$rAw$k$?$a$K;H$o$l(B
 $B$^$9!#%G%#%U%)%k%H$N4X?t$O(B @code{nntp-send-authinfo} $B$G!"(B
@@ -12334,49 +12470,6 @@ Nntp $B$,=PNO$,=*N;$7$?$3$H$r3NG'$9$k$?$a$KBT$D$Y$-;~4V$G$9!#CM$rC;$/$9$l(B
 $B$PH?1~$,B.$/$J$j$^$9$,(B CPU $B$r?)$$$^$9!#%G%#%U%)%k%H$O(B 0.1 $BIC$G$9!#%5!<%P!<(B
 $B$KCY$$2s@~$G@\B3$7$F$$$k>l9g$O(B ($B$=$7$F(B Emacs $B$,(B CPU $B%Q%o!<$r?)$&$N$rK>$^(B
 $B$J$1$l$P(B)$B!"$3$l$rNc$($P(B 1 $B$K$7$F$b9=$$$^$;$s!#(B
-
-@item nntp-list-options
-@vindex nntp-list-options
-LIST $B%3%^%s%I$N%*%W%7%g%s$K;H$C$F!"(B($B%5!<%P!<$N(B) $B%j%9%H=PNO$r@_Dj$7$?%K%e!<(B
-$B%9%0%k!<%W$@$1$K@)8B$9$k$?$a$N!"%K%e!<%9%0%k!<%WL>$N%j%9%H$G$9!#$=$l$>$l(B
-$B$N%K%e!<%9%0%k!<%WL>$K$O(B @dfn{fj.*} $B$d(B @dfn{japan.*} $B$N$h$&$J!"%7%'%k7A(B
-$B<0$N%o%$%k%I%+!<%I$r;H$&$3$H$,$G$-$^$9!#$b$79,1?$K$b%5!<%P!<$,$=$N$h$&$J(B
-$B%*%W%7%g%s$r<u$1IU$1$F$/$l$l$P!"(BGnus $B$rB.$/F0:n$5$;$k$3$H$,$G$-$k$+$b$7(B
-$B$l$^$;$s!#$3$l$O!"0J2<$N$h$&$K%5!<%P!<JQ?t$H$7$F;H$&$3$H$,$G$-$^$9!#(B
-
-@lisp
-(setq gnus-select-method
-      '(nntp "news.somewhere.edu"
-             (nntp-list-options ("fj.*" "japan.*"))))
-@end lisp
-
-@item nntp-options-subscribe
-@vindex nntp-options-subscribe
-$B9gCW$7$?$iL5>r7o$G9VFI$9$k%K%e!<%9%0%k!<%WL>$N@55,I=8=$G$9!#@55,I=8=$NJ8(B
-$B;zNs$G$O(B @dfn{$} $B$NBe$o$j$K(B @dfn{ } $B$r;H$C$F2<$5$$!#%5!<%P!<$,(B LIST $B%3%^(B
-$B%s%I$N%*%W%7%g%s$K%7%'%k7A<0$N%o%$%k%I%+!<%I$r<u$1IU$1$F$/$l$J$$>l9g$G$b!"(B
-@code{nntp-list-options} $B$HF1MM$N8z2L$,$"$k$G$7$g$&!#$3$l$O!"0J2<$N$h$&(B
-$B$K%5!<%P!<JQ?t$H$7$F;H$&$3$H$,$G$-$^$9!#(B
-
-@lisp
-(setq gnus-select-method
-      '(nntp "news.somewhere.edu"
-             (nntp-options-subscribe "^fj\\.\\|^japan\\.")))
-@end lisp
-
-@item nntp-options-not-subscribe
-@vindex nntp-options-not-subscribe
-$B9gCW$7$J$+$C$?$iL5>r7o$G9VFI$9$k%K%e!<%9%0%k!<%WL>$N@55,I=8=$G$9!#@55,I=(B
-$B8=$NJ8;zNs$G$O(B @dfn{$} $B$NBe$o$j$K(B @dfn{ } $B$r;H$C$F2<$5$$!#%5!<%P!<(B
-$B$,(B LIST $B%3%^%s%I$N%*%W%7%g%s$K%7%'%k7A<0$N%o%$%k%I%+!<%I$r<u$1IU$1$F$/$l(B
-$B$J$$>l9g$G$b!"(B@code{nntp-list-options} $B$HF1MM$N8z2L$,$"$k$G$7$g$&!#$3$l(B
-$B$O!"0J2<$N$h$&$K%5!<%P!<JQ?t$H$7$F;H$&$3$H$,$G$-$^$9!#(B
-
-@lisp
-(setq gnus-select-method
-      '(nntp "news.somewhere.edu"
-             (nntp-options-not-subscribe "\\.binaries\\.")))
-@end lisp
 @end table
 
 @menu
@@ -12513,6 +12606,8 @@ Emacs $B$N%;%C%7%g%sA4BN$r%i%C%W$7$F!"%G%#%U%)%k%H$N%a%=%C%I$r;H$&$H$$$&$N(B
 $B$N%j%9%H$G$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#(B
 
 @item nntp-via-rlogin-command
+@vindex nntp-via-rlogin-command
+@vindex nntp-via-rlogin-command-switches
 $BCf4V$N%[%9%H$K%m%0%$%s$9$k$?$a$K;H$o$l$k%3%^%s%I$G$9!#%G%#%U%)%k%H(B
 $B$O(B @samp{rsh} $B$G$9$,!"(B@samp{ssh} $B$,?M5$$N$"$kBeBX<jCJ$G$9!#(B
 
@@ -12691,6 +12786,7 @@ scp $B$^$?$OB>$N2?$+$r;H$C$F(B) Gnus $B$rAv$i$;$kJL$N%[%9%H$K%3%T!<$9$k$3$H$,
 $B5-;v$rEj9F$9$k$H$-$K(B inews $B%W%m%0%i%`$KM?$($i$l$k%Q%i%a!<%?$G$9!#(B
 
 @item nnspool-spool-directory
+@vindex nnspool-spool-directory
 @code{nnspool} $B$,5-;v$rC5$9$H$3$m$G$9!#$3$l$OIaDL(B
 $B$O(B @file{/usr/spool/news/} $B$G$9!#(B
 
@@ -14295,7 +14391,7 @@ Gnus $B$O5-;v$rI=<($9$k$H$-$K$=$l$r@vBu$9$k$?$a$K2aEY$N4X?t$rDs6!$7$F$$$^(B
 $BA4$F$N(B @samp{TAB} $BJ8;z$r(B @samp{SPACE} $BJ8;z$KJQ49$7$^$9!#(B
 
 @item nnmail-fix-eudora-headers
-@findex nnmail-fix-eudra-headers
+@findex nnmail-fix-eudora-headers
 @cindex Eudora
 Eudora $B$O2u$l$?(B @code{References} $B%X%C%@!<$r:n@.$7$^$9$,!"(B
 @code{In-Reply-To} $B%X%C%@!<$K$O$A$c$s$H$7$?$b$N$rF~$l$^$9!#$3$N4X?t(B
@@ -14538,7 +14634,7 @@ rmail box $B$N$?$a$N%"%/%F%#%V%U%!%$%k$NL>A0!#4{DjCM(B
 $B$O(B @file{~/Mail/active} $B$G$9!#(B
 
 @item nnml-newsgroups-file
-@vindex nnml-newgroups-file
+@vindex nnml-newsgroups-file
 @code{nnml} $B%0%k!<%W5-=R%U%!%$%k!#(B@xref{Newsgroups File Format}. $B4{DjCM(B
 $B$O(B @file{~/Mail/newsgroups} $B$G$9!#(B
 
@@ -18660,7 +18756,7 @@ Gnus Agent $B$O$h$/$"$kB>$N%*%U%i%$%s%K%e!<%9%j!<%@!<$N$h$&$K$OF0:n$7$^$;(B
 $B%9%3%"$NJ}$r9%$_$^$9$N$G!"B>$H3JF.$9$k$h$j$O@Z$jBX$($k;v$K$7$^$7$?!#$=$l(B
 $B$i$O40A4$K0c$&;v$r$7$^$9$N$G!"??$CD>$0$K:B$C$FCm0U$rJ'$C$F$/$@$5$$(B!
 
-@vindex gnus-summary-below
+@vindex gnus-summary-mark-below
 $BA4$F$N5-;v$O%9%3%"$N=i4|CM$r;}$C$F$*(B
 $B$j(B (@code{gnus-summary-default-score})$B!"$3$l$O%G%#%U%)%k%H$G(B 0 $B$G$9!#$3(B
 $B$N%9%3%"$OBPOCE*$d!"%9%3%"%U%!%$%k(B (score file) $B$NJ}K!$K$h$j!">e$2$i$l$?(B
@@ -20382,7 +20478,7 @@ Gnus $B$O0lF|$K0l2s%9%3%"$rIeGT$5$;$h$&$H$7$^$9!#Nc$($P!"$b$7(B Gnus $B$r;MF|
 $B$$$k$+$r$o$+$C$F$$$k$H8+$J$7$^$9!#(B
 
 @item gnus-interactive-catchup
-@vindex gnus-interactive-catcup
+@vindex gnus-interactive-catchup
 @code{nil} $B$G$J$$$H!"%0%k!<%W$KDI$$$D$/(B (catchup) $BA0$K!"3NG'$rMW5a$7$^$9!#(B
 $B$3$l$O=i4|@_Dj$G(B @code{t} $B$G$9!#(B
 
@@ -21360,25 +21456,18 @@ NoCeM $B%a%C%;!<%8$rH/9T$9$k?M$O$?$/$5$s$$$^$9!#$3$N%j%9%H$G$O!"C/$N8@$&$3(B
 
 @item gnus-nocem-verifyer
 @vindex gnus-nocem-verifyer
-@findex pgg-verify-region
+@findex pgg-verify
 $B$3$l$O(B NoCeM $BH/9T<T$,K\?M$G$"$k$3$H$r8!>Z$9$k4X?t$G$J$/$F$O$J$j$^$;$s!#(B
-$B=i4|@_Dj$G$O!"0J2<$K<($9(B @code{pgg-verify-region} $B$r;H$&4X?t$G(B
-$B$9(B ($BCp(B: Gnus $B$G$O(B @code{pgg-verify} $B$,%G%#%U%)%k%H$G$9(B)$B!#(B
+$B=i4|CM$O(B @code{pgg-verify} $B$G!"$3$l$O8!>Z$K@.8y$7$?$iHs(B-@code{nil} $B$rJV(B
+$B$7!"$=$&$G$J$1$l$P(B (NoCeM $B%a%C%;!<%8$,=pL>$5$l$F$$$J$$>l9g$r4^$_$^(B
+$B$9(B) @code{nil} $B$rJV$7$^$9!#$b$7$3$l$,Hs>o$KCY$/$F!"8!>Z7k2L$r5$$K$7$J(B
+$B$$(B ($B$3$l$O$?$V$s4m81$G$9(B) $B$N$G$"$l$P!"$3$NJQ?t$r(B @code{nil} $B$K$9$k$3$H$,(B
+$B$G$-$^$9!#(B
 
-@lisp
-(lambda ()
-  (pgg-verify-region (point-min) (point-max)))
-@end lisp
-
-$B$3$l$O8!>Z$K@.8y$7$?$iHs(B-@code{nil} $B$rJV$7!"$=$&$G$J$1$l$P(B (NoCeM $B%a%C%;!<(B
-$B%8$,=pL>$5$l$F$$$J$$>l9g$r4^$_$^$9(B) @code{nil} $B$rJV$7$^$9!#$b$7$3$l$,Hs(B
-$B>o$KCY$/$F!"8!>Z7k2L$r5$$K$7$J$$(B ($B$3$l$O$?$V$s4m81$G$9(B) $B$N$G$"$l$P!"$3$N(B
-$BJQ?t$r(B @code{nil} $B$K$9$k$3$H$,$G$-$^$9!#(B
-
-$B0JA0!"%G%U%)%k%H$O(B Mailcrypt $B$N4X?t$G$"$k(B @code{mc-verify} $B$G$7$?!#$^$@(B
-$B$=$l$r;H$&$3$H$,$G$-$^$9$,!"(BPGP $B$N8x3+80$r(B GnuPG $B$N80B+$K2C$($k$3$H$r1^(B
-$B$o$J$1$l$P!"(BGnuPG $B$H$H$b$KF0:n$9$k%G%#%U%)%k%H$N4X?t$KJQ$($k$3$H$,$G$-$^(B
-$B$9!#(B
+$B0JA0!"%G%#%U%)%k%H$O(B Mailcrypt $B$N4X?t$G$"$k(B @code{mc-verify} $B$G$7$?!#$^(B
+$B$@$=$l$r;H$&$3$H$,$G$-$^$9$,!"(BPGP $B$N8x3+80$r(B GnuPG $B$N80B+$K2C$($k$3$H$r(B
+$B1^$o$J$1$l$P!"(BGnuPG $B$H$H$b$KF0:n$9$k%G%#%U%)%k%H$N4X?t$KJQ$($k$3$H$,$G$-(B
+$B$^$9!#(B
 
 @item gnus-nocem-directory
 @vindex gnus-nocem-directory
