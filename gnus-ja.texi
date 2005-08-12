@@ -10574,72 +10574,87 @@ Gnus $B$O%X%C%@!<$NJB$YBX$((B (sort) $B$b9T$$$^$9(B ($B$3$l$O%G%#%U%)%k%H$G
 @section MIME $B$r;H$&(B
 @cindex @acronym{MIME}
 
-$B%Q%s%H%^%$%`(B (mime) $B$H$O!"4Q5R$O$"$/$S$r$7$J$,$i$\$s$d$j$7$F$$$?$H$7$F$b!"(B
-$B0UL#$bL5$/6uCf$G<j$r?6$k$b$N$H$7$F9-$/CN$i$l$F$$$^$9!#(B
+$B%Q%s%H%^%$%`(B (mime) $B$H$O!"4Q5R$,$"$/$S$r$7$J$,$i$\$s$d$j$7$F$$$k$N$K$b$+(B
+$B$+$o$i$:!"0UL#$bL5$/6uCf$G<j$r?6$k$b$N$H$7$F9-$/CN$i$l$F$$$^$9!#(B
 
 $B0lJ}(B @acronym{MIME} $B$H$O!"$=$N$?$a$KA4$F$N%K%e!<%9%j!<%@$,62I]$G;`$s$G$7(B
-$B$^$&$H$7$F$b!"0UL#$bL5$/5-;v$rId9f2=$9$kI8=`$G$9!#(B
+$B$^$&$N$K$b$+$+$o$i$:!"0UL#$bL5$/5-;v$rId9f2=$9$kI8=`$G$9!#(B
 
 @acronym{MIME} $B$O5-;v$,$I$s$JJ8;z=89g$r;H$&$+!"J8;z$r$I$&Id9f2=$9$k$+$r(B
 $B;XDj$9$k$3$H$,$G$-!"$5$i$K$O3($d$=$NB>$N$_$@$i$J$b$N$rL5<Y5$$J3J9%$N5-;v(B
 $B$KKd$a9~$`$3$H$5$(2DG=$K$7$^$9!#(B
 
-@c TRANSLATEME
 @vindex gnus-display-mime-function
 @findex gnus-display-mime
-Gnus pushes @acronym{MIME} articles through @code{gnus-display-mime-function}
-to display the @acronym{MIME} parts.  This is @code{gnus-display-mime} by
-default, which creates a bundle of clickable buttons that can be used to
-display, save and manipulate the @acronym{MIME} objects.
+Gnus $B$O(B @acronym{MIME} $B%Q!<%H$rI=<($9$k$?$a$K!"(B
+@code{gnus-display-mime-function} $B$K$h$C$F(B @acronym{MIME} $B5-;v$r=hM}$7$^(B
+$B$9!#$3$l$O%G%#%U%)%k%H$G$O(B @code{gnus-display-mime} $B$G!"(B
+@acronym{MIME} $B%*%V%8%'%/%H$rI=<($7!"%;!<%V$7!"$+$DA`:n$9$k$?$a$K;H$&$3(B
+$B$H$,$G$-$k!"$R$H$+$?$^$j$N%/%j%C%/2DG=$J%\%?%s$r:n@.$7$^$9!#(B
 
-The following commands are available when you have placed point over a
-@acronym{MIME} button:
+@acronym{MIME} $B%\%?%s$N>e$K%]%$%s%H$rCV$$$?$J$i$P!"0J2<$N%3%^%s%I$,MxMQ(B
+$B$G$-$^$9(B:
 
 @table @kbd
 @findex gnus-article-press-button
 @item RET (Article)
 @kindex RET (Article)
 @itemx BUTTON-2 (Article)
-Toggle displaying of the @acronym{MIME} object
-(@code{gnus-article-press-button}).  If built-in viewers can not display
-the object, Gnus resorts to external viewers in the @file{mailcap}
-files.  If a viewer has the @samp{copiousoutput} specification, the
-object is displayed inline.
+@acronym{MIME} $B%*%V%8%'%/%H$NI=<($r%H%0%k$G@Z$jBX$($^(B
+$B$9(B (@code{gnus-article-press-button})$B!#$=$N%*%V%8%'%/%H$rFbB"$N%S%e!<%o!<(B
+$B$GI=<($G$-$J$$$H$-$O!"(BGnus $B$O(B @file{mailcap} $B%U%!%$%k$K$"$k30It$N%S%e!<(B
+$B%o!<$K=u$1$r5a$a$^$9!#%S%e!<%o!<$,(B @samp{copiousoutput} $B;EMM$K$J$C$F$$$k(B
+$B>l9g$O!"%*%V%8%'%/%H$O%$%s%i%$%s$G(B ($BLuCm(B: Emacs $B$NI=<($KKd$a9~$^$l$F(B) $BI=(B
+$B<($5$l$^$9!#(B
 
 @findex gnus-mime-view-part
 @item M-RET (Article)
 @kindex M-RET (Article)
 @itemx v (Article)
-Prompt for a method, and then view the @acronym{MIME} object using this
-method (@code{gnus-mime-view-part}).
+$B<jCJ$r?R$M!"$=$N<jCJ$r;H$C$F(B @acronym{MIME} $B%*%V%8%'%/%H$rI=<($7$^(B
+$B$9(B (@code{gnus-mime-view-part})$B!#(B
 
 @findex gnus-mime-view-part-as-type
 @item t (Article)
 @kindex t (Article)
-View the @acronym{MIME} object as if it were a different @acronym{MIME} media type
-(@code{gnus-mime-view-part-as-type}).
+@acronym{MIME} $B%*%V%8%'%/%H$r!"0[$J$k(B @acronym{MIME} $B%a%G%#%"!&%?%$%W$G(B
+$B$"$k$+$N$h$&$KI=<($7$^$9(B (@code{gnus-mime-view-part-as-type})$B!#(B
 
 @findex gnus-mime-view-part-as-charset
 @item C (Article)
 @kindex C (Article)
-Prompt for a charset, and then view the @acronym{MIME} object using this
-charset (@code{gnus-mime-view-part-as-charset}).
+$BJ8;z%;%C%H$r?R$M!"$=$NJ8;z%;%C%H$r;H$C$F(B @acronym{MIME} $B%*%V%8%'%/%H$rI=(B
+$B<($7$^$9(B (@code{gnus-mime-view-part-as-charset})$B!#(B
 
 @findex gnus-mime-save-part
 @item o (Article)
 @kindex o (Article)
-Prompt for a file name, and then save the @acronym{MIME} object
-(@code{gnus-mime-save-part}).
+$B%U%!%$%kL>$r?R$M$F(B @acronym{MIME} $B%*%V%8%'%/%H$r%;!<%V$7$^(B
+$B$9(B (@code{gnus-mime-save-part})$B!#(B
 
+@c TRANSLATEME
 @findex gnus-mime-save-part-and-strip
 @item C-o (Article)
 @kindex C-o (Article)
 Prompt for a file name, then save the @acronym{MIME} object and strip it from
-the article.  Then proceed to article editing, where a reasonable
+the article.
+
+$B%U%!%$%kL>$r?R$M!"(B@acronym{MIME} $B%*%V%8%'%/%H$r%;!<%V$7$F!"$=$l$r5-;v$+(B
+$B$i<h$j30$7$^$9!#(B
+
+              Then proceed to article editing, where a reasonable
 suggestion is being made on how the altered article should look
-like.  The stripped @acronym{MIME} object will be referred via the
+like.
+
+($B$5$F!"$3$l",$O$I$&$d$C$FLu$9(B?)
+
+       The stripped @acronym{MIME} object will be referred via the
 message/external-body @acronym{MIME} type.
 (@code{gnus-mime-save-part-and-strip}).
+
+$B<h$j30$5$l$?(B @acronym{MIME} $B%*%V%8%'%/%H$O!"(Bmessage/external-body
+@acronym{MIME} $B%?%$%W$H$7$F;2>H$5$l$^$9!#(B
+(@code{gnus-mime-save-part-and-strip})$B!#(B
 
 @findex gnus-mime-delete-part
 @item d (Article)
