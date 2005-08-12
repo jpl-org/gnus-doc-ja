@@ -11620,10 +11620,10 @@ from date id references chars lines xref extra の各ヘッダーから成るベク
 @code{gnus-message-replysignencrypted} でもって、暗号化したメッセージに
 自動的に署名もします (ディフォルトで on)。
 
-@acronym{MIME} パートにセキュリティーのための操作を行なうために、以下の
-ように、署名の場合は @kbd{C-c C-m s} キーマップを使って、暗号化の場合
-は @kbd{C-c C-m c} キーマップを使って、@acronym{MML} への指示が行なわれ
-ます。
+@acronym{MIME} パートに対してセキュリティーの操作を行なうため
+の @acronym{MML} への指示は、以下のように、署名の場合は @kbd{C-c C-m s}
+キーマップを使って、暗号化の場合は @kbd{C-c C-m c} キーマップを使って行
+ないます。
 
 @table @kbd
 @item C-c C-m s s
@@ -11648,19 +11648,19 @@ from date id references chars lines xref extra の各ヘッダーから成るベク
 @kindex C-c C-m c s (メッセージ)
 @findex mml-secure-message-encrypt-smime
 
-@acronym{S/MIME} を使って、現在のメッセージを暗号化します。
+@acronym{S/MIME} を使って、現在のメッセージを電子暗号化します。
 
 @item C-c C-m c o
 @kindex C-c C-m c o (メッセージ)
 @findex mml-secure-message-encrypt-pgp
 
-@acronym{PGP} を使って、現在のメッセージを暗号化します。
+@acronym{PGP} を使って、現在のメッセージを電子暗号化します。
 
 @item C-c C-m c p
 @kindex C-c C-m c p (メッセージ)
 @findex mml-secure-message-encrypt-pgpmime
 
-@acronym{PGP/MIME} を使って、現在のメッセージを暗号化します。
+@acronym{PGP/MIME} を使って、現在のメッセージを電子暗号化します。
 
 @item C-c C-m C-n
 @kindex C-c C-m C-n (メッセージ)
