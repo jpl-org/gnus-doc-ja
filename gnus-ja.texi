@@ -472,7 +472,7 @@ Group Buffer
 Group Buffer Format
 
 * Group Line Specification::    $B%0%k!<%W%P%C%U%!$N8+$(J}$r7h$a$k(B
-* Group Mode line Specification::  $B%0%k!<%W%P%C%U%!$N%b!<%I9T(B
+* Group Mode Line Specification::  $B%0%k!<%W%P%C%U%!$N%b!<%I9T(B
 * Group Highlighting::          $B%0%k!<%W%P%C%U%!$K$-$l$$$K?'$r$D$1$k(B
 
 Group Topics
@@ -768,7 +768,6 @@ Gnus Unplugged
 * Example Setup::               $B%*%U%i%$%s?M4V$N$?$a$N(B @file{~/.gnus.el} $B$NNc(B
 * Batching Agents::             @code{cron} $B%8%g%V$K$h$k%K%e!<%9<hF@J}K!(B
 * Agent Caveats::               $B$"$J$?$,M=A[$9$k$3$H$H!"$=$l$,<B:]$K$9$k$3$H(B
-* Control Agents::              Offline $B$r%3%s%H%m!<%k$9$k(B gnus-offline
 
 Agent Categories
 
@@ -1730,7 +1729,7 @@ Gnus $B$N5/F0$K@.8y$7$?8e$K!"0lHV:G8e$K<B9T$5$l$k%U%C%/$G$9!#(B
 
 @menu
 * Group Line Specification::    $B%0%k!<%W%P%C%U%!$N8+$(J}$r7h$a$k(B
-* Group Mode line Specification::  $B%0%k!<%W%P%C%U%!$N%b!<%I9T(B
+* Group Mode Line Specification::  $B%0%k!<%W%P%C%U%!$N%b!<%I9T(B
 * Group Highlighting::          $B%0%k!<%W%P%C%U%!$K$-$l$$$K?'$r$D$1$k(B
 @end menu
 
@@ -1894,7 +1893,7 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 $B%/(B (@samp{*}) $B$,Kd$a$i$l$^$9!=!=Nc$($P!"5/F0$5$l$F$$$J$$30It%0%k!<%W$d!"(B
 $BIT@5$J4pK\%0%k!<%W$N>l9g$G$9!#(B
 
-@node Group Mode line Specification
+@node Group Mode Line Specification
 @subsection $B%0%k!<%W%b!<%I9T$N;EMM(B
 @cindex group mode line
 
@@ -3437,9 +3436,9 @@ kill $B$5$l$?%0%k!<%W$rA4$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#@\
 $B$J$$$s$@$1$I$5(B) (@code{gnus-browse-describe-briefly})$B!#(B
 @end table
 
-@node Exiting gnus
+@node Exiting Gnus
 @section Gnus $B$N=*N;(B
-@cindex exiting gnus
+@cindex exiting Gnus
 
 $B$=$&!"(BGnus $B$O:G8e(B ($B%5%$%3!<(B) $B$G$9(B ($BLuCm(B: $B$/!"6l$7$$!#(B
 $B86J8$O(B ``Yes, Gnus is ex(c)iting.'')$B!#(B
@@ -15158,13 +15157,12 @@ Gnus $B$O$3$l$i$N%=!<%9$X$N3&LL$rDs6!$9$k%P%C%/%(%s%I72$r>/$7Hw$($D$D$"$j(B
 * Slashdot::                    Slashdot $B$N%3%a%s%H$rFI$`(B
 * Ultimate::                    Ultimate Bulletin Board $B%7%9%F%`(B
 * Web Archive::                 $B%&%'%V$KJ]4I$5$l$?%a!<%j%s%0%j%9%H$rFI$`(B
-* Web Newspaper::               $B%&%'%V$KJ]4I$5$l$??7J9$rFI$`(B
 * RSS::                         RDF Site Summary $B$rFI$`(B
 * Customizing w3::              Gnus $B$+$i(B Emacs/W3 $B$rA`:n$9$k(B
 @end menu
 
-@samp{Web Newspaper} $B$r=|$/$9$Y$F$N%&%'%V%=!<%9$O!"F0:n$5$;$k$?$a(B
-$B$K(B Emacs/W3 $B$H(B url $B%i%$%V%i%j$,I,MW$G$9!#(B
+$B$9$Y$F$N%&%'%V%=!<%9$O!"F0:n$5$;$k$?$a$K(B Emacs/W3 $B$H(B url $B%i%$%V%i%j$,I,(B
+$BMW$G$9!#(B
 
 $B$3$l$i$N%&%'%V%=!<%9$N0lHV$NLdBj$OD94|4V$OF0:n$7$J$$2DG=@-$,9b$$$3$H$G$9!#(B
 @acronym{HTML} $B%G!<%?$+$i>pJs$r=8$a$k$N$O$;$$$<$$?dB,$G!"9=B$$,JQ2=$7$?(B
@@ -17492,7 +17490,6 @@ Variables, gnus-agent}) $B$N$G!"$"$J$?$O2?$b@_Dj$9$kI,MW$,L5$$$N$G$9!#(B
 * Example Setup::               $B%*%U%i%$%s?M4V$N$?$a$N(B @file{~/.gnus.el} $B$NNc(B
 * Batching Agents::             @code{cron} $B%8%g%V$K$h$k%K%e!<%9<hF@J}K!(B
 * Agent Caveats::               $B$"$J$?$,M=A[$9$k$3$H$H!"$=$l$,<B:]$K$9$k$3$H(B
-* Control Agents::              Offline $B$r%3%s%H%m!<%k$9$k(B gnus-offline
 @end menu
 
 @node Agent Basics
@@ -18630,93 +18627,6 @@ Gnus $B%(!<%8%'%s%H$K5-;v$r<hF@$5$;$k$N$O(B ($B$=$7$F$"$J$?$N=q$$$?2?$+$N%a%C
 #!/bin/sh
 emacs -batch -l ~/.emacs -l ~/.gnus.el gnus-agent-batch >/dev/null 2>&1
 @end example
-
-@node Control Agents
-@subsection gnus-agent $B4D6-$r(B Control $B$9$k(B
-$B$3$3$^$GFI$s$GMh$i$l$F!"%(!<%8%'%s%H$,Hs>o$KJXMx$J5!G=$G$"$k;v$,J,$+$C$?(B
-$B$H;W$$$^$9!#$?$@!"ITK~$JE@$,$"$k$H$9$k$H!"Kh2s(B @kbd{J j} $B$d(B @kbd{J S} $BEy(B
-$B$r%-!<$G:n6H$7$J$1$l$P$J$i$J$$$3$H$G$7$g$&!#%*%s%i%$%s$HF1$8$h$&$JA`:n$G(B
-$B$d$j$H$j$G$-$?$i!"$H9M$($?;v$O$"$j$^$;$s$+(B?
-gnus-offline $B$O$=$N5!G=$rDs6!$7$^$9!#(B($BI.<T$N<qL#$G(B gnus-agent $B$r;HMQ$9$k(B
-$B;v$r?d>)$7$^$9!#(B@code{MIEE} $B$K$D$$$F$O8e=R;2>H(B)
-
-*Group* $B%P%C%U%!$G(B @kbd{g} $B$r2!$9;v$G(B
-
-@lisp
- (Dialup $B$NI,MW$J4D6-$G$O(B Dialup) ->
-  Mail $B$N<hF@(B ->
-  Spool $B$KN/$C$?(B message $B$NAw?.(B ->
-  News $B$NAw?.(B ->
-  $BITMW$J5-;v$N(B expire
-@end lisp
-
-$B$^$G$r9T$$$^$9!#(B
-
-$B%$%s%9%H!<%k$O$$$?$C$F4JC1!#(B($B$3$3$^$G$G(B gnus-agent $B$N@_Dj$O=*$C$F$$$k$H(B
-$B2>Dj$7$^(B
-$B$9(B) @file{~/.emacs} $B$N(B gnus-agent $B$N@_Dj$N$A$g$$$HA0$K(B
-
-@lisp
-(load "gnus-ofsetup")
-(gnus-setup-for-offline)
-(load gnus-offline-setting-file)
-@end lisp
-
-@acronym{POP} $B$H$$$l!"(BEmacs $B$r:F5/F0$7$F$/$@$5$$!#$9$k$H!"$5$^$6$^$J<ALd(B
-$B$r$5$l$k$H;W$$$^$9!#$=$3$G$O!"$"$J$?$N4D6-$K$"$C$?Ez$($r$7$F$/$@$5$$!#<A(B
-$BLd$,=*$k$H!"@_DjMQ$N%U%!%$%k(B @file{~/.gnus-offline.el} $B$,:n@.$5$l$^$9!#(B
-$B$3$3$K!"I,MW$J@_DjA4$F$,=q$+$l$F$$$^$9!#(BGnus $B$N5/F0$,=*$j!"(B($BB?(B
-$BJ,(B @acronym{POP} $B%5!<%P!<$N%Q%9%o!<%I$rJ9$+$l$k$H;W$$$^$9$,(B) *Group* $B%P%C(B
-$B%U%!$K$J$C$?$i!"(B@kbd{J j} $B$d(B @kbd{J S} $BEy$NA`:n$OI,MW$"$j$^$;$s!#(B
-News/Mail $B$r?75,$G<hF@$7$?$1$l$P!"(B*Group* $B%P%C%U%!$G(B @kbd{g} $B$r2!$9$@$1(B
-$B$G$9!#(B
-
-@code{MIEE} = Message Intercepting and Entrusting Emacs library.
-Message $B$r2#<h$j$7$F!"(Boffline $B$G(B post/send $B$9$k$?$a$NHFMQ%i%$%V%i%j$G$9!#(B
-
-$B$3$N(B @code{MIEE} $B$r;H$&$H(B @code{gnus-offline} $B$rMQ$$$F(B@code{nnspool} $B$b(B
-$B%3%s%H%m!<%k$9$k;v$,$G$-$^$9(B($B$3$3$G$O=R$Y$^$;$s$,!D(B)$B!#(B($B$b$A$m(B
-$B$s(B @code{gnus-agent} + @code{MIEE} $B$H$$$&AH9g$;$b2DG=$G(B
-$B$9(B) @code{MIEE} $B$O(B @uref{http://www.shiojiri.ne.jp/%7Et-ichi/lisp/miee.el} $B$+(B
-$B$i<h$C$FMh$k;v$,$G$-$^$9!#(B@code{gnus-setup-for-offline} $B$G@_Dj$7$?>l9g$K(B
-$B$O!"(B@code{MIEE} $B$N@_Dj$O$$$C$5$$$7$J$/$F$b$+$^$$$^$;$s!#(B
-
-@table @code
-@vindex gnus-offline-articles-to-fetch
-@item gnus-offline-articles-to-fetch
-$B$3$NJQ?t$O<hF@$9$k5-;v$N<oN`$r;XDj$7$^$9!#(B'mail $B$N>l9g$O!"(BMail $B$@$1$r<h(B
-$BF@$7$^$9!#(B'news $B$N>l9g$O!"(BNews $B$@$1$r<hF@$7$^$9!#(B'both $B$N>l9g$O!"(B
-Mail/News $BN>J}$r<hF@$7$^$9!#(B
-
-@vindex gnus-offline-load-hook
-@item gnus-offline-load-hook
-$B$3$NJQ?t$O(B @code{gnus-offline} $B$,(B load $B$5$l$kA0$KI>2A$5$l$k(B hook $B$G$9!#(B
-
-@vindex gnus-offline-before-online-hook
-@item gnus-offline-before-online-hook
-$B$3$NJQ?t$O(B Gnus $B$,(B Online(Plugged) $B>uBV$K$J$kD>A0$KI>2A$5$l$k(B hook $B$G$9!#(B
-
-@vindex gnus-offline-after-online-hook
-@item gnus-offline-after-online-hook
-$B$3$NJQ?t$O(B Gnus $B$,(B Offline(UnPlugged) $B>uBV$K$J$C$?8e$KI>2A$5$l$k(B hook $B$G(B
-$B$9!#(B
-
-@vindex gnus-offline-interval-time
-@item gnus-offline-interval-time
-$B$3$NJQ?t$G;XDj$5$l$?4V(B
-$B3V(B ($BIC?t(B) $B$G(B @code{gnus-offline-articles-to-fetch} $B$G;XDj$5$l(B
-$B$?(B article $B$r<hF@$7$^$9!#F0:n$K$O(B@code{gnus-daemon} $B$r;HMQ$7$F$$$^$9!#(B
-
-@vindex gnus-offline-dialup-function
-@item gnus-offline-dialup-function
-$B$3$NJQ?t$G;XDj$5$l$?4X?t$,(B dialup $B;~$K<B9T$5$l!"(BDialup $B$7%5!<%P!<$K@\B3(B
-$B$7$^$9!#(B
-
-@vindex gnus-offline-hangup-function
-@item gnus-offline-hangup-function
-$B$3$NJQ?t$G;XDj$5$l$?4X?t$,(B hangup $B;~$K<B9T$5$l!"%5!<%P!<$H$N2s@~$r@ZCG$7(B
-$B$^$9!#(B
-@end table
 
 @node Agent Caveats
 @subsection $B%(!<%8%'%s%H$NLdBjE@(B
