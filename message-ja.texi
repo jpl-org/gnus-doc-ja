@@ -848,9 +848,8 @@ Message $B$O(B @code{From}$B!"(B@code{To} $B$*$h$S(B @code{Cc} $B%X%C%@!<
 $B$3$N5!G=$r;H$&$K$O(B @uref{http://www.gnu.org/software/libidn/, GNU
 Libidn} $B$r%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!#(B
 
-@c TRANSLATEME
 @node Security
-@section Security
+@section $B%;%-%e%j%F%#!<(B
 @cindex Security
 @cindex S/MIME
 @cindex PGP
@@ -859,189 +858,191 @@ Libidn} $B$r%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!#(B
 @cindex encrypt
 @cindex secure
 
-Using the @acronym{MML} language, Message is able to create digitally
-signed and digitally encrypted messages.  Message (or rather
-@acronym{MML}) currently support @acronym{PGP} (RFC 1991),
-@acronym{PGP/MIME} (RFC 2015/3156) and @acronym{S/MIME}.  Instructing
-@acronym{MML} to perform security operations on a @acronym{MIME} part is
-done using the @kbd{C-c C-m s} key map for signing and the @kbd{C-c C-m
-c} key map for encryption, as follows.
+@acronym{MML} $B$r;H$C$F!"(BMessage $B$OEE;R=pL>$5$l$?!"$^$?$OEE;R0E9f2=$5$l$?(B
+$B%a%C%;!<%8$r:n$k$3$H$,$G$-$^$9!#(BMessage ($B$H8@$&$+(B @acronym{MML}) $B$O!"8=(B
+$B:_(B @acronym{PGP} (RFC 1991), @acronym{PGP/MIME} (RFC 2015/3156) $B$*$h(B
+$B$S(B @acronym{S/MIME} $B$r%5%]!<%H$7$^$9!#(B@acronym{MIME} $B%Q!<%H$KBP$7$F%;%-%e(B
+$B%j%F%#!<$NA`:n$r9T$J$&$?$a$N(B @acronym{MML} $B$X$N;X<($O!"0J2<$N$h$&$K!"=p(B
+$BL>$N>l9g$O(B @kbd{C-c C-m s} $B%-!<%^%C%W$r;H$C$F!"0E9f2=$N>l9g$O(B @kbd{C-c
+C-m c} $B%-!<%^%C%W$r;H$C$F9T$J$$$^$9!#(B
 
 @table @kbd
-
 @item C-c C-m s s
 @kindex C-c C-m s s
 @findex mml-secure-message-sign-smime
 
-Digitally sign current message using @acronym{S/MIME}.
+@acronym{S/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$KEE;R=qL>$7$^$9!#(B
 
 @item C-c C-m s o
 @kindex C-c C-m s o
 @findex mml-secure-message-sign-pgp
 
-Digitally sign current message using @acronym{PGP}.
+@acronym{PGP} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$KEE;R=qL>$7$^$9!#(B
 
 @item C-c C-m s p
 @kindex C-c C-m s p
 @findex mml-secure-message-sign-pgpmime
 
-Digitally sign current message using @acronym{PGP/MIME}.
+@acronym{PGP/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$KEE;R=qL>$7$^$9!#(B
 
 @item C-c C-m c s
 @kindex C-c C-m c s
 @findex mml-secure-message-encrypt-smime
 
-Digitally encrypt current message using @acronym{S/MIME}.
+@acronym{S/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
 
 @item C-c C-m c o
 @kindex C-c C-m c o
 @findex mml-secure-message-encrypt-pgp
 
-Digitally encrypt current message using @acronym{PGP}.
+@acronym{PGP} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
 
 @item C-c C-m c p
 @kindex C-c C-m c p
 @findex mml-secure-message-encrypt-pgpmime
 
-Digitally encrypt current message using @acronym{PGP/MIME}.
+@acronym{PGP/MIME} $B$r;H$C$F!"8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
 
 @item C-c C-m C-n
 @kindex C-c C-m C-n
 @findex mml-unsecure-message
-Remove security related @acronym{MML} tags from message.
-
+$B%a%C%;!<%8$+$i!"%;%-%e%j%F%#!<4XO"$N(B @acronym{MML} $B%?%0$r30$7$^$9!#(B
 @end table
 
-These commands do not immediately sign or encrypt the message, they
-merely insert the proper @acronym{MML} secure tag to instruct the
-@acronym{MML} engine to perform that operation when the message is
-actually sent.  They may perform other operations too, such as locating
-and retrieving a @acronym{S/MIME} certificate of the person you wish to
-send encrypted mail to.  When the mml parsing engine converts your
-@acronym{MML} into a properly encoded @acronym{MIME} message, the secure
-tag will be replaced with either a part or a multipart tag.  If your
-message contains other mml parts, a multipart tag will be used; if no
-other parts are present in your message a single part tag will be used.
-This way, message mode will do the Right Thing (TM) with
-signed/encrypted multipart messages.
+$B$3$l$i$N%3%^%s%I$O!"$=$N>l$G%a%C%;!<%8$K=pL>$7$?$j0E9f2=$9$k$o$1$G$O$J$/!"(B
+$B$=$l$i$OC1$K%;%-%e%j%F%#!<$N$?$a$NE,@Z$J(B @acronym{MML} $B%?%0$rA^F~$7$F!"(B
+$B%a%C%;!<%8$,<B:]$KAw?.$5$l$k$H$-$K$=$NF0:n$r<B9T$9$k$h$&$K!"(B
+@acronym{MML} $B%(%s%8%s$K;X<($rM?$($k$@$1$G$9!#$=$l$i$OB>$N;E;v!"Nc$($P0E(B
+$B9f2=$5$l$?%a!<%k$rAw$j$?$$Aj<j$N?M$N(B @acronym{S/MIME} $B$N>ZL@=q$rC5$7$F<h(B
+$B$j4s$;$k$h$&$J$3$H$b9T$J$&$+$b$7$l$^$;$s!#(Bmml $B2r@O%(%s%8%s(B
+$B$,(B @acronym{MML} $B$G=q$+$l$?%a%C%;!<%8$r(B @acronym{MIME} $B%a%C%;!<%8$KE,@Z(B
+$B$KJQ49$9$k$H$-!"%;%-%e%j%F%#!<$N$?$a$N%?%0$O!"%Q!<%H$^$?$O%^%k%A%Q!<%H$N(B
+$B$I$A$i$+0lJ}$N%?%0$GCV$-49$($i$l$^$9!#%a%C%;!<%8$,B>$N(B mml $B%Q!<%H$b4^$s(B
+$B$G$$$k>l9g$K$O%^%k%A%Q!<%H$N%?%0$,;H$o$l!"B>$N%Q!<%H$,L5$$>l9g$OC10l$N%Q!<(B
+$B%H$N%?%0$,;H$o$l$k$G$7$g$&!#$3$N$h$&$K$7$F!"=pL>$5$l$k(B/$B0E9f2=$5$l$k%^%k(B
+$B%A%Q!<%H$N%a%C%;!<%8$KBP$7!"%a%C%;!<%8!&%b!<%I$O!V@5$7$$$3$H(B ($BEPO?>&I8(B)$B!W(B
+($B86J8(B: Right Thing (TM)) $B$r9T$J$$$^$9!#(B
 
-Since signing and especially encryption often is used when sensitive
-information is sent, you may want to have some way to ensure that your
-mail is actually signed or encrypted.  After invoking the above
-sign/encrypt commands, it is possible to preview the raw article by
-using @kbd{C-u C-c RET P} (@code{mml-preview}).  Then you can
-verify that your long rant about what your ex-significant other or
-whomever actually did with that funny looking person at that strange
-party the other night, actually will be sent encrypted.
+$B=pL>$=$7$FFC$K0E9f2=$O!"$7$P$7$P5!L)>pJs$rAw?.$9$k$H$-$K;H$o$l$k$N$G!"%a!<(B
+$B%k$,K\Ev$K=pL>$^$?$O0E9f2=$5$l$k$3$H$r3N<B$K$9$k$?$a$N!"2?$i$+$N<jCJ$rI,(B
+$BMW$H$9$k$G$7$g$&!#>e5-$N=pL>(B/$B0E9f2=%3%^%s%I$r<B9T$7$?8e$G$J$i!"(B@kbd{C-u
+C-c RET P} (@code{mml-preview}) $B$r;H$&$3$H$K$h$C$F!"@8$N5-;v$r2<8+$9$k$3(B
+$B$H$,2DG=$G$9!#$=$&$7$F!"$"$J$?$N0JA0$KBg@Z$@$C$??M$K4X$9$k!"$"$k$$$O!"$3(B
+$B$NA0$NLk$NJQ$J%Q!<%F%#!<$G!"$"$N$*$+$7$J?H$J$j$N?M$,<B:]$K$d$C$?$3$H$K4X(B
+$B$9$k$"$J$?$ND9$$GME]$,!"K\Ev$K0E9f2=$5$l$FAw?.$5$l$k$G$"$m$&$3$H$r!"3NG'(B
+$B$9$k$3$H$,$G$-$^$9!#(B
 
-@emph{Note!}  Neither @acronym{PGP/MIME} nor @acronym{S/MIME} encrypt/signs
-RFC822 headers.  They only operate on the @acronym{MIME} object.  Keep this
-in mind before sending mail with a sensitive Subject line.
+@emph{$BCm0U(B!}  @acronym{PGP/MIME} $B$H(B @acronym{S/MIME} $B$N$I$A$i$b!"(B
+RFC822 $B%X%C%@!<$r=pL>(B/$B0E9f2=$7$^$;$s!#$=$l$i$O(B @acronym{MIME} $B%Q!<%H$K$N(B
+$B$_:nMQ$7$^$9!#5!L)$NBjL>$H$H$b$K%a!<%k$rAw$C$F$7$^$&A0$K!"$3$N$3$H$r4N$K(B
+$BL?$8$F2<$5$$!#(B
 
-By default, when encrypting a message, Gnus will use the
-``signencrypt'' mode, which means the message is both signed and
-encrypted.  If you would like to disable this for a particular
-message, give the @code{mml-secure-message-encrypt-*} command a prefix
-argument, e.g., @kbd{C-u C-c C-m c p}.
+$B%a%C%;!<%8$r0E9f2=$9$k$H$-!"(BGnus $B$O%G%#%U%)%k%H$G!V=pL>(B+$B0E9f2=!W(B($B%a%C%;!<(B
+$B%8$KBP$7$F=pL>$H0E9f2=$NN>J}$,9T$J$o$l$k(B) $B%b!<%I$r;H$$$^$9!#FCDj$N%a%C%;!<(B
+$B%8$KBP$7$F$3$l$r9T$J$o$;$?$/$J$$$J$i$P!"(B
+@code{mml-secure-message-encrypt-*} $B%3%^%s%I$K@\F,0z?t$rM?$($F(B ($BNc$((B
+$B$P(B @kbd{C-u C-c C-m c p} $B$r;H$C$F(B) $B2<$5$$!#(B
 
-Actually using the security commands above is not very difficult.  At
-least not compared with making sure all involved programs talk with each
-other properly.  Thus, we now describe what external libraries or
-programs are required to make things work, and some small general hints.
+$B>e5-$N%;%-%e%j%F%#!<%3%^%s%I$r<B:]$K;H$&$N$O!"$5$[$IFq$7$/$"$j$^$;$s!#>/(B
+$B$J$/$H$b!"$9$Y$F$N4X78$9$k%W%m%0%i%`$,E,@Z$KDL?.$79g$&$3$H$r3N$+$a$k$3$H(B
+$B$HHf3S$7$F!#$=$3$G!"30It$N$I$s$J%i%$%V%i%j!<$^$?$O%W%m%0%i%`$,I,MW$+!"$*(B
+$B$h$S$$$/$D$+$N:3:Y$G0lHLE*$J%R%s%H$K$D$$$F!"=R$Y$k$3$H$K$7$^$9!#(B
 
-@subsection Using S/MIME
+@subsection S/MIME $B$r;H$&(B
 
-@emph{Note!}  This section assume you have a basic familiarity with
-modern cryptography, @acronym{S/MIME}, various PKCS standards, OpenSSL and
-so on.
+@emph{$BCm0U(B!}  $B$3$N9`$O!"6aBeE*$J0E9fK!!"(B@acronym{S/MIME}$B!"$5$^$6$^(B
+$B$J(B PKCS $B$NI8=`!"(BOpenSSL $B$J$I$N4pAC$K!"$"$J$?$,@:DL$7$F$$$k$3$H$r2>Dj$7$^(B
+$B$9!#(B
 
-The @acronym{S/MIME} support in Message (and @acronym{MML}) require
-OpenSSL.  OpenSSL performs the actual @acronym{S/MIME} sign/encrypt
-operations.  OpenSSL can be found at @uref{http://www.openssl.org/}.
-OpenSSL 0.9.6 and later should work.  Version 0.9.5a cannot extract mail
-addresses from certificates, and it insert a spurious CR character into
-@acronym{MIME} separators so you may wish to avoid it if you would like
-to avoid being regarded as someone who send strange mail.  (Although by
-sending @acronym{S/MIME} messages you've probably already lost that
-contest.)
+Message ($B$=$l$K(B @acronym{MML}) $B$G(B @acronym{S/MIME} $B$r%5%]!<%H$9$k$K$O!"(B
+OpenSSL $B$,I,MW$G$9!#(BOpenSSL $B$O<B:]$N(B @acronym{S/MIME} $B$K$h$k=pL>(B/$B0E9f2=(B
+$B$N=hM}$r<B9T$7$^$9!#(BOpenSSL $B$O(B @uref{http://www.openssl.org/} $B$G8+$D$+$j(B
+$B$^$9!#(BOpenSSL 0.9.6 $B0J9_$N$b$N$,F0:n$9$k$O$:$G$9!#%P!<%8%g%s(B 0.9.5a $B$O>Z(B
+$BL@=q$+$i%a!<%k%"%I%l%9$rCj=P$9$k$3$H$,$G$-$J$$$7!"(B@acronym{MIME} $B$N%;%Q(B
+$B%l!<%?$KM>7W$J(B CR $BJ8;z$rA^F~$9$k$N$G!"JQ$J%a!<%k$rAw$k?M$@$H;W$o$l$?$/$J(B
+$B$1$l$P!"$=$l$r;H$&$3$H$rHr$1$?$$$G$7$g$&!#(B($B$b$C$H$b!"$"$J$?(B
+$B$O(B @acronym{S/MIME} $B$N%a%C%;!<%8$rAw$k$3$H$K$h$C$F!"$=$NJQ?M%3%s%F%9%H$G(B
+$B$N>!Mx$rF($7$^$7$?$,!#(B)
 
-To be able to send encrypted mail, a personal certificate is not
-required.  Message (@acronym{MML}) need a certificate for the person to whom you
-wish to communicate with though.  You're asked for this when you type
-@kbd{C-c C-m c s}.  Currently there are two ways to retrieve this
-certificate, from a local file or from DNS.  If you chose a local
-file, it need to contain a X.509 certificate in @acronym{PEM} format.
-If you chose DNS, you're asked for the domain name where the
-certificate is stored, the default is a good guess.  To my belief,
-Message (@acronym{MML}) is the first mail agent in the world to support
-retrieving @acronym{S/MIME} certificates from DNS, so you're not
-likely to find very many certificates out there.  At least there
-should be one, stored at the domain @code{simon.josefsson.org}.  LDAP
-is a more popular method of distributing certificates, support for it
-is planned.  (Meanwhile, you can use @code{ldapsearch} from the
-command line to retrieve a certificate into a file and use it.)
+$B0E9f2=$5$l$?%a!<%k$rAw$k$?$a$K!"8D?M$N>ZL@=q$OMW$j$^$;$s!#(BMessage
+(@acronym{MML}) $B$O!"DL?.$7$?$$Aj<j$N?M$N>ZL@=q$rI,MW$H$7$^$9$1$l$I!#(B
+$B$3$N$3$H$O(B @kbd{C-c C-m c s} $B$r%?%$%W$7$?$H$-$K?R$M$i$l$^$9!#$3$N>ZL@=q(B
+$B$r%m!<%+%k%U%!%$%k$+(B DNS $B$+$i<h$j4s$;$k$?$a$K$O!"8=:_Fs$D$NJ}K!$,$"$j$^(B
+$B$9!#%m!<%+%k%U%!%$%k$rA*Br$7$?>l9g!"$=$l$O(B @acronym{PEM} $B7A<0$K$h(B
+$B$k(B X.509 $B>ZL@=q$r4^$s$G$$$kI,MW$,$"$j$^$9!#(BDNS $B$rA*$s$@>l9g$K$O!"$=$N>Z(B
+$BL@=q$,3JG<$5$l$F$$$k%I%a%$%sL>$r?R$M$i$l$^$9(B ($B%G%#%U%)%k%H$O>e<j$K?dB,$7(B
+$B$?$b$N$G$9(B)$B!#;d$,?.$8$k8B$j!"(B
+Message (@acronym{MML}) $B$O(B @acronym{S/MIME} $B$N>ZL@=q$r(B DNS $B$+$i<h$j4s$;(B
+$B$k@$3&=i$N%a!<%k!&%(!<%8%'%s%H$J$N$G!"$=$3$GHs>o$KB?$/$N>ZL@=q$r8+$D$1=P(B
+$B$9$3$H$O$J$$$G$7$g$&!#>/$J$/$H$b0l$D$@$1$O!"(B
+@code{simon.josefsson.org} $B%I%a%$%s$K3JG<$5$l$?$b$N$,$"$k$O$:$G$9!#(B
+LDAP $B$O$b$C$HIa5Z$7$F$$$k>ZL@=q$rG[5k$9$k<jK!$G!"$=$l$r%5%]!<%H$9$k$3$H(B
+$B$,7W2h$5$l$F$$$^$9!#(B($BOCJQ$o$C$F!"(B@code{ldapsearch} $B$r%3%^%s%I%i%$%s$+$i(B
+$B<B9T$7$F>ZL@=q$r%U%!%$%k$K<h$j9~$s$G!"$=$l$r;H$&$3$H$,$G$-$^$9!#(B)
 
-As for signing messages, OpenSSL can't perform signing operations
-without some kind of configuration.  Especially, you need to tell it
-where your private key and your certificate is stored.  @acronym{MML}
-uses an Emacs interface to OpenSSL, aptly named @code{smime.el}, and it
-contain a @code{custom} group used for this configuration.  So, try
-@kbd{M-x customize-group RET smime RET} and look around.
+$B%a%C%;!<%8$N=pL>$K$D$$$F$O!"$"$k<o$N@_DjL5$7$G$O(B OpenSSL $B$O=pL>$N=hM}$r(B
+$B<B9T$9$k$3$H$,$G$-$^$;$s!#$H$j$o$1!"$"$J$?$NHkL)80(B (private key) $B$H>ZL@(B
+$B=q$,$I$3$K3JG<$5$l$F$$$k$+$r65$($F$"$2$kI,MW$,$"$j$^$9!#(B@acronym{MML} $B$O(B
+$B$=$NL>$K$U$5$o$7$$(B @code{smime.el} $B$H$$$&(B Emacs $B%$%s%?!<%U%'!<%9(B
+$B$r(B OpenSSL $B$KBP$7$F;H$$!"$=$l$O$3$N@_Dj$K;H$&$?$a$N$?$a(B
+$B$N(B @code{custom} $B%0%k!<%W$r4^$s$G$$$^$9!#$G$9$+$i!"(B
+@kbd{M-x customize-group RET smime RET} $B$r;n$7$F!"D/$a$F$_$F2<$5$$!#(B
 
-Currently there is no support for talking to a CA (or RA) to create
-your own certificate.  None is planned either.  You need to do this
-manually with OpenSSL or using some other program.  I used Netscape
-and got a free @acronym{S/MIME} certificate from one of the big CA's on the
-net.  Netscape is able to export your private key and certificate in
-PKCS #12 format.  Use OpenSSL to convert this into a plain X.509
-certificate in PEM format as follows.
+$B8=:_$O!"(BCA ($B$^$?$O(B RA) $B$HDL?.$7$F$"$J$?<+?H$N>ZL@=q$r@8@.$9$k$?$a$N%5%]!<(B
+$B%H$O$"$j$^$;$s!#$=$l$K7W2h$b$"$j$^$;$s!#;d$O(B Netscape $B$r;H$C$F!"%M%C%H>e(B
+$B$K$"$kBg$-$J(B CA $B$N0l$D$+$i!"L5NA$N(B @acronym{S/MIME} $B$N>ZL@=q$r$b$i$$$^$7(B
+$B$?!#(BNetscape $B$OHkL)80$H>ZL@=q$r(B PKCS #12 $B7A<0$GM"=P(B (export) $B$9$k$3$H$,(B
+$B$G$-$^$9!#(BOpenSSL $B$r;H$C$F!"$3$l$r0J2<$N$h$&$K(B PEM $B7A<0$K$h$kAG(B
+$B$N(B (plain) X.509 $B>ZL@=q$KJQ49$7$F2<$5$$!#(B
 
 @example
 $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 @end example
 
-The @file{key+cert.pem} file should be pointed to from the
-@code{smime-keys} variable.  You should now be able to send signed mail.
+@code{smime-keys} $BJQ?t$,!"(B@file{key+cert.pem} $B%U%!%$%k$r;X$7<($9$h$&$K$7(B
+$B$J$1$l$P$J$j$^$;$s!#:#$d$"$J$?$O!"=pL>$5$l$?%a%C%;!<%8$rAw?.$G$-$k$O$:$G(B
+$B$9!#(B
 
-@emph{Note!}  Your private key is now stored unencrypted in the file,
-so take care in handling it.  Storing encrypted keys on the disk are
-supported, and Gnus will ask you for a passphrase before invoking
-OpenSSL.  Read the OpenSSL documentation for how to achieve this.  If
-you use unencrypted keys (e.g., if they are on a secure storage, or if
-you are on a secure single user machine) simply press @code{RET} at
-the passphrase prompt.
+@emph{$BCm0U(B!}  $B$"$J$?$N80$O:#!"0E9f2=$5$l$:$K%U%!%$%k$K3JG<$5$l$?$N$G!"$=(B
+$B$l$N07$$$K$O5$$rIU$1$F2<$5$$!#0E9f2=$5$l$?80$N%U%!%$%k$X$N3JG<$O%5%]!<%H(B
+$B$5$l$F$$$F!"$=$N>l9g$O(B OpenSSL $B$r:nF0$9$kA0$K(B Gnus $B$,%Q%9%U%l!<%:$r?R$M(B
+$B$k$G$7$g$&!#$I$&$d$C$F$=$l$r@.$7?k$2$k$+$K$D$$$F$O!"(BOpenSSL $B$N%I%-%e%a%s(B
+$B%H$rFI$s$G2<$5$$!#0E9f2=$5$l$F$$$J$$80$r;H$&(B ($BNc$($P$=$l$i$,0BA4$J%9%H%l!<(B
+$B%8$K$"$k!"$^$?$O!"$"$J$?$,0BA4$J%7%s%0%k!&%f!<%6$N%^%7%s$K$$$k(B) $B$N$G$"$l(B
+$B$P!"%Q%9%U%l!<%:$NF~NO$rMW5a$5$l$?$H$-!"C1$K(B @kbd{RET} $B$r2!$7$F2<$5$$!#(B
 
-@subsection Using PGP/MIME
+@subsection PGP/MIME $B$r;H$&(B
 
-@acronym{PGP/MIME} requires an external OpenPGP implementation, such
-as @uref{http://www.gnupg.org/, GNU Privacy Guard}.  Pre-OpenPGP
-implementations such as PGP 2.x and PGP 5.x are also supported.  One
-Emacs interface to the PGP implementations, PGG (@pxref{Top, ,PGG,
-pgg-ja, PGG Manual}), is included, but Mailcrypt and Florian Weimer's
-@code{gpg.el} are also supported.
+@acronym{PGP/MIME} $B$O(B @uref{http://www.gnupg.org/, GNU Privacy Guard} $B$N(B
+$B$h$&$J!"30It$N(B OpenPGP $B$N<BAu$rI,MW$H$7$^$9!#(BOpenPGP $B$h$j0JA0$N<BAu$G$"(B
+$B$k(B PGP 2.x $B$H(B PGP 5.x $B$b%5%]!<%H$7$^$9!#(BPGP $B$N<BAu$X$N0l$D$N(B Emacs $B%$%s(B
+$B%?!<%U%'!<%9$G$"$k(B (@pxref{Top, ,PGG, pgg-ja, PGG Manual}) $B$,4^$^$l$F$$(B
+$B$^$9$,!"(BMailcrypt $B$H(B Florian Weimer $B$5$s$N(B @code{gpg.el} $B$b%5%]!<%H$7$^(B
+$B$9!#(B
 
 @vindex gpg-temp-directory
-Note, if you are using the @code{gpg.el} you must make sure that the
-directory specified by @code{gpg-temp-directory} have permissions
-0700.
+$BCm(B: $B$b$7(B @code{gpg.el} $B$r;H$&$N$G$"$l$P!"(B@code{gpg-temp-directory} $B$G;X(B
+$BDj$5$l$k%G%#%l%/%H%j$N%Q!<%_%C%7%g%s$,(B 0700 $B$K$J$C$F$$$k$3$H$r3NG'$7$F2<(B
+$B$5$$!#(B
 
-Creating your own key is described in detail in the documentation of
-your PGP implementation, so we refer to it.
+$B$"$J$?$N(B PGP $B$N<BAu$N%I%-%e%a%s%H$G>\$7$/=R$Y$i$l$F$$$k$N$G!"$"$J$?<+?H(B
+$B$N$?$a$N80$N@8@.$N$7$+$?$O!"$=$l$K>y$j$^$9!#(B
 
-If you have imported your old PGP 2.x key into GnuPG, and want to send
-signed and encrypted messages to your fellow PGP 2.x users, you'll
-discover that the receiver cannot understand what you send. One
-solution is to use PGP 2.x instead (i.e., if you use @code{pgg}, set
-@code{pgg-default-scheme} to @code{pgp}).  If you do want to use
-GnuPG, you can use a compatibility script called @code{gpg-2comp}
-available from
-@uref{http://muppet.faveve.uni-stuttgart.de/~gero/gpg-2comp/}.  You
-could also convince your fellow PGP 2.x users to convert to GnuPG.
+$B$b$7$"$J$?$,8E$$(B PGP 2.x $B$N80$r(B GnuPG $B$KM"F~$7$F$"$C$F!"(BPGP 2.x $B$r;H$C$F(B
+$B$$$kAj<j$K=pL>$5$l$+$D0E9f2=$5$l$?%a%C%;!<%8$rAw$j$?$$$H$9$k$H!"<u?.<T$O(B
+$B$"$J$?$,Aw?.$7$?$b$N$rM}2r$G$-$J$$$3$H$rH/8+$9$k$3$H$K$J$k$G$7$g$&!#0l$D(B
+$B$N2r$O!"Be$o$j$K(B PGP 2.x $B$r;H$&$3$H(B ($B$9$J$o$A!"$b$7(B @code{pgg} $B$r;H$C$F(B
+$B$$$k$N$G$"$l$P!"(B@code{pgg-default-scheme} $B$r(B @code{pgp} $B$K@_Dj$9$k$3(B
+$B$H(B) $B$G$9!#(BGnuPG $B$r;H$$$?$/$J$$$N$G$"$l$P!"(B@code{gpg-2comp} $B$H$$$&8_49@-(B
+$B$,$"$k%9%/%j%W%H(B
+$B$r(B @uref{http://muppet.faveve.uni-stuttgart.de/~gero/gpg-2comp/} $B$rF~<j(B
+$B$7$F!";H$&$3$H$,$G$-$^$9!#(BPGP 2.x $B$r;H$C$F$$$kAj<j$N?M$K!"(BGnuPG $B$K>h$j49(B
+$B$($k$3$H$rG<F@$5$;$k$3$H$b$G$-$k$G$7$g$&!#(B
 @vindex mml-signencrypt-style-alist
-As a final workaround, you can make the sign and encryption work in
-two steps; separately sign, then encrypt a message.  If you would like
-to change this behavior you can customize the
-@code{mml-signencrypt-style-alist} variable.  For example:
+$B:G8e$NBeBX<jCJ$H$7$F!"=pL>$H0E9f2=$NF0:n$rFsCJ3,(B ($BJ,N%=pL>$7$F$+$i%a%C%;!<(B
+$B%8$r0E9f2=$9$k(B) $B$K$9$k$3$H$,$G$-$^$9!#$3$N?6$kIq$$$rJQ99$7$?$$$N$G$"$l$P!"(B
+@code{mml-signencrypt-style-alist} $BJQ?t$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B
+$BNc$($P(B:
 
 @lisp
 (setq mml-signencrypt-style-alist '(("smime" separate)
@@ -1050,11 +1051,11 @@ to change this behavior you can customize the
                                     ("pgpmime" separate)))
 @end lisp
 
-This causes to sign and encrypt in two passes, thus generating a
-message that can be understood by PGP version 2.
+$B$3$l$O=pL>$H0E9f2=$rFs%Q%9$G9T$J$o$;$k$3$H$K$h$C$F!"(BPGP version 2 $B$,M}2r(B
+$B$G$-$k%a%C%;!<%8$N@8@.$r$b$?$i$7$^$9!#(B
 
-(Refer to @uref{http://www.gnupg.org/gph/en/pgp2x.html} for more
-information about the problem.)
+($B$=$NLdBj$K4X$9$k$5$i$J$k>pJs$K$D$$$F!"(B
+@uref{http://www.gnupg.org/gph/en/pgp2x.html} $B$r;2>H$7$F2<$5$$!#(B)
 
 @node Various Commands
 @section $B$$$m$$$m$JL?Na(B
@@ -1848,16 +1849,16 @@ RFC1036bis $B$O!"=pL>$O$=$NA0$K(B @samp{-- } $B$N(B3$BJ8;z$@$1$N9T$,$"$k$Y$
 @section $B$$$m$$$m$J%a%C%;!<%8JQ?t(B
 
 @table @code
-@c TRANSLATEME
 @item message-default-charset
 @vindex message-default-charset
 @cindex charset
-Symbol naming a @acronym{MIME} charset.  Non-@acronym{ASCII}
-characters in messages are assumed to be encoded using this charset.
-The default is @code{nil}, which means ask the user.  (This variable
-is used only on non-@sc{mule} Emacsen.  @xref{Charset Translation, ,
-Charset Translation, emacs-mime-ja, Emacs MIME Manual}, for details on
-the @sc{mule}-to-@acronym{MIME} translation process.
+@acronym{MIME} $BJ8;z%;%C%HL>$N%7%s%\%k!#%a%C%;!<%8Fb$N(B
+$BHs(B-@acronym{ASCII} $BJ8;z$O!"$3$NJ8;z%;%C%H$r;H$C$F%(%s%3!<%I$5$l$k$b$N$H(B
+$B2>Dj$7$^$9!#=i4|CM$O(B @code{nil} $B$G!"%f!<%6$K?R$M$k$3$H$r0UL#$7$^$9!#(B($B$3(B
+$B$NJQ?t$OHs(B-@sc{mule} $B$J(B Emacs $B$G$N$_;H$o$l$^$9!#(B@sc{mule} $B$+(B
+$B$i(B @acronym{MIME} $B$X$NCV$-49$(=hM}$N>\:Y$O(B @xref{Charset Translation, ,
+Charset Translation, emacs-mime-ja, Emacs MIME Manual}, $B$r;2>H$7$F2<$5(B
+$B$$!#(B)
 
 @item message-signature-separator
 @vindex message-signature-separator
