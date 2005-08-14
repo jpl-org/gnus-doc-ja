@@ -10632,30 +10632,17 @@ Gnus は @acronym{MIME} パートを表示するために、
 ファイル名を尋ねて @acronym{MIME} オブジェクトをセーブしま
 す (@code{gnus-mime-save-part})。
 
-@c TRANSLATEME
 @findex gnus-mime-save-part-and-strip
 @item C-o (Article)
 @kindex C-o (Article)
-Prompt for a file name, then save the @acronym{MIME} object and strip it from
-the article.
-
 ファイル名を尋ね、@acronym{MIME} オブジェクトをセーブして、それを記事か
-ら取り外します。
-
-              Then proceed to article editing, where a reasonable
-suggestion is being made on how the altered article should look
-like.
-
-(さて、これ↑はどうやって訳す?)
-
-       The stripped @acronym{MIME} object will be referred via the
-message/external-body @acronym{MIME} type.
-(@code{gnus-mime-save-part-and-strip}).
-
-取り外された @acronym{MIME} オブジェクトは、message/external-body
-@acronym{MIME} タイプとして参照されます。
+ら取り外します。そして、変更された記事がどのように見えるべきかについての
+合理的な提案が行われている (訳注: 何を言っているのか今一わからない)、記
+事の編集に移ります。取り外された @acronym{MIME} オブジェクト
+は message/external-body @acronym{MIME} タイプとして参照されます。
 (@code{gnus-mime-save-part-and-strip})。
 
+@c TRANSLATEME
 @findex gnus-mime-delete-part
 @item d (Article)
 @kindex d (Article)
