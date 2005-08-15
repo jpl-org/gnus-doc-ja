@@ -7,7 +7,7 @@
 @synindex pg cp
 
 @copying
-This file documents the Emacs MIME interface functionality.
+このファイルは Emacs MIME インターフェースの機能を文書化したものです。
 
 Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003
           Free Software Foundation, Inc.
@@ -51,7 +51,7 @@ license to the document, as described in section 6 of the license.
 
 @dircategory Emacs
 @direntry
-* Emacs MIME: (emacs-mime-ja).  Emacs MIME de/composition library.
+* Emacs MIME-ja: (emacs-mime-ja). Emacs MIME de/composition library (Japanese).
 @end direntry
 @iftex
 @finalout
@@ -70,69 +70,67 @@ license to the document, as described in section 6 of the license.
 @node Top
 @top Emacs MIME
 
-This manual documents the libraries used to compose and display
-@acronym{MIME} messages.
+このマニュアルは @acronym{MIME} メッセージの表示と作成に使われるライブラ
+リーを文書化したものです。
 
-This manual is directed at users who want to modify the behavior of
-the @acronym{MIME} encoding/decoding process or want a more detailed
-picture of how the Emacs @acronym{MIME} library works, and people who want
-to write functions and commands that manipulate @acronym{MIME} elements.
+このマニュアルは、@acronym{MIME} のエンコード/デコード・プロセスの振る舞
+いを変更したいか、Emacs @acronym{MIME} ライブラリーがどのように動作する
+かのもっと詳細な描写を望むユーザ、および @acronym{MIME} の要素を操作する
+関数およびコマンドを書きたい人たちを対象にしています。
 
-@acronym{MIME} is short for @dfn{Multipurpose Internet Mail Extensions}.
-This standard is documented in a number of RFCs; mainly RFC2045 (Format
-of Internet Message Bodies), RFC2046 (Media Types), RFC2047 (Message
-Header Extensions for Non-@acronym{ASCII} Text), RFC2048 (Registration
-Procedures), RFC2049 (Conformance Criteria and Examples).  It is highly
-recommended that anyone who intends writing @acronym{MIME}-compliant software
-read at least RFC2045 and RFC2047.
+@acronym{MIME} は @dfn{Multipurpose Internet Mail Extensions} の省略表記
+です。この標準は多数の RFC に文書化されていて、主なものは次の通りです:
+RFC2045 (インターネット・メッセージ本文の書式), RFC2046 (メディアタイプ),
+RFC2047 (メッセージヘッダーの非-@acronym{ASCII} テキスト拡張),
+RFC2048 (登録手続), RFC2049 (適合基準と事例)。@acronym{MIME} に準拠した
+ソフトウェアを書こうと思っている人は誰でも、少なくと
+も RFC2045 と RFC2047 は読んでおくことを強く勧めます。
 
 @menu
-* Decoding and Viewing::  A framework for decoding and viewing.
-* Composing::             @acronym{MML}; a language for describing @acronym{MIME} parts.
-* Interface Functions::   An abstraction over the basic functions.
-* Basic Functions::       Utility and basic parsing functions.
-* Standards::             A summary of RFCs and working documents used.
-* Index::                 Function and variable index.
+* Decoding and Viewing::  デコードと表示のための枠組み
+* Composing::             @acronym{MML}; @acronym{MIME} パート記述用言語
+* Interface Functions::   基本的な関数に関する抽象概念
+* Basic Functions::       ユーティリティーおよび基本的な解析のための関数
+* Standards::             使われている RFC と作業文書の概略
+* Index::                 関数および変数の索引
 @end menu
-
 
 @node Decoding and Viewing
-@chapter Decoding and Viewing
+@chapter デコードと表示
 
-This chapter deals with decoding and viewing @acronym{MIME} messages on a
-higher level.
+この章は、上位階層での @acronym{MIME} メッセージのデコードと表示を扱いま
+す。
 
-The main idea is to first analyze a @acronym{MIME} article, and then allow
-other programs to do things based on the list of @dfn{handles} that are
-returned as a result of this analysis.
+その主な目的は、最初に @acronym{MIME} の記事を解析し、次にその解析の結果
+返される「@dfn{ハンドル}」 のリストに基づいて、他のプログラムが物事を行
+なうことを可能にすることです。
 
 @menu
-* Dissection::             Analyzing a @acronym{MIME} message.
-* Non-MIME::               Analyzing a non-@acronym{MIME} message.
-* Handles::                Handle manipulations.
-* Display::                Displaying handles.
-* Display Customization::  Variables that affect display.
-* Files and Directories::  Saving and naming attachments.
-* New Viewers::            How to write your own viewers.
+* Dissection::             @acronym{MIME} メッセージの解析
+* Non-MIME::               非-@acronym{MIME} メッセージの解析
+* Handles::                ハンドルの取り扱い
+* Display::                ハンドルの表示
+* Display Customization::  表示に影響する変数
+* Files and Directories::  添付の保存と命名
+* New Viewers::            自分用ビューワーの書き方
 @end menu
 
-
 @node Dissection
-@section Dissection
+@section 解体
 
-The @code{mm-dissect-buffer} is the function responsible for dissecting
-a @acronym{MIME} article.  If given a multipart message, it will recursively
-descend the message, following the structure, and return a tree of
-@acronym{MIME} handles that describes the structure of the message.
+@code{mm-dissect-buffer} は @acronym{MIME} 記事の解体を担当する関数です。
+マルチパートのメッセージが与えられると、メッセージを再帰的に掘り下げ、構
+造に従って、そのメッセージの構造を描写する @acronym{MIME} ハンドルの木構
+造を返します。
 
 @node Non-MIME
-@section Non-MIME
+@section 非-MIME
 @vindex mm-uu-configure-list
 
-Gnus also understands some non-@acronym{MIME} attachments, such as
-postscript, uuencode, binhex, yenc, shar, forward, gnatsweb, pgp,
-diff.  Each of these features can be disabled by add an item into
-@code{mm-uu-configure-list}.  For example,
+Gnus はいくつかの非-@acronym{MIME} の添付も理解します。それら
+は postscript, uuencode, binhex, yenc, shar, forward, gnatsweb, pgp,
+diff のようなものです。それぞれの機能は @code{mm-uu-configure-list} に項
+目を追加することによって、無効にすることができます。例です。
 
 @lisp
 (require 'mm-uu)
@@ -142,144 +140,137 @@ diff.  Each of these features can be disabled by add an item into
 @table @code
 @item postscript
 @findex postscript
-Postscript file.
+ポストスクリプトのファイル。
 
 @item uu
 @findex uu
-Uuencoded file.
+Uuencode されたファイル。
 
 @item binhex
 @findex binhex
-Binhex encoded file.
+Binhex でエンコードされたファイル。
 
 @item yenc
 @findex yenc
-Yenc encoded file.
+Yenc でエンコードされたファイル。
 
 @item shar
 @findex shar
-Shar archive file.
+Shar 書庫ファイル。
 
 @item forward
 @findex forward
-Non-@acronym{MIME} forwarded message.
+非-@acronym{MIME} で転送されたメッセージ。
 
 @item gnatsweb
 @findex gnatsweb
-Gnatsweb attachment.
+Gnatsweb の添付。
 
 @item pgp-signed
 @findex pgp-signed
-@acronym{PGP} signed clear text.
+@acronym{PGP} で署名された平文 (clear text)。
 
 @item pgp-encrypted
 @findex pgp-encrypted
-@acronym{PGP} encrypted clear text.
+@acronym{PGP} で暗号化された平文 (clear text)。
 
 @item pgp-key
 @findex pgp-key
-@acronym{PGP} public keys.
+@acronym{PGP} の公開鍵。
 
 @item emacs-sources
 @findex emacs-sources
 @vindex mm-uu-emacs-sources-regexp
-Emacs source code.  This item works only in the groups matching
-@code{mm-uu-emacs-sources-regexp}.
+Emacs のソースコード。この項目は @code{mm-uu-emacs-sources-regexp} に合
+致するグループでのみ動作します。
 
 @item diff
 @vindex diff
 @vindex mm-uu-diff-groups-regexp
-Patches.  This is intended for groups where diffs of committed files
-are automatically sent to.  It only works in groups matching
-@code{mm-uu-diff-groups-regexp}.
-
+パッチ。これは、コミットされたファイルの差分が自動的に送られるグループを
+対象にしたものです。@code{mm-uu-diff-groups-regexp} に合致するグループで
+のみ動作します。
 @end table
 
 @node Handles
-@section Handles
+@section ハンドル
 
-A @acronym{MIME} handle is a list that fully describes a @acronym{MIME}
-component.
+@acronym{MIME} ハンドルは、@acronym{MIME} の構成要素を完全に記述するリス
+トです。
 
-The following macros can be used to access elements in a handle:
+ハンドルの要素をアクセスするために、以下のマクロを使うことができます:
 
 @table @code
 @item mm-handle-buffer
 @findex mm-handle-buffer
-Return the buffer that holds the contents of the undecoded @acronym{MIME}
-part.
+デコードされていない @acronym{MIME} パートの内容物を保持しているバッファ
+を返します。
 
 @item mm-handle-type
 @findex mm-handle-type
-Return the parsed @code{Content-Type} of the part.
+解析済みの、パートの @code{Content-Type} を返します。
 
 @item mm-handle-encoding
 @findex mm-handle-encoding
-Return the @code{Content-Transfer-Encoding} of the part.
+パートの @code{Content-Transfer-Encoding} を返します。
 
 @item mm-handle-undisplayer
 @findex mm-handle-undisplayer
-Return the object that can be used to remove the displayed part (if it
-has been displayed).
+表示されているパートを消すことができるもの (訳注: 関数など) を (それが表
+示されている場合に) 返します。
 
 @item mm-handle-set-undisplayer
 @findex mm-handle-set-undisplayer
-Set the undisplayer object.
+表示されているパートを消すことができるもの (訳注: 関数など) を設定します。
 
 @item mm-handle-disposition
 @findex mm-handle-disposition
-Return the parsed @code{Content-Disposition} of the part.
-
-@item mm-handle-disposition
-@findex mm-handle-disposition
-Return the description of the part.
+解析済みの、パートの @code{Content-Disposition} を返します。
 
 @item mm-get-content-id
-Returns the handle(s) referred to by @code{Content-ID}.
-
+@code{Content-ID} で参照されるハンドル (単数または複数) を返します。
 @end table
 
-
 @node Display
-@section Display
+@section 表示
 
-Functions for displaying, removing and saving.
+表示し、消去し、保存するための関数。
 
 @table @code
 @item mm-display-part
 @findex mm-display-part
-Display the part.
+パートを表示します。
 
 @item mm-remove-part
 @findex mm-remove-part
-Remove the part (if it has been displayed).
+パートを (それが表示されていたら) 消去します。
 
 @item mm-inlinable-p
 @findex mm-inlinable-p
-Say whether a @acronym{MIME} type can be displayed inline.
+@acronym{MIME} タイプが埋め込み (inline) 可能かどうかを返します。
 
 @item mm-automatic-display-p
 @findex mm-automatic-display-p
-Say whether a @acronym{MIME} type should be displayed automatically.
+@acronym{MIME} タイプが自動的に表示されるべきかどうかを返します。
 
 @item mm-destroy-part
 @findex mm-destroy-part
-Free all resources occupied by a part.
+パートによって使われているすべての資源を開放します (訳注: パートの表示、
+およびパートを解体して得た個々の部品を一時的に保持しているバッファやファ
+イルを消去します)。
 
 @item mm-save-part
 @findex mm-save-part
-Offer to save the part in a file.
+パートをファイルに保存します。
 
 @item mm-pipe-part
 @findex mm-pipe-part
-Offer to pipe the part to some process.
+パートをあるプロセスにパイプします。
 
 @item mm-interactively-view-part
 @findex mm-interactively-view-part
-Prompt for a mailcap method to use to view the part.
-
+パートを表示するために使う mailcap の手段を尋ねます。
 @end table
-
 
 @node Display Customization
 @section Display Customization
