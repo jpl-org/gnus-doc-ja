@@ -48,14 +48,15 @@ Free Documentation License''.
 
 @node Top
 @top PGG
-This manual describes PGG.  PGG is an interface library between Emacs
-and various tools for secure communication.  PGG also provides a simple
-user interface to encrypt, decrypt, sign, and verify MIME messages.
+これは PGG のマニュアルです。PGG は、安全な通信のための様々なツールと
+Emacs の仲を取り持つインタフェースです。また、PGG は、MIME メッセージ
+の暗号化、復号化、署名、検証のための単純なユーザインタフェースも提供しま
+す。
 
 @menu
-* Overview::                    What PGG is.
-* Prerequisites::               Complicated stuff you may have to do.
-* How to use::                  Getting started quickly.
+* Overview::                    PGG とは
+* Prerequisites::               あらかじめしておくべき複雑な事柄
+* How to use::                  とっとと使い始めよう
 * Architecture::                
 * Parsing OpenPGP packets::     
 * Function Index::              
@@ -65,41 +66,42 @@ user interface to encrypt, decrypt, sign, and verify MIME messages.
 @node Overview
 @chapter Overview
 
-PGG is an interface library between Emacs and various tools for secure
-communication.  Even though Mailcrypt has similar feature, it does not
-deal with detached PGP messages, normally used in PGP/MIME
-infrastructure.  This was the main reason why I wrote the new library.
+PGG は、安全な通信のための様々なツールと Emacs の仲を取り持つインタフェー
+スです。同様の機能は Mailcrypt も持っていますが、Mailcrypt は PGP/MIME
+のインフラで通常用いられる detached PGP メッセージを取り扱うことができま
+せん。これが、私(作者)が新しいライブラリを書いた主な理由です。
 
-PGP/MIME is an application of MIME Object Security Services (RFC1848).
-The standard is documented in RFC2015.
+PGP/MIME は MIME Object Security Services (RFC1848) の実装です。その標準
+は RFC2015 で記述されています。
 
 @node Prerequisites
 @chapter Prerequisites
 
-PGG requires at least one implementation of privacy guard system.
-This document assumes that you have already obtained and installed them
-and that you are familiar with its basic functions.
+PGG を使うためには少なくとも1つのプライバシー保護システムの実装が必要で
+す。このマニュアルでは、あなたがそのようなプログラムをすでに取得、インス
+トールしていて、基本的な使い方を知っていることを仮定します。
 
-By default, PGG uses GnuPG, but Pretty Good Privacy version 2 or version
-5 are also supported.  If you are new to such a system, I recommend that
-you should look over the GNU Privacy Handbook (GPH) which is available
-at @uref{http://www.gnupg.org/gph/}.
+ディフォルトでは、PGG は GnuPG を使います。しかし、PGP (Pretty Good
+Privacy) のバージョン2または5もサポートします。もし、あなたがこのような
+システムに慣れていないのであれば、GNU Privacy Handbook (GPH) を先に読ま
+れることをお薦めします。GPH は、@uref{http://www.gnupg.org/gph/} で見る
+ことができます。
 
 @node How to use
 @chapter How to use
 
-The toplevel interface of this library is quite simple, and only
-intended to use with public-key cryptographic operation.
+このライブラリの最上位インタフェースはとても単純で、公開鍵による暗号の操
+作のみを想定しています。
 
-To use PGG, evaluate following expression at the beginning of your
-application program.
+PGG を使うためには、あなたのアプリケーションプログラムの冒頭で次の S 式
+を評価します。
 
 @lisp
 (require 'pgg)
 @end lisp
 
-If you want to check existence of pgg.el at runtime, instead you can
-list autoload setting for desired functions as follows.
+あなたが pgg.el の存在を確認したいなら、上記の方法ではなく以下のように、
+必要な機能について autoload のリストを設定することもできます。
 
 @lisp
 (autoload 'pgg-encrypt-region "pgg"
@@ -126,58 +128,53 @@ list autoload setting for desired functions as follows.
 @node User Commands
 @section User Commands
 
-At this time you can use some cryptographic commands.  The behavior of
-these commands relies on a fashion of invocation because they are also
-intended to be used as library functions.  In case you don't have the
-signer's public key, for example, the function @code{pgg-verify-region}
-fails immediately, but if the function had been called interactively, it
-would ask you to retrieve the signer's public key from the server.
+この時点で、あなたはいくつかの暗号に関するコマンドを使うことができます。
+これらのコマンドの挙動は起動方法に依存します。これらのコマンドはライブラ
+リ関数として利用されることもあるからです。例えば、あなたがある署名者の公
+開鍵を持っていないとき、@code{pgg-verify-region} という関数は即座に失敗
+しますが、これが対話的に呼び出された場合には、サーバから公開鍵をダウンロー
+ドするかどうか、あなたに確認します。
 
 @deffn Command pgg-encrypt-region start end recipients &optional sign
-Encrypt the current region between @var{start} and @var{end} for
-@var{recipients}.  When the function were called interactively, you
-would be asked about the recipients.
+@var{recipients}宛のメッセージについて、@var{start}と@var{end}の間で指定
+された現在の範囲を暗号化します。対話的に呼ばれると、受信者を聞かれます。
 
-If encryption is successful, it replaces the current region contents (in
-the accessible portion) with the resulting data.
+暗号化に成功すると、現在の範囲の内容が(可能な部分について)暗号化された内
+容に置き換えられます。
 
-If optional argument @var{sign} is non-@code{nil}, the function is
-request to do a combined sign and encrypt.  This currently only work
-with GnuPG.
+オプション引数 @var{sign} が non-@code{nil} ならば、署名と暗号化が同時に
+行われます。現在、この機能は GnuPG でだけ動作します。
 @end deffn
 
 @deffn Command pgg-decrypt-region start end
-Decrypt the current region between @var{start} and @var{end}.  If
-decryption is successful, it replaces the current region contents (in
-the accessible portion) with the resulting data.
+@var{start}と@var{end}の間で指定された現在の範囲を復号化します。復号化に
+成功すると、現在の範囲の内容が(可能な部分について)復号化された内容に置き
+換えられます。
 @end deffn
 
 @deffn Command pgg-sign-region start end &optional cleartext
-Make the signature from text between @var{start} and @var{end}.  If the
-optional third argument @var{cleartext} is non-@code{nil}, or the
-function is called interactively, it does not create a detached
-signature.  In such a case, it replaces the current region contents (in
-the accessible portion) with the resulting data.
+@var{start}と@var{end}の間のテキストに署名します。3番目のオプション引数
+@var{cleartext} が non-@code{nil} であるか、あるいは対話的に呼ばれた場合、
+detached signature は作られません。そのような場合、現在の範囲の内容が(可
+能な部分について)署名された結果に置き換えられます。
 @end deffn
 
 @deffn Command pgg-verify-region start end &optional signature fetch
-Verify the current region between @var{start} and @var{end}.  If the
-optional third argument @var{signature} is non-@code{nil}, or the function
-is called interactively, it is treated as the detached signature of the
-current region.
+@var{start}と@var{end}の間の範囲を検査します。3番目のオプション引数
+@var{signature} が non-@code{nil} であるか、あるいは対話的に呼ばれた場合、
+detached signature として取り扱われます。
 
-If the optional 4th argument @var{fetch} is non-@code{nil}, or the
-function is called interactively, we attempt to fetch the signer's
-public key from the key server.
+4番目のオプション引数 @var{fetch} が non-@code{nil} であるか、あるいは対
+話的に呼ばれた場合、公開鍵をサーバから取得します。
 @end deffn
 
 @deffn Command pgg-insert-key
-Retrieve the user's public key and insert it as ASCII-armored format.
+ユーザの公開鍵を取得して、ASCII-armored フォーマットで挿入します。
 @end deffn
 
 @deffn Command pgg-snarf-keys-region start end
-Collect public keys in the current region between @var{start} and
-@var{end}, and add them into the user's keyring.
+@var{start}と@var{end}の間の範囲にある公開鍵を集め、ユーザの鍵輪
+(keyring)に追加します。
 @end deffn
 
 @node Selecting an implementation
