@@ -67,9 +67,9 @@ Emacs $B$NCg$r<h$j;}$D%$%s%?%U%'!<%9$G$9!#$^$?!"(BPGG $B$O!"(BMIME $B%a%C%;
 @chapter Overview
 
 PGG $B$O!"0BA4$JDL?.$N$?$a$NMM!9$J%D!<%k$H(B Emacs $B$NCg$r<h$j;}$D%$%s%?%U%'!<(B
-$B%9$G$9!#F1MM$N5!G=$O(B Mailcrypt $B$b;}$C$F$$$^$9$,!"(BMailcrypt $B$O(B PGP/MIME
-$B$N%$%s%U%i$GDL>oMQ$$$i$l$k(B detached PGP $B%a%C%;!<%8$r<h$j07$&$3$H$,$G$-$^(B
-$B$;$s!#$3$l$,!";d(B($B:n<T(B)$B$,?7$7$$%i%$%V%i%j$r=q$$$?<g$JM}M3$G$9!#(B
+$B%9$G$9!#F1MM$N5!G=$O(B Mailcrypt $B$b;}$C$F$$$^$9$,!"(BMailcrypt $B$O(B PGP/MIME 
+$B$N%$%s%U%i$GDL>oMQ$$$i$l$kJ,N%$5$l$?(B PGP $B%a%C%;!<%8$r<h$j07$&$3$H$,$G$-(B
+$B$^$;$s!#$3$l$,!";d(B($B:n<T(B)$B$,?7$7$$%i%$%V%i%j$r=q$$$?<g$JM}M3$G$9!#(B
 
 PGP/MIME $B$O(B MIME Object Security Services (RFC1848) $B$N<BAu$G$9!#$=$NI8=`(B
 $B$O(B RFC2015 $B$G5-=R$5$l$F$$$^$9!#(B
@@ -155,14 +155,14 @@ PGG $B$r;H$&$?$a$K$O!"$"$J$?$N%"%W%j%1!<%7%g%s%W%m%0%i%`$NKAF,$G<!$N(B S $B<0
 @deffn Command pgg-sign-region start end &optional cleartext
 @var{start}$B$H(B@var{end}$B$N4V$N%F%-%9%H$K=pL>$7$^$9!#(B3$BHVL\$N%*%W%7%g%s0z?t(B
 @var{cleartext} $B$,(B non-@code{nil} $B$G$"$k$+!"$"$k$$$OBPOCE*$K8F$P$l$?>l9g!"(B
-detached signature $B$O:n$i$l$^$;$s!#$=$N$h$&$J>l9g!"8=:_$NHO0O$NFbMF$,(B($B2D(B
-$BG=$JItJ,$K$D$$$F(B)$B=pL>$5$l$?7k2L$KCV$-49$($i$l$^$9!#(B
+$BJ,N%$5$l$?=pL>$O:n$i$l$^$;$s!#$=$N$h$&$J>l9g!"8=:_$NHO0O$NFbMF$,(B($B2DG=$J(B
+$BItJ,$K$D$$$F(B)$B=pL>$5$l$?7k2L$KCV$-49$($i$l$^$9!#(B
 @end deffn
 
 @deffn Command pgg-verify-region start end &optional signature fetch
 @var{start}$B$H(B@var{end}$B$N4V$NHO0O$r8!::$7$^$9!#(B3$BHVL\$N%*%W%7%g%s0z?t(B
 @var{signature} $B$,(B non-@code{nil} $B$G$"$k$+!"$"$k$$$OBPOCE*$K8F$P$l$?>l9g!"(B
-detached signature $B$H$7$F<h$j07$o$l$^$9!#(B
+$BJ,N%$5$l$?=pL>$H$7$F<h$j07$o$l$^$9!#(B
 
 4$BHVL\$N%*%W%7%g%s0z?t(B @var{fetch} $B$,(B non-@code{nil} $B$G$"$k$+!"$"$k$$$OBP(B
 $BOCE*$K8F$P$l$?>l9g!"8x3+80$r%5!<%P$+$i<hF@$7$^$9!#(B
