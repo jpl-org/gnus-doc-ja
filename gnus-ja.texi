@@ -10574,11 +10574,11 @@ Gnus $B$O%X%C%@!<$NJB$YBX$((B (sort) $B$b9T$$$^$9(B ($B$3$l$O%G%#%U%)%k%H$G
 @section MIME $B$r;H$&(B
 @cindex @acronym{MIME}
 
-$B%Q%s%H%^%$%`(B (mime) $B$H$O!"4Q5R$,$"$/$S$r$7$J$,$i$\$s$d$j$7$F$$$k$N$K$b$+(B
-$B$+$o$i$:!"0UL#$bL5$/6uCf$G<j$r?6$k$b$N$H$7$F9-$/CN$i$l$F$$$^$9!#(B
+$B%Q%s%H%^%$%`(B (mime) $B$O!"4Q5R$,$"$/$S$r$7$J$,$i$\$s$d$j$7$F$$$k$N$K$b$+$+(B
+$B$o$i$:!"0UL#$bL5$/6uCf$G<j$r?6$k$b$N$H$7$F9-$/CN$i$l$F$$$^$9!#(B
 
-$B0lJ}(B @acronym{MIME} $B$H$O!"$=$N$?$a$KA4$F$N%K%e!<%9%j!<%@$,62I]$G;`$s$G$7(B
-$B$^$&$N$K$b$+$+$o$i$:!"0UL#$bL5$/5-;v$rId9f2=$9$kI8=`$G$9!#(B
+$B0lJ}(B @acronym{MIME} $B$O!"$=$N$?$a$KA4$F$N%K%e!<%9%j!<%@$,62I]$G;`$s$G$7$^(B
+$B$&$N$K$b$+$+$o$i$:!"0UL#$bL5$/5-;v$rId9f2=$9$kI8=`$G$9!#(B
 
 @acronym{MIME} $B$O5-;v$,$I$s$JJ8;z=89g$r;H$&$+!"J8;z$r$I$&Id9f2=$9$k$+$r(B
 $B;XDj$9$k$3$H$,$G$-!"$5$i$K$O3($d$=$NB>$N$_$@$i$J$b$N$rL5<Y5$$J3J9%$N5-;v(B
@@ -10597,9 +10597,9 @@ Gnus $B$O(B @acronym{MIME} $B%Q!<%H$rI=<($9$k$?$a$K!"(B
 
 @table @kbd
 @findex gnus-article-press-button
-@item RET (Article)
-@kindex RET (Article)
-@itemx BUTTON-2 (Article)
+@item RET ($B5-;v(B)
+@kindex RET ($B5-;v(B)
+@itemx BUTTON-2 ($B5-;v(B)
 @acronym{MIME} $B%*%V%8%'%/%H$NI=<($r%H%0%k$G@Z$jBX$($^(B
 $B$9(B (@code{gnus-article-press-button})$B!#$=$N%*%V%8%'%/%H$rFbB"$N%S%e!<%o!<(B
 $B$GI=<($G$-$J$$$H$-$O!"(BGnus $B$O(B @file{mailcap} $B%U%!%$%k$K$"$k30It$N%S%e!<(B
@@ -10608,123 +10608,123 @@ Gnus $B$O(B @acronym{MIME} $B%Q!<%H$rI=<($9$k$?$a$K!"(B
 $B<($5$l$^$9!#(B
 
 @findex gnus-mime-view-part
-@item M-RET (Article)
-@kindex M-RET (Article)
-@itemx v (Article)
+@item M-RET ($B5-;v(B)
+@kindex M-RET ($B5-;v(B)
+@itemx v ($B5-;v(B)
 $B<jCJ$r?R$M!"$=$N<jCJ$r;H$C$F(B @acronym{MIME} $B%*%V%8%'%/%H$rI=<($7$^(B
 $B$9(B (@code{gnus-mime-view-part})$B!#(B
 
 @findex gnus-mime-view-part-as-type
-@item t (Article)
-@kindex t (Article)
+@item t ($B5-;v(B)
+@kindex t ($B5-;v(B)
 @acronym{MIME} $B%*%V%8%'%/%H$r!"0[$J$k(B @acronym{MIME} $B%a%G%#%"!&%?%$%W$G(B
 $B$"$k$+$N$h$&$KI=<($7$^$9(B (@code{gnus-mime-view-part-as-type})$B!#(B
 
 @findex gnus-mime-view-part-as-charset
-@item C (Article)
-@kindex C (Article)
+@item C ($B5-;v(B)
+@kindex C ($B5-;v(B)
 $BJ8;z%;%C%H$r?R$M!"$=$NJ8;z%;%C%H$r;H$C$F(B @acronym{MIME} $B%*%V%8%'%/%H$rI=(B
 $B<($7$^$9(B (@code{gnus-mime-view-part-as-charset})$B!#(B
 
 @findex gnus-mime-save-part
-@item o (Article)
-@kindex o (Article)
+@item o ($B5-;v(B)
+@kindex o ($B5-;v(B)
 $B%U%!%$%kL>$r?R$M$F(B @acronym{MIME} $B%*%V%8%'%/%H$r%;!<%V$7$^(B
 $B$9(B (@code{gnus-mime-save-part})$B!#(B
 
 @findex gnus-mime-save-part-and-strip
-@item C-o (Article)
-@kindex C-o (Article)
+@item C-o ($B5-;v(B)
+@kindex C-o ($B5-;v(B)
 $B%U%!%$%kL>$r?R$M!"(B@acronym{MIME} $B%*%V%8%'%/%H$r%;!<%V$7$F!"$=$l$r5-;v$+(B
-$B$i<h$j30$7$^$9!#$=$7$F!"JQ99$5$l$?5-;v$,$I$N$h$&$K8+$($k$Y$-$+$K$D$$$F$N(B
-$B9gM}E*$JDs0F$,9T$o$l$F$$$k(B ($BLuCm(B: $B2?$r8@$C$F$$$k$N$+:#0l$o$+$i$J$$(B)$B!"5-(B
-$B;v$NJT=8$K0\$j$^$9!#<h$j30$5$l$?(B @acronym{MIME} $B%*%V%8%'%/%H(B
-$B$O(B message/external-body @acronym{MIME} $B%?%$%W$H$7$F;2>H$5$l$^$9!#(B
-(@code{gnus-mime-save-part-and-strip})$B!#(B
+$B$i<h$j30$7$^$9(B ($B5-;v$rJT=8$9$k$3$H$K$h$C$F9T$J$o$l$^$9(B)$B!#<h$j30$5$l(B
+$B$?(B @acronym{MIME} $B%*%V%8%'%/%H$O(B message/external-body @acronym{MIME} $B%?(B
+$B%$%W$H$7$F;2>H$5$l$k$h$&$K$J$j$^(B
+$B$9(B (@code{gnus-mime-save-part-and-strip})$B!#(B
 
-@c TRANSLATEME
 @findex gnus-mime-delete-part
-@item d (Article)
-@kindex d (Article)
-Delete the @acronym{MIME} object from the article and replace it with some
-information about the removed @acronym{MIME} object
-(@code{gnus-mime-delete-part}).
+@item d ($B5-;v(B)
+@kindex d ($B5-;v(B)
+$B5-;v$+$i(B @acronym{MIME} $B%*%V%8%'%/%H$r<h$j30$7!"<h$j30$7$?$3$H$rI=$99pCN(B
+$B$GCV$-49$($^$9(B (@code{gnus-mime-delete-part})$B!#(B
 
 @findex gnus-mime-copy-part
-@item c (Article)
-@kindex c (Article)
-Copy the @acronym{MIME} object to a fresh buffer and display this buffer
-(@code{gnus-mime-copy-part}).  If given a prefix, copy the raw contents
-without decoding.  If given a numerical prefix, you can do semi-manual
-charset stuff (see @code{gnus-summary-show-article-charset-alist} in
-@ref{Paging the Article}).  Compressed files like @file{.gz} and
-@file{.bz2} are automatically decompressed if
-@code{auto-compression-mode} is enabled (@pxref{Compressed Files,,
-Accessing Compressed Files, emacs, The Emacs Editor}).
+@item c ($B5-;v(B)
+@kindex c ($B5-;v(B)
+@acronym{MIME} $B%*%V%8%'%/%H$r?7$?$K:n$C$?%P%C%U%!$K%3%T!<$7$F!"$=$l$rI=(B
+$B<($7$^$9(B (@code{gnus-mime-copy-part})$B!#@\F,<-$,M?$($i$l$k$H!"%G%3!<%I$;(B
+$B$:$K@8$NFbMFJ*$r%3%T!<$7$^$9!#?t;z$N@\F,<-$rM?$($k$H!"J8;z%;%C%H$K$h$k%G(B
+$B%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^$9(B (@ref{Paging the Article} $B$G=R(B
+$B$Y$i$l$F$$$k(B @code{gnus-summary-show-article-charset-alist} $B$r;2>H$7$F2<(B
+$B$5$$(B)$B!#(B@code{auto-compression-mode} (@pxref{Compressed Files,, Accessing
+Compressed Files, emacs, The Emacs Editor}) $B$,(B
+$B@_Dj$5$l$F$$$k$H!"(B@file{.gz} $B$d(B @file{.bz2} $B$N$h$&$J05=L$5$l$?%U%!%$%k$r(B
+$B<+F0E*$K2rE`$7$^$9!#(B
 
 @findex gnus-mime-print-part
-@item p (Article)
-@kindex p (Article)
-Print the @acronym{MIME} object (@code{gnus-mime-print-part}).  This
-command respects the @samp{print=} specifications in the
-@file{.mailcap} file.
+@item p ($B5-;v(B)
+@kindex p ($B5-;v(B)
+@acronym{MIME} $B%*%V%8%'%/%H$r0u:~$7$^$9(B (@code{gnus-mime-print-part})$B!#(B
+$B$3$N%3%^%s%I$O(B @file{.mailcap} $B%U%!%$%k$GDj5A$5$l$?(B @samp{print=} $B;EMM$K(B
+$B=>$$$^$9!#(B
 
 @findex gnus-mime-inline-part
-@item i (Article)
-@kindex i (Article)
-Insert the contents of the @acronym{MIME} object into the buffer
-(@code{gnus-mime-inline-part}) as text/plain.  If given a prefix, insert
-the raw contents without decoding.  If given a numerical prefix, you can
-do semi-manual charset stuff (see
-@code{gnus-summary-show-article-charset-alist} in @ref{Paging the
-Article}).  Compressed files like @file{.gz} and @file{.bz2} are
-automatically decompressed depending on @code{jka-compr} regardless of
+@item i ($B5-;v(B)
+@kindex i ($B5-;v(B)
+@acronym{MIME} $B%*%V%8%'%/%H$NFbMFJ*$r!"$=$N5-;v%P%C%U%!$K(B text/plain $B$H(B
+$B$7$FA^F~$7$^$9(B (@code{gnus-mime-inline-part})$B!#@\F,<-$,M?$($i$l$k$H!"%G(B
+$B%3!<%I$;$:$K@8$NFbMFJ*$rA^F~$7$^$9!#?t;z$N@\F,<-$rM?$($k$H!"J8;z%;%C%H$K(B
+$B$h$k%G%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^(B
+$B$9(B (@ref{Paging the Article} $B$G=R$Y$i$l$F$$(B
+$B$k(B @code{gnus-summary-show-article-charset-alist} $B$r;2>H$7$F2<$5$$(B)$B!#(B
 @code{auto-compression-mode} (@pxref{Compressed Files,, Accessing
-Compressed Files, emacs, The Emacs Editor}).
+Compressed Files, emacs, The Emacs Editor}) $B$N(B
+$B@_Dj$H$OL54X78$K!"(B@file{.gz} $B$d(B @file{.bz2} $B$N$h$&$J05=L$5$l$?%U%!%$%k$r(B
+$B<+F0E*$K2rE`$7$^$9!#(B
 
 @findex gnus-mime-view-part-internally
-@item E (Article)
-@kindex E (Article)
-View the @acronym{MIME} object with an internal viewer.  If no internal
-viewer is available, use an external viewer
-(@code{gnus-mime-view-part-internally}).
+@item E ($B5-;v(B)
+@kindex E ($B5-;v(B)
+$BFbIt%S%e!<%o!<$G(B @acronym{MIME} $B%*%V%8%'%/%H$rI=<($7$^$9!#FbIt%S%e!<%o!<(B
+$B$,;H$($J$$$H$-$O!"30It%S%e!<%o!<$r;H$$$^(B
+$B$9(B (@code{gnus-mime-view-part-internally})$B!#(B
 
 @findex gnus-mime-view-part-externally
-@item e (Article)
-@kindex e (Article)
-View the @acronym{MIME} object with an external viewer.
-(@code{gnus-mime-view-part-externally}).
+@item e ($B5-;v(B)
+@kindex e ($B5-;v(B)
+$B30It%S%e!<%o!<$G(B @acronym{MIME} $B%*%V%8%'%/%H$rI=<($7$^(B
+$B$9(B (@code{gnus-mime-view-part-externally})$B!#(B
 
 @findex gnus-mime-pipe-part
-@item | (Article)
-@kindex | (Article)
-Output the @acronym{MIME} object to a process (@code{gnus-mime-pipe-part}).
+@item | ($B5-;v(B)
+@kindex | ($B5-;v(B)
+@acronym{MIME} $B%*%V%8%'%/%H$r%W%m%;%9$K=PNO$7$^(B
+$B$9(B (@code{gnus-mime-pipe-part})$B!#(B
 
 @findex gnus-mime-action-on-part
-@item . (Article)
-@kindex . (Article)
-Interactively run an action on the @acronym{MIME} object
-(@code{gnus-mime-action-on-part}).
-
+@item . ($B5-;v(B)
+@kindex . ($B5-;v(B)
+@acronym{MIME} $B%*%V%8%'%/%H$r$I$&=hM}$9$k$+$r!"BPOCE*$K7h$a$F<B9T$7$^(B
+$B$9(B (@code{gnus-mime-action-on-part})$B!#(B
 @end table
 
-Gnus will display some @acronym{MIME} objects automatically.  The way Gnus
-determines which parts to do this with is described in the Emacs
-@acronym{MIME} manual.
+Gnus $B$O$$$/$D$+$N<oN`$N(B @acronym{MIME} $B%*%V%8%'%/%H$r<+F0E*$KI=<($7$^$9!#(B
+$B$I$N%Q!<%H$KBP$7$F$=$&$9$k$+$r(B Gnus $B$,7h$a$k$d$jJ}$K$D$$$F$O!"(B
+Emacs @acronym{MIME} $B%^%K%e%"%k$G=R$Y$i$l$F$$$^$9!#(B
 
-It might be best to just use the toggling functions from the article
-buffer to avoid getting nasty surprises.  (For instance, you enter the
-group @samp{alt.sing-a-long} and, before you know it, @acronym{MIME} has
-decoded the sound file in the article and some horrible sing-a-long song
-comes screaming out your speakers, and you can't find the volume button,
-because there isn't one, and people are starting to look at you, and you
-try to stop the program, but you can't, and you can't find the program
-to control the volume, and everybody else in the room suddenly decides
-to look at you disdainfully, and you'll feel rather stupid.)
+$BITL{2w$J$b$N$G$S$C$/$j$5$;$i$l$k$N$rHr$1$k$K$O!"%H%0%k$G@Z$jBX$($k4X?t$r(B
+$B;H$&$N$,:G$bNI$$$G$7$g$&!#(B ($BNc$($P!"(B@samp{alt.sing-a-long} $B%0%k!<%W$KF~(B
+$B$k$H!"$"$J$?$N5$$E$+$J$$$&$A$K(B @acronym{MIME} $B$O5-;vCf$N%5%&%s%I%U%!%$%k(B
+$B$rI|9f$7$F!"2?$d$i2x$7$2$JD9$$D9$$2N$,$"$J$?$N%9%T!<%+!<$+$iBg2;6A$GN.$l(B
+$B=P$7!"$"$J$?$O%\%j%e!<%`%\%?%s$r8+$D$1$i$l$:!"$H$$$&$N$O$=$s$J$b$N$O$b$H(B
+$B$b$H$D$$$F$J$$$+$i$G!"$_$s$J$O$"$J$?$NJ}$rbK$_$O$8$a!"$"$J$?$O%W%m%0%i%`(B
+$B$r;_$a$h$&$H$9$k$1$I$G$-$J$/$F!"%\%j%e!<%`$r@)8f$9$k%W%m%0%i%`$b8+$D$1$i(B
+$B$l$J$/$F!"$=$7$FIt20Cf$NA40w$OFMA3$"$J$?$N$3$H$r7ZJN$N4c:9$7$G8+$k$h$&$K(B
+$B$J$C$F$7$^$$!"$"$J$?$O$A$g$C$HLLGr$/$J$$;W$$$r$9$k!"$H$+(B)$B!#(B
 
-Any similarity to real events and people is purely coincidental.  Ahem.
+$B8=<B$N=PMh;v$H<B:_$N?MJ*$KN`;w$7$F$$$k$+$b$7$l$^$;$s$,!"$3$l$OA4$F%[%s%H(B
+$B$N$3$H$G$9!#$2$[$2$[!#(B
 
-Also @pxref{MIME Commands}.
+@pxref{MIME Commands} $B$b8+$F2<$5$$!#(B
 
 @node Customizing Articles
 @section $B5-;v$N%+%9%?%^%$%:(B
