@@ -6,7 +6,7 @@
 
 @dircategory Emacs
 @direntry
-* SASL: (sasl-ja).              The Emacs SASL library.
+* SASL-ja: (sasl-ja).           The Emacs SASL library (Japanese).
 @end direntry
 
 @settitle Emacs SASL Library @value{VERSION}

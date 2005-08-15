@@ -29,7 +29,7 @@ Free Documentation License''.
 
 @dircategory Emacs
 @direntry
-* PGG: (pgg-ja).                Emacs interface to various PGP implementations.
+* PGG-ja: (pgg-ja).        Emacs interface to various PGP implementations (Ja).
 @end direntry
 
 @settitle PGG @value{VERSION}

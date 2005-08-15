@@ -50,7 +50,7 @@ license to the document, as described in section 6 of the license.
 
 @dircategory Emacs
 @direntry
-* Sieve: (sieve-ja).            Managing Sieve scripts in Emacs.
+* Sieve-ja: (sieve-ja).            Managing Sieve scripts in Emacs (Japanese).
 @end direntry
 @iftex
 @finalout
