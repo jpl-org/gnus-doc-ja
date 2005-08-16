@@ -247,7 +247,7 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 
 @item mm-inlinable-p
 @findex mm-inlinable-p
-@acronym{MIME} $B%?%$%W$,Kd$a9~$_(B (inline) $B2DG=$+$I$&$+$rJV$7$^$9!#(B
+@acronym{MIME} $B%?%$%W$,%$%s%i%$%s$GI=<(2DG=$+$I$&$+$rJV$7$^$9!#(B
 
 @item mm-automatic-display-p
 @findex mm-automatic-display-p
@@ -273,59 +273,63 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 @end table
 
 @node Display Customization
-@section Display Customization
+@section $BI=<($N%+%9%?%^%$%:(B
 
 @table @code
-
 @item mm-inline-media-tests
 @vindex mm-inline-media-tests
-This is an alist where the key is a @acronym{MIME} type, the second element
-is a function to display the part @dfn{inline} (i.e., inside Emacs), and
-the third element is a form to be @code{eval}ed to say whether the part
-can be displayed inline.
+$B$3$l$OO"A[%j%9%H$G$9!#80(B ($BBh0lMWAG(B) $B$O(B @acronym{MIME} $B%?%$%W!"BhFsMWAG$O(B
+$B%Q!<%H$r(B @dfn{$B%$%s%i%$%s(B} $B$G(B ($B$9$J$o$A(B Emacs $B$N2hLL$KKd$a9~$s$G(B) $BI=<($9(B
+$B$k$?$a$N4X?t!"$=$7$FBh;0MWAG$O$=$N%Q!<%H$,%$%s%i%$%s$GI=<($9$k$3$H$,2DG=(B
+$B$+$I$&$+$rD4$Y$k$?$a$KI>2A(B (@code{eval}) $B$5$l$k%U%)!<%`$G$9!#(B
 
-This variable specifies whether a part @emph{can} be displayed inline,
-and, if so, how to do it.  It does not say whether parts are
-@emph{actually} displayed inline.
+$B$3$NJQ?t$O!"$"$k%Q!<%H$,%$%s%i%$%sI=<(2DG=$+$I$&$+$H!"$b$72DG=$J$i$=$N$d(B
+$B$jJ}$r;XDj$7$^$9!#%Q!<%H$,8=<B$K%$%s%i%$%sI=<($5$l$F$$$k$+$I$&$+$r<($9$b(B
+$B$N$G$O$"$j$^$;$s!#(B
 
 @item mm-inlined-types
 @vindex mm-inlined-types
-This, on the other hand, says what types are to be displayed inline, if
-they satisfy the conditions set by the variable above.  It's a list of
-@acronym{MIME} media types.
+$B0lJ}$3$l$O!">e5-$NJQ?t$K$h$C$F@_Dj$5$l$?>r7o$rK~B-$9$k!"%$%s%i%$%sI=<(2D(B
+$BG=$J%?%$%W$r<($7$^$9!#$3$l$O(B @acronym{MIME} $B%a%G%#%"%?%$%W$N%j%9%H$G$9!#(B
+($BLuCm(B: $B$=$l$>$l$NMWAG$O@55,I=8=$G$9!#(B)
 
 @item mm-automatic-display
 @vindex mm-automatic-display
-This is a list of types that are to be displayed ``automatically'', but
-only if the above variable allows it.  That is, only inlinable parts can
-be displayed automatically.
+$B$3$l$O>e5-$NJQ?t$,G'$a$k%?%$%W$N$&$A$G!"!V<+F0E*!W$KI=<($5$l$k%?%$%W$N%j(B
+$B%9%H$G$9!#$D$^$j!"%$%s%i%$%sI=<($,2DG=$J%Q!<%H$@$1$,<+F0E*$KI=<($5$l$^$9!#(B
 
 @item mm-automatic-external-display
 @vindex mm-automatic-external-display
-This is a list of types that will be displayed automatically in an
-external viewer.
+$B$3$l$O30It%S%e!<%o!<$G<+F0E*$KI=<($5$l$k%?%$%W$N%j%9%H$G$9!#(B
 
 @item mm-keep-viewer-alive-types
 @vindex mm-keep-viewer-alive-types
-This is a list of media types for which the external viewer will not
-be killed when selecting a different article.
+$B$3$l$O!"JL$N5-;v$rA*Br$7$F$b!"30It%S%e!<%o!<$,(B kill $B$5$l$J$$%a%G%#%"%?%$(B
+$B%W$N%j%9%H$G$9!#(B
+
+$BLuCm(B: postscript $B$d(B dvi $B$J$I(B ($BJQ?t$N%G%#%U%)%k%HCM$r;2>H$N$3$H(B) $B$N$h$&$K!"(B
+$BFI$`$N$K;~4V$,$+$+$k$+$b$7$l$J$$%Q!<%H$N%?%$%W$r4^$`%j%9%H$G$9!#0lJ}!"$3(B
+$B$l$K4^$^$l$J$$C1=c$J2hA|$N%Q!<%H$J$I$O!"$=$l$,4^$^$l$F$$$?5-;v$NI=<($r$d(B
+$B$a$?$H$-$K!"<+F0E*$K30It%S%e!<%o!<$,(B kill $B$5$l$^$9!#(B
 
 @item mm-attachment-override-types
 @vindex mm-attachment-override-types
-Some @acronym{MIME} agents create parts that have a content-disposition of
-@samp{attachment}.  This variable allows overriding that disposition and
-displaying the part inline.  (Note that the disposition is only
-overridden if we are able to, and want to, display the part inline.)
+$B$$$/$D$+$N(B @acronym{MIME} $B%(!<%8%'%s%H$O!"G[CV;X(B
+$BDj(B (content-disposition) $B$H$7$F(B @samp{$BE:IU(B} (@samp{attachment}) $B$r@_Dj$7(B
+$B$?%Q!<%H$r@8@.$7$^$9!#$3$NJQ?t$O$=$s$JG[CV;XDj$r>e=q$-$7$F!"$=$N%Q!<%H$r(B
+$B%$%s%i%$%sI=<($9$k$3$H$r5v$7$^$9!#(B($B$=$N%Q!<%H$N%$%s%i%$%sI=<($9$k$3$H$,(B
+$B2DG=$G!";d$?$A$,$=$&$9$k$3$H$rK>$`>l9g$@$1!"G[CV;XDj$,>e=q$-$5$l$k$3$H$K(B
+$BCm0U$7$F2<$5$$!#(B)
 
 @item mm-discouraged-alternatives
 @vindex mm-discouraged-alternatives
-List of @acronym{MIME} types that are discouraged when viewing
-@samp{multipart/alternative}.  Viewing agents are supposed to view the
-last possible part of a message, as that is supposed to be the richest.
-However, users may prefer other types instead, and this list says what
-types are most unwanted.  If, for instance, @samp{text/html} parts are
-very unwanted, and @samp{text/richtext} parts are somewhat unwanted,
-you could say something like:
+@samp{multipart/alternative} $B$rI=<($9$k$3$H$,7y$o$l$k(B @acronym{MIME} $B%?(B
+$B%$%W$N%j%9%H$G$9!#$=$l$,:G$b6=L#?<$$$b$N$G$"$k$HA[Dj$7$F$$$k$?$a$K!"I=<((B
+$B%(!<%8%'%s%H$O%a%C%;!<%8$N8eH>$K$"$k2D;k$J%Q!<%H$rI=<($9$k$3$H$K$J$C$F$$(B
+$B$^$9!#$7$+$7!"%f!<%6!<$OBe$o$j$KB>$N%?%$%W$r9%$`$+$b$7$l$^$;$s!#$3$N%j%9(B
+$B%H$O!"2?$N%?%$%W$,:G$bK>$^$l$J$$$+$r<($7$^$9!#Nc$($P$b$7!"(B
+@samp{text/html} $B%Q!<%H$OHs>o$KK>$^$:!"$+$D(B @samp{text/richtext} $B%Q!<%H(B
+$B$r$d$dK>$^$J$$$H$$$&$3$H$G$"$l$P!"0J2<$N$h$&$K@k8@$9$k$3$H$,$G$-$^$9(B:
 
 @lisp
 (setq mm-discouraged-alternatives
@@ -336,79 +340,79 @@ you could say something like:
 
 @item mm-inline-large-images
 @vindex mm-inline-large-images
-When displaying inline images that are larger than the window, Emacs
-does not enable scrolling, which means that you cannot see the whole
-image.  To prevent this, the library tries to determine the image size
-before displaying it inline, and if it doesn't fit the window, the
-library will display it externally (e.g. with @samp{ImageMagick} or
-@samp{xv}).  Setting this variable to @code{t} disables this check and
-makes the library display all inline images as inline, regardless of
-their size.
+$B%&%#%s%I%&$h$jBg$-$J%$%s%i%$%s2hA|$rI=<($9$k$H!"(BEmacs $B$O%9%/%m!<%k$9$k$3(B
+$B$H$,$G$-$J$$!"$D$^$j2hA|$NA4BN$r8+$k$3$H$,$G$-$^$;$s!#$3$l$rHr$1$k$?$a!"(B
+$B%i%$%V%i%j!<$O$=$l$r%$%s%i%$%sI=<($9$kA0$K2hA|$N%5%$%:$r7W$C$F!"$=$l$,(B
+$B%&%#%s%I%&$K9g$o$J$$>l9g$O!"%i%$%V%i%j!<$O$=$l$r30It$G(B ($BNc$((B
+$B$P(B @samp{ImageMagick} $B$d(B @samp{xv} $B$G(B) $BI=<($7$^$9!#$3$NJQ?t(B
+$B$r(B @code{t} $B$K@_Dj$9$k$H$3$N8!::$r$5$;$J$/$7$F!"%i%$%V%i%j!<$K$9$Y$F$N%$(B
+$B%s%i%$%s2hA|$r%5%$%:$K4X$o$j$J$/%$%s%i%$%s$GI=<($5$;$^$9!#(B
 
 @item mm-inline-override-types
 @vindex mm-inline-override-types
-@code{mm-inlined-types} may include regular expressions, for example to
-specify that all @samp{text/.*} parts be displayed inline.  If a user
-prefers to have a type that matches such a regular expression be treated
-as an attachment, that can be accomplished by setting this variable to a
-list containing that type.  For example assuming @code{mm-inlined-types}
-includes @samp{text/.*}, then including @samp{text/html} in this
-variable will cause @samp{text/html} parts to be treated as attachments.
+@code{mm-inlined-types} $B$O!"Nc$($P$9$Y$F$N(B @samp{text/.*} $B%Q!<%H$r%$%s%i(B
+$B%$%s$GI=<($9$k$3$H$r;X<($9$k$h$&$J!"@55,I=8=$r4^$`$3$H$,$G$-$^$9!#0lJ}!"(B
+$B%$%s%i%$%sI=<($,2DG=$@$1$l$I$bE:IU$H$7$F07$$$?$$%?%$%W$,$"$k$J$i$P!"$=$N(B
+$B%?%$%W$K9gCW$9$k@55,I=8=$N%j%9%H$r!"$3$NJQ?t$K@_Dj$9$k$3$H$K$h$C$F@.$7?k(B
+$B$2$k$3$H$,$G$-$^$9!#Nc$($P(B @code{mm-inlined-types} $B$,(B @samp{text/.*} $B$r(B
+$B4^$s$G$$$k$b$N$H$9$k$H!"$3$NJQ?t$K(B @samp{text/html} $B$r4^$^$;$k$3$H$K$h$C(B
+$B$F!"(B@samp{text/html} $B%Q!<%H$OE:IU$H$7$F07$o$l$k$h$&$K$J$j$^$9!#(B
 
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
-This selects the function used to render @acronym{HTML}.  The predefined
-renderers are selected by the symbols @code{w3},
-@code{w3m}@footnote{See @uref{http://emacs-w3m.namazu.org/} for more
-information about emacs-w3m}, @code{links}, @code{lynx},
-@code{w3m-standalone} or @code{html2text}.  If @code{nil} use an
-external viewer.  You can also specify a function, which will be
-called with a @acronym{MIME} handle as the argument.
+@acronym{HTML} $B$rIA2h$9$k$?$a$K;H$&4X?t$rA*Br$7$^$9!#$9$G$KMQ0U$7$F$"$k(B
+$BIA2h%W%m%0%i%`$O!"(B@code{w3}, @code{w3m}@footnote{emacs-w3m $B$K$D$$$F$N>\(B
+$B:Y$O(B @uref{http://emacs-w3m.namazu.org/} $B$r8+$F2<$5$$!#(B}, @code{links},
+@code{lynx}, @code{w3m-standalone} $B$^$?$O(B @code{html2text} $B$N%7%s%\%k72(B
+$B$N$&$A$N0l$D$r;XDj$9$k$3$H$K$h$C$FA*Br$7$^$9!#$b$7(B @code{nil} $B$@$C$?$i!"(B
+$B30It%S%e!<%o!<$r;H$$$^$9!#$5$i$K4X?t(B ($B0z?t$H$7$F(B @acronym{MIME} $B%O%s%I%k(B
+$B$,M?$($i$l$F8F$P$l$k(B) $B$r@_Dj$9$k$3$H$b$G$-$^$9!#(B
 
 @item mm-inline-text-html-with-images
 @vindex mm-inline-text-html-with-images
-Some @acronym{HTML} mails might have the trick of spammers using
-@samp{<img>} tags.  It is likely to be intended to verify whether you
-have read the mail.  You can prevent your personal informations from
-leaking by setting this option to @code{nil} (which is the default).
-It is currently ignored by Emacs/w3.  For emacs-w3m, you may use the
-command @kbd{t} on the image anchor to show an image even if it is
-@code{nil}.@footnote{The command @kbd{T} will load all images.  If you
-have set the option @code{w3m-key-binding} to @code{info}, use @kbd{i}
-or @kbd{I} instead.}
+@acronym{HTML} $B%a!<%k$K$O(B @samp{<img>} $B%?%0$r;H$C$?(B spammers (spam $B$r$P(B
+$B$i$^$/$d$+$i(B) $B$NH\Nt$J0-9*$_$,4^$^$l$F$$$k$+$b$7$l$^$;$s!#:G$b$"$j$=$&$J(B
+$B$N$O!"$"$J$?$,$=$N%a!<%k$rFI$s$@$3$H$r3NG'$9$k$?$a$N0U?^$,$"$k$3$H$G$9!#(B
+$B$3$N%*%W%7%g%s$r(B @code{nil} $B$K@_Dj$9$k(B ($B$=$l$,%G%#%U%)%k%H$G$9(B) $B$3$H$K$h$C(B
+$B$F!"$"$J$?$N8D?M>pJs$,N.=P$9$k$N$rKI$0$3$H$,$G$-$^$9!#8=:_(B Emacs/w3 $B$O!"(B
+$B$3$l$rL5;k$7$^$9!#(BEmacs-w3m $B$G$O!"$3$l$,(B @code{nil} $B$G$"$C$F$b!"2hA|$rI=(B
+$B<($9$k$?$a$K!"$=$l$,Kd$a9~$^$l$?>l=j$G(B @kbd{t} $B%3%^%s%I$r;H$&$3$H$,$G$-(B
+$B$^$9!#(B@footnote{@kbd{T} $B%3%^%s%I$O$9$Y$F$N2hA|$r<h$j9~$_$^$9!#(B
+@code{w3m-key-binding} $B%*%W%7%g%s$r(B @code{info} $B$K@_Dj$7$?$J$i$P!"Be$o$j(B
+$B$K(B @kbd{i} $B$+(B @kbd{I} $B$r;H$C$F2<$5$$!#(B}
 
 @item mm-w3m-safe-url-regexp
 @vindex mm-w3m-safe-url-regexp
-A regular expression that matches safe URL names, i.e. URLs that are
-unlikely to leak personal information when rendering @acronym{HTML}
-email (the default value is @samp{\\`cid:}).  If @code{nil} consider
-all URLs safe.
+$B0BA4$J(B URL $BL>!"$9$J$o$A(B @acronym{HTML} $B%a!<%k$rIA2h$9$k$H$-$K8D?M>pJs$,(B
+$BN.=P$7$=$&$b$J$$(B URL $B$K9gCW$9$k@55,I=8=$G$9(B ($B%G%#%U%)%k%HCM(B
+$B$O(B @samp{\\`cid:} $B$G$9(B)$B!#(B@code{nil} $B$G$"$k$H!"$9$Y$F$N(B URL $B$,0BA4$@$HH=(B
+$BCG$7$^$9!#(B
 
 @item mm-inline-text-html-with-w3m-keymap
 @vindex mm-inline-text-html-with-w3m-keymap
-You can use emacs-w3m command keys in the inlined text/html part by
-setting this option to non-@code{nil}.  The default value is @code{t}.
+$B$3$N%*%W%7%g%s$rHs(B-@code{nil} $B$K@_Dj$9$k$3$H$K$h$C$F!"%$%s%i%$%sI=<($5$l(B
+$B$?(B text/html $B%Q!<%H$G(B emacs-w3m $B$N%3%^%s%I%-!<$r;H$&$3$H$,$G$-$^$9!#%G%#(B
+$B%U%)%k%HCM$O(B @code{t} $B$G$9!#(B
 
 @item mm-external-terminal-program
 @vindex mm-external-terminal-program
-The program used to start an external terminal.
+$B30It$NC<Kv$r5/F0$9$k$?$a$K;H$o$l$k%W%m%0%i%`$G$9!#(B
 
 @item mm-enable-external
 @vindex mm-enable-external
-Indicate whether external @acronym{MIME} handlers should be used.
+$B30It$N(B @acronym{MIME} $B%O%s%I%i!<$r;H$&$Y$-$+$I$&$+$r;XDj$7$^$9!#(B
 
-If @code{t}, all defined external @acronym{MIME} handlers are used.  If
-@code{nil}, files are saved to disk (@code{mailcap-save-binary-file}).
-If it is the symbol @code{ask}, you are prompted before the external
-@acronym{MIME} handler is invoked.
+@code{t} $B$G$"$k$H!"Dj5A$5$l$?$9$Y$F$N30It$N(B @acronym{MIME} $B%O%s%I%i!<$,(B
+$B;H$o$l$^$9!#(B@code{nil} $B$@$C$?$i!"%U%!%$%k$O%G%#%9%/$KJ]B8$5$l$^(B
+$B$9(B (@code{mailcap-save-binary-file})$B!#$3$l$,(B @code{ask} $B$H$$$&%7%s%\%k$G(B
+$B$"$C$?$J$i$P!"30It$N(B @acronym{MIME} $B%O%s%I%i!<$,5/F0$5$l$kA0$K?R$M$i$l$k(B
+$B$G$7$g$&!#(B
 
-When you launch an attachment through mailcap (@pxref{mailcap}) an
-attempt is made to use a safe viewer with the safest options---this isn't
-the case if you save it to disk and launch it in a different way
-(command line or double-clicking).  Anyhow, if you want to be sure not
-to launch any external programs, set this variable to @code{nil} or
-@code{ask}.
-
+Mailcap (@pxref{mailcap}) $B$r2p$7$FE:IU$NI=<($r;O$a$k$H!":G$b0BA4$J%*%W%7%g(B
+$B%s$G0BA4$J%S%e!<%o!<$r;H$&$3$H$r;n$_$^$9(B ($BE:IU$r%G%#%9%/$KJ]B8$7$F!"0[$J(B
+$B$k<jCJ(B ($B%3%^%s%I%i%$%s$+%@%V%k%/%j%C%/(B) $B$G$=$NI=<($r;O$a$k>l9g$H$O0c$$$^(B
+$B$9(B)$B!#$H$K$+$/!"$I$s$J30It%W%m%0%i%`$b;H$$$?$/$J$$$N$G$"$l$P!"$3$NJQ?t(B
+$B$r(B @code{nil} $B$+(B @code{ask} $B$K@_Dj$7$F2<$5$$!#(B
 @end table
 
 @node Files and Directories
