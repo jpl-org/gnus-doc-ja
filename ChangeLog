@@ -1,6 +1,18 @@
+2005-08-16  NAKAJI Hiroyuki  <nakaji@heimat.jp>
+
+	* pgg-ja.texi: Translated.
+
 2005-08-15  NAKAJI Hiroyuki  <nakaji@heimat.jp>
 
 	* README.ja: Add an email address for contact.
+
+2005-08-15  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* gnus-ja.texi: Synch with the original.
+
+2005-08-12  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* message-ja.texi: Synch with the original.
 
 2005-08-08  Katsumi Yamaoka  <yamaoka@jpl.org>
 
