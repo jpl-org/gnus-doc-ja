@@ -111,7 +111,7 @@ RFC2048 ($BEPO?<jB3(B), RFC2049 ($BE,9g4p=`$H;vNc(B)$B!#(B@acronym{MIME} 
 * Handles::                $B%O%s%I%k$N<h$j07$$(B
 * Display::                $B%O%s%I%k$NI=<((B
 * Display Customization::  $BI=<($K1F6A$9$kJQ?t(B
-* Files and Directories::  $BE:IU$NJ]B8$HL?L>(B
+* Files and Directories::  $BE:IU%U%!%$%k$NJ]B8$HL?L>(B
 * New Viewers::            $B<+J,MQ%S%e!<%o!<$N=q$-J}(B
 @end menu
 
@@ -127,7 +127,7 @@ RFC2048 ($BEPO?<jB3(B), RFC2049 ($BE,9g4p=`$H;vNc(B)$B!#(B@acronym{MIME} 
 @section $BHs(B-MIME
 @vindex mm-uu-configure-list
 
-Gnus $B$O$$$/$D$+$NHs(B-@acronym{MIME} $B$NE:IU$bM}2r$7$^$9!#$=$l$i(B
+Gnus $B$O$$$/$D$+$NHs(B-@acronym{MIME} $B$NE:IU%U%!%$%k$bM}2r$7$^$9!#$=$l$i(B
 $B$O(B postscript, uuencode, binhex, yenc, shar, forward, gnatsweb, pgp,
 diff $B$N$h$&$J$b$N$G$9!#$=$l$>$l$N5!G=$O(B @code{mm-uu-configure-list} $B$K9`(B
 $BL\$rDI2C$9$k$3$H$K$h$C$F!"L58z$K$9$k$3$H$,$G$-$^$9!#Nc$G$9!#(B
@@ -164,7 +164,7 @@ Shar $B=q8K%U%!%$%k!#(B
 
 @item gnatsweb
 @findex gnatsweb
-Gnatsweb $B$NE:IU!#(B
+Gnatsweb $B$NE:IU%U%!%$%k!#(B
 
 @item pgp-signed
 @findex pgp-signed
@@ -315,11 +315,11 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 @item mm-attachment-override-types
 @vindex mm-attachment-override-types
 $B$$$/$D$+$N(B @acronym{MIME} $B%(!<%8%'%s%H$O!"G[CV;X(B
-$BDj(B (content-disposition) $B$H$7$F(B @samp{$BE:IU(B} (@samp{attachment}) $B$r@_Dj$7(B
-$B$?%Q!<%H$r@8@.$7$^$9!#$3$NJQ?t$O$=$s$JG[CV;XDj$r>e=q$-$7$F!"$=$N%Q!<%H$r(B
-$B%$%s%i%$%sI=<($9$k$3$H$r5v$7$^$9!#(B($B$=$N%Q!<%H$N%$%s%i%$%sI=<($9$k$3$H$,(B
-$B2DG=$G!";d$?$A$,$=$&$9$k$3$H$rK>$`>l9g$@$1!"G[CV;XDj$,>e=q$-$5$l$k$3$H$K(B
-$BCm0U$7$F2<$5$$!#(B)
+$BDj(B (content-disposition) $B$H$7$F(B @samp{$BE:IU(B} (@samp{attachment}) $B%U%!%$%k(B
+$B$G$"$k$3$H$r@_Dj$7$?%Q!<%H$r@8@.$7$^$9!#$3$NJQ?t$O$=$s$JG[CV;XDj$r>e=q$-(B
+$B$7$F!"$=$N%Q!<%H$r%$%s%i%$%sI=<($9$k$3$H$r5v$7$^$9!#(B($B$=$N%Q!<%H$N%$%s%i(B
+$B%$%sI=<($9$k$3$H$,2DG=$G!";d$?$A$,$=$&$9$k$3$H$rK>$`>l9g$@$1!"G[CV;XDj$,(B
+$B>e=q$-$5$l$k$3$H$KCm0U$7$F2<$5$$!#(B)
 
 @item mm-discouraged-alternatives
 @vindex mm-discouraged-alternatives
@@ -352,11 +352,12 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 @vindex mm-inline-override-types
 @code{mm-inlined-types} $B$O!"Nc$($P$9$Y$F$N(B @samp{text/.*} $B%Q!<%H$r%$%s%i(B
 $B%$%s$GI=<($9$k$3$H$r;X<($9$k$h$&$J!"@55,I=8=$r4^$`$3$H$,$G$-$^$9!#0lJ}!"(B
-$B%$%s%i%$%sI=<($,2DG=$@$1$l$I$bE:IU$H$7$F07$$$?$$%?%$%W$,$"$k$J$i$P!"$=$N(B
-$B%?%$%W$K9gCW$9$k@55,I=8=$N%j%9%H$r!"$3$NJQ?t$K@_Dj$9$k$3$H$K$h$C$F@.$7?k(B
-$B$2$k$3$H$,$G$-$^$9!#Nc$($P(B @code{mm-inlined-types} $B$,(B @samp{text/.*} $B$r(B
-$B4^$s$G$$$k$b$N$H$9$k$H!"$3$NJQ?t$K(B @samp{text/html} $B$r4^$^$;$k$3$H$K$h$C(B
-$B$F!"(B@samp{text/html} $B%Q!<%H$OE:IU$H$7$F07$o$l$k$h$&$K$J$j$^$9!#(B
+$B%$%s%i%$%sI=<($,2DG=$@$1$l$I$bE:IU%U%!%$%k$H$7$F07$$$?$$%?%$%W$,$"$k$J$i(B
+$B$P!"$=$N%?%$%W$K9gCW$9$k@55,I=8=$N%j%9%H$r!"$3$NJQ?t$K@_Dj$9$k$3$H$K$h$C(B
+$B$F@.$7?k$2$k$3$H$,$G$-$^$9!#Nc$((B
+$B$P(B @code{mm-inlined-types} $B$,(B @samp{text/.*} $B$r4^$s$G$$$k$b$N$H$9$k$H!"(B
+$B$3$NJQ?t$K(B @samp{text/html} $B$r4^$^$;$k$3$H$K$h$C$F!"(B@samp{text/html} $B%Q!<(B
+$B%H$OE:IU%U%!%$%k$H$7$F07$o$l$k$h$&$K$J$j$^$9!#(B
 
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
@@ -408,80 +409,77 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 $B$"$C$?$J$i$P!"30It$N(B @acronym{MIME} $B%O%s%I%i!<$,5/F0$5$l$kA0$K?R$M$i$l$k(B
 $B$G$7$g$&!#(B
 
-Mailcap (@pxref{mailcap}) $B$r2p$7$FE:IU$NI=<($r;O$a$k$H!":G$b0BA4$J%*%W%7%g(B
-$B%s$G0BA4$J%S%e!<%o!<$r;H$&$3$H$r;n$_$^$9(B ($BE:IU$r%G%#%9%/$KJ]B8$7$F!"0[$J(B
-$B$k<jCJ(B ($B%3%^%s%I%i%$%s$+%@%V%k%/%j%C%/(B) $B$G$=$NI=<($r;O$a$k>l9g$H$O0c$$$^(B
-$B$9(B)$B!#$H$K$+$/!"$I$s$J30It%W%m%0%i%`$b;H$$$?$/$J$$$N$G$"$l$P!"$3$NJQ?t(B
-$B$r(B @code{nil} $B$+(B @code{ask} $B$K@_Dj$7$F2<$5$$!#(B
+Mailcap (@pxref{mailcap}) $B$r2p$7$FE:IU%U%!%$%k$NI=<($r;O$a$k$H!":G$b0BA4(B
+$B$J%*%W%7%g%s$G0BA4$J%S%e!<%o!<$r;H$&$3$H$r;n$_$^$9(B ($BE:IU%U%!%$%k$r%G%#%9(B
+$B%/$KJ]B8$7$F!"0[$J$k<jCJ(B ($B%3%^%s%I%i%$%s$+%@%V%k%/%j%C%/(B) $B$G$=$NI=<($r;O(B
+$B$a$k>l9g$H$O0c$$$^$9(B)$B!#$H$K$+$/!"$I$s$J30It%W%m%0%i%`$b;H$$$?$/$J$$$N$G(B
+$B$"$l$P!"$3$NJQ?t$r(B @code{nil} $B$+(B @code{ask} $B$K@_Dj$7$F2<$5$$!#(B
 @end table
 
 @node Files and Directories
-@section Files and Directories
+@section $B%U%!%$%k$H%G%#%l%/%H%j!<(B
 
 @table @code
-
 @item mm-default-directory
 @vindex mm-default-directory
-The default directory for saving attachments.  If @code{nil} use
-@code{default-directory}.
+$BE:IU%U%!%$%k$rJ]B8$9$k%G%#%U%)%k%H$N%G%#%l%/%H%j!<$G$9!#(B@code{nil} $B$@$C(B
+$B$?$i(B @code{default-directory} $B$r;H$$$^$9!#(B
 
 @item mm-tmp-directory
 @vindex mm-tmp-directory
-Directory for storing temporary files.
+$B0l;~%U%!%$%k$r3JG<$9$k%G%#%l%/%H%j!<$G$9!#(B
 
 @item mm-file-name-rewrite-functions
 @vindex mm-file-name-rewrite-functions
-A list of functions used for rewriting file names of @acronym{MIME}
-parts.  Each function is applied successively to the file name.
-Ready-made functions include
+@acronym{MIME} $B%Q!<%H$N%U%!%$%kL>$r=q$-49$($k$?$a$K;H$o$l$k4X?t$N%j%9%H(B
+$B$G$9!#$=$l$>$l$N4X?t$O%U%!%$%kL>$r<u$1<h$C$F!"%U%!%$%kL>$rJV$7$^$9!#=PMh(B
+$B9g$$$N4X?t$O0J2<$NDL$j$G$9!#(B
 
 @table @code
 @item mm-file-name-delete-control
 @findex mm-file-name-delete-control
-Delete all control characters.
+$B$9$Y$F$N@)8fJ8;z$r>C5n$7$^$9!#(B
 
 @item mm-file-name-delete-gotchas
 @findex mm-file-name-delete-gotchas
-Delete characters that could have unintended consequences when used
-with flawed shell scripts, i.e. @samp{|}, @samp{>} and @samp{<}; and
-@samp{-}, @samp{.} as the first character.
+$B<e$_$,$"$k%7%'%k%9%/%j%W%H$G;H$o$l$k$H0U?^$7$J$$7k2L$r@8$8$kJ8;z!"$9$J$o(B
+$B$A(B @samp{|}, @samp{>} $B$*$h$S(B @samp{<}$B!"2C$($F:G=i$NJ8;z$H$7$F;H$o$l(B
+$B$k(B @samp{-} $B$H(B @samp{.} $B$r>C5n$7$^$9!#(B
 
 @item mm-file-name-delete-whitespace
 @findex mm-file-name-delete-whitespace
-Remove all whitespace.
+$B$9$Y$F$N6uGrJ8;z$r<h$j=|$-$^$9!#(B
 
 @item mm-file-name-trim-whitespace
 @findex mm-file-name-trim-whitespace
-Remove leading and trailing whitespace.
+$B@hF,$HKvHx$N6uGrJ8;z$r<h$j=|$-$^$9!#(B
 
 @item mm-file-name-collapse-whitespace
 @findex mm-file-name-collapse-whitespace
-Collapse multiple whitespace characters.
+$BJ#?t$NO"B3$7$?6uGrJ8;z$rC10l$N%9%Z!<%9J8;z$GCV$-49$($^$9!#(B
 
 @item mm-file-name-replace-whitespace
 @findex mm-file-name-replace-whitespace
 @vindex mm-file-name-replace-whitespace
-Replace whitespace with underscores.  Set the variable
-@code{mm-file-name-replace-whitespace} to any other string if you do
-not like underscores.
+$B6uGrJ8;z$r2<@~(B (underscores) $B$GCV$-49$($^$9!#2<@~$,$*9%$_$G$J$1$l$P!"B>(B
+$B$NJ8;z$r(B @code{mm-file-name-replace-whitespace} $BJQ?t$K@_Dj$7$F2<$5$$!#(B
 @end table
 
-The standard Emacs functions @code{capitalize}, @code{downcase},
-@code{upcase} and @code{upcase-initials} might also prove useful.
+Emacs $BI8=`$N4X?t$G$"$k(B @code{capitalize}, @code{downcase},
+@code{upcase} $B$*$h$S(B @code{upcase-initials} $B$b!"LrN)$D$3$H$OL@$i$+$G$9!#(B
 
 @item mm-path-name-rewrite-functions
 @vindex mm-path-name-rewrite-functions
-List of functions used for rewriting the full file names of @acronym{MIME}
-parts.  This is used when viewing parts externally, and is meant for
-transforming the absolute name so that non-compliant programs can find
-the file where it's saved.
-
+@acronym{MIME} $B%Q!<%H$N%U%k!&%U%!%$%kL>$r=q$-49$($k$?$a$K;H$o$l$k4X?t$N(B
+$B%j%9%H$G$9!#$3$l$O%Q!<%H$r30It$KI=<($9$k$H$-(B ($B$9$J$o$A!"M;DL$N8z$+$J$$%W(B
+$B%m%0%i%`$,!"%U%!%$%k$,J]B8$5$l$?>l=j$r8+$D$1$k$3$H$,$G$-$k$h$&$K!"@dBP%Q(B
+$B%9L>$rJQ49$9$k$?$a(B) $B$K;H$o$l$^$9!#(B
 @end table
 
 @node New Viewers
-@section New Viewers
+@section $B?7$7$$%S%e!<%o!<(B
 
-Here's an example viewer for displaying @code{text/enriched} inline:
+$B$3$l$O(B @code{text/enriched} $B%Q!<%H$r%$%s%i%$%sI=<($9$k%S%e!<%o!<$NNc$G$9(B:
 
 @lisp
 (defun mm-display-enriched-inline (handle)
@@ -494,46 +492,45 @@ Here's an example viewer for displaying @code{text/enriched} inline:
     (mm-insert-inline handle text)))
 @end lisp
 
-We see that the function takes a @acronym{MIME} handle as its parameter.  It
-then goes to a temporary buffer, inserts the text of the part, does some
-work on the text, stores the result, goes back to the buffer it was
-called from and inserts the result.
+$B$3$N4X?t$,%Q%i%a!<%?$H$7$F(B @acronym{MIME} $B%O%s%I%k$r<u$1<h$k$3$H$,$o$+$j(B
+$B$^$9$M!#$=$l$O0l;~%P%C%U%!$K:n6H>l=j$r0\$7!"%Q!<%H$N%F%-%9%H$rA^F~$7!"$=(B
+$B$N%F%-%9%H$K$"$k=hM}$r;\$7!"7k2L$r3P$($F$*$$$F!"4X?t$,8F$P$l$?$H$-$N%P%C(B
+$B%U%!$KLa$C$F$=$N7k2L$rA^F~$7$^$9!#(B
 
-The two important helper functions here are @code{mm-insert-part} and
-@code{mm-insert-inline}.  The first function inserts the text of the
-handle in the current buffer.  It handles charset and/or content
-transfer decoding.  The second function just inserts whatever text you
-tell it to insert, but it also sets things up so that the text can be
-``undisplayed'' in a convenient manner.
-
+$B$3$3$K$"$kFs$D$N=EMW$J$*=u$14X?t(B
+$B$O(B @code{mm-insert-part} $B$H(B @code{mm-insert-inline} $B$G$9!#:G=i$N4X?t$O!"(B
+$B%O%s%I%k$N%F%-%9%H$r8=:_$N%P%C%U%!$KA^F~$7$^$9!#$3$l$OJ8;z%;%C%H$*$h$S%((B
+$B%s%3!<%G%#%0(B (content transfer decoding) $B$r<h$j07$$$^$9!#FsHVL\$N4X?t$O!"(B
+$BA^F~$7$m$H8@$C$?$I$s$J%F%-%9%H$G$bC1$KA^F~$7$^$9$,!"%F%-%9%H$r<j7Z$JJ}K!(B
+$B$G!VI=<($5$l$J$/$9$k(B (undisplayed)$B!W$3$H$,$G$-$k$h$&$J=t@_Dj$r$b9T$J$$$^(B
+$B$9!#(B
 
 @node Composing
-@chapter Composing
+@chapter MIME $B%a%C%;!<%8$N:n@.(B
 @cindex Composing
 @cindex MIME Composing
 @cindex MML
 @cindex MIME Meta Language
 
-Creating a @acronym{MIME} message is boring and non-trivial.  Therefore,
-a library called @code{mml} has been defined that parses a language
-called @acronym{MML} (@acronym{MIME} Meta Language) and generates
-@acronym{MIME} messages.
+@acronym{MIME} $B%a%C%;!<%8$N:n@.$OB`6~$J;E;v$@$74JC1$G$b$"$j$^$;$s!#$=$3(B
+$B$G!"(B@acronym{MML} (@acronym{MIME} Meta Language) $B$H$$$&!"8@8l$r2r@O$7(B
+$B$F(B @acronym{MIME} $B%a%C%;!<%8$r@8@.$9$k!"(B@code{mml} $B$H$$$&%i%$%V%i%j!<$,(B
+$B:n$i$l$^$7$?!#(B
 
 @findex mml-generate-mime
-The main interface function is @code{mml-generate-mime}.  It will
-examine the contents of the current (narrowed-to) buffer and return a
-string containing the @acronym{MIME} message.
+$B<gMW$J%$%s%?!<%U%'!<%94X?t$O(B @code{mml-generate-mime} $B$G$9!#$3$l$O8=:_(B
+$B$N(B ($B69$a$i$l$?(B) $B%P%C%U%!$NFbMFJ*$rD4$Y$F!"(B@acronym{MIME} $B%a%C%;!<%8$r4^(B
+$B$`J8;zNs$rJV$7$^$9!#(B
 
 @menu
-* Simple MML Example::             An example @acronym{MML} document.
-* MML Definition::                 All valid @acronym{MML} elements.
-* Advanced MML Example::           Another example @acronym{MML} document.
-* Encoding Customization::         Variables that affect encoding.
-* Charset Translation::            How charsets are mapped from @sc{mule} to @acronym{MIME}.
-* Conversion::                     Going from @acronym{MIME} to @acronym{MML} and vice versa.
-* Flowed text::                    Soft and hard newlines.
+* Simple MML Example::             @acronym{MML} $BJ8=q$NNc(B
+* MML Definition::                 $B$9$Y$F$NM-8z$J(B @acronym{MML} $BMWAG(B
+* Advanced MML Example::           $B$b$&0l$D$N(B @acronym{MML} $BJ8=q$NNc(B
+* Encoding Customization::         $B%(%s%3!<%G%#%s%0$K:nMQ$9$kJQ?t(B
+* Charset Translation::            @sc{mule} $BJ8;z%;%C%H$+$i(B @acronym{MIME} $BJ8;z%;%C%H$X$N3d$jEv$F(B
+* Conversion::                     @acronym{MIME} $B$+$i(B @acronym{MML} $B$X!"$*$h$S$=$N5U(B
+* Flowed text::                    $B%=%U%H$*$h$S%O!<%I2~9T(B
 @end menu
-
 
 @node Simple MML Example
 @section Simple MML Example
