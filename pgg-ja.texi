@@ -67,9 +67,10 @@ Emacs $B$NCg$r<h$j;}$D%$%s%?%U%'!<%9$G$9!#$^$?!"(BPGG $B$O!"(BMIME $B%a%C%;
 @chapter Overview
 
 PGG $B$O!"0BA4$JDL?.$N$?$a$NMM!9$J%D!<%k$H(B Emacs $B$NCg$r<h$j;}$D%$%s%?%U%'!<(B
-$B%9$G$9!#F1MM$N5!G=$O(B Mailcrypt $B$b;}$C$F$$$^$9$,!"(BMailcrypt $B$O(B PGP/MIME 
-$B$N%$%s%U%i$GDL>oMQ$$$i$l$kJ,N%$5$l$?(B PGP $B%a%C%;!<%8$r<h$j07$&$3$H$,$G$-(B
-$B$^$;$s!#$3$l$,!";d(B($B:n<T(B)$B$,?7$7$$%i%$%V%i%j$r=q$$$?<g$JM}M3$G$9!#(B
+$B%9$G$9!#F1MM$N5!G=$O(B Mailcrypt $B$b;}$C$F$$$^$9$,!"(B
+Mailcrypt $B$O(B PGP/MIME $B$N%$%s%U%i$GDL>oMQ$$$i$l$kJ,N%$5$l$?(B
+PGP $B%a%C%;!<%8$r<h$j07$&$3$H$,$G$-$^$;$s!#$3$l$,!";d(B($B:n<T(B)$B$,?7$7$$%i%$%V(B
+$B%i%j$r=q$$$?<g$JM}M3$G$9!#(B
 
 PGP/MIME $B$O(B MIME Object Security Services (RFC1848) $B$N<BAu$G$9!#$=$NI8=`(B
 $B$O(B RFC2015 $B$G5-=R$5$l$F$$$^$9!#(B
@@ -173,94 +174,92 @@ PGG $B$r;H$&$?$a$K$O!"$"$J$?$N%"%W%j%1!<%7%g%s%W%m%0%i%`$NKAF,$G<!$N(B S $B<0
 @end deffn
 
 @deffn Command pgg-snarf-keys-region start end
-@var{start}$B$H(B@var{end}$B$N4V$NHO0O$K$"$k8x3+80$r=8$a!"%f!<%6$N80NX(B
-(keyring)$B$KDI2C$7$^$9!#(B
+@var{start}$B$H(B@var{end}$B$N4V$NHO0O$K$"$k8x3+80$r=8$a!"(B
+$B%f!<%6$N80NX(B (keyring) $B$KDI2C$7$^$9!#(B
 @end deffn
 
 @node Selecting an implementation
 @section Selecting an implementation
 
-Since PGP has a long history and there are a number of PGP
-implementations available today, the function which each one has differs
-considerably.  For example, if you are using GnuPG, you know you can
-select cipher algorithm from 3DES, CAST5, BLOWFISH, and so on, but on
-the other hand the version 2 of PGP only supports IDEA.
+PGP $B$ONr;K$,D9$/!":#$G$OB?$/$N<BAu$rMxMQ$9$k$3$H$,$G$-$k$N$G!"$=$l$>$l$,(B
+$B;}$C$F$$$k8D!9$N5!G=$,$:$$$V$s0[$J$C$F$$$k$3$H$,$"$j$^$9!#Nc$($P!"$"$J$?(B
+$B$,(B GnuPG $B$r$*;H$$$J$i!"0E9f%"%k%4%j%:%`$K(B 3DES $B$d(B CAST5$B!"(BBLOWFISH $B$J$I$r(B
+$BA*$V$3$H$,$G$-$k$,!"(BPGP $B$N%P!<%8%g%s(B 2 $B$G$O(B IDEA $B$7$+%5%]!<%H$5$l$F$$$J(B
+$B$$$3$H$r$4B8$8$G$7$g$&!#(B
 
-By default, if the variable @code{pgg-scheme} is not set, PGG searches the
-registered scheme for an implementation of the requested service
-associated with the named algorithm.  If there are no match, PGG uses
-@code{pgg-default-scheme}.  In other words, there are two options to
-control which command is used to process the incoming PGP armors.  One
-is for encrypting and signing, the other is for decrypting and
-verifying.
+$B%G%U%)%k%H$G$O!"(B@code{pgg-scheme} $BJQ?t$,@_Dj$5$l$F$$$J$1$l$P!"(BPGG $B$O$"$i(B
+$B$+$8$aMQ0U$5$l$?%9%-!<%`(B (scheme) $B$+$i!"MQ$$$?$$0E9f%"%k%4%j%:%`$KI,MW$J(B
+$B%5!<%S%9$N<BAu$r8!:w$7$^$9!#8@$$49$($l$P!"$d$C$F$/$k(B PGP $BIpAu$r=hM}$9$k(B
+$B$N$K$I$N%3%^%s%I$r;H$&$+$r@)8f$9$k$?$a$N(B 2 $B$D$N%*%W%7%g%s$,$"$j$^$9!#(B
+1$B$D$O0E9f2=$H=pL>$K$D$$$F!"$b$&0lJ}$OI|9f2=$H8!>Z$K$D$$$F!"$G$9!#(B
 
 @defvar pgg-scheme
-Force specify the scheme of PGP implementation for decrypting and verifying.
-The value can be @code{gpg}, @code{pgp}, and @code{pgp5}.
+$BI|9f2=$H8!>Z$K$I$N(B PGP $B<BAu$rMQ$$$k$+$r6/@)$7$^$9!#(B
+$B@_Dj$G$-$k$N$O(B @code{gpg}$B!"(B@code{pgp} $B$*$h$S(B @code{pgp5} $B$N$I$l$+$G$9!#(B
 @end defvar
 
 @defvar pgg-default-scheme
-Force specify the scheme of PGP implementation for encrypting and signing.
-The value can be @code{gpg}, @code{pgp}, and @code{pgp5}.
+$B0E9f2=$H=pL>$K$I$N(B PGP $B<BAu$rMQ$$$k$+$r6/@)$7$^$9!#(B
+$B@_Dj$G$-$k$N$O(B @code{gpg}$B!"(B@code{pgp} $B$*$h$S(B @code{pgp5} $B$N$I$l$+$G$9!#(B
 @end defvar
 
 @node Caching passphrase
 @section Caching passphrase
 
-PGG uses a simple passphrase caching mechanism, which is enabled by
-default.
+PGG $B$O%Q%9%U%l!<%:$r%-%c%C%7%e$7$F$*$/$N$KC1=c$J%a%+%K%:%`$r;H$$$^$9!#$3(B
+$B$l$,%G%U%)%k%H$G$9!#(B
 
 @defvar pgg-cache-passphrase
-If non-@code{nil}, store passphrases.  The default value of this
-variable is @code{t}.  If you were worry about security issue, however,
-you could stop caching with setting it @code{nil}.
+non-@code{nil} $B$G$J$1$l$P!"%Q%9%U%l!<%:$rJ];}$7$^$9!#(B
+$B=i4|CM$O(B @code{t} $B$G$9!#$7$+$7!"$"$J$?$,%;%-%e%j%F%#$K$D$$$F5$3]$+$j$J$i!"(B
+$B$3$l$r(B @code{nil} $B$K@_Dj$7$F$d$l$P!"%Q%9%U%l!<%:$NJ];}$r$d$a$5$;$k$3$H$,(B
+$B$G$-$^$9!#(B
 @end defvar
 
 @defvar pgg-passphrase-cache-expiry
-Elapsed time for expiration in seconds.
+$B%Q%9%U%l!<%:$rJ];}$7$F$*$/;~4V$rIC$G;XDj$7$^$9!#(B
 @end defvar
 
 @node Default user identity
 @section Default user identity
 
-The PGP implementation is usually able to select the proper key to use
-for signing and decryption, but if you have more than one key, you may
-need to specify the key id to use.
+PGP $B$N<BAu$O!"DL>o!"0E9f2=$*$h$SI|9f2=$K;H$&E,@Z$J80$rA*$V$3$H$,$G$-$^$9(B
+$B$,!"$"$J$?$,(B1$B$D0J>e$N80$r;}$C$F$$$k>l9g!"MQ$$$k80$N(B id $B$r;XDj$9$kI,MW$,(B
+$B$"$j$^$9!#(B
 
 @defvar pgg-default-user-id
-User ID of your default identity.  It defaults to the value returned
-by @samp{(user-login-name)}.  You can customize this variable.
+$B$"$J$?<+?H$NDL>oMQ$$$k%f!<%6(B ID $B$G$9!#(B
+$B;XDj$7$J$$>l9g!"=i4|CM$O(B @samp{(user-login-name)} $B$NLaCM$G7hDj$5$l$^$9!#(B
+$B%+%9%?%^%$%:2DG=$G$9!#(B
 @end defvar
 
 @defvar pgg-gpg-user-id
-User ID of the GnuPG default identity.  It defaults to @samp{nil}.
-This overrides @samp{pgg-default-user-id}.  You can customize this
-variable.
+GnuPG $B$G;H$&$"$J$?<+?H$N%f!<%6(B ID $B$G$9!#%G%U%)%k%H$O(B @samp{nil} $B$G$9!#(B
+$B$3$NCM$O(B @samp{pgg-default-user-id} $B$r>e=q$-$7$^$9!#%+%9%?%^%$%:2DG=$G$9!#(B
 @end defvar
 
 @defvar pgg-pgp-user-id
-User ID of the PGP 2.x/6.x default identity.  It defaults to
-@samp{nil}.  This overrides @samp{pgg-default-user-id}.  You can
-customize this variable.
+PGP 2.x/6.x $B$G;H$&$"$J$?<+?H$N%f!<%6(B ID $B$G$9!#(B
+$B%G%U%)%k%H$O(B @samp{nil} $B$G$9!#$3$NCM$O(B @samp{pgg-default-user-id} $B$r>e=q(B
+$B$-$7$^$9!#%+%9%?%^%$%:2DG=$G$9!#(B
 @end defvar
 
 @defvar pgg-pgp5-user-id
-User ID of the PGP 5.x default identity.  It defaults to @samp{nil}.
-This overrides @samp{pgg-default-user-id}.  You can customize this
-variable.
+PGP 5.x $B$G;H$&$"$J$?<+?H$N%f!<%6(B ID $B$G$9!#%G%U%)%k%H$O(B @samp{nil} $B$G$9!#(B
+$B$3$NCM$O(B @samp{pgg-default-user-id} $B$r>e=q$-$7$^$9!#%+%9%?%^%$%:2DG=$G$9!#(B
 @end defvar
 
 @node Architecture
 @chapter Architecture
 
-PGG introduces the notion of a "scheme of PGP implementation" (used
-interchangeably with "scheme" in this document).  This term refers to a
-singleton object wrapped with the luna object system.
+PGG $B$O!V(BPGP $B<BAu$N%9%-!<%`(B($BOHAH(B)$B!W$H$$$&9M$($rF3F~$7$^$9!#0J8e!"(B
+$B!V%9%-!<%`(B (scheme)$B!W$HI=5-$7$^$9!#$3$NMQ8l$O(B luna object system $B$G$N(B
+singleton object $B$KM3Mh$7$^$9!#(B
 
-Since PGG was designed for accessing and developing PGP functionality,
-the architecture had to be designed not just for interoperability but
-also for extensiblity.  In this chapter we explore the architecture
-while finding out how to write the PGG back end.
+PGG $B$O(B PGP $B$N5!G=$K%"%/%;%9$G$-$k$HF1;~$K$=$l$r3+H/$9$k$?$a$K@_7W$5$l$?(B
+$B$N$G!"$=$N4pK\@_7W$G$O!"Aj8_1?MQ@-$@$1$G$J$/3HD%@-$b9M$($J$$$H$$$1$^$;$s!#(B
+$B$3$N>O$G$O!"(BPGG $B$N%P%C%/%(%s%I$r$I$N$h$&$K5-=R$9$k$+$rC5$7$J$,$i!"(BPGG $B$,(B
+$B$I$N$h$&$K$D$/$i$l$F$$$k$+$rC58!$7$F$_$^$7$g$&!#(B
 
 @menu
 * Initializing::                
@@ -271,12 +270,13 @@ while finding out how to write the PGG back end.
 @node Initializing
 @section Initializing
 
-A scheme must be initialized before it is used.
-It had better guarantee to keep only one instance of a scheme.
+$B%9%-!<%`$O!";H$&A0$K=i4|2=$5$l$J$1$l$P$J$j$^$;$s!#(B
+$B$?$@$R$H$D$N%9%-!<%`$rJ]$D$h$&J]>Z$9$k$N$,$h$$$G$7$g$&!#(B
 
-The following code is snipped out of @file{pgg-gpg.el}.  Once an
-instance of @code{pgg-gpg} scheme is initialized, it's stored to the
-variable @code{pgg-scheme-gpg-instance} and will be reused from now on.
+$B0J2<$N%3!<%I$O(B @file{pgg-gpg.el} $B$+$i$NH4$-=q$-$G$9!#(B
+$B0lC6!"$"$k(B @code{pgg-gpg} $B$N%9%-!<%`$,=i4|2=$5$l$k$H!"(B
+$B$=$l$O(B @code{pgg-scheme-gpg-instance} $BJQ?t$KJ]B8$5$l!"0J8e!":FMxMQ$5$l$^(B
+$B$9!#(B
 
 @lisp
 (defvar pgg-scheme-gpg-instance nil)
@@ -287,100 +287,97 @@ variable @code{pgg-scheme-gpg-instance} and will be reused from now on.
 	    (luna-make-entity 'pgg-scheme-gpg))))
 @end lisp
 
-The name of the function must follow the
-regulation---@code{pgg-make-scheme-} follows the back end name.
+$B4X?t$NL>A0$O(B @code{pgg-make-scheme-} $B$N8e$m$K%P%C%/%(%s%IL>$,IU2C$9$k$h(B
+$B$&$KIU$1$i$l$J$1$l$P$J$j$^$;$s!#(B
 
 @node Back end methods
 @section Back end methods
 
-In each back end, these methods must be present.  The output of these
-methods is stored in special buffers (@ref{Getting output}), so that
-these methods must tell the status of the execution.
+$B3F%P%C%/%(%s%I$K$O%a%=%C%I$,B8:_$7$J$1$l$P$J$j$^$;$s!#%a%=%C%I$N<B9T7k2L(B
+$B$N%9%F!<%?%9$rCN$i$;$J$1$l$P$J$i$J$$$N$G!"%a%=%C%I$N=PNO$OFCJL$J%P%C%U%!(B
+$B$KJ]B8$5$l$^$9(B(@ref{Getting output})$B!#(B
 
 @deffn Method pgg-scheme-lookup-key scheme string &optional type
-Return keys associated with @var{string}.  If the optional third
-argument @var{type} is non-@code{nil}, it searches from the secret
-keyrings.
+@var{string} $B$K4XO"$E$1$i$l$?80$rJV$7$^$9!#(B
+3$BHVL\$N%*%W%7%g%s0z?t(B @var{type} $B$,(B non-@code{nil} $B$J$i$P!"HkL)80NX$+$i(B
+$B8!:w$7$^$9!#(B
 @end deffn
 
 @deffn Method pgg-scheme-encrypt-region scheme start end recipients &optional sign
-Encrypt the current region between @var{start} and @var{end} for
-@var{recipients}.  If @var{sign} is non-@code{nil}, do a combined sign
-and encrypt.  If encryption is successful, it returns @code{t},
-otherwise @code{nil}.
+@var{recipients}$B08$N%a%C%;!<%8$K$D$$$F!"(B@var{start}$B$H(B@var{end}$B$N4V$G;XDj(B
+$B$5$l$?8=:_$NHO0O$r0E9f2=$7$^$9!#(B
+$B%*%W%7%g%s0z?t(B @var{sign} $B$,(B non-@code{nil} $B$J$i$P!"=pL>$H0E9f2=$,F1;~$K(B
+$B9T$o$l$^$9!#0E9f2=$K@.8y$9$k$H(B @code{t} $B$r!"<:GT$9$k$H(B @code{nil} $B$rJV$7(B
+$B$^$9!#(B
 @end deffn
 
 @deffn Method pgg-scheme-decrypt-region scheme start end
-Decrypt the current region between @var{start} and @var{end}.  If
-decryption is successful, it returns @code{t}, otherwise @code{nil}.
+@var{start}$B$H(B@var{end}$B$N4V$G;XDj$5$l$?8=:_$NHO0O$rI|9f2=$7$^$9!#I|9f2=$K(B
+$B@.8y$9$k$H(B @code{t} $B$r!"<:GT$9$k$H(B @code{nil} $B$rJV$7$^$9!#(B
 @end deffn
 
 @deffn Method pgg-scheme-sign-region scheme start end &optional cleartext
-Make the signature from text between @var{start} and @var{end}.  If the
-optional third argument @var{cleartext} is non-@code{nil}, it does not
-create a detached signature.  If signing is successful, it returns
-@code{t}, otherwise @code{nil}.
+@var{start}$B$H(B@var{end}$B$N4V$N%F%-%9%H$K=pL>$7$^$9!#(B3$BHVL\$N%*%W%7%g%s0z?t(B
+@var{cleartext} $B$,(B non-@code{nil} $B$G$"$k$+!"$"$k$$$OBPOCE*$K8F$P$l$?>l9g!"(B
+$BJ,N%$5$l$?=pL>$O:n$i$l$^$;$s!#=pL>$K@.8y$9$k$H(B @code{t} $B$r!"(B
+$B<:GT$9$k$H(B @code{nil} $B$rJV$7$^$9!#(B
 @end deffn
 
 @deffn Method pgg-scheme-verify-region scheme start end &optional signature
-Verify the current region between @var{start} and @var{end}.  If the
-optional third argument @var{signature} is non-@code{nil}, it is treated
-as the detached signature of the current region.  If the signature is
-successfully verified, it returns @code{t}, otherwise @code{nil}.
+@var{start}$B$H(B@var{end}$B$N4V$NHO0O$r8!::$7$^$9!#(B3$BHVL\$N%*%W%7%g%s0z?t(B
+@var{signature} $B$,(B non-@code{nil} $B$G$"$k>l9g!"J,N%$5$l$?=pL>$H$7$F<h$j07(B
+$B$o$l$^$9!#=pL>$,@5$7$/8!>Z$5$l$?>l9g!"(B@code{t} $B$r!"(B
+$B<:GT$9$k$H(B @code{nil}$B$rJV$7$^$9!#(B
 @end deffn
 
 @deffn Method pgg-scheme-insert-key scheme
-Retrieve the user's public key and insert it as ASCII-armored format.
-On success, it returns @code{t}, otherwise @code{nil}.
+$B%f!<%6$N8x3+80$r<hF@$7$F!"(BASCII-armored $B%U%)!<%^%C%H$GA^F~$7$^$9!#(B
+$B@.8y$9$k$H(B @code{t} $B$r!"<:GT$9$k$H(B @code{nil} $B$rJV$7$^$9!#(B
 @end deffn
 
 @deffn Method pgg-scheme-snarf-keys-region scheme start end
-Collect public keys in the current region between @var{start} and
-@var{end}, and add them into the user's keyring.
-On success, it returns @code{t}, otherwise @code{nil}.
+@var{start}$B$H(B@var{end}$B$N4V$NHO0O$K$"$k8x3+80$r=8$a!"(B
+$B%f!<%6$N80NX(B (keyring) $B$KDI2C$7$^$9!#(B
+$B@.8y$9$k$H(B @code{t} $B$r!"<:GT$9$k$H(B @code{nil} $B$rJV$7$^$9!#(B
 @end deffn
 
 @node Getting output
 @section Getting output
 
-The output of the back end methods (@ref{Back end methods}) is stored in
-special buffers, so that these methods must tell the status of the
-execution.
+$B%P%C%/%(%s%I%a%=%C%I(B (@ref{Back end methods}) $B$N=PNO$OFCJL$J%P%C%U%!$KJ](B
+$BB8$5$l$^$9!#$7$?$,$C$F!"$3$l$i$N%a%=%C%I$O<B9T7k2L$rEA$($kI,MW$,$"$j$^$9!#(B
 
 @defvar pgg-errors-buffer
-The standard error output of the execution of the PGP command is stored
-here.
+PGP $B%3%^%s%I<B9T;~$NI8=`%(%i!<=PNO$O!"$3$N%P%C%U%!$KJ]B8$5$l$^$9!#(B
 @end defvar
 
 @defvar pgg-output-buffer
-The standard output of the execution of the PGP command is stored here.
+PGP $B%3%^%s%I<B9T;~$NI8=`=PNO$O!"$3$N%P%C%U%!$KJ]B8$5$l$^$9!#(B
 @end defvar
 
 @defvar pgg-status-buffer
-The rest of status information of the execution of the PGP command is
-stored here.
+PGP $B%3%^%s%I<B9T;~$N$=$NB>$N7k2L>pJs$O!"$3$N%P%C%U%!$KJ]B8$5$l$^$9!#(B
 @end defvar
 
 @node Parsing OpenPGP packets
 @chapter Parsing OpenPGP packets
 
-The format of OpenPGP messages is maintained in order to publish all
-necessary information needed to develop interoperable applications.
-The standard is documented in RFC 2440.
+OpenPGP $B$N%a%C%;!<%8$N%U%)!<%^%C%H$O!"Aj8_1?MQ$G$-$k%"%W%j%1!<%7%g%s3+H/(B
+$B$KI,MW$J$9$Y$F$N>pJs$r=PNO$9$k$h$&$K0];}$5$l$F$$$^$9!#(B
+$B$=$NI8=`$O!"(BRFC2440 $B$K5-:\$5$l$F$$$^$9!#(B
 
-PGG has its own parser for the OpenPGP packets.
+PGG $B$O(B OpenPGP $B$KBP1~$7$?FH<+$N%a%C%;!<%82r@O$r9T$$$^$9!#(B
 
 @defun pgg-parse-armor string
-List the sequence of packets in @var{string}.
+@var{string} $BFb$N%Q%1%C%H$NJB$S$r0lMw$7$^$9!#(B
 @end defun
 
 @defun pgg-parse-armor-region start end
-List the sequence of packets in the current region between @var{start}
-and @var{end}.
+@var{start}$B$H(B@var{end}$B$N4V$NHO0OFb$N%Q%1%C%H$NJB$S$r0lMw$7$^$9!#(B
 @end defun
 
 @defvar pgg-ignore-packet-checksum
-If non-@code{nil}, don't check the checksum of the packets.
+non-@code{nil} $B$J$i$P!"%Q%1%C%H$N%A%'%C%/%5%`$r8!>Z$7$^$;$s!#(B
 @end defvar
 
 @node Function Index
