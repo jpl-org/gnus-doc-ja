@@ -89,7 +89,7 @@ RFC2048 ($BEPO?<jB3(B), RFC2049 ($BE,9g4p=`$H;vNc(B)$B!#(B@acronym{MIME} 
 @menu
 * Decoding and Viewing::  $B%G%3!<%I$HI=<($N$?$a$NOHAH$_(B
 * Composing::             @acronym{MML}; @acronym{MIME} $B%Q!<%H5-=RMQ8@8l(B
-* Interface Functions::   $B4pK\E*$J4X?t$K4X$9$kCj>]35G0(B
+* Interface Functions::   $B4pK\E*$J4X?t$NCj>]2=(B
 * Basic Functions::       $B%f!<%F%#%j%F%#!<$*$h$S4pK\E*$J2r@O$N$?$a$N4X?t(B
 * Standards::             $B;H$o$l$F$$$k(B RFC $B$H:n6HJ8=q$N35N,(B
 * Index::                 $B4X?t$*$h$SJQ?t$N:w0z(B
@@ -225,7 +225,8 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 
 @item mm-handle-disposition
 @findex mm-handle-disposition
-$B2r@O:Q$_$N!"%Q!<%H$N(B @code{Content-Disposition} $B$rJV$7$^$9!#(B
+$B2r@O:Q$_$N!"%Q!<%H$N(B @code{Content-Disposition} ($BLuCm(B: $BG[CV;XDj(B) $B$rJV$7(B
+$B$^$9!#(B
 
 @item mm-get-content-id
 @code{Content-ID} $B$G;2>H$5$l$k%O%s%I%k(B ($BC1?t$^$?$OJ#?t(B) $B$rJV$7$^$9!#(B
@@ -307,10 +308,12 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 $B$3$l$O!"JL$N5-;v$rA*Br$7$F$b!"30It%S%e!<%o!<$,(B kill $B$5$l$J$$%a%G%#%"%?%$(B
 $B%W$N%j%9%H$G$9!#(B
 
+@quotation
 $BLuCm(B: postscript $B$d(B dvi $B$J$I(B ($BJQ?t$N%G%#%U%)%k%HCM$r;2>H$N$3$H(B) $B$N$h$&$K!"(B
 $BFI$`$N$K;~4V$,$+$+$k$+$b$7$l$J$$%Q!<%H$N%?%$%W$r4^$`%j%9%H$G$9!#0lJ}!"$3(B
 $B$l$K4^$^$l$J$$C1=c$J2hA|$N%Q!<%H$J$I$O!"$=$l$,4^$^$l$F$$$?5-;v$NI=<($r$d(B
 $B$a$?$H$-$K!"<+F0E*$K30It%S%e!<%o!<$,(B kill $B$5$l$^$9!#(B
+@end quotation
 
 @item mm-attachment-override-types
 @vindex mm-attachment-override-types
@@ -461,8 +464,8 @@ Mailcap (@pxref{mailcap}) $B$r2p$7$FE:IU%U%!%$%k$NI=<($r;O$a$k$H!":G$b0BA4(B
 @item mm-file-name-replace-whitespace
 @findex mm-file-name-replace-whitespace
 @vindex mm-file-name-replace-whitespace
-$B6uGrJ8;z$r2<@~(B (underscores) $B$GCV$-49$($^$9!#2<@~$,$*9%$_$G$J$1$l$P!"B>(B
-$B$NJ8;z$r(B @code{mm-file-name-replace-whitespace} $BJQ?t$K@_Dj$7$F2<$5$$!#(B
+$B6uGrJ8;z$r2<@~(B (underscore) $B$GCV$-49$($^$9!#2<@~$,$*9%$_$G$J$1$l$P!"B>$N(B
+$BJ8;z$r(B @code{mm-file-name-replace-whitespace} $BJQ?t$K@_Dj$7$F2<$5$$!#(B
 @end table
 
 Emacs $BI8=`$N4X?t$G$"$k(B @code{capitalize}, @code{downcase},
@@ -512,10 +515,10 @@ Emacs $BI8=`$N4X?t$G$"$k(B @code{capitalize}, @code{downcase},
 @cindex MML
 @cindex MIME Meta Language
 
-@acronym{MIME} $B%a%C%;!<%8$N:n@.$OB`6~$J;E;v$@$74JC1$G$b$"$j$^$;$s!#$=$3(B
-$B$G!"(B@acronym{MML} (@acronym{MIME} Meta Language) $B$H$$$&!"8@8l$r2r@O$7(B
-$B$F(B @acronym{MIME} $B%a%C%;!<%8$r@8@.$9$k!"(B@code{mml} $B$H$$$&%i%$%V%i%j!<$,(B
-$B:n$i$l$^$7$?!#(B
+@acronym{MIME} $B%a%C%;!<%8$N:n@.$O$&$s$6$j$9$k;E;v$@$74JC1$G$b$"$j$^$;$s!#(B
+$B$=$3$G!"(B@acronym{MML} (@acronym{MIME} Meta Language) $B$H$$$&!"8@8l$r2r@O(B
+$B$7$F(B @acronym{MIME} $B%a%C%;!<%8$r@8@.$9$k$?$a$N!"(B@code{mml} $B$H$$$&%i%$%V(B
+$B%i%j!<$,:n$i$l$^$7$?!#(B
 
 @findex mml-generate-mime
 $B<gMW$J%$%s%?!<%U%'!<%94X?t$O(B @code{mml-generate-mime} $B$G$9!#$3$l$O8=:_(B
@@ -533,198 +536,201 @@ Emacs $BI8=`$N4X?t$G$"$k(B @code{capitalize}, @code{downcase},
 @end menu
 
 @node Simple MML Example
-@section Simple MML Example
+@section $BC1=c$J(B MML $B$NNc(B
 
-Here's a simple @samp{multipart/alternative}:
+@samp{multipart/alternative} $B$NC1=c$JNc$G$9(B:
 
 @example
 <#multipart type=alternative>
 This is a plain text part.
+$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
 <#part type=text/enriched>
 <center>This is a centered enriched part</center>
+<center>$B$3$l$OCf?4$KCV$+$l$k(B enriched $B%Q!<%H$G$9(B</center>
 <#/multipart>
 @end example
 
-After running this through @code{mml-generate-mime}, we get this:
+$B$3$l$r(B @code{mml-generate-mime} $B$KDL$9$H!"<!$N$b$N$,F@$i$l$^$9(B:
 
 @example
 Content-Type: multipart/alternative; boundary="=-=-="
 
-
 --=-=-=
-
+Content-Type: text/plain; charset=iso-2022-jp
 
 This is a plain text part.
+^[$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#^[(B
 
 --=-=-=
-Content-Type: text/enriched
-
+Content-Type: text/enriched; charset=iso-2022-jp
 
 <center>This is a centered enriched part</center>
+<center>^[$B$3$l$OCf?4$KCV$+$l$k^[(B enriched ^[$B%Q!<%H$G$9^[(B</center>
 
 --=-=-=--
 @end example
 
+$B$o$C!"J8;z2=$1$@(B!?  $B$$$$$(!"$b$H$NJ8$,(B @samp{charset=iso-2022-jp} $B$G%(%s(B
+$B%3!<%I$5$l$?$b$N$G$9!#<u?.<T$,8+$k$H$-$K!"E,@Z$K%G%3!<%I$5$l$k$G$7$g$&!#(B
 
 @node MML Definition
-@section MML Definition
+@section MML $B$NDj5A(B
 
-The @acronym{MML} language is very simple.  It looks a bit like an SGML
-application, but it's not.
+@acronym{MML} $B8@8l$O$H$F$bC1=c$G$9!#(BSGML $B%"%W%j%1!<%7%g%s$K>/$7;w$F$$$^(B
+$B$9$,!"0[$J$k$b$N$G$9!#(B
 
-The main concept of @acronym{MML} is the @dfn{part}.  Each part can be of a
-different type or use a different charset.  The way to delineate a part
-is with a @samp{<#part ...>} tag.  Multipart parts can be introduced
-with the @samp{<#multipart ...>} tag.  Parts are ended by the
-@samp{<#/part>} or @samp{<#/multipart>} tags.  Parts started with the
-@samp{<#part ...>} tags are also closed by the next open tag.
+@acronym{MML} $B$N<gMW$J35G0$O(B @dfn{$B%Q!<%H(B} $B$G$9!#$=$l$>$l$N%Q!<%H$O0[$J$k(B
+$B%?%$%W$+0[$J$kJ8;z%;%C%H$N$b$N$G$"$jF@$^$9!#%Q!<%H(B
+$B$O(B @samp{<#part ...>} $B%?%0$G5-=R$5$l$^$9!#%^%k%A%Q!<%H7?$N%Q!<%H$G(B
+$B$O(B @samp{<#multipart ...>} $B%?%0$,MQ$$$i$l$^$9!#$=$l$>$l$N%Q!<%H(B
+$B$O(B @samp{<#/part>} $B%?%0$+(B @samp{<#/multipart>} $B%?%0$G=*C<$5$l$^$9$,!"$5(B
+$B$i$K!"(B@samp{<#part ...>} $B$G;O$^$C$?%?%0$O<!$N%Q!<%H$N;O$^$j$K$h$C$F$bJD(B
+$B$8$i$l$^$9!#(B
 
-There's also the @samp{<#external ...>} tag.  These introduce
-@samp{external/message-body} parts.
+@samp{<#external ...>} $B%?%0$H$$$&$b$N$b$"$j$^$9!#$3$l(B
+$B$O(B @samp{external/message-body} $B7?$N%Q!<%H$r5-=R$9$k$?$a$K;H$o$l$^$9!#(B
 
-Each tag can contain zero or more parameters on the form
-@samp{parameter=value}.  The values may be enclosed in quotation marks,
-but that's not necessary unless the value contains white space.  So
-@samp{filename=/home/user/#hello$^yes} is perfectly valid.
+$B$=$l$>$l$N%?%0$O(B @samp{parameter=$BCM(B} $B$N7A<0$G%Q%i%a!<%?$r4^$`$3$H$,$G$-(B
+$B$^$9!#CM$r%/%)!<%F!<%7%g%s%^!<%/(B ("...") $B$G0O$`$3$H$,$G$-$^$9$,!"CM$,6u(B
+$BGrJ8;z$r4^$`>l9g0J30$O0O$`I,MW$,$"$j$^$;$s!#$7$?$,$C$F!"(B
+@samp{filename=/home/user/#hello$^yes} $B$O40A4$KM-8z$G$9!#(B
 
-The following parameters have meaning in @acronym{MML}; parameters that have no
-meaning are ignored.  The @acronym{MML} parameter names are the same as the
-@acronym{MIME} parameter names; the things in the parentheses say which
-header it will be used in.
+$B0J2<$N%Q%i%a!<%?$O(B @acronym{MML} $B$G;H$o$l$^$9!#0UL#$r;}$?$J$$%Q%i%a!<%?(B
+$B$OL5;k$5$l$^$9!#(B@acronym{MML} $B%Q%i%a!<%?$NL>A0$O(B @acronym{MIME} $B%Q%i%a!<(B
+$B%?$NL>A0$HF1$8$G!"3g8L$NCf$K$"$k$b$N$O!"$=$l$,$I$N%X%C%@!<$NCf$G;H$o$l$k(B
+$B$+$r@k8@$7$^$9!#(B
 
 @table @samp
 @item type
-The @acronym{MIME} type of the part (@code{Content-Type}).
+$B%Q!<%H$N(B @acronym{MIME} $B%?%$%W$G$9(B (@code{Content-Type})$B!#(B
 
 @item filename
-Use the contents of the file in the body of the part
-(@code{Content-Disposition}).
+$B%Q!<%H$K4^$^$;$k%U%!%$%k$NL>A0$G$9(B (@code{Content-Disposition})$B!#(B
 
 @item charset
-The contents of the body of the part are to be encoded in the character
-set specified (@code{Content-Type}). @xref{Charset Translation}.
+$B%Q!<%H$NFbMFJ*$r%(%s%3!<%I$9$k$H$-$K;H$o$l$kJ8;z%;%C%H$G(B
+$B$9(B (@code{Content-Type})$B!#(B@xref{Charset Translation}.
 
 @item name
-Might be used to suggest a file name if the part is to be saved
-to a file (@code{Content-Type}).
+$B%Q!<%H$r%U%!%$%k$KJ]B8$9$k$H$-$N%U%!%$%kL>$r<(:6$9$k$?$a$K;H$o$l$k$+$b$7(B
+$B$l$^$;$s(B (@code{Content-Type})$B!#(B
 
 @item disposition
-Valid values are @samp{inline} and @samp{attachment}
-(@code{Content-Disposition}).
+$BG[CV;XDj$K;H$$$^$9!#M-8z$JCM$O(B @samp{inline} $B$H(B @samp{attachment} $B$G(B
+$B$9(B (@code{Content-Disposition})$B!#(B
 
 @item encoding
-Valid values are @samp{7bit}, @samp{8bit}, @samp{quoted-printable} and
-@samp{base64} (@code{Content-Transfer-Encoding}). @xref{Charset
+$BM-8z$JCM$O(B @samp{7bit}, @samp{8bit}, @samp{quoted-printable} $B$*$h(B
+$B$S(B @samp{base64} $B$G$9(B (@code{Content-Transfer-Encoding})$B!#(B@xref{Charset
 Translation}.
 
 @item description
-A description of the part (@code{Content-Description}).
+$B%Q!<%H$N@bL@=q$-$G$9(B (@code{Content-Description})$B!#(B
 
 @item creation-date
-RFC822 date when the part was created (@code{Content-Disposition}).
+$B%Q!<%H$,:n@.$5$l$?;~9o(B (RFC822 $B7A<0(B) $B$G$9(B (@code{Content-Disposition})$B!#(B
 
 @item modification-date
-RFC822 date when the part was modified (@code{Content-Disposition}).
+$B%Q!<%H$,JQ99$5$l$?;~9o(B (RFC822 $B7A<0(B) $B$G$9(B (@code{Content-Disposition})$B!#(B
 
 @item read-date
-RFC822 date when the part was read (@code{Content-Disposition}).
+$B%Q!<%H$,FI$^$l$?;~9o(B (RFC822 $B7A<0(B) $B$G$9(B (@code{Content-Disposition})$B!#(B
 
 @item recipients
-Who to encrypt/sign the part to.  This field is used to override any
-auto-detection based on the To/CC headers.
+$B%Q!<%H$rC/08$F$K0E9f2=(B/$B=pL>$9$k$+$r;XDj$7$^$9!#$3$l$O(B To/CC $B$r4p$K$7$?<+(B
+$BF08!=P$h$j$bM%@h$5$l$^$9!#(B
 
 @item sender
-Identity used to sign the part.  This field is used to override the
-default key used.
+$B%Q!<%H$K=pL>$9$k$H$-$NL>5A$G$9!#$3$N%U%#!<%k%I$O%G%#%U%)%k%H$N80$,;H$o$l(B
+$B$J$$$h$&$K$9$k$?$a$K;H$o$l$^$9!#(B
 
 @item size
-The size (in octets) of the part (@code{Content-Disposition}).
+$B%Q!<%H$N%5%$%:$r(B octet (8-bit) $B$NC10L$GI=$7$^(B
+$B$9(B (@code{Content-Disposition})$B!#(B
 
 @item sign
-What technology to sign this @acronym{MML} part with (@code{smime}, @code{pgp}
-or @code{pgpmime})
+$B$3$N(B @acronym{MML} $B$N%Q!<%H$K!"2?$N5;=Q<jCJ(B (@code{smime}, @code{pgp} $B$^(B
+$B$?$O(B @code{pgpmime}) $B$G=pL>$9$k$+$r;XDj$7$^$9!#(B
 
 @item encrypt
-What technology to encrypt this @acronym{MML} part with (@code{smime},
-@code{pgp} or @code{pgpmime})
-
+$B$3$N(B @acronym{MML} $B$N%Q!<%H$r!"2?$N5;=Q<jCJ(B (@code{smime}, @code{pgp} $B$^(B
+$B$?$O(B @code{pgpmime}) $B$G0E9f2=$9$k$+$r;XDj$7$^$9!#(B
 @end table
 
-Parameters for @samp{text/plain}:
+$B0J2<$O(B @samp{text/plain} $B$N$?$a$N%Q%i%a!<%?$G$9(B:
 
 @table @samp
 @item format
-Formatting parameter for the text, valid values include @samp{fixed}
-(the default) and @samp{flowed}.  Normally you do not specify this
-manually, since it requires the textual body to be formatted in a
-special way described in RFC 2646.  @xref{Flowed text}.
+$B%F%-%9%H$r%U%)!<%^%C%H$9$k%Q%i%a!<%?$G!"M-8z$JCM$O(B @samp{fixed} ($B%G%#%U%)(B
+$B%k%H(B) $B$H(B @samp{flowed} $B$G$9!#IaDL$O$3$l$r<j$G@_Dj$9$kI,MW$O$"$j$^$;$s!#(B
+$B$=$l$O!"%F%-%9%H$NK\J8$,!"(BRFC 2646 $B$GDj$a$i$l$?FCJL$JJ}K!$G%U%)!<%^%C%H(B
+$B$5$l$k$3$H$rI,MW$H$9$k$+$i$G$9!#(B@xref{Flowed text}.
 @end table
 
-Parameters for @samp{application/octet-stream}:
+$B0J2<$O(B @samp{application/octet-stream} $B$N$?$a$N%Q%i%a!<%?$G$9(B:
 
 @table @samp
 @item type
-Type of the part; informal---meant for human readers
-(@code{Content-Type}).
+$B%Q!<%H$N%?%$%W(B ($B?M4V$,FI$`$3$H$rA[Dj$7$?!"Hs8x<0$J(B) $B$G(B
+$B$9(B (@code{Content-Type})$B!#(B
 @end table
 
-Parameters for @samp{message/external-body}:
+$B0J2<$O(B @samp{message/external-body} $B$N$?$a$N%Q%i%a!<%?$G$9(B:
 
 @table @samp
 @item access-type
-A word indicating the supported access mechanism by which the file may
-be obtained.  Values include @samp{ftp}, @samp{anon-ftp}, @samp{tftp},
-@samp{localfile}, and @samp{mailserver}.  (@code{Content-Type}.)
+$B%U%!%$%k$r<hF@$9$k$?$a$N!"%5%]!<%H$5$l$F$$$k%"%/%;%9<jCJ$r<($98l$G$9!#CM(B
+$B$O(B @samp{ftp}, @samp{anon-ftp}, @samp{tftp}, @samp{localfile} $B$*$h(B
+$B$S(B @samp{mailserver} $B$N$I$l$+$G$9!#(B(@code{Content-Type}.)
 
 @item expiration
-The RFC822 date after which the file may no longer be fetched.
+$B%U%!%$%k$,<hF@$G$-$J$/$J$k$+$b$7$l$J$$F|;~(B (RFC822 $B7A<0(B) $B$G$9!#(B
 (@code{Content-Type}.)
 
 @item size
-The size (in octets) of the file.  (@code{Content-Type}.)
+Octet (8-bit) $B$NC10L$GI=$7$?%U%!%$%k$N%5%$%:$G$9!#(B(@code{Content-Type}.)
 
 @item permission
-Valid values are @samp{read} and @samp{read-write}
-(@code{Content-Type}).
-
+$BM-8z$JCM$O(B @samp{read} $B$H(B @samp{read-write} $B$G$9(B (@code{Content-Type})$B!#(B
 @end table
 
-Parameters for @samp{sign=smime}:
+$B0J2<$O(B @samp{sign=smime} $B$N$?$a$N%Q%i%a!<%?$G$9(B:
 
 @table @samp
 
 @item keyfile
-File containing key and certificate for signer.
-
+$B=pL>$9$k?M$N>ZL@=q$r4^$s$G$$$k%U%!%$%k$G$9!#(B
 @end table
 
-Parameters for @samp{encrypt=smime}:
+$B0J2<$O(B @samp{encrypt=smime} $B$N$?$a$N%Q%i%a!<%?$G$9(B:
 
 @table @samp
-
 @item certfile
-File containing certificate for recipient.
-
+$B<u<h?M$N>ZL@=q$r4^$s$G$$$k%U%!%$%k$G$9!#(B
 @end table
 
-
 @node Advanced MML Example
-@section Advanced MML Example
+@section $B9bEY$J(B MML $B$NNc(B
 
-Here's a complex multipart message.  It's a @samp{multipart/mixed} that
-contains many parts, one of which is a @samp{multipart/alternative}.
+$BJ#;($J%^%k%A%Q!<%H!&%a%C%;!<%8$NNc$G$9!#$3$l$O(B @samp{multipart/mixed} $B$G(B
+$B$9!#B??t$N%Q!<%H$r4^$s$G$$$F!"$=$N0l$D$O(B @samp{multipart/alternative} $B$G(B
+$B$9!#(B
 
 @example
 <#multipart type=mixed>
 <#part type=image/jpeg filename=~/rms.jpg disposition=inline>
 <#multipart type=alternative>
 This is a plain text part.
+$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
 <#part type=text/enriched name=enriched.txt>
 <center>This is a centered enriched part</center>
+<center>$B$3$l$OCf?4$KCV$+$l$k(B enriched $B%Q!<%H$G$9(B</center>
 <#/multipart>
 This is a new plain text part.
+$B$3$l$O?7$7$$%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
 <#part disposition=attachment>
 This plain text part is an attachment.
+$B$3$N%W%l!<%s%F%-%9%H$N%Q!<%H$OE:IU%U%!%$%k$G$9!#(B
 <#/multipart>
 @end example
 
@@ -733,16 +739,9 @@ And this is the resulting @acronym{MIME} message:
 @example
 Content-Type: multipart/mixed; boundary="=-=-="
 
-
 --=-=-=
-
-
-
---=-=-=
-Content-Type: image/jpeg;
- filename="~/rms.jpg"
-Content-Disposition: inline;
- filename="~/rms.jpg"
+Content-Type: image/jpeg
+Content-Disposition: inline; filename=rms.jpg
 Content-Transfer-Encoding: base64
 
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
@@ -762,49 +761,53 @@ tLQ7hbnRrV1GPkAP1x1/Hr+Ncr8Vzjwrbf8AX6v/AKA9eQRyYlQk8Yx9K6XTNbkgia2ciSIn
 7p5Ga9Atte0LTLKO6it4i7dVRFJDcZ4PvXN+JvEMF9bILVGXJLSZ4zkjivRPDaeX4b08HOTC
 pOffmua+KkbS+GLVUGT9tT/0B68eeIpIFYjB70+OOVXyoOM9+M1eaWeCLzHPyHGO/NVWvJJm
 jQ8KGH1NfQWhXSXmh2c8eArRLwO3HSv/2Q==
-
 --=-=-=
 Content-Type: multipart/alternative; boundary="==-=-="
 
-
 --==-=-=
-
+Content-Type: text/plain; charset=iso-2022-jp
 
 This is a plain text part.
+^[$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#^[(B
 
 --==-=-=
-Content-Type: text/enriched;
- name="enriched.txt"
-
+Content-Type: text/enriched; charset=iso-2022-jp; name=enriched.txt
 
 <center>This is a centered enriched part</center>
+<center>^[$B$3$l$OCf?4$KCV$+$l$k^[(B enriched ^[$B%Q!<%H$G$9^[(B</center>
 
 --==-=-=--
 
 --=-=-=
+Content-Type: text/plain; charset=iso-2022-jp
 
 This is a new plain text part.
+^[$B$3$l$O?7$7$$%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#^[(B
 
 --=-=-=
+Content-Type: text/plain; charset=iso-2022-jp
 Content-Disposition: attachment
 
-
 This plain text part is an attachment.
+^[$B$3$N%W%l!<%s%F%-%9%H$N%Q!<%H$OE:IU%U%!%$%k$G$9!#^[(B
 
 --=-=-=--
 @end example
 
+$B$d$d$C!"J8;z2=$1$7$F$k(B!?  $B$$$d!"$b$H$NJ8$,(B @samp{charset=iso-2022-jp} $B$G(B
+$B%(%s%3!<%I$5$l$?$@$1$N$3$H$G$9!#<u?.<T$,8+$k$H$-$K!"E,@Z$K%G%3!<%I$5$l$k(B
+$B$G$7$g$&!#(B
+
 @node Encoding Customization
-@section Encoding Customization
+@section $B%(%s%3!<%G%#%s%0$N%+%9%?%^%$%:(B
 
 @table @code
-
 @item mm-body-charset-encoding-alist
 @vindex mm-body-charset-encoding-alist
-Mapping from @acronym{MIME} charset to encoding to use.  This variable is
-usually used except, e.g., when other requirements force a specific
-encoding (digitally signed messages require 7bit encodings).  The
-default is
+@acronym{MIME} $BJ8;z%;%C%H$K3d$jEv$F$k%(%s%3!<%G%#%s%0$G$9!#$3$NJQ?t$O!"(B
+$BNc$($PB>$NMW7o$K$h$C$FFCDj$N%(%s%3!<%G%#%s%0$,6/@)$5$l$J$$$H$-$K!"DL>o;H(B
+$B$o$l$^$9(B ($BEE;R=pL>$5$l$?%a%C%;!<%8$O(B 7bit $B%(%s%3!<%G%#%s%0$rI,MW$H$7$^$9(B)$B!#(B
+$B%G%#%U%)%k%HCM$O<!$NDL$j$G$9!#(B
 
 @lisp
 ((iso-2022-jp . 7bit)
@@ -814,207 +817,224 @@ default is
  (utf-16le . base64))
 @end lisp
 
-As an example, if you do not want to have ISO-8859-1 characters
-quoted-printable encoded, you may add @code{(iso-8859-1 . 8bit)} to
-this variable.  You can override this setting on a per-message basis
-by using the @code{encoding} @acronym{MML} tag (@pxref{MML Definition}).
+$BNc$($P(B ISO-8859-1 $BJ8;z%;%C%H$,(B quoted-printable $B$G%(%s%3!<%I$5$l$J$$$h$&(B
+$B$K$7$?$$>l9g$O!"$3$NJQ?t$K(B @code{(iso-8859-1 . 8bit)} $B$rDI2C$9$l$PNI$$$G(B
+$B$7$g$&!#(B@acronym{MML} $B$N(B @code{encoding} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=(B
+$B$l$r$3$NJQ?t$h$jM%@h$5$;$k$3$H$b$G$-$^$9(B (@pxref{MML Definition})$B!#(B
 
 @item mm-coding-system-priorities
 @vindex mm-coding-system-priorities
-Prioritize coding systems to use for outgoing messages.  The default
-is @code{nil}, which means to use the defaults in Emacs.  It is a list of
-coding system symbols (aliases of coding systems are also allowed, use
-@kbd{M-x describe-coding-system} to make sure you are specifying correct
-coding system names).  For example, if you have configured Emacs
-to prefer UTF-8, but wish that outgoing messages should be sent in
-ISO-8859-1 if possible, you can set this variable to
-@code{(iso-8859-1)}.  You can override this setting on a per-message
-basis by using the @code{charset} @acronym{MML} tag (@pxref{MML Definition}).
+$BAw=P$9$k%a%C%;!<%8$G;H$&(B coding system $B$NM%@hEY$r;XDj$7$^$9!#%G%#%U%)%k(B
+$B%HCM$O(B @code{nil} $B$G!"$=$N>l9g$O(B Emacs $B$K$*$1$k%G%#%U%)%k%H$NM%@h=g0L$,(B
+$BE,MQ$5$l$^$9!#CM$O(B coding system $B$N%7%s%\%k$N%j%9%H$G(B
+$B$9(B (coding system $B$NJLL>$r;H$C$F$b9=$$$^$;$s!#@_Dj$9$k$H$-(B
+$B$O(B @kbd{M-x describe-coding-system} $B$r;H$C$F!"(Bcoding system $B$NL>A0$,@53N(B
+$B$G$"$k$3$H$r3N$+$a$F2<$5$$(B)$B!#Nc$($P!"(BUTF-8 $B$r:GM%@h$H$9$k$h$&$K(B Emacs $B$r(B
+$B@_Dj$7$?$b$N$N!"2DG=$J>l9g$O(B ISO-8859-1 $B$G%a%C%;!<%8$rAw?.$9$k$h$&$K$7$?(B
+$B$$$H$$$&>l9g$@$C$?$i!"$3$NJQ?t$r(B @code{(iso-8859-1)} $B$K$9$l$PNI$$$G$7$g(B
+$B$&!#(B@acronym{MML} $B$N(B @code{charset} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=$l$r$3(B
+$B$NJQ?t$h$jM%@h$5$;$k$3$H$b$G$-$^$9(B (@pxref{MML Definition})$B!#(B
+
+@quotation
+$BLuCm(B: $BF|K\8l4D6-(B (@code{current-language-environment} $BJQ?t$NCM(B
+$B$,(B @samp{Japanese} $B$K$J$C$F$$$k4D6-(B) $B$G$O!"%G%#%U%)%k%HCM$,(B
+@code{(iso-8859-1 iso-2022-jp iso-2022-jp-2 shift_jis utf-8)} $B$K$J$j$^$9!#(B
+$BF|K\8l$N%a%C%;!<%8$N%(%s%3!<%I$K$OEAE}E*$K(B @code{iso-2022-jp} $B$,;H$o$l$F(B
+$B$$$k$N$KBP$7!"(BEmacs $B$GDj$a$i$l$?M%@h=g0L$K4p$E$/(B
+$B$H(B @code{euc-jp} $B$d(B @code{shift_jis} $B$J$I$,Bh0l8uJd$K$J$C$F$7$^$&$N$G!"(B
+$B$3$N$h$&$J@_Dj$,I,MW$J$N$G$9!#(B
+
+$B$J$*!"%i%F%s8l7w$N?M$?$A$K08$F$F$KAw$k%a%C%;!<%8$,!"H`$i$,%G%3!<%I$G$-$J(B
+$B$$$+$b$7$l$J$$(B @code{iso-2022-jp-2} $B$J$I$G%(%s%3!<%I$5$l$F$7$^$&$N$rKI$0(B
+$B$?$a$K!"%G%#%U%)%k%HCM$N@hF,$K(B @code{iso-8859-1} $B$,CV$+$l$F$$$^$9!#(B
+@end quotation
 
 @item mm-content-transfer-encoding-defaults
 @vindex mm-content-transfer-encoding-defaults
-Mapping from @acronym{MIME} types to encoding to use.  This variable is usually
-used except, e.g., when other requirements force a safer encoding
-(digitally signed messages require 7bit encoding).  Besides the normal
-@acronym{MIME} encodings, @code{qp-or-base64} may be used to indicate that for
-each case the most efficient of quoted-printable and base64 should be
-used.
+@acronym{MIME} $B$N%?%$%W$K3d$jEv$F$k%(%s%3!<%G%#%s%0$G$9!#$3$NJQ?t$O!"Nc(B
+$B$($PB>$NMW7o$K$h$C$F$h$j0BA4$J%(%s%3!<%G%#%s%0$,6/@)$5$l$J$$$H$-$K!"DL>o(B
+$B;H$o$l$^$9(B ($BEE;R=pL>$5$l$?%a%C%;!<%8$O(B 7bit $B%(%s%3!<%G%#%s%0$rI,MW$H$7$^(B
+$B$9(B)$B!#DL>o$N(B @acronym{MIME} $B%(%s%3!<%G%#%s%0$NB>$K!"(B
+quoted-printable $B$H(B base64 $B$N$&$A$G:G$b8zN(E*$JJ}$r!"8D!9$N>l9g$K;H$&$Y(B
+$B$-$G$"$k$3$H$r<($9(B @code{qp-or-base64} $B$r;H$&$3$H$b$G$-$^$9(B ($BLu(B
+$BCm(B: @code{qp-or-base64} $B$N<B:]$NF0:n$O!"(Bquoted-printable $B$H(B base64 $B$NN>(B
+$BJ}$G%(%s%3!<%I$7$F$_$F!"%5%$%:$,>.$5$/$J$kJ}$r:NMQ$9$k$3$H$G$9(B)$B!#(B
 
-@code{qp-or-base64} has another effect.  It will fold long lines so that
-MIME parts may not be broken by MTA.  So do @code{quoted-printable} and
-@code{base64}.
+@code{qp-or-base64} $B$K$O$b$&0l$D$N8z2L$,$"$j$^$9!#$=$l(B
+$B$O(B @acronym{MIME} $B$N%Q!<%H$,(B MTA $B$K$h$C$F2u$5$l$J$$$h$&$K$9$k$?$a$K!"D9(B
+$B$$9T$r@^$j>v$_$^$9!#(B@code{quoted-printable} $B$H(B @code{base64} $B$b$=$&$G$9!#(B
 
-Note that it affects body encoding only when a part is a raw forwarded
-message (which will be made by @code{gnus-summary-mail-forward} with the
-arg 2 for example) or is neither the @samp{text/*} type nor the
-@samp{message/*} type.  Even though in those cases, you can override
-this setting on a per-message basis by using the @code{encoding}
-@acronym{MML} tag (@pxref{MML Definition}).
+$B%Q!<%H$,<u?.$7$?$H$-$N$^$^$N@8$NE>Aw$5$l$?%a%C%;!<%8(B ($BNc$($P!"0z?t(B
+$B$K(B 2 $B$rM?$($?(B @code{gnus-summary-mail-forward} $B$K$h$C$F:n$i$l$k$b$N(B) $B$G(B
+$B$"$k$+!"(B@samp{text/*} $B%?%$%W$d(B @samp{message/*} $B$G$O$J$$>l9g$K!"$3$l$,K\(B
+$BJ8$N%(%s%3!<%G%#%0$K1F6A$rM?$($k$3$H$KCm0U$7$F2<$5$$!#$=$l$i$N>l9g$G$5$(!"(B
+@acronym{MML} $B$N(B @code{encoding} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=(B
+$B$l$r$3$NJQ?t$h$jM%@h$5$;$k$3$H$b$G$-$^$9(B (@pxref{MML Definition})$B!#(B
 
 @item mm-use-ultra-safe-encoding
 @vindex mm-use-ultra-safe-encoding
-When this is non-@code{nil}, it means that textual parts are encoded as
-quoted-printable if they contain lines longer than 76 characters or
-starting with "From " in the body.  Non-7bit encodings (8bit, binary)
-are generally disallowed.  This reduce the probability that a non-8bit
-clean MTA or MDA changes the message.  This should never be set
-directly, but bound by other functions when necessary (e.g., when
-encoding messages that are to be digitally signed).
-
+$B$3$l$,Hs(B-@code{nil} $B$G$"$k>l9g!"K\J8$K(B 76 $BJ8;z$h$j$bD9$$9T$d(B "From " $B$G(B
+$B;O$^$k9T$,$"$C$?$i!"$=$l$i$N%F%-%9%H$N%Q!<%H$O(B quoted-printable $B$G%(%s%3!<(B
+$B%I$5$l$^$9!#Hs(B-7bit $B%(%s%3!<%G%#%s%0(B (8bit, $B%P%$%J%j!<(B) $B$O0lHL$KG'$a$i$l(B
+$B$F$$$^$;$s!#$3$l$O(B 8bit $B$rDL$5$J$$(B MTA $B$+(B MDA $B$,%a%C%;!<%8$r2~JQ$7$F$7$^(B
+$B$&3NN($r2<$2$^$9!#$3$l$OD>@\$K@_Dj$5$l$k$N$G$O$J$/!"B>$N4X?t$K$h$C$F(B ($BNc(B
+$B$($P!"EE;R=pL>$5$l$k%a%C%;!<%8$r%(%s%3!<%I$9$k$H$-$K(B) $BI,MW$K1~$8$FB+G{$5(B
+$B$l$k$Y$-$G$9!#(B
 @end table
 
 @node Charset Translation
-@section Charset Translation
+@section $BJ8;z%;%C%H$NJQ49(B
 @cindex charsets
 
-During translation from @acronym{MML} to @acronym{MIME}, for each
-@acronym{MIME} part which has been composed inside Emacs, an appropriate
-charset has to be chosen.
+@acronym{MML} $B$r(B @acronym{MIME} $B$KJQ49$9$k$H$-$K!"(BEmacs $B$NFbIt$G:n$i$l(B
+$B$k(B @acronym{MIME} $B%Q!<%H$N$=$l$>$l$K$D$$$F!"E,@Z$JJ8;z%;%C%H$rA*$P$J$1$l(B
+$B$P$J$j$^$;$s!#(B
 
 @vindex mail-parse-charset
-If you are running a non-@sc{mule} Emacs, this process is simple: If the
-part contains any non-@acronym{ASCII} (8-bit) characters, the @acronym{MIME} charset
-given by @code{mail-parse-charset} (a symbol) is used.  (Never set this
-variable directly, though.  If you want to change the default charset,
-please consult the documentation of the package which you use to process
-@acronym{MIME} messages.
-@xref{Various Message Variables, , Various Message Variables, message,
-      Message Manual}, for example.)
-If there are only @acronym{ASCII} characters, the @acronym{MIME} charset US-ASCII is
-used, of course.
+$B$b$7Hs(B-@sc{mule} $B$N(B Emacs $B$rAv$i$;$F$$$k$N$G$"$l$P!"$3$N=hM}$OC1=c$G$9!#(B
+$B%Q!<%H$,$I$s$JHs(B-@acronym{ASCII} (8-bit) $BJ8;z$r4^$s$G$$$F$b!"(B
+@code{mail-parse-charset} ($B%7%s%\%k(B) $B$GM?$($i$l$k(B @acronym{MIME} $BJ8;z%;%C(B
+$B%H$r;H$($PNI$$$N$G$9!#(B($B$b$C$H$b!"$3$NJQ?t$rD>@\$K@_Dj$7$J$$$G2<$5$$!#%G%#(B
+$B%U%)%k%H$NJ8;z%;%C%H$rJQ99$7$?$$>l9g$O!"(B@acronym{MIME} $B%a%C%;!<%8$r=hM}(B
+$B$9$k$?$a$K;H$&%Q%C%1!<%8$N@bL@=q$rD4$Y$F$/$@$5$$!#Nc$($P(B: @pxref{Various
+Message Variables, , Various Message Variables, message-ja, Message
+Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B@acronym{MIME} $BJ8;z%;%C(B
+$B%H(B US-ASCII $B$,;H$o$l$k$N$O$b$A$m$s$G$9!#(B
 
 @cindex MULE
 @cindex UTF-8
 @cindex Unicode
 @vindex mm-mime-mule-charset-alist
-Things are slightly more complicated when running Emacs with @sc{mule}
-support.  In this case, a list of the @sc{mule} charsets used in the
-part is obtained, and the @sc{mule} charsets are translated to @acronym{MIME}
-charsets by consulting the variable @code{mm-mime-mule-charset-alist}.
-If this results in a single @acronym{MIME} charset, this is used to encode
-the part.  But if the resulting list of @acronym{MIME} charsets contains more
-than one element, two things can happen: If it is possible to encode the
-part via UTF-8, this charset is used.  (For this, Emacs must support
-the @code{utf-8} coding system, and the part must consist entirely of
-characters which have Unicode counterparts.)  If UTF-8 is not available
-for some reason, the part is split into several ones, so that each one
-can be encoded with a single @acronym{MIME} charset.  The part can only be
-split at line boundaries, though---if more than one @acronym{MIME} charset is
-required to encode a single line, it is not possible to encode the part.
+@sc{mule} $B5!G=$rHw$($?(B Emacs $B$rAv$i$;$F$$$k>l9g$O!"$b$N$4$H$OB?>/J#;($K(B
+$B$J$j$^$9!#$3$N>l9g$O!"%Q!<%H$G;H$o$l$F$$$k(B @sc{mule} $BJ8;z%;%C%H$N%j%9%H(B
+$B$r<hF@$7!"(B@code{mm-mime-mule-charset-alist} $BJQ?t$NCM$K4p$E$$$F!"$=$l$i(B
+$B$N(B @sc{mule} $BJ8;z%;%C%H$r(B @acronym{MIME} $BJ8;z%;%C%H$KJQ49$7$^$9!#7k2L$,(B
+$BC10l$N(B @acronym{MIME} $BJ8;z%;%C%H$@$C$?$i!"$=$l$r;H$C$F%Q!<%H$r%(%s%3!<%I(B
+$B$7$^$9!#$7$+$7!"7k2L$N(B @acronym{MIME} $BJ8;z%;%C%H$N%j%9%H$,Fs$D0J>e$NMWAG(B
+$B$r4^$s$G$$$k>l9g$K$O!"Fs$D$N$3$H$,5/$3$jF@$^$9!#$b$7%Q!<%H$r(B UTF-8 $B$G%((B
+$B%s%3!<%I$9$k$3$H$,2DG=$@$C$?$i!"$=$NJ8;z%;%C%H$r;H$$$^$9!#(B($B$3$N$?$a(B
+$B$K(B Emacs $B$O(B @code{utf-8} coding system $B$r%5%]!<%H$7$J$1$l$P$J$i$J$$$7!"(B
+$B$=$N%Q!<%H$O(B Unicode $B$GDj5A$5$l$?!"$=$l$i$KBP1~$9$kJ8;z$@$1$+$i@.$C$F$$(B
+$B$J$1$l$P$J$j$^$;$s!#(B)  $B2?$i$+$NM}M3$K$h$C$F(B UTF-8 $B$rMxMQ$G$-$J$$>l9g!"$=(B
+$B$N%Q!<%H$O!"$=$l$>$l$,C10l$N(B @acronym{MIME} $BJ8;z%;%C%H$G%(%s%3!<%I$9$k$3(B
+$B$H$,$G$-$k$h$&$K!"$$$/$D$+$KJ,3d$5$l$^$9!#$b$C$H$b!"%Q!<%H$O9T$N6-3&$G$7(B
+$B$+J,3d$9$k$3$H$,$G$-$J$$$N$G!"C10l$N9T$r%(%s%3!<%I$9$k$N$KJ#?t(B
+$B$N(B @acronym{MIME} $BJ8;z%;%C%H$,I,MW$@$H$9$k$H!"$=$N%Q!<%H$r%(%s%3!<%I$9$k(B
+$B$3$H$OIT2DG=$G$9!#(B
 
-When running Emacs with @sc{mule} support, the preferences for which
-coding system to use is inherited from Emacs itself.  This means that
-if Emacs is set up to prefer UTF-8, it will be used when encoding
-messages.  You can modify this by altering the
-@code{mm-coding-system-priorities} variable though (@pxref{Encoding
-Customization}).
+@quotation
+$BLuCm(B: @code{mm-mime-mule-charset-alist} $BJQ?t$r;H$&$N$O<B:]$K$O(B XEmacs $B$@(B
+$B$1$G$9!#(BEmacs $B$K$O<+?H$GDj5A$7$F$$$k(B coding system $B$H(B @acronym{MIME} $BJ8(B
+$B;z%;%C%H$NBP1~I=$,$"$j!">e5-$N=hM}$G$O$=$l$,;H$o$l$^$9!#(B
+@end quotation
 
-The charset to be used can be overridden by setting the @code{charset}
-@acronym{MML} tag (@pxref{MML Definition}) when composing the message.
+@sc{mule} $B5!G=$rHw$($?(B Emacs $B$rAv$i$;$F$$$k>l9g!"$I$N(B coding system $B$r;H(B
+$B$&$+$NM%@h=g0L$O(B Emacs $B<+?H$+$i7Q>5$5$l$^$9!#$3$l$O!"$b(B
+$B$7(B Emacs $B$,(B UTF-8 $B$rM%@h$9$k$h$&$K@_Dj$5$l$F$$$k$H!"$=$l$,%a%C%;!<%8$N%((B
+$B%s%3!<%I$K;H$o$l$k$3$H$r0UL#$7$^$9!#$?$@(B
+$B$7(B @code{mm-coding-system-priorities} $BJQ?t$NCM$rJQ$($k$3$H$K$h$C$F!"$3$l(B
+$B$rJQ99$9$k$3$H$O$G$-$^$9(B (@pxref{Encoding Customization})$B!#(B
 
-The encoding of characters (quoted-printable, 8bit etc) is orthogonal
-to the discussion here, and is controlled by the variables
-@code{mm-body-charset-encoding-alist} and
-@code{mm-content-transfer-encoding-defaults} (@pxref{Encoding
-Customization}).
+$B%a%C%;!<%8$r:n@.$9$k$H$-$K(B @acronym{MML} $B$N(B @code{charset} $B%?%0$r@_Dj$9(B
+$B$k$3$H$K$h$C$F!";H$o$l$kJ8;z%;%C%H$r>e=q$-$9$k$3$H$,$G$-$^$9!#(B
+
+$BJ8;z%;%C%H$N%(%s%3!<%G%#%s%0(B (quoted-printable, 8bit $B$J$I(B) $B$O$3$3$G$N5D(B
+$BO@$KD>8r$9$k35G0$G$9!#$=$l$O(B @code{mm-body-charset-encoding-alist} $BJQ?t(B
+$B$H(B @code{mm-content-transfer-encoding-defaults} $BJQ?t$K$h$C$F@)8f$5$l$^(B
+$B$9(B (@pxref{Encoding Customization})$B!#(B
 
 @node Conversion
-@section Conversion
+@section $BJQ49(B
 
 @findex mime-to-mml
-A (multipart) @acronym{MIME} message can be converted to @acronym{MML}
-with the @code{mime-to-mml} function.  It works on the message in the
-current buffer, and substitutes @acronym{MML} markup for @acronym{MIME}
-boundaries.  Non-textual parts do not have their contents in the buffer,
-but instead have the contents in separate buffers that are referred to
-from the @acronym{MML} tags.
+@code{mime-to-mml} $B4X?t$r;H$C$F(B @acronym{MIME} $B%a%C%;!<%8(B ($B%^%k%A%Q!<%H(B
+$B$G$b2D(B) $B$r(B @acronym{MML} $B$KJQ49$9$k$3$H$,$G$-$^$9!#$3$l$O8=:_$N%P%C%U%!(B
+$B$K$"$k(B @acronym{MIME} $B%a%C%;!<%8$K:nMQ$7$F!"(B@acronym{MIME} $B$N6-3&(B
+$B$r(B @acronym{MML} $B$N0uIU$1(B (markup) $B$GCV$-49$($^$9!#%F%-%9%H$G$O$J$$%Q!<(B
+$B%H$NFbMFJ*$O!"$=$N%P%C%U%!$KCV$/Be$o$j$K(B @acronym{MML} $B%?%0$r2p$7$F;2>H(B
+$B$5$l$kJL$N%P%C%U%!$KCV$+$l$^$9!#(B
 
 @findex mml-to-mime
-An @acronym{MML} message can be converted back to @acronym{MIME} by the
-@code{mml-to-mime} function.
+@code{mml-to-mime} $B4X?t$r;H$C$F(B @acronym{MML} $B%a%C%;!<%8(B
+$B$r(B @acronym{MIME} $B$KJQ49$9$k$3$H$,$G$-$^$9!#(B
 
-These functions are in certain senses ``lossy''---you will not get back
-an identical message if you run @code{mime-to-mml} and then
-@code{mml-to-mime}.  Not only will trivial things like the order of the
-headers differ, but the contents of the headers may also be different.
-For instance, the original message may use base64 encoding on text,
-while @code{mml-to-mime} may decide to use quoted-printable encoding, and
-so on.
+$B$3$l$i$N4X?t$,9T$J$&$3$H$O$"$k0UL#$G!VIT2D5U(B (lossy)$B!W$G$9!#(B
+@code{mime-to-mml} $B$r<B9T$7!"<!$K(B @code{mml-to-mime} $B$r<B9T$9$k$H!"85$H(B
+$B$^$C$?$/F1$8%a%C%;!<%8$OLa$C$FMh$J$$$G$7$g$&!#%X%C%@!<$N=g=x$N$h$&$J$I$&(B
+$B$G$bNI$$$3$H$,0c$C$F$7$^$&$@$1$G$J$/!"%X%C%@!<$NFbMF$bJQ2=$7$F$7$^$&$+$b(B
+$B$7$l$^$;$s!#Nc$($P!"85$N%a%C%;!<%8$,(B base64 $B$G%F%-%9%H$r%(%s%3!<%I$7$F$"$C(B
+$B$F$b!"(B@code{mml-to-mime} $B$O(B quoted-printable $B$r;H$&$+$b$7$l$J$$!"$H$$$&(B
+$B$h$&$J$3$H$G$9!#(B
 
-In essence, however, these two functions should be the inverse of each
-other.  The resulting contents of the message should remain equivalent,
-if not identical.
-
+$B$7$+$7K\<AE*$K$O!"$3$l$iFs$D$O8_$$$K5U4X?t$G$"$k$Y$-$G$9!#7k2L$H$7$F@8@.(B
+$B$5$l$k%a%C%;!<%8$NFbMFJ*$,!"F10l$G$J$$$K$7$F$bEy2A$J$^$^$G$"$k$h$&$J!#(B
 
 @node Flowed text
-@section Flowed text
+@section $BN.F0%F%-%9%H(B
 @cindex format=flowed
 
-The Emacs @acronym{MIME} library will respect the @code{use-hard-newlines}
-variable (@pxref{Hard and Soft Newlines, ,Hard and Soft Newlines,
-emacs, Emacs Manual}) when encoding a message, and the
-``format=flowed'' Content-Type parameter when decoding a message.
+Emacs @acronym{MIME} $B%i%$%V%i%j!<$O!"%a%C%;!<%8$r%(%s%3!<%I$9$k$H$-(B
+$B$O(B @code{use-hard-newlines} $BJQ?t(B (@pxref{Hard and Soft Newlines, ,Hard
+and Soft Newlines, emacs, Emacs Manual}) $B$K=>$$!"%a%C%;!<%8$r%G%3!<%I$9(B
+$B$k$H$-$O(B ``format=flowed'' Content-Type $B%Q%i%a!<%?$rB:=E$7$^$9!#(B
 
-On encoding text, regardless of @code{use-hard-newlines}, lines
-terminated by soft newline characters are filled together and wrapped
-after the column decided by @code{fill-flowed-encode-column}.
-Quotation marks (matching @samp{^>* ?}) are respected.  The variable
-controls how the text will look in a client that does not support
-flowed text, the default is to wrap after 66 characters.  If hard
-newline characters are not present in the buffer, no flow encoding
-occurs.
+$B%F%-%9%H$r%(%s%3!<%I$9$k$H$-!"%=%U%H2~9TJ8;z$G=*C<$5$l$F$$$k3F9T$O(B
+@code{use-hard-newlines} $B$K4X$o$i$:$K5M$a9~$^$l(B (filled)$B!"$=$7(B
+$B$F(B @code{fill-flowed-encode-column} $B$G7hDj$5$l$k7e$N8e$m$G@^$j>v$^$l$^$9!#(B
+$B0zMQ0u(B (@samp{^>* ?} $B$K9gCW$9$k%F%-%9%H(B) $B$OB:=E$5$l$^$9!#$=$NJQ?t$O!"N.(B
+$BF0%F%-%9%H$r%5%]!<%H$7$J$$%/%i%$%"%s%H$K$*$$$F%F%-%9%H$,$I$&8+$($k$+$r@)(B
+$B8f$7!"%G%#%U%)%k%H$G$O(B 66$BJ8;z$N8e$m$G@^$j>v$_$^$9!#%P%C%U%!$K%O!<%I2~9T(B
+$BJ8;z$,L5$1$l$P!"N.F0(B (flowed) $B%F%-%9%H$N$?$a$N%(%s%3!<%I$O9T$J$$$^$;$s!#(B
 
-On decoding flowed text, lines with soft newline characters are filled
-together and wrapped after the column decided by
-@code{fill-flowed-display-column}.  The default is to wrap after
-@code{fill-column}.
+$BN.F0(B (flowed) $B%F%-%9%H$r%G%3!<%I$9$k$H$-!"%=%U%H2~9TJ8;z$r;}$D3F9T$O5M$a(B
+$B9~$^$l(B (filled)$B!"$=$7$F(B @code{fill-flowed-display-column} $B$G7hDj$5$l$k7e(B
+$B$N8e$m$G@^$j>v$^$l$^$9!#%G%#%U%)%k%H$G$O(B @code{fill-column} $B$N8e$m$G@^$j(B
+$B>v$_$^$9!#(B
 
 @table @code
 @item mm-fill-flowed
 @vindex mm-fill-flowed
-If non-@code{nil} a format=flowed article will be displayed flowed.
+$BHs(B-@code{nil} $B$@$C$?$i!"(Bformat=flowed $B$N5-;v$ON.F0E*$KI=<($5$l$^$9!#(B
 @end table
 
-
 @node Interface Functions
-@chapter Interface Functions
+@chapter $B%$%s%?!<%U%'!<%94X?t(B
 @cindex interface functions
 @cindex mail-parse
 
-The @code{mail-parse} library is an abstraction over the actual
-low-level libraries that are described in the next chapter.
+@code{mail-parse} $B%i%$%V%i%j!<$O!"<!0J9_$N>O$G=R$Y$k<B:]$NDc%l%Y%k$J%i%$(B
+$B%V%i%j!<$rCj>]2=$7$?$b$N$G$9!#(B
 
-Standards change, and so programs have to change to fit in the new
-mold.  For instance, RFC2045 describes a syntax for the
-@code{Content-Type} header that only allows @acronym{ASCII} characters in the
-parameter list.  RFC2231 expands on RFC2045 syntax to provide a scheme
-for continuation headers and non-@acronym{ASCII} characters.
+$BI8=`$OJQ$o$j$^$9!#$7$?$,$C$F!"%W%m%0%i%`$b?7$7$$Cr7?$KE,9g$9$k$?$a$KJQ2=(B
+$B$7$J$1$l$P$J$j$^$;$s!#Nc$($P!"(BRFC2045 $B$O%Q%i%a!<%?$N%j%9%H$K$"(B
+$B$k(B @acronym{ASCII} $BJ8;z$@$1$r5vMF$9$k(B @code{Content-Type} $B%X%C%@!<$N$?$a(B
+$B$N%7%s%?%C%/%9$K$D$$$F=R$Y$F$$$^$9!#(BRFC2231 $B$O!"J#?t9T$KEO$C$F7QB3$9$kC1(B
+$B0l$N%X%C%@!<$HHs(B-@acronym{ASCII} $BJ8;z$N9=@.$r5,Dj$9$k$?$a$N(B RFC2045 $B$N%7(B
+$B%s%?%C%/%9$K$D$$$F>\=R$7$F$$$^$9!#(B
 
-The traditional way to deal with this is just to update the library
-functions to parse the new syntax.  However, this is sometimes the wrong
-thing to do.  In some instances it may be vital to be able to understand
-both the old syntax as well as the new syntax, and if there is only one
-library, one must choose between the old version of the library and the
-new version of the library.
+$B$3$l$KBP=h$9$k=>Mh$NJ}K!$O!"C1$K?7$7$$%7%s%?%C%/%9$r2r@O$9$k$?$a$K%i%$%V(B
+$B%i%j!<$N5!G=$r99?7$9$k$3$H$G$7$?!#$7$+$7$J$,$i!"$3$l$O;~$K$O8m$C$?9T0Y$G(B
+$B$9!#>l9g$K$h$C$F$O!"?7$7$$%7%s%?%C%/%9$H8E$$%7%s%?%C%/%9$NN>J}$rM}2r$G$-(B
+$B$k$h$&$K$9$k$3$H$,=EMW$+$b$7$l$^$;$s$7!"%i%$%V%i%j!<$,0l$D$@$1$"$k>l9g$K(B
+$B$O!"%i%$%V%i%j!<$N8E$$%P!<%8%g%s$H?7$7$$%P!<%8%g%s$N$I$A$i$+$rA*$P$J$1$l(B
+$B$P$J$j$^$;$s!#(B
 
-The Emacs @acronym{MIME} library takes a different tack.  It defines a
-series of low-level libraries (@file{rfc2047.el}, @file{rfc2231.el}
-and so on) that parses strictly according to the corresponding
-standard.  However, normal programs would not use the functions
-provided by these libraries directly, but instead use the functions
-provided by the @code{mail-parse} library.  The functions in this
-library are just aliases to the corresponding functions in the latest
-low-level libraries.  Using this scheme, programs get a consistent
-interface they can use, and library developers are free to create
-write code that handles new standards.
+Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
+$B$O!"BP1~$9$kI8=`$K=>$C$F87L)$K2r@O$9$k!"0lO"$NDc%l%Y%k$N%i%$%V%i(B
+$B%j!<(B (@file{rfc2047.el}, @file{rfc2231.el} $B$J$I(B) $B$rDj5A$7$^$9!#$H$O8@$(!"(B
+$B@55,$N%W%m%0%i%`$O!"$3$l$i$N%i%$%V%i%j!<$,D>@\$KDs6!$9$k4X?t$G$O$J$/!"Be(B
+$B$o$j$K(B @code{mail-parse} $B%i%$%V%i%j!<$,Ds6!$9$k4X?t$r;H$&$Y$-$G$9!#$3$N(B
+$B%i%$%V%i%j!<$N4X?t$O!":G?7$NDc%l%Y%k$N%i%$%V%i%j!<$NBP1~$9$k4X?t$X$NC1$J(B
+$B$kJLL>$G$9!#$3$N9=@.$r;H$&$3$H$K$h$C$F!"%W%m%0%i%`$O$=$l$i$,;H$&$3$H$,$G(B
+$B$-$k<sHx0l4S$7$?%$%s%?!<%U%'!<%9$rF~<j$7!"$^$?!"%i%$%V%i%j!<$N3+H/<T$O!"(B
+$B?7$7$$I8=`$r07$&%3!<%I$r<+M3$K:n@.$9$k$3$H$,$G$-$^$9!#(B
 
-The following functions are defined by this library:
+$B0J2<$N4X?t$,!"$3$N%i%$%V%i%j!<$GDj5A$5$l$F$$$^$9(B:
 
 @table @code
 @item mail-header-parse-content-type
 @findex mail-header-parse-content-type
-Parse a @code{Content-Type} header and return a list on the following
-format:
+@code{Content-Type} $B%X%C%@!<$r2r@O$7$F!"0J2<$N7A<0$G%j%9%H$rJV$7$^$9(B:
 
 @lisp
 ("type/subtype"
@@ -1023,7 +1043,7 @@ format:
  ...)
 @end lisp
 
-Here's an example:
+$BNc$G$9(B:
 
 @example
 (mail-header-parse-content-type
@@ -1033,13 +1053,13 @@ Here's an example:
 
 @item mail-header-parse-content-disposition
 @findex mail-header-parse-content-disposition
-Parse a @code{Content-Disposition} header and return a list on the same
-format as the function above.
+@code{Content-Disposition} $B%X%C%@!<$r2r@O$7$F!">e5-$N4X?t$HF1$87A<0$N%j(B
+$B%9%H$rJV$7$^$9!#(B
 
 @item mail-content-type-get
 @findex mail-content-type-get
-Takes two parameters---a list on the format above, and an attribute.
-Returns the value of the attribute.
+$BFs$D$N%Q%i%a!<%?!">e5-$N7A<0$N%j%9%H$HB0@-!"$r<u$1<h$j!"$=$NB0@-$NCM$rJV(B
+$B$7$^$9!#(B
 
 @example
 (mail-content-type-get
@@ -1049,13 +1069,13 @@ Returns the value of the attribute.
 
 @item mail-header-encode-parameter
 @findex mail-header-encode-parameter
-Takes a parameter string and returns an encoded version of the string.
-This is used for parameters in headers like @code{Content-Type} and
-@code{Content-Disposition}.
+$B%Q%i%a!<%?$K;H$&J8;zNs$r<u$1<h$j!"$=$l$r%(%s%3!<%I$7$?$b$N$rJV$7$^$9!#$3(B
+$B$l$O(B @code{Content-Type} $B$H(B @code{Content-Disposition} $B$N$h$&$J%X%C%@!<(B
+$B$KF~$l$k%Q%i%a!<%?$N$?$a$K;H$o$l$^$9!#(B
 
 @item mail-header-remove-comments
 @findex mail-header-remove-comments
-Return a comment-free version of a header.
+$B%X%C%@!<$+$i%3%a%s%H$r<h$j=|$$$?$b$N$rJV$7$^$9!#(B
 
 @example
 (mail-header-remove-comments
@@ -1065,8 +1085,10 @@ Return a comment-free version of a header.
 
 @item mail-header-remove-whitespace
 @findex mail-header-remove-whitespace
-Remove linear white space from a header.  Space inside quoted strings
-and comments is preserved.
+$B%X%C%@!<$+$i(B ``linear white space'' ($BLuCm(B: $BC10l$ND9$$%X%C%@!<$r@^$j>v$s(B
+$B$GJ#?t9T$K$9$k$H$-$K;H$&O"7k;R(B; $B2~9TJ8;z(B+$B6uGrJ8;z(B) $B$r<h$j=|$-$^$9!#%/%)!<(B
+$B%H$5$l$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s%H$OJ]B8$5$l(B
+$B$^$9!#(B
 
 @example
 (mail-header-remove-whitespace
@@ -1076,7 +1098,7 @@ and comments is preserved.
 
 @item mail-header-get-comment
 @findex mail-header-get-comment
-Return the last comment in a header.
+$B%X%C%@!<$N:G8e$N%3%a%s%H$rJV$7$^$9!#(B
 
 @example
 (mail-header-get-comment
@@ -1086,8 +1108,8 @@ Return the last comment in a header.
 
 @item mail-header-parse-address
 @findex mail-header-parse-address
-Parse an address and return a list containing the mailbox and the
-plaintext name.
+$B%"%I%l%9$r2r@O$7$F!"%a!<%k%\%C%/%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`%j%9%H$r(B
+$BJV$7$^$9!#(B
 
 @example
 (mail-header-parse-address
@@ -1097,8 +1119,8 @@ plaintext name.
 
 @item mail-header-parse-addresses
 @findex mail-header-parse-addresses
-Parse a string with list of addresses and return a list of elements like
-the one described above.
+$B%"%I%l%9$N%j%9%H$r4^$s$G$$$kJ8;zNs$r2r@O$7$F!">e$G=R$Y$?$h$&$JMWAG$N%j%9(B
+$B%H$rJV$7$^$9!#(B
 
 @example
 (mail-header-parse-addresses
@@ -1109,43 +1131,45 @@ the one described above.
 
 @item mail-header-parse-date
 @findex mail-header-parse-date
-Parse a date string and return an Emacs time structure.
+$BF|IU$NJ8;zNs$r2r@O$7$F!"(BEmacs $B7A<0$N;~9o$rJV$7$^$9!#(B
 
 @item mail-narrow-to-head
 @findex mail-narrow-to-head
-Narrow the buffer to the header section of the buffer.  Point is placed
-at the beginning of the narrowed buffer.
+$B%P%C%U%!$r%X%C%@!<$N6h0h$K69$a$^$9!#%]%$%s%H$O69$a$i$l$?%P%C%U%!$N@hF,$K(B
+$BCV$+$l$^$9!#(B
 
 @item mail-header-narrow-to-field
 @findex mail-header-narrow-to-field
-Narrow the buffer to the header under point.  Understands continuation
-headers.
+$B%P%C%U%!$r8=:_0LCV$N%X%C%@!<$K69$a$^$9!#J#?t9T$KEO$C$F7QB3$9$kC10l$N%X%C(B
+$B%@!<$rM}2r$7$^$9!#(B
 
 @item mail-header-fold-field
 @findex mail-header-fold-field
-Fold the header under point.
+$B8=:_0LCV$N%X%C%@!<$r@^$j>v$_$^$9!#(B
 
 @item mail-header-unfold-field
 @findex mail-header-unfold-field
-Unfold the header under point.
+$B8=:_0LCV$N%X%C%@!<$N@^$j>v$_$r2r=|$7$^$9!#(B
 
 @item mail-header-field-value
 @findex mail-header-field-value
-Return the value of the field under point.
+$B8=:_0LCV$N%U%#!<%k%I$NCM$rJV$7$^$9!#(B
 
 @item mail-encode-encoded-word-region
 @findex mail-encode-encoded-word-region
-Encode the non-@acronym{ASCII} words in the region.  For instance,
-@samp{Na@"{@dotless{i}}ve} is encoded as @samp{=?iso-8859-1?q?Na=EFve?=}.
+$BNN0h$K$"$k(B @acronym{ASCII} $B0J30$N8l$r%(%s%3!<%I$7$^$9!#Nc$((B
+$B$P(B @samp{Na@"{@dotless{i}}ve} $B$O(B @samp{=?iso-8859-1?q?Na=EFve?=} $B$H$7$F(B
+$B%(%s%3!<%I$5$l$^$9!#(B
 
 @item mail-encode-encoded-word-buffer
 @findex mail-encode-encoded-word-buffer
-Encode the non-@acronym{ASCII} words in the current buffer.  This function is
-meant to be called narrowed to the headers of a message.
+$B8=:_$N%P%C%U%!$K$"$k(B @acronym{ASCII} $B0J30$N8l$r%(%s%3!<%I$7$^$9!#$3$N4X(B
+$B?t$O!"%X%C%@!<$N6h2h$K69$a$i$l$?%a%C%;!<%8$G8F$P$l$k$3$H$r0U?^$7$F$$$^$9!#(B
 
 @item mail-encode-encoded-word-string
 @findex mail-encode-encoded-word-string
-Encode the words that need encoding in a string, and return the result.
+$BJ8;zNs$K4^$^$l$F$$$k%(%s%3!<%I$9$kI,MW$,$"$k8l$r%(%s%3!<%I$7$F!"7k2L$rJV(B
+$B$7$^$9!#(B
 
 @example
 (mail-encode-encoded-word-string
@@ -1155,25 +1179,22 @@ Encode the words that need encoding in a string, and return the result.
 
 @item mail-decode-encoded-word-region
 @findex mail-decode-encoded-word-region
-Decode the encoded words in the region.
+$BNN0h$K$"$k%(%s%3!<%I$5$l$?8l$r%G%3!<%I$7$^$9!#(B
 
 @item mail-decode-encoded-word-string
 @findex mail-decode-encoded-word-string
-Decode the encoded words in the string and return the result.
+$BJ8;zNs$K4^$^$l$F$$$k%(%s%3!<%I$5$l$?8l$r%G%3!<%I$7$F!"7k2L$rJV$7$^$9!#(B
 
 @example
 (mail-decode-encoded-word-string
  "This is =?iso-8859-1?q?na=EFve,?= baby")
 @result{} "This is na@"{@dotless{i}}ve, baby"
 @end example
-
 @end table
 
-Currently, @code{mail-parse} is an abstraction over @code{ietf-drums},
-@code{rfc2047}, @code{rfc2045} and @code{rfc2231}.  These are documented
-in the subsequent sections.
-
-
+$B8=:_(B @code{mail-parse} $B$O(B @code{ietf-drums}, @code{rfc2047},
+@code{rfc2045} $B$*$h$S(B @code{rfc2231} $B$rLVMe$7$FCj>]2=$7$^$9!#$3$l$i$K$D(B
+$B$$$F!"<!0J9_$N>O$G@bL@$7$^$9!#(B
 
 @node Basic Functions
 @chapter Basic Functions
