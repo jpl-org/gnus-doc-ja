@@ -9,7 +9,7 @@
 @copying
 $B$3$N%U%!%$%k$O(B Emacs MIME $B%$%s%?!<%U%'!<%9$N5!G=$rJ8=q2=$7$?$b$N$G$9!#(B
 
-Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003
+Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005
           Free Software Foundation, Inc.
 
 @quotation
@@ -825,24 +825,24 @@ This plain text part is an attachment.
 @item mm-coding-system-priorities
 @vindex mm-coding-system-priorities
 $BAw=P$9$k%a%C%;!<%8$G;H$&(B coding system $B$NM%@hEY$r;XDj$7$^$9!#%G%#%U%)%k(B
-$B%HCM$O(B @code{nil} $B$G!"$=$N>l9g$O(B Emacs $B$K$*$1$k%G%#%U%)%k%H$NM%@h=g0L$,(B
-$BE,MQ$5$l$^$9!#CM$O(B coding system $B$N%7%s%\%k$N%j%9%H$G(B
-$B$9(B (coding system $B$NJLL>$r;H$C$F$b9=$$$^$;$s!#@_Dj$9$k$H$-(B
-$B$O(B @kbd{M-x describe-coding-system} $B$r;H$C$F!"(Bcoding system $B$NL>A0$,@53N(B
-$B$G$"$k$3$H$r3N$+$a$F2<$5$$(B)$B!#Nc$($P!"(BUTF-8 $B$r:GM%@h$H$9$k$h$&$K(B Emacs $B$r(B
-$B@_Dj$7$?$b$N$N!"2DG=$J>l9g$O(B ISO-8859-1 $B$G%a%C%;!<%8$rAw?.$9$k$h$&$K$7$?(B
-$B$$$H$$$&>l9g$@$C$?$i!"$3$NJQ?t$r(B @code{(iso-8859-1)} $B$K$9$l$PNI$$$G$7$g(B
-$B$&!#(B@acronym{MML} $B$N(B @code{charset} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=$l$r$3(B
-$B$NJQ?t$h$jM%@h$5$;$k$3$H$b$G$-$^$9(B (@pxref{MML Definition})$B!#(B
+$B%HCM$O(B @code{nil} $B$G$9(B ($B$=$N>l9g$O(B Emacs $B$K$*$1$k%G%#%U%)%k%H$NM%@h=g0L(B
+$B$,E,MQ$5$l$k(B) $B$,!"F|K\8l4D6-$G(B Emacs $B$r<B9T$9$k>l9g$O(B @code{(iso-8859-1
+iso-2022-jp iso-2022-jp-2 shift_jis utf-8)} $B$K$J$j$^$9!#CM$O(B coding
+system $B$N%7%s%\%k$N%j%9%H$G$9(B (coding system $B$NJLL>$r;H$C$F$b9=$$$^$;$s!#(B
+$B@_Dj$9$k$H$-$O(B @kbd{M-x describe-coding-system} $B$r;H$C$F!"(Bcoding
+system $B$NL>A0$,@53N$G$"$k$3$H$r3N$+$a$F2<$5$$(B)$B!#Nc$($P(B UTF-8 $B$r:GM%@h$H(B
+$B$9$k$h$&$K(B Emacs $B$r@_Dj$7$?$b$N$N!"2DG=$J>l9g$O(B ISO-8859-1 $B$G(B $B%a%C%;!<%8(B
+$B$rAw?.$9$k$h$&$K$7$?$$$H$$$&>l9g$@$C$?$i!"$3$NJQ?t(B
+$B$r(B @code{(iso-8859-1)} $B$K$9$l$PNI$$$G$7$g$&!#(B
+@acronym{MML} $B$N(B @code{charset} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=$l$r$3$NJQ(B
+$B?t$h$jM%@h$5$;$k$3$H$b$G$-$^$9(B (@pxref{MML Definition})$B!#(B
 
 @quotation
-$BLuCm(B: $BF|K\8l4D6-(B (@code{current-language-environment} $BJQ?t$NCM(B
-$B$,(B @samp{Japanese} $B$K$J$C$F$$$k4D6-(B) $B$G$O!"%G%#%U%)%k%HCM$,(B
-@code{(iso-8859-1 iso-2022-jp iso-2022-jp-2 shift_jis utf-8)} $B$K$J$j$^$9!#(B
-$BF|K\8l$N%a%C%;!<%8$N%(%s%3!<%I$K$OEAE}E*$K(B @code{iso-2022-jp} $B$,;H$o$l$F(B
-$B$$$k$N$KBP$7!"(BEmacs $B$GDj$a$i$l$?M%@h=g0L$K4p$E$/(B
-$B$H(B @code{euc-jp} $B$d(B @code{shift_jis} $B$J$I$,Bh0l8uJd$K$J$C$F$7$^$&$N$G!"(B
-$B$3$N$h$&$J@_Dj$,I,MW$J$N$G$9!#(B
+$BLuCm(B: $BF|K\8l4D6-$H$O(B @code{current-language-environment} $BJQ?t$NCM(B
+$B$,(B @samp{Japanese} $B$K$J$C$F$$$k4D6-$N$3$H$G$9!#F|K\8l$N%a%C%;!<%8$N%(%s(B
+$B%3!<%I$K$OEAE}E*$K(B @code{iso-2022-jp} $B$,;H$o$l$F$$$k$N$KBP$7!"(BEmacs $B$GDj(B
+$B$a$i$l$?M%@h=g0L$K4p$E$/$H(B @code{euc-jp} $B$d(B @code{shift_jis} $B$J$I$,Bh0l(B
+$B8uJd$K$J$C$F$7$^$&$N$G!"$3$NCM$,(B @code{nil} $B$G$O$h$m$7$/$J$$$N$G$9!#(B
 
 $B$J$*!"%i%F%s8l7w$N?M$?$A$K08$F$F$KAw$k%a%C%;!<%8$,!"H`$i$,%G%3!<%I$G$-$J(B
 $B$$$+$b$7$l$J$$(B @code{iso-2022-jp-2} $B$J$I$G%(%s%3!<%I$5$l$F$7$^$&$N$rKI$0(B
@@ -907,7 +907,8 @@ Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B@acronym{MIME} $B
 @vindex mm-mime-mule-charset-alist
 @sc{mule} $B5!G=$rHw$($?(B Emacs $B$rAv$i$;$F$$$k>l9g$O!"$b$N$4$H$OB?>/J#;($K(B
 $B$J$j$^$9!#$3$N>l9g$O!"%Q!<%H$G;H$o$l$F$$$k(B @sc{mule} $BJ8;z%;%C%H$N%j%9%H(B
-$B$r<hF@$7!"(B@code{mm-mime-mule-charset-alist} $BJQ?t$NCM$K4p$E$$$F!"$=$l$i(B
+$B$r<hF@$7!"(BEmacs $B<+?H$,Ds6!$9$k%F!<%V%k$+!"(BXEmacs $B$N$?$a(B
+$B$N(B @code{mm-mime-mule-charset-alist} $BJQ?t$NCM$K4p$E$$$F!"$=$l$i(B
 $B$N(B @sc{mule} $BJ8;z%;%C%H$r(B @acronym{MIME} $BJ8;z%;%C%H$KJQ49$7$^$9!#7k2L$,(B
 $BC10l$N(B @acronym{MIME} $BJ8;z%;%C%H$@$C$?$i!"$=$l$r;H$C$F%Q!<%H$r%(%s%3!<%I(B
 $B$7$^$9!#$7$+$7!"7k2L$N(B @acronym{MIME} $BJ8;z%;%C%H$N%j%9%H$,Fs$D0J>e$NMWAG(B
@@ -921,12 +922,6 @@ Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B@acronym{MIME} $B
 $B$+J,3d$9$k$3$H$,$G$-$J$$$N$G!"C10l$N9T$r%(%s%3!<%I$9$k$N$KJ#?t(B
 $B$N(B @acronym{MIME} $BJ8;z%;%C%H$,I,MW$@$H$9$k$H!"$=$N%Q!<%H$r%(%s%3!<%I$9$k(B
 $B$3$H$OIT2DG=$G$9!#(B
-
-@quotation
-$BLuCm(B: @code{mm-mime-mule-charset-alist} $BJQ?t$r;H$&$N$O<B:]$K$O(B XEmacs $B$@(B
-$B$1$G$9!#(BEmacs $B$K$O<+?H$GDj5A$7$F$$$k(B coding system $B$H(B @acronym{MIME} $BJ8(B
-$B;z%;%C%H$NBP1~I=$,$"$j!">e5-$N=hM}$G$O$=$l$,;H$o$l$^$9!#(B
-@end quotation
 
 @sc{mule} $B5!G=$rHw$($?(B Emacs $B$rAv$i$;$F$$$k>l9g!"$I$N(B coding system $B$r;H(B
 $B$&$+$NM%@h=g0L$O(B Emacs $B<+?H$+$i7Q>5$5$l$^$9!#$3$l$O!"$b(B
@@ -1197,57 +1192,56 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 $B$$$F!"<!0J9_$N>O$G@bL@$7$^$9!#(B
 
 @node Basic Functions
-@chapter Basic Functions
+@chapter $B4pK\E*$J4X?t(B
 
-This chapter describes the basic, ground-level functions for parsing and
-handling.  Covered here is parsing @code{From} lines, removing comments
-from header lines, decoding encoded words, parsing date headers and so
-on.  High-level functionality is dealt with in the next chapter
-(@pxref{Decoding and Viewing}).
+$B$3$N>O$O!"2<0L$N3,AX$K$"$k4pK\E*$J!"2r@O$H=hM}$r9T$J$&4X?t$K$D$$$F@bL@$7(B
+$B$^$9!#$3$3$G07$&$3$H$O(B @code{From} $B9T$N2r@O!"%X%C%@!<$N3F9T$K$"$k%3%a%s(B
+$B%H$N:o=|!"8l$N%G%3!<%I$H%(%s%3!<%I!";~9o%X%C%@!<$N2r@O$J$I$G$9!#>e0L3,AX(B
+$B$N5!G=$O:G=i$N>O(B (@pxref{Decoding and Viewing}) $B$G07$$$^$9!#(B
 
 @menu
-* rfc2045::      Encoding @code{Content-Type} headers.
-* rfc2231::      Parsing @code{Content-Type} headers.
-* ietf-drums::   Handling mail headers defined by RFC822bis.
-* rfc2047::      En/decoding encoded words in headers.
-* time-date::    Functions for parsing dates and manipulating time.
-* qp::           Quoted-Printable en/decoding.
-* base64::       Base64 en/decoding.
-* binhex::       Binhex decoding.
-* uudecode::     Uuencode decoding.
-* yenc::         Yenc decoding.
-* rfc1843::      Decoding HZ-encoded text.
-* mailcap::      How parts are displayed is specified by the @file{.mailcap} file
+* rfc2045::      @code{Content-Type} $B%X%C%@!<$N%(%s%3!<%I(B
+* rfc2231::      @code{Content-Type} $B%X%C%@!<$N2r@O(B
+* ietf-drums::   RFC822bis $B$GDj5A$5$l$?%a!<%k%X%C%@!<$N=hM}(B
+* rfc2047::      $B%X%C%@!<$K$*$1$k8l$N%(%s%3!<%I$H%G%3!<%I(B
+* time-date::    $BF|IU$N2r@O$*$h$S;~9o$rA`:n$9$k4X?t(B
+* qp::           Quoted-Printable $B$N%(%s%3!<%I$H%G%3!<%I(B
+* base64::       Base64 $B$N%(%s%3!<%I$H%G%3!<%I(B
+* binhex::       Binhex $B$N%G%3!<%I(B
+* uudecode::     Uuencode $B$N%G%3!<%I(B
+* yenc::         Yenc $B$N%G%3!<%I(B
+* rfc1843::      HZ-$BId9f2=$5$l$?%F%-%9%H$N%G%3!<%I(B
+* mailcap::      $B%Q!<%H$NI=<($N;EJ}$O(B @file{.mailcap} $B%U%!%$%k$KL@5-$5$l$F$$$k(B
 @end menu
 
+$BLuCm(B: RFC822bis == draft-ietf-drums-msg-fmt-09.txt
 
 @node rfc2045
 @section rfc2045
 
-RFC2045 is the ``main'' @acronym{MIME} document, and as such, one would
-imagine that there would be a lot to implement.  But there isn't, since
-most of the implementation details are delegated to the subsequent
-RFCs.
+RFC2045 $B$O!V<gMW$J!W(B@acronym{MIME} $B$NJ88%$G$9!#$J$i$P!"$=$3$K$O$?$/$5$s(B
+$B$N<BAu$,$"$k$@$m$&$HA[A|$9$k$G$7$g$&!#$7$+$7!"$[$H$s$I$N>\:Y$J<BAu$O$=$N(B
+$B8e$N(B RFC $B$K0Q$M$i$l$F$$$F!"$=$3$K$O$"$j$^$;$s!#(B
 
-So @file{rfc2045.el} has only a single function:
+$B$H8@$&$o$1$G!"(B@file{rfc2045.el} $B$K$O$?$C$?0l$D$N4X?t$,$"$j$^$9(B:
 
 @table @code
 @item rfc2045-encode-string
 @findex rfc2045-encode-string
-Takes a parameter and a value and returns a @samp{PARAM=VALUE} string.
-@var{value} will be quoted if there are non-safe characters in it.
+$B%Q%i%a!<%?$HCM$r<u$1<h$j!"(B@samp{PARAM=VALUE} $B$N7A<0$NJ8;zNs$rJV$7$^$9!#(B
+@var{value} $B$K0BA4$G$O$J$$J8;z$,$"$C$?$i%/%)!<%H$5$l(B ("..." $B$G0O$^$l(B) $B$^(B
+$B$9!#(B
 @end table
-
 
 @node rfc2231
 @section rfc2231
 
-RFC2231 defines a syntax for the @code{Content-Type} and
-@code{Content-Disposition} headers.  Its snappy name is @dfn{MIME
-Parameter Value and Encoded Word Extensions: Character Sets, Languages,
-and Continuations}.
+RFC2231 $B$O(B @code{Content-Type} $B$H(B @code{Content-Disposition} $B%X%C%@!<$N(B
+$B%7%s%?%C%/%9$rDj5A$7$^$9!#$=$N>.?h$JL>>N$O(B @dfn{MIME Parameter Value and
+Encoded Word Extensions: Character Sets, Languages, and Continuations}
+$B$G$9!#(B
 
-In short, these headers look something like this:
+$B0l8}$G8@$&$H!"$=$l$i$N%X%C%@!<$O$3$s$J$U$&$G$9(B:
 
 @example
 Content-Type: application/x-stuff;
@@ -1256,15 +1250,14 @@ Content-Type: application/x-stuff;
  title*2="isn't it!"
 @end example
 
-They usually aren't this bad, though.
+$BIaDL$O$3$s$J$K$R$I$/$J$$$G$9$,!#(B
 
-The following functions are defined by this library:
+$B0J2<$N4X?t$,$3$N%i%$%V%i%j!<$GDj5A$5$l$F$$$^$9(B:
 
 @table @code
 @item rfc2231-parse-string
 @findex rfc2231-parse-string
-Parse a @code{Content-Type} header and return a list describing its
-elements.
+@code{Content-Type} $B%X%C%@!<$r2r@O$7$F!"$=$NMWAG$rI=$9%j%9%H$rJV$7$^$9!#(B
 
 @example
 (rfc2231-parse-string
@@ -1278,166 +1271,161 @@ elements.
 
 @item rfc2231-get-value
 @findex rfc2231-get-value
-Takes one of the lists on the format above and returns
-the value of the specified attribute.
+$B>e5-$N7A<0$N%j%9%H$N0l$D$r<u$1<h$j!";XDj$5$l$?B0@-$NCM$rJV$7$^$9!#(B
 
 @item rfc2231-encode-string
 @findex rfc2231-encode-string
-Encode a parameter in headers likes @code{Content-Type} and
-@code{Content-Disposition}.
-
+@code{Content-Type} $B$H(B @code{Content-Disposition} $B$N$h$&$J%X%C%@!<$K$"$k(B
+$B%Q%i%a!<%?$r%(%s%3!<%I$7$^$9!#(B
 @end table
-
 
 @node ietf-drums
 @section ietf-drums
 
-@dfn{drums} is an IETF working group that is working on the replacement
-for RFC822.
+@dfn{drums} $B$O(B RFC822 $B$NCV$-49$(:n6H$r$7$F$$$k(B IETF $B$N:n6HIt2q$G$9!#(B
 
-The functions provided by this library include:
+$B$3$N%i%$%V%i%j!<$K$h$C$FDs6!$5$l$k4X?t$O<!$NDL$j$G$9(B:
 
 @table @code
 @item ietf-drums-remove-comments
 @findex ietf-drums-remove-comments
-Remove the comments from the argument and return the results.
+$B0z?t$+$i%3%a%s%H$r<h$j=|$$$F!"7k2L$rJV$7$^$9!#(B
 
 @item ietf-drums-remove-whitespace
 @findex ietf-drums-remove-whitespace
-Remove linear white space from the string and return the results.
-Spaces inside quoted strings and comments are left untouched.
+$BJ8;zNs$+$i(B ``linear white space'' ($BLuCm(B: $BC10l$ND9$$%X%C%@!<$r@^$j>v$s$G(B
+$BJ#?t9T$K$9$k$H$-$K;H$&O"7k;R(B; $B2~9TJ8;z(B+$B6uGrJ8;z(B) $B$r<h$j=|$-!"7k2L$rJV$7(B
+$B$^$9!#%/%)!<%H$5$l$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s(B
+$B%H$K$O<j$r$D$1$^$;$s!#(B
 
 @item ietf-drums-get-comment
 @findex ietf-drums-get-comment
-Return the last most comment from the string.
+$BJ8;zNs$N:G8eHx$K$"$k%3%a%s%H$rJV$7$^$9!#(B
 
 @item ietf-drums-parse-address
 @findex ietf-drums-parse-address
-Parse an address string and return a list that contains the mailbox and
-the plain text name.
+$B%"%I%l%9$NJ8;zNs$r2r@O$7$F!"%a!<%k%\%C%/%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`(B
+$B%j%9%H$rJV$7$^$9!#(B
 
 @item ietf-drums-parse-addresses
 @findex ietf-drums-parse-addresses
-Parse a string that contains any number of comma-separated addresses and
-return a list that contains mailbox/plain text pairs.
+$B%+%s%^$G6h@Z$i$l$?J#?t$N%"%I%l%9$r4^$s$G$$$kJ8;zNs$r2r@O$7$F!"%a!<%k%\%C(B
+$B%/%9$H%W%l!<%s%F%-%9%H$NBP$r4^$`%j%9%H$rJV$7$^$9!#(B
 
 @item ietf-drums-parse-date
 @findex ietf-drums-parse-date
-Parse a date string and return an Emacs time structure.
+$BF|IU$NJ8;zNs$r2r@O$7$F!"(BEmacs $B7A<0$N;~9o$rJV$7$^$9!#(B
 
 @item ietf-drums-narrow-to-header
 @findex ietf-drums-narrow-to-header
-Narrow the buffer to the header section of the current buffer.
-
+$B8=:_$N%P%C%U%!$r%X%C%@!<$N6h0h$K69$a$^$9!#(B
 @end table
-
 
 @node rfc2047
 @section rfc2047
 
-RFC2047 (Message Header Extensions for Non-@acronym{ASCII} Text) specifies how
-non-@acronym{ASCII} text in headers are to be encoded.  This is actually rather
-complicated, so a number of variables are necessary to tweak what this
-library does.
+RFC2047 (Message Header Extensions for Non-@acronym{ASCII} Text) $B$O!"%X%C(B
+$B%@!<$K$"$kHs(B-@acronym{ASCII} $B%F%-%9%H$r$I$N$h$&$K%(%s%3!<%I$9$k$+$rDj$a(B
+$B$^$9!#<B:]$3$l$O>/!9J#;($K$J$k$N$G!"$3$N%i%$%V%i%j!<$,9T$J$&$3$H$rD4@0$9(B
+$B$k$?$a$K!"B?$/$NJQ?t$,I,MW$G$9!#(B
 
-The following variables are tweakable:
+$B0J2<$NJQ?t$,D4@02DG=$G$9(B:
 
 @table @code
 @item rfc2047-header-encoding-alist
 @vindex rfc2047-header-encoding-alist
-This is an alist of header / encoding-type pairs.  Its main purpose is
-to prevent encoding of certain headers.
+$B$3$l$O%X%C%@!<$H%(%s%3!<%G%#%s%0!&%?%$%W$NBP$r<}$a$?O"A[%j%9%H$G$9!#$=$N(B
+$B<g$JL\E*$O!"$"$k<o$N%X%C%@!<$,%(%s%3!<%I$5$l$J$$$h$&$K$9$k$3$H$G$9!#(B
 
-The keys can either be header regexps, or @code{t}.
+$B80(B ($BLuCm(B: $B3FMWAG$N(B @code{car} $B9`(B) $B$O%X%C%@!<$K9gCW$9$k@55,I=8=(B
+$B$+(B @code{t} $B$N$I$A$i$+$G$9!#(B
 
-The values can be @code{nil}, in which case the header(s) in question
-won't be encoded, @code{mime}, which means that they will be encoded, or
-@code{address-mime}, which means the header(s) will be encoded carefully
-assuming they contain addresses.
+$BCM(B ($BLuCm(B: $B3FMWAG$N(B @code{cdr} $B9`(B) $B$,(B @code{nil} $B$N$H$-!"LdBj$N%X%C%@!<$O(B
+$B%(%s%3!<%I$5$l$^$;$s!#(B@code{mime} $B$O$=$l$i$,%(%s%3!<%I$5$l$k$3$H$r0UL#$7!"(B
+@code{address-mime} $B$N>l9g$O%X%C%@!<$,%"%I%l%9$r4^$s$G$$$k$3$H$rA[Dj$7$F(B
+$BCm0U?<$/%(%s%3!<%I$7$^$9!#(B
 
 @item rfc2047-charset-encoding-alist
 @vindex rfc2047-charset-encoding-alist
-RFC2047 specifies two forms of encoding---@code{Q} (a
-Quoted-Printable-like encoding) and @code{B} (base64).  This alist
-specifies which charset should use which encoding.
+RFC2047 $B$OFs$D$N%(%s%3!<%G%#%s%0$N7A<0$rDj$a$F$$$^$9!#0l$D$O(B @code{Q}
+(Quoted-Printable $B$N$h$&$J%(%s%3!<%G%#%s%0(B) $B$G!"$b$&0l$D$O(B @code{B}
+(base64) $B$G$9!#$3$NO"A[%j%9%H$O!"$"$kJ8;z%;%C%H$KBP$7$F$I$N%(%s%3!<%G%#(B
+$B%s%0$r;H$&$+$r5,Dj$7$^$9!#(B
 
 @item rfc2047-encode-function-alist
 @vindex rfc2047-encode-function-alist
-This is an alist of encoding / function pairs.  The encodings are
-@code{Q}, @code{B} and @code{nil}.
+$B$3$l$O%(%s%3!<%G%#%s%0$H4X?t$NBP$r<}$a$?O"A[%j%9%H$G$9!#%(%s%3!<%G%#%s%0(B
+$B$H$O(B @code{Q}, @code{B} $B$*$h$S(B @code{nil} $B$N$3$H$G$9!#(B
 
 @item rfc2047-encoded-word-regexp
 @vindex rfc2047-encoded-word-regexp
-When decoding words, this library looks for matches to this regexp.
+$B%G%3!<%I$r9T$J$&$H$-!"$3$N%i%$%V%i%j!<$O$3$N@55,I=8=$K9gCW$9$k$b$N$rC5$7(B
+$B$^$9!#(B
 
 @item rfc2047-encode-encoded-words
 @vindex rfc2047-encode-encoded-words
-The boolean variable specifies whether encoded words
-(e.g. @samp{=?hello?=}) should be encoded again.
-
+$B%(%s%3!<%I:Q$_$N8l(B ($BNc$($P(B @samp{=?hello?=}) $B$r:FEY%(%s%3!<%I$9$k$+$I$&(B
+$B$+$r7h$a$k%V!<%kJQ?t$G$9!#(B
 @end table
 
-Those were the variables, and these are this functions:
+$B0J>e$OJQ?t$G$7$?!#<!$O4X?t$G$9(B:
 
 @table @code
 @item rfc2047-narrow-to-field
 @findex rfc2047-narrow-to-field
-Narrow the buffer to the header on the current line.
+$B%P%C%U%!$r8=:_$N9T$N%X%C%@!<$K69$a$^$9!#(B
 
 @item rfc2047-encode-message-header
 @findex rfc2047-encode-message-header
-Should be called narrowed to the header of a message.  Encodes according
-to @code{rfc2047-header-encoding-alist}.
+$B%a%C%;!<%8$N%X%C%@!<$K69$a$i$l$?%P%C%U%!$G;H$o$J$1$l$P$J$j$^$;$s!#(B
+@code{rfc2047-header-encoding-alist} $B$K=>$C$F%(%s%3!<%I$7$^$9!#(B
 
 @item rfc2047-encode-region
 @findex rfc2047-encode-region
-Encodes all encodable words in the region specified.
+$B;XDj$5$l$?NN0h$K$"$k$9$Y$F$N%(%s%3!<%I2DG=$J8l$r%(%s%3!<%I$7$^$9!#(B
 
 @item rfc2047-encode-string
 @findex rfc2047-encode-string
-Encode a string and return the results.
+$BJ8;zNs$r%(%s%3!<%I$7$F7k2L$rJV$7$^$9!#(B
 
 @item rfc2047-decode-region
 @findex rfc2047-decode-region
-Decode the encoded words in the region.
+$BNN0h$K$"$k%(%s%3!<%I$5$l$?8l$r%G%3!<%I$7$^$9!#(B
 
 @item rfc2047-decode-string
 @findex rfc2047-decode-string
-Decode a string and return the results.
+$BJ8;zNs$r%G%3!<%I$7$F7k2L$rJV$7$^$9!#(B
 
 @item rfc2047-encode-parameter
 @findex rfc2047-encode-parameter
-Encode a parameter in the RFC2047-like style.  This is a replacement for
-the @code{rfc2231-encode-string} function.  @xref{rfc2231}.
+$B%Q%i%a!<%?$r(B RFC2047 $B$U$&$NMM<0$G%(%s%3!<%I$7$^$9!#$3$l(B
+$B$O(B @code{rfc2231-encode-string} $B$NCV$-49$($G$9!#(B@xref{rfc2231}.
 
-When attaching files as @acronym{MIME} parts, we should use the RFC2231
-encoding to specify the file names containing non-@acronym{ASCII}
-characters.  However, many mail softwares don't support it in practice
-and recipients won't be able to extract files with correct names.
-Instead, the RFC2047-like encoding is acceptable generally.  This
-function provides the very RFC2047-like encoding, resigning to such a
-regrettable trend.  To use it, put the following line in your
-@file{~/.gnus.el} file:
+$B%U%!%$%k$r(B @acronym{MIME} $B$N%Q!<%H$H$7$FE:IU$9$k$H$-!"(B
+$BHs(B-@acronym{ASCII} $BJ8;z$r4^$`%U%!%$%kL>$r;XDj$9$k$K$O(B RFC2231 $B$N%(%s%3!<(B
+$B%G%#%s%0$r;H$o$J$1$l$P$J$j$^$;$s!#$7$+$7!"<B:]LdBj$H$7$FB?$/$N%a!<%k%=%U(B
+$B%H$,$=$l$r%5%]!<%H$7$J$$$N$G!"<u?.<T$O@5$7$$%U%!%$%kL>$rCj=P$9$k$3$H$,$G(B
+$B$-$^$;$s!#Be$o$j$K(B RFC2047 $B$U$&$N%(%s%3!<%G%#%s%0$,!"9-$/<u$1F~$l$i$l$F(B
+$B$$$^$9!#$=$s$J>p$1$J$$IwD,$r4E<u$7$F!"$3$N4X?t$O(B RFC2047 $B$K$h$/;w$?%(%s(B
+$B%3!<%G%#%0$N5!G=$rDs6!$7$^$9!#$3$l$r;H$&$K$O!"(B@file{~/.gnus.el} $B%U%!%$%k(B
+$B$K<!$N9T$rF~$l$F2<$5$$(B:
 
 @lisp
 (defalias 'mail-header-encode-parameter 'rfc2047-encode-parameter)
 @end lisp
-
 @end table
-
 
 @node time-date
 @section time-date
 
-While not really a part of the @acronym{MIME} library, it is convenient to
-document this library here.  It deals with parsing @code{Date} headers
-and manipulating time.  (Not by using tesseracts, though, I'm sorry to
-say.)
+$BK\Ev$O(B @acronym{MIME} $B%i%$%V%i%j!<$N0lIt$G$O$"$j$^$;$s$,!"$3$3$G@bL@$9$k(B
+$B$3$H$OET9g$,NI$$$N$G$9!#$3$l$OF|IU%X%C%@!<$N2r@O$H;~9o$NA`:n$r07$$$^$9!#(B
+($B$b$C$H$b;M<!85N)J}BN$O;H$$$^$;$s!#$4$a$s$J$5$$!#(B)
 
-These functions convert between five formats: A date string, an Emacs
-time structure, a decoded time list, a second number, and a day number.
+$B$3$l$i$N4X?t$O8^$D$N7A<0(B ($B;~9o$NJ8;zNs!"(BEmacs $B7A<0$N;~9o!"%G%3!<%I$5$l$?(B
+$B;~9o$N%j%9%H!"IC?t!"$*$h$SF|?t(B) $B$N4V$GJQ49$r9T$J$$$^$9!#(B
 
-Here's a bunch of time/date/second/day examples:
+$B;~9o(B/$BF|IU(B/$BIC?t(B/$BF|?t$NAj8_JQ49$NNc$G$9(B:
 
 @example
 (parse-time-string "Sat Sep 12 12:21:54 1998 +0200")
@@ -1483,156 +1471,150 @@ Here's a bunch of time/date/second/day examples:
 @result{} 4.146122685185185
 @end example
 
-And finally, we have @code{safe-date-to-time}, which does the same as
-@code{date-to-time}, but returns a zero time if the date is
-syntactically malformed.
+$B$"$H!"(B@code{safe-date-to-time} $B$H$$$&$b$N$b$"$j$^$9!#$3$l(B
+$B$O(B @code{date-to-time} $B$HF1$8$3$H$r$7$^$9$,!"F|IU$,9=J8E*$KIT40A4$@$C$?(B
+$B>l9g$K%<%m;~9o$rJV$7$^$9!#(B
 
-The five data representations used are the following:
+$B8^$D$N%G!<%?$O0J2<$N$h$&$KI=8=$5$l$^$9(B:
 
 @table @var
 @item date
-An RFC822 (or similar) date string.  For instance: @code{"Sat Sep 12
-12:21:54 1998 +0200"}.
+RFC822 ($B$^$?$ON`;w$N(B) $B7A<0$NF|IU$NJ8;zNs!#Nc(B: @code{"Sat Sep 12 12:21:54
+1998 +0200"}
 
 @item time
-An internal Emacs time.  For instance: @code{(13818 26466)}.
+Emacs $B$NFbIt7A<0$N;~9o!#Nc(B: @code{(13818 26466)}
 
 @item seconds
-A floating point representation of the internal Emacs time.  For
-instance: @code{905595714.0}.
+Emacs $B$NFbIt7A<0$N;~9o$rIbF0>.?t$GI=$7$?$b$N!#Nc(B: @code{905595714.0}
 
 @item days
-An integer number representing the number of days since 00000101.  For
-instance: @code{729644}.
+00000101 $B$r4pE@$H$9$k7P2aF|?t$r@0?t$GI=$7$?$b$N!#Nc(B: @code{729644}
+
+$BLuCm(B: 00000101 $B$,2?$r0UL#$9$k$N$+ITL@$G$9$,!"%=!<%9%3!<%I$K$h$l$P%0%l%4(B
+$B%j%*Nr!&5*85A0(B (BC $B$G$O$J$/(B BCE $B$NJ}$N(B) 0001$BG/(B12$B7n(B31$BF|$N$3$H$i$7$$$G$9!#(B
 
 @item decoded time
-A list of decoded time.  For instance: @code{(54 21 12 12 9 1998 6 t
-7200)}.
+$B%G%3!<%I$5$l$?;~9o$N%j%9%H!#Nc(B: @code{(54 21 12 12 9 1998 6 t 7200)}
 @end table
 
-All the examples above represent the same moment.
+$B>e5-$N$9$Y$F$NNc$O!"F1$8;~$rI=$7$F$$$^$9!#(B
 
-These are the functions available:
+$B4X?t$K$O0J2<$N$h$&$J$b$N$,$"$j$^$9(B:
 
 @table @code
 @item date-to-time
-Take a date and return a time.
+$BF|IU$r<u$1<h$C$F;~9o$rJV$7$^$9!#(B
 
 @item time-to-seconds
-Take a time and return seconds.
+$B;~9o$r<u$1<h$C$FIC?t$rJV$7$^$9!#(B
 
 @item seconds-to-time
-Take seconds and return a time.
+$BIC?t$r<u$1<h$C$F;~9o$rJV$7$^$9!#(B
 
 @item time-to-days
-Take a time and return days.
+$B;~9o$r<u$1<h$C$FF|?t$rJV$7$^$9!#(B
 
 @item days-to-time
-Take days and return a time.
+$BF|?t$r<u$1<h$C$F;~9o$rJV$7$^$9!#(B
 
 @item date-to-day
-Take a date and return days.
+$BF|IU$r<u$1<h$C$FF|?t$rJV$7$^$9!#(B
 
 @item time-to-number-of-days
-Take a time and return the number of days that represents.
+$B;~9o$r<u$1<h$C$F!"$=$l$,I=$7$F$$$kF|?t$rJV$7$^$9!#(B
 
 @item safe-date-to-time
-Take a date and return a time.  If the date is not syntactically valid,
-return a ``zero'' date.
+$BF|IU$r<u$1<h$C$F;~9o$rJV$7$^$9!#F|IU$,9=J8E*$K@5$7$/$J$+$C$?$i!V%<%m!W;~(B
+$B9o$rJV$7$^$9!#(B
 
 @item time-less-p
-Take two times and say whether the first time is less (i. e., earlier)
-than the second time.
+$BFs$D$N;~9o$r<u$1<h$C$F!"0l$DL\$,Fs$DL\$h$j>/$J$$(B ($B$9$J$o$AAa$$(B) $B$+$I$&$+(B
+$B$r<($7$^$9!#(B
 
 @item time-since
-Take a time and return a time saying how long it was since that time.
+$B;~9o$r<u$1<h$C$F!"$=$N;~9o$+$i$I$l$[$I;~4V$,7P2a$7$?$+$r<($7$^$9!#(B
 
 @item subtract-time
-Take two times and subtract the second from the first.  I. e., return
-the time between the two times.
+$BFs$D$N;~9o$r<u$1<h$C$F!"0l$DL\$+$iFs$DL\$r8:;;$7$^$9!#$9$J$o$A!"Fs$D$N;~(B
+$B9o$N4V$N;~4V:9$rJV$7$^$9!#(B
 
 @item days-between
-Take two days and return the number of days between those two days.
+$BFs$D$NF|IU$r<u$1<h$C$F!"$=$l$iFs$D$NF|IU$N4V$NF|?t$rJV$7$^$9!#(B
 
 @item date-leap-year-p
-Take a year number and say whether it's a leap year.
+$BG/$N?t;z$r<u$1<h$C$F!"$=$l$,$&$k$&G/$+$I$&$+$r<($7$^$9!#(B
 
 @item time-to-day-in-year
-Take a time and return the day number within the year that the time is
-in.
-
+$B;~9o$r<u$1<h$C$F!"$=$NG/$N85F|$+$i7P2a$7$?F|?t$rJV$7$^$9!#(B
 @end table
-
 
 @node qp
 @section qp
 
-This library deals with decoding and encoding Quoted-Printable text.
+$B$3$N%i%$%V%i%j!<$O(B Quoted-Printable $B$K$h$k%F%-%9%H$N%G%3!<%I$H%(%s%3!<%I(B
+$B$r07$$$^$9!#(B
 
-Very briefly explained, qp encoding means translating all 8-bit
-characters (and lots of control characters) into things that look like
-@samp{=EF}; that is, an equal sign followed by the byte encoded as a hex
-string.
+$BHs>o$K<jC;$+$K@bL@$9$l$P!"(Bqp $B%(%s%3!<%G%#%s%0$O$9$Y$F$N(B 8-bit $BJ8;z(B ($B$HB?(B
+$B$/$N@)8fJ8;z(B) $B$r(B @samp{=EF} $B$N$h$&$J$b$N(B ($B%$%3!<%k5-9f$H!"$=$l$KB3(B
+$B$/(B 16$B?J?t$K%(%s%3!<%I$5$l$?%P%$%H(B) $B$KJQ49$9$k$3$H$G$9!#(B
 
-The following functions are defined by the library:
+$B$3$N%i%$%V%i%j!<$G$O!"0J2<$N4X?t$,Dj5A$5$l$F$$$^$9(B:
 
 @table @code
 @item quoted-printable-decode-region
 @findex quoted-printable-decode-region
-QP-decode all the encoded text in the specified region.
+$B;XDj$5$l$?NN0h$K$"$k$9$Y$F$N%(%s%3!<%I$5$l$?%F%-%9%H$r(B QP-$B%G%3!<%I$7$^$9!#(B
 
 @item quoted-printable-decode-string
 @findex quoted-printable-decode-string
-Decode the QP-encoded text in a string and return the results.
+$BJ8;zNs$K4^$^$l$F$$$k(B QP-$B%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$F!"7k2L$rJV(B
+$B$7$^$9!#(B
 
 @item quoted-printable-encode-region
 @findex quoted-printable-encode-region
-QP-encode all the encodable characters in the specified region.  The third
-optional parameter @var{fold} specifies whether to fold long lines.
-(Long here means 72.)
+$B;XDj$5$l$?NN0h$K$"$k$9$Y$F$N%(%s%3!<%I2DG=$JJ8;z$r(B QP-$B%(%s%3!<%I$7$^$9!#(B
+$B>JN,$G$-$kBh;00z?t(B @var{fold} $B$O!"D9$$9T$r@^$j>v$`$+$I$&$+$r;XDj$7$^$9!#(B
+($B$3$3$G!VD9$$!W$O(B 72$B7e$r1[$($k$b$N$N$3$H$r0UL#$7$^$9!#(B)
 
 @item quoted-printable-encode-string
 @findex quoted-printable-encode-string
-QP-encode all the encodable characters in a string and return the
-results.
-
+$BJ8;zNs$K4^$^$l$F$$$k$9$Y$F$N%(%s%3!<%I2DG=$JJ8;z$r(B QP-$B%(%s%3!<%I$7$F!"7k(B
+$B2L$rJV$7$^$9!#(B
 @end table
-
 
 @node base64
 @section base64
 @cindex base64
 
-Base64 is an encoding that encodes three bytes into four characters,
-thereby increasing the size by about 33%.  The alphabet used for
-encoding is very resistant to mangling during transit.
+Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 33% $B%5%$%:(B
+$B$,A}$($^$9!#%(%s%3!<%I$G;H$o$l$k%"%k%U%!%Y%C%H$O!"EAAw$5$l$k4V$KBfL5$7$K(B
+$B$5$l$k$3$H$KBP$7$F$H$F$bBQ5WNO$,$"$j$^$9!#(B
 
-The following functions are defined by this library:
+$B0J2<$N4X?t$,$3$N%i%$%V%i%j!<$K$h$C$FDj5A$5$l$F$$$^$9(B:
 
 @table @code
 @item base64-encode-region
 @findex base64-encode-region
-base64 encode the selected region.  Return the length of the encoded
-text.  Optional third argument @var{no-line-break} means do not break
-long lines into shorter lines.
+$BA*Br$5$l$?NN0h$r(B base64 $B$G%(%s%3!<%I$7$F!"%(%s%3!<%I$5$l$?%F%-%9%H$ND9$5(B
+$B$rJV$7$^$9!#>JN,$G$-$kBh;00z?t(B @var{no-line-break} $B$O!"D9$$9T$r$h$jC;$$(B
+$B9T$K@^$j>v$^$J$$$3$H$r;X?^$7$^$9!#(B
 
 @item base64-encode-string
 @findex base64-encode-string
-base64 encode a string and return the result.
+$BJ8;zNs$r(B base64 $B$G%(%s%3!<%I$7$F7k2L$rJV$7$^$9!#(B
 
 @item base64-decode-region
 @findex base64-decode-region
-base64 decode the selected region.  Return the length of the decoded
-text.  If the region can't be decoded, return @code{nil} and don't
-modify the buffer.
+$BA*Br$5$l$?NN0h$r(B base64 $B$G%G%3!<%I$7$F!"%G%3!<%I$5$l$?%F%-%9%H$ND9$5$rJV(B
+$B$7$^$9!#NN0h$,%G%3!<%I2DG=$G$J$+$C$?$i!"(B@code{nil} $B$rJV$9$@$1$G%P%C%U%!(B
+$B$OJQ99$7$^$;$s!#(B
 
 @item base64-decode-string
 @findex base64-decode-string
-base64 decode a string and return the result.  If the string can't be
-decoded, @code{nil} is returned.
-
+$BJ8;zNs$r(B base64 $B$G%G%3!<%I$7$F7k2L$rJV$7$^$9!#J8;zNs$,%G%3!<%I2DG=$G$J$+$C(B
+$B$?$i(B @code{nil} $B$rJV$7$^$9!#(B
 @end table
-
 
 @node binhex
 @section binhex
@@ -1640,15 +1622,15 @@ decoded, @code{nil} is returned.
 @cindex Apple
 @cindex Macintosh
 
-@code{binhex} is an encoding that originated in Macintosh environments.
-The following function is supplied to deal with these:
+@code{binhex} $B$O%^%C%-%s%H%C%7%e$N4D6-$K8;$rH/$9$k%(%s%3!<%G%#%s%0$G$9!#(B
+$B0J2<$N4X?t$,$=$l$i$r07$&$?$a$K6!5k$5$l$F$$$^$9(B:
 
 @table @code
 @item binhex-decode-region
 @findex binhex-decode-region
-Decode the encoded text in the region.  If given a third parameter, only
-decode the @code{binhex} header and return the filename.
-
+$BNN0h$K$"$k%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$^$9!#Bh;0%Q%i%a!<%?$,M?$((B
+$B$i$l$k$H!"(B@code{binhex} $B$N%X%C%@!<$r%G%3!<%I$7$F%U%!%$%kL>$rJV$9$3$H$@$1(B
+$B$r$7$^$9!#(B
 @end table
 
 @node uudecode
@@ -1656,32 +1638,30 @@ decode the @code{binhex} header and return the filename.
 @cindex uuencode
 @cindex uudecode
 
-@code{uuencode} is probably still the most popular encoding of binaries
-used on Usenet, although @code{base64} rules the mail world.
+@code{base64} $B$,%a!<%k$N@$3&$r;YG[$7$F$$$k$b$N$N!"$*$=$i(B
+$B$/(B @code{uuencode} $B$O$^$@(B Usenet $B$G;H$o$l$F$$$k:G$bIa5Z$7$F$$$k%P%$%J%j!<(B
+$B$N%(%s%3!<%G%#%s%0$G$9!#(B
 
-The following function is supplied by this package:
+$B0J2<$N4X?t$,$3$N%Q%C%1!<%8$K$h$C$F6!5k$5$l$F$$$^$9(B:
 
 @table @code
 @item uudecode-decode-region
 @findex uudecode-decode-region
-Decode the text in the region.
+$BNN0h$K$"$k%F%-%9%H$r%G%3!<%I$7$^$9!#(B
 @end table
-
 
 @node yenc
 @section yenc
 @cindex yenc
 
-@code{yenc} is used for encoding binaries on Usenet.  The following
-function is supplied by this package:
+@code{yenc} $B$O(B Usenet $B$G%P%$%J%j!<$r%(%s%3!<%I$9$k$?$a$K;H$o$l$^$9!#0J2<(B
+$B$N4X?t$,$3$N%Q%C%1!<%8$K$h$C$F6!5k$5$l$F$$$^$9(B:
 
 @table @code
 @item yenc-decode-region
 @findex yenc-decode-region
-Decode the encoded text in the region.
-
+$BNN0h$K$"$k%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$^$9!#(B
 @end table
-
 
 @node rfc1843
 @section rfc1843
@@ -1689,34 +1669,33 @@ Decode the encoded text in the region.
 @cindex HZ
 @cindex Chinese
 
-RFC1843 deals with mixing Chinese and @acronym{ASCII} characters in messages.  In
-essence, RFC1843 switches between @acronym{ASCII} and Chinese by doing this:
+RFC1843 $B$O%a%C%;!<%8$K$*$1$kCf9q8l$H(B @acronym{ASCII} $BJ8;z$N:.:_J8$r07$$(B
+$B$^$9!#K\<AE*$K!"(BRFC1843 $B$O0J2<$r;H$C$F(B @acronym{ASCII} $B$HCf9q8l$r@Z$jBX(B
+$B$($^$9(B:
 
 @example
 This sentence is in @acronym{ASCII}.
 The next sentence is in GB.~@{<:Ky2;S@{#,NpJ)l6HK!#~@}Bye.
 @end example
 
-Simple enough, and widely used in China.
+$B$^$C$?$/C1=c$G!"Cf9q$G$O9-$/;H$o$l$F$$$^$9!#(B
 
-The following functions are available to handle this encoding:
+$B$3$N%(%s%3!<%G%#%s%0$r07$&$?$a$K!"0J2<$N4X?t$r;H$&$3$H$,$G$-$^$9(B:
 
 @table @code
 @item rfc1843-decode-region
-Decode HZ-encoded text in the region.
+$BNN0h$K$"$k(B HZ-$B%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$^$9!#(B
 
 @item rfc1843-decode-string
-Decode a HZ-encoded string and return the result.
-
+HZ-$B%(%s%3!<%I$5$l$?J8;zNs$r%G%3!<%I$7$F7k2L$rJV$7$^$9!#(B
 @end table
-
 
 @node mailcap
 @section mailcap
 
-The @file{~/.mailcap} file is parsed by most @acronym{MIME}-aware message
-handlers and describes how elements are supposed to be displayed.
-Here's an example file:
+@file{~/.mailcap} $B%U%!%$%k$O$[$H$s$I$N(B @acronym{MIME} $BBP1~$N%a%C%;!<%8!&(B
+$B%O%s%I%i!<$K$h$C$F2r@O$5$l$^$9!#$=$l$K$O!"3FMWAG$,$I$N$h$&$KI=<($5$l$k$b(B
+$B$N$HA[Dj$5$l$F$$$k$+$r5-=R$7$^$9!#%U%!%$%k$NNc$G$9(B:
 
 @example
 image/*; gimp -8 %s
@@ -1724,93 +1703,87 @@ audio/wav; wavplayer %s
 application/msword; catdoc %s ; copiousoutput ; nametemplate=%s.doc
 @end example
 
-This says that all image files should be displayed with @code{gimp},
-that WAVE audio files should be played by @code{wavplayer}, and that
-MS-WORD files should be inlined by @code{catdoc}.
+$B$3$l$O!"$9$Y$F$N2hA|%U%!%$%k$O(B @code{gimp} $B$GI=<($5$l$k$Y$-$G$"$k$3$H!"(B
+WAVE $B2;6A%U%!%$%k$O(B @code{wavplayer} $B$G:F@8$5$l$k$Y$-$G$"$k$3$H!"$=$7(B
+$B$F(B MS-WORD $B%U%!%$%k$O(B @code{catdoc} $B$K$h$C$F%$%s%i%$%sI=<($5$l$k$Y$-$G$"(B
+$B$k$3$H$r8l$C$F$$$^$9!#(B
 
-The @code{mailcap} library parses this file, and provides functions for
-matching types.
+@code{mailcap} $B%i%$%V%i%j!<$O$3$N%U%!%$%k$r2r@O$7$F!"9gCW$9$k%?%$%W$N$?(B
+$B$a$N4X?t$r5,Dj$7$^$9!#(B
 
 @table @code
 @item mailcap-mime-data
 @vindex mailcap-mime-data
-This variable is an alist of alists containing backup viewing rules.
-
+$B$3$NJQ?t$O!"%P%C%/%"%C%W$5$l$?(B ($BLuCm(B: mailcap $B%U%!%$%k$NFbMF$r2r@O$7(B
+$B$F(B Emacs $B$,07$$0W$$7A<0$K$7$?(B) $BI=<(5,B'$r4^$s$G$$$k!"O"A[%j%9%H$NO"A[%j(B
+$B%9%H$G$9!#(B
 @end table
 
-Interface functions:
+$B%$%s%?!<%U%'!<%94X?t(B:
 
 @table @code
 @item mailcap-parse-mailcaps
 @findex mailcap-parse-mailcaps
-Parse the @file{~/.mailcap} file.
+@file{~/.mailcap} $B%U%!%$%k$r2r@O$7$^$9!#(B
 
 @item mailcap-mime-info
-Takes a @acronym{MIME} type as its argument and returns the matching viewer.
-
+$B0z?t$H$7$F(B @acronym{MIME} $B%?%$%W$r<u$1<h$j!"9gCW$9$k%S%e!<%o!<$rJV$7$^$9!#(B
 @end table
 
-
-
-
 @node Standards
-@chapter Standards
+@chapter $BI8=`(B
 
-The Emacs @acronym{MIME} library implements handling of various elements
-according to a (somewhat) large number of RFCs, drafts and standards
-documents.  This chapter lists the relevant ones.  They can all be
-fetched from @uref{http://quimby.gnus.org/notes/}.
+Emacs @acronym{MIME} $B%i%$%V%i%j!<$O!"(B($B$d$d(B) $BB?$/$N(B RFC$B!"%I%i%U%H$*$h$SI8(B
+$B=`%I%-%e%a%s%H$K=>$C$F!"MM!9$JMWAG$r<h$j07$$$^$9!#$3$N>O$G$O4XO"$9$k$b$N(B
+$B$rNs5s$7$^$9!#$3$l$i$O$9$Y$F(B @uref{http://quimby.gnus.org/notes/} $B$+$i<h(B
+$BF@2DG=$G$9!#(B
 
 @table @dfn
 @item RFC822
 @itemx STD11
-Standard for the Format of ARPA Internet Text Messages.
+ARPA $B%$%s%?!<%M%C%H%F%-%9%H%a%C%;!<%8$N=q<0$N$?$a$NI8=`!#(B
 
 @item RFC1036
-Standard for Interchange of USENET Messages
+USENET $B%a%C%;!<%88r49$N$?$a$NI8=`!#(B
 
 @item RFC2045
-Format of Internet Message Bodies
+$B%$%s%?!<%M%C%H%a%C%;!<%8K\BN$N=q<0!#(B
 
 @item RFC2046
-Media Types
+$B%a%G%#%"%?%$%W!#(B
 
 @item RFC2047
-Message Header Extensions for Non-@acronym{ASCII} Text
+$B%a%C%;!<%8%X%C%@!<$G$NHs(B-@acronym{ASCII} $B%F%-%9%H3HD%!#(B
 
 @item RFC2048
-Registration Procedures
+$BEPO?<jB3!#(B
 
 @item RFC2049
-Conformance Criteria and Examples
+$BE,9g4p=`$H;vNc!#(B
 
 @item RFC2231
-@acronym{MIME} Parameter Value and Encoded Word Extensions: Character Sets,
-Languages, and Continuations
+@acronym{MIME} $B%Q%i%a!<%?CM$HId9f2=C18l3HD%(B: $BJ8;z%;%C%H!"8@8l$*$h$S7QB3!#(B
 
 @item RFC1843
-HZ - A Data Format for Exchanging Files of Arbitrarily Mixed Chinese and
-@acronym{ASCII} characters
+HZ - $BCf1Q:.:_J8$r4^$`%U%!%$%k8r49$N$?$a$N%G!<%?7A<0!#(B
 
 @item draft-ietf-drums-msg-fmt-05.txt
-Draft for the successor of RFC822
+RFC822 $B$N8e7Q$N$?$a$NI8=`!#(B
 
 @item RFC2112
-The @acronym{MIME} Multipart/Related Content-type
+@acronym{MIME} Multipart/Related Content-type$B!#(B
 
 @item RFC1892
-The Multipart/Report Content Type for the Reporting of Mail System
-Administrative Messages
+$B%a!<%k%7%9%F%`$N4IM}%a%C%;!<%8$r%j%]!<%H$9$k$?$a$N(B Multipart/Report
+Content Type$B!#(B
 
 @item RFC2183
-Communicating Presentation Information in Internet Messages: The
-Content-Disposition Header Field
+$B%$%s%?!<%M%C%H%a%C%;!<%8$N>pJsDL?.I=8=(B: Content-Disposition $B%X%C%@!<%U%#!<(B
+$B%k%I!#(B
 
 @item RFC2646
-Documentation of the text/plain format parameter for flowed text.
-
+$BN.F0%F%-%9%H$N$?$a$N(B text/plain $B=q<0%Q%i%a!<%?!#(B
 @end table
-
 
 @node Index
 @chapter Index
