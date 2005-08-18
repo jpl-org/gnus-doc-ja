@@ -12,58 +12,53 @@
 @c
 
 @node Frequently Asked Questions
-@section Frequently Asked Questions
+@section よく尋ねられる質問
 
 @menu
-* FAQ - Changes::                           
-* FAQ - Introduction::                       About Gnus and this FAQ.
-* FAQ 1 - Installation FAQ::                 Installation of Gnus.
-* FAQ 2 - Startup / Group buffer::           Start up questions and the
-                                             first buffer Gnus shows you.
-* FAQ 3 - Getting Messages::                 Making Gnus read your mail
-                                             and news.
-* FAQ 4 - Reading messages::                 How to efficiently read
-                                             messages.
-* FAQ 5 - Composing messages::               Composing mails or Usenet
-                                             postings.
-* FAQ 6 - Old messages::                     Importing, archiving,
-                                             searching and deleting messages.
-* FAQ 7 - Gnus in a dial-up environment::    Reading mail and news while
-                                             offline.
-* FAQ 8 - Getting help::                     When this FAQ isn't enough.
-* FAQ 9 - Tuning Gnus::                      How to make Gnus faster.
-* FAQ - Glossary::                           Terms used in the FAQ
-                                             explained.
+* FAQ - Changes::
+* FAQ - Introduction::                       Gnus およびこの FAQ について
+* FAQ 1 - Installation FAQ::                 Gnus のインストール
+* FAQ 2 - Startup / Group buffer::           起動に関する質問と、Gnus が
+                                             最初に表示するバッファ
+* FAQ 3 - Getting Messages::                 Gnus でメールとニュースを
+                                             読めるようにする
+* FAQ 4 - Reading messages::                 効率良くメッセージを読む方法
+* FAQ 5 - Composing messages::               メッセージの作成、または
+                                             Usenet への投稿
+* FAQ 6 - Old messages::                     移入、書庫への保存、検索、
+                                             およびメッセージの消去
+* FAQ 7 - Gnus in a dial-up environment::    オフラインでメールと
+                                             ニュースを読む
+* FAQ 8 - Getting help::                     この FAQ では不充分だったら
+* FAQ 9 - Tuning Gnus::                      Gnus を速くするには
+* FAQ - Glossary::                           この FAQ で使われる用語
 @end menu
 
-@subheading Abstract
+@subheading 要約
 
-This is the new Gnus Frequently Asked Questions list.
-If you have a Web browser, the official hypertext version is at
-@uref{http://my.gnus.org/FAQ/},
-the Docbook source is available from
-@uref{http://sourceforge.net/projects/gnus/, http://sourceforge.net}.
+これは新しい Gnus のよく尋ねられる質問のリストです。Web ブラウザーがあれ
+ば、@uref{http://my.gnus.org/FAQ/} にある公式なハイパーテキスト版を読む
+ことができます。Docbook のソース
+は @uref{http://sourceforge.net/projects/gnus/,
+http://sourceforge.net} から手に入れることができます。
 
-Please submit features and suggestions to the 
-@email{faq-discuss@@my.gnus.org, FAQ discussion list}.
-The list is protected against junk mail with
-@uref{http://smarden.org/qconfirm/index.html, qconfirm}. As
-a subscriber, your submissions will automatically pass.  You can
-also subscribe to the list by sending a blank email to
-@email{faq-discuss-subscribe@@my.gnus.org, faq-discuss-subscribe@@my.gnus.org}
-and @uref{http://mail1.kens.com/cgi-bin/ezmlm-browse?command=monthbythread%26list=faq-discuss, browse
-the archive}.
+機能に関することや提案は @email{faq-discuss@@my.gnus.org, FAQ discussion
+list} に送って下さい。このメーリングリスト
+は @uref{http://smarden.org/qconfirm/index.html, qconfirm} によって、ご
+みメールから守られています。参加者からの投稿は自動的に通過するでしょう。
+さらに、空のメールを @email{faq-discuss-subscribe@@my.gnus.org,
+faq-discuss-subscribe@@my.gnus.org} に送るか、
+@uref{http://mail1.kens.com/cgi-bin/ezmlm-browse?command=monthbythread%26list=faq-discuss,
+ここを閲覧} することによっても、このメーリングリストを講読することができ
+ます。
 
 @node FAQ - Changes
-@subheading Changes
-
-
+@subheading 変更点
 
 @itemize @bullet
 
 @item
-Updated FAQ to reflect release of Gnus 5.10 and start of
-No Gnus development.
+Gnus 5.10 のリリースと No Gnus の開発の開始を反映する最新の FAQ。
 @end itemize
 
 @node FAQ - Introduction
