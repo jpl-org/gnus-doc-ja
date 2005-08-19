@@ -16,22 +16,17 @@
 
 @menu
 * FAQ - Changes::
-* FAQ - Introduction::                       Gnus およびこの FAQ について
-* FAQ 1 - Installation FAQ::                 Gnus のインストール
-* FAQ 2 - Startup / Group buffer::           起動に関する質問と、Gnus が
-                                             最初に表示するバッファ
-* FAQ 3 - Getting Messages::                 Gnus でメールとニュースを
-                                             読めるようにする
-* FAQ 4 - Reading messages::                 効率良くメッセージを読む方法
-* FAQ 5 - Composing messages::               メッセージの作成、または
-                                             Usenet への投稿
-* FAQ 6 - Old messages::                     移入、書庫への保存、検索、
-                                             およびメッセージの消去
-* FAQ 7 - Gnus in a dial-up environment::    オフラインでメールと
-                                             ニュースを読む
-* FAQ 8 - Getting help::                     この FAQ では不充分だったら
-* FAQ 9 - Tuning Gnus::                      Gnus を速くするには
-* FAQ - Glossary::                           この FAQ で使われる用語
+* FAQ - Introduction::         Gnus およびこの FAQ について
+* FAQ 1 - Installation FAQ::   Gnus のインストール
+* FAQ 2 - Startup / Group buffer:: 起動に関する質問と、最初に表示するバッファ
+* FAQ 3 - Getting Messages::   Gnus でメールとニュースを読めるようにする
+* FAQ 4 - Reading messages::   効率良くメッセージを読む方法
+* FAQ 5 - Composing messages:: メッセージの作成、または Usenet への投稿
+* FAQ 6 - Old messages::       移入、書庫への保存、検索、およびメッセージの消去
+* FAQ 7 - Gnus in a dial-up environment:: オフラインでメールとニュースを読む
+* FAQ 8 - Getting help::       この FAQ では不充分だったら
+* FAQ 9 - Tuning Gnus::        Gnus を速くするには
+* FAQ - Glossary::             この FAQ で使われる用語
 @end menu
 
 @subheading 要約
@@ -53,323 +48,342 @@ faq-discuss-subscribe@@my.gnus.org} に送るか、
 ます。
 
 @node FAQ - Changes
-@subheading 変更点
+@subheading 変更履歴
 
 @itemize @bullet
-
 @item
-Gnus 5.10 のリリースと No Gnus の開発の開始を反映する最新の FAQ。
+Gnus 5.10 のリリースと No Gnus の開発の開始を反映して FAQ を更新しました。
 @end itemize
 
 @node FAQ - Introduction
-@subheading Introduction
+@subheading 序
 
-This is the Gnus Frequently Asked Questions list.
+これは Gnus のよく尋ねられる質問のリストです。
 
-Gnus is a Usenet Newsreader and Electronic Mail User Agent implemented
-as a part of Emacs. It's been around in some form for almost a decade
-now, and has been distributed as a standard part of Emacs for much of
-that time. Gnus 5 is the latest (and greatest) incarnation. The
-original version was called GNUS, and was written by Masanobu UMEDA.
-When autumn crept up in '94, Lars Magne Ingebrigtsen grew bored and
-decided to rewrite Gnus.
+Gnus は Emacs の要素として実装された Usenet ニュースリーダーおよび電子メー
+ルのユーザーエージェントです。それはほぼこの十年間何らかの形で存在してお
+り、その期間の多くにおいて Emacs の標準要素として配布されてきました。
+Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの版は GNUS と言
+い、梅田政信さんが書きました。1994年の秋が忍び寄る頃、退屈していたラルス・
+マッグヌ・イングブリグットスン (Lars Magne Ingebrigtsen) は Gnus を書き
+直そうと決心しました。
 
-Its biggest strength is the fact that it is extremely
-customizable. It is somewhat intimidating at first glance, but
-most of the complexity can be ignored until you're ready to take
-advantage of it. If you receive a reasonable volume of e-mail
-(you're on various mailing lists), or you would like to read
-high-volume mailing lists but cannot keep up with them, or read
-high volume newsgroups or are just bored, then Gnus is what you
-want.
+その最大の強みは、極めてカスタマイズに適しているという事実にあります。こ
+のことを始めて目にすると引いてしまうかもしれませんが、それを利用する準備
+ができるまでは、複雑なもののほとんどは無視することができます。そこそこの
+量の (いろんなメーリングリストに配信される) 電子メールがやって来るのなら
+ば、流通量が多いメーリングリストを読みたいけれども遅れずについていくこと
+ができないのならば、流通量が多いニュースグループを読んでいるのならば、あ
+るいは単に退屈しているのならば、Gnus はあなたが望むものです。
 
-This FAQ was maintained by Justin Sheehy until March 2002. He
-would like to thank Steve Baur and Per Abrahamsen for doing a wonderful
-job with this FAQ before him. We would like to do the same - thanks,
-Justin!
+この FAQ は 2002年3月まで Justin Sheehy によって維持されていました。彼は、
+それ以前にすばらしい仕事をしてくれた Steve Baur と Per Abrahamsen に感謝
+を表明しています。私たちも同じことをしましょう - ありがとう Justin!
 
-If you have a Web browser, the official hypertext version is at:
-@uref{http://my.gnus.org/FAQ/}.
-This version is much nicer than the unofficial hypertext
-versions that are archived at Utrecht, Oxford, Smart Pages, Ohio
-State, and other FAQ archives. See the resources question below
-if you want information on obtaining it in another format.
+Web ブラウザーがあれば、@uref{http://my.gnus.org/FAQ/} にある公式なハイ
+パーテキスト版を読むことができます。この版は、ユトレヒト、オックスフォー
+ド、Smart Pages、オハイオ州 (立大学) に保存されている非公式なハイパーテ
+キスト版や他の FAQ の書庫に比べて、はるかに良いものです。別のフォーマッ
+トでそれを手に入れるための情報が欲しいなら、以下にある質問集を見て下さい。
 
-The information contained here was compiled with the assistance
-of the Gnus development mailing list, and any errors or
-misprints are the my.gnus.org team's fault, sorry.
+ここにある情報は、Gnus 開発メーリングリストの援助でコンパイルされました。
+どんなエラーあるいはミスプリントも my.gnus.org チームが犯した誤りです。
+すみません。
+
+訳注: そしてどんな誤訳の責任も gnus-doc-ja チームにあります。
 
 @node FAQ 1 - Installation FAQ
-@subsection Installation FAQ
+@subsection インストールに関する FAQ
 
 @menu
-* [1.1]::    What is the latest version of Gnus?
-* [1.2]::    What's new in 5.10?
-* [1.3]::    Where and how to get Gnus?
-* [1.4]::    What to do with the tarball now?
-* [1.5]::    I sometimes read references to No Gnus and Oort Gnus, what
-             are those?
-* [1.6]::    Which version of Emacs do I need?
-* [1.7]::    How do I run Gnus on both Emacs and XEmacs?
+* [1.1]::    Gnus の最新版は何ですか?
+* [1.2]::    5.10 では何が新しいですか?
+* [1.3]::    Gnus はどこで、どうやって取得することができますか?
+* [1.4]::    tarball で何をすれば良いですか?
+* [1.5]::    ときどき目にする No Gnus と Oort Gnus って何ですか?
+* [1.6]::    Emacs のどの版が必要ですか?
+* [1.7]::    Gnus を Emacs と XEmacs の両方で走らせるには?
 @end menu
 
 @node [1.1]
-@subsubheading Question 1.1
+@subsubheading 質問 1.1
 
-What is the latest version of Gnus?
+Gnus の最新版は何ですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Jingle please: Gnus 5.10 is released, get it while it's
-hot! As well as the step in version number is rather
-small, Gnus 5.10 has tons of new features which you
-shouldn't miss. The current release (5.10.6) should be at
-least as stable as the latest release of the 5.8 series.
+ジャーン: Gnus 5.10 がリリースされました。熱いうちに召し上がれ!@*
+バージョン番号の歩みがいささか小さいだけではなく、Gnus 5.10 には見逃せな
+い何トンもの新しい機能があります。現在のリリース (5.10.6) は、少なくと
+も 5.8 系のリリースの最新版と同じくらい安定なはずです。
 
 @node [1.2]
-@subsubheading Question 1.2
+@subsubheading 質問 1.2
 
-What's new in 5.10?
+5.10 では何が新しいですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-First of all, you should have a look into the file
-GNUS-NEWS in the toplevel directory of the Gnus tarball,
-there the most important changes are listed. Here's a
-short list of the changes I find especially
-important/interesting:
+第一に、Gnus tarball の先頭のディレクトリーにある GNUS-NEWS ファイルに目
+を通すべきです。そこでは最も重要な変更が羅列されています。ここでは私が特
+に重要だ/興味深いと感じたものの、短いリストを挙げるに留めます:
 
 @itemize @bullet
+@item
+Gnus エージェントの大幅な書き直し。ディフォルトで有効になっています。
 
 @item
-Major rewrite of the Gnus agent, Gnus agent is now
-active by default.
+見苦しく形成された記事を洗濯するための多くの機能。
 
 @item
-Many new article washing functions for dealing with
-ugly formatted articles.
+Spam 除け機能。
 
 @item
-Anti Spam features.
+Message-utils が Gnus に含まれました。@*
+(訳注: Holger Schauer さんが書いた message-utils.el の諸機能
+が message.el に移入されました。)
 
 @item
-Message-utils now included in Gnus.
-
-@item
-New format specifiers for summary lines, e.g. %B for
-a complex trn-style thread tree.
+概略行のための新しい書法仕様。例えば %B は複雑な trn 様式のスレッド
+木 (tree) を指定する書法仕様です。
 @end itemize
 
 @node [1.3]
-@subsubheading Question 1.3
+@subsubheading 質問 1.3
 
-Where and how to get Gnus?
+Gnus はどこで、どうやって取得することができますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-The latest released version of Gnus isn't included in
-Emacs 21, therefor you should get the Gnus tarball from
-@uref{http://www.gnus.org/dist/gnus.tar.gz}
-or via anonymous FTP from 
-@uref{ftp://ftp.gnus.org/pub/gnus/gnus.tar.gz}.
-If you use XEmacs instead of Emacs you can use XEmacs'
-package system instead.
+リリースされた最新版の Gnus は Emacs 21 に含まれていないので、
+@uref{http://www.gnus.org/dist/gnus.tar.gz} から、または匿
+名 ftp で @uref{http://www.gnus.org/dist/gnus.tar.gz} から、
+Gnus の tarball を取得する必要があります。Emacs ではなくて XEmacs を使っ
+ているのなら、XEmacs のパッケージシステムを使うことができます。
 
 @node [1.4]
-@subsubheading Question 1.4
+@subsubheading 質問 1.4
 
-What to do with the tarball now?
+tarball で何をすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Untar it via @samp{tar xvzf gnus.tar.gz} and do the common 
-@samp{./configure; make; make install} circle.
-(under MS-Windows either get the Cygwin environment from
-@uref{http://www.cygwin.com}
-which allows you to do what's described above or unpack the
-tarball with some packer (e.g. Winace from
-@uref{http://www.winace.com})
-and use the batch-file make.bat included in the tarball to install
-Gnus.) If you don't want to (or aren't allowed to) install Gnus
-system-wide, you can install it in your home directory and add the
-following lines to your ~/.xemacs/init.el or ~/.emacs:
+@samp{tar xvzf gnus.tar.gz} で書庫を展開して、ありふれた@*
+@samp{./configure; make; make install} の手順を実行して下さい。
+
+@quotation
+訳注: これだと gnus.elc を含むたくさんのファイルを @file{site-lisp/} ディ
+レクトリーの直下にばらまいてしまうので、以下のようにサブディレクトリーを
+指定してインストールすることをお勧めします。
 
 @example
+./configure --with-lispdir=/usr/local/share/emacs/site-lisp/gnus
+make
+make install
+@end example
+
+configure の他のオプションは、@samp{./configure --help} で知ることができ
+ます。
+@end quotation
+
+(MS-Windows では @uref{http://www.cygwin.com} から Cygwin の環境も取得し
+て下さい。それは上述のことどもを行なうこと、またはある梱包器 (packer)
+(例えば @uref{http://www.winace.com} にある Winace) で tarball を開梱す
+ること、そして tarball に含まれている Gnus をインストールするためのバッ
+チファイル @file{make.bat} を使うことを可能にします。)  Gnus をシステム
+領域にインストールしたくない (またはその権限が与えられていない) ならば、
+ホームディレクトリーにインストールすることもできます。その場合
+は @file{~/.xemacs/init.el} ファイルか @file{.emacs} ファイルに以下の行
+を加えて下さい。
+
+@lisp
 (add-to-list 'load-path "/path/to/gnus/lisp")
 (if (featurep 'xemacs)
     (add-to-list 'Info-directory-list "/path/to/gnus/texi/")
   (add-to-list 'Info-default-directory-list "/path/to/gnus/texi/"))
-@end example
-@noindent
+@end lisp
 
-Make sure that you don't have any Gnus related stuff
-before this line, on MS Windows use something like
-"C:/path/to/lisp" (yes, "/").
+@noindent
+この行より前に、確実にどんな Gnus に関係するものも無いようにして下さい。
+MS Windows では "C:/path/to/lisp" のように書いて下さい (そう、"/" です)。
 
 @node [1.5]
-@subsubheading Question 1.5
+@subsubheading 質問 1.5
 
-I sometimes read references to No Gnus and Oort Gnus,
-what are those?
+ときどき目にする No Gnus と Oort Gnus って何ですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Oort Gnus was the name of the development version of
-Gnus, which became Gnus 5.10 in autumn 2003. No Gnus is
-the name of the current development version which will
-once become Gnus 5.12 or Gnus 6. (If you're wondering why
-not 5.11, the odd version numbers are normally used for
-the Gnus versions bundled with Emacs)
+Oort Gnus は Gnus の開発版の名前で、2003年の秋に Gnus 5.10 になりました。
+No Gnus は現行の開発版の名前で、Gnus 5.12 か Gnus 6 になるでしょう。(な
+ぜ 5.11 ではないのかが不思議ですか?  奇数のバージョン番号は通常 Emacs に
+同梱される Gnus の版に使われるのです。)
 
 @node [1.6]
-@subsubheading Question 1.6
+@subsubheading 質問 1.6
 
-Which version of Emacs do I need?
+Emacs のどの版が必要ですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Gnus 5.10 requires an Emacs version that is greater
-than or equal to Emacs 20.7 or XEmacs 21.1. The
-development versions of Gnus (aka No Gnus) require Emacs
-21 or XEmacs 21.4.
+Gnus 5.10 は Emacs 20.7 以上、または XEmacs 21.1 以上を必要とします。開
+発版の Gnus (No Gnus として知られているも
+の) は Emacs 21 か XEmacs 21.4 を必要とします。
 
 @node [1.7]
-@subsubheading Question 1.7
+@subsubheading 質問 1.7
 
-How do I run Gnus on both Emacs and XEmacs?
+Gnus を Emacs と XEmacs の両方で走らせるには、どうすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-You can't use the same copy of Gnus in both as the Lisp
-files are byte-compiled to a format which is different
-depending on which Emacs did the compilation. Get one copy
-of Gnus for Emacs and one for XEmacs.
+バイトコンパイルされた Gnus の同じコピーを両者で使うことはできません。
+Emacs では Emacs でコンパイルしたものを、XEmacs では XEmacs でコンパイル
+したものを使って下さい。
 
 @node FAQ 2 - Startup / Group buffer
-@subsection Startup / Group buffer
+@subsection 起動 / グループバッファ
 
 @menu
-* [2.1]::    Every time I start Gnus I get a message "Gnus auto-save
-             file exists. Do you want to read it?", what does this mean and
-             how to prevent it?
-* [2.2]::    Gnus doesn't remember which groups I'm subscribed to,
-             what's this?
-* [2.3]::    How to change the format of the lines in Group buffer?
-* [2.4]::    My group buffer becomes a bit crowded, is there a way to
-             sort my groups into categories so I can easier browse through
-             them?
-* [2.5]::    How to manually sort the groups in Group buffer? How to
-             sort the groups in a topic?
+* [2.1]:: 　いつも Gnus を起動すると
+            "Gnus auto-save file exists. Do you want to read it?"
+            というメッセージを受け取るのですが、これは何を意味し
+            ているのですか?  また、どうやったら回避できますか?
+
+* [2.2]:: 　Gnus は私がどのグループを講読するかを覚えてくれませ
+            ん。どうしてですか?
+
+* [2.3]:: 　グループバッファの各行の形式を変更するには、どうした
+            ら良いですか?
+
+* [2.4]:: 　私のグループバッファはちょっと混んでいるのですが、
+            それらを楽に巡回できるように、カテゴリーごとにまとま
+            るように並べ変える方法はありますか?
+
+* [2.5]:: 　グループバッファを手で並べ変えるにはどうしたら良いで
+            すか? トピック内のグループを並べ変えるにはどうしたら
+            良いですか?
 @end menu
 
 @node [2.1]
-@subsubheading Question 2.1
+@subsubheading 質問 2.1
 
-Every time I start Gnus I get a message "Gnus auto-save
-file exists. Do you want to read it?", what does this mean
-and how to prevent it?
+いつも Gnus を起動すると "Gnus auto-save file exists. Do you want to
+read it?" というメッセージを受け取るのですが、これは何を意味しているので
+すか?  また、どうやったら回避できますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-This message means that the last time you used Gnus, it
-wasn't properly exited and therefor couldn't write its
-informations to disk (e.g. which messages you read), you
-are now asked if you want to restore those informations
-from the auto-save file.
+このメッセージが意味するのは、最後に Gnus を使ったときに適切に終了させな
+かったために、ディスクにその情報 (例えばどのメッセージを読んだかの) を書
+き込むことができなかったので、今、それらの情報を自動保存 (auto-save) ファ
+イルから復活させるかどうかを尋ねられているということです。
 
-To prevent this message make sure you exit Gnus
-via @samp{q} in group buffer instead of
-just killing Emacs.
+このメッセージが発せられるのを回避するには、Gnus を終了させるときに単
+に Emacs を kill するのではなく、グループバッファで @kbd{q} を使うように
+して下さい。
 
 @node [2.2]
-@subsubheading Question 2.2
+@subsubheading 質問 2.2
 
-Gnus doesn't remember which groups I'm subscribed to,
-what's this?
+Gnus は私がどのグループを講読するかを覚えてくれません。どうしてですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-You get the message described in the q/a pair above while
-starting Gnus, right? It's an other symptom for the same
-problem, so read the answer above.
+Gnus を起動したときに、上記の質問と回答 (@pxref{[2.1]}) で述べられている
+メッセージを受け取りませんでしたか?  これは同じ問題の別の症状なので、上
+記の回答を読んでください。
 
 @node [2.3]
-@subsubheading Question 2.3
+@subsubheading 質問 2.3
 
-How to change the format of the lines in Group buffer?
+グループバッファの各行の形式を変更するには、どうしたら良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-You've got to tweak the value of the variable
-gnus-group-line-format. See the manual node "Group Line
-Specification" for information on how to do this. An
-example for this (guess from whose .gnus :-)):
+変数 @code{gnus-group-line-format} の値を調整しなければなりません。その
+やり方についてはマニュアル (@pxref{Group Line Specification, ,
+グループ行の仕様, gnus-ja, The Gnus Manual}) を見て下さい。このための例
+です (質問者の @file{~/.gnus.el} ファイルからの推測です :-):
 
-@example
+@lisp
 (setq gnus-group-line-format "%P%M%S[%5t]%5y : %(%g%)\n")
-@end example
-@noindent
+@end lisp
 
 @node [2.4]
-@subsubheading Question 2.4
+@subsubheading 質問 2.4
 
-My group buffer becomes a bit crowded, is there a way to
-sort my groups into categories so I can easier browse
-through them?
+私のグループバッファはちょっと混んでいるのですが、それらを楽に巡回できる
+ように、カテゴリーごとにまとまるように並べ変える方法はありますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Gnus offers the topic mode, it allows you to sort your
-groups in, well, topics, e.g. all groups dealing with
-Linux under the topic linux, all dealing with music under
-the topic music and all dealing with scottish music under
-the topic scottish which is a subtopic of music.
+Gnus はトピックモードを提供します。それはグループをその中へ入れて並べ変
+えることを可能にします。えーとトピックを使うというのは、例えば Linux を
+扱うすべてのグループは linux というトピックに収め、音楽を扱うすべて
+は music というトピックに収め、スコットランド音楽を扱うすべて
+は scottish という music のサブトピックに収める、といったことです。
 
-To enter topic mode, just hit t while in Group buffer. Now
-you can use @samp{T n} to create a topic
-at point and @samp{T m} to move a group to
-a specific topic. For more commands see the manual or the
-menu. You might want to include the %P specifier at the
-beginning of your gnus-group-line-format variable to have
-the groups nicely indented.
+トピックモードに入るには、グループバッファで単に @kbd{t} を叩いて下さい。
+すると @kbd{T n} を使って現在位置でトピックを作ったり、あるグループ
+を @kbd{T m} を使って指定したトピックに移すことができます。さらなるコマ
+ンドについてはマニュアルかメニューを見て下さい。グループ行をより良く行下
+げ (indent) させるために、@code{gnus-group-line-format} 変数の先頭
+に @code{%P} 書法仕様を含ませる必要があるかもしれません。
 
 @node [2.5]
-@subsubheading Question 2.5
+@subsubheading 質問 2.5
 
-How to manually sort the groups in Group buffer? How to
-sort the groups in a topic?
+グループバッファを手で並べ変えるにはどうしたら良いですか? トピック内のグ
+ループを並べ変えるにはどうしたら良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Move point over the group you want to move and
-hit @samp{C-k}, now move point to the
-place where you want the group to be and
-hit @samp{C-y}.
+移動させたいグループの上にポイントを移動して @kbd{C-k} を叩き、次にその
+グループを移動させる目的の場所にポイントを移動して @kbd{C-y} を叩いて下
+さい。
 
 @node FAQ 3 - Getting Messages
-@subsection Getting Messages
+@subsection メッセージの取得
 
 @menu
-* [3.1]::     I just installed Gnus, started it via  @samp{M-x gnus} 
-              but it only says "nntp (news) open error", what to do?
-* [3.2]::     I'm working under Windows and have no idea what ~/.gnus.el
-              means.
-* [3.3]::     My news server requires authentication, how to store user
-              name and password on disk?
-* [3.4]::     Gnus seems to start up OK, but I can't find out how to
-              subscribe to a group.
-* [3.5]::     Gnus doesn't show all groups / Gnus says I'm not allowed
-              to post on this server as well as I am, what's that?
-* [3.6]::     I want Gnus to fetch news from several servers, is this
-              possible?
-* [3.7]::     And how about local spool files?
-* [3.8]::     OK, reading news works now, but I want to be able to read
-              my mail with Gnus, too. How to do it?
-* [3.9]::     And what about IMAP?
-* [3.10]::    At the office we use one of those MS Exchange servers, can
-              I use Gnus to read my mail from it?
-* [3.11]::    Can I tell Gnus not to delete the mails on the server it
-              retrieves via POP3?
+* [3.1]::  　私はまさに Gnus をインストールして `M-x gnus' で起
+             動したのですが、"nntp (news) open error" としか言っ
+             てくれません。どうしたら良いですか?
+
+* [3.2]::  　私は Windows を使っていますが `~/.gnus.el' の意味が
+             わかりません。
+
+* [3.3]::  　私のニュースサーバーは認証を要求します。ディスクに
+             ユーザ名とパスワードを格納するには、どうすれば良い
+             ですか?
+
+* [3.4]::  　Gnus は守備良く起動したようなのですが、グループを講
+             読する方法が見つけられません。
+
+* [3.5]::  　Gnus はすべてのグループを表示してくれません / 私は
+             このサーバーへの投稿が許可されません。どうしてです
+             か?
+
+* [3.6]::  　私は複数のサーバーからニュースを取り込みたいのです
+             が、それは可能ですか?
+
+* [3.7]::  　そして、ローカル・スプール・ファイルからニュースを
+             取り込むことは可能ですか?
+
+* [3.8]::  　ニュースを読むことはうまくいきましたが、私は Gnus
+             でメールを読めるようにしたいのです。どうすれば良い
+             ですか?
+
+* [3.9]::  　そして IMAP でメールを読めるようにするには、どうす
+             れば良いですか?
+
+* [3.10]:: 　私たちは職場で MS Exchange サーバーの一つを使ってい
+             るのですが、Gnus を使ってそこからメールを読むことは
+             できますか?
+
+* [3.11]:: 　POP3 でメールを取得するサーバーで、メールを消さない
+             ように Gnus に指示することはできますか?
 @end menu
 
 @node [3.1]
