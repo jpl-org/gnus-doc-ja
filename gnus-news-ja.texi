@@ -18,16 +18,17 @@
 
 @itemize @bullet
 
-@item Upgrading from previous (stable) version if you have used No Gnus.
+@item すでに No Gnus を使っていて、以前の(安定した)版から
+バージョンアップする
 
-If you have tried No Gnus (the unstable Gnus branch leading to this
-release) but went back to a stable version, be careful when upgrading
-to this version.  In particular, you will probably want to remove the
-@file{~/News/marks} directory (perhaps selectively), so that flags are
-read from your @file{~/.newsrc.eld} instead of from the stale marks
-file, where this release will store flags for nntp.  See a later entry
-for more information about nntp marks.  Note that downgrading isn't
-safe in general.
+あなたが No Gnus (このリリースにつながる不安定な Gnus の枝) を試してみた
+が、安定版に戻したいなら、このバージョンへアップグレードするときには注意
+してください。特に、@file{~/News/marks} ディレクトリの内容を (おそらく選
+びながら) 削除したくなるかもしれません。それによって、このリリースで 
+nntp のフラグを保存している marks ファイルから
+ではなく @file{~/.newsrc.eld} からフラグを読むようになります。
+nntp marks については、以降の項目でさらに詳しい情報を得ることができます。
+一般的に、ダウングレードは安全ではありません。
 
 @item The nntp back end store article marks in @file{~/News/marks}.
 
