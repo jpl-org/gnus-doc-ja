@@ -2,8 +2,9 @@ This file was written when the project to make the Semi-gnus manual
 in Japanese was in progress.  Now we succeed to the project, changing
 the target into the Gnus manual.  We are deeply grateful to Kazuyuki
 IENAGA who had translated the Gnus v5.0.15 manual into Japanese first,
-Yoshiki Hayashi who had started the previous project, and volunteers.
-Their great achievements will be praised through all eternity.
+Yoshiki Hayashi who had started the previous project, Keiichi Suzuki
+who used to have translated gnus-faq.texi, and volunteers.  Their
+great achievements will be praised through all eternity.
 
 This file documents about translation policy.
 There is an ongoing project to make gnus-ja.texi.

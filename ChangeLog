@@ -29,9 +29,10 @@
 	We aim to translate all the Info manuals of Gnus into Japanese.
 	Fortunately, we have the inheritance of the Semi-gnus project, of
 	which Yoshiki Hayashi and the volunteers made the Japanese manuals
-	being specialized to Semi-gnus.  Don't forget that Kazuyuki Ienaga
-	translated the Gnus v5.0.15 manual into Japanese for the first
-	time.  Let's start translating, making full use of those fortunes.
+	being specialized to Semi-gnus.  Don't forget Kazuyuki Ienaga who
+	had translated the Gnus v5.0.15 manual into Japanese for the first
+	time, and Keiichi Suzuki who used to have translated gnus-faq.texi.
+	Let's start translating, making full use of those fortunes.
 
 	There were the following files in the CVS trunk initially:
 
