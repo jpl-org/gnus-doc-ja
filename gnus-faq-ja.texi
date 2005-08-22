@@ -81,9 +81,9 @@ Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの版は 
 を表明しています。私たちも同じことをしましょう - ありがとう Justin!
 
 Web ブラウザーがあれば、@uref{http://my.gnus.org/FAQ/} にある公式なハイ
-パーテキスト版を読むことができます。この版は、ユトレヒト、オックスフォー
-ド、Smart Pages、オハイオ州 (立大学) に保存されている非公式なハイパーテ
-キスト版や他の FAQ の書庫に比べて、はるかに良いものです。別のフォーマッ
+パーテキスト版を読むことができます。この版は、ユトレヒト大学、オックス
+フォード、Smart Pages、オハイオ州立大学 に保存されている非公式なハイパー
+テキスト版や他の FAQ の書庫に比べて、はるかに良いものです。別のフォーマッ
 トでそれを手に入れるための情報が欲しいなら、以下にある質問集を見て下さい。
 
 ここにある情報は、Gnus 開発メーリングリストの援助でコンパイルされました。
@@ -347,36 +347,36 @@ Gnus はトピックモードを提供します。それはグループをその中へ入れて並べ変
 @subsection メッセージの取得
 
 @menu
-* [3.1]::  　私はまさに Gnus をインストールして `M-x gnus' で起
-             動したのですが、"nntp (news) open error" としか言っ
-             てくれません。どうしたら良いですか?
+* [3.1]::  　私は今まさに Gnus をインストールして `M-x gnus' で
+             起動したのですが、"nntp (news) open error" としか
+             言ってくれません。どうしたら良いですか?
 
 * [3.2]::  　私は Windows を使っていますが `~/.gnus.el' の意味が
              わかりません。
 
 * [3.3]::  　私のニュースサーバーは認証を要求します。ディスクに
-             ユーザ名とパスワードを格納するには、どうすれば良い
-             ですか?
+             ユーザ名とパスワードを保存しておくには、どうすれば
+             良いですか?
 
-* [3.4]::  　Gnus は守備良く起動したようなのですが、グループを講
-             読する方法が見つけられません。
+* [3.4]::  　Gnus はうまく起動したようなのですが、グループを講読
+             する方法が見つけられません。
 
-* [3.5]::  　Gnus はすべてのグループを表示してくれません / 私は
+* [3.5]::  　Gnus がすべてのグループを表示してくれません / 私は
              このサーバーへの投稿が許可されません。どうしてです
              か?
 
 * [3.6]::  　私は複数のサーバーからニュースを取り込みたいのです
              が、それは可能ですか?
 
-* [3.7]::  　そして、ローカル・スプール・ファイルからニュースを
-             取り込むことは可能ですか?
+* [3.7]::  　それから、ローカル・スプール・ファイルからニュース
+             を取り込むことは可能ですか?
 
-* [3.8]::  　ニュースを読むことはうまくいきましたが、私は Gnus
-             でメールを読めるようにしたいのです。どうすれば良い
-             ですか?
+* [3.8]::  　ニュースを読むのはうまくいきましたが、私は Gnus で
+             メールも読めるようにしたいのです。どうすれば良いで
+             すか?
 
-* [3.9]::  　そして IMAP でメールを読めるようにするには、どうす
-             れば良いですか?
+* [3.9]::  　それから、IMAP でメールを読めるようにするには、どう
+             すれば良いですか?
 
 * [3.10]:: 　私たちは職場で MS Exchange サーバーの一つを使ってい
              るのですが、Gnus を使ってそこからメールを読むことは
@@ -387,293 +387,291 @@ Gnus はトピックモードを提供します。それはグループをその中へ入れて並べ変
 @end menu
 
 @node [3.1]
-@subsubheading Question 3.1
+@subsubheading 質問 3.1
 
-I just installed Gnus, started it via 
-@samp{M-x gnus} 
-but it only says "nntp (news) open error", what to do?
+私は今まさに Gnus をインストールして @kbd{M-x gnus} で起動したのですが、
+"nntp (news) open error" としか言ってくれません。どうしたら良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-You've got to tell Gnus where to fetch the news from. Read
-the documentation for information on how to do this. As a
-first start, put those lines in ~/.gnus.el:
+どこからニュースを取得すべきかを Gnus に教えてあげなければなりません。や
+り方については文献を読んで下さい。初めて起動するのであれば、次のようなも
+のを @file{~/.gnus.el} ファイルに書き込んでみて下さい:
 
-@example
+@lisp
 (setq gnus-select-method '(nntp "news.yourprovider.net"))
 (setq user-mail-address "you@@yourprovider.net")
 (setq user-full-name "Your Name")
-@end example
-@noindent
+@end lisp
 
 @node [3.2]
-@subsubheading Question 3.2
+@subsubheading 質問 3.2
 
-I'm working under Windows and have no idea what ~/.gnus.el means.
+私は Windows を使っていますが @file{~/.gnus.el} の意味がわかりません。
 
-@subsubheading Answer
+@subsubheading 回答
 
-The ~/ means the home directory where Gnus and Emacs look
-for the configuration files.  However, you don't really
-need to know what this means, it suffices that Emacs knows
-what it means :-) You can type 
-@samp{C-x C-f ~/.gnus.el RET } 
-(yes, with the forward slash, even on Windows), and
-Emacs will open the right file for you.  (It will most
-likely be new, and thus empty.)
-However, I'd discourage you from doing so, since the
-directory Emacs chooses will most certainly not be what
-you want, so let's do it the correct way. 
-The first thing you've got to do is to
-create a suitable directory (no blanks in directory name
-please) e.g. c:\myhome. Then you must set the environment
-variable HOME to this directory.  To do this under Win9x
-or Me include the line
+@file{~/} とは、Gnus と Emacs が設定ファイルを探す場所であるホームディレ
+クトリーのことです。でも、実はその意味を知らなくても構わないのです。
+Emacs がわかっていれば十分ですから。
+:-)  @kbd{C-x C-f ~/.gnus.el RET} とタイプすれば (そう、Windows でもスラッ
+シュでいいのです)、Emacs は正しいファイルを開いてくれるでしょう (それが
+新規ファイルであるために中身が空っぽであることは、おおいにあり得るでしょ
+う)。しかし、ちょっと待って下さい。Emacs が選ぶディレクトリーは、きっと
+あなたの希望通りにはならないので、正しいやり方でそれを行ないましょう。第
+一に、例えば c:\myhome のような適当なディレクトリーを (ディレクトリー名
+に空白を含めないで) 作って下さい。そして、このディレクトリーを環境変
+数 HOME に設定しましょう。これを Win9x か Me で行なうには、
+@file{autoexec.bat} ファイルに以下の行を追加して、再起動して下さい。
 
 @example
 SET HOME=C:\myhome
 @end example
+
 @noindent
+NT, 2000 および XP では、システム・オプションを入力するため
+に @kbd{Winkey + Pause/Break} を叩いて (もしそれが使えなかったら Control
+Panel -> System を辿って) 下さい。そこで環境変数を設定できるでしょうから、
+HOME という名前で値が C:\myhome のものを作って下さい。再起動は不要です。
 
-in your autoexec.bat and reboot.  Under NT, 2000 and XP,
-hit Winkey+Pause/Break to enter system options (if it
-doesn't work, go to Control Panel -> System). There you'll
-find the possibility to set environment variables, create
-a new one with name HOME and value C:\myhome, a reboot is
-not necessary.
-
-Now to create ~/.gnus.el, say
-@samp{C-x C-f ~/.gnus.el RET C-x C-s}.
-in Emacs.
+では、Emacs に @kbd{C-x C-f ~/.gnus.el RET C-x C-s} を指示し
+て、@file{~/.gnus.el} ファイルを作りましょう。
 
 @node [3.3]
-@subsubheading Question 3.3
+@subsubheading 質問 3.3
 
-My news server requires authentication, how to store
-user name and password on disk?
+私のニュースサーバーは認証を要求します。ディスクにユーザ名とパスワードを
+保存しておくには、どうすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Create a file ~/.authinfo which includes for each server a line like this
+次のように、それぞれのサーバーに関する行を含んだ @file{~/.authinfo} ファ
+イルを作って下さい。
 
 @example
 machine news.yourprovider.net login YourUserName password YourPassword
 @end example
+
 @noindent
-.
-Make sure that the file isn't readable to others if you
-work on a OS which is capable of doing so.  (Under Unix
-say 
+OS が対応しているならば、そのファイルを他人が読めないようにしておきましょ
+う。Unix ではシェル上で次のコマンドを実行して下さい。
+
 @example
 chmod 600 ~/.authinfo
 @end example
-@noindent
-
-in a shell.)
 
 @node [3.4]
-@subsubheading Question 3.4
+@subsubheading 質問 3.4
 
-Gnus seems to start up OK, but I can't find out how to
-subscribe to a group.
+Gnus はうまく起動したようなのですが、グループを講読する方法が見つけられ
+ません。
 
-@subsubheading Answer
+@subsubheading 回答
 
-If you know the name of the group say @samp{U
-name.of.group RET} in group buffer (use the
-tab-completion Luke). Otherwise hit ^ in group buffer,
-this brings you to the server buffer. Now place point (the
-cursor) over the server which carries the group you want,
-hit @samp{RET}, move point to the group
-you want to subscribe to and say @samp{u}
-to subscribe to it.
+そのグループの名前がわかっているのなら、グループバッファで @kbd{U
+name.of.group RET} を使って下さい (タブ補完を使え、ルーク (訳注: オビ=ワ
+ン・ケノービの声で))。あるいはグループバッファで @kbd{^} を使いましょう。
+これはあなたをサーバーバッファへいざないます。その場合は、目的のグループ
+があるサーバーの上にポイント (カーソル) を置いて @kbd{RET} を叩き、読み
+たいグループにポイントを移動してから @kbd{u} でそのグループを講読しましょ
+う。
 
 @node [3.5]
-@subsubheading Question 3.5
+@subsubheading 質問 3.5
 
-Gnus doesn't show all groups / Gnus says I'm not allowed to
-post on this server as well as I am, what's that?
+Gnus がすべてのグループを表示してくれません / 私はこのサーバーへの投稿が
+許可されません。どうしてですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Some providers allow restricted anonymous access and full
-access only after authorization. To make Gnus send authinfo
-to those servers append 
+プロバイダーのいくつかは匿名での接続を制限していて、認証してからでないと
+完全なアクセスを許しません。Gnus に認証のための情報 (authinfo) を送出さ
+せるには、@file{~/.authinfo} ファイルの該当するサーバーの行の最後に
 
 @example
 force yes
 @end example
+
 @noindent
- 
-to the line for those servers in ~/.authinfo.
+を追加して下さい。
 
 @node [3.6]
-@subsubheading Question 3.6
+@subsubheading 質問 3.6
 
-I want Gnus to fetch news from several servers, is this possible?
+私は複数のサーバーからニュースを取り込みたいのですが、それは可能ですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Of course. You can specify more sources for articles in the
-variable gnus-secondary-select-methods. Add something like
-this in ~/.gnus.el:
+もちろん。変数 @code{gnus-secondary-select-methods} に、もっと多くの記事
+の供給元を設定することができます。以下のようなもの
+を @file{~/.gnus.el} ファイルに追加して下さい:
 
-@example
+@lisp
 (add-to-list 'gnus-secondary-select-methods
              '(nntp "news.yourSecondProvider.net"))
 (add-to-list 'gnus-secondary-select-methods
              '(nntp "news.yourThirdProvider.net"))
-@end example
-@noindent
+@end lisp
 
 @node [3.7]
-@subsubheading Question 3.7
+@subsubheading 質問 3.7
 
-And how about local spool files?
+それから、ローカル・スプール・ファイルからニュースを取り込むことは可能で
+すか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-No problem, this is just one more select method called
-nnspool, so you want this:
+問題ありません。それは @code{nnspool} というもう一つの選択方法で、こんな
+ふうに設定して下さい:
 
-@example
+@lisp
 (add-to-list 'gnus-secondary-select-methods '(nnspool ""))
-@end example
+@end lisp
+
 @noindent
+あるいは @acronym{NNTP} を第一ニュースソースとして使う必要が無いのであれ
+ば、こうして下さい:
 
-Or this if you don't want an NNTP Server as primary news source:
-
-@example
+@lisp
 (setq gnus-select-method '(nnspool ""))
-@end example
+@end lisp
+
 @noindent
+Gnus は @file{/usr/spool/news} にあるスプール・ファイルを探します。何か
+違うことをやりたいのならば、上記の行を次のようなものに変更して下さい:
 
-Gnus will look for the spool file in /usr/spool/news, if you
-want something different, change the line above to something like this:
-
-@example
+@lisp
 (add-to-list 'gnus-secondary-select-methods
              '(nnspool ""
-		       (nnspool-directory "/usr/local/myspoolddir")))
-@end example
-@noindent
+                       (nnspool-directory "/usr/local/myspoolddir")))
+@end lisp
 
-This sets the spool directory for this server only.
-You might have to specify more stuff like the program used
-to post articles, see the Gnus manual on how to do this.
+@noindent
+これは、スプールがあるディレクトリーを、このサーバーだけのために設定しま
+す。さらに、記事を投稿するために使うプログラムなどを設定する必要があるか
+もしれません。そういう場合にどうしたら良いかについては、Gnus のマニュア
+ルを参照して下さい。
 
 @node [3.8]
-@subsubheading Question 3.8
+@subsubheading 質問 3.8
 
-OK, reading news works now, but I want to be able to read my mail
-with Gnus, too. How to do it?
+ニュースを読むのうまくいきましたが、私は Gnus でメールも読めるようにした
+いのです。どうすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-That's a bit harder since there are many possible sources
-for mail, many possible ways for storing mail and many
-different ways for sending mail. The most common cases are
-these: 1: You want to read your mail from a pop3 server and
-send them directly to a SMTP Server 2: Some program like
-fetchmail retrieves your mail and stores it on disk from
-where Gnus shall read it. Outgoing mail is sent by
-Sendmail, Postfix or some other MTA. Sometimes, you even
-need a combination of the above cases.
+それは少しばかり難しいです。使うことができるメールソースはいっぱいあるし、
+メールを格納する方法はたくさんあるし、送信するための方法も様々なので。最
+もありふれているのは、次の二つの事例のようなものでしょう:
 
-However, the first thing to do is to tell Gnus in which way
-it should store the mail, in Gnus terminology which back end
-to use. Gnus supports many different back ends, the most
-commonly used one is nnml. It stores every mail in one file
-and is therefor quite fast. However you might prefer a one
-file per group approach if your file system has problems with
-many small files, the nnfolder back end is then probably the
-choice for you.  To use nnml add the following to ~/.gnus.el:
+@enumerate
+@item
+@acronym{POP3} サーバーからメールを読み、@acronym{SMTP} サーバーに直接メー
+ルを送信します。
 
-@example
+@item
+fetchmail のようなプログラムでメールを取り込んで、Gnus が読むことになっ
+ているディレクトリーに格納します。外に行くメールは Sendmail, Postfix ま
+たは他の MTA によって送出されます。
+@end enumerate
+
+ときには、これらを併用する必要さえあります。
+
+しかし最初に行なうことは、どの方法でメールを格納するか、Gnus の用語で言
+うと、どのバックエンドを使うかを Gnus に指示することです。Gnus は多くの
+異なるバックエンドをサポートしますが、最も一般的に使われているの
+は @code{nnml} です。それは一通のメールを一つのファイルに格納し、そのた
+め極めて高速です。でも、あなたが使っているファイルシステムがたくさんの小
+さなファイルを扱う上で問題があるのならば、一つのグループのすべてのメール
+を一つのファイルに収める方法を使う必要があるかもしれません。おそらくそう
+いう場合の選択肢が @code{nnfolder} バックエンドです。
+
+@noindent
+@code{nnml} を使うには、以下を @file{~/.gnus.el} ファイルに加えて下さい:
+
+@lisp
 (add-to-list 'gnus-secondary-select-methods '(nnml ""))
-@end example
+@end lisp
+
 @noindent
+@code{nnfolder} を使いたいのならば、あなたの想像した通り、こうすれば良い
+でしょう:
 
-As you might have guessed, if you want nnfolder, it's
-
-@example
+@lisp
 (add-to-list 'gnus-secondary-select-methods '(nnfolder ""))
-@end example
+@end lisp
+
 @noindent
+次に、メールをどこから取得するかを Gnus に伝えなければなりません。それ
+が @acronym{POP3} サーバーであるのなら、このように設定して下さい:
 
-Now we need to tell Gnus, where to get it's mail from. If
-it's a POP3 server, then you need something like this:
+@lisp
+(add-to-list 'mail-sources '(pop :server "pop.YourProvider.net"
+                                 :user "yourUserName"
+                                 :password "yourPassword"))
+@end lisp
 
-@example
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources '(pop :server "pop.YourProvider.net"
-                                    :user "yourUserName"
-                                    :password "yourPassword")))
-@end example
 @noindent
+もしそこにパスワードを書いておくのなら、他人が @file{~/.gnus.el} ファイ
+ルを読めないようにしておいて下さい。メールをローカルマシンの伝統的なスプー
+ルファイルから読みたい場合は、以下のように設定して下さい:
 
-Make sure ~/.gnus.el isn't readable to others if you store
-your password there. If you want to read your mail from a
-traditional spool file on your local machine, it's
+@lisp
+(add-to-list 'mail-sources '(file :path "/path/to/spool/file"))
+@end lisp
 
-@example
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources '(file :path "/path/to/spool/file"))
-@end example
 @noindent
+もしそれが Postfix, Qmail または (そういうふうに設定されている)
+fetchmail によって使われる、一通/一ファイルの Maildir であるのならば、こ
+んなふうにしましょう:
 
-If it's a Maildir, with one file per message as used by
-postfix, Qmail and (optionally) fetchmail it's
+@lisp
+(add-to-list 'mail-sources '(maildir :path "/path/to/Maildir/"
+                                     :subdirs ("cur" "new")))
+@end lisp
 
-@example
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources '(maildir :path "/path/to/Maildir/"
-                                        :subdirs ("cur" "new")))
-@end example
 @noindent
+そして最後に、メールを一つのディレクトリーにある複数のファイルから読むよ
+うにしたいのであれば (例えば procmail がすでに分割してあるという理由で)、
+設定は以下のようになります:
 
-And finally if you want to read your mail from several files
-in one directory, for example because procmail already split your
-mail, it's
+@lisp
+(add-to-list 'mail-sources
+             '(directory :path "/path/to/procmail-dir/"
+                         :suffix ".prcml"))
+@end lisp
 
-@example
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources
-		'(directory :path "/path/to/procmail-dir/"
-			    :suffix ".prcml")))
-@end example
 @noindent
+ここで @code{:suffix} に指定した ".prcml" は、Gnus に拡張子が .prcml の
+ファイルだけを使うことを指示するためのものです。
 
-Where :suffix ".prcml" tells Gnus only to use files with the
-suffix .prcml.
+さあ、後はどうやってメールを送信するかを Gnus に教えるだけです。メールの
+送信に sendmail を使いたければ (または、あなたのシステムの MTA が何であ
+れ sendmail の役を演じるのならば)、何もしなくても良いのです。でも、も
+し @acronym{SMTP} サーバーにメールを送りたいのだったら、以下のようなもの
+が @file{~/.gnus.el} ファイルに書かれている必要があります:
 
-OK, now you only need to tell Gnus how to send mail. If you
-want to send mail via sendmail (or whichever MTA is playing
-the role of sendmail on your system), you don't need to do
-anything. However, if you want to send your mail to an
-SMTP Server you need the following in your ~/.gnus.el
-
-@example
+@lisp
 (setq send-mail-function 'smtpmail-send-it)
 (setq message-send-mail-function 'smtpmail-send-it)
 (setq smtpmail-default-smtp-server "smtp.yourProvider.net")
-@end example
-@noindent
+@end lisp
 
 @node [3.9]
-@subsubheading Question 3.9
+@subsubheading 質問 3.9
 
-And what about IMAP?
+それから、@acronym{IMAP} でメールを読めるようにするには、どうすれば良い
+ですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-There are two ways of using IMAP with Gnus. The first one is
-to use IMAP like POP3, that means Gnus fetches the mail from
-the IMAP server and stores it on disk. If you want to do
-this (you don't really want to do this) add the following to
-~/.gnus.el
+Gnus で @acronym{IMAP} を使うには二つの方法があります。最初の
+は @acronym{IMAP} を @acronym{POP3} のように使うもので、
+Gnus は @acronym{IMAP} サーバーからメールを取得してディスクに格納します。
+これをやりたいのなら (本当にそんなことをしたい人はいないでしょうけれど)、
+以下の設定を @file{~/.gnus.el} ファイルに加えて下さい:
 
-@example
+@lisp
 (add-to-list 'mail-sources '(imap :server "mail.mycorp.com"
                                   :user "username"
                                   :pass "password"
@@ -681,111 +679,137 @@ this (you don't really want to do this) add the following to
                                   :authentication login
                                   :mailbox "INBOX"
                                   :fetchflag "\\Seen"))
-@end example
+@end lisp
+
 @noindent
+@code{:stream} および/または @code{:authentication} の項はいじる必要があ
+るかもしれません。使うことができる値については Gnus マニュア
+ル (@pxref{Mail Source Specifiers, ,メールソース指示子, gnus-ja, The
+Gnus Manual}) を参照して下さい。
 
-You might have to tweak the values for stream and/or
-authentification, see the Gnus manual node "Mail Source
-Specifiers" for possible values.
+@acronym{IMAP} をそれが意図された方法で使いたい場合は、違うやり方に従う
+必要があります。そうするには選択方法に @code{nnimap} を加え、そこでサー
+バーに関する情報を与えて下さい:
 
-If you want to use IMAP the way it's intended, you've got to
-follow a different approach.  You've got to add the nnimap
-back end to your select method and give the information
-about the server there.
-
-@example
+@lisp
 (add-to-list 'gnus-secondary-select-methods
-	     '(nnimap "Give the baby a name"
-		      (nnimap-address "imap.yourProvider.net")
-		      (nnimap-port 143)
-		      (nnimap-list-pattern "archive.*")))
-@end example
-@noindent
+             '(nnimap "Give the baby a name"
+                      (nnimap-address "imap.yourProvider.net")
+                      (nnimap-port 143)
+                      (nnimap-list-pattern "archive.*")))
+@end lisp
 
-Again, you might have to specify how to authenticate to the
-server if Gnus can't guess the correct way, see the Manual
-Node "IMAP" for detailed information.
+@noindent
+さらに、Gnus が正しいやり方を推測できない場合には、サーバーに認証しても
+らう方法を指定しなければならないでしょう。詳しい情報はマニュア
+ル (@pxref{IMAP, ,IMAP, gnus-ja, The Gnus Manual}) を参照して下さい。
 
 @node [3.10]
-@subsubheading Question 3.10
+@subsubheading 質問 3.10
 
-At the office we use one of those MS Exchange servers, can I use
-Gnus to read my mail from it?
+私たちは職場で MS Exchange サーバーの一つを使っているのですが、Gnus を使っ
+てそこからメールを読むことはできますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Offer your administrator a pair of new running shoes for
-activating IMAP on the server and follow the instructions
-above.
+サーバーに @acronym{IMAP} という新しい運動靴を一足はかせてくれるように、
+管理人にお願いして下さい。そして上記の説明に従って、必要なことを行なって
+下さい。
 
 @node [3.11]
-@subsubheading Question 3.11
+@subsubheading 質問 3.11
 
-Can I tell Gnus not to delete the mails on the server it
-retrieves via POP3?
+POP3 でメールを取得するサーバーで、メールを消さないように Gnus に指示す
+ることはできますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-First of all, that's not the way POP3 is intended to work,
-if you have the possibility, you should use the IMAP
-Protocol if you want your messages to stay on the
-server. Nevertheless there might be situations where you
-need the feature, but sadly Gnus itself has no predefined
-functionality to do so.
+そもそも @acronym{POP3} はそういうふうに動作することが意図されていません。
+もし可能性があるのならば、メッセージをサーバー上に残すために
+は @acronym{IMAP} プロトコルを使うべきです。それでもなお、そういう機能を
+必要とする状況があるかもしれませんが、悲しいかな、Gnus 自体はそうするた
+めの既設の機能を持っていないのです。
 
-However this is Gnus county so there are possibilities to
-achieve what you want. The easiest way is to get an external
-program which retrieves copies of the mail and stores them
-on disk, so Gnus can read it from there. On Unix systems you
-could use e.g. fetchmail for this, on MS Windows you can use
-Hamster, an excellent local news and mail server.
+しかしここは Gnus 村ですから、あなたの希望を達成する見込みが無いわけでは
+ありません。最も簡単な方法は、メールのコピーを取り込んで、それらをディス
+クに格納する外部プログラムを手に入れることです。そうすれば Gnus はそこか
+ら読むことができます。例えば Unix システムでは fetchmail がそれです。MS
+Windows では、優れたニュースとメールのサーバーである Hamster を使うこと
+ができます。
 
-The other solution would be, to replace the method Gnus
-uses to get mail from POP3 servers by one which is capable
-of leaving the mail on the server. If you use XEmacs, get
-the package mail-lib, it includes an enhanced pop3.el,
-look in the file, there's documentation on how to tell
-Gnus to use it and not to delete the retrieved mail. For
-GNU Emacs look for the file epop3.el which can do the same
-(If you know the home of this file, please send me an
-e-mail). You can also tell Gnus to use an external program
-(e.g. fetchmail) to fetch your mail, see the info node
-"Mail Source Specifiers" in the Gnus manual on how to do
-it.
+別の解は、Gnus が @acronym{POP3} サーバーからメールを取得する手段を、メー
+ルをサーバーに残すことができるもので置き換えることでしょう。XEmacs を使っ
+ているのであれば mail-lib パッケージを手に入れて下さい。それは拡張され
+た @file{pop3.el} を含んでいます。ファイルの中身を見て下さい。それを使う
+ように Gnus に指示するやり方と、取得したメールを削除しない方法の説明があ
+ります。GNU Emacs を使っている場合は、同じことを行なうことができ
+る @file{epop3.el} を探して下さい (そのファイルの元の出どころを知ってい
+る人は、私 (訳注: Simon Josefsson さんだと思います、たぶん) にメールを送っ
+て下さい)。さらに、Gnus に外部プログラム (例えば fetchmail) を使ってメー
+ルを取り寄せるようにさせることもできます。やり方は Gnus マニュア
+ル (@pxref{Mail Source Specifiers, ,メールソース指示子, gnus-ja, The
+Gnus Manual}) を参照して下さい。
+
+@quotation
+訳注: T-gnus に含まれている @file{pop3.el} は、XEmacs のやり方をさらに発
+展させて、完全に Gnus とともに動作するようになっています (した)。
+@end quotation
 
 @node FAQ 4 - Reading messages
-@subsection Reading messages
+@subsection メッセージを読む
 
 @menu
-* [4.1]::     When I enter a group, all read messages are gone. How to
-              view them again?
-* [4.2]::     How to tell Gnus to show an important message every time I
-              enter a group, even when it's read?
-* [4.3]::     How to view the headers of a message?
-* [4.4]::     How to view the raw unformatted message?
-* [4.5]::     How can I change the headers Gnus displays by default at
-              the top of the article buffer?
-* [4.6]::     I'd like Gnus NOT to render HTML-mails but show me the
-              text part if it's available. How to do it?
-* [4.7]::     Can I use some other browser than w3 to render my
-              HTML-mails?
-* [4.8]::     Is there anything I can do to make poorly formatted mails
-              more readable?
-* [4.9]::     Is there a way to automatically ignore posts by specific
-              authors or with specific words in the subject? And can I highlight
-              more interesting ones in some way?
-* [4.10]::    How can I disable threading in some (e.g. mail-) groups,
-              or set other variables specific for some groups?
-* [4.11]::    Can I highlight messages written by me and follow-ups to
-              those?
-* [4.12]::    The number of total messages in a group which Gnus
-              displays in group buffer is by far to high, especially in mail
-              groups. Is this a bug?
-* [4.13]::    I don't like the layout of summary and article buffer, how
-              to change it? Perhaps even a three pane display?
-* [4.14]::    I don't like the way the Summary buffer looks, how to
-              tweak it?
-* [4.15]::    How to split incoming mails in several groups?
+* [4.1]::  　グループに入ると、以前に読んだメッセージが全部なく
+             なってしまっています。もう一度読むには、どうしたら
+             良いですか?
+
+* [4.2]::  　大事なメッセージを、すでに読んだことがあっても、グ
+             ループに入ったときはいつでも見えるように Gnus に指
+             示するには、どうすれば良いですか?
+
+* [4.3]::  　メッセージのヘッダーを見るにはどうしたら良いですか?
+
+* [4.4]::  　整形されていない生のメッセージを見るには、どうすれ
+             ば良いですか?
+
+* [4.5]::  　記事バッファの先頭に Gnus がディフォルトで表示する
+             ヘッダーを変更するには、どうしたら良いですか?
+
+* [4.6]::  　HTML メールを描画するのではなく、それがある場合には
+             テキストのパートを Gnus に表示して欲しいです。どう
+             すれば良いですか?
+
+* [4.7]::  　HTML メールを w3 以外のブラウザーを使って描画させる
+             ことはできますか?
+
+* [4.8]::  　ぞんざいに構成されたメールをもっと読み易くするため
+             の、何かがありますか?
+
+* [4.9]::  　特定の著者が送信したものや、題名に特定の語が含まれ
+             ているメッセージを、自動的に無視する方法はあります
+             か?  また、もっと興味深いものを何らかの方法で強調
+             表示させることはできますか?
+
+* [4.10]:: 　いくつかの (例えばメールの) グループで、スレッド表
+             示をさせなくすることはできますか?  あるいは、いくつ
+             かのグループに固有の変数を設定することができますか?
+
+* [4.11]:: 　私が書いたメッセージとフォロー記事を、強調表示させ
+             ることはできますか?
+
+* [4.12]:: 　特にメールのグループで、Gnus がグループバッファに表
+             示するメッセージの合計の数が非常に大きいのです。こ
+             れはバグですか?
+
+* [4.13]:: 　概略バッファと記事バッファの配置が気に入らないので
+             すが、どうやったら変更できますか?  できるなら三面で
+             表示させたいです。
+
+* [4.14]:: 　概略バッファを見せるやり方が好きではありません。調
+             整するには、どうすれば良いですか?
+
+* [4.15]:: 　やってきたメールをいろいろなグループに振り分けるに
+             は、どうしたら良いですか?
 @end menu
 
 @node [4.1]
@@ -804,11 +828,11 @@ instead to load all available messages. If you want only the e.g. 300 newest say
 
 Loading only unread messages can be annoying if you have threaded view enabled, say
 
-@example
+@lisp
 (setq gnus-fetch-old-headers 'some)
-@end example
+@end lisp
+
 @noindent
- 
 in ~/.gnus.el to load enough old articles to prevent teared threads, replace 'some with t to load
 all articles (Warning: Both settings enlarge the amount of data which is 
 fetched when you enter a group and slow down the process of entering a group).
@@ -875,12 +899,11 @@ which match it are shown. So if you want author, subject,
 date, and if the header exists, Followup-To and MUA / NUA
 say this in ~/.gnus.el:
 
-@example
+@lisp
 (setq gnus-visible-headers
       '("^From" "^Subject" "^Date" "^Newsgroups" "^Followup-To"
-	"^User-Agent" "^X-Newsreader" "^X-Mailer"))
-@end example
-@noindent
+        "^User-Agent" "^X-Newsreader" "^X-Mailer"))
+@end lisp
 
 @node [4.6]
 @subsubheading Question 4.6
@@ -892,21 +915,19 @@ text part if it's available. How to do it?
 
 Say
 
-@example
-(eval-after-load "mm-decode"
- '(progn 
-      (add-to-list 'mm-discouraged-alternatives "text/html")
-      (add-to-list 'mm-discouraged-alternatives "text/richtext")))
-@end example
-@noindent
+@lisp
+(add-to-list 'mm-discouraged-alternatives "text/html")
+(add-to-list 'mm-discouraged-alternatives "text/richtext")
+@end lisp
 
+@noindent
 in ~/.gnus.el. If you don't want HTML rendered, even if there's no text alternative add
 
-@example
+@lisp
 (setq mm-automatic-display (remove "text/html" mm-automatic-display))
-@end example
-@noindent
+@end lisp
 
+@noindent
 too.
 
 @node [4.7]
@@ -922,10 +943,9 @@ one is used can be specified in the variable
 mm-text-html-renderer, so if you want links to render your
 mail say
 
-@example
+@lisp
 (setq mm-text-html-renderer 'links)
-@end example
-@noindent
+@end lisp
 
 @node [4.8]
 @subsubheading Question 4.8
@@ -991,12 +1011,12 @@ which score to assign, when to expire the rule and how to do the
 matching. If you find me very interesting, you could e.g. add the
 following to your all.Score:
 
-@example
+@lisp
 (("references" ("hschmi22.userfqdn.rz-online.de" 500 nil s))
  ("message-id" ("hschmi22.userfqdn.rz-online.de" 999 nil s)))
-@end example
-@noindent
+@end lisp
 
+@noindent
 This would add 999 to the score of messages written by me
 and 500 to the score of messages which are a (possibly
 indirect) answer to a message written by me. Of course
@@ -1009,11 +1029,11 @@ which reflect this. Adaptive scoring can be a huge help
 when reading high traffic groups. If you want to activate
 adaptive scoring say
 
-@example
+@lisp
 (setq gnus-use-adaptive-scoring t)
-@end example
-@noindent
+@end lisp
 
+@noindent
 in ~/.gnus.el.
 
 @node [4.10]
@@ -1090,33 +1110,32 @@ Instead 25% summary 75% article buffer 35% summary and 65%
 article (the 1.0 for article means "take the remaining
 space"):
 
-@example
+@lisp
 (gnus-add-configuration
  '(article (vertical 1.0 (summary .35 point) (article 1.0))))
-@end example
-@noindent
+@end lisp
 
+@noindent
 A three pane layout, Group buffer on the left, summary
 buffer top-right, article buffer bottom-right:
 
-@example
+@lisp
 (gnus-add-configuration
  '(article
    (horizontal 1.0
-	       (vertical 25
-			 (group 1.0))
-	       (vertical 1.0
-			 (summary 0.25 point)
-			 (article 1.0)))))
+               (vertical 25
+                         (group 1.0))
+               (vertical 1.0
+                         (summary 0.25 point)
+                         (article 1.0)))))
 (gnus-add-configuration
  '(summary
    (horizontal 1.0
-	       (vertical 25
-			 (group 1.0))
-	       (vertical 1.0
-			 (summary 1.0 point)))))
-@end example
-@noindent
+               (vertical 25
+                         (group 1.0))
+               (vertical 1.0
+                         (summary 1.0 point)))))
+@end lisp
 
 @node [4.14]
 @subsubheading Question 4.14
@@ -1140,11 +1159,12 @@ e.g. %B which draws a thread-tree and %&user-date which
 gives you a date where the details are dependent of the
 articles age. Here's an example which uses both:
 
-@example
-(setq gnus-summary-line-format ":%U%R %B %s %-60=|%4L |%-20,20f |%&user-date; \n")
-@end example
-@noindent
+@lisp
+(setq gnus-summary-line-format
+      ":%U%R %B %s %-60=|%4L |%-20,20f |%&user-date; \n")
+@end lisp
 
+@noindent
 resulting in:
 
 @example
@@ -1161,7 +1181,6 @@ resulting in:
 :O  \->  ...                                      |  18 |Kai Grossjohann      | 0:35
 :O    \->  ...                                    |  13 |Lars Magne Ingebrigt | 0:56
 @end example
-@noindent
 
 @node [4.15]
 @subsubheading Question 4.15
@@ -1187,11 +1206,11 @@ as an article lands there.  By default the mail will be
 send to all groups whose rules match. If you 
 don't want that (you probably don't want), say
 
-@example
+@lisp
 (setq nnmail-crosspost nil)
-@end example
-@noindent
+@end lisp
 
+@noindent
 in ~/.gnus.el.
 
 An example might be better than thousand words, so here's
@@ -1203,32 +1222,32 @@ before. Those rules kill about 80% of the Spam which
 reaches me (Email addresses are changed to prevent spammers
 from using them):
 
-@example
-(setq nnmail-split-methods
-  '(("duplicates" "^Gnus-Warning:.*duplicate")
-    ("XEmacs-NT" "^\\(To:\\|CC:\\).*localpart@@xemacs.bla.*")
-    ("Gnus-Tut" "^\\(To:\\|CC:\\).*localpart@@socha.bla.*")
-    ("tcsh" "^\\(To:\\|CC:\\).*localpart@@mx.gw.bla.*")
-    ("BAfH" "^\\(To:\\|CC:\\).*localpart@@.*uni-muenchen.bla.*")
-    ("Hamster-src" "^\\(CC:\\|To:\\).*hamster-sourcen@@yahoogroups.\\(de\\|com\\).*")
-    ("Tagesschau" "^From: tagesschau <localpart@@www.tagesschau.bla>$")
-    ("Replies" "^\\(CC:\\|To:\\).*localpart@@Frank-Schmitt.bla.*")
-    ("EK" "^From:.*\\(localpart@@privateprovider.bla\\|localpart@@workplace.bla\\).*")
-    ("Spam" "^Content-Type:.*\\(ks_c_5601-1987\\|EUC-KR\\|big5\\|iso-2022-jp\\).*")
-    ("Spam" "^Subject:.*\\(This really work\\|XINGA\\|ADV:\\|XXX\\|adult\\|sex\\).*")
-    ("Spam" "^Subject:.*\\(\=\?ks_c_5601-1987\?\\|\=\?euc-kr\?\\|\=\?big5\?\\).*")
-    ("Spam" "^X-Mailer:\\(.*BulkMailer.*\\|.*MIME::Lite.*\\|\\)")
-    ("Spam" "^X-Mailer:\\(.*CyberCreek Avalanche\\|.*http\:\/\/GetResponse\.com\\)")
-    ("Spam" "^From:.*\\(verizon\.net\\|prontomail\.com\\|money\\|ConsumerDirect\\).*")
-    ("Spam" "^Delivered-To: GMX delivery to spamtrap@@gmx.bla$")
-    ("Spam" "^Received: from link2buy.com")
-    ("Spam" "^CC: .*azzrael@@t-online.bla")
-    ("Spam" "^X-Mailer-Version: 1.50 BETA")
-    ("Uni" "^\\(CC:\\|To:\\).*localpart@@uni-koblenz.bla.*")
-    ("Inbox" "^\\(CC:\\|To:\\).*\\(my\ name\\|address@@one.bla\\|adress@@two.bla\\)")
-    ("Spam" "")))
-@end example
-@noindent
+@lisp
+(setq
+ nnmail-split-methods
+ '(("duplicates" "^Gnus-Warning:.*duplicate")
+   ("XEmacs-NT" "^\\(To:\\|CC:\\).*localpart@@xemacs.bla.*")
+   ("Gnus-Tut" "^\\(To:\\|CC:\\).*localpart@@socha.bla.*")
+   ("tcsh" "^\\(To:\\|CC:\\).*localpart@@mx.gw.bla.*")
+   ("BAfH" "^\\(To:\\|CC:\\).*localpart@@.*uni-muenchen.bla.*")
+   ("Hamster-src" "^\\(CC:\\|To:\\).*hamster-sourcen@@yahoogroups.\\(de\\|com\\).*")
+   ("Tagesschau" "^From: tagesschau <localpart@@www.tagesschau.bla>$")
+   ("Replies" "^\\(CC:\\|To:\\).*localpart@@Frank-Schmitt.bla.*")
+   ("EK" "^From:.*\\(localpart@@privateprovider.bla\\|localpart@@workplace.bla\\).*")
+   ("Spam" "^Content-Type:.*\\(ks_c_5601-1987\\|EUC-KR\\|big5\\|iso-2022-jp\\).*")
+   ("Spam" "^Subject:.*\\(This really work\\|XINGA\\|ADV:\\|XXX\\|adult\\|sex\\).*")
+   ("Spam" "^Subject:.*\\(\=\?ks_c_5601-1987\?\\|\=\?euc-kr\?\\|\=\?big5\?\\).*")
+   ("Spam" "^X-Mailer:\\(.*BulkMailer.*\\|.*MIME::Lite.*\\|\\)")
+   ("Spam" "^X-Mailer:\\(.*CyberCreek Avalanche\\|.*http\:\/\/GetResponse\.com\\)")
+   ("Spam" "^From:.*\\(verizon\.net\\|prontomail\.com\\|money\\|ConsumerDirect\\).*")
+   ("Spam" "^Delivered-To: GMX delivery to spamtrap@@gmx.bla$")
+   ("Spam" "^Received: from link2buy.com")
+   ("Spam" "^CC: .*azzrael@@t-online.bla")
+   ("Spam" "^X-Mailer-Version: 1.50 BETA")
+   ("Uni" "^\\(CC:\\|To:\\).*localpart@@uni-koblenz.bla.*")
+   ("Inbox" "^\\(CC:\\|To:\\).*\\(my\ name\\|address@@one.bla\\|adress@@two.bla\\)")
+   ("Spam" "")))
+@end lisp
 
 @node FAQ 5 - Composing messages
 @subsection Composing messages
@@ -1297,14 +1316,14 @@ How to enable automatic word-wrap when composing messages?
 
 Say
 
-@example
+@lisp
 (add-hook 'message-mode-hook
-	  (lambda ()
-	    (setq fill-column 72)
-	    (turn-on-auto-fill)))
-@end example
-@noindent
+          (lambda ()
+            (setq fill-column 72)
+            (turn-on-auto-fill)))
+@end lisp
 
+@noindent
 in ~/.gnus.el. You can reformat a paragraph by hitting
 @samp{M-q} (as usual)
 
@@ -1319,18 +1338,18 @@ There are other ways, but you should use posting styles
 for this. (See below why).
 This example should make the syntax clear:
 
-@example
+@lisp
 (setq gnus-posting-styles
-  '((".*"
-     (name "Frank Schmitt")
-     (address "me@@there.bla")
-     (organization "Hamme net, kren mer och nimmi")
-     (signature-file "~/.signature")
-     ("X-SampleHeader" "foobar")
-     (eval (setq some-variable "Foo bar")))))
-@end example
-@noindent
+      '((".*"
+         (name "Frank Schmitt")
+         (address "me@@there.bla")
+         (organization "Hamme net, kren mer och nimmi")
+         (signature-file "~/.signature")
+         ("X-SampleHeader" "foobar")
+         (eval (setq some-variable "Foo bar")))))
+@end lisp
 
+@noindent
 The ".*" means that this settings are the default ones
 (see below), valid values for the first element of the
 following lists are signature, signature-file,
@@ -1373,25 +1392,25 @@ those under "^gmane" and those under
 of this put general settings at the top and specific ones
 at the bottom.
 
-@example
-(setq gnus-posting-styles
-  '((".*"  ;;default
-     (name "Frank Schmitt")
-     (organization "Hamme net, kren mer och nimmi")
-     (signature-file "~/.signature")    )
-    ((message-news-p)  ;;Usenet news?
-     (address "mySpamTrap@@Frank-Schmitt.bla")
-     ("Reply-To" "hereRealRepliesOnlyPlease@@Frank-Schmitt.bla")    )
-    ((message-mail-p)  ;;mail?
-     (address "usedForMails@@Frank-Schmitt.bla")    )
-    ("^gmane" ;;this is mail, too in fact
-     (address "usedForMails@@Frank-Schmitt.net")
-     ("Reply-To" nil)    )
-    ("^gmane.mail.spam.spamassassin.general$"
-     (eval (setq mail-envelope-from "Azzrael@@rz-online.de"))
-     (address "Azzrael@@rz-online.de")) ))
-@end example
-@noindent
+@lisp
+(setq
+ gnus-posting-styles
+ '((".*"  ;;default
+    (name "Frank Schmitt")
+    (organization "Hamme net, kren mer och nimmi")
+    (signature-file "~/.signature"))
+   ((message-news-p)  ;;Usenet news?
+    (address "mySpamTrap@@Frank-Schmitt.bla")
+    ("Reply-To" "hereRealRepliesOnlyPlease@@Frank-Schmitt.bla"))
+   ((message-mail-p)  ;;mail?
+    (address "usedForMails@@Frank-Schmitt.bla"))
+   ("^gmane" ;;this is mail, too in fact
+    (address "usedForMails@@Frank-Schmitt.net")
+    ("Reply-To" nil))
+   ("^gmane.mail.spam.spamassassin.general$"
+    (eval (setq mail-envelope-from "Azzrael@@rz-online.de"))
+    (address "Azzrael@@rz-online.de"))))
+@end lisp
 
 @node [5.5]
 @subsubheading Question 5.5
@@ -1415,26 +1434,25 @@ manually.
 
 Ispell.el assumes you use ispell, if you choose aspell say
 
-@example
+@lisp
 (setq ispell-program-name "aspell")
-@end example
+@end lisp
+
 @noindent
- 
 in your Emacs configuration file.
 
 If you want your outgoing messages to be spell-checked, say
 
-@example
+@lisp
 (add-hook 'message-send-hook 'ispell-message)
-@end example
-@noindent
+@end lisp
 
+@noindent
 In your ~/.gnus.el, if you prefer on-the-fly spell-checking say
 
-@example
+@lisp
 (add-hook 'message-mode-hook (lambda () (flyspell-mode 1)))
-@end example
-@noindent
+@end lisp
 
 @node [5.6]
 @subsubheading Question 5.6
@@ -1445,7 +1463,7 @@ Can I set the dictionary based on the group I'm posting to?
 
 Yes, say something like
 
-@example
+@lisp
 (add-hook 'gnus-select-group-hook
           (lambda ()
             (cond
@@ -1454,9 +1472,9 @@ Yes, say something like
               (ispell-change-dictionary "deutsch8"))
              (t
               (ispell-change-dictionary "english")))))
-@end example
+@end lisp
+
 @noindent
- 
 in ~/.gnus.el. Change "^de\\." and "deutsch8" to something
 that suits your needs.
 
@@ -1475,8 +1493,8 @@ alias syntax:
 @example
 alias al	"Al <al@@english-heritage.bla>"
 @end example
-@noindent
 
+@noindent
 Then typing your alias (followed by a space or punctuation
 character) on a To: or Cc: line in the message buffer will
 cause Gnus to insert the full address for you. See the
@@ -1488,16 +1506,16 @@ Database bbdb. Get it through the XEmacs package system or from
 @uref{http://bbdb.sourceforge.net/, bbdb's homepage}.
 Now place the following in ~/.gnus.el, to activate bbdb for Gnus:
 
-@example
+@lisp
 (require 'bbdb)
 (bbdb-initialize 'gnus 'message)
-@end example
-@noindent
+@end lisp
 
+@noindent
 Now you probably want some general bbdb configuration,
 place them in ~/.emacs:
 
-@example
+@lisp
 (require 'bbdb)
 ;;If you don't live in Northern America, you should disable the 
 ;;syntax check for telephone numbers by saying
@@ -1510,9 +1528,9 @@ place them in ~/.emacs:
 (setq bbdb-complete-name-allow-cycling t)
 ;;No popup-buffers
 (setq bbdb-use-pop-up nil)
-@end example
-@noindent
+@end lisp
 
+@noindent
 Now you should be ready to go. Say @samp{M-x bbdb RET
 RET} to open a bbdb buffer showing all
 entries. Say @samp{c} to create a new
@@ -1548,23 +1566,23 @@ and create the actual X-face by saying
 cat file.xbm | xbm2ikon | compface > file.face
 cat file.face | sed 's/\\/\\\\/g;s/\"/\\\"/g;' > file.face.quoted
 @end example
-@noindent
 
+@noindent
 If you can't use compface, there's an online X-face converter at 
 @uref{http://www.dairiki.org/xface/}.
 If you use MS Windows, you could also use the WinFace program from
 @uref{http://www.xs4all.nl/~walterln/winface/}.
 Now you only have to tell Gnus to include the X-face in your postings by saying
 
-@example
+@lisp
 (setq message-default-headers
-        (with-temp-buffer
-          (insert "X-Face: ")
-          (insert-file-contents "~/.xemacs/xface")
-          (buffer-string)))
-@end example
-@noindent
+      (with-temp-buffer
+        (insert "X-Face: ")
+        (insert-file-contents "~/.xemacs/xface")
+        (buffer-string)))
+@end lisp
 
+@noindent
 in ~/.gnus.el.
 
 @node [5.9]
@@ -1578,15 +1596,15 @@ newsgroups?
 
 Put this in ~/.gnus.el:
 
-@example
+@lisp
 (setq gnus-confirm-mail-reply-to-news t)
-@end example
-@noindent
+@end lisp
 
+@noindent
 if you already use Gnus 5.10, if you still use 5.8.8 or
 5.9 try this instead:
 
-@example
+@lisp
 (eval-after-load "gnus-msg"
   '(unless (boundp 'gnus-confirm-mail-reply-to-news)
      (defadvice gnus-summary-reply (around reply-in-news activate)
@@ -1595,8 +1613,7 @@ if you already use Gnus 5.10, if you still use 5.8.8 or
        (when (or (not (gnus-news-group-p gnus-newsgroup-name))
                  (y-or-n-p "Really reply by mail to article author? "))
          ad-do-it))))
-@end example
-@noindent
+@end lisp
 
 @node [5.10]
 @subsubheading Question 5.10
@@ -1608,11 +1625,9 @@ How to tell Gnus not to generate a sender header?
 Since 5.10 Gnus doesn't generate a sender header by
 default. For older Gnus' try this in ~/.gnus.el:
 
-@example
-(eval-after-load "message"
-      '(add-to-list 'message-syntax-checks '(sender . disabled)))
-@end example
-@noindent
+@lisp
+(add-to-list 'message-syntax-checks '(sender . disabled))
+@end lisp
 
 @node [5.11]
 @subsubheading Question 5.11
@@ -1628,13 +1643,12 @@ group where the copies shall go or like in the example
 below use a function which is evaluated and which returns
 the group to use.
 
-@example
+@lisp
 (setq gnus-message-archive-group
-	'((if (message-news-p)
-	      "nnml:Send-News"
-	    "nnml:Send-Mail")))
-@end example
-@noindent
+      '((if (message-news-p)
+            "nnml:Send-News"
+          "nnml:Send-Mail")))
+@end lisp
 
 @node [5.12]
 @subsubheading Question 5.12
@@ -1651,26 +1665,25 @@ where Gnus is running isn't suitable (it probably isn't
 at most private machines) you can tell Gnus what to use
 by saying:
 
-@example
+@lisp
 (setq message-user-fqdn "yourmachine.yourdomain.tld")
-@end example
-@noindent
+@end lisp
 
+@noindent
 in ~/.gnus.el.  If you use Gnus 5.9 or ealier, you can use this
 instead (works for newer versions a well): 
 
-@example
-(eval-after-load "message"
-  '(let ((fqdn "yourmachine.yourdomain.tld"));; <-- Edit this!
-     (if (boundp 'message-user-fqdn)
-         (setq message-user-fqdn fqdn)
-       (gnus-message 1 "Redefining `message-make-fqdn'.")
-       (defun message-make-fqdn ()
-         "Return user's fully qualified domain name."
-         fqdn))))
-@end example
-@noindent
+@lisp
+(let ((fqdn "yourmachine.yourdomain.tld"));; <-- Edit this!
+  (if (boundp 'message-user-fqdn)
+      (setq message-user-fqdn fqdn)
+    (gnus-message 1 "Redefining `message-make-fqdn'.")
+    (defun message-make-fqdn ()
+      "Return user's fully qualified domain name."
+      fqdn)))
+@end lisp
 
+@noindent
 If you have no idea what to insert for
 "yourmachine.yourdomain.tld", you've got several
 choices. You can either ask your provider if he allows
@@ -1686,20 +1699,20 @@ English one offering the same, drop me a note).
 Finally you can tell Gnus not to generate a Message-ID
 for News at all (and letting the server do the job) by saying
 
-@example
+@lisp
 (setq message-required-news-headers
-  (remove' Message-ID message-required-news-headers))
-@end example
-@noindent
+      (remove' Message-ID message-required-news-headers))
+@end lisp
 
+@noindent
 you can also tell Gnus not to generate Message-IDs for mail by saying
 
-@example
+@lisp
 (setq message-required-mail-headers
-  (remove' Message-ID message-required-mail-headers))
-@end example
-@noindent
+      (remove' Message-ID message-required-mail-headers))
+@end lisp
 
+@noindent
 , however some mail servers don't generate proper
 Message-IDs, too, so test if your Mail Server behaves
 correctly by sending yourself a Mail and looking at the Message-ID.
@@ -1761,7 +1774,7 @@ the archived message from Gnus? If you say yes, put this
 snippet by Frank Haun <pille3003@@fhaun.de> in
 ~/.gnus.el:
 
-@example
+@lisp
 (defun my-archive-article (&optional n)
   "Copies one or more article(s) to a corresponding `nnml:' group, e.g.
 `gnus.ding' goes to `nnml:1.gnus.ding'. And `nnml:List-gnus.ding' goes
@@ -1777,9 +1790,9 @@ more then one article."
               (replace-in-string gnus-newsgroup-name "^.*:" "")
             (replace-regexp-in-string "^.*:" "" gnus-newsgroup-name)))))
     (gnus-summary-copy-article n archive-name)))
-@end example
-@noindent
+@end lisp
 
+@noindent
 You can now say @samp{M-x
 my-archive-article} in summary buffer to
 archive the article under the cursor in a nnml
@@ -1787,11 +1800,11 @@ group. (Change nnml to your preferred back end)
 
 Of course you can also make sure the cache is enabled by saying
 
-@example
+@lisp
 (setq gnus-use-cache t)
-@end example
-@noindent
+@end lisp
 
+@noindent
 then you only have to set either the tick or the dormant
 mark for articles you want to keep, setting the read
 mark will remove them from cache.
@@ -1909,11 +1922,11 @@ to another group.
 
 Say something like this in ~/.gnus.el:
 
-@example
+@lisp
 (setq nnmail-expiry-target "nnml:expired")
-@end example
-@noindent
+@end lisp
 
+@noindent
 (If you want to change the value of nnmail-expiry-target
 on a per group basis see the question "How can I disable
 threading in some (e.g. mail-) groups, or set other
@@ -1991,11 +2004,11 @@ newsreaders like e.g. Forte Agent. If you want to use
 the Agent place the following in ~/.gnus.el if you are
 still using 5.8.8 or 5.9 (it's the default since 5.10):
 
-@example
+@lisp
 (setq gnus-agent t)
-@end example
-@noindent
+@end lisp
 
+@noindent
 Now you've got to select the servers whose groups can be
 stored locally.  To do this, open the server buffer
 (that is press @samp{^} while in the
@@ -2194,21 +2207,20 @@ eval-after-load, which loads the stuff not at startup
 time, but when it's needed. Say you've got this in your
 ~/.gnus.el:
 
-@example
+@lisp
 (require 'message)
 (add-to-list 'message-syntax-checks '(sender . disabled))
-@end example
-@noindent
+@end lisp
 
+@noindent
 then as soon as you start Gnus, message.el is loaded. If
 you replace it with
 
-@example
-(eval-after-load "message"
-      '(add-to-list 'message-syntax-checks '(sender . disabled)))
-@end example
-@noindent
+@lisp
+(add-to-list 'message-syntax-checks '(sender . disabled))
+@end lisp
 
+@noindent
 it's loaded when it's needed.
 
 @node [9.2]
@@ -2223,31 +2235,31 @@ gnus-fetch-old-headers to anything different from nil,
 so don't do this if speed is an issue. To speed up
 building of summary say
 
-@example
+@lisp
 (gnus-compile)
-@end example
-@noindent
+@end lisp
 
+@noindent
 at the bottom of your ~/.gnus.el, this will make gnus
 byte-compile things like
 gnus-summary-line-format. 
 then you could increase the value of gc-cons-threshold
 by saying something like
 
-@example
+@lisp
 (setq gc-cons-threshold 3500000)
-@end example
-@noindent
+@end lisp
 
+@noindent
 in ~/.emacs. If you don't care about width of CJK
 characters or use Gnus 5.10 or younger together with a
 recent GNU Emacs, you should say
 
-@example
+@lisp
 (setq gnus-use-correct-string-widths nil)
-@end example
+@end lisp
+
 @noindent
- 
 in ~/.gnus.el (thanks to Jesper harder for the last
 two suggestions). Finally if you are still using 5.8.8
 or 5.9 and experience speed problems with summary
