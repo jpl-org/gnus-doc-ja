@@ -782,13 +782,13 @@ Gnus Manual}) を参照して下さい。
 * [4.7]::  　HTML メールを w3 以外のブラウザーを使って描画させる
              ことはできますか?
 
-* [4.8]::  　ぞんざいに構成されたメールをもっと読み易くするため
-             の、何かがありますか?
+* [4.8]::  　見苦しい体裁のメールをもっと読み易くするための何か
+             がありますか?
 
 * [4.9]::  　特定の著者が送信したものや、題名に特定の語が含まれ
              ているメッセージを、自動的に無視する方法はあります
-             か?  また、もっと興味深いものを何らかの方法で強調
-             表示させることはできますか?
+             か?  また、より興味深いものを何らかの方法で強調表示
+             させることはできますか?
 
 * [4.10]:: 　いくつかの (例えばメールの) グループで、スレッド表
              示をさせなくすることはできますか?  あるいは、いくつ
@@ -813,91 +813,87 @@ Gnus Manual}) を参照して下さい。
 @end menu
 
 @node [4.1]
-@subsubheading Question 4.1
+@subsubheading 質問 4.1
 
-When I enter a group, all read messages are gone. How to view them again?
+グループに入ると、以前に読んだメッセージが全部なくなってしまっています。
+もう一度読むには、どうしたら良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-If you enter the group by saying  
-@samp{RET}
-in group buffer with point over the group, only unread and ticked messages are loaded. Say
-@samp{C-u RET}
-instead to load all available messages. If you want only the e.g. 300 newest say
-@samp{C-u 300 RET}
+グループバッファにおいて、そのグループの上にポイントが置かれている状態
+で @kbd{RET} を使うと、未読と可視記事の印 (ticked) が付いたメッセージだ
+けが現れます。存在するすべてのメッセージが表示されるようにするには、代わ
+りに @kbd{C-u RET} を使って下さい。もし最新の、例えば 300通だけが所望な
+らば、@kbd{C-u 300 RET} を使いましょう。
 
-Loading only unread messages can be annoying if you have threaded view enabled, say
+スレッド表示を有効にしていると、未読のメッセージだけを表示するのはじれっ
+たいかもしれません。スレッドがちぎれてしまうことを防止するのに十分な量の
+古い記事を取り込むには、以下の設定を追加すれば良いでしょう:
 
 @lisp
 (setq gnus-fetch-old-headers 'some)
 @end lisp
 
 @noindent
-in ~/.gnus.el to load enough old articles to prevent teared threads, replace 'some with t to load
-all articles (Warning: Both settings enlarge the amount of data which is 
-fetched when you enter a group and slow down the process of entering a group).
+@code{some} を @code{t} に替えると、すべての記事を表示するようになりま
+す (警告: どちらの設定もグループに入ったときに取り込むデータ量を増加させ、
+グループに入る処理を遅くしてしまいます)。
 
-If you already use Gnus 5.10, you can say 
-@samp{/o N} 
-In summary buffer to load the last N messages, this feature is not available in 5.8.8
+すでに Gnus 5.10 を使っているならば、最後の @var{n} 通のメッセージを取り
+込むために、概略バッファで @kbd{/o N} 命令を使うことができます。この機能
+は 5.8.8 にはありません。
 
-If you don't want all old messages, but the parent of the message you're just reading,
-you can say @samp{^}, if you want to retrieve the whole thread
-the message you're just reading belongs to, @samp{A T} is your friend.
+すべての古いメッセージは要らないけれども、今まさに読んでいるメッセージの
+親を辿りたいならば @kbd{^} 命令を使って下さい。今まさに読んでいるメッセー
+ジが属しているスレッドのすべての記事を表示したい場合は、@samp{A T} 命令
+があなたの望むものです。
 
 @node [4.2]
-@subsubheading Question 4.2
+@subsubheading 質問 4.2
 
-How to tell Gnus to show an important message every time I
-enter a group, even when it's read?
+大事なメッセージを、すでに読んだことがあっても、グループに入ったときはい
+つでも見えるように Gnus に指示するには、どうすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-You can tick important messages. To do this hit
-@samp{u} while point is in summary buffer
-over the message. When you want to remove the mark, hit
-either @samp{d} (this deletes the tick
-mark and set's unread mark) or @samp{M c}
-(which deletes all marks for the message).
+大事なメッセージには可視記事の印 (ticked) を付けることができます。それに
+は、概略バッファでポイントがその記事を指しているときに @kbd{u} を叩いて
+下さい。可視記事の印を消す命令は @kbd{d} (これは可視記事の印を消してから
+未読の印を付けます) または @kbd{M c} (そのメッセージに付いているすべての
+印を消します) です。
 
 @node [4.3]
-@subsubheading Question 4.3
+@subsubheading 質問 4.3
 
-How to view the headers of a message?
+メッセージのヘッダーを見るにはどうしたら良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Say @samp{t} 
-to show all headers, one more
-@samp{t} 
-hides them again.
+@kbd{t} 命令を使うとすべてのヘッダーを表示し、もう一度使うとそれらを隠し
+ます。
 
 @node [4.4]
-@subsubheading Question 4.4
+@subsubheading 質問 4.4
 
-How to view the raw unformatted message?
+整形されていない生のメッセージを見るには、どうすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Say 
-@samp{C-u g} 
-to show the raw message
-@samp{g} 
-returns to normal view.
+@kbd{C-u g} 命令を使うと生のメッセージを表示し、@kbd{g} で通常の表示に戻
+ります。
 
 @node [4.5]
-@subsubheading Question 4.5
+@subsubheading 質問 4.5
 
-How can I change the headers Gnus displays by default at
-the top of the article buffer?
+記事バッファの先頭に Gnus がディフォルトで表示するヘッダーを変更するには、
+どうしたら良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-The variable gnus-visible-headers controls which headers
-are shown, its value is a regular expression, header lines
-which match it are shown. So if you want author, subject,
-date, and if the header exists, Followup-To and MUA / NUA
-say this in ~/.gnus.el:
+変数 @code{gnus-visible-headers} がどのヘッダーを表示するかを制御します。
+その値は正規表現で、それに合致するヘッダー行が表示されます。したがって、
+著者、題名、日付、そしてもし存在する場合は Followup-To と MUA / NUA を表
+示したい場合には、@file{~/.gnus.el} ファイルで以下の設定を行なって下さい:
 
 @lisp
 (setq gnus-visible-headers
@@ -906,14 +902,14 @@ say this in ~/.gnus.el:
 @end lisp
 
 @node [4.6]
-@subsubheading Question 4.6
+@subsubheading 質問 4.6
 
-I'd like Gnus NOT to render HTML-mails but show me the
-text part if it's available. How to do it?
+HTML メールを描画するのではなく、テキストのパートがある場合には、そちら
+の方を Gnus に表示して欲しいです。どうすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Say
+@file{~/.gnus.el} ファイルで以下の設定を行なって下さい:
 
 @lisp
 (add-to-list 'mm-discouraged-alternatives "text/html")
@@ -921,95 +917,108 @@ Say
 @end lisp
 
 @noindent
-in ~/.gnus.el. If you don't want HTML rendered, even if there's no text alternative add
+代替のテキストのパートが無い場合でさえも HTML のパートを描画して欲しくな
+いのであれば、以下の設定を追加して下さい:
 
 @lisp
 (setq mm-automatic-display (remove "text/html" mm-automatic-display))
 @end lisp
 
-@noindent
-too.
-
 @node [4.7]
-@subsubheading Question 4.7
+@subsubheading 質問 4.7
 
-Can I use some other browser than w3 to render my HTML-mails?
+HTML メールを w3 以外のブラウザーを使って描画させることはできますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Only if you use Gnus 5.10 or younger. In this case you've got the
-choice between w3, w3m, links, lynx and html2text, which
-one is used can be specified in the variable
-mm-text-html-renderer, so if you want links to render your
-mail say
+Gnus 5.10 またはより新しいものを使う場合だけですが、w3, w3m, links,
+lynx および html2text の中から選ぶことができ、どれを使うかは変
+数 @code{mm-text-html-renderer} で指定することができます。したがっ
+て links で HTML メールを描画したいときは、こうして下さい:
 
 @lisp
 (setq mm-text-html-renderer 'links)
 @end lisp
 
 @node [4.8]
-@subsubheading Question 4.8
+@subsubheading 質問 4.8
 
-Is there anything I can do to make poorly formatted mails
-more readable?
+見苦しい体裁のメールをもっと読み易くするための何かがありますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Gnus offers you several functions to "wash" incoming mail, you can
-find them if you browse through the menu, item
-Article->Washing. The most interesting ones are probably "Wrap
-long lines" (@samp{W w}), "Decode ROT13"
-(@samp{W r}) and "Outlook Deuglify" which repairs
-the dumb quoting used by many users of Microsoft products
-(@samp{W Y f} gives you full deuglify.
-See @samp{W Y C-h} or have a look at the menus for
-other deuglifications).  Outlook deuglify is only available since
-Gnus 5.10.
+Gnus は入ってきたメールを「洗濯」するためにいくつかの関数を提供します。
+それらはメニューの Article->Washing 項目を辿ることによって見つけることが
+できるでしょう。最も興味深いものを挙げてみましょう:
+
+@table @kbd
+@item W w (Wrap long lines)
+長い行を折り畳みます。
+
+@item W r (Decode ROT13)
+ROT13 をデコードします。
+
+@item W Y f (Outlook Deuglify)
+Outlook を見苦しくなくさせます。これは、マイクロソフトの製品を使っている
+多くのユーザーが送ってくる間の抜けた引用付き返信 (訳注: 折り畳まれた長い
+引用行の二行目以降に引用符が前置されないなど) を修繕します。
+
+他の見苦しくなくさせる機能については @kbd{W Y C-h} を使うかメニューを眺
+めて下さい。Outlook Deuglify は Gnus 5.10 以上で使うことができます。
+@end table
 
 @node [4.9]
-@subsubheading Question 4.9
+@subsubheading 質問 4.9
 
-Is there a way to automatically ignore posts by specific
-authors or with specific words in the subject? And can I
-highlight more interesting ones in some way?
+特定の著者が送信したものや、題名に特定の語が含まれているメッセージを、自
+動的に無視する方法はありますか?  また、より興味深いものを何らかの方法で
+強調表示させることはできますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-You want Scoring. Scoring means, that you define rules
-which assign each message an integer value. Depending on
-the value the message is highlighted in summary buffer (if
-it's high, say +2000) or automatically marked read (if the
-value is low, say -800) or some other action happens.
+あなたに必要なのはスコア付けです。スコア付けと言うのは、それぞれのメッセー
+ジに整数の値を割り付けるための規則を定義することです。値に基づいて、概略
+バッファでメッセージが強調表示されたり (それが +2000 といった高い値だっ
+たら)、自動的に既読になったり (その値が例えば -800 のような低い値だった
+ら)、あるいは他のいくつかの作用が行なわれたりします。
 
-There are basically three ways of setting up rules which assign
-the scoring-value to messages. The first and easiest way is to set
-up rules based on the article you are just reading. Say you're
-reading a message by a guy who always writes nonsense and you want
-to ignore his messages in the future. Hit
-@samp{L}, to set up a rule which lowers the score.
-Now Gnus asks you which the criteria for lowering the Score shall
-be. Hit @samp{?} twice to see all possibilities,
-we want @samp{a} which means the author (the from
-header). Now Gnus wants to know which kind of matching we want.
-Hit either @samp{e} for an exact match or
-@samp{s} for substring-match and delete afterwards
-everything but the name to score down all authors with the given
-name no matter which email address is used. Now you need to tell
-Gnus when to apply the rule and how long it should last, hit e.g.
-@samp{p} to apply the rule now and let it last
-forever. If you want to raise the score instead of lowering it say
-@samp{I} instead of @samp{L}.
+メッセージにスコアの値を割り付ける規則を設定するための、基本的な三つのや
+り方があります。
 
-You can also set up rules by hand. To do this say @samp{V
-f} in summary buffer. Then you are asked for the name
-of the score file, it's name.of.group.SCORE for rules valid in
-only one group or all.Score for rules valid in all groups. See the
-Gnus manual for the exact syntax, basically it's one big list
-whose elements are lists again. the first element of those lists
-is the header to score on, then one more list with what to match,
-which score to assign, when to expire the rule and how to do the
-matching. If you find me very interesting, you could e.g. add the
-following to your all.Score:
+@enumerate
+@item
+最初の最も簡単なやり方は、今まさに読んでいる記事に基づいて、規則を設定す
+ることです。いつもたわごとを書いてよこすやつからのメッセージを読んで、今
+後はそいつからのメッセージを無視しようと決心したならば、@kbd{L} を叩いて
+スコアを下げる規則を設定して下さい。
+
+すると Gnus は、スコアを下げる基準をどれにすれば良いかを尋ねてくるでしょ
+う。@kbd{?} を二回叩くと、すべての候補を見ることができますが、ここで選択
+すべきなのは著者 (From ヘッダー) を意味する @kbd{a} です。
+
+次に Gnus は、どの種類の合致を使うべきかを尋ねてくるので、厳密な合致のた
+めの @kbd{e} か、文字の一部への合致を求める @kbd{s} を叩いてから、後です
+べてを削除して下さい。そうしても、どんな電子メールアドレスであっても、そ
+れを持つすべての著者のスコアを下げるために、その名前が使われます。
+
+さらに、その規則をいつ適用するべきか、またどれくらいの時間続けるべきか
+を Gnus に伝える必要があります。例えば @kbd{p} では、その規則を今すぐ適
+用して、それを永久に持続させます。
+
+スコアを下げるのではなくて上げたいのであれば、@kbd{L} の代わり
+に @kbd{I} を使って下さい。
+
+@item
+規則を手で設定することもできます。そうするには概略バッファ
+で @kbd{V f} 命令を使って下さい。するとスコアファイルの名前を尋ねられる
+でしょう。一つのグループだけで有効なのは @file{name.of.group.SCORE} で、
+すべてのグループに対して有効なのが @file{all.SCORE} です。厳密なシンタッ
+クスについては Gnus のマニュアルを参照して下さい。それは一つの大きなリス
+トで、その要素もまた多くのリストです。その後者の単位リストの第一要素はス
+コアの対象であるヘッダーで、残りは、何に合致するか、いくらのスコアを割り
+当てるか、規則を期限切れ消去するのはいつか、そしてどうやって合致させるか
+を示すもう一つのリストです。私にとても興味を持ったならば、例えば以下のよ
+うなものを @file{all.SCORE} ファイルに加えてみて下さい:
 
 @lisp
 (("references" ("hschmi22.userfqdn.rz-online.de" 500 nil s))
@@ -1017,98 +1026,88 @@ following to your all.Score:
 @end lisp
 
 @noindent
-This would add 999 to the score of messages written by me
-and 500 to the score of messages which are a (possibly
-indirect) answer to a message written by me. Of course
-nobody with a sane mind would do this :-)
+これは私が書いたメッセージのスコアに 999 を加えて、それに対する (たぶん
+間接的な) 回答のメッセージのスコアに 500 を加えるでしょう。もちろん分別
+のある人は誰も、こんなことはしないでしょうが。:-)
 
-The third alternative is adaptive scoring. This means Gnus
-watches you and tries to find out what you find
-interesting and what annoying and sets up rules
-which reflect this. Adaptive scoring can be a huge help
-when reading high traffic groups. If you want to activate
-adaptive scoring say
+@item
+三番目の選択肢は適応スコア付けです。これは、Gnus があなたを観察して、あ
+なたが何に興味を持って何に幻滅するかを見つけ出し、それらを反映した規則を
+設定してくれるものです。流通量の多いグループを読むときに、適応スコア付け
+は大きな助けになるでしょう。適応スコア付けをやってみたいならば、
+@file{~/.gnus.el} ファイルで以下の宣言を行なって下さい:
 
 @lisp
 (setq gnus-use-adaptive-scoring t)
 @end lisp
-
-@noindent
-in ~/.gnus.el.
+@end enumerate
 
 @node [4.10]
-@subsubheading Question 4.10
+@subsubheading 質問 4.10
 
-How can I disable threading in some (e.g. mail-) groups, or
-set other variables specific for some groups?
+いくつかの (例えばメールの) グループで、スレッド表示をさせなくすることは
+できますか?  あるいは、いくつかのグループに固有の変数を設定することがで
+きますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-While in group buffer move point over the group and hit
-@samp{G c}, this opens a buffer where you
-can set options for the group. At the bottom of the buffer
-you'll find an item that allows you to set variables
-locally for the group. To disable threading enter
-gnus-show-threads as name of variable and nil as
-value. Hit button done at the top of the buffer when
-you're ready.
+グループバッファにいるときに、そのグループにポイントを移動してか
+ら @kbd{G c} を叩いて下さい。すると、そのグループのためのオプションを設
+定することができるバッファが開きます。そして、そのバッファのおしまいの方
+で、そのグループでローカルに変数を設定するための項目を見つけることができ
+るでしょう。スレッド表示をさせなくするには、変数名とし
+て @code{gnus-show-threads} を、値として @code{nil} を入力して下さい。作
+業を終えたら、そのバッファの最初の方にある [done] ボタンを叩きましょう。
 
 @node [4.11]
-@subsubheading Question 4.11
+@subsubheading 質問 4.11
 
-Can I highlight messages written by me and follow-ups to
-those?
+私が書いたメッセージとフォロー記事を、強調表示させることはできますか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Stop those "Can I ..." questions, the answer is always yes
-in Gnus Country :-). It's a three step process: First we
-make faces (specifications of how summary-line shall look
-like) for those postings, then we'll give them some
-special score and finally we'll tell Gnus to use the new
-faces. You can find detailed instructions on how to do it on
-@uref{http://my.gnus.org/node/view/224, my.gnus.org}
+「できますか?」なんて質問はやめて下さい。Gnus 村では答えはいつも yes な
+のですから。:-) これは三段階の作業になります。まず、それらの投稿のための
+フェース (概略行がどんなふうに見えるかの仕様) を作りましょう。続いて、そ
+れらにいくばくかの特別なスコアを与えましょう。最後に、その新しいフェース
+を使うように Gnus に指示しましょう。それをどう行なうかの詳しい説明
+が @uref{http://my.gnus.org/node/view/224, my.gnus.org} にあります。
 
 @node [4.12]
-@subsubheading Question 4.12
+@subsubheading 質問 4.12
 
-The number of total messages in a group which Gnus
-displays in group buffer is by far to high, especially in
-mail groups. Is this a bug?
+特にメールのグループで、Gnus がグループバッファに表示するメッセージの合
+計の数が非常に大きいのです。これはバグですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-No, that's a matter of design of Gnus, fixing this would
-mean reimplementation of major parts of Gnus'
-back ends. Gnus thinks "highest-article-number -
-lowest-article-number = total-number-of-articles". This
-works OK for Usenet groups, but if you delete and move
-many messages in mail groups, this fails. To cure the
-symptom, enter the group via @samp{C-u RET} 
-(this makes Gnus get all messages), then
-hit @samp{M P b} to mark all messages and
-then say @samp{B m name.of.group} to move
-all messages to the group they have been in before, they
-get new message numbers in this process and the count is
-right again (until you delete and move your mail to other
-groups again).
+いいえ、これは Gnus の設計上の問題で、これを直すには Gnus のバックエンド
+の主要な部分を実装し直さなければなりません。Gnus は最大の記事番号から最
+小の記事番号を減算したものが合計の記事数であると解釈します。これ
+は Usenet のグループでは OK なのですが、メールのグループでたくさんのメッ
+セージを消去したり移動すると、計算に失敗します。この病を治療するに
+は @kbd{C-u RET} でそのグループに入り (この命令は Gnus にすべてのメッセー
+ジを持って来させます)、@kbd{M P b} ですべてのメッセージに印を付けてから、
+@kbd{B m name.of.group} でメッセージを全部、それらが元あったグループに移
+動して下さい。この処理によってそれらは新しいメッセージ番号を持たせられて、
+合計の記事数は再び正しくなるでしょう (またもやそれらを消したり別のグルー
+プに移動するまでは)。
 
 @node [4.13]
-@subsubheading Question 4.13
+@subsubheading 質問 4.13
 
-I don't like the layout of summary and article buffer, how
-to change it? Perhaps even a three pane display?
+概略バッファと記事バッファの配置が気に入らないのですが、どうやったら変更
+できますか?  できるなら三面で表示させたいです。
 
-@subsubheading Answer
+@subsubheading 回答
 
-You can control the windows configuration by calling the
-function gnus-add-configuration. The syntax is a bit
-complicated but explained very well in the manual node
-"Window Layout". Some popular examples:
+@code{gnus-add-configuration} 関数を呼ぶことによって、ウィンドウの配置を
+制御することができます。シンタックスはいささか複雑ですが、マニュアルで非
+常に良く説明されています (@pxref{Window Layout, ,ウィンドウの配置,
+gnus-ja, The Gnus Manual})。いくつかの易しい例を挙げてみましょう。
 
-Instead 25% summary 75% article buffer 35% summary and 65%
-article (the 1.0 for article means "take the remaining
-space"):
+概略 25% 記事 75% というディフォルトの割合を、概略 35% 記事 65% の割合に
+変更します (記事のための 1.0 は、残った空き地を取るという意味です):
 
 @lisp
 (gnus-add-configuration
@@ -1116,8 +1115,8 @@ space"):
 @end lisp
 
 @noindent
-A three pane layout, Group buffer on the left, summary
-buffer top-right, article buffer bottom-right:
+グループバッファが左、概略バッファが右上、記事バッファが右下という三面配
+置です:
 
 @lisp
 (gnus-add-configuration
@@ -1138,26 +1137,26 @@ buffer top-right, article buffer bottom-right:
 @end lisp
 
 @node [4.14]
-@subsubheading Question 4.14
+@subsubheading 質問 4.14
 
-I don't like the way the Summary buffer looks, how to tweak it?
+概略バッファを見せるやり方が好きではありません。調整するには、どうすれば
+良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
-You've got to play around with the variable
-gnus-summary-line-format. It's value is a string of
-symbols which stand for things like author, date, subject
-etc. A list of the available specifiers can be found in the
-manual node "Summary Buffer Lines" and the often forgotten
-node "Formatting Variables" and it's sub-nodes. There
-you'll find useful things like positioning the cursor and
-tabulators which allow you a summary in table form, but
-sadly hard tabulators are broken in 5.8.8.
+変数 @code{gnus-summary-line-format} をいじくり回す必要があります。その
+値は著者、日付、題名などのようなものを表すシンボルの文字列です。使うこと
+ができる仕様のリストは @pxref{Summary Buffer Lines, ,概略バッファの行,
+gnus-ja, The Gnus Manual} と、しばしば忘れられてしまう @pxref{Formatting
+Variables, ,書法仕様変数, gnus-ja, The Gnus Manual} およびその下位の各章
+で見つかるはずです。そこでは書法仕様の概略を使うことができるようにしてく
+れる、カーソルの位置指定やタブ位置の指定のようなものを見つけることができ
+るでしょう。残念ながら 5.8.8 ではタブ位置を固定させる機能が壊れています。
 
-Since 5.10, Gnus offers you some very nice new specifiers,
-e.g. %B which draws a thread-tree and %&user-date which
-gives you a date where the details are dependent of the
-articles age. Here's an example which uses both:
+5.10 から、Gnus は非常にみごとな新しい書法仕様変数を提供しています。例え
+ば %B はスレッド木を描き、また %&user-date は、どう表示するかが記事が発
+信されてからの経過時間に依存している日付を表示します。これらの両方を使っ
+ている例です:
 
 @lisp
 (setq gnus-summary-line-format
@@ -1165,7 +1164,7 @@ articles age. Here's an example which uses both:
 @end lisp
 
 @noindent
-resulting in:
+結果はこんなふうになります:
 
 @example
 :O     Re: [Richard Stallman] rfc2047.el          |  13 |Lars Magne Ingebrigt |Sat 23:06
@@ -1183,44 +1182,40 @@ resulting in:
 @end example
 
 @node [4.15]
-@subsubheading Question 4.15
+@subsubheading 質問 4.15
 
-How to split incoming mails in several groups?
+やってきたメールをいろいろなグループに振り分けるには、どうしたら良いです
+か?
 
-@subsubheading Answer
+@subsubheading 回答
 
-Gnus offers two possibilities for splitting mail, the easy
-nnmail-split-methods and the more powerful Fancy Mail
-Splitting. I'll only talk about the first one, refer to
-the manual, node "Fancy Mail Splitting" for the latter.
+Gnus はメールを分割するための二つの手段、易し
+い @code{nnmail-split-methods} と、もっと強力な特級メール分割の機能を提
+供します。私は最初のものだけについて述べますが、後者についてはマニュア
+ル (@pxref{Fancy Mail Splitting, ,特級メール分割, gnus-ja, The Gnus
+Manual} を参照して下さい。
 
-The value of nnmail-split-methods is a list, each element
-is a list which stands for a splitting rule. Each rule has
-the form "group where matching articles should go to",
-"regular expression which has to be matched", the first
-rule which matches wins. The last rule must always be a
-general rule (regular expression .*) which denotes where
-articles should go which don't match any other rule. If
-the folder doesn't exist yet, it will be created as soon
-as an article lands there.  By default the mail will be
-send to all groups whose rules match. If you 
-don't want that (you probably don't want), say
+@code{nnmail-split-methods} の値はリストで、それぞれの要素は分割の規則を
+表すリストです。それぞれの規則は「合致する記事が行くべきグループ」と「合
+致すべき正規表現」の形式を持っていて、最初に合致した規則が勝ちます。最後
+の規則は常に汎用の規則 (正規表現 @samp{.*}) でなければなりません。それは
+他のどんな規則にも合致しない記事が行くべき場所を示します。もしまだフォル
+ダーが無かったならば、それは記事がそこに着地するとすぐに作られるでしょう。
+ディフォルトでは、メールは規則に合致するすべてのグループに送られます。そ
+れを望まないならば (たぶん望まないでしょう)、以下のもの
+を @file{~/.gnus.el} ファイルに入れて下さい:
 
 @lisp
 (setq nnmail-crosspost nil)
 @end lisp
 
-@noindent
-in ~/.gnus.el.
-
-An example might be better than thousand words, so here's
-my nnmail-split-methods. Note that I send duplicates in a
-special group and that the default group is spam, since I
-filter all mails out which are from some list I'm
-subscribed to or which are addressed directly to me
-before. Those rules kill about 80% of the Spam which
-reaches me (Email addresses are changed to prevent spammers
-from using them):
+たった一つの例は千の言葉を並べるよりも勝ります。そこで、ここでは私
+の @code{nnmail-split-methods} を紹介しましょう。私は、私が講読している
+いくつかのメーリングリストから来るか、私を直接に目指して来たすべてのメー
+ルを濾過器に通すので、私が特別のグループの複写を送ることと、ディフォルト
+のグループは @samp{spam} であることに注意して下さい。これらの規則は、私
+宛てに届いた spam のおよそ 80% を殺してくれます (電子メールアドレス
+は spammers がそれらを使用するのを防ぐために変更されます)。
 
 @lisp
 (setq
