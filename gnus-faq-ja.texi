@@ -782,8 +782,8 @@ Gnus Manual}) $B$r;2>H$7$F2<$5$$!#(B
 * [4.7]::  $B!!(BHTML $B%a!<%k$r(B w3 $B0J30$N%V%i%&%6!<$r;H$C$FIA2h$5$;$k(B
              $B$3$H$O$G$-$^$9$+(B?
 
-* [4.8]::  $B!!8+6l$7$$BN:[$N%a!<%k$r$b$C$HFI$_0W$/$9$k$?$a$N2?$+(B
-             $B$,$"$j$^$9$+(B?
+* [4.8]::  $B!!8+6l$7$$BN:[$N%a!<%k$r$b$C$HFI$_$d$9$/$9$k$?$a$N2?(B
+             $B$+$,$"$j$^$9$+(B?
 
 * [4.9]::  $B!!FCDj$NCx<T$,Aw?.$7$?$b$N$d!"BjL>$KFCDj$N8l$,4^$^$l(B
              $B$F$$$k%a%C%;!<%8$r!"<+F0E*$KL5;k$9$kJ}K!$O$"$j$^$9(B
@@ -943,7 +943,7 @@ lynx $B$*$h$S(B html2text $B$NCf$+$iA*$V$3$H$,$G$-!"$I$l$r;H$&$+$OJQ(B
 @node [4.8]
 @subsubheading $B<ALd(B 4.8
 
-$B8+6l$7$$BN:[$N%a!<%k$r$b$C$HFI$_0W$/$9$k$?$a$N2?$+$,$"$j$^$9$+(B?
+$B8+6l$7$$BN:[$N%a!<%k$r$b$C$HFI$_$d$9$/$9$k$?$a$N2?$+$,$"$j$^$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -1104,7 +1104,7 @@ Outlook $B$r8+6l$7$/$J$/$5$;$^$9!#$3$l$O!"%^%$%/%m%=%U%H$N@=IJ$r;H$C$F$$$k(B
 @code{gnus-add-configuration} $B4X?t$r8F$V$3$H$K$h$C$F!"%&%#%s%I%&$NG[CV$r(B
 $B@)8f$9$k$3$H$,$G$-$^$9!#%7%s%?%C%/%9$O$$$5$5$+J#;($G$9$,!"%^%K%e%"%k$GHs(B
 $B>o$KNI$/@bL@$5$l$F$$$^$9(B (@pxref{Window Layout, ,$B%&%#%s%I%&$NG[CV(B,
-gnus-ja, The Gnus Manual})$B!#$$$/$D$+$N0W$7$$Nc$r5s$2$F$_$^$7$g$&!#(B
+gnus-ja, The Gnus Manual})$B!#$$$/$D$+$N$d$5$7$$Nc$r5s$2$F$_$^$7$g$&!#(B
 
 $B35N,(B 25% $B5-;v(B 75% $B$H$$$&%G%#%U%)%k%H$N3d9g$r!"35N,(B 35% $B5-;v(B 65% $B$N3d9g$K(B
 $BJQ99$7$^$9(B ($B5-;v$N$?$a$N(B 1.0 $B$O!";D$C$?6u$-CO$r<h$k$H$$$&0UL#$G$9(B):
@@ -1189,11 +1189,11 @@ Variables, ,$B=qK!;EMMJQ?t(B, gnus-ja, The Gnus Manual} $B$*$h$S$=$N2<0L$N3F>
 
 @subsubheading $B2sEz(B
 
-Gnus $B$O%a!<%k$rJ,3d$9$k$?$a$NFs$D$N<jCJ!"0W$7(B
+Gnus $B$O%a!<%k$rJ,3d$9$k$?$a$NFs$D$N<jCJ!"$d$5$7(B
 $B$$(B @code{nnmail-split-methods} $B$H!"$b$C$H6/NO$JFC5i%a!<%kJ,3d$N5!G=$rDs(B
 $B6!$7$^$9!#;d$O:G=i$N$b$N$@$1$K$D$$$F=R$Y$^$9$,!"8e<T$K$D$$$F$O%^%K%e%"(B
 $B%k(B (@pxref{Fancy Mail Splitting, ,$BFC5i%a!<%kJ,3d(B, gnus-ja, The Gnus
-Manual} $B$r;2>H$7$F2<$5$$!#(B
+Manual}) $B$r;2>H$7$F2<$5$$!#(B
 
 @code{nnmail-split-methods} $B$NCM$O%j%9%H$G!"$=$l$>$l$NMWAG$OJ,3d$N5,B'$r(B
 $BI=$9%j%9%H$G$9!#$=$l$>$l$N5,B'$O!V9gCW$9$k5-;v$,9T$/$Y$-%0%k!<%W!W$H!V9g(B
@@ -1245,71 +1245,84 @@ Manual} $B$r;2>H$7$F2<$5$$!#(B
 @end lisp
 
 @node FAQ 5 - Composing messages
-@subsection Composing messages
+@subsection $B%a%C%;!<%8$N:n@.(B
 
 @menu
-* [5.1]::     What are the basic commands I need to know for sending
-              mail and postings?
-* [5.2]::     How to enable automatic word-wrap when composing messages?
-* [5.3]::     How to set stuff like From, Organization, Reply-To,
-              signature...?
-* [5.4]::     Can I set things like From, Signature etc group based on
-              the group I post too?
-* [5.5]::     Is there a spell-checker? Perhaps even on-the-fly
-              spell-checking?
-* [5.6]::     Can I set the dictionary based on the group I'm posting
-              to?
-* [5.7]::     Is there some kind of address-book, so I needn't remember
-              all those email addresses?
-* [5.8]::     Sometimes I see little images at the top of article
-              buffer. What's that and how can I send one with my postings, too?
-* [5.9]::     Sometimes I accidentally hit r instead of f in newsgroups.
-              Can Gnus warn me, when I'm replying by mail in newsgroups?
-* [5.10]::    How to tell Gnus not to generate a sender header?
-* [5.11]::    I want Gnus to locally store copies of my send mail and
-              news, how to do it?
-* [5.12]::    People tell me my Message-IDs are not correct, why aren't
-              they and how to fix it?
+* [5.1]::  $B!!%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$K;d$,(B
+             $BCN$C$F$$$kI,MW$,$"$k4pK\E*$J%3%^%s%I$O2?$G$9$+(B?
+
+* [5.2]::  $B!!%a!<%k$r:n@.$9$k$H$-!"<+F0E*$K9T$r@^$jJV$9$K$O$I$&(B
+             $B$9$l$PNI$$$G$9$+(B?
+
+* [5.3]::  $B!!(BFrom, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8(B
+             $B@.$7$?$j!"Dj7?$N=pL>(B (signature) $B$r<+F0E*$KA^F~$9$k(B
+             $B$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+
+* [5.4]::  $B!!Ej9F$9$k%0%k!<%W$K$h$C$F0[$J$k(B From $B%X%C%@!<$d=pL>(B
+             $B$r<+F0A^F~$9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+
+* [5.5]::  $B!!%9%Z%k%A%'%C%+!<$O$"$j$^$9$+(B?  $B$G$-$l$P!"=q$$$?$=$N(B
+             $B>l$G%A%'%C%/$7$F$/$l$k$b$N$,$"$l$PNI$$$N$G$9$,!#(B
+
+* [5.6]::  $B!!Ej9F$9$k%0%k!<%W$K4p$E$$$F!"<-=q(B ($B%9%Z%k%A%'%C%+!<(B
+             $B$N(B) $B$r@Z$jBX$($k$3$H$O$G$-$^$9$+(B?
+
+* [5.7]::  $B!!A40w$NEE;R%a!<%k%"%I%l%9$r;W$$=P$5$J$/$F$b:Q$`$h$&(B
+             $B$K$9$k$?$a$N!"%"%I%l%9D"$N$h$&$J$b$N$O$"$j$^$9$+(B?
+
+* [5.8]::  $B!!5-;v%P%C%U%!$N>e$NJ}$G!"$H$-$I$->.$5$J2hA|$rL\$K$7(B
+             $B$^$9!#$"$l$O2?$G$9$+(B?  $B$^$?!"$I$&$7$?$i;d$bEj9F$9$k(B
+             $B$H$-$KIU$1$k$3$H$,$G$-$^$9$+(B?
+
+* [5.9]::  $B!!$H$-$I$-;d$O%K%e!<%9%0%k!<%W$G!"(B`f' $B$NBe$o$j$K$&$C(B
+             $B$+$j(B `r' $B$rBG$C$F$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K(B
+             $B$b$+$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?$H$-$K!"(BGnus $B$K(B
+             $B7Y9p$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
+
+* [5.10]:: $B!!(BGnus $B$,(B sender $B%X%C%@!<$r@8@.$7$J$$$h$&$K$9$k$K$O!"(B
+             $B$I$&$7$?$iNI$$$G$9$+(B?
+
+* [5.11]:: $B!!Aw?.$7$?%a!<%k$d%K%e!<%9$N95$($r%m!<%+%k$K;D$7$F$*(B
+             $B$-$?$$$N$G$9$,!"$I$&$9$l$PNI$$$G$9$+(B?
+
+* [5.12]:: $B!!;d$N(B Message-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"(B
+             $B$=$l$O$J$<$G$9$+(B?  $B$^$?!"$I$&$d$C$FD>$7$?$iNI$$$G$9(B
+             $B$+(B?
 @end menu
 
 @node [5.1]
-@subsubheading Question 5.1
+@subsubheading $B<ALd(B 5.1
 
-What are the basic commands I need to know for sending mail and postings?
+$B%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$K;d$,CN$C$F$$$kI,MW$,$"$k4p(B
+$BK\E*$J%3%^%s%I$O2?$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-To start composing a new mail hit @samp{m}
-either in Group or Summary buffer, for a posting, it's
-either @samp{a} in Group buffer and
-filling the Newsgroups header manually
-or @samp{a} in the Summary buffer of the
-group where the posting shall be send to. Replying by mail
-is
-@samp{r} if you don't want to cite the
-author, or import the cited text manually and
-@samp{R} to cite the text of the original
-message. For a follow up to a newsgroup, it's
-@samp{f} and @samp{F}
-(analogously to @samp{r} and
-@samp{R}).
+$B?7$7$$%a!<%k$N:n@.$r;O$a$k$K$O!"%0%k!<%W%P%C%U%!$+35N,%P%C%U%!$N$I$A$i$+(B
+$B$G(B @kbd{m} $B$rC!$$$F2<$5$$!#%K%e!<%95-;v$rEj9F$9$k>l9g$K$O!"%0%k!<%W%P%C(B
+$B%U%!$G(B @kbd{a} $B$rC!$$$?8e$K<j$G(B Newsgroups $B%X%C%@!<$K=q$-9~$`$+!"Ej9F$9(B
+$B$k%0%k!<%W$N35N,%P%C%U%!$G(B @kbd{a} $B$rC!$$$F2<$5$$!#(B
 
-Enter new headers above the line saying "--text follows
-this line--", enter the text below the line. When ready
-hit @samp{C-c C-c}, to send the message,
-if you want to finish it later hit @samp{C-c
-C-d} to save it in the drafts group, where you
-can start editing it again by saying @samp{D
-e}.
+$B%a!<%k$GJV?.$9$k>l9g!"85$N5-;v$r0zMQ$7$J$$$+8e$G<j:n6H$G0zMQ$9$k$D$b$j$J(B
+$B$i$P(B @kbd{r} $B$r!"0zMQJ8$r:G=i$+$i<h$j9~$s$G$7$^$&$N$J$i$P(B @kbd{R} $B$r;H$C(B
+$B$F2<$5$$!#%K%e!<%9%0%k!<%W$G%U%)%m!<5-;v$rEj9F$9$k>l9g$G$"$l$P!"(B
+@kbd{f} $B$+(B @kbd{F} (@kbd{r} $B$H(B @kbd{R} $B$N4X78$K;w$F$$$^$9(B) $B$r;H$$$^$7$g(B
+$B$&!#(B
+
+$B?7$?$K%X%C%@!<$rA^F~$9$k$J$i$P(B @samp{--text follows this line--} $B$N>e$K!"(B
+$BK\J8$O$=$N2<$K=q$$$F2<$5$$!#=q$->e$,$C$?%a%C%;!<%8$rAw?.$9$k%3%^%s%I(B
+$B$O(B @kbd{C-c C-c}$B!"8e$G;E>e$2$k$?$a$K(B @samp{drafts} $B%0%k!<%W$KJ]B8$9$k$?(B
+$B$a$N%3%^%s%I$O(B @kbd{C-c C-d} $B$G$9!#8e<T$O(B @kbd{D e} $B$G:F$SJT=8$9$k$3$H$,(B
+$B$G$-$^$9!#(B
 
 @node [5.2]
-@subsubheading Question 5.2
+@subsubheading $B<ALd(B 5.2
 
-How to enable automatic word-wrap when composing messages?
+$B%a!<%k$r:n@.$9$k$H$-!"<+F0E*$K9T$r@^$jJV$9$K$O$I$&$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Say
+$B$3$s$J$b$N$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F2<$5$$!#(B
 
 @lisp
 (add-hook 'message-mode-hook
@@ -1319,19 +1332,20 @@ Say
 @end lisp
 
 @noindent
-in ~/.gnus.el. You can reformat a paragraph by hitting
-@samp{M-q} (as usual)
+$B$$$D$b$NDL$j$K(B @kbd{M-q} $B$r;H$&$3$H$K$h$C$F!"CJMn$r:F@07A$9$k$3$H$,$G$-(B
+$B$^$9!#(B
 
 @node [5.3]
-@subsubheading Question 5.3
+@subsubheading $B<ALd(B 5.3
 
-How to set stuff like From, Organization, Reply-To, signature...?
+From, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8@.$7$?$j!"Dj7?$N=p(B
+$BL>(B (signature) $B$r<+F0E*$KA^F~$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-There are other ways, but you should use posting styles
-for this. (See below why).
-This example should make the syntax clear:
+$BB>$N$d$jJ}$b$"$j$^$9$,!"$3$l$N$?$a$K$OEj9FMM<0(B (posting styles) $B$r;H$&$Y(B
+$B$-$G$9(B ($BM}M3$O8e$G=q$-$^$9(B)$B!#$3$NNc$J$i$P!"$=$N%7%s%?%C%/%9$,L@3N$K$o$+(B
+$B$k$O$:$G$9(B:
 
 @lisp
 (setq gnus-posting-styles
@@ -1345,47 +1359,44 @@ This example should make the syntax clear:
 @end lisp
 
 @noindent
-The ".*" means that this settings are the default ones
-(see below), valid values for the first element of the
-following lists are signature, signature-file,
-organization, address, name or body.  The attribute name
-can also be a string.  In that case, this will be used as
-a header name, and the value will be inserted in the
-headers of the article; if the value is `nil', the header
-name will be removed. You can also say (eval (foo bar)),
-then the function foo will be evaluated with argument bar
-and the result will be thrown away.
+@code{".*"} $B$H$$$&@_Dj$O%G%#%U%)%k%H$N$b$N$G$9(B (@ref{[5.4]} $B;2>H(B)$B!#$=$l(B
+$B0J9_$N%j%9%H$NBh0lMWAG$K;H$($kCM$O(B @code{signature},
+@code{signature-file}, @code{organization}, @code{address}, @code{name}
+$B$^$?$O(B @code{body} $B$G$9!#B0@-L>$OJ8;zNs$G$b9=$$$^$;$s!#$=$N>l9g!"B0@-L>(B
+$B$O%X%C%@!<L>$H$7$F;H$o$l!"$=$NCM$O5-;v$N%X%C%@!<$KA^F~$5$l$^$9!#$?$@$7CM(B
+$B$,(B @code{nil} $B$@$C$?$i!"$=$NL>A0$N%X%C%@!<$O:o=|$5$l$^$9!#(B
+
+@code{(eval (foo bar))} $B$N7A<0$r;H$&$3$H$b2DG=$G!"$=$N>l9g(B @code{bar} $B$r(B
+$B0z?t$KM?$($i$l$F4X?t(B @code{foo} $B$,I>2A$5$l!"7k2L$O<N$F$i$l$^$9!#(B
 
 @node [5.4]
-@subsubheading Question 5.4
+@subsubheading $B<ALd(B 5.4
 
-Can I set things like From, Signature etc group based on the group I post too?
+$BEj9F$9$k%0%k!<%W$K$h$C$F0[$J$k(B From $B%X%C%@!<$d=pL>$r<+F0A^F~$9$k$K$O!"$I(B
+$B$&$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-That's the strength of posting styles. Before, we used ".*"
-to set the default for all groups. You can use a regexp
-like "^gmane" and the following settings are only applied
-to postings you send to the gmane hierarchy, use
-".*binaries" instead and they will be applied to postings
-send to groups containing the string binaries in their
-name etc.
+$B$3$l$3$=$,Ej9FMM<0(B (posting styles) $B$N6/$_$G$9!#A0$N2s(B
+$BEz(B (@pxref{[5.3]}) $B$G$O!"$9$Y$F$N%0%k!<%W$N$?$a$N%G%#%U%)%k%H$r@_Dj$9$k(B
+$B$?$a$K(B @code{".*"} $B$r;H$$$^$7$?!#$3$l$K(B @code{"^gmane"} $B$N$h$&$J@55,I=8=(B
+$B$r;H$&$H!"$=$l0J9_$N@_Dj$r(B gmane $B%K%e!<%9%0%k!<%W$N3,AX$GEj9F$9$k5-;v$@(B
+$B$1$KE,MQ$5$;$k$3$H$,$G$-$^$9!#Be$o$j$K(B @code{".*binaries"} $B$r;H$&$H!"L>(B
+$BA0$J$I$,(B @samp{binary} $B$H$$$&J8;zNs$r4^$s$G$$$k%0%k!<%W$KEj9F$9$k5-;v$@(B
+$B$1$K!"$=$l$i$N@_Dj$,E,MQ$5$l$^$9!#(B
 
-You can instead of specifying a regexp specify a function
-which is evaluated, only if it returns true, the
-corresponding settings take effect. Two interesting
-candidates for this are message-news-p which returns t if
-the current Group is a newsgroup and the corresponding
-message-mail-p.
+$B@55,I=8=$NBe$o$j$K4X?t$r;XDj$9$k$3$H$b$G$-!"$=$l$,I>2A$5$l$F??$rJV$9$H$-(B
+$B$@$1!"$=$l$KBP1~$9$k@_Dj$,M-8z$K$J$j$^$9!#$3$l$N6=L#?<$$Fs$D$N8uJd$O!"(B
+$B8=:_$N%0%k!<%W$,%K%e!<%9%0%k!<%W$@$C$?$i(B @code{t} $B$rJV(B
+$B$9(B @code{message-news-p} $B$H!"$=$l$HBP$K$J$k(B @code{message-mail-p} $B$G$9!#(B
 
-Note that all forms that match are applied, that means in
-the example below, when I post to
-gmane.mail.spam.spamassassin.general, the settings under
-".*" are applied and the settings under message-news-p and
-those under "^gmane" and those under
-"^gmane\\.mail\\.spam\\.spamassassin\\.general$". Because
-of this put general settings at the top and specific ones
-at the bottom.
+$B$9$Y$F$N9gCW$9$kMM<0$,E,MQ$5$l$k$3$H$KCm0U$7$F2<$5$$!#0J2<$rNc$K$9$l$P!"(B
+@samp{gmane.mail.spam.spamassassin.general} $B$KEj9F$9$k$H(B @code{".*"} $B$G(B
+$B;O$^$k@_Dj$,E,MQ$5$l!"(B@code{message-news-p} $B0J2<$N@_Dj$bE,MQ$5$l!"(B
+@code{"^gmane"} $B$G;O$^$k@_Dj!"$=$l(B
+$B$K(B @code{"^gmane\\.mail\\.spam\\.spamassassin\\.general$"} $B0J2<$N@_Dj$N(B
+$B$9$Y$F$,E,MQ$5$l$k$H$$$&$3$H$G$9!#$3$N$?$a!"0lHLE*$J@_Dj$O@hF,$KCV$-!"FC(B
+$BDj$N>r7o$r;}$D$b$N$O2<$NJ}$KCV$/$N$,NI$$$G$7$g$&!#(B
 
 @lisp
 (setq
@@ -1408,55 +1419,61 @@ at the bottom.
 @end lisp
 
 @node [5.5]
-@subsubheading Question 5.5
+@subsubheading $B<ALd(B 5.5
 
-Is there a spell-checker? Perhaps even on-the-fly spell-checking?
+$B%9%Z%k%A%'%C%+!<$O$"$j$^$9$+(B?  $B$G$-$l$P!"=q$$$?$=$N>l$G%A%'%C%/$7$F$/$l(B
+$B$k$b$N$,$"$l$PNI$$$N$G$9$,!#(B
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-You can use ispell.el to spell-check stuff in Emacs. So the
-first thing to do is to make sure that you've got either
-@uref{http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html, ispell}
-or @uref{http://aspell.sourceforge.net/, aspell}
-installed and in your Path. Then you need 
-@uref{http://www.kdstevens.com/~stevens/ispell-page.html, ispell.el}
-and for on-the-fly spell-checking 
-@uref{http://www-sop.inria.fr/mimosa/personnel/Manuel.Serrano/flyspell/flyspell.html, flyspell.el}.
-Ispell.el is shipped with Emacs and available through the XEmacs package system, 
-flyspell.el is shipped with Emacs and part of XEmacs text-modes package which is 
-available through the package system, so there should be no need to install them 
-manually.
+Emacs $B$GC18l$NDV$j$r%A%'%C%/$9$k$?$a$K(B @file{ispell.el} $B$r;H$&$3$H$,$G$-(B
+$B$^$9!#$7$?$,$C$F:G=i$K9T$J$&$N$O!"30It%W%m%0%i(B
+$B%`(B @uref{http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html,
+ispell} $B$^$?$OF1(B @uref{http://aspell.sourceforge.net/, aspell} $B$rE,Ev(B
+$B$J(B path $B$K%$%s%9%H!<%k$7$F$*$/$3$H$G$9!#<!(B
+$B$K(B @uref{http://www.kdstevens.com/~stevens/ispell-page.html,
+ispell.el} $B$H!"=q$$$?$=$N>l$G%9%Z%k%A%'%C%/$r$7$F$/$l(B
+$B$k(B @uref{http://www-sop.inria.fr/mimosa/personnel/Manuel.Serrano/flyspell/flyspell.html,
+flyspell.el} $B$rMQ0U$7$F2<$5$$!#(B@file{ispell.el} $B$O(B Emacs $B$H$H$b$KG[I[$5(B
+$B$l$F$$$k$@$1$G$O$J$/!"(BXEmacs $B%Q%C%1!<%8%7%9%F%`$K$h$C$F$b<j$KF~$l$k$3$H(B
+$B$,$G$-$^$9!#(B@file{flyspell.el} $B$b(B Emacs $B$KF1:-$5$l$F$$$k$N$H$H$b$K!"%Q%C(B
+$B%1!<%8%7%9%F%`$r2p$7$FF~<j$9$k$3$H$,$G$-(B
+$B$k(B XEmacs $B$N(B @code{text-modes} $B%Q%C%1!<%8$N0lIt$G$9!#$7$?$,$C$F!"$=$l$i(B
+$B$r8DJL$K%$%s%9%H!<%k$9$kI,MW$OL5$$$O$:$G$9!#(B
 
-Ispell.el assumes you use ispell, if you choose aspell say
+@file{ispell.el} $B$O30It%W%m%0%i%`(B @samp{ispell} $B$r;H$&$3$H$rA[Dj$7$F$$$^(B
+$B$9!#(B@samp{aspell} $B$rA*$V$J$i!"(BEmacs $B$N@_Dj%U%!%$%k$G0J2<$N@k8@$r9T$J$C$F(B
+$B2<$5$$(B ($BLuCm(B: $B6a$$>-Mh$K(B @file{ispell.el} $B$O$=$l$i$r<+F0H=JL$9$k$h$&$K$J(B
+$B$j$^$9(B):
 
 @lisp
 (setq ispell-program-name "aspell")
 @end lisp
 
-@noindent
-in your Emacs configuration file.
-
-If you want your outgoing messages to be spell-checked, say
+$BAw=P$9$k%a%C%;!<%8$,%9%Z%k%A%'%C%/$5$l$k$h$&$K$7$?$$$J$i0J2<$N9T$r(B
 
 @lisp
 (add-hook 'message-send-hook 'ispell-message)
 @end lisp
 
-@noindent
-In your ~/.gnus.el, if you prefer on-the-fly spell-checking say
+$BC18l$r=q$$$?$=$N>l$G%9%Z%k%A%'%C%/$9$k$3$H$r9%$`$J$i<!$N9T$r(B
 
 @lisp
 (add-hook 'message-mode-hook (lambda () (flyspell-mode 1)))
 @end lisp
 
+@noindent
+@file{~/.gnus.el} $B%U%!%$%k$KDI2C$7$F2<$5$$!#(B
+
 @node [5.6]
-@subsubheading Question 5.6
+@subsubheading $B<ALd(B 5.6
 
-Can I set the dictionary based on the group I'm posting to?
+$BEj9F$9$k%0%k!<%W$K4p$E$$$F!"<-=q(B ($B%9%Z%k%A%'%C%+!<$N(B) $B$r@Z$jBX$($k$3$H$O(B
+$B$G$-$^$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Yes, say something like
+$B$O$$!"$G$-$^$9!#$3$s$J$b$N$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F2<$5$$(B:
 
 @lisp
 (add-hook 'gnus-select-group-hook
@@ -1470,36 +1487,35 @@ Yes, say something like
 @end lisp
 
 @noindent
-in ~/.gnus.el. Change "^de\\." and "deutsch8" to something
-that suits your needs.
+@code{"^de\\."} $B$H(B @code{"deutsch8"} $B$O!"I,MW$K1~$8$FJQ99$7$F2<$5$$!#(B
 
 @node [5.7]
-@subsubheading Question 5.7
+@subsubheading $B<ALd(B 5.7
 
-Is there some kind of address-book, so I needn't remember
-all those email addresses?
+$BA40w$NEE;R%a!<%k%"%I%l%9$r;W$$=P$5$J$/$F$b:Q$`$h$&$K$9$k$?$a$N!"%"%I%l%9(B
+$BD"$N$h$&$J$b$N$O$"$j$^$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-There's an very basic solution for this, mail aliases.
-You can store your mail addresses in a ~/.mailrc file using a simple
-alias syntax:
+$B$=$N$?$a$NHs>o$K4pK\E*$J2r$O!V%a!<%kJLL>!W(B(mail aliases) $B$G$9!#C1=c$JJL(B
+$BL>$N%7%s%?%C%/%9$r;H$C$F!"(B@file{~/.mailrc} $B%U%!%$%k$K%a!<%k%"%I%l%9$rEP(B
+$BO?$7$F$*$/$3$H$,$G$-$^$9!#(B
 
 @example
 alias al	"Al <al@@english-heritage.bla>"
 @end example
 
 @noindent
-Then typing your alias (followed by a space or punctuation
-character) on a To: or Cc: line in the message buffer will
-cause Gnus to insert the full address for you. See the
-node "Mail Aliases" in Message (not Gnus) manual for
-details.
+$B$=$&$7$F$*$$$F!"%a%C%;!<%8%P%C%U%!$N(B To: $B$^$?$O(B Cc: $B9T$G!"JLL>$KB3$$$F%9(B
+$B%Z!<%9$+6gFIE@$r%?%$%W$9$k$3$H$K$h$C$F!"(BGnus $B$K40A4$J%"%I%l%9$rA^F~$7$F(B
+$B$b$i$&$3$H$,$G$-$^$9!#>\:Y$O(B Message $B%^%K%e%"%k(B (@pxref{Mail Aliases,
+,$B%a!<%kJLL>(B, message-ja, The Message Manual}) $B$r;2>H$7$F2<$5$$!#(B
 
-However, what you really want is the Insidious Big Brother 
-Database bbdb. Get it through the XEmacs package system or from
-@uref{http://bbdb.sourceforge.net/, bbdb's homepage}.
-Now place the following in ~/.gnus.el, to activate bbdb for Gnus:
+$B$G$b!"$"$J$?$,K\Ev$K;H$$$?$$$N$O(B BBDB (the Insidious Big Brother
+Database) $B$G$7$g$&!#(BXEmacs $B$N%Q%C%1!<%8%7%9%F%`$r;H$&$+!"(B
+@uref{http://bbdb.sourceforge.net/, bbdb $B$N%[!<%`%Z!<%8(B} $B$+$iF~<j$7$F2<(B
+$B$5$$!#$=$7$F(B Gnus $B$G(B BBDB $B$rM-8z$K$9$k$?$a$K!"0J2<$N$b$N(B
+$B$r(B @file{~/.gnus.el} $B%U%!%$%k$K=q$-9~$s$G2<$5$$(B:
 
 @lisp
 (require 'bbdb)
@@ -1507,55 +1523,51 @@ Now place the following in ~/.gnus.el, to activate bbdb for Gnus:
 @end lisp
 
 @noindent
-Now you probably want some general bbdb configuration,
-place them in ~/.emacs:
+$B$5$F!"$$$/$D$+$N0lHLE*$J(B BBDB $B$N@_Dj$,I,MW$+$b$7$l$^$;$s!#$=$l$i(B
+$B$O(B @file{~/.emacs} $B%U%!%$%k$KCV$-$^$7$g$&!#Nc$G$9(B:
 
 @lisp
 (require 'bbdb)
-;;If you don't live in Northern America, you should disable the 
-;;syntax check for telephone numbers by saying
+;; $BKL%"%a%j%+$K=;$s$G$$$k$N$G$J$1$l$P!"0J2<$K$h$C$FEEOCHV9f$N(B
+;; $B%A%'%C%/$r$d$a$5$;$k$Y$-$G$9!#(B
 (setq bbdb-north-american-phone-numbers-p nil)
-;;Tell bbdb about your email address:
+;; $B$"$J$?$NEE;R%a!<%k%"%I%l%9$r(B BBDB $B$K65$($^$7$g$&!#(B
 (setq bbdb-user-mail-names
       (regexp-opt '("Your.Email@@here.bla"
                     "Your.other@@mail.there.bla")))
-;;cycling while completing email addresses
+;; $B%a!<%k%"%I%l%9$rJd40$9$k$H$-$K!"8uJd$r%(%s%I%l%9$G=P$7$^$9!#(B
+;; cycling while completing email addresses
 (setq bbdb-complete-name-allow-cycling t)
-;;No popup-buffers
+;; BBDB $B$N%P%C%U%!$r%]%C%W%"%C%W$5$;$^$;$s!#(B
 (setq bbdb-use-pop-up nil)
 @end lisp
 
 @noindent
-Now you should be ready to go. Say @samp{M-x bbdb RET
-RET} to open a bbdb buffer showing all
-entries. Say @samp{c} to create a new
-entry, @samp{b} to search your BBDB and
-@samp{C-o} to add a new field to an
-entry. If you want to add a sender to the BBDB you can
-also just hit `:' on the posting in the summary buffer and
-you are done. When you now compose a new mail,
-hit @samp{TAB} to cycle through know
-recipients.
+$B$3$l$G(B BBDB $B$r;H$&=`Hw$,$G$-$?$O$:$G$9!#(B@kbd{M-x bbdb RET RET} $B$G!"$9$Y(B
+$B$F$NEPO?$7$?9`L\$rI=<($9$k(B BBDB $B$N%P%C%U%!$r3+$$$F2<$5$$!#?7$?$KEPO?$9$k(B
+$B$K$O(B @kbd{c}$B!"8!:w$K$O(B @kbd{b}$B!"$=$7$FEPO?$7$F$"$k9`L\$K?7$7$$%U%#!<%k%I(B
+$B$r2C$($k$K$O(B @kbd{C-o} $B$r;H$$$^$7$g$&!#Aw?.<T$r(B BBDB $B$KEPO?$9$k$K$O!"35(B
+$BN,%P%C%U%!$N$=$N5-;v$N>l=j$GC1$K(B @kbd{:} $B$rC!$/$@$1$G!"$"$J$?$N;E;v$O=*(B
+$B$j$G$9!#0lJ}!"?75,$K%a!<%k$r:n@.$7$F$$$k$H$-$K(B @kbd{TAB} $B$rC!$/$3$H$K$h$C(B
+$B$F!"=g7+$j$K8=$l$k8uJd$NCf$+$i<u<h?M$rA*$V$3$H$,$G$-$^$9!#(B
 
 @node [5.8]
-@subsubheading Question 5.8
+@subsubheading $B<ALd(B 5.8
 
-Sometimes I see little images at the top of article
-buffer. What's that and how can I send one with my
-postings, too?
+$B5-;v%P%C%U%!$N>e$NJ}$G!"$H$-$I$->.$5$J2hA|$rL\$K$7$^$9!#$"$l$O2?$G$9$+(B?
+$B$^$?!"$I$&$7$?$i;d$bEj9F$9$k$H$-$KIU$1$k$3$H$,$G$-$^$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Those images are called X-Faces. They are 48*48 pixel b/w
-pictures, encoded in a header line. If you want to include
-one in your posts, you've got to convert some image to a
-X-Face. So fire up some image manipulation program (say
-Gimp), open the image you want to include, cut out the
-relevant part, reduce color depth to 1 bit, resize to
-48*48 and save as bitmap. Now you should get the compface
-package from 
-@uref{ftp://ftp.cs.indiana.edu:/pub/faces/, this site}.
-and create the actual X-face by saying
+$B$"$N2hA|$O(B X-Face $B$H$$$&$b$N$G$9!#%X%C%@!<9T$G(B 48$B!_(B48 $B2hAG$NGr9u2hA|$,%((B
+$B%s%3!<%I$5$l$F$$$^$9!#$=$l$rAw?.$9$k5-;v$K4^$a$?$$$J$i!"2?$+$N2hA|(B
+$B$r(B X-Face $B$KJQ49$9$kI,MW$,$"$j$^$9!#$=$&$9$k$K$O!"2?$i$+$N2hA|$r2C9)$9$k(B
+$B$?$a$N%W%m%0%i%`(B ($BNc$($P(B Gimp) $B$KE@2P$7$F!"5-;v$K4^$a$?$$2hA|$N%U%!%$%k(B
+$B$r3+$-!"I,MW$JItJ,$r@Z$jH4$$$F!"?'$N?<EY$r(B 1-bit $B$^$G8:$i$7!"(B48$B!_(B48 $B$NBg(B
+$B$-$5$K=L>.$^$?$O3HBg$7$F!"(Bbitmap $B$H$7$F%U%!%$%k$KJ]B8$7$F2<$5$$!#<!(B
+$B$K(B @samp{compface} $B%Q%C%1!<%8(B
+$B$r(B @uref{ftp://ftp.cs.indiana.edu:/pub/faces/, $B$3$N%5%$%H(B} $B$+$iF~<j$7$F!"(B
+$B0J2<$r<B9T$9$k$3$H$K$h$C$F<B:]$N(B X-Face $B$r:n$j$^$7$g$&(B:
 
 @example
 cat file.xbm | xbm2ikon | compface > file.face
@@ -1563,11 +1575,12 @@ cat file.face | sed 's/\\/\\\\/g;s/\"/\\\"/g;' > file.face.quoted
 @end example
 
 @noindent
-If you can't use compface, there's an online X-face converter at 
-@uref{http://www.dairiki.org/xface/}.
-If you use MS Windows, you could also use the WinFace program from
-@uref{http://www.xs4all.nl/~walterln/winface/}.
-Now you only have to tell Gnus to include the X-face in your postings by saying
+@samp{compface} $B$r;H$&$3$H$,$G$-$J$/$F$b!"%*%s%i%$%s$N(B X-Face $BJQ494o(B
+$B$,(B @uref{http://www.dairiki.org/xface/} $B$K$"$j$^$9!#(BMS Windows $B$r;H$C$F(B
+$B$$$k$N$J$i$P!"(B@uref{http://www.xs4all.nl/~walterln/winface/} $B$+(B
+$B$i(B @samp{WinFace} $B%W%m%0%i%`$r<h$C$FMh$F;H$&$3$H$b$G$-$^$9!#8e$O!"Aw?.$9(B
+$B$k5-;v$K(B X-Face $B$r4^$a$F$/$l$k$h$&$K(B Gnus $B$K;X<($9$k$@$1$G$9!#$=$l$K(B
+$B$O(B @file{~/.gnus.el} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$rF~$l$F2<$5$$(B:
 
 @lisp
 (setq message-default-headers
@@ -1577,27 +1590,24 @@ Now you only have to tell Gnus to include the X-face in your postings by saying
         (buffer-string)))
 @end lisp
 
-@noindent
-in ~/.gnus.el.
-
 @node [5.9]
-@subsubheading Question 5.9
+@subsubheading $B<ALd(B 5.9
 
-Sometimes I accidentally hit r instead of f in
-newsgroups. Can Gnus warn me, when I'm replying by mail in
-newsgroups?
+$B$H$-$I$-;d$O%K%e!<%9%0%k!<%W$G!"(B@kbd{f} $B$NBe$o$j$K$&$C$+$j(B @kbd{r} $B$rBG$C(B
+$B$F$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K$b$+$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?(B
+$B$H$-$K!"(BGnus $B$K7Y9p$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Put this in ~/.gnus.el:
+$B$b$&(B Gnus 5.10 $B$r;H$C$F$$$k$N$G$"$l$P!"$3$l$r(B @file{~/.gnus.el} $B%U%!%$%k(B
+$B$KF~$l$F2<$5$$(B:
 
 @lisp
 (setq gnus-confirm-mail-reply-to-news t)
 @end lisp
 
 @noindent
-if you already use Gnus 5.10, if you still use 5.8.8 or
-5.9 try this instead:
+$B$^$@(B 5.8.8 $B$d(B 5.9 $B$r;H$C$F$$$k$N$J$i!"Be$o$j$K$3$l$r$I$&$>(B:
 
 @lisp
 (eval-after-load "gnus-msg"
@@ -1611,32 +1621,32 @@ if you already use Gnus 5.10, if you still use 5.8.8 or
 @end lisp
 
 @node [5.10]
-@subsubheading Question 5.10
+@subsubheading $B<ALd(B 5.10
 
-How to tell Gnus not to generate a sender header?
+Gnus $B$,(B sender $B%X%C%@!<$r@8@.$7$J$$$h$&$K$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Since 5.10 Gnus doesn't generate a sender header by
-default. For older Gnus' try this in ~/.gnus.el:
+Gnus 5.10 $B$O%G%#%U%)%k%H$G(B sender $B%X%C%@!<$r:n$i$J$$$N$G$9$1$l$I$M!#$^$@(B
+$B8E$$(B Gnus $B$r;H$C$F$$$k$N$J$i!"(B@file{~/.gnus.el} $B%U%!%$%k$G$3$l$r;n$7$F2<(B
+$B$5$$(B:
 
 @lisp
 (add-to-list 'message-syntax-checks '(sender . disabled))
 @end lisp
 
 @node [5.11]
-@subsubheading Question 5.11
+@subsubheading $B<ALd(B 5.11
 
-I want Gnus to locally store copies of my send mail and
-news, how to do it?
+$BAw?.$7$?%a!<%k$d%K%e!<%9$N95$($r%m!<%+%k$K;D$7$F$*$-$?$$$N$G$9$,!"$I$&$9(B
+$B$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-You must set the variable gnus-message-archive-group to do
-this. You can set it to a string giving the name of the
-group where the copies shall go or like in the example
-below use a function which is evaluated and which returns
-the group to use.
+$B$=$l$r9T$J$&$?$a$K$OJQ?t(B @code{gnus-message-archive-group} $B$r@_Dj$7$J$1(B
+$B$l$P$J$j$^$;$s!#$=$l$K$O!"95$($rJ]B8$7$F$*$/%0%k!<%W$NL>A0$rM?$($kJ8;zNs(B
+$B$r@_Dj$9$k$3$H$,$G$-$^$9!#$"$k$$$O0J2<$NNc$N$h$&$K!"I>2A$5$l$k$H%0%k!<%W(B
+$BL>$rJV$94X?t(B ($BLuCm(B: $B$H8@$&$h$j$O(B Lisp $B$N<0(B) $B$r@_Dj$9$k$3$H$b$G$-$^$9!#(B
 
 @lisp
 (setq gnus-message-archive-group
@@ -1646,30 +1656,30 @@ the group to use.
 @end lisp
 
 @node [5.12]
-@subsubheading Question 5.12
+@subsubheading $B<ALd(B 5.12
 
-People tell me my Message-IDs are not correct, why
-aren't they and how to fix it?
+$B;d$N(B Message-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"$=$l$O$J$<$G$9$+(B?  $B$^(B
+$B$?!"$I$&$d$C$FD>$7$?$iNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-The message-ID is an unique identifier for messages you
-send. To make it unique, Gnus need to know which machine
-name to put after the "@@". If the name of the machine
-where Gnus is running isn't suitable (it probably isn't
-at most private machines) you can tell Gnus what to use
-by saying:
+Message-ID $B$O!"Aw?.$7$?%a%C%;!<%8$,!"$=$l$,$=$l$G$"$k$3$H$r3NG'$9$k$?$a(B
+$B$N$b$N$G$9!#$=$l$,!"$"$k%a%C%;!<%8$K$H$C$F8GM-$G$"$k$h$&$K$9$k$?$a$K!"(B
+Gnus $B$O(B @samp{@@} $B$N8e$KCV$/%^%7%sL>$rCN$kI,MW$,$"$j$^$9!#(BGnus $B$,Av$C$F(B
+$B$$$k%^%7%s$NL>A0$,E,@Z$G$O$J$$$J$i$P(B ($B$[$H$s$I$N8D?M$N%^%7%s$,3:Ev$9$k$G(B
+$B$7$g$&(B)$B!"(BGnus $B$,;H$&L>A0$r0J2<$N$h$&$K(B @file{~/.gnus.el} $B%U%!%$%k$G@_Dj(B
+$B$7$F2<$5$$(B:
 
 @lisp
 (setq message-user-fqdn "yourmachine.yourdomain.tld")
 @end lisp
 
 @noindent
-in ~/.gnus.el.  If you use Gnus 5.9 or ealier, you can use this
-instead (works for newer versions a well): 
+Gnus 5.9 $B$+$=$l0JA0$N$b$N$r;H$C$F$$$k>l9g$O!"Be$o$j$K$3$l$r;H$C$F2<$5(B
+$B$$(B ($B?7$7$$HG$G$bF0:n$7$^$9(B):
 
 @lisp
-(let ((fqdn "yourmachine.yourdomain.tld"));; <-- Edit this!
+(let ((fqdn "yourmachine.yourdomain.tld")) ;; <-- $BJQ99$7$F$M(B!
   (if (boundp 'message-user-fqdn)
       (setq message-user-fqdn fqdn)
     (gnus-message 1 "Redefining `message-make-fqdn'.")
@@ -1679,20 +1689,19 @@ instead (works for newer versions a well):
 @end lisp
 
 @noindent
-If you have no idea what to insert for
-"yourmachine.yourdomain.tld", you've got several
-choices. You can either ask your provider if he allows
-you to use something like
-yourUserName.userfqdn.provider.net, or you can use
-somethingUnique.yourdomain.tld if you own the domain
-yourdomain.tld, or you can register at a service which
-gives private users a FQDN for free, e.g.  
-@uref{http://www.stura.tu-freiberg.de/~dlx/addfqdn.html}.
-(Sorry but this website is in German, if you know of an
-English one offering the same, drop me a note).
+@code{"yourmachine.yourdomain.tld"} $B$K2?$rF~$l$k$+$r7h$a$k$3$H$,$G$-$J$$(B
+$B$J$i$P!"$$$/$D$+$NA*Br;h$,$"$j$^$9!#$"$J$?(B
+$B$,(B @samp{yourUserName.userfqdn.provider.net} $B$N$h$&$J$b$N$r;H$C$F$bNI$$(B
+$B$+$I$&$+$r%W%m%P%$%@!<$K?R$M$F$_$F$bNI$$$7!"8D?M$G%I%a%$(B
+$B%s(B @samp{yourdomain.tld} $B$rJ]M-$7$F$$$k>l9g(B
+$B$O(B @samp{somethingUnique.yourdomain.tld} $B$N$h$&$J$b$N$r;H$&$3$H$,$G$-$^(B
+$B$9!#$"$k$$$O!"%f!<%6!<$KL5NA$G(B FQDN $B$rDs6!$7$F$/$l$k%5!<%S%9!"Nc$((B
+$B$P(B @uref{http://www.stura.tu-freiberg.de/~dlx/addfqdn.html} $B$KEPO?$9$k$N(B
+$B$bNI$$$G$7$g$&(B ($B$G$b$3$N%&%'%V%5%$%H$O%I%$%D$K$"$j$^$9!#F1$8%5!<%S%9$rDs(B
+$B6!$7$F$$$k1Q8l7w$N$b$N$rCN$C$F$$$k$N$J$i$P!";d$K<j;f$r=q$$$F2<$5$$(B)$B!#(B
 
-Finally you can tell Gnus not to generate a Message-ID
-for News at all (and letting the server do the job) by saying
+$B:G8e$K!"(BGnus $B$K%K%e!<%95-;v$G$O(B Message-ID $B$r$^$C$?$/:n$i$;$J$$(B ($B$=$7$F(B
+$B$=$N;E;v$O%5!<%P!<$KG$$;$k(B) $B$3$H$,$G$-$^$9!#0J2<$N@_Dj$r;H$C$F2<$5$$(B:
 
 @lisp
 (setq message-required-news-headers
@@ -1700,7 +1709,8 @@ for News at all (and letting the server do the job) by saying
 @end lisp
 
 @noindent
-you can also tell Gnus not to generate Message-IDs for mail by saying
+$B$5$i$K<!$N@_Dj$K$h$C$F!"%a!<%k$G$b(B Gnus $B$K(B Message-ID $B$r:n$i$;$J$$$3$H$O(B
+$B2DG=$G$9(B:
 
 @lisp
 (setq message-required-mail-headers
@@ -1708,224 +1718,214 @@ you can also tell Gnus not to generate Message-IDs for mail by saying
 @end lisp
 
 @noindent
-, however some mail servers don't generate proper
-Message-IDs, too, so test if your Mail Server behaves
-correctly by sending yourself a Mail and looking at the Message-ID.
+$B$7$+$7$J$,$i!"%a!<%k%5!<%P!<$N$"$k$b$N$OE,@Z$J(B Message-ID $B$r:n$C$F$/$l$J(B
+$B$$$N$G!"<+J,$G%a!<%k$rAw?.$7$F(B Message-ID $B$rD/$a$F$_$k$3$H$K$h$C$F!"$"$J(B
+$B$?$N%a!<%k%5!<%P!<$,@5$7$/?6$kIq$&$+$I$&$+$r%F%9%H$7$F2<$5$$!#(B
 
 @node FAQ 6 - Old messages
-@subsection Old messages
+@subsection $B8E$$%a%C%;!<%8(B
 
 @menu
-* [6.1]::    How to import my old mail into Gnus?
-* [6.2]::    How to archive interesting messages?
-* [6.3]::    How to search for a specific message?
-* [6.4]::    How to get rid of old unwanted mail?
-* [6.5]::    I want that all read messages are expired (at least in some
-             groups). How to do it?
-* [6.6]::    I don't want expiration to delete my mails but to move them
-             to another group.
+* [6.1]:: $B!!(BGnus $B$r;H$C$F$$$J$+$C$?$H$-$N8E$$%a!<%k$r!"(BGnus $B$KJT(B
+            $BF~$5$;$k$K$O$I$&$7$?$iNI$$$G$9$+(B?
+
+* [6.2]:: $B!!6=L#$r;}$C$?5-;v$rJ]B8$9$k$K$O$I$&$9$l$PNI$$$G$9$+(B?
+
+* [6.3]:: $B!!;XDj$7$?%a%C%;!<%8$rC5$9$K$O$I$&$7$?$iNI$$$G$9$+(B?
+
+* [6.4]:: $B!!MW$i$J$/$J$C$?8E$$%a!<%k$r:o=|$9$k$K$O$I$&$9$l$PNI$$(B
+            $B$G$9$+(B?
+
+* [6.5]:: $B!!FI$_=*$o$C$?$9$Y$F$N%a%C%;!<%8$r4|8B@Z$l>C5n$7$?$$$N(B
+            $B$G$9$,(B ($B>/$J$/$H$b$$$/$D$+$N%0%k!<%W$G(B)$B!"$I$&$7$?$i(B
+            $BNI$$$G$9$+(B?
+
+* [6.6]:: $B!!4|8B$,Mh$?%a!<%k$r:o=|$9$k$N$G$O$J$/$F!"B>$N%0%k!<%W(B
+            $B$K0\F0$5$;$?$$$N$G$9$,!#(B
 @end menu
 
 @node [6.1]
-@subsubheading Question 6.1
+@subsubheading $B<ALd(B 6.1
 
-How to import my old mail into Gnus?
+Gnus $B$r;H$C$F$$$J$+$C$?$H$-$N8E$$%a!<%k$r!"(BGnus $B$KJTF~$5$;$k$K$O$I$&$7$?(B
+$B$iNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-The easiest way is to tell your old mail program to
-export the messages in mbox format. Most Unix mailers
-are able to do this, if you come from the MS Windows
-world, you may find tools at
-@uref{http://mbx2mbox.sourceforge.net/}.
+$B:G$b3Z$JJ}K!$O!"8E$$%a!<%k%W%m%0%i%`$K%a%C%;!<%8$r(B @samp{mbox} $B7A<0$K$^(B
+$B$H$a$F$b$i$&$3$H$G$9!#$[$H$s$I$N(B Unix $B$N%a%$%i!<$O$=$l$r$9$k$3$H$,$G$-!"(B
+$B$"$J$?$,(B MS Windows $B$N@$3&$N=P?H$G$"$C$F(B
+$B$b(B @uref{http://mbx2mbox.sourceforge.net/} $B$G!"$=$N$?$a$NF;6q$r8+$D$1$k(B
+$B$3$H$,$G$-$k$+$b$7$l$^$;$s!#(B
 
-Now you've got to import this mbox file into Gnus. To do
-this, create a nndoc group based on the mbox file by
-saying @samp{G f /path/file.mbox RET} in
-Group buffer. You now have read-only access to your
-mail. If you want to import the messages to your normal
-Gnus mail groups hierarchy, enter the nndoc group you've
-just created by saying @samp{C-u RET}
-(thus making sure all messages are retrieved), mark all
-messages by saying @samp{M P b} and
-either copy them to the desired group by saying
-@samp{B c name.of.group RET} or send them
-through nnmail-split-methods (respool them) by saying
-@samp{B r}.
+$B$G$O!"$3$N(B @samp{mbox} $B%U%!%$%k$r(B Gnus $B$KJTF~$5$;$^$7$g$&!#$=$l$K$O%0%k!<(B
+$B%W%P%C%U%!$G(B @kbd{G f /path/file.mbox RET} $B$r<B9T$7$F!"(B@samp{mbox} $B%U%!(B
+$B%$%k$r07$&$?$a$N(B @code{nndoc} $B%0%k!<%W$r:n$C$F2<$5$$!#$=$&$9$l$P!"$"$J$?(B
+$B$N%a!<%k$KFI$_=P$7@lMQ$G%"%/%;%9$G$-$k$h$&$K$J$j$^$9!#$=$N%a%C%;!<%8$rDL(B
+$B>o$N(B Gnus $B$N%a!<%k%0%k!<%W$N3,AX$KJTF~$5$;$?$$$J$i$P!"$?$C$?:#:n$C(B
+$B$?(B @code{nndoc} $B%0%k!<%W$K(B @kbd{C-u RET} $BL?Na$GF~$C$F(B ($B$D$^$j$9$Y$F$N%a%C(B
+$B%;!<%8$,FI$a$k$h$&$K$7$F$*$$$F(B)$B!"$9$Y$F$N%a%C%;!<%8$K(B @kbd{M P b} $B$G0u$r(B
+$BIU$1$F$+$i!"$=$l$i$r$*K>$_$N%0%k!<%W$K(B @kbd{B c name.of.group RET} $B$G%3(B
+$B%T!<$9$k$+!"$^$?$O(B @code{nnmail-split-methods} $B$r;H$C$F$=$l$i$rJ,3d(B ($B:F(B
+$B%9%W!<%k(B) $B$9$k$?$a$K(B @kbd{B r} $B$r;H$C$F2<$5$$!#(B
 
 @node [6.2]
-@subsubheading Question 6.2
+@subsubheading $B<ALd(B 6.2
 
-How to archive interesting messages?
+$B6=L#$r;}$C$?5-;v$rJ]B8$9$k$K$O$I$&$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-If you stumble across an interesting message, say in
-gnu.emacs.gnus and want to archive it there are several
-solutions. The first and easiest is to save it to a file
-by saying @samp{O f}. However, wouldn't
-it be much more convenient to have more direct access to
-the archived message from Gnus? If you say yes, put this
-snippet by Frank Haun <pille3003@@fhaun.de> in
-~/.gnus.el:
+$BNc$($P(B @samp{gnu.emacs.gnus} $B$G6=L#?<$$5-;v$K=P$/$o$7$F!"$=$l$rJ]B8$7$h(B
+$B$&$H;W$C$?$H$-$K$O!"$$$/$D$+$N2r$,$"$j$^$9!#Bh0l$N:G$b$d$5$7$$J}K!$O!"(B
+@kbd{O f} $BL?Na$r;H$C$F$=$l$r%U%!%$%k$KJ]B8$9$k$3$H$G$9!#$G$b$=$l$O!"(B
+Gnus $B$+$iJ]B8$5$l$?%a%C%;!<%8$r$h$jD>@\$K%"%/%;%9$9$k<jCJ$H$7$F$O!"$H$F(B
+$B$bJXMx$@$H$O8@$($J$$$N$G$O$J$$$G$7$g$&$+(B?  $B$=$l$KF10U$7$F$/$l$k$N$J$i$P!"(B
+Frank Haun <pille3003@@fhaun.de> $B$,=q$$$F$/$l$?$3$N%3!<%I$N@Z$lC<(B
+$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F2<$5$$(B:
 
 @lisp
 (defun my-archive-article (&optional n)
-  "Copies one or more article(s) to a corresponding `nnml:' group, e.g.
-`gnus.ding' goes to `nnml:1.gnus.ding'. And `nnml:List-gnus.ding' goes
-to `nnml:1.List-gnus-ding'.
+  "$B0l8D0J>e$N5-;v$r!"BP1~$9$k(B `nnml:' $B%0%k!<%W$K%3%T!<$7$^$9!#(B
+$BNc$($P(B `gnus.ding' $B$N5-;v$O(B `nnml:1.gnus.ding' $B%0%k!<%W$K9T$-!"(B
+`nnml:List-gnus.ding' $B$N5-;v$O(B `nnml:1.List-gnus-ding' $B$K9T$-$^$9!#(B
 
-Use process marks or mark a region in the summary buffer to archive
-more then one article."
+$B0l8D0J>e$N5-;v$rJ]B8$9$k$K$O!"35N,%P%C%U%!$G%W%m%;%9(B/$B@\F,0z?t$N(B
+$B=,47$r;H$C$F2<$5$$!#(B"
   (interactive "P")
   (let ((archive-name
          (format
           "nnml:1.%s"
-          (if (featurep 'xemacs)
-              (replace-in-string gnus-newsgroup-name "^.*:" "")
-            (replace-regexp-in-string "^.*:" "" gnus-newsgroup-name)))))
+          (mm-replace-in-string gnus-newsgroup-name "^.*:" ""))))
     (gnus-summary-copy-article n archive-name)))
 @end lisp
 
-@noindent
-You can now say @samp{M-x
-my-archive-article} in summary buffer to
-archive the article under the cursor in a nnml
-group. (Change nnml to your preferred back end)
+$BLuCm(B: @xref{Process/Prefix, ,$B%W%m%;%9(B/$B@\F,0z?t(B, gnus-ja, The Gnus
+Manual}.
 
-Of course you can also make sure the cache is enabled by saying
+@noindent
+$B$3$l$K$h$j!"35N,%P%C%U%!$G(B @kbd{M-x my-archive-article} $B$r<B9T$9$k$3$H$K(B
+$B$h$C$F!";XDj$7$?5-;v$r(B @code{nnml} $B%0%k!<%W$KJ]B8$9$k$3$H$,$G$-$^$9!#(B
+
+$B$b$A$m$s!"0J2<$N@_Dj$K$h$C$F%-%c%C%7%e$r>o$KM-8z$K$9$k$3$H$b$G$-$^$9(B:
 
 @lisp
 (setq gnus-use-cache t)
 @end lisp
 
 @noindent
-then you only have to set either the tick or the dormant
-mark for articles you want to keep, setting the read
-mark will remove them from cache.
+$B$3$l$K$h$C$F!"0];}$7$?$$5-;v$K$O2D;k(B (ticked) $B$+J]N1(B (dormant) $B$N0u$rIU(B
+$B$1$k$@$1$G:Q$`$h$&$K$J$j$^$9!#$^$?!"4{FI(B (read) $B$N0u$rIU$1$k$3$H$K$h$C$F!"(B
+$B$=$l$i$N5-;v$O%-%c%C%7%e$+$i:o=|$5$l$^$9!#(B
 
 @node [6.3]
-@subsubheading Question 6.3
+@subsubheading $B<ALd(B 6.3
 
-How to search for a specific message?
+$B;XDj$7$?%a%C%;!<%8$rC5$9$K$O$I$&$7$?$iNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-There are several ways for this, too. For a posting from
-a Usenet group the easiest solution is probably to ask
-@uref{http://groups.google.com, groups.google.com},
-if you found the posting there, tell Google to display
-the raw message, look for the message-id, and say
-@samp{M-^ the@@message.id RET} in a
-summary buffer.
-Since Gnus 5.10 there's also a Gnus interface for
-groups.google.com which you can call with
-@samp{G W}) in group buffer.
+$B$3$l$K$b$$$/$D$+$NJ}K!$,$"$j$^$9!#(BUsenet $B%0%k!<%W$KEj9F$5$l$?$b$N$K$D$$(B
+$B$F$O!"$*$=$i$/(B @uref{http://groups.google.com, groups.google.com} $B$K?R$M(B
+$B$k$N$,:G$b3Z$J2r7hJ}K!$G$9!#$=$3$G8+$D$+$C$?$J$i$P!"(BGoogle $B$K@8$N5-;v$r(B
+$BI=<($7$F$b$i$C$F(B Message-ID $B$rC5$7!"35N,%P%C%U%!$G(B @kbd{M-^
+the@@message.id RET} $B$r<B9T$7$F2<$5$$!#$5$i$K(B Gnus 5.10 $B0J9_$G(B
+$B$O(B @samp{groups.google.com} $B$X$N%$%s%?!<%U%'!<%9$,$"$k$N$G!"%0%k!<%W%P%C(B
+$B%U%!$G(B @kbd{G W} $B$r;H$&$3$H$b$G$-$^$9!#(B
 
-Another idea which works for both mail and news groups
-is to enter the group where the message you are
-searching is and use the standard Emacs search
-@samp{C-s}, it's smart enough to look at
-articles in collapsed threads, too. If you want to
-search bodies, too try @samp{M-s}
-instead. Further on there are the
-gnus-summary-limit-to-foo functions, which can help you,
-too.
+$B%a!<%k$H%K%e!<%9$NN>J}$N%0%k!<%W$GF0:n$9$k$b$&0l$D$NJ}K!$O!"C5$7$F$$$k%a%C(B
+$B%;!<%8$,B8:_$9$k%0%k!<%W$KF~$C$F!"(BEmacs $B$NI8=`$NC5:w%3%^%s%I$G$"(B
+$B$k(B @kbd{C-s} $B$r;H$&$3$H$G$9!#$=$l$O!"2u$l$?%9%l%C%I$K$"$k5-;v$rC5$9$?$a(B
+$B$K$b==J,$K8-$$$b$N$G$9!#K\J8$NCf$GC5$7$?$$$N$J$i$P!"Be$o$j(B
+$B$K(B @kbd{M-s} $B$r;n$7$F2<$5$$!#$5$i$KIU$12C$($k$H!"$3$l$bLr$KN)(B
+$B$D(B @code{gnus-summary-limit-to}-* $B%3%^%s%I72$,$"$j$^$9!#(B
 
-Of course you can also use grep to search through your
-local mail, but this is both slow for big archives and
-inconvenient since you are not displaying the found mail
-in Gnus. Here comes nnir into action. Nnir is a front end
-to search engines like swish-e or swish++ and
-others. You index your mail with one of those search
-engines and with the help of nnir you can search trough
-the indexed mail and generate a temporary group with all
-messages which met your search criteria. If this sound
-cool to you get nnir.el from
-@uref{ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/emacs/}
-or @uref{ftp://ftp.is.informatik.uni-duisburg.de/pub/src/emacs/}.
-Instructions on how to use it are at the top of the file.
+$B$b$A$m$s%m!<%+%k$KJ]B8$5$l$F$$$k%a!<%k$r(B @samp{grep} $B$GC5$9$3$H$b$G$-$^(B
+$B$9$,!"Bg$-$J=q8K$,Aj<j$@$HCY$$$7!"8+$D$+$C$?%a!<%k$r(B Gnus $B$GI=<($9$k$o$1(B
+$B$G$O$J$$$N$G!"ITJX$G$b$"$j$^$9!#$=$3$G(B @code{nnir} $B$N=PHV$,$d$C$F$-$^$7(B
+$B$?!#(B@code{nnir} $B$O(B @samp{swish-e}, @samp{swish++} $B$*$h$SB>$N8!:w%(%s%8%s(B
+$B$X$N%U%m%s%H%(%s%I$G$9!#$=$l$i$N8!:w%(%s%8%s$N0l$D$r;H$C$F%a!<%k$K:w0z$r(B
+$BIU$1$F$*$1$P!"(B@code{nnir} $B$N=u$1$r<Z$j$k$3$H$K$h$C$F!":w0z$,IU$1$i$l$?%a!<(B
+$B%k$rC5$7$F!"8!:w$N4p=`$K9gCW$9$k$9$Y$F$N%a!<%k$r4^$`0l;~E*$J%0%k!<%W$r:n(B
+$B$k$3$H$,$G$-$^$9!#$3$l$,%/!<%k$KJ9$3$($k$J$i!"(B
+@uref{ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/emacs/} $B$^$?(B
+$B$O(B @uref{ftp://ftp.is.informatik.uni-duisburg.de/pub/src/emacs/} $B$+(B
+$B$i(B @file{nnir.el} $B$r;}$C$FMh$^$7$g$&!#;H$$J}$N@bL@$O!"$=$N%U%!%$%k$N;O$a(B
+$B$NJ}$K$"$j$^$9!#(B
 
 @node [6.4]
-@subsubheading Question 6.4
+@subsubheading $B<ALd(B 6.4
 
-How to get rid of old unwanted mail?
+$BMW$i$J$/$J$C$?8E$$%a!<%k$r:o=|$9$k$K$O$I$&$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-You can of course just mark the mail you don't need
-anymore by saying @samp{#} with point
-over the mail and then say @samp{B DEL}
-to get rid of them forever. You could also instead of
-actually deleting them, send them to a junk-group by
-saying @samp{B m nnml:trash-bin} which
-you clear from time to time, but both are not the intended
-way in Gnus.
+$B$b$O$dMW$i$J$/$J$C$?%a!<%k$K%]%$%s%H$rCV$$$F(B @kbd{#} $B$G0u$rIU$1$F$+$i!"(B
+$B$=$l$i$r(B @kbd{B DEL} $B$G1J5W$K>C$7$F$7$^$&$3$H$O!"$b$A$m$s$G$-$^$9!#$5$i(B
+$B$K!"$=$l$i$r<B:]$K>C$7$F$7$^$&Be$o$j$K(B @kbd{B m nnml:trash-bin} $B$r;H$C$F(B
+$B%8%c%s%/!&%0%k!<%W(B ($B$=$l$O;~!9>C$5$J$1$l$P$J$j$^$;$s(B) $B$KAw$k$3$H$b$G$-$k(B
+$B$N$G$9$,!"N>J}$H$b(B Gnus $B$,0U?^$9$k$d$jJ}$G$O$"$j$^$;$s!#(B
 
-In Gnus, we let mail expire like news expires on a news
-server. That means you tell Gnus the message is
-expirable (you tell Gnus "I don't need this mail
-anymore") by saying @samp{E} with point
-over the mail in summary buffer. Now when you leave the
-group, Gnus looks at all messages which you marked as
-expirable before and if they are old enough (default is
-older than a week) they are deleted.
+Gnus $B$G$O!"%K%e!<%9%5!<%P!<$G%K%e!<%95-;v$,4|8B@Z$l>C5n$5$l$k$h$&$K!"%a!<(B
+$B%k$b>C$7$^$9!#$=$&$9$k$?$a$K$O!"35N,%P%C%U%!$N$=$N%a!<%k$N>e(B
+$B$G(B @kbd{E} $B$rC!$/$3$H$K$h$C$F!"$=$N%a!<%k$,4|8B@Z$l>C5n2DG=$G$"$k$3$H(B
+$B$r(B ($B!V$3$N%a!<%k$O$b$&MW$i$J$$$h!W$H(B) Gnus $B$KEA$($l$PNI$$$N$G$9!#$9$k$H!"(B
+$B$=$N%0%k!<%W$rH4$1=P$?$H$-$K!"(BGnus $B$O0JA0$K0u$,IU$1$i$l$?$9$Y$F$N%a%C%;!<(B
+$B%8$r8!::$7$F!"==J,$K8E$/$J$C$?(B ($B%G%#%U%)%k%H$G$O0l=54V$h$j8E$/$J$C$?(B) $B%a!<(B
+$B%k$r>C5n$7$^$9!#(B
 
 @node [6.5]
-@subsubheading Question 6.5
+@subsubheading $B<ALd(B 6.5
 
-I want that all read messages are expired (at least in
-some groups). How to do it?
+$BFI$_=*$o$C$?$9$Y$F$N%a%C%;!<%8$r4|8B@Z$l>C5n$7$?$$$N$G$9$,(B ($B>/$J$/$H$b$$(B
+$B$/$D$+$N%0%k!<%W$G(B)$B!"$I$&$7$?$iNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-If you want all read messages to be expired (e.g. in
-mailing lists where there's an online archive), you've
-got two choices: auto-expire and
-total-expire. Auto-expire means, that every article
-which has no marks set and is selected for reading is
-marked as expirable, Gnus hits @samp{E}
-for you every time you read a message. Total-expire
-follows a slightly different approach, here all article
-where the read mark is set are expirable.
+$BFI$_=*$o$C$?$9$Y$F$N%a%C%;!<%8$,4|8B@Z$l>C5n$5$l$k$h$&$K$7$?$$$J$i(B ($BNc$((B
+$B$P%*%s%i%$%s$N=q8K$,JL$KB8:_$7$F$$$k%a!<%j%s%0%j%9%H$G(B)$B!"(B
+@code{auto-expire} $B$H(B @code{total-expire} $B$H$$$&Fs$D$NA*Br;h$,$"$j$^$9!#(B
+@code{auto-expire} $B$H$$$&$N$O!"0u$,IU$$$F$$$J$$$1$l$I$bFI$`$?$a$KA*Br$5(B
+$B$l$?$3$H$,$"$k$9$Y$F$N5-;v$K4|8B@Z$l>C5n2DG=$N0u$,IU$1$i$l$k$3$H$G!"%a%C(B
+$B%;!<%8$rFI$`$?$S$K(B Gnus $B$,(B @kbd{E} $B$rC!$$$F$/$l$k$h$&$J$b$N$G$9!#(B
+@code{total-expire} $B$O>/$70[$J$k$d$jJ}$K=>$C$F$$$F!"4{FI$N0u$,IU$1$i$l$?(B
+$B$9$Y$F$N5-;v$,4|8B@Z$l>C5n2DG=$K$J$j$^$9!#(B
 
-To activate auto-expire, include auto-expire in the
-Group parameters for the group. (Hit @samp{G
-c} in summary buffer with point over the
-group to change group parameters). For total-expire add
-total-expire to the group-parameters.
+@code{auto-expire} $B$r2DG=$K$9$k$K$O!"$=$N%0%k!<%W$N%0%k!<%W%Q%i%a!<%?(B
+$B$K(B @code{auto-expire} $B$r4^$a$F2<$5$$(B ($B%0%k!<%W%P%C%U%!$G%0%k!<%W%Q%i%a!<(B
+$B%?$rJQ99$9$k%0%k!<%W$N>e$K%]%$%s%H$rCV$$$F(B @kbd{G c} $B$rC!$-$^$9(B)$B!#(B
+@code{total-expire} $B$NJ}$O!"%0%k!<%W%Q%i%a!<%?$K(B @code{total-expire} $B$r(B
+$B2C$($F2<$5$$!#(B
 
-Which method you choose is merely a matter of taste:
-Auto-expire is faster, but it doesn't play together with
-Adaptive Scoring, so if you want to use this feature,
-you should use total-expire.
+$B$I$A$i$N<jCJ$rA*$V$+$O!"C1$K9%$_$NLdBj$G$9!#(B@code{auto-expire} $B$OB.$$$N(B
+$B$G$9$,!"E,1~%9%3%"IU$1$H6&B8$G$-$J$$$N$G!"$3$N5!G=$r;H$$$?$$>l9g(B
+$B$O(B @code{total-expire} $B$r;H$o$J$1$l$P$J$j$^$;$s!#(B
 
-If you want a message to be excluded from expiration in
-a group where total or auto expire is active, set either
-tick (hit @samp{u}) or dormant mark (hit
-@samp{u}), when you use auto-expire, you
-can also set the read mark (hit
-@samp{d}).
+@code{total-expire} $B$+(B @code{auto-expire} $B$,@_Dj$5$l$F$$$k%0%k!<%W$G!"$"(B
+$B$k%a%C%;!<%8$r4|8B@Z$l>C5n$NBP>]$+$i30$7$?$$>l9g$K$O!"(B@kbd{u} $B$G2D(B
+$B;k(B (ticked) $B$N0u$rIU$1$k$+(B @kbd{?} $B$GJ]N1(B (dormant) $B$N0u$rIU$1$F2<$5$$!#(B
+@code{auto-expire} $B$r;H$C$F$$$k>l9g$O!"$5$i$K(B @kbd{d} $B$G4{FI$N0u$rIU$1$k(B
+$B$3$H$,$G$-$^$9!#(B
 
 @node [6.6]
-@subsubheading Question 6.6
+@subsubheading $B<ALd(B 6.6
 
-I don't want expiration to delete my mails but to move them
-to another group.
+$B4|8B$,Mh$?%a!<%k$r:o=|$9$k$N$G$O$J$/$F!"B>$N%0%k!<%W$K0\F0$5$;$?$$$N$G$9(B
+$B$,!#(B
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Say something like this in ~/.gnus.el:
+@file{~/.gnus.el} $B%U%!%$%k$K!"$3$N$h$&$J$b$N$r=q$-9~$s$G2<$5$$(B:
 
 @lisp
 (setq nnmail-expiry-target "nnml:expired")
 @end lisp
 
 @noindent
-(If you want to change the value of nnmail-expiry-target
-on a per group basis see the question "How can I disable
-threading in some (e.g. mail-) groups, or set other
-variables specific for some groups?")
+(@code{nnmail-expiry-target} $B$K%0%k!<%W$K$h$C$F0[$J$kCM$r@_Dj$7$?$$>l9g(B
+$B$K$O!"<ALd!V$$$/$D$+$N(B ($BNc$($P%a!<%k$N(B) $B%0%k!<%W$G!"%9%l%C%II=<($r$5$;$J(B
+$B$/$9$k$3$H$O$G$-$^$9$+(B?  $B$"$k$$$O!"$$$/$D$+$N%0%k!<%W$K8GM-$NJQ?t$r@_Dj(B
+$B$9$k$3$H$,$G$-$^$9$+(B?$B!W(B(@pxref{[4.10]}) $B$r;2>H$7$F2<$5$$!#(B
 
 @node FAQ 7 - Gnus in a dial-up environment
 @subsection Gnus in a dial-up environment
