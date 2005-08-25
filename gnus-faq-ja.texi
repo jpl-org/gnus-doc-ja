@@ -125,8 +125,8 @@ Gnus $B$N:G?7HG$O2?$G$9$+(B?
 @subsubheading $B2sEz(B
 
 $BBh0l$K!"(BGnus tarball $B$N@hF,$N%G%#%l%/%H%j!<$K$"$k(B GNUS-NEWS $B%U%!%$%k$KL\(B
-$B$rDL$9$Y$-$G$9!#$=$3$G$O:G$b=EMW$JJQ99$,MeNs$5$l$F$$$^$9!#$3$3$G$O;d$,FC(B
-$B$K=EMW$@(B/$B6=L#?<$$$H46$8$?$b$N$N!"C;$$%j%9%H$r5s$2$k$KN1$a$^$9(B:
+$B$rDL$9$Y$-$G$9!#$=$3$G$O:G$b=EMW$JJQ99$,MeNs$5$l$F$$$^$9!#$3$3$G$OFC$K=E(B
+$BMW(B/$B6=L#?<$$$b$N$N!"C;$$%j%9%H$r5s$2$k$KN1$a$^$9(B:
 
 @itemize @bullet
 @item
@@ -347,40 +347,38 @@ Gnus $B$O%H%T%C%/%b!<%I$rDs6!$7$^$9!#$=$l$O%0%k!<%W$r$=$NCf$XF~$l$FJB$YJQ(B
 @subsection $B%a%C%;!<%8$N<hF@(B
 
 @menu
-* [3.1]::  $B!!;d$O:#$^$5$K(B Gnus $B$r%$%s%9%H!<%k$7$F(B `M-x gnus' $B$G(B
-             $B5/F0$7$?$N$G$9$,!"(B"nntp (news) open error" $B$H$7$+(B
-             $B8@$C$F$/$l$^$;$s!#$I$&$7$?$iNI$$$G$9$+(B?
+* [3.1]::  $B!!:#$^$5$K(B Gnus $B$r%$%s%9%H!<%k$7$F(B `M-x gnus' $B$G5/F0(B
+             $B$7$?$N$G$9$,!"(B"nntp (news) open error" $B$H$7$+8@$C$F(B
+             $B$/$l$^$;$s!#$I$&$7$?$iNI$$$G$9$+(B?
 
-* [3.2]::  $B!!;d$O(B Windows $B$r;H$C$F$$$^$9$,(B `~/.gnus.el' $B$N0UL#$,(B
+* [3.2]::  $B!!(BWindows $B$r;H$C$F$$$k$N$G$9$,(B `~/.gnus.el' $B$N0UL#$,(B
              $B$o$+$j$^$;$s!#(B
 
-* [3.3]::  $B!!;d$N%K%e!<%9%5!<%P!<$OG'>Z$rMW5a$7$^$9!#%G%#%9%/$K(B
-             $B%f!<%6L>$H%Q%9%o!<%I$rJ]B8$7$F$*$/$K$O!"$I$&$9$l$P(B
-             $BNI$$$G$9$+(B?
+* [3.3]::  $B!!%K%e!<%9%5!<%P!<$,G'>Z$rMW5a$7$^$9!#%G%#%9%/$K%f!<(B
+             $B%6L>$H%Q%9%o!<%I$rJ]B8$7$F$*$/$K$O!"$I$&$9$l$PNI$$(B
+             $B$G$9$+(B?
 
 * [3.4]::  $B!!(BGnus $B$O$&$^$/5/F0$7$?$h$&$J$N$G$9$,!"%0%k!<%W$r9VFI(B
              $B$9$kJ}K!$,8+$D$1$i$l$^$;$s!#(B
 
-* [3.5]::  $B!!(BGnus $B$,$9$Y$F$N%0%k!<%W$rI=<($7$F$/$l$^$;$s(B / $B;d$O(B
-             $B$3$N%5!<%P!<$X$NEj9F$,5v2D$5$l$^$;$s!#$I$&$7$F$G$9(B
-             $B$+(B?
+* [3.5]::  $B!!(BGnus $B$,$9$Y$F$N%0%k!<%W$rI=<($7$F$/$l$^$;$s(B / $B$3$N(B
+             $B%5!<%P!<$X$NEj9F$,5v2D$5$l$^$;$s!#$I$&$7$F$G$9$+(B?
 
-* [3.6]::  $B!!;d$OJ#?t$N%5!<%P!<$+$i%K%e!<%9$r<h$j9~$_$?$$$N$G$9(B
-             $B$,!"$=$l$O2DG=$G$9$+(B?
+* [3.6]::  $B!!J#?t$N%5!<%P!<$+$i%K%e!<%9$r<h$j9~$_$?$$$N$G$9$,!"(B
+             $B$=$l$O2DG=$G$9$+(B?
 
 * [3.7]::  $B!!$=$l$+$i!"%m!<%+%k!&%9%W!<%k!&%U%!%$%k$+$i%K%e!<%9(B
              $B$r<h$j9~$`$3$H$O2DG=$G$9$+(B?
 
-* [3.8]::  $B!!%K%e!<%9$rFI$`$N$O$&$^$/$$$-$^$7$?$,!";d$O(B Gnus $B$G(B
-             $B%a!<%k$bFI$a$k$h$&$K$7$?$$$N$G$9!#$I$&$9$l$PNI$$$G(B
-             $B$9$+(B?
+* [3.8]::  $B!!%K%e!<%9$rFI$`$N$O$&$^$/$$$-$^$7$?$,!"(BGnus $B$G%a!<%k(B
+             $B$bFI$a$k$h$&$K$7$?$$$N$G$9!#$I$&$9$l$PNI$$$G$9$+(B?
 
 * [3.9]::  $B!!$=$l$+$i!"(BIMAP $B$G%a!<%k$rFI$a$k$h$&$K$9$k$K$O!"$I$&(B
              $B$9$l$PNI$$$G$9$+(B?
 
-* [3.10]:: $B!!;d$?$A$O?&>l$G(B MS Exchange $B%5!<%P!<$N0l$D$r;H$C$F$$(B
-             $B$k$N$G$9$,!"(BGnus $B$r;H$C$F$=$3$+$i%a!<%k$rFI$`$3$H$O(B
-             $B$G$-$^$9$+(B?
+* [3.10]:: $B!!?&>l$G(B MS Exchange $B%5!<%P!<$N0l$D$r;H$C$F$$$k$N$G$9(B
+             $B$,!"(BGnus $B$r;H$C$F$=$3$+$i%a!<%k$rFI$`$3$H$O$G$-$^$9(B
+             $B$+(B?
 
 * [3.11]:: $B!!(BPOP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$(B
              $B$h$&$K(B Gnus $B$K;X<($9$k$3$H$O$G$-$^$9$+(B?
@@ -389,7 +387,7 @@ Gnus $B$O%H%T%C%/%b!<%I$rDs6!$7$^$9!#$=$l$O%0%k!<%W$r$=$NCf$XF~$l$FJB$YJQ(B
 @node [3.1]
 @subsubheading $B<ALd(B 3.1
 
-$B;d$O:#$^$5$K(B Gnus $B$r%$%s%9%H!<%k$7$F(B @kbd{M-x gnus} $B$G5/F0$7$?$N$G$9$,!"(B
+$B:#$^$5$K(B Gnus $B$r%$%s%9%H!<%k$7$F(B @kbd{M-x gnus} $B$G5/F0$7$?$N$G$9$,!"(B
 "nntp (news) open error" $B$H$7$+8@$C$F$/$l$^$;$s!#$I$&$7$?$iNI$$$G$9$+(B?
 
 @subsubheading $B2sEz(B
@@ -407,7 +405,7 @@ Gnus $B$O%H%T%C%/%b!<%I$rDs6!$7$^$9!#$=$l$O%0%k!<%W$r$=$NCf$XF~$l$FJB$YJQ(B
 @node [3.2]
 @subsubheading $B<ALd(B 3.2
 
-$B;d$O(B Windows $B$r;H$C$F$$$^$9$,(B @file{~/.gnus.el} $B$N0UL#$,$o$+$j$^$;$s!#(B
+Windows $B$r;H$C$F$$$k$N$G$9$,(B @file{~/.gnus.el} $B$N0UL#$,$o$+$j$^$;$s!#(B
 
 @subsubheading $B2sEz(B
 
@@ -440,8 +438,8 @@ HOME $B$H$$$&L>A0$GCM$,(B C:\myhome $B$N$b$N$r:n$C$F2<$5$$!#:F5/F0$OITMW$G$9!
 @node [3.3]
 @subsubheading $B<ALd(B 3.3
 
-$B;d$N%K%e!<%9%5!<%P!<$OG'>Z$rMW5a$7$^$9!#%G%#%9%/$K%f!<%6L>$H%Q%9%o!<%I$r(B
-$BJ]B8$7$F$*$/$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+$B%K%e!<%9%5!<%P!<$,G'>Z$rMW5a$7$^$9!#%G%#%9%/$K%f!<%6L>$H%Q%9%o!<%I$rJ]B8(B
+$B$7$F$*$/$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -479,8 +477,8 @@ name.of.group RET} $B$r;H$C$F2<$5$$(B ($B%?%VJd40$r;H$(!"%k!<%/(B ($BLuCm(
 @node [3.5]
 @subsubheading $B<ALd(B 3.5
 
-Gnus $B$,$9$Y$F$N%0%k!<%W$rI=<($7$F$/$l$^$;$s(B / $B;d$O$3$N%5!<%P!<$X$NEj9F$,(B
-$B5v2D$5$l$^$;$s!#$I$&$7$F$G$9$+(B?
+Gnus $B$,$9$Y$F$N%0%k!<%W$rI=<($7$F$/$l$^$;$s(B / $B$3$N%5!<%P!<$X$NEj9F$,5v2D(B
+$B$5$l$^$;$s!#$I$&$7$F$G$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -498,7 +496,7 @@ force yes
 @node [3.6]
 @subsubheading $B<ALd(B 3.6
 
-$B;d$OJ#?t$N%5!<%P!<$+$i%K%e!<%9$r<h$j9~$_$?$$$N$G$9$,!"$=$l$O2DG=$G$9$+(B?
+$BJ#?t$N%5!<%P!<$+$i%K%e!<%9$r<h$j9~$_$?$$$N$G$9$,!"$=$l$O2DG=$G$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -555,8 +553,8 @@ Gnus $B$O(B @file{/usr/spool/news} $B$K$"$k%9%W!<%k!&%U%!%$%k$rC5$7$^$9!#2?$+
 @node [3.8]
 @subsubheading $B<ALd(B 3.8
 
-$B%K%e!<%9$rFI$`$N$&$^$/$$$-$^$7$?$,!";d$O(B Gnus $B$G%a!<%k$bFI$a$k$h$&$K$7$?(B
-$B$$$N$G$9!#$I$&$9$l$PNI$$$G$9$+(B?
+$B%K%e!<%9$rFI$`$N$&$^$/$$$-$^$7$?$,!"(BGnus $B$G%a!<%k$bFI$a$k$h$&$K$7$?$$$N(B
+$B$G$9!#$I$&$9$l$PNI$$$G$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -707,8 +705,8 @@ Gnus Manual}) $B$r;2>H$7$F2<$5$$!#(B
 @node [3.10]
 @subsubheading $B<ALd(B 3.10
 
-$B;d$?$A$O?&>l$G(B MS Exchange $B%5!<%P!<$N0l$D$r;H$C$F$$$k$N$G$9$,!"(BGnus $B$r;H$C(B
-$B$F$=$3$+$i%a!<%k$rFI$`$3$H$O$G$-$^$9$+(B?
+$B?&>l$G(B MS Exchange $B%5!<%P!<$N0l$D$r;H$C$F$$$k$N$G$9$,!"(BGnus $B$r;H$C$F$=$3(B
+$B$+$i%a!<%k$rFI$`$3$H$O$G$-$^$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -1191,8 +1189,8 @@ Variables, ,$B=qK!;EMMJQ?t(B, gnus-ja, The Gnus Manual} $B$*$h$S$=$N2<0L$N3F>
 
 Gnus $B$O%a!<%k$rJ,3d$9$k$?$a$NFs$D$N<jCJ!"$d$5$7(B
 $B$$(B @code{nnmail-split-methods} $B$H!"$b$C$H6/NO$JFC5i%a!<%kJ,3d$N5!G=$rDs(B
-$B6!$7$^$9!#;d$O:G=i$N$b$N$@$1$K$D$$$F=R$Y$^$9$,!"8e<T$K$D$$$F$O%^%K%e%"(B
-$B%k(B (@pxref{Fancy Mail Splitting, ,$BFC5i%a!<%kJ,3d(B, gnus-ja, The Gnus
+$B6!$7$^$9!#$3$3$G$O:G=i$N$b$N$@$1$K$D$$$F=R$Y$^$9$,!"8e<T$K$D$$$F$O%^%K%e(B
+$B%"%k(B (@pxref{Fancy Mail Splitting, ,$BFC5i%a!<%kJ,3d(B, gnus-ja, The Gnus
 Manual}) $B$r;2>H$7$F2<$5$$!#(B
 
 @code{nnmail-split-methods} $B$NCM$O%j%9%H$G!"$=$l$>$l$NMWAG$OJ,3d$N5,B'$r(B
@@ -1248,8 +1246,8 @@ Manual}) $B$r;2>H$7$F2<$5$$!#(B
 @subsection $B%a%C%;!<%8$N:n@.(B
 
 @menu
-* [5.1]::  $B!!%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$K;d$,(B
-             $BCN$C$F$$$kI,MW$,$"$k4pK\E*$J%3%^%s%I$O2?$G$9$+(B?
+* [5.1]::  $B!!%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$KCN$C(B
+             $B$F$$$kI,MW$,$"$k4pK\E*$J%3%^%s%I$O2?$G$9$+(B?
 
 * [5.2]::  $B!!%a!<%k$r:n@.$9$k$H$-!"<+F0E*$K9T$r@^$jJV$9$K$O$I$&(B
              $B$9$l$PNI$$$G$9$+(B?
@@ -1274,10 +1272,10 @@ Manual}) $B$r;2>H$7$F2<$5$$!#(B
              $B$^$9!#$"$l$O2?$G$9$+(B?  $B$^$?!"$I$&$7$?$i;d$bEj9F$9$k(B
              $B$H$-$KIU$1$k$3$H$,$G$-$^$9$+(B?
 
-* [5.9]::  $B!!$H$-$I$-;d$O%K%e!<%9%0%k!<%W$G!"(B`f' $B$NBe$o$j$K$&$C(B
-             $B$+$j(B `r' $B$rBG$C$F$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K(B
-             $B$b$+$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?$H$-$K!"(BGnus $B$K(B
-             $B7Y9p$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
+* [5.9]::  $B!!$H$-$I$-%K%e!<%9%0%k!<%W$G!"(B`f' $B$NBe$o$j$K$&$C$+$j(B
+             `r' $B$rBG$C$F$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K$b$+(B
+             $B$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?$H$-$K!"(BGnus $B$K7Y9p(B
+             $B$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
 
 * [5.10]:: $B!!(BGnus $B$,(B sender $B%X%C%@!<$r@8@.$7$J$$$h$&$K$9$k$K$O!"(B
              $B$I$&$7$?$iNI$$$G$9$+(B?
@@ -1285,16 +1283,15 @@ Manual}) $B$r;2>H$7$F2<$5$$!#(B
 * [5.11]:: $B!!Aw?.$7$?%a!<%k$d%K%e!<%9$N95$($r%m!<%+%k$K;D$7$F$*(B
              $B$-$?$$$N$G$9$,!"$I$&$9$l$PNI$$$G$9$+(B?
 
-* [5.12]:: $B!!;d$N(B Message-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"(B
-             $B$=$l$O$J$<$G$9$+(B?  $B$^$?!"$I$&$d$C$FD>$7$?$iNI$$$G$9(B
-             $B$+(B?
+* [5.12]:: $B!!(BMessage-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"$=$l$O(B
+             $B$J$<$G$9$+(B?  $B$^$?!"$I$&$d$C$FD>$7$?$iNI$$$G$9$+(B?
 @end menu
 
 @node [5.1]
 @subsubheading $B<ALd(B 5.1
 
-$B%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$K;d$,CN$C$F$$$kI,MW$,$"$k4p(B
-$BK\E*$J%3%^%s%I$O2?$G$9$+(B?
+$B%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$KCN$C$F$$$kI,MW$,$"$k4pK\E*(B
+$B$J%3%^%s%I$O2?$G$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -1593,9 +1590,9 @@ cat file.face | sed 's/\\/\\\\/g;s/\"/\\\"/g;' > file.face.quoted
 @node [5.9]
 @subsubheading $B<ALd(B 5.9
 
-$B$H$-$I$-;d$O%K%e!<%9%0%k!<%W$G!"(B@kbd{f} $B$NBe$o$j$K$&$C$+$j(B @kbd{r} $B$rBG$C(B
-$B$F$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K$b$+$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?(B
-$B$H$-$K!"(BGnus $B$K7Y9p$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
+$B$H$-$I$-%K%e!<%9%0%k!<%W$G!"(B@kbd{f} $B$NBe$o$j$K$&$C$+$j(B @kbd{r} $B$rBG$C$F(B
+$B$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K$b$+$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?$H(B
+$B$-$K!"(BGnus $B$K7Y9p$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -1658,8 +1655,8 @@ Gnus 5.10 $B$O%G%#%U%)%k%H$G(B sender $B%X%C%@!<$r:n$i$J$$$N$G$9$1$l$I$M!#$^$
 @node [5.12]
 @subsubheading $B<ALd(B 5.12
 
-$B;d$N(B Message-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"$=$l$O$J$<$G$9$+(B?  $B$^(B
-$B$?!"$I$&$d$C$FD>$7$?$iNI$$$G$9$+(B?
+Message-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"$=$l$O$J$<$G$9$+(B?  $B$^$?!"$I(B
+$B$&$d$C$FD>$7$?$iNI$$$G$9$+(B?
 
 @subsubheading $B2sEz(B
 
@@ -1781,7 +1778,7 @@ Gnus $B$r;H$C$F$$$J$+$C$?$H$-$N8E$$%a!<%k$r!"(BGnus $B$KJTF~$5$;$k$K$O$I$&$7$
 @kbd{O f} $BL?Na$r;H$C$F$=$l$r%U%!%$%k$KJ]B8$9$k$3$H$G$9!#$G$b$=$l$O!"(B
 Gnus $B$+$iJ]B8$5$l$?%a%C%;!<%8$r$h$jD>@\$K%"%/%;%9$9$k<jCJ$H$7$F$O!"$H$F(B
 $B$bJXMx$@$H$O8@$($J$$$N$G$O$J$$$G$7$g$&$+(B?  $B$=$l$KF10U$7$F$/$l$k$N$J$i$P!"(B
-Frank Haun <pille3003@@fhaun.de> $B$,=q$$$F$/$l$?$3$N%3!<%I$N@Z$lC<(B
+Frank Haun @email{pille3003@@fhaun.de} $B$,=q$$$F$/$l$?$3$N%3!<%I$N@Z$lC<(B
 $B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F2<$5$$(B:
 
 @lisp
@@ -1928,279 +1925,280 @@ Gnus $B$G$O!"%K%e!<%9%5!<%P!<$G%K%e!<%95-;v$,4|8B@Z$l>C5n$5$l$k$h$&$K!"%a!<(B
 $B$9$k$3$H$,$G$-$^$9$+(B?$B!W(B(@pxref{[4.10]}) $B$r;2>H$7$F2<$5$$!#(B
 
 @node FAQ 7 - Gnus in a dial-up environment
-@subsection Gnus in a dial-up environment
+@subsection $B%@%$%"%k%"%C%W4D6-$G(B Gnus $B$r;H$&(B
 
 @menu
-* [7.1]::    I don't have a permanent connection to the net, how can I
-             minimize the time I've got to be connected?
-* [7.2]::    So what was this thing about the Agent?
-* [7.3]::    I want to store article bodies on disk, too. How to do it?
-* [7.4]::    How to tell Gnus not to try to send mails / postings while
-             I'm offline?
+* [7.1]:: $B!!%M%C%H$K>o;~@\B3$7$F$$$J$$$N$G$9$,!"$I$&$7$?$i@\B3$9(B
+            $B$k;~4V$r:G>.8B$K$G$-$^$9$+(B?
+
+* [7.2]:: $B!!$J$i$P!"$=$l$N%(!<%8%'%s%H$K4X78$9$k$b$N$O2?$G$9$+(B?
+
+* [7.3]:: $B!!5-;v$NK\J8$b%G%#%9%/$K3JG<$7$?$$$N$G$9$,!"$I$&$9$l$P(B
+            $BNI$$$G$9$+(B?
+
+* [7.4]:: $B!!%*%U%i%$%s$N$H$-$K(B Gnus $B$K%a!<%k$d%K%e!<%95-;v$rAw?.(B
+            $B$5$;$J$$$h$&$K$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
 @end menu
 
 @node [7.1]
-@subsubheading Question 7.1
+@subsubheading $B<ALd(B 7.1
 
-I don't have a permanent connection to the net, how can
-I minimize the time I've got to be connected?
+$B%M%C%H$K>o;~@\B3$7$F$$$J$$$N$G$9$,!"$I$&$7$?$i@\B3$9$k;~4V$r:G>.8B$K$G$-(B
+$B$^$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-You've got basically two options: Either you use the
-Gnus Agent (see below) for this, or you can install
-programs which fetch your news and mail to your local
-disk and Gnus reads the stuff from your local
-machine.
+$BFs$D$N$d$jJ}$,$"$j$^$9!#0l$D$O(B Gnus $B%(!<%8%'%s%H$r;H$&$3(B
+$B$H(B (@pxref{[7.2]}) $B$G!"$b$&0lJ}$O%K%e!<%95-;v$H%a!<%k$r%m!<%+%k%G%#%9%/(B
+$B$K<h$j9~$`%W%m%0%i%`$r%$%s%9%H!<%k$7$F!"(BGnus $B$K$=$l$i$r%m!<%+%k%^%7%s$+(B
+$B$iFI$s$G$b$i$&J}K!$G$9!#(B
 
-If you want to follow the second approach, you need a
-program which fetches news and offers them to Gnus, a
-program which does the same for mail and a program which
-receives the mail you write from Gnus and sends them
-when you're online.
+$BFs$DL\$N$d$jJ}$G9T$-$?$$$N$J$i!"%K%e!<%95-;v$r<h$j9~$s$G$=$l$i$r(B Gnus $B$K(B
+$BEO$9%W%m%0%i%`!"F1$8$3$H$r%a!<%k$KBP$7$F9T$J$&%W%m%0%i%`!"$*$h$S$"$J$?$,(B
+$B=q$$$?%a!<%k$r(B Gnus $B$+$i<u$1<h$C$F!"%*%s%i%$%s$K$J$C$?$i$=$l$i$rAw?.$9$k(B
+$B%W%m%0%i%`$,I,MW$G$9!#(B
 
-Let's talk about Unix systems first: For the news part,
-the easiest solution is a small nntp server like 
-@uref{http://www.leafnode.org/, Leafnode} or
-@uref{http://infa.abo.fi/~patrik/sn/, sn},
-of course you can also install a full featured news
-server like 
-@uref{http://www.isc.org/products/INN/, inn}. 
-Then you want to fetch your Mail, popular choices
-are @uref{http://www.catb.org/~esr/fetchmail/, fetchmail}
-and @uref{http://www.qcc.ca/~charlesc/software/getmail-3.0/, getmail}.
-You should tell those to write the mail to your disk and
-Gnus to read it from there. Last but not least the mail
-sending part: This can be done with every MTA like
-@uref{http://www.sendmail.org/, sendmail},
-@uref{http://www.qmail.org/, postfix},
-@uref{http://www.exim.org/, exim} or
-@uref{http://www.qmail.org/, qmail}.
+$B:G=i$K(B Unix $B%7%9%F%`$K$D$$$F=q$-$^$7$g$&!#%K%e!<%95-;v$r<h$j9~$`$?$a$N:G(B
+$B$b0B0W$J2r$O!"(B@uref{http://www.leafnode.org/,
+Leafnode} $B$d(B @uref{http://infa.abo.fi/~patrik/sn/, sn} $B$N$h$&$K>.5,LO(B
+$B$J(B @acronym{NNTP} $B%5!<%P!<$r;H$&$3$H$G$9!#$b$A$m(B
+$B$s(B @uref{http://www.isc.org/products/INN/, inn} $B$N$h$&$JK\3JE*$J%K%e!<%9(B
+$B%5!<%P!<$r%$%s%9%H!<%k$9$k$3$H$b$G$-$^$9!#%a!<%k$N<h$j9~$_$K;H$&$b$N$G?M(B
+$B5$$,$"$k$N$O(B @uref{http://www.catb.org/~esr/fetchmail/, fetchmail} $B$*$h(B
+$B$S(B @uref{http://www.qcc.ca/~charlesc/software/getmail-3.0/, getmail} $B$G(B
+$B$9!#$=$l$i$K%a!<%k$r%G%#%9%/$K=q$-9~$`$h$&$K;X<($7$F2<$5$$!#(BGnus $B$O$=$3(B
+$B$+$iFI$`$3$H$K$J$j$^$9!#:G8e$G$9$,$*$m$=$+$K$G$-$J$$$N$O%a!<%k$NAw?.$G$9!#(B
+$B$3$l$K$O$"$i$f$k(B MTA$B!"Nc$($P(B @uref{http://www.sendmail.org/, sendmail},
+@uref{http://www.qmail.org/, postfix}, @uref{http://www.exim.org/,
+exim} $B$^$?$O(B @uref{http://www.qmail.org/, qmail} $B$r;H$&$3$H$,$G$-$^$9!#(B
 
-On windows boxes I'd vote for 
-@uref{http://www.tglsoft.de/, Hamster}, 
-it's a small freeware, open-source program which fetches
-your mail and news from remote servers and offers them
-to Gnus (or any other mail and/or news reader) via nntp
-respectively POP3 or IMAP. It also includes a smtp
-server for receiving mails from Gnus.
+Windows $B>.20$N$?$a$K$O(B @uref{http://www.tglsoft.de/, Hamster} $B$r?d$7$^$9!#(B
+$B$=$l$O>.$5$/$F%U%j!<$J%*!<%W%s%=!<%9$N%W%m%0%i%`$G!"1s3V%5!<%P!<$+$i%a!<(B
+$B%k$H%K%e!<%9$r<h$j9~$s$G!"(B@acronym{NNTP} $B$*$h$S(B @acronym{POP3} $B$^$?(B
+$B$O(B @acronym{IMAP} $B$N$=$l$>$l$r2p$7$F(B Gnus ($B$"$k$$$OB>$N%a!<%k(B/$B%K%e!<%9%j!<(B
+$B%@!<(B) $B$KEO$7$^$9!#$5$i$K$=$l$O(B Gnus $B$,Aw?.$9$k%a!<%k$r<u$1<h$k$?$a(B
+$B$N(B @acronym{SMTP} $B%5!<%P!<$b4^$s$G$$$^$9!#(B
 
 @node [7.2]
-@subsubheading Question 7.2
+@subsubheading $B<ALd(B 7.2
 
-So what was this thing about the Agent?
+$B$J$i$P!"$=$l$N%(!<%8%'%s%H$K4X78$9$k$b$N$O2?$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-The Gnus agent is part of Gnus, it allows you to fetch
-mail and news and store them on disk for reading them
-later when you're offline. It kind of mimics offline
-newsreaders like e.g. Forte Agent. If you want to use
-the Agent place the following in ~/.gnus.el if you are
-still using 5.8.8 or 5.9 (it's the default since 5.10):
+Gnus $B%(!<%8%'%s%H$O(B Gnus $B$N0lIt$G!"%a!<%k$H%K%e!<%9$r<h$j9~$s$G%G%#%9%/(B
+$B$K3JG<$7!"8e$G%*%U%i%$%s$N$H$-$K$=$l$i$rFI$`$3$H$r2DG=$K$7$^$9!#$=$l$O!"(B
+$B8@$&$J$i$P!"Nc$($P(B Forte Agent $B$N$h$&$J%*%U%i%$%s!&%K%e!<%9%j!<%@!<$N??(B
+$B;w$r$7$^$9!#$^$@(B 5.8.8 $B$+(B 5.9 $B$r;H$C$F$$$F%(!<%8%'%s%H$r;H$$$?$1$l$P!"0J(B
+$B2<$N9T$r(B @file{~/.gnus.el} $B%U%!%$%k$K=q$-9~$s$G2<$5$$(B ($B$3$l$O(B 5.10 $B$+$i(B
+$B%G%#%U%)%k%H$K$J$C$F$$$^$9(B):
 
 @lisp
 (setq gnus-agent t)
 @end lisp
 
 @noindent
-Now you've got to select the servers whose groups can be
-stored locally.  To do this, open the server buffer
-(that is press @samp{^} while in the
-group buffer).  Now select a server by moving point to
-the line naming that server.  Finally, agentize the
-server by typing @samp{J a}.  If you
-make a mistake, or change your mind, you can undo this
-action by typing @samp{J r}.  When
-you're done, type 'q' to return to the group buffer.
-Now the next time you enter a group on a agentized
-server, the headers will be stored on disk and read from
-there the next time you enter the group.
+$B$=$&$7$?$i!"?t$"$k%0%k!<%W$r%m!<%+%k$K3JG<$9$k$3$H$,$G$-$k%5!<%P!<$rA*$P(B
+$B$J$1$l$P$J$j$^$;$s!#$=$N$?$a$K$O!"%5!<%P!<%P%C%U%!$r3+$$$F(B ($B%0%k!<%W%P%C(B
+$B%U%!$G(B @kbd{^} $B$r2!$7$F(B) $B2<$5$$!#$=$7$F!"A*$s$@%5!<%P!<L>$N>l=j$K%]%$%s(B
+$B%H$r0\F0$5$;$^$7$g$&!#:G8e$K(B @kbd{J a} $B$r%?%$%W$7$F!"$=$N%5!<%P!<$r%(!<(B
+$B%8%'%s%H2=$7$F2<$5$$!#$b$74V0c$C$F$7$^$C$?$i!"$"$k$$$O5$$,JQ$o$C$?$i!"(B
+@kbd{J r} $B$r%?%$%W$9$l$P85$KLa$9$3$H$,$G$-$^$9!#=*$o$C$?$i(B @kbd{q} $B$r%?(B
+$B%$%W$7$F!"%0%k!<%W%P%C%U%!$KLa$C$F2<$5$$!#<!2s%(!<%8%'%s%H2=$5$l$?%5!<%P!<(B
+$B$N%0%k!<%W$KF~$k$H%X%C%@!<$,%G%#%9%/$K3JG<$5$l!"$=$N<!$N2s$K%0%k!<%W%P%C(B
+$B%U%!$KF~$k$H!"$=$3(B ($B%G%#%9%/(B) $B$+$iFI$`$h$&$K$J$j$^$9!#(B
 
 @node [7.3]
-@subsubheading Question 7.3
+@subsubheading $B<ALd(B 7.3
 
-I want to store article bodies on disk, too. How to do it?
+$B5-;v$NK\J8$b%G%#%9%/$K3JG<$7$?$$$N$G$9$,!"$I$&$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-You can tell the agent to automatically fetch the bodies
-of articles which fulfill certain predicates, this is
-done in a special buffer which can be reached by
-saying @samp{J c} in group
-buffer. Please refer to the documentation for
-information which predicates are possible and how
-exactly to do it.
+$B$"$k=R8l$rK~B-$5$;$k5-;v$NK\J8$r<+F0E*$K<h$j9~$`$h$&$K!"%(!<%8%'%s%H$K;X(B
+$B<($9$k$3$H$,$G$-$^$9!#$=$l$O!"%0%k!<%W%P%C%U%!$G(B @kbd{J c} $BL?Na$r;H$&$3(B
+$B$H$K$h$C$F9T$/$3$H$,$G$-$k!"FCJL$J%P%C%U%!$G9T$J$$$^$9!#$I$N=R8l$r;H$&$3(B
+$B$H$,$G$-$k$+!"$*$h$S$=$l$r@5$7$/9T$J$&J}K!$K4X$9$k>pJs$K$D$$$F$O(B Gnus $B$N(B
+$B%^%K%e%"%k$r;2>H$7$F2<$5$$!#(B
 
-Further on you can tell the agent manually which
-articles to store on disk. There are two ways to do
-this: Number one: In the summary buffer, process mark a
-set of articles that shall be stored in the agent by
-saying @samp{#} with point over the
-article and then type @samp{J s}. The
-other possibility is to set, again in the summary
-buffer, downloadable (%) marks for the articles you
-want by typing @samp{@@} with point over
-the article and then typing @samp{J u}.
-What's the difference? Well, process marks are erased as
-soon as you exit the summary buffer while downloadable
-marks are permanent.  You can actually set downloadable
-marks in several groups then use fetch session ('J s' in
-the GROUP buffer) to fetch all of those articles.  The
-only downside is that fetch session also fetches all of
-the headers for every selected group on an agentized
-server.  Depending on the volume of headers, the initial
-fetch session could take hours.
+$B$5$i$K!"$I$N5-;v$r%G%#%9%/$K3JG<$9$k$+$r!"<j:n6H$G%(!<%8%'%s%H$K;X<($9$k(B
+$B$3$H$b$G$-$^$9!#$=$l$K$OFs$D$N$d$jJ}$,$"$j$^$9(B:
+
+@enumerate
+@item
+$B35N,%P%C%U%!$G!"(B@kbd{#} $BL?Na$r<B9T$7$F%(!<%8%'%s%H$K3JG<$5$l$k$Y$-5-;v$K(B
+$B%W%m%;%90u$rIU$1$F$+$i!"(B@kbd{J s} $B$r%?%$%W$7$F2<$5$$!#(B
+
+@item
+$B35N,%P%C%U%!$G!"(B@kbd{@@} $BL?Na$r<B9T$7$FM_$7$$5-;v$K%@%&%s%m!<%I2DG=(B
+$B0u(B (@samp{%}) $B$rIU$1$F$+$i!"(B@kbd{J u} $B$r%?%$%W$7$F2<$5$$!#(B
+@end enumerate
+
+$B$I$s$J0c$$$,$"$k$N$+$C$F(B?  $B$(!<$H!"%@%&%s%m!<%I2DG=0u$,1J5WE*$J$N$KBP$7(B
+$B$F!"%W%m%;%90u$O35N,%P%C%U%!$rH4$1=P$?$H$?$s$K>C$5$l$kE@$G$9!#<B:]!"J#?t(B
+$B$N%0%k!<%W$G%@%&%s%m!<%I2DG=0u$r@_Dj$7$F!"$=$l$i$9$Y$F$N5-;v$r(B ($B%0%k!<%W(B
+$B%P%C%U%!$G(B @kbd{J s} $BL?Na$r;H$&$3$H$K$h$C$F(B) $B$^$H$a$F<h$j9~$`$3$H$,$G$-(B
+$B$^$9!#M#0l$N7gE@$O!"%(!<%8%'%s%H2=$5$l$F$$$k%5!<%P!<$N!"A*Br$5$l$?$9$Y$F(B
+$B$N%0%k!<%W$N%X%C%@!<$r$b<h$j9~$s$G$7$^$&$3$H$G$9!#%X%C%@!<$NNL$K$b$h$j$^(B
+$B$9$,!":G=i$N<h$j9~$_$K$O2?;~4V$b$+$+$k$+$b$7$l$^$;$s!#(B
 
 @node [7.4]
-@subsubheading Question 7.4
+@subsubheading $B<ALd(B 7.4
 
-How to tell Gnus not to try to send mails / postings
-while I'm offline?
+$B%*%U%i%$%s$N$H$-$K(B Gnus $B$K%a!<%k$d%K%e!<%95-;v$rAw?.$5$;$J$$$h$&$K$9$k$K(B
+$B$O!"$I$&$7$?$iNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-All you've got to do is to tell Gnus when you are online
-(plugged) and when you are offline (unplugged), the rest
-works automatically. You can toggle plugged/unplugged
-state by saying @samp{J j} in group
-buffer. To start Gnus unplugged say @samp{M-x
-gnus-unplugged} instead of
-@samp{M-x gnus}. Note that for this to
-work, the agent must be active.
+$B8=:_$N>uBV$,%*%s%i%$%s(B (plugged) $B$+%*%U%i%$%s(B (unplugged) $B$+$r!"(BGnus $B$K(B
+$B8@$C$F$"$2$J$1$l$P$J$j$^$;$s!#$=$l0J30$N$b$m$b$m$N$3$H$O<+F0E*$K$d$C$F$/(B
+$B$l$^$9!#(Bplugged $B$H(B unplugged $B$N@Z$jBX$($O!"%0%k!<%W%P%C%U%!(B
+$B$G(B @kbd{J j} $BL?Na$r<B9T$9$k$3$H$K$h$C$F9T$J$&$3$H$,$G$-$^$9!#(B
+Gnus $B$r(B unplugged $B$N>uBV$G5/F0$7$?$$$J$i!"(B@kbd{M-x gnus} $B$NBe$o$j(B
+$B$K(B @kbd{M-x gnus-unplugged} $B$r;H$C$F2<$5$$!#$?$@$7!"$3$l$,F/$/$?$a$K$O%(!<(B
+$B%8%'%s%H$rM-8z$K$7$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F2<$5$$!#(B
 
 @node FAQ 8 - Getting help
-@subsection Getting help
+@subsection $B=u$1$rF@$k(B
 
 @menu
-* [8.1]::    How to find information and help inside Emacs?
-* [8.2]::    I can't find anything in the Gnus manual about X (e.g.
-             attachments, PGP, MIME...), is it not documented?
-* [8.3]::    Which websites should I know?
-* [8.4]::    Which mailing lists and newsgroups are there?
-* [8.5]::    Where to report bugs?
-* [8.6]::    I need real-time help, where to find it?
+* [8.1]:: $B!!(BEmacs $B$NCf$G>pJs$rC5$7$?$j=u$1$r5a$a$k$K$O!"$I$&$9$l(B
+            $B$PNI$$$G$9$+(B?
+
+* [8.2]:: $B!!(BGnus $B$N%^%K%e%"%k$NCf$G!"$"$k$3$H$,$i(B ($BNc$($PE:IU(B
+            $B%U%!%$%k!"(BPGP$B!"(BMIME...) $B$K4X$9$k>pJs$r!"2?$b8+$D$1$k(B
+            $B$3$H$,$G$-$^$;$s!#$=$l$i$O=q$+$l$F$$$J$$$N$G$9$+(B?
+
+* [8.3]:: $B!!;d$O$I$N%&%'%V%5%$%H$rCN$C$F$$$J$1$l$P$J$j$^$;$s$+!#(B
+
+* [8.4]:: $B!!$I$s$J%a!<%j%s%0%j%9%H$H%K%e!<%9%0%k!<%W$,$"$j$^$9(B
+            $B$+!#(B
+
+* [8.5]:: $B!!%P%0$O$I$3$KJs9p$9$l$PNI$$$G$9$+(B?
+
+* [8.6]:: $B!!$=$N>l$GB(:B$KF@$i$l$k=u$1(B (real-time help) $B$,M_$7$$(B
+            $B$N$G$9$,!"$I$3$G8+$D$+$j$^$9$+(B?
 @end menu
 
 @node [8.1]
-@subsubheading Question 8.1
+@subsubheading $B<ALd(B 8.1
 
-How to find information and help inside Emacs?
+Emacs $B$NCf$G>pJs$rC5$7$?$j=u$1$r5a$a$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-The first stop should be the Gnus manual (Say
-@samp{C-h i d m Gnus RET} to start the
-Gnus manual, then walk through the menus or do a
-full-text search with @samp{s}). Then
-there are the general Emacs help commands starting with
-C-h, type @samp{C-h ? ?} to get a list
-of all available help commands and their meaning. Finally
-@samp{M-x apropos-command} lets you
-search through all available functions and @samp{M-x
-apropos} searches the bound variables.
+$B:G=i$KN)$A4s$k$Y$->l=j$O(B Gnus $B%^%K%e%"%k$G$9(B (@kbd{C-h i d m Gnus
+RET} $B$G(B Gnus $B%^%K%e%"%k$r3+$$$?$i!"%a%K%e!<$rD/$a2s$9$+(B @kbd{s} $B$GA4BN$N(B
+$B%F%-%9%H$rC5$7$F2<$5$$(B)$B!#0lJ}(B Emacs $B$K$OI8=`$N%X%k%W!&%3%^%s%I$,$"$C$F!"(B
+$B$=$l$K$O(B @kbd{C-h} $B$H$b$&0l$D$N%-!<$r;H$$$^$9(B (@kbd{C-h ? ?} $B$r%?%$%W$9(B
+$B$k$H!"MxMQ2DG=$J%X%k%W!&%3%^%s%I$H$=$l$i$N0UL#$,8=$l$^$9(B)$B!#$5$i(B
+$B$K(B @kbd{M-x apropos-command} $B$GMxMQ2DG=$J$9$Y$F$N%3%^%s%I$r!"(B
+@samp{M-x apropos} $B$GB8:_$9$kJQ?t$rC5$9$3$H$,$G$-$^$9!#(B
 
 @node [8.2]
-@subsubheading Question 8.2
+@subsubheading $B<ALd(B 8.2
 
-I can't find anything in the Gnus manual about X
-(e.g. attachments, PGP, MIME...), is it not documented?
+Gnus $B$N%^%K%e%"%k$NCf$G!"$"$k$3$H$,$i(B ($BNc$($PE:IU%U%!%$%k!"(B
+PGP$B!"(BMIME...) $B$K4X$9$k>pJs$r!"2?$b8+$D$1$k$3$H$,$G$-$^$;$s!#$=$l$i$O=q$+(B
+$B$l$F$$$J$$$N$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-There's not only the Gnus manual but also the manuals
-for message, emacs-mime, sieve and pgg. Those packages
-are distributed with Gnus and used by Gnus but aren't
-really part of core Gnus, so they are documented in
-different info files, you should have a look in those
-manuals, too.
+Gnus $B%^%K%e%"%k0J30$K(B message, emacs-mime, sieve $B$*$h$S(B pgg $B$N%^%K%e%"%k(B
+$B$,$"$j$^$9!#$=$l$i$N%Q%C%1!<%8$O(B Gnus $B$H$H$b$KG[I[$5$l!"(BGnus $B$K$h$C$F;H(B
+$B$o$l$^$9$,!"??$K(B Gnus $B$N3K?4ItJ,$G$O$J$$$N$G!"JL$N(B info $B%U%!%$%k$GJ8=q2=(B
+$B$5$l$F$$$^$9!#$"$J$?$O$=$l$i$N%^%K%e%"%k$bGA$$$F$_$k$Y$-$G$7$g$&!#(B
 
 @node [8.3]
-@subsubheading Question 8.3
+@subsubheading $B<ALd(B 8.3
 
-Which websites should I know?
+$B;d$O$I$N%&%'%V%5%$%H$rCN$C$F$$$J$1$l$P$J$j$^$;$s$+!#(B
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-The two most important ones are the
-@uref{http://www.gnus.org, official Gnus website}.
-and it's sister site 
-@uref{http://my.gnus.org, my.gnus.org (MGO)},
-hosting an archive of lisp snippets, howtos, a (not
-really finished) tutorial and this FAQ.
+$BFs$D$N:G$b=EMW$J$b$N$O(B @uref{http://www.gnus.org,
+$B8x<0(B Gnus $B%&%'%V%5%$%H(B} $B$H!"$=$N;PKe%5%$%H$G$"(B
+$B$k(B @uref{http://my.gnus.org, my.gnus.org (MGO)} $B$G$9!#8e<T$K$O(B Lisp $B$NCG(B
+$BJR!"(BHowTo$B!"(B($BL$40@.$N(B) $B%A%e!<%H%j%"%k!"$*$h$S$3$N(B FAQ $B$,$"$j$^$9!#(B
 
-Tell me about other sites which are interesting.
+$BB>$K$b6=L#?<$$%5%$%H$,$"$C$?$i65$($F2<$5$$!#(B
 
 @node [8.4]
-@subsubheading Question 8.4
+@subsubheading $B<ALd(B 8.4
 
-Which mailing lists and newsgroups are there?
+$B$I$s$J%a!<%j%s%0%j%9%H$H%K%e!<%9%0%k!<%W$,$"$j$^$9$+!#(B
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-There's the newsgroup gnu.emacs.gnus (pull it from
-e.g. news.gnus.org) which deals with general questions and the
-ding mailing list (ding@@gnus.org) dealing with development of
-Gnus. You can read the ding list via NNTP, too under the name
-gmane.emacs.gnus.general from news.gmane.org.
+$B0lHLE*$J<ALd$r<h$j07$&(B @samp{gnu.emacs.gnus} $B%K%e!<%9%0%k!<%W(B ($BNc$((B
+$B$P(B @samp{news.gnus.org} $B$+$i<h$C$FMh$k$3$H$,$G$-$^$9(B) $B$H!"(BGnus $B$N3+H/$r(B
+$B07$C$F$$$k(B @email{ding@@gnus.org, ding $B%a!<%j%s%0%j%9%H(B} $B$,$"$j$^$9!#(B
+@samp{ding} $B%j%9%H$O!"F1(B
+$B$8(B @samp{news.gnus.org} $B$N(B @samp{gmane.emacs.gnus.general} $B%K%e!<%9%0%k!<(B
+$B%W$+$i!"(B@acronym{NNTP} $B$r2p$7$FFI$`$3$H$b$G$-$^$9!#(B
 
-If you want to stay in the big8,
-news.software.newssreaders is also read by some Gnus
-users (but chances for qualified help are much better in
-the above groups) and if you speak German, there's
-de.comm.software.gnus.
+Big8 ($BLuCm(B: comp, humanities, misc, news, rec, sci, soc, talk $B$NH,Bg%K%e!<(B
+$B%9%0%k!<%W(B) $B$K$H$I$^$C$F$$$?$$$N$J$i$P!"(B
+@samp{news.software.newssreaders} $B$b$^$?!"$$$/$i$+$N(B Gnus $B$N%f!<%6!<$K$h$C(B
+$B$FFI$^$l$F$$$^$9(B ($B$G$b!"E*3N$J=u$1$rF@$k$3$H$,$G$-$k8+9~$_$H$$$&E@$G$O!"(B
+$B>e5-$N%0%k!<%W$NJ}$,$O$k$+$KNI$$$G$7$g$&(B)$B!#%I%$%D8l$rOC$9?M8~$1$K(B
+$B$O(B @samp{de.comm.software.gnus} $B$,$"$j$^$9!#(B
 
 @node [8.5]
-@subsubheading Question 8.5
+@subsubheading $B<ALd(B 8.5
 
-Where to report bugs?
+$B%P%0$O$I$3$KJs9p$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Say @samp{M-x gnus-bug}, this will start
-a message to the 
-@email{bugs@@gnus.org, gnus bug mailing list}
-including information about your environment which make
-it easier to help you.
+@kbd{M-x gnus-bug} $BL?Na$r;H$&$3$H$K$h$C$F(B @email{bugs@@gnus.org, gnus
+bug $B%a!<%j%s%0%j%9%H(B} $B$KAw$k%a%C%;!<%8$r=q$-;O$a$k$3$H$,$G$-$^$9!#$=$l$K(B
+$B$O$"$J$?$r=u$1$d$9$/$9$k$?$a$N!"$"$J$?$N4D6-$K4X$9$k>pJs$,E:IU$5$l$^$9!#(B
 
 @node [8.6]
-@subsubheading Question 8.6
+@subsubheading $B<ALd(B 8.6
 
-I need real-time help, where to find it?
+$B$=$N>l$GB(:B$KF@$i$l$k=u$1(B (real-time help) $B$,M_$7$$$N$G$9$,!"$I$3$G8+$D(B
+$B$+$j$^$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-Point your IRC client to irc.my.gnus.org channel
-#mygnus. Don't be afraid if people there speak German,
-they are willing and capable of switching to
-English when people from outside Germany enter.
+$B$"$J$?$N(B @acronym{IRC} $B$r(B @samp{irc.my.gnus.org} $B$N(B @samp{#mygnus} $B%A%c(B
+$B%s%M%k$K@\B3$7$F2<$5$$!#$=$3$G$O?M!9$,%I%$%D8l$rOC$7$F$$$^$9$,!"?,9~$_$9(B
+$B$kI,MW$O$"$j$^$;$s!#H`$i$O!"?M!9$,%I%$%D0J30$+$i$d$C$F$-$?$H$-$K$O1Q8l$K(B
+$B@Z$jBX$($k$3$H$,$G$-$k$7!"$=$l$r$$$H$$$^$;$s!#(B
 
 @node FAQ 9 - Tuning Gnus
-@subsection Tuning Gnus
+@subsection Gnus $B$r%A%e!<%s$9$k(B
 
 @menu
-* [9.1]::    Starting Gnus is really slow, how to speed it up?
-* [9.2]::    How to speed up the process of entering a group?
-* [9.3]::    Sending mail becomes slower and slower, what's up?
+* [9.1]:: $B!!(BGnus $B$N5/F0$,K\Ev$KCY$$$N$G$9$,!"$I$&$7$?$iB.$/$9$k(B
+            $B$3$H$,$G$-$^$9$+(B?
+
+* [9.2]:: $B!!%0%k!<%W$KF~$k$H$-$NF0:n$rB.$/$9$k$K$O!"$I$&$9$l$PNI(B
+            $B$$$G$9$+(B?
+
+* [9.3]:: $B!!%a!<%k$NAw?.$,CY$/$J$C$F$7$^$$$^$7$?!#2?$,5/$-$?$N$G(B
+            $B$7$g$&(B?
 @end menu
 
 @node [9.1]
-@subsubheading Question 9.1
+@subsubheading $B<ALd(B 9.1
 
-Starting Gnus is really slow, how to speed it up?
+Gnus $B$N5/F0$,K\Ev$KCY$$$N$G$9$,!"$I$&$7$?$iB.$/$9$k$3$H$,$G$-$^$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-The reason for this could be the way Gnus reads it's
-active file, see the node "The Active File" in the Gnus
-manual for things you might try to speed the process up.
-An other idea would be to byte compile your ~/.gnus.el (say
-@samp{M-x byte-compile-file RET ~/.gnus.el
-RET} to do it). Finally, if you have require
-statements in your .gnus, you could replace them with
-eval-after-load, which loads the stuff not at startup
-time, but when it's needed. Say you've got this in your
-~/.gnus.el:
+$B$3$N860x$O!"(BGnus $B$,(B active $B%U%!%$%k$rFI$`J}K!$K4X78$7$F$$$k$3$H$,$"$jF@(B
+$B$^$9!#(BGnus $B%^%K%e%"%k$N(B @pxref{The Active File, ,$B%"%/%F%#%V%U%!%$%k(B,
+gnus-ja, The Gnus Manual} $B$r;2>H$7$F2<$5$$!#$=$3$K$O!"$=$N=hM}$rB.$/$9$k(B
+$B$?$a$K;n$7$F$_$k2ACM$,$"$k$3$H$,$i$,$"$j$^$9!#$b$&0l$D$N0F(B
+$B$O!"(B@file{~/.gnus.el} $B%U%!%$%k$r%P%$%H%3%s%Q%$%k$9$k$3(B
+$B$H(B (@kbd{M-x byte-compile-file RET ~/.gnus.el RET} $B$r<B9T$9$k$3$H(B) $B$G$9!#(B
+$B:G8e$K!"(B@file{~/.gnus.el} $B%U%!%$%k$G(B @code{require} $B$r;H$C$F$$$k$J$i$P!"(B
+$B$=$l$i$r(B @code{eval-after-load} $B$GCV$-49$($k$3$H$,$G$-$k$G$7$g$&!#$=$l$O(B
+$BBP>]$N%b%8%e!<%k$r5/F0;~$G$O$J$/!"I,MW$K$J$C$?$H$-$KFI$_9~$`$h$&$K$7$^$9!#(B
+$B$"$J$?$N(B @file{~/.gnus.el} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$,$"$k>l9g$K$O!"(B
 
 @lisp
 (require 'message)
@@ -2208,78 +2206,85 @@ time, but when it's needed. Say you've got this in your
 @end lisp
 
 @noindent
-then as soon as you start Gnus, message.el is loaded. If
-you replace it with
+Gnus $B$r5/F0$7$?$H$?$s$K(B @file{message.el} $B$,FI$_9~$^$l$^$9!#$3$l$r<!$N$h(B
+$B$&$KCV$-49$($k$H!"(B
+
+@lisp
+(eval-after-load "message"
+  '(add-to-list 'message-syntax-checks '(sender . disabled)))
+@end lisp
+
+@noindent
+$B$=$l$OI,MW$K$J$C$?$H$-$KFI$_9~$^$l$k$h$&$K$J$j$^$9!#(B
+
+@emph{$B=EMW$JLuCm(B}: $B86E5$NNc$OITE,@Z$G$9!#8=:_$N(B Gnus $B$OB?$/$N<gMW$J%b%8%e!<(B
+$B%k$r5/F0;~$K(B load $B$9$k$h$&$K$J$C$F$$$F!"Nc$($P(B @file{message.el} $B%b%8%e!<(B
+$B%k$O(B @file{~/.gnus.el} $B%U%!%$%k$rFI$_9~$`;~E@$G$9$G$K(B load $B$5$l$F$$$^$9!#(B
+$B$G$9$+$i>/$J$/$H$b(B @file{message.el} $B%b%8%e!<%k$KBP$7$F(B
+$B$O(B @code{require} $B$b(B @code{eval-after-load} $B$b;H$&I,MW$,$"$j$^$;$s!#<B32(B
+$B$O$"$j$^$;$s$,2?$N8z2L$b$"$j$^$;$s!#JQ?t(B @code{message-syntax-checks} $B$K(B
+$B9`L\$rDI2C$9$k>e5-$NNc$O!"C1$K0J2<$N$h$&$K=q$1$P==J,$G$9!#(B
 
 @lisp
 (add-to-list 'message-syntax-checks '(sender . disabled))
 @end lisp
 
-@noindent
-it's loaded when it's needed.
-
 @node [9.2]
-@subsubheading Question 9.2
+@subsubheading $B<ALd(B 9.2
 
-How to speed up the process of entering a group?
+$B%0%k!<%W$KF~$k$H$-$NF0:n$rB.$/$9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-A speed killer is setting the variable
-gnus-fetch-old-headers to anything different from nil,
-so don't do this if speed is an issue. To speed up
-building of summary say
+$B%9%T!<%I$N;&$720$O!"(B@code{nil} $B0J30$NCM$r@_Dj$5$l(B
+$B$?(B @code{gnus-fetch-old-headers} $BJQ?t$G$9!#$G$9$+$i%9%T!<%I$,LdBj$J$N$G(B
+$B$"$l$P!"$=$l$r$d$i$J$$$G2<$5$$!#35N,%P%C%U%!$N9=C[$rB.$/$9$k$K$O!"(B
 
 @lisp
 (gnus-compile)
 @end lisp
 
 @noindent
-at the bottom of your ~/.gnus.el, this will make gnus
-byte-compile things like
-gnus-summary-line-format. 
-then you could increase the value of gc-cons-threshold
-by saying something like
+$B$r(B @file{~/.gnus.el} $B%U%!%$%k$N:G8e$K=q$-9~$s$G2<$5$$!#$3$l$K$h$C(B
+$B$F(B Gnus $B$O(B @code{gnus-summary-line-format} $B$N$h$&$J$b$N$r%P%$%H%3%s%Q%$(B
+$B%k$7$^$9!#$=$l$+$i!"(B@file{~/.emacs} $B$K0J2<$N$h$&$J$b$N$r=q$-9~$s$G!"(B
+@code{gc-cons-threshold} $B$NCM$rA}$d$7$F$_$F2<$5$$!#(B
 
 @lisp
 (setq gc-cons-threshold 3500000)
 @end lisp
 
 @noindent
-in ~/.emacs. If you don't care about width of CJK
-characters or use Gnus 5.10 or younger together with a
-recent GNU Emacs, you should say
+CJK ($BCf9q8l(B/$BF|K\8l(B/$B4Z9q8l(B) $B$NJ8;z$NI}$r5$$K$7$J$$$N$J$i$P!"$^$?$O:G6a(B
+$B$N(B Emacs $B$H$H$b$K(B Gnus 5.10 $B$+$=$l$h$j?7$7$$$b$N$r;H$C$F$$$k$N$J$i$P!"(B
+$B<!$N9T$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$^$7$g$&(B:
 
 @lisp
 (setq gnus-use-correct-string-widths nil)
 @end lisp
 
 @noindent
-in ~/.gnus.el (thanks to Jesper harder for the last
-two suggestions). Finally if you are still using 5.8.8
-or 5.9 and experience speed problems with summary
-buffer generation, you definitely should update to
-5.10 since there quite some work on improving it has
-been done.
+($B$3$l$iFs$D$NDs8@$r$7$F$/$l$?(B Jesper harder $B$5$s$K46<U$7$^$9!#(B) $B:G8e$K!"(B
+$B$^$@(B 5.8.8 $B$+(B 5.9 $B$r;H$C$F$$$F!"35N,%P%C%U%!$r9=C[$9$k>l9g$NB.EY$KLdBj$,(B
+$B$"$k$3$H$r7P83$9$k$N$G$"$l$P!"@dBP$K(B 5.10 $B$K>e$2$k$Y$-$G$9!#$=$3$G$O$=$l(B
+$B$r2~A1$9$k$?$a$N!"JB30$l$?:n6H$,9T$J$o$l$^$7$?!#(B
 
 @node [9.3]
-@subsubheading Question 9.3
+@subsubheading $B<ALd(B 9.3
 
-Sending mail becomes slower and slower, what's up?
+$B%a!<%k$NAw?.$,CY$/$J$C$F$7$^$$$^$7$?!#2?$,5/$-$?$N$G$7$g$&(B?
 
-@subsubheading Answer
+@subsubheading $B2sEz(B
 
-The reason could be that you told Gnus to archive the
-messages you wrote by setting
-gnus-message-archive-group. Try to use a nnml group
-instead of an archive group, this should bring you back
-to normal speed.
+$B$=$NM}M3$O!"(B@code{gnus-message-archive-group} $BJQ?t$N@_Dj$K$h$C$F!"Aw?.%a%C(B
+$B%;!<%8$N95$($rJ]B8$9$k>l=j$dJ}K!$rJQ99$7$?$;$$$+$b$7$l$^$;$s!#=q(B
+$B8K(B (archive) $B%0%k!<%W$NBe$o$j$K(B @code{nnml} $B%0%k!<%W$r;H$C$F$_$F2<$5$$!#(B
+$B$=$&$9$l$P@5>o$JB.EY$,La$C$F$/$k$O$:$G$9!#(B
 
 @node FAQ - Glossary
-@subsection Glossary
+@subsection $BMQ8l=8(B
 
 @table @dfn
-
 @item ~/.gnus.el
 When the term ~/.gnus.el is used it just means your Gnus
 configuration file. You might as well call it ~/.gnus or
@@ -2307,7 +2312,6 @@ use to read and write e-mails.
 @item NUA
 NUA is an acronym for News User Agent, it's the program you
 use to read and write Usenet news.
-
 @end table
 
 @c Local Variables:
