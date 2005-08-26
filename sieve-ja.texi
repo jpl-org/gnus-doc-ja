@@ -70,39 +70,40 @@ license to the document, as described in section 6 of the license.
 @node Top
 @top Sieve Support for Emacs
 
-This manual documents the Emacs Sieve package.
+このマニュアルは Emacs Sieve パッケージの説明書です。
 
-It is intended as a users manual for Sieve Mode and Manage Sieve, and
-as a reference manual for the @samp{sieve-manage} protocol Emacs Lisp
-API.
+これは Sieve モードと Sieve 管理のためのユーザーズマニュアルとして、およ
+び @samp{sieve-manage} プロトコルを扱う Emacs Lisp API のためのリファレ
+ンスマニュアルとして活用されることを意図しています。
 
-Sieve is a language for server-side filtering of mail.  The language
-is documented in RFC 3028.  This manual does not attempt to document
-the language, so keep RFC 3028 around.
+Sieve はサーバー側でメールを濾過するための言語です。その言語は RFC
+3028 に文書化されています。このマニュアルの目的は言語を説明することでは
+ないので、RFC 3028 は手元に置いておいて下さい。
 
-A good online Sieve resources is @uref{http://www.cyrusoft.com/sieve/}.
+まともな Sieve の資料は @uref{http://www.cyrusoft.com/sieve/} にあります。
+
+訳注: Sieve == 篩 (ふるい)
 
 @menu
-* Installation::          Getting ready to use the package.
-* Sieve Mode::            Editing Sieve scripts.
-* Managing Sieve::        Managing Sieve scripts on a remote server.
-* Examples ::             A few Sieve code snippets.
-* Manage Sieve API ::     Interfacing to the Manage Sieve Protocol API.
-* Standards::             A summary of RFCs and working documents used.
-* Index::                 Function and variable index.
+* Installation::          このパッケージを使うための準備
+* Sieve Mode::            Sieve スクリプトの編集
+* Managing Sieve::        遠隔サーバー上の Sieve スクリプトの管理
+* Examples ::             Sieve コードの片鱗
+* Manage Sieve API ::     Sieve プロトコル API を管理するインターフェース
+* Standards::             使われている RFC と作業文書の概略
+* Index::                 関数および変数の索引
 @end menu
 
-
 @node Installation
-@chapter Installation
+@chapter インストール
 @cindex Install
 @cindex Setup
 
-The Sieve package should come with your Emacs version, and should be
-ready for use directly.
+Sieve パッケージはあなたの Emacs の版に付属していて、すぐに使えるように
+なっているはずです。
 
-However, to manually set up the package you can put the following
-commands in your @code{~/.emacs}:
+しかし、このパッケージを手作業で設定するために、以下のコマンド
+を @code{~/.emacs} ファイルに書き込むことができます:
 
 @lisp
 (autoload 'sieve-mode "sieve-mode")
@@ -112,55 +113,52 @@ commands in your @code{~/.emacs}:
                             auto-mode-alist))
 @end lisp
 
-
 @node Sieve Mode
-@chapter Sieve Mode
+@chapter Sieve モード
 
-Sieve mode provides syntax-based indentation, font-locking support and
-other handy functions to make editing Sieve scripts easier.
+Sieve モードは、構文に基づいたインデント、font-lock のサポート、およ
+び Sieve スクリプトを楽に編集できるようにするための他の便利な機能を提供
+します。
 
-Use @samp{M-x sieve-mode} to switch to this major mode.  This command
-runs the hook @code{sieve-mode-hook}.
+このメジャーモードに切り替えるには @samp{M-x sieve-mode} を使って下さい。
+このコマンドは @code{sieve-mode-hook} で与えられたフックを実行します。
 
 @vindex sieve-mode-map
 @vindex sieve-mode-syntax-table
-Sieve mode is derived from @code{c-mode}, and is very similar except
-for the syntax of comments.  The keymap (@code{sieve-mode-map}) is
-inherited from @code{c-mode}, as are the variables for customizing
-indentation.  Sieve mode has its own abbrev table
-(@code{sieve-mode-abbrev-table}) and syntax table
-(@code{sieve-mode-syntax-table}).
+Sieve モードは @code{c-mode} から派生していて、コメントの構文以外はとて
+も似ています。インデントをカスタマイズする変数があるのと同様に、キーマッ
+プ (@code{sieve-mode-map}) は @code{c-mode} を受け継ぎます。Sieve モード
+は専用の略語表 (@code{sieve-mode-abbrev-table}) と構文テーブ
+ル (@code{sieve-mode-syntax-table}) を持ちます。
 
-In addition to the editing utility functions, Sieve mode also contains
-bindings to manage Sieve scripts remotely. @xref{Managing Sieve}.
+編集に役立つ関数に加えて、Sieve モードには Sieve スクリプトを遠隔管理す
+るためのキー設定もあります。@xref{Managing Sieve}.
 
 @table @kbd
-
 @item C-c RET
 @kindex C-c RET
 @findex sieve-manage
 @cindex manage remote sieve script
-Open a connection to a remote server using the Managesieve protocol.
+Sieve 管理プロトコル (Managesieve protocol) を使って、遠隔サーバーに接続
+します。
 
 @item C-c C-l
 @kindex C-c C-l
 @findex sieve-upload
 @cindex upload sieve script
-Upload the Sieve script to the currently open server.
-
+現在接続しているサーバーに Sieve スクリプトをアップロードします。
 @end table
 
-
 @node Managing Sieve
-@chapter Managing Sieve
+@chapter Sieve の管理
 
-Manage Sieve is a special mode used to display Sieve scripts available
-on a remote server.  It can be invoked with @kbd{M-x sieve-manage
-RET}, which queries the user for a server and if necessary, user
-credentials to use.
+「Sieve 管理」は、遠隔サーバーで使うことができる Sieve スクリプトを表示
+するために使われる特別なモードです。それは @kbd{M-x sieve-manage RET} で
+起動し、そのサーバーにおけるユーザー名と、必要な場合には資格証明
+書 (credentials) の入力を求めます。
 
-When a server has been successfully contacted, the Manage Sieve buffer
-looks something like:
+サーバーとの接続に成功すると、「Sieve 管理」バッファには以下のようなもの
+が表示されます:
 
 @example
 Server  : mailserver:2000
@@ -172,33 +170,31 @@ press RET on <new script> to create a new script.
         template.siv
 @end example
 
-One of the scripts are highlighted, and standard point navigation
-commands (@kbd{<up>}, @kbd{<down>} etc) can be used to navigate the
-list.
+スクリプトの一つが強調表示され、標準のポイント移動コマンド (@kbd{<up>},
+@kbd{<down>} など) でリスト内を移動することができます。
 
-The following commands are available in the Manage Sieve buffer:
+以下のコマンドが「Sieve 管理」バッファで利用可能です:
 
 @table @kbd
-
 @item m
 @kindex m
 @findex sieve-activate
-Activates the currently highlighted script.
+現在の強調表示されたスクリプトを活性化します。
 
 @item u
 @kindex u
 @findex sieve-deactivate
-Deactivates the currently highlighted script.
+現在の強調表示されたスクリプトを不活性化します。
 
 @item C-M-?
 @kindex C-M-?
 @findex sieve-deactivate-all
-Deactivates all scripts.
+すべてのスクリプトを不活性化します。
 
 @item r
 @kindex r
 @findex sieve-remove
-Remove currently highlighted script.
+現在の強調表示されたスクリプトを取り除きます。
 
 @item RET
 @item mouse-2
@@ -207,41 +203,42 @@ Remove currently highlighted script.
 @kindex mouse-2
 @kindex f
 @findex sieve-edit-script
-Bury the server buffer and download the currently highlighted script
-into a new buffer for editing in Sieve mode (@pxref{Sieve Mode}).
+
+サーバーバッファを隠して、現在の強調表示されたスクリプトを Sieve モー
+ド (@pxref{Sieve Mode}) で編集するための新しいバッファにダウンロードしま
+す。
 
 @item o
 @kindex o
 @findex sieve-edit-script-other-window
-Create a new buffer in another window containing the currently
-highlighted script for editing in Sieve mode (@pxref{Sieve Mode}).
+Sieve モード (@pxref{Sieve Mode}) で編集するために、現在の強調表示された
+スクリプトを含んでいる新しいバッファを、別ウィンドウで作成します。
 
 @item q
 @kindex q
 @findex sieve-bury-buffer
-Bury the Manage Sieve buffer without closing the connection.
+接続を切らずに「Sieve 管理」バッファを隠します。
 
 @item ?
 @item h
 @kindex ?
 @kindex h
 @findex sieve-help
-Displays help in the minibuffer. 
-
+ミニバッファにヘルプを表示します。
 @end table
 
 @node Examples
-@chapter Examples
+@chapter 例
 
-If you are not familiar with Sieve, this chapter contains a few simple
-code snippets that you can cut'n'paste and modify at will, until you
-feel more comfortable with the Sieve language to write the rules from
-scratch.
+Sieve を熟知していないなら、この章にほんの少しだけあるコードの断片を利用
+することができます。Sieve 言語でゼロから規則を書くことがもっと快適に感じ
+られるようになるまでは、それらをカット＆ペーストして意のままに変更して下
+さい。
 
-The following complete Sieve script places all messages with a matching
-@samp{Sender:} header into the given mailbox.  Many mailing lists uses
-this format.  The first line makes sure your Sieve server understands
-the @code{fileinto} command.
+以下の完全な Sieve スクリプトは、合致する @samp{Sender:} ヘッダーを持つ
+すべてのメッセージを、指定されたメールボックスに格納します。多くのメーリ
+ングリストがこの形式を使っています。最初の行は Sieve サーバーが確実
+に @code{fileinto} コマンドを理解できるようにするためのものです。
 
 @example
 require "fileinto";
@@ -251,10 +248,9 @@ if address "sender" "owner-w3-beta@@xemacs.org" @{
 @}
 @end example
 
-A few mailing lists do not use the @samp{Sender:} header, but does
-contain some unique identifier in some other header.  The following is
-not a complete script, it assumes that @code{fileinto} has already been
-required.
+少数のメーリングリストは @samp{Sender:} ヘッダーを使いませんが、別のヘッ
+ダーに独特の識別子を含んでいます。以下の不完全なスクリプトは、すで
+に @code{fileinto} が読み込まれていることを仮定しています。
 
 @example
 if header :contains "Delivered-To" "auc-tex@@sunsite.dk" @{
@@ -262,10 +258,10 @@ if header :contains "Delivered-To" "auc-tex@@sunsite.dk" @{
 @}
 @end example
 
-At last, we have the hopeless mailing lists that does not have any
-unique identifier and you are forced to match on the @samp{To:} and
-@samp{Cc} headers.  As before, this snippet assumes that @code{fileinto}
-has been required.
+最後は、どんな独特の識別子も持っていない絶望的なメーリングリストのために、
+@samp{To:} と @samp{Cc} ヘッダーにおける合致を強いられる例です。前のもの
+と同様に、この断片は @code{fileinto} が読み込まれていることを仮定してい
+ます。
 
 @example
 if address ["to", "cc"] "kerberos@@mit.edu" @{
@@ -274,97 +270,91 @@ if address ["to", "cc"] "kerberos@@mit.edu" @{
 @end example
 
 @node Manage Sieve API
-@chapter Manage Sieve API
+@chapter Sieve 管理 API
 
-The @file{sieve-manage.el} library contains low-level functionality
-for talking to a server with the @sc{managesieve} protocol.
+@file{sieve-manage.el} ライブラリーには @sc{managesieve} プロトコルでサー
+バーと話すための、低階層の関数群があります。
 
-A number of user-visible variables exist, which all can be customized
-in the @code{sieve} group (@kbd{M-x customize-group RET sieve RET}):
+いくつかの、ユーザーが見ることができる変数があり、それらすべて
+は @code{sieve} グループでカスタマイズすることができます (@kbd{M-x
+customize-group RET sieve RET}):
 
 @table @code
-
 @item sieve-manage-default-user
 @vindex sieve-manage-default-user
-Sets the default username.
+ディフォルトのユーザー名を設定します。
 
 @item sieve-manage-default-port
 @vindex sieve-manage-default-port
-Sets the default port to use, the suggested port number is @code{2000}.
+仕様するディフォルトのポートを設定します。提案されているポート番号
+は @code{2000} です。
 
 @item sieve-manage-log
 @vindex sieve-manage-log
-If non-@code{nil}, should be a string naming a buffer where a protocol trace
-is dumped (for debugging purposes).
-
+非-@code{nil} だったら、やり取りしたプロトコルの結果が記録される、バッファ
+名の文字列でなければなりません (デバッグするときに使います)。
 @end table
 
-The API functions include:
+API の関数には以下のものがあります:
 
 @table @code
-
 @item sieve-manage-open
 @findex sieve-manage-open
-Open connection to managesieve server, returning a buffer to be used
-by all other API functions.
+Sieve 管理サーバーに接続し、他のすべての API で使うバッファを返します。
 
 @item sieve-manage-opened
 @findex sieve-manage-opened
-Check if a server is open or not.
+サーバーと接続しているか否かを検査します。
 
 @item sieve-manage-close
 @findex sieve-manage-close
-Close a server connection.
+サーバーとの接続を閉じます。
 
 @item sieve-manage-authenticate
 @findex sieve-manage-authenticate
-Authenticate to the server.
+サーバーを認証します。
 
 @item sieve-manage-capability
 @findex sieve-manage-capability
-Return a list of capabilities the server support.
+サーバーがサポートしている機能のリストを返します。
 
 @item sieve-manage-listscripts
 @findex sieve-manage-listscripts
-List scripts on the server.
+サーバーにあるスクリプトを列挙します。
 
 @item sieve-manage-havespace
 @findex sieve-manage-havespace
-Returns non-@code{nil} iff server have roam for a script of given
-size.
+与えられたサイズのスクリプトのための空きがあれば、非-@code{nil} を返しま
+す。
 
 @item sieve-manage-getscript
 @findex sieve-manage-getscript
-Download script from server.
+サーバーからスクリプトをダウンロードします。
 
 @item sieve-manage-putscript
 @findex sieve-manage-putscript
-Upload script to server.
+サーバーにスクリプトをアップロードします。
 
 @item sieve-manage-setactive
 @findex sieve-manage-setactive
-Indicate which script on the server should be active.
-
+サーバーにあるどのスクリプトが活きているかを示します。
 @end table
 
 @node Standards
-@chapter Standards
+@chapter 標準
 
-The Emacs Sieve package implements all or parts of a small but
-hopefully growing number of RFCs and drafts documents.  This chapter
-lists the relevant ones.  They can all be fetched from
-@uref{http://quimby.gnus.org/notes/}.
+Emacs Sieve パッケージは、少ないが増大することが望まれる RFC 群および草
+稿文書の、すべてまたは部分を実装します。この章では関連するものを列挙しま
+す。それらはすべて @uref{http://quimby.gnus.org/notes/} から入手すること
+ができます。
 
 @table @dfn
-
 @item RFC3028
-Sieve: A Mail Filtering Language.
+Sieve: メール濾過言語
 
 @item draft-martin-managesieve-03
-A Protocol for Remotely Managing Sieve Scripts
-
+Sieve スクリプトを遠隔管理するためのプロトコル
 @end table
-
 
 @node Index
 @chapter Index
