@@ -4770,42 +4770,41 @@ Gnus バージョン。
 @item gnus-visual-mark-article-hook
 @vindex gnus-visual-mark-article-hook
 このフックは記事を選択した後に実行されます。これは何らかの方法で記事をハ
-イライトするように意図されています。も
-し @code{gnus-visual} が @code{nil} である場合は実行されません。
+イライトするように意図されています。@code{gnus-visual} が @code{nil} だっ
+たら実行されません。
 
 @item gnus-summary-update-hook
 @vindex gnus-summary-update-hook
-このフックは概略行が変更されたときに呼ばれます。も
-し @code{gnus-visual} が @code{nil} である場合は実行されません。
+このフックは概略行が変化しときに呼ばれます。
+@code{gnus-visual} が @code{nil} だったら実行されません。
 
 @item gnus-summary-selected-face
 @vindex gnus-summary-selected-face
 これは概略バッファでの現在の記事をハイライトするために使われるフェイ
-ス (face) (もしくは、いくらかの人々が @dfn{フォント} (font) と呼ぶような
-もの) です。
+ス (もしくは、ある人たちが @dfn{フォント} と呼ぶようなもの) です。
 
 @item gnus-summary-highlight
 @vindex gnus-summary-highlight
 概略行はこの変数にしたがってハイライトされます。この変数は要素
-が @code{(@var{form} . @var{face})} の形式のリストです。例えば、もし印付
-きの記事をイタリック、高いスコアの記事をボールドにしたければ、この変数を
-次のようにできます。
+が @code{(@var{form} . @var{face})} の形式のリストです。例えば、印付きの
+記事を斜体、高いスコアの記事を太字にしたければ、この変数を次のように設定
+することができます。
 
 @lisp
 (((eq mark gnus-ticked-mark) . italic)
  ((> score default) . bold))
 @end lisp
 
-ご想像のとおり、もし @var{form} が @code{nil} でない値を返すと、
-@var{face} がその行に適用されます。
+ご想像のとおり、@var{form} が @code{nil} でない値を返すと、@var{face} が
+その行に適用されます。
 @end table
 
 @node Summary Maneuvering
 @section 概略間の移動
 @cindex summary movement
 
-すべての直接移動命令は数値接頭引数を受け付け、あなたの期待によくしたがっ
-て動作するでしょう。
+すべての直接移動命令は数値接頭引数を受け付け、かなり期待どおりに動作する
+でしょう。
 
 これらの命令はどれも記事を選択しません。
 
@@ -4815,65 +4814,70 @@ Gnus バージョン。
 @kindex M-n (概略)
 @kindex G M-n (概略)
 @findex gnus-summary-next-unread-subject
-概略行の次の未読記事に移る (@code{gnus-summary-next-unread-subject})。
+概略行の次の未読記事に移ります (@code{gnus-summary-next-unread-subject})。
 
 @item G M-p
 @itemx M-p
 @kindex M-p (概略)
 @kindex G M-p (概略)
 @findex gnus-summary-prev-unread-subject
-概略行の前の未読記事に移る (@code{gnus-summary-prev-unread-subject})。
+概略行の前の未読記事に移ります (@code{gnus-summary-prev-unread-subject})。
 
 @item G g
 @kindex G g (概略)
 @findex gnus-summary-goto-subject
-記事番号か @code{Message-ID} を尋ね、それからその記事を表示すること無く、
-概略行に行く (@code{gnus-summary-goto-subject})。
+記事番号を尋ね、その記事を表示はしないで、その概略行に行きま
+す (@code{gnus-summary-goto-subject})。
 @end table
 
-Gnus が次のグループに移動することを確認をするために、キーを押すことを要
-求するときがあります。その時は、@kbd{C-n} と @kbd{C-p} を使って、グルー
-プバッファに戻ること無く次に読むグループを探すことができます。
+Gnus が次のグループ移動することを確認するためにキー入力を求めた場合、
+@kbd{C-n} キーと @kbd{C-p} キーを使うことによって、実際にグループバッファー
+戻らなくても、次に読むグループを探すことができます。
 
 概略の移動に関連した変数:
 
 @table @code
 @vindex gnus-auto-select-next
 @item gnus-auto-select-next
-もし移動命令の一つ (@kbd{n} のような) を出し、現在の記事の後に未読が無け
-れば、Gnus は次のグループに移動することを奨めます。この変数
-が @code{t} で次のグループが空であると、Gnus は概略モードを終了して、グ
-ループバッファに戻ります。この変数が @code{t} や @code{nil} でなけれ
-ば Gnus はそれを選択します。特別な場合として、この変数
-が @code{quietly} であると、Gnus は確認をせずに、次のグループを選択しま
-す。この変数が @code{almost-quietly} であると、グループの一番最後の記事
-を読んでいたときに限り同じことが起こります。最後に、もしこの変数
-が @code{slightly-quietly} であると、命令 @kbd{Z n} は確認をせずに次のグ
-ループに移ります。@ref{Group Levels} も参照してください。
+移動命令の一つ (@kbd{n} のような) を発したときに現在の記事の後に未読記事
+が無いと、Gnus は次のグループに移動することをうながします。この変数
+が @code{t} で次のグループが空っぽだったら、Gnus は概略モードを抜けてグ
+ループバッファに戻ります。この変数が @code{t} でも @code{nil} でもなけれ
+ば、Gnus はさらに次の未読記事があるグループを選択します。特別な場合とし
+て、この変数が @code{quietly} だったら、Gnus は確認をせずに次のグループ
+を選択します。この変数が @code{almost-quietly} だった場合は、グループの
+一番最後の記事を読んでいたときに限って同じことが起こります。最後に、もし
+この変数が @code{slightly-quietly} だったら、命令 @kbd{Z n} は確認をせず
+に次のグループに移ります。@ref{Group Levels} も参照してください。
 
 @item gnus-auto-select-same
 @vindex gnus-auto-select-same
 @code{nil} でないと、すべての移動命令は現在の記事と同じ表題の記事に移動
 しようとします。(@dfn{同じ} はここでは @dfn{大体同じ} という意味かも知れ
 ません。詳細は @code{gnus-summary-gather-subject-limit} を見てくださ
-い (@pxref{Customizing Threading} も参照してください)。) 同じ表題の記事
-が無いときは最初の未読記事に移動します。
+い (@pxref{Customizing Threading})。) 同じ表題の記事が無いときは、最初の
+未読記事に移動します。
 
 この変数は、スレッド表示を行なっているときはあまり役に立たないでしょう。
 
 @item gnus-summary-check-current
 @vindex gnus-summary-check-current
-@code{nil} でないと、すべての『未読』移動命令は、次 (もしくは前) の記事
-に移動しません。その代わりに、それらは現在の記事を選びます。
+これが @code{nil} ではない場合、すべての『未読』移動命令は、現在の記事が
+未読だったら次 (もしくは前) の記事に移動しません。代わりに、それらは現在
+の記事を選びます。
 
 @item gnus-auto-center-summary
 @vindex gnus-auto-center-summary
 @code{nil} でないと、Gnus は概略バッファでのポイントを常に真中に保ちます。
-これをすると、とてもこぎれいになりますが、遅いネットワーク接続であったり、
-単にこの Emacsism でない行為を好きになれないのであれば、普通の Emacs の
-スクロールにするために、この変数を @code{nil} にすることができます。これ
-は概略バッファの水平方向の真中への再移動も禁止しますので、非常に長いスレッ
-ドを読むときは不便かもしれません。
+これをすると、とてもこぎれいになりますが、遅いネットワークに接続していた
+り、この Emacs らしくない流儀が好きになれないのであれば、この変数
+を @code{nil} にすることによって、普通の Emacs のスクロールにすることが
+できます。これは概略バッファの水平方向でポイントが真ん中になるようにする
+操作 (horizontal re-centering) も禁止してしまうので、非常に長いスレッド
+を読むときは不便かもしれません。
+
+この変数は数値でも構いません。その場合は、ウィンドウの先頭からその数の行
+だけ下がった位置に常にポイントがあるように制御されます。
 @end table
 
 @node Choosing Articles
@@ -4886,9 +4890,9 @@ Gnus が次のグループに移動することを確認をするために、キーを押すことを要
 @end menu
 
 @node Choosing Commands
-@subsection 命令の選択
+@subsection 選択命令
 
-以下の移動コマンドはどれも数値接頭引数を受け付けず、記事を選択し、表示し
+以下の移動コマンドはどれも数値接頭引数を受け付けず、記事を選択して表示し
 ます。
 
 新しい記事を取り込んだり、グループを再表示したいときは @ref{Exiting the
@@ -4898,12 +4902,12 @@ Summary Buffer} を参照して下さい。
 @item SPACE
 @kindex SPACE (概略)
 @findex gnus-summary-next-page
-現在の記事か、それが既に読まれている場合は次の未読記事を選択しま
+現在の記事、またはそれが既読だった場合は次の未読記事を選択しま
 す (@code{gnus-summary-next-page})。
 
-すでに記事ウィンドウを開いているときに再度 @kbd{SPACE} を押すと、その記
-事はスクロールされます。ニュースグループ全体を @kbd{SPACE} で便利に通読
-できます。@xref{Paging the Article}.
+すでに記事ウィンドウを開いているときに再び @kbd{SPACE} を押すと、その記
+事はスクロールされます。ニュースグループ全体を @kbd{SPACE} だけで便利に
+通読することができます。@xref{Paging the Article}.
 
 @item G n
 @itemx n
@@ -4957,73 +4961,69 @@ Summary Buffer} を参照して下さい。
 @kindex , (概略)
 @findex gnus-summary-best-unread-article
 最高スコアの未読記事に移動しま
-す (@code{gnus-summary-best-unread-article})。もし接頭引数が与えられたな
-らば、ディフォルトのスコアより大きいスコアを持つ最初の未読記事に移動しま
-す。
+す (@code{gnus-summary-best-unread-article})。接頭引数が与えられると、ディ
+フォルトのスコアより大きいスコアを持つ最初の未読記事に移動します。
 
 @item G l
 @itemx l
 @kindex l (概略)
 @kindex G l (概略)
 @findex gnus-summary-goto-last-article
-直前の記事に移動します (@code{gnus-summary-goto-last-article})。
+直前に読んだ記事に移動します (@code{gnus-summary-goto-last-article})。
 
 @item G o
 @kindex G o (概略)
 @findex gnus-summary-pop-article
 @cindex history
 @cindex article history
-概略の履歴 (history) から最後の記事を一つ取り出して選択します。
-(@code{gnus-summary-pop-article})。この命令が上の命令と違うのは、
-@kbd{l} が最終二つの記事の間を移動するのに対して、これは好きなだけ前の記
-事を履歴から選び出すことができる点です。何らかのこれに関係したこと
-は (もしこれらの命令をたくさん使うのであれば)、
-@ref{Article Backlog} を参照してください。
+概略の履歴 (history) から最後の記事を一つ取り出して選択しま
+す (@code{gnus-summary-pop-article})。この命令が上の命令と違うのは、
+@kbd{l} が最後の二つの記事の間を移動するだけなのに対して、これは好きなだ
+け前の記事を履歴から選び出すことができる点です。これに多少関係することに
+ついて、@ref{Article Backlog} を参照して下さい (これらの命令をたくさん使
+うのであれば)。
 
 @item G j
 @item j
 @kindex j (概略)
 @kindex G j (概略)
 @findex gnus-summary-goto-article
-記事番号か @code{Message-ID} を尋ね、それからその記事に行く。
-(@code{gnus-summary-goto-article})。
+記事番号か @code{Message-ID} を尋ね、それからその記事に行きま
+す (@code{gnus-summary-goto-article})。
 @end table
 
 @node Choosing Variables
 @subsection 選ぶための変数
 
-記事を移動し、選択するのに関連したいくつかの変数:
+記事の移動と選択に関連するいくつかの変数:
 
 @table @code
 @item gnus-auto-extended-newsgroup
 @vindex gnus-auto-extend-newsgroup
-この変数が @code{nil} でないと、すべての移動命令は、もしその記事が概略バッ
-ファに表示されていない場合でも、前 (もしくは次) の記事に移動しようとしま
-す。その命令の後で、Gnus はサーバーから記事を取得して、記事バッファに表
-示します。
+この変数が @code{nil} でないと、すべての移動命令は、記事が概略バッファに
+表示されていない場合でも、前 (もしくは次) の記事に移動しようとします。そ
+の後 Gnus はサーバーから記事を取得して、記事バッファに表示します。
 
 @item gnus-select-article-hook
 @vindex gnus-select-article-hook
-このフックは記事が選択されたときに常に呼ばれます。初期設定では、選択され
-た記事の下に隠れているスレッドを見せるようになっています。あなたが読んだ
-それぞれの記事をエージェントにセーブさせたい場合は、このフック
-に @code{gnus-agent-fetch-selected-article} を追加することで、それを行な
-うでしょう。
+このフックは記事が選択されたときに常に呼ばれます。初期値は @code{nil} で
+す。講読するそれぞれの記事をエージェントに保存させたい場合は、このフック
+に @code{gnus-agent-fetch-selected-article} を追加すれば良いでしょう。
 
 @item gnus-mark-article-hook
 @vindex gnus-mark-article-hook
 @findex gnus-summary-mark-unread-as-read
 @findex gnus-summary-mark-read-and-unread-as-read
 @findex gnus-unread-mark
-このフックは記事が選択されたときに常に呼ばれます。それは記事に既読の印を
-付けるためにあります。初期値
+このフックは記事が選択されたときに常に呼ばれます。これは記事に既読の印を
+付けるために使われることを意図しています。初期値
 は @code{gnus-summary-mark-read-and-unread-as-read} で、ほとんどすべての
 読んだ記事の印を @code{gnus-read-mark} に変更します。この関数に影響され
-ない記事は、可視、保留、期限切れ削除可能記事だけです。もし、未読に既読の
-印を付けたいだけであれば、代わり
-に @code{gnus-summary-mark-unread-as-read} を使うことができます。それは、
-@code{gnus-low-score-mark} や @code{gnus-del-mark} (などなど) の印をその
-まま残します。
+ない記事は、可視、保留、期限切れ削除可能記事だけです。未読記事に既読の印
+を付けたいだけであれば、代わり
+に @code{gnus-summary-mark-unread-as-read} を使うことができます。
+@code{gnus-low-score-mark} や @code{gnus-del-mark} (など) の印はそのまま
+残します。
 @end table
 
 @node Paging the Article
