@@ -54,6 +54,8 @@ Picon はテキストのアドレスから正しく表示されます。
 メッセージを送信するとき、flowed text を無効にできます。
 
 @item メッセージバッファに添付ファイルをドラッグ＆ドロップできます。
+@code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見てく
+ださい。@xref{MIME}。
 
 @item @code{message-yank-empty-prefix} オプションで、引用文の空行にどの
 ように引用符をつけるか制御できます。

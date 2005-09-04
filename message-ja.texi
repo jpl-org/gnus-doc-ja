@@ -808,8 +808,20 @@ Message $B$O(B @acronym{MIME} $B$KBP1~$7$?!"Aw?.MQ$N%(!<%8%'%s%H$G$9!#$U$D$&%
 $B%f!<%6$,(B @acronym{MIME} $B$G%^%k%A%Q!<%H$r;H$$$?$$:G$bE57?E*$J$b$N$O!"Aw=P(B
 $B$9$k%a!<%k$K!VE:IU!W$rIU$12C$($k$3$H$G$9!#$3$l$O(B @kbd{C-c C-a} $B%3%^%s%I(B
 $B$G9T$J$&$3$H$,$G$-!"$=$N:]%U%!%$%kL>$H(B @acronym{MIME} $B%?%$%W$,?R$M$i$l$^(B
-$B$9!#$"$J$?$N(B Emacs $B$,%I%i%C%0!u%I%m%C%W$r%5%]!<%H$7$F$$$l$P!"(BMessage $B%P%C(B
-$B%U%!$K%U%!%$%k$r%I%m%C%W$9$k$3$H$b$G$-$^$9!#(B
+$B$9!#(B
+
+@vindex mml-dnd-protocol-alist
+@vindex mml-dnd-attach-options
+$B$"$J$?$N(B Emacs $B$,%I%i%C%0!u%I%m%C%W$r%5%]!<%H$7$F$$$l$P!"(BMessage $B%P%C%U%!(B
+$B$K%U%!%$%k$r%I%m%C%W$9$k$3$H$b$G$-$^$9!#JQ(B
+$B?t(B @code{mml-dnd-protocol-alist} $B$G!"(BMessage $B%P%C%U%!$K%U%!%$%k$r%I%m%C(B
+$B%W$7$?$H$-$K$I$s$J$3$H$r9T$J$&$+$r;XDj$7$^$9!#JQ(B
+$B?t(B @code{mml-dnd-attach-options} $B$O!"%U%!%$%k$r%I%m%C%W$9$k$H$-$K$I(B
+$B$N(B @acronym{MIME} $B%*%W%7%g%s$r;XDj$7$?$$$+$r@)8f$7$^$9!#$=$l$r%j%9%H$K$9(B
+$B$k>l9g!"M-8z$J%*%W%7%g%s$O(B @code{type}, @code{description} $B$*$h(B
+$B$S(B @code{disposition} $B$G$9!#(B@code{disposition} $B$O0E$K(B @code{type} $B$r4^$_(B
+$B$^$9!#(B@code{nil} $B$@$C$?$i%*%W%7%g%s$r?R$M$^$;$s!#(B@code{t} $B$K$9$k$H!"%*%W(B
+$B%7%g%s$r;XDj$9$k$+$I$&$+$r?R$M$^$9!#(B
 
 $B$5$i$K(B @acronym{MML} $B8@8l(B (@pxref{Composing, , Composing, emacs-mime-ja,
 The Emacs MIME Manual}) $B$r;H$($P!"J#;($J%^%k%A%Q!<%H$r>!<j5$$^$^$K:n$k$3(B
