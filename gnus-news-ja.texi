@@ -55,7 +55,7 @@ Picon はテキストのアドレスから正しく表示されます。
 
 @item メッセージバッファに添付ファイルをドラッグ＆ドロップできます。
 @code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見てく
-ださい。@xref{MIME}。
+ださい。@xref{MIME, ,MIME, message, Message Manual}。
 
 @item @code{message-yank-empty-prefix} オプションで、引用文の空行にどの
 ように引用符をつけるか制御できます。
