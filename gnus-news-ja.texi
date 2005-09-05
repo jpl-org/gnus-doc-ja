@@ -42,11 +42,11 @@ nntp marks については、以降の項目でさらに詳しい情報を得ることができます。
 
 @item
 Picon はテキストのアドレスから正しく表示されます。
-@code{gnus-picon-style} を見てください。@ref{Picons}。
+@code{gnus-picon-style} を見てください。@ref{Picons}.
 
 @item
 @acronym{OPML} のファイルで @acronym{RSS} 購読情報をインポートあるいはエ
-クスポートできます。@xref{RSS}。
+クスポートできます。@xref{RSS}.
 
 @item
 @code{mm-fill-flowed} オプションで、format=flowed なメッセージの取り扱い
@@ -55,11 +55,11 @@ Picon はテキストのアドレスから正しく表示されます。
 
 @item メッセージバッファに添付ファイルをドラッグ＆ドロップできます。
 @code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見てく
-ださい。@xref{MIME, ,MIME, message, Message Manual}。
+ださい。@xref{MIME, ,MIME, message-ja, Message Manual}.
 
 @item @code{message-yank-empty-prefix} オプションで、引用文の空行にどの
 ように引用符をつけるか制御できます。
-@xref{(message)Insertion Variables}。
+@xref{(message)Insertion Variables}.
 
 @item @acronym{ANSI} @acronym{SGR} 制御シーケンスを @kbd{W A} で変換する
 ことができます。
@@ -117,15 +117,15 @@ ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
 @item Gnus は、サマリバッファで新しい制限コマンド @kbd{/ r}
 (@code{gnus-summary-limit-to-replied}) と @kbd{/ R}
 (@code{gnus-summary-limit-to-recipient}) をサポートします。
-@ref{Limiting}。
+@ref{Limiting}.
 
 @item Gnus は、サマリバッファで新しい並べ替えコマンド @kbd{C-c C-s C-t}
 (@code{gnus-summary-sort-by-recipient}) をサポートします。
-@ref{Summary Sorting}。
+@ref{Summary Sorting}.
 
 @item @code{nnrss} バックエンドは、多言語テキストをサポートします。
 @code{nnrss} グループで非 ASCII 文字列を使ったグループ名もサポートされま
-す。@xref{RSS}。
+す。@xref{RSS}.
 
 @item OpenPGP 内での URL: それをクリックすると、ヘッダがダウンロードされ
 てあなたの PGP 鍵輪に取り込まれます。
@@ -137,7 +137,7 @@ ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
 
 @item @code{gnus-decay-scores} をスコアファイルにマッチする正規表現にで
 きます。これによって、適合するスコアファイルだけに減らすことができます。
-@ref{Score Decays}。
+@ref{Score Decays}.
 
 @item @acronym{S/MIME} が @acronym{LDAP} でのユーザ証明の検索に使えるよ
 うになりました。@code{smime-ldap-host-list} でサーバーを設定する必要があ
@@ -146,7 +146,7 @@ ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
 @item @code{gnus-ignored-from-addresses} を使うとき、
 サマリ行での @code{To} および @code{Newsgroup} ヘッダにつける文字列を
 @code{gnus-summary-to-prefix} と @code{gnus-summary-newsgroup-prefix} で
-カスタマイズすることができます。@ref{To From Newsgroups}。
+カスタマイズすることができます。@ref{To From Newsgroups}.
 
 @end itemize
 
