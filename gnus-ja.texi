@@ -13614,7 +13614,8 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 入ってきたメールを保存するファイルの接頭辞です。初期値
 は @file{Incoming} で、この場合ファイル
 は @file{Incoming30630D_} や @file{Incoming298602ZD} のようになります。
-@code{mail-source-delete-incoming} が @code{nil} の場合だけですが。
+@code{mail-source-delete-incoming} が @code{nil} または数値の場合だけで
+すが。
 
 @item mail-source-default-file-modes
 @vindex mail-source-default-file-modes
