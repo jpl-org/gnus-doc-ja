@@ -6804,7 +6804,7 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 @findex gnus-thread-sort-by-score
 @findex gnus-thread-sort-by-subject
 @findex gnus-thread-sort-by-author
-@c @findex gnus-thread-sort-by-recipient
+@findex gnus-thread-sort-by-recipient
 @findex gnus-thread-sort-by-number
 @findex gnus-thread-sort-by-random
 @vindex gnus-thread-sort-functions
@@ -6817,7 +6817,7 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 
 $B%G%#%U%)%k%H$G$OJB$YBX$($O5-;vHV9f$K4p$E$$$F9T$J$o$l$^$9!#$9$G$KMQ0U$5$l(B
 $B$F$$$kJB$YBX$(=R8l4X?t$O(B @code{gnus-thread-sort-by-number},
-@code{gnus-thread-sort-by-author},
+@code{gnus-thread-sort-by-author}, @code{gnus-thread-sort-by-recipient},
 @code{gnus-thread-sort-by-subject}, @code{gnus-thread-sort-by-date},
 @code{gnus-thread-sort-by-score},
 @code{gnus-thread-sort-by-most-recent-number},
