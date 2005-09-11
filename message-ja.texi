@@ -1398,11 +1398,23 @@ Message $B$,(B Gnus $B>e$GAv$C$F$$$k>l9g!"%a%C%;!<%8%P%C%U%!$O%I%i%U%H%0%k!<%
 
 @item message-alternative-emails
 @vindex message-alternative-emails
-$BBe$o$j$N%a!<%k%"%I%l%9$K9gCW$9$k@55,I=8=$G$9!#:G=i$K%^%C%A$7$?(B ($BBh0l5A$G(B
-$B$O$J$$(B) $B%"%I%l%9$,(B @code{From} $B%U%#!<%k%I$G;H$o$l$^$9!#(B
-($BLuCm(B: To $B$+(B Cc $B$K$"$k%"%I%l%9$G!":G=i$K$3$N@55,I=8=$K9gCW$7!"(B
-$B$+$D(B @code{user-mail-address} $B$H$O0c$&$b$N$,!"(B@code{From} $B%U%#!<%k%I$N%a!<(B
-$B%k%"%I%l%9$H$7$F;H$o$l$^$9!#(B)
+$BBe$o$j$N%a!<%k%"%I%l%9$K9gCW$9$k@55,I=8=$G$9!#85$N5-;v$N(B To$B!"(BCc $B$^$?$O(B
+From $B%X%C%@!<$K$"$k:G=i$N%"%I%l%9$G!"$3$NJQ?t$K9gCW$9$k$b$N$,!"=P$F9T$/(B
+$B%a%C%;!<%8$N(B From $BMs$H$7$F!"%G%#%U%)%k%H$N(B From $B$NCM$rCV$-49$($F;HMQ$5$l(B
+$B$^$9!#(B
+
+$BNc$($P!"$"$J$?$,(B john@@home.net $B$*$h$S(B john.doe@@work.com $B$H$$$&BhFs$NEE(B
+$B;R%a!<%k%"%I%l%9$r;}$C$F$$$F!"$=$l$i$K08$F$FAw$i$l$F$-$?%a%C%;!<%8$KJV?.(B
+$B$9$k$H$-$K!"$=$l$i$r(B From $BMs$G;H$$$?$1$l$P!"$3$NJQ?t$r<!$N$h$&$K@_Dj$9$k(B
+$B$3$H$,$G$-$^$9(B:
+
+@lisp
+(setq message-alternative-emails
+      (regexp-opt '("john@@home.net" "john.doe@@work.com")))
+@end lisp
+
+$B$3$NJQ?t$O!"Ej9FMM<0(B (posting styles) $B$d(B @code{message-setup-hook} $B$G<B(B
+$B9T$9$k$$$+$J$k$b$N$h$j$bM%@h$7$^$9!#(B
 
 @item message-allow-no-recipients
 @vindex message-allow-no-recipients

@@ -14762,8 +14762,16 @@ rmail box のためのアクティブファイルの名前。既定値
 
 @item nnml-use-compressed-files
 @vindex nnml-use-compressed-files
-非-@code{nil} だったら @code{nnml} は圧縮されたメッセージファイルを使う
-ことを考慮に入れます。
+非-@code{nil} だったら @code{nnml} はメッセージファイルを圧縮します。た
+だし @code{auto-compression-mode} が有効になっていなければなりませ
+ん (@pxref{Compressed Files, ,Compressed Files, emacs, The Emacs
+Manual})。
+
+@item nnml-compressed-files-size-threshold
+@vindex nnml-compressed-files-size-threshold
+メッセージファイルを圧縮するかどうかを判断するための、サイズの閾値です。
+@code{nnml-use-compressed-files} が非-@code{nil} に設定されていて、本文
+の文字数がこの変数の値より大きかったら、メッセージファイルは圧縮されます。
 @end table
 
 @findex nnml-generate-nov-databases
