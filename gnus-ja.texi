@@ -20394,6 +20394,19 @@ Redmondo が消えた靴下について書いたときにフォローアップしたすべての人は
  1000)
 @end example
 
+@c TRANSLATEME
+Suppose you're readin ga high volume group and you're only interested
+in replies. The plan is to score down all articles that don't have
+subject that begin with "Re:", "Fw:" or "Fwd:" and then score up all
+parents of articles that have subjects that begin with reply marks.
+
+@example
+((! ("subject" "re:\\|fwd?:" r))
+  -200)
+((1- ("subject" "re:\\|fwd?:" r))
+  200)
+@end example
+
 可能性は無限大です。
 
 @node Advanced Scoring Tips
