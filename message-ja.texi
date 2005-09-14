@@ -1732,7 +1732,7 @@ message は @code{message-user-fqdn}, @code{system-name},
 @end table
 
 @node News Variables
-@section 新しい変数
+@section ニュース変数
 
 @table @code
 @item message-send-news-function
