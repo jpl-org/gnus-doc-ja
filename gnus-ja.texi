@@ -20395,7 +20395,7 @@ Redmondo が消えた靴下について書いたときにフォローアップしたすべての人は
 @end example
 
 @c TRANSLATEME
-Suppose you're readin ga high volume group and you're only interested
+Suppose you're reading a high volume group and you're only interested
 in replies. The plan is to score down all articles that don't have
 subject that begin with "Re:", "Fw:" or "Fwd:" and then score up all
 parents of articles that have subjects that begin with reply marks.
