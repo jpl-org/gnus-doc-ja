@@ -9443,21 +9443,18 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セットに関する他の秘訣:
 @kindex M-^ (概略)
 @cindex Message-ID
 @cindex fetching by Message-ID
-どのグループに属しているかに関わらず、任意の記事を @acronym{NNTP} サーバー
-に要求することができます。
+どのグループに属しているかに関わらず、任意の記事を Gnus に要求することが
+できます。
 @kbd{M-^} (@code{gnus-summary-refer-article}) は @code{Message-ID}、つま
 りあの長くてなかなか読むことのできな
 い @samp{<38o6up$6f2@@hymir.ifi.uio.no>} のようなものをあなたに尋ねます。
 あなたはすべてを正確に打ち込まなければなりません。残念ながら、あいまいな
 検索はできないのです。
-@end table
 
-@c この機能は Pterodactyl Gnus v0.99 がリリースされる直前に削除されてい
-@c る。gnus.texi ともども修正すべし。
-@c
-@c ニュースではない選択方法から @code{Message-ID} によって取得するときには
-@c 現在の選択方法が使われますが、この命令に接頭引数を与えると代わりにそれが
-@c 使われます。
+Gnus はすでに取得してあるヘッダーたちの中で @code{Message-ID} を探します
+が、見つからなかったら @code{gnus-refer-article-method} に設定されている
+すべての選択方法を試してもみます。
+@end table
 
 @vindex gnus-refer-article-method
 もしあなたの読んでいるグループが @code{Message-ID} での取得があまり良く
