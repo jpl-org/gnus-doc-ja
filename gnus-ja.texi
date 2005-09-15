@@ -20340,11 +20340,11 @@ Gnus $B$O$^$@!"$"$N$&$6$C$?$$8E$$>C5n%U%!%$%k$r%5%]!<%H$7$F$$$^$9!#<B:]>C(B
 @node Advanced Scoring Examples
 @subsection $B>e5i%9%3%"IU$1$NNc(B
 
-$B0J2<$NNc$O%9%3%"%U%!%$%k$N5,B'$G$"$k$3$H$K$4Cm0U2<$5$$!#40`z$J%9%3%"%U%!(B
+$B0J2<$NNc$O%9%3%"%U%!%$%k$N5,B'$G$"$k$3$H$KCm0U$7$F2<$5$$!#40`z$J%9%3%"%U%!(B
 $B%$%k$r:n$k$K$O!"JL$N3g8L$NAH$G$=$l$i$r0O$s$G2<$5$$!#(B
 
-Lars $B$,(B Gnus $B$K4X$7$FOC$r$7$F$$$k$H$-$KH`$K$h$C$F=q$+$l$?5-;v$N%9%3%"$r(B
-$BA}$d$7$?$$$H$7$^$7$g$&(B:
+Lars $B$5$s$,(B Gnus $B$K4X$7$FOC$r$7$F$$$k$H$-$K!"H`$K$h$C$F=q$+$l$?5-;v$N%9(B
+$B%3%"$rA}$d$7$?$$$H$7$^$7$g$&(B:
 
 @example
 @group
@@ -20357,7 +20357,7 @@ Lars $B$,(B Gnus $B$K4X$7$FOC$r$7$F$$$k$H$-$KH`$K$h$C$F=q$+$l$?5-;v$N%9%3%"$r
 
 $B$M!"$H$F$bC1=c$G$7$g(B?
 
-$BD9$$5-;v$r=q$$$F$$$k$H$-$O!";~!92?$+AGE($J$3$H$r8@$$$^$9(B:
+$BH`$,D9$$5-;v$r=q$/$H$-!";~!92?$+AGE($J$3$H$r8@$$$^$9(B:
 
 @example
 ((&
@@ -20378,7 +20378,7 @@ Lars $B$,(B Gnus $B$K4X$7$FOC$r$7$F$$$k$H$-$KH`$K$h$C$F=q$+$l$?5-;v$N%9%3%"$r
  -100000)
 @end example
 
-Redmondo $B$,>C$($?7$2<$K$D$$$F=q$$$?$H$-$K%U%)%m!<%"%C%W$7$?$9$Y$F$N?M$O(B
+Redmondo $B$,>C$($?7$2<$K$D$$$F=q$$$?$H$-$K%U%)%m!<%"%C%W$7$?$9$Y$F$N?M$N(B
 $B%9%3%"$,>e$2$i$l$^$9$,!"$=$l$OH`$i$,Gr$$7$2<$K$D$$$F8l$C$F$$$k$H$-$N$_$G(B
 $B$9!#$7$+$7!"(BLars $B$,7$2<$K$D$$$FOC$r$7$F$$$k$H$-$O!"$?$$$F$$$"$^$j$*$b$7(B
 $B$m$/$"$j$^$;$s(B:
@@ -20394,11 +20394,10 @@ Redmondo $B$,>C$($?7$2<$K$D$$$F=q$$$?$H$-$K%U%)%m!<%"%C%W$7$?$9$Y$F$N?M$O(B
  1000)
 @end example
 
-@c TRANSLATEME
-Suppose you're reading a high volume group and you're only interested
-in replies. The plan is to score down all articles that don't have
-subject that begin with "Re:", "Fw:" or "Fwd:" and then score up all
-parents of articles that have subjects that begin with reply marks.
+$BBgNL$N5-;v$,N.$l$F$$$k%0%k!<%W$rFI$s$G$$$F!"JVEz$K$7$+6=L#$,L5$$$H$7$^$7$g(B
+$B$&!#$=$&$$$&>l9g$K$d$k$3$H$O!"(B"Re:"$B!"(B"Fw:" $B$^$?$O(B "Fwd:" $B$G;O$^$kI=Bj$r(B
+$B;}$C$F$$$J$$$9$Y$F$N5-;v$N%9%3%"$r2<$2$F!"JVEz$N0u$G;O$^$kI=Bj$r;}$C$F$$(B
+$B$k5-;v$N$9$Y$F$N?F$N%9%3%"$r>e$2$k$3$H$G$9!#(B
 
 @example
 ((! ("subject" "re:\\|fwd?:" r))
