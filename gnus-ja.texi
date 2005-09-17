@@ -12,7 +12,7 @@ Copyright (C) 1995, 1996, 1997, 1998, 1999, 2000, 2001,
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.1 or
+under the terms of the GNU Free Documentation License, Version 1.2 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with the Front-Cover texts being ``A GNU
 Manual'', and with the Back-Cover Texts as in (a) below.  A copy of the
@@ -20,7 +20,7 @@ license is included in the section entitled ``GNU Free Documentation
 License'' in the Emacs manual.
 
 この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
-第 1.1 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+第 1.2 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
 ることを許可します。変更不可部分は指定しません。「A GNU Manual」は表表紙
 テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
 「Emacs manual」の「GNU フリー文書利用許諾契約書」という章に含まれていま
