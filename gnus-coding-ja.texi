@@ -1,0 +1,172 @@
+\input texinfo
+
+@setfilename gnus-coding-ja
+@settitle Gnus Coding Style and Maintainance Guide
+@syncodeindex fn cp
+@syncodeindex vr cp
+@syncodeindex pg cp
+
+@copying
+Copyright (c) 2004  Free Software Foundation, Inc.
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover texts being ``A GNU
+Manual'', and with the Back-Cover Texts as in (a) below.  A copy of the
+license is included in the section entitled ``GNU Free Documentation
+License'' in the Emacs manual.
+
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.2 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。「A GNU Manual」は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「Emacs manual」の「GNU フリー文書利用許諾契約書」という章に含まれていま
+す。
+
+(a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
+this GNU Manual, like GNU software.  Copies published by the Free
+Software Foundation raise funds for GNU development.''
+
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を GNU ソフトウェア
+のように複製したり変更する自由があります。複製はフリーソフトウェア財団に
+よって出版されました。(フリーソフトウェア財団は) GNU の開発のために必要
+な資金を集めています。」
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license.
+
+この文書は「GNU フリー文書利用許諾契約書」に基づいて配布された収集著作物
+の一部です。もしあなたがこの文書を収集著作物から分離して配布したいときは、
+契約書の第 6 項に記述されているように、文書に契約書の複写を付加すること
+によって、行なうことができます。
+@end quotation
+@end copying
+
+@titlepage
+@title Gnus Coding Style and Maintainance Guide
+
+@c @author by
+
+@insertcopying
+@end titlepage
+
+@node Top
+
+@section Gnus Coding Style
+@subsection Dependencies
+
+@c message / gnus
+@c
+@c nn*
+@c
+@c mm*
+@c
+@c rfc*
+@c
+@c tla netrc pop3 dig dns ...
+@c format-spec.el
+
+@subsection Compatibility
+
+@c Compatibility with XEmacs and older Emacs versions in v5-10 and in the
+@c trunk.
+
+@c @table
+@c x
+@c @end table
+
+@section Gnus Maintainance Guide
+
+@subsection Stable and development versions
+
+The CVS trunk is developed quite actively.
+
+@c Most of the time Gnus is developed on the trunk.
+
+@c Exeption: several month of feature freeze after a release,
+@c e.g. 5.10.1
+
+@subsection Syncing
+
+@c <v9eklyke6b.fsf@marauder.physik.uni-ulm.de>
+@c <buovfd71nkk.fsf@mctpc71.ucom.lsi.nec.co.jp>
+
+I do Emacs->Gnus less often (than Gnus->Emacs) because it tends to
+require more manual work.
+
+By default I sync about once a week.  I also try to follow any Gnus
+threads on the mailing lists and make sure any changes being discussed
+are kept more up-to-date (so say 1-2 days delay for "topical" changes).
+
+@c <buovfd71nkk.fsf@mctpc71.ucom.lsi.nec.co.jp>
+
+BTW, just to add even more verbose explanation about the syncing thing:
+
+Basically my idea is that the Emacs-Gnus gateway will cause all common
+files in Emacs and Gnus v5-10 to be identical except when there's a very
+good reason (e.g., the Gnus version string in Emacs says "5.11", but the
+v5-10 version string remains "5.10.whatever").  Furthermore, all changes
+in these files in either Emacs or the v5-10 branch will be installed
+into the Gnus CVS trunk, again except where there's a good reason
+(typically so far the only exception has been that the changes already
+exist in the trunk in modified form).  Because of this, when the next
+Emacs Gnus upgrade comes, it should be very easy -- just plonk in the
+files from the Gnus trunk without worrying about lost changes from the
+Emacs tree.
+
+The effect of this is that as hacker, you should generally only have to
+make changes in one place:
+
+  1) If it's a file which is thought of as being outside of Gnus (e.g.,
+     the new "encrypt.el"), you should probably make the change in the
+     Emacs tree, and it will show up in the Gnus tree a few days later.
+
+     If you don't have Emacs CVS access (or it's inconvenient), you can
+     change such a file in the v5-10 branch, and it should propagate to
+     Emacs CVS -- however, it will get some extra scrutiny (by me) to see
+     if the changes are possibly controversial and need discussion on the
+     mailing list.  [Many changes are obvious bug-fixes however, so often
+     there won't be any problem.]
+
+  2) If it's to a Gnus file, and it's important enough that it should be
+     part of Emacs/v5-10, then you can make the change on the v5-10
+     branch, and it will go into Emacs CVS and the Gnus CVS trunk (a few
+     days later).
+
+     If you know that there will be conflicts (perhaps because the
+     affected source code is different in v5-10 and the Gnus CVS trunk),
+     then you can install your change in both places, and when I try to
+     sync them, there will be a conflict -- however, since in most such
+     cases there would be a conflict _anyway_, it's often easier for me
+     to resolve it simply if I see two "identical" changes, and can just
+     choose the proper one, rather than having to actually fix the code.
+
+  3) For general Gnus development changes, of course you just make the
+     change on the Gnus CVS trunk and it goes into Emacs a few years
+     later... :-)
+
+Of course in any case, if you just can't wait for me to sync your
+change, you can commit it in more than one place and probably there will
+be no problem; usually the changes are textually identical anyway, so
+can be easily resolved automatically (sometimes I notice silly things in
+such multiple commits, like whitespace differences, and unify those ;-).
+
+@subsection Miscellanea
+
+Starting from No Gnus, the @file{GNUS-NEWS} is created from
+@file{texi/gnus-news.texi}.  Don't edit @file{GNUS-NEWS}.  Edit
+@file{texi/gnus-news.texi}, type @command{make GNUS-NEWS} in the
+@file{texi} directory and commit @file{GNUS-NEWS} and
+@file{texi/gnus-news.texi}.
+
+@c Local Variables:
+@c coding: iso-2022-7bit
+@c fill-column: 72
+@c mode: texinfo
+@c use-kuten-for-period: t
+@c use-touten-for-comma: t
+@c End:

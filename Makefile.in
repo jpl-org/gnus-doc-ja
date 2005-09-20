@@ -1,7 +1,7 @@
 EMACS=@EMACS@
 EMACSINFO=$(EMACS) -batch -q -no-site-file -l infohack.el -f batch-makeinfo
 INFO_DEPS=gnus-ja.info message-ja.info emacs-mime-ja.info\
- pgg-ja.info sasl-ja.info sieve-ja.info
+ pgg-ja.info sasl-ja.info sieve-ja.info gnus-coding-ja.info
 INSTALL=@INSTALL@
 INSTALL_DATA=@INSTALL_DATA@
 INSTALL_INFO=install-info
@@ -42,7 +42,7 @@ install: all
 	else : ; fi
 
 dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi\
- pgg-ja.dvi sasl-ja.dvi sieve-ja.dvi
+ pgg-ja.dvi sasl-ja.dvi sieve-ja.dvi gnus-coding-ja.dvi
 
 .texi.dvi:
 	sed -e '/@iflatex/,/@end iflatex/d' $< > gnustmp.texi

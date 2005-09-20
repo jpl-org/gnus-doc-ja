@@ -8976,8 +8976,8 @@ Gnus でメールを読むことの利点は、それが単純なバグを素晴らしい不条理に置
 @cindex attachments
 @cindex viewing attachments
 
-以下のコマンドはすべて数値接頭引数を理解します。例えば @kbd{3 b} は「三
-番目の @acronym{MIME} パートを表示する」という意味です。
+以下のコマンドはすべて数値接頭引数を理解します。例えば @kbd{3 K v} は
+「三番目の @acronym{MIME} パートを表示する」という意味です。
 
 @table @kbd
 @item b
@@ -8989,6 +8989,21 @@ Gnus でメールを読むことの利点は、それが単純なバグを素晴らしい不条理に置
 @item K o
 @kindex K o (概略)
 @acronym{MIME} パートを保存します。
+
+@item K O
+@kindex K O (概略)
+ファイル名の入力を求めてから @acronym{MIME} パートを保存し、それを記事か
+ら取り除きます。取り除かれた @acronym{MIME} オブジェクト
+は message/external-body 型の @acronym{MIME} 形式として参照されるように
+なります。
+
+@item K r
+@kindex K r (概略)
+@acronym{MIME} パートを外部にある本体で置き換えます。
+
+@item K d
+@kindex K d (概略)
+@acronym{MIME} パートを削除して、削除したことの案内を追加します。
 
 @item K c
 @kindex K c (概略)
@@ -10827,11 +10842,20 @@ Gnus は @acronym{MIME} パートを表示するために、
 イプとして参照されるようになりま
 す (@code{gnus-mime-save-part-and-strip})。
 
+@findex gnus-mime-replace-part
+@item r (記事)
+@kindex r (記事)
+ファイル名の入力を求めて、@acronym{MIME} オブジェクト
+を message/external-body 型の @acronym{MIME} 形式のファイルとして参照さ
+れる外部にある本体で置き換えます。(@code{gnus-mime-replace-part})。
+
 @findex gnus-mime-delete-part
 @item d (記事)
 @kindex d (記事)
 記事から @acronym{MIME} オブジェクトを取り外し、取り外したことを表す告知
 で置き換えます (@code{gnus-mime-delete-part})。
+
+@c FIXME: gnus-auto-select-part はここで説明されるべきです。
 
 @findex gnus-mime-copy-part
 @item c (記事)

@@ -42,7 +42,7 @@ nntp marks については、以降の項目でさらに詳しい情報を得ることができます。
 
 @item
 Picon はテキストのアドレスから正しく表示されます。
-@code{gnus-picon-style} を見てください。@ref{Picons}.
+@code{gnus-picon-style} を見てください。@xref{Picons}.
 
 @item
 @acronym{OPML} のファイルで @acronym{RSS} 購読情報をインポートあるいはエ
@@ -117,11 +117,11 @@ ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
 @item Gnus は、サマリバッファで新しい制限コマンド @kbd{/ r}
 (@code{gnus-summary-limit-to-replied}) と @kbd{/ R}
 (@code{gnus-summary-limit-to-recipient}) をサポートします。
-@ref{Limiting}.
+@xref{Limiting}.
 
 @item Gnus は、サマリバッファで新しい並べ替えコマンド @kbd{C-c C-s C-t}
 (@code{gnus-summary-sort-by-recipient}) をサポートします。
-@ref{Summary Sorting}.
+@xref{Summary Sorting}.
 
 @item @code{nnrss} バックエンドは、多言語テキストをサポートします。
 @code{nnrss} グループで非 ASCII 文字列を使ったグループ名もサポートされま
@@ -137,7 +137,7 @@ ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
 
 @item @code{gnus-decay-scores} をスコアファイルにマッチする正規表現にで
 きます。これによって、適合するスコアファイルだけに減らすことができます。
-@ref{Score Decays}.
+@xref{Score Decays}.
 
 @item @acronym{S/MIME} が @acronym{LDAP} でのユーザ証明の検索に使えるよ
 うになりました。@code{smime-ldap-host-list} でサーバーを設定する必要があ
@@ -146,7 +146,11 @@ ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
 @item @code{gnus-ignored-from-addresses} を使うとき、
 サマリ行での @code{To} および @code{Newsgroup} ヘッダにつける文字列を
 @code{gnus-summary-to-prefix} と @code{gnus-summary-newsgroup-prefix} で
-カスタマイズすることができます。@ref{To From Newsgroups}.
+カスタマイズすることができます。@xref{To From Newsgroups}.
+
+@item @acronym{MIME} パートを外部にある本体で置き換えることができます。
+@code{gnus-mime-replace-part} と @code{gnus-article-replace-part} を見て
+ください。@xref{MIME Commands}, @ref{Using MIME}.
 
 @end itemize
 
