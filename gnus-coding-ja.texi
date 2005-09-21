@@ -6,6 +6,11 @@
 @syncodeindex vr cp
 @syncodeindex pg cp
 
+@dircategory Emacs
+@direntry
+* Gnus-Coding-ja: (gnus-coding-ja).  Gnus Coding Style and Maintainance Guide
+@end direntry
+
 @copying
 Copyright (c) 2004  Free Software Foundation, Inc.
 
@@ -56,8 +61,8 @@ license to the document, as described in section 6 of the license.
 
 @node Top
 
-@section Gnus Coding Style
-@subsection Dependencies
+@section Gnus でコードを書くときの流儀
+@subsection 依存関係
 
 @c message / gnus
 @c
@@ -70,7 +75,7 @@ license to the document, as described in section 6 of the license.
 @c tla netrc pop3 dig dns ...
 @c format-spec.el
 
-@subsection Compatibility
+@subsection 互換性
 
 @c Compatibility with XEmacs and older Emacs versions in v5-10 and in the
 @c trunk.
@@ -79,89 +84,96 @@ license to the document, as described in section 6 of the license.
 @c x
 @c @end table
 
-@section Gnus Maintainance Guide
+@section Gnus の維持管理に関する手引
 
-@subsection Stable and development versions
+@subsection 安定版と開発版
 
-The CVS trunk is developed quite actively.
+CVS の幹はかなり活発に開発されています。
 
 @c Most of the time Gnus is developed on the trunk.
 
 @c Exeption: several month of feature freeze after a release,
 @c e.g. 5.10.1
 
-@subsection Syncing
+@subsection 同期
 
 @c <v9eklyke6b.fsf@marauder.physik.uni-ulm.de>
 @c <buovfd71nkk.fsf@mctpc71.ucom.lsi.nec.co.jp>
 
-I do Emacs->Gnus less often (than Gnus->Emacs) because it tends to
-require more manual work.
+Emacs で行なわれた変更を Gnus に取り込むことを、私は頻繁には行ないませ
+ん。Gnus で行なわれた変更を Emacs に持ち上げるよりも多くの手作業を必要と
+する傾向があるからです。
 
-By default I sync about once a week.  I also try to follow any Gnus
-threads on the mailing lists and make sure any changes being discussed
-are kept more up-to-date (so say 1-2 days delay for "topical" changes).
+私はディフォルトで週一回の同期を行なっています。さらに私は Gnus メーリン
+グリストのあらゆるスレッドを追いかけて、話し合われているどんな変更でも、
+それがより最新になるようにしています (そのため、話題になっている変更への
+追従は 1〜2日遅れます)。
 
 @c <buovfd71nkk.fsf@mctpc71.ucom.lsi.nec.co.jp>
 
-BTW, just to add even more verbose explanation about the syncing thing:
+ついでに、同期に関するより詳しい説明を付記しておきましょう:
 
-Basically my idea is that the Emacs-Gnus gateway will cause all common
-files in Emacs and Gnus v5-10 to be identical except when there's a very
-good reason (e.g., the Gnus version string in Emacs says "5.11", but the
-v5-10 version string remains "5.10.whatever").  Furthermore, all changes
-in these files in either Emacs or the v5-10 branch will be installed
-into the Gnus CVS trunk, again except where there's a good reason
-(typically so far the only exception has been that the changes already
-exist in the trunk in modified form).  Because of this, when the next
-Emacs Gnus upgrade comes, it should be very easy -- just plonk in the
-files from the Gnus trunk without worrying about lost changes from the
-Emacs tree.
+基本的に私が理解しているのは、Emacs と Gnus v5-10 におけるすべての共通な
+ファイルを Emacs-Gnus ゲートウェイが同じにしてくれることです。ただし非常
+に正当な理由がある (例えば Emacs では Gnus の版を表す文字列
+が @samp{5.11} ですが v5-10 枝では @samp{5.10.何がし} のままになってい
+る) 場合を除きます。さらに Emacs か v5-10 枝のどちらかで、それらのファイ
+ルに対して行なわれたすべての変更は、Gnus の CVS の幹にも反映されます。た
+だし、こちらも正当な理由がある場合を除きます (これまでの典型的な例外とし
+て、効果は同じだけれども違うやり方で行なわれた変更がすでに幹に存在してい
+たことがありました)。これによって、次に Emacs の Gnus を更新するときになっ
+たら、それは非常に楽なはずです---Emacs だけで変更されたことが失われてし
+まうことを心配せずに、Gnus の幹をそれらのファイルにどさっと置くだけで良
+いのです。
 
-The effect of this is that as hacker, you should generally only have to
-make changes in one place:
+この結果、ハッカーであるあなたは、通常は一つの場所で変更を行なうだけで済
+むことになります:
 
-  1) If it's a file which is thought of as being outside of Gnus (e.g.,
-     the new "encrypt.el"), you should probably make the change in the
-     Emacs tree, and it will show up in the Gnus tree a few days later.
+@enumerate
+@item
+Gnus の外にあると見なされるファイル (例えば新しい @file{encrypt.el}) の
+場合、おそらく Emacs で変更を行なうべきです。それは二〜三日後に Gnus に
+現われるでしょう。
 
-     If you don't have Emacs CVS access (or it's inconvenient), you can
-     change such a file in the v5-10 branch, and it should propagate to
-     Emacs CVS -- however, it will get some extra scrutiny (by me) to see
-     if the changes are possibly controversial and need discussion on the
-     mailing list.  [Many changes are obvious bug-fixes however, so often
-     there won't be any problem.]
+Emacs の CVS への書き込みが許されていない (またはそれが不便) ならば、
+v5-10 枝で変更を行なえば良いでしょう。それは Emacs の CVS に伝搬されるは
+ずです---しかし、それが論争の的になる可能性があって、メーリングリストで
+議論することが必要かどうかを判断するために、追加の調査が (私によって) 行
+なわれるでしょう。[しかし多くの変更は明らかなバグの修正なので、たいてい
+の場合は問題ありません。]
 
-  2) If it's to a Gnus file, and it's important enough that it should be
-     part of Emacs/v5-10, then you can make the change on the v5-10
-     branch, and it will go into Emacs CVS and the Gnus CVS trunk (a few
-     days later).
+@item
+Gnus のファイルへの変更で、それが十分に重要な Emacs と v5-10 枝の部分で
+あるのならば、変更は v5-10 枝で行なえば良いでしょう。そしてそれ
+は Emacs の CVS と Gnus の CVS の幹に反映されるでしょう (二〜三日後に)。
 
-     If you know that there will be conflicts (perhaps because the
-     affected source code is different in v5-10 and the Gnus CVS trunk),
-     then you can install your change in both places, and when I try to
-     sync them, there will be a conflict -- however, since in most such
-     cases there would be a conflict _anyway_, it's often easier for me
-     to resolve it simply if I see two "identical" changes, and can just
-     choose the proper one, rather than having to actually fix the code.
+(おそらく、対象になるソースコードが v5-10 枝と Gnus の CVS の幹で異なる
+ために) 衝突を生じることがわかっている場合は、あなたの変更を両方の場所に
+インストールして下さい。そして、私がそれらを同期させようとすると衝突する
+でしょう---そういうほとんどの場合に _とにかく_ 衝突します。でも、私が二
+つの「同一の」変更を調べる場合に、それを解決してかつ実際にコードを修正し
+なければならないことに比べれば、適切なものを選ぶだけで済む方が、多くの場
+合、私にはより簡単です。
 
-  3) For general Gnus development changes, of course you just make the
-     change on the Gnus CVS trunk and it goes into Emacs a few years
-     later... :-)
+@item
+Gnus の開発における雑多な変更については、単に Gnus の CVS の幹を変更すれ
+ば、それは Emacs に反映されるでしょう。二〜三年後に@dots{} :-)
+@end enumerate
 
-Of course in any case, if you just can't wait for me to sync your
-change, you can commit it in more than one place and probably there will
-be no problem; usually the changes are textually identical anyway, so
-can be easily resolved automatically (sometimes I notice silly things in
-such multiple commits, like whitespace differences, and unify those ;-).
+もちろんどんな場合でも、私が同期させる作業を待てないのであれば、あなたの
+変更を二つ以上の場所にチェックインすることはできるし、恐らく問題にならな
+いでしょう。通常、変更は文字どおりにとにかく同一ですから、容易に自動的に
+解決することができます (ときどき私はそのように重複して行なわれるチェック
+インの中でお間抜けなもの、例えば空白文字の違いに気づいて、それらを統一し
+ますけれどね ;-)。
 
-@subsection Miscellanea
+@subsection いろんなこと
 
-Starting from No Gnus, the @file{GNUS-NEWS} is created from
-@file{texi/gnus-news.texi}.  Don't edit @file{GNUS-NEWS}.  Edit
-@file{texi/gnus-news.texi}, type @command{make GNUS-NEWS} in the
-@file{texi} directory and commit @file{GNUS-NEWS} and
-@file{texi/gnus-news.texi}.
+@file{texi/gnus-news.texi} を元に @file{GNUS-NEWS} を生成させるのは、No
+Gnus から始まりました。@file{GNUS-NEWS} は編集しないで下さい。
+@file{texi/gnus-news.texi} を編集し、@file{texi} ディレクトリー
+で @command{make GNUS-NEWS} をタイプしてから、
+@file{GNUS-NEWS} と @file{texi/gnus-news.texi} をチェックインして下さい。
 
 @c Local Variables:
 @c coding: iso-2022-7bit
