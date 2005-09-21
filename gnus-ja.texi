@@ -23359,7 +23359,7 @@ From Reiner Steib <reiner.steib@@gmx.de>.
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-spam-exit-processor-blacklist} $B$NBe$o$j$K!"(B
-@code{'(spam spam-use-blacklist)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
+@code{(spam spam-use-blacklist)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
 $B:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
 
 @end defvar
@@ -23375,8 +23375,8 @@ From Reiner Steib <reiner.steib@@gmx.de>.
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-ham-exit-processor-whitelist} $B$NBe$o$j$K!"(B
-@code{'(ham spam-use-whitelist)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
-$B:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
+@code{(ham spam-use-whitelist)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n(B
+$B$9$k$3$H$OJ]>Z$5$l$^$9!#(B
 
 @end defvar
 
@@ -23441,7 +23441,7 @@ From Reiner Steib <reiner.steib@@gmx.de>.
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-ham-exit-processor-BBDB} $B$NBe$o$j$K!"(B
-@code{'(ham spam-use-BBDB)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9$k(B
+@code{(ham spam-use-BBDB)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9$k(B
 $B$3$H$OJ]>Z$5$l$^$9!#(B
 
 @end defvar
@@ -23465,7 +23465,7 @@ Gmane $B$O(B @uref{http://gmane.org} $B$G8+$D$1$k$3$H$,$G$-$^$9!#(B
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-spam-exit-processor-report-gmane} $B$NBe$o$j$K!"(B
-@code{'(spam spam-use-gmane)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9(B
+@code{(spam spam-use-gmane)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9(B
 $B$k$3$H$OJ]>Z$5$l$^$9!#(B
 
 @end defvar
@@ -23632,8 +23632,8 @@ Path $B$K(B @code{bogofilter} $B$N<B9T%U%!%$%k$,L5$$>l9g!"(BBogofilter $B$N
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-spam-exit-processor-bogofilter} $B$NBe$o$j$K!"(B
-@code{'(spam spam-use-bogofilter)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$K(B
-$BF0:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
+@code{(spam spam-use-bogofilter)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
+$B:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
 @end defvar
 
 @defvar gnus-group-ham-exit-processor-bogofilter
@@ -23647,7 +23647,7 @@ Path $B$K(B @code{bogofilter} $B$N<B9T%U%!%$%k$,L5$$>l9g!"(BBogofilter $B$N
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-ham-exit-processor-bogofilter} $B$NBe$o$j$K!"(B
-@code{'(ham spam-use-bogofilter)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
+@code{(ham spam-use-bogofilter)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
 $B:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
 @end defvar
 
@@ -23787,8 +23787,8 @@ Emacs Lisp $B$K$h$kE}7WJ,@O4o$G$"$k(B spam-stat.el $B$r(B @code{spam-split} 
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-spam-exit-processor-stat} $B$NBe$o$j$K!"(B
-@code{'(spam spam-use-stat)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9(B
-$B$k$3$H$OJ]>Z$5$l$^$9!#(B
+@code{(spam spam-use-stat)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9$k(B
+$B$3$H$OJ]>Z$5$l$^$9!#(B
 @end defvar
 
 @defvar gnus-group-ham-exit-processor-stat
@@ -23802,7 +23802,7 @@ Emacs Lisp $B$K$h$kE}7WJ,@O4o$G$"$k(B spam-stat.el $B$r(B @code{spam-split} 
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-ham-exit-processor-stat} $B$NBe$o$j$K!"(B
-@code{'(ham spam-use-stat)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9$k(B
+@code{(ham spam-use-stat)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0:n$9$k(B
 $B$3$H$OJ]>Z$5$l$^$9!#(B
 @end defvar
 
@@ -23892,8 +23892,8 @@ ELisp Package}.
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-spam-exit-processor-spamoracle} $B$NBe$o$j$K!"(B
-@code{'(spam spam-use-spamoracle)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$K(B
-$BF0:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
+@code{(spam spam-use-spamoracle)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
+$B:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
 @end defvar
 
 @defvar gnus-group-ham-exit-processor-spamoracle
@@ -23907,7 +23907,7 @@ ELisp Package}.
 @emph{$B7Y9p(B}
 
 $BGQ$l$?(B @code{gnus-group-ham-exit-processor-spamoracle} $B$NBe$o$j$K!"(B
-@code{'(ham spam-use-spamoracle)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
+@code{(ham spam-use-spamoracle)} $B$r;H$&$3$H$r?d>)$7$^$9!#$9$Y$FF1Ey$KF0(B
 $B:n$9$k$3$H$OJ]>Z$5$l$^$9!#(B
 @end defvar
 
@@ -23978,8 +23978,8 @@ Blackbox $B$,(B spam $B$^$?$O(B ham $B$N=hM}$r%5%]!<%H$9$k>l9g$@$1!"$=$l$i$
 $B$F2<$5$$!#(B
 
 $B$5$i$K(B ham $B$H(B spam $B$N%W%m%;%C%5!<$OC10l$NJQ?t$G$O$J$/$5$l$D$D$"$j!"Be$o(B
-$B$j$K(B @code{'(spam spam-use-blackbox)} $B$^$?(B
-$B$O(B @code{'(ham spam-use-blackbox)} $B$N7A<0$,?d>)$5$l$^$9!#:#$N$H$3(B
+$B$j$K(B @code{(spam spam-use-blackbox)} $B$^$?(B
+$B$O(B @code{(ham spam-use-blackbox)} $B$N7A<0$,?d>)$5$l$^$9!#:#$N$H$3(B
 $B$m(B spam/ham $B%W%m%;%C%5!<JQ?t$O$^$@$"$A$3$A$K$"$j$^$9$,!"D9$/$O$"$j$^$;$s!#(B
 
 @lisp
