@@ -8,7 +8,7 @@
 
 @dircategory Emacs
 @direntry
-* Gnus-Coding-ja: (gnus-coding-ja).  Gnus Coding Style and Maintainance Guide
+* Gnus Coding-ja: (gnus-coding-ja).  Gnus Coding Style and Maintainance Guide
 @end direntry
 
 @copying
