@@ -407,7 +407,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 * Article Buffer::           $B5-;v$rI=<($7!"07$&(B
 * Composing Messages::       $B%a!<%k$H%K%e!<%9$rAw$k$?$a$N>pJs(B
 * Select Methods::           Gnus $B$O$9$Y$F$N%a%C%;!<%8$r$$$m$$$m$JA*BrJ}K!$GFI$`(B
-* Scoring::                  $B5-;v$KCM$r$D$1$k(B
+* Scoring::                  $B5-;v$KCM$rIU$1$k(B
 * Various::                  $B0lHLE*$J@_Dj(B
 * The End::                  $B$5$i$P!"$=$7$F$5$h$&$J$i(B
 * Appendices::               $BMQ8l!"(BEmacs $BF~Lg!"(B@acronym{FAQ}$B!"Nr;K!"FbIt9=B$(B
@@ -454,7 +454,7 @@ Group Buffer
 * Group Data::                  $B%0%k!<%W$N>pJs$rJQ99$9$k(B
 * Group Levels::                $B%l%Y%k(B? $B$=$l$C$F2?(B?
 * Group Score::                 $B$"$J$?$N9%$-$J%0%k!<%W$r8+$D$1=P$9J}K!(B
-* Marking Groups::              $B%0%k!<%W$K0u$r$D$1$F$*$$$F!"8e$G=hM}$G$-$k(B
+* Marking Groups::              $B%0%k!<%W$K0u$rIU$1$F$*$$$F!"8e$G=hM}$G$-$k(B
 * Foreign Groups::              $B%0%k!<%W$N:n@.$H=$@5(B
 * Group Parameters::            $B%0%k!<%WKh$K0c$C$?%Q%i%a!<%?!<$r;}$?$;$i$l$k(B
 * Listing Groups::              Gnus $B$O%0%k!<%W$r$$$m$$$m$JJ,$1J}$GI=<($G$-$k(B
@@ -469,7 +469,7 @@ Group Buffer Format
 
 * Group Line Specification::    $B%0%k!<%W%P%C%U%!!<$N8+$(J}$r7h$a$k(B
 * Group Mode Line Specification::  $B%0%k!<%W%P%C%U%!!<$N%b!<%I9T(B
-* Group Highlighting::          $B%0%k!<%W%P%C%U%!!<$K$-$l$$$K?'$r$D$1$k(B
+* Group Highlighting::          $B%0%k!<%W%P%C%U%!!<$K$-$l$$$K?'$rIU$1$k(B
 
 Group Topics
 
@@ -927,7 +927,7 @@ Gnus Reference Guide
 * Headers::                     Gnus $B$O%X%C%@!<$rFbItE*$K$I$N$h$&$K3JG<$9$k$+(B
 * Ranges::                      $B$?$/$5$s$N?t$r3JG<$9$kJXMx$J7A<0(B
 * Group Info::                  $B%0%k!<%W>pJs7A<0(B
-* Extended Interactive::        $B5-9f@\F,<-$J$I(B
+* Extended Interactive::        $B5-9f@\F,0z?t$J$I(B
 * Emacs/XEmacs Code::           Gnus $B$O$9$Y$F$N6aBe(B Emacsen $B$GF0:n$9$k(B
 * Various File Formats::        Gnus $B$N;HMQ$9$k%U%!%$%k$N7A<0(B
 
@@ -973,7 +973,7 @@ Emacs for Heathens
 $B$^$l$^$9!#(B
 
 $B$3$N@bL@=q$G$h$/$o$+$i$J$$MQ8l$,$G$F$-$?$H$-$O!"MQ8l$N(B
-$B9`(B (@ref{Terminology}) $B$r;2>H$7$F$/$@$5$$!#(B
+$B9`(B (@ref{Terminology}) $B$r;2>H$7$F2<$5$$!#(B
 
 @menu
 * Finding the News::      $B%K%e!<%9$r<hF@$9$kJ}K!$rA*$V(B
@@ -1215,11 +1215,11 @@ Gnus $B$O!"IaDL$O%0%k!<%W$,?7$7$$$+$I$&$+$r!"9XFI$7$F$$$k%0%k!<%W$H:o=|$5(B
 $B$,(B @code{ask-server} $B$rM}2r$9$k$+$,$o$+$k$N$G$7$g$&(B? $B$(!"0c$&$N$G$9(B
 $B$+(B? $B$"$!!"NI$+$C$?!#$H$$$&$N$O!"3N<B$JEz$OB8:_$7$J$$$N$G$9!#;d$K8@$($k$3(B
 $B$H$O!"$3$NJQ?t$r(B @code{ask-server} $B$K@_Dj$7$F!"?tF|4V?7$7$$%0%k!<%W$,8=(B
-$B$l$k$+$I$&$+$rD4$Y$F$/$@$5$$!"$H$$$&$3$H$@$1$G$9!#$b$7$$$/$D$+$N%0%k!<%W(B
-$B$,8=$l$?$J$i!"$=$l$GF0:n$7$F$$$^$9!#0l$D$b8=$l$J$1$l$P!"$=$l$OF0:n$7$F$$(B
-$B$^$;$s!#;d$O!"(BGnus $B$K%5!<%P!<$,(B @code{ask-server} $B$rM}2r$9$k$+$I$&$+$r?d(B
-$BNL$5$;$k4X?t$r=q$/$3$H$b$G$-$^$9$,!"$=$l$OC1$K?dNL$7$F$$$k$K$9$.$^$;$s!#(B
-$B$G$9$+$i!"$=$N4X?t$r=q$/$3$H$O$J$$$G$7$g$&!#B>$NJ}K!$H$7$F$O!"%5!<%P!<(B
+$B$l$k$+$I$&$+$rD4$Y$F2<$5$$!"$H$$$&$3$H$@$1$G$9!#$b$7$$$/$D$+$N%0%k!<%W$,(B
+$B8=$l$?$J$i!"$=$l$GF0:n$7$F$$$^$9!#0l$D$b8=$l$J$1$l$P!"$=$l$OF0:n$7$F$$$^(B
+$B$;$s!#;d$O!"(BGnus $B$K%5!<%P!<$,(B @code{ask-server} $B$rM}2r$9$k$+$I$&$+$r?dNL(B
+$B$5$;$k4X?t$r=q$/$3$H$b$G$-$^$9$,!"$=$l$OC1$K?dNL$7$F$$$k$K$9$.$^$;$s!#$G(B
+$B$9$+$i!"$=$N4X?t$r=q$/$3$H$O$J$$$G$7$g$&!#B>$NJ}K!$H$7$F$O!"%5!<%P!<(B
 $B$K(B @code{telnet} $B$r$7$F!"(B@code{HELP} $B$HBG$A!"%5!<%P!<$,M}2r$9$k%3%^%s%I(B
 $B$NCf$K(B @samp{NEWGROUPS} $B$,$"$k$+$I$&$+$rD4$Y$k$3$H$b$G$-$^$9!#$b$7$"$l$P!"(B
 $B$*$=$i$/F0:n$9$k$G$7$g$&(B ($B$7$+$7!"E,@Z$K5!G=$rDs6!$9$k$3$H$J(B
@@ -1229,7 +1229,7 @@ Gnus $B$O!"IaDL$O%0%k!<%W$,?7$7$$$+$I$&$+$r!"9XFI$7$F$$$k%0%k!<%W$H:o=|$5(B
 Gnus $B$O(B @code{ask-server} $BL?Na$r$=$l$>$l$NA*BrJ}K!$KBP$7$F<B9T$7!"IaDL$N(B
 $BJ}K!$G9XFI$7$^$9(B ($B$b$7$/$O!"$7$^$;$s(B)$B!#$3$l$NI{:nMQ$O!"5/F0$K$+$J$j;~4V(B
 $B$,$+$+$k$N$G!"BT$C$F$$$k4V$KbTA[$G$-$k$3$H$G$9!#1J5W$N9,J!$rC#@.$9$k$?$a(B
-$B$K!"%^%s%H%i(B ``dingnusdingnusdingnus'' $B$r;H$C$F$/$@$5$$!#(B
+$B$K!"%^%s%H%i(B ``dingnusdingnusdingnus'' $B$r;H$C$F2<$5$$!#(B
 
 @node Subscription Methods
 @subsection $B9XFIJ}K!(B
@@ -1305,7 +1305,7 @@ Gnus $B$O(B @code{ask-server} $BL?Na$r$=$l$>$l$NA*BrJ}K!$KBP$7$F<B9T$7!"IaDL$
 $B$h$/$"$k4V0c$$$O!"?tCJMnA0$N(B (@code{gnus-subscribe-newsgroup-method}) $BJQ(B
 $B?t$r(B @code{gnus-subscribe-herarchical-interactive} $B$K@_Dj$9$k$3$H$G$9!#(B
 $B$3$l$O8m$j$G$9!#$3$l$OF0:n$7$^$;$s!#$3$l$O$*$a$G$?$$?M$N$9$k$3$H$G$9!#$G(B
-$B$9$+$i!"@dBP$K$7$J$$$G$/$@$5$$!#(B
+$B$9$+$i!"@dBP$K$7$J$$$G2<$5$$!#(B
 
 @node Filtering New Groups
 @subsection $B?7$7$$%0%k!<%W$rA*JL$9$k(B
@@ -1347,7 +1347,7 @@ options -n !alt.all !rec.all sci.all
 $B%/%(%s%I(B (@code{nnml}, @code{nnbabyl}, @code{nnfolder}, @code{nnmbox},
 @code{nnmh} $B$*$h$S(B @code{nnmaildir}) $B$+$i$G$-$k$9$Y$F$N?7$7$$%0%k!<%W$r(B
 $B9XFI$9$k$h$&$K$J$C$F$$$^$9!#$=$l$,7y$G$"$l$P!"$3$NJQ?t$r(B @code{nil} $B$K@_(B
-$BDj$7$F$/$@$5$$!#(B
+$BDj$7$F2<$5$$!#(B
 
 $B$3$N@55,I=8=$K9gCW$9$k?7$7$$%0%k!<%W(B
 $B$O(B @code{gnus-subscribe-options-newsgroup-method} $B$r;H$C$F9XFI$5$l$^$9!#(B
@@ -1397,7 +1397,7 @@ Gnus $B$O(B @file{.newsrc} $B%U%!%$%k$r$"$k%5!<%P!<MQ$+$iJL$N%5!<%P!<MQ$KJQ49
 $B$@HO0O$O$9$Y$F0UL#$,L5$/$J$j$^$9!#$=$N$h$&$J$H$-(B
 $B$O(B @kbd{M-x gnus-group-clear-data-on-native-groups} $B%3%^%s%I$r;H$C$F!"4p(B
 $BK\%0%k!<%W$K4X$9$k%G!<%?$r$9$Y$F>C5n$9$k$3$H$,$G$-$^$9!#$3$N%3%^%s%I$OCm(B
-$B0U$7$F;H$C$F$/$@$5$$!#(B
+$B0U$7$F;H$C$F2<$5$$!#(B
 
 @kindex M-x gnus-group-clear-data
 @findex gnus-group-clear-data
@@ -1469,7 +1469,7 @@ Groups})$B!#$3$NJQ?t$O@55,I=8=$G$"$k$3$H$b$G$-$^$9!#$=$N$h$&$J>l9g$O!"%U%!(B
 @vindex version-control
 $BJQ?t(B @code{gnus-startup-file} $B$O5/F0%U%!%$%k$,$I$3$K$"$k$+$r;XDj$7$^$9!#(B
 $B%G%#%U%)%k%HCM$O(B @file{~/.newsrc} $B$G!"$=$l$,$I$N$h$&$J$b$N$G$"$l!"KvHx(B
-$B$K(B @samp{.eld} $B$r$D$1$?$b$N$,(B Gnus (El Dingo) $B$N5/F0%U%!%$%k$K$J$j$^$9!#(B
+$B$K(B @samp{.eld} $B$rIU$1$?$b$N$,(B Gnus (El Dingo) $B$N5/F0%U%!%$%k$K$J$j$^$9!#(B
 $B$3$N%U%!%$%k$N%P!<%8%g%s@)8f$r$7$?$$$H$-(B
 $B$O(B @code{gnus-backup-startup-file} $B$r%;%C%H$7$F2<$5$$!#$=$l(B
 $B$O(B @code{version-control} $BJQ?t$HF1$8CM$r<h$j$^$9!#(B
@@ -1557,8 +1557,8 @@ Gnus $B$O5/F0$7$?$H$-$d!"<B:]$K?7$7$$5-;v$,E~Ce$7$F$$$k$+$rH=Dj$7$h$&$H$9(B
 $B$K56$NL>A0$r;}$D%0%k!<%W$rGS=|$9$k$?$a$K;H$o$l$F$-$^$7$?$,!"6=L#$NL5$$%0(B
 $B%k!<%W$N3,AX$rL5;k$9$k$?$a$K;H$&$3$H$b$G$-$^$9!#$7$+$7!"$3$l$O$*4+$a$G$-(B
 $B$^$;$s!#K\Ev$N$3$H$r8@$&$H!"$^$C$?$/;?@.$G$-$^$;$s!#Be$o$j$K!"$=$N$h$&$J(B
-$BMQES$KMQ$$$i$l$kJQ?t$N35N,$rCN$k$?$a$K!"(B@ref{New Groups} $B$r;2>H$7$F$/$@(B
-$B$5$$!#(B
+$BMQES$KMQ$$$i$l$kJQ?t$N35N,$rCN$k$?$a$K!"(B@ref{New Groups} $B$r;2>H$7$F2<$5(B
+$B$$!#(B
 @c This variable is
 @c @code{nil} by default, and will slow down active file handling somewhat
 @c if you set it to anything else.
@@ -1597,13 +1597,13 @@ Gnus $B$O5/F0$7$?$H$-$d!"<B:]$K?7$7$$5-;v$,E~Ce$7$F$$$k$+$rH=Dj$7$h$&$H$9(B
 $BM}2r$7$J$$$J$i!"%5!<%P!<$K$H$C$F$O$"$^$jNI$$$H$O8@$($^$;$s!#(B
 
 Gnus $B$N5/F0$K$"$^$j$K;~4V$,$+$+$k$H;W$C$?$J$i!"$3$NJQ?t$K$3$l$i$N;0$D$N(B
-$B0c$C$?CM$r;n$7$F$_$F!"$I$l$,0lHVNI$$$+$rC5$7$F$/$@$5$$!#(B
+$B0c$C$?CM$r;n$7$F$_$F!"$I$l$,0lHVNI$$$+$rC5$7$F2<$5$$!#(B
 
 @code{some} $B$+(B @code{nil} $B$r;H$&$N$G$"$l$P!"$I$A$i$K$7$mB.EY$r>e$2$k$?$a(B
 $B$K$9$Y$F$N6=L#$NL5$$%0%k!<%W$rI,$::o=|$9$k$Y$-$G$7$g$&!#(B
 
 $B$3$NJQ?t$OFs<!(B (secondary) $BA*BrJ}K!$N%"%/%F%#%V%U%!%$%k<hF@$K$b1F6A$9$k(B
-$B$3$H$K5$$rIU$1$F$/$@$5$$!#(B
+$B$3$H$K5$$rIU$1$F2<$5$$!#(B
 
 @node Startup Variables
 @section $B5/F0JQ?t(B
@@ -1613,7 +1613,7 @@ Gnus $B$N5/F0$K$"$^$j$K;~4V$,$+$+$k$H;W$C$?$J$i!"$3$NJQ?t$K$3$l$i$N;0$D$N(B
 @vindex gnus-load-hook
 Gnus ($B$N%W%m%0%i%`(B) $B$,FI$_9~$^$l$k$H$-$K<B9T$5$l$k%U%C%/$G$9!#2?(B
 $BEY(B Gnus $B$r5/F0$7$F$b!"(BEmacs $B$,5/F0$7$F$+$i=*N;$9$k$^$G$KIaDL$O$3$N%U%C%/(B
-$B$O0l2s$7$+<B9T$5$l$J$$$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B$O0l2s$7$+<B9T$5$l$J$$$3$H$KCm0U$7$F2<$5$$!#(B
 
 @item gnus-before-startup-hook
 @vindex gnus-before-startup-hook
@@ -1647,7 +1647,7 @@ Maintenance})$B!#(B
 $B$b$7(B @code{nil} $B$G$J$$$H!"5/F0;~$N%a%C%;!<%8$OI=<($5$l$^$;$s!#$=$N$h$&$K(B
 $B$9$l$P!";E;v$NBe$o$j$K%K%e!<%9$rFI$s$G$$$k$N$r>e;J$K5$IU$+$l$K$/$/$J$k$G(B
 $B$7$g$&!#$3$NJQ?t$O(B @file{~/.gnus.el} $B$,%m!<%I$5$l$kA0$K;H$o$l$k$N$G!"(B
-@file{.emacs} $B$K@_Dj$9$k$Y$-$G$"$kE@$rCm0U$7$F$/$@$5$$!#(B
+@file{.emacs} $B$K@_Dj$9$k$Y$-$G$"$kE@$rCm0U$7$F2<$5$$!#(B
 
 @item gnus-no-groups-message
 @vindex gnus-no-groups-message
@@ -1710,7 +1710,7 @@ Maintenance})$B!#(B
 * Group Data::                  $B%0%k!<%W$N>pJs$rJQ99$9$k(B
 * Group Levels::                $B%l%Y%k(B? $B$=$l$C$F2?(B?
 * Group Score::                 $B$"$J$?$N9%$-$J%0%k!<%W$r8+$D$1=P$9J}K!(B
-* Marking Groups::              $B%0%k!<%W$K0u$r$D$1$F$*$$$F!"8e$G=hM}$G$-$k(B
+* Marking Groups::              $B%0%k!<%W$K0u$rIU$1$F$*$$$F!"8e$G=hM}$G$-$k(B
 * Foreign Groups::              $B%0%k!<%W$N:n@.$H=$@5(B
 * Group Parameters::            $B%0%k!<%WKh$K0c$C$?%Q%i%a!<%?!<$r;}$?$;$i$l$k(B
 * Listing Groups::              Gnus $B$O%0%k!<%W$r$$$m$$$m$JJ,$1J}$GI=<($G$-$k(B
@@ -1728,7 +1728,7 @@ Maintenance})$B!#(B
 @menu
 * Group Line Specification::    $B%0%k!<%W%P%C%U%!!<$N8+$(J}$r7h$a$k(B
 * Group Mode Line Specification::  $B%0%k!<%W%P%C%U%!!<$N%b!<%I9T(B
-* Group Highlighting::          $B%0%k!<%W%P%C%U%!!<$K$-$l$$$K?'$r$D$1$k(B
+* Group Highlighting::          $B%0%k!<%W%P%C%U%!!<$K$-$l$$$K?'$rIU$1$k(B
 @end menu
 
 @node Group Line Specification
@@ -1748,7 +1748,7 @@ Maintenance})$B!#(B
 $B$H$C$F$b4JC1$G$7$g(B?
 
 @samp{news.announce.newusers} $B$K$O(B 25 $B$NL$FI5-;v$,$"$k$N$,$o$+$j$^$9!#(B
-@samp{alt.fan.andrea-dworkin} $B$K$OL$FI5-;v$O$J$$$1$l$I$b!"0u$r$D$1$?5-;v(B
+@samp{alt.fan.andrea-dworkin} $B$K$OL$FI5-;v$O$J$$$1$l$I$b!"0u$rIU$1$?5-;v(B
 $B$,$$$/$D$+$"$j$^$9(B ($B9TF,$N$A$C$A$c$J%"%9%?%j%9%/$,8+$($k(B?)$B!#(B
 
 @vindex gnus-group-line-format
@@ -1944,7 +1944,7 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
         (t . my-group-face-5)))
 @end lisp
 
-@ref{Faces and Fonts} $B$b;2>H$7$F$/$@$5$$!#(B
+@ref{Faces and Fonts} $B$b;2>H$7$F2<$5$$!#(B
 
 $B$3$N(B form $B$,I>2A$5$l$k$H$-$KF0E*$KB+G{$5$l$F$$$kJQ?t$K$O0J2<$N$b$N$,$"$j(B
 $B$^$9!#(B
@@ -2067,11 +2067,11 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 @findex gnus-group-read-group
 $B8=:_$N%0%k!<%W$rA*Br$7!"35N,%P%C%U%!!<$K@Z$jBX$($F:G=i$NL$FI5-;v$rI=<($7(B
 $B$^$9(B (@code{gnus-group-read-group})$B!#$b$7$=$N%0%k!<%W$KL$FI5-;v$,L5$$!"(B
-$B$b$7$/$O$3$NL?Na$K?tCM0J30$N@\F,<-$rM?$($k$H!"(BGnus $B$O%5!<%P!<$+$i$3$N%0(B
-$B%k!<%W$N$9$Y$F$N8E$$5-;v$r<hF@$7$h$&$H$7$^$9!#(B@var{n} $B$N?tCM@\F,0z?t$rM?(B
-$B$($k$H!"(BGnus $B$N<hF@$9$k5-;v?t$O(B @var{n} $B$K$J$j$^$9!#(B@var{n} $B$,@5$N?t$G$"(B
-$B$l$P(B Gnus $B$O?7$7$$J}$+$i(B @var{n} $B8D$N5-;v$r<hF@$7!"(B@var{n} $B$,Ii$N?t$G$"(B
-$B$l$P(B Gnus $B$O8E$$J}$+$i(B @code{abs(@var{n})} $B8D$N5-;v$r<hF@$7$^$9!#(B
+$B$b$7$/$O$3$NL?Na$K?tCM0J30$N@\F,0z?t$rM?$($k$H!"(BGnus $B$O%5!<%P!<$+$i$3$N(B
+$B%0%k!<%W$N$9$Y$F$N8E$$5-;v$r<hF@$7$h$&$H$7$^$9!#(B@var{n} $B$N?tCM@\F,0z?t$r(B
+$BM?$($k$H!"(BGnus $B$N<hF@$9$k5-;v?t$O(B @var{n} $B$K$J$j$^$9!#(B@var{n} $B$,@5$N?t$G(B
+$B$"$l$P(B Gnus $B$O?7$7$$J}$+$i(B @var{n} $B8D$N5-;v$r<hF@$7!"(B@var{n} $B$,Ii$N?t$G(B
+$B$"$l$P(B Gnus $B$O8E$$J}$+$i(B @code{abs(@var{n})} $B8D$N5-;v$r<hF@$7$^$9!#(B
 
 $B$7$?$,$C$F!"(B@kbd{SPC} $B$G$OIaDL$K%0%k!<%W$KF~$j!"(B@kbd{C-u SPC} $B$G$O8E$$5-(B
 $B;v$,8=$l$^$9!#(B@kbd{C-u 4 2 SPC} $B$G$O(B 42 $B8D$N:G?7$N5-;v$r<hF@$7!"(B@kbd{C-u
@@ -2095,10 +2095,10 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 $B$7$^$9(B (@code{gnus-group-quick-select-group})$B!#%9%3%"!&(Bkill $B$N=hM}$O9T$J(B
 $B$o$l$:!"%O%$%i%$%H$b5-;v>C5n$b$7$^$;$s!#$3$l$O!"$"$J$?$,K\Ev$K5^$$$G$$$F!"(B
 $B$I$C$+$N$d$?$i$G$C$+$$%0%k!<%W$KF~$i$J$1$l$P$$$1$J$$$H$-$KLr$KN)$D$+$b$7(B
-$B$l$^$;$s!#$^$?!"@\F,<-$K(B 0 $B$rM?$($l$P(B ($B$9$J$o$A(B @kbd{0 M-RET})$B!"(BGnus $B$O(B
-$B35N,%P%C%U%!!<$r:n$m$&$H$5$($7$^$;$s!#$3$l$O35N,%P%C%U%!!<$r:n$kA0$K%9%l%C(B
-$B%II=<($r@Z$jBX$($?$$$H$-Lr$KN)$A$^$9(B (@pxref{Summary Generation
-Commands})$B!#(B
+$B$l$^$;$s!#$^$?!"@\F,0z?t$K(B 0 $B$rM?$($l$P(B ($B$9$J$o$A(B @kbd{0 M-RET})$B!"(B
+Gnus $B$O35N,%P%C%U%!!<$r:n$m$&$H$5$($7$^$;$s!#$3$l$O35N,%P%C%U%!!<$r:n$k(B
+$BA0$K%9%l%C%II=<($r@Z$jBX$($?$$$H$-Lr$KN)$A$^$9(B (@pxref{Summary
+Generation Commands})$B!#(B
 
 @item M-SPACE
 @kindex M-SPACE ($B%0%k!<%W(B)
@@ -2227,13 +2227,13 @@ Commands})$B!#(B
 @findex gnus-group-kill-level
 $B$"$k%l%Y%k$N%0%k!<%W$r$9$Y$F(B kill $B$7$^$9(B (@code{gnus-group-kill-level})$B!#(B
 kill $B$7$?8e!"$3$l$i$N%0%k!<%W$r(B yank $B$GLa$9$3$H$O$G$-$J$$$N$G!"$3$N%3%^(B
-$B%s%I$O$$$/$i$+Cm0U$7$F;H$C$F$/$@$5$$!#$3$N%3%^%s%I$,K\Ev$KJXMx$K$J$k$N$O!"(B
+$B%s%I$O$$$/$i$+Cm0U$7$F;H$C$F2<$5$$!#$3$N%3%^%s%I$,K\Ev$KJXMx$K$J$k$N$O!"(B
 @file{.newsrc} $B$K<N$F$F$7$^$$$?$$L$9XFI$N%0%k!<%W$,$?$/$5$s$"$k$H$-$@$1(B
 $B$G$9!#%l%Y%k(B 7 $B$G(B @kbd{S C-k} $B$r9T$J$&$H!"(B@file{.newsrc} $B%U%!%$%kCf$K%a%C(B
 $B%;!<%8HV9f$,$J$$L$9XFI%0%k!<%W$r$9$Y$F(B kill $B$7$^$9!#(B
 @end table
 
-@ref{Group Levels} $B$b;2>H$7$F$/$/$@$5$$!#(B
+@ref{Group Levels} $B$b;2>H$7$F2<$5$$!#(B
 
 @node Group Data
 @section $B%0%k!<%W%G!<%?(B
@@ -2286,7 +2286,7 @@ kill $B$7$?8e!"$3$l$i$N%0%k!<%W$r(B yank $B$GLa$9$3$H$O$G$-$J$$$N$G!"$3$N%3%^
 @item S l
 @kindex S l ($B%0%k!<%W(B)
 @findex gnus-group-set-current-level
-$B8=:_$N%0%k!<%W$N%l%Y%k$r@_Dj$7$^$9!#?tCM$N@\F,<-$,M?$($i$l$k$H!"$=$3$+(B
+$B8=:_$N%0%k!<%W$N%l%Y%k$r@_Dj$7$^$9!#?tCM$N@\F,0z?t$,M?$($i$l$k$H!"$=$3$+(B
 $B$i(B @var{n} $B8D$N%0%k!<%W$N%l%Y%k$,@_Dj$5$l$^$9!#%l%Y%k$rF~NO$9$k$?$a$N%W(B
 $B%m%s%W%H$,=P$^$9!#(B
 @end table
@@ -2330,8 +2330,8 @@ Gnus $B$O%l%Y%k(B 1 $B$+$i(B @code{gnus-level-subscribed} ($B$3$NCM$r4^$`(
 (@kbd{A k} $B$G(B kill $B$5$l$?%0%k!<%W$N%j%9%H$rI=<($7$^$9!#(B)
 
 $B$b$7%l%Y%kJQ?t$GM7$S$?$$$N$G$"$l$P!"B?>/Cm0U$r$7$F$^$o$kI,MW$,$"$j$^$9!#(B
-$B$$$C$?$s$=$l$r@_Dj$7$?$i!"FsEY$H$=$l$K?($i$J$$$G$/$@$5$$!#$5$i$K8@$($P!"(B
-$B<+J,$G2?$r$d$C$F$$$k$+$r@53N$KM}2r$7$F$$$J$$8B$j!"0l@Z?($i$J$$$G$/$@$5$$!#(B
+$B$$$C$?$s$=$l$r@_Dj$7$?$i!"FsEY$H$=$l$K?($i$J$$$G2<$5$$!#$5$i$K8@$($P!"<+(B
+$BJ,$G2?$r$d$C$F$$$k$+$r@53N$KM}2r$7$F$$$J$$8B$j!"0l@Z?($i$J$$$G2<$5$$!#(B
 
 @vindex gnus-level-default-unsubscribed
 @vindex gnus-level-default-subscribed
@@ -2363,8 +2363,8 @@ Gnus $B$O%l%Y%k(B 1 $B$+$i(B @code{gnus-level-subscribed} ($B$3$NCM$r4^$`(
 
 @vindex gnus-group-use-permanent-levels
 @code{gnus-group-use-permanent-levels} $B$,(B @code{nil} $B0J30$G$"$l$P!"$$$C(B
-$B$?$s(B @kbd{g} $B$d(B @kbd{l} $B%3%^%s%I$N@\F,<-$K%l%Y%k$rM?$($k$H!"$=$N8e$N$9$Y(B
-$B$F$N%3%^%s%I$K$*$$$F$=$N%l%Y%k$,!V:nMQ$9$k!W%l%Y%k$K$J$j$^$9!#(B
+$B$?$s(B @kbd{g} $B$d(B @kbd{l} $B%3%^%s%I$N@\F,0z?t$K%l%Y%k$rM?$($k$H!"$=$N8e$N$9(B
+$B$Y$F$N%3%^%s%I$K$*$$$F$=$N%l%Y%k$,!V:nMQ$9$k!W%l%Y%k$K$J$j$^$9!#(B
 
 @vindex gnus-activate-level
 Gnus $B$ODL>o!"(B@code{gnus-activate-level} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%W(B
@@ -2407,13 +2407,13 @@ Gnus $B$ODL>o!"(B@code{gnus-activate-level} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%
 @cindex marking groups
 
 $B$b$7$$$/$D$+$N%0%k!<%W$KBP$7$F2?$i$+$NL?Na$r<B9T$7$?$$>l9g$G!"$=$l$i$,%0(B
-$B%k!<%W%P%C%U%!!<$KO"B3$7$F$"$k>l9g$K$O!"DL>oDL$jL?Na$KBP$7$F?tCM@\F,<-$r(B
-$BM?$($k$@$1$G$9!#$=$&$9$l$P$[$H$s$I$N%0%k!<%WL?Na$O!"$3$l$i$N%0%k!<%W$KBP(B
-$B$7$F$"$J$?$NL?Na$K=>$$$^$9!#(B
+$B%k!<%W%P%C%U%!!<$KO"B3$7$F$"$k>l9g$K$O!"DL>oDL$jL?Na$KBP$7$F?tCM@\F,0z?t(B
+$B$rM?$($k$@$1$G$9!#$=$&$9$l$P$[$H$s$I$N%0%k!<%WL?Na$O!"$3$l$i$N%0%k!<%W$K(B
+$BBP$7$F$"$J$?$NL?Na$K=>$$$^$9!#(B
 
 $B$7$+$7$=$l$i$N%0%k!<%W$,=gHV$KJB$s$G$$$J$$>l9g$K$*$$$F$b!"$$$/$D$+$N%0%k!<(B
 $B%W$KBP$7$FL?Na$r<B9T$9$k$3$H$,$G$-$^$9!#C1$K;O$a$K%W%m%;%90u$G%0%k!<%W$K(B
-$B0u$r$D$1$F$*$-!"$=$7$FL?Na$r<B9T$9$k$@$1$G$9!#(B
+$B0u$rIU$1$F$*$-!"$=$7$FL?Na$r<B9T$9$k$@$1$G$9!#(B
 
 @table @kbd
 @item #
@@ -2421,7 +2421,7 @@ Gnus $B$ODL>o!"(B@code{gnus-activate-level} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%
 @itemx M m
 @kindex M m ($B%0%k!<%W(B)
 @findex gnus-group-mark-group
-$B8=:_$N%0%k!<%W$K0u$r$D$1$k(B (@code{gnus-group-mark-group})$B!#(B
+$B8=:_$N%0%k!<%W$K0u$rIU$1$k(B (@code{gnus-group-mark-group})$B!#(B
 
 @item M-#
 @kindex M-# ($B%0%k!<%W(B)
@@ -2438,22 +2438,22 @@ Gnus $B$ODL>o!"(B@code{gnus-activate-level} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%
 @item M w
 @kindex M w ($B%0%k!<%W(B)
 @findex gnus-group-mark-region
-$B%]%$%s%H$H%^!<%/$N4V$N$9$Y$F$N%0%k!<%W$K0u$r$D$1(B
+$B%]%$%s%H$H%^!<%/$N4V$N$9$Y$F$N%0%k!<%W$K0u$rIU$1(B
 $B$k(B (@code{gnus-group-mark-region})$B!#(B
 
 @item M b
 @kindex M b ($B%0%k!<%W(B)
 @findex gnus-group-mark-buffer
-$B%P%C%U%!!<Fb$N$9$Y$F$N%0%k!<%W$K0u$r$D$1$k(B (@code{gnus-group-mark-buffer})$B!#(B
+$B%P%C%U%!!<Fb$N$9$Y$F$N%0%k!<%W$K0u$rIU$1$k(B (@code{gnus-group-mark-buffer})$B!#(B
 
 @item M r
 @kindex M r ($B%0%k!<%W(B)
 @findex gnus-group-mark-regexp
-$B$"$k@55,I=8=$K9gCW$9$k$9$Y$F$N%0%k!<%W$K0u$r$D$1(B
+$B$"$k@55,I=8=$K9gCW$9$k$9$Y$F$N%0%k!<%W$K0u$rIU$1(B
 $B$k(B (@code{gnus-group-mark-regexp})$B!#(B
 @end table
 
-@ref{Process/Prefix} $B$b;2>H$7$F$/$@$5$$!#(B
+@ref{Process/Prefix} $B$b;2>H$7$F2<$5$$!#(B
 
 @findex gnus-group-universal-argument
 $B%W%m%;%90u$,IU$1$i$l$F$$$k$9$Y$F$N%0%k!<%W$KBP$7$F2?$+$NL?Na$r<B9T$7$?$$(B
@@ -2571,15 +2571,14 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 @cindex ClariNet Briefs
 @cindex nndoc
 $B%U%!%$%k$J$I$r$b$H$K%0%k!<%W$r:n@.$7$^(B
-$B$9(B (@code{gnus-group-make-doc-group})$B!#$3$N%3%^%s%I$K@\F,<-$rM?$($?>l9g!"(B
-$B%U%!%$%kL>$H%U%!%$%k%?%$%W$r%W%m%s%W%H$GF~NO$7$^$9!#8=:_%5%]!<%H$5$l$F$$(B
-$B$k%U%!%$%k%?%$%W$O(B @code{mbox}, @code{babyl}, @code{digest}, @code{news},
-@code{rnews}, @code{mmdf}, @code{forward}, @code{rfc934},
+$B$9(B (@code{gnus-group-make-doc-group})$B!#$3$N%3%^%s%I$K@\F,0z?t$rM?$($?>l(B
+$B9g!"%U%!%$%kL>$H%U%!%$%k%?%$%W$r%W%m%s%W%H$GF~NO$7$^$9!#8=:_%5%]!<%H$5$l(B
+$B$F$$$k%U%!%$%k%?%$%W$O(B @code{mbox}, @code{babyl}, @code{digest},
+@code{news}, @code{rnews}, @code{mmdf}, @code{forward}, @code{rfc934},
 @code{rfc822-forward}, @code{mime-parts}, @code{standard-digest},
 @code{slack-digest}, @code{clari-briefs}, @code{nsmail}, @code{outlook},
-@code{oe-dbx} $B$*$h$S(B @code{mailman} $B$G$9!#@\F,<-$J$7$G$3$N%3%^%s%I$r<B9T(B
-$B$9$k$H!"(BGnus $B$O%U%!%$%k%?%$%W$r?dB,$7$^$9!#(B
-@xref{Document Groups}.
+@code{oe-dbx} $B$*$h$S(B @code{mailman} $B$G$9!#@\F,0z?t$J$7$G$3$N%3%^%s%I$r<B(B
+$B9T$9$k$H!"(BGnus $B$O%U%!%$%k%?%$%W$r?dB,$7$^$9!#(B@xref{Document Groups}.
 
 @item G u
 @kindex G u ($B%0%k!<%W(B)
@@ -2595,7 +2594,7 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 @cindex nnweb
 @cindex gmane
 $B%&%'%V8!:w7k2L$r$b$H$K0l;~E*$J%0%k!<%W$r:n@.$7$^(B
-$B$9(B (@code{gnus-group-make-web-group})$B!#$3$N%3%^%s%I$K@\F,<-$rM?$($k$H!"(B
+$B$9(B (@code{gnus-group-make-web-group})$B!#$3$N%3%^%s%I$K@\F,0z?t$rM?$($k$H!"(B
 $B0l;~E*$G$O$J$/8GDj$7$?%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$G8!:w%(%s%8%s$N<o(B
 $BN`(B (search engine type) $B$H8!:wJ8;zNs$rF~NO$7$^$9!#M-8z$J8!:w%(%s%8%s$N<o(B
 $BN`$K$O(B @code{google}, @code{dejanews}, @code{gmane} $B$,$"$j$^$9!#(B
@@ -2616,11 +2615,11 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 @kindex G DEL ($B%0%k!<%W(B)
 @findex gnus-group-delete-group
 $B$3$N4X?t$O8=:_$N%0%k!<%W$r:o=|$7$^$9(B (@code{gnus-group-delete-group})$B!#(B
-$B@\F,<-$,M?$($i$l$k$H!"$3$N4X?t$O$=$N%0%k!<%WFb$NA45-;v$rK\Ev$K:o=|$7!"%0(B
-$B%k!<%W<+?H$r$3$N@$$+$i6/@)E*$KKu;&$7$F$7$^$$$^$9!#@\F,<-$O!"$"$J$?$,2?$r(B
-$B$d$m$&$H$7$F$$$k$+!"K\Ev$K<+?.$,$"$k$H$-$K$N$_;H$C$F$/$@$5$$!#$^$"!"$3$N(B
-$B%3%^%s%I$O(B (@code{nntp} $B%0%k!<%W$N$h$&$J(B) $BFI$_=P$7@lMQ%0%k!<%W$K$O;H$($^(B
-$B$;$s$1$l$I!#(B
+$B@\F,0z?t$,M?$($i$l$k$H!"$3$N4X?t$O$=$N%0%k!<%WFb$NA45-;v$rK\Ev$K:o=|$7!"(B
+$B%0%k!<%W<+?H$r$3$N@$$+$i6/@)E*$KKu;&$7$F$7$^$$$^$9!#@\F,0z?t$O!"$"$J$?$,(B
+$B2?$r$d$m$&$H$7$F$$$k$+!"K\Ev$K<+?.$,$"$k$H$-$K$N$_;H$C$F2<$5$$!#$^$"!"$3(B
+$B$N%3%^%s%I$O(B (@code{nntp} $B%0%k!<%W$N$h$&$J(B) $BFI$_=P$7@lMQ%0%k!<%W$K$O;H$((B
+$B$^$;$s$1$l$I!#(B
 
 @item G V
 @kindex G V ($B%0%k!<%W(B)
@@ -2751,7 +2750,7 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 $B$O(B @code{Reply-To} $B$OL5;k$5$l!"(B
 @code{reply-to} $B$,(B @code{gnus-boring-article-headers} $B$NItJ,$G$"$l$P!"%X%C(B
 $B%@!<$,1#$5$l$k$H$$$&0UL#$G$9!#$3$l$O$"$k(B listserv $B$K$h$k%a!<%j%s%0%j%9%H(B
-$B$r9XFI$7$F$$$F!"$=$l$,(B @code{Reply-To} $BMs$r(B listserv $B<+?H$KJV$9$h$&$K$D(B
+$B$r9XFI$7$F$$$F!"$=$l$,(B @code{Reply-To} $BMs$r(B listserv $B<+?H$KJV$9$h$&$KIU(B
 $B$1$i$l$F$$$k>l9g$KM-8z$G$7$g$&!#$3$l$O$*$+$7$J?6$kIq$$$G$9!#$@$+$i$3$l$,(B
 $BMW$k$s$G$9(B!
 
@@ -2791,8 +2790,8 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 @cindex total-expire
 $B%0%k!<%W%Q%i%a!<%?!<$K(B @code{(total-expire . t)} $B$N$h$&$JMWAG$,$"$l$P!"(B
 $B4{FI5-;v$O!"4|8B@Z$l>C5n$N0u$,IU$$$F$$$J$/$F$b$9$Y$F4|8B@Z$l>C5n=hM}$r;\(B
-$B$5$l$^$9!#Cm0U$7$F;HMQ$7$F$/$@$5$$!#L$FI5-;v!"0uIU$-5-;v!"J]N15-;v$O4|8B(B
-$B@Z$l>C5n$5$l$^$;$s!#(B
+$B$5$l$^$9!#Cm0U$7$F;HMQ$7$F2<$5$$!#L$FI5-;v!"0uIU$-5-;v!"J]N15-;v$O4|8B@Z(B
+$B$l>C5n$5$l$^$;$s!#(B
 
 @code{gnus-total-expirable-newsgroups} $B$b;2>H$7$F2<$5$$!#(B
 
@@ -3020,7 +3019,7 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 $B$$$h$&$K$J$j$^$9!#(B
 @end table
 
-$B%0%k!<%W%Q%i%a!<%?!<$N=$@5$K$O(B @kbd{G p} $B$+(B @kbd{G c} $BL?Na$r;H$C$F$/$@$5(B
+$B%0%k!<%W%Q%i%a!<%?!<$N=$@5$K$O(B @kbd{G p} $B$+(B @kbd{G c} $BL?Na$r;H$C$F2<$5(B
 $B$$(B (@kbd{G p} $B$O(B Lisp $B%Y!<%9$N!"(B@kbd{G c} $B$O(B Custom $B$U$&$N%$%s%?!<%U%'!<(B
 $B%9$rDs6!$7$^$9(B)$B!#%H%T%C%/%Q%i%a!<%?!<$K$D$$$FFI$s$G$_$k$3$H$bLLGr$$$G$7$g(B
 $B$&(B (@pxref{Topic Parameters})$B!#(B
@@ -3087,8 +3086,8 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 @kindex A l ($B%0%k!<%W(B)
 @findex gnus-group-list-level
 $BL$FI5-;v$,$"$k%0%k!<%W$N$&$A!";XDj$7$?%l%Y%k$N$b$N$@$1$rI=<($7$^(B
-$B$9(B (@code{gnus-group-list-level})$B!#@\F,<-$rM?$($k$H!"L$FI5-;v$NL5$$%0%k!<(B
-$B%W$b4^$a$FI=<($7$^$9!#(B
+$B$9(B (@code{gnus-group-list-level})$B!#@\F,0z?t$rM?$($k$H!"L$FI5-;v$NL5$$%0(B
+$B%k!<%W$b4^$a$FI=<($7$^$9!#(B
 
 @item A k
 @kindex A k ($B%0%k!<%W(B)
@@ -3279,11 +3278,11 @@ kill $B$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#
 $B%H=g$KJB$YBX$($^$9(B (@code{gnus-group-sort-groups-by-real-name})$B!#(B
 @end table
 
-$B0J2<$N$9$Y$F$NL?Na$O%W%m%;%9(B/$B@\F,<-$N=,47$K=>$$$^(B
+$B0J2<$N$9$Y$F$NL?Na$O%W%m%;%9(B/$B@\F,0z?t$N=,47$K=>$$$^(B
 $B$9(B (@pxref{Process/Prefix})$B!#(B
 
-$B%7%s%\%k@\F,<-(B (@pxref{Symbolic Prefixes}) $B$,M?$($i$l$?$H$-$O!"$3$l$i$9(B
-$B$Y$F$NL?Na$O5U=g$GJB$S49$($^$9!#(B
+$B%7%s%\%k@\F,0z?t(B (@pxref{Symbolic Prefixes}) $B$,M?$($i$l$?$H$-$O!"$3$l$i(B
+$B$9$Y$F$NL?Na$O5U=g$GJB$S49$($^$9!#(B
 
 $B$^$?!"%0%k!<%W$N0lIt$rJB$YBX$($k$3$H$b$G$-$^$9!#(B
 
@@ -3527,7 +3526,7 @@ Gnus
 @kindex t ($B%0%k!<%W(B)
 $B$3$N(B @emph{$BAG@2$i$7$$(B} $B5!G=$r;H$&$K$O!"(B@code{gnus-topic} $B%^%$%J!<%b!<%I(B
 $B$r(B ($B2?$H(B!) $BC1$K%9%$%C%A%*%s$9$k$@$1(B---$B%0%k!<%W%P%C%U%!!<$G!"(B@kbd{t} $B$r2!(B
-$B$7$F$/$@$5$$(B ($B$3$l$O%H%0%k%3%^%s%I$G$9(B)$B!#(B
+$B$7$F2<$5$$(B ($B$3$l$O%H%0%k%3%^%s%I$G$9(B)$B!#(B
 
 $B$5$"$d$C$F$_$h$&!#$H$K$+$/;n$7$F$_$F!#7/$,La$C$F$/$k$^$G!"KM$O$3$3$GBT$C(B
 $B$F$k$+$i$5!#%i%i!"%?%i%i%s(B@dots{}$B!"$$$$6J$@$M!"$3$l(B@dots{}$B%i!"%i!"(B
@@ -3536,7 +3535,7 @@ Gnus
 $B$7$F$3$J$$(B? $B%"%D$/$C$F!"$$$^$$$^$7$$$/$i$$$G$7$g(B?
 
 $B$3$l$r$:$C$HM-8z$K$7$?$1$l$P!"%0%k!<%W%b!<%I$N%U%C%/$K$3$N%^%$%J!<%b!<%I(B
-$B$rDI2C$7$F$/$@$5$$!#0J2<$N9T$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F!"$M!#(B
+$B$rDI2C$7$F2<$5$$!#0J2<$N9T$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F!"$M!#(B
 
 @lisp
 (add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
@@ -3608,7 +3607,7 @@ Gnus
 @findex gnus-topic-yank-group
 $BD>A0$N(B kill $B$5$l$?%0%k!<%W$"$k$$$O%H%T%C%/$r(B yank $B$7$^(B
 $B$9(B (@code{gnus-topic-yank-group})$B!#$9$Y$F$N%H%T%C%/$O!"$9$Y$F$N%0%k!<%W(B
-$B$NA0$K(B yank $B$5$l$k$3$H$K5$$r$D$1$F$/$@$5$$!#(B
+$B$NA0$K(B yank $B$5$l$k$3$H$K5$$rIU$1$F2<$5$$!#(B
 
 $B$G$9$+$i!"$"$k%H%T%C%/$r%H%T%C%/$N%j%9%H$N@hF,$K0\F0$9$k$K$O!"C1$K$=$3(B
 $B$G(B @kbd{C-k} $B$rC!$-$^$9!#$3$l$O%+%C%H!u%Z!<%9%H$N%+%C%H$KAjEv$7$^$9!#$=(B
@@ -3634,8 +3633,8 @@ Gnus
 $B$k$H!"DL>oDL$j$=$N%0%k!<%W$KF~$j$^$9!#%H%T%C%/9T$N>e$G9T$J$&$H!"$=$N%H%T%C(B
 $B%/$O(B ($B$9$G$KI=<($5$l$F$$$k$H$-$O(B) $B@^$j$?$?$^$l$k$+!"(B($B$9$G$K@^$j$?$?$^$l(B
 $B$F$$$k$H$-$O(B) $BE83+$5$l$^$9!#$D$^$j%H%T%C%/$KBP$7$F$O$3$l$O%H%0%k%3%^%s%I(B
-$B$G$9!#$5$i$K!"?tCM$N@\F,<-$rM?$($k$H!"$=$N%l%Y%k(B ($B$H$=$l$h$j$b>.$5$$%l%Y(B
-$B%k(B) $B$N%0%k!<%W$,I=<($5$l$^$9!#(B
+$B$G$9!#$5$i$K!"?tCM$N@\F,0z?t$rM?$($k$H!"$=$N%l%Y%k(B ($B$H$=$l$h$j$b>.$5$$%l(B
+$B%Y%k(B) $B$N%0%k!<%W$,I=<($5$l$^$9!#(B
 @end table
 
 $B$5$F$*<!$O!"B>$N%3%^%s%I$N%j%9%H$G$9!#=g=x$K$OFC$K0UL#$O$"$j$^$;$s!#(B
@@ -3663,14 +3662,14 @@ Gnus
 @item T h
 @kindex T h ($B%H%T%C%/(B)
 @findex gnus-topic-hide-topic
-$B8=:_$N%H%T%C%/$r1#$7$^$9!#$b$7@\F,<-$,M?$($i$l$?$J$i!"$=$N%H%T%C%/$r1J5W(B
-$B$K1#$7$^$9!#(B
+$B8=:_$N%H%T%C%/$r1#$7$^$9!#@\F,0z?t$,M?$($i$k$H!"$=$N%H%T%C%/$r1J5W$K1#$7(B
+$B$^$9!#(B
 
 @item T s
 @kindex T s ($B%H%T%C%/(B)
 @findex gnus-topic-show-topic
-$B8=:_$N%H%T%C%/$rI=<($7$^$9!#$b$7@\F,<-$,M?$($i$l$?$J$i!"$=$N%H%T%C%/$r1J(B
-$B5W$KI=<($7$^$9!#(B
+$B8=:_$N%H%T%C%/$rI=<($7$^$9!#@\F,0z?t$,M?$($i$l$k$H!"$=$N%H%T%C%/$r1J5W$K(B
+$BI=<($7$^$9!#(B
 
 @item T D
 @kindex T D ($B%H%T%C%/(B)
@@ -3707,15 +3706,15 @@ Gnus
 @kindex T # ($B%H%T%C%/(B)
 @findex gnus-topic-mark-topic
 $B8=:_$N%H%T%C%/$K$"$k%0%k!<%W$9$Y$F$K%W%m%;%90u$rIU$1$^(B
-$B$9(B (@code{gnus-topic-mark-topic})$B!#@\F,<-$,M?$($i$l$J$$>l9g!"$3$N%3%^%s(B
-$B%I$OI{%H%T%C%/$KBP$7$F:F5"E*$KF/$-$^$9!#(B
+$B$9(B (@code{gnus-topic-mark-topic})$B!#@\F,0z?t$,M?$($i$l$J$$>l9g!"$3$N%3%^(B
+$B%s%I$OI{%H%T%C%/$KBP$7$F:F5"E*$KF/$-$^$9!#(B
 
 @item T M-#
 @kindex T M-# ($B%H%T%C%/(B)
 @findex gnus-topic-unmark-topic
 $B8=:_$N%H%T%C%/$K$"$k$9$Y$F$N%0%k!<%W$+$i%W%m%;%90u$r>C$7$^(B
-$B$9(B (@code{gnus-topic-unmark-topic})$B!#@\F,<-$,M?$($i$l$J$$>l9g!"$3$N%3%^(B
-$B%s%I$OI{%H%T%C%/$KBP$7$F:F5"E*$KF/$-$^$9!#(B
+$B$9(B (@code{gnus-topic-unmark-topic})$B!#@\F,0z?t$,M?$($i$l$J$$>l9g!"$3$N%3(B
+$B%^%s%I$OI{%H%T%C%/$KBP$7$F:F5"E*$KF/$-$^$9!#(B
 
 @item C-c C-x
 @kindex C-c C-x ($B%H%T%C%/(B)
@@ -3858,7 +3857,7 @@ Gnus $B$,CN$C$F$$$k%H%T%C%/2=$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^(B
 $B$K=>$C$FJB$YBX$($^$9(B (@code{gnus-topic-sort-groups})$B!#(B
 @end table
 
-$B@\F,0z?t$,M?$($i$l$?$i!"$3$l$i$9$Y$F$N%3%^%s%I$O5U=g$NJB$YBX$($r9T$J$$$^(B
+$B@\F,0z?t$,M?$($i$l$k$H!"$3$l$i$9$Y$F$N%3%^%s%I$O5U=g$NJB$YBX$($r9T$J$$$^(B
 $B$9!#%0%k!<%W$NJB$YBX$($K$D$$$F$N$5$i$J$k>pJs$O(B @ref{Sorting Groups} $B$r;2(B
 $B>H$7$F2<$5$$!#(B
 
@@ -4004,26 +4003,26 @@ Gnus
 @kindex a ($B%0%k!<%W(B)
 @findex gnus-group-post-news
 $B%a%C%;!<%8(B ($B%G%#%U%)%k%H$O%K%e!<%9(B) $B$N:n@.$r3+;O$7$^(B
-$B$9(B (@code{gnus-group-post-news})$B!#$b$7@\F,<-$,M?$($i$l$?$i8=:_0LCV$N%0%k!<(B
-$B%W$KEj9F$7$^$9!#$b$7@\F,<-$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$KEj9F$9$k$+$r?R$M(B
-$B$^$9!#$3$N4X?t$NL>A0$+$iO"A[$5$l$k$3$H$H$ON"J"$K!"@\F,<-$G%a!<%k%0%k!<%W(B
-$B$,;XDj$5$l$?>l9g$O!"%K%e!<%9$NBe$o$j$K%a!<%k$NMM<0$,MQ0U$5$l$^$9!#(B
+$B$9(B (@code{gnus-group-post-news})$B!#@\F,0z?t$,M?$($i$l$k$H!"8=:_0LCV$N%0%k!<(B
+$B%W$KEj9F$7$^$9!#$b$7@\F,0z?t$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$KEj9F$9$k$+$r?R(B
+$B$M$^$9!#$3$N4X?t$NL>A0$+$iO"A[$5$l$k$3$H$H$ON"J"$K!"@\F,0z?t$G%a!<%k%0%k!<(B
+$B%W$,;XDj$5$l$?>l9g$O!"%K%e!<%9$NBe$o$j$K%a!<%k$NMM<0$,MQ0U$5$l$^$9!#(B
 @xref{Composing Messages}.
 
 @item m
 @kindex m ($B%0%k!<%W(B)
 @findex gnus-group-mail
-$B%a!<%k$r$I$3$+$KAw$j$^$9(B (@code{gnus-group-mail})$B!#$b$7@\F,<-$,M?$($i$l(B
-$B$?$i8=:_0LCV$N%0%k!<%W$NEj9FMM<0(B (posting style) $B$r;H$$$^$9!#$b$7@\F,<-(B
-$B$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$NEj9FMM<0$r;H$&$+$r?R$M$^$9!#(B
+$B%a!<%k$r$I$3$+$KAw$j$^$9(B (@code{gnus-group-mail})$B!#@\F,0z?t$,M?$($i$l$k(B
+$B$H!"8=:_0LCV$N%0%k!<%W$NEj9FMM<0(B (posting style) $B$r;H$$$^$9!#$b$7@\F,0z(B
+$B?t$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$NEj9FMM<0$r;H$&$+$r?R$M$^$9!#(B
 @xref{Composing Messages}.
 
 @item i
 @kindex i ($B%0%k!<%W(B)
 @findex gnus-group-news
-$B%K%e!<%9$N:n@.$r3+;O$7$^$9(B (@code{gnus-group-news})$B!#$b$7@\F,<-$,M?$($i(B
-$B$l$?$i8=:_0LCV$N%0%k!<%W$KEj9F$7$^$9!#$b$7@\F,<-$,(B 1 $B$@$C$?$i!"$I$N%0%k!<(B
-$B%W$KEj9F$9$k$+$r?R$M$^$9!#(B@xref{Composing Messages}.
+$B%K%e!<%9$N:n@.$r3+;O$7$^$9(B (@code{gnus-group-news})$B!#@\F,0z?t$,M?$($i$l(B
+$B$k$H!"8=:_0LCV$N%0%k!<%W$KEj9F$7$^$9!#$b$7@\F,0z?t$,(B 1 $B$@$C$?$i!"$I$N%0(B
+$B%k!<%W$KEj9F$9$k$+$r?R$M$^$9!#(B@xref{Composing Messages}.
 
 $B$3$N4X?t$O!"$?$H$(%a!<%k%0%k!<%W$G;H$o$l$?$H$7$F$b!"<B:]$K$O%K%e!<%9$NMM(B
 $B<0$rMQ0U$7$^$9!#$3$l$O!"%a%C%;!<%8$r<B:]$K$O%M%C%H%o!<%/7PM3$GAw$i$:$K!"(B
@@ -4090,10 +4089,10 @@ Gnus
 @kindex g ($B%0%k!<%W(B)
 @findex gnus-group-get-new-news
 @c @icon{gnus-group-get-new-news}
-$B%5!<%P!<$N?7Ce5-;v$r%A%'%C%/$7$^$9!#?tCM$N@\F,<-$r;HMQ$9$k$H!"$3$NL?Na$O(B
-$B0z?t(B @var{arg} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%W$N$_$r%A%'%C%/$7$^(B
-$B$9(B (@code{gnus-group-get-new-news})$B!#?tCM0J30$N@\F,<-$rM?$($k$H!"$3$NL?(B
-$BNa$O$=$N%P%C%/%(%s%I$+$i%"%/%F%#%V%U%!%$%k$r6/@)E*$KA4ItFI$_D>$7$^$9!#(B
+$B%5!<%P!<$N?7Ce5-;v$r%A%'%C%/$7$^$9!#?tCM$N@\F,0z?t$r;HMQ$9$k$H!"$3$NL?Na(B
+$B$O0z?t(B @var{arg} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%W$N$_$r%A%'%C%/$7$^(B
+$B$9(B (@code{gnus-group-get-new-news})$B!#?tCM0J30$N@\F,0z?t$rM?$($k$H!"$3$N(B
+$BL?Na$O$=$N%P%C%/%(%s%I$+$i%"%/%F%#%V%U%!%$%k$r6/@)E*$KA4ItFI$_D>$7$^$9!#(B
 
 @item M-g
 @kindex M-g ($B%0%k!<%W(B)
@@ -4145,9 +4144,9 @@ Gnus $B$r:F5/F0$7$^$9(B (@code{gnus-group-restart})$B!#$3$l(B
 $B$9(B (@code{gnus-group-fetch-faq})$B!#(B
 Gnus $B$O(B @acronym{FAQ} $B$r(B @code{gnus-group-faq-directory} $B$+$i<hF@$7$h$&(B
 $B$H$7$^$9!#$3$l$ODL>o%j%b!<%H%^%7%s>e$N%G%#%l%/%H%j!<$G$9!#$3$NJQ?t$O%G%#(B
-$B%l%/%H%j!<$N%j%9%H$G$"$C$F$b9=$$$^$;$s!#$3$N>l9g!"$3$N%3%^%s%I$K@\F,<-$r(B
-$BM?$($k$3$H$G$$$/$D$+$N%5%$%H$NCf$+$iA*$V$3$H$,$G$-$^$9!#%U%!%$%k$N<hF@$K(B
-$B$O(B @code{ange-ftp} ($B$^$?$O(B @code{efs}) $B$,;HMQ$5$l$^$9!#(B
+$B%l%/%H%j!<$N%j%9%H$G$"$C$F$b9=$$$^$;$s!#$3$N>l9g!"$3$N%3%^%s%I$K@\F,0z?t(B
+$B$rM?$($k$3$H$G$$$/$D$+$N%5%$%H$NCf$+$iA*$V$3$H$,$G$-$^$9!#%U%!%$%k$N<hF@(B
+$B$K$O(B @code{ange-ftp} ($B$^$?$O(B @code{efs}) $B$,;HMQ$5$l$^$9!#(B
 
 $B$b$7:G=i$N%5%$%H$+$i$N<hF@$,<:GT$7$?>l9g!"(B
 Gnus $B$O(B @code{gnus-group-faq-directory} $B$NCM$r$9$Y$F!"0l$D0l$D%*!<%W%s$7(B
@@ -4194,13 +4193,13 @@ Editor})$B!#(B
 @cindex group description
 @findex gnus-group-describe-group
 $B8=:_$N%0%k!<%W$N@bL@$rI=<($7$^$9(B (@code{gnus-group-describe-group})$B!#@\(B
-$BF,<-$rM?$($k$H!"@bL@J8$r%5!<%P!<$+$i6/@)E*$K:FFI$_9~$_$7$^$9!#(B
+$BF,0z?t$rM?$($k$H!"@bL@J8$r%5!<%P!<$+$i6/@)E*$K:FFI$_9~$_$7$^$9!#(B
 
 @item M-d
 @kindex M-d ($B%0%k!<%W(B)
 @findex gnus-group-describe-all-groups
 $B$9$Y$F$N%0%k!<%W$N@bL@$rI=<($7$^(B
-$B$9(B (@code{gnus-group-describe-all-groups})$B!#@\F,<-$rM?$($k$H!"@bL@J8%U%!(B
+$B$9(B (@code{gnus-group-describe-all-groups})$B!#@\F,0z?t$rM?$($k$H!"@bL@J8%U%!(B
 $B%$%k$r%5!<%P!<$+$i6/@)E*$K:FFI$_9~$_$7$^$9!#(B
 
 @item H v
@@ -4233,7 +4232,7 @@ Gnus $B$N(B info $B%N!<%I$K0\F0$7$^$9(B (@code{gnus-info-find-node})$B!#(B
 Gnus $B$K!"$"$J$?$,:G8e$K$$$D%0%k!<%W$rFI$s$@$+$r5-O?$5$;$k$HJXMx$+$b$7$l(B
 $B$^$;$s!#$3$N3hF0$r;O$a$5$;$k$K$O!"(B
 @code{gnus-group-set-timestamp} $B$r(B @code{gnus-select-group-hook} $B$KDI2C(B
-$B$7$F$/$@$5$$!#(B
+$B$7$F2<$5$$!#(B
 
 @lisp
 (add-hook 'gnus-select-group-hook 'gnus-group-set-timestamp)
@@ -4729,7 +4728,7 @@ Newsgroups:full
 @vindex gnus-summary-mode-line-format
 $B35N,$N%b!<%I9T$NMM<0$bJQ99$9$k$3$H$,$G$-$^$9(B (@pxref{Mode Line
 Formatting})$B!#(B@code{gnus-summary-mode-line-format} $B$r2?$G$b9%$-$J$b$N$K(B
-$B@_Dj$7$F$/$@$5$$!#%G%#%U%)%k%HCM$O(B @samp{Gnus: %%b [%A] %Z} $B$G$9!#(B
+$B@_Dj$7$F2<$5$$!#%G%#%U%)%k%HCM$O(B @samp{Gnus: %%b [%A] %Z} $B$G$9!#(B
 
 $B0J2<$O$"$J$?$,M7$V$3$H$N$G$-$kMWAG$?$A$G$9(B:
 
@@ -4856,13 +4855,13 @@ Gnus $B$,<!$N%0%k!<%W0\F0$9$k$3$H$r3NG'$9$k$?$a$K%-!<F~NO$r5a$a$?>l9g!"(B
 $B%W$rA*Br$7$^$9!#$3$NJQ?t$,(B @code{almost-quietly} $B$@$C$?>l9g$O!"%0%k!<%W(B
 $B$N0lHV:G8e$N5-;v$rFI$s$G$$$?$H$-$K8B$C$FF1$8$3$H$,5/$3$j$^$9!#:G8e$K!"$b(B
 $B$7$3$NJQ?t$,(B @code{slightly-quietly} $B$@$C$?$i!"(B@kbd{Z n} $BL?Na$O3NG'$r$;(B
-$B$:$K<!$N%0%k!<%W$K0\$j$^$9!#(B@ref{Group Levels} $B$b;2>H$7$F$/$@$5$$!#(B
+$B$:$K<!$N%0%k!<%W$K0\$j$^$9!#(B@ref{Group Levels} $B$b;2>H$7$F2<$5$$!#(B
 
 @item gnus-auto-select-same
 @vindex gnus-auto-select-same
 @code{nil} $B$G$J$$$H!"$9$Y$F$N0\F0L?Na$O8=:_$N5-;v$HF1$8I=Bj$N5-;v$K0\F0(B
 $B$7$h$&$H$7$^$9!#(B(@dfn{$BF1$8(B} $B$O$3$3$G$O(B @dfn{$BBgBNF1$8(B} $B$H$$$&0UL#$+$b$7$l(B
-$B$^$;$s!#>\:Y$O(B @code{gnus-summary-gather-subject-limit} $B$r8+$F$/$@$5(B
+$B$^$;$s!#>\:Y$O(B @code{gnus-summary-gather-subject-limit} $B$r8+$F2<$5(B
 $B$$(B (@pxref{Customizing Threading})$B!#(B) $BF1$8I=Bj$N5-;v$,L5$$$H$-$O!":G=i$N(B
 $BL$FI5-;v$K0\F0$7$^$9!#(B
 
@@ -5214,17 +5213,18 @@ Summary Buffer} $B$r;2>H$7$F2<$5$$!#(B
 @findex gnus-summary-mail-forward
 @c @icon{gnus-summary-mail-forward}
 $BC/$+B>$N?M$K8=:_$N5-;v$rE>Aw$7$^$9(B (@code{gnus-summary-mail-forward})$B!#(B
-$B@\F,<-$,M?$($i$l$J$$>l9g!"%a%C%;!<%8$O(B @code{message-forward-as-mime} $B$*(B
-$B$h$S(B @code{message-forward-show-mml} $B$NCM$K=>$C$?$d$jJ}$GE>Aw$5$l$^$9!#(B
-$B@\F,<-$,(B 1 $B$@$C$?$i!"%G%3!<%I$5$l$?%a%C%;!<%8$,D>@\Kd$a9~$^$l$?E>AwMQ$N(B
+$B@\F,0z?t$,M?$($i$l$J$$>l9g!"%a%C%;!<%8(B
+$B$O(B @code{message-forward-as-mime} $B$*$h(B
+$B$S(B @code{message-forward-show-mml} $B$NCM$K=>$C$?$d$jJ}$GE>Aw$5$l$^$9!#@\(B
+$BF,0z?t$,(B 1 $B$@$C$?$i!"%G%3!<%I$5$l$?%a%C%;!<%8$,D>@\Kd$a9~$^$l$?E>AwMQ$N(B
 $B%P%C%U%!!<$,:n$i$l$^$9!#(B2 $B$@$C$?$i(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<%H$,(B
 $BA^F~$5$l$^$9!#$3$N>l9g!"85$N%a%C%;!<%8$O%G%3!<%I$5$l$^$;$s!#(B3 $B$G$O%G%3!<(B
 $B%I$5$l$?(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<%H$,A^F~$5$l$^$9(B ($B<B:]$KAw?.$9(B
-$B$k:]$K:F$S%(%s%3!<%I$5$l$^$9(B)$B!#@\F,<-(B 4 $B$G$O!"(B1 $B$N>l9g$HF1$8F0:n$K$J$j$^(B
-$B$9!#@\F,<-$,$3$l$i0J30$N>l9g$K$O!"(B@code{message-forward-as-mime} $B$NCM$r(B
-$B0l;~E*$KH?E>$7$F!"@\F,<-$,M?$($i$l$J$+$C$?>l9g$HF1$8F0:n$r9T$J$$$^$9!#%G%#(B
-$B%U%)%k%H$G$O!"%G%3!<%I$5$l$?%a%C%;!<%8$,(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<(B
-$B%H$H$7$F@8@.$5$l$^$9!#(B
+$B$k:]$K:F$S%(%s%3!<%I$5$l$^$9(B)$B!#@\F,0z?t(B 4 $B$G$O!"(B1 $B$N>l9g$HF1$8F0:n$K$J$j(B
+$B$^$9!#@\F,0z?t$,$3$l$i0J30$N>l9g$K$O!"(B@code{message-forward-as-mime} $B$N(B
+$BCM$r0l;~E*$KH?E>$7$F!"@\F,0z?t$,M?$($i$l$J$+$C$?>l9g$HF1$8F0:n$r9T$J$$$^(B
+$B$9!#%G%#%U%)%k%H$G$O!"%G%3!<%I$5$l$?%a%C%;!<%8$,(B rfc822 $B7A<0(B
+$B$N(B @acronym{MIME} $B%Q!<%H$H$7$F@8@.$5$l$^$9!#(B
 
 @item S m
 @itemx m
@@ -5233,9 +5233,9 @@ Summary Buffer} $B$r;2>H$7$F2<$5$$!#(B
 @findex gnus-summary-mail-other-window
 @c @icon{gnus-summary-mail-originate}
 $B%a!<%k$r:n@.$7$^$9(B (@code{gnus-summary-mail-other-window})$B!#%G%#%U%)%k%H(B
-$B$G$O8=:_$N%0%k!<%W$NEj9FMM<0(B (posting style) $B$r;H$$$^$9!#$b$7@\F,<-$,M?(B
-$B$($i$l$?$i$=$l$O;H$$$^$;$s!#$b$7@\F,<-$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$NEj9F(B
-$BMM<0$r;H$&$+$r?R$M$^$9!#(B
+$B$G$O8=:_$N%0%k!<%W$NEj9FMM<0(B (posting style) $B$r;H$$$^$9!#@\F,0z?t$,M?$((B
+$B$i$l$k$H!"$=$l$O;H$$$^$;$s!#$b$7@\F,0z?t$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$NEj(B
+$B9FMM<0$r;H$&$+$r?R$M$^$9!#(B
 
 @item S i
 @itemx i
@@ -5243,9 +5243,9 @@ Summary Buffer} $B$r;2>H$7$F2<$5$$!#(B
 @kindex S i ($B35N,(B)
 @findex gnus-summary-news-other-window
 $B%K%e!<%9$r:n@.$7$^$9(B (@code{gnus-summary-news-other-window})$B!#%G%#%U%)%k(B
-$B%H$G$O8=:_$N%0%k!<%W$KEj9F$7$^$9!#$b$7@\F,<-$,M?$($i$l$?$i8=:_$N%0%k!<%W(B
-$BL>$O;H$o$l$^$;$s!#$b$7@\F,<-$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$KEj9F$9$k$+$r?R(B
-$B$M$^$9!#(B
+$B%H$G$O8=:_$N%0%k!<%W$KEj9F$7$^$9!#@\F,0z?t$,M?$($i$l$k$H!"8=:_$N%0%k!<%W(B
+$BL>$O;H$o$l$^$;$s!#$b$7@\F,0z?t$,(B 1 $B$@$C$?$i!"$I$N%0%k!<%W$KEj9F$9$k$+$r(B
+$B?R$M$^$9!#(B
 
 $B$3$N4X?t$O!"$?$H$(%a!<%k%0%k!<%W$G;H$o$l$?$H$7$F$b!"<B:]$K$O%K%e!<%9$NMM(B
 $B<0$rMQ0U$7$^$9!#$3$l$O!"%a%C%;!<%8$r<B:]$K$O%M%C%H%o!<%/7PM3$GAw$i$:$K!"(B
@@ -5333,9 +5333,9 @@ Manual}, $B$K$5$i$J$k>pJs$,$"$j$^$9!#(B
 @findex gnus-summary-post-news
 @c @icon{gnus-summary-post-news}
 $BEj9F$9$k$?$a$N5-;v$r:n@.$7$^$9(B (@code{gnus-summary-post-news})$B!#%G%#%U%)(B
-$B%k%H$G$O8=:_$N%0%k!<%W$KEj9F$7$^$9!#$b$7@\F,<-$,M?$($i$l$?$i8=:_$N%0%k!<(B
-$B%WL>$O;H$o$l$^$;$s!#$b$7@\F,<-$,(B 1 $B$@$C$?$i!"Be$o$j$KJL$N$I$N%0%k!<%W$K(B
-$BEj9F$9$k$+$r?R$M$^$9!#(B
+$B%k%H$G$O8=:_$N%0%k!<%W$KEj9F$7$^$9!#@\F,0z?t$,M?$($i$l$k$H!"8=:_$N%0%k!<(B
+$B%WL>$O;H$o$l$^$;$s!#$b$7@\F,0z?t$,(B 1 $B$@$C$?$i!"Be$o$j$KJL$N$I$N%0%k!<%W(B
+$B$KEj9F$9$k$+$r?R$M$^$9!#(B
 
 @item S f
 @itemx f
@@ -5375,18 +5375,18 @@ Manual}, $B$K$5$i$J$k>pJs$,$"$j$^$9!#(B
 @kindex S o p ($B35N,(B)
 @findex gnus-summary-post-forward
 $B8=:_$N5-;v$r%K%e!<%9%0%k!<%W$KE>Aw$7$^(B
-$B$9(B (@code{gnus-summary-post-forward})$B!#@\F,<-$,M?$($i$l$J$$>l9g!"%a%C%;!<(B
-$B%8$O(B @code{message-forward-as-mime} $B$*$h(B
+$B$9(B (@code{gnus-summary-post-forward})$B!#@\F,0z?t$,M?$($i$l$J$$>l9g!"%a%C(B
+$B%;!<%8$O(B @code{message-forward-as-mime} $B$*$h(B
 $B$S(B @code{message-forward-show-mml} $B$NCM$K=>$C$?$d$jJ}$GE>Aw$5$l$^$9!#@\(B
-$BF,<-$,(B 1 $B$@$C$?$i!"%G%3!<%I$5$l$?%a%C%;!<%8$,D>@\Kd$a9~$^$l$?E>AwMQ$N%P%C(B
-$B%U%!!<$,:n$i$l$^$9!#(B2 $B$@$C$?$i(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<%H$,A^F~(B
-$B$5$l$^$9!#$3$N>l9g!"85$N%a%C%;!<%8$O%G%3!<%I$5$l$^$;$s!#(B3 $B$G$O%G%3!<%I$5(B
-$B$l$?(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<%H$,A^F~$5$l$^$9(B ($B<B:]$KAw?.$9$k:](B
-$B$K:F$S%(%s%3!<%I$5$l$^$9(B)$B!#@\F,<-(B 4 $B$G$O!"(B1 $B$N>l9g$HF1$8F0:n$K$J$j$^$9!#(B
-$B@\F,<-$,$3$l$i0J30$N>l9g$K$O!"(B@code{message-forward-as-mime} $B$NCM$r0l;~(B
-$BE*$KH?E>$7$F!"@\F,<-$,M?$($i$l$J$+$C$?>l9g$HF1$8F0:n$r9T$J$$$^$9!#%G%#%U%)(B
-$B%k%H$G$O!"%G%3!<%I$5$l$?%a%C%;!<%8$,(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<%H(B
-$B$H$7$F@8@.$5$l$^$9!#(B
+$BF,0z?t$,(B 1 $B$@$C$?$i!"%G%3!<%I$5$l$?%a%C%;!<%8$,D>@\Kd$a9~$^$l$?E>AwMQ$N(B
+$B%P%C%U%!!<$,:n$i$l$^$9!#(B2 $B$@$C$?$i(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<%H$,(B
+$BA^F~$5$l$^$9!#$3$N>l9g!"85$N%a%C%;!<%8$O%G%3!<%I$5$l$^$;$s!#(B3 $B$G$O%G%3!<(B
+$B%I$5$l$?(B rfc822 $B7A<0$N(B @acronym{MIME} $B%Q!<%H$,A^F~$5$l$^$9(B ($B<B:]$KAw?.$9(B
+$B$k:]$K:F$S%(%s%3!<%I$5$l$^$9(B)$B!#@\F,0z?t(B 4 $B$G$O!"(B1 $B$N>l9g$HF1$8F0:n$K$J$j(B
+$B$^$9!#@\F,0z?t$,$3$l$i0J30$N>l9g$K$O!"(B@code{message-forward-as-mime} $B$N(B
+$BCM$r0l;~E*$KH?E>$7$F!"@\F,0z?t$,M?$($i$l$J$+$C$?>l9g$HF1$8F0:n$r9T$J$$$^(B
+$B$9!#%G%#%U%)%k%H$G$O!"%G%3!<%I$5$l$?%a%C%;!<%8$,(B rfc822 $B7A<0(B
+$B$N(B @acronym{MIME} $B%Q!<%H$H$7$F@8@.$5$l$^$9!#(B
 
 @item S O p
 @kindex S O p ($B35N,(B)
@@ -5417,7 +5417,7 @@ Manual}, $B$K$5$i$J$k>pJs$,$"$j$^$9!#(B
 @findex gnus-summary-yank-message
 $B8=:_$N5-;v$r!"$9$G$KB8:_$9$k%a%C%;!<%8:n@.%P%C%U%!!<$KE=$jIU$1$^(B
 $B$9(B (@code{gnus-summaryyank-message})$B!#$3$NL?Na$OE=$jIU$1$?$$%a%C%;!<%8%P%C(B
-$B%U%!!<$NF~NO$rB%$7!"%W%m%;%9(B/$B@\F,<-$N=,47$rM}2r$7$^(B
+$B%U%!!<$NF~NO$rB%$7!"%W%m%;%9(B/$B@\F,0z?t$N=,47$rM}2r$7$^(B
 $B$9(B (@pxref{Process/Prefix})$B!#(B
 @end table
 
@@ -5435,18 +5435,18 @@ Manual}, $B$K$5$i$J$k>pJs$,$"$j$^$9!#(B
 @findex gnus-summary-cancel-article
 @kindex C ($B35N,(B)
 @c @icon{gnus-summary-cancel-article}
-$B<h$j>C$7$?$$5-;v$r8+$D$1$F$/$@$5$$(B ($B<h$j>C$9$3$H$,$G$-$k$N$O<+J,$N5-;v$@(B
-$B$1$G$9!#JQ$J$3$H$O;n$5$J$$$G$/$@$5$$(B)$B!#$=$7$F(B @kbd{C} $B$+(B @kbd{S c} $B$r2!(B
-$B$7$F$/$@$5$$(B (@code{gnus-summary-cancel-article})$B!#$"$J$?$N5-;v$,<h$j>C(B
-$B$5$l$^$9(B---$B@$3&Cf$N5!3#$,$"$J$?$N5-;v$r<h$j>C$7$^$9!#$3$NL?Na$O%W%m%;%9(B
-/$B@\F,0z?t$N=,47$rMQ$$$^$9(B (@pxref{Process/Prefix})$B!#(B
+$B<h$j>C$7$?$$5-;v$r8+$D$1$F2<$5$$(B ($B<h$j>C$9$3$H$,$G$-$k$N$O<+J,$N5-;v$@$1(B
+$B$G$9!#JQ$J$3$H$O;n$5$J$$$G2<$5$$(B)$B!#$=$7$F(B @kbd{C} $B$+(B @kbd{S c} $B$r2!$7$F(B
+$B2<$5$$(B (@code{gnus-summary-cancel-article})$B!#$"$J$?$N5-;v$,<h$j>C$5$l$^(B
+$B$9(B---$B@$3&Cf$N5!3#$,$"$J$?$N5-;v$r<h$j>C$7$^$9!#$3$NL?Na$O%W%m%;%9(B/$B@\F,0z(B
+$B?t$N=,47$rMQ$$$^$9(B (@pxref{Process/Prefix})$B!#(B
 
 $B$7$+$7Cm0U$7$FM_$7$$$N$O!"$9$Y$F$N%5%$%H$,<h$j>C$7$r07$C$F$$$k$o$1$G$O$J(B
 $B$$$3$H$G$9!#$G$9$+$i!"$?$$$F$$$N%5%$%H$,LdBj$N5-;v$r<h$j>C$7$F$b!"$"$A$3(B
 $B$A$G$"$J$?$N5-;v$O@8$-;D$k$+$b$7$l$^$;$s!#(B
 
 Gnus $B$O<h$j>C$9$H$-$K!X8=:_!Y$NA*BrJ}K!$r;H$$$^$9!#I8=`$NEj9FJ}K!$r;H$$(B
-$B$?$$$N$G$"$l$P!"J8;z@\F,0z?t(B @samp{a} $B$r;H$C$F$/$@$5(B
+$B$?$$$N$G$"$l$P!"J8;z@\F,0z?t(B @samp{a} $B$r;H$C$F2<$5(B
 $B$$(B (@pxref{Symbolic Prefixes})$B!#(B
 
 Gnus $B$O(B @code{Cancel-Lock} $B%X%C%@!<(B (@pxref{Canceling News,
@@ -5459,7 +5459,7 @@ Gnus $B$O(B @code{Cancel-Lock} $B%X%C%@!<(B (@pxref{Canceling News,
 
 @findex gnus-summary-supersede-article
 @kindex S ($B35N,(B)
-$B855-;v$N$H$3$m$X0\F0$7$F!"(B@kbd{S s} $B$r2!$7$F$/$@$5(B
+$B855-;v$N$H$3$m$X0\F0$7$F!"(B@kbd{S s} $B$r2!$7$F2<$5(B
 $B$$(B (@code{gnus-summary-supersede-article})$B!#$=$l$rIaDL$KAw?.$9$kA0$K!"5-(B
 $B;v$r9%$-$J$h$&$KJT=8$9$k$3$H$,$G$-$^$9!#(B
 
@@ -5476,8 +5476,8 @@ Gnus $B$O(B @code{Cancel-Lock} $B%X%C%@!<(B (@pxref{Canceling News,
 $B$K(B @kbd{C-c C-c} $B$r2!$7$F5-;v$rAw?.$7$F2<$5$$!#A0$N5-;v$O<h$j>C$5$l$k$+(B
 $BCV$-49$($i$l$k$G$7$g$&!#(B
 
-$B$A$g$C$H3P$($F$*$$$F$/$@$5$$(B: 'supersede' ($BBeBX(B) $B$H$$$&8l$NCf$K(B 'c' $B$OL5(B
-$B$$$H$$$&$3$H$r!#(B
+$B$A$g$C$H3P$($F$*$$$F2<$5$$(B: 'supersede' ($BBeBX(B) $B$H$$$&8l$NCf$K(B 'c' $B$OL5$$(B
+$B$H$$$&$3$H$r!#(B
 
 @node Delayed Articles
 @section $BCY1d5-;v(B
@@ -5607,7 +5607,7 @@ Gnus $B$O(B @code{Cancel-Lock} $B%X%C%@!<(B (@pxref{Canceling News,
 @table @samp
 @item !
 @vindex gnus-ticked-mark
-$B2D;k5-;v(B (ticked) $B$H$7$F0u$r$D$1$^$9(B (@code{gnus-ticked-mark})$B!#(B
+$B2D;k5-;v(B (ticked) $B$H$7$F0u$rIU$1$^$9(B (@code{gnus-ticked-mark})$B!#(B
 
 @dfn{$B2D;k5-;v(B} $B$H$O>o$K2D;k>uBV$G$"$k5-;v$N$3$H$G$9!#$*$b$7$m$$$H;W$&5-(B
 $B;v$,$"$C$?>l9g$d!"FI$`$N$r@h$K1d$P$7$?$$$H$-$d!"8e$GJVEz$r$7$?$$$H$-$K!"(B
@@ -5704,7 +5704,7 @@ Articles})$B!#(B
 
 $B5-;v$r(B @dfn{$B4|8B@Z$l>C5n2DG=(B} $B$H$7$F0u$rIU$1$k(B ($B$b$7$/$O!"<+F0E*$K$=$N$h(B
 $B$&$K0u$rIU$1$k(B) $B$3$H$O!"IaDL$N%0%k!<%W$G$O$"$^$j0UL#$,$"$j$^$;$s(B---$BMxMQ(B
-$B<T$O%K%e!<%:5-;v$N4|8B$K$h$k:o=|$r@)8f$7$F$$$^$;$s!#$7$+$7!"Nc$($P%a!<%k(B
+$B<T$O%K%e!<%95-;v$N4|8B$K$h$k:o=|$r@)8f$7$F$$$^$;$s!#$7$+$7!"Nc$($P%a!<%k(B
 $B%0%k!<%W$G$O!"(B@dfn{$B4|8B@Z$l>C5n2DG=(B} $B$H$7$F0u$N$D$$$?5-;v$O!"$$$D$G(B
 $B$b(B Gnus $B$K$h$C$F:o=|$5$l$k$3$H$,$"$j$^$9!#(B
 @end table
@@ -5964,8 +5964,8 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 
 $B$3$N5gCO$rC&$9$k$?$a$K!"(BGnus $B$O$3$l$i$9$Y$F$N0c$C$?$3$H$r$9$kL?Na$rDs6!(B
 $B$7$^$9!#$3$l$i$O35N,%P%C%U%!!<$N(B @kbd{M M} $B%^%C%W$K$"$j$^$9!#$9$Y$F$r8+(B
-$B$k$?$a$K$O(B @kbd{M M C-h} $B$rF~NO$7$F$/$@$5$$(B---$B$3$N%^%K%e%"%k$G0lMw$r=P$9(B
-$B$K$OB?2a$.$^$9!#(B
+$B$k$?$a$K$O(B @kbd{M M C-h} $B$rF~NO$7$F2<$5$$(B---$B$3$N%^%K%e%"%k$G0lMw$r=P$9$K(B
+$B$OB?2a$.$^$9!#(B
 
 $B$3$l$i$NL?Na$rD>@\;H$&$3$H$O$G$-$^$9$,!"$[$H$s$I$NMxMQ<T$O35N,%b!<%I$N%-!<(B
 $B%^%C%W$r8r49$9$kJ}$r9%$`$G$7$g$&!#Nc$($P!"(B@kbd{!} $BL?Na$K<!$NL$FI5-;v$NBe(B
@@ -6125,29 +6125,29 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @kindex / / ($B35N,(B)
 @findex gnus-summary-limit-to-subject
 $B35N,%P%C%U%!!<$r$$$/$D$+$NI=Bj$H9gCW$9$k$b$N$@$1$K@)8B$7$^(B
-$B$9(B (@code{gnus-summary-limit-to-subject})$B!#$b$7@\F,<-$,M?$($i$l$l$P!"9g(B
-$BCW$9$k5-;v$r=|30$7$^$9!#(B
+$B$9(B (@code{gnus-summary-limit-to-subject})$B!#@\F,0z?t$,M?$($i$l$k$H!"9gCW(B
+$B$9$k5-;v$r=|30$7$^$9!#(B
 
 @item / a
 @kindex / a ($B35N,(B)
 @findex gnus-summary-limit-to-author
 $B35N,%P%C%U%!!<$r2??M$+$NCx<T$K9gCW$9$k$b$N$@$1$K@)8B$7$^(B
-$B$9(B (@code{gnus-summary-limit-to-author})$B!#$b$7@\F,<-$,M?$($i$l$l$P!"9gCW(B
-$B$9$k5-;v$r=|30$7$^$9!#(B
+$B$9(B (@code{gnus-summary-limit-to-author})$B!#@\F,0z?t$,M?$($i$l$k$H!"9gCW$9(B
+$B$k5-;v$r=|30$7$^$9!#(B
 
 @item / R
 @kindex / R ($B35N,(B)
 @findex gnus-summary-limit-to-recipient
 $B35N,%P%C%U%!!<$r$$$/$D$+$N<u?.<T$K9gCW$9$k5-;v$@$1$K@)8B$7$^(B
-$B$9(B (@code{gnus-summary-limit-to-recipient})$B!#$b$7@\F,<-$,M?$($i$l$l$P!"(B
-$B9gCW$9$k5-;v$r=|30$7$^$9!#(B
+$B$9(B (@code{gnus-summary-limit-to-recipient})$B!#@\F,0z?t$,M?$($i$l$k$H!"9g(B
+$BCW$9$k5-;v$r=|30$7$^$9!#(B
 
 @item / x
 @kindex / x ($B35N,(B)
 @findex gnus-summary-limit-to-extra
 ``$BDI2C(B'' $B$N%X%C%@!<$N0l$D$K9gCW$9$k5-;v$K35N,%P%C%U%!!<$r@)8B$7$^(B
-$B$9(B (@pxref{To From Newsgroups}) (@code{gnus-summary-limit-to-extra})$B!#$b(B
-$B$7@\F,<-$,M?$($i$l$l$P!"9gCW$9$k5-;v$r=|30$7$^$9!#(B
+$B$9(B (@pxref{To From Newsgroups}) (@code{gnus-summary-limit-to-extra})$B!#@\(B
+$BF,0z?t$,M?$($i$l$k$H!"9gCW$9$k5-;v$r=|30$7$^$9!#(B
 
 @item / u
 @itemx x
@@ -6155,7 +6155,7 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @kindex x ($B35N,(B)
 @findex gnus-summary-limit-to-unread
 $B35N,%P%C%U%!!<$r4{FI$N0u$,IU$$$F$$$J$$5-;v$K@)8B$7$^(B
-$B$9(B (@code{gnus-summary-limit-to-unread})$B!#$b$7@\F,0z?t$,M?$($i$l$l$P!"%P%C(B
+$B$9(B (@code{gnus-summary-limit-to-unread})$B!#@\F,0z?t$,M?$($i$l$k$H!"%P%C(B
 $B%U%!!<$r40A4$KL$FI5-;v$N$_$K@)8B$7$^$9!#$3$l$O!"2D;k$HJ]N1$N5-;v$O4^$^$l(B
 $B$J$$$H$$$&$3$H$G$9!#(B
 
@@ -6169,8 +6169,8 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @kindex / t ($B35N,(B)
 @findex gnus-summary-limit-to-age
 $B?tCM$r?R$M$F!"35N,%P%C%U%!!<$r$=$NF|?t$h$j8E$$(B ($B$b$7$/$OF1$8(B) $B5-;v$K@)8B(B
-$B$7$^$9(B (@code{gnus-summary-limit-to-age})$B!#$b$7@\F,0z?t$,M?$($i$l$l$P!"(B
-$B$=$N?tCM$NF|$h$j$b?7$7$$5-;v$K@)8B$7$^$9!#(B
+$B$7$^$9(B (@code{gnus-summary-limit-to-age})$B!#@\F,0z?t$,M?$($i$l$k$H!"$=$N(B
+$B?tCM$NF|$h$j$b?7$7$$5-;v$K@)8B$7$^$9!#(B
 
 @item / n
 @kindex / n ($B35N,(B)
@@ -6183,8 +6183,8 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @kindex / w ($B35N,(B)
 @findex gnus-summary-pop-limit
 $BA0$N@)8B$r%9%?%C%/$+$i<h$j=P$7$F!"I|85$7$^(B
-$B$9(B (@code{gnus-summary-pop-limit})$B!#$b$7@\F,0z?t$rM?$($i$l$l$P!"$9$Y$F$N(B
-$B@)8B$r%9%?%C%/$+$i<h$j=P$7$^$9!#(B
+$B$9(B (@code{gnus-summary-pop-limit})$B!#@\F,0z?t$rM?$($i$l$k$H!"$9$Y$F$N@)8B(B
+$B$r%9%?%C%/$+$i<h$j=P$7$^$9!#(B
 
 @item / .
 @kindex / . ($B35N,(B)
@@ -6209,8 +6209,8 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @kindex / r ($B35N,(B)
 @findex gnus-summary-limit-to-replied
 $B35N,%P%C%U%!!<$rJV?.$7$?5-;v$@$1$K@)8B$7$^(B
-$B$9(B (@code{gnus-summary-limit-to-replied})$B!#@\F,<-$,M?$($i$l$?>l9g$O!"JV(B
-$B?.$7$?5-;v0J30$N5-;v$K@)8B$7$^$9!#(B
+$B$9(B (@code{gnus-summary-limit-to-replied})$B!#@\F,0z?t$,M?$($i$l$k$H!"JV?.(B
+$B$7$?5-;v0J30$N5-;v$K@)8B$7$^$9!#(B
 
 @item / E
 @itemx M S
@@ -6259,8 +6259,8 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @kindex / C ($B35N,(B)
 @findex gnus-summary-limit-mark-excluded-as-read
 $B$9$Y$F$N=|30$5$l$?L$FI$N5-;v$K4{FI$N0u$rIU$1$^(B
-$B$9(B (@code{gnus-summary-limit-mark-excluded-as-read})$B!#$b$7@\F,0z?t$,M?$((B
-$B$i$l$l$P!"2D;k$HJ]N1$N$_$N0u$N5-;v$b4{FI$H$7$F0u$rIU$1$^$9!#(B
+$B$9(B (@code{gnus-summary-limit-mark-excluded-as-read})$B!#@\F,0z?t$,M?$($i$l(B
+$B$k$H!"2D;k$HJ]N1$N$_$N0u$N5-;v$b4{FI$H$7$F0u$rIU$1$^$9!#(B
 
 @item / N
 @kindex / N ($B35N,(B)
@@ -6272,8 +6272,8 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @item / o
 @kindex / o ($B35N,(B)
 @findex gnus-summary-insert-old-articles
-$B$9$Y$F$N8E$$5-;v$r35N,%P%C%U%!!<$KA^F~$7$^$9!#$b$7?tCM$N@\F,<-$,M?$($i$l(B
-$B$?$i!"$=$N8D?t$N5-;v$r<h$j9~$_$^$9!#(B
+$B$9$Y$F$N8E$$5-;v$r35N,%P%C%U%!!<$KA^F~$7$^$9!#?tCM$N@\F,0z?t$,M?$($i$l$k(B
+$B$H!"$=$N8D?t$N5-;v$r<h$j9~$_$^$9!#(B
 @end table
 
 @node Threading
@@ -6345,7 +6345,7 @@ Gnus $B$O%G%#%U%)%k%H$G5-;v$r%9%l%C%II=<($7$^$9!#(B@dfn{$B%9%l%C%I$K$9$k(B} 
 @item gnus-summary-make-false-root
 @vindex gnus-summary-make-false-root
 $B$b$7(B @code{nil} $B$G$J$$$H!"(BGnus $B$O$9$Y$F$N$D$J$,$C$F$$$J$$ItJ,LZ$r0l$D$N(B
-$BBg$-$JLZ$K$7$F!"D:>e$K$_$;$+$1$N:,K\$r:n$j$^$9!#(B($B$A$g$C$HBT$C$F$/$@$5$$!#(B
+$BBg$-$JLZ$K$7$F!"D:>e$K$_$;$+$1$N:,K\$r:n$j$^$9!#(B($B$A$g$C$HBT$C$F2<$5$$!#(B
 $BD:>e$K:,85(B (root) $B$G$9$C$F(B? $B$($(!"$=$&$J$N$G$9!#(B) $B$D$J$,$C$F$$$J$$ItJ,LZ(B
 $B$OK\Ev$N:,K\$,4|8B@Z$l>C5n$5$l$?$+!"A02s$N%;%C%7%g%s$G:,K\$rFI$s$@$j:o=|(B
 $B$7$?$H$-$K$G$-$^$9!#(B
@@ -6840,7 +6840,7 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 $B$=$l$>$l$N4X?t$OFs$D$N%9%l%C%I$r$H$j!":G=i$N%9%l%C%I$,$b$&0lJ}$h$j@h$KJB(B
 $B$YBX$($i$l$k$Y$-$G$"$l$P(B @code{nil} $B$G$J$$CM$rJV$7$^$9!#<B:]$NJB$YBX$($O!"(B
 $BIaDL$=$l$>$l$N%9%l%C%I$N:,K\$@$1$rD4$Y$k$3$H$K$h$C$F9T$J$o$l$k$3$H$K5$$r(B
-$B$D$1$F2<$5$$!#(B
+$BIU$1$F2<$5$$!#(B
 
 $BFs$D0J>e$N4X?t$r;H$&>l9g!"JB$YBX$($NBh0l$N80$O%j%9%H$N:G8e$N4X?t$G$J$1$l(B
 $B$P$J$j$^$;$s!#JB$YBX$(4X?t$N%j%9%H$N$J$k$Y$/@hF,$K!"$*$=$i$/>o(B
@@ -6923,10 +6923,10 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 $B$G!"@h9T$7$F5-;v(B 2 $B$r<hF@$7$^$9!#$"$J$?$O5-;v(B 3 $B$rFI$`$3$H$K$7$^$9$,!"(B
 Gnus $B$O5-;v(B 2 $B$r<hF@$7$F$$$k:GCf$J$N$G!"@\B3$OIu:?$5$l$F$$$^$9!#(B
 
-$B$3$N>u67$rHr$1$k$?$a$K!"(BGnus $B$O%5!<%P!<$KFs$D(B ($BFs$^$G?t$($F$/$@$5$$(B) $B$N(B
-$B@\B3$rD%$j$^$9!#$3$l$O$"$^$jNI$$$3$H$G$O$J$$$H9M$($k?M$b$$$k$G$7$g$&$,!"(B
-$B;d$K$O<B:]$NBeBX<jCJ$,8+$D$+$i$J$$$N$G$9!#M>J,$J@\B3$rN)$A>e$2$k$?$a$K$O(B
-$B$$$/$P$/$+$N;~4V$,$+$+$k$N$G!"(BGnus $B$N5/F0$OCY$/$J$j$^$9!#(B
+$B$3$N>u67$rHr$1$k$?$a$K!"(BGnus $B$O%5!<%P!<$KFs$D(B ($BFs$^$G?t$($F2<$5$$(B) $B$N@\(B
+$BB3$rD%$j$^$9!#$3$l$O$"$^$jNI$$$3$H$G$O$J$$$H9M$($k?M$b$$$k$G$7$g$&$,!";d(B
+$B$K$O<B:]$NBeBX<jCJ$,8+$D$+$i$J$$$N$G$9!#M>J,$J@\B3$rN)$A>e$2$k$?$a$K$O$$(B
+$B$/$P$/$+$N;~4V$,$+$+$k$N$G!"(BGnus $B$N5/F0$OCY$/$J$j$^$9!#(B
 
 Gnus $B$O$"$J$?$,FI$`$G$"$m$&5-;v$h$j$b$?$/$5$s$N5-;v$r<hF@$7$^$9!#$3$l$O(B
 $B5-;v$N@h9T<hF@$r;H$o$J$$$H$-$h$j$b!"$"$J$?$N%^%7%s$H(B @acronym{NNTP} $B%5!<(B
@@ -6937,8 +6937,8 @@ Gnus $B$O$"$J$?$,FI$`$G$"$m$&5-;v$h$j$b$?$/$5$s$N5-;v$r<hF@$7$^$9!#$3$l$O(B
 $B$&(B@dots{} $BK\Ev$K$=$&$7$?$$$H;W$o$J$$8B$j$O!#(B
 
 @vindex gnus-asynchronous
-$B$d$jJ}$G$9(B: @code{gnus-asynchronous} $B$r(B @code{t} $B$K@_Dj$7$F$/$@$5$$!#$=(B
-$B$l0J30$N=t!9$N$3$H$O<+F0E*$K9T$J$o$l$^$9!#(B
+$B$d$jJ}$G$9(B: @code{gnus-asynchronous} $B$r(B @code{t} $B$K@_Dj$7$F2<$5$$!#$=$l(B
+$B0J30$N=t!9$N$3$H$O<+F0E*$K9T$J$o$l$^$9!#(B
 
 @vindex gnus-use-article-prefetch
 @code{gnus-use-article-prefetch} $B$r@_Dj$9$k$3$H$K$h$C$F!"$I$l$/$i$$$N5-(B
@@ -7221,7 +7221,7 @@ Gnus $B$O$?$/$5$s$NJ}K!$G5-;v$rJ]B8$9$k$3$H$,$G$-$^$9!#0J2<$N$b$N$OHs>o$K(B
 @findex gnus-summary-pipe-output
 $B8=:_$N5-;v$r%Q%$%W$KJ]B8$7$^$9!#$&!<$s$H!"$"$N$)!";d$,8@$*$&$H$7$F$$$k$3(B
 $B$H$O(B---$B8=:_$N5-;v$r%W%m%;%9$K%Q%$%W$9$k$H$$$&$3$H$G(B
-$B$9(B (@code{gnus-summary-pipe-output})$B!#%7%s%\%k@\F,<-(B (@pxref{Symbolic
+$B$9(B (@code{gnus-summary-pipe-output})$B!#%7%s%\%k@\F,0z?t(B (@pxref{Symbolic
 Prefixes}) $B$,M?$($i$l$k$H!"%Q%$%W$X$N=PNO$K40A4$J%X%C%@!<$r4^$a$^$9!#(B
 
 @item O P
@@ -7502,8 +7502,8 @@ Gnus $B$O0J2<$N4JC1$J5,B'$KB'$C$F$I$N5-;v$,72$KB0$9$k$N$+$r?dB,$7$^$9(B: $BI=
 @end table
 
 $B$3$l$i$O$9$Y$F!"%W%m%;%90u$,IU$1$i$l$?5-;v$KBP$7$FH?1~$9$k$H$$$&$3$H$r3P(B
-$B$($F$*$$$F$/$@$5$$!#Nc$($P%K%e!<%9%0%k!<%WA4BN$r%G%3!<%I$7$FJ]B8$7$?$$$N(B
-$B$G$"$l$P!"Nc$K$h$C$F(B @kbd{M P a} (@code{gnus-uu-mark-all}) $B$KB3$$(B
+$B$($F$*$$$F2<$5$$!#Nc$($P%K%e!<%9%0%k!<%WA4BN$r%G%3!<%I$7$FJ]B8$7$?$$$N$G(B
+$B$"$l$P!"Nc$K$h$C$F(B @kbd{M P a} (@code{gnus-uu-mark-all}) $B$KB3$$(B
 $B$F(B @kbd{X U} (@code{gnus-uu-decode-uu-and-save}) $B$r<B9T$7$F2<$5$$!#(B
 
 $B$3$N$9$Y$F$O!"GrF|$N2<$K$$$A$$$A%-!<$rBG$C$F$$$?(B @sc{gnus 4.1} $B$N$H$-(B
@@ -7682,7 +7682,7 @@ Gnus $B$O%U%!%$%k$r$I$&$d$C$FI=<($9$k$+$r7h$a$k$?$a$K(B @dfn{$B5,B'JQ?t(B} 
 @item gnus-uu-ignore-files-by-type
 @vindex gnus-uu-ignore-files-by-type
 $B$3$NJQ?t$K9gCW$9$k(B @acronym{MIME} $B$N7?$r;}$D%U%!%$%k$OI=<($5$l$^$;$s!#(B
-Gnus $B$O%U%!%$%kL>$K4p$E$$$F7?$r?dB,$7$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+Gnus $B$O%U%!%$%kL>$K4p$E$$$F7?$r?dB,$7$F$$$k$3$H$KCm0U$7$F2<$5$$!#(B
 @code{gnus-uu} $B$O(B ($B$^$@(B) @acronym{MIME} $B%Q%C%1!<%8$G$O$J$$$N$G!"$3$l$O>/!9(B
 $B$*9T57$,0-$$$b$N$G$9!#(B
 
@@ -7868,7 +7868,7 @@ uuencode $B$5$l$?%U%!%$%k$r=$I|$7$h$&$H(B @emph{$B;n$_(B} $B$^$9!#(B
 $B%@!<$NL>A0$r%O%$%i%$%H$9$k$N$K;H$o$l$k%U%'!<%9(B (@pxref{Faces and Fonts})$B!"(B
 @var{$BFbMF(B} $B$O%X%C%@!<$NCM$r%O%$%i%$%H$9$k%U%'!<%9$G$9!#:G=i$K9gCW$7$?$b(B
 $B$N$,;H$o$l$^$9!#(B@var{$B@55,I=8=(B} $B$N@hF,$K(B @samp{^} $B$rIU$1$F$O$$$1$J$$$3$H(B
-$B$KCm0U$7$F$/$@$5$$(B---Gnus $B$,$=$l$rIU$12C$($^$9!#(B
+$B$KCm0U$7$F2<$5$$(B---Gnus $B$,$=$l$rIU$12C$($^$9!#(B
 
 @item W H c
 @kindex W H c ($B35N,(B)
@@ -8048,7 +8048,7 @@ MTA $B$,%/%*!<%H$7$?2DG=@-$,$"$j$^$9!#%G%#%U%)%k%HCM$O(B @code{t} $B$G$9!#(B
 @vindex gnus-list-identifiers
 @code{gnus-list-identifiers} $B$G;XDj$5$l$F$$$k%a!<%j%s%0%j%9%H$NI8<1$r:o(B
 $B=|$7$^$9!#$3$l$i$O$$$/$D$+$N%a!<%j%s%0%j%9%H$N%5!<%P!<$,$9$Y$F(B
-$B$N(B @code{Subject} $B%X%C%@!<$N:G=i$K$D$1$kJ8;zNs!"Nc$((B
+$B$N(B @code{Subject} $B%X%C%@!<$N:G=i$KIU$1$kJ8;zNs!"Nc$((B
 $B$P(B @samp{[zebra 4711]} $B$N$h$&$J$b$N$G$9!#J8;zNs$N=i$a$K$"(B
 $B$k(B @samp{Re: } $B$O!":o=|$r9T$J$&A0$KD7$S1[$5$l$^$9!#(B
 @code{gnus-list-identifiers} $B$K(B @code{\\(..\\)} $B$r4^$a$F$O$$$1$^$;$s!#(B
@@ -8175,7 +8175,7 @@ Gnus $B$O$I$3$N0zMQJ8$,1#$5$l$F$$$k$+$r<($9$?$a$K%\%?%s$rIU$12C$(!"J8>O$N(B
 $BM?$($l$P!"$=$l$i$O>o$K1#$7$^$9!#(B
 
 $B0zMQJ8$r%+%9%?%^%$%:$9$k$?$a$N$5$i$J$kJQ?t$K$D$$$F!"(B
-@ref{Article Highlighting} $B$b;2>H$7$F$/$@$5$$!#(B
+@ref{Article Highlighting} $B$b;2>H$7$F2<$5$$!#(B
 
 $B<+F0E*$K5-;v$NMWAG$r1#$9$?$a$NJ}K!$O(B @ref{Customizing Articles} $B$r;2>H(B
 $B$7$F2<$5$$!#(B
@@ -8276,7 +8276,7 @@ IDNA $B%(%s%3!<%I$5$l$?%I%a%$%sL>$O(B @samp{xn--bar} $B$N$h$&$K8+$($^$9!#$3$l
 @cindex Latin 1
 @code{gnus-article-dumbquotes-map} $B$K1~$8$F!"%^"#"#"#%="#(B
 $B"#(B sm*rtq**t*s $B$r=hM}$7$^$9!#$3$N4X?t$OJ8;z$,(B sm*rtq**t* $B$+$I$&$+$r?dB,(B
-$B$9$k$N$G!"BPOCE*$K$N$_;HMQ$5$l$k$Y$-$G$"$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B$9$k$N$G!"BPOCE*$K$N$_;HMQ$5$l$k$Y$-$G$"$k$3$H$KCm0U$7$F2<$5$$!#(B
 
 Sm*rtq**t*s $B$O$b$C$HB?$/$N0zMQJ8;z$rDs6!$9$k$?$a$K!"%^"#"#"#%="#"#$,>!<j(B
 $B$KJ8;z%^%C%W$r3HD%$7$?$b$N$G$9!#$b$7!"%"%]%9%H%m%U%#(B (') $B$d0zMQ5-(B
@@ -8349,8 +8349,8 @@ Quoted-Printable $B$O(B $BHs(B-@acronym{ASCII} ($B$9$J$o$A(B 8-bit) $B$N5
 $B$F(B @samp{d,Ai(Bj,A`(B vu} $B$N$h$&$J$b$N$r(B @samp{d=E9j=E0 vu} $B$K8+$;$k$N$G!"$H$F$b(B
 $BFI$_?I$/$J$j$^$9!#LdBj$N5-;v$,!"$=$N%(%s%3!<%G%#%s%0$,9T$J$o$l$?$3$H$r<((B
 $B$9(B @code{Content-Transfer-Encoding} $B%X%C%@!<$r;}$C$F$$$l$P!"DL>o$=$l(B
-$B$O(B Gnus $B$K$h$C$F<+F0E*$K9T$J$o$l$k$3$H$KCm0U$7$F2<$5$$!#@\F,<-$,M?$($i$l(B
-$B$k$H!"J8;z%;%C%H$,?R$M$i$l$^$9!#(B
+$B$O(B Gnus $B$K$h$C$F<+F0E*$K9T$J$o$l$k$3$H$KCm0U$7$F2<$5$$!#@\F,0z?t$,M?$($i(B
+$B$l$k$H!"J8;z%;%C%H$,?R$M$i$l$^$9!#(B
 
 @item W 6
 @kindex W 6 ($B35N,(B)
@@ -8360,7 +8360,7 @@ Base64 $B$OHs(B-@acronym{ASCII} ($B$9$J$o$A(B 8-bit) $B$N5-;v$rAw$k$H$-$K;H
 $B0lHLE*$J(B @acronym{MIME} $B%(%s%3!<%G%#%s%0$G$9!#LdBj$N5-;v$,!"$=$N%(%s%3!<(B
 $B%G%#%s%0$,9T$J$o$l$?$3$H$r<($9(B @code{Content-Transfer-Encoding} $B%X%C%@!<(B
 $B$r;}$C$F$$$l$P!"DL>o$=$l$O(B Gnus $B$K$h$C$F<+F0E*$K9T$J$o$l$k$3$H$KCm0U$7$F(B
-$B2<$5$$!#@\F,<-$,M?$($i$l$k$H!"J8;z%;%C%H$,?R$M$i$l$^$9!#(B
+$B2<$5$$!#@\F,0z?t$,M?$($i$l$k$H!"J8;z%;%C%H$,?R$M$i$l$^$9!#(B
 
 @item W Z
 @kindex W Z ($B35N,(B)
@@ -8392,7 +8392,7 @@ URL $B$K4^$^$l$k2~9T$r:o=|$7$^$9!#$$$/$D$+$N%a%$%i!<$O!"9T$rC;$/$9$k$?$a$K(B
 $B$r<($9(B @code{Content-Type} $B%X%C%@!<$r;}$C$F$$$?$J$i$P!"$=$l$O(B Gnus $B$K$h$C(B
 $B$F<+F0E*$K9T$J$o$l$k$3$H$KCm0U$7$F2<$5$$!#(B
 
-$B@\F,<-$,M?$($i$l$k$H!"J8;z%;%C%H$r?R$M$i$l$^$9!#(B
+$B@\F,0z?t$,M?$($i$l$k$H!"J8;z%;%C%H$r?R$M$i$l$^$9!#(B
 
 @vindex gnus-article-wash-function
 $B%G%#%U%)%k%H$G$O(B @acronym{HTML} $B$NJQ49$K(B @code{mm-text-html-renderer}
@@ -8574,7 +8574,7 @@ html2text ($B%7%s%W%k$J(B @acronym{HTML} $B%3%s%P!<%?!<$G!"(BGnus $B$K4^$^$
 @item button-par
 Gnus $B$O9gCW$7$?$b$N$N$I$NItJ,$,%O%$%i%$%H$5$l$k$N$+$rCN$i$J$1$l$P$J$j$^(B
 $B$;$s!#$3$l$O@55,I=8=$N$I$NI{I=8=$,%O%$%i%$%H$5$l$k$+$r;XDj$9$kHV9f$G$9!#(B
-$B$9$Y$F$r%O%$%i%$%H$7$?$$$N$J$i!"$3$3$G(B 0 $B$r;H$C$F$/$@$5$$!#(B
+$B$9$Y$F$r%O%$%i%$%H$7$?$$$N$J$i!"$3$3$G(B 0 $B$r;H$C$F2<$5$$!#(B
 
 @item use-p
 $B$3$N<0$O(B @code{$BI>2A(B} $B$5$l!"7k2L$,(B @code{nil} $B$G$J$+$C$?$i!"$3$l$O9gCW$G(B
@@ -8792,7 +8792,7 @@ UT ($BJLL>(B GMT, ZULU) $B$GF|IU$rI=<($7$^$9(B (@code{gnus-article-date-ut})
 $BF|IU$rMxMQ<TDj5A$NMM<0$r;H$C$FI=<($7$^$9(B (@code{gnus-article-date-user})$B!#(B
 $B$=$NMM<0$OJQ?t(B @code{gnus-article-time-format} $B$G;XDj$5$l$k!"(B
 @code{format-time-string} $B$KEO$5$l$kJ8;zNs$G$9!#;XDj$9$k$3$H$,$G$-$kMM<0(B
-$B$N0lMw$O!"JQ?t$N@bL@J8$r8+$F$/$@$5$$!#(B
+$B$N0lMw$O!"JQ?t$N@bL@J8$r8+$F2<$5$$!#(B
 
 @item W T e
 @kindex W T e ($B35N,(B)
@@ -9042,8 +9042,8 @@ Gnus $B$G%a!<%k$rFI$`$3$H$NMxE@$O!"$=$l$,C1=c$J%P%0$rAG@2$i$7$$IT>rM}$KCV(B
 @kindex X m ($B35N,(B)
 @findex gnus-summary-save-parts
 @acronym{MIME} $B%?%$%W$K9gCW$9$k$9$Y$F$N%Q!<%H$r!"%G%#%l%/%H%j!<$K%;!<%V(B
-$B$7$^$9(B (@code{gnus-summary-save-parts})$B!#%W%m%;%9(B/$B@\F,<-$N=,47$rM}2r$7$^(B
-$B$9(B (@pxref{Process/Prefix})$B!#(B
+$B$7$^$9(B (@code{gnus-summary-save-parts})$B!#%W%m%;%9(B/$B@\F,0z?t$N=,47$rM}2r$7(B
+$B$^$9(B (@pxref{Process/Prefix})$B!#(B
 
 @item M-t
 @kindex M-t ($B35N,(B)
@@ -9064,11 +9064,12 @@ Gnus $B$G%a!<%k$rFI$`$3$H$NMxE@$O!"$=$l$,C1=c$J%P%0$rAG@2$i$7$$IT>rM}$KCV(B
 $B$9(B (@code{gnus-article-decode-charset})$B!#(B
 
 $B$3$N%3%^%s%I$O!"J8;z%;%C%H$r7h$a$k$?$a$K(B @code{Content-Type} $B%X%C%@!<$r(B
-$BD4$Y$^$9!#5-;v$K$=$s$J%X%C%@!<$,L5$$>l9g$G$b!"@\F,<-$rM?$($k$3$H$K$h$C$F!"(B
-$B%G%3!<%I$9$k$?$a$NJ8;z%;%C%H$rF~NO$9$k$3$H$O2DG=$G$9!#$"$k6&DL$N%(%s%3!<(B
-$B%G%#%s%0$r;H$C$F(B ($B$G$b(B @acronym{MIME} $B%X%C%@!<$O4^$a$:$K(B) $B?M!9$,5-;v$rEj(B
-$B9F$9$kCO0hE*$J%0%k!<%W$G$O!"(B@code{charset} $B%0%k!<%W(B/$B%H%T%C%/!&%Q%i%a!<%?!<(B
-$B$KI,MW$JJ8;z%;%C%H$r@_Dj$9$l$PNI$$$G$7$g$&(B (@pxref{Group Parameters})$B!#(B
+$BD4$Y$^$9!#5-;v$K$=$s$J%X%C%@!<$,L5$$>l9g$G$b!"@\F,0z?t$rM?$($k$3$H$K$h$C(B
+$B$F!"%G%3!<%I$9$k$?$a$NJ8;z%;%C%H$rF~NO$9$k$3$H$O2DG=$G$9!#$"$k6&DL$N%(%s(B
+$B%3!<%G%#%s%0$r;H$C$F(B ($B$G$b(B @acronym{MIME} $B%X%C%@!<$O4^$a$:$K(B) $B?M!9$,5-;v(B
+$B$rEj9F$9$kCO0hE*$J%0%k!<%W$G$O!"(B@code{charset} $B%0%k!<%W(B/$B%H%T%C%/!&%Q%i%a!<(B
+$B%?!<$KI,MW$JJ8;z%;%C%H$r@_Dj$9$l$PNI$$$G$7$g$&(B (@pxref{Group
+Parameters})$B!#(B
 
 @item W M v
 @kindex W M v ($B35N,(B)
@@ -9647,7 +9648,7 @@ pick $B%b!<%I$G$N35N,9T$NMM<0$OI8=`$NMM<0$H$O>/$70c$$$^$9!#$=$l$>$l$N9T$N(B
 $BLZ%b!<%I$N%P%C%U%!!<$K$*$1$k%b!<%I9T$N$?$a$N%U%)!<%^%C%HJ8;zNs$G(B
 $B$9(B (@pxref{Mode Line Formatting})$B!#%G%#%U%)%k%H(B
 $B$O(B @samp{Gnus: %%b %S %Z} $B$G$9!#;HMQ2DG=$J;XDj(B
-$B$O(B @ref{Summary Buffer Mode Line} $B$r;2>H$7$F$/$@$5$$!#(B
+$B$O(B @ref{Summary Buffer Mode Line} $B$r;2>H$7$F2<$5$$!#(B
 
 @item gnus-selected-tree-face
 @vindex gnus-selected-tree-face
@@ -9712,7 +9713,7 @@ pick $B%b!<%I$G$N35N,9T$NMM<0$OI8=`$NMM<0$H$O>/$70c$$$^$9!#$=$l$>$l$N9T$N(B
 $B%G%#%U%)%k%H$O(B @code{t} $B$G$9!#%U%l!<%`$G$$$/$D$+$N%&%#%s%I%&$,2#$KJB$s$G(B
 $BI=<($5$l$F$$$F!"LZ%P%C%U%!!<$,$=$N$&$A$N0l$D$G$"$k>l9g!"LZ%&%#%s%I%&$r:G(B
 $B>.2=$9$k$3$H$O$=$NNY$KI=<($5$l$F$$$k$9$Y$F$N%&%#%s%I%&$NBg$-$5$r$bJQ99$9(B
-$B$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B$k$3$H$KCm0U$7$F2<$5$$!#(B
 
 $B0J2<$N%U%C%/$rDI2C$7$F!"$$$D$G$bLZ%&%#%s%I%&$r:G>.2=$9$k$h$&$K$7$F$bNI$$(B
 $B$G$7$g$&!#(B
@@ -9811,7 +9812,7 @@ pick $B%b!<%I$G$N35N,9T$NMM<0$OI8=`$NMM<0$H$O>/$70c$$$^$9!#$=$l$>$l$N9T$N(B
 @findex gnus-summary-delete-article
 @c @icon{gnus-summary-mail-delete}
 $B%a!<%k5-;v$r:o=|$7$^$9!#$3$l$O!X$"$J$?$N%G%#%9%/$+$i1J5W$K:o=|$7$FFsEY$H(B
-$BLa$i$J$$!Y$N0UL#$N!X:o=|!Y$G$9!#Cm0U$7$F;H$C$F$/$@$5(B
+$BLa$i$J$$!Y$N0UL#$N!X:o=|!Y$G$9!#Cm0U$7$F;H$C$F2<$5(B
 $B$$(B (@code{gnus-summary-delete-article})$B!#(B
 
 @item B m
@@ -10379,8 +10380,8 @@ Gnus $B$N(B info $B$N@a(B (node) $B$K0\F0$7$^$9(B (@code{gnus-info-find-no
 $B$F$$$^$9!#(Bspam $B$r?6$$Mn$9$?$a$K!"(BNoCeM $B$G=hM}$9$k$3$H$r;n$7$F$_$kI,MW$,(B
 $B$"$k$+$b$7$l$^$;$s(B (@pxref{NoCeM})$B!#(B
 
-$B3P$($F$*$$$F$/$@$5$$(B: $B%/%m%9%]%9%H$O$^$"9=$$$^$;$s$,!"F1$85-;v$rJL!9$KJ#(B
-$B?t$N%0%k!<%W$KEj9F$9$k$N$O5v$5$l$^$;$s!#BgNL$N%/%m%9%]%9(B
+$B3P$($F$*$$$F2<$5$$(B: $B%/%m%9%]%9%H$O$^$"9=$$$^$;$s$,!"F1$85-;v$rJL!9$KJ#?t(B
+$B$N%0%k!<%W$KEj9F$9$k$N$O5v$5$l$^$;$s!#BgNL$N%/%m%9%]%9(B
 $B%H(B (@dfn{velveeta} $B$H$7$FCN$i$l$F$$$k$b$N(B) $B$O2?$H$7$F$bHr$1$i$l$k$Y$-$G!"(B
 $B2a>j$J%/%m%9%]%9%H$KBP$7$FITK~$r8@$&$?$a(B
 $B$K(B @code{gnus-summary-mail-crosspost-complaint} $BL?Na$r;H$&$3$H$5$($G$-$^(B
@@ -10417,7 +10418,7 @@ Gnus $B$K$$$D$G$b@5$7$$(B @code{Xref} $B$r<hF@$9$k$h$&$K$5$;$?$$$N$G$"$l$P!"
 
 $B$^!"?M@8$O$=$N$h$&$J$b$N$G$9!#(B
 
-$BBeBX<jCJ$KIU$$$F$O(B @ref{Duplicate Suppression} $B$r;2>H$7$F$/$@$5$$!#(B
+$BBeBX<jCJ$KIU$$$F$O(B @ref{Duplicate Suppression} $B$r;2>H$7$F2<$5$$!#(B
 
 @node Duplicate Suppression
 @section $B=EJ#$NM^@)(B
@@ -10686,7 +10687,7 @@ Gnus $B$O%X%C%@!<$rA*$jJ,$1$k$?$a$KFs$D$NJQ?t$rMQ0U$7$F$$$^$9(B:
 $B$3$NJQ?t$O>C$7$?$$%X%C%@!<$K9gCW$9$k@55,I=8=$N%j%9%H$G$b9=$$$^$;$s!#(B
 
 $B$J$*!"(B@code{gnus-visible-headers} $B$,(B @code{nil} $B0J30$N>l9g$O!"$3$NJQ?t$K(B
-$B$O8z2L$,L5$$$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B$O8z2L$,L5$$$3$H$KCm0U$7$F2<$5$$!#(B
 @end table
 
 @vindex gnus-sorted-header-list
@@ -10845,11 +10846,11 @@ Gnus $B$O(B @acronym{MIME} $B%Q!<%H$rI=<($9$k$?$a$K!"(B
 @item c ($B5-;v(B)
 @kindex c ($B5-;v(B)
 @acronym{MIME} $B%*%V%8%'%/%H$r?7$?$K:n$C$?%P%C%U%!!<$K%3%T!<$7$F!"$=$l$r(B
-$BI=<($7$^$9(B (@code{gnus-mime-copy-part})$B!#@\F,<-$,M?$($i$l$k$H!"%G%3!<%I(B
-$B$;$:$K@8$NFbMFJ*$r%3%T!<$7$^$9!#?tCM$N@\F,<-$rM?$($k$H!"J8;z%;%C%H$K$h$k(B
-$B%G%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^$9(B (@ref{Paging the Article} $B$G(B
-$B=R$Y$i$l$F$$$k(B @code{gnus-summary-show-article-charset-alist} $B$r;2>H$7$F(B
-$B2<$5$$(B)$B!#(B@code{auto-compression-mode} (@pxref{Compressed Files,
+$BI=<($7$^$9(B (@code{gnus-mime-copy-part})$B!#@\F,0z?t$,M?$($i$l$k$H!"%G%3!<(B
+$B%I$;$:$K@8$NFbMFJ*$r%3%T!<$7$^$9!#?tCM$N@\F,0z?t$rM?$($k$H!"J8;z%;%C%H$K(B
+$B$h$k%G%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^$9(B (@ref{Paging the Article}
+$B$G=R$Y$i$l$F$$$k(B @code{gnus-summary-show-article-charset-alist} $B$r;2>H$7(B
+$B$F2<$5$$(B)$B!#(B@code{auto-compression-mode} (@pxref{Compressed Files,
 ,Accessing Compressed Files, emacs, The Emacs Editor}) $B$,@_Dj$5$l$F$$$k(B
 $B$H!"(B@file{.gz} $B$d(B @file{.bz2} $B$N$h$&$J05=L$5$l$?%U%!%$%k$r<+F0E*$K2rE`$7(B
 $B$^$9!#(B
@@ -10865,9 +10866,9 @@ Gnus $B$O(B @acronym{MIME} $B%Q!<%H$rI=<($9$k$?$a$K!"(B
 @item i ($B5-;v(B)
 @kindex i ($B5-;v(B)
 @acronym{MIME} $B%*%V%8%'%/%H$NFbMFJ*$r!"$=$N5-;v%P%C%U%!!<(B
-$B$K(B text/plain $B$H$7$FA^F~$7$^$9(B (@code{gnus-mime-inline-part})$B!#@\F,<-$,(B
-$BM?$($i$l$k$H!"%G%3!<%I$;$:$K@8$NFbMFJ*$rA^F~$7$^$9!#?tCM$N@\F,<-$rM?$($k(B
-$B$H!"J8;z%;%C%H$K$h$k%G%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^(B
+$B$K(B text/plain $B$H$7$FA^F~$7$^$9(B (@code{gnus-mime-inline-part})$B!#@\F,0z?t(B
+$B$,M?$($i$l$k$H!"%G%3!<%I$;$:$K@8$NFbMFJ*$rA^F~$7$^$9!#?tCM$N@\F,0z?t$rM?(B
+$B$($k$H!"J8;z%;%C%H$K$h$k%G%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^(B
 $B$9(B (@ref{Paging the Article} $B$G=R$Y$i$l$F$$(B
 $B$k(B @code{gnus-summary-show-article-charset-alist} $B$r;2>H$7$F2<$5$$(B)$B!#(B
 @code{auto-compression-mode} (@pxref{Compressed Files, ,Accessing
@@ -10935,7 +10936,7 @@ Emacs @acronym{MIME} $B%^%K%e%"%k$G=R$Y$i$l$F$$$^$9!#(B
 $B$G$9$,!"$^$:$3$l$i$NJQ?t$N<h$jF@$kCM$K$D$$$FOC$7$^$7$g$&!#(B
 
 $BCm0U(B: $B$$$/$D$+$NCM$O!"M-8z$JCM$G$"$C$F$b$[$H$s$I0UL#$rL5$7$^$;$s!#<BMQE*(B
-$B$JCM$O2<$N0lMw$rD4$Y$F$/$@$5$$!#(B
+$B$JCM$O2<$N0lMw$rD4$Y$F2<$5$$!#(B
 
 @enumerate
 @item
@@ -11077,9 +11078,9 @@ Emacs @acronym{MIME} $B%^%K%e%"%k$G=R$Y$i$l$F$$$^$9!#(B
 
 @vindex gnus-part-display-hook
 $B$b$A$m$s!"(B@code{gnus-part-display-hook} $B$+$i8F$P$l$k<+J,MQ$N4X?t$r=q$/(B
-$B$3$H$b$G$-$^$9!#4X?t$O$=$N%Q!<%H$KHO0O$,69$a$i$l$?>uBV$G8F$P$l!"$[$H$s$I$J(B
-$B$s$G$b9%$-$J$3$H$,$G$-$^$9!#%P%C%U%!!<$KJ]B8$7$F$*$+$J$1$l$P$J$i$J$$>pJs(B
-$B$O$"$j$^$;$s(B---$B2?$G$bJQ$($k$3$H$,$G$-$^$9!#(B
+$B$3$H$b$G$-$^$9!#4X?t$O$=$N%Q!<%H$KHO0O$,69$a$i$l$?>uBV$G8F$P$l!"$[$H$s$I(B
+$B$J$s$G$b9%$-$J$3$H$,$G$-$^$9!#%P%C%U%!!<$KJ]B8$7$F$*$+$J$1$l$P$J$i$J$$>p(B
+$BJs$O$"$j$^$;$s(B---$B2?$G$bJQ$($k$3$H$,$G$-$^$9!#(B
 
 @node Article Keymap
 @section $B5-;v$N%-!<%^%C%W(B
@@ -11144,7 +11145,7 @@ Gnus $B$O%5!<%P!<$+$i$=$N5-;v$r<h$C$F$3$h$&$H$7$^(B
 @kindex R ($B5-;v(B)
 @findex gnus-article-reply-with-original
 $B8=:_$N5-;v$K855-;v$r4^$s$@JVEz$N%a!<%k$rAw$j$^(B
-$B$9(B (@code{gnus-article-reply-with-original})$B!#@\F,<-$rM?$($k$H9-$$JV(B
+$B$9(B (@code{gnus-article-reply-with-original})$B!#@\F,0z?t$rM?$($k$H9-$$JV(B
 $BEz(B (wide reply) $B$K$J$j$^$9!#$b$7NN0h$,3h@-2=$5$l$F$$$?$J$i$P!"$=$NNN0h$K(B
 $B$"$k%F%-%9%H$@$1$r(B yank $B$7$^$9!#(B
 
@@ -11152,9 +11153,9 @@ Gnus $B$O%5!<%P!<$+$i$=$N5-;v$r<h$C$F$3$h$&$H$7$^(B
 @kindex F ($B5-;v(B)
 @findex gnus-article-followup-with-original
 $B8=:_$N5-;v$K855-;v$r4^$s$G%U%)%m!<%"%C%W$r$7$^(B
-$B$9(B (@code{gnus-article-followup-with-original})$B!#@\F,<-$rM?$($k$H9-$$JV(B
-$BEz(B (wide reply) $B$K$J$j$^$9!#$b$7NN0h$,3h@-2=$5$l$F$$$?$J$i$P!"$=$NNN0h$K(B
-$B$"$k%F%-%9%H$@$1$r(B yank $B$7$^$9!#(B
+$B$9(B (@code{gnus-article-followup-with-original})$B!#@\F,0z?t$rM?$($k$H9-$$(B
+$BJVEz(B (wide reply) $B$K$J$j$^$9!#$b$7NN0h$,3h@-2=$5$l$F$$$?$J$i$P!"$=$NNN0h(B
+$B$K$"$k%F%-%9%H$@$1$r(B yank $B$7$^$9!#(B
 @end table
 
 @node Misc Article
@@ -11329,7 +11330,7 @@ and Superseding} $B$b;2>H$7$F2<$5$$!#(B
 @vindex gnus-confirm-treat-mail-like-news
 $BHs(B-@code{nil} $B$@$C$?$i!"(BGnus $B$O%a!<%k$KJV?.$9$k;~$K(B
 $B$b(B @code{gnus-confirm-mail-reply-to-news} $B$K4p$E$$$?3NG'$r5a$a$^$9!#$3$l(B
-$B$O%a!<%j%s%0%j%9%H$r%K%e!<%:%0%k!<%W$N$h$&$K07$&$N$KJXMx$G$9!#(B
+$B$O%a!<%j%s%0%j%9%H$r%K%e!<%9%0%k!<%W$N$h$&$K07$&$N$KJXMx$G$9!#(B
 @end table
 
 @node Posting Server
@@ -11650,8 +11651,8 @@ Lisp $B%U%)!<%`$N%j%9%H!#$=$l$>$l$N%U%)!<%`$,I>2A$5$l!":G=i$KJV$C$F$-(B
 
 $B$5$"!"%a%C%;!<%8$rAw$k$HE,@Z$J%0%k!<%W$KJ]B8$5$l$k$h$&$K$J$j$^$7$?!#(B($B$b(B
 $B$7FCDj$N%a%C%;!<%8$rJ]B8$r$7$?$/$J$$$N$G$"$l$P!"A^F~$5$l$?(B @code{Gcc} $BMs(B
-$B$r<h$j=|$$$F$/$@$5$$!#(B)  $BJ]4I%0%k!<%W$O<!$K(B Gnus $B$r5/F0$7$?$H$-$+!"<!$K(B
-$B%0%k!<%W%P%C%U%!!<$G(B @kbd{F} $B$r2!$7$?$H$-$K%0%k!<%W%P%C%U%!!<$K8=$l$^$9!#(B
+$B$r<h$j=|$$$F2<$5$$!#(B)  $BJ]4I%0%k!<%W$O<!$K(B Gnus $B$r5/F0$7$?$H$-$+!"<!$K%0(B
+$B%k!<%W%P%C%U%!!<$G(B @kbd{F} $B$r2!$7$?$H$-$K%0%k!<%W%P%C%U%!!<$K8=$l$^$9!#(B
 $BB>$N%0%k!<%W$HF1$8$h$&$K!"$=$N%0%k!<%W$KF~$C$F5-;v$rFI$`$3$H$,$G$-$^$9!#(B
 $B$=$N%0%k!<%W$,K\Ev$KBg$-$/$FG:$^$7$/$J$C$?$i!"$J$K$+NI$$$b$N$K$=$NL>A0$r(B
 $BJQ99$9$k$3$H$,$G$-$^$9(B ($B%0%k!<%W%P%C%U%!!<$G(B @kbd{G r} $B$r;H$&$3$H$K$h$C(B
@@ -11832,8 +11833,8 @@ subject from date id references chars lines xref extra $B$N3F%X%C%@!<$+$i(B
 $B$k%a%C%;!<%8$rJ]B8$9$kJ}K!$,$"$l$PNI$$$H;W$&$G$7$g$&!#$$$D$+JL$NF|$KJT=8(B
 $B$rB3$1$k$3$H$,$G$-!"$=$l$,40@.$7$?$H;W$C$?$H$-$KAw$k$3$H$,$G$-$k$h$&$K!#(B
 
-$B$($'!"?4G[$7$J$$$G$/$@$5$$!#%a!<%k$+%K%e!<%9$rAw?.$9$k$?$a$N(B Gnus $B$NL?Na(B
-$B$r;H$C$F2?$i$+$N%a%C%;!<%8$r=q$-;O$a$?$H$-$K$"$J$?$,<j$K$9$k%P%C%U%!!<$O!"(B
+$B$($'!"?4G[$7$J$$$G2<$5$$!#%a!<%k$+%K%e!<%9$rAw?.$9$k$?$a$N(B Gnus $B$NL?Na$r(B
+$B;H$C$F2?$i$+$N%a%C%;!<%8$r=q$-;O$a$?$H$-$K$"$J$?$,<j$K$9$k%P%C%U%!!<$O!"(B
 $B<+F0E*$KFCJL$J(B @dfn{draft} $B%0%k!<%W$K4XO"IU$1$i$l$^$9!#IaDL$NJ}K!(B  ($BNc$((B
 $B$P(B @kbd{C-x C-s}) $B$G%P%C%U%!!<$rJ]B8$9$l$P!"$=$N5-;v$O$=$3$KJ]B8$5$l$^$9!#(B
 ($B<+F0J]B8(B (auto-save) $B%U%!%$%k$b2<=q$-%0%k!<%W(B (draft group) $B$K9T$-$^$9!#(B)
@@ -12121,7 +12122,7 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
 $B%5!<%P!<$NA*BrJ}K!!#(B
 @end table
 
-@ref{Formatting Variables} $B$b;2>H$7$F$/$@$5$$!#(B
+@ref{Formatting Variables} $B$b;2>H$7$F2<$5$$!#(B
 
 @node Server Commands
 @subsection $B%5!<%P!<L?Na(B
@@ -12246,11 +12247,11 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
 
 @cindex proxy
 @cindex firewall
-$BKIJI(B (firewall) $B$NCf$K$$$F!"KIJI%^%7%s$+$i$N(B @acronym{NNTP} $B%5!<%P!<$X$N(B
-$B@\B3$7$+$J$$$N$G$"$l$P!"(BGnus $B$KKIJI%^%7%s$K(B @code{rlogin} $B$7$F!"$=$3$+(B
-$B$i(B @acronym{NNTP} $B%5!<%P!<$K(B telnet $B$r$9$k$h$&$K;X<($9$k$3$H$,$G$-$^$9!#(B
-$B$3$l$r$9$k$3$H$O>/$7$P$+$i$7$$$G$9$,!"2>A[%5!<%P!<$NDj5A$O$*$=$i$/$3$N$h(B
-$B$&$J$b$N$K$J$k$O$:$G$9(B:
+$B$"$J$?$,KIJI(B (firewall) $B$NCf$K$$$F!"KIJI%^%7%s$rDL$7$F(B @acronym{NNTP} $B%5!<(B
+$B%P!<$K@\B3$9$k$7$+$J$$$N$G$"$l$P!"KIJI%^%7%s$K(B @code{rlogin} $B$7$F!"$=$3(B
+$B$+$i(B @acronym{NNTP} $B%5!<%P!<$K(B telnet $B$r$9$k$h$&$K(B Gnus $B$K;X<($9$k$3$H$,(B
+$B$G$-$^$9!#$3$s$J$3$H$r$9$k$N$O$$$5$5$+$P$+$2$F$$$k$N$G$9$,!"$G$b2>A[%5!<(B
+$B%P!<$NDj5A$O$*$=$i$/$3$N$h$&$J$b$N$K$J$k$O$:$G$9(B:
 
 @lisp
 (nntp "firewall"
@@ -12260,9 +12261,8 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
       (nntp-end-of-line "\n"))
 @end lisp
 
-$B$b$7!"$9$P$i$7$$(B @code{ssh} $B%W%m%0%i%`$r!"%b%G%`@~$+$i$N05=L$5$l$?@\B3$r(B
-$BDs6!$9$k$?$a$K;H$$$?$$$N$G$"$l$P!">e5-$NNc$K0J2<$N@_Dj$r2C$($k$3$H$,$G$-(B
-$B$^$9!#(B
+$B$"$NAGE($J(B @code{ssh} $B%W%m%0%i%`$r!"%b%G%`$r7PM3$9$kDL?.$r05=L$9$k$?$a$K(B
+$B;H$$$?$$$N$J$i$P!">e5-$NNc$K0J2<$N@_Dj$r2C$($k$3$H$,$G$-$^$9!#(B
 
 @lisp
       (nntp-via-rlogin-command "ssh")
@@ -12270,9 +12270,9 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
 
 @code{nntp-via-rlogin-command-switches} $B$b;2>H$7$F2<$5$$!#(B
 
-$B$b$7$"$J$?$,KIJI$NCf$K$$$?$H$7$F$b!"(B"runsocks" $B$N$h$&$J%i%C%Q!<%3%^%s%I(B
-$B$rDL$7$F30$N@$3&$rD>@\%"%/%;%9$G$-$k$N$J$i$P!"0J2<$N$h$&$K(B socks $B$rDL$7(B
-$B$F%K%e!<%9%5!<%P!<$H(B telnet $B@\B3$9$k$3$H$,$G$-$^$9(B:
+$BKIJI$NCf$K$$$?$H$7$F$b(B "runsocks" $B$N$h$&$J%i%C%Q!<%3%^%s%I$rDL$7$F30$N@$(B
+$B3&$KD>@\%"%/%;%9$G$-$k$N$J$i$P!"0J2<$N$h$&$K(B socks $B2=$5$l$?(B telnet $B$G%K%e!<(B
+$B%9%5!<%P!<$K@\B3$9$k$3$H$,$G$-$k$G$7$g$&(B:
 
 @lisp
 (nntp "outside"
@@ -12282,32 +12282,33 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
       (nntp-end-of-line "\n"))
 @end lisp
 
-$B$3$l$O$b$A$m$s!"<+F0G'>Z$rDs6!$9$k$?$a$K(B @code{ssh-agent} $B$rE,@Z$K@_Dj$7(B
-$B$J$1$l$P$J$j$^$;$s!#05=L$5$l$?@\B3$rF@$k$?$a$K$O!"(B
-@code{ssh} $B$N(B @file{config} $B%U%!%$%k$G(B @samp{Compression} $B%*%W%7%g%s$,$"(B
-$B$kI,MW$,$"$j$^$9!#(B
+$B$b$A$m$s!"<+F0G'>Z$r9T$J$o$;$k$?$a$K$O(B @code{ssh-agent} $B$rE,@Z$K@_Dj$7$J(B
+$B$1$l$P$J$j$^$;$s!#2C$($F!"DL?.FbMF$r05=L$9$k$?$a$K(B
+$B$O!"(B@code{ssh} $B$N(B @file{config} $B%U%!%$%k$K(B @samp{Compression} $B%*%W%7%g%s(B
+$B$,B8:_$7$J$1$l$P$J$j$^$;$s!#(B
 
 @node Creating a Virtual Server
 @subsection $B2>A[%5!<%P!<$r:n@.$9$k(B
 
-$B$b$7$"$J$?$,1JB35-;v$r;H$C$F$?$/$5$s$N5-;v$r%-%c%C%7%e$KJ]B8$7$F$$$k$N$G(B
-$B$"$l$P!"%-%c%C%7%e$rFI$`$?$a$N2>A[%5!<%P!<$r:n$kI,MW$,$"$k$+$b$7$l$^$;$s!#(B
+$B1JB35-;v$r;H$C$F$?$/$5$s$N5-;v$r%-%c%C%7%e$KJ]B8$7$F$$$k$N$G$"$l$P!"%-%c%C(B
+$B%7%e$rFI$`$?$a$N2>A[%5!<%P!<$r:n$kI,MW$,$"$k$G$7$g$&!#(B
 
-$B:G=i$K!"?7$7$$%5!<%P!<$rIU$12C$($kI,MW$,$"$j$^$9!#(B@kbd{a} $BL?Na$,$=$l$r$7(B
-$B$^$9!#$*$=$i$/%-%c%C%7%e$rFI$`$?$a$K$O(B @code{nnml} $B$r;H$&$N$,0lHVNI$$$G(B
-$B$7$g$&!#(B@code{nnspool} $B$d(B @code{nnmh} $B$b;H$&$3$H$,$G$-$^$9$1$I!#(B
+$B:G=i$K?7$7$$%5!<%P!<$rDI2C$9$kI,MW$,$"$j$^$9!#$=$l$r$9$k$N$O(B @kbd{a} $BL?(B
+$BNa$G$9!#$*$=$i$/%-%c%C%7%e$rFI$`$?$a$K$O(B @code{nnml} $B$r;H$&$N$,0lHVNI$$(B
+$B$G$7$g$&!#(B@code{nnspool} $B$d(B @code{nnmh} $B$b;H$($k$G$7$g$&$l$1$I!#(B
 
-@kbd{a nnml RET cache RET} $B$HBG$C$F$/$@$5$$!#(B
+@kbd{a nnml RET cache RET} $B$H%?%$%W$7$F2<$5$$!#(B
 
-$B$9$k$H(B @samp{cache} $B$H8F$P$l$k!"(B@code{nnml} $B$N2>A[%5!<%P!<$,$G$-$k$O$:$G(B
-$B$9!#<!$O$=$l$rJT=8$7$F!"@5$7$$Dj5A$rM?$($k$@$1$G$9!#%5!<%P!<$rJT=8$9$k$?(B
-$B$a$K(B @kbd{e} $B$rBG$C$F$/$@$5$$!#0J2<$N$b$N$r4^$`%P%C%U%!!<$KF~$k$G$7$g$&!#(B
+$B:#$d$"$J$?$O???7$7$$(B @samp{cache} $B$H$$$&(B @code{nnml} $B$N2>A[%5!<%P!<$r<j(B
+$B$KF~$l$?$O$:$G$9!#<!$O$=$l$rJT=8$7$F!"@5$7$$Dj5A$rM?$($^$7$g$&!#%5!<%P!<(B
+$B$rJT=8$9$k$K$O(B @kbd{e} $B$r%?%$%W$7$F2<$5$$!#$"$J$?$O0J2<$N$b$N$r4^$`%P%C(B
+$B%U%!!<$KF~$j$^$9(B:
 
 @lisp
 (nnml "cache")
 @end lisp
 
-$B$=$l$r<!$N$b$N$KJQ99$7$F$/$@$5$$(B:
+$B$=$l$r<!$N$h$&$KJQ99$7$F2<$5$$(B:
 
 @lisp
 (nnml "cache"
@@ -12315,30 +12316,30 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
       (nnml-active-file "~/News/cache/active"))
 @end lisp
 
-$B%5!<%P!<%P%C%U%!!<$KLa$k$?$a$K(B @kbd{C-c C-c} $B$HBG$C$F$/$@$5$$!#:#$d$3$N(B
-$B2>A[%5!<%P!<$G(B @kbd{RET} $B$r2!$9$H!"1\Mw%P%C%U%!!<$KF~$k$Y$-$G!"I=<($5$l(B
-$B$F$$$k$I$N%0%k!<%W$K$G$bF~$k$3$H$,$G$-$k$O$:$G$9!#(B
+$B%5!<%P!<%P%C%U%!!<$KLa$k$K$O(B @kbd{C-c C-c} $B$r%?%$%W$7$F2<$5$$!#:#$G$O$3(B
+$B$N2>A[%5!<%P!<$G(B @kbd{RET} $B$r2!$9$H!"1\Mw%P%C%U%!!<$KF~$C$F!"I=<($5$l$F(B
+$B$$$k$I$N%0%k!<%W$K$G$bF~$k$3$H$,$G$-$k$O$:$G$9!#(B
 
 @node Server Variables
 @subsection $B%5!<%P!<JQ?t(B
 @cindex server variables
 @cindex server parameters
 
-$BJQ?t$rDj5A$9$k0l$D$N$d$C$+$$$JE@$O(B ($B%P%C%/%(%s%I$H(B Emacs $B0lHL$NN>J}$G(B)$B!"(B
-$BJQ?t$NDj5A$,%m!<%I$5$l$F$$$k4V$K!"$$$/$D$+$NJQ?t$OB>$NJQ?t$G=i4|2=$5(B
-$B$l$k$H$$$&$3$H$G$9!#$b$7(B ``$B4p$H$J$k(B'' $BJQ?t$,%m!<%I$5$l$?8e$KJQ99$7$F$b!"(B
-``$BF3$-=P$5$l$?(B'' $BJQ?t$OJQ99$5$l$^$;$s!#(B
+$BJQ?t$r(B ($B%P%C%/%(%s%I$H(B Emacs $B0lHL$NN>J}$G(B) $BDj5A$9$k:]$N0l$D$N$d$C$+$$$J(B
+$BE@$O!"$$$/$D$+$NJQ?t$O!"35$7$F$=$NJQ?t$NDj5A$,%m!<%I$5$l$k$H$-$KB>$NJQ?t(B
+$B$G=i4|2=$5$l$k$3$H$G$9!#!V4p!W$K$J$kJQ?t$,%m!<%I$5$l$?8e$G$=$l$rJQ99$7$F(B
+$B$b!"!VGI@8!W$7$?JQ?t$OJQ99$5$l$^$;$s!#(B
 
-$B$3$l$OIaDL$O%G%#%l%/%H%j!<$d%U%!%$%k$NJQ?t$K1F6A$7$^$9!#Nc$($P!"(B
-@code{nnml-directory} $B$O%G%#%U%)%k%H$G(B @file{~/Mail} $B$G$9$,!"$9$Y$F(B
-$B$N(B @code{nnml} $B%G%#%l%/%H%j!<JQ?t$O$=$NJQ?t$K$h$C$F=i4|2=$5$l$k$N$G!"(B
-@code{nnml-active-file} $B$O(B @file{~/Mail/active} $B$K$J$j$^$9!#$b$7?7$7$$$3(B
-$B$H<B>e$N(B @code{nnml} $B%5!<%P!<$rDj5A$7$?>l9g!"(B@code{nnml-directory} $B$r@_(B
-$BDj$9$k$@$1$G$O=<J,$G$O(B @emph{$B$"$j$^$;$s(B}---$B$"$J$?$OK>$s$@>uBV$K$J$k$h$&(B
-$B$K!"$9$Y$F$N%U%!%$%kJQ?t$rL@<(E*$K@_Dj$7$J$1$l$P$J$j$^$;$s!#$=$l$>$l$N%P%C(B
-$B%/%(%s%I$KBP$9$k40A4$JJQ?t$N%j%9%H$r8+$k$?$a$K$O!"$3$N%^%K%e%"%k$N8e$KB3(B
-$B$/$=$l$>$l$N%P%C%/%(%s%I$NItJ,$rFI$s$G$/$@$5$$!#$G$b!"(B@code{nnml} $B$NDj5A(B
-$B$NNc$O$3$3$K$"$j$^$9(B:
+$B$3$l$O0lHL$K%G%#%l%/%H%j!<$d%U%!%$%k$NJQ?t$K1F6A$7$^$9!#Nc$((B
+$B$P(B @code{nnml-directory} $B$O%G%#%U%)%k%H$G$O(B @file{~/Mail/} $B$G!"$^$?!"$9(B
+$B$Y$F$N(B @code{nnml} $B%G%#%l%/%H%j!<JQ?t$O$=$NJQ?t$K$h$C$F=i4|2=$5$l$k$N$G!"(B
+@code{nnml-active-file} $B$O(B @file{~/Mail/active} $B$K$J$j$^$9!#?7$7(B
+$B$$(B @code{nnml} $B2>A[%5!<%P!<$rDj5A$9$k>l9g!"(B@code{nnml-directory} $B$r@_Dj(B
+$B$9$k$@$1$G$O==J,$G$O(B @emph{$B$"$j$^$;$s(B}---$B$"$J$?$O$9$Y$F$N%U%!%$%kJQ?t$r!"(B
+$B$=$&$7$?$$$HK>$s$@CM$KL@<(E*$K@_Dj$7$J$1$l$P$J$j$^$;$s!#$=$l$>$l$N%P%C%/(B
+$B%(%s%I$N$?$a$N40A4$JJQ?t$N%j%9%H$r8+$k$K$O!"$3$N%^%K%e%"%k$N8e$KB3$/$=$l(B
+$B$>$l$N%P%C%/%(%s%I$NItJ,$rFI$s$G2<$5$$!#$G$b(B @code{nnml} $B$NDj5A$NNc$O$3(B
+$B$3$K$"$j$^$9(B:
 
 @lisp
 (nnml "public"
@@ -12350,37 +12351,36 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
 $B%5!<%P!<JQ?t$O$7$P$7$P(B @dfn{$B%5!<%P!<%Q%i%a!<%?!<(B} $B$H8F$P$l$^$9!#(B
 
 @node Servers and Methods
-@subsection $B%5!<%P!<$HJ}K!(B
+@subsection $B%5!<%P!<$HA*BrJ}K!(B
 
-$BIaDL$KA*BrJ}K!$r;H$&$H$3$m$G$"$l$P$I$3$G$b(B ($BNc$($P!"30It%5!<%P!<$r354Q$7(B
-$B$F$$$k$H$-$N%0%k!<%WA*BrJ}K!$G$"$k(B @code{gnus-secondary-select-method})$B!"(B
-$BBe$o$j$K2>A[%5!<%P!<$NL>A0$r;H$&$3$H$,$G$-$^$9!#$3$N$3$H$K$h$j$?$/$5$s%-!<(B
-$B%\!<%I$rC!$+$J$/$F$9$`2DG=@-$,$"$j$^$9!#$=$7$F!"$9$Y$F$K$o$?$C$F!"$=$NJ}(B
-$B$,NI$$$G$9!#(B
+$BIaDL$KA*BrJ}K!$r;H$&(B ($BNc$($P30It%5!<%P!<$+$i5-;v$rFI$`$H$-$K%0%k!<%W$rA*(B
+$BBr$9$k<jCJ$H$7$F(B @code{gnus-secondary-select-method} $B;H$&(B) $B>lLL$G$O$I$3(B
+$B$G$b!"Be$o$j$K2>A[%5!<%P!<$NL>A0$r;H$&$3$H$,$G$-$^$9!#$3$l$K$h$C$F!"$?$/(B
+$B$5$s%-!<%\!<%I$rC!$+$J$/$F:Q$`$+$b$7$l$^$;$s!#$=$7$F!"$I$s$J$H$-$G$b$=$N(B
+$BJ}$,NI$$$G$9!#(B
 
 @node Unavailable Servers
 @subsection $B;HMQIT2DG=$J%5!<%P!<(B
 
-$B$b$7%5!<%P!<$K@\B3IT2DG=$G$"$k$J$i$P!"(BGnus $B$O%5!<%P!<$r(B @code{$B5qH](B} $B$H$7(B
-$B$F0u$rIU$1$^$9!#$3$l$O$=$N8e$N$=$N%5!<%P!<$H$N@\B3$r$O$+$k$I$N$h$&$J;n$_(B
-$B$bL5;k$5$l$k$H$$$&$3$H$G$9!#(BGnus $B$O@\B3$,3+$1$J$$$3$H$,K\Ev$G$"$k$+$I$&(B
-$B$+$r>/$7$b3N$+$a$:!"(B``It can't be opend,'' ($B@\B3$r3+$/$3$H$,$G$-$^$;(B
-$B$s(B) $B$H9p$2$^$9!#(B
+$B$"$k%5!<%P!<$K@\B3$9$k$3$H$,$G$-$J$$$h$&$K8+$($k$H$-!"(BGnus $B$O$=$N%5!<%P!<(B
+$B$K5qH]$5$l$?(B (@code{denied}) $B$3$H$r5-O?$7$^$9!#$=$N8e$G$=$N%5!<%P!<$H@\(B
+$BB3$7$h$&$H$9$k$I$s$J;n$_$b!"C1$KL5;k$5$l$^$9!#<B:]$K$=$&$+$I$&$+$r>/$7$b(B
+$B3N$+$a$:$K!"(BGnus $B$O!V@\B3$r3+$/$3$H$,$G$-$^$;$s!W$H(B ($B1Q8l$G(B) $B9p$2$^$9!#(B
 
-$B$=$l$O9T57$,0-$$$H;W$&$3$H$,$"$k$+$b$7$l$^$;$s$,!"$=$l$O$?$$$F$$$N$H$-$K(B
-$B$ONI$$J}K!$G$9!#Nc$($P!"%5!<%P!<(B @samp{nephelococcdyia.com} $B$K(B 10 $B8D9XFI(B
-$B$7$F$$$k%0%k!<%W$,$"$k$H$7$^$7$g$&!#%5!<%P!<$O$I$3$+Hs>o$K1s$/$K$"$j!"%^(B
-$B%7%s$O$H$F$bCY$$$N$G!"$=$l$,:#F|$O$"$J$?$H$N@\B3$r5qH]$9$k$+$I$&$+$rD4$Y(B
-$B$k$@$1$G0lJ,$+$+$j$^$9!#$b$7(B Gnus $B$,$=$l$r(B 10 $B2s;n$9$h$&$K$J$C$F$$$?$J$i!"(B
-$B$"$J$?$OHs>o$K$&$k$5$/;W$&$G$7$g$&!#$G$9$+$i!"(BGnus $B$O$=$l$r;n$=$&$H$O$7(B
-$B$^$;$s!#0lEY(B ``connection refused'' ($B@\B3$O5qH]$5$l$^$7$?(B) $B$r<u$1<h$k$H!"(B
-$B$=$l$O%5!<%P!<$,(B ``down'' ($BMn$A$F$$$k(B) $B$G$"$k$H$_$J$7$^$9!#(B
+$B$=$l$O$:$$$V$s$*9T57$,0-$$$H;W$&$+$b$7$l$^$;$s$,!"$?$$$F$$$N>l9g$OM-0U5A(B
+$B$J$N$G$9!#Nc$($P(B @samp{nephelococcdyia.com} $B$H$$$&%5!<%P!<$G==8D$N%0%k!<(B
+$B%W$r9XFI$7$F$$$k$H$7$^$7$g$&!#%5!<%P!<$O$I$3$+$H$F$b1s$$$H$3$m$K$"$C$F!"(B
+$B$=$N%^%7%s$O$H$F$bCY$$$N$G!":#F|$=$l$,@\B3$r5qH]$9$k$+$I$&$+$rD4$Y$k$@$1(B
+$B$G$b0lJ,$+$+$j$^$9!#$b$7(B Gnus $B$,$=$l$r==2s;n$9$h$&$K$J$C$F$$$?$H$9$k$H!"(B
+$B$H$F$bHQ$o$7$$$G$7$g$&!#$G$9$+$i(B Gnus $B$O$=$l$r;n$=$&$H$O$7$^$;$s!#0lEY$G(B
+$B$b!V@\B3$,5qH]$5$l$?!W(B(connection refused) $B$H$$$&7k2L$r<u$1<h$C$?$J$i!"(B
+$B$=$l$O%5!<%P!<$,!VMn$A$F$$$k!W(B(down) $B$N$@!"$H$_$J$7$^$9!#(B
 
-$B$=$l$G!"0l;~E*$K$=$N%^%7%s$N5!7y$,0-$$$@$1$@$C$?$i2?$,5/$3$k$N$G$7$g(B
-$B$&(B? $B%^%7%s$,I|3h$7$?$+$I$&$+$r$I$&$9$l$PD4$Y$k$3$H$,$G$-$k$N$G$7$g$&(B?
+$B$G$O!"0l;~E*$K$=$N%^%7%s$N5!7y$,0-$$$@$1$@$C$?$i2?$,5/$3$k$N$G$7$g$&(B? $B%^(B
+$B%7%s$,I|3h$7$?$+$I$&$+$r$I$&$9$l$PD4$Y$k$3$H$,$G$-$k$N$G$7$g$&(B?
 
-$B%5!<%P!<%P%C%U%!!<$KHt$S0\$C$F(B (@pxref{Server Buffer})$B!"0J2<$NL?Na$G$D$D(B
-$B$/$@$1$G$G$-$^$9(B:
+$B$=$l$K$O!"%5!<%P!<%P%C%U%!!<$K0\F0$7$F(B (@pxref{Server Buffer})$B!"0J2<$NL?(B
+$BNa$GFM$$$F$_$F2<$5$$(B:
 
 @table @kbd
 @item O
@@ -12392,18 +12392,19 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
 @item C
 @kindex C ($B%5!<%P!<(B)
 @findex gnus-server-close-server
-$B%5!<%P!<$N@\B3(B ($B$b$7$"$l$P(B) $B$rJD$8$^$9(B (@code{gnus-server-close-server})$B!#(B
+$B%5!<%P!<$H$N@\B3(B ($B$b$7$"$l$P(B) $B$rJD$8$^(B
+$B$9(B (@code{gnus-server-close-server})$B!#(B
 
 @item D
 @kindex D ($B%5!<%P!<(B)
 @findex gnus-server-deny-server
-$B8=:_$N%5!<%P!<$K@\B3IT2DG=$N0u$rIU$1$^(B
+$B8=:_$N%5!<%P!<$K@\B3IT2D$N0u$rIU$1$^(B
 $B$9(B (@code{gnus-server-open-all-server})$B!#(B
 
 @item M-o
 @kindex M-o ($B%5!<%P!<(B)
 @findex gnus-server-open-all-servers
-$B%P%C%U%!!<$K$"$k$9$Y$F$N%5!<%P!<$H$N@\B3$r%*!<%W%s$7$^(B
+$B%P%C%U%!!<$K$"$k$9$Y$F$N%5!<%P!<$H$N@\B3$r3+$-$^(B
 $B$9(B (@code{gnus-server-open-all-servers})$B!#(B
 
 @item M-c
@@ -12415,7 +12416,7 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
 @item R
 @kindex R ($B%5!<%P!<(B)
 @findex gnus-server-remove-denials
-Gnus $B$,$I$l$+$N%5!<%P!<$+$i@\B35qH]$r<u$1$?$+$I$&$+$N$9$Y$F$N0u$r>C5n$7(B
+Gnus $B$,@\B3$r5qH]$5$l$?$9$Y$F$N%5!<%P!<$N!"$9$Y$F$N0u$r>C5n$7(B
 $B$^$9(B (@code{gnus-server-remove-denials})$B!#(B
 
 @item L
@@ -12429,9 +12430,9 @@ Gnus $B$,$I$l$+$N%5!<%P!<$+$i@\B35qH]$r<u$1$?$+$I$&$+$N$9$Y$F$N0u$r>C5n$7(B
 @cindex reading news
 @cindex news back ends
 
-$B%K%e!<%9%j!<%@!<$OIaDL$O%K%e!<%9$rFI$`$3$H$K;H$o$l$^$9!#(BGnus $B$O8=:_$O%K%e!<(B
-$B%:$r<hF@$9$k$?$a$KFs$D$@$1$NJ}K!$rDs6!$7$F$$$^$9(B---@acronym{NNTP} $B%5!<%P!<(B
-$B$+!"%m!<%+%k%9%W!<%k$+$iFI$`$3$H$,$G$-$^$9!#(B
+$B%K%e!<%9%j!<%@!<$OIaDL$O%K%e!<%9$rFI$`$?$a$K;H$o$l$^$9!#(BGnus $B$O8=:_$O%K%e!<(B
+$B%9$r<hF@$9$k$?$a$NFs$D$NJ}K!$@$1$rDs6!$7$F$$$^$9(B---@acronym{NNTP} $B%5!<%P!<(B
+$B$+$i!"$^$?$O%m!<%+%k%9%W!<%k$+$iFI$`$3$H$,$G$-$^$9!#(B
 
 @menu
 * NNTP::                        @acronym{NNTP} $B%5!<%P!<$+$i%K%e!<%9$rFI$`(B
@@ -12442,13 +12443,13 @@ Gnus $B$,$I$l$+$N%5!<%P!<$+$i@\B35qH]$r<u$1$?$+$I$&$+$N$9$Y$F$N0u$r>C5n$7(B
 @subsection NNTP
 @cindex nntp
 
-@acronym{NNTP} $B%5!<%P!<$N30It%0%k!<%W$r9XFI$9$k$N$OHf3SE*4JC1$G$9!#C1(B
-$B$K(B @code{nntp} $B$rJ}K!$H$7$F;XDj$7!"(B@acronym{NNTP} $B%5!<%P!<$N%"%I%l(B
-$B%9(B (address) $B$r!"$&!<$s!"%"%I%l%9$H$7$F;XDj$9$k$@$1$G$9!#(B
+@acronym{NNTP} $B%5!<%P!<$+$i30It%0%k!<%W$r9XFI$9$k$N$OHf3SE*4JC1$G$9!#C1(B
+$B$KA*BrJ}K!$H$7$F(B @code{nntp} $B$r;XDj$7!"(B@acronym{NNTP} $B%5!<%P!<$N%"%I%l%9(B
+$B$r!"$&!<$s!"%"%I%l%9$H$7$F;XDj$9$k$@$1$G$9!#(B
 
-$B$b$7(B @acronym{NNTP} $B%5!<%P!<$,I8=`$G$J$$%]!<%H(B (port) $B$K0LCV$7$F$$$k$H$-(B
-$B$O!"A*BrJ}K!$N;0HVL\$NMWAG$r$3$N%]!<%H$NHV9f$K@_Dj$9$k$3$H$G@5$7$$%]!<%H(B
-$B$K@\B3$9$k$3$H$,$G$-$k$G$7$g$&!#$=$N$?$a$K%0%k!<%W>pJs$rJT=8$7$J$1$l$P$J(B
+@acronym{NNTP} $B%5!<%P!<$,I8=`$G$O$J$$%]!<%H(B (port) $B$K@_CV$5$l$F$$$k$H$-(B
+$B$O!"A*BrJ}K!$N;0HVL\$NMWAG$r$3$N%]!<%H$NHV9f$K@_Dj$9$l$P!"@5$7$$%]!<%H$K(B
+$B@\B3$9$k$3$H$,$G$-$k$G$7$g$&!#$=$N$?$a$K$O%0%k!<%W>pJs$rJT=8$7$J$1$l$P$J(B
 $B$j$^$;$s(B (@pxref{Foreign Groups})$B!#(B
 
 $B30It%0%k!<%W$NL>A0$O4pK\%0%k!<%W$HF1$8$G$b9=$$$^$;$s!#<B:]!"$"$J$?$N;W$&(B
@@ -12466,39 +12467,38 @@ Gnus $B$,$I$l$+$N%5!<%P!<$+$i@\B35qH]$r<u$1$?$+$I$&$+$N$9$Y$F$N0u$r>C5n$7(B
 @cindex nntp authentification
 @findex nntp-send-authinfo
 @findex nntp-send-mode-reader
-$B$O@\B3$,$G$-$?8e$K<B9T$5$l$^$9!#$=$l$O(B @acronym{NNTP} $B%5!<%P!<$K@\?($7$?(B
-$B8e$K$=$l$KL?Na$rAw$k$?$a$K;H$o$l$k$3$H$,$G$-$^$9!#%G%#%U%)%k%H$G$O4X(B
-$B?t(B @code{nntp-send-mode-reader} $B$K$h$j(B @code{MODE READER} $BL?Na$,%5!<%P!<(B
-$B$KAw$i$l$^$9!#$=$N4X?t$O>o$K$3$N%U%C%/$K$"$k$Y$-$G$9!#(B
+$B$O@\B3$,$G$-$?8e$K<B9T$5$l$^$9!#$=$l$O(B @acronym{NNTP} $B%5!<%P!<$K@\B3$7$?(B
+$B8e$K!"$=$l$KL?Na$rAw$k$?$a$K;H$&$3$H$,$G$-$^$9!#%G%#%U%)%k%H$G(B
+$B$O(B @code{MODE READER} $BL?Na$,!"(B@code{nntp-send-mode-reader} $B4X?t$K$h$C$F(B
+$B%5!<%P!<$KAw$i$l$k$h$&$K$J$C$F$$$^$9!#$3$N4X?t$O>o$K$3$N%U%C%/$K$"$k$Y$-(B
+$B$G$9!#(B
 
 @item nntp-authinfo-function
 @vindex nntp-authinfo-function
 @findex nntp-send-authinfo
 @vindex nntp-authinfo-file
 $B$3$N4X?t$O(B @acronym{NNTP} $B%5!<%P!<$K(B @samp{AUTHINFO} $B$rAw$k$?$a$K;H$o$l(B
-$B$^$9!#%G%#%U%)%k%H$N4X?t$O(B @code{nntp-send-authinfo} $B$G!"(B
-@file{~/.authinfo} ($B$b$7$/$OJQ?t(B @code{nntp-authinfo-file} $B$K@_Dj$7$?$I(B
-$B$N$h$&$J$b$N$G$b(B) $B$r;HMQ2DG=$J5-:\$rD4$Y$k$?$a$KC5$7$^$9!#$b$70l$D$b8+$D(B
-$B$+$i$J$+$C$?$i!"$"$J$?$K%m%0%$%sL>$H%Q%9%o!<%I$NF~NO$rB%?J$7$^$9!#(B
-@file{~/.authinfo} $B%U%!%$%k$NMM<0(B
-$B$O(B @code{ftp} $B$N(B @file{~/.netrc} $B%U%!%$%k$H(B ($B$[$H$s$I(B) $BF1$8$G!"$=$l(B
-$B$O(B @code{ftp} $B$N%^%K%e%"%k%Z!<%8$KDj5A$5$l$F$$$^$9$,!"$3$3$K82Cx$J<BNc$,(B
-$B$"$j$^$9(B:
+$B$^$9!#%G%#%U%)%k%H$N4X?t$O(B @code{nntp-send-authinfo} $B$G!"E,@Z$J5-:\;v9`(B
+$B$rC5$9$?$a$K(B @file{~/.authinfo} ($B$b$7$/$O(B @code{nntp-authinfo-file} $BJQ?t(B
+$B$K@_Dj$7$?2?$G$b(B) $B$rD4$Y$^$9!#$b$70l$D$b8+$D$+$i$J$+$C$?$i!"%m%0%$%sL>$H(B
+$B%Q%9%o!<%I$NF~NO$rMW5a$7$^$9!#(B@file{~/.authinfo} $B%U%!%$%k$NMM<0(B
+$B$O(B @code{ftp} $B$N$?$a$N(B @file{~/.netrc} $B%U%!%$%k$H(B ($B$[$H$s$I(B) $BF1$8$G$9!#(B
+$B$=$l$O(B @code{ftp} $B$N%^%K%e%"%k%Z!<%8$GDj5A$5$l$F$$$^$9$,!"$3$3$K82Cx$J<B(B
+$BNc$,$"$j$^$9(B:
 
 @enumerate
 @item
 $B%U%!%$%k$O0l$D0J>e$N9T$r4^$_!"$=$l$>$l$O0l$D$N%5!<%P!<$rDj5A$7$^$9!#(B
 
 @item
-$B$=$l$>$l$N9T$OG$0U$N?t$N(B $B6h@Z$j0u(B/$BCM(B $B$NBP$r4^$`$3$H$,$G$-$^$9!#(B
+$B$=$l$>$l$N9T$OG$0U$N?t$NI8>O(B (token) $B$HCM$NBP$r4^$`$3$H$,$G$-$^$9!#(B
 
-$BM-8z$J6h@Z$j0u$O(B @samp{machine}, @samp{login}, @samp{password},
+$BM-8z$JI8>O$O(B @samp{machine}, @samp{login}, @samp{password},
 @samp{default} $B$G$9!#2C$($F!"(BGnus $B$O(B @file{.netrc}/@code{ftp} $B$N9=J8$N86(B
-$B7?$K$O8=$l$J$$Fs$D$N?7$7$$6h@Z$j0u!"L>IU$1(B
-$B$F(B @samp{port} $B$H(B @samp{force} $B$rF3F~$7$^$9!#(B
-($B$3$l$,(B @file{.authinfo} $B%U%!%$%k$NMM<0$,(B @file{.netrc} $B%U%!%$%k$NMM<0$+(B
-$B$i0o$l$kM#0l$NJ}K!$G$9!#(B) @samp{port} $B$O%5!<%P!<$N$I$N%]!<%H$rG'>Z$KMQ$$(B
-$B$k$+$r<($7!"(B@samp{force} $B$O0J2<$G@bL@$7$^$9!#(B
+$B7?$K$O8=$l$J$$Fs$D$N?7$7$$I8>O!"L>IU$1$F(B @samp{port} $B$H(B @samp{force} $B$r(B
+$BF3F~$7$^$9!#(B($B$3$l$,(B @file{.authinfo} $B%U%!%$%k$NMM<0$,(B @file{.netrc} $B%U%!(B
+$B%$%k$NMM<0$+$i0oC&$9$kM#0l$NJ}K!$G$9!#(B) @samp{port} $B$O%5!<%P!<$N$I$N%]!<(B
+$B%H$rG'>Z$KMQ$$$k$+$r<($7!"(B@samp{force} $B$O0J2<$G@bL@$7$^$9!#(B
 @end enumerate
 
 $B$3$l$,$=$N%U%!%$%k$NNc$G$9(B:
@@ -12508,15 +12508,15 @@ machine news.uio.no login larsi password geheimnis
 machine nntp.ifi.uio.no login larsi force yes
 @end example
 
-$B6h@Z$j0u(B/$BCM(B $B$NBP$O$I$N$h$&$J=gHV$G$G$b8=$l$k$3$H$,$G$-$^$9!#Nc$($P!"(B
-@samp{machine} $B$O:G=i$K8=$l$kI,MW$O$"$j$^$;$s!#(B
+$BI8>O$HCM$NBP$O$I$s$J=gHV$G$G$b8=$l$k$3$H$,$G$-$^$9!#Nc$((B
+$B$P(B @samp{machine} $B$,:G=i$G$J$1$l$P$J$i$J$$I,MW$O$"$j$^$;$s!#(B
 
-$B$3$NNc$G$O!"%m%0%$%sL>$H%Q%9%o!<%I$NN>J}$,A0<T$N%5!<%P!<$K$OM?$($i$l$F$$(B
-$B$k$N$KBP$7$F!"8e<T$O%m%0%$%sL>$@$1$r5s$2$F$$$F!"MxMQ<T$O%Q%9%o!<%I$NF~NO(B
-$B$rB%?J$5$l$^$9!#8e<T$O(B @samp{force} $B%?%0$b;}$C$F$$$F!"$=$l$O@\B3;~(B
-$B$K(B @var{nntp} $B%5!<%P!<$KG'>Z>pJs(B (authinfo) $B$,Aw$i$l$k$H$$$&$3$H$G$9!#%G%#(B
-$B%U%)%k%H(B ($B$9$P$o$A!"(B@samp{force} $B%?%0$,L5$$$H$-(B) $B$G$O(B @var{nntp} $B%5!<%P!<(B
-$B$,G'>Z>pJs$r?R$M$J$$8B$j$=$l$r(B @var{nntp} $B%5!<%P!<$KAw$j$^$;$s!#(B
+$B$3$NNc$G$O!"A0<T$N%5!<%P!<$K%m%0%$%sL>$H%Q%9%o!<%I$NN>J}$,M?$($i$l$F$$$k(B
+$B$N$KBP$7$F!"8e<T$K$O%m%0%$%sL>$@$1$,$"$j!"MxMQ<T$O%Q%9%o!<%I$NF~NO$r5a$a(B
+$B$i$l$k$G$7$g$&!#8e<T$O(B @samp{force} $B%?%0$b;}$C$F$$$F!"$3$l$K$h$C$F@\B3;~(B
+$B$K(B @var{nntp} $B%5!<%P!<$KG'>Z>pJs(B (authinfo) $B$,Aw$i$l$^$9!#%G%#%U%)%k(B
+$B%H(B ($B$9$J$o$A!"(B@samp{force} $B%?%0$,L5$$$H$-(B) $B$G$O!"(B@var{nntp} $B%5!<%P!<$,G'(B
+$B>Z>pJs$r?R$M$J$$8B$j$=$l$r(B @var{nntp} $B%5!<%P!<$KAw$j$^$;$s!#(B
 
 @samp{machine} $B9T$K9gCW$7$J$$$9$Y$F$N%5!<%P!<$KE,MQ$5$l(B
 $B$k(B @samp{default} $B9T$rDI2C$9$k$3$H$b$G$-$^$9!#(B
@@ -12525,11 +12525,11 @@ machine nntp.ifi.uio.no login larsi force yes
 default force yes
 @end example
 
-$B$3$l$O0JA0$K=q$+$l$F$$$J$$$9$Y$F$N%5!<%P!<$K(B @samp{AUTHINFO} $BL?Na$r6/@)(B
-$BE*$KAw$j$^$9!#(B
+$B$3$l$O!"$=$l0JA0$K=q$+$l$F$$$J$$$9$Y$F$N%5!<%P!<$K(B @samp{AUTHINFO} $BL?Na(B
+$B$r6/@)E*$KAw$j$^$9!#(B
 
-@file{~/.authinfo} $B%U%!%$%k$r@$3&Cf$,FI$a$k$h$&$J@_Dj$KJ|CV$7$J$$$h$&$K(B
-$BCm0U$7$F$/$@$5$$!#(B
+@file{~/.authinfo} $B%U%!%$%k$r@$3&Cf$,FI$a$k$h$&$J@_Dj$N$^$^$GJ|CV$7$J$$(B
+$B$h$&$KCm0U$7$F2<$5$$!#(B
 
 @item nntp-server-action-alist
 @vindex nntp-server-action-alist
@@ -12605,7 +12605,7 @@ default force yes
 @item nntp-buggy-select
 @vindex nntp-buggy-select
 $B$"$J$?$NA*Br$N0lO"$N:n6H$,8N>c$,$A$G$"$k$H$-$K$3$l$r(B @code{nil} $B$G$J$$CM(B
-$B$K@_Dj$7$F$/$@$5$$!#(B
+$B$K@_Dj$7$F2<$5$$!#(B
 
 @item nntp-nov-is-evil
 @vindex nntp-nov-is-evil
@@ -12630,7 +12630,7 @@ default force yes
 $B$3$NJQ?t$O(B @code{XOVER} $BMW5a$,$I$l$/$i$$Bg$-$JFs$D$NO"B3$7$?5-;v72$N4V$N(B
 $B$X$@$?$j(B (gap) $B$^$GJ,3d$5$l$J$$$GAw$i$l$k$+$r7hDj$7$^$9!#%M%C%H%o!<%/$,(B
 $BB.$$>l9g$O!"$3$NJQ?t$rK\Ev$K>.$5$J?tCM$K@_Dj$9$k$H$*$=$i$/<hF@$,CY$/$J$k(B
-$B$H$$$&$3$H$KCm0U$7$F$/$@$5$$!#$3$NJQ?t$,(B @code{nil} $B$G$"$k$H!"(B
+$B$H$$$&$3$H$KCm0U$7$F2<$5$$!#$3$NJQ?t$,(B @code{nil} $B$G$"$k$H!"(B
 @code{nntp} $B$OMW5a$rJ,3d$7$^$;$s!#%G%#%U%)%k%H$O(B 5 $B$G$9!#(B
 
 @item nntp-prepare-server-hook
@@ -12761,8 +12761,8 @@ Emacs $B$N%;%C%7%g%sA4BN$r%i%C%W$7$F!"%G%#%U%)%k%H$N%a%=%C%I$r;H$&$H$$$&$N(B
 $B$3$l$i$N4X?t$O!"<B:]$K(B @acronym{NNTP} $B%5!<%P!<$K@\B3$9$kA0$KCf4V$N%[%9%H(B
 $B$K@\B3$9$k$?$a$K4V@\E*$K8F$P$l$^$9!#$9$Y$F$N$3$l$i$N4X?t$H4XO"$9$kJQ?t(B
 $B$O(B ``via'' $B@\B3$NCg4V$KB0$7$F$$$k$H$b8@$($k$N$G!"$=$l$rL@3N$K$9$k$?$a$K(B
-$B$9$Y$F(B ``via'' $B$H$$$&@\F,<-$,IU$1$i$l$^$9!#$^$?!"$=$l$i$NF0:n$O$=$l$i$,(B
-$B6&DL$K;2>H$9$kJQ?t$K1F6A$5$l$^$9(B (@pxref{Common Variables})$B!#(B
+$B$9$Y$F(B ``via'' $B$H$$$&@\F,0z?t$,IU$1$i$l$^$9!#$^$?!"$=$l$i$NF0:n$O$=$l$i(B
+$B$,6&DL$K;2>H$9$kJQ?t$K1F6A$5$l$^$9(B (@pxref{Common Variables})$B!#(B
 
 @table @code
 @item nntp-open-via-rlogin-and-telnet
@@ -13217,16 +13217,16 @@ Splitting}.
 $B$Y$-$G$9!#(B
 
 $B$9$Y$F$N%a!<%k%P%C%/%(%s%I$O!"F~$C$FMh$?IOK3$G=c?h$J%X%C%@!<$rMpK=$K07$C(B
-$B$F$bNI$$$3$H$KCm0U$7$F$/$@$5$$!#$=$l$i$O$9$Y$F(B @code{Lines} $B%X%C%@!<$rDI(B
-$B2C$7$^$9!#$$$/$D$+$O(B @code{X-Gnus-Group} $B%X%C%@!<$r2C$($^$9!#$?$$$F$$$N(B
-$B$b$N$O(B Unix $B$N(B mbox $B$N(B @code{From<SPACE>} $B9T$r2?$+JL$NL>A0$KJQ$($^$9!#(B
+$B$F$bNI$$$3$H$KCm0U$7$F2<$5$$!#$=$l$i$O$9$Y$F(B @code{Lines} $B%X%C%@!<$rDI2C(B
+$B$7$^$9!#$$$/$D$+$O(B @code{X-Gnus-Group} $B%X%C%@!<$r2C$($^$9!#$?$$$F$$$N$b(B
+$B$N$O(B Unix $B$N(B mbox $B$N(B @code{From<SPACE>} $B9T$r2?$+JL$NL>A0$KJQ$($^$9!#(B
 
 @vindex nnmail-crosspost
 $B%a!<%k%P%C%/%(%s%I$O$9$Y$F%/%m%9%]%9%H$N5!G=$rDs6!$7$F$$$^$9!#$$$/$D$+$N(B
 $B@55,I=8=$,9gCW$9$k$H!"%a!<%k$O$9$Y$F$N%0%k!<%W$K(B ``$B%/%m%9%]%9%H(B'' $B$5$l$^(B
 $B$9!#(B@code{nnmail-crosspost} $B$O$3$N5!G=$r;H$&$+$I$&$+$r;XDj$7$^$9!#$I$N5-(B
-$B;v$bAm9g$N(B (@samp{""}) $B%0%k!<%W$K%/%m%9%]%9%H$5$l$J$$$3$H$KCm0U$7$F$/$@(B
-$B$5$$!#(B
+$B;v$bAm9g$N(B (@samp{""}) $B%0%k!<%W$K%/%m%9%]%9%H$5$l$J$$$3$H$KCm0U$7$F2<$5(B
+$B$$!#(B
 
 @vindex nnmail-crosspost-link-function
 @cindex crosspost
@@ -13235,8 +13235,8 @@ Splitting}.
 $B%/(B (hardlink) $B$r:n$k$3$H$K$h$C$F%/%m%9%]%9%H$r9T$J$$$^$9!#$7$+$7!"$9$Y$F(B
 $B$N%U%!%$%k%7%9%F%`$,%O!<%I%j%s%/$N5!G=$rDs6!$7$F$$$k$o$1$G$O$"$j$^$;$s!#(B
 $B$b$7$"$J$?$,$=$N>l9g$KEv$F$O$^$k$N$G$"$l$P!"(B
-@code{nnmail-crosspost-link-function} $B$r(B @code{copy-file} $B$K@_Dj$7$F$/$@(B
-$B$5$$!#(B($B$3$NJQ?t$O%G%#%U%)%k%H$G(B @code{add-name-to-file} $B$G$9!#(B)
+@code{nnmail-crosspost-link-function} $B$r(B @code{copy-file} $B$K@_Dj$7$F2<$5(B
+$B$$!#(B($B$3$NJQ?t$O%G%#%U%)%k%H$G(B @code{add-name-to-file} $B$G$9!#(B)
 
 @kindex M-x nnmail-split-history
 @findex nnmail-split-history
@@ -13373,7 +13373,7 @@ rm -f $TMP; $MOVEMAIL $MAIL $TMP >/dev/null && cat $TMP
 @end example
 
 $BL\E*$K9g$&$h$&$K;HMQ$7$?$$(B @samp{movemail} $B$K9g$o$;$F%9%/%j%W%H$r=q$-49(B
-$B$($F$/$@$5$$!#(B
+$B$($F2<$5$$!#(B
 
 @item directory
 @vindex nnmail-scan-directory-mail-source-once
@@ -13654,7 +13654,7 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
 $B$-(B @acronym{IMAP} $B%/%i%$%"%s%H$G%a!<%k%\%C%/%9$rGA$-!"$$$/$D$+$N5-;v$K4{(B
 $BFI(B ($B$b$7$/$O!"(BSEEN) $B$N0u$rIU$1$k$J$i!"(B@samp{1:*} $B$K@_Dj$9$kI,MW$,$"$k$+(B
 $B$b$7$l$^$;$s!#$=$&$9$l$P!"%a!<%k%\%C%/%9$N$9$Y$F$N5-;v$O0u$NG!2?$K4X$o$i(B
-$B$:<hF@$5$l$^$9!#=R8l$N40A4$J0lMw$O!"(BRFC2060 $B$N(B 6.4.4 $B@a$rFI$s$G$/$@$5$$!#(B
+$B$:<hF@$5$l$^$9!#=R8l$N40A4$J0lMw$O!"(BRFC2060 $B$N(B 6.4.4 $B@a$rFI$s$G2<$5$$!#(B
 
 @item :fetchflag
 $B%5!<%P!<$G!"<hF@$7$?5-;v$K0u$rIU$1$kJ}K!!#%G%#%U%)%k%HCM(B
@@ -13801,7 +13801,7 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
 
 @item mail-source-incoming-file-prefix
 @vindex mail-source-incoming-file-prefix
-$BF~$C$F$-$?%a!<%k$rJ]B8$9$k%U%!%$%k$N@\F,<-$G$9!#%G%#%U%)%k%HCM(B
+$BF~$C$F$-$?%a!<%k$rJ]B8$9$k%U%!%$%k$N@\F,0z?t$G$9!#%G%#%U%)%k%HCM(B
 $B$O(B @file{Incoming} $B$G!"$3$N>l9g%U%!%$%k(B
 $B$O(B @file{Incoming30630D_} $B$d(B @file{Incoming298602ZD} $B$N$h$&$K$J$j$^$9!#(B
 @code{mail-source-delete-incoming} $B$,(B @code{nil} $B$^$?$O?tCM$N>l9g$@$1$G(B
@@ -13959,7 +13959,7 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
       ;; @r{$BB>$N%a!<%j%s%0%j%9%H(B@dots{}}
       (any "procmail@@informatik\\.rwth-aachen\\.de" "procmail.list")
       (any "SmartList@@informatik\\.rwth-aachen\\.de" "SmartList.list")
-      ;; @r{$B0J2<$N$I$A$i$N%a!<%j%s%0%j%9%H$bF1$8@\F,<-$J$N$G!"(Bbugs-}
+      ;; @r{$B0J2<$N$I$A$i$N%a!<%j%s%0%j%9%H$bF1$8@\F,0z?t$J$N$G!"(Bbugs-}
       ;; @r{$B$@$1$KEj9F$5$l$?$b$N$,(B mypkg.list $B$K%/%m%9%]%9%H$5$l$J$$$h(B}
       ;; @r{$B$&$K$7$F$$$^$9!#$7$+$7K\Ev$K%/%m%9%]%9%H$5$l$?5-;v$r%/%m%9(B}
       ;; @r{$B%]%9%H$9$k$3$H$O5v$7$F$$$^$9!#(B}
@@ -14113,18 +14113,18 @@ table) $B$K=>$C$F40A4$K9gCW$7$J$1$l$P$J$j$^$;$s!#@55,I=8=$G%U%#!<%k%IL>$+(B
 $B;v$HF1$8%0%k!<%W$K?6$jJ,$1$k$?$a$K;H$$$^$9!#%a!<%k$N?6$jJ,$1$r0l@87|L?@_(B
 $BDj$7$F$_$F$b40`z$K$O$G$-$J$$$3$H$,$"$j$^$9$M!#Nc$($P!">e;J$+$i8D?M08$F$N(B
 $B%a!<%k$,FO$$$?$H$7$^$9!#<+J,$,7H$C$F$$$k%W%m%8%'%/%H$H$OJL$NOC$G$9!#$1$l(B
-$B$I!VB>$N%a!<%k$H6hJL$G$-$k$h$&$K$3$l$3$l$3$&$$$&8@MU$rI=Bj$K=q$$$F$/$@$5(B
-$B$$!W$H>e;J$K8~$+$C$F;X?^$9$k$o$1$K$O$$$-$^$;$s$+$i!"7k6I<+J,$N<j$rHQ$o$7(B
-$B$F$R$H$D$R$H$D%a!<%k$r@5$7$$%0%k!<%W$K?6$jJ,$1$k$O$a$K$J$j$^$9!#$=$s$J$H(B
-$B$-$K$3$N4X?t$r;H$&$H!"$3$NLLE]$J:n6H$r0l%9%l%C%I$K$D$-0l2s$-$j$G:Q$^$9$3(B
-$B$H$,$G$-$^$9!#(B
+$B$I!VB>$N%a!<%k$H6hJL$G$-$k$h$&$K$3$l$3$l$3$&$$$&8@MU$rI=Bj$K=q$$$F2<$5$$!W(B
+$B$H>e;J$K8~$+$C$F;X?^$9$k$o$1$K$O$$$-$^$;$s$+$i!"7k6I<+J,$N<j$rHQ$o$7$F$R(B
+$B$H$D$R$H$D%a!<%k$r@5$7$$%0%k!<%W$K?6$jJ,$1$k$O$a$K$J$j$^$9!#$=$s$J$H$-$K(B
+$B$3$N4X?t$r;H$&$H!"$3$NLLE]$J:n6H$r0l%9%l%C%I$K$D$-0l2s$-$j$G:Q$^$9$3$H$,(B
+$B$G$-$^$9!#(B
 
 $B$3$N5!G=$rMxMQ$9$k$?$a$K$O!"$^$:JQ(B
 $B?t(B @code{nnmail-treat-duplicates} $B$*$h(B
 $B$S(B @code{nnmail-cache-accepted-message-ids} $B$NCM$rHs(B-code{nil} $B$K@_Dj$9(B
 $B$kI,MW$,$"$j$^$9!#$=$l$,$G$-$?(B
-$B$i(B @code{nnmail-split-fancy-with-parent} $B$r;H$C$F$_$F$/$@$5$$!#%3%m%s$r(B
-$B;H$C$F$3$s$JIw$K=q$-$^$9(B:
+$B$i(B @code{nnmail-split-fancy-with-parent} $B$r;H$C$F$_$F2<$5$$!#%3%m%s$r;H$C(B
+$B$F$3$s$JIw$K=q$-$^$9(B:
 
 @lisp
 (setq nnmail-treat-duplicates 'warn     ; @r{$B$^$?$O(B @code{delete}}
@@ -14184,7 +14184,7 @@ table) $B$K=>$C$F40A4$K9gCW$7$J$1$l$P$J$j$^$;$s!#@55,I=8=$G%U%#!<%k%IL>$+(B
 $B$H$-$K$O!"%a!<%j%s%0%j%9%H$K$OJ#?t$N%"%I%l%9$,$"$j!"%a!<%kJ,3d$K$=$l$i$9(B
 $B$Y$F$rG'<1$5$;$kI,MW$,$"$k$+$b$7$l$^$;$s(B: @code{extra-aliases} $B%0%k!<%W(B
 $B%Q%i%a!<%?!<$rDI2C$N%"%I%l%9$N%j%9%H$K@_Dj$9$k$@$1$G=*$j$G$9!#@55,I=8=$r(B
-$B;H$$$?$1$l$P!"(B@code{split-regexp} $B$r@_Dj$7$F$/$@$5$$!#(B
+$B;H$$$?$1$l$P!"(B@code{split-regexp} $B$r@_Dj$7$F2<$5$$!#(B
 
 $B$3$l$i$N$9$Y$F$N%0%k!<%W$N%Q%i%a!<%?!<$O!"(B@code{nnmail-split-fancy} $BJ,3d(B
 $B$r:n@.$9$k$?$a$K;HMQ$5$l!"$=$l$O(B @var{field} $B$,(B @samp{any} $B$G!"(B
@@ -14215,7 +14215,7 @@ table) $B$K=>$C$F40A4$K9gCW$7$J$1$l$P$J$j$^$;$s!#@55,I=8=$G%U%#!<%k%IL>$+(B
 $B8D?M$N%a!<%k%U%)%k%@!<$N$I$N%a!<%j%s%0%j%9%H$K$bEv$F$O$^$i$J$$%a!<%k$rJ,(B
 $B3d$9$k$N$KJXMx$G$7$g$&!#$J$*$3$NFC5iJ,3d$O!"(B@code{|} $BJ,3d%j%9%H$N:G8e$N(B
 $BMWAG(B - $B%0%k!<%W%Q%i%a!<%?!<$+$iCj=P$5$l$?5,B'$r;}$D(B @code{&} $BJ,3d$r4^(B
-$B$`(B - $B$H$7$FDI2C$5$l$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B$`(B - $B$H$7$FDI2C$5$l$k$3$H$KCm0U$7$F2<$5$$!#(B
 
 $B$=$m$=$mNc$r=P$9$Y$-$G$7$g$&!#0J2<$N%0%k!<%W%Q%i%a!<%?!<$,Dj5A$5$l$F$$$k(B
 $B$H$7$^$9(B:
@@ -14280,7 +14280,7 @@ nnml:mail.others:
 $B$G99?7$7$J$1$l$P$J$j$^$;$s!#(B@code{gnus-group-split-update} $B$r<B9T$9$k$3(B
 $B$H$G$=$l$r9T$J$($^$9!#<+F0E*$K99?7$5$l$kJ}$,9%$_$J$i!"(B
 @code{gnus-group-split-setup} $B$K$=$l$r<B9T$9$k$h$&$K65$($k$@$1$G$9!#Nc$((B
-$B$P!"(B@file{~/.gnus.el} $B$K0J2<$N$b$N$rDI2C$7$F$/$@$5$$(B:
+$B$P!"(B@file{~/.gnus.el} $B$K0J2<$N$b$N$rDI2C$7$F2<$5$$(B:
 
 @lisp
 (gnus-group-split-setup @var{auto-update} @var{catch-all})
@@ -14341,9 +14341,9 @@ Groups})$B!#(B
 
 mbox $B%U%!%$%k$N$9$Y$F$N%a!<%k%a%C%;!<%8$b:#$d$"$J$?$N(B @code{nnml} $B%0%k!<(B
 $B%W$K9-$,$C$F$$$^$9!#$=$l$i$KF~$C$F!"JQ$J8N>c$b$J$/$b$N$4$H$,$&$^$/$$$C$F(B
-$B$$$k$+$I$&$+$rD4$Y$F$/$@$5$$!#$b$7Bg>fIW$J$h$&$G$"$l$P!"(Bmbox $B%U%!%$%k$r(B
-$B>C$9$3$H$r9M$($k$+$b$7$l$^$;$s$,!";d$O$9$Y$F$N%a!<%k$,$"$k$Y$-$H$3$m$KG<(B
-$B$^$C$F$$$k$N$r40A4$K3NG'$9$k$^$G$O!"$=$&$O$7$^$;$s!#(B
+$B$$$k$+$I$&$+$rD4$Y$F2<$5$$!#$b$7Bg>fIW$J$h$&$G$"$l$P!"(Bmbox $B%U%!%$%k$r>C(B
+$B$9$3$H$r9M$($k$+$b$7$l$^$;$s$,!";d$O$9$Y$F$N%a!<%k$,$"$k$Y$-$H$3$m$KG<$^$C(B
+$B$F$$$k$N$r40A4$K3NG'$9$k$^$G$O!"$=$&$O$7$^$;$s!#(B
 
 @node Expiring Mail
 @subsection $B%a!<%k$N4|8B@Z$l>C5n(B
@@ -14417,11 +14417,11 @@ total-expire $B$NMxE@$O!"E,1~%9%3%"IU$1(B (@pxref{Adaptive Scoring}) $B$GNI9%
 @end lisp
 
 $B<+F04|8B@Z$l>C5n2DG=%0%k!<%W$r:n$k$3$H$O!"$9$Y$F$N4{FI5-;v$,4|8B@Z$l>C5n(B
-$B$5$l$k$3$H$G$O$J$$$3$H$K5$$rIU$1$F$/$@$5$$(B---$B4|8B@Z$l>C5n2DG=$H$7$F0u$N(B
-$BIU$$$?5-;v$@$1$,4|8B@Z$l>C5n$5$l$^$9!#(B@kbd{d} $BL?Na$,<+F0E*$K5-;v$r4|8B@Z(B
-$B$l>C5n2DG=$K$9$k$N$G$OL5$$$H$$$&$3$H$K$b5$$rIU$1$F$/$@$5$$(B---$BH><+F0$N!"(B
-$B<+F04|8B@Z$l>C5n2DG=%0%k!<%W$G5-;v$r4{FI$K0uIU$1$k$3$H$@$1$,5-;v$r4|8B@Z(B
-$B$l>C5n2DG=$K$7$^$9!#(B
+$B$5$l$k$3$H$G$O$J$$$3$H$K5$$rIU$1$F2<$5$$(B---$B4|8B@Z$l>C5n2DG=$H$7$F0u$NIU(B
+$B$$$?5-;v$@$1$,4|8B@Z$l>C5n$5$l$^$9!#(B@kbd{d} $BL?Na$,<+F0E*$K5-;v$r4|8B@Z$l(B
+$B>C5n2DG=$K$9$k$N$G$OL5$$$H$$$&$3$H$K$b5$$rIU$1$F2<$5$$(B---$BH><+F0$N!"<+F0(B
+$B4|8B@Z$l>C5n2DG=%0%k!<%W$G5-;v$r4{FI$K0uIU$1$k$3$H$@$1$,5-;v$r4|8B@Z$l>C(B
+$B5n2DG=$K$7$^$9!#(B
 
 @lisp
 (setq gnus-auto-expirable-newsgroups
@@ -14519,15 +14519,15 @@ Gnus $B$K$OJQ?t(B @code{nnmail-fancy-expiry-targets} $B$K=>$C$F%a!<%k$r4|8B@Z
 $B$H$3$m$G(B: $B$=$3$K$"$k!"(BGnus $B$,7h$7$F4|8B@Z$l>C5n2DG=$G$J$$5-;v$r4|8B@Z$l(B
 $B>C5n$9$k$3$H$O$J$$!"$H$$$&$N$O13$G$9!#(B@code{total-expire} $B$r%0%k!<%W%Q%i(B
 $B%a!<%?!<$KF~$l$k$H!"5-;v$O4|8B@Z$l>C5n$N0u$,IU$-$^$;$s$,!"$9$Y$F$N5-;v$O(B
-$B4|8B@Z$l>C5n2aDx$KF~$l$i$l$^$9!#Hs>o$KCm0U$7$F;H$C$F$/$@$5$$!#$5$i$K$b$C(B
-$B$H4m81$J$b$N$OJQ?t(B @code{gnus-total-expirable-newsgroups} $B$G$9!#$3$N@55,(B
-$BI=8=$K9gCW$9$k$9$Y$F$N%0%k!<%W$O$9$Y$F$N4{FI5-;v$,4|8B@Z$l>C5n2DG=$N2aDx(B
-$B$KFM$C9~$^$l$^$9!#$3$l$O!"Ev$N%0%k!<%W$N(B @emph{$B$9$Y$F(B} $B$N8E$$%a!<%k5-;v(B
-$B$O>/$78e$G:o=|$5$l$k$H$$$&$3$H$G$9!#Hs>o$KCm0U$7$F;H$C$F!"$"$J$?$,;HMQ$7(B
-$B$?@55,I=8=$,4V0c$C$?%0%k!<%W$K9gCW$7$F!"$"$J$?$N$9$Y$F$N=EMW$J%a!<%k$,>C(B
-$B$($F$7$^$C$?$H8@$C$F!";d$N$H$3$m$K5c$-IU$$$FMh$J$$$G$/$@$5$$!#(B
-@emph{$BCK(B} $B$K$J$j$J$5$$(B! $B$b$7$/$O(B @emph{$B=w(B} $B$K$J$j$J$5$$(B! $B$"$J$?$,5$;}$A(B
-$B$h$$$H46$8$k$9$Y$F$N$b$N$H(B! $B$G$9$+$i$=$3$K(B!
+$B4|8B@Z$l>C5n2aDx$KF~$l$i$l$^$9!#Hs>o$KCm0U$7$F;H$C$F2<$5$$!#$5$i$K$b$C$H(B
+$B4m81$J$b$N$OJQ?t(B @code{gnus-total-expirable-newsgroups} $B$G$9!#$3$N@55,I=(B
+$B8=$K9gCW$9$k$9$Y$F$N%0%k!<%W$O$9$Y$F$N4{FI5-;v$,4|8B@Z$l>C5n2DG=$N2aDx$K(B
+$BFM$C9~$^$l$^$9!#$3$l$O!"Ev$N%0%k!<%W$N(B @emph{$B$9$Y$F(B} $B$N8E$$%a!<%k5-;v$O(B
+$B>/$78e$G:o=|$5$l$k$H$$$&$3$H$G$9!#Hs>o$KCm0U$7$F;H$C$F!"$"$J$?$,;HMQ$7$?(B
+$B@55,I=8=$,4V0c$C$?%0%k!<%W$K9gCW$7$F!"$"$J$?$N$9$Y$F$N=EMW$J%a!<%k$,>C$((B
+$B$F$7$^$C$?$H8@$C$F!";d$N$H$3$m$K5c$-IU$$$FMh$J$$$G2<$5$$!#(B@emph{$BCK(B} $B$K$J(B
+$B$j$J$5$$(B! $B$b$7$/$O(B @emph{$B=w(B} $B$K$J$j$J$5$$(B! $B$"$J$?$,5$;}$A$h$$$H46$8$k$9(B
+$B$Y$F$N$b$N$H(B! $B$G$9$+$i$=$3$K(B!
 
 $B$?$$$F$$$N?M$O$[$H$s$I$N%a!<%k%0%k!<%W$r(B total-expirable ($BA4BN4|8B@Z$l>C(B
 $B5n2DG=(B) $B$K$7$^$9$,!#(B
@@ -14688,8 +14688,8 @@ Quoted Readable $B%(%s%3!<%I$r%G%3!<%I$7$^$9!#(B
 $B$F$$$F!"(B@code{nnmail-treat-duplicates} $B$,(B @code{delete} $B$K@_Dj$7$F$"$k$H!"(B
 $B$"$J$?$NCN$C$F$$$k!"$=$N?M$,$9$G$K<u$1<h$C$?%a!<%k(B
 $B$N(B @code{Message-ID} $B$r;H$C$F!"9M$($k8B$j$?$/$5$s$NIn?+$rAw$k$3$H$,$G$-(B
-$B$^$9!#$=$N3Z$7$5$r9M$($F$_$F$/$@$5$$(B! $B$=$N?M$O$=$l$i$r7h$7$F$_$k$3$H$O$"(B
-$B$j$^$;$s(B! $B$o$)(B!
+$B$^$9!#$=$N3Z$7$5$r9M$($F$_$F2<$5$$(B! $B$=$N?M$O$=$l$i$r7h$7$F$_$k$3$H$O$"$j(B
+$B$^$;$s(B! $B$o$)(B!
 
 @node Not Reading Mail
 @subsection $B%a!<%k$rFI$`$N$G$O$J$$(B
@@ -15579,7 +15579,7 @@ Gnus $B$O$3$l$i$N%=!<%9$X$N3&LL$rDs6!$9$k%P%C%/%(%s%I72$r>/$7Hw$($D$D$"$j(B
 $B$N(B @emph{$B%l!<%>%s!&%G!<%H%k(B} ($BB8:_M}M3(B) $B$G$"$j!"<R2q$K%5!<%S%9$rDs6!$9$k(B
 $B$3$H$G$O$J$$$+$i$G$9!#(B@code{nnweb} $B$O$9$Y$F$N5-;v$+$i9-9p$r@v$$N.$7$F$7(B
 $B$^$&$N$G!"Ds6!<T$?$A$,%`%+$D$$$F$$$k$H;W$o$l$k$+$b$7$l$^$;$s!#$^$"8+$F$F(B
-$B$/$@$5$$!#(B
+$B2<$5$$!#(B
 
 @code{nnweb} $B$r;H$&$K$O!"(B@code{url} $B$H(B @code{w3} $B%Q%C%1!<%8$r%$%s%9%H!<(B
 $B%k$7$F$*$+$J$/$F$J$J$j$^$;$s!#(B
@@ -15646,7 +15646,7 @@ Gnus $B$O$3$l$i$N%=!<%9$X$N3&LL$rDs6!$9$k%P%C%/%(%s%I72$r>/$7Hw$($D$D$"$j(B
 $B$r?R$M$k$h$&$K$7$^$9!#(B@kbd{F} $BL?Na$O$=$l$>$l$N?7$7$$%K%e!<%95-;v$r?7$7(B
 $B$$(B Gnus $B$N%0%k!<%W$H$7$F9XFI$7!"$3$l$i$N%0%k!<%W$KF~$k$3$H$G%3%a%s%H$rFI(B
 $B$`$3$H$,$G$-$^$9!#(B($B%G%#%U%)%k%H$N9XFIJ}K!$G$O!"?7$7$$%0%k!<%W$r%>%s%S$H(B
-$B$7$F9XFI$9$k$3$H$KCm0U$7$F$/$@$5$$!#B>$NJ}K!$b;H$($^(B
+$B$7$F9XFI$9$k$3$H$KCm0U$7$F2<$5$$!#B>$NJ}K!$b;H$($^(B
 $B$9(B (@pxref{Subscription Methods})$B!#(B
 
 $B$b$7$"$J$?$,8E$$(B @code{nnslashdot} $B%0%k!<%W$r:o=|$7$?$$$N$J$i$P!"(B
@@ -15657,7 +15657,7 @@ Gnus $B$O$3$l$i$N%=!<%9$X$N3&LL$rDs6!$9$k%P%C%/%(%s%I72$r>/$7Hw$($D$D$"$j(B
 $B$5$l$?%F%-%9%H$O$=$NBe$o$j$K(B @samp{blockquote} $B$G0zMQ$5$l!"=pL>$K$O$=$l(B
 $B$>$l$N9T$N:G8e$K(B @samp{br} $B$,DI2C$5$l$^$9!#$=$l0J30$O!"%a%C%;!<%8%P%C%U%!!<(B
 $B$KD>@\(B @acronym{HTML} $B$r=q$/$3$H$,$G$-$^$9!#(BSlashdot $B$O$$$/$D(B
-$B$+(B @acronym{HTML} $B$rA*JL$9$k$3$H$K5$$r$D$1$F$/$@$5$$!#(B
+$B$+(B @acronym{HTML} $B$rA*JL$9$k$3$H$K5$$rIU$1$F2<$5$$!#(B
 
 $B0J2<$NJQ?t$G?6$kIq$$$rJQ$($k$3$H$,$G$-$^$9(B:
 
@@ -15723,9 +15723,9 @@ Gnus $B$O$3$l$i$N%=!<%9$X$N3&LL$rDs6!$9$k%P%C%/%(%s%I72$r>/$7Hw$($D$D$"$j(B
 $B$N$h$&$J$b$N$r$9$k$3$H$G$9(B: @kbd{B nnultimate RET
 http://www.tcj.com/messboard.ubbcgi/ RET}$B!#(B($B6=L#$N$"$k2q5D<<(B
 $B$N(B @acronym{URL} (@samp{Ultimate.cgi} $BEy$r:G8e$K4^$s$G$$$J$$$b$N(B) $B$KJQ$((B
-$B$F$/$@$5$$!#(BUltimate $B%&%'%V%5%$%H$K$O$?$/$5$s5s$2$i$l$F$$$^$9!#(B) $B$=$l$+(B
-$B$i%5!<%P!<%P%C%U%!!<$G6=L#$N$"$k%0%k!<%W$r9XFI$7!"%0%k!<%W%P%C%U%!!<$+$i(B
-$B$=$l$i$rFI$s$G$/$@$5$$!#(B
+$B$F2<$5$$!#(BUltimate $B%&%'%V%5%$%H$K$O$?$/$5$s5s$2$i$l$F$$$^$9!#(B) $B$=$l$+$i(B
+$B%5!<%P!<%P%C%U%!!<$G6=L#$N$"$k%0%k!<%W$r9XFI$7!"%0%k!<%W%P%C%U%!!<$+$i$=(B
+$B$l$i$rFI$s$G2<$5$$!#(B
 
 $B0J2<$N(B @code{nnutimate} $BJQ?t$rJQ992DG=$G$9(B:
 
@@ -15924,7 +15924,7 @@ Gnus $B$O%&%'%V%Z!<%8$r<hF@$9$k$?$a$K(B url $B%i%$%V%i%j$r!"%&%'%V%Z!<%8$rI=<
 @cindex @acronym{IMAP}
 
 @acronym{IMAP} $B$O%a!<%k(B ($B$b$7$/$O!"%K%e!<%9!"$b$7$/$O(B @dots{}) $B$rFI$`$?(B
-$B$a$N%M%C%H%o!<%/%W%m%H%3%k$G$9!#8=BeIw$N(B @acronym{NNTP} $B$H9M$($F$/$@$5$$!#(B
+$B$a$N%M%C%H%o!<%/%W%m%H%3%k$G$9!#8=BeIw$N(B @acronym{NNTP} $B$H9M$($F2<$5$$!#(B
 @acronym{IMAP} $B%5!<%P!<$X$N@\B3$O%K%e!<%9%5!<%P!<$X$N@\B3$HHs>o$K;w$F$$(B
 $B$F!"$=$N%5!<%P!<$N%M%C%H%o!<%/%"%I%l%9$r;XDj$9$k$@$1$K$J$C$F$$$^$9!#(B
 
@@ -16206,7 +16206,7 @@ Gnus $B$O%&%'%V%Z!<%8$r<hF@$9$k$?$a$K(B url $B%i%$%V%i%j$r!"%&%'%V%Z!<%8$rI=<
 $B$?$V$s;H$$$b$N$K$J$kJL$NCM$O(B @code{"UID %s NOT SENTSINCE %s"} $B$G!"(B
 nnimap $B$K5-;v$NFbItE*$JF|IU$NBe$o$j$K(B Date: $B$r;H$&$h$&$K$5$;$^$9!#$5$i$J(B
 $B$k>pJs$d;H$&$3$H$,$G$-$kJ8;zNs$K$D$$$F$O!"(BRFC 2060 $B$N%;%/%7%g%s(B 6.4.4 $B$r(B
-$B8+$F$/$@$5$$!#(B
+$B8+$F2<$5$$!#(B
 
 @item nnimap-authinfo-file
 @vindex nnimap-authinfo-file
@@ -16248,10 +16248,10 @@ machine students.uio.no login larsi password geheimnis port imap
 @cindex splitting imap mail
 
 $BJ,3d$O(B Gnus $B$NMxMQ<T$,2?G/$b$N4V0&$7$F$-$?$b$N$G!":#$d;D$j$N@$3&$bDI$$$D(B
-$B$3$&$H$7$F$$$^$9!#$O$$!"A[A|$7$F$/$@$5$$!"(B@acronym{IMAP} $B%5!<%P!<$NCf$K(B
-$B%5!<%P!<B&$GJ,3d$G$-$k$b$N$O$"$^$jB?$/$J$/!"$7$+$b$=$l$i$OI8=`$G$J$$%W%m(B
-$B%H%3%k$r;H$C$F$$$k$h$&$G$9!#$3$l$O!"(BGnus $B$N(B @acronym{IMAP} $B%5%]!<%H$O<+(B
-$BJ,<+?H$GJ,3d$r$7$J$1$l$P$J$i$J$$$H$$$&$3$H$G$9!#(B
+$B$3$&$H$7$F$$$^$9!#$O$$!"A[A|$7$F2<$5$$!"(B@acronym{IMAP} $B%5!<%P!<$NCf$K%5!<(B
+$B%P!<B&$GJ,3d$G$-$k$b$N$O$"$^$jB?$/$J$/!"$7$+$b$=$l$i$OI8=`$G$J$$%W%m%H%3(B
+$B%k$r;H$C$F$$$k$h$&$G$9!#$3$l$O!"(BGnus $B$N(B @acronym{IMAP} $B%5%]!<%H$O<+J,<+(B
+$B?H$GJ,3d$r$7$J$1$l$P$J$i$J$$$H$$$&$3$H$G$9!#(B
 
 $B$=$7$F<B:]$K$7$^$9!#(B
 
@@ -16519,20 +16519,20 @@ ACL $B$O(B Access Control List ($B;HMQ@)8B0lMw(B) $B$NN,$G$9!#(B@acronym{I
 
 $B$3$3$K$O(B Gnus $B$K$*$1$k(B @acronym{IMAP} $B$N<BAu$KBP$9$k4X78$rJ]>Z$9$kJ8=q$,(B
 $BL5$$$N$G$9$,!"$$$/$D$+$N%5!<%P!<$O(B Gnus $B$N%a!<%k%\%C%/%9$NL>A0$N;H$$J}$G(B
-$B$OF0:n$7$J$$$d$jJ}$GL>A06u4V@\F,<-$r;H$C$F$$$^$9!#(B
+$B$OF0:n$7$J$$$d$jJ}$GL>A06u4V@\F,0z?t$r;H$C$F$$$^$9!#(B
 
 $B6qBNE*$K$O!"%o%7%s%H%sBg3X$N(B @acronym{IMAP} $B%5!<%P!<(B
 $B$O(B @code{#driver.mbx/read-mail} $B$N$h$&$J%a!<%k%\%C%/%9L>$r;H$C$F$$$F!"$=(B
 $B$l$O(B @sc{create} $B$H(B @sc{append} $B%3%^%s%I$G$@$1M-8z$G$9!#%a!<%k%\%C%/%9$,(B
 $B:n$i$l$?8e(B ($B$^$?$O%a%C%;!<%8$,%a!<%k%\%C%/%9$KDI2C$5$l$?8e(B) $B$G$O!"$=$l$O(B
-$BL>A06u4V@\F,<-$rIU$1$:$K%"%/%;%9!"$9$J$o$A(B @code{read-mail} $B$5$l$J$1$l$P(B
-$B$J$j$^$;$s!#(BGnus $B$OMxMQ<T$,(B CREATE $B$H(B APPEND $B%3%^%s%I$@$1$GF~NO$7$?%a!<(B
-$B%k%\%C%/%9L>$rJ]>Z$G$-$J$$$N$G!"@dBP$KL>A06u4V@\F,<-$,IU$$$?%a!<%k%\%C%/(B
-$B%9L>$r(B Gnus $B$G;H$C$F$O$$$1$^$;$s!#(B
+$BL>A06u4V@\F,0z?t$rIU$1$:$K%"%/%;%9!"$9$J$o$A(B @code{read-mail} $B$5$l$J$1$l(B
+$B$P$J$j$^$;$s!#(BGnus $B$OMxMQ<T$,(B CREATE $B$H(B APPEND $B%3%^%s%I$@$1$GF~NO$7$?%a!<(B
+$B%k%\%C%/%9L>$rJ]>Z$G$-$J$$$N$G!"@dBP$KL>A06u4V@\F,0z?t$,IU$$$?%a!<%k%\%C(B
+$B%/%9L>$r(B Gnus $B$G;H$C$F$O$$$1$^$;$s!#(B
 
-@code{#driver.*/} $B@\F,<-$K$D$$$F$N$5$i$J$k;H$$J}$N>pJs$O(B UoW IMAPD $B$NJ8(B
-$B=q$r8+$F2<$5$$!#$=$l$i$O6/NO$J9)6q$J$N$G!"$I$s$J8z2L$,$"$k$+$,3N$+$J>l9g(B
-$B$@$1;H$C$F2<$5$$!#(B
+@code{#driver.*/} $B@\F,0z?t$K$D$$$F$N$5$i$J$k;H$$J}$N>pJs$O(B UoW IMAPD $B$N(B
+$BJ8=q$r8+$F2<$5$$!#$=$l$i$O6/NO$J9)6q$J$N$G!"$I$s$J8z2L$,$"$k$+$,3N$+$J>l(B
+$B9g$@$1;H$C$F2<$5$$!#(B
 
 @node Debugging IMAP
 @subsection IMAP $B$N%G%P%C%0(B
@@ -16640,7 +16640,7 @@ Gnus $B$O$?$@C1$K%K%e!<%9$d%a!<%k$rFI$`0J>e$N$3$H$,$G$-$^$9!#0J2<(B
 $B$N(B @code{nneething} $B%0%k!<%W$N$?$a$N?7$7$$35N,%P%C%U%!!<$KO"$l$F9T$/$G$7$g(B
 $B$&!#0J2<F1MM$G!"$b$7$"$J$?$,$=$&$7$?$1$l$P!"$3$NJ}K!$GA4%G%#%9%/$r6n$1=d(B
 $B$k$3$H$,$G$-$^$9!#$G$9$,!"(BGnus $B$OK\Ev$O(B dired $B$G$O$J$/!"$=$N$h$&$K0U?^$5(B
-$B$l$?$b$N$G$b$J$$!"$H$$$&$3$H$O3P$($F$*$$$F$/$@$5$$!#(B
+$B$l$?$b$N$G$b$J$$!"$H$$$&$3$H$O3P$($F$*$$$F2<$5$$!#(B
 
 $B$3$3$G$NF0:n$K$OA4BNE*$KFs$D$N%b!<%I$,$"$j$^$9(B--- $B0l;~%b!<%I$H8GDj%b!<%I(B
 $B$G$9!#0l;~E*$JA`:n$r9T$J$C$F$$$k$H$-$O(B ($B$9$J$o$A!"%0%k!<%W%P%C%U%!!<(B
@@ -16819,7 +16819,7 @@ Clarinet $B$N%K%e!<%99`L\$rMWLs$7$?$^$H$aAw$j!#(B
 
 $B$3$NDj5A$OC1$K!"M#0l$NL>A0(B (@dfn{name}) $B$H$=$l$KB3$/@55,I=8=$H2>A[JQ?t@_(B
 $BDj$NNs$+$i$J$j$^$9!#0J2<$,$3$l$K;H$($kJQ?t$G$9(B---$BJQ?t$N?t$K05E]$5$l$J$$(B
-$B$G$/$@$5$$!#$[$H$s$I$NJ8=q<oJL$O$4$/$o$:$+$N@_Dj$GDj5A$G$-$^$9!#(B
+$B$G2<$5$$!#$[$H$s$I$NJ8=q<oJL$O$4$/$o$:$+$N@_Dj$GDj5A$G$-$^$9!#(B
 
 @table @code
 @item first-article
@@ -17189,8 +17189,8 @@ Gnus $B$,JV?.%Q%1%C%H$rC5$7$K9T$/>l=j$G$9!#%G%#%U%)%k%HCM$O(B @file{~/} $B$G$
 @end lisp
 
 $B$=$l$@$1$G$9!"$[$s$H$K!#$b$7(B @sc{soup} $B%7%9%F%`$K%K%e!<%9$@$1$rF~$l$?$+$C(B
-$B$?$i!":G=i$N9T$@$1$r;H$C$F$/$@$5$$!#$b$7%a!<%k$@$1$r(B @sc{soup} $B$5$;$?$+$C(B
-$B$?$i!"FsHVL\$r;H$C$F$/$@$5$$!#(B
+$B$?$i!":G=i$N9T$@$1$r;H$C$F2<$5$$!#$b$7%a!<%k$@$1$r(B @sc{soup} $B$5$;$?$+$C(B
+$B$?$i!"FsHVL\$r;H$C$F2<$5$$!#(B
 
 @node Mail-To-News Gateways
 @subsection $B%a!<%k$+$i%K%e!<%9$X$N%2!<%H%&%'%$(B
@@ -17202,8 +17202,8 @@ Gnus $B$,JV?.%Q%1%C%H$rC5$7$K9T$/>l=j$G$9!#%G%#%U%)%k%HCM$O(B @file{~/} $B$G$
 $B$3$H$,$G$-$^$9!#(B@code{nngateway} $B%P%C%/%(%s%I$O$3$N%$%s%?!<%U%'!<%9$rDs(B
 $B6!$7$^$9!#(B
 
-$B$3$N%P%C%/%(%s%I$+$i$O2?$bFI$_=P$;$J$$$3$H$KCm0U$7$F$/$@$5$$(B---$B$3$l$OEj(B
-$B9F$9$k$?$a$@$1$K;H$o$l$^$9!#(B
+$B$3$N%P%C%/%(%s%I$+$i$O2?$bFI$_=P$;$J$$$3$H$KCm0U$7$F2<$5$$(B---$B$3$l$OEj9F(B
+$B$9$k$?$a$@$1$K;H$o$l$^$9!#(B
 
 $B0J2<$O%5!<%P!<JQ?t$G$9!#(B
 
@@ -17291,11 +17291,11 @@ nnvirtual $B%0%k!<%W(B (@dfn{nnvirtual group}) $B$O<B$OB>$N%0%k!<%W$N=89g0J>e
 $B$D$NBg$-$J%0%k!<%W$KF~$l$F!"7y$K$J$k$/$i$$5pBg$G<j$KIi$($J$$%0%k!<%W$rFI(B
 $B$`$3$H$,$G$-$^$9!#$3$l$,%3%s%T%e!<%?!<$N3Z$7$_$@$M(B!
 
-$BA*BrJ}K!$H$7$F(B @code{nnvirtual} $B$r;XDj$7$F$/$@$5$$!#%"%I%l%9$O!"$=$l$r9=(B
-$B@.$9$k%0%k!<%W$K9gCW$9$k@55,I=8=$G$9!#(B
+$BA*BrJ}K!$H$7$F(B @code{nnvirtual} $B$r;XDj$7$F2<$5$$!#%"%I%l%9$O!"$=$l$r9=@.(B
+$B$9$k%0%k!<%W$K9gCW$9$k@55,I=8=$G$9!#(B
 
 $B2>A[%0%k!<%WFb$GIU$1$i$l$?$9$Y$F$N0u$O!"$=$N9=@.%0%k!<%W$N5-;v$K$/$C$D$1(B
-$B$i$l$^$9!#$D$^$j!"$b$72>A[%0%k!<%WFb$G5-;v$K2D;k5-;v$N0u$r$D$1$k$H!"$=$N(B
+$B$i$l$^$9!#$D$^$j!"$b$72>A[%0%k!<%WFb$G5-;v$K2D;k5-;v$N0u$rIU$1$k$H!"$=$N(B
 $B5-;v$O$b$H$b$H$N9=@.%0%k!<%W$NCf$G$b2D;k5-;v$K$J$j$^$9!#(B($B$=$7$F5U$b@.$j(B
 $BN)$A$^$9(B---$B9=@.%0%k!<%WFb$GIU$1$?0u$O2>A[%0%k!<%WFb$G$bI=<($5$l$^(B
 $B$9!#(B) $B6u$N2>A[%0%k!<%W$r:n$k$K$O!"%0%k!<%W%P%C%U%!!<$G(B @kbd{G V}
@@ -17326,7 +17326,7 @@ nnvirtual $B%0%k!<%W(B (@dfn{nnvirtual group}) $B$O<B$OB>$N%0%k!<%W$N=89g0J>e
 
 ($B$G$b$A$g$C$HCm0U!#(B@kbd{G m} $B$G%0%k!<%W$r:n@.$9$k$H$-$O!"%P%C%/%9%i%C%7%e(B
 $B$rFs=E$KIU$1$F$O$$$1$^$;$s!#$=$7$FJ8;zNs$N:G=i$H:G8e$N0zMQ5-(B
-$B9f(B (@samp{"..."}) $B$b<h$jJ'$C$F$/$@$5$$!#(B)
+$B9f(B (@samp{"..."}) $B$b<h$jJ'$C$F2<$5$$!#(B)
 
 $B$3$l$O$A$g$C$H$&$^$/F0:n$9$k$O$:$G$9(B---$BN>J}$N%0%k!<%W$N5-;v$OA4It40A4$K(B
 $B0l$D$N%0%k!<%W$K$J$j!"=EJ#$bL5$$$O$:$G$9!#%9%l%C%II=<((B ($B$H$=$NB>(B) $B$bDL>o(B
@@ -17335,9 +17335,9 @@ nnvirtual $B%0%k!<%W(B (@dfn{nnvirtual group}) $B$O<B$OB>$N%0%k!<%W$N=89g0J>e
 $B$s(B (@pxref{Selecting a Group})$B!#(B
 
 $B$J$*!"$3$3$G0l$D$@$1@)8B$,$"$j$^$9(B---$B2>A[%0%k!<%W$K4^$^$l$k%0%k!<%W$O$9(B
-$B$Y$F@8$-$F$$$k(B ($B$9$J$o$A!"9XFI$^$?$OHs9XFI$N(B) $B>uBV$G$J$/$F$O$J$j$^$;$s!#:o(B
-$B=|$"$k$$$O%>%s%S%0%k!<%W$O(B @code{nnvirtual} $B%0%k!<%W$N9=@.%0%k!<%W$K$J$k(B
-$B$3$H$O$G$-$^$;$s!#(B
+$B$Y$F@8$-$F$$$k(B ($B$9$J$o$A!"9XFI$^$?$OHs9XFI$N(B) $B>uBV$G$J$/$F$O$J$j$^$;$s!#(B
+$B:o=|$"$k$$$O%>%s%S%0%k!<%W$O(B @code{nnvirtual} $B%0%k!<%W$N9=@.%0%k!<%W$K$J(B
+$B$k$3$H$O$G$-$^$;$s!#(B
 
 @vindex nnvirtual-always-rescan
 @code{nnvirtual-always-rescan} $B$,(B @code{nil} $B0J30$G$"$l$P!"(B
@@ -17398,10 +17398,10 @@ Gnus $B$O$=$N(B @code{nnkiboze} $B%0%k!<%W$N0lIt$H$J$k$Y$-5-;v$,$"$k$+$I$&$+$
 $BD4$Y$k$?$a$K!"A4It$N9=@.%0%k!<%W$NA4It$N5-;v$KBP$7$F%X%C%@!<$r<hF@$7!"$=(B
 $B$l$i$9$Y$F$KBP$7$F%9%3%"=hM}$r<B9T$7$J$/$F$O$J$i$J$$$N$G$9!#(B
 
-$B9=@.%0%k!<%W$N?t$rM^$($k$h$&$K!"8BDj$7$?@55,I=8=$r;H$C$F$/$@$5$$!#$5$b$J(B
-$B$$$H!"$"$J$?$N$H$3$m$N%7%9%F%`4IM}<T$rE\$i$;$F$7$^$C$F!"(B
-@acronym{NNTP} $B%5!<%P!<$+$i$"$J$?$rDI$$=P$7$FFsEY$HF~$l$J$$$h$&$K$7$F$7(B
-$B$^$&$+$b$7$l$^$;$s!#IT47$l$J?M$,$h$/$d$k$3$H$G$9!#(B
+$B9=@.%0%k!<%W$N?t$rM^$($k$h$&$K!"8BDj$7$?@55,I=8=$r;H$C$F2<$5$$!#$5$b$J$$(B
+$B$H!"$"$J$?$N$H$3$m$N%7%9%F%`4IM}<T$rE\$i$;$F$7$^$C$F!"(B@acronym{NNTP} $B%5!<(B
+$B%P!<$+$i$"$J$?$rDI$$=P$7$FFsEY$HF~$l$J$$$h$&$K$7$F$7$^$&$+$b$7$l$^$;$s!#(B
+$BIT47$l$J?M$,$h$/$d$k$3$H$G$9!#(B
 
 @code{nnkiboze} $B$N9=@.%0%k!<%W$O@8$-$F$$$kI,MW$O$"$j$^$;$s(B---$B;`$s$G$F$b(B
 $BNI$$$7!"30It%0%k!<%W$G$b9=$$$^$;$s!#L5@)8B$G$9!#(B
@@ -17448,8 +17448,8 @@ Gnus $B$G%a!<%k$rFI$`$?$a$NI8=`$NA*Br;h$N0l$D$G$"$k$D$b$j$OL5$$$+$i$G$9!#(B
 $B$-$K!"$H$-$I$-$"$J$?$NM=Dj$r;W$$=P$5$;$k$?$a$K!"$"$?$+$b?7Ce$GL$FI$N$h$&(B
 $B$K!"%a%C%;!<%8$,:F$S%]%C%W%"%C%W$9$k$G$7$g$&!#(B
 @item
-$B$3$l$r4^$s$G$$$k!V?7$7$$!W%a%C%;!<%8$rFI$s$G$/$@$5$$!"$=$7$F!":F$S$"$J$?(B
-$B$,2a$4$9Lk$rL48+$F2<$5$$!#(B
+$B$3$l$r4^$s$G$$$k!V?7$7$$!W%a%C%;!<%8$rFI$s$G2<$5$$!"$=$7$F!":F$S$"$J$?$,(B
+$B2a$4$9Lk$rL48+$F2<$5$$!#(B
 @item
 $B$$$C$?$s%G!<%H$,=*$o$k$H(B ($B<B:]$K$O%G%#%J!<$N$9$08e$G?2F~$C$F$7$^$C$?$H$7(B
 $B$F$b(B)$B!"4|8B@Z$l>C5n$N0u$,IU$$$F$$$l$P!"%a%C%;!<%8$O<+F0E*$K>C5n$5$l$^$9!#(B
@@ -17899,7 +17899,7 @@ Gnus $B$r(B @code{gnus-unplugged} $B$G5/F0$7$^$9!#$3$l$O(B Gnus $B%(!<%8%'%
 $B%+%k%^%7%s$K%@%&%s%m!<%I$9$k$3$H$b$G$-$^$9!#8e<T$r<B9T$7$?$1$l$P!"(B
 @kbd{g} $B$r2!$7$F?7Ce%a!<%k$r8!::$7$F$+$i(B @kbd{J s} $B$GA4%0%k!<%W$+$iE,@Z(B
 $B$J5-;v$r$9$Y$F<hF@$7$^$9!#(B(Gnus $B$K$I$N5-;v$r%@%&%s%m!<%I$7$?$$$+$r;XDj$9(B
-$B$k$K$O(B @ref{Agent Categories} $B$r;2>H$7$F$/$@$5$$!#(B)
+$B$k$K$O(B @ref{Agent Categories} $B$r;2>H$7$F2<$5$$!#(B)
 
 @item
 $B5-;v$r<hF@$7$?8e$O(B @kbd{J j} $B$r2!$7$F!"(BGnus $B$r:F$S@Z$jN%$7>uBV$K$5$;!"(B
@@ -18002,7 +18002,7 @@ Commands}) $B$+!"$^$?$O%(!<%8%'%s%H$K07$C$FM_$7$/$J$$$N$K<+F0E*$KDI2C$5$l(B
 @item agent-score-file
 ($BDL>o(B) $B$I$N5-;v$r%@%&%s%m!<%I$9$k$+$r7h$a$k$H$-$N$h$j$-$a$N:Y$+$$%9%3%"(B
 $B5,B'!#(B($B$3$N%@%&%s%m!<%I%9%3%"(B (@dfn{download score}) $B$ODL>o$N%9%3%"$H$O(B
-$BI,$:$7$b4X78$,L5$$$3$H$KCm0U$7$F$/$@$5$$!#(B)
+$BI,$:$7$b4X78$,L5$$$3$H$KCm0U$7$F2<$5$$!#(B)
 
 @item agent-enable-expiration
 $B$3$N%0%k!<%W$N8E$$5-;v$r%(!<%8%'%s%H$,4|8B@Z$l>C5n$9$Y$-$+$I$&$+$r<($9(B
@@ -18119,9 +18119,8 @@ Gnus $B%(!<%8%'%s%H$,$=$N5-;v$r(B spam $B$@$H?dB,$7$?$i??$G$9!#$3$NH/8+E*<jK!
 $B>o$K56$G$9!#(B
 @end table
 
-$B$"$J$?$,<+J,$NFH<+$N=R8l4X?t$r:n@.$7$?$1$l$P!"$3$l$rCN$C$F$*$$$F$/$@$5(B
-$B$$(B:
-$B4X?t$O0z?tL5$7$G8F$S=P$5$l$^$9$,!"(B
+$B$"$J$?$,<+J,$NFH<+$N=R8l4X?t$r:n@.$7$?$1$l$P!"$3$l$rCN$C$F$*$$$F2<$5(B
+$B$$(B: $B4X?t$O0z?tL5$7$G8F$S=P$5$l$^$9$,!"(B
 @code{gnus-headers} $B$H(B @code{gnus-score} $BF0E*JQ?t$K$OJXMx$JCM$,B+G{$5$l(B
 $B$^$9!#(B
 
@@ -18174,7 +18173,7 @@ Gnus $B%(!<%8%'%s%H$,$=$N5-;v$r(B spam $B$@$H?dB,$7$?$i??$G$9!#$3$NH/8+E*<jK!
 
 $B$3$l$O(B agent $BJ,N`$N%G%#%U%)%k%H$HEy2A$J%0%k!<%W(B/$B%H%T%C%/%Q%i%a!<%?!<$G$9!#(B
 $B$3$N$h$&$J0l8l$N=R8l$r;XDj$7$F$$$k$H$-$O!"(B@code{agent-predicate} $B;X<($O(B
-$B%I%C%HBP5-K!$G$"$kI,MW$,$"$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B%I%C%HBP5-K!$G$"$kI,MW$,$"$k$3$H$KCm0U$7$F2<$5$$!#(B
 
 $B>e$N$b$N$HEy2A$JD9$$J}$NNc$O(B:
 
@@ -18228,7 +18227,7 @@ Gnus $B%(!<%8%'%s%H$,$=$N5-;v$r(B spam $B$@$H?dB,$7$?$i??$G$9!#$3$NH/8+E*<jK!
                    (500 -100 nil <)))
 @end lisp
 
-$B$^$?!"$3$3$G0lHV30$N3g8L$,>JN,$5$l$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B$^$?!"$3$3$G0lHV30$N3g8L$,>JN,$5$l$F$$$k$3$H$KCm0U$7$F2<$5$$!#(B
 @end itemize
 
 @item
@@ -18455,15 +18454,15 @@ file
 @kindex J a ($B%(!<%8%'%s%H(B $B%0%k!<%W(B)
 @findex gnus-agent-add-group
 $B8=:_$N%0%k!<%W$r%(!<%8%'%s%HJ,N`$KDI2C$7$^(B
-$B$9(B (@code{gnus-agent-add-group})$B!#$3$NL?Na$O%W%m%;%9(B/$B@\F,<-$N=,47$rM}2r(B
-$B$7$^$9(B (@pxref{Process/Prefix})$B!#(B
+$B$9(B (@code{gnus-agent-add-group})$B!#$3$NL?Na$O%W%m%;%9(B/$B@\F,0z?t$N=,47$rM}(B
+$B2r$7$^$9(B (@pxref{Process/Prefix})$B!#(B
 
 @item J r
 @kindex J r ($B%(!<%8%'%s%H(B $B%0%k!<%W(B)
 @findex gnus-agent-remove-group
 $B8=:_$N%0%k!<%W$r!"$b$7B8:_$7$F$$$l$P!"$=$NJ,N`$+$i>C5n$7$^(B
-$B$9(B (@code{gnus-agent-remove-group})$B!#$3$NL?Na$O%W%m%;%9(B/$B@\F,<-$N=,47$rM}(B
-$B2r$7$^$9!#(B(@pxref{Process/Prefix})$B!#(B
+$B$9(B (@code{gnus-agent-remove-group})$B!#$3$NL?Na$O%W%m%;%9(B/$B@\F,0z?t$N=,47$r(B
+$BM}2r$7$^$9!#(B(@pxref{Process/Prefix})$B!#(B
 
 @item J Y
 @kindex J Y ($B%(!<%8%'%s%H(B $B%0%k!<%W(B)
@@ -18937,7 +18936,7 @@ Gnus $B$,%5!<%P!<$K@\B3$G$-$J$H$-$K2?$,5/$-$?$+$rJ*8l$j$^$9!#%(!<%8%'%s%H(B
 
 $B4pK\E*$K$O$3$l$@$1$GNI$$$O$:$G$9!#$3$l$r$"$J$?$N(B @file{~/.gnus.el} $B%U%!(B
 $B%$%k$KF~$l$F!"$"$J$?$NMWK>$K9g$o$;$FJT=8$7!"(BPPP ($B$d2?$+(B) $B$r5/F0$7$F!"(B
-@kbd{M-x gnus} $B$HBG80$7$F$/$@$5$$!#(B
+@kbd{M-x gnus} $B$HBG80$7$F2<$5$$!#(B
 
 $B=i$a$F(B Gnus $B$r<B9T$9$k$7$?$H$-$O!"$$$/$D$+$N%K%e!<%9%0%k!<%W$,%G%#%U%)%k(B
 $B%H$G<+F0E*$K9XFI$5$l$^$9!#$*$=$i$/$b$C$H$?$/$5$s$N%0%k!<%W$r9XFI$7$?$/$J(B
@@ -18952,8 +18951,7 @@ Gnus $B$,%5!<%P!<$K@\B3$G$-$J$H$-$K2?$,5/$-$?$+$rJ*8l$j$^$9!#%(!<%8%'%s%H(B
 
 $B$5$F!"$3$3$G$=$N>l$G%0%k!<%W$rFI$`$3$H$b$G$-$k$7!"$"$k$$$O(B @kbd{J s} $BL?(B
 $BNa$G5-;v$r%@%&%s%m!<%I$9$k$3$H$b$G$-$^$9!#$"$H$O$3$N%^%K%e%"%k$N;D$j$rFI(B
-$B$s$G!"$=$NB>$N2?I42/$N9`L\$+$i%+%9%?%^%$%:$7$?$$$3$H$r8+$D$1=P$7$F$/$@$5(B
-$B$$!#(B
+$B$s$G!"$=$NB>$N2?I42/$N9`L\$+$i%+%9%?%^%$%:$7$?$$$3$H$r8+$D$1=P$7$F2<$5$$!#(B
 
 @node Batching Agents
 @subsection $B0l3g%(!<%8%'%s%H=hM}(B
@@ -19001,7 +18999,7 @@ Gnus $B%(!<%8%'%s%H$O!"$h$/$"$kB>$N%*%U%i%$%s%K%e!<%9%j!<%@!<$N$h$&$K$OF0(B
 
 $BB>$N?M!9$O(B @dfn{$B:o=|%U%!%$%k(B} $B$r;H$$$^$9$,!"$3$3(B Gnus $B%?%o!<$O:o=|$h$j$b(B
 $B%9%3%"$NJ}$r9%$`$N$G!"B>$H3JF.$9$k$h$j$O@Z$jBX$($k$3$H$K$7$^$7$?!#$=$l$i(B
-$B$O40A4$K0c$&$3$H$r$9$k$N$G!"??$CD>$0$K:B$C$FCm0U$rJ'$C$F$/$@$5$$(B!
+$B$O40A4$K0c$&$3$H$r$9$k$N$G!"??$CD>$0$K:B$C$FCm0U$rJ'$C$F2<$5$$(B!
 
 @vindex gnus-summary-mark-below
 $B$9$Y$F$N5-;v$O%9%3%"$N%G%#%U%)%k%HCM$r;}$C$F$*(B
@@ -19164,7 +19162,7 @@ Gnus $B$O35N,%P%C%U%!!<$r:n@.$9$kA0$K!"8=:_$N%0%k!<%W$KE,MQ$5$l$k$I$s(B
 @code{Xref} $B9T$K%9%3%"$rIU$1$^$9(B---$B$9$J$o$A!"%/%m%9%]%9%H9T$G$9!#(B
 
 @item r
-@code{References} $B9T$K%9%3%"$r$D$1$^$9!#(B
+@code{References} $B9T$K%9%3%"$rIU$1$^$9!#(B
 
 @item d
 $BF|IU(B (date) $B$K%9%3%"$rIU$1$^$9!#(B
@@ -19483,7 +19481,7 @@ Gnus $B$O0lHLE*$J%9%3%"%U%!%$%k$rFCDj$N%9%3%"%U%!%$%k8~$1$N$b$N$h$jA0$KE,(B
 @cindex score file format
 
 $B%9%3%"%U%!%$%k$OIaDL$OC1=c$JMM<0$N$b$N$@$1$r4^$`(B @code{emacs-lisp} $B%U%!(B
-$B%$%k$G$9!#L5F\Ce$JMxMQ<T$O$3$l$rJT=8$7$J$$$G$/$@$5$$!#$9$Y$F$O35N,%P%C%U%!!<(B
+$B%$%k$G$9!#L5F\Ce$JMxMQ<T$O$3$l$rJT=8$7$J$$$G2<$5$$!#$9$Y$F$O35N,%P%C%U%!!<(B
 $B$+$iJQ99$5$l$k$G$7$g$&!#(B
 
 $B$H$K$+$/!"$=$l$r<+J,$G$$$8$C$F$_$?$/$J$C$?$N$J$i!"Nc$,$"$j$^$9(B:
@@ -19513,7 +19511,7 @@ Gnus $B$O0lHLE*$J%9%3%"%U%!%$%k$rFCDj$N%9%3%"%U%!%$%k8~$1$N$b$N$h$jA0$KE,(B
 @end lisp
 
 $B$3$NNc$O$?$$$F$$$N%9%3%"%U%!%$%k$NMWAG$r@bL@$7$F$$$^$9!#0c$C$?J}K!$K$D$$(B
-$B$F$O!"(B@ref{Advanced Scoring} $B$r8+$F$/$@$5$$!#(B
+$B$F$O!"(B@ref{Advanced Scoring} $B$r8+$F2<$5$$!#(B
 
 $B$3$l$O(B Lisp $B%3!<%I$N$h$&$K8+$($^$9$,!"<B:]$O$3$3$K$"$k$b$N$O2?(B
 $B$b(B @code{$BI>2A(B} (eval) $B$5$l$^$;$s!#$7$+$7!"(BLisp $B%j!<%@!<$,$3$NMM<0$rFI$_(B
@@ -19530,11 +19528,11 @@ Gnus $B$O0lHLE*$J%9%3%"%U%!%$%k$rFCDj$N%9%3%"%U%!%$%k8~$1$N$b$N$h$jA0$KE,(B
 $B$($F!"5-;vA4BN$r<hF@$7$F5-;v$N$h$jBg$-$JItJ,$G(B Gnus $B$K9gCW$r5a$a$5$;$k;0(B
 $B$D$NJ8;zNs$,$"$j$^$9(B: @code{Body} $B$O5-;v$NK\J8$G9gCW$r5a$a!"(B
 @code{Head} $B$O5-;v$N%X%C%@!<$G9gCW$r5a$a!"(B@code{All} $B$O5-;vA4BN$G9gCW$r(B
-$B5a$a$^$9!#$3$l$i:G8e$N;0$D$N%-!<$r;H$&$3$H$O!"%0%k!<%W$KF~$k$H$-$KB.EY$r(B
-@emph{$B$+$J$j(B} $BCY$/$9$k$3$H$K5$$r$D$1$F$/$@$5$$!#%9%3%"$rIU$1$k$3$H$N$G$-(B
-$B$k:G8e$N(B ``$B%X%C%@!<(B'' $B$O(B @code{Followup} $B$G$9!#$3$l$i$N%9%3%"9`L\$O!"$=(B
-$B$l$K9gCW$9$k5-;v$X$N$9$Y$F$N%U%)%m!<%"%C%W$N$?$a$N?7$7$$%9%3%"9`L\$,IU$1(B
-$B2C$($i$l$^$9!#(B
+$B5a$a$^$9!#$3$l$i:G8e$N;0$D$N%-!<$r;H$&$3$H$O!"%0%k!<%W$KF~$k$H$-$KB.EY(B
+$B$r(B @emph{$B$+$J$j(B} $BCY$/$9$k$3$H$K5$$rIU$1$F2<$5$$!#%9%3%"$rIU$1$k$3$H$N$G(B
+$B$-$k:G8e$N(B ``$B%X%C%@!<(B'' $B$O(B @code{Followup} $B$G$9!#$3$l$i$N%9%3%"9`L\$O!"(B
+$B$=$l$K9gCW$9$k5-;v$X$N$9$Y$F$N%U%)%m!<%"%C%W$N$?$a$N?7$7$$%9%3%"9`L\$,IU(B
+$B$12C$($i$l$^$9!#(B
 
 $B$3$N%-!<$KB3$/$N$OG$0U$N?t$N%9%3%"9`L\$G!"$=$l$>$l$N%9%3%"9`L\$O0l$D$+$i(B
 $B;M$D$^$G$NMWAG$r;}$A$^$9!#(B
@@ -19614,9 +19612,9 @@ Gnus $B$O0lHLE*$J%9%3%"%U%!%$%k$rFCDj$N%9%3%"%U%!%$%k8~$1$N$b$N$h$jA0$KE,(B
 
 $B9gCW$,(B @code{Lines} $B$G$J$5$l$F$$$k$H!"$$$/$D$+$N%P%C%/%(%s(B
 $B%I(B (@code{nndir} $B$N$h$&$J$b$N(B) $B$O(B @code{Lines} $B%X%C%@!<$r:n@.$7$J$$$?$a(B
-$B$K$9$Y$F$N5-;v$,(B 0 $B9T$G$"$k$H$7$F07$o$l$k$3$H$K5$$rIU$1$F$/$@$5$$!#$3$l(B
-$B$O$b$7>/$7$N9T$7$+$J$$5-;v$N%9%3%"$r2<$2$F$$$k$N$J$i!"JQ$J7k2L$,5/$3$jF@(B
-$B$k$3$H$K$J$j$^$9!#(B
+$B$K$9$Y$F$N5-;v$,(B 0 $B9T$G$"$k$H$7$F07$o$l$k$3$H$K5$$rIU$1$F2<$5$$!#$3$l$O(B
+$B$b$7>/$7$N9T$7$+$J$$5-;v$N%9%3%"$r2<$2$F$$$k$N$J$i!"JQ$J7k2L$,5/$3$jF@$k(B
+$B$3$H$K$J$j$^$9!#(B
 
 @item Date
 Date ($BF|IU(B) $B%X%C%@!<$K$O;0$D$N$J$s$H$J$/$P$+$2$F$$$k9gCW$N7?$,$"$j$^$9(B:
@@ -19640,8 +19638,8 @@ Date ($BF|IU(B) $B%X%C%@!<$K$O;0$D$N$J$s$H$J$/$P$+$2$F$$$k9gCW$N7?$,$"$j$^$9
 $B$N(B 4$B7n(B1$BF|(B $B$KEj9F$5$l$?$9$Y$F$N5-;v$K$,<#$5$;$?$$$N$G$"$l$P!"(B
 @samp{....0401.........} $B$r9gCWJ8;zNs$H$7$F;H$&$3$H$,$G$-$^$9!#(B($BF|IU$O85!9(B
 $B$NI8=`;~$GJ]B8$5$l$F$$$k$N$G!"$=$N5-;v$,Ej9F$5$l$?$H$3$m$G(B 4$B7n(B1$BF|(B $B$KEj9F(B
-$B$5$l$?5-;v$K9gCW$9$k$3$H$KCm0U$7$F$/$@$5$$!#I8=`;~$O0l2H$K$H$C$FHs>o$KM-(B
-$B1W$J3Z$7$_$G$7$g$&(B?)
+$B$5$l$?5-;v$K9gCW$9$k$3$H$KCm0U$7$F2<$5$$!#I8=`;~$O0l2H$K$H$C$FHs>o$KM-1W(B
+$B$J3Z$7$_$G$7$g$&(B?)
 
 @item Head, Body, All
 $B$3$l$i$N;0$D$N9gCW$N%-!<$O(B @code{From} $B%X%C%@!<(B ($B$J$I(B) $B$HF1$89gCW$N7?$r(B
@@ -19665,8 +19663,8 @@ Date ($BF|IU(B) $B%X%C%@!<$K$O;0$D$N$J$s$H$J$/$P$+$2$F$$$k9gCW$N7?$,$"$j$^$9
 $B$$$/$D$+$N5-;v$,40A4$J(B @code{References} $B%X%C%@!<$r;}$C$F$$$J$+$C$?$H$7(B
 $B$F$b!"%9%l%C%IA4BN$N%9%3%"$r>e$2(B/$B2<$2$G$-$k$3$H$rJ]>Z$7$^$9!#$3$l$r;H$&(B
 $B$H!"%9%l%C%I$N5-;v$K7hDjE*$G$J$$%9%3%"$,IU$/$+$b$7$l$J$$$H$$$&$3$H$KCm0U(B
-$B$7$F$/$@$5$$!#(B($B$3$N9gCW%-!<$r;H$&$H!"(B@file{ADAPT} $B%U%!%$%k$r:n$k$3$H$K$J(B
-$B$j$^$9!#(B)
+$B$7$F2<$5$$!#(B($B$3$N9gCW%-!<$r;H$&$H!"(B@file{ADAPT} $B%U%!%$%k$r:n$k$3$H$K$J$j(B
+$B$^$9!#(B)
 @end table
 @end enumerate
 
@@ -19712,8 +19710,8 @@ Date ($BF|IU(B) $B%X%C%@!<$K$O;0$D$N$J$s$H$J$/$P$+$2$F$$$k9gCW$N7?$,$"$j$^$9
 @item orphan
 $B$3$NEPO?$NCM$O?tCM$G$"$k$Y$-$G$9!#?F5-;v$r;}$?$J$$5-;v$O%9%3%"$K$3$N?tCM(B
 $B$,2C$($i$l$^$9!#(B@samp{comp.lang.c} $B$N$h$&$JNL$NB?$$%K%e!<%9%0%k!<%W$rDI(B
-$B$$$+$1$F$$$k$H$7$F$/$@$5$$!#$*$=$i$/Fs!";0$N%9%l%C%I$H?7$7$$%9%l%C%I$@$1(B
-$B$rDI$$$?$$$G$7$g$&!#(B
+$B$$$+$1$F$$$k$H$7$F2<$5$$!#$*$=$i$/Fs!";0$N%9%l%C%I$H?7$7$$%9%l%C%I$@$1$r(B
+$BDI$$$?$$$G$7$g$&!#(B
 
 $B0J2<$N;0$D$N%9%3%"%U%!%$%kEPO?$K$h$C$F$=$l$r$9$k$3$H$,$G$-$^$9(B:
 
@@ -19756,7 +19754,7 @@ ignore)} $B$rE,1~%9%3%"$r$7$?$/$J$$%0%k!<%W$KA^F~$9$k$G$7$g$&!#>/$7$N%0%k!<(B
 $B$=$l$>$l$N(B @var{var} $B$O8=:_$N35N,%P%C%U%!!<$N%P%C%U%!!<8GM-$K$J$j!";XDj(B
 $B$5$l$?CM(B (value) $B$K@_Dj$5$l$^$9!#$3$l$OJXMx$J!"$b$7>/$7JQ$@$H$7$F$b!"%U%C(B
 $B%/$r$"$^$j9%$^$J$$$$$/$D$+$N%0%k!<%W$GJQ?t$r@_Dj$9$kJ}K!$G$9!#(B
-@var{value} $B$OI>2A$5$l$J$$$3$H$KCm0U$7$F$/$@$5$$!#(B
+@var{value} $B$OI>2A$5$l$J$$$3$H$KCm0U$7$F2<$5$$!#(B
 @end table
 
 @node Score File Editing
@@ -19791,7 +19789,7 @@ ignore)} $B$rE,1~%9%3%"$r$7$?$/$J$$%0%k!<%W$KA^F~$9$k$G$7$g$&!#>/$7$N%0%k!<(B
 $B$K$=$l$r$7$^$9!#(B
 @end table
 
-$B$3$N%b!<%I$r;H$&$?$a$K$O(B @kbd{M-x gnus-score-mode} $B$HBG$C$F$/$@$5$$!#(B
+$B$3$N%b!<%I$r;H$&$?$a$K$O(B @kbd{M-x gnus-score-mode} $B$HBG$C$F2<$5$$!#(B
 
 @vindex gnus-score-mode-hook
 @code{gnus-score-menu-hook} $B$,%9%3%"%b!<%I%P%C%U%!!<$G<B9T$5$l$^$9!#(B
@@ -19808,14 +19806,14 @@ ignore)} $B$rE,1~%9%3%"$r$7$?$/$J$$%0%k!<%W$KA^F~$9$k$G$7$g$&!#>/$7$N%0%k!<(B
 $B$^$9!#$$$d$`$7$m!"?M9)L5G=$K$h$C$F!"$H$$$&J}$,@53N$+$J!#(B
 
 @vindex gnus-use-adaptive-scoring
-$B5-;v$rFI$s$@$H$-!"$"$k$$$O5-;v$K4{FI$N0u$r$D$1$?$H$-!"5-;v$r:o=|$7$?$H$-(B
-$B$K!"$=$N0u$r;D$7$F$*$$$F$/$@$5$$!#%0%k!<%W$+$i=P$k$H$-$K(B Gnus $B$O!"$=$l$i(B
-$B$N0u$NJU$j$rSL$.2s$j!"2?$N0u$r8+$D$1$?$+$K0MB8$7$F%9%3%"MWAG$rDI2C$7$^$9!#(B
+$B5-;v$rFI$s$@$H$-!"$"$k$$$O5-;v$K4{FI$N0u$rIU$1$?$H$-!"5-;v$r:o=|$7$?$H$-(B
+$B$K!"$=$N0u$r;D$7$F$*$$$F2<$5$$!#%0%k!<%W$+$i=P$k$H$-$K(B Gnus $B$O!"$=$l$i$N(B
+$B0u$NJU$j$rSL$.2s$j!"2?$N0u$r8+$D$1$?$+$K0MB8$7$F%9%3%"MWAG$rDI2C$7$^$9!#(B
 $B$3$N5!G=(B
 $B$O(B @code{gnus-use-adaptive-scoring} $B$r(B @code{t} $B$+(B @code{(line)} $B$K@_Dj(B
 $B$9$k$3$H$GM-8z$K$J$j$^$9!#$b$7%9%3%"$r!"I=Bj$K8=$l$k8DJL$NC18l$r$b$H$KE,(B
-$B1~$5$;$?$1$l$P!"$3$NJQ?t$r(B @code{(word)} $B$K@_Dj$7$F$/$@$5$$!#N>J}$NE,1~(B
-$BJ}K!$r;H$$$?$1$l$P!"$3$NJQ?t$r(B @code{(wordline)} $B$K@_Dj$7$F$/$@$5$$!#(B
+$B1~$5$;$?$1$l$P!"$3$NJQ?t$r(B @code{(word)} $B$K@_Dj$7$F2<$5$$!#N>J}$NE,1~J}(B
+$BK!$r;H$$$?$1$l$P!"$3$NJQ?t$r(B @code{(wordline)} $B$K@_Dj$7$F2<$5$$!#(B
 
 @vindex gnus-default-adaptive-score-alist
 @code{gnus-default-adaptive-score-alist} $BJQ?t$r%+%9%?%^%$%:$9$k$3$H$G!"(B
@@ -19849,7 +19847,7 @@ ignore)} $B$rE,1~%9%3%"$r$7$?$/$J$$%0%k!<%W$KA^F~$9$k$G$7$g$&!#>/$7$N%0%k!<(B
 @code{gnus-del-mark} $B$rNc$K<h$j$^$7$g$&(B---$B$3$NO"A[%j%9%H$G$N0UL#$O!"$3$N(B
 $B0u(B ($B$9$J$o$A(B @samp{e} $B$N0u(B) $B$,$D$$$F$$$k5-;v$O$9$Y$F!"(B@code{From} $B%X%C%@!<(B
 $B$r$b$H$K(B -4 $B2<$2$i$l(B @code{Subject} $B$G(B -1 $B2<$2$i$l$k%9%3%"9`L\$,DI2C$5$l(B
-$B$^$9!#$3$l$r$"$J$?$NJP8+$K9g$o$;$FJQ99$7$F$/$@$5$$!#(B
+$B$^$9!#$3$l$r$"$J$?$NJP8+$K9g$o$;$FJQ99$7$F2<$5$$!#(B
 
 $B$b$7(B 10 $B8D$N5-;v$KF1$8(B subject $B$G(B @code{gnus-del-mark} $B$N0u$,$D$$$F$$$?(B
 $B$H$9$k$H!"$3$N0u$KBP$9$k5,B'$O==2sE,MQ$5$l$^$9!#$=$l$O$D$^$j!"$=(B
@@ -19857,11 +19855,11 @@ ignore)} $B$rE,1~%9%3%"$r$7$?$/$J$$%0%k!<%W$KA^F~$9$k$G$7$g$&!#>/$7$N%0%k!<(B
 $B$J$$$+$.$j!"(B-10 $B$N$O$:$G$9!#(B
 
 $B$b$7<+F04|8B@Z$l>C5n(B ($B%a!<%k(B) $B%0%k!<%W(B (@pxref{Expiring Mail}) $B$,$"$l$P!"(B
-$B4{FI5-;v$K$O$9$Y$F(B @samp{E} $B0u$,$D$1$i$l$^$9!#$3$l$O$*$=$i$/!"E,1~@-%9%3(B
+$B4{FI5-;v$K$O$9$Y$F(B @samp{E} $B0u$,IU$1$i$l$^$9!#$3$l$O$*$=$i$/!"E,1~@-%9%3(B
 $B%"IU$1$r$A$g$C$H$P$+$jIT2DG=$K$9$k$N$G!"<+F04|8B@Z$l>C5n$HE,1~@-%9%3%"$O(B
 $B0l=o$K$O$&$^$/$d$C$F$$$1$^$;$s!#(B
 
-$B%9%3%"$r$D$1$i$l$k%X%C%@!<$K$O(B @code{from}, @code{subject},
+$B%9%3%"$rIU$1$i$l$k%X%C%@!<$K$O(B @code{from}, @code{subject},
 @code{message-id}, @code{references}, @code{xref}, @code{lines},
 @code{chars}, @code{date} $B$,$"$j$^$9!#$5$i$K(B @code{followup} $B$K$b%9%3%"(B
 $BIU$1$G$-$^$9!#$3$l$O8=:_$N5-;v$N(B @code{Message-ID} $B$r;HMQ$7(B
@@ -19919,7 +19917,7 @@ ignore)} $B$rE,1~%9%3%"$r$7$?$/$J$$%0%k!<%W$KA^F~$9$k$G$7$g$&!#>/$7$N%0%k!<(B
 @vindex gnus-ignored-adaptive-words
 @code{gnus-default-ignored-adaptive-words} $B$N%j%9%H$K8=$l$kC18l$OL5;k$5(B
 $B$l$^$9!#L5;k$7$?$$C18l$rDI2C$7$?$$$H$-$O!"$3$NJQ?t$G$O$J(B
-$B$/(B @code{gnus-ignored-adaptive-words} $B%j%9%H$NJ}$r;H$C$F$/$@$5$$!#(B
+$B$/(B @code{gnus-ignored-adaptive-words} $B%j%9%H$NJ}$r;H$C$F2<$5$$!#(B
 
 @vindex gnus-adaptive-word-length-limit
 $BC;$$C18l$G$OE,1~@-%9%3%"$r:nF0$5$;$k$Y$-$G$O$J$$$H;W$&?M$b$$$k$G$7$g$&!#(B
@@ -19949,8 +19947,8 @@ Gnus $B$O%0%k!<%WL>$N$9$Y$F$N8l$K$D$$$F!"C18lE,1~@-%9%3%"$r$7$^$;$s!#$[$H(B
 $BNI$/$J$$$+$J!#(B
 
 $BC18lE,1~@-%9%3%"IU$1$OHs>o$K<B83E*$J$b$N$G$"$C$F!":#8eJQ99$5$l$k$G$"$m$&(B
-$B$H$$$&$3$H$O?4$KN1$a$F$*$$$F$/$@$5$$!#Bh0l0u>]$G$O!"$3$l$O8=>u$G$O$^$C$?(B
-$B$/;H$$J*$K$J$i$J$$$h$&$K;W$($^$9!#$3$l$r$b$C$H;H$($k$h$&$K$9$k$?$a$K$O!"(B
+$B$H$$$&$3$H$O?4$KN1$a$F$*$$$F2<$5$$!#Bh0l0u>]$G$O!"$3$l$O8=>u$G$O$^$C$?$/(B
+$B;H$$J*$K$J$i$J$$$h$&$K;W$($^$9!#$3$l$r$b$C$H;H$($k$h$&$K$9$k$?$a$K$O!"(B
 ($B$h$j87L)$JE}7WE*<jK!$r4,$-E:$($K$7$F(B) $B$5$i$J$k:n6H$,I,MW$H$J$k$G$7$g$&!#(B
 
 @node Home Score File
@@ -20167,10 +20165,10 @@ Gnus $B$r:F5/F0$7$F!"(B@kbd{M-x nnml-generate-nov-databases} $B%3%^%s%I(B
 $B$9$,!"%9%3%"%U%!%$%kKh$K0l$DA*$s$G$=$l$K8GDj$7$?J}$,NI$$$G$9!#$b$7Fs$D$r(B
 $B;H$&$H!"$=$l$>$l$N5-;v$O(B @emph{$BFs2s(B} $B<hF@$5$l$F$7$^$$$^$9!#$b(B
 $B$7(B @code{Head} $B$+$i$A$g$C$H$@$1!"(B@code{Body} $B$+$i$A$g$C$H$@$19gCW$5$;$?(B
-$B$$!"$H$$$&$N$G$"$l$P!"AGD>$K(B @code{All} $B$r;H$C$FA4It9gCW$5$;$F$/$@$5$$!#(B
+$B$$!"$H$$$&$N$G$"$l$P!"AGD>$K(B @code{All} $B$r;H$C$FA4It9gCW$5$;$F2<$5$$!#(B
 
 @item $B4{FI$N0uIU$1(B
-$B$"$k0lDj?tCM0J2<$N%9%3%"$r;}$D5-;v$K$O!"$*$=$i$/4{FI$N0u$r$D$1$F$7$^$$$?(B
+$B$"$k0lDj?tCM0J2<$N%9%3%"$r;}$D5-;v$K$O!"$*$=$i$/4{FI$N0u$rIU$1$F$7$^$$$?(B
 $B$/$J$k$G$7$g$&!#$3$l$O(B @file{all.SCORE} $B%U%!%$%k$K0J2<$N$b$N$rF~$l$F$*$/(B
 $B$3$H$K$h$C$F:G$b4JC1$K<B8=$G$-$^$9!#(B
 
@@ -20183,7 +20181,7 @@ Gnus $B$r:F5/F0$7$F!"(B@kbd{M-x nnml-generate-nov-databases} $B%3%^%s%I(B
 @item $BH]DjJ8;z%/%i%9(B
 $B$b$7(B @code{[^abcd]*} $B$_$?$$$J$b$N$r;XDj$9$k$H!"$?$V$s4|BTDL$j$N7k2L$OF@(B
 $B$i$l$J$$$G$7$g$&!#$3$l$O2~9TJ8;z$K$b9gCW$7$F$7$^$$!"$(!<$H!"L$CN$N@$3&$^(B
-$B$GB3$/$+$b$7$l$^$;$s!#Be$o$j$K(B @code{[^abcd\n]*} $B$r;H$C$F$/$@$5$$!#(B
+$B$GB3$/$+$b$7$l$^$;$s!#Be$o$j$K(B @code{[^abcd\n]*} $B$r;H$C$F2<$5$$!#(B
 @end table
 
 @node Reverse Scoring
@@ -20202,7 +20200,7 @@ Gnus $B$r:F5/F0$7$F!"(B@kbd{M-x nnml-generate-nov-databases} $B%3%^%s%I(B
 @end lisp
 
 $B$=$7$F(B @samp{Sex with Emacs} $B$K9gCW$9$k$9$Y$F$N5-;v$r=8$a$F!";D$j$r=3Ht(B
-$B$P$9$?$a$K4{FI$N0u$r$D$1!">C5n$7$^$9!#(B
+$B$P$9$?$a$K4{FI$N0u$rIU$1!">C5n$7$^$9!#(B
 
 @node Global Score Files
 @section $B%0%m!<%P%k%9%3%"%U%!%$%k(B
@@ -20248,10 +20246,10 @@ Gnus $B$r:F5/F0$7$F!"(B@kbd{M-x nnml-generate-nov-databases} $B%3%^%s%I(B
 $B$j$^$9!#(B($B$D$^$j(B---$B$+$J$j!"$G$9$1$I(B)
 
 $B$b$7%9%3%"%U%!%$%k$r!"B>$N?M$?$A$K;H$C$F$b$i$&$h$&$K0];}$7$?$/$J$C$F$-$?(B
-$B$i!"C1$K$"$J$?$N%9%3%"%U%!%$%k$rF?L>(B FTP $B$KCV$$$F!"@$3&Cf$K8xI=$7$F$/$@(B
-$B$5$$!#5U;J2q<T$K$J$l$k$h(B! $B$=$N8e$KB3$$$F4V0c$$$J$/5/$3$k5U;J2q<T@oAh!"$9(B
-$B$J$o$A?M!9$N6&46$r>!$A<h$k$?$a$N5U;J2q<T$N@o$$$K;22C$9$k$3$H$G!"H`$i$N%9(B
-$B%3%"%U%!%$%k$K4V0c$C$?A0Ds$r;H$o$;$k$h$&$KM6F3$9$k$N$@(B! $B$d$C$?(B! $B$3$l$G%M%C(B
+$B$i!"C1$K$"$J$?$N%9%3%"%U%!%$%k$rF?L>(B FTP $B$KCV$$$F!"@$3&Cf$K8xI=$7$F2<$5(B
+$B$$!#5U;J2q<T$K$J$l$k$h(B! $B$=$N8e$KB3$$$F4V0c$$$J$/5/$3$k5U;J2q<T@oAh!"$9$J(B
+$B$o$A?M!9$N6&46$r>!$A<h$k$?$a$N5U;J2q<T$N@o$$$K;22C$9$k$3$H$G!"H`$i$N%9%3(B
+$B%"%U%!%$%k$K4V0c$C$?A0Ds$r;H$o$;$k$h$&$KM6F3$9$k$N$@(B! $B$d$C$?(B! $B$3$l$G%M%C(B
 $B%H$O5_$o$l$k(B!
 
 $B0J2<$K!"5U;J2q<T$J$j$?$,$j$N$?$a$NHk5;$r$$$/$D$+!"B(@J$G=R$Y$^$9!#(B
@@ -20308,7 +20306,7 @@ Gnus $B$O$^$@!"$"$N$&$6$C$?$$8E$$>C5n%U%!%$%k$r%5%]!<%H$7$F$$$^$9!#<B:]>C(B
 (gnus-expunge "X")
 @end lisp
 
-$B$3$l$O;d$,=q$$$?$9$Y$F$N5-;v$K4{FI$N0u$r$D$1!"35N,%P%C%U%!!<$+$i0u$N$D$$(B
+$B$3$l$O;d$,=q$$$?$9$Y$F$N5-;v$K4{FI$N0u$rIU$1!"35N,%P%C%U%!!<$+$i0u$N$D$$(B
 $B$?5-;v$r:o=|$7$^$9!#$H$C$F$bJXMx$G$9!#$"$J$?$b$=$&;W$&$G$7$g!#(B
 
 $BB>$N%W%m%0%i%`$G$O$^$C$?$/0c$&>C5n%U%!%$%k$N9=J8$r;H$C$F$$$^$9!#$b(B
@@ -20368,7 +20366,7 @@ Gnus $B$O$^$@!"$"$N$&$6$C$?$$8E$$>C5n%U%!%$%k$r%5%]!<%H$7$F$$$^$9!#<B:]>C(B
 $B%k%H$G$O(B @code{(gnus-apply-kill-file)} $B$G$9!#$b$7F1$8%0%k!<%W$KBP$7$F%9(B
 $B%3%"%U%!%$%k$,$"$k>l9g$K$O>C5n%U%!%$%k$rL5;k$7$?$1$l$P!"$3$N%U%C%/(B
 $B$r(B @code{(gnus-apply-kill-file-unless-scored)} $B$K@_Dj$7$^$9!#>C5n%U%!%$(B
-$B%k$r=hM}$5$;$?$/$J$1$l$P!"$3$NJQ?t$r(B @code{nil} $B$K@_Dj$7$F$/$@$5$$!#(B
+$B%k$r=hM}$5$;$?$/$J$1$l$P!"$3$NJQ?t$r(B @code{nil} $B$K@_Dj$7$F2<$5$$!#(B
 
 @item gnus-kill-file-mode-hook
 @vindex gnus-kill-file-mode-hook
@@ -20392,8 +20390,8 @@ Gnus $B$O$^$@!"$"$N$&$6$C$?$$8E$$>C5n%U%!%$%k$r%5%]!<%H$7$F$$$^$9!#<B:]>C(B
 
 $B$b$7$"$J$?$N>C5n%U%!%$%k$,Hs>o$KJ#;($J$b$N$G$"$l$P(B---$B$=$l(B
 $B$K(B @code{gnus-kill} $B7A<00J30$N$b$N$,$?$/$5$s4^$^$l$F$$$l$P!"$=$l$i$r<j$G(B
-$BJQ49$7$J$1$l$P$J$j$^$;$s!#$"$k$$$OC1$K$=$l$i$r!"$=$N$^$^$K$7$F$*$$$F$/$@(B
-$B$5$$!#(BGnus $B$O0JA0F1MM$K$=$l$i$r;H$C$F$/$l$k$G$7$g$&!#(B
+$BJQ49$7$J$1$l$P$J$j$^$;$s!#$"$k$$$OC1$K$=$l$i$r!"$=$N$^$^$K$7$F$*$$$F2<$5(B
+$B$$!#(BGnus $B$O0JA0F1MM$K$=$l$i$r;H$C$F$/$l$k$G$7$g$&!#(B
 
 @node Advanced Scoring
 @section $B>e5i%9%3%"IU$1(B
@@ -20626,9 +20624,9 @@ and `gnus-score-decay-scale'."
 60 $B$h$jBg$-$$%9%3%"$O%9%3%"$N(B 5% $B$K8:$i$5$l$^$9!#(B
 @end enumerate
 
-$B$b$7$3$NIeGT4X?t$r9%$-$G$J$$$J$i!"<+J,<+?H$N4X?t$r=q$$$F$/$@$5$$!#$=$l$O(B
-$BIeGT$9$k$Y$-%9%3%"$rM#0l$N0z?t$H$7$F8F$P$l!"@0?t$G$"$k$Y$-?7$7$$%9%3%"$r(B
-$BJV$5$J$1$l$P$J$j$^$;$s!#(B
+$B$b$7$3$NIeGT4X?t$r9%$-$G$J$$$J$i!"<+J,<+?H$N4X?t$r=q$$$F2<$5$$!#$=$l$OIe(B
+$BGT$9$k$Y$-%9%3%"$rM#0l$N0z?t$H$7$F8F$P$l!"@0?t$G$"$k$Y$-?7$7$$%9%3%"$rJV(B
+$B$5$J$1$l$P$J$j$^$;$s!#(B
 
 Gnus $B$O0lF|$K0l2s%9%3%"$rIeGT$5$;$h$&$H$7$^$9!#Nc$($P!"$b$7(B Gnus $B$r;MF|(B
 $B4V<B9T$7$F$$$J$$$H!"(BGnus $B$O;M2s%9%3%"$rIe$i$;$^$9!#(B
@@ -20711,8 +20709,7 @@ Gnus $B$O0lF|$K0l2s%9%3%"$rIeGT$5$;$h$&$H$7$^$9!#Nc$($P!"$b$7(B Gnus $B$r;MF|
 $B$N(B @kbd{d} ($B$3$l$O8=:_$N5-;v$K4{FI$N0u$rIU$1$^$9(B) $B$O%G%#%U%)%k%H$G$O0u$r(B
 $BIU$1$?8e$K<!$NL$FI5-;v$K0\F0$9$k$N$G!"(B@kbd{3 d} $B$O35N,%P%C%U%!!<$,$I$N$h(B
 $B$&$G$"$C$F$b!"<!$N;0$D$NL$FI5-;v$r4{FI$K$7$^$9!#$b$C$HJ,$+$j$d$9$$F0:n$N(B
-$B$?$a$K$O(B @code{gnus-summary-goto-unread} $B$r(B @code{nil} $B$K@_Dj$7$F$/$@$5(B
-$B$$!#(B
+$B$?$a$K$O(B @code{gnus-summary-goto-unread} $B$r(B @code{nil} $B$K@_Dj$7$F2<$5$$!#(B
 
 $BB?$/$N%3%^%s%I$O%W%m%;%9(B/$B@\F,0z?t$N=,47$r;H$$$^$;$s!#$H$$$&$3$H$O!"$3$N(B
 $B%^%K%e%"%k$G$O$C$-$j$H=R$Y$F$$$^$9!#%W%m%;%9(B/$B@\F,0z?t$N=,47$r;H$o$J$$%3(B
@@ -20783,7 +20780,7 @@ Gnus $B$r=*N;$9$kA0$K3NG'$rMW5a$7$^$9!#$3$NJQ?t$O%G%#%U%)%k%H(B
 $B%k@\F,0z?t$rLrN)$F$F$$$k$o$1$G$O$"$j$^$;$s!#(B
 
 $B$b$7$I$N$h$&$K(B Gnus $B$,$3$l$r<BAu$7$F$$$k$+$K6=L#$,$"$k$J$i!"(B
-@ref{Extended Interactive} $B$r8+$F$/$@$5$$!#(B
+@ref{Extended Interactive} $B$r8+$F2<$5$$!#(B
 
 @node Formatting Variables
 @section $B=qK!;EMMJQ?t(B
@@ -20966,7 +20963,7 @@ Gnus $B$O4X?t(B @code{gnus-user-format-function-}@samp{foo} $B$r8F$S=P$7$^$9!
 @samp{%@{} $B$H(B @samp{%@}} $B;XDj$N4V$NJ8>O$O(B @code{gnus-face-0} $B$r;H$C$FIa(B
 $BDL$N%U%'!<%9$,@_Dj$5$l!"$=$l$O%G%#%U%)%k%H$G(B @code{bold} $B$G$9!#$b(B
 $B$7(B @samp{%@{1} $B$H$7$?$J$i!"Be$o$j$K(B @code{gnus-face-1} $B$rF@!"0J2<F1MM$G(B
-$B$9!#M_$7$$$@$1$?$/$5$s$N%U%'!<%9$r:n$C$F$/$@$5$$!#F1$8$3$H(B
+$B$9!#M_$7$$$@$1$?$/$5$s$N%U%'!<%9$r:n$C$F2<$5$$!#F1$8$3$H(B
 $B$,(B @code{mouse-face} $B;XDj$K$b8@$($^(B
 $B$9(B---@samp{hello} $B$,(B @code{gnus-mouse-face-3} $B$G%^%&%9!]%O%$%i%$%H$5$l$k(B
 $B$?$a$K$O!"(B@samp{%3(hello%)} $B$H$9$k$3$H$,$G$-$^$9!#(B
@@ -20979,7 +20976,7 @@ Gnus $B$O4X?t(B @code{gnus-user-format-function-}@samp{foo} $B$r8F$S=P$7$^$9!
 $B$k%F%-%9%H$N>e$rDL2a$9$k$H!"%P%k!<%s%&%#%s%I%&$,8=$l$F!"J8;zNs$rI=<($7$^(B
 $B$9!#$3$l$N>\$7$$>pJs$O(B @xref{Tooltips, ,Tooltips, emacs, The Emacs
 Editor}, (GNU Emacs) $B$^$?$O(B @code{balloon-help-mode} (XEmacs) $B$N@bL@J8;z(B
-$BNs$r;2>H$7$F$/$@$5$$!#(B($B5;=QE*$JM}M3$N$?$a$K!"%.%#%a(B (guillemets:
+$BNs$r;2>H$7$F2<$5$$!#(B($B5;=QE*$JM}M3$N$?$a$K!"%.%#%a(B (guillemets:
 @footnote{guillemets ($BJ)8l(B) $B$O%.%e%a$H$bI=5-$5$l$^$9!#F|K\8l$N!V!W$KEv$?(B
 $B$k$b$N$G!"8}F,I=8=$rI=5-$7$?$j!"6/D4$7$?$$C18l$r0O$`!"2?$+$+$i$N0zMQItJ,(B
 $B$r0O$`!"=qJ*Ey$N%?%$%H%k$r5-$9EyMM!9$K;H$o$l$^$9!#(B}) $B$O$3$N@a$G(B
@@ -21006,10 +21003,10 @@ Editor}, (GNU Emacs) $B$^$?$O(B @code{balloon-help-mode} (XEmacs) $B$N@bL@J8;
 @end lisp
 
 $B$"$J$?$,$3$N0F$r;H$C$F40A4$KFI$a$J$/$FHs>o$K2<IJ$JI=<($r:n$k$3$H$,$G$-$k(B
-$B$H3N?.$7$F$$$^$9!#3Z$7$s$G$/$@$5$$(B!
+$B$H3N?.$7$F$$$^$9!#3Z$7$s$G2<$5$$(B!
 
 @samp{%(} $B;XDj(B ($B$d$=$NN`$N$b$N(B) $B$O%b!<%I9TJQ?t$G$O$^$C$?$/0UL#$r$J$5$J$$(B
-$B$3$H$KCm0U$7$F$/$@$5$$!#(B
+$B$3$H$KCm0U$7$F2<$5$$!#(B
 
 @node Positioning Point
 @subsection $B%]%$%s%H$N0\F0(B
@@ -21078,7 +21075,7 @@ Gnus $B$ODL>o$[$H$s$I$N%P%C%U%!!<$G!"%]%$%s%H$r3F9T$N$"$i$+$8$a7h$a$i$l$?(B
 $B$G(B @code{t} $B$G$9!#(B
 
 $B$3$NJQ?t$r(B @code{nil} $B$K@_Dj$9$k$N$O$=$l$J$j$KF0:n$7$^$9$,!"LdBj$b$"$j$^(B
-$B$9!#4m81$r3P8g$N>e$G;H$C$F$/$@$5$$!#(B
+$B$9!#4m81$r3P8g$N>e$G;H$C$F2<$5$$!#(B
 
 @vindex gnus-buffer-configuration
 @code{gnus-buffer-configuration} $B$O$=$l$>$l$N(B Gnus $B$N%P%C%U%!!<$,$I$N$/(B
@@ -21632,14 +21629,14 @@ Gnus $B$O$5$^$6$^$J@)8f;R(B @dfn{handlers} $B$rDj5A$9$k$3$H$K$h$C$F$=$N$h$&$J
 @code{gnus-demon-add-scan-timestamps}, @code{gnus-demon-add-rescan},
 @code{gnus-demon-add-scanmail} $B$G(B
 $B$9!#$3$l$i$NG=NO$,M_$7$1$l$P!"C1$K$3$l$i$N4X?t$r(B @file{~/.gnus.el} $B$KF~(B
-$B$l$F$/$@$5$$!#(B
+$B$l$F2<$5$$!#(B
 
 @findex gnus-demon-init
 @findex gnus-demon-cancel
 @vindex gnus-demon-handlers
 $B$b$7(B @code{gnus-demon-handlers} $B$G@)8f;R$rD>@\DI2C$7$?>l9g$K$O!"$=$l$r8z(B
-$B$+$;$k$?$a$K(B @code{gnus-demon-init} $B$r<B9T$7$F$/$@$5$$!#$9$Y$F$N%G!<%b%s(B
-$B$r<h$j>C$9$K$O!"(B@code{gnus-demon-cancel} $B4X?t$r;H$&$3$H$,$G$-$^$9!#(B
+$B$+$;$k$?$a$K(B @code{gnus-demon-init} $B$r<B9T$7$F2<$5$$!#$9$Y$F$N%G!<%b%s$r(B
+$B<h$j>C$9$K$O!"(B@code{gnus-demon-cancel} $B4X?t$r;H$&$3$H$,$G$-$^$9!#(B
 
 $B%G!<%b%s$NDI2C$O!"$d$j$9$.$k$N$O$H$C$F$b$*9T57$N$h$/$J$$$3$H$G$9!#$9$Y$F(B
 $B$N%5!<%P!<$+$i$9$Y$F$N%K%e!<%9$H%a!<%k$rFsICKh$KD4$Y$^$o$94X?t$rIU$12C$((B
@@ -21834,7 +21831,7 @@ Gnus $B$O!"MxMQ<T$,2?$r$9$k$+$r21$($F$*$-!"$=$NMxMQ<T$NF0:n$N5U$r9T$J$&F0(B
 $B$b$7$"$J$?$,;J2q<T(B ($B%b%G%l!<%?!<(B) $B$J$i$P!"(B@file{gnus-mdrtn.el} $B%Q%C%1!<(B
 $B%8$r;H$&$3$H$,$G$-$^$9!#$3$l$OI8=`(B Gnus $B%Q%C%1!<%8$K$O4^$^$l$^$;$s!#(B
 @samp{larsi@@gnus.org} $B$K!"$I$N%0%k!<%W$N;J2q$r9T$J$&$N$+$r=R$Y$?%a!<%k(B
-$B$r=q$$$F$/$@$5$$!#$=$&$9$l$P%3%T!<$r<j$KF~$l$i$l$^$9!#(B
+$B$r=q$$$F2<$5$$!#$=$&$9$l$P%3%T!<$r<j$KF~$l$i$l$^$9!#(B
 
 $B;J2q<TMQ%Q%C%1!<%8$O35N,%P%C%U%!!<$N%^%$%J!<%b!<%I$H$7$F<BAu$5$l$F$$$^$9!#(B
 
@@ -21842,7 +21839,7 @@ Gnus $B$O!"MxMQ<T$,2?$r$9$k$+$r21$($F$*$-!"$=$NMxMQ<T$NF0:n$N5U$r9T$J$&F0(B
 (add-hook 'gnus-summary-mode-hook 'gnus-moderate)
 @end lisp
 
-$B$r$"$J$?$N(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F$/$@$5$$!#(B
+$B$r$"$J$?$N(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F2<$5$$!#(B
 
 $B$"$J$?$,(B @samp{rec.zoofle} $B$N;J2q<T$@$H$9$k$H!"$3$l$O0J2<$N$h$&$KF0:n$9(B
 $B$k$h$&$K$J$C$F$$$^$9!#(B
@@ -22075,7 +22072,7 @@ Gnus $B$O(B 2$B!A(B3 $B$N4X?t$HJQ?t$rDs6!$7$^$9!#(B
 $B$F$$$k%Q%C%1!<%8$O8=:_(B Gnus $B$@$1$J$N$G!"$3$3$G@bL@$7$^$9!#(B
 
 $B$R$H$3$H$G8@$($P(B---Gnus $B$G%9%^%$%j!<$r;H$&$K$O!"0J2<(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$K=q$$$F$/$@$5$$!#(B
+$B$r(B @file{~/.gnus.el} $B%U%!%$%k$K=q$$$F2<$5$$!#(B
 
 @lisp
 (setq gnus-treat-display-smileys t)
@@ -22399,8 +22396,8 @@ Spam $B$KBP=h$9$k0l$D$NJ}K!$O!"(BGnus $B$K$9$Y$F$N(B spam $B$r(B @samp{spa
 $B$O(B @samp{larsi@@trym.ifi.uio.no} $B$rA*$S$^$7$?$,!"(B
 @samp{larsi+usenet@@ifi.uio.no} $B7A<0$N$?$/$5$s$N%"%I%l%9$NJ}$,NI$$A*Br$G(B
 $B$9!#$"$J$?$N%5%$%H$N(B sendmail $B$N@_Dj$,%a!<%k%"%I%l%9$N%m!<%+%kIt$H$7$F$I(B
-$B$s$J%-!<%o!<%I$r<u$1IU$1$k$+$O!"$"$J$?$N%5%$%H$N%7%9%F%`4IM}<T$KJ9$$$F$/(B
-$B$@$5$$!#(B)
+$B$s$J%-!<%o!<%I$r<u$1IU$1$k$+$O!"$"$J$?$N%5%$%H$N%7%9%F%`4IM}<T$KJ9$$$F2<(B
+$B$5$$!#(B)
 
 @lisp
 (setq message-default-news-headers
@@ -23063,7 +23060,7 @@ Spam $B$,0\F0$G$-$J$$>l9g(B ($BNc$($P(B @acronym{NNTP} $B$N$h$&$JFI$_9~$_@l
 Ham $B$H(B spam $B$K4X$9$kLdBj$O!"(BGnus $B$,%G%#%U%)%k%H$G$O$3$N=hM}$rDI@W$7$F$/(B
 $B$l$J$$$3$H$G$9!#=hM}$5$l$?5-;v$rDI@W$7!"$+$DJ#?t2s$K$o$?$C$F=hM}$9$k$3$H(B
 $B$r2sHr$9$k$?$a$K(B @code{spam.el} $B$,(B @code{gnus-registry.el} $B$r;H$&$h$&$K!"(B
-@code{spam-log-to-registry} $BJQ?t$rM-8z$K$7$F$/$@$5$$!#EPO??t$r@)8B$9$k$H!"(B
+@code{spam-log-to-registry} $BJQ?t$rM-8z$K$7$F2<$5$$!#EPO??t$r@)8B$9$k$H!"(B
 $B@)8B$,L5$$>l9g$N$h$&$KF0:n$7$J$$$3$H$r3P$($F$*$$$F2<$5$$!#(B
 
 @vindex spam-mark-only-unseen-as-spam
@@ -23581,7 +23578,7 @@ Gmane $B$O(B @uref{http://gmane.org} $B$G8+$D$1$k$3$H$,$G$-$^$9!#(B
 @defvar spam-use-bogofilter
 
 Eric Raymond $B$N?WB.$J(B Bogofilter $B$r(B @code{spam-split} $B$K;HMQ$7$?$$>l9g$O!"(B
-$B$3$NJQ?t$r%;%C%H$7$F$/$@$5$$!#(B
+$B$3$NJQ?t$r%;%C%H$7$F2<$5$$!#(B
 
 Spam $B5-;v$@$1$N(B @samp{$} $B0u$r4XO"IU$1$k:G>.$N@$OC$K$h$C$F!"(BBogofilter $B%H(B
 $B%l!<%K%s%0$O$9$Y$F$+$J$j<+F0E*$K$J$j$^$9!#3F%+%F%4%j!<$N(B spam $B$+$=$&$G$J(B
@@ -23606,7 +23603,7 @@ Path $B$K(B @code{bogofilter} $B$N<B9T%U%!%$%k$,L5$$>l9g!"(BBogofilter $B$N
 
 $B%a%C%;!<%8%X%C%@!<$@$1$rD4$Y$k$?$a$K(B Eric Raymond $B$N?WB.(B
 $B$J(B Bogofilter $B$r(B @code{spam-split} $B$K;HMQ$7$?$$>l9g$O!"$3$NJQ?t$r%;%C%H(B
-$B$7$F$/$@$5$$!#$3$l$O(B @code{spam-use-bogofilter} $B$HF1$8$h$&$KF0:n$7$^$9$,!"(B
+$B$7$F2<$5$$!#$3$l$O(B @code{spam-use-bogofilter} $B$HF1$8$h$&$KF0:n$7$^$9$,!"(B
 $B$"$i$+$8$a(B @code{X-Bogosity} $B%X%C%@!<$,%a%C%;!<%8$KB8:_$7$J$1$l$P$J$j$^(B
 $B$;$s!#DL>o$3$l$O(B procmail $B$N5;K!$+!"2?$+$=$l$K;w$?$b$N$G9T$J$&$3$H$K$J$k(B
 $B$G$7$g$&!#(BBogofilter $B$N%$%s%9%H!<%k$K4X$9$kJ8=q$rD4$Y$F2<$5$$!#(B
@@ -23953,7 +23950,7 @@ Blackbox $B$,(B spam $B$H(B ham $B$r(B register/unregister $B$G$-$k$N$G$"
 
 @code{spam-check-blackbox} $B4X?t$O!"B>$N=,47$KJo$C(B
 $B$F(B @samp{nil} $B$+(B @code{spam-split-group} $B$rJV$5$J$1$l$P$J$j$^$;$s!#$"$J(B
-$B$?$K$G$-$k$3$H$NNc$O!"4{B8$N(B @code{spam-check-*} $B4X?t$r;2>H$7$F$/$@$5$$!#(B
+$B$?$K$G$-$k$3$H$NNc$O!"4{B8$N(B @code{spam-check-*} $B4X?t$r;2>H$7$F2<$5$$!#(B
 $B$^$?!"$"$J$?$,$=$&$G$J$$M}M3$r40A4$KM}2r$7$F$$$J$$$J$i$P!"%F%s%W%l!<%H$K(B
 $Bsv$jIU$$$F2<$5$$!#(B
 
@@ -24359,8 +24356,8 @@ Dired $B$G0u$rIU$1$?$b$N$rE:IU%U%!%$%k$H$7$FAw?.$7$^(B
 @item C-c C-m C-l
 @findex gnus-dired-find-file-mailcap
 $BE,@Z$J(B mailcap $B9`L\$K=>$C$F%U%!%$%k$r3+$-$^(B
-$B$9(B (@code{gnus-dired-find-file-mailcap})$B!#@\F,<-$rIU$1$k$H!"%U%!%$%k$r?7(B
-$B$7$$%P%C%U%!!<$G3+$-$^$9!#(B
+$B$9(B (@code{gnus-dired-find-file-mailcap})$B!#@\F,0z?t$rIU$1$k$H!"%U%!%$%k$r(B
+$B?7$7$$%P%C%U%!!<$G3+$-$^$9!#(B
 
 @item C-c C-m C-p
 @findex gnus-dired-print
@@ -24386,10 +24383,10 @@ Gnus $B$,3JG<$9$k$?$/$5$s$N%U%!%$%kL>$H%G%#%l%/%H%j!<L>$NJQ?t$O!"$3$l$K$h$C(B
 $B?t$,@_Dj$5$l$F$$$J$$>l9g$O(B @file{~/News/} $B$G$9!#(B
 
 @file{~/.gnus.el} $B%U%!%$%k$,FI$^$l$?$H$-$O(B Gnus $B$N$[$H$s$I$O$9$G$KFI$_9~(B
-$B$^$l$F$$$k$H$$$&$3$H$KCm0U$7$F$/$@$5$$!#$3$l$O$D$^$j!"$3$NJQ?t(B
+$B$^$l$F$$$k$H$$$&$3$H$KCm0U$7$F2<$5$$!#$3$l$O$D$^$j!"$3$NJQ?t(B
 $B$r(B @file{~/.gnus.el} $B$NCf$G@_Dj$7$F$b!"$3$NJQ?t$K$h$C$F=i4|2=$5$l$kB>$N(B
 $B%G%#%l%/%H%j!<JQ?t$O@5$7$/@_Dj$5$l$J$$$@$m$&$H$$$&$3$H$G$9!#$3$NJQ?t$OBe(B
-$B$o$j$K(B @file{.emacs} $B$G@_Dj$7$F$/$@$5$$!#(B
+$B$o$j$K(B @file{.emacs} $B$G@_Dj$7$F2<$5$$!#(B
 
 @item gnus-default-directory
 @vindex gnus-default-directory
@@ -24623,12 +24620,12 @@ Ingebrigtsen) $B$O(B Gnus $B$r=q$-D>$=$&$H7h?4$7$^$7$?!#(B
 
 2000$BG/(B10$B7n(B26$BF|$K(B Oort Gnus $B$,3+;O$5$l$^$7$?!#(B
 
-$B$b$7@\F,<-$r;}$C$?HG$N(B Gnus---``(ding) Gnus'', ``September Gnus'',
+$B$b$7@\F,0z?t$r;}$C$?HG$N(B Gnus---``(ding) Gnus'', ``September Gnus'',
 ``Red Gnus'', ``Quassia Gnus'', ``Pterodactyl Gnus'',
-``Oort Gnus''---$B$K=P2q$C$F$b!":.Mp$7$J$$$G$/$@$5$$!#$"$J$?$,62$,$C$F$$$k(B
-$B$3$H$rCN$i$l$F$O$$$1$^$;$s!#8e$m$K2<$,$j$J$5$$!#$f$C$/$j$H!#B>$K2?$r$7$F(B
-$B$b!"Av$C$F$O$$$1$^$;$s!#$=$l$,FO$+$/$J$k$^$G!"@E$+$KJb$-5n$j$J$5$$!#E,@Z(B
-$B$K%j%j!<%9$5$l$?HG$N(B Gnus $B$r8+$D$1$F!"Be$o$j$K$=$l$K4s$jE:$C$F2<$5$$!#(B
+``Oort Gnus''---$B$K=P2q$C$F$b!":.Mp$7$J$$$G2<$5$$!#$"$J$?$,62$,$C$F$$$k$3(B
+$B$H$rCN$i$l$F$O$$$1$^$;$s!#8e$m$K2<$,$j$J$5$$!#$f$C$/$j$H!#B>$K2?$r$7$F$b!"(B
+$BAv$C$F$O$$$1$^$;$s!#$=$l$,FO$+$/$J$k$^$G!"@E$+$KJb$-5n$j$J$5$$!#E,@Z$K%j(B
+$B%j!<%9$5$l$?HG$N(B Gnus $B$r8+$D$1$F!"Be$o$j$K$=$l$K4s$jE:$C$F2<$5$$!#(B
 
 @node Other Gnus Versions
 @subsection $BB>$N(B Gnus $B$N%P!<%8%g%s(B
@@ -24866,7 +24863,7 @@ Gnus $B$OFs$D$NCJ3,$N=[4D$G3+H/$5$l$F$$$^$9!#:G=i$NCJ3,(B
 $B$O(B ``Red Gnus'' $B$d(B ``Quassia Gnus'' $B$N$h$&$JL>A0$K$J$C$F$$$^$9!#(B
 
 50-100 $B$/$i$$$N%j%j!<%9$N8e$G!"(BGnus $B$O(B @dfn{$BE`7k(B} $B$5$l$?$H@k8@$5$l!"%P%0(B
-$B=$@5$N$_$,E,MQ$5$l$^$9!#(BGnus $B$O@\F,<-$,<h$l!"$=$NBe$o$j(B
+$B=$@5$N$_$,E,MQ$5$l$^$9!#(BGnus $B$O@\F,0z?t$,<h$l!"$=$NBe$o$j(B
 $B$K(B ``Gnus 5.6.32'' $B$N$h$&$K8F$P$l$^$9!#$3$l$iIaDL$N?M$,;H$&$3$H$N$G$-$k(B
 $B$b$N$H9M$($i$l!"<g$K(B @samp{gnu.emacs.gnus} $B%K%e!<%9%0%k!<%W$G5DO@$5$l$F(B
 $B$$$^$9!#(B
@@ -25814,7 +25811,7 @@ Gnus $B$r%*%U%i%$%s%K%e!<%9%j!<%@!<$H$7$F;H$&?75!G=$,2C$($i$l$^$7$?!#2a>j(B
 
 @item
 $BEj9F<h$j>C$7$O8=:_$NA*BrJ}K!$r;H$&$h$&$K$J$j$^$7$?!#%7%s%\%k@\F,(B
-$B<-(B @kbd{a} $B$OIaDL$NEj9FJ}K!$r6/@)$7$^$9!#(B
+$B0z?t(B @kbd{a} $B$OIaDL$NEj9FJ}K!$r6/@)$7$^$9!#(B
 
 @item
 M******** sm*rtq**t*s $B$rE,@Z$JJ8>O$KK]0F$9$k?7$7$$L?Na$,$"$j$^$9(B---
@@ -26448,7 +26445,7 @@ Sieve $B$N5,B'$O%0%k!<%W%Q%i%a!<%?!<$H$7$F2C$($k$3$H$,$G$-!"%0%k!<%W%P%C%U%!!<
 $B$?(B ($BLuCm(B: $B0JA0$O(B)$B!#?7$7$$4X?t$OB>$N5-;v$r_I2a$7$F=|5n$7$^$9!#(B
 
 @item
-$B$$$/$D$+$N%3%^%s%I$O(B @kbd{C-u} $B@\F,<-$G9gCW$NH]Dj$r07$&$3$H$,$G$-$^$9!#(B
+$B$$$/$D$+$N%3%^%s%I$O(B @kbd{C-u} $B@\F,0z?t$G9gCW$NH]Dj$r07$&$3$H$,$G$-$^$9!#(B
 
 @kbd{C-u} $B$r(B subject$B!"(Bauthor $B$^$?$O(B extra $B%X%C%@!<$r$3$N=g$K;H$&(B---$B$9$J(B
 $B$o$A(B @kbd{/ s}$B!"(B@kbd{/ a} $B$*$h(B
@@ -26582,7 +26579,7 @@ No Gnus $B$N?7$7$$5!G=(B:
 @end lisp
 
 @samp{yes} $B$H(B @code{yes} $B$OFs$D$N(B @emph{$B$^$C$?$/(B} $B0c$C$?$b$N$G$9(B---$B@dBP(B
-$B$K:.F1$7$J$$$G$/$@$5$$!#(B
+$B$K:.F1$7$J$$$G2<$5$$!#(B
 
 @iflatex
 @c @head
@@ -27099,7 +27096,7 @@ Gnus $B$H$=$N%P%C%/%(%s%I4V$N%$%s%?!<%U%'!<%9(B ($B$3$l$O40A4$K5-=R$5$l$F$$(
 * Headers::                     Gnus $B$O%X%C%@!<$rFbItE*$K$I$N$h$&$K3JG<$9$k$+(B
 * Ranges::                      $B$?$/$5$s$N?t$r3JG<$9$kJXMx$J7A<0(B
 * Group Info::                  $B%0%k!<%W>pJs7A<0(B
-* Extended Interactive::        $B5-9f@\F,<-$J$I(B
+* Extended Interactive::        $B5-9f@\F,0z?t$J$I(B
 * Emacs/XEmacs Code::           Gnus $B$O$9$Y$F$N6aBe(B Emacsen $B$GF0:n$9$k(B
 * Various File Formats::        Gnus $B$N;HMQ$9$k%U%!%$%k$N7A<0(B
 @end menu
@@ -27126,12 +27123,12 @@ Gnus $B$H$=$N%P%C%/%(%s%I4V$N%$%s%?!<%U%'!<%9(B ($B$3$l$O40A4$K5-=R$5$l$F$$(
 
 @item gnus-group-real-name
 @findex gnus-group-real-name
-$B@55,$N(B ($B@\F,<-IU$-$N(B) Gnus $B%0%k!<%WL>$r<u$1<h$j!"@\F,<-L5$7$NL>A0(B
+$B@55,$N(B ($B@\F,0z?tIU$-$N(B) Gnus $B%0%k!<%WL>$r<u$1<h$j!"@\F,0z?tL5$7$NL>A0(B
 $B$rJV$7$^$9!#(B
 
 @item gnus-group-prefixed-name
 @findex gnus-group-prefixed-name
-$B@\F,<-L5$7$N%0%k!<%WL>$HA*BrJ}K!$r<u$1<h$j!"@55,$N(B ($B@\F,<-IU$-$N(B)
+$B@\F,0z?tL5$7$N%0%k!<%WL>$HA*BrJ}K!$r<u$1<h$j!"@55,$N(B ($B@\F,0z?tIU$-$N(B)
 Gnus $B%0%k!<%WL>$rJV$7$^$9!#(B
 
 @item gnus-get-info
@@ -27238,8 +27235,8 @@ Gnus $B$,%P%C%/%(%s%I(B---$BNc$($P(B @code{nntp}---$B$K2?$+$N>pJs$rMW5a$9$k
 $B$r<h$j$^$9!#$b$7$3$N2>A[%5!<%P!<$,3+$+$l$F$$$J$1$l$P!"$3$N4X?t$O<:GT$7$^(B
 $B$9!#(B
 
-$B2>A[%5!<%P!<L>$O!"J*M}E*$J%5!<%P!<L>$H$O2?$N4X78$bL5$$$3$H$KCm0U$7$F$/$@(B
-$B$5$$!#$3$NNc$r8+$F$/$@$5$$!#(B
+$B2>A[%5!<%P!<L>$O!"J*M}E*$J%5!<%P!<L>$H$O2?$N4X78$bL5$$$3$H$KCm0U$7$F2<$5(B
+$B$$!#$3$NNc$r8+$F2<$5$$!#(B
 
 @lisp
 (nntp "odd-one"
@@ -27378,7 +27375,7 @@ field      = <text except TAB>
 @end example
 
 $B$3$l$i$NMs$K$I$N$h$&$J$b$N$,4^$^$l$k$+$r$h$j>\$7$/8+$?$1$l$P!"(B
-@ref{Headers} $B$r;2>H$7$F$/$@$5$$!#(B
+@ref{Headers} $B$r;2>H$7$F2<$5$$!#(B
 
 @item (nnchoke-open-server SERVER &optional DEFINITIONS)
 
@@ -27457,10 +27454,10 @@ field      = <text except TAB>
 $B:G=i$N?tCM$O>uBV$G!"$3$l$O(B 211 $B$G$J$/$F$O$J$j$^$;$s!#<!$O$=$N%0%k!<%W$K(B
 $B$"$k5-;v$NAm?t!":G>.$N5-;vHV9f!":GBg$N5-;vHV9f!"$=$7$F:G8e$,%0%k!<%WL>$G(B
 $B$9!#5-;v$NAm?t$O!":GBg!&:G>.5-;vHV9f$+$iC1=c$K9M$($i$l$k?t$h$j$b>.$5$$$3(B
-$B$H$,$"$k$3$H$KCm0U$7$F$/$@$5$$!#$$$/$D$+$N5-;v$O<h$j>C$5$l$F$$$k$+$b$7$l(B
-$B$^$;$s!#(BGnus $B$OAm?t$OC1$K<N$F$F$7$^$C$F$$$k$N$G!"(B($B$b$7$=$l$,LdBj$H$J$k$H(B
-$B$-$K(B) $B@5$7$$CM$r@8@.$9$kLLE]$rIi$&$Y$-$+$I$&$+$O!"FI<T$X$N2]Bj$H$7$F;D$7(B
-$B$F$"$j$^$9!#$b$7$=$N%0%k!<%W$K5-;v$,L5$1$l$P!":G>.5-;vHV9f$O(B 1$B!":GBg(B
+$B$H$,$"$k$3$H$KCm0U$7$F2<$5$$!#$$$/$D$+$N5-;v$O<h$j>C$5$l$F$$$k$+$b$7$l$^(B
+$B$;$s!#(BGnus $B$OAm?t$OC1$K<N$F$F$7$^$C$F$$$k$N$G!"(B($B$b$7$=$l$,LdBj$H$J$k$H$-(B
+$B$K(B) $B@5$7$$CM$r@8@.$9$kLLE]$rIi$&$Y$-$+$I$&$+$O!"FI<T$X$N2]Bj$H$7$F;D$7$F(B
+$B$"$j$^$9!#$b$7$=$N%0%k!<%W$K5-;v$,L5$1$l$P!":G>.5-;vHV9f$O(B 1$B!":GBg(B
 $B$O(B 0 $B$H$7$FJs9p$5$l$J$1$l$P$J$j$^$;$s!#(B
 
 @example
@@ -28330,9 +28327,9 @@ parameters    = "(" *elisp-forms ")"
 @cindex interactive
 @findex gnus-interactive
 
-Gnus $B$O(B Emacs $B$NI8=`$N(B @code{interactive} $B;XDj$r%7%s%\%k@\F,<-$r4JC1$K;H(B
-$B$($k$?$a$K>/$73HD%$7$F$$$^$9(B (@pxref{Symbolic Prefixes})$B!#$3$l$O$=$N;H$$(B
-$BJ}$NNc$G$9(B:
+Gnus $B$O(B Emacs $B$NI8=`$N(B @code{interactive} $B;XDj$r%7%s%\%k@\F,0z?t$r4JC1$K(B
+$B;H$($k$?$a$K>/$73HD%$7$F$$$^$9(B (@pxref{Symbolic Prefixes})$B!#$3$l$O$=$N;H(B
+$B$$J}$NNc$G$9(B:
 
 @lisp
 (defun gnus-summary-increase-score (&optional score symp)
@@ -28480,11 +28477,11 @@ description   = <string>
 $B?.$8$k$+$I$&$+$OCN$j$^$;$s$,!"(BGnus $B$r;H$&?M$NCf$K$O(B Gnus Love Boat $B$G$N(B
 $BN9$KEk>h$9$kA0$K$"$^$j(B Emacs $B$r;H$C$?$3$H$,L5$$$H$$$&?M$,$$$^$9!#$b$7$"(B
 $B$J$?$,(B ``@kbd{C-M-a}'' $B$d(B ``$B%j!<%8%g%s$r@Z$k(B''$B!"$=$7(B
-$B$F(B ``@code{gnus-flargblossen} $B$rO"A[%j%9%H$K@_Dj$7$F$/$@$5$$!#$=$N%-!<$O(B
-$B%0%k!<%WL>$K9gCW$9$k$?$a$K;H$o$l$k@55,I=8=$G$9(B'' $B$,>/$7$N0UL#$+$^$C$?$/(B
-$B0UL#$NL5$$KbK!$N8@MU$G$"$kIT9,$J?M$G$"$l$P!"$3$NIUO?$O$"$J$?$N$?$a$K$"$j(B
-$B$^$9!#$b$7$"$J$?$,$9$G$K(B Emacs $B$K?F$7$s$G$$$k$N$G$"$l$P!"$3$l$rL5;k$7$F(B
-$B<V$r2D0&$,$j$K9T$C$F2<$5$$!#(B
+$B$F(B ``@code{gnus-flargblossen} $B$rO"A[%j%9%H$K@_Dj$7$F2<$5$$!#$=$N%-!<$O%0(B
+$B%k!<%WL>$K9gCW$9$k$?$a$K;H$o$l$k@55,I=8=$G$9(B'' $B$,>/$7$N0UL#$+$^$C$?$/0U(B
+$BL#$NL5$$KbK!$N8@MU$G$"$kIT9,$J?M$G$"$l$P!"$3$NIUO?$O$"$J$?$N$?$a$K$"$j$^(B
+$B$9!#$b$7$"$J$?$,$9$G$K(B Emacs $B$K?F$7$s$G$$$k$N$G$"$l$P!"$3$l$rL5;k$7$F<V(B
+$B$r2D0&$,$j$K9T$C$F2<$5$$!#(B
 
 @menu
 * Keystrokes::                  $BJ8>O$rF~NO$7$FL?Na$r<B9T$9$k(B
@@ -28517,12 +28514,12 @@ A: $BC<Kv$,%Z%@%k$r;}$C$F$$$?$i$J$!$H4j$&?M$N$3$H$G$9!#(B
 
 $B$3$l$+$i!";d$?$A(B Emacs $B?M$O!"$=$l$,$"$^$j$KITJX$J$?$a!"(B
 ``meta-control-m $B%-!<$r2!$9(B'' $B$H$O8@$$$^$;$s!#;d$?$A$O(B ``@kbd{C-M-m} $B$r(B
-$B2!$9(B'' $B$H8@$$$^$9!#(B@kbd{M-} $B$O(B ``$B%a%?(B'' $B$r8=$9@\F,<-$G!"(B``C-'' $B$O(B ``$B%3%s(B
-$B%H%m!<%k(B'' $B$r0UL#$9$k@\F,<-$G$9!#$G$9$+$i!"(B``@kbd{C-k} $B$r2!$9(B'' $B$O(B ``$B%3(B
-$B%s%H%m!<%k%-!<$r2<$K2!$7!"(B@kbd{k} $B$r2!$7$F$$$k4V!"$=$l$r2<$KJ]$A$J$5(B
-$B$$(B'' $B$H$$$&$3$H$G$9!#(B``@kbd{C-M-k} $B$r2!$9(B'' $B$O(B ``$B%a%?%-!<$H%3%s%H%m!<%k(B
-$B%-!<$r2!$7$F2<$KJ]$C$?8e$G(B @kbd{k} $B$r2!$9(B'' $B$H$$$&$3$H$G$9!#4JC1$G$7$g!#(B
-$B$M(B?
+$B2!$9(B'' $B$H8@$$$^$9!#(B@kbd{M-} $B$O(B ``$B%a%?(B'' $B$r8=$9@\F,0z?t$G!"(B``C-'' $B$O(B ``$B%3(B
+$B%s%H%m!<%k(B'' $B$r0UL#$9$k@\F,0z?t$G$9!#$G$9$+$i!"(B``@kbd{C-k} $B$r2!(B
+$B$9(B'' $B$O(B ``$B%3%s%H%m!<%k%-!<$r2<$K2!$7!"(B@kbd{k} $B$r2!$7$F$$$k4V!"$=$l$r2<$K(B
+$BJ]$A$J$5$$(B'' $B$H$$$&$3$H$G$9!#(B``@kbd{C-M-k} $B$r2!$9(B'' $B$O(B``$B%a%?%-!<$H%3%s%H(B
+$B%m!<%k%-!<$r2!$7$F2<$KJ]$C$?8e$G(B @kbd{k} $B$r2!$9(B'' $B$H$$$&$3$H$G$9!#4JC1$G(B
+$B$7$g!#$M(B?
 
 $B$3$l$O$9$Y$F$N%-!<%\!<%I$,%a%?%-!<$r;}$C$F$$$k$o$1$G$O$J$$$H$$$&;v<B$K$h(B
 $B$j>/$7J#;($K$J$C$F$$$^$9!#$=$N$h$&$J>l9g$O!"(B``$B%(%9%1!<%W(B'' $B%-!<$r;H$&$3(B
