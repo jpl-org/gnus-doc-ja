@@ -1120,7 +1120,7 @@ Gnus $B$O$=$N%j%9%H$NCf$N%0%k!<%W$r9XFI$7!";D$j$r:o=|$7$^$9!#%7%9%F%`4IM}(B
 $B$J$$$H$-(B ($BNc$($P!"%"%I%l%9$r4V0c$($?>l9g(B) $B$d%5!<%P!<$,2?$i$+$NM}M3$G0l;~(B
 $BE*$KD4;R$,$*$+$7$/$J$C$F$$$k$H$-$K5/$3$j$^$9!#$b$7$=$N$^$^B39T$9$k$3$H$K(B
 $B$7$F!"30It%0%k!<%W$,0l$D$bL5$$>l9g!"<B$O%0%k!<%W%P%C%U%!!<$G$O$[$H$s$I2?(B
-$B$b$G$-$J$$$H$$$&$3$H$K5$$,$D$/$G$7$g$&!#$G$b!"$M$'!"$=$l$O$"$J$?$NLdBj$G(B
+$B$b$G$-$J$$$H$$$&$3$H$K5$$,IU$/$G$7$g$&!#$G$b!"$M$'!"$=$l$O$"$J$?$NLdBj$G(B
 $B$9!#%V%V!<%C(B!
 
 @findex gnus-no-server
@@ -6375,7 +6375,7 @@ Gnus $B$O8I;y$K$J$C$?5-;v72$N:G=i$N$b$N$r?F$K$7$^$9!#$3$N?F$O$9$Y$F$NB>$N(B
 @item $B$_$;$+$1(B (dummy)
 @vindex gnus-summary-dummy-line-format
 @vindex gnus-summary-make-false-root-always
-Gnus $B$O?F$N$U$j$r$9$k$_$;$+$1$N35N,9T$r$D$/$j$^$9!#$3$N$_$;$+(B
+Gnus $B$O?F$N$U$j$r$9$k$_$;$+$1$N35N,9T$r:n$j$^$9!#$3$N$_$;$+(B
 $B$1$N9T$O$I$NK\Ev$N5-;v$K$bBP1~$7$J$$$N$G!"$=$l$rA*Br$9$k$3$H$O!"(B
 $B$_$;$+$1$N5-;v$N8e$N:G=i$NK\Ev$N5-;v$rA*Br$r$9$k$@$1$K$J$j$^$9!#(B
 $B$_$;$+$1$N:,K\$NMM<0$r;XDj$9$k$?$a$K!"(B
@@ -17242,12 +17242,12 @@ To: alt-religion-emacs@@GATEWAY
 @table @code
 @item nngateway-simple-header-transformaton
 @var{newsgroup}@@@code{nngateway-address} $B$N$h$&$J(B @code{To} $B%X%C%@!<$r(B
-$B$D$/$j$^$9!#(B
+$B:n$j$^$9!#(B
 
 @findex nngateway-mail2news-header-transformation
 
 @item nngateway-mail2news-header-transformation
-@code{nngateway-address} $B$N$h$&$J(B @code{To} $B%X%C%@!<$r$D$/$j$^$9!#(B
+@code{nngateway-address} $B$N$h$&$J(B @code{To} $B%X%C%@!<$r:n$j$^$9!#(B
 
 $B$3$3$KNc$,$"$j$^$9!#(B
 
@@ -20079,7 +20079,7 @@ Gnus $B$O8=:_$N%P%C%U%!!<$+$i(B @code{Message-ID} $B%X%C%@!<$r8+$D$1=P$9$?$a$
 @end lisp
 
 $B$"$J$?$N<+J,$N(B @code{Message-ID} $B$r$8$C$/$j$HD/$a$F$_$k$H!"$O$8$a$NFs!"(B
-$B;0J8;z$O>o$KF1$8$G$"$k$3$H$K5$$,$D$/$G$7$g$&!#0J2<$NFs$D$O;d$N$b$N$G$9!#(B
+$B;0J8;z$O>o$KF1$8$G$"$k$3$H$K5$$,IU$/$G$7$g$&!#0J2<$NFs$D$O;d$N$b$N$G$9!#(B
 
 @example
 <x6u3u47icf.fsf@@eyesore.no>
@@ -28299,7 +28299,7 @@ parameters    = "(" *elisp-forms ")"
 @itemx gnus-info-set-marks
 @findex gnus-info-marks
 @findex gnus-info-set-marks
-$B0u$7$D$-5-;v$NHO0O$N%j%9%H$r<hF@(B/$B@_Dj$7$^$9!#(B
+$B0u$7IU$-5-;v$NHO0O$N%j%9%H$r<hF@(B/$B@_Dj$7$^$9!#(B
 
 @item gnus-info-method
 @itemx gnus-info-set-method
