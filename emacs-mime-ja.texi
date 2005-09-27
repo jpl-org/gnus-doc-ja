@@ -190,7 +190,29 @@ Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g
 $B%Q%C%A!#$3$l$O!"%3%_%C%H$5$l$?%U%!%$%k$N:9J,$,<+F0E*$KAw$i$l$k%0%k!<%W$r(B
 $BBP>]$K$7$?$b$N$G$9!#(B@code{mm-uu-diff-groups-regexp} $B$K9gCW$9$k%0%k!<%W$G(B
 $B$N$_F0:n$7$^$9!#(B
+
+@item verbatim-marks
+@cindex verbatim-marks
+Slrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g$=$N$^$^I=$9(B) $B5-9f$NBP!#(B@*
+$BLuCm(B: @samp{#v+} $B$H(B @samp{#v-} $B$NFs9T$G0O$^$l$?%F%-%9%H(B
+$B$r(B @acronym{MIME} $B%Q!<%H$K8+N)$F$^$9!#(B
+
+@item LaTeX
+@cindex LaTeX
+LaTeX $B$NJ88%!#(B@code{mm-uu-tex-groups-regexp} $B$K9gCW$9$kL>A0$N%0%k!<%W$G(B
+$B$N$_F0:n$7$^$9!#(B
 @end table
+
+@cindex text/x-gnus-verbatim
+@c @vindex $B$O(B face $B$N$?$a$KE,@Z$+(B?
+@vindex mm-uu-extract
+$B$$$/$D$+$N(B @acronym{MIME} $B$G$O$J$$E:IU$O(B @code{mm-uu-extract} $B$H$$$&%U%'!<(B
+$B%9$r;H$C$FI=<($5$l$^$9!#%G%#%U%)%k%H$G$O$=$l$i$N%Q!<%H(B
+$B$K(B @acronym{MIME} $B%\%?%s$,IU$-$^$;$s!#(B@kbd{K b}
+(@code{gnus-summary-display-buttonized}) $B$r;H$&(B
+$B$+(B @code{gnus-buttonized-mime-types} $B$K(B @code{text/x-gnus-verbatim} $B$r2C(B
+$B$($k$3$H$K$h$C$F!"%\%?%s$NI=<($r6/@)$9$k$3$H$,$G$-$^$9!#(B@xref{MIME
+Commands, ,MIME Commands, gnus-ja, Gnus Manual}.
 
 @node Handles
 @section $B%O%s%I%k(B
