@@ -848,8 +848,8 @@ Message $B$O(B @code{From}$B!"(B@code{To} $B$*$h$S(B @code{Cc} $B%X%C%@!<
 @vindex message-use-idna
 $BJQ?t(B @code{message-use-idna} $B$O(B @acronym{IDNA} $B$r;H$&$+$I$&$+$r@)8f$7$^(B
 $B$9!#$3$NJQ?t$,(B @code{nil} $B$@$C$?$i(B @acronym{IDNA} $B%(%s%3!<%I$O9T$J$o$l$^(B
-$B$;$s!#%7%s%\%k(B @code{ask} $B$K@_Dj$5$l$F$$$k(B ($B%G%#%U%)%k%H(B) $B$H%f!<%6$O3NG'(B
-$B$r5a$a$i$l$^$9!#$=$7$F(B @code{t} $B$K@_Dj$5$l$F$$$k$H!"<+F0E*(B
+$B$;$s!#%7%s%\%k(B @code{ask} $B$K@_Dj$5$l$F$$$k$H%f!<%6$O3NG'$r5a$a$i$l$^$9$,!"(B
+@code{t} $B$K@_Dj$5$l$F$$$k(B ($B$=$l$,%G%#%U%)%k%H$G$9(B) $B$H!"<+F0E*(B
 $B$K(B @acronym{IDNA} $B%(%s%3!<%I$,9T$J$o$l$^$9!#(B
 
 @findex message-idna-to-ascii-rhs
