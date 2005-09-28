@@ -54,10 +54,14 @@ license to the document, as described in section 6 of the license.
 @titlepage
 @title Gnus Coding Style and Maintainance Guide
 
-@c @author by
+@c @author by Reiner Steib  <Reiner.Steib@gmx.de>
 
 @insertcopying
 @end titlepage
+
+@c 明らかにこれは未成熟な草稿に過ぎません。とにかく、それを見とがめた誰
+@c かが直してくれることを期待して、私たちはこれを CVS に置きました。;-)
+@c 一部を直してくれるだけでもありがたいです。
 
 @node Top
 
@@ -77,8 +81,7 @@ license to the document, as described in section 6 of the license.
 
 @subsection 互換性
 
-@c Compatibility with XEmacs and older Emacs versions in v5-10 and in the
-@c trunk.
+@c v5-10 枝と幹における、XEmacs と古いバージョンの Emacs との互換性。
 
 @c @table
 @c x
@@ -90,12 +93,18 @@ license to the document, as described in section 6 of the license.
 
 CVS の幹はかなり活発に開発されています。
 
-@c Most of the time Gnus is developed on the trunk.
+@c 通常 Gnus は幹で開発されています。
 
-@c Exeption: several month of feature freeze after a release,
-@c e.g. 5.10.1
+@c 例外: 5.10.1 がリリースされた後の数ヶ月間、新機能の追加が凍結されまし
+@c た。
 
 @subsection 同期
+
+@c 随所に関連する Message-ID があります。Gmane でそれらのスレッドを参照
+@c するには http://thread.gmane.org/Message-ID を使って下さい (そして表
+@c 題をクリックして下さい)。
+
+@c Miles Bader さんのいくつかの記事から引用します...
 
 @c <v9eklyke6b.fsf@marauder.physik.uni-ulm.de>
 @c <buovfd71nkk.fsf@mctpc71.ucom.lsi.nec.co.jp>
