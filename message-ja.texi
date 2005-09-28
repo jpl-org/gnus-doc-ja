@@ -783,14 +783,16 @@ MFT $B$rB:=E$9$k$3$H$ONI$$%M%A%1%C%H(B (netiquette) $B$G$"$k$H9M$($i$l$F$$$^$
 @findex message-mark-inserted-region
 $B8=:_$N5-;v$N$$$/$D$+$NNN0h$r!"$=$l$i$r0O$`$?$a$N%?%0$G0u$rIU$1$^$9!#(B
 @code{message-mark-insert-begin} $B$H(B @code{message-mark-insert-end} $B$r8+(B
-$B$F2<$5$$!#(B
+$B$F2<$5$$!#@\F,0z?t$rIU$1$F;H$&$H(B slrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g$=(B
+$B$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B
 
 @item C-c M-f
 @kindex C-c M-f
 @findex message-mark-insert-file
 $B8=:_$N5-;v$K!"%?%0$G0O$^$l$?%U%!%$%k$rA^F~$7$^$9!#(B
 @code{message-mark-insert-begin} $B$H(B @code{message-mark-insert-end} $B$r8+(B
-$B$F2<$5$$!#(B
+$B$F2<$5$$!#@\F,0z?t$rIU$1$F;H$&$H(B slrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g$=(B
+$B$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B
 @end table
 
 @node MIME
