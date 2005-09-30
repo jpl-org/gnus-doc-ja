@@ -11186,7 +11186,7 @@ Gnus はサーバーからその記事を取ってこようとしま
 
 @item gnus-article-mode-syntax-table
 @vindex gnus-article-mode-syntax-table
-記事バッファーで用いられるシンタックステーブルです。これ
+記事バッファーで用いられる構文テーブル (syntax table) です。これ
 は @code{text-mode-syntax-table} をもとに初期化されます。
 
 @vindex gnus-article-over-scroll
@@ -11528,7 +11528,7 @@ Gnus はあなたが送ったメールとニュースを貯めておくためのいくつかの違った
 い (@pxref{Mail Group Commands})。
 
 @vindex gnus-message-archive-method
-@code{gnus-message-archive-method} は、送ったメッセージを蓄積するために
+@code{gnus-message-archive-method} は、送ったメッセージを保存するために
 どの仮想サーバーを Gnus が使うかを指定します。ディフォルトは:
 
 @lisp
@@ -13146,7 +13146,7 @@ End} と @ref{Expiring Mail} を。
 ダーで判定するために使う正規表現です (ところで、メールグループの名前
 が @samp{mail} で始まる必要はありません)。最初の文字列は、
 @code{replace-match} が合致した文章から取り出した副表現を挿入するために
-使われるような、@code{samp\\1} の様式を含むかもしれません。例えば:
+使われるような、@samp{\\1} の様式を含むかもしれません。例えば:
 
 @lisp
 ("list.\\1" "From:.* \\(.*\\)-list@@majordomo.com")
@@ -13471,9 +13471,9 @@ fetchmail %u@@%s -P %p %t
 り意味がありません。サーバーに残されたメールは、次回に (何度でも) 再び取
 り込まれてしまいます。一度取り込んだメールを二度と取得しないようにする機
 能を持つ @file{pop3.el} は T-gnus に含まれています。これは XEmacs 用に開
-発されたものが元になっています。残念ながら誰が開発したかがわかりません。
-したがって FSF への正式な権利譲渡が行なわれていないので、Gnus に含めるこ
-とができないのです。
+発されたものが元になっています。しかし、残念ながら誰が開発したかがわかり
+ません。したがって FSF への正式な権利譲渡が行なわれていないので、Gnus に
+含めることができないのです。
 @end quotation
 
 いくつか例を挙げます:
@@ -13864,11 +13864,11 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 @item nnmail-use-long-file-names
 @vindex nnmail-use-long-file-names
 @code{nil} でないなら、メールバックエンドは長いファイル名とディレクトリー
-名を使います。@samp{mail.misc} のようなグループ名は @file{mail.misc} と
-いうディレクトリー (@code{nnml} バックエンドが使われているとみなすと) か
-ファイル (@code{nnfolder} バックエンドが使われているとみなすと) という結
-果になります。もしそれが @code{nil} であるなら、同じグループ
-は @file{mail/misc} という結果になります。
+名を使います。@samp{mail.misc} のようなグループは @file{mail.misc} とい
+う長い名前のディレクトリーかファイルに収められます (@code{nnml} バックエ
+ンドの場合はディレクトリー、@code{nnfolder} バックエンドの場合はファイル
+です)。@code{nil} だったら、同じグループは @file{mail/misc} に収められま
+す。
 
 @item nnmail-delete-file-function
 @vindex nnmail-delete-file-function
@@ -13878,14 +13878,14 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 
 @item nnmail-cache-accepted-message-ids
 @vindex nnmail-cache-accepted-message-ids
-@code{nil} でないと、バックエンドに入って来た記事 (例えば、@code{Gcc} に
-よって) の @code{Message-ID} をメール重複発見ファイルに入れます。ディフォ
-ルトは @code{nil} です。
+@code{nil} でないと、バックエンドに (例えば @code{Gcc} によって) 入って
+来た記事の @code{Message-ID} を、メールの重複を発見するためのキャッシュ
+に入れます。ディフォルトは @code{nil} です。
 
 @item nnmail-cache-ignore-groups
 @vindex nnmail-cache-ignore-groups
-正規表現か正規表現のリストです。正規表現にグループ名が合致する
-と @code{Message-ID} キャッシュに記録されません。
+正規表現か正規表現のリストです。名前がどれかの正規表現に合致するグループ
+の記事は、@code{Message-ID} キャッシュに記録されません。
 
 例えば特級分割 (@pxref{Fancy Mail Splitting}) を関
 数 @code{nnmail-split-fancy-with-parent} とともに使っている場合に役立つ
@@ -13897,31 +13897,39 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 @cindex mail splitting
 @cindex fancy mail splitting
 
+@quotation
+訳注: @dfn{Fancy} という単語は、創造的、空想的、気まぐれな、好きな、派手
+な、上等な、極上の、変わり種の、等々のさまざまな意味で使われますが、ここ
+では助動詞無しで使える利便を考えて「特級」という訳語を割り当てました。
+@end quotation
+
 @vindex nnmail-split-fancy
 @findex nnmail-split-fancy
-比較的単純な標準のメール分割指定の方法ではあなたの望むことができない場合、
-@code{nnmail-split-methods} を @code{nnmail-split-fancy} に設定すること
-ができます。それから変数 @code{nnmail-split-fancy} で遊ぶことができます。
+比較的単純な、標準のメール分割指定の方法では思い通りにならないならば、
+@code{nnmail-split-methods} を @code{nnmail-split-fancy} に設定すると良
+いでしょう。そうすると、変数 @code{nnmail-split-fancy} で遊ぶことができ
+るようになります。
 
 まずこの変数の値の例を見てみましょう:
 
 @lisp
-;; @r{メールデーモン (mailer deamon) は普通のグループにはクロスポスト}
-;; @r{されません。警告は本当のエラーとは違ったグループに入れられます。}
+;; @r{メイラーデーモンから送られたメッセージが、普通のグループにクロス}
+;; @r{ポストされないようにします。警告は本当のエラーとは違ったグループ}
+;; @r{に入れます。}
 (| ("from" mail (| ("subject" "warn.*" "mail.warning")
                    "mail.misc"))
-   ;; @r{エラーでないメッセージはすべての関連したグループにクロスポスト}
-   ;; @r{されますが、(ding) リストと他の (ding) 関連のメールのためのグ}
-   ;; @r{ループにはクロスポストしません。}
+   ;; @r{エラーでないメッセージはすべての関連するグループにクロスポスト}
+   ;; @r{しますが、(ding) メーリングリストと他の (ding) 関連のメールの}
+   ;; @r{ためのグループにはクロスポストしません。}
    (& (| (any "ding@@ifi\\.uio\\.no" "ding.list")
          ("subject "ding" "ding.misc"))
       ;; @r{他のメーリングリスト@dots{}}
       (any "procmail@@informatik\\.rwth-aachen\\.de" "procmail.list")
       (any "SmartList@@informatik\\.rwth-aachen\\.de" "SmartList.list")
-      ;; @r{以下のどちらのメーリングリストも同じ接頭語なので、bugs-}
-      ;; @r{だけに投稿されたものが mypkg.list にクロスポストされないよ}
-      ;; @r{うにしています。しかし本当にクロスポストされた記事をクロス}
-      ;; @r{ポストすることは許しています。}
+      ;; @r{以下のどちらのメーリングリストも同じ接尾語なので、bugs- だ}
+      ;; @r{けに投稿されたものが mypkg.list にクロスポストされないよう}
+      ;; @r{にしています。しかし本当にクロスポストされた記事をクロスポ}
+      ;; @r{ストすることは許しています。}
       (any "bugs-mypackage@@somewhere" "mypkg.bugs")
       (any "mypackage@@somewhere" - "bugs-mypackage" "mypkg.list")
       ;; @r{人々@dots{}}
@@ -13930,41 +13938,43 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
    "misc.misc")
 @end lisp
 
-この変数は @dfn{分割} の様式になっています。分割は (あるいは) それぞれの
-分割が他の分割を含む再帰的構造です。これは使用可能な分割構文です:
+この変数は @dfn{分割} の様式になっています。分割は (ことによると) それぞ
+れの分割が他の分割を含む再帰的構造です。以下は使うことができる分割の構文
+です:
 
 @table @code
-
 @item group
-もし分割が文字列であると、それはグループ名としてみなされます。普通の正規
-表現の合致がなされます。例は下の方を見て下さい。
+分割が文字列だったら、それはグループ名であるとみなされます。通常の正規表
+現の展開が行なわれます。後述の例 (訳注: @samp{\\&}, @samp{\\1}〜
+@samp{\\9}) を見て下さい。
 
 @item (@var{field} @var{value} [- @var{restrict} [@dots{}] ] @var{split})
-もし分割がリストで、最初の要素が文字列であり、ヘッダー @var{field} (正規
-表現) が @var{value} (これも正規表現) を含んでいる場合、メッセージ
-を @var{split} で指定されたところに蓄積します。@var{restrict} (また他の
-正規表現) が @var{field} の後で、合致した @var{value} の最後の前のいくつ
-かの文字列に合致したら、@var{split} は無視されます。@var{restrict} の閉
-包のどれもが合致しなければ @var{split} が実行されます。
+もし分割がリストで、最初の要素が文字列であり、ヘッダーの @var{field} (正
+規表現) が @var{value} (これも正規表現) を含んでいる場合、メッセージ
+を @var{split} で指定されたグループに格納します。@var{field} の後にあっ
+てしかも合致した @var{value} の最後尾より前にある何かの文字列
+に @var{restrict} (これもまた正規表現) が合致したら、@var{split} は無視
+されます。いくつかの @var{restrict} のどれもが合致しなけれ
+ば @var{split} が実行されます。
 
 @item (| @var{split} @dots{})
-分割がリストで、最初の要素が @code{|} (垂直棒) であると、それぞれ
-の @var{split} をそのうちの一つが合致するまで実行します。@var{split} は
-メールメッセージが一つ以上のグループに蓄積されたときに ``合致した'' とし
-ます。
+分割がリストで、最初の要素が @code{|} (垂直棒) だったら、それぞれ
+の @var{split} をそのうちの一つが合致するまで実行します。ここで言う「合
+致」とは、ある @var{split} がメッセージを一つ以上のグループに格納しよう
+とすることです。
 
 @item (& @var{split} @dots{})
-分割がリストで、最初の要素が @code{&} であると、リストのすべて
-の @var{split} (複数) を実行します。
+分割がリストで、最初の要素が @code{&} だったら、そのリストにあるすべて
+の @var{split} を実行します。
 
 @item junk
-もし分割がシンボル @code{junk} であると、そのメッセージを保存しませ
+もし分割がシンボル @code{junk} だったら、そのメッセージを保存しませ
 ん (すなわち、消去してしまいます)。非常に注意して使って下さい。
 
 @item (: @var{function} @var{arg1} @var{arg2} @dots{})
-もし分割がリストで、最初の要素が @code{:} であると、二番目の要素
+もし分割がリストで、最初の要素が @code{:} だったら、二番目の要素
 が @var{args} を引数として関数として呼ばれます。関数は @var{split} を返
-すべきです。
+さなければなりません。
 
 @cindex body split
 例えば以下の関数は、記事のボディーに基づいた分割に使えるでしょう:
@@ -13979,37 +13989,64 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
         "string.group"))))
 @end lisp
 
-@var{function} が走らされるとき、バッファーはメッセージの部分に狭められ
+@var{function} が実行されるとき、バッファーはメッセージの部分に狭められ
 ます。それが上記の例
 で @code{save-excursion} と @code{save-restriction} の後
-で @code{(widen)} が呼ばれる必要がある理由です。さらに nnimap バックエン
-ドの場合、ディフォルトでは記事のボディーがダウンロードされないことに注意
-して下さい。それをするために
+で @code{(widen)} を呼ぶ必要がある理由です。さらに @code{nnimap} バック
+エンドの場合、ディフォルトでは記事のボディーがダウンロードされないことに
+注意して下さい。それをするために
 は @code{nnimap-split-download-body} を @code{t} に設定する必要がありま
 す (@pxref{Splitting in IMAP})。
 
 @item (! @var{func} @var{split})
-分割がリストで、最初の要素が @code{!} であると @var{split} が実行され、
+分割がリストで最初の要素が @code{!} だったら、@var{split} が実行され、
 @var{func} は @var{split} の結果を引数として呼ばれます。@var{func} は分
-割を返すべきです。
+割を返さなければなりません。
 
 @item nil
-もし分割が @code{nil} であれば、それは無視されます。
-
+分割が @code{nil} だったら、それは無視されます。
 @end table
 
 これらの分割で、@var{fileld} は完全なフィールド名に合致しなければなりま
 せん。@var{value} は基礎モード (fundamental mode) 構文テーブル (syntax
-table) に従って完全に合致しなければなりません。正規表現でフィールド名か
-語の部分に合致させるために @code{.*} を使うことができます。言い換えれば、
-すべての @var{value} は @samp{\<} と @samp{\>} の対で囲まれます。
+table) に従って完全に合致しなければなりません。フィールド名か語の一部分
+に合致させるために、正規表現で @code{.*} を使うことができます。言い換え
+れば、すべての @var{value} は @samp{\<} と @samp{\>} の対で囲まれます。
+
+@quotation
+訳注: この件は非常に重要です。例えば以下の分割は、ディフォルトでは永久
+に @samp{foo@@example.com} というメールアドレスに合致することはありませ
+ん:
+
+@lisp
+;; @r{@@example.com} から来たすべてのメールを example グループに入れる。
+(from "@@example\\.com" "example")
+@end lisp
+
+なぜかと言うと、実際に行なわれる処理は
+
+@lisp
+(string-match "@@example\\.com" "foo@@example.com")
+@end lisp
+
+ではなくて、
+
+@lisp
+(string-match "\\<@@example\\.com\\>" "foo@@example.com")
+@end lisp
+
+だからです。
+@code{nnmail-split-fancy-match-partial-words} (後述) を @code{nil} では
+ない値に設定すれば、あなたが設定した正規表現は @samp{\<} と @samp{\>} の
+対で囲まれません。
+@end quotation
 
 @vindex nnmail-split-abbrev-alist
-@var{field} と @var{value} は Lisp シンボル (symbol) であることもでき、
-その場合それらは @code{nnmail-split-abbrev-alist} で指定されているように
-展開されます。これはセルの @sc{car} がキーを含んでいて、@sc{cdr} が関連
-付けられた値を持っているコンスセル (cons cell) の連想リストです。以下の
-項目が、あらかじめ @code{nnmail-split-abbrev-alist} に定義されています:
+@var{field} と @var{value} は Lisp シンボルであることもできます。その場
+合それらは @code{nnmail-split-abbrev-alist} で指定された内容に従って展開
+されます。これはセルの @sc{car} がキーを含んでいて、@sc{cdr} が関連付け
+られた値を持っているコンスセル (cons cell) の連想リストです。以下の項目
+が、あらかじめ @code{nnmail-split-abbrev-alist} に定義されています:
 
 @table @code
 @item from
@@ -14023,28 +14060,31 @@ table) に従って完全に合致しなければなりません。正規表現でフィールド名か
 @end table
 
 @vindex nnmail-split-fancy-syntax-table
-@code{nnmail-split-fancy-syntax-table} がこれらのすべての分割が実行され
-ているときに有効な構文テーブルです。
+@code{nnmail-split-fancy-syntax-table} は、これらのすべての分割が実行さ
+れているときに有効な構文テーブルです。
 
-ヘッダーのいくつかの情報に基づいて、Gnus に動的にグループを作らせたいの
-であれば (例えば、グループ名で @code{replace-match} のような代用をする)、
-次のようなことができます。
+ヘッダーのいくつかの情報に基づいて、Gnus に動的にグループを作らせた
+い (例えば、グループ名の一部を @code{replace-match} のようなやり方で置き
+換えさせたい) ならば、次のようなことができます。
 
 @example
 (any "debian-\\b\\(\\w+\\)@@lists.debian.org" "mail.debian.\\1")
 @end example
 
 この例では、@samp{debian-foo@@lists.debian.org} に送られたメール
-は @samp{mail.debian.foo} という風になります。
+は @samp{mail.debian.foo} というグループに入れられます。
 
-もし文字列が要素 @samp{\&} を含んでいると、代わりに前で合致した文字列が
-使われます。同様に、要素 @samp{\\1} から @samp{\\9} まではグループ付
-け 1 から 9 までで合致した文字列で代替されます。
+文字列が要素 @samp{\\&} を含んでいる場合は、直前に合致した文字列で置き換
+えられます。同様に、要素 @samp{\\1} から @samp{\\9} までは、合致した文字
+列の一部で置き換えられます (訳注: 正規表現の中
+に @samp{\\(} と @samp{\\)} を使ってグループにまとめられたものが一つ以上
+ある場合に、@samp{\\@var{n}} はその正規表現の @var{n} 個目のグループに合
+致する文字列の一部で置き換えられます)。
 
 @vindex nnmail-split-lowercase-expanded
-ここで、合致した文字列を小文字にしたもので代替するべきかどうか
-を @code{nnmail-split-lowercase-expanded} が制御します。これを
-非-@code{nil} にすることによって、アドレスに大文字と小文字が区別せずに使
+その際、合致した文字列を小文字にしたもので置き換えるべきかどうか
+を @code{nnmail-split-lowercase-expanded} が決定します。これを
+非-@code{nil} にすることによって、アドレスで大文字と小文字が区別せずに使
 われている (例えば mailing-list@@domain と Mailing-List@@Domain) 場合で
 も、複数のグループが生成されてしまうことを避けることができます。ディフォ
 ルトは @code{t} です。
@@ -14061,8 +14101,8 @@ table) に従って完全に合致しなければなりません。正規表現でフィールド名か
 (any "joe" "joemail")
 @end example
 
-この例で、通常 @samp{joedavis@@foo.org} から来たメッセージ
-は @samp{joemail} に格納されません。しかし、
+この例では、@samp{joedavis@@foo.org} から来たメッセージは、ディフォルト
+では @samp{joemail} に格納されません。しかし、
 @code{nnmail-split-fancy-match-partial-words} を @code{t} に設定すると合
 致が起きます。要するに、語を区切る条件が削除され、代わりに合致がよ
 り grep らしくなるのです。
@@ -14080,8 +14120,8 @@ table) に従って完全に合致しなければなりません。正規表現でフィールド名か
 
 この機能を利用するためには、まず変
 数 @code{nnmail-treat-duplicates} およ
-び @code{nnmail-cache-accepted-message-ids} の値を非-code{nil} に設定す
-る必要があります。それができた
+び @code{nnmail-cache-accepted-message-ids} の値を @code{nil} ではない値
+に設定する必要があります。それができた
 ら @code{nnmail-split-fancy-with-parent} を使ってみて下さい。コロンを使っ
 てこんな風に書きます:
 
@@ -14096,32 +14136,32 @@ table) に従って完全に合致しなければなりません。正規表現でフィールド名か
 
 この機能は実際、次の様に働いています: 変数
 @code{nnmail-treat-duplicates} の値が非-@code{nil} の場合、Gnus は見つけ
-た全記事のメッセージ ID を変数 @code{nnmail-message-id-cache-file} が指
-定するファイルに記録します。このとき、それぞれの記事が存在するグループの
-名前を併記します (ただしメールの場合だけ、さもなければグループ名は調べま
-せん)。さて、いよいよメールの振り分けが始まると、関数
-@code{nnmail-split-fancy-with-parent} は、対象となる各記事の References
-(と In-Reply-To) ヘッダーを調べ、@code{nnmail-message-id-cache-file} に
-指定されているファイルにそれらのメッセージ ID があるかどうか調べます。親
-記事が見つかると、そのグループ名が正規表
+た全記事のメッセージ ID を変数 @code{nnmail-message-id-cache-file} で指
+定されたファイルに記録します。このとき、それぞれの記事が格納されたグルー
+プの名前を併記します (ただしメールではないメッセージの場合は、グループ名
+は省略されます)。さて、いよいよメールの振り分けが始まると、関
+数 @code{nnmail-split-fancy-with-parent} は、分割される各記事
+の References (と In-Reply-To) ヘッダーを調べ、
+@code{nnmail-message-id-cache-file} で指定されたファイルにそれらのメッセー
+ジ ID があるかどうか調べます。親記事が見つかると、そのグループ名が正規表
 現 @code{nnmail-split-fancy-with-parent-ignore-groups} に合致しなければ、
 この関数は対応するグループ名を返すわけです。ここで、変
-数 @code{nnmail-message-id-cache-length} の値を既定値よりも幾らか大きな
-値に設定することをお勧めします。そうすると、今調べられたメッセージ ID 達
-は今しばらくキャッシュの中に存続できます (5000 に設定するとキャッシュファ
-イルの大きさはだいたい 300 キロバイトぐらいになるみたいです)。
+数 @code{nnmail-message-id-cache-length} の値をディフォルト値よりも幾ら
+か大きな値に設定することをお勧めします。そうすると、今調べられたメッセー
+ジ ID 達は今しばらくキャッシュの中に存続できます (5000 に設定するとキャッ
+シュファイルの大きさはだいたい 300 キロバイトぐらいになるみたいです)。
 @vindex nnmail-cache-accepted-message-ids
 さらに、変数 @code{nnmail-cache-accepted-message-ids} の値を
 非-@code{nil} に設定すれば、Gnus は移動された記事のメッセージ ID をも記
 録するので、フォローアップ記事は親記事の移動先と同じグループに入るように
 なります。
 
-あるグループをキャッシュに記録したくない場合は、変
+特定のグループをキャッシュに記録したくない場合は、変
 数 @code{nnmail-cache-ignore-groups} も参照して下さい。例えば、外に出す
-すべてのメッセージが ``outgoing'' グループで書かれているならば、
+すべてのメッセージを ``outgoing'' グループに保存しているのならば、
 @code{nnmail-cache-ignore-groups} をそのグループ名に合致するように設定す
-るのが良いです。さもないとあなたのすべてのメッセージに対する返事が、最後
-は ``outgoing'' グループに入ってしまうでしょう。
+れば良いでしょう。さもないとあなたのすべてのメッセージに対する返事が、
+``outgoing'' グループに入ってしまいます。
 
 @node Group Mail Splitting
 @subsection グループメール分割
@@ -14129,10 +14169,10 @@ table) に従って完全に合致しなければなりません。正規表現でフィールド名か
 @cindex group mail splitting
 
 @findex gnus-group-split
-たーくさんのメーリングリストを購読しているけれど、手でメール分割規則を維
-持したくないときは、グループメール分割というものがあなたのためにあります。
-グループパラメーターかグループカスタマイズ
-で @code{to-list}, @code{to-address} の両方もしくはどちらかを設定し
+何ダースものメーリングリストを購読しているけれど、手でメール分割規則を維
+持したくないというときのために、グループメール分割というものがあります。
+あなたがしなければならないことは、グループパラメーターかグループカスタマ
+イズで @code{to-list}, @code{to-address} の両方もしくはどちらかを設定し
 て @code{nnmail-split-methods} を @code{gnus-group-split} に設定するだけ
 です。分割関数はすべてのグループでこれらのパラメーターを走査し、それに従っ
 て分割します。すなわち、メールグループのパラメー
@@ -14142,42 +14182,44 @@ table) に従って完全に合致しなければなりません。正規表現でフィールド名か
 
 ときには、メーリングリストには複数のアドレスがあり、メール分割にそれらす
 べてを認識させる必要があるかもしれません: @code{extra-aliases} グループ
-パラメーターを追加のアドレスのリストに設定するだけで終りです。正規表現を
-使いたければ、@code{split-regexp} を設定して下さい。
+パラメーターを追加のアドレスのリストに設定するだけで終りです。あえて正規
+表現を使いたければ、@code{split-regexp} を設定して下さい。
 
-これらのすべてのグループのパラメーターは、@code{nnmail-split-fancy} 分割
-を作成するために使用され、それは @var{field} が @samp{any} で、
-@var{value} が @code{to-list}, @code{to-address},
-@code{extra-aliases} のすべて、@code{split-regexp} のすべての合致に合致
-する単独の正規表現、@var{split} がグループの名前になります。
-@var{restrict} も使用できます: @code{split-exclude} パラメーターを正規表
-現のリストに設定するだけです。
+これらのすべてのグループのパラメーターは、@code{nnmail-split-fancy} の分
+割を作成するために使用されます。その分割の仕様の中身
+は、@var{field} の値が @samp{any} であり、
+@var{value} の値
+が @code{to-list} と @code{to-address} と @code{extra-aliases} のすべて
+と @code{split-regexp} に合致するもののすべてに合致する単一の正規表現、
+そして @var{split} がグループの名前になります。@var{restrict} も使うこと
+ができます: それには @code{split-exclude} パラメーターを正規表現のリスト
+に設定して下さい。
 
 これらのすべてのパラメーターを使って正しい分割が生成されないときや、何か
-違ったものが必要なときは、パラメー
-ター @code{split-spec} を @code{nnmail-split-fancy} 分割に設定することが
-できます。この場合は、他の前に書いたすべてのパラメーター
-は @code{gnus-group-split} に無視されます。特に、
-@code{split-spec} は @code{nil} に設定することができ、その場合はグループ
-は @code{gnus-group-split} に無視されます。
+もっと凝ったものが必要なときは、@code{split-spec} パラメーター
+を @code{nnmail-split-fancy} の分割に設定することができます。この場合は、
+前もって書かれたすべてのパラメーターは @code{gnus-group-split} に無視さ
+れます。特に、@code{split-spec} は @code{nil} (訳注: これ
+も @code{nnmail-split-fancy} の分割の一種です) に設定することができ、そ
+の場合そのグループは @code{gnus-group-split} に無視されます。
 
 @vindex gnus-group-split-default-catch-all-group
-@code{gnus-group-split} はそれぞれのグループに一つの分割を含む単一
-の @code{&} 特級分割を定義することで合致するすべてのグループにクロスポス
-トをします。メッセージがどの分割にも合致しなければ、どれかのグループ
-で @var{split-spec} が @code{catch-all} に設定されていない場合
-は @code{gnus-group-split-default-catch-all-group} で指定されているグルー
-プに保存されます。@code{split-spec} が @code{catch-all} に設定されている
-グループがある場合は、そのグループがすべてを捕獲するグループとして使用さ
-れます。この変数はしばしば単にグループを指定するために使われますが、任意
-の複雑な特級分割をも設定する (結局、グループ名は特級分割なのです) ので、
-個人のメールフォルダーのどのメーリングリストにも当てはまらないメールを分
-割するのに便利でしょう。なおこの特級分割は、@code{|} 分割リストの最後の
-要素 - グループパラメーターから抽出された規則を持つ @code{&} 分割を含
-む - として追加されることに注意して下さい。
+それぞれのグループのために、一つの分割を含む単一の @code{&} 特級分割を定
+義することによって、@code{gnus-group-split} は合致するすべてのグループに
+クロスポストをします。どの分割にも合致しないメッセージは、どれかのグルー
+プで @var{split-spec} が @code{catch-all} に設定されていない場合
+は @code{gnus-group-split-default-catch-all-group} で指定された名前のグ
+ループに格納されます。その場合、そのグループはすべてを受け取
+る (catch-all) グループとして使われます。この変数はしばしばグループを指
+定するためだけに使われますが、任意の複雑な特級分割に設定することもできる
+ので (結局のところグループ名は特級分割なのです)、個人のメールフォルダー
+にそれらのメールが格納されるどのメーリングリストにも当てはまらないメール
+を、分割するのに便利でしょう。なおこの特級分割は、@code{|} 分割リス
+ト (それは、グループパラメーターから抽出された規則を持った @code{&} 分割
+をも含んでいます) の最後の要素として追加されることに注意して下さい。
 
 そろそろ例を出すべきでしょう。以下のグループパラメーターが定義されている
-とします:
+ことを仮定します:
 
 @example
 nnml:mail.bar:
@@ -14193,7 +14235,7 @@ nnml:mail.others:
 @end example
 
 @code{nnmail-split-methods} を @code{gnus-group-split} に設定すると、
-@code{nnmail-split-fancy} が選択されて、変
+@code{nnmail-split-fancy} が選択されていて、かつ変
 数 @code{nnmail-split-fancy} が以下のように設定されているかのように振舞
 います:
 
@@ -14205,65 +14247,69 @@ nnml:mail.others:
 @end lisp
 
 @findex gnus-group-split-fancy
-すべてのメールグループでグループ分割を使用したくはないときは、
-@code{nnmail-split-fancy} 分割を次のように使用することでいくつかのグルー
-プだけに使うことができます。
+グループ分割をすべてのメールグループで積極的には使いたくなければ、
+@code{nnmail-split-fancy} の分割を次のように使用することで、いくつかのグ
+ループだけで使うことができます。
 
 @lisp
 (: gnus-group-split-fancy @var{groups} @var{no-crosspost} @var{catch-all})
 @end lisp
 
-@var{groups} は出力の分割を生成するためにパラメーターが走査されるグルー
-プ名のリストか正規表現です。@var{no-crosspost} はクロスポストを使用禁止
-にるために使うことができます。その場合、単一の @code{|} 分割が出力されま
-す。
+@var{groups} は、出力の分割を生成するためにパラメーターが走査されるグルー
+プ名のリストか、それらのグループ名に合致する正規表現です。
+@var{no-crosspost} はクロスポストを禁止するために使うことができ、その場
+合は、単一の @code{|} 分割が出力されます。
 @var{catch-all} は @code{gnus-group-split-default-catch-all-group} のよ
 うに、最後の手段として使われる特級分割です。
-@var{catch-all} が @code{nil} であるか、@code{split-regexp} がどれかの選
-択されたグループ空文字列に合致すると、全捕獲分割は行なわれません。そうで
-ない場合、@code{split-spec} が @code{catch-all} に設定されているグループ
-では、それが @var{catch-all} 引数よりも優先されます。
+@var{catch-all} が @code{nil} に設定されているか、@code{split-regexp} が
+どれかの選択されたグループで空の文字列に合致すると、すべてを受け取
+る (catch-all) 分割は発行されません。そうでない場合、あるグループ
+に @code{catch-all} に設定されている @code{split-spec} があると、そのグ
+ループは @var{catch-all} 引数の値よりも優先されます。
 
 @findex gnus-group-split-setup
-不運なことに、すべてのグルプとパラメーターを走査することは非常に遅いです。
-特にすべてのメッセージに対してなされることを考えると。けれども、絶望しな
-いで! 関数 @code{gnus-group-split-setup} が @code{gnus-group-split} をよ
-りずっと効率的な方法で使うことができます。それ
+不運なことに、すべてのグループとそれらのパラメーターを走査することは、特
+にすべてのメッセージに対して行なわなければならないことを考慮に入れると、
+非常に遅くなるでしょう。でも、絶望してはいけません。
+@code{gnus-group-split-setup} 関数を、はるかに効率的な方法
+で @code{gnus-group-split} を動作させるために使うことができます。それ
 は @code{nnmail-split-methods} を @code{nnmail-split-fancy} に設定し、
-@code{nnmail-split-fancy} を @code{gnus-group-split-fancy} で生成された
-分割に設定します。こうしてどんなに分割するメッセージがたくさんあっても、
-グループパラメーターは一度だけ走査されます。
+@code{nnmail-split-fancy} を @code{gnus-group-split-fancy} で生成される
+分割に設定します。そうすることによって、どんなに分割するメッセージがたく
+さんあっても、グループパラメーターは一度だけ走査されるようになります。
 
 @findex gnus-group-split-update
-しかし、グループパラメーターを変更すると、@code{nnmail-split-fancy} を手
-で更新しなければなりません。@code{gnus-group-split-update} を実行するこ
-とでそれを行なえます。自動的に更新される方が好みなら、
-@code{gnus-group-split-setup} にそれを実行するように教えるだけです。例え
-ば、@file{~/.gnus.el} に以下のものを追加して下さい:
+しかしながら、グループパラメーターを変更すると、
+@code{nnmail-split-fancy} を手で更新しなければならなくなるでしょう。
+@code{gnus-group-split-update} を実行することによって、それを行なうこと
+ができます。どちらかと言えば、それを自動的に更新したい場合には、
+@code{gnus-group-split-setup} にそれを実行するように指示して下さい。例え
+ば、@file{~/.gnus.el} に以下のものを追加すれば良いでしょう:
 
 @lisp
 (gnus-group-split-setup @var{auto-update} @var{catch-all})
 @end lisp
 
-@var{auto-update} が @code{nil} で無いと、
+@var{auto-update} が @code{nil} でなければ
 @code{gnus-group-split-update} が @code{nnmail-pre-get-new-mail-hook} に
-追加され、二度と @code{nnmail-split-fancy} の更新を心配する必要はありま
-せん。@var{catch-all} を省略しない場合は (それはオプション
-で @code{nil} と等
-価)、@code{gnus-group-split-default-catch-all-group} はその値に設定され
+追加されるので、二度と @code{nnmail-split-fancy} の更新について心配する
+必要はありません。@var{catch-all} を省略しない場合は (それはオプション
+で @code{nil} と等価で
+す)、@code{gnus-group-split-default-catch-all-group} がその値に設定され
 ます。
 
 @vindex gnus-group-split-updated-hook
-@code{nnmail-split-fancy} が @code{gnus-group-split-update} で設定された
-後で変更する必要があるときのために、この関数
-は @code{gnus-group-split-update-hook} を終了する直前に実行します。
+@code{gnus-group-split-update} によって設定され
+た @code{nnmail-split-fancy} を後で変更する必要があるときのために、この
+関数 (@code{gnus-group-split-update}) は終了する直前
+に @code{gnus-group-split-update-hook} を実行します。
 
 @node Incorporating Old Mail
 @subsection 古いメールを取り込む
 @cindex incorporating old mail
 @cindex import old mail
 
-たいていの人は色々なファイルフォーマットで蓄積されたたくさんの古いメール
+たいていの人は色々なファイルフォーマットで保存されたたくさんの古いメール
 があるでしょう。もし Gnus に粋な Gnus メールバックエンドの一つを使うよう
 に設定したのであれば、おそらく古いメールをメールグループに取り込みたいと
 思うでしょう。
@@ -14774,7 +14820,7 @@ rmail box のためのアクティブファイルの名前。既定値
 前もってディレクトリーを作っておく必要はありません。それの面倒は Gnus が
 見てくれます。
 
-もしあなたのアカウントに蓄積できるファイルの数に厳密な制限があるなら、こ
+もしあなたのアカウントに保存できるファイルの数に厳密な制限があるなら、こ
 のバックエンドを使うべきではありません。それぞれのメールはそれ自身のファ
 イルを得るので、数週間でたくさんの iノードを占有する可能性は十分にありま
 す。別にこれが問題でなく、親切なシステム管理者が、気が狂ったよう
@@ -17554,13 +17600,14 @@ X-Diary-Time-Zone: *
 下の二つのオプションをカスタマイズする必要があるでしょう:
 
 @defvar nndiary-mail-sources
-標準の @code{mail-sources} 変数の、日程用に特化した代替品です。同じシン
-タックスを使い、ディフォルト値は @code{(file :path "~/.nndiary")} です。
+標準の @code{mail-sources} 変数の、日程用に特化した代替品です。同じ構
+文 (syntax) を使い、ディフォルト値は @code{(file :path "~/.nndiary")} で
+す。
 @end defvar
 
 @defvar nndiary-split-methods
 標準の @code{nnmail-split-methods} 変数の、日程用に特化した代替品です。
-同じシンタックスを使います。
+同じ構文 (syntax) を使います。
 @end defvar
 
 最終的には @code{gnus-secondary-select-methods} に、恒久的
@@ -19297,7 +19344,7 @@ Gnus は何度もスコア連想リストを読み込むのを避けるために、それのキャッシュ
 
 @item gnus-kill-files-directory
 @vindex gnus-kill-files-directory
-すべての削除とスコアのファイルはこのディレクトリーに蓄積され、それはディ
+すべての削除とスコアのファイルはこのディレクトリーに格納され、それはディ
 フォルトでは環境変数 @env{SAVEDIR} によって初期化されます。ディフォルト
 値は @file{~/News/} です。
 
@@ -23333,12 +23380,12 @@ From Reiner Steib <reiner.steib@@gmx.de>.
 表現のリストです。例えば @samp{vmadmin.com} の誰からでも来るメールを阻止
 するには、あなたのブラックリストに @samp{vmadmin.com} を入れて下さい。空
 のブラックリストで始めましょう。ブラックリストの各項目は Emacs の正規表
-現シンタックスを使います。
+現の構文 (stntax) を使います。
 
 逆に、ホワイトリストは何のアドレスが正当だと考えられるかを告げます。ホワ
 イトリストにあるアドレスからやって来たすべてのメッセージは、非-spam だと
 見なされます。@ref{BBDB Whitelists} も見て下さい。ホワイトリストの各項目
-は Emacs の正規表現シンタックスを使います。
+は Emacs の正規表現の構文 (stntax) を使います。
 
 ブラックリストとホワイトリストのファイルの所在は、
 @code{spam-directory} 変数 (ディフォルトは @file{~/News/spam}) また
@@ -25499,7 +25546,7 @@ Gnus は @code{Mail-Copies-To} ヘッダーに注意を払うようになりました。
 
 @item
 簡単にトリートメントができるようにするために、現在の記事のきれいな複製が
-いつも別バッファーに蓄積されるようになりました。
+いつも別バッファーに置かれるようになりました。
 
 @item
 Gnus がどこに記事を保存するかを提案できるようになりました (@pxref{Saving
@@ -26692,7 +26739,7 @@ Gnus がグループに入ると、グループのすべての未読記事のヘッダーをバックエ
 
 @item 切られたグループ (killed groups)
 @cindex killed groups
-切られたグループの情報は蓄積されたり更新されたりしないので、切られたグルー
+切られたグループの情報は保存されたり更新されたりしないので、切られたグルー
 プを購読されたグループより簡単に扱えるようになります。
 
 @item ゾンビグループ (zombie groups)
@@ -26702,7 +26749,7 @@ Gnus がグループに入ると、グループのすべての未読記事のヘッダーをバックエ
 @item アクティブファイル (active file)
 @cindex active file
 ニュースサーバーはどの記事を運んでいるか、どのグループが存在するかを記録
-しておかなければなりません。すべてのこの情報は現状ファイルに蓄積され、そ
+しておかなければなりません。すべてのこの情報は現状ファイルに格納され、そ
 れはあなたが想像するように比較的大きいです。
 
 @item 偽グループ (bogus groups)
@@ -26746,7 +26793,7 @@ Gnus がグループに入ると、グループのすべての未読記事のヘッダーをバックエ
 @item 一時グループ (ephemeral groups)
 @cindex ephemeral groups
 @cindex temporary groups
-たいていのグループはどの記事を読んだかのデータを蓄積します。
+たいていのグループはどの記事を読んだかのデータを保存します。
 @dfn{一時} グループはデータが溜められないグループです---グループを出ると、
 それは天空に消え去ります。
 
