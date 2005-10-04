@@ -170,15 +170,18 @@ tarball で何をすれば良いですか?
 @samp{tar xvzf gnus.tar.gz} で書庫を展開して、ありふれた@*
 @samp{./configure; make; make install} の手順を実行して下さい。
 
-(MS-Windows では @uref{http://www.cygwin.com} から Cygwin の環境も取得し
+@quotation
+MS-Windows では @uref{http://www.cygwin.com} から Cygwin の環境も取得し
 て下さい。それは上述のことどもを行なうこと、またはある梱包器 (packer)
 (例えば @uref{http://www.winace.com} にある Winace) で tarball を開梱す
 ること、そして tarball に含まれている Gnus をインストールするためのバッ
-チファイル @file{make.bat} を使うことを可能にします。)  Gnus をシステム
-領域にインストールしたくない (またはその権限が与えられていない) ならば、
-ホームディレクトリーにインストールすることもできます。その場合
-は @file{~/.xemacs/init.el} ファイルか @file{.emacs} ファイルに以下の行
-を加えて下さい。
+チファイル @file{make.bat} を使うことを可能にします。
+@end quotation
+
+Gnus をシステム領域にインストールしたくない (またはその権限が与えられて
+いない) ならば、ホームディレクトリーにインストールすることもできます。そ
+の場合は @file{~/.xemacs/init.el} ファイルか @file{.emacs} ファイルに以
+下の行を加えて下さい。
 
 @lisp
 (add-to-list 'load-path "/path/to/gnus/lisp")
