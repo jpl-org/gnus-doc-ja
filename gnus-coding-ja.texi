@@ -12,7 +12,7 @@
 @end direntry
 
 @copying
-Copyright (c) 2004  Free Software Foundation, Inc.
+Copyright (c) 2004, 2005  Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -54,7 +54,7 @@ license to the document, as described in section 6 of the license.
 @titlepage
 @title Gnus Coding Style and Maintainance Guide
 
-@c @author by Reiner Steib  <Reiner.Steib@gmx.de>
+@author by Reiner Steib  <Reiner.Steib@@gmx.de>
 
 @insertcopying
 @end titlepage
@@ -68,6 +68,121 @@ license to the document, as described in section 6 of the license.
 @section Gnus $B$G%3!<%I$r=q$/$H$-$NN.57(B
 @subsection $B0MB84X78(B
 
+Gnus $B$NG[I[$O!"(BGnus $B$N$?$a$K=q$+$l(B Gnus $B$N$?$a$K=8CfE*$K;H$o$l$k$?$/$5$s(B
+$B$N%i%$%V%i%j!<$r4^$s$G$$$^$9!#$7$+$7!"$=$l$i$N%i%$%V%i%j!<$NB?$/$O$=$l$i(B
+$BC1FH$G$bM-MQ$G$9!#Nc$($PB>$N(B Emacs Lisp $B%Q%C%1!<%8$,!"(B@acronym{MIME} $B%i(B
+$B%$%V%i%j!<$r;H$&$+$b$7$l$^$;$s!#(B@xref{Top, ,Top, emacs-mime-ja, The
+Emacs MIME Manual}.
+
+@subsection $BHFMQ%i%$%V%i%j!<(B
+
+@table @file
+@item netrc.el
+@file{.netrc} $B$r2r@O$9$k5!G=$rDs6!$7$^$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item format-spec.el
+$BG$0U$N%U%)!<%^%C%HJ8;zNs$r%U%)!<%^%C%H$9$k4X?t72$rDs6!$7$^$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+@end table
+
+@subsection $B0E9f2=$H%;%-%e%j%F%#!<(B
+
+@table @file
+@item encrypt.el
+$B%U%!%$%k$r0E9f2=$9$k%k!<%A%s72$rDs6!$7$^$9!#(B
+@c As of 2005-10-25...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item password.el
+$BMxMQ<T$N%Q%9%o!<%I$rFI$_<h$j!"%Q%9%o!<%I%-%c%C%7%e$r;H$&$3$H$b$"$j$^$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item tls.el
+GnuTLS $B$G0O$`%i%C%Q!<$r2p$7$F(B TLS/SSL $B$r%5%]!<%H$7$^$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item pgg*.el
+$B$5$^$6$^$J(B PGP $B$N<BAu$N$?$a$N%$%s%?!<%U%'!<%9$rDs6!$7$^$9!#(B
+@c As of 2005-10-21...
+$B$3$l$i$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+@end table
+
+@subsection $B%M%C%H%o!<%-%s%0(B
+
+@table @file
+@item dig.el
+$B%I%a%$%sL>%7%9%F%`(B dig $B$X$N%$%s%?!<%U%'!<%9$G$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$K(B Gnus $B$X$N=EBg$J0MB8$O$"$j$^$;$s!#(B
+@code{gnus-run-mode-hooks} ($B%i%C%Q!<4X?t(B) $B$r;H$$$^$9!#(B
+
+@item dns*.el
+$B%I%a%$%sL>%5!<%S%9$GD4$Y$^$9!#(B
+@c As of 2005-10-21...
+$B$3$l$i$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+@end table
+
+@subsection RFC $B$K4X78$9$k%a!<%k$H%K%e!<%9$N%i%$%V%i%j!<(B
+
+@table @file
+@item pop3.el
+$B%]%9%H%*%U%#%9%W%m%H%3%k(B (RFC1460) $B$X$N%$%s%?!<%U%'!<%9$G$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item imap.el
+@acronym{IMAP} $B%i%$%V%i%j!<$G$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item ietf-drums.el
+RFC822bis $B%X%C%@!<$r2r@O$9$k4X?t72$rDs6!$7$^$9!#(B
+@c As of 2005-10-21...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item rfc1843.el
+HZ (RFC1843) $B%G%3!<%I$r9T$J$$$^$9!#(BHZ $B$OCf9q8l$H(B @acronym{ASCII} $BJ8;z$r(B
+$BG$0U$K:.$<9g$o$;$?J8>O$N!"%U%!%$%k8r49$N$?$a$N%G!<%?$G$9!#(B
+@c As of 2005-10-21...
+@code{rfc1843-gnus-setup} $B$O(B Gnus $B$G$@$1Lr$KN)$D$G$7$g$&!#(BGnus $B$X$N0MB8(B
+$B$rL5$/$9$?$a$K!"$3$N4X?t$OJL$N>l=j$K0\@_$9$Y$-$+$b$7$l$^$;$s!#$3$l0J30$K!"(B
+$B=EBg$G$O$J$$$1$l$I$b(B Gnus $B$K0MB8$7$F$$$k4X(B
+$B?t(B @code{rfc1843-decode-article-body} $B$K$D$$$F$O!"0z?t$r%*%W%7%g%s$K$9$k(B
+$B$3$H$K$h$C$F!"(B@code{gnus-newsgroup-name} $B$r=|30$9$k$3$H$,$G$-$k$G$7$g$&!#(B
+
+@item rfc2045.el
+RFC2045 $B%X%C%@!<$r%G%3!<%I$9$k4X?t72$rDs6!$7$^$9!#(B
+
+@item rfc2047.el
+RFC2047 $B%a%C%;!<%8$r%(%s%3!<%I$*$h$S%G%3!<%I$9$k4X?t72$rDs6!$7$^$9!#(B
+
+@item rfc2104.el
+RFC2104 $B$K4p$E$/%a%C%;!<%8$N%O%C%7%e$K$h$kG'>Z$N$?$a$N%3!<%I$rDs6!$7$^$9!#(B
+
+@item rfc2231.el
+RFC2231 $B%X%C%@!<$r%G%3!<%I$9$k4X?t72$rDs6!$7$^$9!#(B
+@end table
+
+@subsection message
+
+Gnus $B$G$O$9$Y$F$N%a%C%;!<%8(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$N:n@.$r(B Message $B%b!<(B
+$B%I$N%P%C%U%!!<$G9T$J$$$^$9!#(BMessage $B%b!<%I$O(B Emacs $B$N%a!<%k%b!<%I$NCV$-(B
+$B49$($K$J$k$3$H$,0U?^$5$l$F$$$^$9!#(B@file{message.el} $B$O(B Gnus $B$K0MB8$7$J$$(B
+$B$h$&$K$9$Y$-$G$9!#(B
+
+@subsection Gnus $B%P%C%/%(%s%I(B
+
+@file{nn*.el} $B$N%U%!%$%k72$O(B NNTP (@file{nntp.el}), IMAP
+(@file{nnimap.el}) $B$*$h$SJ#?t$NB>$N%a!<%k%P%C%/%(%s%I$N5!G=$rDs6!$7$^(B
+$B$9(B ($B$*$=$i$/(B @file{nnml.el}, @file{nnfolder.el} $B$*$h(B
+$B$S(B @file{nnmaildir.el} $B$,!"$b$C$H$b9-$/;H$o$l$F$$$k%a!<%k%P%C%/%(%s%I$G(B
+$B$9(B)$B!#(B
+
 @c message / gnus
 @c
 @c nn*
@@ -76,10 +191,11 @@ license to the document, as described in section 6 of the license.
 @c
 @c rfc*
 @c
+@c pgg*
 @c tla netrc pop3 dig dns ...
 @c format-spec.el
 
-@subsection $B8_49@-(B
+@section $B8_49@-(B
 
 @c v5-10 $B;^$H44$K$*$1$k!"(BXEmacs $B$H8E$$%P!<%8%g%s$N(B Emacs $B$H$N8_49@-!#(B
 
@@ -87,9 +203,9 @@ license to the document, as described in section 6 of the license.
 @c x
 @c @end table
 
-@section Gnus $B$N0];}4IM}$K4X$9$k<j0z(B
+@chapter Gnus $B$N0];}4IM}$K4X$9$k<j0z(B
 
-@subsection $B0BDjHG$H3+H/HG(B
+@section $B0BDjHG$H3+H/HG(B
 
 CVS $B$N44$O$+$J$j3hH/$K3+H/$5$l$F$$$^$9!#(B
 
@@ -98,7 +214,7 @@ CVS $B$N44$O$+$J$j3hH/$K3+H/$5$l$F$$$^$9!#(B
 @c $BNc30(B: 5.10.1 $B$,%j%j!<%9$5$l$?8e$N?t%v7n4V!"?75!G=$NDI2C$,E`7k$5$l$^$7(B
 @c $B$?!#(B
 
-@subsection $BF14|(B
+@section $BF14|(B
 
 @c $B?o=j$K4XO"$9$k(B Message-ID $B$,$"$j$^$9!#(BGmane $B$G$=$l$i$N%9%l%C%I$r;2>H(B
 @c $B$9$k$K$O(B http://thread.gmane.org/Message-ID $B$r;H$C$F2<$5$$(B ($B$=$7$FI=(B
@@ -176,7 +292,9 @@ Gnus $B$N3+H/$K$*$1$k;(B?$JJQ99$K$D$$$F$O!"C1$K(B Gnus $B$N(B CVS $B$N44$rJ
 $B%$%s$NCf$G$*4VH4$1$J$b$N!"Nc$($P6uGrJ8;z$N0c$$$K5$$E$$$F!"$=$l$i$rE}0l$7(B
 $B$^$9$1$l$I$M(B ;-)$B!#(B
 
-@subsection $B$$$m$s$J$3$H(B
+@section $B$$$m$s$J$3$H(B
+
+@heading @file{GNUS-NEWS}
 
 @file{texi/gnus-news.texi} $B$r85$K(B @file{GNUS-NEWS} $B$r@8@.$5$;$k$N$O!"(BNo
 Gnus $B$+$i;O$^$j$^$7$?!#(B@file{GNUS-NEWS} $B$OJT=8$7$J$$$G2<$5$$!#(B
