@@ -64,7 +64,16 @@ license to the document, as described in section 6 of the license.
 @c 一部を直してくれるだけでもありがたいです。
 
 @node Top
+@top Gnus Coding Style and Maintainance Guide
 
+このマニュアルは @dots{} を説明します。
+
+@menu
+* Gnus Coding Style:: Gnus でコードを書くときの流儀
+* Gnus Maintainance Guide:: Gnus の維持管理に関する手引
+@end menu
+
+@node Gnus Coding Style
 @section Gnus でコードを書くときの流儀
 @subsection 依存関係
 
@@ -166,6 +175,11 @@ RFC2104 に基づくメッセージのハッシュによる認証のためのコードを提供します。
 
 @item rfc2231.el
 RFC2231 ヘッダーをデコードする関数群を提供します。
+
+@item flow-fill.el
+RFC2646 の "flowed" テキストを処理します。
+@c As of 2005-10-27...
+このファイルは Gnus に依存しません。
 @end table
 
 @subsection message
@@ -203,6 +217,7 @@ Gnus ではすべてのメッセージ (メールとニュースの両方) の作成を 
 @c x
 @c @end table
 
+@node Gnus Maintainance Guide
 @chapter Gnus の維持管理に関する手引
 
 @section 安定版と開発版
