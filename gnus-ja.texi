@@ -6815,6 +6815,7 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 
 @findex gnus-thread-sort-by-total-score
 @findex gnus-thread-sort-by-date
+@findex gnus-thread-sort-by-date-reverse
 @findex gnus-thread-sort-by-score
 @findex gnus-thread-sort-by-subject
 @findex gnus-thread-sort-by-author
@@ -6832,7 +6833,8 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 $B%G%#%U%)%k%H$G$OJB$YBX$($O5-;vHV9f$K4p$E$$$F9T$J$o$l$^$9!#$9$G$KMQ0U$5$l(B
 $B$F$$$kJB$YBX$(=R8l4X?t$O(B @code{gnus-thread-sort-by-number},
 @code{gnus-thread-sort-by-author}, @code{gnus-thread-sort-by-recipient},
-@code{gnus-thread-sort-by-subject}, @code{gnus-thread-sort-by-date},
+@code{gnus-thread-sort-by-subject},
+@code{gnus-thread-sort-by-date}, @code{gnus-thread-sort-by-date-reverse},
 @code{gnus-thread-sort-by-score},
 @code{gnus-thread-sort-by-most-recent-number},
 @code{gnus-thread-sort-by-most-recent-date},
@@ -6871,6 +6873,42 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
       '((lambda (t1 t2)
           (not (gnus-thread-sort-by-number t1 t2)))
         gnus-thread-sort-by-score))
+@end lisp
+
+@c TRANSLATEME
+Yet more examples. You can define different sorting to different
+groups. Here is an example for where one @acronym{NNTP} group is
+sorted by subject and the @acronym{RSS} group is sorted by date to see
+the latest news at the top.
+
+@lisp
+(require 'cl)
+
+(defun my-gnus-summary-mode-hook-group-select ()
+  (flet ((lsetq (x val) ;; Local setq
+                (set (make-local-variable x) val)))
+    (cond
+     ;;  In Group buffer to make Debian daily news group press: G m
+     ;;  and point it to nntp server news.gmane.org and
+     ;;  group gmane.linux.debian.user.news
+     ((string-match "nntp.*debian.user.news" gnus-newsgroup-name)
+      (lsetq 'gnus-show-threads nil)
+      (lsetq 'gnus-article-sort-functions 'gnus-article-sort-by-date-reverse)
+      (lsetq 'gnus-use-adaptive-scoring nil)
+      (lsetq 'gnus-use-scoring nil))
+     ;;  In Group buffer to read Debian weekly news RSS feed press: G R
+     ;;  and point it to url:
+     ;;  http://packages.debian.org/unstable/newpkg_main.en.rdf
+     ((string-match "nnrss.*debian" gnus-newsgroup-name)
+      (lsetq 'gnus-show-threads nil)
+      (lsetq 'gnus-article-sort-functions 'gnus-article-sort-by-subject)
+      (lsetq 'gnus-use-adaptive-scoring nil)
+      (lsetq 'gnus-use-scoring t)
+      (lsetq 'gnus-score-find-score-files-function 'gnus-score-find-single)
+      (lsetq 'gnus-summary-line-format "%U%R%z%d %I%(%[ %s %]%)\n")))))
+
+(defun my-gnus-summary-mode-hook  ()
+  (my-gnus-summary-mode-hook-group-select))
 @end lisp
 
 @vindex gnus-thread-score-function
