@@ -3054,6 +3054,18 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 文字列の値は、@code{to-group} の例が示すように、正規表現による置き換えを
 受けることがあります。
 
+@vindex gnus-parameters-case-fold-search
+グループ名と @code{gnus-parameters} で指定されたこれらの正規表現の一つを
+比較するときに大文字と小文字を区別するかどうかは、ディフォルトではその比
+較を行なう時点での @code{case-fold-search} の値に依存します。一般的
+に @code{case-fold-search} の値は @code{t} で、それは例え
+ば @code{("INBOX\\.FOO" (total-expire . t))} という要素
+が、@samp{INBOX.FOO} グループと @samp{INBOX.foo} グループの両方に適用さ
+れることを意味します。これらの正規表現が常に大文字と小文字を区別するよう
+にしたい場合は、@code{gnus-parameters-case-fold-search} 変数の値
+を @code{nil} に設定して下さい。あるいは、それらが常に大文字と小文字を区
+別しないようにしたいなら、それを @code{t} に設定して下さい。
+
 @node Listing Groups
 @section グループの一覧表示
 @cindex group listing
