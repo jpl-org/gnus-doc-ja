@@ -11002,7 +11002,10 @@ Emacs @acronym{MIME} マニュアルで述べられています。
 @code{head}: ヘッダーでそのトリートメントをします。
 
 @item
-@code{last}: このトリートメントを最後のパートで行ないます。
+@code{first}: このトリートメントを最初の本文のパートで行ないます。
+
+@item
+@code{last}: このトリートメントを最後の本文のパートで行ないます。
 
 @item
 整数: このトリートメントをこの数値より短いすべての本文のパートで行ないま
@@ -11054,7 +11057,7 @@ Emacs @acronym{MIME} マニュアルで述べられています。
 @item gnus-treat-overstrike (t, integer)
 @item gnus-treat-strip-cr (t, integer)
 @item gnus-treat-strip-headers-in-body (t, integer)
-@item gnus-treat-strip-leading-blank-lines (t, integer)
+@item gnus-treat-strip-leading-blank-lines (t, first, integer)
 @item gnus-treat-strip-multiple-blank-lines (t, integer)
 @item gnus-treat-strip-pem (t, last, integer)
 @item gnus-treat-strip-trailing-blank-lines (t, last, integer)
