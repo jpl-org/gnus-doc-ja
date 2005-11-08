@@ -10345,6 +10345,12 @@ Gnus の info の節 (node) に移動します (@code{gnus-info-find-no
 すべての記事に既読の印を付けて次のグループへ移動しま
 す (@code{gnus-summary-catchup-and-goto-next-group})。
 
+@item Z p
+@kindex Z p (概略)
+@findex gnus-summary-catchup-and-goto-prev-group
+すべての記事に既読の印を付けて前のグループへ移動しま
+す (@code{gnus-summary-catchup-and-goto-prev-group})。
+
 @item Z R
 @itemx C-x C-s
 @kindex Z R (概略)
@@ -22393,13 +22399,13 @@ Picon のファイル名として試してみる順に並べられた拡張子のリストです。ディ
 @table @code
 @item gnus-use-toolbar
 @vindex gnus-use-toolbar
-ツールバーを表示しないのならば、この変数を @code{nil} に設定して下さい。
-ツールバーを上、下、右、または左に表示するのならば、この変数をそれぞ
-れ @code{top-toolbar}, @code{bottom-toolbar}, @code{right-toolbar}, また
-は @code{left-toolbar} に設定して下さい。この変数は XEmacs にツールバー
-をどうやって表示するかを指示するためのものではなく、XEmacs がツールバー
-をどうやって表示するかを Gnus に言うためのものです。ディフォルト
-は @code{default-toolbar} です。
+@code{nil} だったらツールバーを表示しません。非-@code{nil} の場合、それ
+は @code{default-toolbar}, @code{top-toolbar}, @code{bottom-toolbar},
+@code{right-toolbar} または @code{left-toolbar} の中の一つでなければなり
+ません。
+
+訳注: 現在この変数による制御は有効ではありません。かつて改善が試みられま
+したが、今のところ解決を見ていません。
 
 @item gnus-group-toolbar
 @vindex gnus-group-toolbar
