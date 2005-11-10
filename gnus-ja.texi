@@ -3067,6 +3067,32 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 $B$r(B @code{nil} $B$K@_Dj$7$F2<$5$$!#$"$k$$$O!"$=$l$i$,>o$KBgJ8;z$H>.J8;z$r6h(B
 $BJL$7$J$$$h$&$K$7$?$$$J$i!"$=$l$r(B @code{t} $B$K@_Dj$7$F2<$5$$!#(B
 
+@code{gnus-parameters} $B$r2p$9$k$3$H$K$h$C$F!"%0%k!<%W$K$h$C$F0[$J$kJB$Y(B
+$BBX$($rDj5A$9$k$3$H$,$G$-$^$9!#$3$l$O!"(B@acronym{NNTP} $B$G$OI=Bj$G!"(B
+@acronym{RSS} $B%0%k!<%W$G$O:G?7$N%K%e!<%9$,@hF,$K$J$k$h$&$KF|IU$G!"$=$l$>(B
+$B$lJB$YBX$($r9T$J$&Nc$G$9!#$3$NNc$N:G=i$N%0%k!<%W$O!"(Bnews.gmane.org $B$+$i(B
+$B<hF@$9$k(B Debian $B$N%G%$%j!<%K%e!<%9$G$9!#(B@acronym{RSS} $B%0%k!<%W$O!"(BRSS
+$B%U%#!<%I$GG[?.$5$l$F$$$k(B Debian $B$N%&%#!<%/%j!<%K%e!<(B
+$B%9(B @url{http://packages.debian.org/unstable/newpkg_main.en.rdf} $B$KBP1~$7(B
+$B$^$9!#(B@xref{RSS}.
+
+@lisp
+(setq
+ gnus-parameters
+ '(("nntp.*gmane\\.debian\\.user\\.news"
+    (gnus-show-threads nil)
+    (gnus-article-sort-functions '((not gnus-article-sort-by-date)))
+    (gnus-use-adaptive-scoring nil)
+    (gnus-use-scoring nil))
+   ("nnrss.*debian"
+    (gnus-show-threads nil)
+    (gnus-article-sort-functions 'gnus-article-sort-by-subject)
+    (gnus-use-adaptive-scoring nil)
+    (gnus-use-scoring t)
+    (gnus-score-find-score-files-function 'gnus-score-find-single)
+    (gnus-summary-line-format "%U%R%z%d %I%(%[ %s %]%)\n"))))
+@end lisp
+
 @node Listing Groups
 @section $B%0%k!<%W$N0lMwI=<((B
 @cindex group listing
@@ -6881,46 +6907,8 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 
 @lisp
 (setq gnus-thread-sort-functions
-      '((lambda (t1 t2)
-          (not (gnus-thread-sort-by-number t1 t2)))
+      '((not gnus-thread-sort-by-number)
         gnus-thread-sort-by-score))
-@end lisp
-
-$B$5$i$KJL$NNc!#%0%k!<%W$K$h$C$F0[$J$kJB$SBX$($rDj5A$9$k$3$H$,$G$-$^$9!#$3(B
-$B$3$K$"$kNc$O!"0l$D$N(B @acronym{NNTP} $B$G$OI=Bj$K$h$C$FJB$SBX$($r9T$$!"(B
-@acronym{RSS} $B%0%k!<%W$G$O!"@hF,$G:G?7$N%K%e!<%9$r8+$k$?$a$K!"F|IU$GJB$Y(B
-$BBX$($^$9!#(B($BLuCm(B: $B$3$NNc$O(B @code{cl} $B$r>o;~FI$_9~$_$^$9!#FC$K(B Emacs $B$G$3(B
-$B$N$h$&$J@_Dj$r;H$&I,MW$,@8$8$?$H$-$O!"(B@code{cl} $B$rI,MW$H$7$J$$%3!<%I$K=q(B
-$B$-49$($k$3$H$r9MN8$7$F2<$5$$!#Fq$7$/$O$"$j$^$;$s!#(B)
-
-@lisp
-(require 'cl)
-
-(defun my-gnus-summary-mode-hook-group-select ()
-  (flet ((lsetq (x val) ;; Local setq
-                (set (make-local-variable x) val)))
-    (cond
-     ;;  In Group buffer to make Debian daily news group press: G m
-     ;;  and point it to nntp server news.gmane.org and
-     ;;  group gmane.linux.debian.user.news
-     ((string-match "nntp.*debian.user.news" gnus-newsgroup-name)
-      (lsetq 'gnus-show-threads nil)
-      (lsetq 'gnus-article-sort-functions 'gnus-article-sort-by-date-reverse)
-      (lsetq 'gnus-use-adaptive-scoring nil)
-      (lsetq 'gnus-use-scoring nil))
-     ;;  In Group buffer to read Debian weekly news RSS feed press: G R
-     ;;  and point it to url:
-     ;;  http://packages.debian.org/unstable/newpkg_main.en.rdf
-     ((string-match "nnrss.*debian" gnus-newsgroup-name)
-      (lsetq 'gnus-show-threads nil)
-      (lsetq 'gnus-article-sort-functions 'gnus-article-sort-by-subject)
-      (lsetq 'gnus-use-adaptive-scoring nil)
-      (lsetq 'gnus-use-scoring t)
-      (lsetq 'gnus-score-find-score-files-function 'gnus-score-find-single)
-      (lsetq 'gnus-summary-line-format "%U%R%z%d %I%(%[ %s %]%)\n")))))
-
-(defun my-gnus-summary-mode-hook  ()
-  (my-gnus-summary-mode-hook-group-select))
 @end lisp
 
 @vindex gnus-thread-score-function
@@ -6954,6 +6942,9 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
       '(gnus-article-sort-by-number
         gnus-article-sort-by-subject))
 @end lisp
+
+@code{gnus-parameters} $B$r2p$9$k$3$H$K$h$C$F!"%0%k!<%W$K$h$C$F0[$J$kJB$Y(B
+$BBX$($rDj5A$9$k$3$H$,$G$-$^$9!#(B@xref{Group Parameters}.
 
 @node Asynchronous Fetching
 @section $BHsF14|5-;v<hF@(B
@@ -12329,7 +12320,20 @@ Message Manual}, $B$r;2>H$7$F2<$5$$!#(B
       (nntp-via-rlogin-command "ssh")
 @end lisp
 
-@code{nntp-via-rlogin-command-switches} $B$b;2>H$7$F2<$5$$!#(B
+@code{nntp-via-rlogin-command-switches} $B$b;2>H$7$F2<$5$$!#4V@\E*$K@\B3$9(B
+$B$k>l9g$NNc$G$9(B:
+
+@lisp
+(setq gnus-select-method
+      '(nntp "indirect"
+	     (nntp-address "news.server.example")
+             (nntp-via-user-name "intermediate_user_name")
+             (nntp-via-address "intermediate.host.example")
+             (nntp-via-rlogin-command "ssh")
+             (nntp-end-of-line "\n")
+             (nntp-via-rlogin-command-switches ("-C" "-t" "-e" "none"))
+             (nntp-open-connection-function nntp-open-via-rlogin-and-telnet)))
+@end lisp
 
 $BKIJI$NCf$K$$$?$H$7$F$b(B "runsocks" $B$N$h$&$J%i%C%Q!<%3%^%s%I$rDL$7$F30$N@$(B
 $B3&$KD>@\%"%/%;%9$G$-$k$N$J$i$P!"0J2<$N$h$&$K(B socks $B2=$5$l$?(B telnet $B$G%K%e!<(B
@@ -25047,13 +25051,11 @@ RFC 1731 $B$O(B @acronym{IMAP} $B$N(B GSSAPI/Kerberos4 $B$N<jK!$K$D$$$F=R$Y
 Gnus $B$O0J2<$N$b$N$GF0:n$7$^$9(B:
 
 @itemize @bullet
-
 @item
 Emacs 21.1 $B$H$=$l0J>e!#(B
 
 @item
-XEmacs 21.4 $B0J>e$N(B Mule $B5!G=IU$-(B
-
+XEmacs 21.4 $B$H$=$l0J>e!#(B
 @end itemize
 
 $B$3$N(B Gnus $B$NHG$O$3$l$h$j8E$$$I$s$J(B Emacsen $B$G$b40A4$KF0:n$7$J$$$G$7$g$&!#(B
