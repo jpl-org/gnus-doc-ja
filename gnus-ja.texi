@@ -22408,13 +22408,18 @@ Picon $B$N%U%!%$%kL>$H$7$F;n$7$F$_$k=g$KJB$Y$i$l$?3HD%;R$N%j%9%H$G$9!#%G%#(B
 @table @code
 @item gnus-use-toolbar
 @vindex gnus-use-toolbar
-@code{nil} $B$@$C$?$i%D!<%k%P!<$rI=<($7$^$;$s!#Hs(B-@code{nil} $B$N>l9g!"$=$l(B
-$B$O(B @code{default-toolbar}, @code{top-toolbar}, @code{bottom-toolbar},
-@code{right-toolbar} $B$^$?$O(B @code{left-toolbar} $B$NCf$N0l$D$G$J$1$l$P$J$j(B
-$B$^$;$s!#(B
+$B$3$NJQ?t$O%D!<%k%P!<$rI=<($9$k0LCV$r;XDj$7$^$9!#(B@code{nil} $B$@$C$?$i%D!<(B
+$B%k%P!<$rI=<($7$^$;$s!#Hs(B-@code{nil} $B$N>l9g!"$=$l$O(B @code{default},
+@code{top}, @code{bottom}, @code{right} $B$^$?$O(B @code{left} $B$NCf$N0l$D$N(B
+$B%7%s%\%k$G$J$1$l$P$J$j$^$;$s!#(B@code{default} $B$@$C$?$i%G%#%U%)%k%H$N%D!<(B
+$B%k%P!<$r;H$$!"B>$N$b$N$@$C$?$i$=$NL>A0$,<($9>l=j$K%D!<%k%P!<$rI=<($7$^$9!#(B
+$B%G%%%U%)%k%H$O(B @code{default} $B$G$9!#(B
 
-$BLuCm(B: $B8=:_$3$NJQ?t$K$h$k@)8f$OM-8z$G$O$"$j$^$;$s!#$+$D$F2~A1$,;n$_$i$l$^(B
-$B$7$?$,!":#$N$H$3$m2r7h$r8+$F$$$^$;$s!#(B
+@item gnus-toolbar-thickness
+@vindex gnus-toolbar-thickness
+$B9b$5$HI}$N%3%s%9(B (cons) $B$G!"%D!<%k%P!<$N8|$5$r;XDj$7$^$9!#9b$5$O>eJU$+2<(B
+$BJU$KI=<($9$k%D!<%k%P!<$G;H$o$l!"I}$O1&C<$+:8C<$KI=<($9$k%D!<%k%P!<$G;H$o(B
+$B$l$^$9!#%G%#%U%)%k%HCM$O%G%#%U%)%k%H$N%D!<%k%P!<$NCM$G$9!#(B
 
 @item gnus-group-toolbar
 @vindex gnus-group-toolbar
@@ -23015,9 +23020,9 @@ Configuration Examples} $B$K$"$j$^$9!#(B
 @cindex spam filtering incoming mail
 @cindex spam
 
-$BF~$C$F$/$k%a!<%k$r_I2a$9$kL\E*$G(B @code{spam.el} $B$r;H$&$K$O!"FC5iJ,3d%j%9(B
-$B%H(B @code{nnmail-split-fancy} $B$^$?$O(B @code{nnimap-split-fancy} $B$K0J2<$rDI(B
-$B2C$7$J$1$l$P$J$j$^$;$s(B:
+$BF~$C$F$/$k%a!<%k$r_I2a$9$kL\E*$G(B @code{spam.el} $B$N5!9=$r;H$&$K$O!"FC5iJ,(B
+$B3d%j%9%H(B @code{nnmail-split-fancy} $B$^$?$O(B @code{nnimap-split-fancy} $B$K0J(B
+$B2<$N$b$N$rDI2C$7$J$1$l$P$J$j$^$;$s(B:
 
 @example
 (: spam-split)
@@ -23027,27 +23032,29 @@ Configuration Examples} $B$K$"$j$^$9!#(B
 $B;H$C$F$$$k$+$K1~$8$F!"(B@code{nnmail-split-fancy} $B$^$?(B
 $B$O(B @code{nnimap-split-fancy} $B$+$i8F$P$l$k$3$H$KCm0U$7$F2<$5$$!#(B
 
-$B$5$i$K!"(B@code{spam-split} $B$O$$$+$J$kJ}K!$K$h$C$F$b?7Ce%a!<%k$r2~JQ$7$^$;(B
-$B$s!#(B
+$B$^$?!"(B@code{spam-split} $B$O$$$+$J$kJ}K!$K$h$C$F$b?7Ce%a!<%k$r2~JQ$7$^$;$s!#(B
 
-@code{spam-split} $B4X?t$OF~$C$F$/$k%a!<%k$r=hM}$7!"(Bspam $B$H;W$o$l$k%a!<%k(B
-$B$rJQ?t(B @code{spam-split-group} $B$GM?$($i$l$kL>A0$N%0%k!<%W$KAw$j$^$9!#%G%#(B
-$B%U%)%k%H$G$O$=$N%0%k!<%WL>$O(B @samp{spam} $B$G$9$,!"(B
-@code{spam-split-group} $B$r%+%9%?%^%$%:$9$k$3$H$,2DG=$G$9!#(B
-@code{spam-split-group} $B$NFbMF$,(B @emph{$B@dBP(B} $B%0%k!<%WL>$G$"$k$3$H!"Nc$((B
-$B$P(B @samp{your-server} $B$H$$$&(B @code{nnimap} $B%5!<%P!<$N>l9g$O!"(B
-@samp{spam} $BJQ?t$,:G=*E*$K(B @samp{nnimap+your-server:spam} $B$K$J$k$3$H$r3N(B
-$B$+$a$F2<$5$$!#=>$C$F(B @samp{nnimap+server:spam} $B$H$$$&CM$O4V0c$$$G!"$=$l(B
-$B$O<B:]$K$O(B @samp{nnimap+your-server:nnimap+server:spam} $B$H$$$&%0%k!<%W$K(B
-$B$J$j!"$=$l$,F/$/$+F/$+$J$$$+$O!"$"$J$?$N%5!<%P!<$,4qL/$J%0%k!<%WL>$KBP$7(B
-$B$F42MF$+$I$&$+$K0MB8$9$k$G$7$g$&!#(B
+@code{spam-split} $B4X?t$OF~$C$F$/$k%a!<%k$r=hM}$7$F!"(Bspam $B$H8+$J$5$l$?%a!<(B
+$B%k$rJQ?t(B @code{spam-split-group} $B$GM?$($i$l$kL>A0$N%0%k!<%W$KAw$j$^$9!#(B
+$B%G%#%U%)%k%H$G$O$=$N%0%k!<%WL>$O(B @samp{spam} $B$G$9$,!"(B
+@code{spam-split-group} $B$G%+%9%?%^%$%:$9$k$3$H$,2DG=$G$9!#(B
+@code{spam-split-group} $B$NFbMF$O!"I,$:(B @emph{$BAjBPE*$J(B} $B%0%k!<%WL>(B ($BLuCm(B:
+@samp{spam} $B$N$h$&$J%P%C%/%(%s%I$H%5!<%P!<$rFCDj$7$J$$%0%k!<%WL>(B) $B$K$7$F(B
+$B2<$5$$!#$3$l$O!"Nc$($P(B @samp{your-server} $B$H$$$&(B @code{nnimap} $B%5!<%P!<(B
+$B$K$*$$$F!"(B@samp{spam} $B$H$$$&CM$,:G=*E*(B
+$B$K(B @samp{nnimap+your-server:spam} $B$K$J$k$H$$$&$3$H$G$9!#=>$C(B
+$B$F(B @samp{nnimap+server:spam} $B$H$$$&CM$O4V0c$$$G$"$C$F!"$=$l$O<B:]$K(B
+$B$O(B @samp{nnimap+your-server:nnimap+server:spam} $B$H$$$&%0%k!<%W$K$J$j!"$=(B
+$B$l$,F/$/$+F/$+$J$$$+$O!"$"$J$?$N%5!<%P!<$,4qL/$J%0%k!<%WL>$KBP$7$F42MF$+(B
+$B$I$&$+$K$h$k$G$7$g$&!#(B
 
-$B$^$?!"(B@code{spam-split} $B$K%Q%i%a!<%?!<!"Nc$((B
-$B$P(B @code{spam-use-regex-headers} $B$^$?$O(B @code{"maybe-spam"} $B$rM?$($k$3$H(B
-$B$b$G$-$^$9!#$J$<$3$l$,M-MQ$J$N$G$7$g$&$+(B?
+$B$^$?!"Nc$($P(B @code{spam-use-regex-headers} $B$^$?$O(B @code{"maybe-spam"} $B$N(B
+$B$h$&$J%Q%i%a!<%?!<$r!"(B@code{spam-split} $B$KM?$($k$3$H$b$G$-$^$9!#$J$<$3$l(B
+$B$,M-MQ$J$N$G$7$g$&$+(B?
 
-$B$3$l$i$N(B (@code{spam-use-regex-headers} $B$H(B @code{spam-use-blackholes} $B$N(B
-$B@_Dj$K$h$k(B) $BJ,3d$N5,B'$r8+$F2<$5$$(B:
+$B<!$NJ,3d$N5,B'$r9M$($F$_$F2<$5(B
+$B$$(B (@code{spam-use-regex-headers} $B$H(B @code{spam-use-blackholes} $B$,@_Dj$5(B
+$B$l$F$$$k$b$N$H$7$^$9(B):
 
 @example
  nnimap-split-fancy '(|
@@ -23058,15 +23065,15 @@ Configuration Examples} $B$K$"$j$^$9!#(B
 @end example
 
 $B$5$F!"LdBj$O(B ding $B08$F$N%a%C%;!<%8$r$9$Y$F(B ding $B%U%)%k%@!<$KF~$l$h$&$H$7(B
-$B$F$$$k$3$H$G$9!#$G$b$=$l$O(B ding $B%a!<%j%s%0%j%9%H08$F$KAw$i$l$?(B spam ($BNc(B
-$B$($P(B SpamAssassin $B$H(B @code{spam-use-regex-headers} $B$K$h$C$F8!=P$5$l(B
-$B$k(B spam) $B$r5v$7$F$7$^$&$G$7$g$&!#0lJ}!"$$$/$D$+$N(B ding $B08$F$N%a%C%;!<%8(B
-$B$O%V%i%C%/%[!<%k%j%9%H$K:\$C$F$$$k%a!<%k%5!<%P!<$+$i$d$C$FMh$k$N$G!"(B
+$B$F$$$k$3$H$G$9!#$G$b$=$l$O!"(Bding $B%a!<%j%s%0%j%9%H08$F$KAw$i$l$?L@$i$+(B
+$B$J(B spam ($BNc$($P(B SpamAssassin $B$H(B @code{spam-use-regex-headers} $B$K$h$C$F8!(B
+$B=P$5$l$k(B spam) $B$r5v$7$F$7$^$&$G$7$g$&!#0lJ}!"$$$/$D$+$N(B ding $B08$F$N%a%C(B
+$B%;!<%8$O%V%i%C%/%[!<%k%j%9%H$K:\$C$F$$$k%a!<%k%5!<%P!<$+$i$d$C$FMh$k$N$G!"(B
 ding $B$N5,B'$h$jA0$K(B @code{spam-split} $B$rH/F0$9$k$3$H$,$G$-$^$;$s!#(B
 
-SpamAssassin $B%X%C%@!<$K(B ding $B$N5,B'$rCV$-49$($5$;$k$3$H$O$G$-$^$9$,!"B>(B
-$B$N$9$Y$F$N(B @code{spam-split} $B$N5,B'(B ($BBhFs$N@55,I=8=%X%C%@!<8!::$r4^(B
-$B$`(B) $B$O(B ding $B$N5,B'$N8e$K$J$C$F$7$^$&$G$7$g$&!#(B
+SpamAssassin $B%X%C%@!<$G(B ding $B$N5,B'$rCV$-49$($k$3$H$O$G$-$^$9$,!"B>$N$9(B
+$B$Y$F$N(B @code{spam-split} $B$N5,B'(B ($BBhFs$N@55,I=8=%X%C%@!<8!::$r4^(B
+$B$`(B) $B$O(B ding $B$N5,B'$N8e$K$J$C$F$7$^$&$G$7$g$&(B:
 
 @example
  nnimap-split-fancy '(|
@@ -23081,30 +23088,32 @@ SpamAssassin $B%X%C%@!<$K(B ding $B$N5,B'$rCV$-49$($5$;$k$3$H$O$G$-$^$9$,!"B>
                       "mail")
 @end example
 
-$B4pK\E*$K!"$3$l$OFC$K$"$J$?$NI,MW$K0MB8$7$?FCDj$N(B @code{spam-split} $B8!(B
-$B::$r5/F0$5$;!"$=$l$i$N8!::$N7k2L$OFCDj$N(B spam $B%0%k!<%W$r;X$7<($7$^$9!#$9(B
-$B$Y$F$N%a!<%k$r$9$Y$F$N(B spam $B%F%9%H$KEj$2$kI,MW$O$"$j$^$;$s!#$3$l$,NI$$JL(B
-$B$NM}M3$O!"5,B'$r;}$C$F$$$k%a!<%j%s%0%j%9%H$X$N%a%C%;!<%8$KBP$7$F!";q8;=8(B
-$BLsE*$J%V%i%C%/%[!<%k!&%A%'%C%/$r<B9T$9$kI,MW$,$J$$$H$$$&$3$H$G$9!#$5$i(B
-$B$K(B nnmail $BJ,3d$KBP$7$F(B nnimap $BJ,3d$N$?$a$N!"0[$J$k(B spam $B8!::$r;XDj$9$k$3(B
-$B$H$b$G$-$^$9!#5$$,68$&!<!#(B
+$B$3$l$O!"$"$J$?$NFCJL$JI,MW$K1~$8$?FCDj$N(B @code{spam-split} $B8!::$r5/F0$7!"(B
+$B$=$l$i$N8!::$N7k2L$GFCDj$N(B spam $B%0%k!<%W$r;X$7<($7$^$9!#$9$Y$F$N%a!<%k$K(B
+$BBP$7$F!"$9$Y$F$N(B spam $B8!::$r9T$J$&I,MW$O$"$j$^$;$s!#$3$l$,NI$$$b$&0l$D$N(B
+$BM}M3$O!"J,3d5,B'$r@_Dj$7$F$"$k%a!<%j%s%0%j%9%H08$F$N%a%C%;!<%8$KBP$7$F!"(B
+$B;q8;=8LsE*$J%V%i%C%/%[!<%k!&%A%'%C%/$r<B9T$9$kI,MW$,$J$$$H$$$&$3$H$G$9!#(B
+$B$5$i$K!"(Bnnmail $B$NJ,3d$N$?$a$K(B nnimap $B$N$b$N$H$O0[$J$k(B spam $B8!::$N$d$jJ}(B
+$B$r@_Dj$9$k$3$H$b$G$-$k$G$7$g$&!#5$$,68$&!<!#(B
 
-$B8!::$HF1;~$KL@$i$+$K(B @code{spam-split} $B$r<B9T$9$k$H$7$F$b!":#$^$G$H$*(B
-$B$j(B @code{spam-use-regex-headers} $B$r(B @code{t} $B$K@_Dj$9$k$h$&$J8!::$r9T$J$C(B
-$B$F$$$J$1$l$P$J$j$^$;$s!#$J$<$J$i(B @file{spam.el} $B$rFI$_9~$`$H$-$K!"$"$J$?(B
-$B$,2?$N(B @code{spam-use-xyz} $BJQ?t$r@_Dj$7$F$$$k$+$K1~$8$?!"$$$/$D$+$N>r7o(B
-$BIU$-$NFI$_9~$_$,9T$J$o$l$k$+$i$G$9!#(B
+$B$"$J$?$,8!::$GL@3N$K(B @code{spam-split} $B$r8F$S=P$9$h$&$K$7$F$$$?$H$7$F$b(B
+$B$J$*!"(B@code{spam-use-regex-headers} $B$r(B @code{t} $B$K@_Dj$9$k$3$H$K$h$C$F<B(B
+$B9T$5$l$k$h$&$J8!::$r9T$J$C$F$$$J$1$l$P$J$j$^$;$s!#$J$<$J(B
+$B$i(B @file{spam.el} $B$rFI$_9~$`$H$-$K!"$"$J$?$,@_Dj$7$F$$$k2?$i$+(B
+$B$N(B @code{spam-use-xyz} $BJQ?t$K1~$8$?!">r7oIU$-$NFI$_9~$_$,9T$J$o$l$k$+$i(B
+$B$G$9!#(B
 
 @emph{@acronym{IMAP} $BMxMQ<T$X$NCm0U(B}
 
-$B%X%C%@!<$@$1$G$O$J$/$F%a%C%;!<%8A4BN$K4p$E$$$FJ,3d$r9T$J$$$?$$>l9g$O!"%V!<(B
-$B%kJQ?t(B @code{nnimap-split-download-body} $B$,@_Dj$5$l$kI,MW$,$"$j$^$9!#%G%#(B
+$B%X%C%@!<$@$1$G$O$J$/%a%C%;!<%8A4BN$K4p$E$$$FJ,3d$r9T$J$$$?$$>l9g$O!"%V!<(B
+$B%kJQ?t(B @code{nnimap-split-download-body} $B$r@_Dj$9$kI,MW$,$"$j$^$9!#%G%#(B
 $B%U%)%k%H$G$O!"(Bnnimap $B%P%C%/%(%s%I$O%a%C%;!<%8%X%C%@!<$@$1$r<h$j9~$_$^$9!#(B
 $BNc$($P(B @code{spam-check-bogofilter}$B!"(B@code{spam-check-ifile} $B$^$?(B
 $B$O(B @code{spam-check-stat} ($B$=$l$i$NJ,3d4o$O%a%C%;!<%8$NK\J8A4BN$+$i>pJs(B
-$B$rF@$k(B) $B$N$h$&$J(B @emph{$BE}7WE*$J(B} $B_I2a4o$r;H$&$J$i$P!"$3$NJQ?t$O<+F0E*$K(B
-$B@_Dj$5$l$k$G$7$g$&!#$=$l$O(B @acronym{IMAP} $B$NF0:n$rCY$/$7$F$7$^$&$N$G!"E}(B
-$B7WE*$G$O$J$$%P%C%/%(%s%I$KBP$7$F%G%#%U%)%k%H$G$O@_Dj$5$l$F$$$^$;$s!#(B
+$B$rF@$k$3$H$,$G$-$^$9(B) $B$N$h$&$J(B @emph{$BE}7WE*$J(B} $B_I2a4o$r;H$&>l9g$K$O!"$3(B
+$B$NJQ?t$O<+F0E*$K@_Dj$5$l$^$9!#$=$l$O(B @acronym{IMAP} $B$NF0:n$rCY$/$7$F$7$^(B
+$B$&$N$G!"E}7WE*$G$O$J$$%P%C%/%(%s%I$KBP$7$F%G%#%U%)%k%H$G$O@_Dj$5$l$F$$$^(B
+$B$;$s!#(B
 
 @xref{Splitting in IMAP}.
 
@@ -23150,26 +23159,29 @@ Gnus $B$O$"$J$?$,<u$1<h$C$?(B spam $B$+$i3X$S$^$9!#$"$J$?$O0l$D0J>e$N(B spam
 @cindex $
 Spam $B%0%k!<%W$G$O!"%G%#%U%)%k%H$G$9$Y$F$N%a%C%;!<%8$,(B spam $B$G$"$k$H2r<a(B
 $B$5$l$^$9(B: $B$=$N%0%k!<%W$KF~$k$H!"$=$l$i(B
-$B$K(B @samp{$} $B0u(B (@code{gnus-spam-mark}) $B$,IU$-$^$9!#%a%C%;!<%8$r8+$F$$$C(B
-$B$?$s$=$l$K(B spam $B$N0u$rIU$1$F$b!"8e$G<h$j>C$;$P!"$=$N8e$=$N%0%k!<%W$KF~$C(B
-$B$?$H$-$K!"$=$l$K$O(B spam $B0u$OIU$-$^$;$s!#$?$@(B
-$B$7(B @code{spam-mark-only-unseen-as-spam} $B%Q%i%a!<%?!<$r(B @code{nil} $B$K$9$l(B
-$B$P!"$=$&$$$&F0:n$r$d$a$5$;$k!"$D$^$j$9$Y$F$NL$FI%a%C%;!<%8$K(B spam $B0u$,IU(B
-$B$/$h$&$K$9$k$3$H$,$G$-$^$9!#$=$N%0%k!<%W$N35N,%P%C%U%!!<$K$$$k$H$-!"$d$C(B
-$B$Q$j(B spam $B$G$O$J$+$C$?$9$Y$F$N(B $B5-;v$+$i(B @samp{$} $B0u$r>C$5$J$1$l$P$J$j$^(B
-$B$;$s!#(B@samp{$} $B0u$r>C$9$K$O(B @kbd{M-u} $B$G$=$N5-;v$r!VL$FI!W$K$9$k$+!"$"$k(B
-$B$$$O(B @kbd{d} $B$G(B spam $B$G$O$J$$$b$N$H$7$FFI$s$@$3$H$r@k8@$9$l$PNI$$$G$7$g(B
-$B$&!#%0%k!<%W$rH4$1$k$H$-!"$9$Y$F$N(B spam $B0u(B (@samp{$}) $B$,IU$$$?5-;v(B
-$B$O(B spam $B%W%m%;%C%5!<$KAw$i$l!"$=$l$i$r(B spam $B$NI8K\$H$7$F3X=,$7$^$9!#(B
+$B$K(B @samp{$} $B0u(B (@code{gnus-spam-mark}) $B$,IU$-$^$9!#$"$k%a%C%;!<%8$r8+$F!"(B
+$B$$$C$?$s$=$l$K(B spam $B$N0u$rIU$1$F$b!"8e$G<h$j>C$;$P!"$=$N8e$=$N%0%k!<%W$K(B
+$BF~$C$?$H$-$K!"$=$l$K$O(B spam $B0u$OIU$-$^$;$s!#(B
+@code{spam-mark-only-unseen-as-spam} $B%Q%i%a!<%?!<$r(B @code{nil} $B$K$9$l$P!"(B
+$B$=$&$$$&F0:n$r$d$a$5$;$k!"$D$^$j$9$Y$F$NL$FI%a%C%;!<%8$K(B spam $B0u$,IU$/$h(B
+$B$&$K$9$k$3$H$,$G$-$^$9!#$=$N%0%k!<%W$N35N,%P%C%U%!!<$K$$$k$H$-$K!"$d$C$Q(B
+$B$j(B spam $B$G$O$J$+$C$?$H$o$+$C$?5-;v$,$"$C$?$i!"$=$l$i$N$9$Y$F$+(B
+$B$i(B @samp{$} $B0u$r>C$5$J$1$l$P$J$j$^$;$s!#(B@samp{$} $B0u$r>C$9$K$O(B @kbd{M-u}
+$B$G$=$N5-;v$r!VL$FI!W$K$9$k$+!"$"$k$$$O(B @kbd{d} $B$r;H$C$F(B spam $B$G$O$J$$$b(B
+$B$N$H$7$FFI$s$@$3$H$r@k8@$9$l$PNI$$$G$7$g$&!#%0%k!<%W$rH4$1$k$H$-!"$9$Y$F(B
+$B$N(B spam $B0u(B (@samp{$}) $B$,IU$$$?5-;v$O(B spam $B%W%m%;%C%5!<$KAw$i$l!"$=$l$i(B
+$B$r(B spam $B$NI8K\$H$7$F3X=,$7$^$9!#(B
 
 $B%a%C%;!<%8$OB>$N$$$m$$$m$JJ}K!$K$h$C$F$b>C5n$5$l$k$+$b$7$l$J$$$7!"(B
-@code{ham-marks} $B%0%k!<%W%Q%i%a!<%?!<$,L58z$K$5$l$J$1$l$P!"Dc$$%9%3%"$N(B
-$B$?$a$N(B @samp{Y} $B0u$HF1MM!"%G%#%U%)%k%H$N4{FI$+L@<(E*$J>C5n$N$?$a(B
-$B$N(B @samp{R} $B$H(B @samp{r} $B0u!"<+F0$^$?$OL@<(E*$J:o=|$N$?$a(B
-$B$N(B @samp{X} $B$H(B @samp{K} $B0u!"$=$l$i$9$Y$F$,(B spam $B5-;v$H$OL54X78$G$"$k$H2r(B
-$B<a$5$l$^$9!#$3$N2>Dj$O!"K\J*$N(B spam $B$r8!=P$9$k$?$a$K>C5n(B (kill) $B%U%!%$%k(B
-$B$+%9%3%"%U%!%$%k$rFCJL$K;H$C$F$$$k>l9g$O4V0c$C$F$$$k$+$b$7$l$^$;$s!#$=$&(B
-$B$G$"$l$P(B @code{ham-marks} $B%0%k!<%W%Q%i%a!<%?!<$rD4@0$9$k$Y$-$G$9!#(B
+@code{ham-marks} $B%0%k!<%W%Q%i%a!<%?!<$,L58z$K$5$l$J$1$l$P!"(B@samp{R} $B0u(B
+$B$H(B @samp{r} $B0u!"$*$h$S(B @samp{X} $B0u$H(B @samp{K} $B$O!"(B@samp{Y} $B0u$HF1MM(B
+$B$K!"$9$Y$F(B spam $B$G$OL5$$5-;v$K4XO"IU$1$i$l$k$b$N$H2r<a$5$l$^$9(B ($B$=$l$>(B
+$B$l(B @samp{R} $B$O%G%#%U%)%k%H$N4{FI$N0u!"(B@samp{r} $BL@<(E*$J>C5n$N0u!"(B
+@samp{X} $B$O<+F0E*$J:o=|$N0u!"(B@samp{K} $B$OL@<(E*$J:o=|$N0u!"$=$7(B
+$B$F(B @samp{Y} $B$ODc$$%9%3%"$N$?$a0u$G$9(B)$B!#$3$N2>Dj$O!"FC$K??@-$N(B spam $B$r8!(B
+$B=P$9$k$?$a$K>C5n(B (kill) $B%U%!%$%k$+%9%3%"%U%!%$%k$r;H$C$F$$$k>l9g$O!"4V0c(B
+$B$$$+$b$7$l$^$;$s!#$=$&$G$"$l$P(B @code{ham-marks} $B%0%k!<%W%Q%i%a!<%?!<$rD4(B
+$B@0$9$k$Y$-$G$9!#(B
 
 @defvar ham-marks
 $B$3$N%0%k!<%W$^$?$O%H%T%C%/%Q%i%a!<%?!<$r(B ham $B$G$"$k$H2r<a$7$?$$0u$N%j%9(B
@@ -23177,9 +23189,9 @@ Spam $B%0%k!<%W$G$O!"%G%#%U%)%k%H$G$9$Y$F$N%a%C%;!<%8$,(B spam $B$G$"$k$H2r<a
 $BFI(B (read)$B!":o=|(B (killed)$B!"(Bkill $B%U%!%$%k$K$"$k$b$N(B (kill-filed) $B$*$h$SDc(B
 $B$$%9%3%"(B (low-score$B!"4{FI$@$1$l$I$b(B spam $B$G$O$J$$$H9M$($k(B) $B0u$N%j%9%H$G(B
 $B$9!#(BHam $B0u$N%j%9%H$K2D;k(B (tick) $B0u$r4^$a$k$3$H$,LrN)$D$3$H$b$"$j$^$9!#L$(B
-$BFI0u$r(B ham $B0u$K$9$k$3$H$O!"DL>o$=$l$,J,N`$,B-$j$F$$$J$$$3$H$rI=$9$N$G!"(B
-$B4+$a$i$l$^$;$s!#$7$+$7!"$"$J$?$,$=$l$r9T$J$&$3$H$O$G$-$k$7!";d$?$A$KITK~(B
-$B$O$"$j$^$;$s!#(B
+$BFI0u$r(B ham $B0u$K$9$k$3$H$O!"DL>o$=$l$,J,N`$5$l$F$$$J$$$3$H$rI=$9$N$G!"4+(B
+$B$a$i$l$^$;$s!#$7$+$7!"$"$J$?$,$=$l$r9T$J$&$3$H$O$G$-$k$7!";d$?$A$KITK~$O(B
+$B$"$j$^$;$s!#(B
 @end defvar
 
 @defvar spam-marks
@@ -23192,33 +23204,32 @@ Spam $B%0%k!<%W$G$O!"%G%#%U%)%k%H$G$9$Y$F$N%a%C%;!<%8$,(B spam $B$G$"$k$H2r<a
 $B$N(B @code{spam-contents} $B$NJ,N`$K$+$+$o$i$:!"(Bspam $B0u$,IU$$$F$$$k$9$Y$F$N(B
 $B5-;v$O(B spam $B%W%m%;%C%5!<$KAw$i$l!"$=$l$i$r(B spam $B$NI8K\$H$7$F3X=,$7$^$9!#(B
 $B0U?^E*$K$?$/$5$s$N>C5n$r9T$J$&$H!"$?$^$K$=$l$O8+$F$$$J$$(B @samp{K} $B0u$,IU(B
-$B$$$?5-;v$G=*$o$k$+$b$7$l$^$;$s!#$=$7$F$=$l$i$O6vA3$K(B spam $B$r4^$s$G$$$k$+(B
-$B$b$7$l$^$;$s!#:G$bNI$$$N$O!"K\Ev$N(B spam $B$K(B @samp{$} $B$,IU$$$F$$$F!"B>$K2?(B
-$B$bL5$$$3$H$r3N$+$a$k$3$H$G$9!#(B
+$B$$$?5-;v72$G=*$o$k$+$b$7$l$^$;$s!#$=$7$F$=$l$i$O6vA3$K(B spam $B$r4^$s$G$$$k(B
+$B$+$b$7$l$^$;$s!#:G$bNI$$$N$O!"K\Ev$N(B spam $B$K(B @samp{$} $B$,IU$$$F$$$F!"B>$K(B
+$B2?$b0u$,L5$$$3$H$r3N$+$a$k$3$H$G$9!#(B
 
 @vindex gnus-ham-process-destinations
 @emph{Spam} $B%0%k!<%W$rH4$1$k$H$-$K!"(Bspam $B0u$,IU$$$F$$$k$9$Y$F$N5-;v(B
 $B$K$O(B spam $B%W%m%;%C%5!<$G=hM}$7$?8e$G4|8B@Z$l>C5n$N0u$,IU$1$i$l$^$9!#$3$l(B
 $B$O(B @emph{$BL$J,N`(B} $B$^$?$O(B @emph{ham} $B%0%k!<%W$KBP$7$F$O9T$J$o$l$^$;$s!#$5(B
 $B$i$K(B spam $B%0%k!<%W$K$"$k$I$N(B @strong{ham} $B5-;v$b!"(B
-@code{ham-process-destination} $B%0%k!<%W%Q%i%a!<%?!<(B
-$B$+(B @code{gnus-ham-process-destinations} $BJQ?t$N$I$A$i$+$K9gCW$9$k>l=j$K0\(B
-$B$5$l$^$9!#$=$l$i$O%0%k!<%WL>$K9gCW$9$k@55,I=8=$N%j%9%H$G(B
-$B$9(B (@kbd{M-x customize-variable @key{RET}
-gnus-ham-process-destinations} $B$K$h$C$F$3$NJQ?t$r%+%9%?%^%$%:$9$k$N$,:G(B
-$B$b4JC1$G$9(B)$B!#JQ?t$r<j$G%+%9%?%^%$%:$9$kJ}$,9%$-$J?M$N$?$a$K8@$C$F$*$/$H!"(B
-$B$=$l$>$l$N%0%k!<%WL>$N%j%9%H$OIaDL$N(B Lisp $B$N(B list $B$G$9!#(B
-@code{ham-process-destination} $B%Q%i%a!<%?!<$,@_Dj$5$l$F$$$J$$$H!"(Bham $B5-(B
-$B;v$O$=$3$KN1$aCV$+$l$^$9!#(B
+@code{ham-process-destination} $B%0%k!<%W%Q%i%a!<%?!<$,<($9>l=j(B
+$B$+(B @code{gnus-ham-process-destinations} $BJQ?t$NCf$G9gCW$9$k>l=j$N$I$A$i$+(B
+$B$K0\$5$l$^$9!#8e<T$O%0%k!<%WL>$K9gCW$9$k@55,I=8=$N%j%9%H$G$9(B (@kbd{M-x
+customize-variable @key{RET} gnus-ham-process-destinations} $B$K$h$C$F$3$N(B
+$BJQ?t$r%+%9%?%^%$%:$9$k$N$,:G$b4JC1$G$9(B)$B!#JQ?t$r<j$G%+%9%?%^%$%:$9$kJ}$,(B
+$B9%$-$J?M$N$?$a$K8@$C$F$*$/$H!"$=$l$>$l$N%0%k!<%WL>$N%j%9%H$OIaDL$N(B Lisp
+$B$N(B list $B$G$9!#(B@code{ham-process-destination} $B%Q%i%a!<%?!<$,@_Dj$5$l$F$$(B
+$B$J$$$H!"(Bham $B5-;v$O0\F0$5$;$i$l$^$;$s!#(B
 @code{spam-mark-ham-unread-before-move-from-spam-group} $B%Q%i%a!<%?!<$,@_(B
-$BDj$5$l$F$$$k$H!"(Bham $B5-;v$O0\F0$5$;$i$l$kA0$KL$FI$N0u$,IU$1$i$l$^$9!#(B
+$BDj$5$l$F$$$k$H!"(Bham $B5-;v$K$O0\F0$5$;$i$l$kA0$KL$FI$N0u$,IU$1$i$l$^$9!#(B
 
-Ham $B$,0\F0$G$-$J$$>l9g(B ($BNc$($P(B @acronym{NNTP} $B$N$h$&$JFI$_9~$_@lMQ%P%C%/(B
-$B%(%s%I$G$"$k$?$a$K(B)$B!"$=$l$O%3%T!<$5$l$^$9!#(B
+$BNc$($P(B @acronym{NNTP} $B$N$h$&$JFI$_9~$_@lMQ%P%C%/%(%s%I$G$"$k$?$a(B
+$B$K(B ham $B$,0\F0$G$-$J$$>l9g!"$=$l$O%3%T!<$5$l$^$9!#(B
 
-$B%0%k!<%W$^$?$O@55,I=8=$4$H$KJ#?t$N0\F0@h$r;XDj$G$-$k$3$H$KCmL\$7$F2<$5$$(B!
-$B$3$l$K$h$C$F(B ham $B5-;v$r@55,$N%a!<%k%0%k!<%W$H(B @emph{ham $B%H%l!<%K%s%0(B} $B%0(B
-$B%k!<%W$KAw$k$3$H$,$G$-$^$9!#(B
+$B%0%k!<%W$4$H$K!"$^$?$O@55,I=8=$K9gCW$9$k%0%k!<%W$4$H$K!"J#?t$N0\F0@h$r;X(B
+$BDj$G$-$k$3$H$KCmL\$7$F2<$5$$(B!  $B$3$l$K$h$C$F(B ham $B5-;v$r@55,$N%a!<%k%0%k!<(B
+$B%W$H(B @emph{ham $B%H%l!<%K%s%0(B} $B%0%k!<%W$KAw$k$3$H$,$G$-$^$9!#(B
 
 @emph{Ham} $B%0%k!<%W$rH4$1$k$H$-$K!"(Bham $B0u$,IU$$$F$$$k$9$Y$F$N5-;v(B
 $B$O(B ham $B%W%m%;%C%5!<$KAw$i$l!"$=$l$i$r(B spam $B$G$O$J$$I8K\$H$7$F3X=,$7$^$9!#(B
@@ -23226,45 +23237,45 @@ Ham $B$,0\F0$G$-$J$$>l9g(B ($BNc$($P(B @acronym{NNTP} $B$N$h$&$JFI$_9~$_@lM
 @vindex spam-process-ham-in-spam-groups
 $BJQ?t(B @code{spam-process-ham-in-spam-groups} $B$O%G%#%U%)%k%H$G(B
 $B$O(B @code{nil} $B$G$9!#(BSpam $B%0%k!<%W$G8+$D$+$C$?(B ham $B$,%W%m%;%C%5!<$KAw$i$l(B
-$B$k$h$&$K$7$?$$>l9g$O(B @code{t} $B$K$7$F2<$5$$!#DL>o$3$l$O9T$J$o$l$^$;$s!#$"(B
-$B$J$?$,<+J,$G(B ham $B5-;v$r(B ham $B%0%k!<%W$KAw$C$F!"$=$3$G=hM}$9$k$3$H$,4|BT$5(B
-$B$l$F$$$^$9!#(B
+$B$k$h$&$K$7$?$$>l9g$O(B @code{t} $B$K$7$F2<$5$$!#DL>o$3$l$O9T$J$o$l$^$;$s!#$=(B
+$B$NBe$o$j!"$"$J$?$,<+J,$G(B ham $B5-;v$r(B ham $B%0%k!<%W$KAw$C$F!"$=$3$G=hM}$9$k(B
+$B$3$H$,A[Dj$5$l$F$$$^$9!#(B
 
 @vindex spam-process-ham-in-nonham-groups
 $BJQ?t(B @code{spam-process-ham-in-nonham-groups} $B$O%G%#%U%)%k%H$G(B
 $B$O(B @code{nil} $B$G$9!#(BHam $B$G$O$J$$(B (spam $B$^$?$OL$J,N`$N(B) $B%0%k!<%W$G8+$D$+$C(B
 $B$?(B ham $B$,%W%m%;%C%5!<$KAw$i$l$k$h$&$K$7$?$$>l9g$O(B @code{t} $B$K$7$F2<$5$$!#(B
-$BDL>o$3$l$O9T$J$o$l$^$;$s!#$"$J$?$,<+J,$G(B ham $B5-;v$r(B ham $B%0%k!<%W$KAw$C$F!"(B
-$B$=$3$G=hM}$9$k$3$H$,4|BT$5$l$F$$$^$9!#(B
+$BDL>o$3$l$O9T$J$o$l$^$;$s!#$=$NBe$o$j!"$"$J$?$,<+J,$G(B ham $B5-;v$r(B ham $B%0%k!<(B
+$B%W$KAw$C$F!"$=$3$G=hM}$9$k$3$H$,A[Dj$5$l$F$$$^$9!#(B
 
 @vindex gnus-spam-process-destinations
 @emph{Ham} $B$^$?$O(B @emph{$BL$J,N`(B} $B%0%k!<%W$rH4$1$k$H$-$K!"$9$Y$F(B
 $B$N(B @strong{spam} $B5-;v$O!"(B@code{spam-process-destination} $B%0%k!<%W%Q%i%a!<(B
-$B%?!<$+(B @code{gnus-spam-process-destinations} $BJQ?t$N$I$A$i$+$K9gCW$9$k>l(B
-$B=j$K0\$5$l$^$9!#$=$l$i$O%0%k!<%WL>$K9gCW$9$k@55,I=8=$N%j%9%H$G(B
-$B$9(B (@kbd{M-x customize-variable @key{RET}
+$B%?!<$,<($9>l=j$+(B @code{gnus-spam-process-destinations} $BJQ?t$NCf$G9gCW$9(B
+$B$k>l=j$N$I$A$i$+$K0\$5$l$^$9!#8e<T$O%0%k!<%WL>$K9gCW$9$k@55,I=8=$N%j%9%H(B
+$B$G$9(B (@kbd{M-x customize-variable @key{RET}
 gnus-spam-process-destinations} $B$K$h$C$F$3$NJQ?t$r%+%9%?%^%$%:$9$k$N$,:G(B
 $B$b4JC1$G$9(B)$B!#JQ?t$r<j$G%+%9%?%^%$%:$9$kJ}$,9%$-$J?M$N$?$a$K8@$C$F$*$/$H!"(B
 $B$=$l$>$l$N%0%k!<%WL>$N%j%9%H$OIaDL$N(B Lisp $B$N(B list $B$G$9!#(B
-@code{spam-process-destination} $B%Q(B
-$B%i%a!<%?!<$,@_Dj$5$l$F$$$J$$$H!"(Bspam $B5-;v$OC1$K4|8B@Z$l>C5n$5$l$^$9!#%0(B
-$B%k!<%WL>$O40A47A$G$"$k$3$H!"$9$J$o$A%0%k!<%W%P%C%U%!!<$G%0%k!<%WL>$NA0(B
-$B$K(B @samp{nntp:servername} $B$N$h$&$J$b$N$,8+$($k>l9g$O!"$3$3$G$b$=$l$r;H$&(B
-$BI,MW$,$"$j$^$9!#(B
+@code{spam-process-destination} $B%Q%i%a!<%?!<$,@_Dj$5$l$F$$$J$$$H!"(B
+spam $B5-;v$OC1$K4|8B@Z$l>C5n$5$l$^$9!#%0%k!<%WL>$O40A47A$G$"$k$3$H!"$9$J(B
+$B$o$A%0%k!<%W%P%C%U%!!<$G%0%k!<%WL>$NA0$K(B @samp{nntp:servername} $B$N$h$&$J(B
+$B$b$N$,8+$($k>l9g$O!"$3$3$G$b$=$l$r;H$&I,MW$,$"$j$^$9!#(B
 
-Spam $B$,0\F0$G$-$J$$>l9g(B ($BNc$($P(B @acronym{NNTP} $B$N$h$&$JFI$_9~$_@lMQ%P%C(B
-$B%/%(%s%I$G$"$k$?$a$K(B)$B!"$=$l$O%3%T!<$5$l$^$9!#(B
+$BNc$($P(B @acronym{NNTP} $B$N$h$&$JFI$_9~$_@lMQ%P%C%/%(%s%I$G$"$k$?$a(B
+$B$K(B spam $B$,0\F0$G$-$J$$>l9g!"$=$l$O%3%T!<$5$l$^$9!#(B
 
-$B%0%k!<%W$^$?$O@55,I=8=$4$H$KJ#?t$N0\F0@h$r;XDj$G$-$k$3$H$KCmL\$7$F2<$5$$(B!
-$B$3$l$K$h$C$F(B spam $B5-;v$r@55,$N%a!<%k%0%k!<%W(B
-$B$H(B @emph{spam $B%H%l!<%K%s%0(B} $B%0%k!<%W$KAw$k$3$H$,$G$-$^$9!#(B
+$B%0%k!<%W$4$H$K!"$^$?$O@55,I=8=$K9gCW$9$k%0%k!<%W$4$H$K!"J#?t$N0\F0@h$r;X(B
+$BDj$G$-$k$3$H$KCmL\$7$F2<$5$$(B!  $B$3$l$K$h$C$F(B spam $B5-;v$r@55,$N%a!<%k%0%k!<(B
+$B%W$H(B @emph{spam $B%H%l!<%K%s%0(B} $B%0%k!<%W$KAw$k$3$H$,$G$-$^$9!#(B
 
 @vindex spam-log-to-registry
 Ham $B$H(B spam $B$K4X$9$kLdBj$O!"(BGnus $B$,%G%#%U%)%k%H$G$O$3$N=hM}$rDI@W$7$F$/(B
-$B$l$J$$$3$H$G$9!#=hM}$5$l$?5-;v$rDI@W$7!"$+$DJ#?t2s$K$o$?$C$F=hM}$9$k$3$H(B
-$B$r2sHr$9$k$?$a$K(B @code{spam.el} $B$,(B @code{gnus-registry.el} $B$r;H$&$h$&$K!"(B
-@code{spam-log-to-registry} $BJQ?t$rM-8z$K$7$F2<$5$$!#EPO??t$r@)8B$9$k$H!"(B
-$B@)8B$,L5$$>l9g$N$h$&$KF0:n$7$J$$$3$H$r3P$($F$*$$$F2<$5$$!#(B
+$B$l$J$$$3$H$G$9!#J#?t2s$K$o$?$C$F=hM}$9$k$3$H$r2sHr$9$k$?$a$K!"(B
+@code{spam.el} $B$,(B @code{gnus-registry.el} $B$r;H$C$F=hM}$5$l$?5-;v$rDI@W$9(B
+$B$k$h$&$K!"(B@code{spam-log-to-registry} $BJQ?t$rM-8z$K$7$F2<$5$$!#(B
+@code{gnus-registry.el} $B$,EPO?$9$k?t$r@)8B$7$F$7$^$&$H!"@)8B$,L5$$>l9g$N(B
+$B$h$&$KF0:n$7$J$$$3$H$r3P$($F$*$$$F2<$5$$!#(B
 
 @vindex spam-mark-only-unseen-as-spam
 Spam $B%0%k!<%W$K$"$k!"$^$@FI$^$l$?$3$H$,L5$$5-;v$@$1$K(B spam $B$N0u$rIU$1$?(B
@@ -23273,14 +23284,15 @@ Spam $B%0%k!<%W$K$"$k!"$^$@FI$^$l$?$3$H$,L5$$5-;v$@$1$K(B spam $B$N0u$rIU$1$?
 
 @vindex spam-mark-ham-unread-before-move-from-spam-group
 Ham $B$,(B spam $B%0%k!<%W$+$i0\F0$5$l$kA0$K0u$r>C$7$?$$>l9g$O!"$3$NJQ?t$r%;%C(B
-$B%H$7$F2<$5$$!#$3$l$O(B ham $B$K0u$rIU$1$k$?$a$K2D;k(B (tick) $B0u$N$h$&$J$b$N$r(B
-$B;H$&>l9g$K!"$H$F$bLr$KN)$A$^$9!#5-;v$O$"$?$+$b$=$l$,%a!<%k%5!<%P!<$r=P$?(B
-$B$P$+$j$N$h$&$K!"L50u$G(B @code{ham-process-destination} $B$KCV$+$l$k$G$7$g$&!#(B
+$B%H$7$F2<$5$$!#$3$l$O(B ham $B$K0u$rIU$1$k$?$a$K2D;k(B (tick) $B0u(B (@samp{!}) $B$N(B
+$B$h$&$J$b$N$r;H$&>l9g$K!"$H$F$bLr$KN)$A$^$9!#5-;v$O$"$?$+$b$=$l$,%a!<%k%5!<(B
+$B%P!<$+$iMh$?$P$+$j$N$h$&$K!"L50u$G(B @code{ham-process-destination} $B$KCV$+(B
+$B$l$k$G$7$g$&!#(B
 
 @vindex spam-autodetect-recheck-messages
 $B$3$NJQ?t$O(B @code{spam.el} $B$,(B spam $B$N<+F08!=P$r9T$J$&>l9g$K!"$^$@FI$^$l$?(B
-$B$3$H$,L5$$5-;v$@$1!"$^$?$O$9$Y$F$NL$FI5-;v$N(B spam $B8!::$r9T$J$&$+$I$&$+$r(B
-$B;X<($7$^$9!#$3$l$O$=$N$^$^$K$7$F$*$/$3$H$r4+$a$^$9!#(B
+$B$3$H$,L5$$5-;v$@$1$+!"$^$?$O$9$Y$F$NL$FI5-;v$N$I$A$i$KBP$7$F(B spam $B8!::$r(B
+$B9T$J$&$+$r;X<($7$^$9!#$3$l$O$=$N$^$^$K$7$F$*$/$3$H$r4+$a$^$9!#(B
 
 @node Spam ELisp Package Sorting and Score Display in Summary Buffer
 @subsubsection Spam ELisp Package Sorting and Score Display in Summary Buffer
