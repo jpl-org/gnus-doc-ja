@@ -417,7 +417,7 @@ Gnus $B$OB>$N?M$N%a%C%;!<%8$K$"$k(B MFT $B%X%C%@!<$rB:=E$7$^$9(B ($B$9$J$o$
 $B%H$G$9!#$=$l$i$N4X?t$K$O0z?t$,L5$$$3$H$rCi9p$7$F$*$-$^$7$g$&!#%G%#%U%)%k(B
 $B%HCM$O(B @code{nil} $B$G$9!#(B
 
-Gnus $B$G$O$3$NJQ?t$N$?$a$KDj5A$5$l$?!"9%$$4X?t$N8uJd$,$"$j$^$9!#4X(B
+Gnus $B$G$O$3$NJQ?t$N$?$a$KDj5A$5$l$?!"NI$$4X?t$N8uJd$,$"$j$^$9!#4X(B
 $B?t(B @code{gnus-find-subscribed-addresses} $B$O!"(B@code{subscribed} $B%0%k!<%W(B
 $B%Q%i%a!<%?!<(B (@pxref{Group Parameters, ,$B%0%k!<%W%Q%i%a!<%?!<(B, gnus-ja,
 The Gnus Manual}) $B$,Hs(B-@code{nil} $B$K@_Dj$5$l$F$$$k%0%k!<%W$KBP1~$9$k%"%I(B
