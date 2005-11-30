@@ -1,6 +1,10 @@
+2005-11-30  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* message-ja.texi: Fix translations.
+
 2005-11-22  Katsumi Yamaoka  <yamaoka@jpl.org>
 
-	* gnus.el: Fix translations.
+	* gnus-ja.texi: Fix translations.
 
 2005-09-21  Katsumi Yamaoka  <yamaoka@jpl.org>
 
