@@ -158,6 +158,9 @@ ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
 らを手動で取り除いても良いし、@samp{make remove-installed-shadows} を使っ
 て削除することもできます。
 
+@item @acronym{POP3} によるメールの取得が @acronym{SSL}/@acronym{TLS} と
+StartTLS をサポートするようになりました。
+
 @end itemize
 
 @c Local Variables:
