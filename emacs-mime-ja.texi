@@ -533,8 +533,8 @@ Emacs $BI8=`$N4X?t$G$"$k(B @code{capitalize}, @code{downcase},
 $B%O%s%I%k$N%F%-%9%H$r8=:_$N%P%C%U%!!<$KA^F~$7$^$9!#$3$l$OJ8;z%;%C%H$*$h$S(B
 $B%(%s%3!<%G%#%0(B (content transfer decoding) $B$r<h$j07$$$^$9!#FsHVL\$N4X?t(B
 $B$O!"A^F~$7$m$H8@$C$?$I$s$J%F%-%9%H$G$bC1$KA^F~$7$^$9$,!"%F%-%9%H$r<j7Z$J(B
-$BJ}K!$G!VI=<($5$l$J$/$9$k(B (undisplayed)$B!W$3$H$,$G$-$k$h$&$J=t@_Dj$r$b9T$J(B
-$B$$$^$9!#(B
+$BJ}K!$G!VI=<($5$l$J$/$9$k!W(B(undisplayed $B$K$9$k(B) $B$3$H$,$G$-$k$h$&$J=t@_Dj(B
+$B$r$b9T$J$$$^$9!#(B
 
 @node Composing
 @chapter MIME $B%a%C%;!<%8$N:n@.(B
@@ -906,10 +906,10 @@ quoted-printable $B$H(B base64 $B$N$&$A$G:G$b8zN(E*$JJ}$r8D!9$N>l9g$K;H$&$Y$-
 $B$3$l$,Hs(B-@code{nil} $B$G$"$k>l9g!"K\J8$K(B 76 $BJ8;z$h$j$bD9$$9T$d(B "From " $B$G(B
 $B;O$^$k9T$,$"$C$?$i!"$=$l$i$N%F%-%9%H$N%Q!<%H$O(B quoted-printable $B$G%(%s%3!<(B
 $B%I$5$l$^$9!#Hs(B-7bit $B%(%s%3!<%G%#%s%0(B (8bit, $B%P%$%J%j!<(B) $B$O0lHL$KG'$a$i$l(B
-$B$F$$$^$;$s!#$3$l$O(B 8bit $B$rDL$5$J$$(B MTA $B$+(B MDA $B$,%a%C%;!<%8$r2~JQ$7$F$7$^(B
-$B$&3NN($r2<$2$^$9!#$3$l$OD>@\$K@_Dj$5$l$k$N$G$O$J$/!"B>$N4X?t$K$h$C$F(B ($BNc(B
-$B$($P!"EE;R=pL>$5$l$k%a%C%;!<%8$r%(%s%3!<%I$9$k$H$-$K(B) $BI,MW$K1~$8$FB+G{$5(B
-$B$l$k$Y$-$G$9!#(B
+$B$F$$$^$;$s!#$3$NJQ?t$r(B @code{nil} $B0J30$NCM$K@_Dj$7$F$*$/$3$H$O!"(B8bit $B$r(B
+$BDL$5$J$$(B MTA $B$+(B MDA $B$,%a%C%;!<%8$r2~JQ$7$F$7$^$&3NN($r2<$2$^$9!#$3$l$OD>(B
+$B@\$K@_Dj$5$l$k$N$G$O$J$/!"B>$N4X?t$K$h$C$F(B ($BNc$($P!"EE;R=pL>$5$l$k%a%C%;!<(B
+$B%8$r%(%s%3!<%I$9$k$H$-$K(B) $BI,MW$K1~$8$FB+G{$5$l$k$Y$-$G$9!#(B
 @end table
 
 @node Charset Translation
@@ -917,19 +917,19 @@ quoted-printable $B$H(B base64 $B$N$&$A$G:G$b8zN(E*$JJ}$r8D!9$N>l9g$K;H$&$Y$-
 @cindex charsets
 
 @acronym{MML} $B$r(B @acronym{MIME} $B$KJQ49$9$k$H$-$K!"(BEmacs $B$NFbIt$G:n$i$l(B
-$B$k(B @acronym{MIME} $B%Q!<%H$N$=$l$>$l$K$D$$$F!"E,@Z$JJ8;z%;%C%H$rA*$P$J$1$l(B
+$B$?(B @acronym{MIME} $B%Q!<%H$N$=$l$>$l$K$D$$$F!"E,@Z$JJ8;z%;%C%H$rA*$P$J$1$l(B
 $B$P$J$j$^$;$s!#(B
 
 @vindex mail-parse-charset
-$B$b$7Hs(B-@sc{mule} $B$N(B Emacs $B$rAv$i$;$F$$$k$N$G$"$l$P!"$3$N=hM}$OC1=c$G$9!#(B
-$B%Q!<%H$,$I$s$JHs(B-@acronym{ASCII} (8-bit) $BJ8;z$r4^$s$G$$$F$b!"(B
-@code{mail-parse-charset} ($B%7%s%\%k(B) $B$GM?$($i$l$k(B @acronym{MIME} $BJ8;z%;%C(B
-$B%H$r;H$($PNI$$$N$G$9!#(B($B$b$C$H$b!"$3$NJQ?t$rD>@\$K@_Dj$7$J$$$G2<$5$$!#%G%#(B
-$B%U%)%k%H$NJ8;z%;%C%H$rJQ99$7$?$$>l9g$O!"(B@acronym{MIME} $B%a%C%;!<%8$r=hM}(B
-$B$9$k$?$a$K;H$&%Q%C%1!<%8$N@bL@=q$rD4$Y$F$/$@$5$$!#Nc$($P(B: @pxref{Various
-Message Variables, ,$B$$$m$$$m$J%a%C%;!<%8JQ?t(B, message-ja, The Message
-Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B@acronym{MIME} $BJ8;z%;%C(B
-$B%H(B US-ASCII $B$,;H$o$l$k$N$O$b$A$m$s$G$9!#(B
+@sc{mule} $B5!G=$,L5$$(B Emacs $B$rAv$i$;$F$$$k>l9g$@$C$?$i!"$3$N=hM}$OC1=c$G(B
+$B$9!#%Q!<%H$,$I$s$JHs(B-@acronym{ASCII} (8-bit) $BJ8;z$r4^$s$G$$$F$b!"(B
+@code{mail-parse-charset} $B$GM?$($i$l$k(B @acronym{MIME} $BJ8;z%;%C%H(B ($B%7%s%\(B
+$B%k(B) $B$r;H$($PNI$$$N$G$9!#(B($B$b$C$H$b!"$3$NJQ?t$rD>@\$K@_Dj$7$J$$$G2<$5$$!#(B
+$B%G%#%U%)%k%H$NJ8;z%;%C%H$rJQ99$7$?$$>l9g$O!"(B@acronym{MIME} $B%a%C%;!<%8$r(B
+$B=hM}$9$k$?$a$K;H$&%Q%C%1!<%8$N@bL@=q$rD4$Y$F$/$@$5$$!#Nc$($P(B:
+@pxref{Various Message Variables, ,$B$$$m$$$m$J%a%C%;!<%8JQ?t(B, message-ja,
+The Message Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B
+US-ASCII $B$,(B @acronym{MIME} $BJ8;z%;%C%H$H$7$F;H$o$l$k$N$O$b$A$m$s$G$9!#(B
 
 @cindex MULE
 @cindex UTF-8
@@ -944,27 +944,27 @@ Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B@acronym{MIME} $B
 $B$7$^$9!#$7$+$7!"7k2L$N(B @acronym{MIME} $BJ8;z%;%C%H$N%j%9%H$,Fs$D0J>e$NMWAG(B
 $B$r4^$s$G$$$k>l9g$K$O!"Fs$D$N$3$H$,5/$3$jF@$^$9!#$b$7%Q!<%H$r(B UTF-8 $B$G%((B
 $B%s%3!<%I$9$k$3$H$,2DG=$@$C$?$i!"$=$NJ8;z%;%C%H$r;H$$$^$9!#(B($B$3$N$?$a(B
-$B$K(B Emacs $B$O(B @code{utf-8} coding system $B$r%5%]!<%H$7$J$1$l$P$J$i$J$$$7!"(B
-$B$=$N%Q!<%H$O(B Unicode $B$GDj5A$5$l$?!"$=$l$i$KBP1~$9$kJ8;z$@$1$+$i@.$C$F$$(B
-$B$J$1$l$P$J$j$^$;$s!#(B)  $B2?$i$+$NM}M3$K$h$C$F(B UTF-8 $B$rMxMQ$G$-$J$$>l9g!"$=(B
-$B$N%Q!<%H$O!"$=$l$>$l$,C10l$N(B @acronym{MIME} $BJ8;z%;%C%H$G%(%s%3!<%I$9$k$3(B
-$B$H$,$G$-$k$h$&$K!"$$$/$D$+$KJ,3d$5$l$^$9!#$b$C$H$b!"%Q!<%H$O9T$N6-3&$G$7(B
-$B$+J,3d$9$k$3$H$,$G$-$J$$$N$G!"C10l$N9T$r%(%s%3!<%I$9$k$N$KJ#?t(B
-$B$N(B @acronym{MIME} $BJ8;z%;%C%H$,I,MW$@$H$9$k$H!"$=$N%Q!<%H$r%(%s%3!<%I$9$k(B
-$B$3$H$OIT2DG=$G$9!#(B
+$B$K(B Emacs $B$O(B @code{utf-8} coding system $B$r%5%]!<%H$7$F$$$J$1$l$P$J$j$^$;(B
+$B$s!#$^$?!"$=$N%Q!<%H$r9=@.$9$k$9$Y$F$NJ8;z$KBP1~$9$k$b$N$,!"(BUnicode $B$NDj(B
+$B5A$KB8:_$7$F$$$J$1$l$P$J$j$^$;$s!#(B)  $B2?$i$+$NM}M3$K$h$C$F(B UTF-8 $B$rMxMQ$G(B
+$B$-$J$$>l9g!"$=$N%Q!<%H$O!"$=$l$>$l$,C10l$N(B @acronym{MIME} $BJ8;z%;%C%H$G%((B
+$B%s%3!<%I$9$k$3$H$,$G$-$k$h$&$K!"$$$/$D$+$KJ,3d$5$l$^$9!#$b$C$H$b!"%Q!<%H(B
+$B$O9T$N6-3&$G$7$+J,3d$9$k$3$H$,$G$-$J$$$N$G!"C10l$N9T$r%(%s%3!<%I$9$k$?$a(B
+$B$KJ#?t$N(B @acronym{MIME} $BJ8;z%;%C%H$,I,MW$@$H$9$k$H!"$=$N%Q!<%H$r%(%s%3!<(B
+$B%I$9$k$3$H$OIT2DG=$G$9!#(B
 
 @sc{mule} $B5!G=$rHw$($?(B Emacs $B$rAv$i$;$F$$$k>l9g!"$I$N(B coding system $B$r;H(B
 $B$&$+$NM%@h=g0L$O(B Emacs $B<+?H$+$i7Q>5$5$l$^$9!#$3$l$O!"$b(B
 $B$7(B Emacs $B$,(B UTF-8 $B$rM%@h$9$k$h$&$K@_Dj$5$l$F$$$k$H!"$=$l$,%a%C%;!<%8$N%((B
-$B%s%3!<%I$K;H$o$l$k$3$H$r0UL#$7$^$9!#$?$@(B
+$B%s%3!<%I$K;H$o$l$k$H$$$&$3$H$G$9!#$?$@(B
 $B$7(B @code{mm-coding-system-priorities} $BJQ?t$NCM$rJQ$($k$3$H$K$h$C$F!"$3$l(B
 $B$rJQ99$9$k$3$H$O$G$-$^$9(B (@pxref{Encoding Customization})$B!#(B
 
 $B%a%C%;!<%8$r:n@.$9$k$H$-$K(B @acronym{MML} $B$N(B @code{charset} $B%?%0$r@_Dj$9(B
 $B$k$3$H$K$h$C$F!";H$o$l$kJ8;z%;%C%H$r$=$l$K$9$k$3$H$,$G$-$^$9!#(B
 
-$BJ8;z%;%C%H$N%(%s%3!<%G%#%s%0(B (quoted-printable, 8bit $B$J$I(B) $B$O$3$3$G$N5D(B
-$BO@$KD>8r$9$k35G0$G$9!#$=$l$O(B @code{mm-body-charset-encoding-alist} $BJQ?t(B
+$BJ8;zNs$N%(%s%3!<%G%#%s%0(B (quoted-printable, 8bit $B$J$I(B) $B$O$3$3$G$N5DO@$H(B
+$BD>8r$9$k35G0$G$9!#$=$l$O(B @code{mm-body-charset-encoding-alist} $BJQ?t(B
 $B$H(B @code{mm-content-transfer-encoding-defaults} $BJQ?t$K$h$C$F@)8f$5$l$^(B
 $B$9(B (@pxref{Encoding Customization})$B!#(B
 
@@ -976,20 +976,20 @@ Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B@acronym{MIME} $B
 $B$G$b2D(B) $B$r(B @acronym{MML} $B$KJQ49$9$k$3$H$,$G$-$^$9!#$3$l$O8=:_$N%P%C%U%!!<(B
 $B$K$"$k(B @acronym{MIME} $B%a%C%;!<%8$K:nMQ$7$F!"(B@acronym{MIME} $B$N6-3&(B
 $B$r(B @acronym{MML} $B$N0uIU$1(B (markup) $B$GCV$-49$($^$9!#%F%-%9%H$G$O$J$$%Q!<(B
-$B%H$NFbMFJ*$O!"$=$N%P%C%U%!!<$KCV$/Be$o$j$K(B @acronym{MML} $B%?%0$r2p$7$F;2(B
-$B>H$5$l$kJL$N%P%C%U%!!<$KCV$+$l$^$9!#(B
+$B%H$NFbMFJ*$O!"$=$N%P%C%U%!!<$KCV$+$l$kBe$o$j$K(B @acronym{MML} $B%?%0$r2p$7(B
+$B$F;2>H$5$l$kJL$N%P%C%U%!!<$KCV$+$l$^$9!#(B
 
 @findex mml-to-mime
-@code{mml-to-mime} $B4X?t$r;H$C$F(B @acronym{MML} $B%a%C%;!<%8(B
+@code{mml-to-mime} $B4X?t$r;H$C$F!"5U$K(B @acronym{MML} $B%a%C%;!<%8(B
 $B$r(B @acronym{MIME} $B$KJQ49$9$k$3$H$,$G$-$^$9!#(B
 
-$B$3$l$i$N4X?t$,9T$J$&$3$H$O$"$k0UL#$G!VIT2D5U(B (lossy)$B!W$G$9!#(B
+$B$3$l$i$N4X?t$,9T$J$&$3$H$O$"$k0UL#$G!VIT2D5U!W(B(lossy) $B$G$9!#(B
 @code{mime-to-mml} $B$r<B9T$7!"<!$K(B @code{mml-to-mime} $B$r<B9T$9$k$H!"85$H(B
-$B$^$C$?$/F1$8%a%C%;!<%8$OLa$C$FMh$J$$$G$7$g$&!#%X%C%@!<$N=g=x$N$h$&$J$I$&(B
-$B$G$bNI$$$3$H$,0c$C$F$7$^$&$@$1$G$J$/!"%X%C%@!<$NFbMF$bJQ2=$7$F$7$^$&$+$b(B
-$B$7$l$^$;$s!#Nc$($P!"85$N%a%C%;!<%8$,(B base64 $B$G%F%-%9%H$r%(%s%3!<%I$7$F$"$C(B
-$B$F$b!"(B@code{mml-to-mime} $B$O(B quoted-printable $B$r;H$&$+$b$7$l$J$$!"$H$$$&(B
-$B$h$&$J$3$H$G$9!#(B
+$B$^$C$?$/F1$8%a%C%;!<%8$K$OLa$i$J$$$G$7$g$&!#%X%C%@!<$N=g=x$N$h$&$J$I$&$G(B
+$B$bNI$$$3$H$,0c$C$F$7$^$&$@$1$G$J$/!"$=$l$>$l$N%X%C%@!<$NFbMF$bJQ2=$7$F$7(B
+$B$^$&$+$b$7$l$^$;$s!#Nc$($P!"85$N%a%C%;!<%8$,(B base64 $B$G%F%-%9%H$r%(%s%3!<(B
+$B%I$7$F$"$C$F$b!"(B@code{mml-to-mime} $B$O(B quoted-printable $B$r;H$&$+$b$7$l$J(B
+$B$$!"$H$$$&$h$&$J$3$H$G$9!#(B
 
 $B$7$+$7K\<AE*$K$O!"$3$l$iFs$D$O8_$$$K5U4X?t$G$"$k$Y$-$G$9!#7k2L$H$7$F@8@.(B
 $B$5$l$k%a%C%;!<%8$NFbMFJ*$,!"F10l$G$J$$$K$7$F$bEy2A$J$^$^$G$"$k$h$&$J!#(B
@@ -1001,20 +1001,21 @@ Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B@acronym{MIME} $B
 Emacs @acronym{MIME} $B%i%$%V%i%j!<$O!"%a%C%;!<%8$r%(%s%3!<%I$9$k$H$-(B
 $B$O(B @code{use-hard-newlines} $BJQ?t(B (@pxref{Hard and Soft Newlines, ,Hard
 and Soft Newlines, emacs, Emacs Manual}) $B$K=>$$!"%a%C%;!<%8$r%G%3!<%I$9(B
-$B$k$H$-$O!H(Bformat=flowed$B!I(BContent-Type $B%Q%i%a!<%?!<$rB:=E$7$^$9!#(B
+$B$k$H$-$O(B Content-Type $B%Q%i%a!<%?!<$N!H(Bformat=flowed$B!I$rB:=E$7$^$9!#(B
 
 $B%F%-%9%H$r%(%s%3!<%I$9$k$H$-!"%=%U%H2~9TJ8;z$G=*C<$5$l$F$$$k3F9T(B
-$B$O(B @code{use-hard-newlines} $B$K4X$o$i$:$K5M$a9~$^$l(B (filled)$B!"$=$7(B
-$B$F(B @code{fill-flowed-encode-column} $B$G7hDj$5$l$k7e$N8e$m$G@^$j>v$^$l$^$9!#(B
-$B0zMQ0u(B (@samp{^>* ?} $B$K9gCW$9$k%F%-%9%H(B) $B$OB:=E$5$l$^$9!#$=$NJQ?t$O!"N.(B
-$BF0%F%-%9%H$r%5%]!<%H$7$J$$%/%i%$%"%s%H$K$*$$$F%F%-%9%H$,$I$&8+$($k$+$r@)(B
-$B8f$7!"%G%#%U%)%k%H$G$O(B 66$BJ8;z$N8e$m$G@^$j>v$_$^$9!#%P%C%U%!!<$K%O!<%I2~(B
-$B9TJ8;z$,L5$1$l$P!"N.F0(B (flowed) $B%F%-%9%H$N$?$a$N%(%s%3!<%I$O9T$J$$$^$;$s!#(B
+$B$O!"(B@code{use-hard-newlines} $B$K4X$o$i$:(B
+$B$K(B @code{fill-flowed-encode-column} $B$G7hDj$5$l$k7e$N8e$m$G@^$j>v$^$l$F!"(B
+$B<*$rB7$($i$l(B (filled $B$5$l(B) $B$^$9!#0zMQ$N0u(B (@samp{^>* ?}) $B$OB:=E$5$l$^$9!#(B
+$B$=$NJQ?t$O!"N.F0%F%-%9%H$r%5%]!<%H$7$J$$%/%i%$%"%s%H$K$*$1$k%F%-%9%H$N8+(B
+$B$(J}$r@)8f$7!"%G%#%U%)%k%H$G$O(B 66$BJ8;z$N8e$m$G@^$j>v$_$^$9!#%P%C%U%!!<$K(B
+$B%O!<%I2~9TJ8;z$,L5$1$l$P!"N.F0(B (flowed) $B%F%-%9%H$N$?$a$N%(%s%3!<%I$O9T$J(B
+$B$$$^$;$s!#(B
 
-$BN.F0(B (flowed) $B%F%-%9%H$r%G%3!<%I$9$k$H$-!"%=%U%H2~9TJ8;z$r;}$D3F9T$O5M$a(B
-$B9~$^$l(B (filled)$B!"$=$7$F(B @code{fill-flowed-display-column} $B$G7hDj$5$l$k7e(B
-$B$N8e$m$G@^$j>v$^$l$^$9!#%G%#%U%)%k%H$G$O(B @code{fill-column} $B$N8e$m$G@^$j(B
-$B>v$_$^$9!#(B
+$BN.F0(B (flowed) $B%F%-%9%H$r%G%3!<%I$9$k$H$-!"%=%U%H2~9TJ8;z$r;}$D3F9T(B
+$B$O(B @code{fill-flowed-display-column} $B$G7hDj$5$l$k7e$N8e$m$G@^$j>v$^$l$F(B
+$B<*$rB7$($i$l(B (filled $B$5$l(B) $B$^$9!#%G%#%U%)%k%H$G$O(B @code{fill-column} $B$N(B
+$B8e$m$G@^$j>v$_$^$9!#(B
 
 @table @code
 @item mm-fill-flowed
@@ -1027,31 +1028,31 @@ and Soft Newlines, emacs, Emacs Manual}) $B$K=>$$!"%a%C%;!<%8$r%G%3!<%I$9(B
 @cindex interface functions
 @cindex mail-parse
 
-@code{mail-parse} $B%i%$%V%i%j!<$O!"<!0J9_$N>O$G=R$Y$k<B:]$NDc%l%Y%k$J%i%$(B
-$B%V%i%j!<$rCj>]2=$7$?$b$N$G$9!#(B
+@code{mail-parse} $B%i%$%V%i%j!<$O!"<!$N>O$G=R$Y$k<B:]$NDc%l%Y%k$J%i%$%V%i(B
+$B%j!<$rCj>]2=$7$?$b$N$G$9!#(B
 
-$BI8=`$OJQ$o$j$^$9!#$7$?$,$C$F!"%W%m%0%i%`$b?7$7$$Cr7?$KE,9g$9$k$?$a$KJQ2=(B
-$B$7$J$1$l$P$J$j$^$;$s!#Nc$($P!"(BRFC2045 $B$O%Q%i%a!<%?!<$N%j%9%H$K$"(B
-$B$k(B @acronym{ASCII} $BJ8;z$@$1$r5vMF$9$k(B @code{Content-Type} $B%X%C%@!<$N$?$a(B
+$BI8=`$OJQ2=$9$k$N$G!"%W%m%0%i%`$b?7$7$$Cr7?$KE,9g$9$k$?$a$KJQ2=$7$J$1$l$P(B
+$B$J$j$^$;$s!#Nc$($P(B RFC2045 $B$O!"%Q%i%a!<%?!<$N%j%9%H$K$*$$(B
+$B$F(B @acronym{ASCII} $BJ8;z$@$1$r5vMF$9$k(B @code{Content-Type} $B%X%C%@!<$N$?$a(B
 $B$N9=J8$K$D$$$F=R$Y$F$$$^$9!#(BRFC2231 $B$O!"J#?t9T$KEO$C$F7QB3$9$kC10l$N%X%C(B
 $B%@!<$HHs(B-@acronym{ASCII} $BJ8;z$N9=@.$r5,Dj$9$k$?$a$N(B RFC2045 $B$N9=J8$K$D$$(B
-$B$F>\=R$7$F$$$^$9!#(B
+$B$F>\$7$/5-=R$7$F$$$^$9!#(B
 
 $B$3$l$KBP=h$9$k=>Mh$NJ}K!$O!"C1$K?7$7$$9=J8$r2r@O$9$k$?$a$K%i%$%V%i%j!<$N(B
-$B5!G=$r99?7$9$k$3$H$G$7$?!#$7$+$7$J$,$i!"$3$l$O;~$K$O8m$C$?9T0Y$G$9!#>l9g(B
+$B4X?t$r99?7$9$k$3$H$G$7$?!#$7$+$7$J$,$i!"$3$l$O;~$K$O8m$C$?9T0Y$G$9!#>l9g(B
 $B$K$h$C$F$O!"?7$7$$9=J8$H8E$$9=J8$NN>J}$rM}2r$G$-$k$h$&$K$9$k$3$H$,=EMW$+(B
-$B$b$7$l$J$$$7!"%i%$%V%i%j!<$,0l$D$@$1$"$k>l9g$K$O!"%i%$%V%i%j!<$N8E$$%P!<(B
+$B$b$7$l$J$$$7!"%i%$%V%i%j!<$,0l$D$7$+L5$$>l9g$K$O!"%i%$%V%i%j!<$N8E$$%P!<(B
 $B%8%g%s$H?7$7$$%P!<%8%g%s$N$I$A$i$+$rA*$P$J$1$l$P$J$j$^$;$s!#(B
 
 Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
-$B$O!"BP1~$9$kI8=`$K=>$C$F87L)$K2r@O$9$k!"0lO"$NDc%l%Y%k$N%i%$%V%i(B
+$B$O!"BP1~$9$kI8=`$K=>$C$F87L)$K2r@O$9$k0lO"$NDc%l%Y%k$N%i%$%V%i(B
 $B%j!<(B (@file{rfc2047.el}, @file{rfc2231.el} $B$J$I(B) $B$rDj5A$7$^$9!#$H$O8@$(!"(B
 $B@55,$N%W%m%0%i%`$O!"$3$l$i$N%i%$%V%i%j!<$,D>@\$KDs6!$9$k4X?t$G$O$J$/!"Be(B
 $B$o$j$K(B @code{mail-parse} $B%i%$%V%i%j!<$,Ds6!$9$k4X?t$r;H$&$Y$-$G$9!#$3$N(B
-$B%i%$%V%i%j!<$N4X?t$O!":G?7$NDc%l%Y%k$N%i%$%V%i%j!<$NBP1~$9$k4X?t$X$NC1$J(B
-$B$kJLL>$G$9!#$3$N9=@.$r;H$&$3$H$K$h$C$F!"%W%m%0%i%`$O$=$l$i$,;H$&$3$H$,$G(B
-$B$-$k<sHx0l4S$7$?%$%s%?!<%U%'!<%9$rF~<j$7!"$^$?!"%i%$%V%i%j!<$N3+H/<T$O!"(B
-$B?7$7$$I8=`$r07$&%3!<%I$r<+M3$K:n@.$9$k$3$H$,$G$-$^$9!#(B
+$B%i%$%V%i%j!<$K$"$k4X?t$O!":G?7$NDc%l%Y%k$N%i%$%V%i%j!<$N!"BP1~$9$k4X?t$X(B
+$B$NC1$J$kJLL>$G$9!#$3$N9=@.$r;H$&$3$H$K$h$C$F!"%W%m%0%i%`$O$=$l$i$,;H$&$3(B
+$B$H$,$G$-$k<sHx0l4S$7$?%$%s%?!<%U%'!<%9$r<j$KF~$l$^$7$?!#$^$?!"%i%$%V%i%j!<(B
+$B$N3+H/<T$O!"?7$7$$I8=`$r07$&%3!<%I$r<+M3$K:n@.$9$k$3$H$,$G$-$^$9!#(B
 
 $B0J2<$N4X?t$,!"$3$N%i%$%V%i%j!<$GDj5A$5$l$F$$$^$9(B:
 
@@ -1082,8 +1083,8 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-content-type-get
 @findex mail-content-type-get
-$BFs$D$N%Q%i%a!<%?!<!">e5-$N7A<0$N%j%9%H$HB0@-!"$r<u$1<h$j!"$=$NB0@-$NCM$r(B
-$BJV$7$^$9!#(B
+$B>e5-$N7A<0$N%j%9%H$HB0@-$NFs$D$N%Q%i%a!<%?!<$r<u$1<h$j!"$=$NB0@-$NCM$rJV(B
+$B$7$^$9!#(B
 
 @example
 (mail-content-type-get
@@ -1109,10 +1110,11 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-remove-whitespace
 @findex mail-header-remove-whitespace
-$B%X%C%@!<$+$i!H(Blinear white space$B!I(B($BLuCm(B: $BC10l$ND9$$%X%C%@!<$r@^$j>v$s$G(B
-$BJ#?t9T$K$9$k$H$-$K;H$&O"7k;R(B; $B2~9TJ8;z(B+$B6uGrJ8;z(B) $B$r<h$j=|$-$^$9!#%/%)!<(B
-$B%H$5$l$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s%H$OJ]B8$5$l(B
-$B$^$9!#(B
+$B%X%C%@!<$+$i!H(Blinear white space$B!I$r<h$j=|$-$^$9!#%/%)!<%H$5$l(B
+$B$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s%H$OJ]B8$5$l$^$9!#(B
+
+$BLuCm(B:$B!H(Blinear white space$B!I$H$O0l$D0J>e$N6uGrJ8;z$N$3$H$G!"$=$NA0$K2~9T(B
+$BJ8;z$rCV$$$?$b$N$O!"D9$$%X%C%@!<$r@^$j>v$`$H$-$K;H$o$l$^$9!#(B
 
 @example
 (mail-header-remove-whitespace
@@ -1130,9 +1132,12 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 @result{} "Finnish Landrace"
 @end example
 
+$BLuCm(B: @samp{Finnish Landrace} $B$O(B 1998$BG/(B8$B7n(B23$BF|$K%j%j!<%9$5$l$?(B XEmacs
+21.0-pre11 $B$N%3!<%I%M!<%`$G$9!#$^$"!"$I$&$G$b$$$$$3$H$G$9$,!#(B
+
 @item mail-header-parse-address
 @findex mail-header-parse-address
-$B%"%I%l%9$r2r@O$7$F!"%a!<%k%\%C%/%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`%j%9%H$r(B
+$B%"%I%l%9$r2r@O$7$F!"%a!<%k%"%I%l%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`%j%9%H$r(B
 $BJV$7$^$9!#(B
 
 @example
@@ -1164,8 +1169,8 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-narrow-to-field
 @findex mail-header-narrow-to-field
-$B%P%C%U%!!<$r8=:_0LCV$N%X%C%@!<$K69$a$^$9!#J#?t9T$KEO$C$F7QB3$9$kC10l$N%X%C(B
-$B%@!<$rM}2r$7$^$9!#(B
+$B%P%C%U%!!<$r8=:_0LCV$N(B ($BC10l$N(B) $B%X%C%@!<$K69$a$^$9!#J#?t9T$KEO$C$F7QB3$9(B
+$B$k%X%C%@!<$rM}2r$7$^$9!#(B
 
 @item mail-header-fold-field
 @findex mail-header-fold-field
@@ -1182,13 +1187,20 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 @item mail-encode-encoded-word-region
 @findex mail-encode-encoded-word-region
 $BNN0h$K$"$k(B @acronym{ASCII} $B0J30$N8l$r%(%s%3!<%I$7$^$9!#Nc$((B
-$B$P(B @samp{Na@"{@dotless{i}}ve} $B$O(B @samp{=?iso-8859-1?q?Na=EFve?=} $B$H$7$F(B
+$B$P(B @samp{Na@"{@dotless{i}}ve} $B$O(B @samp{=?iso-8859-1?Q?Na=EFve?=} $B$H$7$F(B
 $B%(%s%3!<%I$5$l$^$9!#(B
+
+$BLuCm(B: $B$3$3$G8@$o$s$H$7$F$$$k$3$H$r3N$+$a$k$K$O!"0J2<$r(B @code{eval} $B$7$F(B
+$B2<$5$$(B:
+
+@lisp
+(rfc2047-decode-string "=?iso-8859-1?Q?Na=EFve?=")
+@end lisp
 
 @item mail-encode-encoded-word-buffer
 @findex mail-encode-encoded-word-buffer
 $B8=:_$N%P%C%U%!!<$K$"$k(B @acronym{ASCII} $B0J30$N8l$r%(%s%3!<%I$7$^$9!#$3$N(B
-$B4X?t$O!"%X%C%@!<$N6h2h$K69$a$i$l$?%a%C%;!<%8$G8F$P$l$k$3$H$r0U?^$7$F$$$^(B
+$B4X?t$O!"%X%C%@!<$N6h0h$K69$a$i$l$?%a%C%;!<%8$G8F$P$l$k$3$H$r0U?^$7$F$$$^(B
 $B$9!#(B
 
 @item mail-encode-encoded-word-string
@@ -1199,7 +1211,7 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 @example
 (mail-encode-encoded-word-string
  "This is na@"{@dotless{i}}ve, baby")
-@result{} "This is =?iso-8859-1?q?na=EFve,?= baby"
+@result{} "This is =?iso-8859-1?Q?na=EFve,?= baby"
 @end example
 
 @item mail-decode-encoded-word-region
@@ -1212,7 +1224,7 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @example
 (mail-decode-encoded-word-string
- "This is =?iso-8859-1?q?na=EFve,?= baby")
+ "This is =?iso-8859-1?Q?na=EFve,?= baby")
 @result{} "This is na@"{@dotless{i}}ve, baby"
 @end example
 @end table
@@ -1224,17 +1236,18 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 @node Basic Functions
 @chapter $B4pK\E*$J4X?t(B
 
-$B$3$N>O$O!"2<0L$N3,AX$K$"$k4pK\E*$J!"2r@O$H=hM}$r9T$J$&4X?t$K$D$$$F@bL@$7(B
-$B$^$9!#$3$3$G07$&$3$H$O(B @code{From} $B9T$N2r@O!"%X%C%@!<$N3F9T$K$"$k%3%a%s(B
-$B%H$N:o=|!"8l$N%G%3!<%I$H%(%s%3!<%I!";~9o%X%C%@!<$N2r@O$J$I$G$9!#>e0L3,AX(B
-$B$N5!G=$O:G=i$N>O(B (@pxref{Decoding and Viewing}) $B$G07$$$^$9!#(B
+$B$3$N>O$O!"2<0L$N3,AX$K0LCV$7$F$$$F!"2r@O$H=hM}$r9T$J$&$?$a$N4pK\E*$J4X?t(B
+$B$K$D$$$F@bL@$7$^$9!#$3$3$G07$&$3$H$O(B @code{From} $B9T$N2r@O!"%X%C%@!<$N3F(B
+$B9T$K$"$k%3%a%s%H$N:o=|!"%(%s%3!<%I$5$l$?8l$N%G%3!<%I!";~9o%X%C%@!<$N2r@O(B
+$B$J$I$G$9!#>e0L3,AX$N5!G=$O:G=i$N>O(B (@pxref{Decoding and Viewing}) $B$G07$o(B
+$B$l$F$$$^$9!#(B
 
 @menu
 * rfc2045::      @code{Content-Type} $B%X%C%@!<$N%(%s%3!<%I(B
 * rfc2231::      @code{Content-Type} $B%X%C%@!<$N2r@O(B
-* ietf-drums::   RFC822bis $B$GDj5A$5$l$?%a!<%k%X%C%@!<$N=hM}(B
-* rfc2047::      $B%X%C%@!<$K$*$1$k8l$N%(%s%3!<%I$H%G%3!<%I(B
-* time-date::    $BF|IU$N2r@O$*$h$S;~9o$rA`:n$9$k4X?t(B
+* ietf-drums::   RFC822bis $B$GDj5A$5$l$F$$$k%a!<%k%X%C%@!<$N=hM}(B
+* rfc2047::      $B%X%C%@!<$K$"$k8l$N%(%s%3!<%I$H%G%3!<%I(B
+* time-date::    $BF|IU$N2r@O$H;~9o$rA`:n$9$k4X?t(B
 * qp::           Quoted-Printable $B$N%(%s%3!<%I$H%G%3!<%I(B
 * base64::       Base64 $B$N%(%s%3!<%I$H%G%3!<%I(B
 * binhex::       Binhex $B$N%G%3!<%I(B
@@ -1253,7 +1266,7 @@ RFC2045 $B$O!V<gMW$J!W(B@acronym{MIME} $B$NJ88%$G$9!#$J$i$P!"$=$3$K$O$?$/$5$s
 $B$N<BAu$,$"$k$@$m$&$HA[A|$9$k$G$7$g$&!#$7$+$7!"$[$H$s$I$N>\:Y$J<BAu$O$=$N(B
 $B8e$N(B RFC $B$K0Q$M$i$l$F$$$F!"$=$3$K$O$"$j$^$;$s!#(B
 
-$B$H8@$&$o$1$G!"(B@file{rfc2045.el} $B$K$O$?$C$?0l$D$N4X?t$,$"$j$^$9(B:
+$B$H8@$&$o$1$G(B @file{rfc2045.el} $B$K$O$?$C$?0l$D$N4X?t$,$"$j$^$9(B:
 
 @table @code
 @item rfc2045-encode-string
@@ -1267,8 +1280,8 @@ RFC2045 $B$O!V<gMW$J!W(B@acronym{MIME} $B$NJ88%$G$9!#$J$i$P!"$=$3$K$O$?$/$5$s
 @section rfc2231
 
 RFC2231 $B$O(B @code{Content-Type} $B$H(B @code{Content-Disposition} $B%X%C%@!<$N(B
-$B9=J8$rDj5A$7$^$9!#$=$N>.?h$JL>>N$O(B @dfn{MIME Parameter Value and Encoded
-Word Extensions: Character Sets, Languages, and Continuations} $B$G$9!#(B
+$B9=J8$rDj5A$7$^$9!#$=$N>.?h$JL>>N$O!V(B@acronym{MIME} $B%Q%i%a!<%?!<CM$HId9f(B
+$B2=C18l3HD%J8;z%;%C%H!&8@8l$=$7$F7QB3!W$G$9!#(B
 
 $B0l8}$G8@$&$H!"$=$l$i$N%X%C%@!<$O$3$s$J$U$&$G$9(B:
 
@@ -1304,8 +1317,8 @@ Content-Type: application/x-stuff;
 
 @item rfc2231-encode-string
 @findex rfc2231-encode-string
-@code{Content-Type} $B$H(B @code{Content-Disposition} $B$N$h$&$J%X%C%@!<$K$"$k(B
-$B%Q%i%a!<%?!<$r%(%s%3!<%I$7$^$9!#(B
+@code{Content-Type} $B$H(B @code{Content-Disposition} $B$N$h$&$J%X%C%@!<$KF~$l(B
+$B$k%Q%i%a!<%?!<$r%(%s%3!<%I$7$^$9!#(B
 @end table
 
 @node ietf-drums
@@ -1322,10 +1335,12 @@ Content-Type: application/x-stuff;
 
 @item ietf-drums-remove-whitespace
 @findex ietf-drums-remove-whitespace
-$BJ8;zNs$+$i!H(Blinear white space$B!I(B($BLuCm(B: $BC10l$ND9$$%X%C%@!<$r@^$j>v$s$GJ#(B
-$B?t9T$K$9$k$H$-$K;H$&O"7k;R(B; $B2~9TJ8;z(B+$B6uGrJ8;z(B) $B$r<h$j=|$-!"7k2L$rJV$7$^(B
-$B$9!#%/%)!<%H$5$l$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s%H(B
-$B$K$O<j$rIU$1$^$;$s!#(B
+$BJ8;zNs$+$i!H(Blinear white space$B!I$r<h$j=|$-!"7k2L$rJV$7$^$9!#%/%)!<%H$5$l(B
+$B$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s%H$K$O<j$rIU$1$^$;(B
+$B$s!#(B
+
+$BLuCm(B:$B!H(Blinear white space$B!I$H$O0l$D0J>e$N6uGrJ8;z$N$3$H$G!"$=$NA0$K2~9T(B
+$BJ8;z$rCV$$$?$b$N$O!"D9$$%X%C%@!<$r@^$j>v$`$H$-$K;H$o$l$^$9!#(B
 
 @item ietf-drums-get-comment
 @findex ietf-drums-get-comment
@@ -1333,13 +1348,13 @@ Content-Type: application/x-stuff;
 
 @item ietf-drums-parse-address
 @findex ietf-drums-parse-address
-$B%"%I%l%9$NJ8;zNs$r2r@O$7$F!"%a!<%k%\%C%/%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`(B
+$B%"%I%l%9$NJ8;zNs$r2r@O$7$F!"%a!<%k%"%I%l%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`(B
 $B%j%9%H$rJV$7$^$9!#(B
 
 @item ietf-drums-parse-addresses
 @findex ietf-drums-parse-addresses
-$B%+%s%^$G6h@Z$i$l$?J#?t$N%"%I%l%9$r4^$s$G$$$kJ8;zNs$r2r@O$7$F!"%a!<%k%\%C(B
-$B%/%9$H%W%l!<%s%F%-%9%H$NBP$r4^$`%j%9%H$rJV$7$^$9!#(B
+$B%+%s%^$G6h@Z$i$l$?J#?t$N%"%I%l%9$r4^$s$G$$$kJ8;zNs$r2r@O$7$F!"%a!<%k%"%I(B
+$B%l%9$H%W%l!<%s%F%-%9%H$NBP$r4^$`%j%9%H$rJV$7$^$9!#(B
 
 @item ietf-drums-parse-date
 @findex ietf-drums-parse-date
@@ -1353,10 +1368,10 @@ Content-Type: application/x-stuff;
 @node rfc2047
 @section rfc2047
 
-RFC2047 (Message Header Extensions for Non-@acronym{ASCII} Text) $B$O!"%X%C(B
+RFC2047 ($B%a%C%;!<%8!&%X%C%@!<$G$NHs(B-@acronym{ASCII} $B%F%-%9%H3HD%(B) $B$O!"%X%C(B
 $B%@!<$K$"$kHs(B-@acronym{ASCII} $B%F%-%9%H$r$I$N$h$&$K%(%s%3!<%I$9$k$+$rDj$a(B
-$B$^$9!#<B:]$3$l$O>/!9J#;($K$J$k$N$G!"$3$N%i%$%V%i%j!<$,9T$J$&$3$H$rD4@0$9(B
-$B$k$?$a$K!"B?$/$NJQ?t$,I,MW$G$9!#(B
+$B$F$$$^$9!#<B:]$3$l$O>/!9J#;($K$J$k$N$G!"$3$N%i%$%V%i%j!<$,9T$J$&$3$H$rD4(B
+$B@0$9$k$?$a$K!"B?$/$NJQ?t$,I,MW$G$9!#(B
 
 $B0J2<$NJQ?t$,D4@02DG=$G$9(B:
 
@@ -1369,10 +1384,10 @@ RFC2047 (Message Header Extensions for Non-@acronym{ASCII} Text) $B$O!"%X%C(B
 $B80(B ($BLuCm(B: $B3FMWAG$N(B @code{car} $B9`(B) $B$O%X%C%@!<$K9gCW$9$k@55,I=8=(B
 $B$+(B @code{t} $B$N$I$A$i$+$G$9!#(B
 
-$BCM(B ($BLuCm(B: $B3FMWAG$N(B @code{cdr} $B9`(B) $B$,(B @code{nil} $B$N$H$-!"LdBj$N%X%C%@!<$O(B
-$B%(%s%3!<%I$5$l$^$;$s!#(B@code{mime} $B$O$=$l$i$,%(%s%3!<%I$5$l$k$3$H$r0UL#$7!"(B
-@code{address-mime} $B$N>l9g$O%X%C%@!<$,%"%I%l%9$r4^$s$G$$$k$3$H$rA[Dj$7$F(B
-$BCm0U?<$/%(%s%3!<%I$7$^$9!#(B
+$BCM(B ($BLuCm(B: $B3FMWAG$N(B @code{cdr} $B9`(B) $B$O(B @code{nil} $B$K$9$k$3$H$,$G$-$F!"$=$N(B
+$B>l9g!"80$KAjEv$9$k%X%C%@!<$O%(%s%3!<%I$5$l$^$;$s!#(B@code{mime} $B$O$=$l$i$r(B
+$B%(%s%3!<%I$9$k$3$H$r0UL#$7$^$9$,!"(B@code{address-mime} $B$N>l9g$O%X%C%@!<$,(B
+$B%"%I%l%9$r4^$s$G$$$k$3$H$rA[Dj$7$FCm0U?<$/%(%s%3!<%I$7$^$9!#(B
 
 @item rfc2047-charset-encoding-alist
 @vindex rfc2047-charset-encoding-alist
@@ -1383,8 +1398,8 @@ RFC2047 $B$OFs$D$N%(%s%3!<%G%#%s%0$N7A<0$rDj$a$F$$$^$9!#0l$D$O(B @code{Q}
 
 @item rfc2047-encode-function-alist
 @vindex rfc2047-encode-function-alist
-$B$3$l$O%(%s%3!<%G%#%s%0$H4X?t$NBP$r<}$a$?O"A[%j%9%H$G$9!#%(%s%3!<%G%#%s%0(B
-$B$H$O(B @code{Q}, @code{B} $B$*$h$S(B @code{nil} $B$N$3$H$G$9!#(B
+$B$3$l$O%(%s%3!<%G%#%s%0$H$=$l$r<B;\$9$k$?$a$N4X?t$NBP$r<}$a$?O"A[%j%9%H$G(B
+$B$9!#%(%s%3!<%G%#%s%0$H$O(B @code{Q}, @code{B} $B$*$h$S(B @code{nil} $B$N$3$H$G$9!#(B
 
 @item rfc2047-encoded-word-regexp
 @vindex rfc2047-encoded-word-regexp
@@ -1407,7 +1422,7 @@ RFC2047 $B$OFs$D$N%(%s%3!<%G%#%s%0$N7A<0$rDj$a$F$$$^$9!#0l$D$O(B @code{Q}
 @item rfc2047-encode-message-header
 @findex rfc2047-encode-message-header
 $B%a%C%;!<%8$N%X%C%@!<$K69$a$i$l$?%P%C%U%!!<$G;H$o$J$1$l$P$J$j$^$;$s!#(B
-@code{rfc2047-header-encoding-alist} $B$K=>$C$F%(%s%3!<%I$7$^$9!#(B
+@code{rfc2047-header-encoding-alist} $B$K=>$C$F%(%s%3!<%I$r9T$J$$$^$9!#(B
 
 @item rfc2047-encode-region
 @findex rfc2047-encode-region
@@ -1433,11 +1448,11 @@ RFC2047 $B$OFs$D$N%(%s%3!<%G%#%s%0$N7A<0$rDj$a$F$$$^$9!#0l$D$O(B @code{Q}
 $B%U%!%$%k$r(B @acronym{MIME} $B$N%Q!<%H$H$7$FE:IU$9$k$H$-!"(B
 $BHs(B-@acronym{ASCII} $BJ8;z$r4^$`%U%!%$%kL>$r;XDj$9$k$K$O(B RFC2231 $B$N%(%s%3!<(B
 $B%G%#%s%0$r;H$o$J$1$l$P$J$j$^$;$s!#$7$+$7!"<B:]LdBj$H$7$FB?$/$N%a!<%k%=%U(B
-$B%H$,$=$l$r%5%]!<%H$7$J$$$N$G!"<u?.<T$O@5$7$$%U%!%$%kL>$rCj=P$9$k$3$H$,$G(B
-$B$-$^$;$s!#Be$o$j$K(B RFC2047 $B$U$&$N%(%s%3!<%G%#%s%0$,!"9-$/<u$1F~$l$i$l$F(B
-$B$$$^$9!#$=$s$J>p$1$J$$IwD,$r4E<u$7$F!"$3$N4X?t$O(B RFC2047 $B$K$h$/;w$?%(%s(B
-$B%3!<%G%#%0$N5!G=$rDs6!$7$^$9!#$3$l$r;H$&$K$O!"(B@file{~/.gnus.el} $B%U%!%$%k(B
-$B$K<!$N9T$rF~$l$F2<$5$$(B:
+$B%H$,$=$l$r%5%]!<%H$7$F$$$J$$$N$G!"<u?.<T$O@5$7$$%U%!%$%kL>$rCj=P$9$k$3$H(B
+$B$,$G$-$^$;$s!#Be$o$j$K(B RFC2047 $B$U$&$N%(%s%3!<%G%#%s%0$,9-$/<u$1F~$l$i$l(B
+$B$F$$$^$9!#$=$s$J>p$1$J$$IwD,$r4E<u$7$F!"$3$N4X?t$O(B RFC2047 $B$K$h$/;w$?%((B
+$B%s%3!<%G%#%0$N5!G=$rDs6!$7$^$9!#$3$l$r;H$&$K$O(B @file{~/.gnus.el} $B%U%!%$(B
+$B%k$K<!$N9T$rF~$l$F2<$5$$(B:
 
 @lisp
 (defalias 'mail-header-encode-parameter 'rfc2047-encode-parameter)
@@ -1617,8 +1632,8 @@ Emacs $B$NFbIt7A<0$N;~9o$rIbF0>.?t$GI=$7$?$b$N!#Nc(B: @code{905595714.0}
 @cindex base64
 
 Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 33% $B%5%$%:(B
-$B$,A}$($^$9!#%(%s%3!<%I$G;H$o$l$k%"%k%U%!%Y%C%H$O!"EAAw$5$l$k4V$KBfL5$7$K(B
-$B$5$l$k$3$H$KBP$7$F$H$F$bBQ5WNO$,$"$j$^$9!#(B
+$B$,A}$($^$9!#%"%k%U%!%Y%C%H$@$1$G%(%s%3!<%I$9$k$N$G!"EAAw$5$l$kESCf$G=P2q(B
+$B$&$+$b$7$l$J$$>c32$KBP$7$F$H$F$bBQ5WNO$,$"$j$^$9!#(B
 
 $B0J2<$N4X?t$,$3$N%i%$%V%i%j!<$K$h$C$FDj5A$5$l$F$$$^$9(B:
 
@@ -1668,8 +1683,8 @@ Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 
 @cindex uudecode
 
 @code{base64} $B$,%a!<%k$N@$3&$r;YG[$7$F$$$k$b$N$N!"$*$=$i(B
-$B$/(B @code{uuencode} $B$O$^$@(B Usenet $B$G;H$o$l$F$$$k:G$bIa5Z$7$F$$$k%P%$%J%j!<(B
-$B$N%(%s%3!<%G%#%s%0$G$9!#(B
+$B$/(B @code{uuencode} $B$O$^$@(B Usenet $B$G;H$o$l$F$$$k$b$N$NCf$G!":G$bIa5Z$7$F(B
+$B$$$k%P%$%J%j!<$N%(%s%3!<%G%#%s%0$G$9!#(B
 
 $B0J2<$N4X?t$,$3$N%Q%C%1!<%8$K$h$C$F6!5k$5$l$F$$$^$9(B:
 
@@ -1699,8 +1714,8 @@ Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 
 @cindex Chinese
 
 RFC1843 $B$O%a%C%;!<%8$K$*$1$kCf9q8l$H(B @acronym{ASCII} $BJ8;z$N:.:_J8$r07$$(B
-$B$^$9!#K\<AE*$K!"(BRFC1843 $B$O0J2<$r;H$C$F(B @acronym{ASCII} $B$HCf9q8l$r@Z$jBX(B
-$B$($^$9(B:
+$B$^$9!#K\<AE*$K$O!"(BRFC1843 $B$O0J2<$N$h$&$K(B @acronym{ASCII} $B$HCf9q8l$r@Z$j(B
+$BBX$($k$b$N$G$9(B:
 
 @example
 This sentence is in @acronym{ASCII}.
@@ -1722,9 +1737,9 @@ HZ-$B%(%s%3!<%I$5$l$?J8;zNs$r%G%3!<%I$7$F7k2L$rJV$7$^$9!#(B
 @node mailcap
 @section mailcap
 
-@file{~/.mailcap} $B%U%!%$%k$O$[$H$s$I$N(B @acronym{MIME} $BBP1~$N%a%C%;!<%8!&(B
-$B%O%s%I%i!<$K$h$C$F2r@O$5$l$^$9!#$=$l$K$O!"3FMWAG$,$I$N$h$&$KI=<($5$l$k$b(B
-$B$N$HA[Dj$5$l$F$$$k$+$r5-=R$7$^$9!#%U%!%$%k$NNc$G$9(B:
+@file{~/.mailcap} $B%U%!%$%k$O$[$H$s$I$N(B @acronym{MIME} $B$KBP1~$7$?%a%C%;!<(B
+$B%8!&%O%s%I%i!<$K$h$C$F2r@O$5$l$^$9!#$=$l$K$O!"3FMWAG$,$I$N$h$&$KI=<($5$l(B
+$B$k$b$N$HA[Dj$5$l$F$$$k$+$r5-=R$7$^$9!#%U%!%$%k$NNc$G$9(B:
 
 @example
 image/*; gimp -8 %s
@@ -1735,10 +1750,10 @@ application/msword; catdoc %s ; copiousoutput ; nametemplate=%s.doc
 $B$3$l$O!"$9$Y$F$N2hA|%U%!%$%k$O(B @code{gimp} $B$GI=<($5$l$k$Y$-$G$"$k$3$H!"(B
 WAVE $B2;6A%U%!%$%k$O(B @code{wavplayer} $B$G:F@8$5$l$k$Y$-$G$"$k$3$H!"$=$7(B
 $B$F(B MS-WORD $B%U%!%$%k$O(B @code{catdoc} $B$K$h$C$F%$%s%i%$%sI=<($5$l$k$Y$-$G$"(B
-$B$k$3$H$r8l$C$F$$$^$9!#(B
+$B$k$H8@$C$F$$$^$9!#(B
 
 @code{mailcap} $B%i%$%V%i%j!<$O$3$N%U%!%$%k$r2r@O$7$F!"9gCW$9$k%?%$%W$N$?(B
-$B$a$N4X?t$r5,Dj$7$^$9!#(B
+$B$a$N4X?t$rDs6!$7$^$9!#(B
 
 @table @code
 @item mailcap-mime-data
@@ -1798,7 +1813,7 @@ USENET $B%a%C%;!<%88r49$N$?$a$NI8=`!#(B
 HZ - $BCf1Q:.:_J8$r4^$`%U%!%$%k8r49$N$?$a$N%G!<%?7A<0!#(B
 
 @item draft-ietf-drums-msg-fmt-05.txt
-RFC822 $B$N8e7Q$N$?$a$NI8=`!#(B
+RFC822 $B$N8e7Q$N$?$a$NAp9F!#(B
 
 @item RFC2112
 @acronym{MIME} Multipart/Related Content-type$B!#(B
