@@ -1,3 +1,7 @@
+2005-12-02  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* emacs-mime-ja.texi: Fix translations.
+
 2005-11-30  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* message-ja.texi: Fix translations.
