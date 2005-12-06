@@ -1,5 +1,7 @@
 2005-12-06  Katsumi Yamaoka  <yamaoka@jpl.org>
 
+	* sasl-ja.texi: Fix translations.
+
 	* sieve-ja.texi: Fix translations.
 
 	* gnus-news-ja.texi: Fix translations.
