@@ -22,9 +22,9 @@ License'' in the Emacs manual.
 
 $B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
 $BBh(B 1.2 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
-$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!V(BA GNU Manual$B!W$OI=I=;f(B
+$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!H(BA GNU Manual$B!I$OI=I=;f(B
 $B%F%-%9%H!"0J2<$N(B (a) $B$ON"I=;f%F%-%9%H$G$9!#$3$NMxMQ5vBz7@Ls=q$NJ#<L$O(B
-$B!V(BEmacs manual$B!W$N!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^(B
+$B!H(BEmacs manual$B!I$N!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^(B
 $B$9!#(B
 
 (a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
@@ -43,14 +43,14 @@ license to the document, as described in section 6 of the license.
 
 $B$3$NJ8=q$O!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$K4p$E$$$FG[I[$5$l$?<}=8Cx:nJ*(B
 $B$N0lIt$G$9!#$b$7$"$J$?$,$3$NJ8=q$r<}=8Cx:nJ*$+$iJ,N%$7$FG[I[$7$?$$$H$-$O!"(B
-$B7@Ls=q$NBh(B 6 $B9`$K5-=R$5$l$F$$$k$h$&$K!"J8=q$K7@Ls=q$NJ#<L$rIU2C$9$k$3$H(B
+$B7@Ls=q$NBh(B 6 $B>O$K5-=R$5$l$F$$$k$h$&$K!"J8=q$K7@Ls=q$NJ#<L$rIU2C$9$k$3$H(B
 $B$K$h$C$F!"9T$J$&$3$H$,$G$-$^$9!#(B
 @end quotation
 @end copying
 
 @dircategory Emacs
 @direntry
-* Sieve-ja: (sieve-ja).            Managing Sieve scripts in Emacs (Japanese).
+* Sieve-ja: (sieve-ja).         Managing Sieve scripts in Emacs (Japanese).
 @end direntry
 @iftex
 @finalout
@@ -66,15 +66,14 @@ license to the document, as described in section 6 of the license.
 @insertcopying
 @end titlepage
 
-
 @node Top
 @top Sieve Support for Emacs
 
 $B$3$N%^%K%e%"%k$O(B Emacs Sieve $B%Q%C%1!<%8$N@bL@=q$G$9!#(B
 
-$B$3$l$O(B Sieve $B%b!<%I$H(B Sieve $B4IM}$N$?$a$N%f!<%6!<%:%^%K%e%"%k$H$7$F!"$*$h(B
-$B$S(B @samp{sieve-manage} $B%W%m%H%3%k$r07$&(B Emacs Lisp API $B$N$?$a$N%j%U%!%l(B
-$B%s%9%^%K%e%"%k$H$7$F3hMQ$5$l$k$3$H$r0U?^$7$F$$$^$9!#(B
+$B$3$l$O(B Sieve $B%b!<%I$H!V(BSieve-$B4IM}!W(B(Manage Sieve) $B$N$?$a$N%f!<%6!<%:%^%K%e(B
+$B%"%k$H$7$F!"$*$h$S(B @samp{sieve-manage} $B%W%m%H%3%k$r07$&(B Emacs Lisp
+API $B$N$?$a$N%j%U%!%l%s%9%^%K%e%"%k$H$7$F3hMQ$5$l$k$3$H$r0U?^$7$F$$$^$9!#(B
 
 Sieve $B$O%5!<%P!<B&$G%a!<%k$r_I2a$9$k$?$a$N8@8l$G$9!#$=$N8@8l$O(B RFC
 3028 $B$KJ8=q2=$5$l$F$$$^$9!#$3$N%^%K%e%"%k$NL\E*$O8@8l$r@bL@$9$k$3$H$G$O(B
@@ -87,9 +86,9 @@ Sieve $B$O%5!<%P!<B&$G%a!<%k$r_I2a$9$k$?$a$N8@8l$G$9!#$=$N8@8l$O(B RFC
 @menu
 * Installation::          $B$3$N%Q%C%1!<%8$r;H$&$?$a$N=`Hw(B
 * Sieve Mode::            Sieve $B%9%/%j%W%H$NJT=8(B
-* Managing Sieve::        $B1s3V%5!<%P!<>e$N(B Sieve $B%9%/%j%W%H$N4IM}(B
+* Managing Sieve::        $B1s3V%5!<%P!<>e$N(B Sieve $B%9%/%j%W%H$r4IM}$9$k(B
 * Examples ::             Sieve $B%3!<%I$NJRNZ(B
-* Manage Sieve API ::     Sieve $B%W%m%H%3%k(B API $B$r4IM}$9$k%$%s%?!<%U%'!<%9(B
+* Manage Sieve API ::     $B!V(BSieve-$B4IM}!W%W%m%H%3%k(B API $B$N%$%s%?!<%U%'!<%9(B
 * Standards::             $B;H$o$l$F$$$k(B RFC $B$H:n6HJ8=q$N35N,(B
 * Index::                 $B4X?t$*$h$SJQ?t$N:w0z(B
 @end menu
@@ -102,8 +101,8 @@ Sieve $B$O%5!<%P!<B&$G%a!<%k$r_I2a$9$k$?$a$N8@8l$G$9!#$=$N8@8l$O(B RFC
 Sieve $B%Q%C%1!<%8$O$"$J$?$N(B Emacs $B$NHG$KIUB0$7$F$$$F!"$9$0$K;H$($k$h$&$K(B
 $B$J$C$F$$$k$O$:$G$9!#(B
 
-$B$7$+$7!"$3$N%Q%C%1!<%8$r<j:n6H$G@_Dj$9$k$?$a$K!"0J2<$N%3%^%s%I(B
-$B$r(B @code{~/.emacs} $B%U%!%$%k$K=q$-9~$`$3$H$,$G$-$^$9(B:
+$B$=$&$J$C$F$$$J$$$N$G$"$l$P!"$3$N%Q%C%1!<%8$r<j:n6H$G@_Dj$9$k$?$a$K!"0J2<(B
+$B$N%3%^%s%I$r(B @code{~/.emacs} $B%U%!%$%k$K=q$-9~$s$G2<$5$$(B:
 
 @lisp
 (autoload 'sieve-mode "sieve-mode")
@@ -117,8 +116,8 @@ Sieve $B%Q%C%1!<%8$O$"$J$?$N(B Emacs $B$NHG$KIUB0$7$F$$$F!"$9$0$K;H$($k$h$&$K
 @chapter Sieve $B%b!<%I(B
 
 Sieve $B%b!<%I$O!"9=J8$K4p$E$$$?%$%s%G%s%H!"(Bfont-lock $B$N%5%]!<%H!"$*$h(B
-$B$S(B Sieve $B%9%/%j%W%H$r3Z$KJT=8$G$-$k$h$&$K$9$k$?$a$NB>$NJXMx$J5!G=$rDs6!(B
-$B$7$^$9!#(B
+$B$S(B Sieve $B%9%/%j%W%H$r3Z$KJT=8$G$-$k$h$&$K$9$k$?$a$N$=$NB>$NJXMx$J5!G=$r(B
+$BDs6!$7$^$9!#(B
 
 $B$3$N%a%8%c!<%b!<%I$K@Z$jBX$($k$K$O(B @samp{M-x sieve-mode} $B$r;H$C$F2<$5$$!#(B
 $B$3$N%3%^%s%I$O(B @code{sieve-mode-hook} $B$GM?$($i$l$?%U%C%/$r<B9T$7$^$9!#(B
@@ -127,9 +126,9 @@ Sieve $B%b!<%I$O!"9=J8$K4p$E$$$?%$%s%G%s%H!"(Bfont-lock $B$N%5%]!<%H!"$*$h(B
 @vindex sieve-mode-syntax-table
 Sieve $B%b!<%I$O(B @code{c-mode} $B$+$iGI@8$7$F$$$F!"%3%a%s%H$N9=J80J30$O$H$F(B
 $B$b;w$F$$$^$9!#%$%s%G%s%H$r%+%9%?%^%$%:$9$kJQ?t$,$"$k$N$HF1MM$K!"%-!<%^%C(B
-$B%W(B (@code{sieve-mode-map}) $B$O(B @code{c-mode} $B$r<u$17Q$.$^$9!#(BSieve $B%b!<%I(B
-$B$O@lMQ$NN,8lI=(B (@code{sieve-mode-abbrev-table}) $B$H9=J8%F!<%V(B
-$B%k(B (@code{sieve-mode-syntax-table}) $B$r;}$A$^$9!#(B
+$B%W(B (@code{sieve-mode-map}) $B$O(B @code{c-mode} $B$N$b$N$r<u$17Q$.$^$9!#(B
+Sieve $B%b!<%I$O@lMQ$NN,8lI=(B (@code{sieve-mode-abbrev-table}) $B$H9=J8%F!<%V(B
+$B%k(B (@code{sieve-mode-syntax-table}) $B$r;}$C$F$$$^$9!#(B
 
 $BJT=8$KLrN)$D4X?t$K2C$($F!"(BSieve $B%b!<%I$K$O(B Sieve $B%9%/%j%W%H$r1s3V4IM}$9(B
 $B$k$?$a$N%-!<@_Dj$b$"$j$^$9!#(B@xref{Managing Sieve}.
@@ -139,8 +138,8 @@ Sieve $B%b!<%I$O(B @code{c-mode} $B$+$iGI@8$7$F$$$F!"%3%a%s%H$N9=J80J30$O$H$F
 @kindex C-c RET
 @findex sieve-manage
 @cindex manage remote sieve script
-Sieve $B4IM}%W%m%H%3%k(B (Managesieve protocol) $B$r;H$C$F!"1s3V%5!<%P!<$K@\B3(B
-$B$7$^$9!#(B
+$B!V(BSieve-$B4IM}!W%W%m%H%3%k(B (Managesieve protocol) $B$r;H$C$F!"1s3V%5!<%P!<$K(B
+$B@\B3$7$^$9!#(B
 
 @item C-c C-l
 @kindex C-c C-l
@@ -152,13 +151,13 @@ Sieve $B4IM}%W%m%H%3%k(B (Managesieve protocol) $B$r;H$C$F!"1s3V%5!<%P!<$K@\B
 @node Managing Sieve
 @chapter Sieve $B$N4IM}(B
 
-$B!V(BSieve $B4IM}!W$O!"1s3V%5!<%P!<$G;H$&$3$H$,$G$-$k(B Sieve $B%9%/%j%W%H$rI=<((B
-$B$9$k$?$a$K;H$o$l$kFCJL$J%b!<%I$G$9!#$=$l$O(B @kbd{M-x sieve-manage RET} $B$G(B
-$B5/F0$7!"$=$N%5!<%P!<$K$*$1$k%f!<%6!<L>$H!"I,MW$J>l9g$K$O;q3J>ZL@(B
-$B=q(B (credentials) $B$NF~NO$r5a$a$^$9!#(B
+$B!V(BSieve-$B4IM}!W$O!"1s3V%5!<%P!<$K$"$k(B Sieve $B%9%/%j%W%H$rI=<($9$k$?$a$K;H(B
+$B$o$l$kFCJL$J%b!<%I$G$9!#$=$l$O(B @kbd{M-x sieve-manage RET} $B$G5/F0$7!"$=$N(B
+$B%5!<%P!<$K$*$1$k%f!<%6!<L>$H!"I,MW$J>l9g$K$O;q3J>ZL@=q(B (credentials) $B$N(B
+$BF~NO$r5a$a$^$9!#(B
 
-$B%5!<%P!<$H$N@\B3$K@.8y$9$k$H!"!V(BSieve $B4IM}!W%P%C%U%!$K$O0J2<$N$h$&$J$b$N(B
-$B$,I=<($5$l$^$9(B:
+$B%5!<%P!<$H$N@\B3$K@.8y$9$k$H!"!V(BSieve-$B4IM}!W%P%C%U%!!<$K$O0J2<$N$h$&$J$b(B
+$B$N$,I=<($5$l$^$9(B:
 
 @example
 Server  : mailserver:2000
@@ -173,7 +172,7 @@ press RET on <new script> to create a new script.
 $B%9%/%j%W%H$N0l$D$,6/D4I=<($5$l!"I8=`$N%]%$%s%H0\F0%3%^%s%I(B (@kbd{<up>},
 @kbd{<down>} $B$J$I(B) $B$G%j%9%HFb$r0\F0$9$k$3$H$,$G$-$^$9!#(B
 
-$B0J2<$N%3%^%s%I$,!V(BSieve $B4IM}!W%P%C%U%!$GMxMQ2DG=$G$9(B:
+$B0J2<$N%3%^%s%I$,!V(BSieve-$B4IM}!W%P%C%U%!!<$GMxMQ2DG=$G$9(B:
 
 @table @kbd
 @item m
@@ -203,37 +202,36 @@ press RET on <new script> to create a new script.
 @kindex mouse-2
 @kindex f
 @findex sieve-edit-script
-
-$B%5!<%P!<%P%C%U%!$r1#$7$F!"8=:_$N6/D4I=<($5$l$?%9%/%j%W%H$r(B Sieve $B%b!<(B
-$B%I(B (@pxref{Sieve Mode}) $B$GJT=8$9$k$?$a$N?7$7$$%P%C%U%!$K%@%&%s%m!<%I$7$^(B
-$B$9!#(B
+$B%5!<%P!<%P%C%U%!!<$r1#$7$F!"8=:_$N6/D4I=<($5$l$?%9%/%j%W%H$r(B Sieve $B%b!<(B
+$B%I(B (@pxref{Sieve Mode}) $B$GJT=8$9$k$?$a$N?7$7$$%P%C%U%!!<$K%@%&%s%m!<%I$7(B
+$B$^$9!#(B
 
 @item o
 @kindex o
 @findex sieve-edit-script-other-window
 Sieve $B%b!<%I(B (@pxref{Sieve Mode}) $B$GJT=8$9$k$?$a$K!"8=:_$N6/D4I=<($5$l$?(B
-$B%9%/%j%W%H$r4^$s$G$$$k?7$7$$%P%C%U%!$r!"JL%&%#%s%I%&$G:n@.$7$^$9!#(B
+$B%9%/%j%W%H$r4^$s$G$$$k?7$7$$%P%C%U%!!<$r!"JL%&%#%s%I%&$G:n@.$7$^$9!#(B
 
 @item q
 @kindex q
 @findex sieve-bury-buffer
-$B@\B3$r@Z$i$:$K!V(BSieve $B4IM}!W%P%C%U%!$r1#$7$^$9!#(B
+$B@\B3$r@Z$i$:$K!V(BSieve-$B4IM}!W%P%C%U%!!<$r1#$7$^$9!#(B
 
 @item ?
 @item h
 @kindex ?
 @kindex h
 @findex sieve-help
-$B%_%K%P%C%U%!$K%X%k%W$rI=<($7$^$9!#(B
+$B%_%K%P%C%U%!!<$K%X%k%W$rI=<($7$^$9!#(B
 @end table
 
 @node Examples
 @chapter $BNc(B
 
 Sieve $B$r=OCN$7$F$$$J$$$J$i!"$3$N>O$K$[$s$N>/$7$@$1$"$k%3!<%I$NCGJR$rMxMQ(B
-$B$9$k$3$H$,$G$-$^$9!#(BSieve $B8@8l$G%<%m$+$i5,B'$r=q$/$3$H$,$b$C$H2wE,$K46$8(B
-$B$i$l$k$h$&$K$J$k$^$G$O!"$=$l$i$r%+%C%H!u%Z!<%9%H$7$F0U$N$^$^$KJQ99$7$F2<(B
-$B$5$$!#(B
+$B$9$l$PNI$$$G$7$g$&!#(BSieve $B8@8l$G%<%m$+$i5,B'$r=q$/$3$H$,$b$C$H2wE,$K46$8(B
+$B$i$l$k$h$&$K$J$k$^$G$O!"$=$l$i$r%+%C%H!u%Z!<%9%H$7$F9%$-$J$h$&$KJQ99$7$F(B
+$B2<$5$$!#(B
 
 $B0J2<$N40A4$J(B Sieve $B%9%/%j%W%H$O!"9gCW$9$k(B @samp{Sender:} $B%X%C%@!<$r;}$D(B
 $B$9$Y$F$N%a%C%;!<%8$r!";XDj$5$l$?%a!<%k%\%C%/%9$K3JG<$7$^$9!#B?$/$N%a!<%j(B
@@ -249,7 +247,7 @@ if address "sender" "owner-w3-beta@@xemacs.org" @{
 @end example
 
 $B>/?t$N%a!<%j%s%0%j%9%H$O(B @samp{Sender:} $B%X%C%@!<$r;H$$$^$;$s$,!"JL$N%X%C(B
-$B%@!<$KFHFC$N<1JL;R$r4^$s$G$$$^$9!#0J2<$NIT40A4$J%9%/%j%W%H$O!"$9$G(B
+$B%@!<$KFHFC$N<1JL;R$r4^$s$G$$$^$9!#0J2<$N%9%/%j%W%H$O40A4$G$O$J$/!"$9$G(B
 $B$K(B @code{fileinto} $B$,FI$_9~$^$l$F$$$k$3$H$r2>Dj$7$F$$$^$9!#(B
 
 @example
@@ -270,7 +268,7 @@ if address ["to", "cc"] "kerberos@@mit.edu" @{
 @end example
 
 @node Manage Sieve API
-@chapter Sieve $B4IM}(B API
+@chapter $B!V(BSieve-$B4IM}!W$N(B API
 
 @file{sieve-manage.el} $B%i%$%V%i%j!<$K$O(B @sc{managesieve} $B%W%m%H%3%k$G%5!<(B
 $B%P!<$HOC$9$?$a$N!"Dc3,AX$N4X?t72$,$"$j$^$9!#(B
@@ -291,7 +289,7 @@ customize-group RET sieve RET}):
 
 @item sieve-manage-log
 @vindex sieve-manage-log
-$BHs(B-@code{nil} $B$@$C$?$i!"$d$j<h$j$7$?%W%m%H%3%k$N7k2L$,5-O?$5$l$k!"%P%C%U%!(B
+$BHs(B-@code{nil} $B$@$C$?$i!"$d$j<h$j$7$?%W%m%H%3%k$N7k2L$,5-O?$5$l$k%P%C%U%!!<(B
 $BL>$NJ8;zNs$G$J$1$l$P$J$j$^$;$s(B ($B%G%P%C%0$9$k$H$-$K;H$$$^$9(B)$B!#(B
 @end table
 
@@ -300,7 +298,8 @@ API $B$N4X?t$K$O0J2<$N$b$N$,$"$j$^$9(B:
 @table @code
 @item sieve-manage-open
 @findex sieve-manage-open
-Sieve $B4IM}%5!<%P!<$K@\B3$7!"B>$N$9$Y$F$N(B API $B$G;H$&%P%C%U%!$rJV$7$^$9!#(B
+$B!V(BSieve-$B4IM}!W%5!<%P!<$K@\B3$7!"B>$N$9$Y$F$N(B API $B$G;H$&%P%C%U%!!<$rJV$7(B
+$B$^$9!#(B
 
 @item sieve-manage-opened
 @findex sieve-manage-opened
@@ -324,8 +323,8 @@ Sieve $B4IM}%5!<%P!<$K@\B3$7!"B>$N$9$Y$F$N(B API $B$G;H$&%P%C%U%!$rJV$7$^$9!#
 
 @item sieve-manage-havespace
 @findex sieve-manage-havespace
-$BM?$($i$l$?%5%$%:$N%9%/%j%W%H$N$?$a$N6u$-$,$"$l$P!"Hs(B-@code{nil} $B$rJV$7$^(B
-$B$9!#(B
+$BM?$($i$l$?%5%$%:$N%9%/%j%W%H$N$?$a$N6u$-$,$"$k>l9g$@$1!"Hs(B-@code{nil} $B$r(B
+$BJV$7$^$9!#(B
 
 @item sieve-manage-getscript
 @findex sieve-manage-getscript
@@ -337,16 +336,16 @@ Sieve $B4IM}%5!<%P!<$K@\B3$7!"B>$N$9$Y$F$N(B API $B$G;H$&%P%C%U%!$rJV$7$^$9!#
 
 @item sieve-manage-setactive
 @findex sieve-manage-setactive
-$B%5!<%P!<$K$"$k$I$N%9%/%j%W%H$,3h$-$F$$$k$+$r<($7$^$9!#(B
+$B%5!<%P!<$K$"$k$I$N%9%/%j%W%H$,3h$-$F$$$k$O$:$G$"$k$+$r<($7$^$9!#(B
 @end table
 
 @node Standards
 @chapter $BI8=`(B
 
-Emacs Sieve $B%Q%C%1!<%8$O!">/$J$$$,A}Bg$9$k$3$H$,K>$^$l$k(B RFC $B72$*$h$SAp(B
-$B9FJ8=q$N!"$9$Y$F$^$?$OItJ,$r<BAu$7$^$9!#$3$N>O$G$O4XO"$9$k$b$N$rNs5s$7$^(B
-$B$9!#$=$l$i$O$9$Y$F(B @uref{http://quimby.gnus.org/notes/} $B$+$iF~<j$9$k$3$H(B
-$B$,$G$-$^$9!#(B
+Emacs Sieve $B%Q%C%1!<%8$O!">/$J$$$1$l$I$bA}Bg$9$k$3$H$,K>$^$l$k(B RFC $B72$*(B
+$B$h$SAp9FJ8=q$N!"$9$Y$F$^$?$O0lItJ,$r<BAu$7$^$9!#$3$N>O$G$O4XO"$9$k$b$N$r(B
+$BNs5s$7$^$9!#$=$l$i$O$9$Y$F(B @uref{http://quimby.gnus.org/notes/} $B$+$iF~<j(B
+$B$9$k$3$H$,$G$-$^$9!#(B
 
 @table @dfn
 @item RFC3028
