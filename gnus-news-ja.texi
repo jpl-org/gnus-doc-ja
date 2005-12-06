@@ -1,168 +1,186 @@
 @c -*-texinfo-*-
-
+@c
 @c Copyright (C) 2004, 2005 Free Software Foundation, Inc.
-
+@c
 @c    Permission is granted to anyone to make or distribute verbatim copies
 @c    of this document as received, in any medium, provided that the
 @c    copyright notice and this permission notice are preserved,
 @c    thus giving the recipient permission to redistribute in turn.
-
+@c
 @c    Permission is granted to distribute modified versions
 @c    of this document, or of portions of it,
 @c    under the above conditions, provided also that they
 @c    carry prominent notices stating who last changed them.
-
+@c
 @c This file contains a list of news features Gnus.  It is supposed to be
 @c included in `gnus.texi'.  `GNUS-NEWS' is automatically generated from
 @c this file (see `gnus-news.el').
-
+@c
 @itemize @bullet
+@item No Gnus を使ったことがあるが、以前の (安定した) 版に戻してしまった
+人たちへの注意。
 
-@item すでに No Gnus を使っていて、
-以前の(安定した)版からバージョンアップする
+No Gnus (このリリースにつながる不安定な Gnus の枝) を試してみたものの、
+安定版に戻してしまっている場合、このバージョンへアップグレードするときに
+は注意して下さい。特に、@file{~/News/marks} ディレクトリーの内容を (もし
+かしたら注意深く選んで) 削除する必要があるでしょう。(訳注: 削除しないと、
+新しい No Gnus を初めて使ったときに、安定版を使っていなかった時期に更新
+されなかった marks ファイルが読み込まれて、@file{~/.newsrc.eld} ファイル
+の内容を上書きしてしまいます。)  削除することによって、このリリース
+で nntp のフラグを保存している marks ファイルからではな
+く @file{~/.newsrc.eld} からフラグを読むようになります (訳注: そして新し
+い marks ファイルが作られます)。nntp marks については、次の項目でさらに
+詳しい情報を得ることができます。一般にダウングレードすることは安全ではあ
+りません。
 
-あなたが No Gnus (このリリースにつながる不安定な Gnus の枝) を試してみた
-が、安定版に戻したいなら、このバージョンへアップグレードするときには注意
-してください。特に、@file{~/News/marks} ディレクトリの内容を (おそらく選
-びながら) 削除したくなるかもしれません。それによって、このリリースで 
-nntp のフラグを保存している marks ファイルから
-ではなく @file{~/.newsrc.eld} からフラグを読むようになります。
-nntp marks については、以降の項目でさらに詳しい情報を得ることができます。
-一般的に、ダウングレードは安全ではありません。
+@item nntp バックエンドは記事の印を @file{~/News/marks} に保管します
 
-@item nntp バックエンドは記事マークを @file{~/News/marks} に保管します
-
-そのディレクトリは (カスタマイズ可能な)
-変数 @code{nntp-marks-directory} で変更することができます。また、マーク
-そのものを (バックエンドの) 変数 @code{nntp-marks-is-evil} で無効にする
-ことができます。これの利点は、@file{~/News/marks} を (rsync や scp など
-で別のホストにインストールされた Gnus にもコピーして、既読記事やマークさ
-れた記事を同じように扱うことができることです。@file{~/News/marks} のデー
-タは @file{~/.newsrc.eld} にある同じデータより優先されます。
-
-@item
-Picon はテキストのアドレスから正しく表示されます。
-@code{gnus-picon-style} を見てください。@xref{Picons}.
-
-@item
-@acronym{OPML} のファイルで @acronym{RSS} 購読情報をインポートあるいはエ
-クスポートできます。@xref{RSS}.
+そのディレクトリーは @code{nntp-marks-directory} という (カスタマイズ可
+能な) 変数で変更することができます。また、nntp で印を使うこと
+を @code{nntp-marks-is-evil} という変数 (バックエンド変数) で無効にする
+ことができます。印を使うことの利点は、@file{~/News/marks} を別のホストに
+インストールされた Gnus にも (rsync, scp などを使って) コピーすることに
+よって、どの記事を読んでどの記事に印を付けたかの情報を、そこでも維持でき
+ることです (訳注: 同じ nntp サーバーに接続する場合に限ります)。
+@file{~/News/marks} のデータは @file{~/.newsrc.eld} にある同じデータより
+優先されます。
 
 @item
-@code{mm-fill-flowed} オプションで、format=flowed なメッセージの取り扱い
-を無効にすることができます。また、インラインで @acronym{PGP} 署名された
-メッセージを送信するとき、flowed text を無効にできます。
+Picon はテキストの対象物の右側に表示できるようになりました。
+@code{gnus-picon-style} を見て下さい。@xref{Picons}.
+
+@item
+@acronym{RSS} の購読情報を @acronym{OPML} のファイルから取り込み、または
+書き出すことができるようになりました。@xref{RSS}.
+
+@item
+@code{mm-fill-flowed} オプションで format=flowed なメッセージの取り扱い
+を無効にすることができます。また、@acronym{PGP} の署名が埋め込まれたメッ
+セージを送信するときに、flowed text は無効にされます。
 
 @item メッセージバッファに添付ファイルをドラッグ＆ドロップできます。
-@code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見てく
-ださい。@xref{MIME, ,MIME, message-ja, Message Manual}.
+@code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見て下
+さい。@xref{MIME, ,MIME, message-ja, Message Manual}.
 
-@item @code{message-yank-empty-prefix} オプションで、引用文の空行にどの
-ように引用符をつけるか制御できます。
-@xref{(message)Insertion Variables}.
+@item @code{message-yank-empty-prefix} オプションで、引用文の空行にどん
+な引用符を付けるかを制御することができます。@xref{Insertion Variables,
+,挿入するための変数, message-ja, Message Manual}.
 
 @item @acronym{ANSI} @acronym{SGR} 制御シーケンスを @kbd{W A} で変換する
 ことができます。
 
-@acronym{ANSI} シーケンスは、中国語系列において記事をハイライト表示
-する (@code{gnus-article-treat-ansi-sequences}) のに使われます。
+中国語のニュース階層のグループにおいて、記事をハイライト表示するため
+に @acronym{ANSI} シーケンスが使われま
+す (@code{gnus-article-treat-ansi-sequences})。
 
-@item 国際化ホスト名 (@acronym{IDNA}) は、
-@kbd{W i} (@code{gnus-summary-idna-message}) で記事の本文中でデコードさ
-れます。この機能を使うには、
-GNU Libidn (@url{http://www.gnu.org/software/libidn/}) をインストールし
-ておく必要があります。
+@item 国際化ホスト名 (@acronym{IDNA}) を、@kbd{W i}
+(@code{gnus-summary-idna-message}) を使うことによって、記事の本文中でデ
+コードできるようになりました。この機能を使うには GNU Libidn
+(@url{http://www.gnu.org/software/libidn/}) をインストールしておく必要が
+あります。
 
-@item Gnus は Emacs Lisp @acronym{SASL} ライブラリを含みます。
+@item Gnus は Emacs Lisp @acronym{SASL} ライブラリーを含むようになりまし
+た。
 
-これによって、Emacs の中から @acronym{SASL} の機構を利用する
-ためのきれいな @acronym{API} が提供されます。以前に比べて、ユーザの目に
-見える利点は、@acronym{DIGEST}-@acronym{MD5} と @acronym{NTLM} がサポー
+これによって、Emacs の中から @acronym{SASL} の機構を利用するために、すっ
+きりした @acronym{API} を使うことができます。利用者の目に見える利点は、
+以前は無かった @acronym{DIGEST}-@acronym{MD5} と @acronym{NTLM} がサポー
 トされるようになったことです。
 
-@item ManageSieve 接続にはデフォルトで @acronym{SASL} ライブラリが使われ
-ます。
+@item ManageSieve の接続に、ディフォルトで @acronym{SASL} ライブラリーを
+使うようになりました。
 
-これによる主な変更点は、サーバがサポートしているとき、
-@acronym{DIGEST-MD5} と @acronym{NTLM} のサポートです。
+これによる主な変更点は、サーバーがサポートしている場合
+に @acronym{DIGEST-MD5} と @acronym{NTLM} をサポートするようになったこと
+です。
 
-@item Gnus は password.el でパスワードキャッシュ機構を含みます。
+@item Gnus は password.el にパスワードをキャッシュする機構を含めました。
 
-パスワードキャッシュはデフォルトで有効です (@code{password-cache} を
-参照)。タイムアウトは 16 秒と短いです (@code{password-cache-expiry} を
-参照)。@acronym{PGG} を @acronym{PGP} のバックエンドに使う場合、
-@acronym{PGP} のパスフレーズはこの機構で管理されます。
-ManageSieve 接続のパスワードは、ユーザにそのようにしてよいか尋ねたあと、
-この機構で管理されます。
+パスワードキャッシュはディフォルトで有効です (@code{password-cache} を
+参照)。タイムアウトは 16秒と短いです (@code{password-cache-expiry} を参
+照)。@acronym{PGG} を @acronym{PGP} のバックエンドとして使う場合に、
+@acronym{PGP} のパスフレーズはこの機構で管理されます。ManageSieve 接続の
+パスワードは、利用者にそうするかどうかを尋ねてから、この機構が管理します。
 
-@item @acronym{IMAP} の証明 (@acronym{RFC} 2971) がサポートされます。
+@item @acronym{IMAP} の identity (@acronym{RFC} 2971) をサポートします。
 
-デフォルトでは、Gnus はそれ自身の情報を送信しませんが、
+ディフォルトでは Gnus はそれ自身に関する情報を送信しませんが、
 @code{nnimap-id} 変数を使ってそれをカスタマイズすることができます。
 
-@item @kbd{W e} で、@file{all.SCORE} ファイルをグループバッファから編集
-できます。
+@item @kbd{W e} で @file{all.SCORE} ファイルをグループバッファーから編集
+することができます。
 
-@item Gnus は、記事に "MIME-Version" ヘッダがなくても記事を MIME デコー
-ドします。これにより、@code{gnus-article-loose-mime} のデフォルトが変更
-になります。
+@item Gnus は記事に“MIME-Version”ヘッダーがなくても記事を MIME デコー
+ドします。このために @code{gnus-article-loose-mime} のディフォルト値が変
+更されました。
 
-@item Gnus は、dns-mode を使って text/dns として送信された DNS マスタファ
-イルを見ます。
+@item Gnus は dns-mode を使って text/dns として送信された DNS マスターファ
+イルを表示します。
 
-@item Gnus は、``hashcash'' client puzzle anti-spam の考えをサポートしま
-す。詳しくは、Gnus マニュアルの「Hashcash」節を見てください。有効にする
-には、@code{(setq message-generate-hashcash t)} としてください。
+@item Gnus は“hashcash”client puzzle anti-spam の構想をサポートします。
+詳しくは Gnus マニュアルの「Hashcash」の章を見て下さい。
+@code{(setq message-generate-hashcash t)} で有効になります。
 
-@item Gnus は、サマリバッファで新しい制限コマンド @kbd{/ r}
+@item Gnus は概略バッファーで新しい制限コマンド @kbd{/ r}
 (@code{gnus-summary-limit-to-replied}) と @kbd{/ R}
 (@code{gnus-summary-limit-to-recipient}) をサポートします。
 @xref{Limiting}.
 
-@item Gnus は、サマリバッファで新しい並べ替えコマンド @kbd{C-c C-s C-t}
+@item Gnus は概略バッファーで新しい並べ替えコマンド @kbd{C-c C-s C-t}
 (@code{gnus-summary-sort-by-recipient}) をサポートします。
 @xref{Summary Sorting}.
 
-@item @code{nnrss} バックエンドは、多言語テキストをサポートします。
-@code{nnrss} グループで非 ASCII 文字列を使ったグループ名もサポートされま
-す。@xref{RSS}.
+@item @code{nnrss} バックエンドは多言語テキストをサポートします。
+@code{nnrss} グループでは非-ASCII 文字列を使ったグループ名もサポートされ
+ます。@xref{RSS}.
 
-@item OpenPGP 内での URL: それをクリックすると、ヘッダがダウンロードされ
-てあなたの PGP 鍵輪に取り込まれます。
+@item OpenPGP: ヘッダーにある URL をクリックすると、ヘッダーがダウンロー
+ドされてあなたの PGP の鍵束に取り込まれます。
 
-@item Gnus はメッセージバッファでヘッダを隠すために
-ナロウイング (narrowing) を使います。@code{References} はデフォルトで表
-示されません。すべてのヘッダが見えるように
-するには、@code{(setq message-hidden-headers nil)} としてください。
+@item Gnus はメッセージバッファーでヘッダーを隠すために、それら以外の部
+分だけが見えるようにバッファーを狭めます。@code{References} はディフォル
+トで表示されません。すべてのヘッダーが見えるようにするに
+は @code{(setq message-hidden-headers nil)} として下さい。
 
-@item @code{gnus-decay-scores} をスコアファイルにマッチする正規表現にで
-きます。これによって、適合するスコアファイルだけに減らすことができます。
-@xref{Score Decays}.
+@item @code{gnus-decay-scores} をスコアファイルに合致する正規表現にでき
+ます。例えば @samp{\\.ADAPT\\'} に設定すると、適応スコアファイルだけが減
+衰されるようになります。@xref{Score Decays}.
 
-@item @acronym{S/MIME} が @acronym{LDAP} でのユーザ証明の検索に使えるよ
+@item @acronym{S/MIME} が @acronym{LDAP} の利用者証明書の検索に使えるよ
 うになりました。@code{smime-ldap-host-list} でサーバーを設定する必要があ
 ります。
 
-@item @code{gnus-ignored-from-addresses} を使うとき、
-サマリ行での @code{To} および @code{Newsgroup} ヘッダにつける文字列を
-@code{gnus-summary-to-prefix} と @code{gnus-summary-newsgroup-prefix} で
-カスタマイズすることができます。@xref{To From Newsgroups}.
+@item @code{gnus-ignored-from-addresses} を使う場合に、概略行におい
+て @code{To} と @code{Newsgroup} ヘッダーに相当する場所の最初に表示する
+文字列を、@code{gnus-summary-to-prefix} およ
+び @code{gnus-summary-newsgroup-prefix} でカスタマイズすることができます。
+@xref{To From Newsgroups}.
 
 @item @acronym{MIME} パートを外部にある本体で置き換えることができます。
 @code{gnus-mime-replace-part} と @code{gnus-article-replace-part} を見て
-ください。@xref{MIME Commands}, @ref{Using MIME}.
+下さい。@xref{MIME Commands}, @ref{Using MIME}.
 
 @item Lisp ファイルがディフォルトで .../site-lisp/gnus/ にインストールさ
 れるようになりました。加えて、新しいインストーラーは他にインストールされ
-ている、新しい Gnus より優先される Gnus を検出して、警告を発します。それ
-らを手動で取り除いても良いし、@samp{make remove-installed-shadows} を使っ
+ている、新しい Gnus より優先される Gnus を検出して警告を発します。それら
+を手動で取り除いても良いし、@samp{make remove-installed-shadows} を使っ
 て削除することもできます。
 
-@item @acronym{POP3} によるメールの取得が @acronym{SSL}/@acronym{TLS} と
-StartTLS をサポートするようになりました。
+@item @acronym{POP3} によるメールの取得において、
+@acronym{SSL}/@acronym{TLS} と StartTLS をサポートするようになりました。
 
+@item サーバーバッファーで外部グループのための select-method を変更する
+と、すぐにそのサーバーを使うグループの講読に反映されるようになりました。
+例えば @code{nntp-via-address} を @samp{foo.example.com} か
+ら @samp{bar.example.com} に変更すると、Gnus は次回から中間ホス
+ト @samp{bar.example.com} を経由してニュースサーバーに接続するようになり
+ます。
+
+@item Gnus のバッファーにおける XEmacs の toolbar の位置を変更できるよう
+になりました。@code{gnus-use-toolbar} と @code{message-use-toolbar} を見
+て下さい。
 @end itemize
-
+@c
 @c Local Variables:
 @c coding: iso-2022-7bit
 @c fill-column: 72
