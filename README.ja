@@ -33,7 +33,7 @@ Emacs $B$K4^$^$l$F$$$k$b$N$G$O$J$/!"(BGnus $B%?%o!<$+$i%j%j!<%9$5$l$kHG$KBP(
 ====
 PDF $B$d(B PS $B%U%!%$%k$r:n$k$3$H$,$G$-$^$9!#$?$@$7(B dvipdfmx, jbibtex,
 pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
-$B$$$J$1$l$P$J$j$^$;$s!#(Bconfigure $B$r<B9T$7$?8e$G!"0J2<$r<B9T$7$F2<$5$$!#(B
+$B$$$J$1$l$P$J$j$^$;$s!#(Bconfigure $B$r9T$J$C$?8e$G!"0J2<$r<B9T$7$F2<$5$$!#(B
 
 % make pdf
 
