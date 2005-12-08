@@ -11938,9 +11938,9 @@ subject from date id references chars lines xref extra の各ヘッダーから
 す (@pxref{Rejected Articles})。
 
 @findex gnus-draft-send-all-messages
-@kindex D s (Draft)
+@kindex D s (下書き)
 @findex gnus-draft-send-message
-@kindex D S (Draft)
+@kindex D S (下書き)
 送信を拒否されたメッセージがたくさんあって、それ以上編集せずにそれらを送
 信したい場合は、@kbd{D s} 命令を使うことができます。この命令はプロセス/
 接頭引数の習慣を理解します (@pxref{Process/Prefix})。@kbd{D S} 命
@@ -11948,7 +11948,7 @@ subject from date id references chars lines xref extra の各ヘッダーから
 ジを送り出します。
 
 @findex gnus-draft-toggle-sending
-@kindex D t (Draft)
+@kindex D t (下書き)
 送りたくないメッセージがいくつかあるのであれば、@kbd{D t} 命
 令 (@code{gnus-draft-toggle-sending}) を使ってメッセージに送信不可の印を
 付けることができます。これは切り替え命令です。
@@ -18583,7 +18583,7 @@ file
 @node Agent Commands
 @subsection エージェント命令
 @findex gnus-agent-toggle-plugged
-@kindex J j (Agent)
+@kindex J j (エージェント)
 
 すべての Gnus エージェント命令は @kbd{J} サブマップにあります。
 @kbd{J j} (@code{gnus-agent-toggle-plugged}) 命令はすべてのモードで動作
