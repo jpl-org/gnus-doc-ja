@@ -1282,7 +1282,7 @@ Gnus $B$O(B @code{ask-server} $BL?Na$r$=$l$>$l$NA*BrJ}K!$KBP$7$F<B9T$7!"IaDL$
 @item gnus-subscribe-topics
 @vindex gnus-subscribe-topics
 $B%0%k!<%W$r!"$=$l$K9gCW$9$k(B @code{subscribe} $B%H%T%C%/%Q%i%a!<%?!<$r;}$C$F(B
-$B$$$k%0%k!<%W$KF~$l$^$9(B (@pxref{Topc Parameters})$B!#Nc$($P!"0J2<$N$h$&(B
+$B$$$k%0%k!<%W$KF~$l$^$9(B (@pxref{Topic Parameters})$B!#Nc$($P!"0J2<$N$h$&(B
 $B$J(B @code{subscribe} $B%Q%i%a!<%?!<(B
 
 @example
