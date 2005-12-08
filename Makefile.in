@@ -1,3 +1,5 @@
+@SET_MAKE@
+DVIPDFMX=@DVIPDFMX@
 EMACS=@EMACS@
 EMACSINFO=$(EMACS) -batch -q -no-site-file -l infohack.el -f batch-makeinfo
 INFO_DEPS=gnus-ja.info message-ja.info emacs-mime-ja.info\
@@ -6,13 +8,14 @@ INSTALL=@INSTALL@
 INSTALL_DATA=@INSTALL_DATA@
 INSTALL_INFO=install-info
 JBIBTEX=@JBIBTEX@
+PDVIPS=@PDVIPS@
 PTEX=@PTEX@
 SHELL=/bin/sh
 TEXI2DVI=@TEXI2DVI@
-prefix=@prefix@
 infodir=@infodir@
+prefix=@prefix@
 
-.SUFFIXES: .texi
+.SUFFIXES: .pdf .ps .texi
 
 all: $(INFO_DEPS)
 
@@ -49,9 +52,21 @@ dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi\
 	env TEX=$(PTEX) BIBTEX=$(JBIBTEX) $(TEXI2DVI) -l ja -o $@ gnustmp.texi
 	rm -f gnustmp.*
 
+pdf: gnus-ja.pdf message-ja.pdf emacs-mime-ja.pdf\
+ pgg-ja.pdf sasl-ja.pdf sieve-ja.pdf gnus-coding-ja.pdf
+
+.texi.pdf:
+	i=`basename $@ .pdf`; $(MAKE) $$i.dvi; $(DVIPDFMX) $$i
+
+ps: gnus-ja.ps message-ja.ps emacs-mime-ja.ps\
+ pgg-ja.ps sasl-ja.ps sieve-ja.ps gnus-coding-ja.ps
+
+.texi.ps:
+	i=`basename $@ .ps`; $(MAKE) $$i.dvi; $(PDVIPS) $$i
+
 clean:
-	rm -f *.dvi *.info *.info-[0-9] *.info-[0-9][0-9] *.orig *~\
-	gnustmp.* missfont.log
+	rm -f *.dvi *.info *.info-[0-9] *.info-[0-9][0-9] *.orig *.pdf *.ps *~\
+ gnustmp.* missfont.log
 
 distclean: clean
 	rm -fr autom4te.cache
