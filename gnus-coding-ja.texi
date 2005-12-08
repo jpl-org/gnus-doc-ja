@@ -356,6 +356,7 @@ Gnus から始まりました。@file{GNUS-NEWS} は編集しないで下さい。
 で @command{make GNUS-NEWS} をタイプしてから、
 @file{GNUS-NEWS} と @file{texi/gnus-news.texi} をチェックインして下さい。
 
+@bye
 @c Local Variables:
 @c coding: iso-2022-7bit
 @c fill-column: 72
