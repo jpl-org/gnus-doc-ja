@@ -23630,7 +23630,7 @@ BBDB $B$K:\$C$F$$$J$$C/$+$N%a%C%;!<%8$O(B spam $B$H$b(B ham $B$H$b8+$J$5$l$
 $B$r(B @code{t} $B$K$7$F2<$5$$!#Cm0U$7$F;H$C$F2<$5$$!#(BBBDB $B$K:\$C$F$$$kAw?.<T(B
 $B$@$1$,DL9T$r5v$5$l!"B>$N$9$Y$F$O(B spammers $B$H$7$FJ,N`$5$l$^$9!#(B
 
-@code {spam.el} $B$K4X$9$k8B$j$O!"(B@code{spam-use-BBDB} $B$NJLL>$H$7(B
+@code{spam.el} $B$K4X$9$k8B$j$O!"(B@code{spam-use-BBDB} $B$NJLL>$H$7(B
 $B$F(B @code{spam-use-BBDB-exclusive} $B$r;H$&$3$H$,$G$-$^$9$,!"$=$l$OJL$N%P%C(B
 $B%/%(%s%I$G$O$"$j$^$;$s!#(B@code{spam-use-BBDB-exclusive} $B$r(B @code{t} $B$K@_(B
 $BDj$9$l$P!"(BBBDB $B$K$h$kJ,3d$O$9$Y$FGSB>E*$K$J$j$^$9!#(B
