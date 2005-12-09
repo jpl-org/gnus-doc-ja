@@ -5,6 +5,9 @@
 @synindex fn cp
 @synindex vr cp
 @synindex pg cp
+@iftex
+@firstparagraphindent insert
+@end iftex
 
 @copying
 このファイルは Emacs MIME インターフェースの機能を文書化したものです。

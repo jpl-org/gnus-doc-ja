@@ -5,6 +5,9 @@
 @syncodeindex fn cp
 @syncodeindex vr cp
 @syncodeindex pg cp
+@iftex
+@firstparagraphindent insert
+@end iftex
 
 @dircategory Emacs
 @direntry

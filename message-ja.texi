@@ -5,6 +5,9 @@
 @synindex fn cp
 @synindex vr cp
 @synindex pg cp
+@iftex
+@firstparagraphindent insert
+@end iftex
 @copying
 This file documents Message, the Emacs message composition mode.
 

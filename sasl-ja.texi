@@ -1,6 +1,9 @@
 \input texinfo                  @c -*-texinfo-*-
 
 @setfilename sasl-ja
+@iftex
+@firstparagraphindent insert
+@end iftex
 
 @set VERSION 0.2
 

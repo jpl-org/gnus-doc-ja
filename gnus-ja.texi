@@ -5,6 +5,9 @@
 @syncodeindex fn cp
 @syncodeindex vr cp
 @syncodeindex pg cp
+@iftex
+@firstparagraphindent insert
+@end iftex
 
 @copying
 Copyright (C) 1995, 1996, 1997, 1998, 1999, 2000, 2001,
