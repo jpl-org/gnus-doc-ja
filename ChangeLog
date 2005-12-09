@@ -1,3 +1,9 @@
+2005-12-09  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* emacs-mime-ja.texi, gnus-coding-ja.texi, gnus-ja.texi,
+	message-ja.texi, pgg-ja.texi, sasl-ja.texi, sieve-ja.texi:
+	Add @firstparagraphindent.
+
 2005-12-08  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Makefile.in, configure.ac: Support making of PDF and PS files.
