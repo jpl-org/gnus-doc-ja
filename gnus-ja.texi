@@ -9177,6 +9177,13 @@ Parameters})。
 @code{gnus-unbuttonized-mime-types} はディフォルト値のままにしておいて下
 さい。
 
+また、このリストに @code{"multipart/alternative"} を加えることによって、
+そういうメールに含まれている二つのメディア・タイプのうちの一つを選ぶこと
+ができる、ラジオボタンを表示させることができます。
+@code{mm-discouraged-alternatives} も参照して下さい (@pxref{Display
+Customization, ,表示のカスタマイズ, emacs-mime-ja, The Emacs MIME
+Manual})。
+
 @item gnus-inhibit-mime-unbuttonizing
 @vindex gnus-inhibit-mime-unbuttonizing
 これが非-@code{nil} だと、すべての @acronym{MIME} パートにボタンを付加し

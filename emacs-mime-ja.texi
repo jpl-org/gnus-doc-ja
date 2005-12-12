@@ -371,6 +371,14 @@ LaTeX $B$NJ88%!#(B@code{mm-uu-tex-groups-regexp} $B$K9gCW$9$kL>A0$N%0%k!<%W$G
       (remove "text/html" mm-automatic-display))
 @end lisp
 
+$B$5$i$K!"$3$l$K(B @code{"image/.*"} $B$rDI2C$9$k$3$H$,Lr$KN)$D$+$b$7$l$^$;$s!#(B
+Spammers $B$,(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G!"$=(B
+$B$l$r;H$C$F$$$k$3$H$,$"$j$^$9!#(B@code{gnus-buttonized-mime-types} $B$b;2>H$7(B
+$B$F2<$5$$(B (@pxref{MIME Commands, ,MIME $B%3%^%s%I(B, gnus-ja, The Gnus
+Manual})$B!#$=$l$K(B @code{"multipart/alternative"} $B$r2C$($k$H!"$=$&$$$&%a!<(B
+$B%k$K4^$^$l$F$$$kFs$D$N%a%G%#%"!&%?%$%W$N$&$A$N0l$D$r<j$GA*$V$3$H$,$G$-$k(B
+$B$h$&$K$J$j$^$9!#(B
+
 @item mm-inline-large-images
 @vindex mm-inline-large-images
 $B%&%#%s%I%&$h$jBg$-$J%$%s%i%$%s2hA|$rI=<($9$k$H!"(BEmacs $B$O%9%/%m!<%k$9$k$3(B
