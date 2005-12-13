@@ -75,6 +75,9 @@ license to the document, as described in section 6 of the license.
 * Gnus Coding Style:: Gnus $B$G%3!<%I$r=q$/$H$-$NN.57(B
 * Gnus Maintainance Guide:: Gnus $B$N0];}4IM}$K4X$9$k<j0z(B
 @end menu
+@c
+@c @ref{Gnus Reference Guide, ,Gnus $B%j%U%!%l%s%9%,%$%I(B, gnus-ja, The Gnus
+@c Newsreader}
 
 @node Gnus Coding Style
 @section Gnus $B$G%3!<%I$r=q$/$H$-$NN.57(B
@@ -91,12 +94,12 @@ Emacs MIME Manual}.
 @table @file
 @item netrc.el
 @file{.netrc} $B$r2r@O$9$k5!G=$rDs6!$7$^$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item format-spec.el
 $BG$0U$N%U%)!<%^%C%HJ8;zNs$r%U%)!<%^%C%H$9$k4X?t72$rDs6!$7$^$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 @end table
 
@@ -105,22 +108,22 @@ Emacs MIME Manual}.
 @table @file
 @item encrypt.el
 $B%U%!%$%k$r0E9f2=$9$k%k!<%A%s72$rDs6!$7$^$9!#(B
-@c As of 2005-10-25...
+@c 2005-10-25 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item password.el
 $BMxMQ<T$N%Q%9%o!<%I$rFI$_<h$j!"%Q%9%o!<%I%-%c%C%7%e$r;H$&$3$H$b$"$j$^$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item tls.el
 GnuTLS $B$G0O$`%i%C%Q!<$r2p$7$F(B TLS/SSL $B$r%5%]!<%H$7$^$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item pgg*.el
 $B$5$^$6$^$J(B PGP $B$N<BAu$N$?$a$N%$%s%?!<%U%'!<%9$rDs6!$7$^$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$l$i$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 @end table
 
@@ -129,13 +132,13 @@ GnuTLS $B$G0O$`%i%C%Q!<$r2p$7$F(B TLS/SSL $B$r%5%]!<%H$7$^$9!#(B
 @table @file
 @item dig.el
 $B%I%a%$%sL>%7%9%F%`(B dig $B$X$N%$%s%?!<%U%'!<%9$G$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$K(B Gnus $B$X$N=EBg$J0MB8$O$"$j$^$;$s!#(B
 @code{gnus-run-mode-hooks} ($B%i%C%Q!<4X?t(B) $B$r;H$$$^$9!#(B
 
 @item dns*.el
 $B%I%a%$%sL>%5!<%S%9$GD4$Y$^$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$l$i$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 @end table
 
@@ -144,23 +147,23 @@ GnuTLS $B$G0O$`%i%C%Q!<$r2p$7$F(B TLS/SSL $B$r%5%]!<%H$7$^$9!#(B
 @table @file
 @item pop3.el
 $B%]%9%H%*%U%#%9%W%m%H%3%k(B (RFC1460) $B$X$N%$%s%?!<%U%'!<%9$G$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item imap.el
 @acronym{IMAP} $B%i%$%V%i%j!<$G$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item ietf-drums.el
 RFC822bis $B%X%C%@!<$r2r@O$9$k4X?t72$rDs6!$7$^$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item rfc1843.el
 HZ (RFC1843) $B%G%3!<%I$r9T$J$$$^$9!#(BHZ $B$OCf9q8l$H(B @acronym{ASCII} $BJ8;z$r(B
 $BG$0U$K:.$<9g$o$;$?J8>O$N!"%U%!%$%k8r49$N$?$a$N%G!<%?$G$9!#(B
-@c As of 2005-10-21...
+@c 2005-10-21 $B8=:_(B...
 @code{rfc1843-gnus-setup} $B$O(B Gnus $B$G$@$1Lr$KN)$D$G$7$g$&!#(BGnus $B$X$N0MB8(B
 $B$rL5$/$9$?$a$K!"$3$N4X?t$OJL$N>l=j$K0\@_$9$Y$-$+$b$7$l$^$;$s!#$3$l0J30$K!"(B
 $B=EBg$G$O$J$$$1$l$I$b(B Gnus $B$K0MB8$7$F$$$k4X(B
@@ -181,8 +184,15 @@ RFC2231 $B%X%C%@!<$r%G%3!<%I$9$k4X?t72$rDs6!$7$^$9!#(B
 
 @item flow-fill.el
 RFC2646 $B$N(B "flowed" $B%F%-%9%H$r=hM}$7$^$9!#(B
-@c As of 2005-10-27...
+@c 2005-10-27 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item uudecode.el
+ELisp $BHG$N(B uudecode $B$G$9(B ($BLuCm(B: $B$G$b30It%W%m%0%i%`$N(B uudecode $B$,$"$k>l9g(B
+$B$O!"%G%#%U%)%k%H$G$=$l$r;H$$$^$9(B)$B!#(B
+@c 2005-12-06 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+@c ... $B$G$b!"%+%9%?%`%0%k!<%W$O(B gnus-extract $B$G$9!#(B
 @end table
 
 @subsection message
@@ -208,6 +218,9 @@ Gnus $B$G$O$9$Y$F$N%a%C%;!<%8(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$N:n@.$r(B 
 $B$S(B @file{nnmaildir.el} $B$,!"$b$C$H$b9-$/;H$o$l$F$$$k%a!<%k%P%C%/%(%s%I$G(B
 $B$9(B)$B!#(B
 @c
+@c mm-uu $B$O(B nnheader $B$r8F$S=P$7!"(Bnnheader $B$O(B gnus-util $B$r8F$S=P$7$^$9!#(B
+@c message.el $B$b(B nnheader $B$r8F$S=P$7$^$9!#(B
+@c
 @c message / gnus
 @c
 @c nn*
@@ -221,8 +234,6 @@ Gnus $B$G$O$9$Y$F$N%a%C%;!<%8(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$N:n@.$r(B 
 @c format-spec.el
 
 @section $B8_49@-(B
-@c
-@c v5-10 $B;^$H44$K$*$1$k!"(BXEmacs $B$H8E$$%P!<%8%g%s$N(B Emacs $B$H$N8_49@-!#(B
 
 No Gnus $B$O0J2<$N$b$N$GF0:n$7$^$9(B:
 
@@ -256,6 +267,7 @@ Gnus $B$N3+H/$ODL>o(B CVS $B$N44$G9T$J$o$l$^$9!#$9$J$o$A!"3+H/$9$k$3$H$H?7$7$
 $B$^$9!#(BGnus 5.10.6 $B$,%j%j!<%9$5$l$?8e$G?75,$J5!G=$N3+H/$,:F3+$7$^$7$?$,!"(B
 $BI,MW$K1~$8$F$5$i$K0BDj$JHG(B (5.10.7, @dots{}) $B$r%j%j!<%9$9$k$?$a$N0BDjHG(B
 $B$N;^(B (v5-10) $B$G!"(B5.10 $B7ONs$OB8B3$7$F$$$^$9!#(B
+@xref{Gnus Development, ,Gnus $B$N3+H/(B, gnus-ja, The Gnus Newsreader}.
 
 Gnus $B$N0BDjHG$N%j%j!<%9$O!":G=*E*$K$O(B Emacs $B$N0lIt$K$J$j$^$9!#Nc$((B
 $B$P(B Gnus 5.8 $B$O(B (Gnus 5.9 $B$K2~>N$7$F(B) Emacs 21 $B$N0lIt$K$J$j$^$7$?!#(B
@@ -359,6 +371,13 @@ Gnus $B$+$i;O$^$j$^$7$?!#(B@file{GNUS-NEWS} $B$OJT=8$7$J$$$G2<$5$$!#(B
 $B$G(B @command{make GNUS-NEWS} $B$r%?%$%W$7$F$+$i!"(B
 @file{GNUS-NEWS} $B$H(B @file{texi/gnus-news.texi} $B$r%A%'%C%/%$%s$7$F2<$5$$!#(B
 
+@heading defcustoms $B$G;H$&(B :version $B>pJs$NN.57(B
+
+$B?7$7$$JQ?t$r(B Oort Gnus (v5-10 $B;^$r4^$`(B) $B$KF3F~$9$k$H$-$O!"%3%a%s%H$r4^$s(B
+$B$@(B @code{:version "22.1" ;; Oort Gnus} $B$r;H$C$F2<$5$$!#(B
+@c
+$B$=$NJQ?t$,(B No Gnus $B$G?75,$@$C$?$i!"(B@code{:version "23.0" ;; No Gnus} $B$r(B
+$B;H$C$F2<$5$$!#(B
 @bye
 @c Local Variables:
 @c coding: iso-2022-7bit
