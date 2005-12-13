@@ -11340,9 +11340,9 @@ Gnus はサーバーからその記事を取ってこようとしま
 @kindex C-c C-c (投稿)
 すべての投稿とメールを送るためのコマンドは、あなたをメッセージバッファー
 に導きます。そこでは @kbd{C-c C-c} を押すことによって記事を送信する前に、
-記事を好きなように編集することができます。@xref{Top, ,Overview, message,
-Message Manual}.  メッセージはあなたの設定に基づいて投稿またはメールとし
-て送信されます (@pxref{Posting Server})。
+記事を好きなように編集することができます。@xref{Top, ,概要, message-ja,
+The Message Manual}.  メッセージはあなたの設定に基づいて投稿またはメール
+として送信されます (@pxref{Posting Server})。
 
 @menu
 * Mail::                        メールの送信と返答
