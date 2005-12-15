@@ -23684,8 +23684,13 @@ Gmane は @uref{http://gmane.org} で見つけることができます。
 を運営しているなどの理由によって、ローカルな記事番号が Gmane の記事番号
 と合わない場合は、@code{nil} に設定して下さい。
 @code{spam-report-gmane-use-article-number} が @code{nil} であると、
-@file{spam-report.el} は Gmane が提供する @code{X-Report-Spam} ヘッダー
-を使います。
+@code{spam-report.el} はその番号を記事のヘッダーから取得します。
+@end defvar
+
+@defvar spam-report-user-mail-address
+Gmane への spam の報告に付加される User-Agent に現れるメールアドレスです。
+これは、誤った報告が行なわれたときに、Gmane の管理者があなたに連絡できる
+ようにするためのものです。ディフォルトは @code{user-mail-address} です。
 @end defvar
 
 @node Anti-spam Hashcash Payments
