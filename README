@@ -19,7 +19,7 @@ specify the PATH environment variable if it is needed.  For example:
 
 % ./configure --with-emacs=emacs-21.4 --infodir=/usr/local/info
 
-Gnus Version
+Gnus version
 ============
 This package corresponds to the version of Gnus released from the Gnus
 Towers, not the version of the one distributed with Emacs.  When two
@@ -51,7 +51,7 @@ the same place where this package exists.
 
 Anonymous CVS
 =============
-You can get the manuals of which translating is in progress.
+You can get the manuals of which translating is in progress:
 
 % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
 This is necessary only first.  Just type the RET key when you are
