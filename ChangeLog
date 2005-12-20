@@ -1,3 +1,7 @@
+2005-12-20  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* README: New file.
+
 2005-12-09  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* emacs-mime-ja.texi, gnus-coding-ja.texi, gnus-ja.texi,

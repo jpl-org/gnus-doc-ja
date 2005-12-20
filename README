@@ -1,0 +1,81 @@
+These are the complete Japanese translations of the Gnus Info manuals,
+corresponding to No Gnus v0.4.
+
+Installation
+============
+% ./configure
+% make
+% make install
+
+You can specify Emacs which is used to format the Info files, and the
+destination directory in which the Info files are installed:
+
+% ./configure --with-emacs=EMACS --infodir=INFODIR
+
+To know those default values, look into Makefile after running the
+configure script without argument.  The value for EMACS doesn't allow
+to have directory components like /usr/local/bin/emacs, so you have to
+specify the PATH environment variable if it is needed.  For example:
+
+% ./configure --with-emacs=emacs-21.4 --infodir=/usr/local/info
+
+Gnus Version
+============
+This package corresponds to the version of Gnus released from the Gnus
+Towers, not the version of the one distributed with Emacs.  When two
+or more versions of Gnusae are released in a short period of time, the
+most development-oriented version in them will be targeted.
+
+Where to get this package
+=========================
+(somewhere)
+
+The tarball corresponding to the tarball xgnus-m.n.tar.gz which is the
+released version of Gnus is xgnus-m.n-doc-ja.tar.gz.
+
+Printing
+========
+You can also make PDF or PS files.  To do that, you need to have
+prepared properly the environment in which you are able to use the
+commands dvipdfmx, jbibtex, pdvips, ptex, and texi2dvi.  Perform the
+following commands after running the configure script:
+
+% make pdf
+
+or
+
+% make ps
+
+Otherwise, you may use the ready-made PDF files, which can be found in
+the same place where this package exists.
+
+Anonymous CVS
+=============
+You can get the manuals of which translating is in progress.
+
+% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
+This is necessary only first.  Just type the RET key when you are
+asked for the password.
+
+% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout gnus-doc-ja
+
+Join the translation
+====================
+Anyone is welcome.  The place where the translation is being done is:
+
+% CVS_RSH=ssh cvs -d :ext:cvs@cvs.m17n.org:/cvs/root
+
+The name of the repository is gnus-doc-ja.  If you wish to have a
+write access, send an e-mail with a user name which you desire to use
+and the ssh2 public key to <cvs@cvs.m17n.org>.
+
+*NOTE*
+There are many implicit conventions on terms, ways to write English
+words in Japanese text, turns of phrases, etc.  Please follow the
+conventional ways as much as possible, looking at the ones that have
+already been translated.
+
+Discussion
+==========
+Use the semi-gnus-ja mailing list <semi-gnus-ja@meadowy.org> to
+discuss for the time being.
