@@ -3071,10 +3071,10 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 $BJL$7$J$$$h$&$K$7$?$$$J$i!"$=$l$r(B @code{t} $B$K@_Dj$7$F2<$5$$!#(B
 
 @code{gnus-parameters} $B$r2p$9$k$3$H$K$h$C$F!"%0%k!<%W$K$h$C$F0[$J$kJB$Y(B
-$BBX$($rDj5A$9$k$3$H$,$G$-$^$9!#$3$l$O!"(B@acronym{NNTP} $B$G$OI=Bj$G!"(B
-@acronym{RSS} $B%0%k!<%W$G$O:G?7$N%K%e!<%9$,@hF,$K$J$k$h$&$KF|IU$G!"$=$l$>(B
-$B$lJB$YBX$($r9T$J$&Nc$G$9!#$3$NNc$N:G=i$N%0%k!<%W$O!"(Bnews.gmane.org $B$+$i(B
-$B<hF@$9$k(B Debian $B$N%G%$%j!<%K%e!<%9$G$9!#(B@acronym{RSS} $B%0%k!<%W(B
+$BBX$($rDj5A$9$k$3$H$,$G$-$^$9!#$3$l$O!"(B@acronym{NNTP} $B%0%k!<%W$G$O:G?7$N(B
+$B%K%e!<%9$,@hF,$K$J$k$h$&$KF|IU$G!"(B@acronym{RSS} $B%0%k!<%W$G$OI=Bj$G!"$=$l(B
+$B$>$lJB$YBX$($r9T$J$&Nc$G$9!#$3$NNc$N:G=i$N%0%k!<%W$O!"(Bnews.gmane.org $B$+(B
+$B$i<hF@$9$k(B Debian $B$N%G%$%j!<%K%e!<%9$G$9!#(B@acronym{RSS} $B%0%k!<%W(B
 $B$O(B RSS $B%U%#!<%I$GG[?.$5$l$F$$$k(B Debian $B$N%&%#!<%/%j!<%K%e!<(B
 $B%9(B @url{http://packages.debian.org/unstable/newpkg_main.en.rdf} $B$KBP1~$7(B
 $B$^$9!#(B@xref{RSS}.
@@ -16026,6 +16026,7 @@ Language) $B$G%m!<%I(B/$B%;!<%V$9$k$?$a$K!"0J2<$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9
 
 $B0J2<$N%3!<%I$O!"35N,%P%C%U%!!<$+$iD>@\(B nnrss $B$N(B url $B$r%*!<%W%s$9$k$N$KJX(B
 $BMx$+$b$7$l$^$;$s!#(B
+
 @lisp
 (require 'browse-url)
 
@@ -16046,6 +16047,32 @@ Language) $B$G%m!<%I(B/$B%;!<%V$9$k$?$a$K!"0J2<$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9
   #'(define-key gnus-summary-mode-map
       (kbd "<RET>") 'browse-nnrss-url))
 (add-to-list 'nnmail-extra-headers nnrss-url-field)
+@end lisp
+
+@code{nnrss} $B%P%C%/%(%s%I$O!"$=$l$>$l$,(B @samp{text/plain} $B%Q!<%H(B
+$B$H(B @samp{text/html} $B%Q!<%H$r4^$s$G$$(B
+$B$k(B @samp{multipart/alternative} $B7?$N(B @acronym{MIME} $B5-;v$r:n$j$^$9!#(B
+$B$"$J$?$,(B @acronym{HTML} $B%Q!<%H$r8+$?$/$J$$$?$a(B
+$B$K(B @code{"text/html"} $B$r(B @code{mm-discouraged-alternatives} $BJQ(B
+$B?t(B (@pxref{Display Customization, ,$BI=<($N%+%9%?%^%$%:(B, emacs-mime-ja,
+The Emacs MIME Manual}) $B$K2C$($F$$$?$H$7$F$b!"FC$K(B @code{nnrss} $B%0%k!<%W(B
+$B$G$O(B @samp{text/html} $B$rI=<($9$kJ}$,JXMx$+$b$7$l$^$;$s!#0J2<(B
+$B$O(B @code{nnrss} $B%0%k!<%W$G$@$1$O(B @samp{text/html} $B%Q!<%H$rI=<($9$k$?$a$K!"(B
+$B%0%k!<%W%Q%i%a!<%?!<$H$7$F(B @code{mm-discouraged-alternatives} $B$r@_Dj$9$k(B
+$BNc$G$9(B:
+
+@lisp
+;; @r{@code{mm-discouraged-alternatives} $B$N%G%#%U%)%k%HCM$r@_Dj!#(B}
+(eval-after-load "gnus-sum"
+  '(add-to-list
+    'gnus-newsgroup-variables
+    '(mm-discouraged-alternatives
+      . '("text/html" "image/.*"))))
+
+;; @r{@code{nnrss} $B%0%k!<%W$G$O(B @samp{text/html} $B%Q!<%H$rI=<(!#(B}
+(add-to-list
+ 'gnus-parameters
+ '("\\`nnrss:" (mm-discouraged-alternatives nil)))
 @end lisp
 
 @node Customizing W3
