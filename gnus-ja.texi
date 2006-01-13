@@ -8436,7 +8436,10 @@ URL に含まれる改行を削除します。いくつかのメイラーは、行を短くするために
 を示す @code{Content-Type} ヘッダーを持っていたならば、それは Gnus によっ
 て自動的に行なわれることに注意して下さい。
 
-接頭引数が与えられると、文字セットを尋ねられます。
+接頭引数が与えられると、文字セットを尋ねられます。それがもし数値だったら、
+@code{gnus-summary-show-article-charset-alist} (@pxref{Paging the
+Article}) で定義されている文字セットが使われます。(訳注: 実質的には「文
+字セット」ではなくて @code{coding-system} です。)
 
 @vindex gnus-article-wash-function
 ディフォルトでは @acronym{HTML} の変換に @code{mm-text-html-renderer}
@@ -8447,11 +8450,14 @@ Emacs MIME Manual}) で設定された関数を使いますが、変
 りです:
 
 @table @code
-@item W3
+@item w3
 Emacs/W3 を使います。
 
 @item w3m
 @uref{http://emacs-w3m.namazu.org/, emacs-w3m} を使います。
+
+@item w3m-standalone
+@uref{http://w3m.sourceforge.net/, w3m} を使います。
 
 @item links
 @uref{http://links.sf.net/, Links} を使います。
