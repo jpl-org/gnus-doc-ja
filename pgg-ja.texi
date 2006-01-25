@@ -108,6 +108,8 @@ PGG $B$r;H$&$?$a$K$O!"%"%W%j%1!<%7%g%s%W%m%0%i%`$NKAF,$G<!$N(B S $B<0$rI>2A$7
 @lisp
 (autoload 'pgg-encrypt-region "pgg"
   "Encrypt the current region." t)
+(autoload 'pgg-encrypt-symmetric-region "pgg"
+  "Encrypt the current region with symmetric algorithm." t)
 (autoload 'pgg-decrypt-region "pgg"
   "Decrypt the current region." t)
 (autoload 'pgg-sign-region "pgg"
@@ -137,26 +139,50 @@ PGG $B$r;H$&$?$a$K$O!"%"%W%j%1!<%7%g%s%W%m%0%i%`$NKAF,$G<!$N(B S $B<0$rI>2A$7
 $B$3$l$,BPOCE*$K8F$S=P$5$l$?>l9g$K$O!"%5!<%P!<$+$i8x3+80$r%@%&%s%m!<%I$9$k(B
 $B$+$I$&$+$r$"$J$?$K?R$M$^$9!#(B
 
-@deffn Command pgg-encrypt-region start end recipients &optional sign
+@deffn Command pgg-encrypt-region start end recipients &optional sign passphrase
 @var{start} $B$H(B @var{end} $B$N4V$NNN0h$r(B @var{recipients} $B08$KAw$k$b$N$H$7(B
 $B$F0E9f2=$7$^$9!#BPOCE*$K8F$V$H!"<u?.<T$r?R$M$^$9!#(B
 
 $B0E9f2=$K@.8y$9$k$H!"8=:_$NNN0h$NFbMF$r0E9f2=$7$?%G!<%?$GCV$-49$($^$9!#(B
 
 $B%*%W%7%g%s0z?t(B @var{sign} $B$,(B @code{nil} $B$G$J$+$C$?$i!"=pL>$H0E9f2=$rF1;~(B
-$B$K9T$J$$$^$9!#8=:_!"$3$N5!G=$O(B GnuPG $B$@$1$GF0:n$7$^$9!#(B
+$B$K9T$J$$$^$9!#8=:_$3$N5!G=$O(B GnuPG $B$GF0:n$9$k$3$H$,3NG'$5$l$F$$$^$9$,!"(B
+PGP $B$d(B PGP5 $B$G$OF0:n$7$J$$$+$b$7$l$^$;$s!#(B
+
+$B%*%W%7%g%s0z?t(B @var{passphrase} $B$,(B @code{nil} $B$@$C$?$i!"%Q%9%U%l!<%:$N(B
+$B%-%c%C%7%e$+$i$+!"$^$?$O%f!<%6!<$KF~NO$7$F$b$i$&$3$H$K$h$C$F%Q%9%U%l!<%:(B
+$B$rF@$^$9!#(B
 @end deffn
 
-@deffn Command pgg-decrypt-region start end
+@deffn Command pgg-encrypt-symmetric-region &optional start end passphrase
+$B8=:_$N(B @var{start} $B$H(B @var{end} $B$N4V$NNN0h$r!"6&DL800E9f(B (symmetric
+cipher) $B$G0E9f2=$7$^$9!#8F$S=P$7$?8e$G%Q%9%U%l!<%:$,?R$M$i$l$^$9!#(B
+
+$B%*%W%7%g%s0z?t(B @var{passphrase} $B$,(B @code{nil} $B$@$C$?$i!"%Q%9%U%l!<%:$N(B
+$B%-%c%C%7%e$+$i$+!"$^$?$O%f!<%6!<$KF~NO$7$F$b$i$&$3$H$K$h$C$F%Q%9%U%l!<%:(B
+$B$rF@$^$9!#(B
+
+$B6&DL800E9f$K$h$k0E9f2=$O!"8=:_(B GnuPG $B$@$1$G<BAu$5$l$F$$$^$9!#(B
+@end deffn
+
+@deffn Command pgg-decrypt-region start end &optional passphrase
 @var{start} $B$H(B @var{end} $B$N4V$NNN0h$r2rFI$7$^$9!#2rFI$K@.8y$9$k$H!"8=:_(B
 $B$NNN0h$NFbMF$r2rFI$7$?%G!<%?$GCV$-49$($^$9!#(B
+
+$B%*%W%7%g%s0z?t(B @var{passphrase} $B$,(B @code{nil} $B$@$C$?$i!"%Q%9%U%l!<%:$N(B
+$B%-%c%C%7%e$+$i$+!"$^$?$O%f!<%6!<$KF~NO$7$F$b$i$&$3$H$K$h$C$F%Q%9%U%l!<%:(B
+$B$rF@$^$9!#(B
 @end deffn
 
-@deffn Command pgg-sign-region start end &optional cleartext
+@deffn Command pgg-sign-region start end &optional cleartext passphrase
 @var{start} $B$H(B @var{end} $B$N4V$N%F%-%9%H$K=pL>$7$^$9!#;0HVL\$N%*%W%7%g%s(B
 $B0z?t(B @var{cleartext} $B$,(B @code{nil} $B$G$O$J$$$+!"$"$k$$$OBPOCE*$K8F$P$l$?(B
 $B>l9g!"J,N%$5$l$?=pL>$r:n$j$^$;$s!#$=$N$h$&$J>l9g$K$O!"8=:_$NNN0h$NFbMF$r(B
 $B=pL>$7$?%G!<%?$GCV$-49$($^$9!#(B
+
+$B%*%W%7%g%s0z?t(B @var{passphrase} $B$,(B @code{nil} $B$@$C$?$i!"%Q%9%U%l!<%:$N(B
+$B%-%c%C%7%e$+$i$+!"$^$?$O%f!<%6!<$KF~NO$7$F$b$i$&$3$H$K$h$C$F%Q%9%U%l!<%:(B
+$B$rF@$^$9!#(B
 @end deffn
 
 @deffn Command pgg-verify-region start end &optional signature fetch
@@ -210,8 +236,9 @@ PGG $B$OC1=c$J%a%+%K%:%`$r;H$C$F%Q%9%U%l!<%:$r%-%c%C%7%e$7$^$9!#$=$l$r9T$J(B
 
 @defvar pgg-cache-passphrase
 @code{nil} $B$G$J$1$l$P!"%Q%9%U%l!<%:$rJ];}$7$^$9!#=i4|CM$O(B @code{t} $B$G$9!#(B
-$B$7$+$7!"$"$J$?$,%;%-%e%j%F%#$K$D$$$F5$3]$+$j$J$i!"$3$l$r(B @code{nil} $B$K@_(B
-$BDj$7$F$d$l$P!"%-%c%C%7%e$r$d$a$5$;$k$3$H$,$G$-$^$9!#(B
+$B$7$+$7!"$"$J$?$,%;%-%e%j%F%#$K$D$$$F5$3]$+$j$J$i!"$3$NJQ?t(B
+$B$r(B @code{nil} $B$K@_Dj$9$k$3$H$K$h$C$F!"%Q%9%U%l!<%:$N%-%c%C%7%e$r$d$a$5$;(B
+$B$k$3$H$,$G$-$^$9!#(B
 @end defvar
 
 @defvar pgg-passphrase-cache-expiry
@@ -301,19 +328,26 @@ PGG $B$O(B PGP $B$N5!G=$K%"%/%;%9$9$k$HF1;~$K$=$l$r3+H/$9$k$?$a$K@_7W$5$l$?$N
 $B?t(B @var{type} $B$,Hs(B-@code{nil} $B$@$C$?$i!"HkL)$N80B+$+$i8!:w$7$^$9!#(B
 @end deffn
 
-@deffn Method pgg-scheme-encrypt-region scheme start end recipients &optional sign
+@deffn Method pgg-scheme-encrypt-region scheme start end recipients &optional sign passphrase
 @var{start} $B$H(B @var{end} $B$N4V$NNN0h$r(B @var{recipients} $B08$KAw$k$b$N$H$7(B
 $B$F0E9f2=$7$^$9!#%*%W%7%g%s0z?t(B @var{sign} $B$,(B @code{nil} $B$G$J$+$C$?$i!"=p(B
 $BL>$H0E9f2=$rF1;~$K9T$J$$$^$9!#0E9f2=$K@.8y$9$k$H(B @code{t} $B$r!"<:GT$9$k(B
 $B$H(B @code{nil} $B$rJV$7$^$9!#(B
 @end deffn
 
-@deffn Method pgg-scheme-decrypt-region scheme start end
+@deffn Method pgg-scheme-encrypt-symmetric-region scheme start end &optional passphrase
+$B8=:_$N(B @var{start} $B$H(B @var{end} $B$N4V$NNN0h$r!"6&DL800E9f(B (symmetric
+cipher) $B$H%Q%9%U%l!<%:$G0E9f2=$7$^$9!#0E9f2=$K@.8y$9$k$H(B @code{t} $B$rJV$7!"(B
+$B$=$&$G$J$1$l$P(B @code{nil} $B$rJV$7$^$9!#$3$N5!G=$O8=:_(B GnuPG $B$@$1$G<BAu$5(B
+$B$l$F$$$^$9!#(B
+@end deffn
+
+@deffn Method pgg-scheme-decrypt-region scheme start end &optional passphrase
 @var{start} $B$H(B @var{end} $B$N4V$NNN0h$r2rFI$7$^$9!#2rFI$K@.8y$9$k(B
 $B$H(B @code{t} $B$r!"<:GT$9$k$H(B @code{nil} $B$rJV$7$^$9!#(B
 @end deffn
 
-@deffn Method pgg-scheme-sign-region scheme start end &optional cleartext
+@deffn Method pgg-scheme-sign-region scheme start end &optional cleartext passphrase
 @var{start} $B$H(B @var{end} $B$N4V$N%F%-%9%H$K=pL>$7$^$9!#;0HVL\$N%*%W%7%g%s(B
 $B0z?t(B @var{cleartext} $B$,(B @code{nil} $B$G$O$J$$>l9g!"J,N%$5$l$?=pL>$r:n$j$^(B
 $B$;$s!#=pL>$K@.8y$9$k$H(B @code{t} $B$r!"<:GT$9$k$H(B @code{nil} $B$rJV$7$^$9!#(B
