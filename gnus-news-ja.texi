@@ -179,6 +179,9 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 @item Gnus のバッファーにおける XEmacs の toolbar の位置を変更できるよう
 になりました。@code{gnus-use-toolbar} と @code{message-use-toolbar} を見
 て下さい。
+
+@item nnml バックエンドではメッセージを圧縮するために @file{gzip} 以外の
+プログラムも使うことができます。@xref{Mail Spool}.
 @end itemize
 @c
 @c Local Variables:

@@ -15027,7 +15027,10 @@ Rmail mbox のためのアクティブファイルの名前。ディフォルト
 非-@code{nil} だったら、@code{nnml} は圧縮されたメッセージファイルを扱う
 ことができるようになります。ただし @code{auto-compression-mode} が有効に
 なっていなければなりません (@pxref{Compressed Files, ,Compressed Files,
-emacs, The Emacs Editor})。
+emacs, The Emacs Editor})。@code{nnml-use-compressed-files} の値が文字列
+だった場合、それは圧縮プログラムを指定するファイル拡張子として使われます。
+Emacs がそれをサポートしていれば、それを @samp{.bz2} に設定することがで
+きます。値 @code{t} は @samp{.gz} と等価です。
 
 @item nnml-compressed-files-size-threshold
 @vindex nnml-compressed-files-size-threshold
@@ -24820,14 +24823,17 @@ Ingebrigtsen) は Gnus を書き直そうと決心しました。
 に (99 リリースと CVS リポジトリでの作業の後)“Gnus 5.8”としてリリース
 されました。
 
-2000年10月26日に Oort Gnus が開始されました。
+2000年10月26日に Oort Gnus が開始され、2003年5月1日に Gnus 5.10 としてリ
+リースされました (24 リリース)。
 
-もし接頭語を持った版の Gnus---“(ding) Gnus”,“September Gnus”,“Red
-Gnus”,“Quassia Gnus”,“Pterodactyl Gnus”,“Oort Gnus”---に出会って
-も、混乱しないで下さい。あなたが恐がっていることを知られてはいけません。
-後ろに下がりなさい。ゆっくりと。他に何をしても、走ってはいけません。それ
-が届かくなるまで、静かに歩き去りなさい。正しくリリースされた版の Gnus を
-見つけて、代わりにそれにすり寄りなさい。
+2004年1月4日に No Gnus が始まりました。
+
+接頭語を持った版の Gnus---“(ding) Gnus”,“September Gnus”,“Red
+Gnus”,“Quassia Gnus”,“Pterodactyl Gnus”,“Oort Gnus”,“No
+Gnus”---に出会っても、混乱しないで下さい。あなたが恐がっていることを知
+られてはいけません。後ろに下がりなさい。ゆっくりと。他に何をしても、走っ
+てはいけません。それが届かくなるまで、静かに歩き去りなさい。正しくリリー
+スされた版の Gnus を見つけて、代わりにそれにすり寄りなさい。
 
 @node Other Gnus Versions
 @subsection 他の Gnus のバージョン
