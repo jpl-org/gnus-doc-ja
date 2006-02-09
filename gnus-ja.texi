@@ -27273,7 +27273,7 @@ toggle-debug-on-quit} $B$r;H$C$F!"CY$/$J$C$?$H$-$K(B @kbd{C-g} $B$r2!$7!"$7$+
 $B$rJ,@O$9$kF;6q(B) ELP $B$r;H$&$3$H$G$9!#%W%m%U%!%$%i!<$K$D$$$F$O$I$3$+B>(B
 $B$N>l=j$G40A4$KJ8=q2=$5$l$F$$$k$O$:$G$9$,!"$=$l$r;O$a$k$?$a$KI,MW$J<j=g$r(B
 $B>/!9=q$$$F$*$-$^$7$g$&!#Bh0l$K!"%W%m%U%!%$%k$7$F$_$?$$(B Gnus $B$NItJ,$r7WB,(B
-$B$9$k$?$a$N@_Dj$r!"Nc$($P(B @kbd{M-xelp-instrument-package RET
+$B$9$k$?$a$N@_Dj$r!"Nc$($P(B @kbd{M-x elp-instrument-package RET
 gnus} $B$d(B @kbd{M-x elp-instrument-package RET message} $B$G9T$J$C$F2<$5$$!#(B
 $B$=$7$F!"CY$$F0:n$r9T$J$o$;$F$+$i(B @kbd{M-x elp-results} $B$r2!$7$^$7$g$&!#(B
 $B$9$k$H!"$I$NF0:n$,;~4V$r?)$C$F$$$k$+$r8+$F!"$=$l$i$r$5$i$K$^$?%G%P%C%0$9(B
