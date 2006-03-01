@@ -914,7 +914,7 @@ New Features
 * Quassia Gnus::                2 $B$+$1$k(B 2 $B$O(B 4$B!"$b$7$/$O(B Gnus 5.6/5.7
 * Pterodactyl Gnus::            $B?@Hk$N?t$b(B P $B$G;O$^$k$1$l$I!#(BGnus 5.8/5.9 $B$NJLL>(B
 * Oort Gnus::                   $B5pBg$J!#1s$/MZ$+$J!#(BGnus 5.10/5.11$B!#(B
-* No Gnus::                     Very punny.
+* No Gnus::                     $BD6$d$P$$(B
 
 Customization
 
@@ -25434,7 +25434,7 @@ Gnus $B$N%"%k%U%!G[I[$K4^$^$l$F$$$k(B ChangeLog $B$O!"$=$l$>$l$N?M$?$A$,9T$J$
 * Quassia Gnus::                2 $B$+$1$k(B 2 $B$O(B 4$B!"$b$7$/$O(B Gnus 5.6/5.7
 * Pterodactyl Gnus::            $B?@Hk$N?t$b(B P $B$G;O$^$k$1$l$I!#(BGnus 5.8/5.9 $B$NJLL>(B
 * Oort Gnus::                   $B5pBg$J!#1s$/MZ$+$J!#(BGnus 5.10/5.11$B!#(B
-* No Gnus::                     Lars $B$5$s!"D>$7$F(B!
+* No Gnus::                     $BD6$d$P$$(B
 @end menu
 
 $B$3$l$i$N%j%9%H$O!"$b$A$m$s(B @emph{$B$?$$$F$$$N(B} $B=EMW$J?7$7$$5!G=$K4X$9(B
