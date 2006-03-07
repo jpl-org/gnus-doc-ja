@@ -9230,12 +9230,12 @@ Manual})。
 "multipart/related" のパートを "multipart/mixed" であるものとして表示し
 ます。
 
-もし "text/html" を表示するのが気に入らないのなら、@xref{Display
-Customization, ,表示のカスタマイズ, emacs-mime-ja, The Emacs MIME
-Manual}, にある @code{mm-discouraged-alternatives} を参照して下さい。た
-だし (それで "text/html" を表示しないように設定して、かつ) この変数
+もし "text/html" を表示するのが気に入らないのなら、
+@code{mm-discouraged-alternatives} を参照して下さい。ただし (それ
+で "text/html" を表示しないように設定して、かつ) この変数
 が @code{nil} だと、"multipart/related" パートの中にある画像や他の資料を
-見逃してしまうかもしれません。
+見逃してしまうかもしれません。@xref{Display Customization,
+,表示のカスタマイズ, emacs-mime-ja, The Emacs MIME Manual}.
 
 @vindex gnus-mime-display-multipart-as-mixed
 @item gnus-mime-display-multipart-as-mixed
@@ -26510,6 +26510,8 @@ Gnus エージェントは大規模な更新を経て、今やディフォルトで有効になります。
 いかれた Outlook (Express) の記事を醜くなくするための、Raymond Scholz
 @email{rscholz@@zonix.de} によって新設されたファイルです。
 
+@c FIXME: `gnus-load' について言及している README が、CVS には含まれてい
+@c ません。私たちはこの項目のためのより良い場所を見つけるべきです。
 @item
 @code{(require 'gnus-load)}
 

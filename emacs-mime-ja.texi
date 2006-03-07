@@ -372,13 +372,13 @@ LaTeX $B$NJ88%!#(B@code{mm-uu-tex-groups-regexp} $B$K9gCW$9$kL>A0$N%0%k!<%W$G
 @end lisp
 
 $B$5$i$K!"$3$l$K(B @code{"image/.*"} $B$rDI2C$9$k$3$H$OLr$KN)$D$G$7$g$&!#(B
-Spammers $B$,(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G$=$l(B
-$B$r;H$C$F$$$k$3$H$,$"$j!"$"$J$?$O$=$l0J30$N%Q!<%H$,$"$k$3$H$K5$$,IU$+$J$$(B
-$B$+$b$7$l$^$;$s!#(B@code{gnus-buttonized-mime-types} $B$b;2>H$7$F2<$5(B
-$B$$(B (@pxref{MIME Commands, ,MIME $B%3%^%s%I(B, gnus-ja, The Gnus Manual})$B!#$=(B
-$B$l$K(B @code{"multipart/alternative"} $B$r2C$($k$H!"$=$&$$$&%a!<%k$K4^$^$l$F(B
-$B$$$kFs$D$N%a%G%#%"!&%?%$%W$N$&$A$N0l$D$r<j$GA*$V$3$H$,$G$-$k$h$&$K$J$j$^(B
-$B$9!#Nc$($P!"$3$N$h$&$K@_Dj$9$k$3$H$,$G$-$^$9(B:
+Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|(B
+$B$r;H$C$F$$$k$3$H$,$"$k$N$G!"$"$J$?$O$=$l0J30$N%Q!<%H$,$"$k$3$H$K5$$,IU$+(B
+$B$J$$$+$b$7$l$^$;$s!#(B@code{gnus-buttonized-mime-types} $B$b;2>H$7$F2<$5(B
+$B$$(B (@pxref{MIME Commands, ,MIME $B%3%^%s%I(B, gnus-ja, The Gnus Manual})$B!#(B
+@code{gnus-buttonized-mime-types} $B$K(B @code{"multipart/alternative"} $B$rDI(B
+$B2C$7$?8e$G$O!"8+$?$$B&$r<j$GA*$V$3$H$,$G$-$^$9!#Nc$($P!"$3$N$h$&$K@_Dj$9(B
+$B$k$l$PNI$$$G$7$g$&(B:
 
 @lisp
 (setq gnus-buttonized-mime-types
