@@ -14058,14 +14058,21 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 現の展開が行なわれます。後述の例 (訳注: @samp{\\&},
 @samp{\\1}〜@samp{\\9}) を見て下さい。
 
-@item (@var{field} @var{value} [- @var{restrict} [@dots{}] ] @var{split})
-もし分割がリストで、最初の要素が文字列であり、ヘッダーの @var{field} (正
-規表現) が @var{value} (これも正規表現) を含んでいる場合、メッセージ
-を @var{split} で指定されたグループに格納します。@var{field} の後にあっ
-てしかも合致した @var{value} の最後尾より前にある何かの文字列
-に @var{restrict} (これもまた正規表現) が合致したら、@var{split} は無視
-されます。いくつかの @var{restrict} のどれもが合致しなけれ
-ば @var{split} が実行されます。
+@c この行を折り返さないで下さい。
+@item (@var{field} @var{value} [- @var{restrict} [@dots{}] ] @var{split} [@var{invert-match-partial-words}])
+もし分割がリストで、最初の要素が文字列であり、@var{field} (正規表現) に
+合致するヘッダーが @var{value} (これも正規表現) に合致する文字列を含んで
+いたならば、@var{split} で指定されたグループにメッセージを格納します。
+@var{field} の後にあって、しかも合致した @var{value} の最後尾より前にあ
+る何かの文字列に @var{restrict} (これもまた正規表現) が合致したら、
+@var{split} は無視されます。いくつかの @var{restrict} のどれもが合致しな
+ければ @var{split} が実行されます。
+
+最後の要素 @var{invert-match-partial-words} は任意です。これが省略されて
+いなくて、しかも値が @code{nil} でなければ、語 (word) の境界をまたいで正
+規表現の合致を行なうかどうかの振る舞
+い (@code{nnmail-split-fancy-match-partial-words} 変数によって制御されま
+す) が反転します (下記参照)。
 
 @item (| @var{split} @dots{})
 分割がリストで、最初の要素が @code{|} (垂直棒) だったら、それぞれ
@@ -14117,39 +14124,50 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 分割が @code{nil} だったら、それは無視されます。
 @end table
 
-これらの分割で、@var{fileld} は完全なフィールド名に合致しなければなりま
-せん。@var{value} は基礎モード (fundamental mode) 構文テーブル (syntax
-table) に従って完全に合致しなければなりません。フィールド名か語の一部分
-に合致させるために、正規表現で @code{.*} を使うことができます。言い換え
-れば、すべての @var{value} は @samp{\<} と @samp{\>} の対で囲まれます。
+これらの分割で @var{fileld} は完全なフィールド名 (と言うかヘッダー名) に
+合致しなければなりません。
 
-@quotation
-訳注: この件は非常に重要です。例えば以下の分割は、ディフォルトでは永久
-に @samp{foo@@example.com} というメールアドレスに合致することはありませ
-ん:
+通常これらの分割における @var{value} は、基礎モード (fundamental
+mode) 構文テーブル (syntax table) に従って、完全に @emph{語} (word) に合
+致しなければなりません。言い換えれば、すべての @var{value} は暗
+に @code{\<...\>} 印 (語の区切り記号) で囲まれます。したがって、例えば以
+下の分割を使うと、
 
-@lisp
-;; @r{@@example.com} から来たすべてのメールを example グループに入れる。
-(from "@@example\\.com" "example")
-@end lisp
+@example
+(any "joe" "joemail")
+@end example
 
-なぜかと言うと、実際に行なわれる処理は
+@noindent
+@samp{joedavis@@foo.org} からやって来たメッセージは、通
+常 @samp{joemail} には格納されないでしょう。この振る舞いを変更したければ、
+以下の三つのやり方のどれでもを使うことができます:
 
-@lisp
-(string-match "@@example\\.com" "foo@@example.com")
-@end lisp
+@enumerate
+@item
+@vindex nnmail-split-fancy-match-partial-words
+@code{nnmail-split-fancy-match-partial-words} 変数を @code{nil} ではない
+値に設定することによって、語の境界を無視させることができます。すると、合
+致はより grep ふうになります。この変数は、特級分割で語の境界をまたいだ合
+致を行なうかどうかを制御します。ディフォルト値は @code{nil} です。
 
-ではなくて、
+分割の規則のすべての @var{value} に影響することに注意して下さい。
 
-@lisp
-(string-match "\\<@@example\\.com\\>" "foo@@example.com")
-@end lisp
+@item
+@code{.*} で始まる @var{value} は、語の前にある語の境界を無視させます。
+同様に @code{.*} で終わる @var{value} は、語の後ろにある語の境界を無視さ
+せます。例えば @code{"@@example\\.com"} とい
+う @var{value} は @samp{foo@@example.com} に合致しませんが、
+@code{".*@@example\\.com"} ならば合致します。
 
-だからです。
-@code{nnmail-split-fancy-match-partial-words} (後述) を @code{nil} では
-ない値に設定すれば、あなたが設定した正規表現は @samp{\<} と @samp{\>} の
-対で囲まれません。
-@end quotation
+@item
+この章の最初の方で述べた @var{invert-match-partial-words} フラグを、
+@samp{(@var{field} @var{value} @dots{})} 型の分割規則で使うことができま
+す。このフラグが設定されていると、
+@code{nnmail-split-fancy-match-partial-words} が @code{nil} であっても、
+語の両側にある語の境界は無視されます。逆に、このフラグが設定されていると、
+@code{nnmail-split-fancy-match-partial-words} が @code{nil} ではない値で
+あっても、語の境界は無視されません。
+@end enumerate
 
 @vindex nnmail-split-abbrev-alist
 @var{field} と @var{value} は Lisp シンボルであることもできます。その場
@@ -14198,24 +14216,6 @@ table) に従って完全に合致しなければなりません。フィールド名か語の一部分
 われている (例えば mailing-list@@domain と Mailing-List@@Domain) 場合で
 も、複数のグループが生成されてしまうことを避けることができます。ディフォ
 ルトは @code{t} です。
-
-@vindex nnmail-split-fancy-match-partial-words
-@code{nnmail-split-fancy-match-partial-words} は、特級分割で部分的な語が
-合致するかどうかを制御します。
-
-通常 @code{nnmail-split-fancy} で与えられる正規表現は、暗に語の区切りを
-表す @code{\<...\>} 印で囲まれています。この変数が真であると、それらは何
-によっても暗に囲まれません。
-
-@example
-(any "joe" "joemail")
-@end example
-
-この例では、@samp{joedavis@@foo.org} から来たメッセージは、ディフォルト
-では @samp{joemail} に格納されません。しかし、
-@code{nnmail-split-fancy-match-partial-words} を @code{t} に設定すると合
-致が起きます。要するに、語を区切る条件が削除され、代わりに合致がよ
-り grep らしくなるのです。
 
 @findex nnmail-split-fancy-with-parent
 関数 @code{nnmail-split-fancy-with-parent} は、フォローアップ記事を親記
