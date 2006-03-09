@@ -14072,7 +14072,7 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 いなくて、しかも値が @code{nil} でなければ、語 (word) の境界をまたいで正
 規表現の合致を行なうかどうかの振る舞
 い (@code{nnmail-split-fancy-match-partial-words} 変数によって制御されま
-す) が反転します (下記参照)。
+す; 下記参照) が反転します。(Gnus 5.10.7 の新機能)
 
 @item (| @var{split} @dots{})
 分割がリストで、最初の要素が @code{|} (垂直棒) だったら、それぞれ
@@ -14166,7 +14166,7 @@ mode) 構文テーブル (syntax table) に従って、完全に @emph{語} (
 @code{nnmail-split-fancy-match-partial-words} が @code{nil} であっても、
 語の両側にある語の境界は無視されます。逆に、このフラグが設定されていると、
 @code{nnmail-split-fancy-match-partial-words} が @code{nil} ではない値で
-あっても、語の境界は無視されません。
+あっても、語の境界は無視されません。(Gnus 5.10.7 の新機能)
 @end enumerate
 
 @vindex nnmail-split-abbrev-alist
@@ -22480,7 +22480,7 @@ Picon のファイル名として試してみる順に並べられた拡張子のリストです。ディ
 @code{top}, @code{bottom}, @code{right} または @code{left} の中の一つの
 シンボルでなければなりません。@code{default} だったらディフォルトのツー
 ルバーを使い、他のものだったらその名前が示す場所にツールバーを表示します。
-デゥフォルトは @code{default} です。
+ディフォルトは @code{default} です。
 
 @item gnus-toolbar-thickness
 @vindex gnus-toolbar-thickness
