@@ -14059,18 +14059,20 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 @samp{\\1}〜@samp{\\9}) を見て下さい。
 
 @c この行を折り返さないで下さい。
-@item (@var{field} @var{value} [- @var{restrict} [@dots{}] ] @var{split} [@var{invert-match-partial-words}])
-もし分割がリストで、最初の要素が文字列であり、@var{field} (正規表現) に
-合致するヘッダーが @var{value} (これも正規表現) に合致する文字列を含んで
-いたならば、@var{split} で指定されたグループにメッセージを格納します。
+@item (@var{field} @var{value} [- @var{restrict} [@dots{}] ] @var{split} [@var{invert-partial}])
+この分割は少なくとも三つの要素を含んでいる必要があります。最初の要
+素 @var{field} (正規表現) に合致するヘッダーが @var{value} (これも正規表
+現) に合致する文字列を含んでいたならば、@var{split} で指定されたグループ
+にメッセージを格納します。
+
 @var{field} の後にあって、しかも合致した @var{value} の最後尾より前にあ
 る何かの文字列に @var{restrict} (これもまた正規表現) が合致したら、
 @var{split} は無視されます。いくつかの @var{restrict} のどれもが合致しな
 ければ @var{split} が実行されます。
 
-最後の要素 @var{invert-match-partial-words} は任意です。これが省略されて
-いなくて、しかも値が @code{nil} でなければ、語 (word) の境界をまたいで正
-規表現の合致を行なうかどうかの振る舞
+最後の要素 @var{invert-partial} は任意です。これが省略されていなくて、し
+かも値が @code{nil} でなければ、語 (word) の境界をまたいで正規表現の合致
+を行なうかどうかの振る舞
 い (@code{nnmail-split-fancy-match-partial-words} 変数によって制御されま
 す; 下記参照) が反転します。(Gnus 5.10.7 の新機能)
 
@@ -14160,7 +14162,7 @@ mode) 構文テーブル (syntax table) に従って、完全に @emph{語} (
 @code{".*@@example\\.com"} ならば合致します。
 
 @item
-この章の最初の方で述べた @var{invert-match-partial-words} フラグを、
+この章の最初の方で述べた @var{invert-partial} フラグを、
 @samp{(@var{field} @var{value} @dots{})} 型の分割規則で使うことができま
 す。このフラグが設定されていると、
 @code{nnmail-split-fancy-match-partial-words} が @code{nil} であっても、
