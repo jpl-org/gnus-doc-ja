@@ -1210,26 +1210,26 @@ Manual}) $B$r;2>H$7$F2<$5$$!#(B
 (setq
  nnmail-split-methods
  '(("duplicates" "^Gnus-Warning:.*duplicate")
-   ("XEmacs-NT" "^\\(To:\\|CC:\\).*localpart@@xemacs.bla.*")
-   ("Gnus-Tut" "^\\(To:\\|CC:\\).*localpart@@socha.bla.*")
-   ("tcsh" "^\\(To:\\|CC:\\).*localpart@@mx.gw.bla.*")
-   ("BAfH" "^\\(To:\\|CC:\\).*localpart@@.*uni-muenchen.bla.*")
+   ("XEmacs-NT" "^\\(To:\\|CC:\\).*localpart@@xemacs.invalid.*")
+   ("Gnus-Tut" "^\\(To:\\|CC:\\).*localpart@@socha.invalid.*")
+   ("tcsh" "^\\(To:\\|CC:\\).*localpart@@mx.gw.invalid.*")
+   ("BAfH" "^\\(To:\\|CC:\\).*localpart@@.*uni-muenchen.invalid.*")
    ("Hamster-src" "^\\(CC:\\|To:\\).*hamster-sourcen@@yahoogroups.\\(de\\|com\\).*")
-   ("Tagesschau" "^From: tagesschau <localpart@@www.tagesschau.bla>$")
-   ("Replies" "^\\(CC:\\|To:\\).*localpart@@Frank-Schmitt.bla.*")
-   ("EK" "^From:.*\\(localpart@@privateprovider.bla\\|localpart@@workplace.bla\\).*")
+   ("Tagesschau" "^From: tagesschau <localpart@@www.tagesschau.invalid>$")
+   ("Replies" "^\\(CC:\\|To:\\).*localpart@@Frank-Schmitt.invalid.*")
+   ("EK" "^From:.*\\(localpart@@privateprovider.invalid\\|localpart@@workplace.invalid\\).*")
    ("Spam" "^Content-Type:.*\\(ks_c_5601-1987\\|EUC-KR\\|big5\\|iso-2022-jp\\).*")
    ("Spam" "^Subject:.*\\(This really work\\|XINGA\\|ADV:\\|XXX\\|adult\\|sex\\).*")
    ("Spam" "^Subject:.*\\(\=\?ks_c_5601-1987\?\\|\=\?euc-kr\?\\|\=\?big5\?\\).*")
    ("Spam" "^X-Mailer:\\(.*BulkMailer.*\\|.*MIME::Lite.*\\|\\)")
    ("Spam" "^X-Mailer:\\(.*CyberCreek Avalanche\\|.*http\:\/\/GetResponse\.com\\)")
    ("Spam" "^From:.*\\(verizon\.net\\|prontomail\.com\\|money\\|ConsumerDirect\\).*")
-   ("Spam" "^Delivered-To: GMX delivery to spamtrap@@gmx.bla$")
+   ("Spam" "^Delivered-To: GMX delivery to spamtrap@@gmx.invalid$")
    ("Spam" "^Received: from link2buy.com")
-   ("Spam" "^CC: .*azzrael@@t-online.bla")
+   ("Spam" "^CC: .*azzrael@@t-online.invalid")
    ("Spam" "^X-Mailer-Version: 1.50 BETA")
-   ("Uni" "^\\(CC:\\|To:\\).*localpart@@uni-koblenz.bla.*")
-   ("Inbox" "^\\(CC:\\|To:\\).*\\(my\ name\\|address@@one.bla\\|adress@@two.bla\\)")
+   ("Uni" "^\\(CC:\\|To:\\).*localpart@@uni-koblenz.invalid.*")
+   ("Inbox" "^\\(CC:\\|To:\\).*\\(my\ name\\|address@@one.invalid\\|adress@@two.invalid\\)")
    ("Spam" "")))
 @end lisp
 
@@ -1339,7 +1339,7 @@ From, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8@.$7$?$j!"Dj7?$N=p(B
 (setq gnus-posting-styles
       '((".*"
          (name "Frank Schmitt")
-         (address "me@@there.bla")
+         (address "me@@there.invalid")
          (organization "Hamme net, kren mer och nimmi")
          (signature-file "~/.signature")
          ("X-SampleHeader" "foobar")
@@ -1389,21 +1389,21 @@ From, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8@.$7$?$j!"Dj7?$N=p(B
 @lisp
 (setq
  gnus-posting-styles
- '((".*"  ;;default
+ '((".*" ;;default
     (name "Frank Schmitt")
     (organization "Hamme net, kren mer och nimmi")
     (signature-file "~/.signature"))
-   ((message-news-p)  ;;Usenet news?
-    (address "mySpamTrap@@Frank-Schmitt.bla")
-    ("Reply-To" "hereRealRepliesOnlyPlease@@Frank-Schmitt.bla"))
-   ((message-mail-p)  ;;mail?
-    (address "usedForMails@@Frank-Schmitt.bla"))
+   ((message-news-p) ;;Usenet news?
+    (address "mySpamTrap@@Frank-Schmitt.invalid")
+    (reply-to "hereRealRepliesOnlyPlease@@Frank-Schmitt.invalid"))
+   ((message-mail-p) ;;mail?
+    (address "usedForMails@@Frank-Schmitt.invalid"))
    ("^gmane" ;;this is mail, too in fact
-    (address "usedForMails@@Frank-Schmitt.net")
-    ("Reply-To" nil))
-   ("^gmane.mail.spam.spamassassin.general$"
-    (eval (setq mail-envelope-from "Azzrael@@rz-online.de"))
-    (address "Azzrael@@rz-online.de"))))
+    (address "usedForMails@@Frank-Schmitt.invalid")
+    (reply-to nil))
+   ("^gmane\\.mail\\.spam\\.spamassassin\\.general$"
+    (eval (set (make-local-variable 'message-sendmail-envelope-from)
+               "Azzrael@@rz-online.de")))))
 @end lisp
 
 @node [5.5]
@@ -1490,7 +1490,7 @@ flyspell.el} $B$rMQ0U$7$F2<$5$$!#(B@file{ispell.el} $B$O(B Emacs $B$H$H$b$K
 $B%9$rEPO?$7$F$*$/$3$H$,$G$-$^$9(B:
 
 @example
-alias al	"Al <al@@english-heritage.bla>"
+alias al	"Al <al@@english-heritage.invalid>"
 @end example
 
 @noindent
@@ -1521,8 +1521,8 @@ Database) $B$G$7$g$&!#(BXEmacs $B$N%Q%C%1!<%8%7%9%F%`$r;H$&$+!"(B
 (setq bbdb-north-american-phone-numbers-p nil)
 ;; $B$"$J$?$NEE;R%a!<%k%"%I%l%9$r(B BBDB $B$K65$($^$7$g$&!#(B
 (setq bbdb-user-mail-names
-      (regexp-opt '("Your.Email@@here.bla"
-                    "Your.other@@mail.there.bla")))
+      (regexp-opt '("Your.Email@@here.invalid"
+                    "Your.other@@mail.there.invalid")))
 ;; $B%a!<%k%"%I%l%9$rJd40$9$k$H$-$K!"8uJd$r%(%s%I%l%9$G=P$7$^$9!#(B
 ;; cycling while completing email addresses
 (setq bbdb-complete-name-allow-cycling t)
