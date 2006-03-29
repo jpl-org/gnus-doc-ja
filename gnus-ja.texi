@@ -11857,7 +11857,8 @@ subject from date id references chars lines xref extra の各ヘッダーから
       '((".*"
          (signature-file "~/.signature")
          (name "User Name")
-         ("X-Home-Page" (getenv "WWW_HOME"))
+         (x-face-file "~/.xface")
+         (x-url (getenv "WWW_HOME"))
          (organization "People's Front Against MWM"))
         ("^rec.humor"
          (signature my-funny-signature-randomizer))
@@ -22258,8 +22259,11 @@ Lisp Reference Manual}, を参照して下さい。今のところ Emacs で
 及ぼします。
 @end table
 
-Gnus は外に出すメッセージに X-Face ヘッダーを簡単に挿入できるようにする
-ための、便利な関数と変数を少しばかり提供します。
+投稿様式 (posting style) を使うのであれば、
+@code{gnus-posting-styles} に @code{x-face-file} の項を加えれば良いでしょ
+う (@pxref{Posting Styles})。さもなけば、外に出すメッセージに X-Face ヘッ
+ダーを簡単に挿入できるようにするために Gnus が提供する、いくつかの便利な
+関数と変数を利用することができます。
 
 @findex gnus-random-x-face
 @vindex gnus-convert-pbm-to-x-face-command
