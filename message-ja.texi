@@ -91,8 +91,8 @@ Gnus $B$N$9$Y$F$N%a%C%;!<%8$N:n@.(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$O!"%a%C
 * Key Index::         $B%a%C%;!<%8%b!<%I$N%-!<$N0lMw(B
 @end menu
 
-$B$3$N%^%K%e%"%k$O(B Message v5.10.6 $B$KBP1~$7$^$9!#(BMessage $B$O$3$N%^%K%e%"%k(B
-$B$HF1$8HGHV9f$N5-:\$,$"$k(B Gnus $B$NG[I[$H6&$KG[I[$5$l$^$9!#(B
+Message $B$O(B Gnus $B$H$H$b$KG[I[$5$l$^$9!#$3$N%^%K%e%"%k$KBP1~$9$k(B Gnus $B$NHG(B
+$B$O(B No Gnus v0.3 $B$G$9!#(B
 
 @node Interface
 @chapter $B%$%s%?!<%U%'!<%9(B

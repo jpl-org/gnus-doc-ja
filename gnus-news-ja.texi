@@ -180,6 +180,11 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 になりました。@code{gnus-use-toolbar} と @code{message-use-toolbar} を見
 て下さい。
 
+@item ツールバーが GNOME のアイコンを使うように更新されました。
+ツールバーをカスタマイズすることもできます。まだマニュアルで文書化されて
+いませんが、@kbd{M-x customize-apropos RET -tool-bar$} で始めることがで
+きるはずです。(XEmacs ではなく Emacs 用のものだけです。)
+
 @item nnml バックエンドではメッセージを圧縮するために @file{gzip} 以外の
 プログラムも使うことができます。@xref{Mail Spool}.
 @end itemize
