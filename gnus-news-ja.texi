@@ -17,7 +17,7 @@
 @c this file (see `gnus-news.el').
 @c
 @itemize @bullet
-@item No Gnus $B$N%$%s%9%H!<%k$K4X$9$kJQ99(B
+@item $B%$%s%9%H!<%k$K4X$9$kJQ99(B
 
 @itemize @bullet
 @item No Gnus $B$r;H$C$?$3$H$,$"$k$,!"0JA0$N(B ($B0BDj$7$?(B) $BHG$KLa$7$F$7$^$C$?(B
@@ -36,29 +36,25 @@ No Gnus ($B$3$N%j%j!<%9$K$D$J$,$kIT0BDj$J(B Gnus $B$N;^(B) $B$r;n$7$F$_$?$b
 $B>\$7$$>pJs$rF@$k$3$H$,$G$-$^$9!#0lHL$K%@%&%s%0%l!<%I$9$k$3$H$O0BA4$G$O$"(B
 $B$j$^$;$s!#(B
 
-@item Lisp $B%U%!%$%k$,%G%#%U%)%k%H$G(B .../site-lisp/gnus/ $B$K%$%s%9%H!<%k$5(B
-$B$l$k$h$&$K$J$j$^$7$?!#2C$($F!"?7$7$$%$%s%9%H!<%i!<$OB>$K%$%s%9%H!<%k$5$l(B
-$B$F$$$k!"?7$7$$(B Gnus $B$h$jM%@h$5$l$k(B Gnus $B$r8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i(B
-$B$r<jF0$G<h$j=|$$$F$bNI$$$7!"(B@samp{make remove-installed-shadows} $B$r;H$C(B
-$B$F:o=|$9$k$3$H$b$G$-$^$9!#(B
+@item Lisp $B%U%!%$%k$,%G%#%U%)%k%H$G(B @file{.../site-lisp/gnus/} $B$K%$%s%9(B
+$B%H!<%k$5$l$k$h$&$K$J$j$^$7$?!#0JA0$O(B @file{.../site-lisp/} $B$,%G%#%U%)%k(B
+$B%H$G$7$?!#2C$($F!"?7$7$$%$%s%9%H!<%i!<$OB>$K%$%s%9%H!<%k$5$l$F$$$k!"?7$7(B
+$B$$(B Gnus $B$h$jM%@h$5$l$k(B Gnus $B$r8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i$r<jF0$G<h$j(B
+$B=|$$$F$bNI$$$7!"(B@code{make remove-installed-shadows} $B$r;H$C$F:o=|$9$k$3(B
+$B$H$b$G$-$^$9!#(B
 @end itemize
 
-@item No Gnus $B$N<gMW$J?75,5!G=(B
+@item Gnus $B$K4^$^$l$k?7$7$$%Q%C%1!<%8$H%i%$%V%i%j!<(B
 
 @itemize @bullet
-@item $B9q:]2=%[%9%HL>(B (@acronym{IDNA}) $B$r!"(B@kbd{W i}
-(@code{gnus-summary-idna-message}) $B$r;H$&$3$H$K$h$C$F!"5-;v$NK\J8Cf$G%G(B
-$B%3!<%I$G$-$k$h$&$K$J$j$^$7$?!#$3$N5!G=$r;H$&$K$O(B GNU Libidn
-(@url{http://www.gnu.org/software/libidn/}) $B$r%$%s%9%H!<%k$7$F$*$/I,MW$,(B
-$B$"$j$^$9!#(B
-
 @item Gnus $B$O(B Emacs Lisp @acronym{SASL} $B%i%$%V%i%j!<$r4^$`$h$&$K$J$j$^$7(B
 $B$?!#(B
 
 $B$3$l$K$h$C$F!"(BEmacs $B$NCf$+$i(B @acronym{SASL} $B$N5!9=$rMxMQ$9$k$?$a$K!"$9$C(B
 $B$-$j$7$?(B @acronym{API} $B$r;H$&$3$H$,$G$-$^$9!#MxMQ<T$NL\$K8+$($kMxE@$O!"(B
 $B0JA0$OL5$+$C$?(B @acronym{DIGEST}-@acronym{MD5} $B$H(B @acronym{NTLM} $B$,%5%]!<(B
-$B%H$5$l$k$h$&$K$J$C$?$3$H$G$9!#(B
+$B%H$5$l$k$h$&$K$J$C$?$3$H$G$9!#(B@xref{Top, ,Emacs SASL, sasl-ja, Emacs
+SASL}.
 
 @item ManageSieve $B$N@\B3$K!"%G%#%U%)%k%H$G(B @acronym{SASL} $B%i%$%V%i%j!<$r(B
 $B;H$&$h$&$K$J$j$^$7$?!#(B
@@ -74,16 +70,20 @@ No Gnus ($B$3$N%j%j!<%9$K$D$J$,$kIT0BDj$J(B Gnus $B$N;^(B) $B$r;n$7$F$_$?$b
 $B>H(B)$B!#(B@acronym{PGG} $B$r(B @acronym{PGP} $B$N%P%C%/%(%s%I$H$7$F;H$&>l9g$K!"(B
 @acronym{PGP} $B$N%Q%9%U%l!<%:$O$3$N5!9=$G4IM}$5$l$^$9!#(BManageSieve $B@\B3$N(B
 $B%Q%9%o!<%I$O!"MxMQ<T$K$=$&$9$k$+$I$&$+$r?R$M$F$+$i!"$3$N5!9=$,4IM}$7$^$9!#(B
+@end itemize
 
-@item @kbd{W e} $B$G(B @file{all.SCORE} $B%U%!%$%k$r%0%k!<%W%P%C%U%!!<$+$iJT=8(B
-$B$9$k$3$H$,$G$-$^$9!#(B
+@item $B35N,%b!<%I$H5-;v%b!<%I$NJQ99(B
 
-@item Gnus $B$O(B dns-mode $B$r;H$C$F(B text/dns $B$H$7$FAw?.$5$l$?(B DNS $B%^%9%?!<%U%!(B
-$B%$%k$rI=<($7$^$9!#(B
+@itemize @bullet
+@item $B9q:]2=%[%9%HL>(B (@acronym{IDNA}) $B$r!"(B@kbd{W i}
+(@code{gnus-summary-idna-message}) $B$r;H$&$3$H$K$h$C$F!"5-;v$NK\J8Cf$G%G(B
+$B%3!<%I$G$-$k$h$&$K$J$j$^$7$?!#$3$N5!G=$r;H$&$K$O(B GNU Libidn
+(@url{http://www.gnu.org/software/libidn/}) $B$r%$%s%9%H!<%k$7$F$*$/I,MW$,(B
+$B$"$j$^$9!#(B
+@c FIXME: Also mention @code{message-use-idna}?
 
-@item Gnus $B$O!H(Bhashcash$B!I(Bclient puzzle anti-spam $B$N5!9=$r%5%]!<%H$7$^$9!#(B
-$B>\$7$/$O(B Gnus $B%^%K%e%"%k$N!V(BHashcash$B!W$N>O$r8+$F2<$5$$!#(B
-@code{(setq message-generate-hashcash t)} $B$GM-8z$K$J$j$^$9!#(B
+@item Gnus $B$O(B dns-mode $B$r;H$C$F(B text/dns $B$H$7$FAw?.$5$l(B
+$B$?(B @acronym{DNS} $B%^%9%?!<%U%!%$%k$rI=<($7$^$9!#(B
 
 @item Gnus $B$O35N,%P%C%U%!!<$G?7$7$$@)8B%3%^%s%I(B @kbd{/ r}
 (@code{gnus-summary-limit-to-replied}) $B$H(B @kbd{/ R}
@@ -98,8 +98,65 @@ No Gnus ($B$3$N%j%j!<%9$K$D$J$,$kIT0BDj$J(B Gnus $B$N;^(B) $B$r;n$7$F$_$?$b
 $B$&$K$J$j$^$7$?!#(B@code{smime-ldap-host-list} $B$G%5!<%P!<$r@_Dj$9$kI,MW$,$"(B
 $B$j$^$9!#(B
 
-@item OpenPGP: $B%X%C%@!<$K$"$k(B URL $B$r%/%j%C%/$9$k$H!"%X%C%@!<$,%@%&%s%m!<(B
-$B%I$5$l$F$"$J$?$N(B PGP $B$N80B+$K<h$j9~$^$l$^$9!#(B
+@item Open@acronym{PGP} $B%X%C%@!<$K$"$k(B URL $B$r%/%j%C%/$9$k$H!"%X%C%@!<$,(B
+$B%@%&%s%m!<%I$5$l$F$"$J$?$N(B PGP $B$N80B+$K<h$j9~$^$l$^$9!#(B
+
+@item
+Picon $B$O%F%-%9%H$NBP>]J*$N1&B&$KI=<($G$-$k$h$&$K$J$j$^$7$?!#(B
+@code{gnus-picon-style} $B$r8+$F2<$5$$!#(B@xref{Picons}.
+
+@item @acronym{ANSI} @acronym{SGR} $B@)8f%7!<%1%s%9$r(B @kbd{W A} $B$GJQ49$9$k(B
+$B$3$H$,$G$-$^$9!#(B
+
+$BCf9q8l$N%K%e!<%93,AX$N%0%k!<%W$K$*$$$F!"5-;v$r%O%$%i%$%HI=<($9$k$?$a(B
+$B$K(B @acronym{ANSI} $B%7!<%1%s%9$,;H$o$l$^(B
+$B$9(B (@code{gnus-article-treat-ansi-sequences})$B!#(B
+
+@item Gnus $B$O5-;v$K!H(BMIME-Version$B!I%X%C%@!<$,$J$/$F$b5-;v$r(B MIME $B%G%3!<(B
+$B%I$7$^$9!#$3$N$?$a$K(B @code{gnus-article-loose-mime} $B$N%G%#%U%)%k%HCM$,JQ(B
+$B99$5$l$^$7$?!#(B
+
+@item @code{gnus-decay-scores} $B$r%9%3%"%U%!%$%k$K9gCW$9$k@55,I=8=$K$G$-(B
+$B$^$9!#Nc$($P(B @samp{\\.ADAPT\\'} $B$K@_Dj$9$k$H!"E,1~%9%3%"%U%!%$%k$@$1$,8:(B
+$B?j$5$l$k$h$&$K$J$j$^$9!#(B@xref{Score Decays}.
+
+@item @code{gnus-ignored-from-addresses} $B$r;H$&>l9g$K!"35N,9T$K$*$$(B
+$B$F(B @code{To} $B$H(B @code{Newsgroup} $B%X%C%@!<$KAjEv$9$k>l=j$N:G=i$KI=<($9$k(B
+$BJ8;zNs$r!"(B@code{gnus-summary-to-prefix} $B$*$h(B
+$B$S(B @code{gnus-summary-newsgroup-prefix} $B$G%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B
+@xref{To From Newsgroups}.
+
+@item @acronym{MIME} $B%Q!<%H$r30It$K$"$kK\BN$GCV$-49$($k$3$H$,$G$-$^$9!#(B
+@code{gnus-mime-replace-part} $B$H(B @code{gnus-article-replace-part} $B$r8+$F(B
+$B2<$5$$!#(B@xref{MIME Commands}, @ref{Using MIME}.
+
+@item
+@code{mm-fill-flowed} $B%*%W%7%g%s$G(B format=flowed $B$J%a%C%;!<%8$N<h$j07$$(B
+$B$rL58z$K$9$k$3$H$,$G$-$^$9!#$^$?!"(B@acronym{PGP} $B$N=pL>$,Kd$a9~$^$l$?%a%C(B
+$B%;!<%8$rAw?.$9$k$H$-$K!"(Bflowed text $B$OL58z$K$5$l$^$9!#(B@xref{Flowed text,
+,$BN.F0%F%-%9%H(B, emacs-mime-ja, The Emacs MIME Manual}.
+@end itemize
+
+@item Message $B%b!<%I$NJQ99(B
+
+@itemize @bullet
+@item Gnus $B$O!H(Bhashcash$B!I(Bclient puzzle anti-spam $B$N5!9=$r%5%]!<%H$7$^$9!#(B
+@code{(setq message-generate-hashcash t)} $B$GM-8z$K$J$j$^$9!#(B
+@xref{Hashcash}.
+
+@item $B%a%C%;!<%8%P%C%U%!$KE:IU%U%!%$%k$r%I%i%C%0!u%I%m%C%W$G$-$^$9!#(B
+@code{mml-dnd-protocol-alist} $B$H(B @code{mml-dnd-attach-options} $B$r8+$F2<(B
+$B$5$$!#(B@xref{MIME, ,MIME, message-ja, Message Manual}.
+
+@item @code{message-yank-empty-prefix} $B%*%W%7%g%s$G!"0zMQJ8$N6u9T$K$I$s(B
+$B$J0zMQId$rIU$1$k$+$r@)8f$9$k$3$H$,$G$-$^$9!#(B@xref{Insertion Variables,
+,$BA^F~$9$k$?$a$NJQ?t(B, message-ja, Message Manual}.
+
+@item Gnus $B$O%a%C%;!<%8%P%C%U%!!<$G%X%C%@!<$r1#$9$?$a$K!"$=$l$i0J30$NIt(B
+$BJ,$@$1$,8+$($k$h$&$K%P%C%U%!!<$r69$a$^$9!#(B@code{References} $B$O%G%#%U%)%k(B
+$B%H$GI=<($5$l$^$;$s!#$9$Y$F$N%X%C%@!<$,8+$($k$h$&$K$9$k$K(B
+$B$O(B @code{(setq message-hidden-headers nil)} $B$H$7$F2<$5$$!#(B@xref{Message
+Headers, ,$B%a%C%;!<%8%X%C%@!<(B, message-ja, Message Manual}.
 @end itemize
 
 @item $B%P%C%/%(%s%I$NJQ99(B
@@ -132,60 +189,34 @@ No Gnus ($B$3$N%j%j!<%9$K$D$J$,$kIT0BDj$J(B Gnus $B$N;^(B) $B$r;n$7$F$_$?$b
 
 @item @acronym{POP3} $B$K$h$k%a!<%k$N<hF@$K$*$$$F!"(B
 @acronym{SSL}/@acronym{TLS} $B$H(B StartTLS $B$r%5%]!<%H$9$k$h$&$K$J$j$^$7$?!#(B
-@end itemize
-
-@item Message $B$NJQ99(B
-
-@itemize @bullet
-@item $B%a%C%;!<%8%P%C%U%!$KE:IU%U%!%$%k$r%I%i%C%0!u%I%m%C%W$G$-$^$9!#(B
-@code{mml-dnd-protocol-alist} $B$H(B @code{mml-dnd-attach-options} $B$r8+$F2<(B
-$B$5$$!#(B@xref{MIME, ,MIME, message-ja, Message Manual}.
-
-@item @code{message-yank-empty-prefix} $B%*%W%7%g%s$G!"0zMQJ8$N6u9T$K$I$s(B
-$B$J0zMQId$rIU$1$k$+$r@)8f$9$k$3$H$,$G$-$^$9!#(B@xref{Insertion Variables,
-,$BA^F~$9$k$?$a$NJQ?t(B, message-ja, Message Manual}.
-
-@item Gnus $B$O%a%C%;!<%8%P%C%U%!!<$G%X%C%@!<$r1#$9$?$a$K!"$=$l$i0J30$NIt(B
-$BJ,$@$1$,8+$($k$h$&$K%P%C%U%!!<$r69$a$^$9!#(B@code{References} $B$O%G%#%U%)%k(B
-$B%H$GI=<($5$l$^$;$s!#$9$Y$F$N%X%C%@!<$,8+$($k$h$&$K$9$k$K(B
-$B$O(B @code{(setq message-hidden-headers nil)} $B$H$7$F2<$5$$!#(B
 
 @item nnml $B%P%C%/%(%s%I$G$O%a%C%;!<%8$r05=L$9$k$?$a$K(B @file{gzip} $B0J30$N(B
 $B%W%m%0%i%`$b;H$&$3$H$,$G$-$^$9!#(B@xref{Mail Spool}.
 @end itemize
 
-@item No Gnus $B$N$=$NB>$NJQ99(B
+@item $B308+(B
+@c Maybe it's not worth to separate this from "Miscellaneous"?
 
 @itemize @bullet
-@item
-Picon $B$O%F%-%9%H$NBP>]J*$N1&B&$KI=<($G$-$k$h$&$K$J$j$^$7$?!#(B
-@code{gnus-picon-style} $B$r8+$F2<$5$$!#(B@xref{Picons}.
+@item $B%D!<%k%P!<$,(B GNOME $B$N%"%$%3%s$r;H$&$h$&$K99?7$5$l$^$7$?!#%D!<%k%P!<(B
+$B$r%+%9%?%^%$%:$9$k$3$H$b$G$-$^$9!#$^$@%^%K%e%"%k$GJ8=q2=$5$l$F$$$^$;$s$,!"(B
+@kbd{M-x customize-apropos RET -tool-bar$} $B$G;O$a$k$3$H$,$G$-$k$O$:$G$9!#(B
+(Emacs $B$@$1$G$9!#(BXEmacs $B$OL$BP1~!#(B)
+@c FIXME: Document this in the manual
 
-@item @acronym{ANSI} @acronym{SGR} $B@)8f%7!<%1%s%9$r(B @kbd{W A} $B$GJQ49$9$k(B
-$B$3$H$,$G$-$^$9!#(B
+@item $B%D!<%k%P!<$N%"%$%3%s$,%0%k!<%W%P%C%U%!!<$G@5$7$/3h@-2=(B ($B$^$?$OIT3h(B
+$B@-2=(B) $B$5$l$k$h$&$K$J$j$^$7$?!#JQ?t(B @code{gnus-group-update-tool-bar} $B$r(B
+$B;2>H$7$F2<$5$$!#$=$N%G%#%U%)%k%HCM$O(B Emacs $B$NHG$K0MB8$7$^$9!#(B
+@c FIXME: Document this in the manual
 
-$BCf9q8l$N%K%e!<%93,AX$N%0%k!<%W$K$*$$$F!"5-;v$r%O%$%i%$%HI=<($9$k$?$a(B
-$B$K(B @acronym{ANSI} $B%7!<%1%s%9$,;H$o$l$^(B
-$B$9(B (@code{gnus-article-treat-ansi-sequences})$B!#(B
+@item Gnus $B$N%P%C%U%!!<$K$*$1$k(B XEmacs $B$N(B toolbar $B$N0LCV$rJQ99$G$-$k$h$&(B
+$B$K$J$j$^$7$?!#(B@code{gnus-use-toolbar} $B$H(B @code{message-use-toolbar} $B$r8+(B
+$B$F2<$5$$!#(B
+@end itemize
 
-@item Gnus $B$O5-;v$K!H(BMIME-Version$B!I%X%C%@!<$,$J$/$F$b5-;v$r(B MIME $B%G%3!<(B
-$B%I$7$^$9!#$3$N$?$a$K(B @code{gnus-article-loose-mime} $B$N%G%#%U%)%k%HCM$,JQ(B
-$B99$5$l$^$7$?!#(B
+@item $B$=$NB>$NJQ99(B
 
-@item @code{gnus-decay-scores} $B$r%9%3%"%U%!%$%k$K9gCW$9$k@55,I=8=$K$G$-(B
-$B$^$9!#Nc$($P(B @samp{\\.ADAPT\\'} $B$K@_Dj$9$k$H!"E,1~%9%3%"%U%!%$%k$@$1$,8:(B
-$B?j$5$l$k$h$&$K$J$j$^$9!#(B@xref{Score Decays}.
-
-@item @code{gnus-ignored-from-addresses} $B$r;H$&>l9g$K!"35N,9T$K$*$$(B
-$B$F(B @code{To} $B$H(B @code{Newsgroup} $B%X%C%@!<$KAjEv$9$k>l=j$N:G=i$KI=<($9$k(B
-$BJ8;zNs$r!"(B@code{gnus-summary-to-prefix} $B$*$h(B
-$B$S(B @code{gnus-summary-newsgroup-prefix} $B$G%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B
-@xref{To From Newsgroups}.
-
-@item @acronym{MIME} $B%Q!<%H$r30It$K$"$kK\BN$GCV$-49$($k$3$H$,$G$-$^$9!#(B
-@code{gnus-mime-replace-part} $B$H(B @code{gnus-article-replace-part} $B$r8+$F(B
-$B2<$5$$!#(B@xref{MIME Commands}, @ref{Using MIME}.
-
+@itemize @bullet
 @item $B%5!<%P!<%P%C%U%!!<$G30It%0%k!<%W$N$?$a$N(B select-method $B$rJQ99$9$k(B
 $B$H!"$9$0$K$=$N%5!<%P!<$r;H$&%0%k!<%W$N9VFI$KH?1G$5$l$k$h$&$K$J$j$^$7$?!#(B
 $BNc$($P(B @code{nntp-via-address} $B$r(B @samp{foo.example.com} $B$+(B
@@ -193,20 +224,8 @@ Picon $B$O%F%-%9%H$NBP>]J*$N1&B&$KI=<($G$-$k$h$&$K$J$j$^$7$?!#(B
 $B%H(B @samp{bar.example.com} $B$r7PM3$7$F%K%e!<%9%5!<%P!<$K@\B3$9$k$h$&$K$J$j(B
 $B$^$9!#(B
 
-@item Gnus $B$N%P%C%U%!!<$K$*$1$k(B XEmacs $B$N(B toolbar $B$N0LCV$rJQ99$G$-$k$h$&(B
-$B$K$J$j$^$7$?!#(B@code{gnus-use-toolbar} $B$H(B @code{message-use-toolbar} $B$r8+(B
-$B$F2<$5$$!#(B
-
-@c FIXME: Document this in the manual
-@item $B%D!<%k%P!<$N%"%$%3%s$,%0%k!<%W%P%C%U%!!<$G@5$7$/3h@-2=(B ($B$^$?$OIT3h(B
-$B@-2=(B) $B$5$l$k$h$&$K$J$j$^$7$?!#JQ?t(B @code{gnus-group-update-tool-bar} $B$r(B
-$B;2>H$7$F2<$5$$!#$=$N%G%#%U%)%k%HCM$O(B Emacs $B$NHG$K0MB8$7$^$9!#(B
-@c FIXME: Document this in the manual
-
-@item
-@code{mm-fill-flowed} $B%*%W%7%g%s$G(B format=flowed $B$J%a%C%;!<%8$N<h$j07$$(B
-$B$rL58z$K$9$k$3$H$,$G$-$^$9!#$^$?!"(B@acronym{PGP} $B$N=pL>$,Kd$a9~$^$l$?%a%C(B
-$B%;!<%8$rAw?.$9$k$H$-$K!"(Bflowed text $B$OL58z$K$5$l$^$9!#(B
+@item @kbd{W e} $B$G(B @file{all.SCORE} $B%U%!%$%k$r%0%k!<%W%P%C%U%!!<$+$iJT=8(B
+$B$9$k$3$H$,$G$-$^$9!#(B
 @end itemize
 @end itemize
 @c
