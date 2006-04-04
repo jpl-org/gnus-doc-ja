@@ -10577,9 +10577,8 @@ Gnus は署名されたメッセージを検証したり、暗号化されたメッセージをデコー
 があります。OpenSSL 0.9.6 か、それより新しいものがお勧めです。
 @end enumerate
 
-それらをどうやって設定するかについてのもっと詳しい情報が、message マニュ
-アル (@pxref{Security, ,セキュリティー, message-ja, The Message
-Manual}) で見つかるでしょう。
+以下は、メッセージを読む場合のセキュリティーの機能を制御するための変数で
+す:
 
 @table @code
 @item mm-verify-option
@@ -10609,6 +10608,14 @@ Manual}) で見つかるでしょう。
 ものの @code{mailcrypt} と @code{gpg} もサポートします。
 @end table
 
+ディフォルトではセキュリティーの情報を表示するボタンが現れません。それら
+は実際にメールを読む際に邪魔になるからです。 @kbd{K b} をタイプすれば、
+その情報を表示することができますが。これを恒久的に行なわせるには、
+@code{gnus-buttonized-mime-types} およ
+び @code{gnus-unbuttonized-mime-types} 変数を使って下さい。これらの変数
+の詳細と、常にセキュリティーの情報を表示させるためにカスタマイズする方法
+は、@ref{MIME Commands} を参照して下さい。
+
 @cindex snarfing keys
 @cindex importing PGP keys
 @cindex PGP key ring import
@@ -10628,6 +10635,10 @@ application/pgp-keys; gpg --import --interactive --verbose; needsterminal
 
 これは、たまたま @code{mailcap-mime-data} ですでに定義されている、ディフォ
 ルトの動作でもあります。
+
+送信するメッセージに署名したり暗号化するために、どうやって設定するかにつ
+いてのもっと詳しい情報が、message マニュアル (@pxref{Security,
+,セキュリティー, message-ja, The Message Manual}) で見つかるでしょう。
 
 @node Mailing List
 @section メーリングリスト
