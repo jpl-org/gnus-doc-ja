@@ -22207,30 +22207,26 @@ Gnus はこれを利用することにしました。
 @end iflatex
 @end iftex
 @c @anchor{X-Face}
-@code{X-Face} ヘッダーのデコードには @samp{compface} をサポートしてい
-る Emacs (ほとんどの XEmacs の版がサポート) か、あなたのシステム
-に @samp{compface} がインストールされている必要があります。もしどちらか
-が真ならば、Gnus はディフォルトで @code{X-Face} ヘッダーを表示します。
+@code{X-Face} ヘッダーを見るには @samp{compface} をサポートしてい
+る Emacs (ほとんどの XEmacs の版がサポート) か、変換または表示のための適
+切なプログラムをインストールしてあることが必要です。あなたの Emacs が自
+前で画像の表示をサポートしているならば、ディフォルトで @code{From} ヘッ
+ダーの前に顔が表示されます。Emacs が自前で @code{X-Face} をサポートして
+いない場合、Gnus は @code{pbmplus} パッケージとその仲間の外部プログラム
+を使って @code{X-Face} ヘッダーを変換しようとします。@code{X-Face} をサ
+ポートするようにコンパイルされている XEmacs は速いです。画像をサポートし
+ていない Emacs では、ディフォルトでは表示のための処理
+を @code{display} というプログラムに委ねます。
+
+GNU/Linux システムの場合、ImageMagick パッケージの @code{display} プログ
+ラムを使います。外部プログラムとしては @code{netpbm}、
+@code{libgr-progs} および @code{compface} のような名前のものを探します。
 
 これを制御するのは @code{gnus-article-x-face-command} 変数です。この変数
 が文字列ならば、この文字列がサブシェルで実行されます。関数ならば、この関
 数が顔を引数として呼ばれます。も
 し @code{gnus-article-x-face-too-ugly} (これは正規表現で
 す) が @code{From} 欄に合致すれば、顔は表示されません。
-
-画像をサポートしない Emacs でのディフォルトの動作は、@code{display} プロ
-グラム@footnote{@code{display} は ImageMagick パッケージに含まれています。
-@code{uncompface} と @code{icontopbm} の両プログラムについては、
-`compface' や GNU/Linux システムにおける `faces-xface' のようなパッケー
-ジを探して下さい。} に渡して顔を見ることです。
-
-XEmacs か適切な画像をサポートしている Emacs 21+ でのディフォルトの動作は、
-@code{From} 欄の前に顔を表示することです。(XEmacs が X-Face 機能付きでコ
-ンパイルされていると良いでしょう---それは表示を少し早くします。もし生来
-の X-Face 機能が無いのであれば、Gnus は @code{pbmplus} やその仲間の外部
-プログラムを使って @code{X-Face} 欄を変換しようと試みま
-す@footnote{GNU/Linux システムでは @code{netpbm}、@code{libgr-progs} ま
-たは @code{compface} のような名前のパッケージを探して下さい。}。)
 
 (注: 変数/関数名には @code{xface} ではなく @code{x-face} が使われます。)
 
@@ -22274,7 +22270,9 @@ Lisp Reference Manual}, を参照して下さい。今のところ Emacs で
 @code{gnus-posting-styles} に @code{x-face-file} の項を加えれば良いでしょ
 う (@pxref{Posting Styles})。さもなけば、外に出すメッセージに X-Face ヘッ
 ダーを簡単に挿入できるようにするために Gnus が提供する、いくつかの便利な
-関数と変数を利用することができます。
+関数と変数を利用することができます。これらの機能のためには、前述
+の ImageMagick、netpbm または他の画像を変換するパッケージ (何が必要かは、
+下記の変数群の値によります) も必要です。
 
 @findex gnus-random-x-face
 @vindex gnus-convert-pbm-to-x-face-command
@@ -22318,7 +22316,7 @@ Lisp Reference Manual}, を参照して下さい。今のところ Emacs で
 @subsection Face
 @cindex face
 
-@c #### FIXME: faces and x-faces'implementations should really be harmonized.
+@c #### FIXME: faces and x-faces' implementations should really be harmonized.
 @code{Face} ヘッダーは、本質的に @code{X-Face} をよりファンキーに変形し
 たものです。それらは、メッセージを書いた人を象徴することになってい
 る 48×48 画素のカラー画像を描きます。
@@ -22329,8 +22327,12 @@ Lisp Reference Manual}, を参照して下さい。今のところ Emacs で
 ればなりません。正確な仕様について、
 @uref{http://quimby.gnus.org/circus/face/} を参照して下さい。
 
-変数 @code{gnus-face-properties-alist} は表示される Face 画像の外観に影
-響します。@xref{X-Face}.
+@code{Face} ヘッダーを見るには Emacs が PNG 画像を表示できる必要がありま
+す。
+@c Maybe add this:
+@c (if (featurep 'xemacs)
+@c     (featurep 'png)
+@c   (image-type-available-p 'png))
 
 Gnus は外に出すメッセージに Face ヘッダーを簡単に挿入できるようにするた
 めの、便利な関数と変数を少しばかり提供します。
