@@ -22327,6 +22327,9 @@ Lisp Reference Manual}, を参照して下さい。今のところ Emacs で
 ればなりません。正確な仕様について、
 @uref{http://quimby.gnus.org/circus/face/} を参照して下さい。
 
+変数 @code{gnus-face-properties-alist} は表示される Face 画像の外観に影
+響します。@xref{X-Face}.
+
 @code{Face} ヘッダーを見るには Emacs が PNG 画像を表示できる必要がありま
 す。
 @c Maybe add this:
