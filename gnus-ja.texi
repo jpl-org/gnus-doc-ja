@@ -2748,6 +2748,10 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 $B$=$N%0%k!<%W$O%0%k!<%W%P%C%U%!!<$K$*$$$F!"L$FI5-;v$,$"$k$+$I$&$+$K4X$o$i(B
 $B$:!">o$KI=<($5$l$^$9!#(B
 
+$B$3$N%Q%i%a!<%?!<$r(B @code{gnus-parameters} $B$r2p$7$F@_Dj$9$k$3$H$O$G$-$^$;(B
+$B$s$,!"Be$o$j$K(B @code{gnus-permanently-visible-groups} $B$r;H$($PNI$$$G$7$g(B
+$B$&!#(B
+
 @item broken-reply-to
 @cindex broken-reply-to
 @code{(broken-reply-to . t)} $B$H$$$&MWAG$,$"$l$P!"$=$N%0%k!<%W$G(B
@@ -3032,7 +3036,8 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 @vindex gnus-parameters
 $B%0%k!<%W%Q%i%a!<%?!<$O(B @code{gnus-parameters} $BJQ?t$r2p:_$7$F@_Dj$9$k$3$H(B
 $B$b$G$-$^$9!#$G$b$$$/$D$+$N%Q%i%a!<%?!<!"Nc$($P(B @code{visible} $B$O8zNO$rH/(B
-$B4x$7$^$;$s!#Nc$G$9!#(B
+$B4x$7$^$;$s(B ($B$=$N>l9g!"BeBX$H$7(B
+$B$F(B @code{gnus-permanently-visible-groups} $B$r;H$&$3$H$,$G$-$^$9(B)$B!#Nc$G$9(B:
 
 @lisp
 (setq gnus-parameters
@@ -4646,6 +4651,8 @@ Gnus $B$OJQ?t(B @code{gnus-extract-address-components} $B$NCM$r(B @code{From
 $B9T?t!#(B
 @item O
 $B%@%&%s%m!<%I$N0u!#(B
+@item *
+$B%+!<%=%k$r(B ($B:G=i$N%3%m%s$N8e$m$NBe$o$j$K(B) $BCV$/>l=j!#(B
 @item &user-date;
 $B7P2a;~4V$NMM<0!#$$$m$$$m$JMM<0$,(B @code{gnus-user-date-format-alist} $B$GDj(B
 $B5A$5$l$F$$$^$9!#(B
