@@ -4040,6 +4040,22 @@ Gnus
 @end menu
 
 @table @kbd
+@item v
+@kindex v (グループ)
+@cindex keys, reserved for users (Group)
+@kbd{v} キーはユーザー用に予約されています。そのまま何かの機能に割り当て
+ても構いませんが、接頭キーとして使う方が良いでしょう。例です:
+
+@lisp
+(define-key gnus-group-mode-map (kbd "v j d")
+  (lambda ()
+    (interactive)
+    (gnus-group-jump-to-group "nndraft:drafts")))
+@end lisp
+
+Emacs でユーザー用に予約されているキーとキーバインドについては、
+@xref{Keymaps, Keymaps, ,emacs, The Emacs Editor}.
+
 @item ^
 @kindex ^ (グループ)
 @findex gnus-group-enter-server-mode
@@ -4420,6 +4436,16 @@ if address "sender" "owner-ding@@hpc.uh.edu" @{
 することです (@pxref{Selecting a Group})。
 
 好きなだけたくさんの概略バッファーを開いておくことができます。
+
+@kindex v (概略)
+@cindex keys, reserved for users (Summary)
+@kbd{v} キーはユーザー用に予約されています。そのまま何かの機能に割り当て
+ても構いませんが、接頭キーとして使う方が良いでしょう。例です:
+
+@lisp
+;; 副スレッドのスコアを下げる。
+(define-key gnus-summary-mode-map (kbd "v -") "LrS")
+@end lisp
 
 @menu
 * Summary Buffer Format::       概略バッファーの外観を決定する
@@ -11173,7 +11199,12 @@ Emacs @acronym{MIME} マニュアルで述べられています。
 記事を読んでいる間、実際に概略バッファーを表示させておく必要がありません。
 すべての操作は記事バッファーから行なうことができるのです。
 
-他にもいくつかのキーが利用できます。
+@kindex v (記事)
+@cindex keys, reserved for users (Article)
+@kbd{v} キーはユーザー用に予約されています。そのまま何かの機能に割り当て
+ても構いませんが、接頭キーとして使う方が良いでしょう。
+
+他にもいくつかのキーが利用できます:
 
 @table @kbd
 @item SPACE
@@ -12213,6 +12244,12 @@ Message Manual}, を参照して下さい。
 @cindex server commands
 
 @table @kbd
+@item v
+@kindex v (サーバー)
+@cindex keys, reserved for users (Server)
+@kbd{v} キーはユーザー用に予約されています。そのまま何かの機能に割り当て
+ても構いませんが、接頭キーとして使う方が良いでしょう。
+
 @item a
 @kindex a (サーバー)
 @findex gnus-server-add-server
