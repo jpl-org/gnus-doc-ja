@@ -1212,13 +1212,14 @@ $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 @section メールの別名
 @cindex mail aliases
 @cindex aliases
+@cindex completion
+@cindex ecomplete
 
 @vindex message-mail-alias-type
 @code{message-mail-alias-type} という変数で、どのような型のメールの別
-名 (mail alias) の伸張を使うかを制御します。今のところ一つの様式しか使え
-ません---Message はメールの別名を扱うために @code{mailabbrev} を使います。
-もしこの変数が @code{nil} になっていると、メールの別名の伸張は行なわれま
-せん。
+名 (mail alias) の伸張を使うかを制御します。今のところ二つの様式、
+@code{mailabbrev} と @code{ecomplete} を使うことができます。もしこの変数
+が @code{nil} になっていると、メールの別名の伸張は行なわれません。
 
 @code{Mailabbrev} は @file{/etc/mailrc} と @file{~/.mailrc} ファイルを解
 析することによって動作します。それらのファイルは次のようになっています:
@@ -1235,6 +1236,14 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 メッセージを送るときには伸張は行なわれません---すべての伸張は明示的
 に (訳注: 実際に自分でメールを書いているときに) 行なわれなくてはなりませ
 ん。
+
+@code{ecomplete} を使っていると、@code{To} と @code{Cc} ヘッダーにあるす
+べてのアドレスが、自動的に @file{~/.ecompleterc} ファイルに格納されます。
+@code{To} と @code{Cc} ヘッダーにテキストを書き込んだときに、
+@code{ecomplete} はそこに格納されている値を調べて、どんな補完候補がある
+かを「エレクトリック」に (訳注: 巧妙なやり方で) 教えてくれるでしょう。そ
+れらの補完候補の一つを探すには、@kbd{M-n} コマンドでリストを下に読み進ん
+で下さい。リストを昇るのは @kdb{M-p}、そして選択するのは @kdb{RET} です。
 
 @node Spelling
 @section Emacs にスペルチェックさせる
