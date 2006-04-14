@@ -1243,7 +1243,7 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 @code{ecomplete} はそこに格納されている値を調べて、どんな補完候補がある
 かを「エレクトリック」に (訳注: 巧妙なやり方で) 教えてくれるでしょう。そ
 れらの補完候補の一つを探すには、@kbd{M-n} コマンドでリストを下に読み進ん
-で下さい。リストを昇るのは @kdb{M-p}、そして選択するのは @kdb{RET} です。
+で下さい。リストを昇るのは @kbd{M-p}、そして選択するのは @kbd{RET} です。
 
 @node Spelling
 @section Emacs にスペルチェックさせる
