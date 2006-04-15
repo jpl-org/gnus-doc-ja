@@ -6829,6 +6829,12 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに、すべての「ずれ」
 @findex gnus-summary-reparent-thread
 現在の記事を印付きの (もしくは前の) 記事の子記事にしま
 す (@code{gnus-summary-reparent-thread})。
+
+@item T M-^
+@kindex T M-^ (概略)
+@findex gnus-summary-reparent-children
+現在の記事を印付きの記事の親記事にしま
+す (@code{gnus-summary-reparent-children})。
 @end table
 
 以下の命令はスレッド移動命令です。これらはすべて数値接頭引数を受け付けま
