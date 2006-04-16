@@ -6348,6 +6348,14 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @findex gnus-summary-insert-old-articles
 $B$9$Y$F$N8E$$5-;v$r35N,%P%C%U%!!<$KA^F~$7$^$9!#?tCM$N@\F,0z?t$,M?$($i$l$k(B
 $B$H!"$=$N8D?t$N5-;v$r<h$j9~$_$^$9!#(B
+
+@item / b
+@kindex / b ($B35N,(B)
+@findex gnus-summary-limit-to-bodies
+$B35N,%P%C%U%!!<$r!"$"$k@55,I=8=(B (@code{gnus-summary-limit-to-bodies}) $B$K(B
+$BK\J8$,9gCW$9$k5-;v$@$1$K@)8B$7$^$9!#@\F,0z?t$,M?$($i$l$k$H!"@)8B$r5U$K$7(B
+$B$^$9(B ($BLuCm(B: $B9gCW$7$J$$5-;v$@$1$K@)8B$7$^$9(B)$B!#9gCW$9$k$b$N$rC5$9$?$a$K$=(B
+$B$l$>$l$N5-;v$r<h$j9~$^$J$1$l$P$J$i$J$$$N$G!"$3$N%3%^%s%I$O$H$F$bCY$$$G$9!#(B
 @end table
 
 @node Threading
@@ -10232,6 +10240,18 @@ Gnus $B$N(B info $B$N@a(B (node) $B$K0\F0$7$^$9(B (@code{gnus-info-find-no
 @findex gnus-summary-search-article-backward
 $B$=$l0JA0$N$9$Y$F$N(B ($B@8$N(B) $B5-;v$r@55,I=8=$G8!:w$7$^(B
 $B$9(B (@code{gnus-summary-search-article-backward})$B!#(B
+
+@item M-S
+@kindex M-S ($B35N,(B)
+@findex gnus-summary-repeat-search-article-forward
+$BA02s$NA0J}8!:w$r7+$jJV$7$^(B
+$B$9(B (@code{gnus-summary-repeat-search-article-forward})$B!#(B
+
+@item M-R
+@kindex M-R ($B35N,(B)
+@findex gnus-summary-repeat-search-article-backward
+$BA02s$N8eJ}8!:w$r7+$jJV$7$^(B
+$B$9(B (@code{gnus-summary-repeat-search-article-backward})$B!#(B
 
 @item &
 @kindex & ($B35N,(B)
