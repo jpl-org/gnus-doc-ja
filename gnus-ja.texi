@@ -23000,9 +23000,9 @@ Spam パッケージは spam を検出して濾過するために集結された機構を Gnus
 
 Spam パッケージがどのように働くかを理解するために、必ずこの章を読んで下
 さい。読み飛ばし、速読、または斜め読みしてはいけません。
-@c
-@c @code{spam.el} シーケンスのイベントの章をちゃんと読みましょう。@ref{Spam
-@c ELisp Package Sequence of Events} を参照して下さい。
+
+@code{spam.el} シーケンスのイベントの章をちゃんと読みましょう。
+@ref{Extending the Spam package} を参照して下さい。
 
 @cindex spam-initialize
 @vindex spam-use-stat
@@ -23627,6 +23627,7 @@ Incoming Mail}, @pxref{Detecting Spam in Groups}) と spam および ham
 * Blackholes::
 * Regular Expressions Header Matching::
 * Bogofilter::
+* SpamAssassin back end::
 * ifile spam filtering::
 * Spam Statistics Filtering::
 * SpamOracle::
