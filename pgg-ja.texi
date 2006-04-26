@@ -245,6 +245,15 @@ PGG は単純なメカニズムを使ってパスフレーズをキャッシュします。それを行な
 パスフレーズを保持しておく時間を秒で指定します。
 @end defvar
 
+@defvar pgg-gpg-use-agent
+PGP 実装として GnuPG (gpg) を使う場合、キャッシュのため
+に @code{gpg-agent} を併用することができます。@footnote{実際に
+は @code{gpg-agent} はパスフレーズではなく秘密鍵をキャッシュします。もっ
+とも、この技術的な違いはユーザーには見えませんが。} @code{nil} ではない
+場合に、稼働している @code{gpg-agent} を使おうとします。ディフォルト
+は @code{nil} です。
+@end defvar
+
 @node Default user identity
 @section ディフォルトのユーザー ID
 
