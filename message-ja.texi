@@ -92,7 +92,7 @@ Gnus $B$N$9$Y$F$N%a%C%;!<%8$N:n@.(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$O!"%a%C
 @end menu
 
 Message $B$O(B Gnus $B$H$H$b$KG[I[$5$l$^$9!#$3$N%^%K%e%"%k$KBP1~$9$k(B Gnus $B$NHG(B
-$B$O(B No Gnus v0.4 $B$G$9!#(B
+$B$O(B No Gnus v0.5 $B$G$9!#(B
 
 @node Interface
 @chapter $B%$%s%?!<%U%'!<%9(B
