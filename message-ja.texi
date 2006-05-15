@@ -118,6 +118,10 @@ Message $B$O(B Gnus $B$H$H$b$KG[I[$5$l$^$9!#$3$N%^%K%e%"%k$KBP1~$9$k(B Gnus 
 * Mailing Lists::        $B%a!<%j%s%0%j%9%H$K%a!<%k$rAw$k(B
 @end menu
 
+Message $B%b!<%I$N%D!<%k%P!<$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B@kbd{M-x
+customize-apropos RET message-tool-bar} $B$r;n$7$F$_$F2<$5$$!#$3$N5!G=$rMx(B
+$BMQ$G$-$k$N$O(B Emacs $B$@$1$G$9$,!#(B
+
 @node New Mail Message
 @section $B?7$7$$%a!<%k%a%C%;!<%8(B
 
@@ -825,10 +829,12 @@ Message $B$O(B @acronym{MIME} $B$KBP1~$7$?Aw?.MQ$N%(!<%8%'%s%H$G$9!#$U$D$&MxM
 $BF0E*$K(B @code{Content-Type} $B$*$h$S(B @code{Content-Transfer-Encoding} $B%X%C(B
 $B%@!<$rIU2C$7$^$9!#(B
 
+@findex mml-attach
+@kindex C-c C-a
 $BMxMQ<T$,(B @acronym{MIME} $B$G%^%k%A%Q!<%H$r;H$$$?$$:G$b0lHLE*$J$b$N$O!"Aw=P(B
-$B$9$k%a!<%k$K!VE:IU!W$rIU$12C$($k$3$H$G$7$g$&!#$3$l$O(B @kbd{C-c C-a} $BL?Na(B
-$B$G9T$J$&$3$H$,$G$-!"$=$N:]%U%!%$%kL>$H(B @acronym{MIME} $B%?%$%W$,?R$M$i$l$^(B
-$B$9!#(B
+$B$9$k%a!<%k$K!VE:IU!W$rIU$12C$($k$3$H$G$7$g$&!#$3$l$O(B @kbd{C-c C-a} $BL?(B
+$BNa(B (@kbd{M-x mml-attach}) $B$G9T$J$&$3$H$,$G$-!"$=$N:]%U%!%$%kL>(B
+$B$H(B @acronym{MIME} $B%?%$%W$,?R$M$i$l$^$9!#(B
 
 @vindex mml-dnd-protocol-alist
 @vindex mml-dnd-attach-options
@@ -1846,6 +1852,8 @@ node) $B$H$7$F;H$$$^$9!#J8;zNs$@$C$?$i!"$=$NJ8;zNs$r;H$$$^$9!#$=$l$,J8;zNs(B
 Hallvard B Furuseth <h.b.furuseth@@usit.uio.no> writes:
 @end example
 
+@c FIXME: `message-insert-formated-citation-line' $B$H(B
+@c `message-citation-line-format' $B$rDI2C$9$Y$7!#(B
 $B$3$N4X?t$,8F$P$l$?$H$-!"%]%$%s%H$O%a%C%;!<%8$NK\J8$N@hF,$KCV$+$l$k$G$7$g(B
 $B$&!#(B
 

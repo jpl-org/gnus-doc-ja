@@ -400,7 +400,6 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 $B%W%m%0%i%`$,?M$rA`:n$9$k$Y$-$G$O$"$j$^$;$s!#?M$,%W%m%0%i%`$r;H$&(B ($B$b$7$/(B
 $B$OMtMQ$9$k(B) $B$3$H$K$h$C$F!"$d$j$?$$$3$H$r$G$-$k$h$&$K$J$C$F$$$k$Y$-$J$N$G(B
 $B$9!#(B
-
 @end iftex
 
 @menu
@@ -944,7 +943,6 @@ Emacs for Heathens
 
 * Keystrokes::                  $BJ8>O$rF~NO$7$FL?Na$r<B9T$9$k(B
 * Emacs Lisp::                  $BHw$(IU$1$N(B Emacs $B%W%m%0%i%_%s%08@8l(B
-
 @end detailmenu
 @end menu
 
@@ -952,10 +950,17 @@ Emacs for Heathens
 @chapter Gnus $B$N5/F0(B
 @cindex starting up
 
+Gnus $B$r;H$&0JA0$K$"$^$j(B Emacs $B$r;H$C$F$$$J$$$N$J$i$P!":G=i$K(B @ref{Emacs
+for Heathens} $B$rFI$s$G2<$5$$!#(B
+
 @kindex M-x gnus
 @findex gnus
 $B%7%9%F%`4IM}<T$,E,@Z$J@_Dj$r$7$F$$$?$J$i$P!"(BGnus $B$r5/F0$7$F%K%e!<%9$rFI(B
-$B$`$N$OHs>o$K4JC1$G$9!#$=$&!"(BEmacs $B$G(B @kbd{M-x gnus} $B$HBG$D$@$1$G$9!#(B
+$B$`$N$OHs>o$K4JC1$G$9!#$=$&!"(BEmacs $B$G(B @kbd{M-x gnus} $B$HBG$D$@$1$G$9!#$5$b(B
+$B$J$1$l$P!"JQ?t(B @code{gnus-select-method} $B$r%+%9%?%^%$%:$7$J$1$l$P$J$j$^(B
+$B$;$s!#$3$l$O(B @ref{Finding the News} $B$G@bL@$5$l$F$$$^$9!#$^$?!"Ej9F$9$k$?(B
+$B$a$N:GDc8B$N@_Dj$r9T$J$&$?$a$K!"JQ?t(B @code{user-full-name} $B$*$h(B
+$B$S(B @code{user-mail-address} $B$b%+%9%?%^%$%:$7$J$1$l$P$J$j$^$;$s!#(B
 
 @findex gnus-other-frame
 @kindex M-x gnus-other-frame
@@ -1724,6 +1729,15 @@ Maintenance})$B!#(B
 * Group Mode Line Specification::  $B%0%k!<%W%P%C%U%!!<$N%b!<%I9T(B
 * Group Highlighting::          $B%0%k!<%W%P%C%U%!!<$K$-$l$$$K?'$rIU$1$k(B
 @end menu
+
+$B%0%k!<%W%b!<%I$N%D!<%k%P!<$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B@kbd{M-x
+customize-apropos RET gnus-group-tool-bar} $B$r;n$7$F$_$F2<$5$$!#$3$N5!G=(B
+$B$rMxMQ$G$-$k$N$O(B Emacs $B$@$1$G$9$,!#(B
+
+$B%D!<%k%P!<$N%"%$%3%s$O!":#$G$O%+!<%=%k$N0LCV$K1~$8$F@5$7$/M-8z$K!"$^$?$O(B
+$BL58z$K$5$l$k$N$G!"%0%k!<%W%P%C%U%!!<Fb$G$N0\F0$OCY$/$J$j$^$9!#$3$l$OJQ(B
+$B?t(B @code{gnus-group-update-tool-bar} $B$G6X;_$9$k$3$H$,$G$-$^$9!#$=$N%G%#(B
+$B%U%)%k%HCM$O(B Emacs $B$N%P!<%8%g%s$K0MB8$7$F$$$^$9!#(B
 
 @node Group Line Specification
 @subsection $B%0%k!<%W9T$N;EMM(B
@@ -4428,6 +4442,10 @@ if address "sender" "owner-ding@@hpc.uh.edu" @{
 
 $B9%$-$J$@$1$?$/$5$s$N35N,%P%C%U%!!<$r3+$$$F$*$/$3$H$,$G$-$^$9!#(B
 
+$B35N,%b!<%I$N%D!<%k%P!<$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B@kbd{M-x
+customize-apropos RET gnus-summary-tool-bar} $B$r;n$7$F$_$F2<$5$$!#$3$N5!(B
+$BG=$rMxMQ$G$-$k$N$O(B Emacs $B$@$1$G$9$,!#(B
+
 @kindex v ($B35N,(B)
 @cindex keys, reserved for users (Summary)
 @kbd{v} $B%-!<$O%f!<%6!<MQ$KM=Ls$5$l$F$$$^$9!#$=$N$^$^2?$+$N5!G=$K3d$jEv$F(B
@@ -5781,7 +5799,6 @@ Articles})$B!#(B
 $B5-;v$,FI$^$l$?$+$I$&$+$K$O4X78$7$J$$0u$,$$$/$D$+$"$j$^$9!#(B
 
 @itemize @bullet
-
 @item
 $B8=:_$N5-;v$K$7$*$j$r64$`$3$H$,$G$-$^$9!#$"$J$?$OG-$N$*$7$C$3$N=,47$K4X$9(B
 $B$kD9$$O@J8$rFI$s$G$$$F!"$=$l$rFI$_=*$o$kA0$KHU$4HS$r?)$Y$K2H$K5"$i$J$1$l(B
@@ -11095,7 +11112,6 @@ Emacs @acronym{MIME} $B%^%K%e%"%k$G=R$Y$i$l$F$$$^$9!#(B
 (or last
     (typep "text/x-vcard"))
 @end lisp
-
 @end enumerate
 
 $B$3$3$G!V%Q!<%H!W$H$$$&8l$,;H$o$l$F$$$k$3$H$K5$IU$$$?$H;W$$$^$9!#$3$l$O%a%C(B
@@ -11953,7 +11969,9 @@ subject from date id references chars lines xref extra $B$N3F%X%C%@!<$+$i(B
 
 @samp{nnml:.*} $B$N5,B'$O!"$"$J$?$,=P$9$9$Y$F$NJV;v$N(B @code{To} $B%"%I%l%9(B
 $B$r(B @code{From} $B%"%I%l%9$H$7$F;H$&$3$H$r0UL#$7$^$9!#$3$l$O!"$"$J$?$,$?$/(B
-$B$5$s$N%a!<%j%s%0%j%9%H$K;22C$7$F$$$k>l9g$KJXMx$G$7$g$&!#(B
+$B$5$s$N%a!<%j%s%0%j%9%H$K;22C$7$F$$$k>l9g$KJXMx$G$7$g$&!#Be$o$j(B
+$B$K(B @code{message-alternative-emails} $B$r;H$&$3$H$b$G$-$^$9!#(B@xref{Message
+Headers, ,$B%a%C%;!<%8%X%C%@!<(B, message-ja, The Message Manual}.
 
 @node Drafts
 @section $B2<=q$-(B
@@ -20576,7 +20594,6 @@ file)$B!W$r;}$C$F$$$^$9!#$=$l$i$OIaDL!"$9$Y$F$N%0%k!<%W$KE,MQ$5$l$k!"MxMQ(B
 $B0J2<$K!"5U9T;J2q<T$J$j$?$,$j$N$?$a$NHk5;$r$$$/$D$+!"B(@J$G=R$Y$^$9(B:
 
 @itemize @bullet
-
 @item
 $BHs>o$KB?$/$N>l=j$K%/%m%9%]%9%H$5$l$F$$$k5-;v$O4V0c$$$J$/6}$G$"$k!#(B
 @item
@@ -26220,25 +26237,10 @@ Gnus $B$O(B @code{nnimap} $B$K$h$C$F(B @acronym{IMAP} $B$N%a!<%k$rFI$`$3$H$
 Gnus 5.10 $B$N?7$7$$5!G=(B:
 
 @itemize @bullet
-@item
-$BNN0h$,3h@-2=$5$l$F$$$k>l9g$K!"(B
-@kbd{F} $B%-!<(B (@code{gnus-article-followup-with-original}) $B$*$h(B
-$B$S(B @kbd{R} $B%-!<(B (@code{gnus-article-reply-with-original}) $B$O!"$=$NNN0h$K(B
-$B$"$k%F%-%9%H$@$1$r(B yank $B$7$^$9!#(B
+@item $B%$%s%9%H!<%k$K4X$9$kJQ99(B
+@c ***************************
 
-@item
-@code{gnus-group-read-ephemeral-group} $B$r(B @kbd{G M} $B%-!<$GBPOCE*$K8F$V$3(B
-$B$H$,$G$-$^$9!#(B
-
-@item
-$B%I%i%U%H!&%0%k!<%W$G(B @kbd{e} $B%-!<$,(B @code{gnus-draft-edit-message} $B%3%^(B
-$B%s%I$K3d$jEv$F$i$l$^$7$?!#(B@code{gnus-summary-edit-article} $B%3%^%s%I$K$O!"(B
-$BBe$o$j$K(B @kbd{B w} $B%-!<$r;H$C$F2<$5$$!#(B
-
-@item
-$B2~Dj$5$l$?(B Gnus @acronym{FAQ} $B$,%^%K%e%"%k$K4^$^$l$F$$$^$9!#(B
-@xref{Frequently Asked Questions}.
-
+@itemize @bullet
 @item
 Oort $B$r;H$C$?$3$H$,$"$k>l9g$N!"0JA0$N(B ($B0BDj$J(B) $BHG$+$i$N%0%l!<%I%"%C%W!#(B
 
@@ -26255,6 +26257,167 @@ Oort ($B$3$N%j%j!<%9$K@hN)$D0BDj$G$O$J$$(B Gnus $B$N;^(B) $B$r;H$C$F$_$?$b$
 $B$$$3$H$KCm0U$7$F2<$5$$!#(B
 
 @item
+MS $B%&%#%s%I%&%:$G(B Gnus $B$r%3%s%Q%$%k$7$F%$%s%9%H!<%k$9$k$?$a$N!"?7$7(B
+$B$$(B @file{make.bat}$B!#(B
+
+MS $B%&%#%s%I%&%:$G(B Gnus $B$r%$%s%9%H!<%k$9$k$K$O(B @file{make.bat} $B$r;H$C$F2<(B
+$B$5$$!#$3$N%P%C%A!&%W%m%0%i%`$NBh0l0z?t$O%G%#%l%/%H%j!<$G$9!#$=$3(B
+$B$G(B @file{xemacs.exe} $B$H(B @file{emacs.exe} $B$,=g$KA\$7=P$5$l$^$9!#%3%s%Q%$(B
+$B%k$7$F$+$i(B Gnus $B$r%$%s%9%H!<%k$7$?$$$H$-$O!"(B@file{make.bat} $B$NBhFs0z?t(B
+$B$K(B @code{/copy} $B$rM?$($F2<$5$$!#(B
+
+@file{make.bat} $B$O%<%m$+$i=q$-D>$5$l$^$7$?!#(BXEmacs $B$H(B GNU Emacs $B$r<+F0G'(B
+$B<1$7!"(B@file{gnus-load.el} $B$r@8@.$7!"%3%s%Q%$%kCf$H(B info $B%U%!%$%k$N@8@.Cf(B
+$B$K%(%i!<$,5/$-$?$i9=C[=hM}$N:G8e$KJs9p$7$^$9!#(B@code{makeinfo} $B$,MxMQ2DG=(B
+$B$G$"$l$P$=$l$r;H$$!"$5$b$J$1$l$P(B @file{infohack.el} $B$KMj$j$^$9!#:#(B
+$B$d(B @file{make.bat} $B$O(B Gnus $B$rF0:n$5$;$k$?$a$KI,MW$J$9$Y$F$N%U%!%$%k$r%$(B
+$B%s%9%H!<%k$9$k$O$:$G!"BgBN$K$*$$$F(B Unix $B%7%9%F%`$K$*$1(B
+$B$k(B @code{configure; make; make install} $B%5%$%/%k$N40A4$JCV$-49$($K$J$j$^(B
+$B$7$?!#(B
+
+$B?7$7$$(B @file{make.bat} $B$K$h$C(B
+$B$F(B @file{make-x.bat} $B$H(B @file{xemacs.mak} $B$,ITMW$K$J$C$?$N$G!"$=$l$i$O:o(B
+$B=|$5$l$^$7$?!#(B
+
+@item
+@file{~/News/overview/} $B$OITMW!#(B
+
+$B0J2<$NJQ99$N7k2L!"$b$O$d(B @file{~/News/overview/} $B%G%#%l%/%H%j!<$OMW$j$^(B
+$B$;$s!#$9$Y$F$N3,AX$r0BA4$K:o=|$9$k$3$H$,$G$-$^$9!#(B
+
+@c FIXME: `gnus-load' $B$K$D$$$F8@5Z$7$F$$$k(B README $B$,!"(BCVS $B$K$O4^$^$l$F$$(B
+@c $B$^$;$s!#;d$?$A$O$3$N9`L\$N$?$a$N$h$jNI$$>l=j$r8+$D$1$k$Y$-$G$9!#(B
+@item
+@code{(require 'gnus-load)}
+
+$BC1FH$GG[I[$5$l$F$$$k(B Gnus $B$r;H$&>l9g$K$O!"(B
+@code{load-path} $B$K(B Gnus $B$N(B lisp $B%G%#%l%/%H%j!<$rDI2C$7$F$+$i!"(B
+@file{~/.emacs} $B$K(B @code{(require 'gnus-load)} $B$r2C$($k$N$,NI$$$G$9!#(B
+
+@file{gnus-load.el} $B%U%!%$%k$O!"$=$N$&$A$N$$$/$D$+$O(B Emacsen $B$NG[I[$KF~$C(B
+$B$F$$$J$$$+$b$7$l$J$$<+F0FI$_9~$_(B (autoload) $B%3%^%s%I!"4X?t$*$h$SJQ?t$r4^(B
+$B$s$G$$$^$9!#(B
+@end itemize
+
+@item Gnus $B$KFbB"$5$l$??7$7$$%Q%C%1!<%8$H%i%$%V%i%j!<(B
+@c **************************************************
+
+@itemize @bullet
+@item
+$B2~Dj$5$l$?(B Gnus @acronym{FAQ} $B$,%^%K%e%"%k$K4^$^$l$F$$$^$9!#(B
+@xref{Frequently Asked Questions}.
+
+@item
+@acronym{TLS} $B%i%C%Q!<$,(B Gnus $B$KF1:-$5$l$^$7$?!#(B
+
+@acronym{TLS}/@acronym{SSL} $B$,!"(B@file{tls.el} $B$H(B GNUTLS $B$r2p$7(B
+$B$F(B @acronym{IMAP} $B$H(B @acronym{NNTP} $B$G%5%]!<%H$5$l$k$h$&$K$J$j$^$7$?!#(B
+($B%5!<%I%Q!<%F%#!<$N(B) @file{ssl.el} $B$H(B OpenSSL $B$K$h$k8E(B
+$B$$(B @acronym{TLS}/@acronym{SSL} $B$O!"$^$@F/$-$^$9!#(B
+
+@item
+$B2~NI$5$l$?(B spam $BBP935!G=!#(B
+
+Gnus $B$OHs>o$KJQ2=$KIY$s$@%W%m%0%i%`$H_I2a$N5,B'$r;H$C$F!"%a!<%k$d%K%e!<(B
+$B%9$NK[N.$+$i(B spam $B$rH4$-<h$C$F$7$^$&$3$H$,$G$-$k$h$&$K$J$j$^$7$?!#BP1~$7(B
+$B$F$$$kJ}<0$O!"(BRBL blocklists$B!"(Bbogofilter $B$=$l$K%[%o%$%H(B/$B%V%i%C%/%j%9%H$G(B
+$B$9!#$^$?(B SpamAssassin $B$d(B Hashcash $B$N$h$&$J30It%Q%C%1!<%8$rMF0W$K;H$&$?$a(B
+$B$N(B hook $B$b?7$7$/$J$j$^$7$?!#(B@xref{Thwarting Email Spam}.
+@c FIXME: @xref{Spam Package}?.  $B$3$l$O(B Misc $B$N2<$K$"$k$Y$-$+(B?
+
+@item
+Gnus $B$O(B Sieve $B$r;H$C$?%5!<%P!<B&$G$N%a!<%k$N_I2a$r%5%]!<%H$7$^$9!#(B
+
+Sieve $B$N5,B'$O%0%k!<%W%Q%i%a!<%?!<$H$7$F2C$($k$3$H$,$G$-!"%0%k!<%W%P%C%U%!!<(B
+$B$G(B @kbd{D g} $B$r;H$&$H40A4$J(B Sieve $B%9%/%j%W%H$,@8@.$5$l$^$9!#$=$&$7$?$i!"(B
+$B@8@.$5$l$?(B Sieve $B%P%C%U%!!<$G(B @kbd{C-c C-l} $B$r;H$C$F!"%5!<%P!<$K%"%C%W%m!<(B
+$B%I$7$F2<$5$$!#(B@ref{Sieve Commands}$B!"$=$l$K?7$7$$(B Sieve $B$N%^%K%e%"(B
+$B%k(B (@pxref{Top, ,Top, sieve-ja, Emacs Sieve}) $B$r;2>H$7$F2<$5$$!#(B
+@end itemize
+
+@item $B%0%k!<%W%b!<%I$NJQ99(B
+@c ***********************
+
+@itemize @bullet
+@item
+@code{gnus-group-read-ephemeral-group} $B$r(B @kbd{G M} $B%-!<$GBPOCE*$K8F$V$3(B
+$B$H$,$G$-$^$9!#(B
+
+@item
+$B7{>O$H%3%s%H%m!<%k%a%C%;!<%8$N<hF@!#(B
+
+$BFs$D$N?7$7$$%3%^%s%I$G!"%K%e!<%9%0%k!<%W$N7{>O$r<h$j9~$`(B (@kbd{H c}) $B$3(B
+$B$H$H!"%3%s%H%m!<%k%a%C%;!<%8$r<hF@$9$k(B (@kbd{H C}) $B$3$H$,$G$-$^$9!#(B
+
+@item
+$B?7$7$$JQ?t(B @code{gnus-parameters} $B$r!"%0%k!<%W%Q%i%a!<%?!<$r@_Dj$9$k$?$a(B
+$B$K;H$&$3$H$,$G$-$^$9!#(B
+
+$B$3$l$O=i4|$K$O!"%Q%i%a!<%?!<$r(B @file{~/.newsrc.eld} $B$K3JG<$9$k(B @kbd{G p}
+($B$^$?$O(B @kbd{G c}) $B$G$7$+9T$J$&$3$H$,$G$-$^$;$s$G$7$?$,!"$3$NJQ?t$K$h$C(B
+$B$F%+%9%?%^%$%:$N0RNO$r4.G=$9$k$3$H$,$G$-$^$9!#$^$?!"$=$NJQ?t(B
+$B$O(B @file{~/.newsrc.eld} $B$G$O$J$/$F(B @file{~/.gnus.el} $B$G@_Dj$9$k$N$G!"%P%C(B
+$B%/%"%C%W$,4JC1$K$J$j$^$9!#$=$NJQ?t$O!"%0%k!<%WL>$K9gCW$9$k@55,I=8=$r!"0J(B
+$B2<$N$h$&$JN.57$G%0%k!<%W%Q%i%a!<%?!<$K3d$jEv$F$^$9(B:
+
+@lisp
+(setq gnus-parameters
+      '(("mail\\..*"
+         (gnus-show-threads nil)
+         (gnus-use-scoring nil))
+        ("^nnimap:\\(foo.bar\\)$"
+         (to-group . "\\1"))))
+@end lisp
+
+@item
+nnimap $B$N%0%k!<%W$K$*$1$kL$FI$N?t$,@53N$K$J$j$^$7$?!#(B
+
+$B%0%k!<%W%P%C%U%!!<$GI=<($5$l$k(B nnimap $B%0%k!<%W$NL$FI5-;v$N?t$N8+@Q$j$,@5(B
+$B3N$K$J$C$?$O$:$G$9!#$3$l$O(B @code{gnus-setup-news-hook} ($B5/F0;~$K8F$P$l(B
+$B$k(B) $B$H(B @code{gnus-after-getting-new-news-hook} ($B?7$7$$%a!<%k$r<hF@$7$?D>(B
+$B8e$K8F$P$l$k(B) $B$+$i(B @code{nnimap-fixup-unread-after-getting-new-news} $B$r(B
+$B8F$V$3$H$K$h$C$F@.$7?k$2$i$l$^$9!#$3$l$i$NJQ?t$r%G%#%U%)%k%H$G$O$J$$CM$K(B
+$BJQ$($F$$$k>l9g$O!"=E$M(B
+$B$F(B @code{nnimap-fixup-unread-after-getting-new-news} $B$rDI2C$9$kI,MW$,$"(B
+$B$k$+$b$7$l$^$;$s!#8+@Q$j$KK~B-$7$F$$$F!"?7$7$$%a!<%k$r<hF@$9$k$H$-$K$$$/(B
+$B$i$+$N(B ($B$o$:$+$J(B) $B;~4V$r@aLs$7$?$$$N$G$"$l$P!"$=$N4X?t$r30$7$F2<$5$$!#(B
+
+@item
+$B%0%k!<%WL>$O!"%G%#%U%)%k%H$G(B UTF-8 $B$G$"$k$b$N$H$7$F<h$j07$o$l$^$9!#(B
+
+$B$3$l$O(B USEFOR $B$,0\9T$7$h$&$H$7$F$$$k$HA[Dj$5$l$k$b$N$G$9!#%+%9%?%^%$%:$9(B
+$B$k$K$O(B @code{gnus-group-name-charset-group-alist} $B$*$h(B
+$B$S(B @code{gnus-group-name-charset-method-alist} $B$r;2>H$7$F2<$5$$!#(B
+
+@item
+@code{gnus-group-charset-alist} $B$H(B @code{gnus-group-ignored-charsets-alist}
+
+$B$3$l$i$NJQ?t$K@_Dj$5$l$?@55,I=8=$O!"40A4$J(B (full) $B%0%k!<%WL>$HHf3S$5$l$^(B
+$B$9!#(BGnus 5.8 $B$G$O<B:]$N(B (real) $B%0%k!<%WL>$,Hf3S$NBP>]$G$7$?!#$7$?$,$C$F!"(B
+$B$3$l$i$NJQ?t$r%+%9%?%^%$%:$7$F$$$kMxMQ<T$O!"@55,I=8=$rJQ99$7$J$1$l$P$J$j(B
+$B$^$;$s!#Nc$G$9(B:
+
+@lisp
+("^han\\>" euc-kr) -> ("\\(^\\|:\\)han\\>" euc-kr)
+@end lisp
+@end itemize
+
+@item $B35N,%b!<%I$H5-;v%b!<%I$NJQ99(B
+@c *******************************
+
+@itemize @bullet
+@item
+$BNN0h$,3h@-2=$5$l$F$$$k>l9g$K!"(B
+@kbd{F} $B%-!<(B (@code{gnus-article-followup-with-original}) $B$*$h(B
+$B$S(B @kbd{R} $B%-!<(B (@code{gnus-article-reply-with-original}) $B$O!"$=$NNN0h$K(B
+$B$"$k%F%-%9%H$@$1$r(B yank $B$7$^$9!#(B
+
+@item
+$B%I%i%U%H!&%0%k!<%W$G(B @kbd{e} $B%-!<$,(B @code{gnus-draft-edit-message} $B%3%^(B
+$B%s%I$K3d$jEv$F$i$l$^$7$?!#(B@code{gnus-summary-edit-article} $B%3%^%s%I$K$O!"(B
+$BBe$o$j$K(B @kbd{B w} $B%-!<$r;H$C$F2<$5$$!#(B
+
+@item
 $B5-;v$N%\%?%s!#(B
 
 URL$B!"%a!<%k%"%I%l%9!"(BMessage-ID$B!"(BInfo $B$X$N%j%s%/!"(Bman $B%Z!<%8$H(B Emacs $B$^(B
@@ -26262,17 +26425,6 @@ URL$B!"%a!<%k%"%I%l%9!"(BMessage-ID$B!"(BInfo $B$X$N%j%s%/!"(Bman $B%Z!<%
 @xref{Article Buttons}. $B$9$Y$F$N5-;v$N%\%?%s$N8+1I$($r@)8f$9$k$?$a(B
 $B$K(B @code{gnus-button-@var{*}-level} $BJQ?t$r;H$&$3$H$,$G$-$^$9!#(B
 @xref{Article Button Levels}.
-
-@item
-Dired $B$NE}9g!#(B
-
-@code{gnus-dired-minor-mode} (@ref{Other modes} $B;2>H(B) $B$O(B dired $B$N%P%C%U%!!<(B
-$B$G!"E:IU%U%!%$%k$rAw?.$9$k!"(Bmailcap $B$NE,@Z$J9`L\$r;H$C$F%U%!%$%k$r3+$/!"(B
-$B$=$l$K(B mailcap $B$N9`L\$r;H$C$F%U%!%$%k$r0u:~$9$k$?$a$N%-!<$r3d$jEv$F$^$9!#(B
-
-@item
-Gnus $B$O(B RSS $B$N%K%e!<%9G[Aw$r!"%K%e!<%9%0%k!<%W$H$7$FI=<($7$^$9!#(B
-@xref{RSS}.
 
 @item
 $BC10l$N(B yenc $B$G%(%s%3!<%I$5$l$?E:IU%Q!<%H$r%G%3!<%I$9$k$3$H$,$G$-$^$9!#(B
@@ -26290,28 +26442,6 @@ Picon $B$O!"MxMQ<T!"%I%a%$%s!"$=$l$K%K%e!<%9%0%k!<%W$rI=8=$9$k$?$a$N!V8D?M(B
 @item
 $B?7$7$$%*%W%7%g%s(B @code{gnus-treat-body-boundary} $B$rHs(B-@code{nil} $B$K$9$k(B
 $B$H!"%X%C%@!<$N$*$7$^$$$K6-3&@~$,IA$+$l$^$9!#(B
-
-@item
-$B7{>O$H%3%s%H%m!<%k%a%C%;!<%8$N<hF@!#(B
-
-$BFs$D$N?7$7$$%3%^%s%I$G!"%K%e!<%9%0%k!<%W$N7{>O$r<h$j9~$`(B (@kbd{H c}) $B$3(B
-$B$H$H!"%3%s%H%m!<%k%a%C%;!<%8$r<hF@$9$k(B (@kbd{H C}) $B$3$H$,$G$-$^$9!#(B
-
-@item
-$BCY1d5-;v!#(B
-
-Message $B%P%C%U%!!<$K$*$1$k(B @kbd{C-c C-j} $B$G!"%a%C%;!<%8$NAw?.$rCY$i$;$k(B
-$B$3$H$,$G$-$^$9!#%a%C%;!<%8$O;XDj$5$l$?;~9o$KG[Aw$5$l$^$9!#$3$l$O$"$J$?<+(B
-$B?.$N$?$a$NK:HwO?$H$7$FLr$KN)$D$G$7$g$&!#(B@xref{Delayed Articles}.
-
-@item
-@code{auto-compression-mode} $B$,M-8z$K$J$C$F$$$k$H!"E:IU%U%!%$%k$r8+$k$H(B
-$B$-$K<+F0$G05=L$,2r$+$l$^$9!#(B
-
-@item
-$B?7$7$$%*%W%7%g%s(B @code{nnml-use-compressed-files} $B$rHs(B-@code{nil} $B$K$9$k(B
-$B$3$H$K$h$C$F!"(Bnnml $B$,05=L$5$l$?%a%C%;!<%8%U%!%$%k$r07$&$3$H$,$G$-$k$h$&(B
-$B$K$J$j$^$7$?!#(B
 
 @item
 $B=pL>$5$l$?5-;v$N%X%C%@!<(B (X-PGP-Sig) $B$r!"(B@kbd{W p} $B$GG'>Z$9$k$3$H$,$G$-(B
@@ -26337,14 +26467,6 @@ Message $B%P%C%U%!!<$K$*$1$k(B @kbd{C-c C-j} $B$G!"%a%C%;!<%8$NAw?.$rCY$i$;$k
 $B$l$I$b8E$$5-;v$H$O6hJL$7$F(B) $BI=<($7$^$9!#(B
 
 @item
-$B?7$7$$%*%W%7%g%s(B @code{gnus-gcc-mark-as-read} $B$O!"(BGcc $B$N5-;v$K<+F0E*$K4{(B
-$BFI$N0u$rIU$1$^$9!#(B
-
-@item
-nndoc $B%P%C%/%(%s%I$O!"(Bmailman $B$N$^$H$aAw$j$H(B exim $B$,CF$$$?%a%C%;!<%8$r%5(B
-$B%]!<%H$9$k$h$&$K$J$j$^$7$?!#(B
-
-@item
 Gnus $B$O(B RFC 2369 $B$N%a!<%j%s%0%j%9%H$N%X%C%@!<$r%5%]!<%H$7$^$9!#$^$?!"%a!<(B
 $B%j%s%0%j%9%H$N%0%k!<%WMQ$K?t!9$N%3%^%s%I$rMQ0U$7$^$7$?!#(B@xref{Mailing
 List}.
@@ -26354,52 +26476,8 @@ List}.
 @xref{Article Date}.
 
 @item
-Sendmail $B$r;H$&$H$-$N%(%s%Y%m!<%WAw?.<T(B (envelope sender) $B$N%"%I%l%9$,!"(B
-$B%+%9%?%^%$%:$G$-$k$h$&$K$J$j$^$7$?!#(B@xref{Mail Variables, ,$B%a!<%kJQ?t(B,
-message-ja, The Message Manual}.
-
-@item
 @code{mm-uu-diff-groups-regexp} $B$K9gCW$9$k%0%k!<%W$G$O!":9J,(B (diffs) $B$,(B
 $B<+F0E*$K%O%$%i%$%H$5$l$^$9!#(B
-
-@item
-@acronym{TLS} $B%i%C%Q!<$,(B Gnus $B$KF1:-$5$l$^$7$?!#(B
-
-@acronym{TLS}/@acronym{SSL} $B$,!"(B@file{tls.el} $B$H(B GNUTLS $B$r2p$7(B
-$B$F(B @acronym{IMAP} $B$H(B @acronym{NNTP} $B$G%5%]!<%H$5$l$k$h$&$K$J$j$^$7$?!#(B
-($B%5!<%I%Q!<%F%#!<$N(B) @file{ssl.el} $B$H(B OpenSSL $B$K$h$k8E(B
-$B$$(B @acronym{TLS}/@acronym{SSL} $B$O!"$^$@F/$-$^$9!#(B
-
-@item
-MS $B%&%#%s%I%&%:$G(B Gnus $B$r%3%s%Q%$%k$7$F%$%s%9%H!<%k$9$k$?$a$N!"?7$7(B
-$B$$(B @file{make.bat}$B!#(B
-
-MS $B%&%#%s%I%&%:$G(B Gnus $B$r%$%s%9%H!<%k$9$k$K$O(B @file{make.bat} $B$r;H$C$F2<(B
-$B$5$$!#$3$N%P%C%A!&%W%m%0%i%`$NBh0l0z?t$O%G%#%l%/%H%j!<$G$9!#$=$3(B
-$B$G(B @file{xemacs.exe} $B$H(B @file{emacs.exe} $B$,=g$KA\$7=P$5$l$^$9!#%3%s%Q%$(B
-$B%k$7$F$+$i(B Gnus $B$r%$%s%9%H!<%k$7$?$$$H$-$O!"(B@file{make.bat} $B$NBhFs0z?t(B
-$B$K(B @code{/copy} $B$rM?$($F2<$5$$!#(B
-
-@file{make.bat} $B$O%<%m$+$i=q$-D>$5$l$^$7$?!#(BXEmacs $B$H(B GNU Emacs $B$r<+F0G'(B
-$B<1$7!"(B@file{gnus-load.el} $B$r@8@.$7!"%3%s%Q%$%kCf$H(B info $B%U%!%$%k$N@8@.Cf(B
-$B$K%(%i!<$,5/$-$?$i9=C[=hM}$N:G8e$KJs9p$7$^$9!#(B@code{makeinfo} $B$,MxMQ2DG=(B
-$B$G$"$l$P$=$l$r;H$$!"$5$b$J$1$l$P(B @file{infohack.el} $B$KMj$j$^$9!#:#(B
-$B$d(B @file{make.bat} $B$O(B Gnus $B$rF0:n$5$;$k$?$a$KI,MW$J$9$Y$F$N%U%!%$%k$r%$(B
-$B%s%9%H!<%k$9$k$O$:$G!"BgBN$K$*$$$F(B Unix $B%7%9%F%`$K$*$1(B
-$B$k(B @code{configure; make; make install} $B%5%$%/%k$N40A4$JCV$-49$($K$J$j$^(B
-$B$7$?!#(B
-
-$B?7$7$$(B @file{make.bat} $B$O(B @file{make-x.bat} $B$rITMW$K$7$?$N$G!"$=$l$O:o=|(B
-$B$5$l$^$7$?!#(B
-
-@item
-$BHs(B-@acronym{ASCII} $B%I%a%$%sL>$N%5%]!<%H!#(B
-
-Message $B$O(B From:, To: $B$*$h$S(B Cc: $B$K$"$kHs(B-@acronym{ASCII} $B%I%a%$%sL>$r%5(B
-$B%]!<%H$7!"%a%C%;!<%8$NAw?.$r$7$h$&$H$7$?$H$-$K%(%s%3!<%I$9$k$+$I$&$+$r?R(B
-$B$M$^$9!#(B@code{message-use-idna} $BJQ?t$G$3$l$r@)8f$7$^$9!#(BGnus $B$b$^$?!"%a%C(B
-$B%;!<%8$r8+$k$H$-$K(B From:, To: $B$*$h$S(B Cc: $B$K$"$kHs(B-@acronym{ASCII} $B%I%a%$(B
-$B%sL>$r%G%3!<%I$7$^$9!#$3$l$r@)8f$9$k$N$O(B @code{gnus-use-idna} $BJQ?t$G$9!#(B
 
 @item
 $B%^%$%/%m%=%U%H0zMQMM<0$N$h$jNI$$<h$j07$$!#(B
@@ -26409,6 +26487,10 @@ Message $B$O(B From:, To: $B$*$h$S(B Cc: $B$K$"$kHs(B-@acronym{ASCII} $B%
 $B$G0O$^$l$F$$$J$/$F$b!"(BGnus $B$O$H$K$+$/G'<1$7$h$&$H$7$^$9!#JQ(B
 $B?t(B @code{gnus-cite-unsightly-citation-regexp} $B$O!"$=$l$i$N0zMQ$N@hF,$K9g(B
 $BCW$7$^$9!#(B
+
+$B?7$7$$(B @kbd{W Y f} $B%3%^%s(B
+$B%I(B (@code{gnus-article-outlook-deuglify-article}) $B$G!"=9$/2u$l$?(B Outlook
+(Express) $B$N5-;v$r@07A$7D>$9$3$H$,$G$-$^$9!#(B
 
 @item
 @code{gnus-article-skip-boring}
@@ -26422,34 +26504,116 @@ Message $B$O(B From:, To: $B$*$h$S(B Cc: $B$K$"$kHs(B-@acronym{ASCII} $B%
 $B$$$k$?$/$5$s$N5-;v$rFI$`>l9g$K!"$3$l$OFC$KLr$KN)$A$^$9!#(B
 
 @item
-$B%]%$%s%H$N0LCV7h$a$N$?$a$N=qK!;EMM(B (format spec) $B$G$"$k(B @code{%C} $B$O!"(B
-@code{%*} $B$KJQ99$5$l$^$7$?!#(B
-
-@item
-$B?7$7$$JQ?t(B @code{gnus-parameters} $B$r!"%0%k!<%W%Q%i%a!<%?!<$r@_Dj$9$k$?$a(B
-$B$K;H$&$3$H$,$G$-$^$9!#(B
-
-$B$3$l$O=i4|$K$O!"%Q%i%a!<%?!<$r(B @file{~/.newsrc.eld} $B$K3JG<$9$k(B @kbd{G p}
-($B$^$?$O(B @kbd{G c}) $B$G$7$+9T$J$&$3$H$,$G$-$^$;$s$G$7$?$,!"$3$NJQ?t$K$h$C(B
-$B$F%+%9%?%^%$%:$N0RNO$r4.G=$9$k$3$H$,$G$-$^$9!#$^$?!"$=$NJQ?t(B
-$B$O(B @file{~/.newsrc.eld} $B$G$O$J$/$F(B @file{~/.gnus.el} $B$G@_Dj$9$k$N$G!"%P%C(B
-$B%/%"%C%W$,4JC1$K$J$j$^$9!#$=$NJQ?t$O!"%0%k!<%WL>$K9gCW$9$k@55,I=8=$r!"0J(B
-$B2<$N$h$&$JN.57$G%0%k!<%W%Q%i%a!<%?!<$K3d$jEv$F$^$9(B:
-@lisp
-(setq gnus-parameters
-      '(("mail\\..*"
-         (gnus-show-threads nil)
-         (gnus-use-scoring nil))
-        ("^nnimap:\\(foo.bar\\)$"
-         (to-group . "\\1"))))
-@end lisp
-
-@item
 $B%9%^%$%j!<(B (@samp{:-)}, @samp{;-)} $B$J$I(B) $B$,(B Emacs $B$G$b%"%$%3%s2=$5$l$k$h(B
 $B$&$K$J$j$^$7$?!#(B
 
 $B$3$l$rF/$+$J$$$h$&$K$9$k$K$O!"(B@code{(setq gnus-treat-display-smileys
 nil)} $B$r(B @file{~/.gnus.el} $B$KCV$$$F2<$5$$!#(B
+
+@item
+Face $B%X%C%@!<$r07$($k$h$&$K$J$j$^$7$?!#(B@xref{Face}.
+
+@item
+$B35N,%P%C%U%!!<$G!"?7$7$$%3%^%s%I(B @kbd{/ N} $B$O?7Ce%a%C%;!<%8$rA^F~$7!"(B
+@kbd{/ o} $B$O8E$$%a%C%;!<%8$rA^F~$7$^$9!#(B
+
+@item
+@kbd{W m} $B$r2!$9$H!"(BGnus $B$O%b!<%k%9$G%(%s%3!<%I$5$l$?%a%C%;!<%8$r%G%3!<(B
+$B%I$7$^$9!#(B
+
+@item
+@code{gnus-summary-line-format}
+
+$B%G%#%U%)%k%HCM$,(B @samp{%U%R%z%I%(%[%4L: %-23,23f%]%) %s\n} $B$KJQ$o$j$^$7(B
+$B$?!#$5$i$K!"<u?.<T$NL>A0$+(B @acronym{NNTP} $B%0%k!<%W$KEj9F$7$?%0%k!<%WL>$G(B
+$BMxMQ<TL>$rCV$-49$($k$?$a$K!"(B@code{gnus-extra-headers}$B!"(B
+@code{nnmail-extra-headers} $B$*$h$S(B @code{gnus-ignored-from-addresses} $B$N(B
+$B%G%U%)%k%HCM$,JQ$o$j$^$7$?!#(B
+
+@item
+$BE:IU%U%!%$%k$N>C5n!#(B
+
+@code{gnus-mime-save-part-and-strip} $B%3%^%s%I(B (@acronym{MIME} $B%\%?%s>e(B
+$B$G(B @kbd{C-o} $B$K3d$jEv$F$i$l$F$$$k(B) $B$O!"%Q!<%H$r%;!<%V$7$F$+$i30It$N$=$l(B
+$B$HCV$-49$($^$9!#(B@code{gnus-mime-delete-part} (@acronym{MIME} $B%\%?%s>e(B
+$B$G(B @kbd{d} $B$K3d$jEv$F$i$l$F$$$k(B) $B$O!"%Q!<%H$r:o=|$7$^$9!#$3$l$OJT=8$r%5(B
+$B%]!<%H$7$F$$$k%P%C%/%(%s%I$G$@$1F0:n$7$^$9!#(B
+
+@item
+@code{gnus-default-charset}
+
+$B%G%U%)%k%HCM$O(B @code{iso-8859-1} $B$KBe$o$C(B
+$B$F(B @code{current-language-environment} $BJQ?t$K$h$C$F7hDj$5$l$kCM$K$J$j$^(B
+$B$9!#$^$?!"(B@code{gnus-group-charset-alist} $B$K$"$C$?(B @samp{.*} $B$N9`L\$O:o(B
+$B=|$5$l$^$7$?!#(B
+
+@item
+$B0u:~$N@-G=$,8~>e$7$^$7$?!#(B
+
+Gnus $B$O$=$l<+?H$,!"35N,$H5-;v%P%C%U%!!<$K$*$1(B
+$B$k(B @kbd{O P} $B$G(B Muttprint $B$r%5%]!<%H$7$^$9!#$5$i$K(B @acronym{MIME} $B%\%?%s(B
+$B>e$G(B @kbd{p} $B$r;H$&$3$H$K$h$C$F!"8D!9$N(B @acronym{MIME} $B%Q!<%H$N$=$l$>$l(B
+$B$r0u:~$9$k$3$H$,$G$-$^$9!#(B
+
+@item
+$B3HD%$5$l$?=qK!;EMM(B (format specs)$B!#(B
+
+$B=qK!;EMM(B @samp{%&user-date;} $B$,(B @code{gnus-summary-line-format-alist} $B$K(B
+$BDI2C$5$l$^$7$?!#$=$l$K!"MxMQ<TDj5A$K$h$k3HD%$5$l$?%U%)!<%^%C%H$N;EMM$b%5(B
+$B%]!<%H$5$l$F$$$^$9!#3HD%$5$l$?=qK!;EMM$O(B @samp{%u&foo;} $B$N$h$&$J$b$N$G!"(B
+$B4X?t(B @code{gnus-user-format-function-@var{foo}} $B$r5/F0$7$^$9!#(B
+@samp{&} $B$,%(%9%1!<%WJ8;z$K;H$o$l$F$$$k$N$G!"8E$$MxMQ<TDj5A=qK!$G$"(B
+$B$k(B @samp{%u&} $B$O:#$G$O%5%]!<%H$5$l$F$$$^$;$s!#(B
+
+@item
+@kbd{/ *} (@code{gnus-summary-limit-include-cached}) $B$,=q$-D>$5$l$^$7$?!#(B
+@c FIXME: $B$3$l$OMxMQ<T$K8+$($kJQ99$@$C$?$N$+(B?
+
+$B$3$l$O(B @kbd{Y c} (@code{gnus-summary-insert-cached-articles}) $B$NJLL>$G$7(B
+$B$?(B ($BLuCm(B: $B0JA0$O(B)$B!#?7$7$$4X?t$OB>$N5-;v$r_I2a$7$F=|5n$7$^$9!#(B
+
+@item
+$B$$$/$D$+$N@)8BL?Na$O(B @kbd{C-u} $B@\F,0z?t$G9gCW$NH]Dj$r07$&$3$H$,$G$-$^$9!#(B
+
+@kbd{C-u} $B$r(B subject$B!"(Bauthor $B$^$?$O(B extra $B%X%C%@!<!"$9$J$o$A(B @kbd{/ s}$B!"(B
+@kbd{/ a} $B$*$h(B
+$B$S(B @kbd{/ x} (@code{gnus-summary-limit-to-@{subject,author,extra@}}) $B$G(B
+$B;H$&$H!"7k2L$H$7$F$=$NI=8=$K9gCW$7$J$$$9$Y$F$N5-;v$,I=<($5$l$^$9!#(B
+
+@item
+Gnus $B$O30It%Q!<%H(B (message/external) $B$r%$%s%i%$%sI=<($7$^$9!#(B
+@end itemize
+
+@item Message $B%b!<%I$NJQ99$H4XO"$9$k(B Gnus $B$N5!G=(B
+@c *********************************************
+
+@itemize @bullet
+@item
+$BCY1d5-;v!#(B
+
+Message $B%P%C%U%!!<$K$*$1$k(B @kbd{C-c C-j} $B$G!"%a%C%;!<%8$NAw?.$rCY$i$;$k(B
+$B$3$H$,$G$-$^$9!#%a%C%;!<%8$O;XDj$5$l$?;~9o$KG[Aw$5$l$^$9!#$3$l$O$"$J$?<+(B
+$B?.$N$?$a$NK:HwO?$H$7$FLr$KN)$D$G$7$g$&!#(B@xref{Delayed Articles}.
+
+@item
+@code{auto-compression-mode} $B$,M-8z$K$J$C$F$$$k$H!"E:IU%U%!%$%k$r8+$k$H(B
+$B$-$K<+F0$G05=L$,2r$+$l$^$9!#(B
+
+@item
+$B?7$7$$%*%W%7%g%s(B @code{gnus-gcc-mark-as-read} $B$O!"(BGcc $B$N5-;v$K<+F0E*$K4{(B
+$BFI$N0u$rIU$1$^$9!#(B
+
+@item
+$BE:IU%U%!%$%k$N@Z$jN%$7(B (externalizing)$B!#(B
+
+@code{gnus-gcc-externalize-attachments} $B$^$?(B
+$B$O(B @code{message-fcc-externalize-attachments} $B$,Hs(B-@code{nil} $B$K$J$C$F$$(B
+$B$k$H!"%m!<%+%k%U%!%$%k$r30It%Q!<%H$H$7$FE:IU$7$^$9!#(B
+
+@item
+Sendmail $B$r;H$&$H$-$N%(%s%Y%m!<%WAw?.<T(B (envelope sender) $B$N%"%I%l%9$,!"(B
+$B%+%9%?%^%$%:$G$-$k$h$&$K$J$j$^$7$?!#(B@xref{Mail Variables, ,$B%a!<%kJQ?t(B,
+message-ja, The Message Manual}.
 
 @item
 Gnus $B$O:#$G$O(B Sender: $B%X%C%@!<$r<+F0$G$O@8@.$7$^$;$s!#(B
@@ -26481,40 +26645,7 @@ x} $B$O!"E,@Z$J%X%C%@!<$H!"%/%m%9%]%9%H$H%U%)%m!<@h$K$D$$$F$NCm0U=q$-$rK\(B
 $B$^$;$s!#(B
 
 @item
-$B2~NI$5$l$?(B spam $BBP935!G=!#(B
-
-Gnus $B$OHs>o$KJQ2=$KIY$s$@%W%m%0%i%`$H_I2a$N5,B'$r;H$C$F!"%a!<%k$d%K%e!<(B
-$B%9$NK[N.$+$i(B spam $B$rH4$-<h$C$F$7$^$&$3$H$,$G$-$k$h$&$K$J$j$^$7$?!#BP1~$7(B
-$B$F$$$kJ}<0$O!"(BRBL blocklists$B!"(Bbogofilter $B$=$l$K%[%o%$%H(B/$B%V%i%C%/%j%9%H$G(B
-$B$9!#$^$?(B SpamAssassin $B$d(B Hashcash $B$N$h$&$J30It%Q%C%1!<%8$rMF0W$K;H$&$?$a(B
-$B$N(B hook $B$b?7$7$/$J$j$^$7$?!#(B@xref{Thwarting Email Spam}.
-
-@item
-X-Faces $B%X%C%@!<$NA^F~$,4JC1$K$J$j$^$7$?!#(B
-
-@item
-Face $B%X%C%@!<$r07$($k$h$&$K$J$j$^$7$?!#(B
-
-@item
-$B35N,%P%C%U%!!<$G!"?7$7$$%3%^%s%I(B @kbd{/ N} $B$O?7Ce%a%C%;!<%8$rA^F~$7!"(B
-@kbd{/ o} $B$O8E$$%a%C%;!<%8$rA^F~$7$^$9!#(B
-
-@item
-@kbd{W m} $B$r2!$9$H!"(BGnus $B$O%b!<%k%9$G%(%s%3!<%I$5$l$?%a%C%;!<%8$r%G%3!<(B
-$B%I$7$^$9!#(B
-
-@item
-nnimap $B$N%0%k!<%W$K$*$1$kL$FI$N?t$,@53N$K$J$j$^$7$?!#(B
-
-$B%0%k!<%W%P%C%U%!!<$GI=<($5$l$k(B nnimap $B%0%k!<%W$NL$FI5-;v$N?t$N8+@Q$j$,@5(B
-$B3N$K$J$C$?$O$:$G$9!#$3$l$O(B @code{gnus-setup-news-hook} ($B5/F0;~$K8F$P$l(B
-$B$k(B) $B$H(B @code{gnus-after-getting-new-news-hook} ($B?7$7$$%a!<%k$r<hF@$7$?D>(B
-$B8e$K8F$P$l$k(B) $B$+$i(B @code{nnimap-fixup-unread-after-getting-new-news} $B$r(B
-$B8F$V$3$H$K$h$C$F@.$7?k$2$i$l$^$9!#$3$l$i$NJQ?t$r%G%#%U%)%k%H$G$O$J$$CM$K(B
-$BJQ$($F$$$k>l9g$O!"=E$M(B
-$B$F(B @code{nnimap-fixup-unread-after-getting-new-news} $B$rDI2C$9$kI,MW$,$"(B
-$B$k$+$b$7$l$^$;$s!#8+@Q$j$KK~B-$7$F$$$F!"?7$7$$%a!<%k$r<hF@$9$k$H$-$K$$$/(B
-$B$i$+$N(B ($B$o$:$+$J(B) $B;~4V$r@aLs$7$?$$$N$G$"$l$P!"$=$N4X?t$r30$7$F2<$5$$!#(B
+X-Faces $B%X%C%@!<$NA^F~$,4JC1$K$J$j$^$7$?!#(B@xref{X-Face}.
 
 @item
 $B%0%k!<%W%+!<%\%s%3%T!<(B (GCC) $B$r0zMQId$G0O$`!#(B
@@ -26529,65 +26660,6 @@ nnimap $B$N%0%k!<%W$K$*$1$kL$FI$N?t$,@53N$K$J$j$^$7$?!#(B
 $B$r$5$l$F$7$^$&$G$7$g$&!#=i4|$N$3$m$KJ8;zNs(B @samp{nnml:foo, nnml:bar} $B$r(B
 $BJV$9$h$&$K$7$?$3$H$,4V0c$$$@$C$?$3$H$KCeL\$7$F2<$5$$!#$=$l$OD>@\A^F~$5$l(B
 $B$?$N$G!"$^$C$?$/LdBj$r@8$8$^$;$s$G$7$?!#(B
-
-@item
-@file{~/News/overview/} $B$OITMW!#(B
-
-$B0J2<$NJQ99$N7k2L!"$b$O$d(B @file{~/News/overview/} $B%G%#%l%/%H%j!<$OMW$j$^(B
-$B$;$s!#$9$Y$F$N3,AX$r0BA4$K:o=|$9$k$3$H$,$G$-$^$9!#(B
-
-@item
-@code{gnus-agent}
-
-Gnus $B%(!<%8%'%s%H$OBg5,LO$J99?7$r7P$F!":#$d%G%#%U%)%k%H$GM-8z$K$J$j$^$9!#(B
-$B$=$7(B
-$B$F(B @code{gnus-select-method} $B$H(B @code{gnus-secondary-select-method} $B$G;X(B
-$BDj$5$l$k$9$Y$F$N(B nntp $B$H(B nnimap $B$N%5!<%P!<$,!"%G%#%U%)%k%H$G%(!<%8%'%s%H(B
-$B2=$5$l$^$9!#=i4|$K$*$$$F$O(B @code{gnus-select-method} $B$N%5!<%P!<$@$1$,%G%#(B
-$B%U%)%k%H$G%(!<%8%'%s%H2=$5$l!"%(!<%8%'%s%H$O%G%#%U%)%k%H$G$OM-8z$K$5$l$^(B
-$B$;$s$G$7$?!#%(!<%8%'%s%H$,M-8z$K$5$l$k$H!":#$G$O2DG=$J$i$P%P%C%/%(%s%I$K(B
-$BBe$o$C$F%(!<%8%'%s%H$N%-%c%C%7%e$+$i%X%C%@!<$,<h$j4s$;$i$l$^$9!#=i4|$K$O!"(B
-$B$3$l$O%*%U%i%$%s(B (unplugged) $B$N>uBV$G$N$_9T$J$o$l$F$$$^$7$?!#%5!<%P!<%P%C(B
-$B%U%!!<$G(B @kbd{J a} $B$H(B @kbd{J r} $B$r;H$&$3$H$K$h$C$F!"%5!<%P!<$NEPO?$H:o=|(B
-$B$r9T$J$&$3$H$,$G$-$^$9!#%0%k!<%W%P%C%U%!!<$+$i(B @kbd{J u} $B$+(B @kbd{J s} $B$r(B
-$B;H$C$FL?Na$7$J$$8B$j!"(BGnus $B$O5-;v$r%(!<%8%'%s%H$N%-%c%C%7%e$K%@%&%s%m!<(B
-$B%I$7$^$;$s!#(B@code{(setq gnus-agent nil)} $B$r@_Dj$9$k$3$H$K$h$C$F!"%(!<%8%'(B
-$B%s%H$,M-8z$K$5$l$F$$$J$+$C$?@N$N?6$kIq$$$KLa$9$3$H$,$G$-$^$9!#$b$O(B
-$B$d(B @file{~/.gnus.el} $B$K(B @code{(gnus-agentize)} $B$rCV$$$F$*$/I,MW$,L5$$$3(B
-$B$H$KCm0U$7$F2<$5$$!#(B
-
-@item
-@code{gnus-summary-line-format}
-
-$B%G%#%U%)%k%HCM$,(B @samp{%U%R%z%I%(%[%4L: %-23,23f%]%) %s\n} $B$KJQ$o$j$^$7(B
-$B$?!#$5$i$K!"<u?.<T$NL>A0$+(B @acronym{NNTP} $B%0%k!<%W$KEj9F$7$?%0%k!<%WL>$G(B
-$BMxMQ<TL>$rCV$-49$($k$?$a$K!"(B@code{gnus-extra-headers}$B!"(B
-@code{nnmail-extra-headers} $B$*$h$S(B @code{gnus-ignored-from-addresses} $B$N(B
-$B%G%U%)%k%HCM$,JQ$o$j$^$7$?!#(B
-
-@item
-@file{deuglify.el} (@code{gnus-article-outlook-deuglify-article})
-
-$B$$$+$l$?(B Outlook (Express) $B$N5-;v$r=9$/$J$/$9$k$?$a$N!"(BRaymond Scholz
-@email{rscholz@@zonix.de} $B$K$h$C$F?7@_$5$l$?%U%!%$%k$G$9!#(B
-
-@c FIXME: `gnus-load' $B$K$D$$$F8@5Z$7$F$$$k(B README $B$,!"(BCVS $B$K$O4^$^$l$F$$(B
-@c $B$^$;$s!#;d$?$A$O$3$N9`L\$N$?$a$N$h$jNI$$>l=j$r8+$D$1$k$Y$-$G$9!#(B
-@item
-@code{(require 'gnus-load)}
-
-$BC1FH$GG[I[$5$l$F$$$k(B Gnus $B$r;H$&>l9g$K$O!"(B
-@code{load-path} $B$K(B Gnus $B$N(B lisp $B%G%#%l%/%H%j!<$rDI2C$7$F$+$i!"(B
-@file{~/.emacs} $B$K(B @code{(require 'gnus-load)} $B$r2C$($k$N$,NI$$$G$9!#(B
-
-@file{gnus-load.el} $B%U%!%$%k$O!"$=$N$&$A$N$$$/$D$+$O(B Emacsen $B$NG[I[$KF~$C(B
-$B$F$$$J$$$+$b$7$l$J$$<+F0FI$_9~$_(B (autoload) $B%3%^%s%I!"4X?t$*$h$SJQ?t$r4^(B
-$B$s$G$$$^$9!#(B
-
-@item
-@code{gnus-slave-unplugged}
-
-$B%*%U%i%$%s$N(B Gnus $B$r%9%l!<%V%b!<%I$G5/F0$9$k?7$7$$%3%^%s%I$G$9!#(B
 
 @item
 @code{message-insinuate-rmail}
@@ -26606,27 +26678,6 @@ Gnus $B%(!<%8%'%s%H$OBg5,LO$J99?7$r7P$F!":#$d%G%#%U%)%k%H$GM-8z$K$J$j$^$9!#(B
 (define-key message-minibuffer-local-map [(tab)]
   'bbdb-complete-name)
 @end lisp
-
-@item
-$BE:IU%U%!%$%k$N@Z$jN%$7(B (externalizing) $B$H>C5n!#(B
-
-@code{gnus-gcc-externalize-attachments} $B$^$?(B
-$B$O(B @code{message-fcc-externalize-attachments} $B$,Hs(B-@code{nil} $B$K$J$C$F$$(B
-$B$k$H!"%m!<%+%k%U%!%$%k$r30It%Q!<%H$H$7$FE:IU$7$^$9!#(B
-
-@code{gnus-mime-save-part-and-strip} $B%3%^%s%I(B (@acronym{MIME} $B%\%?%s>e(B
-$B$G(B @kbd{C-o} $B$K3d$jEv$F$i$l$F$$$k(B) $B$O!"%Q!<%H$r%;!<%V$7$F$+$i30It$N$=$l(B
-$B$HCV$-49$($^$9!#(B@code{gnus-mime-delete-part} (@acronym{MIME} $B%\%?%s>e(B
-$B$G(B @kbd{d} $B$K3d$jEv$F$i$l$F$$$k(B) $B$O!"%Q!<%H$r:o=|$7$^$9!#$3$l$OJT=8$r%5(B
-$B%]!<%H$7$F$$$k%P%C%/%(%s%I$G$@$1F0:n$7$^$9!#(B
-
-@item
-@code{gnus-default-charset}
-
-$B%G%U%)%k%HCM$O(B @code{iso-8859-1} $B$KBe$o$C(B
-$B$F(B @code{current-language-environment} $BJQ?t$K$h$C$F7hDj$5$l$kCM$K$J$j$^(B
-$B$9!#$^$?!"(B@code{gnus-group-charset-alist} $B$K$"$C$?(B @samp{.*} $B$N9`L\$O:o(B
-$B=|$5$l$^$7$?!#(B
 
 @item
 @code{gnus-posting-styles}
@@ -26653,14 +26704,6 @@ Gnus $B%(!<%8%'%s%H$OBg5,LO$J99?7$r7P$F!":#$d%G%#%U%)%k%H$GM-8z$K$J$j$^$9!#(B
 $B$=$l$iFs$D$N%X%C%@!<$b2C$($kI,MW$,$"$j$^$9!#(B
 
 @item
-Gnus $B$O(B plugged $B$N$H$-$K!"%(!<%8%'%s%H$K(B @acronym{NOV} $B$H5-;v$rFI$_9~$_(B
-$B$^$9!#(B
-
-Plugged $B$N$H$-$K5-;v$rFI$`>l9g$K!"$=$N5-;v$,$9$G$K%(!<%8%'%s%H$K$"$k$J$i(B
-$B$P!"$b$&0lEY%@%&%s%m!<%I$9$k$3$H$O$"$j$^$;$s!#(B@code{(setq
-gnus-agent-cache nil)} $B$O5l<0$NF0:n$KLa$7$^$9!#(B
-
-@item
 Gnus $B$O!H(Bformat=flowed$B!I(B(RFC 2646) $B%Q%i%a!<%?!<$r%5%]!<%H$7$^$9!#%a%C%;!<(B
 $B%8$r:n@.$9$k$H$-$K!"$=$l$O(B @code{use-hard-newlines} $B$G3h@-2=$5$l$^$9!#(B
 format=flowed $B$N%G%3!<%I$O0JA0$+$i$G$-$^$7$?$,!"=i4|$NHG$G$O@bL@$NJ8=q$,(B
@@ -26676,20 +26719,6 @@ format=flowed $B$N%G%3!<%I$O0JA0$+$i$G$-$^$7$?$,!"=i4|$NHG$G$O@bL@$NJ8=q$,(B
 Gnus $B$O(B RFC 2298 $B$N3+Iu3NG'MW5a$N@8@.$r%5%]!<%H$7$^$9!#(B
 
 $B$3$l$O%a%C%;!<%8%b!<%I$N(B @kbd{C-c M-n} $B%-!<$G8F$S=P$5$l$^$9!#(B
-
-@item
-Gnus $B$O(B Maildir $B%0%k!<%W$r%5%]!<%H$7$^$9!#(B
-
-Gnus $B$O?7%P%C%/%(%s%I$G$"$k(B @file{nnmaildir.el} $B$r4^$s$G$$$^$9!#(B
-@xref{Maildir}.
-
-@item
-$B0u:~$N@-G=$,8~>e$7$^$7$?!#(B
-
-Gnus $B$O$=$l<+?H$,!"35N,$H5-;v%P%C%U%!!<$K$*$1(B
-$B$k(B @kbd{O P} $B$G(B Muttprint $B$r%5%]!<%H$7$^$9!#$5$i$K(B @acronym{MIME} $B%\%?%s(B
-$B>e$G(B @kbd{p} $B$r;H$&$3$H$K$h$C$F!"8D!9$N(B @acronym{MIME} $B%Q!<%H$N$=$l$>$l(B
-$B$r0u:~$9$k$3$H$,$G$-$^$9!#(B
 
 @item
 Message $B$O(B Importance: $B%X%C%@!<(B (RFC 2156) $B$r%5%]!<%H$9$k$h$&$K$J$j$^$7(B
@@ -26712,44 +26741,69 @@ Gnus $B$O%K%e!<%9$N(B Cancel Locks $B$r%5%]!<%H$7$^$9!#(B
 $BJQ99$9$k$,$G$-$^$9!#(B
 
 @item
-Gnus $B$O(B Sieve $B$r;H$C$?%5!<%P!<B&$G$N%a!<%k$N_I2a$r%5%]!<%H$7$^$9!#(B
+Gnus $B$O(B @acronym{PGP} (RFC 1991/2440)$B!"(B@acronym{PGP/MIME} (RFC
+2015/3156) $B$*$h$S(B @acronym{S/MIME} (RFC 2630-2633) $B$r%5%]!<%H$7$^$9!#(B
 
-Sieve $B$N5,B'$O%0%k!<%W%Q%i%a!<%?!<$H$7$F2C$($k$3$H$,$G$-!"%0%k!<%W%P%C%U%!!<(B
-$B$G(B @kbd{D g} $B$r;H$&$H40A4$J(B Sieve $B%9%/%j%W%H$,@8@.$5$l$^$9!#$=$&$7$?$i!"(B
-$B@8@.$5$l$?(B Sieve $B%P%C%U%!!<$G(B @kbd{C-c C-l} $B$r;H$C$F!"%5!<%P!<$K%"%C%W%m!<(B
-$B%I$7$F2<$5$$!#(B@ref{Sieve Commands}$B!"$=$l$K?7$7$$(B Sieve $B$N%^%K%e%"(B
-$B%k(B (@pxref{Top, ,Top, sieve-ja, Emacs Sieve}) $B$r;2>H$7$F2<$5$$!#(B
-
-@item
-$B3HD%$5$l$?=qK!;EMM(B (format specs)$B!#(B
-
-$B=qK!;EMM(B @samp{%&user-date;} $B$,(B @code{gnus-summary-line-format-alist} $B$K(B
-$BDI2C$5$l$^$7$?!#$=$l$K!"MxMQ<TDj5A$K$h$k3HD%$5$l$?%U%)!<%^%C%H$N;EMM$b%5(B
-$B%]!<%H$5$l$F$$$^$9!#3HD%$5$l$?=qK!;EMM$O(B @samp{%u&foo;} $B$N$h$&$J$b$N$G!"(B
-$B4X?t(B @code{gnus-user-format-function-@var{foo}} $B$r5/F0$7$^$9!#(B
-@samp{&} $B$,%(%9%1!<%WJ8;z$K;H$o$l$F$$$k$N$G!"8E$$MxMQ<TDj5A=qK!$G$"(B
-$B$k(B @samp{%u&} $B$O:#$G$O%5%]!<%H$5$l$F$$$^$;$s!#(B
+$B$3$l$K$O(B @acronym{S/MIME} $B$H(B OpenPGP $B$,<BAu$5$l$F$$$kI,MW$,$"$j$^$9!#$G(B
+$B$bDI2C$N(B Lisp $B%i%$%V%i%j!<$OMW$j$^$;$s!#%a%C%;!<%8$N:n@.;~$K!"$$$/$D$+$N(B
+$B%a%K%e!<$H(B @kbd{C-c RET} $B%-!<$N3d$jEv$F$,(B Attachments $B%a%K%e!<$KDI2C$5$l(B
+$B$^$9!#$3$l$O$^$?!"(B@code{gnus-article-hide-pgp-hook} $B$r;~BeCY$l$K$7$^$7$?!#(B
 
 @item
-@kbd{/ *} (@code{gnus-summary-limit-include-cached}) $B$,=q$-D>$5$l$^$7$?!#(B
+@acronym{MML} (Mime $B:n@.(B) $B%3%^%s%I$N@\F,%-!<$,!"(B@kbd{M-m} $B$+$i(B @kbd{C-c
+C-m} $B$KJQ$o$j$^$7$?!#(B
 
-$B$3$l$O(B @kbd{Y c} (@code{gnus-summary-insert-cached-articles}) $B$NJLL>$G$7(B
-$B$?(B ($BLuCm(B: $B0JA0$O(B)$B!#?7$7$$4X?t$OB>$N5-;v$r_I2a$7$F=|5n$7$^$9!#(B
-
-@item
-$B$$$/$D$+$N@)8BL?Na$O(B @kbd{C-u} $B@\F,0z?t$G9gCW$NH]Dj$r07$&$3$H$,$G$-$^$9!#(B
-
-@kbd{C-u} $B$r(B subject$B!"(Bauthor $B$^$?$O(B extra $B%X%C%@!<!"$9$J$o$A(B @kbd{/ s}$B!"(B
-@kbd{/ a} $B$*$h(B
-$B$S(B @kbd{/ x} (@code{gnus-summary-limit-to-@{subject,author,extra@}}) $B$G(B
-$B;H$&$H!"7k2L$H$7$F$=$NI=8=$K9gCW$7$J$$$9$Y$F$N5-;v$,I=<($5$l$^$9!#(B
+$B$3$NJQ99$K$h$C$F!"I8=`%-!<3d$jEv$F$N(B @code{back-to-indentation} $B$H$N>WFM(B
+$B$,2sHr$5$l$^$7$?!#$3$N%3%^%s%I$b$^$?!"%a%C%;!<%8%b!<%I$G$OLr$KN)$D$N$G$9!#(B
 
 @item
-$B%0%k!<%WL>$O!"%G%#%U%)%k%H$G(B UTF-8 $B$G$"$k$b$N$H$7$F<h$j07$o$l$^$9!#(B
+@code{message-forward-show-mml} $B$N%G%#%U%)%k%H$,(B @code{best} $B$H$$$&%7%s(B
+$B%\%k$KJQ$o$j$^$7$?!#(B
 
-$B$3$l$O(B USEFOR $B$,0\9T$7$h$&$H$7$F$$$k$HA[Dj$5$l$k$b$N$G$9!#%+%9%?%^%$%:$9(B
-$B$k$K$O(B @code{gnus-group-name-charset-group-alist} $B$*$h(B
-$B$S(B @code{gnus-group-name-charset-method-alist} $B$r;2>H$7$F2<$5$$!#(B
+$BCM(B @code{best} $B$N?6$kIq$$$O!"$=$l$,$U$5$o$7$$>l9g$O(B @acronym{MML} $B$rI=<((B
+$B$9$k(B ($B$9$J$o$A(B @acronym{MIME} $B$KJQ49$9$k(B) $B$3$H$G$9!#JQ49$,%G%#%8%?%k=pL>(B
+$B$rL58z$K$7$F$7$^$&$N$G!"=pL>$5$l$?!"$^$?$O0E9f2=$5$l$?%a%C%;!<%8$rE>Aw$9(B
+$B$k$H$-$O(B @acronym{MML} $B$O;H$o$l$^$;$s!#(B
+
+@item
+@code{auto-compression-mode} $B$,M-8z$K$J$C$F$$$k$H!"E:IU%U%!%$%k$r8+$k$H(B
+$B$-$K<+F0$G05=L$,2r$+$l$^$9!#(B
+@c FIXME: $B$3$l$O5-;v%b!<%I$^$?$O(B message $B%b!<%I$K1F6A$9$k(B?
+
+@item
+$BHs(B-@acronym{ASCII} $B%I%a%$%sL>$N%5%]!<%H!#(B
+
+Message $B$O(B From:, To: $B$*$h$S(B Cc: $B$K$"$kHs(B-@acronym{ASCII} $B%I%a%$%sL>$r%5(B
+$B%]!<%H$7!"%a%C%;!<%8$NAw?.$r$7$h$&$H$7$?$H$-$K%(%s%3!<%I$9$k$+$I$&$+$r?R(B
+$B$M$^$9!#(B@code{message-use-idna} $BJQ?t$G$3$l$r@)8f$7$^$9!#(BGnus $B$b$^$?!"%a%C(B
+$B%;!<%8$r8+$k$H$-$K(B From:, To: $B$*$h$S(B Cc: $B$K$"$kHs(B-@acronym{ASCII} $B%I%a%$(B
+$B%sL>$r%G%3!<%I$7$^$9!#$3$l$r@)8f$9$k$N$O(B @code{gnus-use-idna} $BJQ?t$G$9!#(B
+
+@item
+Message $B%P%C%U%!!<$KE:IU%U%!%$%k$r%I%i%C%0!u%I%m%C%W$9$k$3$H$,$G$-$^$9!#(B
+
+@code{mml-dnd-protocol-alist} $B$H(B @code{mml-dnd-attach-options} $B$r;2>H$7(B
+$B$F2<$5$$!#(B@xref{MIME, ,MIME, message, The Message Manual}.
+@c New in 5.10.9 / 5.11
+@end itemize
+
+@item $B%P%C%/%(%s%I$NJQ99(B
+@c *********************
+
+@itemize @bullet
+@item
+Gnus $B$O(B RSS $B$N%K%e!<%9G[Aw$r!"%K%e!<%9%0%k!<%W$H$7$FI=<($7$^$9!#(B
+@xref{RSS}.
+
+@item
+nndoc $B%P%C%/%(%s%I$O!"(Bmailman $B$N$^$H$aAw$j$H(B exim $B$,CF$$$?%a%C%;!<%8$r%5(B
+$B%]!<%H$9$k$h$&$K$J$j$^$7$?!#(B
+
+@item
+Gnus $B$O(B Maildir $B%0%k!<%W$r%5%]!<%H$7$^$9!#(B
+
+Gnus $B$O?7%P%C%/%(%s%I$G$"$k(B @file{nnmaildir.el} $B$r4^$s$G$$$^$9!#(B
+@xref{Maildir}.
 
 @item
 nnml $B$H(B nnfolder $B%P%C%/%(%s%I$O!"%0%k!<%WKh$K0u(B (marks) $B$r3JG<$9$k$h$&$K(B
@@ -26767,7 +26821,12 @@ Gnus $B$O(B @file{~/.newsrc.eld} $B$K$"$k>pJs$NBe$o$j$K!"<+F0E*(B
 $B$K(B @file{.marks} $B$+(B @file{.mrk} $B%U%!%$%k$r;H$$$^$9!#?7$7$$%5!<%P!<JQ?t$G(B
 $B$"$k(B @code{nnml-marks-is-evil} $B$H(B @code{nnfolder-marks-is-evil} $B$,!"$3$N(B
 $B5!G=$rM^@)$9$k$?$a$K;H$&$3$H$,$G$-$^$9!#(B
+@end itemize
 
+@item $B308+$K4X$9$k$3$H(B
+@c *******************
+
+@itemize @bullet
 @item
 $B%0%k!<%W$H35N,%P%C%U%!!<$N%a%K%e!<%P!<9`L\$NL>A0!H(BMisc$B!I$O!H(BGnus$B!I$K2~L>(B
 $B$5$l$^$7$?!#(B
@@ -26780,44 +26839,64 @@ Manual}) $B$N$h$&$J!"%;%-%e%j%F%#!<$K4XO"$7$?$b$N$b4^$s$G$$$k$3$H$KCeL\$7(B
 $B$F2<$5$$!#(B
 
 @item
-@code{gnus-group-charset-alist} $B$H(B @code{gnus-group-ignored-charsets-alist}
+$B%D!<%k%P!<$,%0%k!<%W!"35N,$*$h$S(B Message $B%b!<%I$G(B GNOME $B$N%"%$%3%s$r;H$&(B
+$B$h$&$K99?7$5$l$^$7$?!#%D!<%k%P!<$O%+%9%?%^%$%:2DG=$G$9!#$3$l$O(B Gnus
+5.10.9 $B$N?75!G=$G$9!#(B(Emacs $B$@$1$G$9!#(BXEmacs $B$OL$BP1~!#(B)
 
-$B$3$l$i$NJQ?t$K@_Dj$5$l$?@55,I=8=$O!"40A4$J(B (full) $B%0%k!<%WL>$HHf3S$5$l$^(B
-$B$9!#(BGnus 5.8 $B$G$O<B:]$N(B (real) $B%0%k!<%WL>$,Hf3S$NBP>]$G$7$?!#$7$?$,$C$F!"(B
-$B$3$l$i$NJQ?t$r%+%9%?%^%$%:$7$F$$$kMxMQ<T$O!"@55,I=8=$rJQ99$7$J$1$l$P$J$j(B
-$B$^$;$s!#Nc$G$9(B:
+@item The tool bar icons are now (de)activated correctly
+$B%0%k!<%W%P%C%U%!!<$GJQ?t(B @code{gnus-group-update-tool-bar} $B$r;2>H$7$F2<(B
+$B$5$$!#$=$N%G%#%U%)%k%HCM$O(B Emacs $B$N%P!<%8%g%s$K0MB8$7$F$$$^$9!#$3$l(B
+$B$O(B Gnus 5.10.9 $B$N?75!G=$G$9!#(B
+@end itemize
 
-@lisp
-("^han\\>" euc-kr) -> ("\\(^\\|:\\)han\\>" euc-kr)
-@end lisp
+@item $B$=$NB>$NJQ99(B
+@c ***************
+
+@itemize @bullet
+@item
+@code{gnus-agent}
+
+Gnus $B%(!<%8%'%s%H$OBg5,LO$J99?7$r7P$F!":#$d%G%#%U%)%k%H$GM-8z$K$J$j$^$9!#(B
+$B$=$7(B
+$B$F(B @code{gnus-select-method} $B$H(B @code{gnus-secondary-select-method} $B$G;X(B
+$BDj$5$l$k$9$Y$F$N(B nntp $B$H(B nnimap $B$N%5!<%P!<$,!"%G%#%U%)%k%H$G%(!<%8%'%s%H(B
+$B2=$5$l$^$9!#=i4|$K$*$$$F$O(B @code{gnus-select-method} $B$N%5!<%P!<$@$1$,%G%#(B
+$B%U%)%k%H$G%(!<%8%'%s%H2=$5$l!"%(!<%8%'%s%H$O%G%#%U%)%k%H$G$OM-8z$K$5$l$^(B
+$B$;$s$G$7$?!#%(!<%8%'%s%H$,M-8z$K$5$l$k$H!":#$G$O2DG=$J$i$P%P%C%/%(%s%I$K(B
+$BBe$o$C$F%(!<%8%'%s%H$N%-%c%C%7%e$+$i%X%C%@!<$,<h$j4s$;$i$l$^$9!#=i4|$K$O!"(B
+$B$3$l$O%*%U%i%$%s(B (unplugged) $B$N>uBV$G$N$_9T$J$o$l$F$$$^$7$?!#%5!<%P!<%P%C(B
+$B%U%!!<$G(B @kbd{J a} $B$H(B @kbd{J r} $B$r;H$&$3$H$K$h$C$F!"%5!<%P!<$NEPO?$H:o=|(B
+$B$r9T$J$&$3$H$,$G$-$^$9!#%0%k!<%W%P%C%U%!!<$+$i(B @kbd{J u} $B$+(B @kbd{J s} $B$r(B
+$B;H$C$FL?Na$7$J$$8B$j!"(BGnus $B$O5-;v$r%(!<%8%'%s%H$N%-%c%C%7%e$K%@%&%s%m!<(B
+$B%I$7$^$;$s!#(B@code{(setq gnus-agent nil)} $B$r@_Dj$9$k$3$H$K$h$C$F!"%(!<%8%'(B
+$B%s%H$,M-8z$K$5$l$F$$$J$+$C$?@N$N?6$kIq$$$KLa$9$3$H$,$G$-$^$9!#$b$O(B
+$B$d(B @file{~/.gnus.el} $B$K(B @code{(gnus-agentize)} $B$rCV$$$F$*$/I,MW$,L5$$$3(B
+$B$H$KCm0U$7$F2<$5$$!#(B
 
 @item
-Gnus $B$O(B @acronym{PGP} (RFC 1991/2440)$B!"(B@acronym{PGP/MIME} (RFC
-2015/3156) $B$*$h$S(B @acronym{S/MIME} (RFC 2630-2633) $B$r%5%]!<%H$7$^$9!#(B
+Gnus $B$O(B plugged $B$N$H$-$K!"%(!<%8%'%s%H$K(B @acronym{NOV} $B$H5-;v$rFI$_9~$_(B
+$B$^$9!#(B
 
-$B$3$l$K$O(B @acronym{S/MIME} $B$H(B OpenPGP $B$,<BAu$5$l$F$$$kI,MW$,$"$j$^$9!#$G(B
-$B$bDI2C$N(B Lisp $B%i%$%V%i%j!<$OMW$j$^$;$s!#%a%C%;!<%8$N:n@.;~$K!"$$$/$D$+$N(B
-$B%a%K%e!<$H(B @kbd{C-c RET} $B%-!<$N3d$jEv$F$,(B Attachments $B%a%K%e!<$KDI2C$5$l(B
-$B$^$9!#$3$l$O$^$?!"(B@code{gnus-article-hide-pgp-hook} $B$r;~BeCY$l$K$7$^$7$?!#(B
-
-@item
-Gnus $B$O30It%Q!<%H(B (message/external) $B$r%$%s%i%$%sI=<($7$^$9!#(B
+Plugged $B$N$H$-$K5-;v$rFI$`>l9g$K!"$=$N5-;v$,$9$G$K%(!<%8%'%s%H$K$"$k$J$i(B
+$B$P!"$b$&0lEY%@%&%s%m!<%I$9$k$3$H$O$"$j$^$;$s!#(B@code{(setq
+gnus-agent-cache nil)} $B$O5l<0$NF0:n$KLa$7$^$9!#(B
 
 @item
-@acronym{MML} (Mime $B:n@.(B) $B%3%^%s%I$N@\F,%-!<$,!"(B@kbd{M-m} $B$+$i(B @kbd{C-c
-C-m} $B$KJQ$o$j$^$7$?!#(B
+Dired $B$NE}9g!#(B
 
-$B$3$NJQ99$K$h$C$F!"I8=`%-!<3d$jEv$F$N(B @code{back-to-indentation} $B$H$N>WFM(B
-$B$,2sHr$5$l$^$7$?!#$3$N%3%^%s%I$b$^$?!"%a%C%;!<%8%b!<%I$G$OLr$KN)$D$N$G$9!#(B
+@code{gnus-dired-minor-mode} (@ref{Other modes} $B;2>H(B) $B$O(B dired $B$N%P%C%U%!!<(B
+$B$G!"E:IU%U%!%$%k$rAw?.$9$k!"(Bmailcap $B$NE,@Z$J9`L\$r;H$C$F%U%!%$%k$r3+$/!"(B
+$B$=$l$K(B mailcap $B$N9`L\$r;H$C$F%U%!%$%k$r0u:~$9$k$?$a$N%-!<$r3d$jEv$F$^$9!#(B
 
 @item
-@code{message-forward-show-mml} $B$N%G%#%U%)%k%H$,(B @code{best} $B$H$$$&%7%s(B
-$B%\%k$KJQ$o$j$^$7$?!#(B
+$B%]%$%s%H$N0LCV7h$a$N$?$a$N=qK!;EMM(B (format spec) $B$G$"$k(B @code{%C} $B$O!"(B
+@code{%*} $B$KJQ99$5$l$^$7$?!#(B
 
-$BCM(B @code{best} $B$N?6$kIq$$$O!"$=$l$,$U$5$o$7$$>l9g$O(B @acronym{MML} $B$rI=<((B
-$B$9$k(B ($B$9$J$o$A(B @acronym{MIME} $B$KJQ49$9$k(B) $B$3$H$G$9!#JQ49$,%G%#%8%?%k=pL>(B
-$B$rL58z$K$7$F$7$^$&$N$G!"=pL>$5$l$?!"$^$?$O0E9f2=$5$l$?%a%C%;!<%8$rE>Aw$9(B
-$B$k$H$-$O(B @acronym{MML} $B$O;H$o$l$^$;$s!#(B
+@item
+@code{gnus-slave-unplugged}
+
+$B%*%U%i%$%s$N(B Gnus $B$r%9%l!<%V%b!<%I$G5/F0$9$k?7$7$$%3%^%s%I$G$9!#(B
+@end itemize
 @end itemize
 
 @node No Gnus
@@ -26887,7 +26966,6 @@ No Gnus $B$N?7$7$$5!G=(B:
 $B$"$l$P!"$I$&$9$l$P$=$l$h$j$b$C$H=EMW$J$b$N$,$G$-$k$N$G$7$g$&(B? $B$3$N@$3&$N(B
 $B$b$&0l$D$NIT;W5D$G$7$g$&!"$?$V$s!#(B)
 @end iflatex
-
 @end iftex
 
 @node On Writing Manuals
