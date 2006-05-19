@@ -7273,7 +7273,7 @@ Gnus はたくさんの方法で記事を保存することができます。以下のものは非常に
 @item O m
 @kindex O m (概略)
 @findex gnus-summary-save-article-mail
-現在の記事をメールの様式で保存しま
+現在の記事を Unix メール (mbox) ファイルに保存しま
 す (@code{gnus-summary-save-article-mail})。
 
 @item O r
