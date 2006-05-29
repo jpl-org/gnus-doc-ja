@@ -7350,7 +7350,7 @@ Gnus $B$OC1=c$K$9$Y$F$N5-;v$r%G%#%U%)%k%H$N%U%!%$%k$KJ]B8$7$^$9!#(B
 @vindex gnus-default-article-saver
 Gnus $B$r;W$$DL$j$KF0:n$5$;$k$?$a$K!"JQ(B
 $B?t(B @code{gnus-default-article-saver} $B$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B
-$B2<$NO;$D$N4{@=$N4X?t$r;H$&$3$H$,$G$-$k$7!"<+J,<+?H$N4X?t$r:n$k$3$H$b$G$-(B
+$B2<$NH,$D$N4{@=$N4X?t$r;H$&$3$H$,$G$-!"$^$?<+J,<+?H$N4X?t$r:n$k$3$H$b$G$-(B
 $B$^$9!#(B
 
 @table @code
@@ -7393,6 +7393,13 @@ Unix $B%a!<%k(B (mbox) $B%U%!%$%k$KJ]B8$7$^$9!#JQ(B
 $B%$%k$NL>A0$r<hF@$9$k$?$a$K;H$$$^$9!#%G%#%U%)%k%H(B
 $B$O(B @code{gnus-numeric-save-name} $B$G$9!#(B
 
+@item gnus-summary-write-body-to-file
+@findex gnus-summary-write-body-to-file
+$B5-;v$NK\J8$r%9%H%l!<%H$KDL>o$N%U%!%$%k$KJ]B8$7$^$9!#$=$N%U%!%$%k$,B8:_$7(B
+$B$F$$$?$i>e=q$-$5$l$^$9!#JQ?t(B @code{gnus-file-save-name} $B$K@_Dj$5$l$F$$$k(B
+$B4X?t$r!"5-;v$rJ]B8$9$k%U%!%$%k$NL>A0$r<hF@$9$k$?$a$K;H$$$^$9!#%G%#%U%)%k(B
+$B%H$O(B @code{gnus-numeric-save-name} $B$G$9!#(B
+
 @item gnus-summary-save-in-folder
 @findex gnus-summary-save-in-folder
 @findex gnus-folder-save-name
@@ -7411,6 +7418,30 @@ MH $B%i%$%V%i%j!<$N(B @code{rcvstore} $B$r;H$C$F!"5-;v$r(B MH $B%U%)%k%@!<$
 @findex gnus-summary-save-in-vm
 $B5-;v$r(B VM $B%U%)%k%@!<$KJ]B8$7$^$9!#$3$N@_Dj$r;H$&$?$a$K$O(B VM $B%a!<%k%j!<%@!<(B
 $B$,I,MW$G$9!#(B
+@end table
+
+$B$=$l$>$l$NJQ?t$N%7%s%\%k$O0J2<$NB0@-(B (property) $B$r;}$D$3$H$,$G$-$^$9(B:
+
+@table @code
+@item :decode
+@code{nil} $B$G$O$J$$CM$,@_Dj$5$l$F$$$k$H%G%3!<%I$7$?5-;v$rJ]B8$7$^$9!#(B
+@code{gnus-summary-save-in-file}$B!"(B@code{gnus-summary-save-body-in-file}$B!"(B
+@code{gnus-summary-write-to-file} $B$*$h(B
+$B$S(B @code{gnus-summary-write-body-to-file} $B$G$@$1!"$3$l$r@_Dj$9$k0U5A$,$"(B
+$B$j$^$9!#(B
+
+@item :function
+$B5-;v$r%U%!%$%k$K>e=q$9$k$N$G$O$J$/!"DI2C$9$k$?$a$NBe$o$j$N4X?t$r;XDj$7$^(B
+$B$9!#$3$l$r@_Dj$9$k$H!"J#?t$N5-;v$r0lEY$KJ]B8$9$k$H$-(B
+$B$K(B @code{gnus-prompt-before-saving} $B$,(B @code{t} $B$KB+G{$5$l!"$9$Y$F$N5-;v(B
+$B$,C10l$N%U%!%$%k$KJ]B8$5$l$^$9!#(B@code{gnus-summary-write-to-file} $B$*$h(B
+$B$S(B @code{gnus-summary-write-body-to-file} $B$G$@$1!"$3$l$r@_Dj$9$k0U5A$,$"(B
+$B$j$^$9!#(B
+
+@item :headers
+$BJ]B8$5$l$k%X%C%@!<$r;XDj$9$kJQ?t$N%7%s%\%k$r$3$l$G@_Dj$7$^$9!#>JN,$5$l$?(B
+$B>l9g$O(B @code{gnus-save-all-headers} $B$H(B @code{gnus-saved-headers} $B$,!"$I(B
+$B$N%X%C%@!<$rJ]B8$9$k$+$r@)8f$7$^$9!#(B
 @end table
 
 @vindex gnus-article-save-directory
