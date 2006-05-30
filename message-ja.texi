@@ -197,8 +197,9 @@ Message は返答がどこに行くかを決定するために標準の方法を使いますが、
 す (@pxref{Reply})。
 
 @vindex message-dont-reply-to-names
-正規表現 @code{rmail-dont-reply-to-names} に合致するアドレス
-は @code{Cc} ヘッダーから取り除かれます。
+正規表現 (または正規表現のリスト) @code{message-dont-reply-to-names} に
+合致するアドレスは @code{Cc} ヘッダーから取り除かれます。@code{nil} にす
+ると、あなたの名前だけが取り除かれます。
 
 @vindex message-wide-reply-confirm-recipients
 @code{message-wide-reply-confirm-recipients} が非-@code{nil} だったら、
