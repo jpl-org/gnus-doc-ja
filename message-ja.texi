@@ -1816,8 +1816,8 @@ node) として使います。文字列だったら、その文字列を使います。それが文字列
 @end table
 
 ディフォルトでは、これらすべての条件が調べられます。ただ
-し @code{message-insert-canlock} が @code{nil} だったら検査が行なわれな
-い @code{sender} を除きます。@xref{Canceling News}.
+し @code{message-insert-canlock} が @code{nil} だったらディフォルトでは
+検査が行なわれない @code{sender} を除きます。@xref{Canceling News}.
 
 @item message-ignored-news-headers
 @vindex message-ignored-news-headers
