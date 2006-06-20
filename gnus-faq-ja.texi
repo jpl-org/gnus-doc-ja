@@ -1,7 +1,7 @@
 @c \input texinfo @c -*-texinfo-*-
 @c Uncomment 1st line before texing this file alone.
 @c %**start of header
-@c Copyright (C) 1995, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.
+@c Copyright (C) 1995, 2001, 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 @c
 @c Do not modify this file, it was generated from gnus-faq.xml, available from
 @c <URL:http://my.gnus.org/FAQ/>.
@@ -2168,10 +2168,8 @@ bug $B%a!<%j%s%0%j%9%H(B} $B$KAw$k%a%C%;!<%8$r=q$-;O$a$k$3$H$,$G$-$^$9!#$=$l$
 
 @subsubheading $B2sEz(B
 
-$B$"$J$?$N(B @acronym{IRC} $B$r(B @samp{irc.my.gnus.org} $B$N(B @samp{#mygnus} $B%A%c(B
-$B%s%M%k$K@\B3$7$F2<$5$$!#$=$3$G$O?M!9$,%I%$%D8l$rOC$7$F$$$^$9$,!"?,9~$_$9(B
-$B$kI,MW$O$"$j$^$;$s!#H`$i$O?M!9$,%I%$%D0J30$+$i$d$C$F$-$?$H$-$K$O1Q8l$K@Z(B
-$B$jBX$($k$3$H$,$G$-$k$7!"$=$l$r$$$H$$$^$;$s!#(B
+$B$"$J$?$N(B @acronym{IRC} $B$r(B @samp{irc.freenode.net} $B$N(B @samp{#mygnus} $B%A%c(B
+$B%s%M%k$K@\B3$7$F2<$5$$!#(B
 
 @node FAQ 9 - Tuning Gnus
 @subsection Gnus $B$r%A%e!<%s$9$k(B

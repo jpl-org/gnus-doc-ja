@@ -12662,8 +12662,8 @@ Gnus $B$,@\B3$r5qH]$5$l$?$9$Y$F$N%5!<%P!<$N!"$9$Y$F$N0u$r>C5n$7(B
 @vindex nntp-server-opened-hook
 @cindex @sc{mode reader}
 @cindex authinfo
-@cindex authentification
-@cindex nntp authentification
+@cindex authentication
+@cindex nntp authentication
 @findex nntp-send-authinfo
 @findex nntp-send-mode-reader
 $B$O@\B3$,$G$-$?8e$K<B9T$5$l$^$9!#$=$l$O(B @acronym{NNTP} $B%5!<%P!<$K@\B3$7$?(B
@@ -20862,7 +20862,7 @@ Lars $B$,(B Gnus $B$K4X$7$FOC$r$7$F$$$k$H$-$K!"H`$K$h$C$F=q$+$l$?5-;v$N%9%3%"
 @example
 ((&
   ("from" "Lars Ingebrigtsen")
-  (1- ("from" "Reig Eigir Logge")))
+  (1- ("from" "Reig Eigil Logge")))
  -100000)
 @end example
 
@@ -27229,7 +27229,7 @@ Gnus $B$O$$$D$b0l$D$NJ}K!(B ($B$H%P%C%/%(%s%I(B) $B$r!"%K%e!<%9$rF@$k$?$a$N
 $B$NMM<0$O!"(BRFC1153 $B$G5,Dj$5$l$F$$$^$9!#(B
 
 @item $BJ,3d(B (splitting)
-@cindex splitting, terminolgy
+@cindex splitting, terminology
 @cindex mail sorting
 @cindex mail filtering (splitting)
 $B$"$k5,B'$K$h$C$F%a!<%k$r6hJ,$1$9$k9T0Y$G$9!#$H$-$I$-4V0c$C$F%a!<%k$N_I(B
