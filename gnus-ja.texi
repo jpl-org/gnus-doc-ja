@@ -14864,12 +14864,16 @@ Gnus は表示する記事を洗濯するために多すぎるほどの関数を提供していますが、
 @findex nnmail-remove-tabs
 すべての @samp{TAB} 文字を @samp{SPACE} 文字に変換します。
 
-@item nnmail-fix-eudora-headers
-@findex nnmail-fix-eudora-headers
+@item nnmail-ignore-broken-references
+@findex nnmail-ignore-broken-references
+@c @findex nnmail-fix-eudora-headers
 @cindex Eudora
-Eudora は壊れた @code{References} ヘッダーを作成しますが、
-@code{In-Reply-To} ヘッダーにはちゃんとしたものを入れます。この関数
-は @code{References} ヘッダーを取り除きます。
+@cindex Pegasus
+いくつかの MUA (例えば Eudora と Pegasus) は壊れた @code{References} ヘッ
+ダーを作成しますが、@code{In-Reply-To} ヘッダーにはちゃんとしたものを入
+れます。この関数は、ヘッダー部に正規表
+現 @code{nnmail-broken-references-mailers} に合致する行があったら、
+@code{References} ヘッダーを取り除きます。
 @end table
 
 @item nnmail-prepare-incoming-message-hook
@@ -26353,7 +26357,8 @@ Gnus は非常に変化に富んだプログラムと濾過の規則を使って、メールやニュー
 スの奔流から spam を抜き取ってしまうことができるようになりました。対応し
 ている方式は、RBL blocklists、bogofilter それにホワイト/ブラックリストで
 す。また SpamAssassin や Hashcash のような外部パッケージを容易に使うため
-の hook も新しくなりました。@xref{Thwarting Email Spam}.
+の hook も新しくなりました。@ref{Thwarting Email Spam} およ
+び @ref{Spam Package}.
 @c FIXME: @xref{Spam Package}?.  これは Misc の下にあるべきか?
 
 @item
