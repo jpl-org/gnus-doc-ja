@@ -19282,21 +19282,21 @@ nnimap)} です。
 ても良いでしょう。
 
 @lisp
-;;; @r{Gnus がどのようにニュースを取得するかを定義します。ここ}
-;;; @r{では ISP のサーバーから @acronym{NNTP} で取ってくることにします。}
+;; @r{Gnus がどのようにニュースを取得するかを定義します。ここ}
+;; @r{では ISP のサーバーから @acronym{NNTP} で取ってくることにします。}
 (setq gnus-select-method '(nntp "news.your-isp.com"))
 
-;;; @r{Gnus がどのようにメールを読むかを定義します。}
-;;; @r{ISP の @acronym{POP} サーバーからメールを読むことにします。}
+;; @r{Gnus がどのようにメールを読むかを定義します。}
+;; @r{ISP の @acronym{POP} サーバーからメールを読むことにします。}
 (setq mail-sources '((pop :server "pop.your-isp.com")))
 
-;;; @r{Gnus がメールをどのように格納するかを指定します。}
-;;; @r{nnml グループを使うことにします。}
+;; @r{Gnus がメールをどのように格納するかを指定します。}
+;; @r{nnml グループを使うことにします。}
 (setq gnus-secondary-select-methods '((nnml "")))
 
-;;; @r{Gnus をオフラインニュースリーダーにします。}
-;;; (gnus-agentize) ; @r{旧式の設定。}
-;;; (setq gnus-agent t) ; @r{現在のディフォルト。}
+;; @r{Gnus をオフラインニュースリーダーにします。}
+;; (gnus-agentize) ; @r{旧式の設定。}
+;; (setq gnus-agent t) ; @r{現在のディフォルト。}
 @end lisp
 
 基本的にはこれだけで良いはずです。これを @file{~/.gnus.el} ファイルに入
@@ -23256,16 +23256,17 @@ ding の規則より前に @code{spam-split} を発動することができません。
 を @code{spam-split} に渡すことによって行なわれます:
 
 @example
- nnimap-split-fancy '(|
-;;; @r{@code{spam-use-regex-headers} で検出された}
-;;; @r{spam は @samp{regex-spam} へ。}
-                      (: spam-split "regex-spam" 'spam-use-regex-headers)
-                      (any "ding" "ding")
-;;; @r{spam-split で検出された他のすべての spam は}
-;;; @r{@code{spam-split-group} へ。}
-                      (: spam-split)
-                      ;; @r{ディフォルトのメールボックス。}
-                      "mail")
+nnimap-split-fancy
+      '(|
+        ;; @r{@code{spam-use-regex-headers} で検出された}
+        ;; @r{spam は @samp{regex-spam} へ。}
+        (: spam-split "regex-spam" 'spam-use-regex-headers)
+        (any "ding" "ding")
+        ;; @r{spam-split で検出された他のすべての spam は}
+        ;; @r{@code{spam-split-group} へ。}
+        (: spam-split)
+        ;; @r{ディフォルトのメールボックス。}
+        "mail")
 @end example
 
 @noindent
