@@ -9239,11 +9239,15 @@ Parameters})$B!#(B
 
 @item gnus-article-emulate-mime
 @vindex gnus-article-emulate-mime
+@cindex uuencode
+@cindex yEnc
 @acronym{MIME} $B$G$O$J$$JL$N%(%s%3!<%G%#%s%0$N<jK!$,$"$j$^$9!#:G$b0lHLE*(B
 $B$J$N$O(B @samp{uuencode} $B$G$9$,!"(ByEncode $B$bIa5Z$7$F$-$F$$$^$9!#$3$NJQ?t$,(B
 $BHs(B-@code{nil} $B$K$J$C$F$$$k$H!"(BGnus $B$O%a%C%;!<%8$NK\J8$K$=$l$i$N%(%s%3!<(B
 $B%G%#%s%0$,8+$D$+$k$+$I$&$+$rD4$Y!"$b$7$"$C$?$J$i$P!"$=$l$i(B
 $B$r(B Gnus $B$N(B @acronym{MIME} $B5!9=$G=hM}$7$^$9!#%G%#%U%)%k%H$O(B @code{t} $B$G$9!#(B
+$B%G%3!<%I$G$-$k$N$OC10l$N(B yEnc $B$G%(%s%3!<%I$5$l$?%Q!<%H$@$1$G$9!#(BGnus $B$O(B
+$B%(%s%3!<%I$K$D$$$F$O%5%]!<%H$7$^$;$s!#(B
 
 @item gnus-unbuttonized-mime-types
 @vindex gnus-unbuttonized-mime-types
@@ -26291,6 +26295,14 @@ Oort ($B$3$N%j%j!<%9$K@hN)$D0BDj$G$O$J$$(B Gnus $B$N;^(B) $B$r;H$C$F$_$?$b$
 $B$$$&$3$H$G$9!#$=$l$i$O?7$?$K:n@.$5$l$^$9(B)$B!#8e=R$N9`L\$G!"0u(B (marks) $B$K4X(B
 $B$9$k$h$jB?$/$N>pJs$rFI$s$G2<$5$$!#%0%l!<%I$r2<$2$F$b0lHL$K$O=u$1$K$J$i$J(B
 $B$$$3$H$KCm0U$7$F2<$5$$!#(B
+
+@item
+Lisp $B%U%!%$%k$,%G%#%U%)%k%H$G(B @file{.../site-lisp/gnus/} $B$K%$%s%9%H!<%k(B
+$B$5$l$k$h$&$K$J$j$^$7$?!#0JA0$O(B @file{.../site-lisp/} $B$,%G%#%U%)%k%H$G$7(B
+$B$?!#2C$($F!"?7$7$$%$%s%9%H!<%i!<$OB>$K%$%s%9%H!<%k$5$l$F$$$k!"?7$7(B
+$B$$(B Gnus $B$h$jM%@h$5$l$k(B Gnus $B$r8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i$r<jF0$G<h$j(B
+$B=|$$$F$bNI$$$7!"(B@code{make remove-installed-shadows} $B$r;H$C$F:o=|$9$k$3(B
+$B$H$b$G$-$^$9!#(B
 
 @item
 MS $B%&%#%s%I%&%:$G(B Gnus $B$r%3%s%Q%$%k$7$F%$%s%9%H!<%k$9$k$?$a$N!"?7$7(B
