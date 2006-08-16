@@ -19,7 +19,7 @@ under the terms of the GNU Free Documentation License, Version 1.2 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
 Texts.  A copy of the license is included in the section entitled ``GNU
-Free Documentation License''.
+Free Documentation License.''.
 
 この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
 第 1.2 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
