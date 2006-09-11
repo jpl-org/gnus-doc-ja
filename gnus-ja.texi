@@ -6257,9 +6257,9 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @item / n
 @kindex / n ($B35N,(B)
 @findex gnus-summary-limit-to-articles
-$B35N,%P%C%U%!!<$r8=:_$N5-;v$K@)8B$7$^(B
-$B$9(B (@code{gnus-summary-limit-to-articles})$B!#%W%m%;%9(B/$B@\F,0z?t$N=,47$r;H(B
-$B$$$^$9(B (@pxref{Process/Prefix})$B!#(B
+$B35N,%P%C%U%!!<$r!"@\F,0z?t(B @samp{n} $B$G;XDj$5$l$?<!$N(B @samp{n} $B8D$N5-;v$K(B
+$B@)8B$7$^$9!#@\F,0z?t$,M?$($i$l$J$$$H!"Be$o$j$K%W%m%;%90u$,IU$$$F$$$k5-;v(B
+$B$K@)8B$7$^$9!#(B(@code{gnus-summary-limit-to-articles})$B!#(B
 
 @item / w
 @kindex / w ($B35N,(B)
