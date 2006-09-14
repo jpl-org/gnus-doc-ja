@@ -26761,8 +26761,10 @@ format=flowed のデコードは以前からできましたが、初期の版では説明の文書が
 @item
 @code{mm-fill-flowed} オプションで“format=flowed”メッセージを流動テキス
 トとして処理することをやめさせることができます。また、PGP 署名が埋め込ま
-れたメッセージを送信するとき、流動テキストの処理は行なわれません。(Gnus
-5.10.7 の新機能)
+れたメッセージを送信するとき、流動テキストの処理は行なわれません。
+@xref{Flowed text, ,流動テキスト, emacs-mime-ja, The Emacs MIME Manual}.
+(Gnus 5.10.7 の新機能)
+@c このエントリーは "No Gnus" 節にもあります。
 
 @item
 Gnus は RFC 2298 の開封確認要求の生成をサポートします。
