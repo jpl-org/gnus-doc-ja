@@ -907,20 +907,20 @@ This plain text part is an attachment.
       (nconc
        ;; Some charsets are just examples!
        '(("^cn\\." ;; Chinese
-	  (mm-coding-system-priorities
-	   '(iso-8859-1 cn-big5 chinese-iso-7bit utf-8)))
-	 ("^cz\\.\\|^pl\\." ;; Central and Eastern European
-	  (mm-coding-system-priorities '(iso-8859-2 utf-8)))
-	 ("^de\\." ;; German language
-	  (mm-coding-system-priorities '(iso-8859-1 iso-8859-15 utf-8)))
-	 ("^fr\\." ;; French
-	  (mm-coding-system-priorities '(iso-8859-15 iso-8859-1 utf-8)))
-	 ("^fj\\." ;; Japanese
-	  (mm-coding-system-priorities
-	   '(iso-8859-1 iso-2022-jp iso-2022-jp-2 shift_jis utf-8)))
-	 ("^ru\\." ;; Cyrillic
-	  (mm-coding-system-priorities
-	   '(koi8-r iso-8859-5 iso-8859-1 utf-8))))
+          (mm-coding-system-priorities
+           '(iso-8859-1 cn-big5 chinese-iso-7bit utf-8)))
+         ("^cz\\.\\|^pl\\." ;; Central and Eastern European
+          (mm-coding-system-priorities '(iso-8859-2 utf-8)))
+         ("^de\\." ;; German language
+          (mm-coding-system-priorities '(iso-8859-1 iso-8859-15 utf-8)))
+         ("^fr\\." ;; French
+          (mm-coding-system-priorities '(iso-8859-15 iso-8859-1 utf-8)))
+         ("^fj\\." ;; Japanese
+          (mm-coding-system-priorities
+           '(iso-8859-1 iso-2022-jp iso-2022-jp-2 shift_jis utf-8)))
+         ("^ru\\." ;; Cyrillic
+          (mm-coding-system-priorities
+           '(koi8-r iso-8859-5 iso-8859-1 utf-8))))
        gnus-parameters))
 @end lisp
 
