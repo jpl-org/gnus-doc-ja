@@ -894,6 +894,18 @@ This plain text part is an attachment.
 @acronym{MML} の @code{charset} タグを使って、メッセージ毎にそれで指定し
 た値をこの変数より優先させることもできます (@pxref{MML Definition})。
 
+@quotation
+訳注: 日本語環境とは @code{current-language-environment} 変数の値
+が @samp{Japanese} になっている環境のことです。日本語のメッセージのエン
+コードには伝統的に @code{iso-2022-jp} が使われているのに対し、Emacs で定
+められた優先順位に基づくと @code{euc-jp} や @code{shift_jis} などが第一
+候補になってしまうので、この値が @code{nil} ではよろしくないのです。
+
+なお、ラテン語圏の人たちに宛てて送るメッセージが、彼らがデコードできない
+かもしれない @code{iso-2022-jp-2} などでエンコードされてしまうのを防ぐた
+めに、ディフォルト値の先頭に @code{iso-8859-1} が置かれています。
+@end quotation
+
 ニュースグループ階層ごとに優先するべき文字セットが異なるので、Gnus で
 は @code{mm-coding-system-priorities} の値を階層によって切り替える必要が
 あるでしょう。そのための例です:
@@ -923,18 +935,6 @@ This plain text part is an attachment.
            '(koi8-r iso-8859-5 iso-8859-1 utf-8))))
        gnus-parameters))
 @end lisp
-
-@quotation
-訳注: 日本語環境とは @code{current-language-environment} 変数の値
-が @samp{Japanese} になっている環境のことです。日本語のメッセージのエン
-コードには伝統的に @code{iso-2022-jp} が使われているのに対し、Emacs で定
-められた優先順位に基づくと @code{euc-jp} や @code{shift_jis} などが第一
-候補になってしまうので、この値が @code{nil} ではよろしくないのです。
-
-なお、ラテン語圏の人たちに宛てて送るメッセージが、彼らがデコードできない
-かもしれない @code{iso-2022-jp-2} などでエンコードされてしまうのを防ぐた
-めに、ディフォルト値の先頭に @code{iso-8859-1} が置かれています。
-@end quotation
 
 @item mm-content-transfer-encoding-defaults
 @vindex mm-content-transfer-encoding-defaults
