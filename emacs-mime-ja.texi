@@ -894,6 +894,36 @@ This plain text part is an attachment.
 @acronym{MML} の @code{charset} タグを使って、メッセージ毎にそれで指定し
 た値をこの変数より優先させることもできます (@pxref{MML Definition})。
 
+ニュースグループ階層ごとに優先するべき文字セットが異なるので、Gnus で
+は @code{mm-coding-system-priorities} の値を階層によって切り替える必要が
+あるでしょう。そのための例です:
+
+@c 優先されるべき文字セットの訂正を歓迎します。de、fr および fj は正しい
+@c はずですが、それら以外については不確かです (したがって、それらは単な
+@c る例です):
+@lisp
+(add-to-list 'gnus-newsgroup-variables 'mm-coding-system-priorities)
+(setq gnus-parameters
+      (nconc
+       ;; Some charsets are just examples!
+       '(("^cn\\." ;; Chinese
+	  (mm-coding-system-priorities
+	   '(iso-8859-1 cn-big5 chinese-iso-7bit utf-8)))
+	 ("^cz\\.\\|^pl\\." ;; Central and Eastern European
+	  (mm-coding-system-priorities '(iso-8859-2 utf-8)))
+	 ("^de\\." ;; German language
+	  (mm-coding-system-priorities '(iso-8859-1 iso-8859-15 utf-8)))
+	 ("^fr\\." ;; French
+	  (mm-coding-system-priorities '(iso-8859-15 iso-8859-1 utf-8)))
+	 ("^fj\\." ;; Japanese
+	  (mm-coding-system-priorities
+	   '(iso-8859-1 iso-2022-jp iso-2022-jp-2 shift_jis utf-8)))
+	 ("^ru\\." ;; Cyrillic
+	  (mm-coding-system-priorities
+	   '(koi8-r iso-8859-5 iso-8859-1 utf-8))))
+       gnus-parameters))
+@end lisp
+
 @quotation
 訳注: 日本語環境とは @code{current-language-environment} 変数の値
 が @samp{Japanese} になっている環境のことです。日本語のメッセージのエン
