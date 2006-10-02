@@ -2477,6 +2477,10 @@ Gnus $B$ODL>o!"(B@code{gnus-activate-level} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%
 $B$l$i$NL?Na$O$9$Y$F!"?75,$K:n@.$7$?%0%k!<%W$r%]%$%s%H0LCV$KA^F~$7$^(B
 $B$9(B---@code{gnus-subscribe-newsgroup-method} $B$O;2>H$5$l$^$;$s!#(B
 
+$B$3$l$i%0%k!<%W$rJT=8$9$k%3%^%s%I72$G9T$J$C$?JQ99$O(B @file{~/.newsrc.eld}
+(@code{gnus-startup-file}) $B$K3JG<$5$l$^$9!#Be$o$j$N<jCJ$H$7$F!"JQ(B
+$B?t(B @code{gnus-parameters} $B$bMQ0U$5$l$F$$$^$9(B (@pxref{Group Parameters})$B!#(B
+
 @table @kbd
 @item G m
 @kindex G m ($B%0%k!<%W(B)
