@@ -22299,10 +22299,9 @@ Gnus は利用者がすることを憶えておいて、利用者がすることの逆を行なうこと
 @node Image Enhancements
 @section 画像の拡張
 
-XEmacs それに Emacs 21@footnote{MS ウィンドウズの Emacs 21 はまだ画像を
-サポートしていません。} は絵やその種のものを表示することができるので、
-Gnus はこれを利用することにしました。
-
+XEmacs それに v21 以上の Emacs 絵やその種のものを表示することができ
+る@footnote{MS ウィンドウズの Emacs 21 は画像をサポートしていません。
+Emacs 22 はします。}ので、Gnus はこれを利用することにしました。
 @menu
 * X-Face::                      ファンキーでちっちゃな白黒の絵を表示する
 * Face::                        よりファンキーでちっちゃなカラーの絵を表示する
@@ -24697,6 +24696,7 @@ Spam の学習: (spam-stat-process-spam-directory "~/Mail/mail/spam")
 @table @kbd
 @item C-c C-m C-a
 @findex gnus-dired-attach
+@cindex attachments, selection via dired
 Dired で印を付けたものを添付ファイルとして送信しま
 す (@code{gnus-dired-attach})。どの message バッファーに添付するかを尋ね
 られます。

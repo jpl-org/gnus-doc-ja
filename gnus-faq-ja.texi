@@ -154,11 +154,15 @@ Gnus はどこで、どうやって取得することができますか?
 
 @subsubheading 回答
 
-リリースされた最新版の Gnus は Emacs 21 に含まれていないので、
-@uref{http://www.gnus.org/dist/gnus.tar.gz} から、または匿
-名 ftp で @uref{http://www.gnus.org/dist/gnus.tar.gz} か
-ら Gnus の tarball を取得する必要があります。Emacs ではなくて XEmacs を
-使っているのなら、XEmacs のパッケージシステムを使うことができます。
+Gnus は Emacs や XEmacs のリリースとは別に、独自にリリースされます。その
+ため Emacs に同梱されている版や XEmacs パッケージにある版は、最新ではな
+いかもしれません (例えば Emacs 20 に同梱されている Gnus 5.9 は、使用期限
+が切れています)。
+@c
+リリースされた最新版
+の Gnus は、@uref{http://www.gnus.org/dist/gnus.tar.gz} から、または匿
+名 ftp で @uref{ftp://ftp.gnus.org/pub/gnus/gnus.tar.gz} から手に入れる
+ことができます。
 
 @node [1.4]
 @subsubheading 質問 1.4
