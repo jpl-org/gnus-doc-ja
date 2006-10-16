@@ -22299,7 +22299,7 @@ Gnus は利用者がすることを憶えておいて、利用者がすることの逆を行なうこと
 @node Image Enhancements
 @section 画像の拡張
 
-XEmacs それに v21 以上の Emacs 絵やその種のものを表示することができ
+XEmacs それに v21 以上の Emacs は絵やその種のものを表示することができ
 る@footnote{MS ウィンドウズの Emacs 21 は画像をサポートしていません。
 Emacs 22 はします。}ので、Gnus はこれを利用することにしました。
 @menu
