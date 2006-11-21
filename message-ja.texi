@@ -1516,8 +1516,9 @@ Newsgroups などが空だった場合) に、何をするかを設定します。
 @item message-generate-hashcash
 @vindex message-generate-hashcash
 メッセージのための @samp{X-Hashcash} ヘッダーを計算して付加すべきかどう
-かを指示するブール変数 (@code{nil} か非-@code{nil}) です。
-@xref{Hashcash, ,Hashcash, gnus-ja, The Gnus Manual}.
+かを指示する変数です。@xref{Hashcash, ,Hashcash, gnus-ja, The Gnus
+Manual}.  @symbol{opportunistic} にすると、ユーザーを待たせない場合に限
+り、ヘッダーを作ります。
 @end table
 
 @node Mail Variables
