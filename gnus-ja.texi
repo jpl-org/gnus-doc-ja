@@ -10923,14 +10923,15 @@ Gnus $B$O%X%C%@!<$NJB$YBX$((B (sort) $B$b9T$J$$$^$9(B ($B$3$l$O%G%#%U%)%k%H
 @code{To} $BMs$,8=:_$N%0%k!<%W$N(B @code{to-list} $B%Q%i%a!<%?!<$HF1$8$b$N$7$+(B
 $B4^$s$G$$$J$$>l9g$K$O>C5n$7$^$9!#(B
 @item cc-list
-@code{CC} $BMs$,8=:_$N%0%k!<%W$N(B @code{to-list} $B%Q%i%a!<%?!<$HF1$8$b$N$7$+(B
+@code{Cc} $BMs$,8=:_$N%0%k!<%W$N(B @code{to-list} $B%Q%i%a!<%?!<$HF1$8$b$N$7$+(B
 $B4^$s$G$$$J$$>l9g$K$O>C5n$7$^$9!#(B
 @item date
 $B$=$N5-;v$,2a5n;0F|0JFb$N$b$N$G$"$l$P!"(B@code{Date} $BMs$r>C5n$7$^$9!#(B
 @item long-to
-@code{To} $BMs$,$"$^$j$K$bD9$$>l9g$K$O>C5n$7$^$9!#(B
+@code{To} $BMs$*$h$S(B/$B$^$?$O(B @code{Cc} $BMs$,$"$^$j$K$bD9$$>l9g$K$O>C5n$7$^$9!#(B
 @item many-to
-@code{To} $BMs$,0l$D$h$j$bB?$1$l$P!"$=$l$i$r$9$Y$F>C5n$7$^$9!#(B
+@code{To} $BMs$*$h$S(B/$B$^$?$O(B @code{Cc} $BMs$,0l$D$h$j$bB?$1$l$P!"$=$l$i$r$9$Y(B
+$B$F>C5n$7$^$9!#(B
 @end table
 
 $B$3$l$i$N$&$A$N;0$D$NMWAG$rF~$l$?$1$l$P!"$3$s$JIw$K$J$j$^$9(B:
@@ -22340,20 +22341,25 @@ Emacs 22 $B$O$7$^$9!#(B}$B$N$G!"(BGnus $B$O$3$l$rMxMQ$9$k$3$H$K$7$^$7$?!#(
 $B@Z$J%W%m%0%i%`$r%$%s%9%H!<%k$7$F$"$k$3$H$,I,MW$G$9!#$"$J$?$N(B Emacs $B$,<+(B
 $BA0$G2hA|$NI=<($r%5%]!<%H$7$F$$$k$J$i$P!"%G%#%U%)%k%H$G(B @code{From} $B%X%C(B
 $B%@!<$NA0$K4i$,I=<($5$l$^$9!#(BEmacs $B$,<+A0$G(B @code{X-Face} $B$r%5%]!<%H$7$F(B
-$B$$$J$$>l9g!"(BGnus $B$O(B @code{pbmplus} $B%Q%C%1!<%8$H$=$NCg4V$N30It%W%m%0%i%`(B
-$B$r;H$C$F(B @code{X-Face} $B%X%C%@!<$rJQ49$7$h$&$H$7$^$9!#(B@code{X-Face} $B$r%5(B
-$B%]!<%H$9$k$h$&$K%3%s%Q%$%k$5$l$F$$$k(B XEmacs $B$OB.$$$G$9!#2hA|$r%5%]!<%H$7(B
-$B$F$$$J$$(B Emacs $B$G$O!"%G%#%U%)%k%H$G$OI=<($N$?$a$N=hM}(B
+$B$$$J$$>l9g!"(BGnus $B$O(B @code{pbmplus} $B%Q%C%1!<%8$H$=$NCg4V$N30It%W%m%0%i(B
+$B%`(B ($B2<5-;2>H(B) $B$r;H$C$F(B @code{X-Face} $B%X%C%@!<$rJQ49$7$h$&$H$7$^$9!#(B
+@code{X-Face} $B$r%5%]!<%H$9$k$h$&$K%3%s%Q%$%k$5$l$F$$$k(B XEmacs $B$OB.$$$G$9!#(B
+$B2hA|$r%5%]!<%H$7$F$$$J$$(B Emacs $B$G$O!"%G%#%U%)%k%H$G$OI=<($N$?$a$N=hM}(B
 $B$r(B @code{display} $B$H$$$&%W%m%0%i%`$K0Q$M$^$9!#(B
 
-GNU/Linux $B%7%9%F%`$N>l9g!"(BImageMagick $B%Q%C%1!<%8$N(B @code{display} $B%W%m%0(B
-$B%i%`$r;H$$$^$9!#30It%W%m%0%i%`$H$7$F$O(B @code{netpbm}$B!"(B
-@code{libgr-progs} $B$*$h$S(B @code{compface} $B$N$h$&$JL>A0$N$b$N$rC5$7$^$9!#(B
+GNU/Linux $B%7%9%F%`$N>l9g!"(BImageMagick $B%Q%C%1!<%8$K4^$^$l$F$$(B
+$B$k(B @code{display} $B%W%m%0%i%`$r;H$$$^$9!#30It%W%m%0%i%`$H$7$F(B
+$B$O(B @code{netpbm}$B!"(B@code{libgr-progs} $B$*$h$S(B @code{compface} $B$N$h$&$JL>A0(B
+$B$N$b$N$rC5$7$^$9!#(BWindows $B$G$O(B @url{http://gnuwin32.sourceforge.net} $B$K(B
+$B$"$k(B @code{netpbm} $B$*$h$S(B @code{compface} $B%Q%C%1!<%8$r;H$C$F$bNI$$$G$9!#(B
+@code{PATH} $B4D6-JQ?t$K(B @code{bin} $B%G%#%l%/%H%j!<$rDI2C$9$kI,MW$,$"$j$^$9!#(B
+@c $B<B:]$K$O0J2<$N(B DLL $B$H%P%$%J%j!<$@$1$,I,MW$H;W$o$l$^$9(B: compface1.dll
+@c uncompface.exe libnetpbm10.dll icontopbm.exe $B$G$9!#(B
 
-$B$3$l$r@)8f$9$k$N$O(B @code{gnus-article-x-face-command} $BJQ?t$G$9!#$3$NJQ?t(B
-$B$,J8;zNs$J$i$P!"$3$NJ8;zNs$,%5%V%7%'%k$G<B9T$5$l$^$9!#4X?t$J$i$P!"$3$N4X(B
-$B?t$,4i$r0z?t$H$7$F8F$P$l$^$9!#$b(B
-$B$7(B @code{gnus-article-x-face-too-ugly} ($B$3$l$O@55,I=8=$G(B
+$BJQ?t(B @code{gnus-article-x-face-command} $B$G!"(B@code{X-Face} $B%X%C%@!<$rI=<((B
+$B$9$k$?$a$K2?$N%W%m%0%i%`$r;H$&$+$r@)8f$7$^$9!#$3$NJQ?t$,J8;zNs$J$i$P!"$3(B
+$B$NJ8;zNs$,%5%V%7%'%k$G<B9T$5$l$^$9!#4X?t$J$i$P!"$3$N4X?t$,4i$r0z?t$H$7$F(B
+$B8F$P$l$^$9!#$b$7(B @code{gnus-article-x-face-too-ugly} ($B$3$l$O@55,I=8=$G(B
 $B$9(B) $B$,(B @code{From} $BMs$K9gCW$9$l$P!"4i$OI=<($5$l$^$;$s!#(B
 
 ($BCm(B: $BJQ?t(B/$B4X?tL>$K$O(B @code{xface} $B$G$O$J$/(B @code{x-face} $B$,;H$o$l$^$9!#(B)
