@@ -11706,6 +11706,10 @@ ISP $B$,(B @acronym{POP}-before-@acronym{SMTP} $B$NG'>Z$rMW5a$7$F$$$k>l9g$KM-
 
 $B$"$J$?$NI,MW$K1~$8$FJQ99$7$F2<$5$$!#(B
 
+@code{gnus-message-highlight-citation} $B$r(B @code{t} $B$K@_Dj$9$k$3$H$K$h$C(B
+$B$F!"(Bmessage $B%b!<%I$N%P%C%U%!!<$G$b5-;v%P%C%U%!!<$HF1MM$K!"0zMQ$5$l$?J8$N(B
+$B%l%Y%k$N0c$$$K1~$8$?%O%$%i%$%H$,9T$J$o$l$^$9!#(B
+
 @node Archived Messages
 @section $B%a%C%;!<%8$NJ]4I(B
 @cindex archived messages
