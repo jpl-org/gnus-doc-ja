@@ -2797,6 +2797,7 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 
 @item auto-expire
 @cindex auto-expire
+@cindex expiring mail
 $B%0%k!<%W%Q%i%a!<%?!<$K(B @code{(auto-expire . t)} $B$N$h$&$JMWAG$,$"$l$P!"$9(B
 $B$Y$F$N4{FI5-;v$O4|8B@Z$l>C5n$5$l$k$h$&$K0u$rIU$1$i$l$^$9!#B>$NJ}K!$O!"(B
 @xref{Expiring Mail}.
@@ -2805,6 +2806,7 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 
 @item total-expire
 @cindex total-expire
+@cindex expiring mail
 $B%0%k!<%W%Q%i%a!<%?!<$K(B @code{(total-expire . t)} $B$N$h$&$JMWAG$,$"$l$P!"(B
 $B4{FI5-;v$O!"4|8B@Z$l>C5n$N0u$,IU$$$F$$$J$/$F$b$9$Y$F4|8B@Z$l>C5n=hM}$r;\(B
 $B$5$l$^$9!#Cm0U$7$F;HMQ$7$F2<$5$$!#L$FI5-;v!"0uIU$-5-;v!"J]N15-;v$O4|8B@Z(B
@@ -3420,6 +3422,7 @@ kill $B$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#
 @item C-c C-x
 @kindex C-c C-x ($B%0%k!<%W(B)
 @findex gnus-group-expire-articles
+@cindex expiring mail
 $B8=:_$N%0%k!<%W$N4|8B@Z$l>C5n2DG=$J5-;v$KBP$7$F(B ($B$b$7$"$l$P(B) $B$9$Y$F4|8B@Z(B
 $B$l>C5n$N=hM}$r9T$J$$$^$9(B (@code{gnus-group-expire-articles})$B!#$3$l$O!"$=(B
 $B$N%0%k!<%W$K$7$P$i$/B8:_$7$F$$$?4|8B@Z$l>C5n2DG=$J$9$Y$F$N5-;v$r>C5n$9$k(B
@@ -3428,6 +3431,7 @@ kill $B$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#
 @item C-c C-M-x
 @kindex C-c C-M-x ($B%0%k!<%W(B)
 @findex gnus-group-expire-all-groups
+@cindex expiring mail
 $B$9$Y$F$N%0%k!<%W$N$9$Y$F$N4|8B@Z$l>C5n2DG=$J5-;v$KBP$7$F!"4|8B@Z$l>C5n$N(B
 $B=hM}$r9T$J$$$^$9!#(B(@code{gnus-group-expire-all-groups})$B!#(B
 @end table
@@ -3775,6 +3779,7 @@ Gnus
 @item C-c C-x
 @kindex C-c C-x ($B%H%T%C%/(B)
 @findex gnus-topic-expire-articles
+@cindex expiring mail
 ($B$b$7$"$l$P(B) $B8=:_$N%0%k!<%W$+%H%T%C%/$+$N$9$Y$F$N4|8B@Z$l>C5n2DG=5-;v$r(B
 $B4|8B@Z$l>C5n$7$^$9(B (@code{gnus-topic-expire-articles})$B!#(B(@pxref{Expiring
 Mail})$B!#(B
@@ -9953,6 +9958,7 @@ pick $B%b!<%I$G$N35N,9T$NMM<0$OI8=`$NMM<0$H$O>/$70c$$$^$9!#$=$l$>$l$N9T$N(B
 @item B e
 @kindex B e ($B35N,(B)
 @findex gnus-summary-expire-articles
+@cindex expiring mail
 $B8=:_$N%0%k!<%W$N$9$Y$F$N4|8B@Z$l>C5n2DG=$J5-;v$K$D$$$F!"4|8B@Z$l>C5n$N=h(B
 $BM}(B (@code{gnus-summary-expire-articles}) $B$r9T$J$$$^$9!#$3$l$O!"$=$N%0%k!<(B
 $B%W$K$7$P$i$/B8:_$7$F$$$?4|8B@Z$l>C5n2DG=$J$9$Y$F$N5-;v$r>C5n$9$k$H$$$&$3(B
@@ -9961,6 +9967,7 @@ pick $B%b!<%I$G$N35N,9T$NMM<0$OI8=`$NMM<0$H$O>/$70c$$$^$9!#$=$l$>$l$N9T$N(B
 @item B C-M-e
 @kindex B C-M-e ($B35N,(B)
 @findex gnus-summary-expire-articles-now
+@cindex expiring mail
 $B%0%k!<%W$N$9$Y$F$N4|8B@Z$l>C5n2DG=$J5-;v$r:o=|$7$^(B
 $B$9(B (@code{gnus-summay-expire-articles-now})$B!#$3$l$O!"8=:_$N%0%k!<%W$K$"(B
 $B$k(B @strong{$B$9$Y$F(B} $B$N4|8B@Z$l>C5n2DG=$J5-;v$,!"1J1s$K6u$NBg$-(B
@@ -14614,6 +14621,7 @@ nnml:mail.others:
 @node Expiring Mail
 @subsection $B%a!<%k$N4|8B@Z$l>C5n(B
 @cindex article expiry
+@cindex expiring mail
 
 $BEAE}E*$J%a!<%k%j!<%@!<$O!"4{FI$N0u$rIU$1$k$H%a!<%k$N5-;v$r2?$i$+$NJ}K!$G(B
 $B:o=|$9$k798~$,$"$j$^$9!#(BGnus $B$O%a!<%k$rFI$`$3$H$KBP$7$F!"4pK\E*$K0c$&J}(B
@@ -16548,6 +16556,7 @@ Gnus $B$K$OFs$D$N!V2D;k!W0u$,$"$j!"(B@acronym{IMAP} $B$K$O$O$?$C$?0l$D$@$H$$$
 @item nnimap-expunge-search-string
 @cindex expunging
 @vindex nnimap-expunge-search-string
+@cindex expiring @acronym{IMAP} mail
 $B$3$NJQ?t$K$O!"4|8B@Z$l>C5n$9$k$N$,K>$^$7$$5-;v$rC5$9$H$-$K%5!<%P!<$KAw$C(B
 $B$?(B @acronym{IMAP} $B$N8!:w%3%^%s%I$,F~$C$F$$$^$9!#%G%#%U%)%k%H(B
 $B$O(B @code{"UID %s NOT SINCE %s"} $B$G!"$3$3$G:G=i$N(B @code{%s} $B$O(B UID $B$N0lB7(B
@@ -16557,6 +16566,10 @@ Gnus $B$K$OFs$D$N!V2D;k!W0u$,$"$j!"(B@acronym{IMAP} $B$K$O$O$?$C$?0l$D$@$H$$$
 $B$1$G!"$=$l$O(B nnimap $B$K5-;v$NFbItE*$JF|IU$NBe$o$j$K(B Date: $B$r;H$&$h$&$K$5(B
 $B$;$^$9!#(B $B;H$&$3$H$,$G$-$kJ8;zNs$K4X$9$k$5$i$J$k>pJs$O!"(BRFC 2060 $B$N(B
 $BBh(B 6.4.4 $B>O$r8+$F2<$5$$!#(B
+
+$B$7$+$7$J$,$i(B @code{nnimap-search-uids-not-since-is-evil} $B$,??$K$J$C$F$$(B
+$B$k$H!"$3$NJQ?t$H$OL54X78$K%3%^%s%I(B
+$B$O(B @code{"UID NOT SINCE @var{date}"} $B$K$J$j$^$9!#(B
 
 @item nnimap-authinfo-file
 @vindex nnimap-authinfo-file
@@ -16580,6 +16593,48 @@ machine students.uio.no login larsi password geheimnis port imap
 $B%a!<%k%\%C%/%972$G?7Ce%a!<%k$rC5$9A0$K!"$=$l$i$rL$A*Br$K$7$^$9!#$$$/$D$+(B
 $B$N%5!<%P!<$,!"2?$i$+$N>u67$N85$G$3$l$rI,MW$H$9$k$h$&$G$9!#(BCourier
 1.7.1 $B$O$=$&$@$H$$$&Js9p$,$"$j$^$7$?!#(B
+
+@item nnimap-nov-is-evil
+@vindex nnimap-nov-is-evil
+@cindex Courier @acronym{IMAP} server
+@cindex @acronym{NOV}
+
+@acronym{NOV} $B%G!<%?%Y!<%9$r:n$i$J$$$+!"$^$?$O%m!<%+%k$N$b$N$r;H$$$^$9!#(B
+$B%G%#%U%)%k%H$O(B @code{gnus-agent} $B$NCM$G$9!#(B
+
+$BIaDL(B @acronym{NOV} $B%G!<%?%Y!<%9$r;H$&$H%X%C%@!<$N<hF@$,$H$F$bB.$/$J$j$^(B
+$B$9$,!"$"$k<o$N%5!<%P!<(B ($BFC$K$$$/$D$+$N(B Courier $B$NHG(B) $B$G$OHs>o$KCY(B
+$B$$(B @code{UID SEARCH UID} $B%3%^%s%I$r;H$$$^$9!#(BGnus $B%(!<%8%'%s%H$O!"$=$NCY(B
+$B$$%3%^%s%I$r;H$o$:$K(B @acronym{NOV} $B%G!<%?%Y!<%9$K>pJs$r%-%c%C%7%e$9$k$N(B
+$B$G!"$3$NJQ?t$N%G%#%U%)%k%HCM$O!"%(!<%8%'%s%H$,;H$o$l$k>l9g$O??$K!"$=$&$G(B
+$B$J$$>l9g$O56$K$J$j$^$9!#(B
+
+@item nnimap-search-uids-not-since-is-evil
+@vindex nnimap-search-uids-not-since-is-evil
+@cindex Courier @acronym{IMAP} server
+@cindex expiring @acronym{IMAP} mail
+
+@code{UID SEARCH UID @var{message numbers} NOT SINCE @var{date}} $B%3%^%s(B
+$B%I$r;H$o$J$$$h$&$K$7$^$9!#$=$l$O!"$"$k<o$N(B @acronym{IMAP} $B%5!<%P!<(B ($BFC$K(B
+$B$$$/$D$+$N(B Courier $B$NHG(B) $B$G$OHs>o$KCY$/$J$j$^$9!#Be$o$j(B
+$B$K(B @code{UID SEARCH SINCE @var{date}} $B$r;H$C$F!"(BGnus $B$G4|8B@Z$l>C5n$9$k(B
+$B5-;v$N%j%9%H$+$iM>J,$J$b$N$r<h$j=|$-$^$9!#(B
+
+Gnus $B$,%a!<%k$N4|8B@Z$l>C5n(B (@pxref{Expiring Mail}) $B$r9T$&$H$-$O!"4|8B@Z(B
+$B$l>C5n$7$F$b$h$$5-;v$N%j%9%H$,;O$a$K$"$j!"(BIMAP $B%5!<%P!<$K!V$3$l$i$N5-;v(B
+$B$N$&$A!"0l=54V$h$j8E$$$b$N$O$I$l(B?$B!W$N$h$&$JLd$$$rH/$7$^$9!#$3$l$O40A4$K(B
+$B9gM}E*$J<ALd$K8+$($^$9$,!"8+$?$H$3$m$$$/$D$+$N(B IMAP $B%5!<%P!<$O!"$9$Y$F$N(B
+$B8E$$5-;v$K$D$$$F4|8B@Z$l>C5n$NBP>]$+$I$&$+$rD4$Y$k$N$G!"$=$l$KEz$($k$?$a(B
+$B$KD9$$;~4V$,$+$+$j$^$9!#IT;W5D$J$3$H$K!V(B@emph{$B$9$Y$F(B} $B$N5-;v$N$&$A!"0l=5(B
+$B4V$h$j8E$$$b$N$O$I$l(B?$B!W$H$$$&<ALd$NJ}$,$a$C$]$&B.$/Ez$($,JV$C$F$/$k$N$G!"(B
+$B$3$NJQ?t$r@_Dj$7$F(B Gnus $B$K$3$N<ALd$r=P$5$;$k$3$H$K$h$C$F!"K\Mh$N<ALd$=$N(B
+$B$b$N$X$NEz$rF@$k$3$H$,$G$-$k$N$G$9!#(B
+
+$B$3$NLdBj$O<B:]$K$"$J$?$KG&$S4s$C$F$/$k$G$7$g$&!#:G=i$N$3$m$O!"(BGnus $B$r@_(B
+$BDj$7$F!"$9$Y$F$,$&$^$/$$$C$?$H$7$F$b!"$$$C$?$sFs!A;0@iDL$N%a%C%;!<%8$,N/(B
+$B$^$C$?$J$i$P!"$"$J$?$O(B Gnus $B$NCY$$$3$H$r$N$N$7$j$O$8$a$k$G$7$g$&!#0lJ}!"(B
+$B$"$J$?$,BgNL$NEE;R%a!<%k$r$?$C$?0l=54V$G<u$1<h$k$N$G$"$l$P!"$3$NJQ?t$r@_(B
+$BDj$9$k$H(B Gnus $B$H(B IMAP $B%5!<%P!<4V$NDL?.NL$NA}Bg$r>7$/$G$7$g$&!#(B
 @end table
 
 @menu
@@ -16755,7 +16810,7 @@ Nnmail $B$GBP1~$9$k$b$N(B: @code{nnmail-split-fancy}.
 
 @node Expiring in IMAP
 @subsection IMAP $B$G$N4|8B@Z$l>C5n(B
-@cindex expiring imap mail
+@cindex expiring @acronym{IMAP} mail
 
 @code{nnimap} $B$O40A4$J(B @code{nnmail} $BM3Mh$N%P%C%/%(%s%I$G$O$"$j$^$;$s$,!"(B
 $BI8=`E*$J$?$$$F$$$N4|8B@Z$l>C5n(B (@pxref{Expiring Mail}) $B$N5!G=$r%5%]!<%H(B
@@ -16773,6 +16828,10 @@ Nnmail $B$GBP1~$9$k$b$N(B: @code{nnmail-split-fancy}.
 $B$N$3$H$O!"%/%i%$%"%s%HFCM-$N%U%i%0$r915WE*$K%a%C%;!<%8$KJ]B8$9$k$3$H$r!"(B
 $B%5!<%P!<$,%5%]!<%H$7$J$1$l$P$J$i$J$$$3$H$b0UL#$7$^$9!#$?$$$F$$$O%5%]!<%H(B
 $B$7$^$9!#9,$$$K$b!#(B
+
+$B$b$7(B @acronym{IMAP} $B%a!<%k$N4|8B@Z$l>C5n$,$H$F$bCY$/46$8$i$l$k$N$J$i$P!"(B
+$B%5!<%P!<JQ?t(B @code{nnimap-search-uids-not-since-is-evil} $B$r@_Dj$9$k$3$H(B
+$B$r;n$7$F$_$F$/$@$5$$!#(B
 
 @table @code
 @item nnmail-expiry-wait
@@ -19008,7 +19067,7 @@ Variables}) $B$r@_Dj$9$k$3$H$,$G$-$^$9!#(BGnus $B$O$[$H$s$I3N$+$K$b$C$HCY$/$J
 @findex gnus-agent-expire-group
 @cindex agent expiry
 @cindex Gnus agent expiry
-@cindex expiry
+@cindex expiry, in Gnus agent
 
 $B%(!<%8%'%s%H%P%C%/%(%s%I(B @code{nnagent} $B$O4|8B@Z$l>C5n$r07$$$^$;$s!#$(!<(B
 $B$H!">/$J$/$H$bB>$N%P%C%/%(%s%I$N$h$&$K$=$l$r07$$$^$;$s!#$=$NBe$o$j$K!"(B
@@ -23530,9 +23589,6 @@ From Ted Zlatanov <tzz@@lifelogs.com>.
 ;; @r{$B>\:Y$O(B @file{gnus-registry.el} $B$r;2>H!#(B}
 (gnus-registry-initialize)
 (spam-initialize)
-
-;; @r{$B;d$O(B spam $B0u$rIU$1$k$N$K(B @kbd{C-s} $B$r9%$`!#(B}
-(define-key gnus-summary-mode-map "\C-s" 'gnus-summary-mark-as-spam)
 
 (setq
  spam-log-to-registry t ;; @r{Spam $B$N<+F08!=P$N$?$a!#(B}
