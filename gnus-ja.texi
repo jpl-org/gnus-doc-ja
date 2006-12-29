@@ -11713,9 +11713,10 @@ ISP $B$,(B @acronym{POP}-before-@acronym{SMTP} $B$NG'>Z$rMW5a$7$F$$$k>l9g$KM-
 
 $B$"$J$?$NI,MW$K1~$8$FJQ99$7$F2<$5$$!#(B
 
-@code{gnus-message-highlight-citation} $B$r(B @code{t} $B$K@_Dj$9$k$3$H$K$h$C(B
-$B$F!"(Bmessage $B%b!<%I$N%P%C%U%!!<$G$b5-;v%P%C%U%!!<$HF1MM$K!"0zMQ$5$l$?J8$N(B
-$B%l%Y%k$N0c$$$K1~$8$?%O%$%i%$%H$,9T$J$o$l$^$9!#(B
+@vindex gnus-message-highlight-citation
+@code{gnus-message-highlight-citation} $B$r(B @code{t} $B$K@_Dj$9$l$P!"(B
+message $B%b!<%I$N%P%C%U%!!<$G$b5-;v%P%C%U%!!<$HF1MM$K!"0zMQ$5$l$?J8$N%l%Y(B
+$B%k$N0c$$$K1~$8$?%O%$%i%$%H$,9T$J$o$l$^$9!#(B
 
 @node Archived Messages
 @section $B%a%C%;!<%8$NJ]4I(B
@@ -24125,7 +24126,7 @@ SpamAssassin $B%X%C%@!<$K4p$E$$$F(B @code{spam-split} $B$KJ,3d$r9T$J$o$;$?$$$
 @code{spam-use-spamassassin} $B$r;H$&>l9g!"$3$l$rM-8z$K$7$F$O$$$1$^$;$s!#(B
 @end defvar
 
-@defvar spam-spamassassin-path
+@defvar spam-spamassassin-program
 $B$3$NJQ?t$O(B SpamAssassin $B$N<B9T7A<0$r;X$7$^$9!#(B@code{spamd} $B$r2TF/$7$F$$(B
 $B$k$J$i$P!"$h$jB.$$=hM}$N$?$a$K!"$3$NJQ?t$K(B @code{spamc} $B$N<B9T7A<0$r@_Dj(B
 $B$9$k$3$H$,$G$-$^$9!#(B@code{spamd}/@code{spamc} $B$N99$J$k>pJs$O!"(B
@@ -24164,7 +24165,7 @@ ifile $B$K4X$9$k8B$j!"$3$l$O(B spam $B%a%C%;!<%8$N%+%F%4%j!<$G$9!#<B:]$K;H$o$
 $B$F$*$-$?$$$G$7$g$&!#(B
 @end defvar
 
-@defvar spam-ifile-database-path
+@defvar spam-ifile-database
 $B$3$l$O(B ifile $B%G!<%?%Y!<%9$N%U%!%$%kL>$G$9!#%G%#%U%)%k%H$G$ODj5A$5$l$F$$(B
 $B$J$$$N$G!"(Bifile $B$O$=$l<+?H$N%G%#%U%)%k%H$N%G!<%?%Y!<%9L>$r;H$$$^$9!#(B
 @end defvar
