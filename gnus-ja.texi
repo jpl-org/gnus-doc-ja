@@ -6233,6 +6233,13 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 $B$9(B (@code{gnus-summary-limit-to-recipient})$B!#@\F,0z?t$,M?$($i$l$k$H!"9g(B
 $BCW$9$k5-;v$r=|30$7$^$9!#(B
 
+@item / S
+@kindex / S ($B35N,(B)
+@findex gnus-summary-limit-to-singletons
+$B35N,%P%C%U%!!<$rI=<($5$l$F$$$k%9%l%C%I$KB0$5$J$$5-;v$@$1$K@)8B$7$^(B
+$B$9(B (@code{gnus-summary-limit-to-singletons})$B!#@\F,0z?t$,M?$($i$l$k$H!"I=(B
+$B<($5$l$F$$$k%9%l%C%I$KB0$9$k5-;v$@$1$K@)8B$7$^$9!#(B
+
 @item / x
 @kindex / x ($B35N,(B)
 @findex gnus-summary-limit-to-extra
@@ -10353,6 +10360,12 @@ Gnus $B$N(B info $B$N@a(B (node) $B$K0\F0$7$^$9(B (@code{gnus-info-find-no
 @findex gnus-summary-insert-dormant-articles
 ($B8=:_$N%0%k!<%W$N$?$a$N(B) $B$9$Y$F$NJ]N15-;v$r35N,%P%C%U%!!<$KA^F~$7$^(B
 $B$9(B (@code{gnus-summary-insert-dormant-articles})$B!#(B
+
+@item Y t
+@kindex Y t ($B35N,(B)
+@findex gnus-summary-insert-ticked-articles
+($B8=:_$N%0%k!<%W$N$?$a$N(B) $B$9$Y$F$N2D;k5-;v$r35N,%P%C%U%!!<$KA^F~$7$^(B
+$B$9(B (@code{gnus-summary-insert-ticked-articles})$B!#(B
 @end table
 
 @node Really Various Summary Commands
@@ -11188,42 +11201,66 @@ Emacs @acronym{MIME} $B%^%K%e%"%k$G=R$Y$i$l$F$$$^$9!#(B
 $B$G==J,$G$7$g$&!#(B
 
 @table @code
+@vindex gnus-treat-buttonize
 @item gnus-treat-buttonize (t, integer)
+@vindex gnus-treat-buttonize-head
 @item gnus-treat-buttonize-head (head)
 
 @xref{Article Buttons}.
 
+@vindex gnus-treat-capitalize-sentences
 @item gnus-treat-capitalize-sentences (t, integer)
+@vindex gnus-treat-overstrike
 @item gnus-treat-overstrike (t, integer)
+@vindex gnus-treat-strip-cr
 @item gnus-treat-strip-cr (t, integer)
+@vindex gnus-treat-strip-headers-in-body
 @item gnus-treat-strip-headers-in-body (t, integer)
+@vindex gnus-treat-strip-leading-blank-lines
 @item gnus-treat-strip-leading-blank-lines (t, first, integer)
+@vindex gnus-treat-strip-multiple-blank-lines
 @item gnus-treat-strip-multiple-blank-lines (t, integer)
+@vindex gnus-treat-strip-pem
 @item gnus-treat-strip-pem (t, last, integer)
+@vindex gnus-treat-strip-trailing-blank-lines
 @item gnus-treat-strip-trailing-blank-lines (t, last, integer)
+@vindex gnus-treat-unsplit-urls
 @item gnus-treat-unsplit-urls (t, integer)
+@vindex gnus-treat-wash-html
 @item gnus-treat-wash-html (t, integer)
 
 @xref{Article Washing}.
 
+@vindex gnus-treat-date-english
 @item gnus-treat-date-english (head)
+@vindex gnus-treat-date-iso8601
 @item gnus-treat-date-iso8601 (head)
+@vindex gnus-treat-date-lapsed
 @item gnus-treat-date-lapsed (head)
+@vindex gnus-treat-date-local
 @item gnus-treat-date-local (head)
+@vindex gnus-treat-date-original
 @item gnus-treat-date-original (head)
+@vindex gnus-treat-date-user-defined
 @item gnus-treat-date-user-defined (head)
+@vindex gnus-treat-date-ut
 @item gnus-treat-date-ut (head)
 
 @xref{Article Date}.
 
+@vindex gnus-treat-from-picon
 @item gnus-treat-from-picon (head)
+@vindex gnus-treat-mail-picon
 @item gnus-treat-mail-picon (head)
+@vindex gnus-treat-newsgroups-picon
 @item gnus-treat-newsgroups-picon (head)
 
 @xref{Picons}.
 
+@vindex gnus-treat-display-smileys
 @item gnus-treat-display-smileys (t, integer)
 
+@vindex gnus-treat-body-boundary
 @item gnus-treat-body-boundary (head)
 
 @vindex gnus-body-boundary-delimiter
@@ -11232,41 +11269,63 @@ Emacs @acronym{MIME} $B%^%K%e%"%k$G=R$Y$i$l$F$$$^$9!#(B
 
 @xref{Smileys}.
 
+@vindex gnus-treat-display-x-face
 @item gnus-treat-display-x-face (head)
 
 @xref{X-Face}.
 
+@vindex gnus-treat-display-face
 @item gnus-treat-display-face (head)
 
 @xref{Face}.
 
+@vindex gnus-treat-emphasize
 @item gnus-treat-emphasize (t, head, integer)
+@vindex gnus-treat-fill-article
 @item gnus-treat-fill-article (t, integer)
+@vindex gnus-treat-fill-long-lines
 @item gnus-treat-fill-long-lines (t, integer)
+@vindex gnus-treat-hide-boring-headers
 @item gnus-treat-hide-boring-headers (head)
+@vindex gnus-treat-hide-citation
 @item gnus-treat-hide-citation (t, integer)
+@vindex gnus-treat-hide-citation-maybe
 @item gnus-treat-hide-citation-maybe (t, integer)
+@vindex gnus-treat-hide-headers
 @item gnus-treat-hide-headers (head)
+@vindex gnus-treat-hide-signature
 @item gnus-treat-hide-signature (t, last)
+@vindex gnus-treat-strip-banner
 @item gnus-treat-strip-banner (t, last)
+@vindex gnus-treat-strip-list-identifiers
 @item gnus-treat-strip-list-identifiers (head)
 
 @xref{Article Hiding}.
 
+@vindex gnus-treat-highlight-citation
 @item gnus-treat-highlight-citation (t, integer)
+@vindex gnus-treat-highlight-headers
 @item gnus-treat-highlight-headers (head)
+@vindex gnus-treat-highlight-signature
 @item gnus-treat-highlight-signature (t, last, integer)
 
 @xref{Article Highlighting}.
 
+@vindex gnus-treat-play-sounds
 @item gnus-treat-play-sounds
+@vindex gnus-treat-translate
 @item gnus-treat-translate
 @item gnus-treat-ansi-sequences (t)
+@vindex gnus-treat-x-pgp-sig
 @item gnus-treat-x-pgp-sig (head)
 
+@vindex gnus-treat-unfold-headers
 @item gnus-treat-unfold-headers (head)
+@vindex gnus-treat-fold-headers
 @item gnus-treat-fold-headers (head)
+@vindex gnus-treat-fold-newsgroups
 @item gnus-treat-fold-newsgroups (head)
+@vindex gnus-treat-leading-whitespace
 @item gnus-treat-leading-whitespace (head)
 
 @xref{Article Header}.
@@ -16569,8 +16628,7 @@ Gnus $B$K$OFs$D$N!V2D;k!W0u$,$"$j!"(B@acronym{IMAP} $B$K$O$O$?$C$?0l$D$@$H$$$
 $BBh(B 6.4.4 $B>O$r8+$F2<$5$$!#(B
 
 $B$7$+$7$J$,$i(B @code{nnimap-search-uids-not-since-is-evil} $B$,??$K$J$C$F$$(B
-$B$k$H!"$3$NJQ?t$H$OL54X78$K%3%^%s%I(B
-$B$O(B @code{"UID NOT SINCE @var{date}"} $B$K$J$j$^$9!#(B
+$B$k$H!"8e=R$N$h$&$K8!:wO@M}$,H?E>$5$l$k$N$G!"$3$NJQ?t$OL58z$K$J$j$^$9!#(B
 
 @item nnimap-authinfo-file
 @vindex nnimap-authinfo-file

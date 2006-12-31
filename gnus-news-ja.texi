@@ -90,6 +90,10 @@ SASL}.
 (@code{gnus-summary-limit-to-recipient}) をサポートします。
 @xref{Limiting}.
 
+@item @kbd{Y t} (@code{gnus-summary-insert-ticked-articles}) を使って、
+サーバーからすべての可視記事を取り寄せることができるようになりました。
+@xref{Summary Generation Commands}.
+
 @item Gnus は概略バッファーで新しい並べ替えコマンド @kbd{C-c C-s C-t}
 (@code{gnus-summary-sort-by-recipient}) をサポートします。
 @xref{Summary Sorting}.
