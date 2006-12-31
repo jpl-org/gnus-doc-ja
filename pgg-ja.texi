@@ -83,11 +83,19 @@ PGG を使うためには、少なくとも一つのプライバシー保護システムの実装が必要
 です。このマニュアルは、そのようなプログラムをすでに取得、インストールし
 ていて、基本的な使い方を知っていることを想定しています。
 
-ディフォルトでは PGG は GnuPG を使います。しかし、PGP (Pretty Good
-Privacy) のバージョン 2 または 5 もサポートします。もし、このようなシス
-テムに慣れていないのであれば、GNU Privacy Handbook (GPH) を先に読んでお
-くことを薦めます。GPH は @uref{http://www.gnupg.org/gph/} で見ることがで
-きます。
+ディフォルトでは PGG は GnuPG を使います。そのようなシステムに慣れていな
+いのであれば、@uref{http://www.gnupg.org/documentation/} にある GNU
+Privacy Handbook (GPH) に目を通すことを勧めます。
+
+GnuPG を使う場合には @code{gpg-agent} の利用を推奨します。それはバージョ
+ン 2.0 以降の GnuPG とともに配布されています。これは、どんなプロトコルを
+使うかとは無関係に秘密鍵を管理するデーモンで、パスフレーズを入力してキャッ
+シュするための最も安全な手段を提供します (@pxref{Caching passphrase})。
+それが稼働している場合、PGG はディフォルトで @code{gpg-agent} を使おうと
+します。@xref{Invoking GPG-AGENT,,,gnupg,Using the GNU Privacy Guard}.
+
+PGG は Pretty Good Privacy バージョン 2 またはバージョン 5 もサポートし
+ます。
 
 @node How to use
 @chapter 使い方
@@ -249,9 +257,8 @@ PGG は単純なメカニズムを使ってパスフレーズをキャッシュします。それを行な
 PGP 実装として GnuPG (gpg) を使う場合、キャッシュのため
 に @code{gpg-agent} を併用することができます。@footnote{実際に
 は @code{gpg-agent} はパスフレーズではなく秘密鍵をキャッシュします。もっ
-とも、この技術的な違いはユーザーには見えませんが。} @code{nil} ではない
-場合に、稼働している @code{gpg-agent} を使おうとします。ディフォルト
-は @code{nil} です。
+とも、この技術的な違いはユーザーには見えませんが。} ディフォルト値
+は @code{t} です。これを @code{nil} に設定することは推奨されません。
 @end defvar
 
 @node Default user identity
