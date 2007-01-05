@@ -902,6 +902,17 @@ Libidn} をインストールしておかなければなりません。
 子暗号化されたメッセージを作ることができます。Message (と言う
 か @acronym{MML}) は、現在 @acronym{PGP} (RFC 1991), @acronym{PGP/MIME}
 (RFC 2015/3156) および @acronym{S/MIME} をサポートしています。
+
+@menu
+* Signing and encryption::      署名と暗号化のコマンド
+* Using S/MIME::                S/MIME を使う
+* Using PGP/MIME::              PGP/MIME を使う
+* PGP Compatibility::           古い実装との互換性
+@end menu
+
+@node Signing and encryption
+@subsection 署名と暗号化のコマンド
+
 @acronym{MIME} パートに対してセキュリティーの操作を行なうため
 の @acronym{MML} への指示は、以下のように署名の場合は @kbd{C-c C-m s} キー
 マップを使って、暗号化の場合は @kbd{C-c C-m c} キーマップを使って行ない
@@ -989,6 +1000,7 @@ Libidn} をインストールしておかなければなりません。
 して。そこで、外部のどんなライブラリーまたはプログラムが必要かについて、
 およびいくつかの些細で一般的なヒントを述べることにします。
 
+@node Using S/MIME
 @subsection S/MIME を使う
 
 @emph{注意!}  この章は近代的な暗号法、@acronym{S/MIME}、さまざま
@@ -1054,6 +1066,7 @@ $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 る) のであれば、パスフレーズの入力を要求されたとき、単に @kbd{RET} を押
 して下さい。
 
+@node Using PGP/MIME
 @subsection PGP/MIME を使う
 
 @acronym{PGP/MIME} は @uref{http://www.gnupg.org/, GNU Privacy Guard} の
@@ -1061,7 +1074,47 @@ $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 る PGP 2.x と PGP 5.x もサポートします。PGP の実装への一つの Emacs イン
 ターフェースである (@pxref{Top, ,PGG, pgg-ja, PGG Manual}) が含まれてい
 ますが、Mailcrypt と Florian Weimer さんの @code{gpg.el} もサポートしま
-す。
+す。@xref{PGP Compatibility}.
+
+@cindex gpg-agent
+Message はデータを暗号化するために内部的に GnuPG (@command{gpg} コマン
+ド) を呼びます。また、ある場合 (例えば暗号の解読や署名を行なう場合) には、
+@command{gpg} はユーザーのパスフレーズを要求します。現
+在 @command{gpg} にパスフレーズを渡す方法として推奨されているのは、
+@command{gpg-agent} プログラムを使うことです。
+
+Emacs で @command{gpg-agent} を使うには、Emacs を起動する前にシェルで
+以下のコマンドを走らせる必要があります。
+
+@example
+eval `gpg-agent --daemon`
+@end example
+
+これは @command{gpg-agent} を実行するととも
+に @command{gpg} が @command{gpg-agent} と通信できるように、環境変
+数 @code{GPG_AGENT_INFO} を設定します。これを @file{.xsession} また
+は @file{.bash_profile} に書き込むのは良い考えでしょう。@xref{Invoking
+GPG-AGENT, , , gnupg, Using the GNU Privacy Guard}.
+
+いったん @command{gpg-agent} が立ち上がると、それは @command{gpg} のため
+に必要に応じてパスフレーズを尋ねます。X ウィンドウ・システムでは、パスフ
+レーズを入力するための対話手段が新たに出現します。その対話手段は PIN
+Entry (@command{pinentry} コマンド) によって提供されますが、バージョ
+ン 0.7.2 のものは単一の tty 上の Emacs とは協調して動作することができま
+せん。したがって、もし文字コンソールを使っているのであれば、パスフレーズ
+を gpg-agent のキャッシュに前もって入れておかなければならないでしょう。
+以下のコマンドを、そのために使うことができます。
+
+@example
+gpg --use-agent --sign < /dev/null > /dev/null
+@end example
+
+Lisp 変数 @code{pgg-gpg-use-agent} で @command{gpg-agent} を使うかどうか
+を制御します。@xref{Caching passphrase, ,パスフレーズをキャッシュする,
+pgg-ja, The PGG Manual}, も参照して下さい。
+
+@node PGP Compatibility
+@subsection 古い実装との互換性
 
 @vindex gpg-temp-directory
 注: もし @code{gpg.el} を使うのであれば、@code{gpg-temp-directory} で指
