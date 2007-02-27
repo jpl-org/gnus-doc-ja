@@ -12936,6 +12936,27 @@ default force yes
 があらかじめ用意されています。それらは二種類に分類することができ、直接接
 続するための関数群 (四つ) と間接的に接続するためのもの (三つ) があります。
 
+@item nntp-never-echoes-commands
+@vindex nntp-never-echoes-commands
+非-@code{nil} で @acronym{NNTP} サーバーがコマンドをエコーバックしないこ
+とを意味します。報告によると、ある種の @acronym{NNTPS} サーバーはコマン
+ドをエコーバックしないそうです。したがって、例え
+ば @code{nntp-open-connection-function} を @code{nntp-open-ssl-stream} に
+設定してあるそのようなサーバーのための選択方法の中で、この変数を
+非-@code{nil} に設定する必要があるでしょう。ディフォルト値
+は @code{nil} です。この変数の値 @code{nil} は、
+@code{nntp-open-connection-functions-never-echo-commands} 変数でくつがえ
+されることに注意して下さい。
+
+@item nntp-open-connection-functions-never-echo-commands
+@vindex nntp-open-connection-functions-never-echo-commands
+コマンドをエコーバックしない関数のリストです。
+@code{nntp-open-connection-function} に設定した関数がコマンドをエコーバッ
+クしないならば、それをこのリストに加えて下さい。
+@code{nntp-never-echoes-commands} 変数の @code{nil} でない値が、この変数
+をくつがえすことに注意して下さい。ディフォルト値
+は @code{(nntp-open-network-stream)} です。
+
 @item nntp-prepare-post-hook
 @vindex nntp-prepare-post-hook
 記事を投稿する直前に実行されるフックです。もし記事
