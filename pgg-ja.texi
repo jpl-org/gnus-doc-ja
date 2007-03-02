@@ -239,8 +239,60 @@ BLOWFISH などを選ぶことができますが、PGP のバージョン 2 は IDE
 @node Caching passphrase
 @section パスフレーズをキャッシュする
 
-PGG は単純なメカニズムを使ってパスフレーズをキャッシュします。それを行な
-うことは、ディフォルトで有効になっています。
+PGP 実装として GnuPG (gpg) を使うのであれば、パスフレーズの入力とキャッ
+シュ@footnote{@code{gpg-agent} は実際にはパスフレーズではなくて秘密鍵を
+キャッシュします。一方ユーザーの視点からは、この技術的な差異は見えませ
+ん。}するために @code{gpg-agent} というプログラムを使うことを推奨します。
+
+@defvar pgg-gpg-use-agent
+@code{nil} でない値では、可能な場合は常にいつでも @code{gpg-agent} を使
+おうとします。ディフィフォルトは @code{t} です。@code{gpg-agent} が稼働
+していないか、または GnuPG が現在の PGP 実装として選択されていない場合は、
+PGG 自身が持っているパスフレーズをキャッシュする仕組みが使われます (下記
+参照)。
+@end defvar
+
+PGG で @code{gpg-agent}を使うには、第一に @code{gpg-agent} が確実に稼働
+しているようにして下さい。例えば X Window System を走らせているのであれ
+ば、以下の行をあなたの @file{.xsession} ファイルに置くことによって、それ
+を確実にすることができます:
+
+@smallexample
+eval "$(gpg-agent --daemon)"
+@end smallexample
+
+@code{gpg-agent} の起動に関するさらに詳しいことは、@xref{Invoking
+GPG-AGENT,,,gnupg,Using the GNU Privacy Guard}.
+
+GnuPG のパスフレーズを必要とする PGG の機能を実行するときはいつも、
+GnuPG は @code{gpg-agent} とやり取りを行ない、それはあなたにパスフレーズ
+を入力することを要求します。しかし @code{gpg-agent} がその結果を「キャッ
+シュ」するので、次回以降の実行では再びパスフレーズの入力は要りません。
+(通常このキャッシュは一定時間経過後に期限切れ消去されます。これを変更す
+るには、@code{gpg-agent} を起動するときに @code{--default-cache-ttl} オ
+プションを使って下さい。)
+
+X Window System の環境では @code{gpg-agent} はパスフレーズの入力を要求す
+るためにグラフィックなウィンドウを開きます。しかし文字端末で Emacs を使っ
+ている場合は、@code{gpg-agent} は端末からの入力を受け取る上で問題があり
+ます。それが Emacs に送られてしまうからです。この問題に対処するための暫
+定的な対策のひとつは、@code{gpg-agent} を @code{--keep-tty} オプションと
+ともに Emacs とは別の端末で走らせることです。これは @code{gpg-agent} に、
+パスフレーズの入力にそれ自身の端末を使うようにさせます。
+
+@code{gpg-agent} を使わない場合、PGG は Emacs を介してパスフレーズの入力
+を要求します。これにはパスフレーズをキャッシュする仕組みがあり、それは変
+数 @code{pgg-read-passphrase} で制御されます (下記参照)。
+
+@code{gpg-agent} ではなく PGG でパスフレーズを扱う場合には安全上のリスク
+があります。Emacs の要求に従ってパスフレーズを入力すると、それは一時的
+に Emacs が実行しているメモリーに cleartext 文字列として格納されます。も
+しそのメモリーがディスクとの間で swap されると、理論上 root ユーザーはパ
+スフレーズを swap ファイルから抽出することができます。その上、そのシステ
+ムが廃棄されたり盗難に会った後も、その cleartext のパスフレーズが含まれ
+ている swap ファイルはディスクに残っているかもしれないのです。
+@code{gpg-agent} はメモリーを lock するような策をもって、この問題を回避
+しています。それは Emacs には実装されていません。
 
 @defvar pgg-cache-passphrase
 @code{nil} でなければ、パスフレーズを保持します。初期値は @code{t} です。
@@ -251,14 +303,6 @@ PGG は単純なメカニズムを使ってパスフレーズをキャッシュします。それを行な
 
 @defvar pgg-passphrase-cache-expiry
 パスフレーズを保持しておく時間を秒で指定します。
-@end defvar
-
-@defvar pgg-gpg-use-agent
-PGP 実装として GnuPG (gpg) を使う場合、キャッシュのため
-に @code{gpg-agent} を併用することができます。@footnote{実際に
-は @code{gpg-agent} はパスフレーズではなく秘密鍵をキャッシュします。もっ
-とも、この技術的な違いはユーザーには見えませんが。} ディフォルト値
-は @code{t} です。これを @code{nil} に設定することは推奨されません。
 @end defvar
 
 @node Default user identity
