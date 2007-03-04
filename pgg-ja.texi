@@ -282,7 +282,7 @@ X Window System $B$N4D6-$G$O(B @code{gpg-agent} $B$O%Q%9%U%l!<%:$NF~NO$rMW5a$
 
 @code{gpg-agent} $B$r;H$o$J$$>l9g!"(BPGG $B$O(B Emacs $B$r2p$7$F%Q%9%U%l!<%:$NF~NO(B
 $B$rMW5a$7$^$9!#$3$l$K$O%Q%9%U%l!<%:$r%-%c%C%7%e$9$k;EAH$_$,$"$j!"$=$l$OJQ(B
-$B?t(B @code{pgg-read-passphrase} $B$G@)8f$5$l$^$9(B ($B2<5-;2>H(B)$B!#(B
+$B?t(B @code{pgg-cache-passphrase} $B$G@)8f$5$l$^$9(B ($B2<5-;2>H(B)$B!#(B
 
 @code{gpg-agent} $B$G$O$J$/(B PGG $B$G%Q%9%U%l!<%:$r07$&>l9g$K$O0BA4>e$N%j%9%/(B
 $B$,$"$j$^$9!#(BEmacs $B$NMW5a$K=>$C$F%Q%9%U%l!<%:$rF~NO$9$k$H!"$=$l$O0l;~E*(B
