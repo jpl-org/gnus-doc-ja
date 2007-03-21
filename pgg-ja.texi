@@ -305,6 +305,14 @@ X Window System $B$N4D6-$G$O(B @code{gpg-agent} $B$O%Q%9%U%l!<%:$NF~NO$rMW5a$
 $B%Q%9%U%l!<%:$rJ];}$7$F$*$/;~4V$rIC$G;XDj$7$^$9!#(B
 @end defvar
 
+$B%Q%9%U%l!<%:$,Hs(B-ASCII $BJ8;z$r4^$s$G$$$k>l9g$O!"$=$l$r%(%s%3!<%I$9$k$?$a(B
+$B$N(B coding system $B$r;XDj$9$kI,MW$,$"$j$^$9!#(BGnuPG $B$O%Q%9%U%l!<%:$rJ8;zNs(B
+$B$G$O$J$/%P%$%HNs$H$7$F07$&$+$i$G$9!#(B
+
+@defvar pgg-passphrase-coding-system
+$B%Q%9%U%l!<%:$r%(%s%3!<%I$9$k$?$a$N(B coding system $B$G$9!#(B
+@end defvar
+
 @node Default user identity
 @section $B%G%#%U%)%k%H$N%f!<%6!<(B ID
 

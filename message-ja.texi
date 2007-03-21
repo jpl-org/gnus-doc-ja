@@ -2282,6 +2282,8 @@ to whom*, *news on group* $B$J$I(B) $B$7$F!"$=$NL>A0$N4{B8$N%P%C%U%!!<$GJT=8$
 $B$=$N4X?t$O?7$7$$%P%C%U%!!<L>$rJV$5$J$1$l$P$J$j$^$;$s!#(B
 @end table
 
+$B%G%#%U%)%k%HCM$O(B @code{unique} $B$G$9!#(B
+
 @item message-max-buffers
 @vindex message-max-buffers
 $B$3$NJQ?t$O$I$N$/$i$$8E$$%a%C%;!<%8%P%C%U%!!<$r;D$7$F$*$/$+$r;XDj$7$^$9!#(B
