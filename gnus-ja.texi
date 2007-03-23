@@ -69,7 +69,7 @@ license to the document, as described in section 6 of the license.
 \makeindex
 \begin{document}
 
-\newcommand{\gnusversionname}{No Gnus v0.5}
+\newcommand{\gnusversionname}{No Gnus v0.6}
 \newcommand{\gnuschaptername}{}
 \newcommand{\gnussectionname}{}
 
@@ -374,7 +374,7 @@ Gnus $B$r;H$&$3$H$K$h$C$F(B Emacs $B$G%K%e!<%9$r(B ($B$=$l$K%a!<%k$b(B) $
 $B$"$i$f$k6K0-$J<jCJ$r6n;H$7$F<j$KF~$l$k$3$H$,$G$-$^$9!#1?;n$7$r$7$F$_$h$&(B
 $B$H;W$&$J$i$P!"$9$Y$F$rF1;~$KMQ$$$k$3$H$b$G$-$^$9!#(B
 
-$B$3$N@bL@=q$O(B No Gnus v0.5 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.6 $B$KBP1~$7$^$9!#(B
 @end ifinfo
 @iftex
 
