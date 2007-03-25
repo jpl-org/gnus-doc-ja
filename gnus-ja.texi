@@ -20686,6 +20686,13 @@ Gnus を再起動して、@kbd{M-x nnml-generate-nov-databases} コマンド
 
 わかったかな? 簡単だよね。
 
+@vindex gnus-inhibit-slow-scoring
+ヘッダーまたは本文の遅いスコア付けは、変
+数 @code{gnus-inhibit-slow-scoring} を設定することによって禁止することが
+できます。もし @code{gnus-inhibit-slow-scoring} が正規表現だったら、グルー
+プがその正規表現に合致する場合に遅いスコア付けが禁止されます。それ
+が @code{t} だったら、すべてのグループで遅いスコア付けが禁止されます。
+
 @node Scoring Tips
 @section スコア付けの奥義
 @cindex scoring tips
