@@ -13681,8 +13681,8 @@ TMP=$HOME/Mail/tmp
 rm -f $TMP; $MOVEMAIL $MAIL $TMP >/dev/null && cat $TMP
 @end example
 
-あなたが使いたい @samp{movemail} に合わせて、スクリプトを書き換えて下さ
-い。
+あなたが使いたい @samp{movemail} と一時ファイルに合わせて、スクリプトを
+書き換えて下さい。
 
 @item directory
 @vindex nnmail-scan-directory-mail-source-once
