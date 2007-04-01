@@ -2044,6 +2044,13 @@ RFC1036bis $B$O!"=pL>$O$=$NA0$K(B @samp{-- } $B$N;0J8;z$@$1$N9T$,$"$k$Y$-$G$"
 $B$O(B @xref{Charset Translation, ,$BJ8;z%;%C%H$NJQ49(B, emacs-mime-ja, Emacs
 MIME Manual}, $B$r;2>H$7$F2<$5$$!#(B
 
+@item message-fill-column
+@vindex message-fill-column
+@cindex auto-fill
+$B%a%C%;!<%8%P%C%U%!!<$G9T$,$3$N7e?t$r1[$($k$H<+F0E*$J@^$jJV$7$r5/$3$9$Y$-!"(B
+$B%P%C%U%!!<%m!<%+%k$JCM$G$9!#(B@code{nil} $B$G$O$J$$CM(B ($B%G%#%U%)%k%H(B) $B$G%a%C(B
+$B%;!<%8%P%C%U%!!<$N<+F0@^$jJV$7$,(B ON $B$K$J$j$^$9!#(B
+
 @item message-signature-separator
 @vindex message-signature-separator
 $B=pL>$HK\J8$rJ,N%$9$k5-9f$K9gCW$9$k@55,I=8=$G$9!#%G%#%U%)%k%H(B

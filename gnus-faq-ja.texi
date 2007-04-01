@@ -1314,13 +1314,18 @@ Manual}) を参照して下さい。
 
 @subsubheading 回答
 
-こんなものを @file{~/.gnus.el} ファイルに入れて下さい:
+No Gnus の場合は自動で行を折り返す機能がディフォルトで ON になります。変
+数 @code{message-fill-column} を参照して下さい。
+
+他の Gnus の版では、こんなものを @file{~/.gnus.el} ファイルに入れて下さ
+い:
 
 @lisp
-(add-hook 'message-mode-hook
-          (lambda ()
-            (setq fill-column 72)
-            (turn-on-auto-fill)))
+(unless (boundp 'message-fill-column)
+  (add-hook 'message-mode-hook
+            (lambda ()
+              (setq fill-column 72)
+              (turn-on-auto-fill))))
 @end lisp
 
 @noindent

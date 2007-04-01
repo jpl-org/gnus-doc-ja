@@ -170,6 +170,10 @@ article buffer.  See @code{gnus-message-highlight-citation}.
 @item 記事バッファーでできるのと同様に、引用された文のレベルの違いに応じ
 たハイライトを行うことができます。
 @code{gnus-message-highlight-citation} を参照して下さい。
+
+@item Message モードでは @code{auto-fill-mode} がディフォルトで ON にな
+ります。@code{message-fill-column} を参照して下さい。@xref{Message
+Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 @end itemize
 
 @item バックエンドの変更
