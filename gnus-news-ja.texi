@@ -174,6 +174,9 @@ article buffer.  See @code{gnus-message-highlight-citation}.
 @item Message モードでは @code{auto-fill-mode} がディフォルトで ON にな
 ります。@code{message-fill-column} を参照して下さい。@xref{Message
 Headers, ,メッセージヘッダー, message-ja, Message Manual}.
+
+@item 署名ファイルを @code{message-signature-directory} 変数で指定するディ
+レクトリーに置くことができます。
 @end itemize
 
 @item バックエンドの変更
@@ -209,6 +212,14 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 
 @item nnml バックエンドではメッセージを圧縮するために @file{gzip} 以外の
 プログラムも使うことができます。@xref{Mail Spool}.
+
+@item nnml バックエンドではグループを圧縮することができます。
+
+関数 @code{gnus-group-compact-group} (グループバッファー
+の @kbd{G z} キー) および @code{gnus-server-compact-server} (サーバーバッ
+ファーの @kbd{z} キー) で呼び出すこの機能は、グループのすべての記事の番
+号を 1 から順に振り直して、すきまを取り除きます。その結果として、正しい
+全記事数を得ることができます (再びメッセージが削除されるまでは)。
 @end itemize
 
 @item 外見

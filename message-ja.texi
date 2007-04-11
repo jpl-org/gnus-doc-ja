@@ -2009,8 +2009,16 @@ Yank されたメッセージを字下げするための空白の数です。
 
 @item message-signature-file
 @vindex message-signature-file
-バッファーの最後に挿入される、署名の入っているファイルです。ディフォルト
-は @file{~/.signature} です。
+バッファーの最後に挿入される、署名の入っているファイルです。ディレクトリー
+が指定されていると、@code{message-signature-directory} の値はたとえ設定
+されていても無視されます。ディフォルトは @file{~/.signature} です。
+
+@item message-signature-directory
+@vindex message-signature-directory
+署名ファイルを置くディレクトリーの名前です。そういうファイルをたくさん持っ
+ているならば、例えば投稿様式 (Gnus posting styles) でそれらを切り替える
+際に役立ちます。もし @code{nil} だったら (それがディフォルト)、
+@code{message-signature-file} がディレクトリーも指定すると見なされます。
 
 @item message-signature-insert-empty-line
 @vindex message-signature-insert-empty-line
