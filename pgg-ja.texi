@@ -61,6 +61,7 @@ Free Documentation License.''.
 * How to use::                  とっとと使い始めよう
 * Architecture::                
 * Parsing OpenPGP packets::     
+* GNU Free Documentation License:: この文書の利用許諾契約書
 * Function Index::              
 * Variable Index::              
 @end menu
@@ -480,12 +481,19 @@ PGG は OpenPGP パケットに対応した独自のメッセージ解析を行ないます。
 @code{nil} でなかったら、パケットのチェックサムを検証しません。
 @end defvar
 
+@node GNU Free Documentation License
+@chapter GNU フリー文書利用許諾契約書
+
+訳注: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+非公式な日本語訳} があります。
+@include doclicense.texi
+
 @node Function Index
-@chapter Function Index
+@unnumbered Function Index
 @printindex fn
 
 @node Variable Index
-@chapter Variable Index
+@unnumbered Variable Index
 @printindex vr
 
 @summarycontents

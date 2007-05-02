@@ -94,6 +94,7 @@ Sieve はサーバー側でメールを濾過するための言語です。その言語は RFC
 * Examples ::             Sieve コードの片鱗
 * Manage Sieve API ::     「Sieve-管理」プロトコル API のインターフェース
 * Standards::             使われている RFC と作業文書の概略
+* GNU Free Documentation License:: この文書の利用許諾契約書
 * Index::                 関数および変数の索引
 @end menu
 
@@ -359,8 +360,15 @@ Sieve: メール濾過言語
 Sieve スクリプトを遠隔管理するためのプロトコル
 @end table
 
+@node GNU Free Documentation License
+@chapter GNU フリー文書利用許諾契約書
+
+訳注: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+非公式な日本語訳} があります。
+@include doclicense.texi
+
 @node Index
-@chapter Index
+@unnumbered Index
 @printindex cp
 
 @summarycontents

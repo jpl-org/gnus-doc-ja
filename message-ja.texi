@@ -87,6 +87,7 @@ Gnus $B$N$9$Y$F$N%a%C%;!<%8$N:n@.(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$O!"%a%C
 * Variables::         $B%a%C%;!<%8%P%C%U%!!<$N%+%9%?%^%$%:(B
 * Compatibility::     $B%a%C%;!<%8$r2<0L8_49$K$9$k(B
 * Appendices::        $B$b$C$H5;=QE*$J$3$H(B
+* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
 * Index::             $BJQ?t!"4X?t!"35G0$N:w0z(B
 * Key Index::         $B%a%C%;!<%8%b!<%I$N%-!<$N0lMw(B
 @end menu
@@ -2442,6 +2443,13 @@ Message $B$O;v<B>e$=$l<+?H$NJQ?t$7$+;H$o$:(B (*)$B!"8E$$(B @code{mail-} $BJ
 $B$,(B @samp{never} $B$G$J$$8B$j!"?7$7$$(B @code{Cc} $B%X%C%@!<$N4p$H$7$F;H$o$l$^(B
 $B$9!#(B
 @end table
+
+@node GNU Free Documentation License
+@chapter GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
+
+$BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+$BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+@include doclicense.texi
 
 @node Index
 @chapter Index

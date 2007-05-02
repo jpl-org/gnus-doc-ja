@@ -95,6 +95,7 @@ RFC2045 ($B%$%s%?!<%M%C%H!&%a%C%;!<%8$NK\J8$N=q<0(B), RFC2046 ($B%a%G%#%"%?%$
 * Interface Functions::   $B4pK\E*$J4X?t$NCj>]2=(B
 * Basic Functions::       $B%f!<%F%#%j%F%#!<$*$h$S4pK\E*$J2r@O$N$?$a$N4X?t(B
 * Standards::             $B;H$o$l$F$$$k(B RFC $B$H:n6HJ8=q$N35N,(B
+* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
 * Index::                 $B4X?t$*$h$SJQ?t$N:w0z(B
 @end menu
 
@@ -1887,6 +1888,13 @@ Content Type$B!#(B
 @item RFC2646
 $BN.F0%F%-%9%H$N$?$a$N(B text/plain $B=q<0%Q%i%a!<%?!<!#(B
 @end table
+
+@node GNU Free Documentation License
+@chapter GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
+
+$BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+$BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+@include doclicense.texi
 
 @node Index
 @chapter Index

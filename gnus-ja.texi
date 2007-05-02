@@ -413,6 +413,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 * Various::                  $B0lHLE*$J@_Dj(B
 * The End::                  $B$5$i$P!"$=$7$F$5$h$&$J$i(B
 * Appendices::               $BMQ8l!"(BEmacs $BF~Lg!"(B@acronym{FAQ}$B!"Nr;K!"FbIt9=B$(B
+* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
 * Index::                    $BJQ?t!"4X?t!"35G0$N:w0z(B
 * Key Index::                $B%-!<:w0z(B
 
@@ -8056,8 +8057,8 @@ Gnus $B$O%U%!%$%kL>$K4p$E$$$F7?$r?dB,$7$F$$$k$3$H$KCm0U$7$F2<$5$$!#(B
 @table @code
 @vindex gnus-cite-parse-max-size
 @item gnus-cite-parse-max-size
-$B5-;v$NBg$-$5$,$3$NJQ?t(B ($B%G%#%U%)%k%H$G$O(B 25000) $B$h$jBg$-$$5-;v$O!"0zMQJ8(B
-$B$N%O%$%i%$%H$,9T$J$o$l$^$;$s!#(B
+$B5-;v$NBg$-$5$,$3$NJQ?t(B ($B%G%#%U%)%k%H$G$O(B 25000) $B$N%P%$%H?t$h$jBg$-$$5-;v(B
+$B$O!"0zMQJ8$N%O%$%i%$%H$,9T$J$o$l$^$;$s!#(B
 
 @item gnus-cite-max-prefix
 @vindex gnus-cite-max-prefix
@@ -29257,6 +29258,13 @@ Gnus $B$O(B Emacs Lisp $B$K$h$C$F=q$+$l$F$$$F!"%$%s%?!<%W%j%?!<$G<B9T$5$l$k$?
 
 @page
 @include gnus-faq-ja.texi
+
+@node GNU Free Documentation License
+@chapter GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
+
+$BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+$BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+@include doclicense.texi
 
 @node Index
 @chapter Index
