@@ -164,14 +164,7 @@ Both characters must have the same length of multi-byte form."
 			  (beginning-of-line)
 			  (delete-region (point) (save-excursion
 						   (forward-line 1)
-						   (point)))))
-		    (goto-char (point-min))
-		    ;; Remove `@node' line having appeared in parent file.
-		    (if (re-search-forward
-			 "^@node GNU Free Documentation License" nil t)
-			(let ((start (match-beginning 0)))
-			  (forward-line 1)
-			  (delete-region start (point)))))))))
+						   (point))))))))))
 	  ;; Remove ignored areas.
 	  (goto-char (point-min))
 	  (while (re-search-forward "^@ignore[\t\r ]*$" nil t)
