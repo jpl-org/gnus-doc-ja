@@ -486,6 +486,7 @@ PGG は OpenPGP パケットに対応した独自のメッセージ解析を行ないます。
 
 訳注: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
 非公式な日本語訳} があります。
+
 @include doclicense.texi
 
 @node Function Index

@@ -29264,6 +29264,7 @@ Gnus $B$O(B Emacs Lisp $B$K$h$C$F=q$+$l$F$$$F!"%$%s%?!<%W%j%?!<$G<B9T$5$l$k$?
 
 $BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
 $BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+
 @include doclicense.texi
 
 @node Index

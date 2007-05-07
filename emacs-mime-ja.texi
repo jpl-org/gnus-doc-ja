@@ -1894,6 +1894,7 @@ Content Type。
 
 訳注: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
 非公式な日本語訳} があります。
+
 @include doclicense.texi
 
 @node Index

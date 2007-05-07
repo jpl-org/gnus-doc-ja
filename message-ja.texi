@@ -2449,6 +2449,7 @@ Message $B$O;v<B>e$=$l<+?H$NJQ?t$7$+;H$o$:(B (*)$B!"8E$$(B @code{mail-} $BJ
 
 $BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
 $BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+
 @include doclicense.texi
 
 @node Index
