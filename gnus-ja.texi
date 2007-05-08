@@ -5122,7 +5122,7 @@ Summary Buffer} を参照して下さい。
 記事の移動と選択に関連するいくつかの変数:
 
 @table @code
-@item gnus-auto-extended-newsgroup
+@item gnus-auto-extend-newsgroup
 @vindex gnus-auto-extend-newsgroup
 この変数が @code{nil} でないと、すべての移動命令は、記事が概略バッファー
 に表示されていない場合でも、前 (もしくは次) の記事に移動しようとします。
