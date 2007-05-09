@@ -10410,6 +10410,26 @@ Gnus の info の節 (node) に移動します (@code{gnus-info-find-no
 使うことによって、もっと便利なやり方でそれらのメッセージを読むことができ
 ます。
 
+変数 @code{gnus-auto-select-on-ephemeral-exit} はダイジェスト・グループ
+を出た後に、どの記事を選択すべきかを制御します。有効な値は次の通りです:
+
+@table @code
+@item next
+次の記事を選択します。
+
+@item next-unread
+次の未読記事を選択します。
+
+@item next-noselect
+カーソルを次の記事に移動します。これがディフォルトです。
+
+@item next-unread-noselect
+カーソルを次の未読記事に移動します。
+@end table
+
+これら以外の値だったり、次の (未読の) 記事が無かったら、ダイジェスト・グ
+ループに入る前に選択されていた記事が現れます。
+
 @item C-M-d
 @kindex C-M-d (概略)
 @findex gnus-summary-read-document
