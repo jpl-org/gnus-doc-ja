@@ -2073,6 +2073,11 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 $B%3%^%s%I$,<!$NL$FI%0%k!<%W$K0\F0$9$k$H8@$$D%$C$F$$$F$b$G$9!#%G%#%U%)%k%H(B
 $B$O(B @code{t} $B$G$9!#(B
 
+@vindex gnus-summary-next-group-on-exit
+$B35N,%P%C%U%!!<$r=P$?$H$-$K(B @code{gnus-summary-next-group-on-exit} $B$,(B
+@code{t} $B$@$C$?$i!"%0%k!<%W%P%C%U%!!<$G<!$NL$FI$N%0%k!<%W$K0\F0$7$^$9!#(B
+$B$=$l0J30$N>l9g$O=P$?%0%k!<%W$KN1$^$j$^$9!#%G%#%U%)%k%H$O(B @code{t} $B$G$9!#(B
+
 @node Selecting a Group
 @section $B%0%k!<%W$NA*Br(B
 @cindex group selection
