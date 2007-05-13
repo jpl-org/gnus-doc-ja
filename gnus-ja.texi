@@ -2078,6 +2078,13 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 @code{t} $B$@$C$?$i!"%0%k!<%W%P%C%U%!!<$G<!$NL$FI$N%0%k!<%W$K0\F0$7$^$9!#(B
 $B$=$l0J30$N>l9g$O=P$?%0%k!<%W$KN1$^$j$^$9!#%G%#%U%)%k%H$O(B @code{t} $B$G$9!#(B
 
+@quotation
+$BLuCm(B: @code{gnus-group-goto-unread} $B$,<!$NL$FI%0%k!<%W$+C1$K<!$N%0%k!<%W(B
+$B$N$I$A$i$K0\F0$9$k$+$r;XDj$9$k$N$KBP$7(B
+$B$F(B @code{gnus-summary-next-group-on-exit} $B$O0\F0$9$k$+$7$J$$$+$r;XDj$9$k(B
+$B$?$a$K;H$$$^$9!#(B
+@end quotation
+
 @node Selecting a Group
 @section $B%0%k!<%W$NA*Br(B
 @cindex group selection
