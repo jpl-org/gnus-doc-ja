@@ -2082,7 +2082,9 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 $BLuCm(B: @code{gnus-group-goto-unread} $B$,<!$NL$FI%0%k!<%W$+C1$K<!$N%0%k!<%W(B
 $B$N$I$A$i$K0\F0$9$k$+$r;XDj$9$k$N$KBP$7(B
 $B$F(B @code{gnus-summary-next-group-on-exit} $B$O0\F0$9$k$+$7$J$$$+$r;XDj$9$k(B
-$B$?$a$K;H$$$^$9!#(B
+$B$?$a$K;H$$$^$9!#$?$@$78e<T$O(B @kbd{q} ($B$^$?$O(B @kbd{Z Q},
+@code{gnus-summary-exit}) $B$G35N,%P%C%U%!!<$r=P$?$H$-$@$1$K8z2L$r5Z$\$7$^(B
+$B$9!#(B
 @end quotation
 
 @node Selecting a Group
