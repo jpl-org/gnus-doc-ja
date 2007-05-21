@@ -14359,7 +14359,7 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
    ;; @r{しますが、(ding) メーリングリストと他の (ding) 関連のメールの}
    ;; @r{ためのグループにはクロスポストしません。}
    (& (| (any "ding@@ifi\\.uio\\.no" "ding.list")
-         ("subject "ding" "ding.misc"))
+         ("subject" "ding" "ding.misc"))
       ;; @r{他のメーリングリスト@dots{}}
       (any "procmail@@informatik\\.rwth-aachen\\.de" "procmail.list")
       (any "SmartList@@informatik\\.rwth-aachen\\.de" "SmartList.list")
