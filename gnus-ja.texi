@@ -6271,6 +6271,13 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 $B$9(B (@code{gnus-summary-limit-to-recipient})$B!#@\F,0z?t$,M?$($i$l$k$H!"9g(B
 $BCW$9$k5-;v$r=|30$7$^$9!#(B
 
+@item / A
+@kindex / A ($B35N,(B)
+@findex gnus-summary-limit-to-address
+$B35N,%P%C%U%!!<$r!"$=$N(B From$B!"(BTo $B$^$?$O(B Cc $B%X%C%@!<$NFbMF$,M?$($i$l$?%"%I(B
+$B%l%9$H9gCW$9$k5-;v$K@)8B$7$^$9(B (@code{gnus-summary-limit-to-address})$B!#(B
+$B@\F,0z?t$,M?$($i$l$k$H!"9gCW$9$k5-;v$r=|30$7$^$9!#(B
+
 @item / S
 @kindex / S ($B35N,(B)
 @findex gnus-summary-limit-to-singletons
