@@ -11886,7 +11886,8 @@ Gnus はあなたが送ったメールとニュースを貯めておくためのいくつかの違った
 
 @vindex gnus-message-archive-method
 @code{gnus-message-archive-method} は、送ったメッセージを保存するために
-どの仮想サーバーを Gnus が使うかを指定します。ディフォルトは:
+どの仮想サーバーを Gnus が使うかを指定します。ディフォルト
+は @code{"arhive"} で、実際に使われるときに以下の方法に展開されます:
 
 @lisp
 (nnfolder "archive"
@@ -11896,10 +11897,25 @@ Gnus はあなたが送ったメールとニュースを貯めておくためのいくつかの違った
           (nnfolder-inhibit-expiry t))
 @end lisp
 
-しかし、どのメール選択方法でも使うことができま
-す (@code{nnml}, @code{nnmbox} などなど)。しかし @code{nnfolder} はこの
-ようなことをするのにとても好ましい選択方法です。ディフォルトで選択される
-ディレクトリーを好きでないならば、次のようにできます:
+@quotation
+@vindex gnus-update-message-archive-method
+注: このようなサーバーは、@code{"archive"} という名前のサーバーの実際の
+選択方法としてその後ずっと使えるようにするために (つま
+り @code{gnus-message-archive-method} が @code{"archive"} に設定された場
+合のために)、最初に @file{~/.newsrc.eld} ファイルに保存されます。もしそ
+れが一度保存されると、@code{gnus-message-archive-method} の値を後で変更
+しても、ディフォルトではそれは更新されません。したがっ
+て @code{"archive"} というサーバーが、いつでもこのよう
+な @code{nnfolder} サーバーを意味するとは限りません。保存される選択方法
+が常に @code{gnus-message-archive-method} の値を反映するようにしたい場合
+は、@code{gnus-update-message-archive-method} 変数を @code{nil} 以外の値
+に設定して下さい。この変数のディフォルト値は @code{nil} です。
+@end quotation
+
+@code{nnfolder} はこのようなことをするのには極めて適した選択方法なのです
+が、これに限らず @code{nnml} や @code{nnmbox} などの、どのメール選択方法
+でも使うことができます。ディフォルトで選択されるディレクトリーが気にいら
+なければ、次のようにすることができます:
 
 @lisp
 (setq gnus-message-archive-method
@@ -11911,12 +11927,10 @@ Gnus はあなたが送ったメールとニュースを貯めておくためのいくつかの違った
 
 訳注: 上記のような例は「意図した通りに動作しない」FAQ のネタになりつつあ
 り、不具合の原因が特定できない事例が少なくありません。例えば、同
-じ "archive" という名前の仮想サーバーを過去に使ったことがあると、それ
-が @file{~/.newsrc.eld} ファイルの中で @code{gnus-server-alist} 変数に登
-録されているかもしれません。それを削除するには @file{~/.newsrc.eld} ファ
-イルを手作業で書き換えなければなりませんが、かなり危険です。あるいは単に、
-同名の仮想サーバーを現在も使っているかもしれません。そのような場合は、別
-の名前を使う必要があります。
+じ @code{"archive"} という名前の仮想サーバーを過去に使ったことがあると、
+それが @file{~/.newsrc.eld} ファイルの中で @code{gnus-server-alist} 変数
+に登録されているかもしれません。あるいは単に、同名の仮想サーバーを現在も
+使っているかもしれません。そのような場合は、別の名前を使う必要があります。
 
 @vindex gnus-message-archive-group
 @cindex Gcc
