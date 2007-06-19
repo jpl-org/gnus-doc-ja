@@ -25036,6 +25036,16 @@ Gnus がデータを格納するほとんどのファイルとディレクトリーの名前の変数は、
 この変数は @code{gnus-verbose} と同様の効果をもたらしますが、Gnus 本体で
 はなく Gnus のバックエンドに対して適用されます。
 
+@item gnus-add-timestamp-to-message
+@vindex gnus-add-timestamp-to-message
+この変数は @code{gnus-verbose} と @code{gnus-verbose-backends} で制御さ
+れて出力されるメッセージに、時刻 (タイムスタンプ) を付加するかどうかを制
+御します。ディフォルト値は時刻を付加しないことを意味する @code{nil} です。
+@code{log} だったら @samp{*Messages*} バッファー (XEmacs で
+は @samp{ *Message-Log*} バッファー) に入るメッセージだけに時刻を付加し
+ます。もし @code{nil} でも @code{log} でもなければ、ログに入るメッセージ
+だけでなく、エコーエリアに表示されるものにも時刻を付加します。
+
 @item nnheader-max-head-length
 @vindex nnheader-max-head-length
 バックエンドが記事の連続したヘッダー部を読んでいるときは、できる限り少な
