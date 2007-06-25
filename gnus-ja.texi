@@ -7117,13 +7117,13 @@ Gnus はあなたが読むであろう記事よりもたくさんの記事を取得します。これは
 が @code{nil} であると、先行取得は行なわれません。
 
 @vindex gnus-async-prefetch-article-p
-@findex gnus-async-read-p
+@findex gnus-async-unread-p
 おそらく先行取得をしたくない記事がいくつかあるでしょう---例えば既読記事
 です。変数 @code{gnus-async-prefetch-article-p} は記事が先に取得されるか
 どうかを制御します。この変数に設定される関数は、問題の記事を先行取得する
 のであれば @code{nil} でない値を返さなければなりません。ディフォルトの関
-数は @code{gnus-async-read-p} で、これは既読記事には @code{nil} を返しま
-す。この関数は記事のデータ構造を唯一の引数として呼ばれます。
+数は @code{gnus-async-unread-p} で、これは既読記事には @code{nil} を返し
+ます。この関数は記事のデータ構造を唯一の引数として呼ばれます。
 
 例えば、100 行よりも短い未読記事だけを先に取得したいのであれば、次のよう
 にできます:
