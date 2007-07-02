@@ -15,7 +15,7 @@
 @end direntry
 
 @copying
-Copyright (c) 2004, 2005  Free Software Foundation, Inc.
+Copyright (c) 2004, 2005, 2007  Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -271,7 +271,7 @@ Gnus $B$N3+H/$ODL>o(B CVS $B$N44$G9T$J$o$l$^$9!#$9$J$o$A!"3+H/$9$k$3$H$H?7$7$
 
 Gnus $B$N0BDjHG$N%j%j!<%9$O!":G=*E*$K$O(B Emacs $B$N0lIt$K$J$j$^$9!#Nc$((B
 $B$P(B Gnus 5.8 $B$O(B (Gnus 5.9 $B$K2~>N$7$F(B) Emacs 21 $B$N0lIt$K$J$j$^$7$?!#(B
-5.10 $B7ONs$O(B (Gnus 5.11 $B$H$7$F(B) Emacs 22 $B$N0lIt$K$J$k$G$7$g$&!#(B
+5.10 $B7ONs$O(B Gnus 5.11 $B$H$7$F(B Emacs 22 $B$N0lIt$K$J$j$^$7$?!#(B
 
 @section $BF14|(B
 @c
