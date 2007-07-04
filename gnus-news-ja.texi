@@ -177,6 +177,11 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 
 @item 署名ファイルを @code{message-signature-directory} 変数で指定するディ
 レクトリーに置くことができます。
+
+@item "○○さん writes:" のような行の形式を、オプショ
+ン @code{message-citation-line-format} で指定することができます。これを
+使うには @code{message-citation-line-function} 変数
+を @code{message-insert-formated-citation-line} に設定する必要があります。
 @end itemize
 
 @item バックエンドの変更
