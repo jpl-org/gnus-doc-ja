@@ -13646,15 +13646,21 @@ Commands}) を使って下さい。
 @code{nnmail-split-header-length-limit} の制限より長いヘッダー行は、分割
 関数の処理対象から除外されます。
 
-@vindex nnmail-mail-splitting-charset
 @vindex nnmail-mail-splitting-decodes
-ディフォルトでは分割の処理においてヘッダーを @acronym{MIME} デコードする
-ので、非-@acronym{ASCII} 文字列に合致させることができます。変
-数 @code{nnmail-mail-splitting-charset} で、デコードするときのディフォル
-トの文字セットを指定します。
-@code{nnmail-mail-splitting-decodes} を @code{nil} に束縛することによっ
-てまったくデコードを行なわないようにすることができ、それは、生のヘッダー
-のデータを元に記事の合致を判定したい場合には役立つでしょう。
+@vindex nnmail-mail-splitting-charset
+ディフォルトでは分割の処理においてヘッダーを @acronym{MIME} デコードしな
+いので、非-@acronym{ASCII} 文字列に合致させることができません。しかし、
+生のヘッダーのデータを元に記事の合致を判定したい場合には役立つでしょう。
+それを可能にするには @code{nnmail-mail-splitting-decodes} 変数
+を @code{nil} ではない値に設定して下さい。加え
+て @code{nnmail-mail-splitting-decodes} が @code{nil} ではない場合に、
+@code{nnmail-mail-splitting-charset} 変数の値が @acronym{MIME} ではない
+エンコードされた文字列 (訳注: @code{iso-2022-jp} でエンコードされた生の
+データなど) をデコードするために使われます。ディフォルトは @code{nil} で、
+@acronym{MIME} ではないエンコードされた文字列をデコードしません。あなた
+にとって好都合な値はおそらく @code{undecided} か、またはあなたが興味があ
+るメールで通常使われている文字セット (訳注: 実際は coding system) になる
+でしょう。
 
 @vindex nnmail-resplit-incoming
 ディフォルトでは入ってくるすべてのメッセージに対して分割の処理が行なわれ
