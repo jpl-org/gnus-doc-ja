@@ -11517,6 +11517,7 @@ Gnus はサーバーからその記事を取ってこようとしま
 @table @code
 @item gnus-single-article-buffer
 @vindex gnus-single-article-buffer
+@cindex article buffers, several
 @code{nil} 以外であれば、すべてのグループに対して同じ記事バッファーを使
 用します (これはディフォルトです)。@code{nil} であれば、各グループ毎の固
 有の記事バッファーを持つようになります。
