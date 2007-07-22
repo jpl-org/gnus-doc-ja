@@ -16376,6 +16376,14 @@ Language) $B$G%m!<%I(B/$B%;!<%V$9$k$?$a$K!"0J2<$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9
 $B$O(B @code{mm-universal-coding-system} $B$NCM(B ($B$=$N%G%#%U%)%k%H$O(B Emacs $B$G(B
 $B$O(B @code{emacs-mule}$B!"(BXEmacs $B$G$O(B @code{escape-quoted}) $B$G$9!#(B
 
+@item nnrss-ignore-article-fields
+@vindex nnrss-ignore-article-fields
+$B$$$/$D$+$N%U%#!<%I$O!"5-;v%U%#!<%k%I$NNc$($P%3%a%s%H?t$r!"$=$NB8B34|4V$r(B
+$BDL$8$F@d$($:99?7$7$^$9!#$7$+$7$=$l$O%m!<%+%k$KJ]B8$7$?$b$N$H$N:90[$r@8$`(B
+$B$N$G!"%5!<%P!<$K?7$7$$5-;v$,$"$k$h$&$K2r<a$5$l$F$7$^$$$^$9!#$$$/$D$+$N(B
+$B%U%#!<%k%I$rL5;k$7$F$3$l$rKI$0$?$a$K$O!"$3$NJQ?t$KL5;k$9$k$Y$-%U%#!<%k%I(B
+$B$N%j%9%H$r@_Dj$7$F2<$5$$!#%G%#%U%)%k%H$O(B @code{'(slash:comments)} $B$G$9!#(B
+
 @item nnrss-use-local
 @vindex nnrss-use-local
 @findex nnrss-generate-download-script
@@ -16408,12 +16416,12 @@ Language) $B$G%m!<%I(B/$B%;!<%V$9$k$?$a$K!"0J2<$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9
 @end lisp
 
 $B0J2<$N%3!<%I$O!"35N,%P%C%U%!!<$+$iD>@\(B nnrss $B$N(B url $B$r%*!<%W%s$9$k$N$KJX(B
-$BMx$+$b$7$l$^$;$s!#(B
+$BMx$G$7$g$&!#(B
 
 @lisp
 (require 'browse-url)
 
-(defun browse-nnrss-url( arg )
+(defun browse-nnrss-url (arg)
   (interactive "p")
   (let ((url (assq nnrss-url-field
                    (mail-header-extra
