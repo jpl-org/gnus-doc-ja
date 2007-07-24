@@ -52,6 +52,9 @@ license to the document, as described in section 6 of the license.
 @end quotation
 @end copying
 
+@c Node ``Interface Functions'' uses Latin-1 characters
+@c @documentencoding ISO-8859-1
+@c
 @dircategory Emacs
 @direntry
 * Emacs MIME-ja: (emacs-mime-ja). Emacs MIME de/composition library (Japanese).
@@ -1246,8 +1249,8 @@ Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにしました。これ
 @item mail-encode-encoded-word-region
 @findex mail-encode-encoded-word-region
 領域にある @acronym{ASCII} 以外の語をエンコードします。例え
-ば @samp{Na@"{@dotless{i}}ve} は @samp{=?iso-8859-1?Q?Na=EFve?=} として
-エンコードされます。
+ば @samp{Na,Aove} は @samp{=?iso-8859-1?Q?Na=EFve?=} としてエンコードされ
+ます。
 
 訳注: ここで言わんとしていることを確かめるには、以下を @code{eval} して
 下さい:
@@ -1269,7 +1272,7 @@ Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにしました。これ
 
 @example
 (mail-encode-encoded-word-string
- "This is na@"{@dotless{i}}ve, baby")
+ "This is na,Aove, baby")
 @result{} "This is =?iso-8859-1?Q?na=EFve,?= baby"
 @end example
 
@@ -1284,7 +1287,7 @@ Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにしました。これ
 @example
 (mail-decode-encoded-word-string
  "This is =?iso-8859-1?Q?na=EFve,?= baby")
-@result{} "This is na@"{@dotless{i}}ve, baby"
+@result{} "This is na,Aove, baby"
 @end example
 @end table
 
