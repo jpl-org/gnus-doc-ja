@@ -1252,13 +1252,6 @@ Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにしました。これ
 ば @samp{Na,Aove} は @samp{=?iso-8859-1?Q?Na=EFve?=} としてエンコードされ
 ます。
 
-訳注: ここで言わんとしていることを確かめるには、以下を @code{eval} して
-下さい:
-
-@lisp
-(rfc2047-decode-string "=?iso-8859-1?Q?Na=EFve?=")
-@end lisp
-
 @item mail-encode-encoded-word-buffer
 @findex mail-encode-encoded-word-buffer
 現在のバッファーにある @acronym{ASCII} 以外の語をエンコードします。この
