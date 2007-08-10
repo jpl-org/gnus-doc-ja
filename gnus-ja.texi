@@ -13007,6 +13007,33 @@ default force yes
 く取得が遅くなることに注意して下さい。この変数が @code{nil} ならば、
 @code{nntp} は要求を分割しません。ディフォルトは 5 です。
 
+@item nntp-xref-number-is-evil
+@vindex nntp-xref-number-is-evil
+ユーザーが指定した @code{Message-ID} を持っている記事、または現在のもの
+の親記事の @code{Message-ID} を持っている記事を参照すると
+き (@pxref{Finding the Parent})、Gnus はそれがどこにあるかを知るため
+に @acronym{NNTP} サーバーに @code{HEAD} コマンドを送ります。そしてサー
+バーは、@code{Xref} ヘッダーにグループと記事番号の対を含んでいるデータを
+返します。そのデータが、その記事が現在のグループにあることを示すなら、通
+常 Gnus はその記事を参照するのに記事番号を使用します、そうでなけれ
+ば @code{Message-ID} を使いますが。ところが、あるニュースサーバー (例え
+ば Diablo を実行するもの) は、同じ記事群を有する複数のエンジンを運転して
+いて、それらの間では記事番号が同期されていません。その場
+合 @code{Xref} ヘッダーに現われる記事番号は、どのエンジンが選ばれるかに
+よって変化するので、例えば現在のグループにある親記事を参照することができ
+ません。そのようなサーバーに接続するのであれば、この変数を @code{nil} で
+はない値に設定して下さい。そうすれば Gnus は記事番号を使いません。例えば:
+
+@lisp
+(setq gnus-select-method
+      '(nntp "newszilla"
+             (nntp-address "newszilla.example.com")
+             (nntp-xref-number-is-evil t)
+             @dots{}))
+@end lisp
+
+このサーバー変数のディフォルト値は @code{nil} です。
+
 @item nntp-prepare-server-hook
 @vindex nntp-prepare-server-hook
 @acronym{NNTP} サーバーに接続を試みる前に実行するフックです。
