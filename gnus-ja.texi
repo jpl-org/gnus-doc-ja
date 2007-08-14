@@ -505,6 +505,7 @@ Summary Buffer
 * Asynchronous Fetching::       Gnus は記事を先に取得することができる
 * Article Caching::             キャッシュに記事を貯めておける
 * Persistent Articles::         記事を期限切れ消去しなくさせる
+* Sticky Articles::             再利用しない記事バッファー
 * Article Backlog::             すでに読んだ記事を残しておく
 * Saving Articles::             記事の保存をカスタマイズする方法
 * Decoding Articles::           Gnus は一連の (uu)encode された記事を扱える
@@ -4517,6 +4518,7 @@ customize-apropos RET gnus-summary-tool-bar} を試してみて下さい。この機
 * Asynchronous Fetching::       Gnus は記事を先に取得することができる
 * Article Caching::             キャッシュに記事を貯めておける
 * Persistent Articles::         記事を期限切れ消去しなくさせる
+* Sticky Articles::             再利用しない記事バッファー
 * Article Backlog::             すでに読んだ記事を残しておく
 * Saving Articles::             記事の保存をカスタマイズする方法
 * Decoding Articles::           Gnus は一連の (uu)encode された記事を扱える
@@ -7282,6 +7284,54 @@ Gnus はものごとを正しくするための二つのコマンドを提供します。
 @lisp
 (setq gnus-use-cache 'passive)
 @end lisp
+
+@node Sticky Articles
+@section 粘着記事
+@cindex sticky articles
+
+記事を選択するとき、変数 @code{gnus-single-article-buffer} の値によって
+は現在の記事バッファーが再利用されます。それが @code{nil} 以外の値だと、
+すべての記事が同じ記事バッファーを再利用しますが、@code{nil} だった場合
+はグループ毎に独自の記事バッファーを持ちます。
+
+このことは、あるグループで同じに一つより多い記事バッファーを持つことはで
+きないことを意味します。でも、時には今度のクリスマス・パーティーの段取り
+のために、お母さん、お父さん、叔母さん、叔父さん、さらに 17 人のいとこか
+ら最近届いたすべての電子メールを表示したいこともあるでしょう。
+
+こんなときに粘着記事が役に立ちます。粘着記事バッファーは原理的には普通の
+記事バッファーなのですが、他の記事を選択しても再利用されません。記事を粘
+着質にするには、このコマンドを使って下さい:
+
+@table @kbd
+@item A S
+@kindex A S (概略)
+@findex gnus-sticky-article
+現在の記事を粘着質にします。接頭引数付きで呼ぶと、この粘着記事バッファー
+の名前を尋ねます。
+@end table
+
+粘着記事バッファーを閉じるには、次のコマンドを使って下さい:
+
+@table @kbd
+@item q
+@kindex q (記事)
+@findex bury-buffer
+この粘着記事バッファーを、すべてのバッファーのリストの最後尾に置きます。
+
+@item k
+@kindex k (記事)
+@findex gnus-kill-sticky-article-buffer
+この粘着記事バッファーを削除します。
+@end table
+
+すべての粘着記事バッファーを削除するには、このコマンドを使えば良いでしょ
+う:
+
+@defun gnus-kill-sticky-article-buffers ARG
+すべての粘着記事バッファーを削除します。接頭引数を与えると、確認を求めま
+す。
+@end defun
 
 @node Article Backlog
 @section 記事のバックログ
@@ -25740,6 +25790,7 @@ Raja R. Harinath,
 P. E. Jareth Hein,
 ひさしげ けんじ,
 Scott Hofmann,
+Tassilo Horn,
 Marc Horowitz,
 Gunnar Horrigmo,
 Richard Hoskins,
