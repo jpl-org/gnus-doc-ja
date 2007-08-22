@@ -924,19 +924,19 @@ Libidn} をインストールしておかなければなりません。
 @kindex C-c C-m s s
 @findex mml-secure-message-sign-smime
 
-@acronym{S/MIME} を使って現在のメッセージに電子書名します。
+@acronym{S/MIME} を使って現在のメッセージに電子署名します。
 
 @item C-c C-m s o
 @kindex C-c C-m s o
 @findex mml-secure-message-sign-pgp
 
-@acronym{PGP} を使って現在のメッセージに電子書名します。
+@acronym{PGP} を使って現在のメッセージに電子署名します。
 
 @item C-c C-m s p
 @kindex C-c C-m s p
 @findex mml-secure-message-sign-pgpmime
 
-@acronym{PGP/MIME} を使って現在のメッセージに電子書名します。
+@acronym{PGP/MIME} を使って現在のメッセージに電子署名します。
 
 @item C-c C-m c s
 @kindex C-c C-m c s
