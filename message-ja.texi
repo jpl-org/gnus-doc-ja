@@ -831,11 +831,11 @@ Message $B$O(B @acronym{MIME} $B$KBP1~$7$?Aw?.MQ$N%(!<%8%'%s%H$G$9!#$U$D$&MxM
 $BF0E*$K(B @code{Content-Type} $B$*$h$S(B @code{Content-Transfer-Encoding} $B%X%C(B
 $B%@!<$rIU2C$7$^$9!#(B
 
-@findex mml-attach
+@findex mml-attach-file
 @kindex C-c C-a
 $BMxMQ<T$,(B @acronym{MIME} $B$G%^%k%A%Q!<%H$r;H$$$?$$:G$b0lHLE*$J$b$N$O!"Aw=P(B
 $B$9$k%a!<%k$K!VE:IU!W$rIU$12C$($k$3$H$G$7$g$&!#$3$l$O(B @kbd{C-c C-a} $BL?(B
-$BNa(B (@kbd{M-x mml-attach}) $B$G9T$J$&$3$H$,$G$-!"$=$N:]%U%!%$%kL>(B
+$BNa(B (@kbd{M-x mml-attach-file}) $B$G9T$J$&$3$H$,$G$-!"$=$N:]%U%!%$%kL>(B
 $B$H(B @acronym{MIME} $B%?%$%W$,?R$M$i$l$^$9!#(B
 
 @vindex mml-dnd-protocol-alist
