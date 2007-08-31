@@ -14144,7 +14144,8 @@ Kerberos, GSSAPI, @acronym{TLS}/@acronym{SSL} $B$*$h$S(B STARTTLS $B$N$?$a$N3
 ssh %s imapd
 @end example
 
-$BM-8z$J=qK!;EMM;X<(;R$O0J2<$NDL$j$G$9!#(B
+$B2?J*$b$=$N%W%m%0%i%`$N=PNO$r<YKb$7$J$$$h$&$K$7$F2<$5$$!#Nc$($P%(%i!<=PNO(B
+$B$O(B void $B$K?6$jJ,$1$^$7$g$&!#M-8z$J=qK!;EMM;X<(;R$O0J2<$NDL$j$G$9!#(B
 
 @table @samp
 @item s
@@ -16768,7 +16769,9 @@ GNUTLS (@samp{gnutls-cli} $B%W%m%0%i%`(B) $B$,I,MW$G$9!#(B
 @vindex imap-shell-program
 @vindex imap-shell-host
 @code{shell} $B%9%H%j!<%`$r;H$&(B @acronym{IMAP} $B@\B3$G$O!"2?$N%W%m%0%i%`$r(B
-$B8F$V$+$rJQ?t(B @code{imap-shell-program} $B$G;XDj$7$^$9!#(B
+$B8F$V$+$rJQ?t(B @code{imap-shell-program} $B$G;XDj$7$^$9!#2?J*$b$=$N%W%m%0%i(B
+$B%`$N=PNO$r<YKb$7$J$$$h$&$K$7$F2<$5$$!#Nc$($P%(%i!<=PNO$O(B void $B$K?6$jJ,$1(B
+$B$^$7$g$&!#(B
 
 @item nnimap-authenticator
 @vindex nnimap-authenticator

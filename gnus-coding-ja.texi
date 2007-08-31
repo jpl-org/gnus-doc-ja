@@ -125,6 +125,16 @@ GnuTLS $B$G0O$`%i%C%Q!<$r2p$7$F(B TLS/SSL $B$r%5%]!<%H$7$^$9!#(B
 $B$5$^$6$^$J(B PGP $B$N<BAu$N$?$a$N%$%s%?!<%U%'!<%9$rDs6!$7$^$9!#(B
 @c 2005-10-21 $B8=:_(B...
 $B$3$l$i$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item sha1.el
+SHA1 Secure Hash Algorithm.
+@c 2007-08-25 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+
+@item hex-util.el
+16$B?J?t$NJ8;zNs$r%(%s%3!<%I(B/$B%G%3!<%I$9$k$?$a$N4X?t72$G$9!#(B
+@c 2007-08-25 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 @end table
 
 @subsection $B%M%C%H%o!<%-%s%0(B
@@ -136,7 +146,7 @@ GnuTLS $B$G0O$`%i%C%Q!<$r2p$7$F(B TLS/SSL $B$r%5%]!<%H$7$^$9!#(B
 $B$3$N%U%!%$%k$K(B Gnus $B$X$N=EBg$J0MB8$O$"$j$^$;$s!#(B
 @code{gnus-run-mode-hooks} ($B%i%C%Q!<4X?t(B) $B$r;H$$$^$9!#(B
 
-@item dns*.el
+@item dns.el, dns-mode.el
 $B%I%a%$%sL>%5!<%S%9$GD4$Y$^$9!#(B
 @c 2005-10-21 $B8=:_(B...
 $B$3$l$i$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
@@ -172,15 +182,26 @@ HZ (RFC1843) $B%G%3!<%I$r9T$J$$$^$9!#(BHZ $B$OCf9q8l$H(B @acronym{ASCII} $B
 
 @item rfc2045.el
 RFC2045 $B%X%C%@!<$r%G%3!<%I$9$k4X?t72$rDs6!$7$^$9!#(B
+@c 2007-08-25 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item rfc2047.el
 RFC2047 $B%a%C%;!<%8$r%(%s%3!<%I$*$h$S%G%3!<%I$9$k4X?t72$rDs6!$7$^$9!#(B
+@c 2007-08-25 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
+@c
+$B$G$b!"$$$/$D$+$N(B Gnus $BM3Mh$N%7%s%\%k$r%F%9%H$7$^$9(B ($BLuCm(B: $B$=$l$i$,L5$/$F(B
+$B$bF0:n$7$^$9(B)$B!#(B
 
 @item rfc2104.el
 RFC2104 $B$K4p$E$/%a%C%;!<%8$N%O%C%7%e$K$h$kG'>Z$N$?$a$N%3!<%I$rDs6!$7$^$9!#(B
+@c 2007-08-25 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item rfc2231.el
 RFC2231 $B%X%C%@!<$r%G%3!<%I$9$k4X?t72$rDs6!$7$^$9!#(B
+@c 2007-08-25 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 
 @item flow-fill.el
 RFC2646 $B$N(B "flowed" $B%F%-%9%H$r=hM}$7$^$9!#(B
@@ -193,6 +214,14 @@ ELisp $BHG$N(B uudecode $B$G$9(B ($BLuCm(B: $B$G$b30It%W%m%0%i%`$N(B uud
 @c 2005-12-06 $B8=:_(B...
 $B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 @c ... $B$G$b!"%+%9%?%`%0%k!<%W$O(B gnus-extract $B$G$9!#(B
+
+@item canlock.el
+Cancel-Lock $B5!G=$N$?$a$N4X?t72$rDs6!$7$^$9!#(B
+@c draft-ietf-usefor-cancel-lock-01.txt $B;2>H!#(B
+@c $B$3$NAp9F$O4|8B@Z$l>C5n$5$l$^$7$?$,!"(B2007$BG/$KBg<j$N%K%e!<%9!&%W%m%P%$(B
+@c $B%@!<$?$A(B ($BNc$($P(B news.individual.org) $B$,;H$$;O$a$FI|3h$7$^$7$?!#(B
+@c 2007-08-25 $B8=:_(B...
+$B$3$N%U%!%$%k$O(B Gnus $B$K0MB8$7$^$;$s!#(B
 @end table
 
 @subsection message
@@ -208,7 +237,8 @@ Gnus $B$G$O$9$Y$F$N%a%C%;!<%8(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$N:n@.$r(B 
 $B$N(B @acronym{MIME} $B$N5!G=$rDs6!$7$^$9!#(B
 
 @acronym{MML} (@acronym{MIME} Meta Language) $B$O(B Gnus $B$+$i$OFHN)$7$?$b$N(B
-$B$@$H9M$($i$l$F$$$^$9!#(B
+$B$@$H9M$($i$l$F$$$^$9$,!";DG0$J$,$i8=<B$O$=$&$G$O$"$j$^$;$s!#$=$N0MB84X78(B
+$B$r@d$D$?$a$N%Q%C%A$dDs0F$r4?7^$7$^$9!#(B
 
 @subsection Gnus $B%P%C%/%(%s%I(B
 
@@ -220,22 +250,10 @@ Gnus $B$G$O$9$Y$F$N%a%C%;!<%8(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$N:n@.$r(B 
 @c
 @c mm-uu $B$O(B nnheader $B$r8F$S=P$7!"(Bnnheader $B$O(B gnus-util $B$r8F$S=P$7$^$9!#(B
 @c message.el $B$b(B nnheader $B$r8F$S=P$7$^$9!#(B
-@c
-@c message / gnus
-@c
-@c nn*
-@c
-@c mm*
-@c
-@c rfc*
-@c
-@c pgg*
-@c tla netrc pop3 dig dns ...
-@c format-spec.el
 
 @section $B8_49@-(B
 
-No Gnus $B$O0J2<$N$b$N$GF0:n$7$^$9(B:
+No Gnus $B$H(B Gnus 5.10.10 $B0J>e$O<!$N$b$N$GF0:n$7$^$9(B:
 
 @itemize @bullet
 @item
@@ -245,7 +263,7 @@ Emacs 21.1 $B$H$=$l0J>e!#(B
 XEmacs 21.4 $B$H$=$l0J>e!#(B
 @end itemize
 
-Gnus 5.10 $B$O0J2<$N$b$N$GF0:n$7$^$9(B:
+Gnus 5.10.8 $B0J2<$O<!$N$b$N$GF0:n$7$^$9(B:
 
 @itemize @bullet
 @item
@@ -373,11 +391,16 @@ Gnus $B$+$i;O$^$j$^$7$?!#(B@file{GNUS-NEWS} $B$OJT=8$7$J$$$G2<$5$$!#(B
 
 @heading defcustoms $B$G;H$&(B :version $B>pJs$NN.57(B
 
-$B?7$7$$JQ?t$r(B Oort Gnus (v5-10 $B;^$r4^$`(B) $B$KF3F~$9$k$H$-$O!"%3%a%s%H$r4^$s(B
-$B$@(B @code{:version "22.1" ;; Oort Gnus} $B$r;H$C$F2<$5$$!#(B
+$B?7$7$$%+%9%?%^%$%:2DG=$JJQ?t$r(B Oort Gnus (v5-10 $B;^$r4^$`(B) $B$KF3F~$9$k$H$-(B
+$B$O!"%3%a%s%H$r4^$s$@(B @code{:version "22.1" ;; Oort Gnus} $B$r;H$C$F2<$5$$!#(B
+$B$"$k$$$O!"$b$7$=$N5!G=$,Nc$($P(B Emacs 22.2 $B$N(B Gnus 5.10.10 $B$N$?$a$KDI2C$5(B
+$B$l$?$N$G$"$l$P!"(B@code{:version "22.2" ;; Gnus 5.10.10} $B$r;H$C$F2<$5$$!#(B
 @c
 $B$=$NJQ?t$,(B No Gnus $B$G?75,$@$C$?$i!"(B@code{:version "23.0" ;; No Gnus} $B$r(B
 $B;H$C$F2<$5$$!#(B
+
+$B%+%9%?%^%$%:2DG=$JJQ?t$N%G%#%U%)%k%HCM$rJQ99$7$?$H$-$b!"F1$8$3$H$r9T$J$C(B
+$B$F2<$5$$!#(B
 @bye
 @c Local Variables:
 @c coding: iso-2022-7bit
