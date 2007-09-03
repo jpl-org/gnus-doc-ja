@@ -1,3 +1,10 @@
+2007-09-03  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* ptexinfmt.el (ptexinfmt-broken-facility, ptexinfmt-defun-if-broken)
+	(ptexinfmt-defun-if-void, ptexinfmt-defvar-if-void): Don't use
+	old-style backquotes.
+	(texinfo-format-cedilla-accent): Quote `,'.
+
 2007-05-02  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* infohack.el (infohack-texi-format): Revert.
@@ -32,8 +39,8 @@
 2005-12-09  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* emacs-mime-ja.texi, gnus-coding-ja.texi, gnus-ja.texi,
-	message-ja.texi, pgg-ja.texi, sasl-ja.texi, sieve-ja.texi:
-	Add @firstparagraphindent.
+	message-ja.texi, pgg-ja.texi, sasl-ja.texi, sieve-ja.texi: Add
+	@firstparagraphindent.
 
 2005-12-08  Katsumi Yamaoka  <yamaoka@jpl.org>
 
@@ -121,17 +128,22 @@
 	* gnus-doc-ja: The project has started.
 
 	We aim to translate all the Info manuals of Gnus into Japanese.
-	Fortunately, we have the inheritance of the Semi-gnus project, of
-	which Yoshiki Hayashi and Keisuke Mori made the Japanese manuals
-	being specialized to Semi-gnus.  Don't forget Kazuyuki Ienaga who
-	had translated the Gnus v5.0.15 manual into Japanese for the first
-	time, and Keiichi Suzuki who used to have translated gnus-faq.texi.
-	Let's start translating, making full use of those fortunes.
+	Fortunately, we have the inheritance of the Semi-gnus project, of which
+	Yoshiki Hayashi and Keisuke Mori made the Japanese manuals being
+	specialized to Semi-gnus.  Don't forget Kazuyuki Ienaga who had
+	translated the Gnus v5.0.15 manual into Japanese for the first time,
+	and Keiichi Suzuki who used to have translated gnus-faq.texi.  Let's
+	start translating, making full use of those fortunes.
 
 	There were the following files in the CVS trunk initially:
 
-	.cvsignore ChangeLog Makefile.in README.ja TRANSLATION.ja
-	configure configure.ac doclicense.texi emacs-mime-ja.texi
-	gnus-faq-ja.texi gnus-ja.texi gnus-news-ja.texi gnus-terms.ja
-	infohack.el install-sh message-ja.texi mkinstalldirs pgg-ja.texi
-	ptexinfmt.el sasl-ja.texi sieve-ja.texi
+	.cvsignore ChangeLog Makefile.in README.ja TRANSLATION.ja configure
+	configure.ac doclicense.texi emacs-mime-ja.texi gnus-faq-ja.texi
+	gnus-ja.texi gnus-news-ja.texi gnus-terms.ja infohack.el install-sh
+	message-ja.texi mkinstalldirs pgg-ja.texi ptexinfmt.el sasl-ja.texi
+	sieve-ja.texi
+
+
+Local Variables:
+fill-column: 79
+End:
