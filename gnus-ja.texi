@@ -466,6 +466,7 @@ Group Buffer
 * Browse Foreign Server::       サーバーを概観できる。何が読めるのか見てみよう
 * Exiting Gnus::                ニュースを読むのをやめて、仕事をしよう
 * Group Topics::                グループを切り混ぜて、トピックごとに分割する
+* Non-ASCII Group Names::       英字以外の名前のグループへのアクセス
 * Misc Group Stuff::            他にできること
 
 Group Buffer Format
@@ -1720,6 +1721,7 @@ Maintenance})。
 * Browse Foreign Server::       サーバーを概観できる。何が読めるのか見てみよう
 * Exiting Gnus::                ニュース読むのをやめて、仕事をしよう
 * Group Topics::                グループを切り混ぜて、トピックごとに分割する
+* Non-ASCII Group Names::       英字以外の名前のグループへのアクセス
 * Misc Group Stuff::            他にできること
 @end menu
 
@@ -4090,6 +4092,130 @@ Gnus
 際、私はこのとき何が起こるのかは「未定義 @dfn{undefined}」である、とここ
 に宣言します。この手のことをやりたい場合には十分注意しなければなりません。
 
+@node Non-ASCII Group Names
+@section 英字以外の名前のグループへのアクセス
+@cindex non-ascii group names
+
+世界には、それぞれの母国語で表した名前のグループを提供するニュースサーバー
+があります。例えば、あるニュースサーバには名前が中国語で綴られたニュース
+グループがあって、そこで人々は中国語で話をしています。もちろん Gnus でそ
+のようなニュースグループを講読することは可能です。Gnus は現
+在 @code{nntp} バックエンドだけでなく @code{nnml} バックエンド
+と @code{nnrss} バックエンドで非-@acronym{ASCII} グループ名をサポートし
+ています。
+
+すべてのそのようなグループ名は、サーバー側で、ある文字セットでエンコード
+されています (@acronym{NNTP} サーバーでは管理者が文字セットを決めますが、
+他のバックエンドのグループではあなたがそれを決めます)。Gnus はあなたのた
+めにグループバッファーと記事バッファーでデコードされたものを表示しなけれ
+ばなりませんし、サーバーと通信するときはエンコードされたものを使う必要が
+あります。しかし Gnus は、各々の非-@acronym{ASCII} グループ名にどんな文
+字セットが使われているかを知りません。以下の二つの変数は、まさに各グルー
+プでどんな文字セットを使うべきかを Gnus に伝えるためのものです:
+
+@table @code
+@item gnus-group-name-charset-method-alist
+@vindex gnus-group-name-charset-method-alist
+選択方法と文字セットの連想リストです。ディフォルト値は @code{nil} です。
+その選択方法で指定されるサーバーにあるグループの名前は、すべてその対応す
+る文字セットを使うものと仮定されます。例です:
+
+@lisp
+(setq gnus-group-name-charset-method-alist
+      '(((nntp "news.com.cn") . cn-gb-2312)))
+@end lisp
+
+この変数でグループに指定された文字セットは、同じグループ
+に @code{gnus-group-name-charset-group-alist} 変数で指定されたものより優
+先されます (下記参照)。
+
+選択方法は非常に長くなる場合がありますね。このように:
+
+@lisp
+(nntp "quimby"
+      (nntp-address "news.gnus.org")
+      (nntp-end-of-line "\n")
+      (nntp-open-connection-function
+       nntp-open-via-rlogin-and-telnet)
+      (nntp-via-rlogin-command "ssh")
+      (nntp-via-rlogin-command-switches
+       ("-C" "-t" "-e" "none"))
+      (nntp-via-address @dots{}))
+@end lisp
+
+そのような場合、この変数の中では @code{(nntp "quimby")} に切り詰めること
+ができます。つまり、バックエンド名とサーバー名だけを含んでいれば十分です。
+
+@item gnus-group-name-charset-group-alist
+@cindex UTF-8 group names
+@vindex gnus-group-name-charset-group-alist
+グループ名の正規表現と、それに合致するグループのための文字セットの連想リ
+ストです。UTF-8 がサポートされている場合は @code{((".*" utf-8))} がディ
+フォルト値で、それ以外の場合のディフォルトは @code{nil} です。例です:
+
+@lisp
+(setq gnus-group-name-charset-group-alist
+      '(("\\.com\\.cn:" . cn-gb-2312)
+        (".*" . utf-8)))
+
+@code{gnus-group-name-charset-method-alist} で合致した場合、この変数は無
+視されることに注意して下さい。
+@end lisp
+@end table
+
+これら二つの変数は @code{nntp} 以外のバックエンドにある
+非-@acronym{ASCII} 名のグループをエンコードおよびデコードする文字セット
+を決定するためにも使われます。つまり、それを決めるのはあなたです。何もし
+なければそれらのバックエンドのグループ名で使われる文字セットは、
+@code{gnus-group-name-charset-group-alist} の最後の素子のせいですべ
+て @code{utf-8} になるでしょう。
+
+さて、非-@acronym{ASCII} グループ名のための重要な変数がもう一つあります。
+@emph{XEmacs ユーザーは必ず設定して下さい}。Emacs ユーザーは必ずしも行な
+う必要はありません:
+
+@table @code
+@item nnmail-pathname-coding-system
+この変数の値は coding system もしくは @code{nil} (それがディフォルト) で
+す。@code{nnml} バックエンド、@code{nnrss} バックエンド、
+@acronym{NNTP} 印 (@pxref{NNTP marks})、エージェント、およびキャッシュは、
+それらのファイルとディレクトリーで非-@acronym{ASCII} グループ名を使いま
+す。この変数は、それらのファイル名とディレクトリー名をエンコードおよびデ
+コードするときに用いられる coding system を指定す
+る @code{file-name-coding-system} の値を上書きします。
+
+XEmacs (@code{mule} 機能付き) では、@code{file-name-coding-system} はファ
+イル名をエンコードおよびデコードするのに用いられる coding system を指定
+する唯一の手段です。したがって、
+@emph{あなた (XEmacs ユーザー) は} @code{nnmail-pathname-coding-system} を
+非-@acronym{ASCII} グループ名をエンコードおよびデコードするのに適切
+な coding system に@emph{設定しなければなりません}。一
+方 Emacs は @code{file-name-coding-system} の値が @code{nil} だった場合、
+@code{default-file-name-coding-system} の値を使用します。通
+常 @code{default-file-name-coding-system} の値は言語環境に従って初期化さ
+れるので、その値が非-@acronym{ASCII} グループ名をエンコードおよびデコー
+ドするために適切であれば、何もする必要は無いでしょう。
+
+この変数 (または @code{default-file-name-coding-system}) の値は、必ずし
+も @code{gnus-group-name-charset-method-alist} およ
+び @code{gnus-group-name-charset-group-alist} によって決定される値と同じ
+である必要はありません。
+
+例えば中国語で綴られたニュースグループを講読したいのに、
+@code{default-file-name-coding-system} がディフォルト
+で @code{iso-latin-1} に初期化されてしまうのならば、それは Emacs ユーザー
+でも @code{nnmail-pathname-coding-system} を設定しなければならない最も典
+型的な場合です。@code{utf-8} coding system はそのための良い候補です。あ
+るいはこの変数を設定する代わりに、
+@code{default-file-name-coding-system} が適切な値に初期化されるように、
+あなたのシステムの言語環境を変更しても良いでしょう。
+@end table
+
+記事を非-@acronym{ASCII} グループから他のグループにコピーまたは移動する
+場合、グループ名をエンコードおよびデコードするための文字セットが両方のグ
+ループで同じでなければならないことに注意して下さい。さもないと記事バッ
+ファーに Newsgroups ヘッダーが正しく表示されないでしょう。
+
 @node Misc Group Stuff
 @section その他のグループ関連
 
@@ -4186,31 +4312,6 @@ method) を持っていなければなりませんが。
 @vindex gnus-permanently-visible-groups
 この正規表現に合致するグループは、それが空であるかどうかに関わらず、常に
 グループバッファーに表示されます。
-
-@item gnus-group-name-charset-method-alist
-@vindex gnus-group-name-charset-method-alist
-グループ名用の選択方法と文字セットの連想リストです。これは英字ではないグ
-ループ名を表示するために使います。
-
-例:
-@lisp
-(setq gnus-group-name-charset-method-alist
-    '(((nntp "news.com.cn") . cn-gb-2312)))
-@end lisp
-
-@item gnus-group-name-charset-group-alist
-@cindex UTF-8 group names
-@vindex gnus-group-name-charset-group-alist
-グループ名用のグループ名の正規表現と文字セットの連想リストです。これは英
-字ではないグループ名を表示するために使います。UTF-8 がサポートされている
-場合は @code{((".*" utf-8))} がディフォルト値で、それ以外の場合のディフォ
-ルトは @code{nil} です。
-
-例:
-@lisp
-(setq gnus-group-name-charset-group-alist
-    '(("\\.com\\.cn:" . cn-gb-2312)))
-@end lisp
 @end table
 
 @node Scanning New Messages
