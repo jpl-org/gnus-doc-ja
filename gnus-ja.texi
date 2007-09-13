@@ -2163,7 +2163,7 @@ Generation Commands})。
 @code{gnus-large-ephemeral-newsgroup} は @code{gnus-large-newsgroup} と
 同じですが、一時ニュースグループのためにだけ使われます。
 
-@vindex gnus-maximum-newsgroup
+@vindex gnus-newsgroup-maximum-articles
 いくつかのニュースサーバーのとあるグループでは、期限切れ消去されない少数
 の非常に古い記事と最新のものとの間に大きな隙間があるかもしれません。そう
 いう場合、そのサーバーは @code{LIST ACTIVE group} コマンドに対して例え
@@ -2172,14 +2172,14 @@ Generation Commands})。
 とを知っているわけではないので 30000000 通の記事を受け取るための準備をし
 ます。しかしそれでは何百メガバイトのメモリーを消費してしまうし、場合によっ
 ては Emacs を立ち往生させてしまうかもしれません。もしそのようなサーバー
-を使うのであれば、変数 @code{gnus-maximum-newsgroup} を正の数に設定して
-下さい。値は、あらゆるグループでその数の最新の記事以外を Gnus が無視する
-ことを意味します。例えば 10000 という数は、Gnus に 29990001-30000000 の
-記事だけを取得させるようにします (最新の記事番号が 30000000 だった場合で
-す)。この変数に数値を設定すると、非常に古い記事を読むことができなくなっ
-てしまうかもしれないことに注意して下さい。変
-数 @code{gnus-maximum-newsgroup} のディフォルト値は @code{nil} で、その
-場合 Gnus は古い記事を無視しません。
+を使うのであれば、変数 @code{gnus-newsgroup-maximum-articles} を正の数に
+設定して下さい。値は、あらゆるグループでその数の最新の記事以外を Gnus が
+無視することを意味します。例えば 10000 という数
+は Gnus に 29990001〜30000000 の記事だけを取得させるようにします (最新の
+記事番号が 30000000 だった場合です)。この変数に数値を設定すると、非常に
+古い記事を読むことができなくなってしまうかもしれないことに注意して下さい。
+変数 @code{gnus-newsgroup-maximum-articles} のディフォルト値
+は @code{nil} で、その場合 Gnus は古い記事を無視しません。
 
 @vindex gnus-select-group-hook
 @vindex gnus-auto-select-first
