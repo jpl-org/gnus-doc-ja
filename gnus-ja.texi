@@ -4132,8 +4132,8 @@ Gnus
 選択方法は非常に長くなる場合がありますね。このように:
 
 @lisp
-(nntp "quimby"
-      (nntp-address "news.gnus.org")
+(nntp "gmane"
+      (nntp-address "news.gmane.org")
       (nntp-end-of-line "\n")
       (nntp-open-connection-function
        nntp-open-via-rlogin-and-telnet)
@@ -4143,7 +4143,7 @@ Gnus
       (nntp-via-address @dots{}))
 @end lisp
 
-そのような場合、この変数の中では @code{(nntp "quimby")} に切り詰めること
+そのような場合、この変数の中では @code{(nntp "gmane")} に切り詰めること
 ができます。つまり、バックエンド名とサーバー名だけを含んでいれば十分です。
 
 @item gnus-group-name-charset-group-alist
