@@ -4189,7 +4189,7 @@ XEmacs (@code{mule} $B5!G=IU$-(B) $B$G$O!"(B@code{file-name-coding-system} 
 $B$9$kM#0l$N<jCJ$G$9!#$7$?$,$C$F!"(B
 @emph{$B$"$J$?(B (XEmacs $B%f!<%6!<(B) $B$O(B} @code{nnmail-pathname-coding-system} $B$r(B
 $BHs(B-@acronym{ASCII} $B%0%k!<%WL>$r%(%s%3!<%I$*$h$S%G%3!<%I$9$k$N$KE,@Z(B
-$B$J(B coding system $B$K(B@emph{$B@_Dj$7$J$1$l$P$J$j$^$;$s(B}$B!#0l(B
+$B$J(B coding system $B$K(B @emph{$B@_Dj$7$J$1$l$P$J$j$^$;$s(B}$B!#0l(B
 $BJ}(B Emacs $B$O(B @code{file-name-coding-system} $B$NCM$,(B @code{nil} $B$@$C$?>l9g!"(B
 @code{default-file-name-coding-system} $B$NCM$r;HMQ$7$^$9!#DL(B
 $B>o(B @code{default-file-name-coding-system} $B$NCM$O8@8l4D6-$K=>$C$F=i4|2=$5(B
@@ -27802,11 +27802,11 @@ Gnus $B$O$$$D$b0l$D$NJ}K!(B ($B$H%P%C%/%(%s%I(B) $B$r!"%K%e!<%9$rF@$k$?$a$N
 @end menu
 
 @node Slow/Expensive Connection
-@subsection $BCY$/$F9b2A$J(B NNTP $B@\B3(B
+@subsection $BCY$/$F9b2A$J@\B3(B
 
 Emacs $B$r%m!<%+%k$N%^%7%s$G<B9T$7$F$$$F!"Hs>o$K:Y$$$R$b$N8~$3$&$N%^%7%s$+(B
-$B$i%K%e!<%9$r<h$j4s$;$F$$$k$H$7$?$i!"(BGnus $B$,(B @acronym{NNTP} $B%5!<%P!<$+$i(B
-$B<h$C$FMh$J$1$l$P$J$i$J$$%G!<%?$NAmNL$r8:$i$7$?$/$J$k$G$7$g$&$M!#(B
+$B$i%K%e!<%9$r<h$j4s$;$F$$$k$H$7$?$i!"(BGnus $B$,%5!<%P!<$+$i<h$C$FMh$J$1$l$P(B
+$B$J$i$J$$%G!<%?$NAmNL$r8:$i$7$?$/$J$k$G$7$g$&$M!#(B
 
 @table @code
 @item gnus-read-active-file
@@ -27818,11 +27818,44 @@ Emacs $B$r%m!<%+%k$N%^%7%s$G<B9T$7$F$$$F!"Hs>o$K:Y$$$R$b$N8~$3$&$N%^%7%s$+(B
 $B$^$9!#(B
 
 @item gnus-nov-is-evil
-$B$3$l$b(B @code{nil} $B$K$7$F$$$J$1$l$P$J$j$^$;$s!#$=$&$7$F$*$+$J$$$H!"5-;v$N(B
-$B%X%C%@!<$r(B @acronym{NNTP} $B%5!<%P!<$+$iDO$_<h$C$F$/$k$N$,!"$"$^$jB.$/$J$j(B
-$B$^$;$s!#$b$C$H$b!"$9$Y$F$N(B @acronym{NNTP} $B%5!<%P!<$,(B @sc{xover} $B$r%5%]!<(B
-$B%H$7$F$$$k$o$1$G$O$"$j$^$;$s!#$=$N$3$H$O(B Gnus $B$,<+J,$G8!::$7$^$9!#(B
+$B$3$l$O(B @emph{$B>o$K(B} @code{nil} $B$K$7$F$*$+$J$1$l$P$J$j$^$;$s(B ($B$=$l$,%G%#%U%)(B
+$B%k%H$G$9(B)$B!#Nc$($P$b$7(B @code{nntp} $B%P%C%/%(%s%I$G(B @acronym{NOV} ($B8e=R(B) $B$r(B
+$B;H$o$J$$$h$&$K$9$kI,MW$,$"$k$J$i(B (@pxref{Crosspost Handling})$B!"$3$l$r@_(B
+$BDj$9$kBe$o$j$K(B @code{nntp-nov-is-evil} $B$r(B @code{nil} $B0J30$NCM$K$7$F2<$5(B
+$B$$!#$7$+$7(B Gnus $B$O(B @acronym{NNTP} $B%5!<%P!<$,(B @acronym{NOV} $B$r%5%]!<%H$9(B
+$B$k$+$I$&$+$r<+J,$GD4$Y$k$N$G!"DL>o(B @code{nntp-nov-is-evil} $B$r@_Dj$9$kI,(B
+$BMW$O$"$j$^$;$s!#$H$K$+$/(B Gnus $B$,(B @acronym{NOV} $B$rMxMQ$7$J$$$h$&$K$9$k$H!"(B
+@acronym{NNTP} $B%5!<%P!<$+$i5-;v$N%X%C%@!<$rDO$_<h$C$F$/$kF0:n$,!"$"$^$j(B
+$BB.$/$J$j$^$;$s!#(B
+
+$BB>$N%P%C%/%(%s%I$N$?$a$NJQ?t$H$7$F(B @code{nndiary-nov-is-evil},
+@code{nndir-nov-is-evil}, @code{nnfolder-nov-is-evil},
+@code{nnimap-nov-is-evil}, @code{nnml-nov-is-evil},
+@code{nnspool-nov-is-evil} $B$*$h$S(B @code{nnwarchive-nov-is-evil} $B$,$"$j$^(B
+$B$9!#(B@code{gnus-nov-is-evil} $B$K(B @code{nil} $B0J30$NCM$rM?$($k$H!"$=$l$i$9$Y(B
+$B$F$NJQ?t$r>e=q$-$7$F$7$^$&$3$H$KCm0U$7$F2<$5$$!#(B
 @end table
+
+@noindent
+@acronym{NOV} $B$H$O(B?
+
+@acronym{NOV} $B$O(B News OverView $B$NN,$G!"5-;v$N4J7i$J%X%C%@!<$N>pJs$r4^$`(B
+$B%G!<%?$rDs6!$7$^$9!#$=$l$i$O%5!<%P!<$,:n$k$b$N$G$9!#(B@code{nntp} $B%P%C%/%((B
+$B%s%I$G$O(B Gnus $B$O(B @acronym{NNTP} $B%5!<%P!<$,:n$k$b$N$r;H$$$^$9$,!"(B
+@code{nnml} $B$N$h$&$K(B Gnus $B$,1i$8$k%5!<%P!<$G$O(B Gnus $B<+?H$,:n$j$^$9!#(B
+@acronym{NOV} $B%G!<%?$O0l$D0J>e$N%F%-%9%H9T(B (@pxref{Text Lines, ,Motion
+by Text Lines, elisp, The Emacs Lisp Reference Manual}) $B$+$i@.$j!"$=$l$>(B
+$B$l$N9T$O0l$D$N5-;v$N%X%C%@!<>pJs$r;}$C$F$$$^$9!#%X%C%@!<>pJs$O%?%V$G6h@Z(B
+$B$i$l$?0lO"$N%X%C%@!<$NFbMF$G!"5-;vHV9f!"I=Bj!"Cx<T!"F|IU!"(BMessage-ID$B!"(B
+References $B$J$I$r4^$s$G$$$^$9!#(B
+
+$B$=$l$i$N%G!<%?$O(B Gnus $B$,35N,9T$rB.$/@8@.$9$k$3$H$r2DG=$K$7$^$9!#$7$+$7%5!<(B
+$B%P!<$,(B @acronym{NOV} $B$r%5%]!<%H$7$F$$$J$+$C$?$j!"8N0U$K$^$?$O$"$kM}M3$G(B
+$B$=$l$r;H$o$J$$$h$&$K$7$F$7$^$&$H!"(BGnus $B$O5-;v$N%X%C%@!<$r0l$D$:$D2r@O$9(B
+$B$k$3$H$K$h$C$F%X%C%@!<>pJs$r@8@.$7$h$&$H$9$k$G$7$g$&!#$=$l$K$O;~4V$,$+$+(B
+$B$j$^$9!#$7$?$,$C$F!"%5!<%P!<$,4V0c$C$?(B @acronym{NOV} $B%G!<%?$r:n$k$h$&$J(B
+$BM}M3$,L5$$8B$j!"(B@code{*-nov-is-evil} $B$r(B @code{nil} $B$G$O$J$$CM$K$9$k$3$H(B
+$B$O!"DL>o$ONI$$9M$($G$O$"$j$^$;$s!#(B
 
 @node Slow Terminal Connection
 @subsection $BCY$$%?!<%_%J%k@\B3(B
