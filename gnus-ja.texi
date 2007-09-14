@@ -10841,8 +10841,8 @@ Gnus $B$K%/%m%9%]%9%H$r@5$7$/07$($J$/$5$;$k860x$N0l$D$O!"(B@sc{xover} ($B$3$l
 $B$K$7$F$/$l$k$^$G!"H`=w$K8~$+$C$F6+$S!"5c$-IU$/$Y$-$G$7$g$&!#(B
 
 Gnus $B$K$$$D$G$b@5$7$$(B @code{Xref} $B$r<hF@$9$k$h$&$K$5$;$?$$$N$G$"$l$P!"(B
-@code{gnus-nov-is-evil} $B$r(B @code{t} $B$K$9$kI,MW$,$"$j!"$=$l$OHs>o$KB.EY$r(B
-$BCY$/$7$^$9!#(B
+@code{nntp-nov-is-evil} $B$r(B @code{t} $B$K$9$kI,MW$,$"$j!"$=$l$OHs>o$KB.EY$r(B
+$BCY$/$7$^$9!#(B@ref{Slow/Expensive Connection} $B$b;2>H$7$F2<$5$$!#(B
 
 $B$^!"?M@8$O$=$N$h$&$J$b$N$G$9!#(B
 
@@ -27940,6 +27940,7 @@ Gnus $B$,35N,%P%C%U%!!<$r%j%;%s%?!<$9$k(B ($BLuCm(B: $B8=:_$N5-;v$,??$sCf$K
 $BN,%P%C%U%!!<$KF~$k$3$H$HH4$1$k$3$H$rB.$/$9$k$?$a(B
 $B$K!"(B@code{gnus-show-threads} $B$H(B @code{gnus-use-cross-reference}$B!"$=$l(B
 $B$K(B @code{gnus-nov-is-evil} $B$r(B @code{nil} $B$K@_Dj$7$F2<$5$$!#(B
+@ref{Slow/Expensive Connection} $B$b;2>H$7$F2<$5$$!#(B
 
 @page
 @node Troubleshooting
