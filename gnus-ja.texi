@@ -10840,7 +10840,6 @@ Gnus $B$K%/%m%9%]%9%H$r@5$7$/07$($J$/$5$;$k860x$N0l$D$O!"(B@sc{xover} ($B$3$l
 $B$7$l$^$;$s(B)$B!"%K%e!<%9$N4IM}<T$,354Q%U%!%$%k$K(B @code{Xref} $BMs$r4^$a$k$h$&(B
 $B$K$7$F$/$l$k$^$G!"H`=w$K8~$+$C$F6+$S!"5c$-IU$/$Y$-$G$7$g$&!#(B
 
-@vindex gnus-nov-is-evil
 Gnus $B$K$$$D$G$b@5$7$$(B @code{Xref} $B$r<hF@$9$k$h$&$K$5$;$?$$$N$G$"$l$P!"(B
 @code{gnus-nov-is-evil} $B$r(B @code{t} $B$K$9$kI,MW$,$"$j!"$=$l$OHs>o$KB.EY$r(B
 $BCY$/$7$^$9!#(B
@@ -27818,6 +27817,7 @@ Emacs $B$r%m!<%+%k$N%^%7%s$G<B9T$7$F$$$F!"Hs>o$K:Y$$$R$b$N8~$3$&$N%^%7%s$+(B
 $B$^$9!#(B
 
 @item gnus-nov-is-evil
+@vindex gnus-nov-is-evil
 $B$3$l$O(B @emph{$B>o$K(B} @code{nil} $B$K$7$F$*$+$J$1$l$P$J$j$^$;$s(B ($B$=$l$,%G%#%U%)(B
 $B%k%H$G$9(B)$B!#Nc$($P$b$7(B @code{nntp} $B%P%C%/%(%s%I$G(B @acronym{NOV} ($B8e=R(B) $B$r(B
 $B;H$o$J$$$h$&$K$9$kI,MW$,$"$k$J$i(B (@pxref{Crosspost Handling})$B!"$3$l$r@_(B
