@@ -27839,9 +27839,9 @@ Emacs をローカルのマシンで実行していて、非常に細いひもの向こうのマシンか
 @noindent
 @acronym{NOV} とは?
 
-@acronym{NOV} は News OverView の略で、ニュースサーバーのヘッダーの一つ
-の形式です。それらは記事の簡潔なヘッダーの情報を含むデータを提供します。
-それらはサーバーが自ら作るものです。@code{nntp} バックエンドで
+@acronym{NOV} は News OverView の略です。それらはニュースサーバーのヘッ
+ダーの一つの形式で、記事の簡潔なヘッダーの情報を含むデータを提供するため
+に、サーバーが自ら作ります。@code{nntp} バックエンドで
 は Gnus は @acronym{NNTP} サーバーが作るものを使いますが、いくつかのサー
 バー (特に @code{nnml}) のためには Gnus 自身が作ります。@acronym{NOV} デー
 タは一つ以上のテキスト行 (@pxref{Text Lines, ,Motion by Text Lines,
