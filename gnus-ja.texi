@@ -27820,11 +27820,11 @@ Emacs をローカルのマシンで実行していて、非常に細いひもの向こうのマシンか
 @vindex gnus-nov-is-evil
 これは @emph{常に} @code{nil} にしておかなければなりません (それがディフォ
 ルトです)。例えばもし @code{nntp} バックエンドで @acronym{NOV} (後述) を
-使わないようにする必要があるなら (@pxref{Crosspost Handling})、これを設
-定する代わりに @code{nntp-nov-is-evil} を @code{nil} 以外の値にして下さ
-い。しかし Gnus は @acronym{NNTP} サーバーが @acronym{NOV} をサポートす
-るかどうかを自分で調べるので、通常 @code{nntp-nov-is-evil} を設定する必
-要はありません。とにかく Gnus が @acronym{NOV} を利用しないようにすると、
+使わないようにしたい (@pxref{Crosspost Handling}) のであれば、これを設定
+する代わりに @code{nntp-nov-is-evil} を @code{nil} 以外の値にして下さい。
+しかし Gnus は @acronym{NNTP} サーバーが @acronym{NOV} をサポートするか
+どうかを自分で調べるので、通常 @code{nntp-nov-is-evil} を設定する必要は
+ありません。とにかく Gnus が @acronym{NOV} を利用しないようにすると、
 @acronym{NNTP} サーバーから記事のヘッダーを掴み取ってくる動作が、あまり
 速くなりません。
 
@@ -27839,23 +27839,25 @@ Emacs をローカルのマシンで実行していて、非常に細いひもの向こうのマシンか
 @noindent
 @acronym{NOV} とは?
 
-@acronym{NOV} は News OverView の略で、記事の簡潔なヘッダーの情報を含む
-データを提供します。それらはサーバーが作るものです。@code{nntp} バックエ
-ンドでは Gnus は @acronym{NNTP} サーバーが作るものを使いますが、
-@code{nnml} のように Gnus が演じるサーバーでは Gnus 自身が作ります。
-@acronym{NOV} データは一つ以上のテキスト行 (@pxref{Text Lines, ,Motion
-by Text Lines, elisp, The Emacs Lisp Reference Manual}) から成り、それぞ
-れの行は一つの記事のヘッダー情報を持っています。ヘッダー情報はタブで区切
-られた一連のヘッダーの内容で、記事番号、表題、著者、日付、Message-ID、
-References などを含んでいます。
+@acronym{NOV} は News OverView の略で、ニュースサーバーのヘッダーの一つ
+の形式です。それらは記事の簡潔なヘッダーの情報を含むデータを提供します。
+それらはサーバーが自ら作るものです。@code{nntp} バックエンドで
+は Gnus は @acronym{NNTP} サーバーが作るものを使いますが、いくつかのサー
+バー (特に @code{nnml}) のためには Gnus 自身が作ります。@acronym{NOV} デー
+タは一つ以上のテキスト行 (@pxref{Text Lines, ,Motion by Text Lines,
+elisp, The Emacs Lisp Reference Manual}) から成り、それぞれの行は一つの
+記事のヘッダー情報を持っています。ヘッダー情報はタブで区切られた一連のヘッ
+ダーの内容で、記事番号、表題、著者、日付、Message-ID、References などを
+含んでいます。
 
-それらのデータは Gnus が概略行を速く生成することを可能にします。しかしサー
-バーが @acronym{NOV} をサポートしていなかったり、故意にまたはある理由で
-それを使わないようにしてしまうと、Gnus は記事のヘッダーを一つずつ解析す
-ることによってヘッダー情報を生成しようとするでしょう。それには時間がかか
-ります。したがって、サーバーが間違った @acronym{NOV} データを作るような
-理由が無い限り、@code{*-nov-is-evil} を @code{nil} ではない値にすること
-は、通常は良い考えではありません。
+それらのデータは Gnus が概略行をすばやく生成することを可能にします。しか
+しサーバーが @acronym{NOV} をサポートしていなかったり、故意にまたはある
+理由でそれを使わないようにしてしまうと、Gnus はそれぞれの記事のヘッダー
+を一つずつ解析することによってヘッダー情報を生成しようとするでしょう。そ
+れには時間がかかります。したがって、サーバーが間違った @acronym{NOV} デー
+タを作ることがわかっている場合以外は、
+@code{*-nov-is-evil} を @code{nil} ではない値にすることは、通常は良い考
+えではありません。
 
 @node Slow Terminal Connection
 @subsection 遅いターミナル接続
