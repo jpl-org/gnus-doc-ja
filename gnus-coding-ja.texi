@@ -101,6 +101,11 @@ Emacs MIME Manual}.
 任意のフォーマット文字列をフォーマットする関数群を提供します。
 @c 2005-10-21 現在...
 このファイルは Gnus に依存しません。
+
+@item hex-util.el
+16進数の文字列をエンコード/デコードするための関数群です。
+@c 2007-08-25 現在...
+このファイルは Gnus に依存しません。
 @end table
 
 @subsection 暗号化とセキュリティー
@@ -128,11 +133,6 @@ GnuTLS で囲むラッパーを介して TLS/SSL をサポートします。
 
 @item sha1.el
 SHA1 Secure Hash Algorithm.
-@c 2007-08-25 現在...
-このファイルは Gnus に依存しません。
-
-@item hex-util.el
-16進数の文字列をエンコード/デコードするための関数群です。
 @c 2007-08-25 現在...
 このファイルは Gnus に依存しません。
 @end table
@@ -229,7 +229,9 @@ Cancel-Lock 機能のための関数群を提供します。
 Gnus ではすべてのメッセージ (メールとニュースの両方) の作成を Message モー
 ドのバッファーで行ないます。Message モードは Emacs のメールモードの置き
 換えになることが意図されています。@file{message.el} は Gnus に依存しない
-ようにすべきです。
+ようにすべきです。しかし、残念ながらそうなっていないのです。依存関係を絶
+ち切るためのパッチや提案を歓迎します。
+@c message.el は nnheader を必要とし、それは gnus-util を必要とします。
 
 @subsection Emacs @acronym{MIME}
 

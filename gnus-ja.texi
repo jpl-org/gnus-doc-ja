@@ -7098,7 +7098,6 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに、すべての「ずれ」
 
 @findex gnus-thread-sort-by-total-score
 @findex gnus-thread-sort-by-date
-@findex gnus-thread-sort-by-date-reverse
 @findex gnus-thread-sort-by-score
 @findex gnus-thread-sort-by-subject
 @findex gnus-thread-sort-by-author
@@ -7117,7 +7116,7 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに、すべての「ずれ」
 ている並べ替え述語関数は @code{gnus-thread-sort-by-number},
 @code{gnus-thread-sort-by-author}, @code{gnus-thread-sort-by-recipient},
 @code{gnus-thread-sort-by-subject},
-@code{gnus-thread-sort-by-date}, @code{gnus-thread-sort-by-date-reverse},
+@code{gnus-thread-sort-by-date},
 @code{gnus-thread-sort-by-score},
 @code{gnus-thread-sort-by-most-recent-number},
 @code{gnus-thread-sort-by-most-recent-date},
