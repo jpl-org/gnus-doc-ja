@@ -27671,10 +27671,31 @@ Gnus $B$O$$$D$b0l$D$NJ}K!(B ($B$H%P%C%/%(%s%I(B) $B$r!"%K%e!<%9$rF@$k$?$a$N
 
 @item @acronym{NOV}
 @cindex @acronym{NOV}
+@acronym{NOV} $B$O(B News OverView $B$NN,$G$9!#$=$l$i$O%K%e!<%9%5!<%P!<$N%X%C(B
+$B%@!<$N0l$D$N7A<0$G!"5-;v$N4J7i$J%X%C%@!<$N>pJs$r4^$`%G!<%?$rDs6!$9$k$?$a(B
+$B$K!"%5!<%P!<$,<+$i:n$j$^$9!#(B@code{nntp} $B%P%C%/%(%s%I$G(B
+$B$O(B Gnus $B$O(B @acronym{NNTP} $B%5!<%P!<$,:n$k$b$N$r;H$$$^$9$,!"$$$/$D$+$N%5!<(B
+$B%P!<(B ($BFC$K(B @code{nnml}) $B$N$?$a$K$O(B Gnus $B<+?H$,:n$j$^$9!#(B
+
 $B%0%k!<%W$KF~$k$H!"(BGnus $B$O%0%k!<%W$N$9$Y$F$NL$FI5-;v$N%X%C%@!<$r%P%C%/%((B
 $B%s%I$KMW5a$7$^$9!#$[$H$s$I$N%5!<%P!<$O(B News OverView $BMM<0$r%5%]!<%H$7$F(B
 $B$$$^$9!#$=$l$OI8=`$N(B @sc{head} $BMM<0$h$j%3%s%Q%/%H$G!"$H$F$bB.$/!"FI$s$G(B
 $B2r@O$9$k$3$H$,$G$-$^$9!#(B
+
+@acronym{NOV} $B%G!<%?$O0l$D0J>e$N%F%-%9%H9T(B (@pxref{Text Lines, ,Motion
+by Text Lines, elisp, The Emacs Lisp Reference Manual}) $B$+$i@.$j!"$=$l$>(B
+$B$l$N9T$O0l$D$N5-;v$N%X%C%@!<>pJs$r;}$C$F$$$^$9!#%X%C%@!<>pJs$O%?%V$G6h@Z(B
+$B$i$l$?0lO"$N%X%C%@!<$NFbMF$G!"5-;vHV9f!"I=Bj!"Cx<T!"F|IU!"(BMessage-ID$B!"(B
+References $B$J$I$r4^$s$G$$$^$9!#(B
+
+$B$=$l$i$N%G!<%?$O(B Gnus $B$,35N,9T$r$9$P$d$/@8@.$9$k$3$H$r2DG=$K$7$^$9!#$7$+(B
+$B$7%5!<%P!<$,(B @acronym{NOV} $B$r%5%]!<%H$7$F$$$J$+$C$?$j!"8N0U$K$^$?$O$"$k(B
+$BM}M3$G$=$l$r;H$o$J$$$h$&$K$7$F$7$^$&$H!"(BGnus $B$O$=$l$>$l$N5-;v$N%X%C%@!<(B
+$B$r0l$D$:$D2r@O$9$k$3$H$K$h$C$F%X%C%@!<>pJs$r@8@.$7$h$&$H$9$k$G$7$g$&!#$=(B
+$B$l$K$O;~4V$,$+$+$j$^$9!#$7$?$,$C$F!"%5!<%P!<$,4V0c$C$?(B @acronym{NOV} $B%G!<(B
+$B%?$r:n$k$3$H$,$o$+$C$F$$$k>l9g0J30$O!"(Bnn*-nov-is-evil
+(@pxref{Slow/Expensive Connection}) $B$r(B @code{nil} $B$G$O$J$$CM$K$9$k$3$H$O!"(B
+$BDL>o$ONI$$9M$($G$O$"$j$^$;$s!#(B
 
 @item $B%l%Y%k(B (level)
 @cindex levels
@@ -27817,13 +27838,14 @@ Emacs $B$r%m!<%+%k$N%^%7%s$G<B9T$7$F$$$F!"Hs>o$K:Y$$$R$b$N8~$3$&$N%^%7%s$+(B
 
 @item gnus-nov-is-evil
 @vindex gnus-nov-is-evil
-$B$3$l$O(B @emph{$B>o$K(B} @code{nil} $B$K$7$F$*$+$J$1$l$P$J$j$^$;$s(B ($B$=$l$,%G%#%U%)(B
-$B%k%H$G$9(B)$B!#Nc$($P$b$7(B @code{nntp} $B%P%C%/%(%s%I$G(B @acronym{NOV} ($B8e=R(B) $B$r(B
-$B;H$o$J$$$h$&$K$7$?$$(B (@pxref{Crosspost Handling}) $B$N$G$"$l$P!"$3$l$r@_Dj(B
-$B$9$kBe$o$j$K(B @code{nntp-nov-is-evil} $B$r(B @code{nil} $B0J30$NCM$K$7$F2<$5$$!#(B
-$B$7$+$7(B Gnus $B$O(B @acronym{NNTP} $B%5!<%P!<$,(B @acronym{NOV} $B$r%5%]!<%H$9$k$+(B
-$B$I$&$+$r<+J,$GD4$Y$k$N$G!"DL>o(B @code{nntp-nov-is-evil} $B$r@_Dj$9$kI,MW$O(B
-$B$"$j$^$;$s!#$H$K$+$/(B Gnus $B$,(B @acronym{NOV} $B$rMxMQ$7$J$$$h$&$K$9$k$H!"(B
+$BDL>o$3$l$O(B @emph{$B>o$K(B} @code{nil} $B$K$7$F$*$+$J$1$l$P$J$j$^$;$s(B ($B$=$l$,%G%#(B
+$B%U%)%k%H$G$9(B)$B!#Nc$($P$b$7(B @code{nntp} $B%P%C%/%(%s%I(B
+$B$G(B @acronym{NOV} (@pxref{Terminology}) $B$r;H$o$J$$$h$&$K$7$?(B
+$B$$(B (@pxref{Crosspost Handling}) $B$N$G$"$l$P!"$3$l$r@_Dj$9$kBe$o$j(B
+$B$K(B @code{nntp-nov-is-evil} $B$r(B @code{nil} $B0J30$NCM$K$7$F2<$5$$!#$7$+(B
+$B$7(B Gnus $B$O(B @acronym{NNTP} $B%5!<%P!<$,(B @acronym{NOV} $B$r%5%]!<%H$9$k$+$I$&(B
+$B$+$r<+J,$GD4$Y$k$N$G!"DL>o(B @code{nntp-nov-is-evil} $B$r@_Dj$9$kI,MW$O$"$j(B
+$B$^$;$s!#$H$K$+$/(B Gnus $B$,(B @acronym{NOV} $B$rMxMQ$7$J$$$h$&$K$9$k$H!"(B
 @acronym{NNTP} $B%5!<%P!<$+$i5-;v$N%X%C%@!<$rDO$_<h$C$F$/$kF0:n$,!"$"$^$j(B
 $BB.$/$J$j$^$;$s!#(B
 
@@ -27832,31 +27854,11 @@ Emacs $B$r%m!<%+%k$N%^%7%s$G<B9T$7$F$$$F!"Hs>o$K:Y$$$R$b$N8~$3$&$N%^%7%s$+(B
 @code{nnimap-nov-is-evil}, @code{nnml-nov-is-evil},
 @code{nnspool-nov-is-evil} $B$*$h$S(B @code{nnwarchive-nov-is-evil} $B$,$"$j$^(B
 $B$9!#(B@code{gnus-nov-is-evil} $B$K(B @code{nil} $B0J30$NCM$rM?$($k$H!"$=$l$i$9$Y(B
-$B$F$NJQ?t$r>e=q$-$7$F$7$^$&$3$H$KCm0U$7$F2<$5$$!#(B
+$B$F$NJQ?t$r>e=q$-$7$F$7$^$&$3$H$KCm0U$7$F2<$5$$!#(B@footnote{$B$b$C$H(B
+$B$b(B @code{nnkiboze}, @code{nnslashdot}, @code{nnultimate} $B$*$h(B
+$B$S(B @code{nnwfm} $B$N3F%P%C%/%(%s%I$K$O!"$=$l$i@lMQ$N(B nn*-nov-is-evil $B$,$"(B
+$B$j$^$;$s$,!#(B}
 @end table
-
-@noindent
-@acronym{NOV} $B$H$O(B?
-
-@acronym{NOV} $B$O(B News OverView $B$NN,$G$9!#$=$l$i$O%K%e!<%9%5!<%P!<$N%X%C(B
-$B%@!<$N0l$D$N7A<0$G!"5-;v$N4J7i$J%X%C%@!<$N>pJs$r4^$`%G!<%?$rDs6!$9$k$?$a(B
-$B$K!"%5!<%P!<$,<+$i:n$j$^$9!#(B@code{nntp} $B%P%C%/%(%s%I$G(B
-$B$O(B Gnus $B$O(B @acronym{NNTP} $B%5!<%P!<$,:n$k$b$N$r;H$$$^$9$,!"$$$/$D$+$N%5!<(B
-$B%P!<(B ($BFC$K(B @code{nnml}) $B$N$?$a$K$O(B Gnus $B<+?H$,:n$j$^$9!#(B@acronym{NOV} $B%G!<(B
-$B%?$O0l$D0J>e$N%F%-%9%H9T(B (@pxref{Text Lines, ,Motion by Text Lines,
-elisp, The Emacs Lisp Reference Manual}) $B$+$i@.$j!"$=$l$>$l$N9T$O0l$D$N(B
-$B5-;v$N%X%C%@!<>pJs$r;}$C$F$$$^$9!#%X%C%@!<>pJs$O%?%V$G6h@Z$i$l$?0lO"$N%X%C(B
-$B%@!<$NFbMF$G!"5-;vHV9f!"I=Bj!"Cx<T!"F|IU!"(BMessage-ID$B!"(BReferences $B$J$I$r(B
-$B4^$s$G$$$^$9!#(B
-
-$B$=$l$i$N%G!<%?$O(B Gnus $B$,35N,9T$r$9$P$d$/@8@.$9$k$3$H$r2DG=$K$7$^$9!#$7$+(B
-$B$7%5!<%P!<$,(B @acronym{NOV} $B$r%5%]!<%H$7$F$$$J$+$C$?$j!"8N0U$K$^$?$O$"$k(B
-$BM}M3$G$=$l$r;H$o$J$$$h$&$K$7$F$7$^$&$H!"(BGnus $B$O$=$l$>$l$N5-;v$N%X%C%@!<(B
-$B$r0l$D$:$D2r@O$9$k$3$H$K$h$C$F%X%C%@!<>pJs$r@8@.$7$h$&$H$9$k$G$7$g$&!#$=(B
-$B$l$K$O;~4V$,$+$+$j$^$9!#$7$?$,$C$F!"%5!<%P!<$,4V0c$C$?(B @acronym{NOV} $B%G!<(B
-$B%?$r:n$k$3$H$,$o$+$C$F$$$k>l9g0J30$O!"(B
-@code{*-nov-is-evil} $B$r(B @code{nil} $B$G$O$J$$CM$K$9$k$3$H$O!"DL>o$ONI$$9M(B
-$B$($G$O$"$j$^$;$s!#(B
 
 @node Slow Terminal Connection
 @subsection $BCY$$%?!<%_%J%k@\B3(B
