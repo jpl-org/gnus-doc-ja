@@ -18952,25 +18952,25 @@ short
 
 @table @code
 @item short
-記事が @code{gnus-agent-short-article} の行数より短かい場合だけ真です。
-ディフォルトは 100 です。
+記事が @code{gnus-agent-short-article} の行数より短かければ真です。ディ
+フォルトは 100 です。
 
 @item long
-記事が @code{gnus-agent-long-article} の行数より長い場合だけ真です。ディ
-フォルトは 200 です。
+記事が @code{gnus-agent-long-article} の行数より長ければ真です。ディフォ
+ルトは 200 です。
 
 @item low
-記事のダウンロードスコアが @code{gnus-agent-low-score} の値より小さい場
-合だけ真です。ディフォルトは 0 です。
+記事のダウンロードスコアが @code{gnus-agent-low-score} の値より小さけれ
+ば真です。ディフォルトは 0 です。
 
 @item high
-記事のダウンロードスコアが @code{gnus-agent-high-score} の値より大きい場
-合だけ真です。ディフォルトは 0 です。
+記事のダウンロードスコアが @code{gnus-agent-high-score} の値より大きけれ
+ば真です。ディフォルトは 0 です。
 
 @item spam
-Gnus エージェントがその記事を spam だと推測した場合だけ真です。この検出
-法は今後変更されるかもしれませんが。現時点では、これはチェックサムを計算
-し、記事が一致するかどうかを調べているだけです。
+Gnus エージェントがその記事を spam だと推測した場合に真です。この検出法
+は今後変更されるかもしれませんが。現時点では、これはチェックサムを計算し、
+記事が一致するかどうかを調べているだけです。
 
 @item true
 常に真です。
@@ -27194,13 +27194,13 @@ message-ja, The Message Manual}.
 @item
 Gnus は今では Sender: ヘッダーを自動では生成しません。
 
-初期のころ、それは利用者が設定できる email アドレスが、Gnus が想定した利
-用者のディフォルトのアドレスと違っていた場合に限って生成されました。今日
-ではその想定アルゴリズムが正しいことはまれで、Sender: ヘッダーの唯一
-の (議論の的になる) 用途は、ニュースを cancel/supersede する資格があるか
-どうかを検査すること (これは代わりに、他の章で述べられる Cancel Locks に
-よって解決されました) なので、そのヘッダーの生成はディフォルトで抑制され
-ています。変数 @code{message-required-headers}、
+それは初期においては、利用者が設定した email アドレスが Gnus が想定した
+利用者のディフォルトのアドレスと違っていた場合に生成されました。今日では
+その想定アルゴリズムが正しいことはまれで、Sender: ヘッダーの唯一の (議論
+の的になる) 用途は、ニュースを cancel/supersede する資格があるかどうかを
+検査すること (これは代わりに、他の章で述べられる Cancel Locks によって解
+決されました) なので、そのヘッダーの生成はディフォルトで抑制されています。
+変数 @code{message-required-headers}、
 @code{message-required-news-headers} およ
 び @code{message-required-mail-headers} を参照して下さい。
 

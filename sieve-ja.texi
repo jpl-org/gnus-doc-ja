@@ -328,8 +328,8 @@ API の関数には以下のものがあります:
 
 @item sieve-manage-havespace
 @findex sieve-manage-havespace
-与えられたサイズのスクリプトのための空きがある場合だけ、非-@code{nil} を
-返します。
+与えられたサイズのスクリプトのための空きがあれば、非-@code{nil} を返しま
+す。
 
 @item sieve-manage-getscript
 @findex sieve-manage-getscript
