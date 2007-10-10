@@ -1139,8 +1139,8 @@ Gnus Manual})。いくつかのやさしい例を挙げてみましょう。
 
 変数 @code{gnus-summary-line-format} をいじくり回す必要があります。その
 値は著者、日付、表題などのようなものを表すシンボルの文字列です。使うこと
-ができる仕様のリストは @xref{Summary Buffer Lines, ,概略バッファーの行,
-gnus-ja, The Gnus Manual} と、しばしば忘れられてしまう @xref{Formatting
+ができる仕様のリストは @pxref{Summary Buffer Lines, ,概略バッファーの行,
+gnus-ja, The Gnus Manual} と、しばしば忘れられてしまう @pxref{Formatting
 Variables, ,書法仕様変数, gnus-ja, The Gnus Manual} およびその下位の各章
 で見つかるはずです。そこでは書法仕様の概略を使うことができるようにしてく
 れる、カーソルの位置指定やタブ位置の指定のようなものを見つけることができ
@@ -2202,7 +2202,7 @@ Gnus の起動が本当に遅いのですが、どうしたら速くすることができますか?
 @subsubheading 回答
 
 この原因は、Gnus が active ファイルを読む方法に関係していることがあり得
-ます。Gnus マニュアルの @xref{The Active File, ,アクティブファイル,
+ます。Gnus マニュアルの @pxref{The Active File, ,アクティブファイル,
 gnus-ja, The Gnus Manual} を参照して下さい。そこには、その処理を速くする
 ために試してみる価値があることがらがあります。もう一つの案
 は、@file{~/.gnus.el} ファイルをバイトコンパイルするこ
