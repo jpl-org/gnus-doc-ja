@@ -83,7 +83,12 @@ SASL}.
 コードできるようになりました。この機能を使うには GNU Libidn
 (@url{http://www.gnu.org/software/libidn/}) をインストールしておく必要が
 あります。
-@c FIXME: Also mention @code{message-use-idna}?
+@c FIXME: @code{message-use-idna} も書かなくていい?
+
+@item 非-@acronym{ASCII} グループ名の取り扱いが非常に改善されました。完
+全にサポートしているバックエンドは現在 @code{nntp}, @code{nnml}, およ
+び @code{nnrss} です。エージェント、キャッシュ、それに印 (marks) もそれ
+らのバックエンドで機能します。@xref{Non-ASCII Group Names}.
 
 @item Gnus は dns-mode を使って text/dns として送信され
 た @acronym{DNS} マスターファイルを表示します。
@@ -231,19 +236,19 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 @end itemize
 
 @item 外見
-@c Maybe it's not worth to separate this from "Miscellaneous"?
+@c もしかしたら "その他" から切り離す価値は無い?
 
 @itemize @bullet
 @item ツールバーが GNOME のアイコンを使うように更新されました。ツールバー
 をカスタマイズすることもできます。まだマニュアルで文書化されていませんが、
 @kbd{M-x customize-apropos RET -tool-bar$} で始めることができるはずです。
 (Emacs だけです。XEmacs は未対応。)
-@c FIXME: Document this in the manual
+@c FIXME: これをマニュアルに書くべし。
 
 @item ツールバーのアイコンがグループバッファーで正しく活性化 (または不活
 性化) されるようになりました。変数 @code{gnus-group-update-tool-bar} を
 参照して下さい。そのディフォルト値は Emacs の版に依存します。
-@c FIXME: Document this in the manual
+@c FIXME: これをマニュアルに書くべし。
 
 @item Gnus のバッファーにおける XEmacs の toolbar の位置を変更できるよう
 になりました。@code{gnus-use-toolbar} と @code{message-use-toolbar} を見
