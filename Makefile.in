@@ -49,7 +49,7 @@ dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi\
 
 .texi.dvi:
 	sed -e '/@iflatex/,/@end iflatex/d' $< > gnustmp.texi
-	env TEX=$(PTEX) BIBTEX=$(JBIBTEX) $(TEXI2DVI) -l ja -o $@ gnustmp.texi
+	env TEX=$(PTEX) BIBTEX=$(JBIBTEX) $(TEXI2DVI) -o $@ gnustmp.texi
 	rm -f gnustmp.*
 
 pdf: gnus-ja.pdf message-ja.pdf emacs-mime-ja.pdf\

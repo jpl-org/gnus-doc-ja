@@ -1,3 +1,11 @@
+2007-10-17  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* ptexinfmt.el (texinfo-copying-text, texinfo-copying)
+	(texinfo-insertcopying, texinfo-format-scan): Move from infohack.el.
+	* infohack.el: Do.
+
+	* Makefile.in (.texi.dvi): Don't specify "-l ja" to texi2dvi.
+
 2007-09-21  TAKAHASHI Kaoru  <kaoru@kaisei.org>
 
 	* ptexinfmt.el: Support @fonttextsize, @textdegree.
