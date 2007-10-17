@@ -2,7 +2,7 @@
 
 	* ptexinfmt.el (texinfo-copying-text, texinfo-copying)
 	(texinfo-insertcopying, texinfo-format-scan): Move from infohack.el.
-	* infohack.el: Do.
+	* infohack.el: Do; don't require backquote.
 
 	* Makefile.in (.texi.dvi): Don't specify "-l ja" to texi2dvi.
 

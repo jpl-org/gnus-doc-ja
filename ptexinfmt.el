@@ -59,7 +59,6 @@
 
 ;;; Code:
 
-(require 'backquote)
 (require 'texinfmt)
 
 ;;; Broken
