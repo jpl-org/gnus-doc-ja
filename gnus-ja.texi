@@ -14440,13 +14440,12 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 @subsubsection メールの取得
 
 @vindex mail-sources
-@vindex nnmail-spool-file
 新しいメールをどこから取得するかを実際に Gnus に指示する手段は、
 @code{mail-sources} をメールソース指示子のリストに設定することで
 す (@pxref{Mail Source Specifiers})。
 
-この変数 (と旧式の @code{nnmail-spool-file}) が @code{nil} であれば、メー
-ルバックエンドは決して自分自身ではメールを取得しようとしません。
+この変数が @code{nil} であれば、メールバックエンドは決して自分自身ではメー
+ルを取得しようとしません。
 
 ローカルのスプールと @acronym{POP} メールサーバーの両方からメールを取得
 したいなら、このようにすることができます:
