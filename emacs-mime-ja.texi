@@ -1461,10 +1461,24 @@ RFC2047 は二つのエンコーディングの形式を定めています。一つは @code{Q}
 デコードを行なうとき、このライブラリーはこの正規表現に合致するものを探し
 ます。
 
+@item rfc2047-encoded-word-regexp-loose
+@vindex rfc2047-encoded-word-regexp-loose
+@code{rfc2047-encoded-word-regexp} の Q エンコーディングのための正規表現
+を緩慢にしたバージョンです。
+
 @item rfc2047-encode-encoded-words
 @vindex rfc2047-encode-encoded-words
-エンコード済みの語 (例えば @samp{=?hello?=}) を再度エンコードするかどう
-かを決めるブール変数です。
+エンコード済みの語 (例えば @samp{=?us-ascii?q?hello?=}) を再度エンコード
+するかどうかを決めるブール変数です。
+@code{rfc2047-encoded-word-regexp} がそのような語を探すために使われます。
+
+@item rfc2047-allow-irregular-q-encoded-words
+@vindex rfc2047-allow-irregular-q-encoded-words
+いい加減に Q でエンコードされた語 (例え
+ば @samp{=?us-ascii?q?hello??=}) をデコードすべきかどうかを決めるブール
+変数です。それが @code{nil} 以外の値ならば、エンコードされた語を探すため
+に @code{rfc2047-encoded-word-regexp} に代わっ
+て @code{rfc2047-encoded-word-regexp-loose} が使われます。
 @end table
 
 以上は変数でした。次は関数です:
