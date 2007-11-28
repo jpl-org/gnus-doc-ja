@@ -14656,8 +14656,8 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
         "string.group"))))
 @end lisp
 
-@var{function} が実行されるとき、バッファーはメッセージの部分に狭められ
-ます。それが上記の例
+@var{function} が実行されるとき、バッファーは対象となるメッセージのヘッ
+ダー部分に狭められています。それが上記の例
 で @code{save-excursion} と @code{save-restriction} の後
 で @code{(widen)} を呼ぶ必要がある理由です。さらに @code{nnimap} バック
 エンドの場合、ディフォルトでは記事のボディーがダウンロードされないことに
