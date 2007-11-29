@@ -120,8 +120,8 @@ Message $B$O(B Gnus $B$H$H$b$KG[I[$5$l$^$9!#$3$N%^%K%e%"%k$KBP1~$9$k(B Gnus 
 @end menu
 
 Message $B%b!<%I$N%D!<%k%P!<$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B@kbd{M-x
-customize-apropos RET message-tool-bar} $B$r;n$7$F$_$F2<$5$$!#$3$N5!G=$rMx(B
-$BMQ$G$-$k$N$O(B Emacs $B$@$1$G$9$,!#(B
+customize-apropos RET message-tool-bar} $B$r;n$7$F$_$F$/$@$5$$!#$3$N5!G=$r(B
+$BMxMQ$G$-$k$N$O(B Emacs $B$@$1$G$9$,!#(B
 
 @node New Mail Message
 @section $B?7$7$$%a!<%k%a%C%;!<%8(B
@@ -254,7 +254,7 @@ Message $B$,%K%e!<%95-;v$r%]%9%H$9$k$H$-!"%G%#%U%)%k%H(B
 lock $B%Q%9%o!<%I(B ($B:G=i$K$3$N5!G=$r;H$&$H$-$K<+F0E*$K@8@.$5$l$^$9(B) $B$r3JG<(B
 $B$9$k>l=j(B) $B$r$J$/$7$F$7$^$&$H!"%a%C%;!<%8$N<h$j>C$7$,$G$-$J$/$J$C$F$7$^$&(B
 $B$3$H$G$9!#<+J,$G%Q%9%o!<%I$r4IM}$7$?$$$J$i$P!"0J2<$N$h$&$J$b$N(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F2<$5$$(B:
+$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F$/$@$5$$(B:
 
 @lisp
 (setq canlock-password "geheimnis"
@@ -433,7 +433,7 @@ Gnus $B$G$O$3$NJQ?t$N$?$a$KDj5A$5$l$?!"NI$$4X?t$N8uJd$,$"$j$^$9!#4X(B
 $B?t(B @code{gnus-find-subscribed-addresses} $B$O!"(B@code{subscribed} $B%0%k!<%W(B
 $B%Q%i%a!<%?!<(B (@pxref{Group Parameters, ,$B%0%k!<%W%Q%i%a!<%?!<(B, gnus-ja,
 The Gnus Manual}) $B$,Hs(B-@code{nil} $B$K@_Dj$5$l$F$$$k%0%k!<%W$KBP1~$9$k%"%I(B
-$B%l%9$N%j%9%H$rJV$7$^$9!#$3$s$J$U$&$K;H$C$F2<$5$$!#(B
+$B%l%9$N%j%9%H$rJV$7$^$9!#$3$s$J$U$&$K;H$C$F$/$@$5$$!#(B
 
 @lisp
 (setq message-subscribed-address-functions
@@ -694,7 +694,7 @@ Message $B$OIaDL$O$&$^$/F0:n$7$^$9$,!"$H$-$I$-4V0c$($b$7$^$9!#$=$l$i$N4V0c(B
 $B$F(B @samp{(was: <$B8E$$I=Bj(B>)} $B$rDI2C$7$^$9!#$=$&$$$&5-;v$r<u$1<h$C$??M$,$5(B
 $B$i$KJV?.$9$k$H$-$K!"8E$$I=Bj$O:o=|$9$k$3$H$,$G$-$^$9!#(B
 @code{message-subject-trailing-was-query} (@ref{Message Headers}) $B$r8+$F(B
-$B2<$5$$!#(B
+$B$/$@$5$$!#(B
 
 @item C-c C-f x
 @kindex C-c C-f x
@@ -735,7 +735,7 @@ Message $B$OIaDL$O$&$^$/F0:n$7$^$9$,!"$H$-$I$-4V0c$($b$7$^$9!#$=$l$i$N4V0c(B
 $B$O(B @code{message-archive-header} $B$H(B @code{message-archive-note} $B$r;H$C$F(B
 $B%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#@\F,0z?tIU$-$G8F$P$l$k$H!"A^F~$9$k%F%-%9(B
 $B%H$rMW5a$7$^$9!#K\J8$KCm0U=q$-$rF~$l$?$/$J$$>l9g$O!"(B
-@code{message-archive-note} $B$r(B @code{nil} $B$K$7$F2<$5$$!#(B
+@code{message-archive-note} $B$r(B @code{nil} $B$K$7$F$/$@$5$$!#(B
 @end table
 
 @node Movement
@@ -786,7 +786,7 @@ Yank $B$5$l$?%a%C%;!<%8$r@^$jJV$7$F<*$rB7$($^(B
 $B$F$$$k$H!"(Byank $B$5$l$?J8>O$r$R$I$/$0$A$c$0$A$c$K$7$F$7$^$&$+$b$7$l$^$;$s!#(B
 $B$b$C$H$b!"$I$s$J$b$N$,0BA4$+$O!"$9$0$K$o$+$k$G$7$g$&$1$l$I!#$H$K$+$/!"2?(B
 $B$,5/$-$F$b(B @kbd{C-x u} (@code{undo}) $B$,;H$($k$N$@$+$iLdBjL5$$$3$H$@$1$O!"(B
-$B3P$($F$*$$$F2<$5$$!#(B
+$B3P$($F$*$$$F$/$@$5$$!#(B
 
 @item C-c C-w
 @kindex C-c C-w
@@ -803,9 +803,9 @@ Yank $B$5$l$?%a%C%;!<%8$r@^$jJV$7$F<*$rB7$($^(B
 @findex message-mark-inserted-region
 $B8=:_$N5-;v$N$"$kNN0h$r!"$=$l$i$r0O$`$?$a$N%?%0$G0u$rIU$1$^$9!#(B
 @code{message-mark-insert-begin} $B$H(B @code{message-mark-insert-end} $B$r8+(B
-$B$F2<$5$$!#@\F,0z?t$rIU$1$F;H$&$H!"(Bslrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g$=(B
-$B$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B($BLuCm(B: $B$=$&(B
-$B$$$&%a%C%;!<%8$r(B Gnus $B$GI=<($9$k$H!"%G%#%U%)%k%H$G$O$=$NNN0h$,0l$D$N%Q!<(B
+$B$F$/$@$5$$!#@\F,0z?t$rIU$1$F;H$&$H!"(Bslrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g(B
+$B$=$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B($BLuCm(B: $B$=(B
+$B$&$$$&%a%C%;!<%8$r(B Gnus $B$GI=<($9$k$H!"%G%#%U%)%k%H$G$O$=$NNN0h$,0l$D$N%Q!<(B
 $B%H$H$7$F07$o$l!"$^$?6/D4I=<($5$l$^$9!#(B)
 
 @item C-c M-f
@@ -813,9 +813,9 @@ Yank $B$5$l$?%a%C%;!<%8$r@^$jJV$7$F<*$rB7$($^(B
 @findex message-mark-insert-file
 $B8=:_$N5-;v$K%U%!%$%k$rA^F~$7$F!"$=$NNN0h$r0O$`$?$a$N%?%0$G0u$rIU$1$^$9!#(B
 @code{message-mark-insert-begin} $B$H(B @code{message-mark-insert-end} $B$r8+(B
-$B$F2<$5$$!#@\F,0z?t$rIU$1$F;H$&$H!"(Bslrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g$=(B
-$B$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B($BLuCm(B: $B$=$&(B
-$B$$$&%a%C%;!<%8$r(B Gnus $B$GI=<($9$k$H!"%G%#%U%)%k%H$G$O$=$NNN0h$,0l$D$N%Q!<(B
+$B$F$/$@$5$$!#@\F,0z?t$rIU$1$F;H$&$H!"(Bslrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g(B
+$B$=$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B($BLuCm(B: $B$=(B
+$B$&$$$&%a%C%;!<%8$r(B Gnus $B$GI=<($9$k$H!"%G%#%U%)%k%H$G$O$=$NNN0h$,0l$D$N%Q!<(B
 $B%H$H$7$F07$o$l!"$^$?6/D4I=<($5$l$^$9!#(B)
 @end table
 
@@ -884,7 +884,7 @@ Message $B$O(B @code{From}$B!"(B@code{To} $B$*$h$S(B @code{Cc} $B%X%C%@!<
 @findex message-idna-to-ascii-rhs
 $B<B83E*$K(B @acronym{IDNA} $B%(%s%3!<%I$r9T$J$$$?$$$J$i$P!"(B($B%(%s%3!<%I$5$l$?(B
 $BHs(B-@acronym{ASCII} $B%I%a%$%sL>$rF@$k$?$a$K(B) $B%a%C%;!<%8$NJT=8Cf(B
-$B$K(B @kbd{M-x message-idna-to-ascii-rhs RET} $B$r%?%$%W$7$F2<$5$$!#(B
+$B$K(B @kbd{M-x message-idna-to-ascii-rhs RET} $B$r%?%$%W$7$F$/$@$5$$!#(B
 
 $B$3$N5!G=$r;H$&$K$O(B @uref{http://www.gnu.org/software/libidn/, GNU
 Libidn} $B$r%$%s%9%H!<%k$7$F$*$+$J$1$l$P$J$j$^$;$s!#(B
@@ -988,13 +988,13 @@ Libidn} $B$r%$%s%9%H!<%k$7$F$*$+$J$1$l$P$J$j$^$;$s!#(B
 @emph{$BCm0U(B!}  @acronym{PGP/MIME} $B$H(B @acronym{S/MIME} $B$N$I$A$i(B
 $B$b(B RFC822 $B%X%C%@!<$r=pL>(B/$B0E9f2=$7$^$;$s!#$=$l$i$O(B @acronym{MIME} $B%Q!<%H(B
 $B$K$N$_:nMQ$7$^$9!#5!L)$NI=Bj$H$H$b$K%a!<%k$rAw$C$F$7$^$&A0$K!"$3$N$3$H$r(B
-$B4N$KL?$8$F$*$$$F2<$5$$!#(B
+$B4N$KL?$8$F$*$$$F$/$@$5$$!#(B
 
 $B%a%C%;!<%8$r0E9f2=$9$k$H$-!"(BGnus $B$O%G%#%U%)%k%H$G!V=pL>(B+$B0E9f2=!W(B($B%a%C%;!<(B
 $B%8$KBP$7$F=pL>$H0E9f2=$NN>J}$,9T$J$o$l$k(B) $B%b!<%I$r;H$$$^$9!#FCDj$N%a%C%;!<(B
 $B%8$KBP$7$F$3$l$r9T$J$o$;$?$/$J$$$J$i$P!"(B
 @code{mml-secure-message-encrypt-*} $BL?Na$K@\F,0z?t$rM?$($F(B ($BNc$((B
-$B$P(B @kbd{C-u C-c C-m c p} $B$r;H$C$F(B) $B2<$5$$!#(B
+$B$P(B @kbd{C-u C-c C-m c p} $B$r;H$C$F(B) $B$/$@$5$$!#(B
 
 $B>e5-$N%;%-%e%j%F%#!<L?Na$r<B:]$K;H$&$N$O$5$[$IFq$7$/$"$j$^$;$s!#>/$J$/$H(B
 $B$b!"$9$Y$F$N4X78$9$k%W%m%0%i%`$,E,@Z$KDL?.$79g$&$3$H$r3N$+$a$k$3$H$HHf3S(B
@@ -1041,14 +1041,14 @@ Message ($B$=$l$K(B @acronym{MML}) $B$,(B @acronym{S/MIME} $B$r%5%]!<%H$9$k
 $B$=$NL>$K$U$5$o$7$$(B @code{smime.el} $B$H$$$&(B OpenSSL $B$X$N(B Emacs $B%$%s%?!<%U%'!<(B
 $B%9$r;H$$$^$9$,!"$=$l$O$3$N@_Dj$K;H$&$?$a$N$?$a$N(B @code{custom} $B%0%k!<%W(B
 $B$r;}$C$F$$$^$9!#$G$9$+$i(B @kbd{M-x customize-group RET smime RET} $B$r;n$7(B
-$B$F!"D/$a$F$_$F2<$5$$!#(B
+$B$F!"D/$a$F$_$F$/$@$5$$!#(B
 
 $B8=:_$O!"(BCA ($B$^$?$O(B RA) $B$HDL?.$7$F$"$J$?<+?H$N>ZL@=q$r@8@.$9$k$3$H$O%5%]!<(B
 $B%H$5$l$F$$$^$;$s!#$=$l$K7W2h$b$"$j$^$;$s!#;d$O(B Netscape $B$r;H$C$F!"%M%C%H(B
 $B>e$K$"$kBg$-$J(B CA $B$N0l$D$+$iL5NA$N(B @acronym{S/MIME} $B$N>ZL@=q$r$b$i$$$^$7(B
 $B$?!#(BNetscape $B$OHkL)80$H>ZL@=q$r(B PKCS #12 $B7A<0$GM"=P(B (export) $B$9$k$3$H$,(B
 $B$G$-$^$9!#(BOpenSSL $B$r;H$C$F!"$3$l$r0J2<$N$h$&$K(B PEM $B7A<0$K$h$k(B
-$BAG(B (plain) $B$N(B X.509 $B>ZL@=q$KJQ49$7$F2<$5$$!#(B
+$BAG(B (plain) $B$N(B X.509 $B>ZL@=q$KJQ49$7$F$/$@$5$$!#(B
 
 @example
 $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
@@ -1059,13 +1059,13 @@ $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 $B$9!#(B
 
 @emph{$BCm0U(B!}  $B$"$J$?$N80$O:#!"0E9f2=$5$l$:$K%U%!%$%k$K3JG<$5$l$?$N$G!"$=(B
-$B$l$N07$$$K$O5$$rIU$1$F2<$5$$!#0E9f2=$5$l$?80$r%U%!%$%k$K3JG<$9$k5!G=$O%5(B
-$B%]!<%H$5$l$F$$$^$9!#$=$N>l9g$O(B OpenSSL $B$r8F$S=P$9A0$K(B Gnus $B$,%Q%9%U%l!<(B
+$B$l$N07$$$K$O5$$rIU$1$F$/$@$5$$!#0E9f2=$5$l$?80$r%U%!%$%k$K3JG<$9$k5!G=$O(B
+$B%5%]!<%H$5$l$F$$$^$9!#$=$N>l9g$O(B OpenSSL $B$r8F$S=P$9A0$K(B Gnus $B$,%Q%9%U%l!<(B
 $B%:$r?R$M$k$G$7$g$&!#$I$&$d$C$F$=$l$r@.$7?k$2$k$+$K$D$$$F$O(B OpenSSL $B$N%I(B
-$B%-%e%a%s%H$rFI$s$G2<$5$$!#0E9f2=$5$l$F$$$J$$80$r;H$&(B ($BNc$($P$=$l$i$,0BA4(B
+$B%-%e%a%s%H$rFI$s$G$/$@$5$$!#0E9f2=$5$l$F$$$J$$80$r;H$&(B ($BNc$($P$=$l$i$,0BA4(B
 $B$J%9%H%l!<%8$K$"$k!"$^$?$O$"$J$?$,0BA4$J%7%s%0%k!&MxMQ<T$N%^%7%s$K$$(B
 $B$k(B) $B$N$G$"$l$P!"%Q%9%U%l!<%:$NF~NO$rMW5a$5$l$?$H$-!"C1$K(B @kbd{RET} $B$r2!(B
-$B$7$F2<$5$$!#(B
+$B$7$F$/$@$5$$!#(B
 
 @node Using PGP/MIME
 @subsection PGP/MIME $B$r;H$&(B
@@ -1112,7 +1112,7 @@ gpg --use-agent --sign < /dev/null > /dev/null
 
 Lisp $BJQ?t(B @code{pgg-gpg-use-agent} $B$G(B @command{gpg-agent} $B$r;H$&$+$I$&$+(B
 $B$r@)8f$7$^$9!#(B@xref{Caching passphrase, ,$B%Q%9%U%l!<%:$r%-%c%C%7%e$9$k(B,
-pgg-ja, The PGG Manual}, $B$b;2>H$7$F2<$5$$!#(B
+pgg-ja, The PGG Manual}, $B$b;2>H$7$F$/$@$5$$!#(B
 
 @node PGP Compatibility
 @subsection $B8E$$<BAu$H$N8_49@-(B
@@ -1120,7 +1120,7 @@ pgg-ja, The PGG Manual}, $B$b;2>H$7$F2<$5$$!#(B
 @vindex gpg-temp-directory
 $BCm(B: $B$b$7(B @code{gpg.el} $B$r;H$&$N$G$"$l$P!"(B@code{gpg-temp-directory} $B$G;X(B
 $BDj$5$l$k%G%#%l%/%H%j!<$N%Q!<%_%C%7%g%s$,I,$:(B 0700 $B$K$J$C$F$$$k$h$&$K$7$F(B
-$B2<$5$$!#(B
+$B$/$@$5$$!#(B
 
 $B$"$J$?$N(B PGP $B$N<BAu$N%I%-%e%a%s%H$G>\$7$/=R$Y$i$l$F$$$k$N$G!"$"$J$?<+?H(B
 $B$N$?$a$N80$N@8@.$N$7$+$?$O!"$=$l$K>y$j$^$9!#(B
@@ -1152,7 +1152,7 @@ pgg-ja, The PGG Manual}, $B$b;2>H$7$F2<$5$$!#(B
 $B$G$-$k%a%C%;!<%8$r@8@.$7$^$9!#(B
 
 ($B$=$NLdBj$K4X$9$k$5$i$J$k>pJs$K$D$$$F$O!"(B
-@uref{http://www.gnupg.org/gph/en/pgp2x.html} $B$r;2>H$7$F2<$5$$!#(B)
+@uref{http://www.gnupg.org/gph/en/pgp2x.html} $B$r;2>H$7$F$/$@$5$$!#(B)
 
 @node Various Commands
 @section $B$$$m$$$m$JL?Na(B
@@ -1179,7 +1179,7 @@ pgg-ja, The PGG Manual}, $B$b;2>H$7$F2<$5$$!#(B
 @findex message-kill-address
 $B8=:_0LCV$N%"%I%l%9$r:o=|$7$^$9(B ($BLuCm(B: $B$3$NL?Na$O:n<T$d=P$I$3$m$,ITL@$G!"(B
 $B$5$i$K0-$$$3$H$KIT40A4$JL?Na$K8+$($^$9!#I,$:>C$7$?$$%"%I%l%9$N@hF,$K%]%$(B
-$B%s%H$rCV$$$F;H$C$F2<$5$$!#(B)
+$B%s%H$rCV$$$F;H$C$F$/$@$5$$!#(B)
 
 @item C-c C-z
 @kindex C-c C-z
@@ -1247,8 +1247,9 @@ pgg-ja, The PGG Manual}, $B$b;2>H$7$F2<$5$$!#(B
 @quotation
 $BLuCm(B: @code{bury-buffer} $B$O;XDj$7$?%P%C%U%!!<$r8=:_$N(B Emacs $B>e$KB8:_$9$k(B
 $B%P%C%U%!!<$N%j%9%H$N:G8e$NMWAG$K$9$k4X?t$G!"0lHL$K=EMWEY$,Dc$/$J$C$?%P%C(B
-$B%U%!!<$KBP$7$F<B9T$5$l$^$9!#$=$l$r8+$?$$>l9g$O(B @kbd{C-x C-b} $B$r;H$C$F2<(B
-$B$5$$!#$?$@$7%P%C%U%!!<$NL>A0$,(B @samp{*sent ... *} $B$KJQ$o$C$F$$$k$O$:$G$9!#(B
+$B%U%!!<$KBP$7$F<B9T$5$l$^$9!#$=$l$r8+$?$$>l9g$O(B @kbd{C-x C-b} $B$r;H$C$F$/(B
+$B$@$5$$!#$?$@$7%P%C%U%!!<$NL>A0$,(B @samp{*sent ... *} $B$KJQ$o$C$F$$$k$O$:$G(B
+$B$9!#(B
 @end quotation
 
 @item C-c C-s
@@ -1304,7 +1305,8 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 @code{ecomplete} $B$O$=$3$K3JG<$5$l$F$$$kCM$rD4$Y$F!"$I$s$JJd408uJd$,$"$k(B
 $B$+$r!V%(%l%/%H%j%C%/!W$K(B ($BLuCm(B: $B9*L/$J$d$jJ}$G(B) $B65$($F$/$l$k$G$7$g$&!#$=(B
 $B$l$i$NJd408uJd$N0l$D$rC5$9$K$O!"(B@kbd{M-n} $B%3%^%s%I$G%j%9%H$r2<$KFI$_?J$s(B
-$B$G2<$5$$!#%j%9%H$r>:$k$N$O(B @kbd{M-p}$B!"$=$7$FA*Br$9$k$N$O(B @kbd{RET} $B$G$9!#(B
+$B$G$/$@$5$$!#%j%9%H$r>:$k$N$O(B @kbd{M-p}$B!"$=$7$FA*Br$9$k$N$O(B @kbd{RET} $B$G(B
+$B$9!#(B
 
 @node Spelling
 @section Emacs $B$K%9%Z%k%A%'%C%/$5$;$k(B
@@ -1316,7 +1318,7 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 $B$i$"$C$F!"$?$V$s$h$j0lHLE*$J%Q%C%1!<%8$G$9!#$"$J$?$O:G=i$K%a%C%;!<%8$r=q(B
 $B$$$F$+$i!"Nc$K$h$C$FA4BN$r(B @code{ispell} $B$KDL$7!"$9$Y$F$N=q$-B;$8$r=$@5(B
 $B$9$k$G$7$g$&!#%a%C%;!<%8$rAw?.$9$k$H$-$K$=$l$r<+F0E*$K9T$J$&$?$a$K$O!"(B
-@file{.emacs} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$rF~$l$F2<$5$$!#(B
+@file{.emacs} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$rF~$l$F$/$@$5$$!#(B
 
 @lisp
 (add-hook 'message-send-hook 'ispell-message)
@@ -1342,7 +1344,7 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 $B$?%9%Z%k$N8l$r;XE&$7$F$/$l$^$9!#(B
 
 @code{flyspell} $B$r;H$&$K$O!"0J2<$N$h$&$J$b$N$r(B @file{.emacs} $B%U%!%$%k$K(B
-$BF~$l$F2<$5$$!#(B
+$BF~$l$F$/$@$5$$!#(B
 
 @lisp
 (defun my-message-setup-routine ()
@@ -1396,7 +1398,7 @@ Message $B$O%a%C%;!<%8$r:n@.$9$kJ,Ln$NBh0l@~$K$"$C$F!"6K$a$F0UM_E*$G$9!#$=(B
 $B$^$9!#(B
 
 $BJQ?t(B @code{message-deletable-headers} ($B8e=R(B) $B$N@_Dj$K$h$C$F$O!"$$$/$D$+(B
-$B$N%X%C%@!<$,Aw?.$9$kA0$K>C$5$l$F:n$jD>$5$l$k$3$H$KCm0U$7$F2<$5$$!#(B
+$B$N%X%C%@!<$,Aw?.$9$kA0$K>C$5$l$F:n$jD>$5$l$k$3$H$KCm0U$7$F$/$@$5$$!#(B
 
 @item message-draft-headers
 @vindex message-draft-headers
@@ -1551,8 +1553,8 @@ Newsgroups $B$J$I$,6u$@$C$?>l9g(B) $B$K!"2?$r$9$k$+$r@_Dj$7$^$9!#(B
 @table @code
 @item message-required-mail-headers
 @vindex message-required-mail-headers
-$B$3$NJQ?t$N9=J8$K$D$$$F$O(B @ref{News Headers} $B$r;2>H$7$F2<$5$$!#%G%#%U%)%k(B
-$B%H$O(B @code{(From Subject Date (optional . In-Reply-To) Message-ID
+$B$3$NJQ?t$N9=J8$K$D$$$F$O(B @ref{News Headers} $B$r;2>H$7$F$/$@$5$$!#%G%#%U%)(B
+$B%k%H$O(B @code{(From Subject Date (optional . In-Reply-To) Message-ID
 (optional . User-Agent))} $B$G$9!#(B
 
 @item message-ignored-mail-headers
@@ -1599,7 +1601,7 @@ Manual}.  @code{opportunistic} $B$K$9$k$H!"%f!<%6!<$rBT$?$;$J$$>l9g$K8B$j!"(B
 $B%8$r?)$o$5$l$k$N$r7y$$$^$9!#$3$NJQ?t$,(B @code{nil} $B$G$J$$(B ($B$3$l$,%G%#%U%)(B
 $B%k%H$G$9$,(B) $B$J$i!"$3$l$i$N%X%C%@!<$O(B MH $B$r2p$7$F%a%C%;!<%8$rAw$kA0$K<h$j(B
 $B=|$+$l$^$9!#$"$J$?$N(B MH $B$,$3$l$i$N%X%C%@!<$r07$&$3$H$,$G$-$k$N$G$"$l$P!"(B
-@code{nil} $B$K@_Dj$7$F2<$5$$!#(B
+@code{nil} $B$K@_Dj$7$F$/$@$5$$!#(B
 
 @item message-qmail-inject-program
 @vindex message-qmail-inject-program
@@ -1642,9 +1644,9 @@ sendmail $B$N%G%#%U%)%k%H$NF0:n$G$O!"$=$l$r;XDj$5$l$k$H!V??$NAw?.<T$,=q$-(B
 @item message-mailer-swallows-blank-line
 @vindex message-mailer-swallows-blank-line
 $B%7%9%F%`$N%a%$%i!<$,%X%C%@!<$HK\J8$r0l=o$K$7$F$7$^$&>l9g$O(B @code{nil} $B$G(B
-$B$O$J$$CM$K@_Dj$7$F2<$5$$!#(B(SunOS 4 $B$K$*$$$F(B sendmail $B$,%j%b!<%H%b!<%I$G(B
-$BF0:n$9$k>l9g$,3:Ev$7$^$9!#(B) $BCM$O!">c32$,<B:]$K5/$-$k$+$I$&$+$r%F%9%H$9$k(B
-$B$?$a$N<0$K$9$Y$-$G$9!#(B
+$B$O$J$$CM$K@_Dj$7$F$/$@$5$$!#(B(SunOS 4 $B$K$*$$$F(B sendmail $B$,%j%b!<%H%b!<%I(B
+$B$GF0:n$9$k>l9g$,3:Ev$7$^$9!#(B) $BCM$O!">c32$,<B:]$K5/$-$k$+$I$&$+$r%F%9%H$9(B
+$B$k$?$a$N<0$K$9$Y$-$G$9!#(B
 
 $BLuCm(B: $B6qBNE*$K$O!"K\J8$NBh0l9TL\0J9_$K%X%C%@!<$N$h$&$J%F%-%9%H$,$"$k$H!"(B
 $B$=$l$i$,%X%C%@!<$N0lIt$@$H8+$J$5$l$F$7$^$&LdBj$G$9!#(B
@@ -1774,7 +1776,7 @@ node) $B$H$7$F;H$$$^$9!#J8;zNs$@$C$?$i!"$=$NJ8;zNs$r;H$$$^$9!#$=$l$,J8;zNs(B
 $B$5$l$^$9!#(B
 
 $B$3$N%j%9%H$+$i$"$k9`L\$r>C$7$?$$$H$-$O!"0J2<$N(B Lisp $B$N@Z$lC<$,Lr$KN)$D$G(B
-$B$7$g$&!#B>$NMWAG$r:o=|$7$?$$$H$-$O$=$l$K9g$o$;$F2<$5$$!#(B
+$B$7$g$&!#B>$NMWAG$r:o=|$7$?$$$H$-$O$=$l$K9g$o$;$F$/$@$5$$!#(B
 
 @lisp
 (setq message-required-news-headers
@@ -1793,7 +1795,7 @@ node) $B$H$7$F;H$$$^$9!#J8;zNs$@$C$?$i!"$=$NJ8;zNs$r;H$$$^$9!#$=$l$,J8;zNs(B
 (signature . disabled)
 @end lisp
 
-$B$r2C$($F2<$5$$!#(B
+$B$r2C$($F$/$@$5$$!#(B
 
 $BM-8z$J8!::$O0J2<$NDL$j$G$9(B ($BLuCm(B: $B$3$l$i$N8!::$N0lIt$O%a!<%k$G$b9T$J$o$l(B
 $B$^$9(B):
@@ -1899,7 +1901,7 @@ node) $B$H$7$F;H$$$^$9!#J8;zNs$@$C$?$i!"$=$NJ8;zNs$r;H$$$^$9!#$=$l$,J8;zNs(B
 @item message-post-method
 @vindex message-post-method
 $B$G$-$"$,$C$?%K%e!<%9%a%C%;!<%8$rEj9F$9$k$?$a$K;H$o$l$k(B Gnus $B$N!VA*BrJ}K!!W(B
-($B>\:Y$O(B Gnus $B%^%K%e%"%k$r8+$F2<$5$$(B) $B$G$9!#(B
+($B>\:Y$O(B Gnus $B%^%K%e%"%k$r8+$F$/$@$5$$(B) $B$G$9!#(B
 @end table
 
 @node Insertion Variables
@@ -1934,7 +1936,7 @@ Hallvard B Furuseth <h.b.furuseth@@usit.uio.no> writes:
 $B$J$*(B Gnus $B$K$O!"(B`writes:' $B$N>e$G%/%j%C%/$9$k$H0zMQ$5$l$?%F%-%9%H$r1#$95!(B
 $BG=$,$"$j$^$9!#$b$7$"$J$?$,EY$r1[$7$F0zMQ9T$rJQ99$7$F$7$^$&$H!"$=$l$rFI$`(B
 $B?M$?$A$bH`$i$N(B Gnus $B$rBP1~$5$;$J$1$l$P$J$i$J$/$J$k$G$7$g$&!#JQ(B
-$B?t(B @code{gnus-cite-attribution-suffix} $B$r;2>H$7$F2<$5$$!#>\:Y(B
+$B?t(B @code{gnus-cite-attribution-suffix} $B$r;2>H$7$F$/$@$5$$!#>\:Y(B
 $B$O(B @xref{Article Highlighting, ,$B5-;v$N%O%$%i%$%H(B, gnus-ja, The Gnus
 Manual}, $B$K$"$j$^$9!#(B
 
@@ -1956,7 +1958,7 @@ Manual}, $B$K$"$j$^$9!#(B
 @cindex quoting
 $B$9$G$K0zMQ$5$l$?%F%-%9%H$r4^$`5-;v$+$i(B yank $B$9$k$H$-!"$=$l$>$l$N9T$K$O$3(B
 $B$NJQ?t$NCM$,A0CV$5$l$^$9!#%G%#%U%)%k%H$O(B @samp{>} $B$G$9!#(B
-@code{message-yank-prefix} $B$b;2>H$7$F2<$5$$!#(B
+@code{message-yank-prefix} $B$b;2>H$7$F$/$@$5$$!#(B
 
 @item message-yank-empty-prefix
 @vindex message-yank-empty-prefix
@@ -1965,7 +1967,7 @@ Manual}, $B$K$"$j$^$9!#(B
 $B5-;v$+$i%F%-%9%H$r0zMQ$9$k$H$-!"$=$l$>$l$N6u9T$K$3$NJQ?t$NCM$,A0CV$5$l$^(B
 $B$9!#%G%#%U%)%k%H$O(B @samp{>} $B$G$9!#$3$NJQ?t$r6uJ8;z$K@_Dj$9$k$3$H$K$h$C$F!"(B
 $B0zMQ$5$l$?%F%-%9%H$r<+F0E*$KCJMnJ,$1$9$k$3$H$,$G$-$^$9!#(B
-@code{message-yank-prefix} $B$b;2>H$7$F2<$5$$!#(B
+@code{message-yank-prefix} $B$b;2>H$7$F$/$@$5$$!#(B
 
 @item message-indentation-spaces
 @vindex message-indentation-spaces
@@ -2028,12 +2030,12 @@ Yank $B$5$l$?%a%C%;!<%8$r;z2<$2$9$k$?$a$N6uGr$N?t$G$9!#(B
 @end table
 
 RFC1036bis $B$O!"=pL>$O$=$NA0$K(B @samp{-- } $B$N;0J8;z$@$1$N9T$,$"$k$Y$-$G$"(B
-$B$k$H8@$C$F$$$k$3$H$KCm0U$7$F2<$5$$!#$3$l$O<u$1<j$,<+F0E*$K=pL>$rG'<1$7$F!"(B
-$B=hM}$r$9$k$3$H$r4JC1$K$9$k$?$a$G$9!#$G$9$+$i!"$=$N!"$"$J$?$NH~$7$$%G%6%$(B
-$B%s$r!"$=$l$,BfL5$7$K$7$F$$$k$H46$8$F$b!"$=$l$i$NJ8;z$r<h$j=|$+$J$$$G2<$5(B
-$B$$!#(B
+$B$k$H8@$C$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#$3$l$O<u$1<j$,<+F0E*$K=pL>$rG'<1$7(B
+$B$F!"=hM}$r$9$k$3$H$r4JC1$K$9$k$?$a$G$9!#$G$9$+$i!"$=$N!"$"$J$?$NH~$7$$%G(B
+$B%6%$%s$r!"$=$l$,BfL5$7$K$7$F$$$k$H46$8$F$b!"$=$l$i$NJ8;z$r<h$j=|$+$J$$$G(B
+$B$/$@$5$$!#(B
 
-$B=pL>$O;M9T$h$jB?$/$J$k$Y$-$G$OL5$$$H8@$&$3$H$bCm0U$7$F2<$5$$!#(B
+$B=pL>$O;M9T$h$jB?$/$J$k$Y$-$G$OL5$$$H8@$&$3$H$bCm0U$7$F$/$@$5$$!#(B
 @acronym{ASCII} $B$N3($rF~$l$k$3$H$O!"3'$K$"$J$?$,GO</$G2?$b=EMW$J$3$H$O8@(B
 $B$o$J$$$H$$$&$3$H$r?.$8$5$;$k$?$a$N8z2LE*$JJ}K!$G$9!#(B
 
@@ -2051,7 +2053,7 @@ RFC1036bis $B$O!"=pL>$O$=$NA0$K(B @samp{-- } $B$N;0J8;z$@$1$N9T$,$"$k$Y$-$G$"
 $B$H$r0UL#$7$^$9!#(B($B$3$NJQ?t$O(B @sc{mule} $B5!G=$,L5$$(B Emacs $B$G$N$_;H$o$l$^$9!#(B)
 @sc{mule} $B$+$i(B @acronym{MIME} $B$X$NCV$-49$(=hM}$N>\:Y(B
 $B$O(B @xref{Charset Translation, ,$BJ8;z%;%C%H$NJQ49(B, emacs-mime-ja, Emacs
-MIME Manual}, $B$r;2>H$7$F2<$5$$!#(B
+MIME Manual}, $B$r;2>H$7$F$/$@$5$$!#(B
 
 @item message-fill-column
 @vindex message-fill-column
@@ -2166,8 +2168,8 @@ Emacs $B$O%a%C%;!<%8:n@.$r$$$m$$$m$K2u$7$F$7$^$&$3$H$,$G$-$kB?$/$NFCJL$J%F(B
 $B@_Dj$5$l$F$$$k$H!"(Bmessage $B$O$=$l$i$NB0@-$r%a%C%;!<%8$r:n@.$9$k%P%C%U%!!<(B
 $B$+$iGm$.<h$j$^$9!#$7$+$7$$$/$D$+$N%Q%C%1!<%8$O!"F0:n$9$k$?$a$K$=$l$i$NB0(B
 $B@-$,B8:_$7$F$$$k$3$H$,I,MW$G$9!#$=$l$i$N%Q%C%1!<%8$N0l$D$r;H$&$N$J$i$P!"(B
-$B$3$N%*%W%7%g%s$r(B off $B$K$7$F!"%a%C%;!<%8$,2u$l$F$7$^$o$J$$$3$H$r5'$C$F2<(B
-$B$5$$!#(B
+$B$3$N%*%W%7%g%s$r(B off $B$K$7$F!"%a%C%;!<%8$,2u$l$F$7$^$o$J$$$3$H$r5'$C$F$/(B
+$B$@$5$$!#(B
 
 $BLuCm(B: $BF|K\8lF~NO$N$?$a$N%Q%C%1!<%8$G$"$k(B tamago $BBh;MHG$O!"$^$5$K%F%-%9%H(B
 $BB0@-$r9*$_$K6n;H$7$F$$$^$9!#$=$N$?$a!"$3$NJQ?t$,Hs(B-@code{nil} $B$K@_Dj$5$l(B
@@ -2312,8 +2314,8 @@ to whom*, *news on group* $B$J$I(B) $B$7$F!"$=$NL>A0$N4{B8$N%P%C%U%!!<$GJT=8$
 $B%a%C%;!<%8$rAw$C$?8e$G!"%P%C%U%!!<$NL>A0$O!"Nc$((B
 $B$P(B @samp{*reply to Lars*} $B$+$i(B @samp{*sent reply to Lars*} $B$KJQ99$5$l$^(B
 $B$9!#$b$7$3$l$,9%$-$G$O$J$$$N$J$i$P!"$3$NJQ?t$r$"$J$?$N9%$-$JJ}K!$G%P%C(B
-$B%U%!!<$NL>A0$rJQ99$9$k4X?t$K@_Dj$7$F2<$5$$!#$=$b$=$b%P%C%U%!!<L>$rJQ99$9(B
-$B$k$3$H$r9%$^$J$$$N$G$"$l$P!"<!$N$h$&$K$9$l$PNI$$$G$7$g$&(B:
+$B%U%!!<$NL>A0$rJQ99$9$k4X?t$K@_Dj$7$F$/$@$5$$!#$=$b$=$b%P%C%U%!!<L>$rJQ99(B
+$B$9$k$3$H$r9%$^$J$$$N$G$"$l$P!"<!$N$h$&$K$9$l$PNI$$$G$7$g$&(B:
 
 @lisp
 (setq message-send-rename-function 'ignore)

@@ -101,7 +101,7 @@ Program Interface によって触発されました。それは、抽象化した一連の認証メ
 (まだ書かれていません)。
 
 Emacs SASL ライブラリーを使うには、アプリケーション・プログラムの最初で、
-以下の式を評価して下さい。
+以下の式を評価してください。
 
 @lisp
 (require 'sasl)
@@ -149,7 +149,7 @@ Emacs SASL ライブラリーを使うには、アプリケーション・プログラムの最初で、
 
 認証メカニズムのドライバー (@ref{Back end drivers}) を書きたければ、
 @code{sasl-make-mechanism} を使い、@code{sasl-mechanisms} およ
-び @code{sasl-mechanism-alist} を正しく変更して下さい。
+び @code{sasl-mechanism-alist} を正しく変更してください。
 
 @defun sasl-make-mechanism name steps
 @code{sasl-mechanism} オブジェクトを割り当てます。@*
@@ -193,8 +193,8 @@ Emacs SASL ライブラリーを使うには、アプリケーション・プログラムの最初で、
 クライアントのサーバー名を文字列で返します。
 @end defun
 
-属性の設定を追加したい場合は、@code{sasl-client-set-property} を使って下
-さい。
+属性の設定を追加したい場合は、@code{sasl-client-set-property} を使ってく
+ださい。
 
 @defun sasl-client-set-property client property value
 与えられた属性およびその値をクライアントに追加します。

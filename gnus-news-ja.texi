@@ -25,11 +25,11 @@
 
 No Gnus (このリリースにつながる不安定な Gnus の枝) を試してみたものの、
 安定版に戻してしまっている場合、このバージョンへアップグレードするときに
-は注意して下さい。特に、@file{~/News/marks} ディレクトリーの内容を (もし
-かしたら注意深く選んで) 削除する必要があるでしょう。(訳注: 削除しないと、
-新しい No Gnus を初めて使ったときに、安定版を使っていなかった時期に更新
-されなかった marks ファイルが読み込まれて、@file{~/.newsrc.eld} ファイル
-の内容を上書きしてしまいます。)  削除することによって、このリリース
+は注意してください。特に、@file{~/News/marks} ディレクトリーの内容を (も
+しかしたら注意深く選んで) 削除する必要があるでしょう。(訳注: 削除しない
+と、新しい No Gnus を初めて使ったときに、安定版を使っていなかった時期に
+更新されなかった marks ファイルが読み込まれて、@file{~/.newsrc.eld} ファ
+イルの内容を上書きしてしまいます。)  削除することによって、このリリース
 で nntp のフラグを保存している marks ファイルからではな
 く @file{~/.newsrc.eld} からフラグを読むようになります (訳注: そして新し
 い marks ファイルが作られます)。nntp marks については、次の項目でさらに
@@ -115,7 +115,7 @@ SASL}.
 
 @item
 Picon はテキストの対象物の右側に表示できるようになりました。
-@code{gnus-picon-style} を見て下さい。@xref{Picons}.
+@code{gnus-picon-style} を見てください。@xref{Picons}.
 
 @item @acronym{ANSI} @acronym{SGR} 制御シーケンスを @kbd{W A} で変換する
 ことができます。
@@ -140,7 +140,7 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 
 @item @acronym{MIME} パートを外部にある本体で置き換えることができます。
 @code{gnus-mime-replace-part} と @code{gnus-article-replace-part} を見て
-下さい。@xref{MIME Commands}, @ref{Using MIME}.
+ください。@xref{MIME Commands}, @ref{Using MIME}.
 
 @item
 @code{mm-fill-flowed} オプションで format=flowed なメッセージの取り扱い
@@ -159,8 +159,8 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 @xref{Hashcash}.
 
 @item メッセージバッファに添付ファイルをドラッグ＆ドロップできます。
-@code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見て下
-さい。@xref{MIME, ,MIME, message-ja, Message Manual}.
+@code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見てく
+ださい。@xref{MIME, ,MIME, message-ja, Message Manual}.
 
 @item @code{message-yank-empty-prefix} オプションで、引用文の空行にどん
 な引用符を付けるかを制御することができます。@xref{Insertion Variables,
@@ -169,18 +169,18 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 @item Gnus はメッセージバッファーでヘッダーを隠すために、それら以外の部
 分だけが見えるようにバッファーを狭めます。@code{References} はディフォル
 トで表示されません。すべてのヘッダーが見えるようにするに
-は @code{(setq message-hidden-headers nil)} として下さい。@xref{Message
-Headers, ,メッセージヘッダー, message-ja, Message Manual}.
+は @code{(setq message-hidden-headers nil)} としてください。
+@xref{Message Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 
 @item You can highlight different levels of citations like in the
 article buffer.  See @code{gnus-message-highlight-citation}.
 
 @item 記事バッファーでできるのと同様に、引用された文のレベルの違いに応じ
 たハイライトを行うことができます。
-@code{gnus-message-highlight-citation} を参照して下さい。
+@code{gnus-message-highlight-citation} を参照してください。
 
 @item Message モードでは @code{auto-fill-mode} がディフォルトで ON にな
-ります。@code{message-fill-column} を参照して下さい。@xref{Message
+ります。@code{message-fill-column} を参照してください。@xref{Message
 Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 
 @item 署名ファイルを @code{message-signature-directory} 変数で指定するディ
@@ -248,12 +248,12 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 
 @item ツールバーのアイコンがグループバッファーで正しく活性化 (または不活
 性化) されるようになりました。変数 @code{gnus-group-update-tool-bar} を
-参照して下さい。そのディフォルト値は Emacs の版に依存します。
+参照してください。そのディフォルト値は Emacs の版に依存します。
 @c FIXME: これをマニュアルに書くべし。
 
 @item Gnus のバッファーにおける XEmacs の toolbar の位置を変更できるよう
 になりました。@code{gnus-use-toolbar} と @code{message-use-toolbar} を見
-て下さい。
+てください。
 @end itemize
 
 @item その他の変更
