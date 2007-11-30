@@ -1,3 +1,7 @@
+2007-11-30  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* infohack.el: Reduce the number of split Info files.
+
 2007-10-17  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* ptexinfmt.el (texinfo-copying-text, texinfo-copying)

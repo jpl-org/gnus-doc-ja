@@ -89,6 +89,16 @@ Both characters must have the same length of multi-byte form."
 
 (require 'bytecomp)
 
+;; Reduce the number of split Info files.
+(require 'informat)
+(let* ((fn (symbol-function 'Info-split))
+       (fns (prin1-to-string fn)))
+  (when (string-match "\\([\t\n ]+\\)50000\\([\t\n ]+\\)" fns)
+    (condition-case nil
+	(fset 'Info-split (read (replace-match "\\1200000\\2" nil nil fns)))
+      (error
+       (fset 'Info-split fn)))))
+
 (defun infohack-texi-format (file &optional addsuffix)
   (let ((auto-save-default nil)
 	(find-file-run-dired nil)
