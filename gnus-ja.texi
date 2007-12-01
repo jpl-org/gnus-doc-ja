@@ -9472,7 +9472,7 @@ Parameters})。
 非-@code{nil} だったら、Gnus は記事を @acronym{MIME} メッセージとして解
 読する前に、@samp{MIME-Version} があることを必要としません。これは、ある
 壊れたメール・ユーザー・エージェントからのメッセージを読むときに役立ちま
-す。ディフォルトは @code{nil} です。
+す。ディフォルトは @code{t} です。
 
 @item gnus-article-emulate-mime
 @vindex gnus-article-emulate-mime
