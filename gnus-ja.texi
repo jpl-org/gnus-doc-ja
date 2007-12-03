@@ -7956,13 +7956,19 @@ Gnus $B$O0J2<$N4JC1$J5,B'$KB'$C$F$I$N5-;v$,72$KB0$9$k$N$+$r?dB,$7$^$9(B: $BI=
 @item X o
 @kindex X o ($B35N,(B)
 @findex gnus-uu-decode-save
-$B8=:_$N72$rJ]B8$7$^$9(B (@code{gnus-uu-decode-save})$B!#(B
+$B8=:_$N5-;v72$rJ]B8$7$^$9(B (@code{gnus-uu-decode-save})$B!#(B
 
 @item X b
 @kindex X b ($B35N,(B)
 @findex gnus-uu-decode-binhex
-$B8=:_$N5-;v$r(B binhex $B$G2rE`$7$^$9(B (@code{gnus-uu-decode-binhex})$B!#$3$l$O(B
-$B<B:]$K$OF0:n$7$^$;$s!#(B
+$B8=:_$N5-;v72$r(B binhex $B$G2rE`$7$^$9(B (@code{gnus-uu-decode-binhex})$B!#$3$l(B
+$B$O$^$@<B:]$K$OF0:n$7$^$;$s!#(B
+
+@item X Y
+@kindex X Y (Summary)
+@findex gnus-uu-decode-yenc
+$B8=:_$N5-;v72$r(B yEnc $B$G%G%3!<%I$7$FJ]B8$7$^(B
+$B$9(B (@code{gnus-uu-decode-yenc})$B!#(B
 @end table
 
 @node Decoding Variables
