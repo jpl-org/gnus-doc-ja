@@ -20246,12 +20246,13 @@ Editing})。
 @vindex gnus-score-uncacheable-files
 @cindex score cache
 通常すべてのスコアファイルは、スコアファイルの過剰な再読み込みを避けるた
-めにキャッシュされます。しかし、このために Emacs が大きく肥大化するよう
-ならば、再び必要とされそうもないスコアファイルを取り除くためにこの正規表
-現を使うことができます。@file{all.SCORE} のキャッシュをやめてしまうのは
-間違った考えですが、@file{comp.infosystems.www.authoring.misc.ADAPT} を
-キャッシュしないのは良い考えかもしれません。実際のところ、この変数のディ
-フォルトは @samp{ADAPT$} で、適応スコアファイルはキャッシュされません。
+めにキャッシュされます。しかし、このために Emacs が大きく肥大化するかも
+しれません。そこで、再び必要とされそうもないスコアファイルを取り除くため
+にこの正規表現を使うことができます。@file{all.SCORE} のキャッシュをやめ
+てしまうのは間違った考えですが、
+@file{comp.infosystems.www.authoring.misc.ADAPT} をキャッシュしないのは
+良い考えかもしれません。実際のところ、この変数のディフォルトは
+@samp{ADAPT$} で、適応スコアファイルはキャッシュされません。
 
 @item gnus-save-score
 @vindex gnus-save-score
