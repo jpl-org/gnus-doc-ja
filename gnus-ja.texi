@@ -20667,9 +20667,9 @@ Files})$B!#(B($BCm0U(B: $B!V%0%m!<%P%k!W$O$3$3$G$OK\Ev$K!VA4BNE*!W$H$$$&0UL
 @table @kbd
 @item C-c C-c
 @kindex C-c C-c ($B%9%3%"(B)
-@findex gnus-score-edit-done
+@findex gnus-score-edit-exit
 $B$"$J$?$,9T$J$C$?JQ99$rJ]B8$7$F35N,%P%C%U%!!<$KLa$j$^(B
-$B$9(B (@code{gnus-score-edit-done})$B!#(B
+$B$9(B (@code{gnus-score-edit-exit})$B!#(B
 
 @item C-c C-d
 @kindex C-c C-d ($B%9%3%"(B)
