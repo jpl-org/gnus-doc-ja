@@ -2705,8 +2705,15 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 @section $B%0%k!<%W%Q%i%a!<%?!<(B
 @cindex group parameters
 
-$B%0%k!<%W%Q%i%a!<%?!<$O!"$"$kFCDj$N%0%k!<%W$K8GM-$J>pJs$rJ];}$7$^$9!#0J2<(B
-$B$O%0%k!<%W%Q%i%a!<%?!<%j%9%H$NNc$G$9(B:
+$B%0%k!<%W%Q%i%a!<%?!<$O!"$"$kFCDj$N%0%k!<%W$K8GM-$J>pJs$rJ];}$7$^$9!#(B
+
+$B%0%k!<%W%Q%i%a!<%?!<$N=$@5$K$O(B @kbd{G p} $B$+(B @kbd{G c} $BL?Na$r;H$C$F$/$@$5(B
+$B$$(B (@kbd{G p} $B$O(B Lisp $B%Y!<%9$N!"(B@kbd{G c} $B$O(B Custom $B$U$&$N%$%s%?!<%U%'!<(B
+$B%9$rDs6!$7$^$9(B)$B!#%H%T%C%/%Q%i%a!<%?!<$K$D$$$FFI$s$G$_$k$3$H$bLLGr$$$G$7$g(B
+$B$&(B (@pxref{Topic Parameters})$B!#2C$($F!"(B@code{gnus-parameters} $BJQ?t$r2p$7(B
+$B$F%0%k!<%W%Q%i%a!<%?!<$r@_Dj$9$k$3$H$b$G$-$^$9!#2<5-;2>H$7$F$/$@$5$$!#(B
+
+$B0J2<$O%0%k!<%W%Q%i%a!<%?!<%j%9%H$NNc$G$9(B:
 
 @example
 ((to-address . "ding@@gnus.org")
@@ -3088,11 +3095,6 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 $B$=$N%0%k!<%W$KF~$C$?$H$-$K(B @kbd{d} $B%-!<$O5-;v$K4|8B@Z$l>C5n$N0u$rIU$1$J(B
 $B$$$h$&$K$J$j$^$9!#(B
 @end table
-
-$B%0%k!<%W%Q%i%a!<%?!<$N=$@5$K$O(B @kbd{G p} $B$+(B @kbd{G c} $BL?Na$r;H$C$F$/$@$5(B
-$B$$(B (@kbd{G p} $B$O(B Lisp $B%Y!<%9$N!"(B@kbd{G c} $B$O(B Custom $B$U$&$N%$%s%?!<%U%'!<(B
-$B%9$rDs6!$7$^$9(B)$B!#%H%T%C%/%Q%i%a!<%?!<$K$D$$$FFI$s$G$_$k$3$H$bLLGr$$$G$7$g(B
-$B$&(B (@pxref{Topic Parameters})$B!#(B
 
 @vindex gnus-parameters
 $B%0%k!<%W%Q%i%a!<%?!<$O(B @code{gnus-parameters} $BJQ?t$r2p:_$7$F@_Dj$9$k$3$H(B
