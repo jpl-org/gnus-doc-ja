@@ -15,7 +15,7 @@ This file documents Message, the Emacs message composition mode.
 書です。
 
 Copyright @copyright{} 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
-2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -1583,17 +1583,38 @@ Manual}.  @code{opportunistic} にすると、ユーザーを待たせない場合に限り、
 @table @code
 @item message-send-mail-function
 @vindex message-send-mail-function
+@findex message-send-mail-function
 @findex message-send-mail-with-sendmail
 @findex message-send-mail-with-mh
 @findex message-send-mail-with-qmail
 @findex message-smtpmail-send-it
 @findex smtpmail-send-it
 @findex feedmail-send-it
+@findex message-send-mail-with-mailclient
 現在のバッファーをメールとして送るために使われる関数です。ディフォルト
 は @code{message-send-mail-with-sendmail}、またはシステムによって
-は @code{smtpmail-send-it} です。他に @code{message-send-mail-with-mh},
-@code{message-send-mail-with-qmail}, @code{message-smtpmail-send-it} お
-よび @code{feedmail-send-it} が使えます。
+は @code{smtpmail-send-it} です。他
+に @code{message-send-mail-with-mailclient},
+@code{message-send-mail-with-mh}, @code{message-send-mail-with-qmail},
+@code{message-smtpmail-send-it} および @code{feedmail-send-it} が使えま
+す。
+
+関数 @code{message-send-mail-with-sendmail} は記事を順番待ちに入れた
+り (queuing) 送信するために、記事を @code{sendmail} コマンドにパイプしま
+す。ローカルシステムが @code{sendmail} でメールを送信するように設定され
+ていなくても、遠隔 @acronym{SMTP} サーバーに接続することができるのであれ
+ば、@code{message-send-mail-function} を @code{smtpmail-send-it} に設定
+することができます。@code{smtpmail} パッケージを使うために正しい設定がな
+されているかどうか確認してください。例です:
+
+@lisp
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-default-smtp-server "YOUR SMTP HOST")
+@end lisp
+
+これと似たものに @code{message-smtpmail-send-it} があります。
+ISP が @acronym{POP}-before-@acronym{SMTP} の認証を要求する場合に有用で
+す。@xref{POP before SMTP, , POP before SMTP, gnus-ja, The Gnus Manual}.
 
 @item message-mh-deletable-headers
 @vindex message-mh-deletable-headers

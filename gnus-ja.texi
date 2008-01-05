@@ -11,7 +11,7 @@
 
 @copying
 Copyright @copyright{} 1995, 1996, 1997, 1998, 1999, 2000, 2001,
-2002, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -11905,30 +11905,11 @@ C-c})、Gnus は投稿にどの方法を使うかをあなたに尋ねます。
 最後に、あなたがいつでも基本の選択方法を使って投稿したいのならば、この変
 数を @code{native} にしてください。
 
-メールを送信するときに、Message は @code{message-send-mail-function} を
-呼び出します。ディフォルトの関
-数 @code{message-send-mail-with-sendmail} は記事を順番待ちに入
-れ (queuing) たり送信するために、記事を @code{sendmail} コマンドにパイプ
-します。ローカルシステムが @code{sendmail} でメールを送信するように設定
-されていなくても、あなたが遠隔 @acronym{SMTP} サーバーに接続する権利を持っ
-ているならば、
-@code{message-send-mail-function} を @code{smtpmail-send-it} に設定する
-ことができます。@code{smtpmail} パッケージを使うために正しい設定がなされ
-ているかどうか確認してください。例です:
-
-@lisp
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-default-smtp-server "YOUR SMTP HOST")
-@end lisp
-
-これと似たものに @code{message-smtpmail-send-it} があります。
-ISP が @acronym{POP}-before-@acronym{SMTP} の認証を要求している場合に有
-用です。@xref{POP before SMTP}.
-
-他の可能な @code{message-send-mail-function} の選択肢に
-は @code{message-send-mail-with-mh},
-@code{message-send-mail-with-qmail} および @code{feedmail-send-it} があ
-ります。
+@vindex message-send-mail-function
+メールを送信するときに、Message は @code{message-send-mail-function} 変
+数によって指定される関数を呼び出します。Gnus はそれを、あなたのシステム
+に適合する値に設定しようとします。詳しくは: @xref{Mail Variables, ,
+メール変数, message-ja, The Message Manual}.
 
 @node POP before SMTP
 @section POP before SMTP
