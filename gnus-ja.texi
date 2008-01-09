@@ -11675,17 +11675,26 @@ Gnus はサーバーからその記事を取ってこようとしま
 @kindex R (記事)
 @findex gnus-article-reply-with-original
 現在の記事に元記事を含んだ返答のメールを送りま
-す (@code{gnus-article-reply-with-original})。接頭引数を与えると広い返
-答 (wide reply) になります。もし領域が活性化されていたならば、その領域に
-あるテキストだけを yank します。
+す (@code{gnus-article-reply-with-original})。もし領域が活性化されていた
+ならば、その領域にあるテキストだけを yank します。
+
+@item S W
+@kindex S W (記事)
+@findex gnus-article-wide-reply-with-original
+現在の記事に元記事を含んだ広い返答のメールを送りま
+す (@code{gnus-article-wide-reply-with-original})。もし領域が活性化され
+ていたならば、その領域にあるテキストだけを yank します。
+
+訳注:「広い返答」とはヘッダーの @code{To}, @code{From}, (もしく
+は @code{Reply-to}) と @code{Cc}) のすべての人に返答をすることです。
+@code{Mail-Followup-To} があれば、代わりにそれが使われます。
 
 @item F
 @kindex F (記事)
 @findex gnus-article-followup-with-original
 現在の記事に元記事を含んでフォローアップをしま
-す (@code{gnus-article-followup-with-original})。接頭引数を与えると広い
-返答 (wide reply) になります。もし領域が活性化されていたならば、その領域
-にあるテキストだけを yank します。
+す (@code{gnus-article-followup-with-original})。もし領域が活性化されて
+いたならば、その領域にあるテキストだけを yank します。
 @end table
 
 @node Misc Article
