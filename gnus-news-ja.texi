@@ -149,6 +149,13 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 ,流動テキスト, emacs-mime-ja, The Emacs MIME Manual}.  (Gnus 5.10.7 の新
 機能)
 @c このエントリーは "Oort Gnus" 節にもあります。
+
+@item 新コマンド @kbd{S W} (@code{gnus-article-wide-reply-with-original}) は
+記事バッファーで広い返答をするためのもので、もし領域が設定され
+たテキストがあれば @kbd{R} コマン
+ド (@code{gnus-article-reply-with-original}) と同様にそれを引用します。
+以前は @kbd{R} コマンドに広い返答をさせるために使われた接頭引数が、今で
+は受け付けられないことに注意して下さい。@xref{Article Keymap}.
 @end itemize
 
 @item Message モードの変更
