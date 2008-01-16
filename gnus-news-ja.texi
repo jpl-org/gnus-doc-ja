@@ -156,6 +156,10 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 ド (@code{gnus-article-reply-with-original}) と同様にそれを引用します。
 以前は @kbd{R} コマンドに広い返答をさせるために使われた接頭引数が、今で
 は受け付けられないことに注意して下さい。@xref{Article Keymap}.
+
+@item 記事バッファーで使う新コマンド @kbd{C-h b}
+(@code{gnus-article-describe-bindings}) は、記事コマンドだけでなく記事バッ
+ファーから利用することができる真の簡略コマンドも表示します。
 @end itemize
 
 @item Message モードの変更
