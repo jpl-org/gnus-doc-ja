@@ -2994,6 +2994,12 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 $B$b$7$3$l$,@_Dj$5$l$F$$$k$H!"%a%C%;!<%8$rAw?.$9$k$?$a$NA*BrJ}K!$H$7(B
 $B$F(B @code{gnus-post-method} $B$NBe$o$j$K;H$o$l$^$9!#(B
 
+@item mail-source
+@cindex mail-source
+$B$3$l$,@_Dj$5$l$F$$$F!"$+$D(B @code{mail-sources} $B$N@_Dj$,(B @code{group} $B%0(B
+$B%k!<%W!&%a!<%k%=!<%9(B (@pxref{Mail Sources}) $B$r4^$s$G$$$k$J$i$P!"$=$NCM$,(B
+$B$3$N%0%k!<%W$N%a!<%k%=!<%9$K$J$j$^$9!#(B
+
 @item banner
 @cindex banner
 @code{(banner . @var{regex})} $B$N$h$&$J9`L\$O!"5-;v$N$9$Y$F$N>l=j$G@55,I=(B
@@ -13913,6 +13919,21 @@ Gnus $B$O$"$J$?<+?H$K:R$$$,5Z$V2DG=@-$"$C$F$b!"$"$J$?$,K>$`$9$Y$F$N5!2q$r(B
 $B7?!W!"$=$l$KG$0U$N?t$N!V%-!<%o!<%I!W$,B3$-$^$9!#L@<(E*$K;XDj$5$l$F$$$J$$(B
 $B%-!<%o!<%I$O%G%#%U%)%k%HCM$K$J$j$^$9!#(B
 
+@code{mail-sources} $B$O$9$Y$F$N%0%k!<%W$KBP$7$F6&DL$G$9!#$7$+$7FCDj$N%0%k!<(B
+$B%W$N$?$a$K!"(B@code{mail-sources} $B$K(B @code{group} $B%a!<%k%=!<%9;X<(;R$r;}$?(B
+$B$;$F!"$+$DC10l$N%a!<%k%=!<%9$r;XDj$9$k(B @code{mail-source} $B%0%k!<%W%Q%i%a!<(B
+$B%?!<(B (@pxref{Group Parameters}) $B$r@_Dj$9$k$3$H$K$h$C$F!"%a!<%k%=!<%9$rDI(B
+$B2C$9$k$3$H$,$G$-$^$9!#$3$l$r;H$&>l9g$N(B @code{mail-sources} $B$O!"0lHL$K$O(B
+$BC1$J$k(B @code{(group)} $B$G$9!#$=$7$F%0%k!<%W$N$?$a$N(B @code{mail-source} $B%Q(B
+$B%i%a!<%?!<$O$3$N$h$&$J$b$N$K$J$k$G$7$g$&(B:
+
+@lisp
+(mail-source . (file :path "home/user/spools/foo.spool"))
+@end lisp
+
+$B$3$l$O!"$=$N%0%k!<%W$O(B ($B$3$N%0%k!<%W$@$1$O(B) $B%a%C%;!<%8$r%9%W!<%k%U%!%$(B
+$B%k(B @samp{/user/spools/foo.spool} $B$+$i<hF@$9$k$3$H$r0UL#$7$^$9!#(B
+
 $B0J2<$N%a!<%k%=!<%9$N7?$,;HMQ2DG=$G$9(B:
 
 @table @code
@@ -14332,6 +14353,11 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
          :user "user-name"
          :password "secret")
 @end lisp
+
+@item group
+$B<B:]$N%a!<%k%=!<%9$H$7$F(B @code{mail-source} $B%0%k!<%W%Q%i%a!<%?!<$G@_Dj$5(B
+$B$l$F$$$k$b$N$r;H$$$^$9!#(B@xref{Group Parameters}.
+
 @end table
 
 @table @dfn
