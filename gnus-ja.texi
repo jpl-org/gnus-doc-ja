@@ -12444,8 +12444,9 @@ Headers, ,メッセージヘッダー, message-ja, The Message Manual}.
 @findex gnus-draft-send-message
 @kindex D S (下書き)
 送信を拒否されたメッセージがたくさんあって、それ以上編集せずにそれらを送
-信したい場合は、@kbd{D s} 命令を使うことができます。この命令はプロセス/
-接頭引数の習慣を理解します (@pxref{Process/Prefix})。@kbd{D S} 命
+信したい場合は、@kbd{D s} 命令 (@code{gnus-draft-send-message}) を使うこ
+とができます。この命令はプロセス/接頭引数の習慣を理解しま
+す (@pxref{Process/Prefix})。@kbd{D S} 命
 令 (@code{gnus-draft-send-all-messages}) はバッファーのすべてのメッセー
 ジを送り出します。
 
