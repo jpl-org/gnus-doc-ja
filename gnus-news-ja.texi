@@ -42,6 +42,8 @@ No Gnus ($B$3$N%j%j!<%9$K$D$J$,$kIT0BDj$J(B Gnus $B$N;^(B) $B$r;n$7$F$_$?$b
 $B$$(B Gnus $B$h$jM%@h$5$l$k(B Gnus $B$r8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i$r<jF0$G<h$j(B
 $B=|$$$F$bNI$$$7!"(B@code{make remove-installed-shadows} $B$r;H$C$F:o=|$9$k$3(B
 $B$H$b$G$-$^$9!#(B
+
+@item $B%$%s%9%H!<%k@h$N%G%#%l%/%H%jL>$,6uGrJ8;z$r4^$`$3$H$r5vMF$7$^$9!#(B
 @end itemize
 
 @item Gnus $B$K4^$^$l$k?7$7$$%Q%C%1!<%8$H%i%$%V%i%j!<(B
