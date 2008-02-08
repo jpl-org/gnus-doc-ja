@@ -12,8 +12,9 @@ PDVIPS=@PDVIPS@
 PTEX=@PTEX@
 SHELL=/bin/sh
 TEXI2DVI=@TEXI2DVI@
-infodir=@infodir@
 prefix=@prefix@
+datarootdir=@datarootdir@
+infodir=@infodir@
 
 .SUFFIXES: .pdf .ps .texi
 
@@ -23,13 +24,13 @@ all: $(INFO_DEPS)
 	@texi=$<; rm -f $@ $@-[0-9] $@-[0-9][0-9]; $(EMACSINFO) $$texi t
 
 install: all
-	$(SHELL) ./mkinstalldirs $(infodir)
+	$(SHELL) ./mkinstalldirs "$(infodir)"
 	@list='$(INFO_DEPS)';\
 	for file in $$list; do\
 	  for ifile in `echo $$file $$file-[0-9] $$file-[0-9][0-9]`; do\
 	    if test -f $$ifile; then\
-	      echo " $(INSTALL_DATA) $$ifile $(infodir)/$$ifile";\
-	      $(INSTALL_DATA) $$ifile $(infodir)/$$ifile;\
+	      echo "$(INSTALL_DATA) $$ifile \"$(infodir)/$$ifile\"";\
+	      $(INSTALL_DATA) $$ifile "$(infodir)/$$ifile";\
 	    else : ; fi;\
 	  done;\
 	done
@@ -37,9 +38,9 @@ install: all
 		| fgrep -s -v -i debian'>/dev/null 2>&1; then\
 	  list='$(INFO_DEPS)';\
 	  for file in $$list; do\
-	    if test -f $(infodir)/$$file; then\
-	      echo " $(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/$$file";\
-	      $(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/$$file || :;\
+	    if test -f "$(infodir)/$$file"; then\
+	      echo "$(INSTALL_INFO) --info-dir=\"$(infodir)\" \"$(infodir)/$$file\"";\
+	      $(INSTALL_INFO) --info-dir="$(infodir)" "$(infodir)/$$file" || :;\
 	    else : ; fi\
 	  done;\
 	else : ; fi
