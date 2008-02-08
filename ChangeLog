@@ -1,3 +1,12 @@
+2008-02-08  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Makefile.in (datarootdir): Define.
+	(install): Quote directory name that might contain whitespace.
+
+	* configure: Regenerate.
+
+	* mkinstalldirs: Replace it with the 2006-05-11.19 version.
+
 2007-11-30  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* infohack.el: Reduce the number of split Info files.
