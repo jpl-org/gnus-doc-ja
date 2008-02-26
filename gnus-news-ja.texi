@@ -50,10 +50,11 @@ Emacs 23 $B$G$O!"(BGnus $B$O5-;v$N%I%i%U%H$H(B @file{~/.newsrc.eld} $B$rJ]B
 @item Lisp $B%U%!%$%k$,%G%#%U%)%k%H$G(B @file{.../site-lisp/gnus/} $B$K%$%s%9(B
 $B%H!<%k$5$l$k$h$&$K$J$j$^$7$?!#(B
 
-$B0JA0$O(B @file{.../site-lisp/} $B$,%G%#%U%)%k%H$G$7$?!#2C$($F!"?7$7$$%$%s%9(B
-$B%H!<%i!<$OB>$K%$%s%9%H!<%k$5$l$F$$$k!"?7$7$$(B Gnus $B$h$jM%@h$5$l$k(B Gnus $B$r(B
-$B8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i$r<jF0$G<h$j=|$$$F$bNI$$$7!"(B
-@code{make remove-installed-shadows} $B$r;H$C$F:o=|$9$k$3$H$b$G$-$^$9!#(B
+$B0JA0$O(B @file{.../site-lisp/} $B$,%G%#%U%)%k%H$G$7$?!#2C$($F!"?7$7$$(B
+$B%$%s%9%H!<%i!<$OB>$K%$%s%9%H!<%k$5$l$F$$$k!"?7$7$$(B Gnus $B$h$j(B
+$BM%@h$5$l$k(B Gnus $B$r8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i$r<jF0$G<h$j(B
+$B=|$$$F$bNI$$$7!"(B@code{make remove-installed-shadows} $B$r;H$C$F(B
+$B:o=|$9$k$3$H$b$G$-$^$9!#(B
 
 @item $B%$%s%9%H!<%k@h$N%G%#%l%/%H%jL>$,6uGrJ8;z$r4^$`$3$H$r5vMF$7$^$9!#(B
 @end itemize
