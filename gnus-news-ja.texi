@@ -36,12 +36,24 @@ No Gnus ($B$3$N%j%j!<%9$K$D$J$,$kIT0BDj$J(B Gnus $B$N;^(B) $B$r;n$7$F$_$?$b
 $B>\$7$$>pJs$rF@$k$3$H$,$G$-$^$9!#0lHL$K%@%&%s%0%l!<%I$9$k$3$H$O0BA4$G$O$"(B
 $B$j$^$;$s!#(B
 
+@item Emacs 23 $B$+$i(B Emacs 22 $B$K@Z$jBX$($k$HHs8_49@-$NLdBj$,@8$8$^$9!#(B
+
+Emacs 23 $B$G$O!"(BGnus $B$O5-;v$N%I%i%U%H$H(B @file{~/.newsrc.eld} $B$rJ]B8$9$k$?(B
+$B$a$K(B Emacs $B$N?7$7$$FbIt(B coding system $B$G$"$k(B @code{utf-8-emacs} $B$r;H$$$^(B
+$B$9!#$3$l$i$N%U%!%$%k$O(B Emacs 22 $B0J2<$G$O@5$7$/FI$_9~$^$l$J$$$+$b$7$l$^$;(B
+$B$s!#(BGnus $B$r0[$J$k%P!<%8%g%s$N(B Emacs $B$K$^$?$,$C$F;H$$$?$$>l9g$O!"(B
+@code{mm-auto-save-coding-system} $B$r(B @code{emacs-mule} $B$K@_Dj$9$l$PNI$$(B
+$B$G$7$g$&!#(B
+@c FIXME: $BL$8!>Z!#(B($B$=$l$H$bC/$+%F%9%H$7$^$7$?$+(B?)
+@c http://thread.gmane.org/gmane.emacs.gnus.general/66251/focus=66344 $B;2>H!#(B
+
 @item Lisp $B%U%!%$%k$,%G%#%U%)%k%H$G(B @file{.../site-lisp/gnus/} $B$K%$%s%9(B
-$B%H!<%k$5$l$k$h$&$K$J$j$^$7$?!#0JA0$O(B @file{.../site-lisp/} $B$,%G%#%U%)%k(B
-$B%H$G$7$?!#2C$($F!"?7$7$$%$%s%9%H!<%i!<$OB>$K%$%s%9%H!<%k$5$l$F$$$k!"?7$7(B
-$B$$(B Gnus $B$h$jM%@h$5$l$k(B Gnus $B$r8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i$r<jF0$G<h$j(B
-$B=|$$$F$bNI$$$7!"(B@code{make remove-installed-shadows} $B$r;H$C$F:o=|$9$k$3(B
-$B$H$b$G$-$^$9!#(B
+$B%H!<%k$5$l$k$h$&$K$J$j$^$7$?!#(B
+
+$B0JA0$O(B @file{.../site-lisp/} $B$,%G%#%U%)%k%H$G$7$?!#2C$($F!"?7$7$$%$%s%9(B
+$B%H!<%i!<$OB>$K%$%s%9%H!<%k$5$l$F$$$k!"?7$7$$(B Gnus $B$h$jM%@h$5$l$k(B Gnus $B$r(B
+$B8!=P$7$F7Y9p$rH/$7$^$9!#$=$l$i$r<jF0$G<h$j=|$$$F$bNI$$$7!"(B
+@code{make remove-installed-shadows} $B$r;H$C$F:o=|$9$k$3$H$b$G$-$^$9!#(B
 
 @item $B%$%s%9%H!<%k@h$N%G%#%l%/%H%jL>$,6uGrJ8;z$r4^$`$3$H$r5vMF$7$^$9!#(B
 @end itemize
