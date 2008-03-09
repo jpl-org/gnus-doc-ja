@@ -14419,6 +14419,7 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
 $B%a!<%k$,!"$=$l$r=hM}$7$F$$$k4|4VCf$K3JG<$5$l$F$$$k>l=j$G$9!#%G%#%U%)%k%H(B
 $B$O(B @file{~/.emacs-mail-crash-box} $B$G$9!#(B
 
+@cindex Incoming*
 @item mail-source-delete-incoming
 @vindex mail-source-delete-incoming
 @code{nil} $B$G$J$1$l$P!"F~$C$FMh$?%a!<%k$r0l;~E*$K3JG<$7$?%U%!%$%k$r!"$=(B
@@ -14427,7 +14428,9 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
 $B?t0J>e$K8E$$%U%!%$%k$r>C5n$7$^$9(B ($B>C5n$O?7Ce%a!<%k$r<u$1<h$k$H$-$@$19T$J(B
 $B$o$l$^$9(B)$B!#(B@code{mail-source-delete-incoming} $B$r(B @code{nil} $B$K$7$F$*$$$F!"(B
 @code{mail-source-delete-old-incoming} $B$r%U%C%/$G8F$V$+!"$^$?$OBPOCE*$K(B
-$B8F$V$3$H$b$G$-$^$9!#(B
+$B8F$V$3$H$b$G$-$^$9!#(B@code{mail-source-delete-incoming} $B$N%G%#%U%)%k%HCM(B
+$B$O!"%"%k%U%!HG$N(B Gnus $B$G$O(B @code{2}$B!"%j%j!<%9$5$l$?HG$N(B Gnus $B$G(B
+$B$O(B @code{10} $B$G$9!#(B@xref{Gnus Development}.
 
 @item mail-source-delete-old-incoming-confirm
 @vindex mail-source-delete-old-incoming-confirm
@@ -25762,11 +25765,10 @@ Gnus $B$N%"%k%U%!%j%j!<%9$O!H(BRed Gnus$B!I$d!H(BQuassia Gnus$B!I$N$h$&$JL>
 
 @cindex Incoming*
 @vindex mail-source-delete-incoming
-$B%"%k%U%!(B Gnusae $B$H%j%j!<%9$5$l$?(B Gnusae $B$G$O!"JQ?t$N%G%#%U%)%k%H$,0c$&$b(B
-$B$N$,$"$j$^$9!#FC$K(B @code{mail-source-delete-incoming} $B$O!"%"%k(B
-$B%U%!(B Gnusae $B$G$O(B @code{nil} $B$G!"%j%j!<%9$5$l$?(B Gnusae $B$G$O(B @code{t} $B$G$9!#(B
-$B$3$l$O%a!<%k$r07$C$F$$$k:]$K!"%"%k%U%!%j%j!<%9$,$7$c$C$/$j$r$7$F%a!<%k$r(B
-$B<:$J$&$3$H$rHr$1$k$?$a$G$9!#(B
+$B%"%k%U%!HG$N(B Gnus $B$H%j%j!<%9$5$l$?HG$N(B Gnus $B$G$O$$$/$D$+$NJQ?t!"FC(B
+$B$K(B @code{mail-source-delete-incoming}$B!"$N%G%#%U%)%k%H$,0[$J$j$^$9!#$3$l(B
+$B$O%a!<%k$r07$C$F$$$k:]$K!"%"%k%U%!%j%j!<%9$,$7$c$C$/$j$r$7$F%a!<%k$r<:$J(B
+$B$&$3$H$rHr$1$k$?$a$G$9!#(B@xref{Mail Source Customization}.
 
 ding $B%a!<%j%s%0%j%9%H$H(B Gnus $B%K%e!<%9%0%k!<%W$K$*$1$k5DO@$O!"=c?h$K8x=0(B
 $B$N4X?4$K$h$C$FJ,N%$5$l$F$$$k$o$1$G$O$"$j$^$;$s!#%"%k%U%!(B Gnus $B%j%j!<%9(B
@@ -25777,6 +25779,10 @@ ding $B%a!<%j%s%0%j%9%H$H(B Gnus $B%K%e!<%9%0%k!<%W$K$*$1$k5DO@$O!"=c?h$K8x=0
 $B$9$k$H<N$F$i$l$k$+!"40A4$K=q$-49$($i$l$k$+$N$I$A$i$+$G$9!#%a!<%j%s%0%j%9(B
 $B%H$rFI$s$G$$$k?M$OIaDL$O$3$NB.$$JQ99$KIU$$$F$$$-$^$9$,!"%K%e!<%9%0%k!<%W(B
 $B$N?M$b$=$&$G$"$k$H8+$J$9$3$H$O$G$-$^$;$s!#(B
+
+@c FIXME:
+@c ding = gmane.emacs.gnus.general
+@c newsgroup = gnu.emacs.gnus = gmane.emacs.gnus.user = info-gnus-english
 
 @node Contributors
 @subsection $B9W8%<T(B
@@ -27015,6 +27021,11 @@ nnimap $B$N%0%k!<%W$K$*$1$kL$FI$N?t$,@53N$K$J$j$^$7$?!#(B
 @lisp
 ("^han\\>" euc-kr) -> ("\\(^\\|:\\)han\\>" euc-kr)
 @end lisp
+
+@item
+$BF~$C$F$-$?%a!<%k$r0l;~C_$($k%U%!%$%k(B (@file{Incoming*}) $B$N8E$$$b$N$O!"B((B
+$B;~$G$O$J$/2?F|$+8e$K>C5n$5$l$^$9!#(B@xref{Mail Source Customization}.
+(Gnus 5.10.10 $B$N?75!G=(B)
 @end itemize
 
 @item $B35N,%b!<%I$H5-;v%b!<%I$NJQ99(B

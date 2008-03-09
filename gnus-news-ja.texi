@@ -87,6 +87,17 @@ SASL}.
 パスワードは、利用者にそうするかどうかを尋ねてから、この機構が管理します。
 @end itemize
 
+@item グループモードの変更
+@c ***********************
+
+@itemize @bullet
+@item
+入ってきたメールを一時蓄えるファイル (@file{Incoming*}) の古いものは、即
+時ではなく何日か後に消去されます。@xref{Mail Source Customization}.
+@c Gnus 5.10.10/No Gnus 0.8 の新機能
+@c このエントリーは "Oort Gnus" 節にもあります。
+@end itemize
+
 @item 概略モードと記事モードの変更
 
 @itemize @bullet
