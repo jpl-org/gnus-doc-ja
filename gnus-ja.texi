@@ -14457,7 +14457,7 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 は @file{Incoming30630D_} や @file{Incoming298602ZD} のようになります。
 これが本当に関係するの
 は @code{mail-source-delete-incoming} が @code{nil} または数値の場合だけ
-すが。
+ですが。
 
 @item mail-source-default-file-modes
 @vindex mail-source-default-file-modes
