@@ -23066,12 +23066,21 @@ Gnus $B$O30$K=P$9%a%C%;!<%8$K(B Face $B%X%C%@!<$r4JC1$KA^F~$G$-$k$h$&$K$9$k$?
 $BAG$N:G=i$N9`L\$O9gCW$9$k@55,I=8=$G!"FsHVL\$NMWAG$O3($GCV$-49$($i$l$k@55,(B
 $BI=8=$N%0%k!<%WHV9f!"$=$7$F;0HVL\$NMWAG$OI=<($5$l$k%U%!%$%k$NL>A0$G$9!#(B
 
-$B0J2<$NJQ?t$O!"%9%^%$%j!<$,$3$l$i$N%U%!%$%k$rC5$9>l=j$r%+%9%?%^%$%:$7$^$9(B:
+$B0J2<$NJQ?t$G%9%^%$%j!<$N8+1I$($r%+%9%?%^%$%:$7$^$9(B:
 
 @table @code
+@item smiley-style
+@vindex smiley-style
+$B%9%^%$%j!<$N7A<0$r;XDj$7$^$9!#$"$i$+$8$aDj5A$5$l$F$$$k7A<0(B
+$B$O(B @code{low-color} (13$B!_(B14 $B2hAG$G(B 3 $B?'$N>.$5$$2hA|(B)$B!"(B@code{medium}
+(16$B!_(B16 $B2hAG$G$b$C$H%+%i%U%k$J2hA|(B) $B$*$h$S(B @code{grayscale} (14$B!_(B14 $B2hAG(B
+$B$N%0%l!<%9%1!<%k2hA|(B) $B$G$9!#%G%#%U%)%k%H$O%G%#%U%)%k%H(B face $B$N9b$5$K0MB8(B
+$B$7$^$9!#(B
+
 @item smiley-data-directory
 @vindex smiley-data-directory
-$B%9%^%$%j!<$,4i%U%!%$%k$rC5$9>l=j$G$9!#(B
+$B%9%^%$%j!<$,4i%U%!%$%k$rC5$9>l=j$G$9!#$b$&$3$NJQ?t$O$$$8$i$J$$$G!"Be$o$j(B
+$B$K(B @code{smiley-style} $B$r%+%9%?%^%$%:$7$F$/$@$5$$!#(B
 
 @item gnus-smiley-file-types
 @vindex gnus-smiley-file-types
