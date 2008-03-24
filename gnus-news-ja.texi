@@ -85,6 +85,13 @@ SASL}.
 照)。@acronym{PGG} を @acronym{PGP} のバックエンドとして使う場合に、
 @acronym{PGP} のパスフレーズはこの機構で管理されます。ManageSieve 接続の
 パスワードは、利用者にそうするかどうかを尋ねてから、この機構が管理します。
+
+@item Gnus は EasyPG を使います。
+
+EasyPG を使うことができる場合、Gnus は @acronym{PGG} の代わりにそれを使
+います。EasyPG は GNU Privacy Guard へのユーザーインターフェースです。
+@xref{Top, ,EasyPG Assistant user's manual, epa, EasyPG Assistant user's
+manual}.  EasyPG は Emacs 23 に含まれていますが、単独でも利用可能です。
 @end itemize
 
 @item グループモードの変更
@@ -103,6 +110,15 @@ SASL}.
 @itemize @bullet
 @item 粘着記事バッファーを使えるようになりました。これは、別の記事を選択
 したときに再利用されない記事バッファーです。@xref{Sticky Articles}.
+@c
+@c @item ブックマーク
+@c FIXME: 追加すべし
+
+@item Gnus は @kbd{K H} で @samp{text/html} 記事を WWW ブラウザーで選択
+的に表示することができます。@xref{MIME Commands}.
+@c
+@c gnus-registry-marks
+@c FIXME: 追加すべし
 
 @item 国際化ホスト名 (@acronym{IDNA}) を、@kbd{W i}
 (@code{gnus-summary-idna-message}) を使うことによって、記事の本文中でデ
@@ -271,6 +287,12 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 ファーの @kbd{z} キー) で呼び出すこの機能は、グループのすべての記事の番
 号を 1 から順に振り直して、すきまを取り除きます。その結果として、正しい
 全記事数を得ることができます (再びメッセージが削除されるまでは)。
+@c
+@c @item nnmairix.el
+@c FIXME
+@c
+@c @item nnir.el
+@c FIXME
 @end itemize
 
 @item 外見

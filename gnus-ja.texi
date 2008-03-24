@@ -2701,6 +2701,56 @@ kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$
 @ref{Group Levels} $B$b;2>H$7$F$/$@$5$$!#(B@code{gnus-activate-level} $B$b30It(B
 $B%K%e!<%9%0%k!<%W$N3h@-2=$K1F6A$r5Z$\$7$^$9!#(B
 
+$B0J2<$N%3%^%s%I$O0l;~E*$J%0%k!<%W$r:n$j$^$9!#$=$l$i$O(B Group $B%P%C%U%!!<$+(B
+$B$i$@$1$G$O$J$/!"$I$N(B Gnus $B%P%C%U%!!<$+$i$b8F$V$3$H$,$G$-$^$9!#(B
+
+@table @code
+@item gnus-read-ephemeral-gmane-group
+@findex gnus-read-ephemeral-gmane-group
+@vindex gnus-gmane-group-download-format
+Gmane.org $B$G0l;~E*$J%0%k!<%W$r9VFI$9$k$?$a$N%3%^%s%I$G$9!#5-;v(B
+$B$O(B @code{gnus-gmane-group-download-format} $B$K$h$C$F;XDj$5$l(B
+$B$?(B @acronym{URL} $B$r;H$C$F(B HTTP $B$G%@%&%s%m!<%I$5$l$^$9!#(BGnus $B$O%0%k!<%WL>(B
+$B$H:G=i$N5-;vHV9f$*$h$S5-;v?t$NHO0O$r?R$M$^$9!#(B
+
+@item gnus-read-ephemeral-gmane-group-url
+@findex gnus-read-ephemeral-gmane-group-url
+$B$3$N%3%^%s%I$O(B @code{gnus-read-ephemeral-gmane-group} $B$K;w$F$$$^$9$,!"%0(B
+$B%k!<%WL>$H:G=i$N5-;vHV9f$*$h$S5-;v?t$NHO0O$O!"M?$($i$l(B
+$B$?(B @acronym{URL} $B$r85$K7hDj$5$l$^$9!#%5%]!<%H$5$l$F$$$k(B @acronym{URL} $B$N(B
+$B7A<0$O!"Nc$($P<!$N$h$&$J$b$N$G$9(B:
+@url{http://thread.gmane.org/gmane.foo.bar/12300/focus=12399},
+@url{http://thread.gmane.org/gmane.foo.bar/12345/},
+@url{http://article.gmane.org/gmane.foo.bar/12345/},
+@url{http://permalink.gmane.org/gmane.foo.bar/12345/}, $B$*$h(B
+$B$S(B @url{http://news.gmane.org/group/gmane.foo.bar/thread=12345}$B!#(B
+
+@item gnus-read-ephemeral-emacs-bug-group
+@findex gnus-read-ephemeral-emacs-bug-group
+$B0l;~E*$J%0%k!<%W$G(B Emacs $B$N%P%0%j%]!<%H$r9VFI$7$^$9!#(BGnus $B$O%P%0$NHV9f$r(B
+$B?R$M$^$9!#%G%#%U%)%k%H$O8=:_0LCV$NHV9f$G$9!#(B
+@acronym{URL} $B$O(B @code{gnus-bug-group-download-format-alist} $B$G;XDj$7$^(B
+$B$9!#(B
+
+@item gnus-read-ephemeral-debian-bug-group
+@findex gnus-read-ephemeral-debian-bug-group
+$B0l;~E*$J%0%k!<%W$G(B Debian $B$N%P%0%j%]!<%H$r9VFI$7$^$9!#(B
+@code{gnus-read-ephemeral-emacs-bug-group} $B$K;w$F$$$^$9!#(B
+@end table
+
+$B$3$l$i$N%3%^%s%I$N$$$/$D$+$O!"5-;v$N%\%?%s$H$7$F$bJXMx$G$9!#(B
+@xref{Article Buttons}.
+
+$BNc(B:
+@lisp
+(require 'gnus-art)
+(add-to-list
+ 'gnus-button-alist
+ '("#\\([0-9]+\\)\\>" 1
+   (string-match "\\<emacs\\>" (or gnus-newsgroup-name ""))
+   gnus-read-ephemeral-emacs-bug-group 1))
+@end lisp
+
 @node Group Parameters
 @section $B%0%k!<%W%Q%i%a!<%?!<(B
 @cindex group parameters
@@ -9413,6 +9463,21 @@ Gnus $B$G%a!<%k$rFI$`$3$H$NMxE@$O!"$=$l$,C1=c$J%P%0$rAG@2$i$7$$IT>rM}$KCV(B
 $B$^$;$s(B:
 
 @table @kbd
+@item K H
+@kindex K H ($B35N,(B)
+@findex gnus-article-browse-html-article
+$B8=:_$N5-;v$N(B @samp{text/html} $B%Q!<%H$r(B WWW $B%V%i%&%6!<$G8+$^$9!#@\F,0z?t(B
+$B$,M?$($i$l$J$1$l$P!"$9$Y$F$N(B html $B%Q!<%H$N@hF,$K5-;v$N%X%C%@!<$,2C$($i$l(B
+$B$^$9!#(B
+
+$B7Y9p(B: Spammers $B$O(B HTML $B5-;vCf$N2hA|$X$N%j%s%/$r!"$"$J$?$,$=$N5-;v$rFI$s(B
+$B$@$+$I$&$+$r3N$+$a$k$?$a$K;H$$$^$9!#$3$N%3%^%s%I$O(B @acronym{HTML} $B5-;v$+(B
+$B$i$=$N<j$N(B ``web bugs'' $B$r<h$j=|$+$J$$$G%V%i%&%6!<$KEO$9$N$G!"$3$N%3%^%s(B
+$B%I$O?.Mj$G$-$kAw?.<T$+$i$N%a!<%k$G$@$1;H$&$Y$-$G$9!#(B
+
+@acronym{HTML} $B$r>o$K%V%i%&%6!<$GI=<($7$?$$$N$G$"$l$P!"(B
+@code{mm-text-html-renderer} $B$r(B @code{nil} $B$K@_Dj$7$F$/$@$5$$!#(B
+
 @item K b
 @kindex K b ($B35N,(B)
 $B$9$Y$F$N(B @acronym{MIME} $B%Q!<%H$N@hF,$K%\%?%s$rIU2C$7$^$9!#Kd$a9~$^$l$?%Q!<(B
