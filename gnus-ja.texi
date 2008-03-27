@@ -12923,7 +12923,7 @@ Message Manual}, を参照してください。
 @lisp
 (nntp "outside"
       (nntp-pre-command "runsocks")
-      (nntp-open-connection-function nntp-open-via-telnet)
+      (nntp-open-connection-function nntp-open-telnet-stream)
       (nntp-address "the.news.server")
       (nntp-end-of-line "\n"))
 @end lisp
