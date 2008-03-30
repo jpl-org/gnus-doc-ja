@@ -2148,13 +2148,12 @@ Gnus $B%^%K%e%"%k0J30$K(B message, emacs-mime, sieve $B$*$h$S(B pgg $B$N%^%
 
 @subsubheading $B2sEz(B
 
-Gnus $B$N0lHLE*$J<ALd$r<h$j07$&(B @samp{gnu.emacs.gnus} $B%K%e!<%9%0%k!<(B
-$B%W(B (@uref{http://dir.gmane.org/gmane.emacs.gnus.user,
-gmane.emacs.gnus.user} $B$G$bMxMQ2D(B) $B$H!"(BGnus $B$N3+H/$r07$C$F$$(B
-$B$k(B @email{ding@@gnus.org, ding $B%a!<%j%s%0%j%9%H(B} $B$,$"$j$^$9!#(B
-@samp{ding} $B%j%9%H$O(B @samp{news.gmane.org} $B$+$i(B @acronym{NNTP} $B$r2p$7$F!"(B
-$B$*$h$S(B @uref{http://dir.gmane.org/gmane.emacs.gnus.general,
-gmane.emacs.gnus.general} $B$+$iFI$`$3$H$b$G$-$^$9!#(B
+Gnus $B$N0lHLE*$J<ALd$r<h$j07$&%K%e!<%9%0%k!<%W$H$7(B
+$B$F(B @samp{gnu.emacs.gnus} $B$,$"$j$^(B
+$B$9(B (@uref{http://dir.gmane.org/gmane.emacs.gnus.user,
+gmane.emacs.gnus.user} $B$G$bMxMQ2D(B) $B!#3+H/HG$N(B Gnus $B$KBP$9$k<ALd$,$"$k$N(B
+$B$J$i!"(Bding $B%a!<%j%s%0%j%9%H$G?R$M$kJ}$,NI$$$O$:$G$9!#0J2<$r;2>H$7$F$/$@(B
+$B$5$$!#(B
 
 Big8 ($BLuCm(B: comp, humanities, misc, news, rec, sci, soc, talk $B$NH,Bg%K%e!<(B
 $B%9%0%k!<%W(B) $B$K$H$I$^$C$F$$$?$$$N$J$i$P!"(B
@@ -2162,6 +2161,11 @@ Big8 ($BLuCm(B: comp, humanities, misc, news, rec, sci, soc, talk $B$NH,Bg%K%
 $B$FFI$^$l$F$$$^$9(B ($B$G$b!"E*3N$J=u$1$rF@$k$3$H$,$G$-$k8+9~$_$H$$$&E@$G$O!"(B
 $B>e5-$N%0%k!<%W$NJ}$,$O$k$+$KNI$$$G$7$g$&(B)$B!#%I%$%D8l$rOC$9?M8~$1$K(B
 $B$O(B @samp{de.comm.software.gnus} $B$,$"$j$^$9!#(B
+
+ding $B%a!<%j%s%0%j%9%H(B (ding@@gnus.org) $B$O(B Gnus $B$N3+H/$r07$$$^$9!#(Bding $B%j(B
+$B%9%H$O(B news.gmane.org $B$K$"(B
+$B$k(B @uref{http://dir.gmane.org/gmane.emacs.gnus.general,
+gmane.emacs.gnus.general} $B$r(B NNTP $B7PM3$GFI$`$3$H$b$G$-$^$9!#(B
 
 @node [8.5]
 @subsubheading $B<ALd(B 8.5
