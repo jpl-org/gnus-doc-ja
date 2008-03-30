@@ -400,6 +400,18 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 $B%W%m%0%i%`$,?M$rA`:n$9$k$Y$-$G$O$"$j$^$;$s!#?M$,%W%m%0%i%`$r;H$&(B ($B$b$7$/(B
 $B$OMtMQ$9$k(B) $B$3$H$K$h$C$F!"$d$j$?$$$3$H$r$G$-$k$h$&$K$J$C$F$$$k$Y$-$J$N$G(B
 $B$9!#(B
+@c
+@c $B0J2<$N9T$rJQ99$9$k$H$-$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.7 $B$KBP1~$7$^$9!#(B
+
+@heading $B4XO"$9$kB>$N%^%K%e%"%k(B
+@itemize
+@item Message manual: $B%a%C%;!<%8$N:n@.(B
+@item Emacs-MIME:     $B%a%C%;!<%8$N:n@.(B; @acronym{MIME} $B%Q!<%H(B
+@item Sieve:          Sieve $B%9%/%j%W%H$r(B Emacs $B$G4IM}(B
+@item PGG:            @acronym{PGP/MIME} $B$r(B Gnus $B$G(B
+@item SASL:           @acronym{SASL} $BG'>Z$r(B Emacs $B$G(B
+@end itemize
 @end iftex
 
 @menu
@@ -9636,7 +9648,7 @@ Manual})$B!#(B
 "multipart/related" $B$N%Q!<%H$r(B "multipart/mixed" $B$G$"$k$b$N$H$7$FI=<($7(B
 $B$^$9!#(B
 
-$B$b$7(B "text/html" $B$rI=<($9$k$N$,5$$KF~$i$J$$$N$J$i!"(B
+$B$b$7(B @samp{text/html} $B$rI=<($9$k$N$,5$$KF~$i$J$$$N$J$i!"(B
 @code{mm-discouraged-alternatives} $B$r;2>H$7$F$/$@$5$$!#$?$@$7(B ($B$=$l(B
 $B$G(B "text/html" $B$rI=<($7$J$$$h$&$K@_Dj$7$F!"$+$D(B) $B$3$NJQ?t(B
 $B$,(B @code{nil} $B$@$H!"(B"multipart/related" $B%Q!<%H$NCf$K$"$k2hA|$dB>$N;qNA$r(B
@@ -11386,9 +11398,9 @@ Compressed Files, emacs, The Emacs Editor}) $B$,@_Dj$5$l$F$$$k$H!"(B
 @item i ($B5-;v(B)
 @kindex i ($B5-;v(B)
 @acronym{MIME} $B%*%V%8%'%/%H$NFbMFJ*$r!"$=$N5-;v%P%C%U%!!<(B
-$B$K(B text/plain $B$H$7$FA^F~$7$^$9(B (@code{gnus-mime-inline-part})$B!#@\F,0z?t(B
-$B$,M?$($i$l$k$H!"%G%3!<%I$;$:$K@8$NFbMFJ*$rA^F~$7$^$9!#?tCM$N@\F,0z?t$rM?(B
-$B$($k$H!"J8;z%;%C%H$K$h$k%G%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^(B
+$B$K(B @samp{text/plain} $B$H$7$FA^F~$7$^$9(B (@code{gnus-mime-inline-part})$B!#@\(B
+$BF,0z?t$,M?$($i$l$k$H!"%G%3!<%I$;$:$K@8$NFbMFJ*$rA^F~$7$^$9!#?tCM$N@\F,0z(B
+$B?t$rM?$($k$H!"J8;z%;%C%H$K$h$k%G%3!<%I$rH><jF0$G@Z$jBX$($k$3$H$,$G$-$^(B
 $B$9(B (@ref{Paging the Article} $B$G=R$Y$i$l$F$$(B
 $B$k(B @code{gnus-summary-show-article-charset-alist} $B$r;2>H$7$F$/$@$5$$(B)$B!#(B
 @code{auto-compression-mode} (@pxref{Compressed Files, ,Accessing
@@ -16736,7 +16748,7 @@ Language) $B$G%m!<%I(B/$B%;!<%V$9$k$?$a$K!"0J2<$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9
 @end lisp
 
 $B$"$J$?$,(B @acronym{HTML} $B%Q!<%H$r8+$?$/$J$$$?$a(B
-$B$K(B @code{"text/html"} $B$r(B @code{mm-discouraged-alternatives} $BJQ(B
+$B$K(B @samp{text/html} $B$r(B @code{mm-discouraged-alternatives} $BJQ(B
 $B?t(B (@pxref{Display Customization, ,$BI=<($N%+%9%?%^%$%:(B, emacs-mime-ja,
 The Emacs MIME Manual}) $B$K2C$($F$$$?$H$7$F$b!"FC$K(B @code{nnrss} $B%0%k!<%W(B
 $B$G$O(B @samp{text/html} $B$rI=<($9$kJ}$,JXMx$+$b$7$l$^$;$s!#0J2<(B
@@ -21956,11 +21968,15 @@ Gnus $B$OMxMQ<TDj5A;EMM$r3HD%$7$?(B @samp{%u&foo;} $B$N$h$&$J7A<0$b%5%]!<%H$7
 @node Formatting Fonts
 @subsection $B=qK!;EMM%U%)%s%H(B
 
+@cindex %(, %)
+@vindex gnus-mouse-face
 $B$9$Y$F$N=qK!;EMMJQ?t$K$h$C$F6&M-$5$l$k!"%O%$%i%$%H(B ($B6/D4I=<((B) $B$N$?$a$N;E(B
 $BMM$,$"$j$^$9!#=R8l(B @samp{%(} $B$H(B $B=R8l(B @samp{%)} $B$G0O$^$l$?%F%-%9%H$K$OFC(B
 $BJL$J(B @code{mouse-face} $BB0@-$,M?$($i$l!"$=$3$K%^%&%9$N%]%$%s%?!<$rCV$$$?(B
 $B$H$-$K(B (@code{gnus-mouse-face} $B$K$h$C$F(B) $B%O%$%i%$%H$5$l$^$9!#(B
 
+@cindex %@{, %@}
+@vindex gnus-face-0
 $B=R8l(B @samp{%@{} $B$H(B $B=R8l(B @samp{%@}} $B$G0O$^$l$?%F%-%9%H$K$O!"IaDL$N%U%'!<(B
 $B%9$G$"$k(B @code{gnus-face-0} ($B%G%#%U%)%k%H$G(B @code{bold}) $B$,M?$($i$l$^$9!#(B
 @samp{%@{1} $B$r;H$&$H!"Be$o$j$K(B @code{gnus-face-1} $B$,M?$($i$l!"0J2<F1MM$G(B
@@ -21969,6 +21985,9 @@ Gnus $B$OMxMQ<TDj5A;EMM$r3HD%$7$?(B @samp{%u&foo;} $B$N$h$&$J7A<0$b%5%]!<%H$7
 $B$K(B @code{gnus-mouse-face-3} $B$G%O%$%i%$%H$5$l$k$?$a$K$O!"(B
 @samp{%3(hello%)} $B$H$9$l$PNI$$$G$7$g$&!#(B
 
+@cindex %<<, %>>, guillemets
+@c @cindex %<<, %>>, %«, %», guillemets
+@vindex gnus-balloon-face-0
 $B=R8l(B `%$B!T(B' $B$H(B $B=R8l(B `%$B!U(B' $B$G0O$^$l$?%F%-%9%H$G$O!"FCJL(B
 $B$J(B @code{balloon-help} $BB0@-$,(B @code{gnus-balloon-face-0} $B$K@_Dj$5$l$^$9!#(B
 `%1$B!T(B' $B$H$9$k$H!"(B@code{gnus-balloon-face-1} $B$,;H$o$l!"0J2<F1MM$G$9!#(B
@@ -25814,28 +25833,27 @@ XEmacs 21.4 $B$H$=$l0J>e!#(B
 $BHG$G$bF0:n$9$k$G$7$g$&!#FC$K(B Gnus 5.10.8 $B$O(B Emacs 20.7 $B$H(B XEmacs 21.1 $B$G(B
 $B$bF0$/$O$:$G$9!#(B
 
-$B$$$m$$$m$J%W%i%C%H%U%)!<%`$N(B Gnus $B$N4V$K$O$$$/$D$+$NGyA3$H$7$?0c$$$,$"$j(B
-$B$^$9(B---XEmacs $B$K$O2hA|5!G=(B ($B%m%4$H%D!<%k%P!<(B) $B$NFCD'$,$"$j$^$9(B---$B$7$+$7!"(B
-$B$=$NB>$O$9$Y$F$N(B Emacsen $B$G$[$H$s$IF1$8$O$:$G$9!#(B
-
 @node Gnus Development
 @subsection Gnus $B$N3+H/(B
 
-Gnus $B$OFs$D$N%5%$%/%k$G3+H/$5$l$F$$$^$9!#:G=i$N%5%$%/%k$G(B
-$B$O(B @samp{ding@@gnus.org} $B$G$?$/$5$s$N5DO@$r9T$J$$$^$9!#$=$3$G$O?M!9$,JQ(B
-$B99$d?7$7$$5!G=$NDs0F$r$7$?$j!"%Q%C%A$d?7$7$$%P%C%/%(%s%I$rEj9F$7$^$9!#$3(B
-$B$NCJ3,$O!V%"%k%U%!!WCJ3,$H8F$P$l$F$$$^$9!#$H$$$&$N$O!"$3$NCJ3,$G%j%j!<%9(B
-$B$5$l$?(B Gnusae $B$O!V%"%k%U%!%j%j!<%9!W$b$7$/$O(B ($BB>$NCDBN$G$O$h$jNI$/;H$o$l(B
-$B$k(B)$B!V%9%J%C%W%7%g%C%H!W$H8F$P$l$k$b$N$@$+$i$G$9!#$3$NCJ3,$G$O(B Gnus $B$OIT(B
-$B0BDj$G!"0lHL$NMxMQ<T$K$h$C$F;H$o$l$k$Y$-$G$O$J$$$H9M$($i$l$F$$$^$9!#(B
-Gnus $B$N%"%k%U%!%j%j!<%9$O!H(BRed Gnus$B!I$d!H(BQuassia Gnus$B!I$N$h$&$JL>A0$K$J$C(B
-$B$F$$$^$9!#(B
+Gnus $B$OFs$D$N%5%$%/%k$G3+H/$5$l$F$$$^$9!#:G=i$N%5%$%/%k$G$O3+H/%a!<%j%s(B
+$B%0%j%9%H(B @samp{ding@@gnus.org} $B$G$?$/$5$s$N5DO@$r9T$J$$$^$9!#$=$3$G$O?M!9(B
+$B$,JQ99$d?7$7$$5!G=$NDs0F$r$7$?$j!"%Q%C%A$d?7$7$$%P%C%/%(%s%I$rEj9F$7$^$9!#(B
+$B$3$NCJ3,$O!V%"%k%U%!!WCJ3,$H8F$P$l$F$$$^$9!#$H$$$&$N$O!"$3$NCJ3,$G%j%j!<(B
+$B%9$5$l$?(B Gnusae $B$O!V%"%k%U%!%j%j!<%9!W$b$7$/$O(B ($BB>$NCDBN$G$O$h$jNI$/;H$o(B
+$B$l$k(B)$B!V%9%J%C%W%7%g%C%H!W$H8F$P$l$k$b$N$@$+$i$G$9!#$3$NCJ3,$G$O(B Gnus $B$O(B
+$BIT0BDj$G!"0lHL$NMxMQ<T$K$h$C$F;H$o$l$k$Y$-$G$O$J$$$H9M$($i$l$F$$$^$9!#(B
+Gnus $B$N%"%k%U%!%j%j!<%9$O!H(BOort Gnus$B!I$d!H(BNo Gnus$B!I$N$h$&$JL>A0$K$J$C$F(B
+$B$$$^$9!#(B@xref{Gnus Versions}.
 
-$B$N$i$/$i$H(B 50-100 $B$/$i$$$N%"%k%U%!%j%j!<%9$r$7$?8e$G!"(BGnus $B$O!VE`7k!W$5(B
+$B$N$i$/$i$H(B 10-100 $B$/$i$$$N%"%k%U%!%j%j!<%9$r$7$?8e$G!"(BGnus $B$O!VE`7k!W$5(B
 $B$l$?$H@k8@$5$l!"%P%0=$@5$N$_$,E,MQ$5$l$^$9!#(BGnus $B$O@\F,8l$r<:$$!"$=$NBe(B
-$B$o$j$K!H(BGnus 5.6.32$B!I$N$h$&$K8F$P$l$^$9!#$3$l$i$OIaDL$N?M$,;H$&$3$H$,$G(B
+$B$o$j$K!H(BGnus 5.10.1$B!I$N$h$&$K8F$P$l$^$9!#$3$l$i$OIaDL$N?M$,;H$&$3$H$,$G(B
 $B$-$k$b$N$H9M$($i$l!"<g$K(B @samp{gnu.emacs.gnus} $B%K%e!<%9%0%k!<%W$G5DO@$5(B
-$B$l$F$$$^$9!#(B
+$B$l$F$$$^$9!#$3$N%K%e!<%9%0%k!<%W$O(B @samp{info-gnus-english@@gnu.org} $B%a!<(B
+$B%j%s%0%j%9%H$K%_%i!<$5$l$F$$$F!"$=$l$O(B @samp{gmane.emacs.gnus.user} $B$H$7(B
+$B$F(B Gmane $B$K$b:\$C$F$$$^$9!#$3$l$i$N%j%j!<%9$O:G=*E*$K(B Emacs $B$KE}9g$5$l$^(B
+$B$9!#(B
 
 @cindex Incoming*
 @vindex mail-source-delete-incoming
@@ -25854,9 +25872,17 @@ ding $B%a!<%j%s%0%j%9%H$H(B Gnus $B%K%e!<%9%0%k!<%W$K$*$1$k5DO@$O!"=c?h$K8x=0
 $B%H$rFI$s$G$$$k?M$OIaDL$O$3$NB.$$JQ99$KIU$$$F$$$-$^$9$,!"%K%e!<%9%0%k!<%W(B
 $B$N?M$b$=$&$G$"$k$H8+$J$9$3$H$O$G$-$^$;$s!#(B
 
-@c FIXME:
-@c ding = gmane.emacs.gnus.general
-@c newsgroup = gnu.emacs.gnus = gmane.emacs.gnus.user = info-gnus-english
+$B$7$?$,$C$F%"%k%U%!HG$NLdBj$d$=$l$K4X$9$k<ALd$,$"$k$J$i!"$=$l$i$O(B ding $B%a!<(B
+$B%j%s%0%j%9%H(B @samp{ding@@gnus.org} $B$K8~$1$F$/$@$5$$!#$3$N%j%9%H(B
+$B$O(B Gmane $B$K(B @samp{gmane.emacs.gnus.general} $B$H$7$F$b$"$j$^$9!#(B
+
+@cindex Incoming*
+@vindex mail-source-delete-incoming
+$B$$$/$D$+$NJQ?t!"FC$K(B @code{mail-source-delete-incoming} $B$N%G%#%U%)%k%HCM(B
+$B$O%"%k%U%!(B Gnus $B$H%j%j!<%9$5$l$?(B Gnus $B$G0[$J$C$F$$$^$9!#$3$l$O%"%k%U%!HG(B
+$B$,%a!<%k$r07$C$F$$$k$H$-$K!"$b$7!"$7$c$C$/$j$r$7$F$b!"%a!<%k$,<:$o$l$F$7(B
+$B$^$&$3$H$rKI$0$?$a$G$9!#(B
+@xref{Mail Source Customization}.
 
 @node Contributors
 @subsection $B9W8%<T(B
@@ -27099,7 +27125,7 @@ nnimap $B$N%0%k!<%W$K$*$1$kL$FI$N?t$,@53N$K$J$j$^$7$?!#(B
 @item
 $BF~$C$F$-$?%a!<%k$r0l;~C_$($k%U%!%$%k(B (@file{Incoming*}) $B$N8E$$$b$N$O!"B((B
 $B;~$G$O$J$/2?F|$+8e$K>C5n$5$l$^$9!#(B@xref{Mail Source Customization}.
-(Gnus 5.10.10 $B$N?75!G=(B)
+(Gnus 5.10.10 / Emacs 22.2 $B$N?75!G=(B)
 @end itemize
 
 @item $B35N,%b!<%I$H5-;v%b!<%I$NJQ99(B
