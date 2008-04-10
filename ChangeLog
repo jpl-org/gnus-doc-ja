@@ -1,3 +1,10 @@
+2008-04-10  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* infohack.el: Make XEmacs reduce the number of split Info files as
+	well.
+	(infohack-texi-format): Bind coding-system-for-read to iso-2022-7bit
+	for XEmacs.
+
 2008-02-08  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Makefile.in (datarootdir): Define.

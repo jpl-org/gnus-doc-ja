@@ -90,18 +90,33 @@ Both characters must have the same length of multi-byte form."
 (require 'bytecomp)
 
 ;; Reduce the number of split Info files.
-(require 'informat)
-(let* ((fn (symbol-function 'Info-split))
-       (fns (prin1-to-string fn)))
-  (when (string-match "\\([\t\n ]+\\)50000\\([\t\n ]+\\)" fns)
-    (condition-case nil
-	(fset 'Info-split (read (replace-match "\\1200000\\2" nil nil fns)))
-      (error
-       (fset 'Info-split fn)))))
+(if (featurep 'xemacs)
+    (if (load "informat.el" t t)
+	(let* ((fn (symbol-function 'Info-split))
+	       (fns (prin1-to-string fn)))
+	  (load "informat.elc" t t)
+	  (when (and (string-match "\\([\t\n ]+\\)50000\\([\t\n )]+\\)" fns)
+		     (condition-case nil
+			 (setq fn (byte-compile
+				   (read (replace-match "\\1200000\\2" nil nil
+							fns))))
+		       (error nil))
+		     (fset 'Info-split fn)))))
+  (require 'informat)
+  (let* ((fn (symbol-function 'Info-split))
+	 (fns (prin1-to-string fn)))
+    (when (string-match "\\([\t\n ]+\\)50000\\([\t\n ]+\\)" fns)
+      (condition-case nil
+	  (fset 'Info-split (read (replace-match "\\1200000\\2" nil nil fns)))
+	(error
+	 (fset 'Info-split fn))))))
 
 (defun infohack-texi-format (file &optional addsuffix)
   (let ((auto-save-default nil)
 	(find-file-run-dired nil)
+	(coding-system-for-read (if (featurep 'xemacs)
+				    'iso-2022-7bit
+				  coding-system-for-read))
 	coding-system-for-write
 	(error 0))
     (condition-case err
