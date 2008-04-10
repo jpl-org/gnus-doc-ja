@@ -1,4 +1,4 @@
-Gnus の Info マニュアルの全訳です。No Gnus v0.7 に対応します。
+Gnus の Info マニュアルの全訳です。No Gnus v0.8 に対応します。
 
 インストール
 ============
@@ -15,7 +15,7 @@ Gnus の Info マニュアルの全訳です。No Gnus v0.7 に対応します。
 名にすることはできません。あらかじめ PATH 環境変数を設定してください。
 例です:
 
-% ./configure --with-emacs=emacs-21.4 --infodir=/usr/local/info
+% ./configure --with-emacs=emacs-22.2 --infodir=/usr/local/info
 
 Gnus のバッファーで `C-c C-i' をタイプするか message バッファーで
 `M-x message-info' をタイプしたときに日本語版の Info マニュアルを読み
@@ -123,7 +123,7 @@ XEmacs を使っている場合は、＊必ず＊ "./configure && make EMACS=xemacs"
 下のようなものを .emacs ファイルか、またはそういうものを収めておく場所
 に書き込めば良いでしょう。
 
-   (setq load-path (cons (expand-file-name "~/ngnus-0.7/lisp") load-path))
+   (setq load-path (cons (expand-file-name "~/ngnus-0.8/lisp") load-path))
    (require 'gnus-load)
 
 Gnus のマニュアルを読めるようにするには、このようなものを使ってくださ
@@ -131,8 +131,8 @@ Gnus のマニュアルを読めるようにするには、このようなものを使ってくださ
 
   (require 'info)
   (if (featurep 'xemacs)
-      (add-to-list 'Info-directory-list "~/ngnus-0.7/texi/")
-    (add-to-list 'Info-default-directory-list "~/ngnus-0.7/texi/"))
+      (add-to-list 'Info-directory-list "~/ngnus-0.8/texi/")
+    (add-to-list 'Info-default-directory-list "~/ngnus-0.8/texi/"))
 
 No Gnus は Emacs 21.1 か XEmacs 21.4 より古いものでは全然動きません。
 

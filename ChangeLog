@@ -1,5 +1,7 @@
 2008-04-10  Katsumi Yamaoka  <yamaoka@jpl.org>
 
+	* Gnus-Doc-Ja: The version for No Gnus v0.8 is released.
+
 	* infohack.el: Make XEmacs reduce the number of split Info files as
 	well.
 	(infohack-texi-format): Bind coding-system-for-read to iso-2022-7bit

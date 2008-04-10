@@ -69,7 +69,7 @@ license to the document, as described in section 6 of the license.
 \makeindex
 \begin{document}
 
-\newcommand{\gnusversionname}{No Gnus v0.7}
+\newcommand{\gnusversionname}{No Gnus v0.8}
 \newcommand{\gnuschaptername}{}
 \newcommand{\gnussectionname}{}
 
@@ -374,7 +374,7 @@ Gnus $B$r;H$&$3$H$K$h$C$F(B Emacs $B$G%K%e!<%9$r(B ($B$=$l$K%a!<%k$b(B) $
 $B$"$i$f$k6K0-$J<jCJ$r6n;H$7$F<j$KF~$l$k$3$H$,$G$-$^$9!#1?;n$7$r$7$F$_$h$&(B
 $B$H;W$&$J$i$P!"$9$Y$F$rF1;~$KMQ$$$k$3$H$b$G$-$^$9!#(B
 
-$B$3$N@bL@=q$O(B No Gnus v0.7 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.8 $B$KBP1~$7$^$9!#(B
 @end ifinfo
 @iftex
 
@@ -402,7 +402,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 $B$9!#(B
 @c
 @c $B0J2<$N9T$rJQ99$9$k$H$-$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
-$B$3$N@bL@=q$O(B No Gnus v0.7 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.8 $B$KBP1~$7$^$9!#(B
 
 @heading $B4XO"$9$kB>$N%^%K%e%"%k(B
 @itemize
@@ -25818,7 +25818,7 @@ RFC 1731 $B$O(B @acronym{IMAP} $B$N(B GSSAPI/Kerberos4 $B$N<jK!$K$D$$$F=R$Y
 @cindex Mule
 @cindex Emacs
 
-Gnus $B$O0J2<$N$b$N$GF0:n$7$^$9(B:
+$B$3$N%P!<%8%g%s$N(B Gnus $B$O0J2<$N$b$N$GF0:n$7$^$9(B:
 
 @itemize @bullet
 @item
@@ -25832,6 +25832,9 @@ XEmacs 21.4 $B$H$=$l0J>e!#(B
 $B>/$J$/$H$b?.Mj$G$-$kF0:n$O$7$J$$$G$7$g$&!#8E$$HG$N(B Gnus $B$O8E$$(B Emacs $B$N(B
 $BHG$G$bF0:n$9$k$G$7$g$&!#FC$K(B Gnus 5.10.8 $B$O(B Emacs 20.7 $B$H(B XEmacs 21.1 $B$G(B
 $B$bF0$/$O$:$G$9!#(B
+@c
+@c $B%^!<%8$7$F$O$$$1$J$$$b$N$K4X$9$k%3%a%s%H(B: v5-10 $B$N$3$N>l=j$G$O2C$($i(B
+@c $B$l$F$$$k9`$r!"$3$A$i$K$bF~$l$F$O$$$1$^$;$s(B!
 
 @node Gnus Development
 @subsection Gnus $B$N3+H/(B
@@ -28115,7 +28118,7 @@ Gnus $B$OH"$+$i=P$7$F$9$0$K(B @emph{$BHs>o$K(B} $B$h$/F0:n$7$^$9(B---$B$I
 $BEY(B Emacs $B$r=*N;$7$F:F5/F0$9$kI,MW$,$"$j$^$9!#(B
 
 @item
-@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{No Gnus v0.7} $B$N$h$&(B
+@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{No Gnus v0.8} $B$N$h$&(B
 $B$J$b$N$,=P$F$-$?$J$i!"@5$7$$%U%!%$%k$,FI$_9~$^$l$F$$$^$9!#$=$&$J$i$J$$$N(B
 $B$O8E$$(B @file{.el} $B%U%!%$%k$,;6$i$+$C$F$$$k$;$$$G$7$g$&!#$=$l$i$r>C$7$F$/(B
 $B$@$5$$!#(B
