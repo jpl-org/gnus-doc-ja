@@ -1,3 +1,12 @@
+2008-05-21  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for No Gnus v0.10 is released.
+
+2008-04-22  TAKAHASHI Kaoru  <kaoru@kaisei.org>
+
+	* ptexinfmt.el: Fix Comments.
+	(texinfo-format-geq, texinfo-format-leq,): Support @geq and @leq.
+
 2008-04-10  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Gnus-Doc-Ja: The version for No Gnus v0.8 is released.

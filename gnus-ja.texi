@@ -69,7 +69,7 @@ license to the document, as described in section 6 of the license.
 \makeindex
 \begin{document}
 
-\newcommand{\gnusversionname}{No Gnus v0.9}
+\newcommand{\gnusversionname}{No Gnus v0.10}
 \newcommand{\gnuschaptername}{}
 \newcommand{\gnussectionname}{}
 
@@ -374,7 +374,7 @@ Gnus $B$r;H$&$3$H$K$h$C$F(B Emacs $B$G%K%e!<%9$r(B ($B$=$l$K%a!<%k$b(B) $
 $B$"$i$f$k6K0-$J<jCJ$r6n;H$7$F<j$KF~$l$k$3$H$,$G$-$^$9!#1?;n$7$r$7$F$_$h$&(B
 $B$H;W$&$J$i$P!"$9$Y$F$rF1;~$KMQ$$$k$3$H$b$G$-$^$9!#(B
 
-$B$3$N@bL@=q$O(B No Gnus v0.9 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.10 $B$KBP1~$7$^$9!#(B
 @end ifinfo
 @iftex
 
@@ -402,7 +402,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 $B$9!#(B
 @c
 @c $B0J2<$N9T$rJQ99$9$k$H$-$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
-$B$3$N@bL@=q$O(B No Gnus v0.9 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.10 $B$KBP1~$7$^$9!#(B
 
 @heading $B4XO"$9$kB>$N%^%K%e%"%k(B
 @itemize
@@ -4879,7 +4879,7 @@ Gnus $B$OJQ?t(B @code{gnus-extract-address-components} $B$NCM$r(B @code{From
 $B3+$-3g8L!#IaDL$O(B @samp{[} $B$G$9$,!"M\;R5-;v$K$O(B @samp{<} $B$K$9$k$3$H$,$G$-(B
 $B$^$9(B (@pxref{Customizing Threading})$B!#(B
 @item ]
-$BJD$83g8L!#IaDL$O(B @samp{[} $B$G$9$,!"M\;R5-;v$K$O(B @samp{<} $B$K$9$k$3$H$,$G$-(B
+$BJD$83g8L!#IaDL$O(B @samp{]} $B$G$9$,!"M\;R5-;v$K$O(B @samp{>} $B$K$9$k$3$H$,$G$-(B
 $B$^$9!#(B
 @item >
 $B$=$l$>$l$N%9%l%C%I$N%l%Y%k$KBP$7$F0l$D$N6uGr!#(B
@@ -10561,6 +10561,12 @@ Gnus $B$O(B @code{Message-ID} $B$rIU$1BX$($F(B ($BI=<($N$?$a$@$1$K(B) $B$
 $B%j%9%H$J$N$G!"(B@code{setq} $B$h$j$O$`$7(B
 $B$m(B @code{add-to-list} $B$d(B @code{push} $B$J$I$r;H$C$F!"CM$r!VDI2C!W$7$?J}$,(B
 $BJXMx$+$b$7$l$^$;$s!#(B
+
+@vindex gnus-propagate-marks
+@item gnus-propagate-marks
+@code{nil} $B0J30$NCM$@$C$?$i!"0u$r%P%C%/%(%s%I$KEA$($^$9!#$=$l$i$r5-O?$9(B
+$B$k$?$a$G$9!#$b$C$H$-$a:Y$+$/$U$k$$$K$+$1$k$K$O(B @ref{NNTP marks} $B$*$h$S$=(B
+$B$NCg4V$r;2>H$7$F$/$@$5$$!#(B
 @end table
 
 @node Summary Group Information
@@ -12894,16 +12900,16 @@ Message Manual}, $B$r;2>H$7$F$/$@$5$$!#(B
 @cindex firewall
 $B$"$J$?$,KIJI(B (firewall) $B$NCf$K$$$F!"KIJI%^%7%s$rDL$7$F(B @acronym{NNTP} $B%5!<(B
 $B%P!<$K@\B3$9$k$7$+$J$$$N$G$"$l$P!"KIJI%^%7%s$K(B @code{rlogin} $B$7$F!"$=$3(B
-$B$+$i(B @acronym{NNTP} $B%5!<%P!<$K(B telnet $B$r$9$k$h$&$K(B Gnus $B$K;X<($9$k$3$H$,(B
-$B$G$-$^$9!#$3$s$J$3$H$r$9$k$N$O$$$5$5$+$P$+$2$F$$$k$N$G$9$,!"$G$b2>A[%5!<(B
-$B%P!<$NDj5A$O$*$=$i$/$3$N$h$&$J$b$N$K$J$k$O$:$G$9(B:
+$B$+$i(B @uref{http://netcat.sourceforge.net/, netcat} $B$G(B @acronym{NNTP} $B%5!<(B
+$B%P!<$K@\B3$9$k$h$&$K(B Gnus $B$K;X<($9$k$3$H$,$G$-$^$9!#$3$s$J$3$H$r$9$k$N$O(B
+$B$$$5$5$+$P$+$2$F$$$k$N$G$9$,!"$G$b2>A[%5!<%P!<$NDj5A$O$*$=$i$/$3$N$h$&$J(B
+$B$b$N$K$J$k$O$:$G$9(B:
 
 @lisp
 (nntp "firewall"
-      (nntp-open-connection-function nntp-open-via-rlogin-and-telnet)
+      (nntp-open-connection-function nntp-open-via-rlogin-and-netcat)
       (nntp-via-address "the.firewall.machine")
-      (nntp-address "the.real.nntp.host")
-      (nntp-end-of-line "\n"))
+      (nntp-address "the.real.nntp.host"))
 @end lisp
 
 $B$"$NAGE($J(B @code{ssh} $B%W%m%0%i%`$r!"%b%G%`$r7PM3$9$kDL?.$r05=L$9$k$?$a$K(B
@@ -12923,27 +12929,23 @@ Message Manual}, $B$r;2>H$7$F$/$@$5$$!#(B
              (nntp-via-user-name "intermediate_user_name")
              (nntp-via-address "intermediate.host.example")
              (nntp-via-rlogin-command "ssh")
-             (nntp-end-of-line "\n")
-             (nntp-via-rlogin-command-switches ("-C" "-t" "-e" "none"))
-             (nntp-open-connection-function nntp-open-via-rlogin-and-telnet)))
+             (nntp-via-rlogin-command-switches ("-C"))
+             (nntp-open-connection-function nntp-open-via-rlogin-and-netcat)))
 @end lisp
 
+$B$b$A$m$s!"<+F0G'>Z$r9T$J$o$;$k$?$a$K$O(B @code{ssh-agent} $B$rE,@Z$K@_Dj$7$J(B
+$B$1$l$P$J$j$^$;$s!#(B
+
 $BKIJI$NCf$K$$$?$H$7$F$b(B "runsocks" $B$N$h$&$J%i%C%Q!<%3%^%s%I$rDL$7$F30$N@$(B
-$B3&$KD>@\%"%/%;%9$G$-$k$N$J$i$P!"0J2<$N$h$&$K(B socks $B2=$5$l$?(B telnet $B$G%K%e!<(B
+$B3&$KD>@\%"%/%;%9$G$-$k$N$J$i$P!"0J2<$N$h$&$K(B socks $B2=$5$l$?(B netcat $B$G%K%e!<(B
 $B%9%5!<%P!<$K@\B3$9$k$3$H$,$G$-$k$G$7$g$&(B:
 
 @lisp
 (nntp "outside"
       (nntp-pre-command "runsocks")
-      (nntp-open-connection-function nntp-open-telnet-stream)
-      (nntp-address "the.news.server")
-      (nntp-end-of-line "\n"))
+      (nntp-open-connection-function nntp-open-netcat-stream)
+      (nntp-address "the.news.server"))
 @end lisp
-
-$B$b$A$m$s!"<+F0G'>Z$r9T$J$o$;$k$?$a$K$O(B @code{ssh-agent} $B$rE,@Z$K@_Dj$7$J(B
-$B$1$l$P$J$j$^$;$s!#2C$($F!"DL?.FbMF$r05=L$9$k$?$a$K(B
-$B$O!"(B@code{ssh} $B$N(B @file{config} $B%U%!%$%k$K(B @samp{Compression} $B%*%W%7%g%s(B
-$B$,B8:_$7$J$1$l$P$J$j$^$;$s!#(B
 
 @node Creating a Virtual Server
 @subsection $B2>A[%5!<%P!<$r:n@.$9$k(B
@@ -13399,24 +13401,39 @@ default force yes
       (nntp-address "snews.bar.com"))
 @end lisp
 
+@findex nntp-open-netcat-stream
+@item nntp-open-netcat-stream
+@code{netcat} $B%3%^%s%I$r;H$C$F(B @acronym{NNTP} $B%5!<%P!<$K@\B3$7$^$9!#%G%#(B
+$B%U%)%k%H$N(B @code{nntp-open-network-stream} $B$,$=$l$r$9$k$N$K$b$+$+$o$i$:!"(B
+$B$J$<$3$N4X?t$,$"$k$N$+IT;W5D$K;W$&$+$b$7$l$^$;$s!#$=$NM}M3(B ($B$N0l$D(B) $B$O!"(B
+$B$b$7$"$J$?$,KIJI$NCf$K$$$?$H$7$F$b(B @code{runsocks} $B$N$h$&$J%3%^%s%I%i%C(B
+$B%Q!<$N$*$+$2$G30$N@$3&$rD>@\%"%/%;%9$G$-$k$J$i$P!"$=$l$r$3$N$h$&$K;H$&$3(B
+$B$H$,$G$-$k$N$G$9(B:
+
+@lisp
+(nntp "socksified"
+      (nntp-pre-command "runsocks")
+      (nntp-open-connection-function nntp-open-netcat-stream)
+      (nntp-address "the.news.server"))
+@end lisp
+
+$B%G%#%U%)%k%H$N%a%=%C%I$N$^$^$G$=$l$r9T$J$&$K$O(B Emacs $B$N%;%C%7%g%sA4BN$r(B
+$B%i%C%W$9$kI,MW$,$"$k$G$7$g$&$,!"$=$l$ONI$$9M$($G$O$"$j$^$;$s!#(B
+
 @findex nntp-open-telnet-stream
 @item nntp-open-telnet-stream
-$BC1$K(B @samp{telnet} $B$7$F(B @acronym{NNTP} $B%5!<%P!<$K@\B3$7$^$9!#%G%#%U%)%k(B
-$B%H$N(B @code{nntp-open-network-stream} $B$,$=$l$r$9$k$N$K$b$+$+$o$i$:!"$J$<(B
-$B$3$N4X?t$,$"$k$N$+IT;W5D$K;W$&$+$b$7$l$^$;$s!#$=$NM}M3(B ($B$N0l$D(B) $B$O!"$b$7(B
-$B$"$J$?$,KIJI$NCf$K$$$?$H$7$F$b(B @code{runsocks} $B$N$h$&$J%3%^%s%I%i%C%Q!<(B
-$B$N$*$+$2$G30$N@$3&$rD>@\%"%/%;%9$G$-$k$J$i$P!"$=$l$r$3$N$h$&$K;H$&$3$H$,(B
-$B$G$-$k$N$G$9(B:
+@code{nntp-open-netcat-stream} $B$K;w$F$$$^$9$,!"(B@code{netcat} $B$G$O$J(B
+$B$/$F(B @code{telnet} $B$r;H$$$^$9!#9TKv%3!<%I$rJQ99$7$?$j$9$k$N(B
+$B$G(B @code{telnet} $B$O$$$5$5$+7x<B$5$K7g$1$k$N$G$9$,!"(B@code{netcat} $B$,L5$$(B
+$B>l9g$b$"$j$^$9!#A0$NNc$O$3$N$h$&$K=q$-49$($i$l$k$G$7$g$&(B:
 
 @lisp
 (nntp "socksified"
       (nntp-pre-command "runsocks")
       (nntp-open-connection-function nntp-open-telnet-stream)
-      (nntp-address "the.news.server"))
+      (nntp-address "the.news.server")
+      (nntp-end-of-line "\n"))
 @end lisp
-
-Emacs $B$N%;%C%7%g%sA4BN$r%i%C%W$7$F!"%G%#%U%)%k%H$N%a%=%C%I$r;H$&$H$$$&$N(B
-$B$O!"NI$$9M$($G$O$"$j$^$;$s!#(B
 @end table
 
 @node Indirect Functions
@@ -13430,13 +13447,13 @@ Emacs $B$N%;%C%7%g%sA4BN$r%i%C%W$7$F!"%G%#%U%)%k%H$N%a%=%C%I$r;H$&$H$$$&$N(B
 $B;2>H$9$kJQ?t$K1F6A$5$l$^$9(B (@pxref{Common Variables})$B!#(B
 
 @table @code
-@item nntp-open-via-rlogin-and-telnet
-@findex nntp-open-via-rlogin-and-telnet
-$B1s3V%7%9%F%`$K(B @samp{rlogin} $B$7$F!"$=$3$+$iK\Ev(B
-$B$N(B @acronym{NNTP} $B%5!<%P!<$K(B @samp{telnet} $B$7$^$9!#$3$l$O!"Nc$($P$"$J$?(B
-$B$,;O$a$KKIJI%^%7%s$K@\B3$7$J$1$l$P$J$i$J$$>l9g$KJXMx$G$9!#(B
+@item nntp-open-via-rlogin-and-netcat
+@findex nntp-open-via-rlogin-and-netcat
+$B1s3V%7%9%F%`$K(B @samp{rlogin} $B$7$F!"$=$3$+$iK\Ev$N(B @acronym{NNTP} $B%5!<%P!<(B
+$B$K@\B3$9$k$?$a$K(B @code{netcat} $B$r;H$$$^$9!#$3$l$O!"Nc$($P$"$J$?$,;O$a$K(B
+$BKIJI%^%7%s$K@\B3$7$J$1$l$P$J$i$J$$>l9g$KJXMx$G$9!#(B
 
-@code{nntp-open-via-rlogin-and-telnet}-$BMQ$NJQ?t(B:
+@code{nntp-open-via-rlogin-and-netcat}-$BMQ$NJQ?t(B:
 
 @table @code
 @item nntp-via-rlogin-command
@@ -13448,36 +13465,29 @@ Emacs $B$N%;%C%7%g%sA4BN$r%i%C%W$7$F!"%G%#%U%)%k%H$N%a%=%C%I$r;H$&$H$$$&$N(B
 @vindex nntp-via-rlogin-command-switches
 @code{nntp-via-rlogin-command} $B$N%3%^%s%I$N%9%$%C%A$H$7$F;H$o$l$kJ8;zNs(B
 $B$N%j%9%H$G$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#$b(B
-$B$7(B @samp{ssh} $B$r(B @code{nntp-via-rlogin-command} $B$NCM$H$7$F;H$&$J$i$P!"%G!<(B
-$B%?@\B3$r05=L$9$k$?$a$K(B @samp{("-C")} $B$r;H$&$3$H$,$G$-$^$9!#$"$k$$$O!"$b(B
-$B$7Cf4V$N%[%9%H$G(B telnet $B%3%^%s%I$,5?;wC<Kv$rI,MW$H$9$k$J$i$P!"$3$l(B
-$B$r(B @samp{("-t" "-e" "none")} $B$^$?$O(B @samp{("-C" "-t" "-e" "none")} $B$K$7(B
-$B$F$/$@$5$$!#(B
+$B$7(B @samp{ssh} $B$r(B @code{nntp-via-rlogin-command} $B$NCM$H$7$F;H$&$J$i$P!"$9(B
+$B$Y$F$N%G!<%?@\B3$r05=L$9$k$?$a$K(B @samp{("-C")} $B$r;H$&$3$H$,$G$-$^$9!#(B
 @end table
 
-@code{nntp-end-of-line} $B$NCM$r(B @samp{\n} $B$KJQ99$9$kI,MW$,$"$k$G$"$m$&$3(B
-$B$H$KCm0U$7$F$/$@$5$$(B (@pxref{Common Variables})$B!#(B
-
-@item nntp-open-via-rlogin-and-netcat
-@findex nntp-open-via-rlogin-and-netcat
+@item nntp-open-via-rlogin-and-telnet
+@findex nntp-open-via-rlogin-and-telnet
 $BK\<AE*$K$OF1$8$3$H$J$N$G$9$,!"Cf4V$N%[%9%H$+$iK\Ev$N(B @acronym{NNTP} $B%5!<(B
-$B%P!<$K@\B3$9$k$?$a$K!"(B@samp{telnet} $B$NBe$o$j(B
-$B$K(B @uref{http://netcat.sourceforge.net/, netcat} $B$r;H$$$^$9!#(B
+$B%P!<$K@\B3$9$k$?$a$K!"(B@samp{netcat} $B$NBe$o$j$K(B @code{telnet} $B$r;H$$$^$9!#(B
+$B9TKv%3!<%I$rJQ99$7$?$j$9$k$N$G(B @code{telnet} $B$O$$$5$5$+7x<B$5$K7g$1$k$N(B
+$B$G$9$,!"(B@code{netcat} $B$,L5$$>l9g$b$"$k$G$7$g$&!#(B
 
-@code{nntp-open-via-rlogin-and-netcat}-$BMQ$NJQ?t(B:
+@code{nntp-open-via-rlogin-and-telnet}-$BMQ$NJQ?t(B:
 
 @table @code
-@item nntp-via-netcat-command
-@vindex nntp-via-netcat-command
+@item nntp-telnet-command
+@vindex nntp-telnet-command
 $BCf4V$N%[%9%H$+$iK\Ev$N(B @acronym{NNTP} $B%5!<%P!<$K@\B3$9$k$?$a$K;H$o$l$k%3(B
-$B%^%s%I$G$9!#%G%#%U%)%k%H$O(B @samp{nc} $B$G$9!#Be$o$j(B
-$B$K(B @uref{http://www.imasy.or.jp/~gotoh/ssh/connect.html, connect} $B$N$h$&(B
-$B$J!"B>$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9!#(B
+$B%^%s%I$G$9!#%G%#%U%)%k%H$O(B @samp{telnet} $B$G$9!#(B
 
-@item nntp-via-netcat-switches
-@vindex nntp-via-netcat-switches
-@code{nntp-via-netcat-command} $B$N%3%^%s%I$N%9%$%C%A$H$7$F;H$o$l$kJ8;zNs(B
-$B$N%j%9%H$G$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#(B
+@item nntp-telnet-switches
+@vindex nntp-telnet-switches
+@code{nntp-telnet-command} $B$N%3%^%s%I$N%9%$%C%A$H$7$F;H$o$l$kJ8;zNs$N%j(B
+$B%9%H$G$9!#%G%#%U%)%k%H$O(B @code{("-8")} $B$G$9!#(B
 
 @item nntp-via-rlogin-command
 @vindex nntp-via-rlogin-command
@@ -13487,8 +13497,14 @@ Emacs $B$N%;%C%7%g%sA4BN$r%i%C%W$7$F!"%G%#%U%)%k%H$N%a%=%C%I$r;H$&$H$$$&$N(B
 @item nntp-via-rlogin-command-switches
 @vindex nntp-via-rlogin-command-switches
 @code{nntp-via-rlogin-command} $B$N%3%^%s%I$N%9%$%C%A$H$7$F;H$o$l$kJ8;zNs(B
-$B$N%j%9%H$G$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#(B
+$B$N%j%9%H$G$9!#(B@samp{ssh} $B$r;H$&>l9g$K!"$b$7Cf4V$N%[%9%H$G(B telnet $B%3%^%s(B
+$B%I$,5?;wC<Kv$rI,MW$H$9$k$J$i$P!"$3$l$r(B @samp{("-t" "-e" "none")} $B$^$?(B
+$B$O(B @samp {("-C" "-t" "-e" "none")} $B$K$9$kI,MW$,$"$k$G$7$g$&!#%G%#%U%)%k(B
+$B%H$O(B @code{nil} $B$G$9!#(B
 @end table
+
+@code{nntp-end-of-line} $B$NCM$r(B @samp{\n} $B$KJQ99$9$kI,MW$,$"$k$G$"$m$&$3(B
+$B$H$KCm0U$7$F$/$@$5$$(B (@pxref{Common Variables})$B!#(B
 
 @item nntp-open-via-telnet-and-telnet
 @findex nntp-open-via-telnet-and-telnet
@@ -13576,17 +13592,17 @@ Emacs $B$N%;%C%7%g%sA4BN$r%i%C%W$7$F!"%G%#%U%)%k%H$N%a%=%C%I$r;H$&$H$$$&$N(B
 $B$kJ8;zNs$G$9!#$3$l$O%G%#%U%)%k%H$G(B @samp{\r\n} $B$G$9$,!"AG$G$O$J$$@\B3MQ(B
 $B$N(B telnet $BF1Ey$N4X?t$r;H$C$F$$$k$H$-$O(B @samp{\n} $B$G$"$k$Y$-$G$9!#(B
 
-@item nntp-telnet-command
-@vindex nntp-telnet-command
-@samp{telnet} $B$rDL$7$F(B @acronym{NNTP} $B%5!<%P!<$H@\B3$9$k$H$-$K;H$&%3%^%s(B
+@item nntp-netcat-command
+@vindex nntp-netcat-command
+@samp{netcat} $B$rDL$7$F(B @acronym{NNTP} $B%5!<%P!<$H@\B3$9$k$H$-$K;H$&%3%^%s(B
 $B%I$G$9!#$3$l$OCf4V$N%[%9%H$H@\B3$9$k$?$a$N$b$N$G$O(B @emph{$B$"$j$^$;$s(B}$B!#$3(B
 $B$l$O$^$5$KK\Ev$N(B @acronym{NNTP} $B%5!<%P!<$H@\B3$9$k$?$a$N$b$N$G$9!#%G%#%U%)(B
-$B%k%H$O(B @samp{telnet} $B$G$9!#(B
+$B%k%H$O(B @samp{nc} $B$G$9!#(B
 
-@item nntp-telnet-switches
-@vindex nntp-telnet-switches
-@code{nntp-telnet-command} $B$KEO$9%9%$%C%A$N%j%9%H$G$9!#%G%#%U%)%k%H(B
-$B$O(B @samp{("-8")} $B$G$9!#(B
+@item nntp-netcat-switches
+@vindex nntp-netcat-switches
+@code{nntp-netcat-command} $B$KEO$9%9%$%C%A$N%j%9%H$G$9!#%G%#%U%)%k%H(B
+$B$O(B @samp{()} $B$G$9!#(B
 @end table
 
 @node NNTP marks
@@ -18729,7 +18745,7 @@ Buffer Lines})$B!#(B@code{gnus-diary} $B$O$=$l$r!"F|Dx%0%k!<%W$N%Q%i%a!<%?!<$
 $B$FAH$_F~$l$i$l$F$$$^$9!#$=$l$O$5$i$K!"DL>o$N%a!<%k$rF|DxMQ$N$b$N$KJQ49$9(B
 $B$kA`:n$r4JC1$K$9$k$?$a$K!"(B
 @code{message-mode} $B$H(B @code{article-edit-mode} $B$K$*$$(B
-$B$F(B @kbd{C-c D c} $B%-!<$H$7$F@_Dj$b$5$l$F$$$^$9!#(B
+$B$F(B @kbd{C-c C-f d} $B%-!<$H$7$F@_Dj$b$5$l$F$$$^$9!#(B
 
 $B@\F,0z?t$rH<$C$F$3$N4X?t$r8F$V$H!"$=$l$i$,$"$k$+!"@5$7$$$+$I$&$+$H$OL54X(B
 $B78$K!"F|Dx%X%C%@!<$NF~NO$r6/@)$7$^$9!#$=$&$d$C$F!"Nc$($P$9$G$K@5$7$/@_Dj(B
@@ -24733,8 +24749,8 @@ Bogofilter $B$K;w$?E}7WJ,@O4o$G$"(B
 
 @defvar spam-ifile-spam-category
 ifile $B$K4X$9$k8B$j!"$3$l$O(B spam $B%a%C%;!<%8$N%+%F%4%j!<$G$9!#<B:]$K;H$o$l(B
-$B$kJ8;zNs$OL54X78$G$9$,!"$?$V$s$"$J$?$O(B @samp{spam} $B$N%G%U%)%k%HCM$r;D$7(B
-$B$F$*$-$?$$$G$7$g$&!#(B
+$B$kJ8;zNs$OL54X78$G$9$,!"$?$V$s$"$J$?$O(B @samp{spam} $B$N%G%#%U%)%k%HCM$r;D(B
+$B$7$F$*$-$?$$$G$7$g$&!#(B
 @end defvar
 
 @defvar spam-ifile-database
@@ -27257,7 +27273,7 @@ Face $B%X%C%@!<$r07$($k$h$&$K$J$j$^$7$?!#(B@xref{Face}.
 $B$?!#$5$i$K!"<u?.<T$NL>A0$+(B @acronym{NNTP} $B%0%k!<%W$KEj9F$7$?%0%k!<%WL>$G(B
 $BMxMQ<TL>$rCV$-49$($k$?$a$K!"(B@code{gnus-extra-headers}$B!"(B
 @code{nnmail-extra-headers} $B$*$h$S(B @code{gnus-ignored-from-addresses} $B$N(B
-$B%G%U%)%k%HCM$,JQ$o$j$^$7$?!#(B
+$B%G%#%U%)%k%HCM$,JQ$o$j$^$7$?!#(B
 
 @item
 $BE:IU%U%!%$%k$N>C5n!#(B
@@ -27271,7 +27287,7 @@ Face $B%X%C%@!<$r07$($k$h$&$K$J$j$^$7$?!#(B@xref{Face}.
 @item
 @code{gnus-default-charset}
 
-$B%G%U%)%k%HCM$O(B @code{iso-8859-1} $B$KBe$o$C(B
+$B%G%#%U%)%k%HCM$O(B @code{iso-8859-1} $B$KBe$o$C(B
 $B$F(B @code{current-language-environment} $BJQ?t$K$h$C$F7hDj$5$l$kCM$K$J$j$^(B
 $B$9!#$^$?!"(B@code{gnus-group-charset-alist} $B$K$"$C$?(B @samp{.*} $B$N9`L\$O:o(B
 $B=|$5$l$^$7$?!#(B
@@ -27515,7 +27531,13 @@ Message $B%P%C%U%!!<$KE:IU%U%!%$%k$r%I%i%C%0!u%I%m%C%W$9$k$3$H$,$G$-$^$9!#(B
 
 @code{mml-dnd-protocol-alist} $B$H(B @code{mml-dnd-attach-options} $B$r;2>H$7(B
 $B$F$/$@$5$$!#(B@xref{MIME, ,MIME, message, The Message Manual}.
-@c New in 5.10.9 / 5.11
+@c New in 5.10.9 / 5.11 (Emacs 21.1)
+
+@item
+@code{auto-fill-mode} $B$,(B Message $B%b!<%I$G%G%#%U%)%k%H$GM-8z$K$J$j$^$9!#(B
+@code{message-fill-column} $B$r;2>H$7$F$/$@$5$$!#(B@xref{Various Message
+Variables, ,$B$$$m$$$m$J%a%C%;!<%8JQ?t(B, message-ja, The Message Manual}.
+@c New in Gnus 5.10.12 / 5.11 (Emacs 22.3)
 @end itemize
 
 @item $B%P%C%/%(%s%I$NJQ99(B
@@ -27571,13 +27593,15 @@ Manual}) $B$N$h$&$J!"%;%-%e%j%F%#!<$K4XO"$7$?$b$N$b4^$s$G$$$k$3$H$KCeL\$7(B
 
 @item
 $B%D!<%k%P!<$,%0%k!<%W!"35N,$*$h$S(B Message $B%b!<%I$G(B GNOME $B$N%"%$%3%s$r;H$&(B
-$B$h$&$K99?7$5$l$^$7$?!#%D!<%k%P!<$O%+%9%?%^%$%:2DG=$G$9!#$3$l$O(B Gnus
-5.10.9 $B$N?75!G=$G$9!#(B(Emacs $B$@$1$G$9!#(BXEmacs $B$OL$BP1~!#(B)
+$B$h$&$K99?7$5$l$^$7$?!#%D!<%k%P!<$O%+%9%?%^%$%:2DG=$G$9(B: @kbd{M-x
+customize-apropos RET -tool-bar$} $B$+$i;O$a$F$/$@$5$$!#$3$l$O(B Gnus
+5.10.10 $B$N?75!G=$G$9!#(B(Emacs $B$@$1$G$9!#(BXEmacs $B$OL$BP1~!#(B)
 
-@item The tool bar icons are now (de)activated correctly
-$B%0%k!<%W%P%C%U%!!<$GJQ?t(B @code{gnus-group-update-tool-bar} $B$r;2>H$7$F$/(B
-$B$@$5$$!#$=$N%G%#%U%)%k%HCM$O(B Emacs $B$N%P!<%8%g%s$K0MB8$7$F$$$^$9!#$3$l(B
-$B$O(B Gnus 5.10.9 $B$N?75!G=$G$9!#(B
+@item
+$B%D!<%k%P!<$N%"%$%3%s$,@5$7$/M-8z$K(B ($B$^$?$OL58z$K(B) $B$J$j$^$9!#%0%k!<%W%P%C(B
+$B%U%!!<$GJQ?t(B @code{gnus-group-update-tool-bar} $B$r;2>H$7$F$/$@$5$$!#$=$N(B
+$B%G%#%U%)%k%HCM$O(B Emacs $B$N%P!<%8%g%s$K0MB8$7$F$$$^$9!#$3$l$O(B Gnus 5.10.9
+$B$N?75!G=$G$9!#(B
 @end itemize
 
 @item $B$=$NB>$NJQ99(B
@@ -28118,10 +28142,11 @@ Gnus $B$OH"$+$i=P$7$F$9$0$K(B @emph{$BHs>o$K(B} $B$h$/F0:n$7$^$9(B---$B$I
 $BEY(B Emacs $B$r=*N;$7$F:F5/F0$9$kI,MW$,$"$j$^$9!#(B
 
 @item
-@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{No Gnus v0.9} $B$N$h$&(B
-$B$J$b$N$,=P$F$-$?$J$i!"@5$7$$%U%!%$%k$,FI$_9~$^$l$F$$$^$9!#$=$&$J$i$J$$$N(B
-$B$O8E$$(B @file{.el} $B%U%!%$%k$,;6$i$+$C$F$$$k$;$$$G$7$g$&!#$=$l$i$r>C$7$F$/(B
-$B$@$5$$!#(B
+@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{No Gnus v0.10} $B$N$h(B
+@c $B$3$N9T$rJQ99$9$k>l9g$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
+$B$&$J$b$N$,=P$F$-$?$J$i!"@5$7$$%U%!%$%k$,FI$_9~$^$l$F$$$^$9!#$=$&$J$i$J$$(B
+$B$N$O8E$$(B @file{.el} $B%U%!%$%k$,;6$i$+$C$F$$$k$;$$$G$7$g$&!#$=$l$i$r>C$7$F(B
+$B$/$@$5$$!#(B
 
 @item
 @acronym{FAQ} $B$HF~Lg=q$rFI$`$?$a$K!"%X%k%W%0%k!<%W(B ($B%0%k!<%W%P%C%U%!!<(B
