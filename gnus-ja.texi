@@ -69,7 +69,7 @@ license to the document, as described in section 6 of the license.
 \makeindex
 \begin{document}
 
-\newcommand{\gnusversionname}{No Gnus v0.10}
+\newcommand{\gnusversionname}{No Gnus v0.11}
 \newcommand{\gnuschaptername}{}
 \newcommand{\gnussectionname}{}
 
@@ -374,7 +374,7 @@ Gnus $B$r;H$&$3$H$K$h$C$F(B Emacs $B$G%K%e!<%9$r(B ($B$=$l$K%a!<%k$b(B) $
 $B$"$i$f$k6K0-$J<jCJ$r6n;H$7$F<j$KF~$l$k$3$H$,$G$-$^$9!#1?;n$7$r$7$F$_$h$&(B
 $B$H;W$&$J$i$P!"$9$Y$F$rF1;~$KMQ$$$k$3$H$b$G$-$^$9!#(B
 
-$B$3$N@bL@=q$O(B No Gnus v0.10 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.11 $B$KBP1~$7$^$9!#(B
 @end ifinfo
 @iftex
 
@@ -402,7 +402,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 $B$9!#(B
 @c
 @c $B0J2<$N9T$rJQ99$9$k$H$-$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
-$B$3$N@bL@=q$O(B No Gnus v0.10 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B No Gnus v0.11 $B$KBP1~$7$^$9!#(B
 
 @heading $B4XO"$9$kB>$N%^%K%e%"%k(B
 @itemize
@@ -21121,8 +21121,15 @@ Gnus $B$,!VEAE}E*!W$J%X%C%@!<(B ---@samp{From}, @samp{Subject} $B$J$I(B---$
 $B$a$K(B Gnus $B$,Kh2s%P%C%/%(%s%I$+$iC1FH$N5-;v$r<h$j4s$;$J$1$l$P$J$i$J$$$3$H(B
 $B$r0UL#$7$^$9!#$3$l$OBg$-$J%0%k!<%W$G$OD9$$;~4V$,$+$+$j$^$9!#(B
 
-$B$5$F!"$3$l$K4X$7$F%K%e!<%9%0%k!<%W$N$?$a$K$G$-$k$3$H$OB?$/$O$"$j$^$;$s$,!"(B
-$B%a!<%k%0%k!<%W$N$?$a$K$O$h$jM%$l$?<jCJ$,$"$j$^$9!#(B
+@vindex gnus-inhibit-slow-scoring
+$B%X%C%@!<$^$?$OK\J8$NCY$$%9%3%"IU$1$O!"JQ(B
+$B?t(B @code{gnus-inhibit-slow-scoring} $B$r@_Dj$9$k$3$H$K$h$C$F6X;_$9$k$3$H$,(B
+$B$G$-$^$9!#$b$7(B @code{gnus-inhibit-slow-scoring} $B$,@55,I=8=$@$C$?$i!"%0%k!<(B
+$B%W$,$=$N@55,I=8=$K9gCW$9$k>l9g$KCY$$%9%3%"IU$1$,6X;_$5$l$^$9!#$=$l(B
+$B$,(B @code{t} $B$@$C$?$i!"$9$Y$F$N%0%k!<%W$GCY$$%9%3%"IU$1$,6X;_$5$l$^$9!#(B
+
+$B$5$F!"$3$l$K4X$7$F%K%e!<%9%0%k!<%W$G$NCY$5$N$?$a$K$G$-$k$3$H$OB?$/$O$"$j(B
+$B$^$;$s$,!"%a!<%k%0%k!<%W$N$?$a$K$O$h$jM%$l$?<jCJ$,$"$j$^$9!#(B
 @ref{To From Newsgroups} $B$N>O$G$3$N5!9=$,$I$&F/$/$+$,>\$7$/@bL@$5$l$F$$(B
 $B$^$9$,!"$3$3$G$O$I$&$7$?$i(B @code{nnml} $B$G(B @samp{To} $B$H(B @samp{Cc} $B%X%C%@!<(B
 $B$K%9%3%"$rIU$1$k$3$H$,$G$-$k$+$ND4M}$NNc$r5s$2$^$7$g$&!#(B
@@ -21143,13 +21150,6 @@ Gnus $B$r:F5/F0$7$F!"(B@kbd{M-x nnml-generate-nov-databases} $B%3%^%s%I(B
 $B$H$,$G$-$^$9!#(B
 
 $B$o$+$C$?$+$J(B? $B4JC1$@$h$M!#(B
-
-@vindex gnus-inhibit-slow-scoring
-$B%X%C%@!<$^$?$OK\J8$NCY$$%9%3%"IU$1$O!"JQ(B
-$B?t(B @code{gnus-inhibit-slow-scoring} $B$r@_Dj$9$k$3$H$K$h$C$F6X;_$9$k$3$H$,(B
-$B$G$-$^$9!#$b$7(B @code{gnus-inhibit-slow-scoring} $B$,@55,I=8=$@$C$?$i!"%0%k!<(B
-$B%W$,$=$N@55,I=8=$K9gCW$9$k>l9g$KCY$$%9%3%"IU$1$,6X;_$5$l$^$9!#$=$l(B
-$B$,(B @code{t} $B$@$C$?$i!"$9$Y$F$N%0%k!<%W$GCY$$%9%3%"IU$1$,6X;_$5$l$^$9!#(B
 
 @node Scoring Tips
 @section $B%9%3%"IU$1$N1|5A(B
@@ -28142,7 +28142,7 @@ Gnus $B$OH"$+$i=P$7$F$9$0$K(B @emph{$BHs>o$K(B} $B$h$/F0:n$7$^$9(B---$B$I
 $BEY(B Emacs $B$r=*N;$7$F:F5/F0$9$kI,MW$,$"$j$^$9!#(B
 
 @item
-@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{No Gnus v0.10} $B$N$h(B
+@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{No Gnus v0.11} $B$N$h(B
 @c $B$3$N9T$rJQ99$9$k>l9g$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
 $B$&$J$b$N$,=P$F$-$?$J$i!"@5$7$$%U%!%$%k$,FI$_9~$^$l$F$$$^$9!#$=$&$J$i$J$$(B
 $B$N$O8E$$(B @file{.el} $B%U%!%$%k$,;6$i$+$C$F$$$k$;$$$G$7$g$&!#$=$l$i$r>C$7$F(B
