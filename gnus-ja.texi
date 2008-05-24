@@ -6888,6 +6888,15 @@ Gnus $B$O(B @code{Subject} $BMs$rD4$Y$k$3$H$K$h$C$F%9%l%C%I$r=8$a$^$9!#$3$l$O
 $B$O2?$b$"$j$^$;$s$,!"(B@kbd{A T} $BL?Na$r$h$/;H$&$N$G$"$l$PLr$KN)$D$G$7$g(B
 $B$&(B (@pxref{Finding the Parent})$B!#(B
 
+$B%5!<%P!<$O!"$3$N$$$:$l$r$b5!G=$5$;$k$?$a$K(B @acronym{NOV} $B$r%5%]!<%H$7$J(B
+$B$1$l$P$J$j$^$;$s!#(B
+
+@cindex Gmane, gnus-fetch-old-headers
+$B$3$N5!G=$O@-G=$K?<9o$J1F6A$rM?$(F@$^$9!#$9$Y$F$N%m!<%+%k$K%-%c%C%7%e$5$l(B
+$B$?%X%C%@!<$rL5;k$9$k$+$i$G$9!#5-;v$r4|8B@Z$l>C5n$7$J$$%5!<(B
+$B%P!<(B ($BNc$($P(B news.gmane.org) $B$N!"$"$k%0%k!<%W$N$?$a$K$=$l$r(B @code{t} $B$K(B
+$B@_Dj$9$k$H!"35N,$N@8@.$,$H$F$bCY$/$J$C$F$7$^$$$^$9!#(B
+
 @item gnus-fetch-old-ephemeral-headers
 @vindex gnus-fetch-old-ephemeral-headers
 @code{gnus-fetch-old-headers} $B$HF1$8$G$9$,!"0l;~%K%e!<%9%0%k!<%W$N$?$a$K(B
