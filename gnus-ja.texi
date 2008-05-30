@@ -18846,7 +18846,7 @@ Variables, gnus-agent}) $B$N$G!"$"$J$?$O2?$b@_Dj$9$kI,MW$,L5$$$N$G$9!#(B
 
 $B$^$:!"$$$/$D$+$NMQ8l$rJRIU$1$F$*$-$^$7$g$&!#(B
 
-$B%M%C%H%o!<%/$H$N@\B3$r@Z$C$F$$$k$H$-(B ($B$+$D%(!<%8%'%s%H$K$=$N$3$H$rCN$i$5(B
+$B%M%C%H%o!<%/$H$N@\B3$r@Z$C$F$$$k$H$-(B ($B$+$D%(!<%8%'%s%H$K$=$N$3$H$rCN$i$;(B
 $B$F$"$k$H$-(B)$B!"(BGnus $B%(!<%8%'%s%H$O(B @dfn{unplugged} $B$G$9!"$H8@$$$^$9!#%M%C(B
 $B%H%o!<%/$H$N@\B3$,I|3h$7$?$i(B ($B$+$D(B Gnus $B$,$=$N$3$H$rCN$C$F$$$l$P(B)$B!"%(!<(B
 $B%8%'%s%H$O(B @dfn{plugged} $B$G$9!#(B
@@ -22011,7 +22011,7 @@ Gnus $B$OMxMQ<TDj5A;EMM$r3HD%$7$?(B @samp{%u&foo;} $B$N$h$&$J7A<0$b%5%]!<%H$7
 @samp{%3(hello%)} $B$H$9$l$PNI$$$G$7$g$&!#(B
 
 @cindex %<<, %>>, guillemets
-@c @cindex %<<, %>>, %«, %», guillemets
+@c @cindex %<<, %>>, %$B!T(B, %$B!U(B, guillemets
 @vindex gnus-balloon-face-0
 $B=R8l(B `%$B!T(B' $B$H(B $B=R8l(B `%$B!U(B' $B$G0O$^$l$?%F%-%9%H$G$O!"FCJL(B
 $B$J(B @code{balloon-help} $BB0@-$,(B @code{gnus-balloon-face-0} $B$K@_Dj$5$l$^$9!#(B
