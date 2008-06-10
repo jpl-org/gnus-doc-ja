@@ -1617,8 +1617,8 @@ Gnus $B$N5/F0$K$"$^$j$K;~4V$,$+$+$k$H;W$C$?$J$i!"$3$NJQ?t$K$3$l$i$N;0$D$N(B
 @code{some} $B$+(B @code{nil} $B$r;H$&$N$G$"$l$P!"$I$A$i$K$7$mB.EY$r>e$2$k$?$a(B
 $B$K$9$Y$F$N6=L#$NL5$$%0%k!<%W$rI,$::o=|$9$k$Y$-$G$7$g$&!#(B
 
-$B$3$NJQ?t$OFs<!(B (secondary) $BA*BrJ}K!$N%"%/%F%#%V%U%!%$%k<hF@$K$b1F6A$9$k(B
-$B$3$H$K5$$rIU$1$F$/$@$5$$!#(B
+$B$3$NJQ?t$OBhFs$N(B (secondary) $BA*BrJ}K!$N%"%/%F%#%V%U%!%$%k<hF@$K$b1F6A$9(B
+$B$k$3$H$K5$$rIU$1$F$/$@$5$$!#(B
 
 @node Startup Variables
 @section $B5/F0JQ?t(B
@@ -4377,7 +4377,7 @@ Mairix $B$O%m!<%+%k$J%a!<%k$r8!:w$7$^$9(B - $B$D$^$j(B mairix $B$O%a!<%k!&%
 
 $B2C$($F!"(B@code{nnmairix} $B$O(B Gnus $B$N%P%C%/%(%s%I(B @code{nnml}$B!"(B
 @code{nnmaildir} $B$*$h$S(B @code{nnimap} $B$@$1$r%5%]!<%H$7$^$9!#(B
-@code{nnmairix} $B$r;H$&$K$O!"(B@strong{$BI,$:(B}$B$3$l$i$N%P%C%/%(%s%I$N0l$D$r;H(B
+@code{nnmairix} $B$r;H$&$K$O!"(B@strong{$BI,$:(B} $B$3$l$i$N%P%C%/%(%s%I$N0l$D$r;H(B
 $B$o$J$1$l$P$J$j$^$;$s!#(B@code{nnmbox}$B!"(B@code{nnfolder} $B$^$?(B
 $B$O(B @code{nnmh} $B$N$h$&$JB>$N%P%C%/%(%s%I$G$OF0:n$7$J$$$G$7$g$&!#(B
 
@@ -4434,211 +4434,213 @@ Mairix $B%U%)%k%@!<$N$?$a$K;0$D$N0[$J$k%a!<%k%P%C%/%(%s%I(B @code{nnml}$B!"(
 $B%H$K;H$$$?$$$N$G$"$l$P!"FCJL$J;v>p$,@8$8$^$9(B - $B$3$3$G$O(B mairix $B%U%)%k%@!<(B
 $B$HB>$N%a!<%k$,F1$8(B @code{nnimap} $B%P%C%/%(%s%I>e$K$J$1$l$P$J$j$^$;$s!#(B
 
-@c TRANSLATEME
 @node Setting up mairix
 @subsubsection mairix $B$N@_Dj(B
 
-First: create a backup of your mail folders (@pxref{nnmairix caveats}).
+$B$^$:$O%a!<%k%U%)%k%@!<$N%P%C%/%"%C%W$r:n$j$^$7$g$&(B (@pxref{nnmairix
+caveats})$B!#(B
 
-Setting up mairix is easy: simply create a @file{.mairixrc} file with
-(at least) the following entries:
+Mairix $B$N@_Dj$O4JC1$G$9!#(B($B>/$J$/$H$b(B) $B0J2<$N%(%s%H%j!<$r4^(B
+$B$`(B @file{.mairixrc} $B%U%!%$%k$r:n$C$F$/$@$5$$(B:
 
 @example
 # Your Maildir/MH base folder
 base=~/Maildir
 @end example
 
-This is the base folder for your mails.  All the following paths are
-relative to this base folder.  If you want to use @code{nnmairix} with
-@code{nnimap}, this base path has to point to the mail path where the
-@acronym{IMAP} server stores the mail folders!
+$B$3$l$O$9$Y$F$N%a!<%k$N4pE@$K$J$k%U%)%k%@!<$G$9!#0J2<$N$9$Y$F$N%Q%9$O$3$N(B
+$B%U%)%k%@!<$r4pE@$KAjBPE*$JCM$r$H$j$^$9!#(B
+@code{nnmairix} $B$r(B @code{nnimap} $B$G;H$$$?$$>l9g!"4pE@$N%Q%9(B
+$B$O(B @acronym{IMAP} $B%5!<%P!<$,%a!<%k%U%)%k%@!<$r3JG<$9$k%a!<%k%Q%9$rI=$9$b(B
+$B$N$G$J$1$l$P$J$j$^$;$s(B!
 
-@c FIXME: Add typical examples?
+@c FIXME: $BE57?E*$JNc$rDI2C$9$kJ}$,NI$$$N$G$O(B?
 @example
-maildir= ... your maildir folders which should be indexed ...
-mh= ... your nnml/mh folders which should be indexed ...
-mbox = ... your mbox files which should be indexed ...
+maildir= ... $B:w0z$rIU$1$k(B maildir $B%U%)%k%@!<(B ...
+mh= ... $B:w0z$rIU$1$k(B nnml/mh $B%U%)%k%@!<(B ...
+mbox = ... $B:w0z$rIU$1$k(B mbox $B%U%)%k%@!<(B ...
 @end example
 
-Specify all your maildir/nnml folders and mbox files (relative to the
-base path!) you want to index with mairix.  See the man-page for
-mairixrc for details.
+Mairix $B$G:w0z$rIU$1$?$$$9$Y$F$N(B maildir/nnml $B%U%)%k%@!<$H(B mbox $B%U%!%$%k(B
+$B$r(B ($B4pE@$X$NAjBP%Q%9$G(B!) $B;XDj$7$^$7$g$&!#>\$7$/$O(B mairixrc $B$N(B man $B%Z!<%8(B
+$B$r8+$F$/$@$5$$!#(B
 
 @example
 omit=zz_mairix-*
 @end example
 
 @vindex nnmairix-group-prefix
-This should make sure that you don't accidentally index the mairix
-search results.  You can change the prefix of these folders with the
-variable @code{nnmairix-group-prefix}.
+$B$3$l$O(B mairix $B$N8!:w7k2L$K6vA3$K:w0zIU$1$r$7$F$7$^$o$J$$$h$&$K$7$^$9!#$3(B
+$B$l$i$N%U%)%k%@!<$N@\F,<-$O!"JQ?t(B @code{nnmairix-group-prefix} $B$GJQ$($k$3(B
+$B$H$,$G$-$^$9!#(B
 
-@c FIXME: Add typical examples?
+@c FIXME: $BE57?E*$JNc$rDI2C$9$kJ}$,NI$$$N$G$O(B?
 @example
-mformat= ... 'maildir' or 'mh' ...
-database= ... location of database file ...
+mformat= ... 'maildir' $B$^$?$O(B 'mh' ...
+database= ... $B%G!<%?%Y!<%9!&%U%!%$%k$NCV$->l=j(B ...
 @end example
 
-The @code{format} setting specifies the output format for the mairix
-search folder.  Set this to @code{mh} if you want to access search results
-with @code{nnml}.  Otherwise choose @code{maildir}.
+@code{mformat} $B$N@_Dj$O(B mairix $B8!:w%U%)%k%@!<$X$N=PNO7A<0$r;XDj$7$^$9!#(B
+$B8!:w7k2L$K(B @code{nnml} $B$G%"%/%;%9$7$?$$>l9g$O!"$3$l$r(B @code{mh} $B$K@_Dj$7(B
+$B$F$/$@$5$$!#$5$b$J$1$l$P(B @code{maildir} $B$rA*$S$^$7$g$&!#(B
 
-See the man pages for mairix and mairixrc for further options.  Now
-simply call @code{mairix} to create the index for the first time.
+$B$5$i$J$k%*%W%7%g%s$K$D$$$F$O(B mairix $B$H(B mairixrc $B$N(B man $B%Z!<%8$r8+$F$/$@(B
+$B$5$$!#$5$"!"$=$l$G$O:G=i$K(B @code{mairix} $B$r<B9T$7$F:w0z$r:n$j$^$7$g$&!#(B
 
 @node Configuring nnmairix
 @subsubsection nnmairix $B%P%C%/%(%s%I$N@_Dj(B
 
-In group mode, type @kbd{G b c}
-(@code{nnmairix-create-server-and-default-group}).  This will ask you for all
-necessary information and create a @code{nnmairix} server as a foreign
-server.  You will have to specify the following:
+$B%0%k!<%W%b!<%I(B
+$B$G(B @kbd{G b c} (@code{nnmairix-create-server-and-default-group}) $B$r%?%$(B
+$B%W$7$F$/$@$5$$!#$3$l$OI,MW$J$9$Y$F$N>pJs$r<ALd$7$F!"(B@code{nnmairix} $B%5!<(B
+$B%P!<$r30It(B (foreign) $B%0%k!<%W$H$7$F:n@.$7$^$9!#0J2<$r;XDj$9$kI,MW$,$"$k(B
+$B$G$7$g$&(B:
 
 @itemize @bullet
+@item
+@code{nnmairix} $B%5!<%P!<$N(B @strong{$BL>A0(B} $B$G$9!#9%$-$J$b$N$rA*$s$G$/$@$5(B
+$B$$!#(B
 
 @item
-The @strong{name} of the @code{nnmairix} server - choose whatever you
-want.
-
-@item
-The @strong{mail back end} where mairix should stores its
-searches.  Currently @code{nnmaildir}, @code{nnimap} and @code{nnml} are
-supported.  As explained above, for locally stored mails, this can be an
-existing mail back end where you store your mails.  However, you can also
-create e.g. a new @code{nnmaildir} server exclusively for
-@code{nnmairix} in your secondary select methods (@pxref{Finding the
-News}).  If you want to use mairix remotely on an @acronym{IMAP} server,
-you have to choose the corresponding @code{nnimap} back end here.
+Mairix $B$,$=$N8!:w7k2L$r3JG<$9$k(B @strong{$B%a!<%k%P%C%/%(%s%I(B} $B$G$9!#:#$N$H(B
+$B$3$m(B @code{nnmaildir}$B!"(B@code{nnimap} $B$*$h$S(B @code{nnml} $B$,%5%]!<%H$5$l$F(B
+$B$$$^$9!#>e$G@bL@$7$?$h$&$K!"%m!<%+%k$K3JG<$5$l$k%a!<%k$N$?$a$K$O!"$"$J$?(B
+$B$,%a!<%k$r3JG<$7$F$$$k4{B8$N%a!<%k%P%C%/%(%s%I$K$9$l$PNI$$$G$7$g$&!#$7$+(B
+$B$7(B @code{nnmairix} $B@lMQ$K!"Nc$($P?7$7$$(B @code{nnmaildir} $B%5!<%P!<$r(B
+$BBhFs$N(B (secondary) $BA*BrJ}K!$K2C$($k$3$H$b$G$-$^$9(B (@pxref{Finding the
+News})$B!#(BMairix $B$r(B @acronym{IMAP} $B%5!<%P!<>e$G1s3VF0:n$5$;$?$$$N$J$i$P!"(B
+$B$=$3$G$=$l$KBP1~$9$k(B @code{nnimap} $B%P%C%/%(%s%I$rA*$P$J$1$l$P$J$j$^$;$s!#(B
 
 @item
 @vindex nnmairix-mairix-search-options
-The @strong{command} to call the mairix binary.  This will usually just
-be @code{mairix}, but you can also choose something like @code{ssh
-SERVER mairix} if you want to call mairix remotely, e.g. on your
-@acronym{IMAP} server.  If you want to add some default options to
-mairix, you could do this here, but better use the variable
-@code{nnmairix-mairix-search-options} instead.
+Mairix $B%P%$%J%j!<$r8F$V$?$a$N(B @strong{$B%3%^%s%I(B} $B$G$9!#DL>o$3$l$OC1(B
+$B$K(B @code{mairix} $B$GNI$$$N$G$9$,!"Nc$($P(B @acronym{IMAP} $B%5!<%P!<>e(B
+$B$G(B mairix $B$r1s3VF0:n$5$;$?$$$N$G$"$l$P!"(B@code{ssh SERVER mairix} $B$N$h$&(B
+$B$J$b$N$K$9$k$3$H$b$G$-$^$9!#(BMairix $B$X$N%G%#%U%)%k%H$N%*%W%7%g%s$r2C$($?(B
+$B$$>l9g!"$=$l$r$3$3$G$d$C$F$b9=$$$^$;$s!#$G$b!"Be$o$j$KJQ(B
+$B?t(B @code{nnmairix-mairix-search-options} $B$r;H$&J}$,NI$$$G$9!#(B
 
 @item
-The name of the @strong{default search group}.  This will be the group
-where all temporary mairix searches are stored, i.e. all searches which
-are not bound to permanent @code{nnmairix} groups.  Choose whatever you
-like.
+@strong{$B%G%#%U%)%k%H$N8!:w%0%k!<%W(B} $B$NL>A0$G$9!#$3$l$O(B mairix $B$N$9$Y$F$N(B
+$B8!:w7k2L!"$D$^$j915WE*$J(B @code{nnmairix} $B%0%k!<%W$K7k$SIU$1$i$l$J$$$9$Y(B
+$B$F$N8!:w7k2L$r3JG<$9$k%0%k!<%W$G$9!#9%$-$J$b$N$rA*$s$G$/$@$5$$!#(B
 
 @item
-If the mail back end is @code{nnimap} or @code{nnmaildir}, you will be
-asked if you work with @strong{Maildir++}, i.e. with hidden maildir
-folders (=beginning with a dot).  For example, you have to answer
-@samp{yes} here if you work with the Dovecot @acronym{IMAP}
-server.  Otherwise, you should answer @samp{no} here.
-
+$B$b$7%a!<%9%P%C%/%(%s%I$,(B @code{nnimap} $B$+(B @code{nnmaildir} $B$@$C$?$i!"(B
+@strong{Maildir++} $B$D$^$j1#$5$l$?(B (= @samp{.} $B$G;O$^$k(B ) maildir $B%U%)%k(B
+$B%@!<$r;H$&$+$I$&$+$r?R$M$i$l$k$G$7$g$&!#Nc$($P(B Dovecot @acronym{IMAP} $B%5!<(B
+$B%P!<$r;H$C$F$$$k>l9g$O!"$=$3$G(B @samp{yes} $B$H2sEz$7$J$1$l$P$J$j$^$;$s!#$=(B
+$B$l0U30$N>l9g$O(B @samp{no} $B$HEz$($k$Y$-$G$9!#(B
 @end itemize
 
 @node nnmairix keyboard shortcuts
 @subsubsection $BMxMQ$G$-$k%7%g!<%H%+%C%H%-!<(B
 
-In group mode:
+$B%0%k!<%W%b!<%I$G(B:
 
 @table @kbd
-
 @item G b c
-@kindex G b c (Group)
+@kindex G b c ($B%0%k!<%W(B)
 @findex nnmairix-create-server-and-default-group
-Creates @code{nnmairix} server and default search group for this server
-(@code{nnmairix-create-server-and-default-group}).  You should have done
-this by now (@pxref{Configuring nnmairix}).
+@code{nnmairix} $B%5!<%P!<$H!"$3$N%5!<%P!<$N$?$a$N%G%#%U%)%k%H$N8!:w%0%k!<(B
+$B%W$r:n$j$^$9(B (@code{nnmairix-create-server-and-default-group})$B!#$3$l$O$9(B
+$B$G$K9T$J$C$F$*$$$F$"$kI,MW$,$"$j$^$9(B (@pxref{Configuring nnmairix})$B!#(B
 
 @item G b s
-@kindex G b s (Group)
+@kindex G b s ($B%0%k!<%W(B)
 @findex nnmairix-search
-Prompts for query which is then sent to the mairix binary.  Search
-results are put into the default search group which is automatically
-displayed (@code{nnmairix-search}).
+Mairix $B$KAw$i$l$k8!:w8l$rM?$($^$9!#8!:w7k2L$O%G%#%U%)%k%H$N8!:w%0%k!<%W(B
+$B$K3JG<$5$l!"$=$l$O<+F0E*$KI=<($5$l$^$9(B (@code{nnmairix-search})$B!#(B
 
 @item G b m
-@kindex G b m (Group)
+@kindex G b m ($B%0%k!<%W(B)
 @findex nnmairix-widget-search
-Allows you to create a mairix search or a permanent group more
-comfortably using graphical widgets, similar to a customization
-group.  Just try it to see how it works (@code{nnmairix-widget-search}).
+Mairix $B$N8!:w$^$?$O915WE*$J%0%k!<%W$r$b$C$H2wE,$K!">o$K%0%k!<%W$N%+%9%?(B
+$B%^%$%:$K;w$?%0%i%U%#%C%/$J%&%#%8%'%C%H$r;H$C$F:n$k$h$&$K$7$^$9!#$=$l$,$I(B
+$B$s$J$b$N$+$rCN$k$K$O!"$^$:$O;n$7$F$_$F$/$@$5(B
+$B$$(B (@code{nnmairix-widget-search})$B!#(B
 
 @item G b i
-@kindex G b i (Group)
+@kindex G b i ($B%0%k!<%W(B)
 @findex nnmairix-search-interactive
-Another command for creating a mairix query more comfortably, but uses
-only the minibuffer (@code{nnmairix-search-interactive}).
+$B$b$&0l$D$N2wE,$J(B mairix $B8!:w%3%^%s%I$G$9$,!"%_%K%P%C%U%!!<$7$+;H$$$^$;(B
+$B$s(B (@code{nnmairix-search-interactive})$B!#(B
 
 @item G b g
-@kindex G b g (Group)
+@kindex G b g ($B%0%k!<%W(B)
 @findex nnmairix-create-search-group
-Creates a permanent group which is associated with a search query
-(@code{nnmairix-create-search-group}).  The @code{nnmairix} back end
-automatically calls mairix when you update this group with @kbd{g} or
-@kbd{M-g}.
+$B8!:w$K4XO"$5$;$i$l$?915WE*$J%0%k!<%W$r:n$j$^(B
+$B$9(B (@code{nnmairix-create-search-group})$B!#$3$N%0%k!<%W$r(B @kbd{g} $B$^$?(B
+$B$O(B @kbd{M-g} $B$G99?7$9$k$H$-$K(B @code{nnmairix} $B%P%C%/%(%s%I$O<+F0E*(B
+$B$K(B mairix $B$r8F$S$^$9!#(B
 
 @item G b q
-@kindex G b q (Group)
+@kindex G b q ($B%0%k!<%W(B)
 @findex nnmairix-group-change-query-this-group
-Changes the search query for the @code{nnmairix} group under cursor
-(@code{nnmairix-group-change-query-this-group}).
+$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N8!:w>r7o$rJQ99$7$^(B
+$B$9(B (@code{nnmairix-group-change-query-this-group})$B!#(B
 
 @item G b t
-@kindex G b t (Group)
+@kindex G b t ($B%0%k!<%W(B)
 @findex nnmairix-group-toggle-threads-this-group
-Toggles the 'threads' parameter for the @code{nnmairix} group under cursor,
-i.e.  if you want see the whole threads of the found messages
-(@code{nnmairix-group-toggle-threads-this-group}).
+$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N(B `$B%9%l%C%I(B' $B%Q%i%a!<%?!<$r%H%0(B
+$B%k$K@Z$jBX$($^$9!#$D$^$j8+$D$+$C$?%a%C%;!<%8$N$9$Y$F$N%9%l%C%I$r8+$?$$>l(B
+$B9g$K;H$$$^$9(B (@code{nnmairix-group-toggle-threads-this-group})$B!#(B
 
 @item G b u
-@kindex G b u (Group)
+@kindex G b u ($B%0%k!<%W(B)
 @findex nnmairix-update-database
 @vindex nnmairix-mairix-update-options
-Calls mairix binary for updating the database
-(@code{nnmairix-update-database}).  The default parameters are @code{-F}
-and @code{-Q} for making this as fast as possible (see variable
-@code{nnmairix-mairix-update-options} for defining these default
-options).
+$B%G!<%?%Y!<%9$r99?7$9$k$?$a$K(B mairix $B%P%$%J%j!<$r8F$S$^(B
+$B$9(B (@code{nnmairix-update-database})$B!#%G%#%U%)%k%H$N%Q%i%a!<%?!<$O!"$3$l(B
+$B$r$G$-$k$@$1B.$/$9$k$?$a$N(B @code{-F} $B$*$h$S(B @code{-Q} $B$G$9(B ($B$3$l$i$N%G%#(B
+$B%U%)%k%H$N%*%W%7%g%s$rDj5A$9$k$K$OJQ(B
+$B?t(B @code{nnmairix-mairix-update-options} $B$r8+$F$/$@$5$$(B)$B!#(B
 
 @item G b r
-@kindex G b r (Group)
+@kindex G b r ($B%0%k!<%W(B)
 @findex nnmairix-group-toggle-readmarks-this-group
-Keep articles in this @code{nnmairix} group always read or unread, or leave the
-marks unchanged (@code{nnmairix-group-toggle-readmarks-this-group}).
+$B$3$N(B @code{nnmairix} $B%0%k!<%W$N5-;v$r>o$K4{FI$^$?$OL$FI$KJ]$D$+!"$^$?$O(B
+$B0u$rJQ99$7$J$$$h$&$K$7$^(B
+$B$9(B (@code{nnmairix-group-toggle-readmarks-this-group})$B!#(B
 
 @item G b d
-@kindex G b d (Group)
+@kindex G b d ($B%0%k!<%W(B)
 @findex nnmairix-group-delete-recreate-this-group
-Recreate @code{nnmairix} group on the ``real'' mail back end
-(@code{nnmairix-group-delete-recreate-this-group}).  You can do this if
-you always get wrong article counts with a @code{nnmairix} group.
+$B!VK\Ev$N!W%a!<%k%P%C%/%(%s%I$G(B @code{nnmairix} $B%0%k!<%W$r:n$jD>$7$^(B
+$B$9(B (@code{nnmairix-group-delete-recreate-this-group})$B!#(B
+@code{nnmairix} $B%0%k!<%W$N5-;v?t$,$$$D$b4V0c$C$F$$$k>l9g$K!"$3$l$r9T$J$&(B
+$B$3$H$,$G$-$^$9!#(B
 
 @item G b a
-@kindex G b a (Group)
+@kindex G b a ($B%0%k!<%W(B)
 @findex nnmairix-group-toggle-allowfast-this-group
-Toggles the @code{allow-fast} parameters for group under cursor
-(@code{nnmairix-group-toggle-allowfast-this-group}).  The default
-behavior of @code{nnmairix} is to do a mairix search every time you
-update or enter the group.  With the @code{allow-fast} parameter set,
-mairix will only be called when you explicitly update the group, but not
-upon entering.  This makes entering the group faster, but it may also
-lead to dangling symlinks if something changed between updating and
-entering the group which is not yet in the mairix database.
+$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N$?$a$N(B @code{allow-fast} $B%Q%i%a!<(B
+$B%?!<$r%H%0%k$K@Z$jBX$($^(B
+$B$9(B (@code{nnmairix-group-toggle-allowfast-this-group})$B!#%G%#%U%)%k%H(B
+$B$N(B @code{nnmairix} $B$NF0:n$O!"%0%k!<%W$r99?7$7$?$jF~$C$?$H$-$K(B mairix $B$N(B
+$B8!:w$r9T$J$&$3$H$G$9!#(B@code{allow-fast} $B%Q%i%a!<%?!<$,@_Dj$5$l$k$H!"%0%k!<(B
+$B%WF~$C$?$H$-$G$O$J$/!"L@<(E*$K%0%k!<%W$r99?7$9$k$H$-$@$1(B mairix $B$,8F$P$l(B
+$B$^$9!#$3$l$O%0%k!<%W$KF~$k$H$-$KB.$/$J$j$^$9$,!"99?7$7$?$H$-$H$^(B
+$B$@(B mairix $B%G!<%?%Y!<%9$KL5$$%0%k!<%W$KF~$k$H$-$N4|4V$K2?$+$,JQ2=$7$?>l9g(B
+$B$K!"<BBN$NL5$$%7%s%\%j%C%/%j%s%/$r@8$8$5$;$k$+$b$7$l$^$;$s!#(B
 
 @item G b p
-@kindex G b p (Group)
+@kindex G b p ($B%0%k!<%W(B)
 @findex nnmairix-group-toggle-propmarks-this-group
-Toggle marks propagation for this group
-(@code{nnmairix-group-toggle-propmarks-this-group}).  (@pxref{Propagating
-marks}).
+$B$3$N%0%k!<%W$N0u$rEAHB$5$;$k$+$I$&$+$r%H%0%k$K@Z$jBX$($^(B
+$B$9(B (@code{nnmairix-group-toggle-propmarks-this-group})$B!#(B
+(@pxref{Propagating marks})$B!#(B
 
 @item G b o
-@kindex G b o (Group)
+@kindex G b o ($B%0%k!<%W(B)
 @findex nnmairix-propagate-marks
-Manually propagate marks (@code{nnmairix-propagate-marks}); needed only when
-@code{nnmairix-propagate-marks-upon-close} is set to @code{nil}.
-
+$B0u$r<gF0$GEAHB$5$;$^$9(B (@code{nnmairix-propagate-marks})$B!#$3$l(B
+$B$O(B @code{nnmairix-propagate-marks-upon-close} $B$,(B @code{nil} $B$G$"$k>l9g$@(B
+$B$1I,MW$G$9!#(B
 @end table
 
+@c TRANSLATEME
 In summary mode:
 
 @table @kbd
