@@ -4640,59 +4640,58 @@ Mairix の検索または恒久的なグループをもっと快適に、常にグループのカスタ
 け必要です。
 @end table
 
-@c TRANSLATEME
-In summary mode:
+概略モードで:
 
 @table @kbd
-
 @item $ m
-@kindex $ m (Summary)
+@kindex $ m (概略)
 @findex nnmairix-widget-search-from-this-article
-Allows you to create a mairix query or group based on the current
-message using graphical widgets (same as @code{nnmairix-widget-search})
-(@code{nnmairix-widget-search-from-this-article}).
+現在のメッセージに基づいた mairix の検索またはグループを、グラフィックな
+ウィジェットを使って作ります (@code{nnmairix-widget-search} と同じで
+す) (@code{nnmairix-widget-search-from-this-article})。
 
 @item $ g
-@kindex $ g (Summary)
+@kindex $ g (概略)
 @findex nnmairix-create-search-group-from-message
-Interactively creates a new search group with query based on the current
-message, but uses the minibuffer instead of graphical widgets
-(@code{nnmairix-create-search-group-from-message}).
+現在のメッセージに基づいた検索条件で新しい検索グループを対話的に作ります。
+グラフィックなウィジェットの代わりにミニバッファーを使います
+が (@code{nnmairix-create-search-group-from-message})。
 
 @item $ t
-@kindex $ t (Summary)
+@kindex $ t (概略)
 @findex nnmairix-search-thread-this-article
-Searches thread for the current article
-(@code{nnmairix-search-thread-this-article}).  This is effectively a
-shortcut for calling @code{nnmairix-search} with @samp{m:msgid} of the
-current article and enabled threads.
+現在の記事のスレッドを捜しま
+す (@code{nnmairix-search-thread-this-article})。事実上これは現在の記事
+の @samp{m:msgid} で @code{nnmairix-search} を呼んでスレッドを得るための
+ショートカットです。
 
 @item $ f
-@kindex $ f (Summary)
+@kindex $ f (概略)
 @findex nnmairix-search-from-this-article
-Searches all messages from sender of the current article
-(@code{nnmairix-search-from-this-article}).  This is a shortcut for
-calling @code{nnmairix-search} with @samp{f:From}.
+現在の記事の送信者からのすべてのメッセージを探しま
+す (@code{nnmairix-search-from-this-article})。これ
+は @samp{f:From} で @code{nnmairix-search} を呼ぶためのショートカットで
+す。
 
 @item $ o
-@kindex $ o (Summary)
+@kindex $ o (概略)
 @findex nnmairix-goto-original-article
-(Only in @code{nnmairix} groups!) Tries determine the group this article
-originally came from and displays the article in this group, so that
-e.g. replying to this article the correct posting styles/group
-parameters are applied (@code{nnmairix-goto-original-article}).  This
-function will use the registry if available, but can also parse the
-article file path as a fallback method.
+(これが使えるのは @code{nnmairix} グループだけです!) この記事に正しい投
+稿様式 (posting styles) とグループパラメーターを適用して返信するために、
+この記事が元々来たグループを判定して、そのグループでその記事を表示しよう
+とします (@code{nnmairix-goto-original-article})。この関数はもし利用可能
+ならレジストリーを使いますが、代替手段として記事ファイルのパスを分析する
+こともできます。
 
 @item $ u
 @kindex $ u (Summary)
 @findex nnmairix-remove-tick-mark-original-article
-Remove possibly existing tick mark from original article
-(@code{nnmairix-remove-tick-mark-original-article}).  (@pxref{nnmairix
-tips and tricks}).
-
+元の記事から、もしあれば可視記事の印 (tick mark) を取り除きま
+す (@code{nnmairix-remove-tick-mark-original-article}) (@pxref{nnmairix
+tips and tricks})。
 @end table
 
+@c TRANSLATEME
 @node Propagating marks
 @subsubsection nnmairix グループの印を波及させる方法
 
