@@ -4328,7 +4328,7 @@ FIXME; $B$^$:$O(B @file{nnir} $B$K$"$k%3%a%s%H$r(B texi $B$KJQ49$7$F$/$@$5$
 * Setting up mairix::           mairix $B$N@_Dj(B
 * Configuring nnmairix::        nnmairix $B%P%C%/%(%s%I$N@_Dj(B
 * nnmairix keyboard shortcuts:: $BMxMQ$G$-$k%7%g!<%H%+%C%H%-!<(B
-* Propagating marks::           nnmairix $B%0%k!<%W$N0u$rGH5Z$5$;$kJ}K!(B
+* Propagating marks::           nnmairix $B%0%k!<%W$N0u$rEAHB$5$;$kJ}K!(B
 * nnmairix tips and tricks::    $B%R%s%H!"$3$D!"$*$h$SNc$N$$$/$D$+(B
 * nnmairix caveats::            $B$5$i$KCN$C$F$*$/I,MW$,$"$k$3$H(B
 @end menu
@@ -4678,7 +4678,7 @@ Mairix $B$N8!:w$^$?$O915WE*$J%0%k!<%W$r$b$C$H2wE,$K!">o$K%0%k!<%W$N%+%9%?(B
 @findex nnmairix-goto-original-article
 ($B$3$l$,;H$($k$N$O(B @code{nnmairix} $B%0%k!<%W$@$1$G$9(B!) $B$3$N5-;v$K@5$7$$Ej(B
 $B9FMM<0(B (posting styles) $B$H%0%k!<%W%Q%i%a!<%?!<$rE,MQ$7$FJV?.$9$k$?$a$K!"(B
-$B$3$N5-;v$,85!9Mh$?%0%k!<%W$rH=Dj$7$F!"$=$N%0%k!<%W$G$=$N5-;v$rI=<($7$h$&(B
+$B$3$N5-;v$,85!9Mh$?%0%k!<%W$rFCDj$7$F!"$=$N%0%k!<%W$G$=$N5-;v$rI=<($7$h$&(B
 $B$H$7$^$9(B (@code{nnmairix-goto-original-article})$B!#$3$N4X?t$O$b$7MxMQ2DG=(B
 $B$J$i%l%8%9%H%j!<$r;H$$$^$9$,!"BeBX<jCJ$H$7$F5-;v%U%!%$%k$N%Q%9$rJ,@O$9$k(B
 $B$3$H$b$G$-$^$9!#(B
@@ -4691,110 +4691,108 @@ Mairix $B$N8!:w$^$?$O915WE*$J%0%k!<%W$r$b$C$H2wE,$K!">o$K%0%k!<%W$N%+%9%?(B
 tips and tricks})$B!#(B
 @end table
 
-@c TRANSLATEME
 @node Propagating marks
-@subsubsection nnmairix $B%0%k!<%W$N0u$rGH5Z$5$;$kJ}K!(B
+@subsubsection nnmairix $B%0%k!<%W$N0u$rEAHB$5$;$kJ}K!(B
 
-First of: you really need a patched mairix binary for using the marks
-propagation feature efficiently. Otherwise, you would have to update
-the mairix database all the time. You can get the patch at
+$B=i$a$K(B: $B0u$rEAHB$5$;$k5!G=$r8zN(NI$/;H$&$?$a$K$O!"<B:]$K$O%Q%C%A$rEv$F(B
+$B$?(B mairix $B$N%P%$%J%j!<$,I,MW$G$9!#$=$&$7$J$$$H$$$D$b(B mairix $B%G!<%?%Y!<%9(B
+$B$r99?7$7$J$1$l$P$J$i$J$$$G$7$g$&!#%Q%C%A$O$3$3$G<j$KF~$j$^$9(B:
 
 @uref{http://m61s02.vlinux.de/mairix-maildir-patch.tar}
 
-You need the mairix v0.21 source code for this patch; everything else
-is explained in the accompanied readme file. If you don't want to use
-marks propagation, you don't have to apply these patches, but they also
-fix some annoyances regarding changing maildir flags, so it might still
-be useful to you.
+$B$3$N%Q%C%A$K$O(B mairix v0.21 $B$N%=!<%9%3!<%I$,I,MW$G$9!#$=$l$KIU$$$F$$(B
+$B$k(B readme $B%U%!%$%k$G$I$s$J$3$H$b@bL@$5$l$F$$$^$9!#0u$NEAHB$r;H$o$J$/$F$b(B
+$BNI$$$H;W$&$J$i$3$l$i$N%Q%C%A$rEv$F$J$/$F$b9=$$$^$;$s$,!"$=$l$G$b$J$*!"$=(B
+$B$l$i$O(B maildir $B%U%i%0$NJQ99$K$^$D$o$k$d$C$+$$$4$H$r=$@5$7$F$b$/$l$k$N$G(B
+$BM-MQ$G$7$g$&!#(B
 
-With the patched mairix binary, you can use @code{nnmairix} as an
-alternative to mail splitting (@pxref{Fancy Mail Splitting}). For
-example, instead of splitting all mails from @samp{david@@foobar.com}
-into a group, you can simply create a search group with the query
-@samp{f:david@@foobar.com}. This is actually what ``smart folders'' are
-all about: simply put everything in one mail folder and dynamically
-create searches instead of splitting. This is more flexible, since you
-can dynamically change your folders any time you want to. This also
-implies that you will usually read your mails in the @code{nnmairix}
-groups instead of your ``real'' mail groups.
+$B%Q%C%A$rEv$F$?(B mairix $B$N%P%$%J%j!<$H$H$b$K(B @code{nnmairix} $B$r%a!<%kJ,(B
+$B3d(B (@pxref{Fancy Mail Splitting}) $B$NBe$o$j$H$7$F;H$&$3$H$,$G$-$^$9!#Nc$((B
+$B$P(B @samp{david@@foobar.com} $B$+$i$N$9$Y$F$N%a!<%k$r$"$k%0%k!<%W$KJ|$j9~$`(B
+$BBe$o$j$K!"C1$K(B @samp{f:david@@foobar.com} $B$rC5$98!:w%0%k!<%W$r:n$k$3$H$,(B
+$B$G$-$^$9!#<B$N$H$3$m$3$l$,!V8-$$%U%)%k%@!<!W$N4N?4$J$H$3$m$G!"C1$K$9$Y$F(B
+$B$r0l$D$N%a!<%k%U%)%k%@!<$KJ|$j9~$s$@$i!"J,3d$9$kBe$o$j$KF0E*$K8!:w7k2L$r(B
+$B:n$k$N$G$9!#$3$l$O!"$7$?$$$H$-$O$$$D$G$b%U%)%k%@!<$rJQ99$G$-$k$N$G!"$h$j(B
+$BM;DL$,8z$-$^$9!#$3$N$3$H$O!"$"$J$?$,<B:]$N%a!<%k%0%k!<%W$NBe$o$j$K!"$$$D(B
+$B$b$O(B @code{nnmairix} $B%0%k!<%W$K$"$k%a!<%k$rFI$`$G$"$m$&$3$H$b0E<($7$^$9!#(B
 
-There is one problem, though: say you got a new mail from
-@samp{david@@foobar.com} - it will now show up in two groups, the
-``real'' group (your INBOX, for example) and in the @code{nnmairix}
-search group (provided you have updated the mairix database). Now you
-enter the @code{nnmairix} group and read the mail. The mail will be
-marked as read, but only in the @code{nnmairix} group - in the ``real''
-mail group it will be still shown as unread.
+$B$7$+$7!"0l$DLdBj$,$"$j$^$9!#(B@samp{david@@foobar.com} $B$+$i?7$7$$%a!<%k$r(B
+$B<u$1<h$C$?$H$9$k$H!"$=$l$OFs$D$N%0%k!<%W$K8=$l$k$N$G$9!#!V<B:]!W$N%0%k!<(B
+$B%W(B ($BNc$($P(B INBOX) $B$*$h$S(B @code{nnmairix} $B8!:w%0%k!<%W$G$9(B ($B8e<T$O!"$b(B
+$B$7(B mairix $B%G!<%?%Y!<%9$r99?7$7$F$"$l$P(B)$B!#(B@code{nnmairix} $B%0%k!<%W$KF~$C(B
+$B$F$=$N%a!<%k$rFI$`$H4{FI$N0u$,IU$-$^$9$,!"(B@code{nnmairix} $B%0%k!<%W$G$@$1(B
+$B$G$"$C$F!V<B:]!W$N%a!<%k%0%k!<%W$G$OL$FI$N$^$^$G$9!#(B
 
-You could now catch up the mail group (@pxref{Group Data}), but this is
-tedious and error prone, since you may overlook mails you don't have
-created @code{nnmairix} groups for. Of course, you could first use
-@code{nnmairix-goto-original-article} (@pxref{nnmairix keyboard
-shortcuts}) and then read the mail in the original group, but that's
-even more cumbersome.
+$B$=$N%a!<%k%0%k!<%W$r%-%c%C%A%"%C%W$9$k(B ($B$9$Y$F$N5-;v$r4{FI$K$9$k(B) $B$3$H$O(B
+$B$G$-$^$9!#$7$+$7$3$l$OB`6~$@$7(B @code{nnmairix} $B%0%k!<%W$r:n$C$F$$$J$$%a!<(B
+$B%k$r8+Mn$H$9$+$b$7$l$J$$E@$G;v8N$r5/$3$7$d$9$$$G$7$g$&!#$b$A$m$s:G=i(B
+$B$K(B @code{nnmairix-goto-original-article} (@pxref{nnmairix keyboard
+shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G$-$^$9$,!"(B
+$B$=$l$O$b$C$H$d$C$+$$$G$7$g$&!#(B
 
-Clearly, the easiest way would be if marks could somehow be
-automatically set for the original article. This is exactly what
-@emph{marks propagation} is about.
+$BL@$i$+$K!"85$N5-;v$K$I$&$K$+$7$F0u$r<+F0E*$KIU$1$k$3$H$G$-$l$P!"$=$l$,:G(B
+$B$b3Z$J$d$jJ}$G$7$g$&!#$3$l$,$^$5$K(B @emph{$B0u$NEAHB(B} $B$,9T$J$*$&$H$7$F$$$k(B
+$B$3$H$G$9!#(B
 
-Marks propagation is deactivated by default. You can activate it for a
-certain @code{nnmairix} group with
-@code{nnmairix-group-toggle-propmarks-this-group} (bound to @kbd{G b
-p}). This function will warn you if you try to use it with your default
-search group; the reason is that the default search group is used for
-temporary searches, and it's easy to accidentally propagate marks from
-this group. However, you can ignore this warning if you really want to.
+$B%G%#%U%)%k%H$G$O0u$NEAHB$O$7$J$$$h$&$K$J$C$F$$$^$9!#$"$k%0%k!<%W$N$?$a$N(B
+$B$=$l$O(B @code{nnmairix-group-toggle-propmarks-this-group} (@kbd{G b p} $B$K(B
+$B%P%$%s%I$5$l$F$$$^$9(B) $B$GM-8z$K$9$k$3$H$,$G$-$^$9!#$3$N4X?t$O%G%#%U%)%k%H(B
+$B$N8!:w%0%k!<%W$G;H$*$&$H$9$k$H7Y9p$rH/$7$^$9!#$J$<$+$H8@$&$H%G%#%U%)%k%H(B
+$B$N8!:w%0%k!<%W$O0l;~E*$J8!:w$N$?$a$K$"$k$N$G!"0u$,6vA3$K$3$N%0%k!<%W$+$i(B
+$BEAHB$7$F$7$^$$$d$9$$$+$i$G$9!#$b$C$H$bK\Ev$K$=$l$r$d$j$?$$$N$J$i!"$=$N7Y(B
+$B9p$rL5;k$9$k$3$H$O$G$-$^$9!#(B
 
-With marks propagation enabled, all the marks you set in a @code{nnmairix}
-group should now be propagated to the original article. For example,
-you can now tick an article (by default with @kbd{!}) and this mark should
-magically be set for the original article, too.
+$B0u$NEAHB$rM-8z$K$7$F$"$k$H(B @code{nnmairix} $B%0%k!<%W$GIU$1$?$9$Y$F$N0u$,(B
+$B85$N%0%k!<%W$KEAHB$9$k$O$:$G$9!#Nc$($P5-;v$K2D;k(B (tick) $B$N0u$r(B ($B%G%#%U%)(B
+$B%k%H$G$O(B @kbd{!} $B$G(B) $BIU$1$k$H!"$3$N0u$OKbK!$N$h$&$K85$N5-;v$K$bIU$/$O$:(B
+$B$G$9!#(B
 
-A few more remarks which you may or may not want to know:
+$B$"$J$?$,CN$C$F$$$kI,MW$,$"$k!"$^$?$OL5$$!"$5$i$J$k$3$H$,$i$,$"$j$^$9(B:
 
 @vindex nnmairix-propagate-marks-upon-close
-Marks will not be set immediately, but only upon closing a group. This
-not only makes marks propagation faster, it also avoids problems with
-dangling symlinks when dealing with maildir files (since changing flags
-will change the file name). You can also control when to propagate marks
-via @code{nnmairix-propagate-marks-upon-close} (see the doc-string for
-details).
+$B0u$O$9$0$K$G$O$J$/!"%0%k!<%W$rJD$8$?$H$-$@$1IU$1$i$l$^$9!#$3$l$O0u$NEAHB(B
+$B$r@-5^$K9T$J$o$J$$0J30$K(B maildir $B%U%!%$%k$r07$&$H$-$N%7%s%\%j%C%/%j%s%/(B
+$B$K$^$D$o$kLdBj$N2sHr$b$7$^$9(B ($B%U%i%0$NJQ99$O%U%!%$%kL>$NJQ2=$rH<$&$N$G(B)$B!#(B
+$B0u$NEAHB$r(B @code{nnmairix-propagate-marks-upon-close} $B$rDL$8$F@)8f$9$k$3(B
+$B$H$b$G$-$^$9(B ($B>\$7$/$OJQ?t$N@bL@$r8+$F$/$@$5$$(B)$B!#(B
 
-Obviously, @code{nnmairix} will have to look up the original group for every
-article you want to set marks for. If available, @code{nnmairix} will first use
-the registry for determining the original group. The registry is very
-fast, hence you should really, really enable the registry when using
-marks propagation. If you don't have to worry about RAM and disc space,
-set @code{gnus-registry-max-entries} to a large enough value; to be on
-the safe side, choose roughly the amount of mails you index with mairix.
+$BL@$i$+$K!"$"$J$?$,0u$rIU$1$?$$$"$i$f$k5-;v$N$?$a$K(B @code{nnmairix} $B$O85(B
+$B$N%0%k!<%W$rD4$Y$J$1$l$P$J$i$J$$$G$7$g$&!#85$N%0%k!<%W$rFCDj$9$k$?$a(B
+$B$K(B @code{nnmairix} $B$O!"$b$7;H$($k$J$i:G=i$K%l%8%9%H%j!<$r;H$$$^$9!#%l%8(B
+$B%9%H%j!<$OHs>o$KB.$$$G$9!#$7$?$,$C$F0u$NEAHB$r;H$&$J$iK\Ev$K%l%8%9%H%j!<(B
+$B$r;H$($k$h$&$K$9$Y$-$G$9!#K\Ev$K!#(BRAM $B$H%G%#%9%/$NMFNL$K?4G[$,L5$$$J(B
+$B$i(B @code{gnus-registry-max-entries} $B$r==J,$KBg$-$JCM$K@_Dj$7$F$/$@$5$$!#(B
+$BBg;v$r<h$k$?$a$K$O!"$*$*$h$=(B mairix $B$G:w0z$rIU$1$k%a!<%k$NNL$rA*$s$G$/$@(B
+$B$5$$!#(B
 
 @vindex nnmairix-only-use-registry
-If you don't want to use the registry or the registry hasn't seen the
-original article yet, @code{nnmairix} will use an additional mairix search
-for determining the file path of the article. This, of course, is way
-slower than the registry - if you set hundreds or even thousands of
-marks this way, it might take some time. You can avoid this situation
-by setting @code{nnmairix-only-use-registry} to t.
+$B%l%8%9%H%j!<$r;H$$$?$/$J$$!"$^$?$O%l%8%9%H%j!<$,$^$@85$N5-;v$r8+$?$3$H$,(B
+$BL5$$>l9g!"$=$N5-;v$N%Q%9$rFCDj$9$k$?$a$K(B @code{nnmairix} $B$ODI2C(B
+$B$N(B mairix $B8!:w$r9T$J$$$^$9!#$b$A$m$s$3$l$O%l%8%9%H%j!<$h$jCY$/$J$j$^$9!#(B
+$B$b$7$3$N$d$jJ}$G?tI4$J$$$7$O?t@i$N0u$rIU$1$k$H!"$$$/$i$+;~4V$,$+$+$k$+$b(B
+$B$7$l$^$;$s!#$3$N>u67$O(B @code{nnmairix-only-use-registry} $B$r(B @code{t} $B$K(B
+$B@_Dj$9$k$3$H$K$h$C$FHr$1$k$3$H$,$G$-$^$9!#(B
 
-Maybe you also want to propagate marks the other way round, i.e. if you
-tick an article in a "real" mail group, you'd like to have the same
-article in a @code{nnmairix} group ticked, too. For several good
-reasons, this can only be done efficiently if you use maildir. To
-immediately contradict myself, let me mention that it WON'T work with
-@code{nnmaildir}, since @code{nnmaildir} stores the marks externally and
-not in the file name. Therefore, propagating marks to @code{nnmairix}
-groups will usually only work if you use an IMAP server which uses
-maildir as its file format.
+$B$*$=$i$/$"$J$?$O5UJ}8~$K$b0u$rEAHB$5$;$?$$$G$7$g$&!#$D$^$j!VK\Ev$N!W%a!<(B
+$B%k%0%k!<%W$G5-;v$K2D;k(B (tick) $B0u$rIU$1$?$i(B @code{nnmairix} $B%0%k!<%W$K$"(B
+$B$kF1$85-;v$b2D;k$K$J$C$FM_$7$$$H$$$&$3$H$G$9!#$$$/$D$+$N$b$C$H$b$JM}M3$K(B
+$B$h$j!"$3$l$O(B maildir $B$r;H$&>l9g$@$18zN(E*$K9T$J$&$3$H$,$G$-$^$9!#$9$0$K(B
+$BL7=b$7$?$3$H$r8@$$$^$9$,!"$=$l$O(B @code{nnmaildir} $B$G$OF/$-$^$;$s!#$J$<$J(B
+$B$i(B @code{nnmaildir} $B$O0u$r30It$N$7$+$b%U%!%$%k$G$O$J$$$H$3$m$K3JG<$9$k$+(B
+$B$i$G$9!#$7$?$,$C$F(B @code{nnmairix} $B%0%k!<%W$X$N0u$NEAHB$O!"DL>o$O%U%!%$(B
+$B%k7A<0$H$7$F(B maildir $B$r;H$&(B IMAP $B%5!<%P!<$N>l9g$@$1F/$-$^$9!#(B
 
+@c TRANSLATEME
 @vindex nnmairix-propagate-marks-to-nnmairix-groups
-If you work with this setup, just set
-@code{nnmairix-propagate-marks-to-nnmairix-groups} to @code{t} and see what
-happens. If you don't like what you see, just set it to @code{nil} again. One
-problem might be that you get a wrong number of unread articles; this
-usually happens when you delete or expire articles in the original
-groups. When this happens, you can recreate the @code{nnmairix} group on the
-back end using @kbd{G b d}.
+$B$b$7$3$N@_Dj:n6H$r9T$J$C$F$$$k$N$J(B
+$B$i(B @code{nnmairix-propagate-marks-to-nnmairix-groups} $B$r(B @code{t} $B$K@_Dj(B
+$B$7$F2?$,5/$-$k$+8+$F$/$@$5$$!#$b$7$"$J$?$,8+$k$b$N$,9%$-$G$O$J$$$J$i$P!"(B
+$B:F$S$=$l$r(B @code{nil} $B$KLa$7$^$7$g$&!#0l$D$NLdBj$OL$FI5-;v$N?t$r4V0c$($k(B
+$B$3$H$+$b$7$l$^$;$s!#$3$l$O85$N%0%k!<%W$G5-;v$r>C5n$7$?$j!"$^$?$O4|8B@Z$l(B
+$B>C5n$5$l$?$H$-$KIaDL$K5/$-$^$9!#$3$l$,5/$-$?$i$=$N%P%C%/%(%s%I$G(B @kbd{G
+b d} $B$r;H$C$F!"$=$N(B @code{nnmairix} $B%0%k!<%W$r:n$jD>$7$F$/$@$5$$!#(B
 
+@c TRANSLATEME
 @node nnmairix tips and tricks
 @subsubsection $B%R%s%H!"$3$D!"$*$h$SNc$N$$$/$D$+(B
 
