@@ -4299,20 +4299,22 @@ XEmacs (@code{mule} $B5!G=IU$-(B) $B$G$O!"(B@code{file-name-coding-system} 
 @cindex Searching
 FIXME: $B$3$N@a$O=q$-$+$1$G$9!#(B
 
-FIXME: Gnus $B$,8!:w$K4X$7$F$G$-$k$3$H$N4JC1$J$"$i$^$7$r2C$($F$/$@$5$$!#(B
-nnir, nnmairix, contrib/gnus-namazu $B$N4J7i$JHf3S$b$^$?NI$$$G$7$g$&!#(B
+FIXME: Gnus $B$,8!:w$K4X$7$F$G$-$k$3$H$N4JC1$J$"$i$^$7$r2C$($k!#(Bnnir,
+nnmairix, contrib/gnus-namazu $B$N4J7i$JHf3S$b$^$?NI$$$@$m$&!#(B
 
 FIXME: @ref{Searching for Articles} $B$H$N0c$$$r@bL@$7$F!"$=$l$i$X$N%j%U%!(B
-$B%l%s%9$H5U$+$i$N%j%U%!%l%s%9$rDI2C$7$F$/$@$5$$!#(B
+$B%l%s%9$H5U$+$i$N%j%U%!%l%s%9$rDI2C$9$k!#(B
 
 @node nnir
 @subsection nnir
 
-FIXME; $B$^$:$O(B @file{nnir} $B$K$"$k%3%a%s%H$r(B texi $B$KJQ49$7$F$/$@$5$$!#(B
+FIXME; $B$^$:$O(B @file{nnir} $B$K$"$k%3%a%s%H$r(B texi $B$KJQ49$9$k!#(B
 @cindex nnir
 
 @node nnmairix
 @subsection nnmairix
+
+($BLuCm(B: Mairix $B$O(B @acronym{ASCII} $BJ8;z$7$+%5%]!<%H$7$^$;$s!#(B)
 
 @cindex mairix
 @cindex nnmairix
@@ -4329,7 +4331,7 @@ FIXME; $B$^$:$O(B @file{nnir} $B$K$"$k%3%a%s%H$r(B texi $B$KJQ49$7$F$/$@$5$
 * Configuring nnmairix::        nnmairix $B%P%C%/%(%s%I$N@_Dj(B
 * nnmairix keyboard shortcuts:: $BMxMQ$G$-$k%7%g!<%H%+%C%H%-!<(B
 * Propagating marks::           nnmairix $B%0%k!<%W$N0u$rEAHB$5$;$kJ}K!(B
-* nnmairix tips and tricks::    $B%R%s%H!"$3$D!"$*$h$SNc$N$$$/$D$+(B
+* nnmairix tips and tricks::    $B%R%s%H!"$3$D!"$*$h$S$$$/$D$+$NNc(B
 * nnmairix caveats::            $B$5$i$KCN$C$F$*$/I,MW$,$"$k$3$H(B
 @end menu
 
@@ -4425,14 +4427,15 @@ Mairix $B%U%)%k%@!<$N$?$a$K;0$D$N0[$J$k%a!<%k%P%C%/%(%s%I(B @code{nnml}$B!"(
 @code{nnmaildir} $B$^$?$O(B @code{nnimap} $B$NCf$+$iA*$V$3$H$,$G$-$^$9!#(B
 @code{nnmairix} $B$O8!:w7k2L$r$3$N%a!<%k%P%C%/%(%s%I(B
 $B$N(B @code{zz_mairix-<NAME>-<NUMBER>} $B$H$$$&L>A0$N%U%)%k%@!<$K3JG<$9$k$?$a(B
-$B$K(B mairix $B%P%$%J%j!<$r8F$S$^$9$,!"(BGnus $B%U%m%s%H%(%s%I$K$O$=$l$i$N%U%)%k(B
-$B%@!<$OL>A0$,(B @code{<NAME>} $B$@$1$K$J$C$FEO$5$l$^$9!#$9$G$K%a!<%k$r3JG<$7(B
+$B$K(B mairix $B%P%$%J%j!<$r8F$S$^$9$,!"$=$l$i$N%U%)%k%@!<$O(B Gnus $B%U%m%s%H%(%s(B
+$B%I$K$OL>A0$,(B @code{<NAME>} $B$@$1$K$J$C$FEO$5$l$^$9!#$9$G$K%a!<%k$r3JG<$7(B
 $B$F$$$k4{B8$N%a!<%k%P%C%/%(%s%I$r;H$&$3$H$,$G$-$^$9$,!"$"$J$?$NB>$N%a!<%k(B
 $B$HJB$Y$F?7$7$$%a!<%k%0%k!<%W$r:n$k(B @code{nnmairix} $B$,5$;}$A0-$$$N$G$"$l(B
 $B$P!"Nc$($P?7$7$$(B @code{nnmaildir} $B%5!<%P!<$r(B mairix $B@lMQ$K:n$k$3$H$b$G$-(B
-$B$^$9!#$7$+$7!"$b$7(B @code{nnimap} $B$H$H$b$K(B IMAP $B%5!<%P!<$G(B mairix $B$r%j%b!<(B
-$B%H$K;H$$$?$$$N$G$"$l$P!"FCJL$J;v>p$,@8$8$^$9(B - $B$3$3$G$O(B mairix $B%U%)%k%@!<(B
-$B$HB>$N%a!<%k$,F1$8(B @code{nnimap} $B%P%C%/%(%s%I>e$K$J$1$l$P$J$j$^$;$s!#(B
+$B$^$9!#$7$+$7!"$b$7(B @code{nnimap} $B$H$H$b$K(B @acronym{IMAP} $B%5!<%P!<(B
+$B$G(B mairix $B$r%j%b!<%H$K;H$$$?$$$N$G$"$l$P!"FCJL$J;v>p$,@8$8$^$9(B - $B$3$3$G(B
+$B$O(B mairix $B%U%)%k%@!<$HB>$N%a!<%k$,F1$8(B @code{nnimap} $B%P%C%/%(%s%I>e$K$J(B
+$B$1$l$P$J$j$^$;$s!#(B
 
 @node Setting up mairix
 @subsubsection mairix $B$N@_Dj(B
@@ -4458,7 +4461,7 @@ base=~/Maildir
 @example
 maildir= ... $B:w0z$rIU$1$k(B maildir $B%U%)%k%@!<(B ...
 mh= ... $B:w0z$rIU$1$k(B nnml/mh $B%U%)%k%@!<(B ...
-mbox = ... $B:w0z$rIU$1$k(B mbox $B%U%)%k%@!<(B ...
+mbox= ... $B:w0z$rIU$1$k(B mbox $B%U%)%k%@!<(B ...
 @end example
 
 Mairix $B$G:w0z$rIU$1$?$$$9$Y$F$N(B maildir/nnml $B%U%)%k%@!<$H(B mbox $B%U%!%$%k(B
@@ -4470,9 +4473,9 @@ omit=zz_mairix-*
 @end example
 
 @vindex nnmairix-group-prefix
-$B$3$l$O(B mairix $B$N8!:w7k2L$K6vA3$K:w0zIU$1$r$7$F$7$^$o$J$$$h$&$K$7$^$9!#$3(B
-$B$l$i$N%U%)%k%@!<$N@\F,<-$O!"JQ?t(B @code{nnmairix-group-prefix} $B$GJQ$($k$3(B
-$B$H$,$G$-$^$9!#(B
+$B$3$l$O(B mairix $B$N8!:w7k2L$K6vA3$K:w0zIU$1$r$7$F$7$^$o$J$$$?$a$N$b$N$G$9!#(B
+$B$3$l$i$N%U%)%k%@!<$N@\F,<-$O!"JQ?t(B @code{nnmairix-group-prefix} $B$GJQ$($k(B
+$B$3$H$,$G$-$^$9!#(B
 
 @c FIXME: $BE57?E*$JNc$rDI2C$9$kJ}$,NI$$$N$G$O(B?
 @example
@@ -4526,11 +4529,11 @@ Mairix $B%P%$%J%j!<$r8F$V$?$a$N(B @strong{$B%3%^%s%I(B} $B$G$9!#DL>o$3$l$OC
 $B$F$N8!:w7k2L$r3JG<$9$k%0%k!<%W$G$9!#9%$-$J$b$N$rA*$s$G$/$@$5$$!#(B
 
 @item
-$B$b$7%a!<%9%P%C%/%(%s%I$,(B @code{nnimap} $B$+(B @code{nnmaildir} $B$@$C$?$i!"(B
+$B$b$7%a!<%k%P%C%/%(%s%I$,(B @code{nnimap} $B$+(B @code{nnmaildir} $B$@$C$?$i!"(B
 @strong{Maildir++} $B$D$^$j1#$5$l$?(B (= @samp{.} $B$G;O$^$k(B ) maildir $B%U%)%k(B
 $B%@!<$r;H$&$+$I$&$+$r?R$M$i$l$k$G$7$g$&!#Nc$($P(B Dovecot @acronym{IMAP} $B%5!<(B
 $B%P!<$r;H$C$F$$$k>l9g$O!"$=$3$G(B @samp{yes} $B$H2sEz$7$J$1$l$P$J$j$^$;$s!#$=(B
-$B$l0U30$N>l9g$O(B @samp{no} $B$HEz$($k$Y$-$G$9!#(B
+$B$l0J30$N>l9g$O(B @samp{no} $B$HEz$($k$Y$-$G$9!#(B
 @end itemize
 
 @node nnmairix keyboard shortcuts
@@ -4724,11 +4727,11 @@ tips and tricks})$B!#(B
 $B$G$"$C$F!V<B:]!W$N%a!<%k%0%k!<%W$G$OL$FI$N$^$^$G$9!#(B
 
 $B$=$N%a!<%k%0%k!<%W$r%-%c%C%A%"%C%W$9$k(B ($B$9$Y$F$N5-;v$r4{FI$K$9$k(B) $B$3$H$O(B
-$B$G$-$^$9!#$7$+$7$3$l$OB`6~$@$7(B @code{nnmairix} $B%0%k!<%W$r:n$C$F$$$J$$%a!<(B
-$B%k$r8+Mn$H$9$+$b$7$l$J$$E@$G;v8N$r5/$3$7$d$9$$$G$7$g$&!#$b$A$m$s:G=i(B
-$B$K(B @code{nnmairix-goto-original-article} (@pxref{nnmairix keyboard
-shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G$-$^$9$,!"(B
-$B$=$l$O$b$C$H$d$C$+$$$G$7$g$&!#(B
+$B$G$-$^$9!#$7$+$7$3$l$OB`6~$@$7!"$=$N$?$a$N(B @code{nnmairix} $B%0%k!<%W$r:n$C(B
+$B$F$$$J$$%a!<%k$r8+Mn$H$9$+$b$7$l$J$$E@$G;v8N$r5/$3$7$d$9$$$G$7$g$&!#$b$A(B
+$B$m$s:G=i$K(B @code{nnmairix-goto-original-article} (@pxref{nnmairix
+keyboard shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G(B
+$B$-$^$9$,!"$=$l$O$b$C$H$d$C$+$$$G$7$g$&!#(B
 
 $BL@$i$+$K!"85$N5-;v$K$I$&$K$+$7$F0u$r<+F0E*$KIU$1$k$3$H$G$-$l$P!"$=$l$,:G(B
 $B$b3Z$J$d$jJ}$G$7$g$&!#$3$l$,$^$5$K(B @emph{$B0u$NEAHB(B} $B$,9T$J$*$&$H$7$F$$$k(B
@@ -4756,8 +4759,8 @@ shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G$-$^$9$,!"(B
 $B0u$NEAHB$r(B @code{nnmairix-propagate-marks-upon-close} $B$rDL$8$F@)8f$9$k$3(B
 $B$H$b$G$-$^$9(B ($B>\$7$/$OJQ?t$N@bL@$r8+$F$/$@$5$$(B)$B!#(B
 
-$BL@$i$+$K!"$"$J$?$,0u$rIU$1$?$$$"$i$f$k5-;v$N$?$a$K(B @code{nnmairix} $B$O85(B
-$B$N%0%k!<%W$rD4$Y$J$1$l$P$J$i$J$$$G$7$g$&!#85$N%0%k!<%W$rFCDj$9$k$?$a(B
+$BEvA3$J$,$i!"$"$J$?$,0u$rIU$1$?$$$"$i$f$k5-;v$N$?$a$K(B @code{nnmairix} $B$O(B
+$B85$N%0%k!<%W$rD4$Y$J$1$l$P$J$i$J$$$G$7$g$&!#85$N%0%k!<%W$rFCDj$9$k$?$a(B
 $B$K(B @code{nnmairix} $B$O!"$b$7;H$($k$J$i:G=i$K%l%8%9%H%j!<$r;H$$$^$9!#%l%8(B
 $B%9%H%j!<$OHs>o$KB.$$$G$9!#$7$?$,$C$F0u$NEAHB$r;H$&$J$iK\Ev$K%l%8%9%H%j!<(B
 $B$r;H$($k$h$&$K$9$Y$-$G$9!#K\Ev$K!#(BRAM $B$H%G%#%9%/$NMFNL$K?4G[$,L5$$$J(B
@@ -4780,11 +4783,10 @@ shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G$-$^$9$,!"(B
 $BL7=b$7$?$3$H$r8@$$$^$9$,!"$=$l$O(B @code{nnmaildir} $B$G$OF/$-$^$;$s!#$J$<$J(B
 $B$i(B @code{nnmaildir} $B$O0u$r30It$N$7$+$b%U%!%$%k$G$O$J$$$H$3$m$K3JG<$9$k$+(B
 $B$i$G$9!#$7$?$,$C$F(B @code{nnmairix} $B%0%k!<%W$X$N0u$NEAHB$O!"DL>o$O%U%!%$(B
-$B%k7A<0$H$7$F(B maildir $B$r;H$&(B IMAP $B%5!<%P!<$N>l9g$@$1F/$-$^$9!#(B
+$B%k7A<0$H$7$F(B maildir $B$r;H$&(B @acronym{IMAP} $B%5!<%P!<$N>l9g$@$1F/$-$^$9!#(B
 
-@c TRANSLATEME
 @vindex nnmairix-propagate-marks-to-nnmairix-groups
-$B$b$7$3$N@_Dj:n6H$r9T$J$C$F$$$k$N$J(B
+$B:#$3$N@_Dj:n6H$r9T$J$C$F$$$k$N$J(B
 $B$i(B @code{nnmairix-propagate-marks-to-nnmairix-groups} $B$r(B @code{t} $B$K@_Dj(B
 $B$7$F2?$,5/$-$k$+8+$F$/$@$5$$!#$b$7$"$J$?$,8+$k$b$N$,9%$-$G$O$J$$$J$i$P!"(B
 $B:F$S$=$l$r(B @code{nil} $B$KLa$7$^$7$g$&!#0l$D$NLdBj$OL$FI5-;v$N?t$r4V0c$($k(B
@@ -4792,25 +4794,24 @@ shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G$-$^$9$,!"(B
 $B>C5n$5$l$?$H$-$KIaDL$K5/$-$^$9!#$3$l$,5/$-$?$i$=$N%P%C%/%(%s%I$G(B @kbd{G
 b d} $B$r;H$C$F!"$=$N(B @code{nnmairix} $B%0%k!<%W$r:n$jD>$7$F$/$@$5$$!#(B
 
-@c TRANSLATEME
 @node nnmairix tips and tricks
-@subsubsection $B%R%s%H!"$3$D!"$*$h$SNc$N$$$/$D$+(B
+@subsubsection $B%R%s%H!"$3$D!"$*$h$S$$$/$D$+$NNc(B
 
 @itemize
 @item
-Checking Mail
+$B%a!<%k$N%A%'%C%/(B
 
 @findex nnmairix-update-groups
-I put all my important mail groups at group level 1. The mairix groups
-have group level 5, so they do not get checked at start up (@pxref{Group
-Levels}).
+$B;d$OBg;v$J%a!<%k$N%0%k!<%W$r%0%k!<%W%l%Y%k(B 1 $B$K$7$F$$$^$9!#(BMairix $B%0%k!<(B
+$B%W$N%0%k!<%W%l%Y%k$O(B 5 $B$J$N$G!"$=$l$i$O5/F0;~$K%A%'%C%/$5$l$^$;(B
+$B$s(B (@pxref{Group Levels})$B!#(B
 
-I use the following to check for mails:
+$B%a!<%k$r%A%'%C%/$9$k$?$a$K;d$O0J2<$r;H$C$F$$$^$9(B:
 
 @lisp
 (defun my-check-mail-mairix-update (level)
   (interactive "P")
-  ;; if no prefix given, set level=1
+  ;; $B@\F,0z?t$,M?$($i$l$J$+$C$?$i%l%Y%k$r(B 1 $B$K@_Dj$9$k!#(B
   (gnus-group-get-new-news (or level 1))
   (nnmairix-update-groups "mairixsearch" t t)
   (gnus-group-list-groups))
@@ -4818,58 +4819,59 @@ I use the following to check for mails:
 (define-key gnus-group-mode-map "g" 'my-check-mail-mairix-update)
 @end lisp
 
-Instead of @samp{"mairixsearch"} use the name of your @code{nnmairix}
-server. See the doc string for @code{nnmairix-update-groups} for
-details.
+@samp{"mairixsearch"} $B$NBe$o$j$K$"$J$?$N(B @code{nnmairix} $B%5!<%P!<$NL>A0(B
+$B$r;H$$$^$7$g$&!#>\$7$/$O(B @code{nnmairix-update-groups} $B$N@bL@$r8+$F$/$@(B
+$B$5$$!#(B
 
 @item
-Example: search group for ticked articles
+$B2D;k(B (ticked) $B5-;v$N$?$a$N8!:w%0%k!<%W$NNc(B
 
-For example, you can create a group for all ticked articles, where the
-articles always stay unread:
+$BNc$($P$9$Y$F$N2D;k5-;v$N$?$a$N%0%k!<%W$r:n$k$3$H$,$G$-$^$9!#$=$3$G$O5-;v(B
+$B$,>o$KL$FI$K$J$C$F$$$^$9(B:
 
-Hit @kbd{G b g}, enter group name (e.g. @samp{important}), use
-@samp{F:f} as query and do not include threads.
+@kbd{G b g} $B$r$?$?$$$F%0%k!<%WL>$rF~NO$7!"8!:w>r7o$H$7$F(B @samp{F:f} $B$r;H$C(B
+$B$F$/$@$5$$!#$=$7$F%9%l%C%I$r4^$a$J$$$h$&$K$7$^$9!#(B
 
-Now activate marks propagation for this group by using @kbd{G b p}. Then
-activate the always-unread feature by using @kbd{G b r} twice.
+$B<!$K(B @kbd{G b p} $B$r;H$C$F$3$N%0%k!<%W$N$?$a$N0u$NEAHB$rM-8z$K$7$^$7$g$&!#(B
+$B$=$&$7$?$i(B @kbd{G b r} $B$rFs2s;H$C$F!V>o$KL$FI!W5!G=$rM-8z$K$7$^$9!#(B
 
-So far so good - but how do you remove the tick marks in the @code{nnmairix}
-group?  There are two options: You may simply use
-@code{nnmairix-remove-tick-mark-original-article} (bound to @kbd{$ u}) to remove
-tick marks from the original article. The other possibility is to set
-@code{nnmairix-propagate-marks-to-nnmairix-groups} to @code{t}, but see the above
-comments about this option.  If it works for you, the tick marks should
-also exist in the @code{nnmairix} group and you can remove them as usual,
-e.g. by marking an article as read.
+$B$3$l$O$3$l$GNI$$$H$7$F!"$7$+$7$I$&$d$C$F(B @code{nnmairix} $B%0%k!<%W$N2D;k(B
+$B0u$r>C$7$?$iNI$$$G$7$g$&$+(B? $B$=$l$K$OFs$D$NA*Br;h$,$"$j$^$9(B:
+@code{nnmairix-remove-tick-mark-original-article} (@kbd{$ u} $B$K%P%$%s%I(B
+$B$5$l$F$$$^$9(B) $B$r;H$C$F85$N5-;v$+$i2D;k0u$r<h$j=|$/$3$H$,$G$-$^$9!#$b$&0l(B
+$B$D$N2DG=$J$3$H(B
+$B$O(B @code{nnmairix-propagate-marks-to-nnmairix-groups} $B$r(B @code{t} $B$K@_Dj(B
+$B$9$k$3$H$G$9!#$7$+$7>e5-$N$3$N%*%W%7%g%s$K4X$9$k%3%a%s%H$r8+$F$/$@$5$$!#(B
+$B$b$7$=$l$,F0:n$9$k$J$i2D;k0u$O(B @code{nnmairix} $B%0%k!<%W$K$"$k$O$:$G!"$=(B
+$B$l$i$O$$$D$b$N$h$&$K!"Nc$($P5-;v$r4{FI$K$9$k$3$H$K$h$C$F<h$j=|$/$3$H$,$G(B
+$B$-$^$9!#(B
 
-When you have removed a tick mark from the original article, this
-article should vanish from the @code{nnmairix} group after you have updated the
-mairix database and updated the group.  Fortunately, there is a function
-for doing exactly that: @code{nnmairix-update-groups}. See the previous code
-snippet and the doc string for details.
+$B85$N5-;v$+$i2D;k0u$r<h$j=|$/$H!"(Bmairix $B%G!<%?%Y!<%9$r99?7$7$+$D%0%k!<%W(B
+$B$r99?7$7$?8e$G!"$=$N5-;v$O(B @code{nnmairix} $B%0%k!<%W$+$i>C$(5n$k$O$:$G$9!#(B
+$B9,$$$K$^$5$K$=$l$r9T$J$&$?$a$N4X?t$,$"$j$^$9(B:
+@code{nnmairix-update-groups} $B$G$9!#>\$7$/$OA0=R$N%3!<%I$NCGJR$H4X?t$N@b(B
+$BL@$r8+$F$/$@$5$$!#(B
 
 @item
-Dealing with auto-subscription of mail groups
+$B%a!<%k%0%k!<%W$N<+F09VFI$N<h$j07$$(B
 
-As described before, all @code{nnmairix} groups are in fact stored on
-the mail back end in the form @samp{zz_mairix-<NAME>-<NUMBER>}. You can
-see them when you enter the back end server in the server buffer. You
-should not subscribe these groups! Unfortunately, these groups will
-usually get @strong{auto-subscribed} when you use @code{nnmaildir} or
-@code{nnml}, i.e. you will suddenly see groups of the form
-@samp{zz_mairix*} pop up in your group buffer. If this happens to you,
-simply kill these groups with C-k.  For avoiding this, turn off
-auto-subscription completely by setting the variable
-@code{gnus-auto-subscribed-groups} to @code{nil} (@pxref{Filtering New
-Groups}), or if you like to keep this feature use the following kludge
-for turning it off for all groups beginning with @samp{zz_}:
+$B@h$K@bL@$7$?$h$&$K!"$9$Y$F$N(B @code{nnmairix} $B%0%k!<%W$O<B:]$K(B
+$B$O(B @samp{zz_mairix-<NAME>-<NUMBER>} $B$NMM<0$G%a!<%k%P%C%/%(%s%I$K3JG<$5$l(B
+$B$^$9!#$=$l$i$O%5!<%P!<%P%C%U%!!<$G$=$N%P%C%/%(%s%I$KF~$k$H8+$k$3$H$,$G$-(B
+$B$^$9!#$3$l$i$N%0%k!<%W$r9VFI$7$F$O$$$1$^$;$s(B! $B;DG0$J$,$i$3$l$i$N%0%k!<%W(B
+$B$O(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B$r;H$&$HDL>o(B @strong{$B<+F09VFI(B} $B$K(B
+$B$J$j$^$9!#$D$^$j(B @samp{zz_mairix*} $BMM<0$N%0%k!<%W$,FMA3%0%k!<%W%P%C%U%!!<(B
+$B$K8=$l$k$N$r8+$k$3$H$K$J$j$^$9!#$b$7$3$l$,5/$3$C$?$iC1$K(B @kbd{C-k} $B$G$=(B
+$B$l$i$N%0%k!<%W$r(B kill $B$7$F$/$@$5$$!#$3$l$rHr$1$k$K(B
+$B$O(B @code{gnus-auto-subscribed-groups} $B$r(B @code{nil} $B$K@_Dj$7$F<+F09VFI$r(B
+$B915WE*$KL58z$K$9$k(B (@pxref{Filtering New Groups} $B$+!"$^$?$O$b$7$3$N5!G=(B
+$B$r0];}$7$?$$$N$G$"$l$P(B @samp{zz_} $B$G$O$8$^$k$9$Y$F$N%0%k!<%W$G$=$l$rL58z(B
+$B$K$9$k0J2<$N$=$N>l$7$N$.$N<j$r;H$C$F$/$@$5$$(B:
 
 @lisp
 (setq gnus-auto-subscribed-groups
       "^\\(nnml\\|nnfolder\\|nnmbox\\|nnmh\\|nnbabyl\\|nnmaildir\\).*:\\([^z]\\|z$\\|\\z[^z]\\|zz$\\|zz[^_]\\|zz_$\\).*")
 @end lisp
-
 @end itemize
 
 @node nnmairix caveats
@@ -4877,67 +4879,70 @@ for turning it off for all groups beginning with @samp{zz_}:
 
 @itemize
 @item
-If you use the Gnus agent (@pxref{Gnus Unplugged}): don't agentize
-@code{nnmairix} groups (though I have no idea what happens if you do).
+$B$b$7(B Gnus $B%(!<%8%'%s%H(B (@pxref{Gnus Unplugged}) $B$r;H$C$F$$$k$J$i(B:
+@code{nnmairix} $B%0%k!<%W$r%(!<%8%'%s%H2=$7$J$$$G$/$@$5$$(B ($B$b$C$H$b!"$=$l(B
+$B$r$d$C$?$i2?$,5/$-$k$+;d$OCN$j$^$;$s$,(B)$B!#(B
 
 @item
-If you use the Gnus registry: don't use the registry with
-@code{nnmairix} groups (put them in
-@code{gnus-registry-unfollowed-groups}).  Be @strong{extra careful} if
-you use @code{gnus-registry-split-fancy-with-parent} - mails which are
-split into @code{nnmairix} groups are usually gone for good as soon as
-you check the group for new mail (yes, it has happened to me...).
+$B$b$7(B Gnus $B%l%8%9%H%j!<$r;H$C$F$$$k$J$i(B:
+@code{nnmairix} $B%0%k!<%W$G%l%8%9%H%j!<$r;H$&(B ($B$=$l$i$N%0%k!<%W(B
+$B$r(B @code{gnus-registry-unfollowed-groups} $B$K4^$a$k(B) $B$3$H$O$7$J$$$G$/$@$5(B
+$B$$!#$b$7(B @code{gnus-registry-split-fancy-with-parent} $B$r;H$C$F$$$k$J(B
+$B$i(B @strong{$BFCJL$JCm0U(B} $B$,I,MW$G$9!#J,3d$5$l$F(B @code{nnmairix} $B%0%k!<%W$K(B
+$BF~$C$?%a!<%k$O!"DL>o$=$N%0%k!<%W$N?7Ce%a!<%k$r%A%'%C%/$7$?$H$?$s$K1J5W$K(B
+$BL5$/$J$C$F$7$^$$$^$9(B ($B$O$$!";d$O$=$l$r$d$C$F$7$^$$$^$7$?(B@dots{})$B!#(B
 
 @item
-Therefore: @strong{Never ever} put ``real'' mails into @code{nnmairix}
-groups (you shouldn't be able to, anyway).
+$B$7$?$,$C$F(B:
+@strong{$B@dBP$K!"CG$8$F(B}$B!VK\Ev$N!W%a!<%k$r(B @code{nnmairix} $B%0%k!<%W$KF~$l(B
+$B$F$O$$$1$^$;$s(B ($B$H$K$+$/$=$l$,$G$-$k$Y$-$G$O$"$j$^$;$s(B)$B!#(B
 
 @item
-mairix does only support us-ascii characters.
+Mairix $B$O(B @acronym{US}-@acronym{ASCII} $BJ8;z$@$1$r%5%]!<%H$7$^$9!#(B
 
 @item
-@code{nnmairix} uses a rather brute force method to force Gnus to
-completely reread the group on the mail back end after mairix was
-called - it simply deletes and re-creates the group on the mail
-back end. So far, this has worked for me without any problems, and I
-don't see how @code{nnmairix} could delete other mail groups than its
-own, but anyway: you really should have a backup of your mail
-folders.
+@code{nnmairix} $B$O(B mairix $B$,8F$P$l$?8e$G(B Gnus $B$K%a!<%k%P%C%/%(%s%I$N%0%k!<(B
+$B%W$r40A4$KFI$_D>$5$;$k!"$+$J$jNO$^$+$;$J<jCJ(B - $BC1=c$K$=$N%a!<%k%P%C%/%((B
+$B%s%I$N%0%k!<%W$r>C$7$F:n$jD>$9(B - $B$r;H$$$^$9!#$3$l$^$G$N$H$3$m!"$3$l$O2?(B
+$B$iLdBjL5$/F/$-!"(B@code{nnmairix} $B$,$=$l<+?H$N$b$N0J30$N%a!<%k%0%k!<%W$r:o(B
+$B=|$9$k$H$O;W$($^$;$s!#$7$+$7$H$K$+$/K\Ev$K!"%a!<%k%U%)%k%@!<$N%P%C%/%"%C(B
+$B%W$r;}$D$Y$-$G$9!#(B
 
 @item
-All necessary information is stored in the group parameters
-(@pxref{Group Parameters}). This has the advantage that no active file
-is needed, but also implies that when you kill a @code{nnmairix} group,
-it is gone for good.
+$B$9$Y$F$NI,MW$J>pJs$O%0%k!<%W%Q%i%a!<%?!<$K3JG<$5$l$^$9(B (@pxref{Group
+Parameters})$B!#$3$l$K$O%"%/%F%#%V%U%!%$%k$rI,MW$H$7$J$$$H$$$&MxE@$,$"$j$^(B
+$B$9$,!"$=$l$O0E$K(B @code{nnmairix} $B%0%k!<%W$r(B kill $B$9$k$H1J5W$K<:$o$l$F$7(B
+$B$^$&$3$H$r$b0UL#$7$^$9!#(B
 
 @item
 @findex nnmairix-purge-old-groups
-If you create and kill a lot of @code{nnmairix} groups, the
-``zz_mairix-*'' groups will accumulate on the mail back end server. To
-delete old groups which are no longer needed, call
-@code{nnmairix-purge-old-groups}. Note that this assumes that you don't
-save any ``real'' mail in folders of the form
-@code{zz_mairix-<NAME>-<NUMBER>}. You can change the prefix of
-@code{nnmairix} groups by changing the variable
-@code{nnmairix-group-prefix}.
+$B$?$/$5$s$N(B @code{nnmairix} $B%0%k!<%W$r:n$C$F(B kill $B$9$k$H!"%a!<%k%P%C%/%((B
+$B%s%I$N%5!<%P!<$K(B ``zz_mairix-*'' $B$H$$$&L>A0$N%0%k!<%W$,N/$^$C$F$7$^$$$^(B
+$B$9!#$b$O$dITMW$K$J$C$?8E$$%0%k!<%W$r:o=|$9$k$K(B
+$B$O(B @code{nnmairix-purge-old-groups} $B$r8F$s$G$/$@$5$$!#$3$l$OEv(B
+$BA3(B @code{zz_mairix-<NAME>-<NUMBER>} $B$NMM<0$G$O$I$s$J!VK\Ev$N!W%a!<%k$b%U%)(B
+$B%k%@!<$K%;!<%V$7$J$$$3$H$rA[Dj$7$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+@code{nnmairix} $B%0%k!<%W$N@\F,<-$OJQ?t(B @code{nnmairix-group-prefix} $B$rJQ(B
+$B99$9$k$3$H$K$h$C$FJQ$($k$3$H$,$G$-$^$9!#(B
 
 @item
-The following only applies if you @strong{don't} use the mentioned patch
-for mairix (@pxref{Propagating marks}):
+$B0J2<$O@h$K8@5Z$7$?(B mairix $B$N$?$a$N%Q%C(B
+$B%A(B (@pxref{Propagating marks}) $B$r(B @strong{$B;H$o$J$$(B} $B>l9g$@$1$KEv$F$O$^$j(B
+$B$^$9(B:
 
-A problem can occur when using @code{nnmairix} with maildir folders and
-comes with the fact that maildir stores mail flags like @samp{Seen} or
-@samp{Replied} by appending chars @samp{S} and @samp{R} to the message
-file name, respectively. This implies that currently you would have to
-update the mairix database not only when new mail arrives, but also when
-mail flags are changing. The same applies to new mails which are indexed
-while they are still in the @samp{new} folder but then get moved to
-@samp{cur} when Gnus has seen the mail. If you don't update the database
-after this has happened, a mairix query can lead to symlinks pointing to
-non-existing files. In Gnus, these messages will usually appear with
-``(none)'' entries in the header and can't be accessed. If this happens
-to you, using @kbd{G b u} and updating the group will usually fix this.
-
+@code{nnmairix} $B$r(B maildir $B%U%)%k%@!<$H$H$b$K;H$&$HLdBj$,5/$-$k>l9g$,$"(B
+$B$j$^$9!#$=$l$O(B maildir $B$,%a!<%k$N%U%i%0$r(B @samp{Seen} $B$^$?(B
+$B$O(B @samp{Replied} $B$N$h$&$K!"$=$l$>$lJ8;z(B @samp{S} $B$*$h$S(B @samp{R} $B$r%a%C(B
+$B%;!<%8$N%U%!%$%kL>$KIU$12C$($k$3$H$K$h$C$F3JG<$9$k$H$$$&;v<B$K$h$j$^$9!#(B
+$B$3$l$O!":#$N$H$3$m!"?7$7$$%a!<%k$,FO$$$?$H$-$@$1$G$J$/%a!<%k$N%U%i%0$,JQ(B
+$B2=$7$?$H$-$b!"(Bmairix $B$N%G!<%?%Y!<%9$r99?7$7$J$1$l$P$J$i$J$$$G$"$m$&$3$H(B
+$B$r0E<($7$F$$$^$9!#F1$8$3$H$,!"$^$@(B @samp{new} $B%U%)%k%@!<$K$"$k$&$A$K:w0z(B
+$B$,:n$i$l$?$b$N$N(B Gnus $B$,$=$N%a!<%k$r8+$?$H$-$K(B @samp{cur} $B$K0\$5$l$??7$7(B
+$B$$%a!<%k$K$bEv$F$O$^$j$^$9!#$3$l$,5/$-$?8e$G%G!<%?%Y!<%9$r99?7$7$J$$$H!"(B
+mairix $B8!:w$OB8:_$7$J$$%U%!%$%k$r;X$9%7%s%\%j%C%/%j%s%/$r$b$?$i$7$^$9!#(B
+Gnus $B$G$ODL>o$=$l$i$N%a%C%;!<%8$O%X%C%@!<$K(B ``(none)'' $B$,I=<($5$l$F8=$l!"(B
+$B%"%/%;%9$9$k$3$H$,$G$-$^$;$s!#$b$7$3$l$,5/$3$C$?>l9g!"IaDL(B
+$B$O(B @kbd{G b u} $B$r;H$$!"$+$D%0%k!<%W$r99?7$9$l$P2r7h$7$^$9!#(B
 @end itemize
 
 @node Misc Group Stuff
