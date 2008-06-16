@@ -4518,7 +4518,7 @@ database=~/.mairixdatabase
 
 さあ、それでは最初に @code{mairix} を実行して索引を作りましょう。これに
 は数分かかるでしょう。でもあらゆる索引が追加的 (インクリメンタル) に更新
-をので非常に速いです。
+を行なうので非常に速いです。
 
 @node Configuring nnmairix
 @subsubsection nnmairix バックエンドの設定
