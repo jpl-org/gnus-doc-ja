@@ -15221,8 +15221,8 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 われます)。@code{mail-source-delete-incoming} を @code{nil} にしておいて、
 @code{mail-source-delete-old-incoming} をフックで呼ぶか、または対話的に
 呼ぶこともできます。@code{mail-source-delete-incoming} のディフォルト値
-は、アルファ版の Gnus では @code{2}、リリースされた版の Gnus で
-は @code{10} です。@xref{Gnus Development}.
+は、アルファ版の Gnus では @code{10}、リリースされた版の Gnus で
+は @code{2} です。@xref{Gnus Development}.
 
 @item mail-source-delete-old-incoming-confirm
 @vindex mail-source-delete-old-incoming-confirm
@@ -28229,7 +28229,7 @@ Message バッファーに添付ファイルをドラッグ＆ドロップすることができます。
 
 @code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を参照し
 てください。@xref{MIME, ,MIME, message, The Message Manual}.
-@c New in 5.10.9 / 5.11 (Emacs 21.1)
+@c New in 5.10.9 / 5.11 (Emacs 22.1)
 
 @item
 @code{auto-fill-mode} が Message モードでディフォルトで有効になります。
