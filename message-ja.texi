@@ -21,36 +21,23 @@ Copyright @copyright{} 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.2 or
 any later version published by the Free Software Foundation; with no
-Invariant Sections, with the Front-Cover texts being ``A GNU
-Manual'', and with the Back-Cover Texts as in (a) below.  A copy of the
-license is included in the section entitled ``GNU Free Documentation
-License''.
+Invariant Sections, with the Front-Cover texts being ``A GNU Manual'',
+and with the Back-Cover Texts as in (a) below.  A copy of the license
+is included in the section entitled ``GNU Free Documentation License''.
 
 この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
 第 1.2 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
 ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
 テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
-“Emacs manual”の「GNU フリー文書利用許諾契約書」という章に含まれていま
-す。
+「GNU フリー文書利用許諾契約書」という章に含まれています。
 
-(a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
-this GNU Manual, like GNU software.  Copies published by the Free
-Software Foundation raise funds for GNU development.''
+(a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
+modify this GNU manual.  Buying copies from the FSF supports it in
+developing GNU and promoting software freedom.''
 
-(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を GNU ソフトウェア
-のように複製したり変更する自由があります。複製はフリーソフトウェア財団に
-よって出版されました。(フリーソフトウェア財団は) GNU の開発のために必要
-な資金を集めています。」
-
-This document is part of a collection distributed under the GNU Free
-Documentation License.  If you want to distribute this document
-separately from the collection, you can do so by adding a copy of the
-license to the document, as described in section 6 of the license.
-
-この文書は「GNU フリー文書利用許諾契約書」に基づいて配布された収集著作物
-の一部です。もしあなたがこの文書を収集著作物から分離して配布したいときは、
-契約書の第 6 章に記述されているように、文書に契約書の複写を付加すること
-によって、行なうことができます。
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。FSF からの複写の購入は GNU の開発とソフトウェアの自由
+の促進を支援します。」
 @end quotation
 @end copying
 
