@@ -8311,10 +8311,14 @@ Gnus $B$O$?$/$5$s$NJ}K!$G5-;v$rJ]B8$9$k$3$H$,$G$-$^$9!#0J2<$N$b$N$OHs>o$K(B
 @kindex O p ($B35N,(B)
 @kindex | ($B35N,(B)
 @findex gnus-summary-pipe-output
+@vindex gnus-summary-pipe-output-default-command
 $B8=:_$N5-;v$r%Q%$%W$KJ]B8$7$^$9!#$&!<$s$H!"$"$N$)!";d$,8@$*$&$H$7$F$$$k$3(B
 $B$H$O(B---$B8=:_$N5-;v$r%W%m%;%9$K%Q%$%W$9$k$H$$$&$3$H$G(B
 $B$9(B (@code{gnus-summary-pipe-output})$B!#%7%s%\%k@\F,0z?t(B (@pxref{Symbolic
 Prefixes}) $B$,M?$($i$l$k$H!"%Q%$%W$X$N=PNO$K40A4$J%X%C%@!<$r4^$a$^$9!#(B
+@code{gnus-summary-pipe-output-default-command} $BJQ?t$r%G%#%U%)%k%H$N%3%^(B
+$B%s%I$H0z?t$r4^$`J8;zNs$K@_Dj$9$k$3$H$,$G$-$^$9(B ($B%G%#%U%)%k%H(B
+$B$O(B @code{nil})$B!#(B
 
 @item O P
 @kindex O P ($B35N,(B)
@@ -8411,6 +8415,17 @@ MH $B%i%$%V%i%j!<$N(B @code{rcvstore} $B$r;H$C$F!"5-;v$r(B MH $B%U%)%k%@!<$
 @findex gnus-summary-save-in-vm
 $B5-;v$r(B VM $B%U%)%k%@!<$KJ]B8$7$^$9!#$3$N@_Dj$r;H$&$?$a$K$O(B VM $B%a!<%k%j!<%@!<(B
 $B$,I,MW$G$9!#(B
+
+@item gnus-summary-save-in-pipe
+@findex gnus-summary-save-in-pipe
+$B5-;v$r%7%'%k%3%^%s%I$K%Q%$%W$7$^$9!#$3$N4X?t$O0l$D$N0z?t$r<u$1IU$1$^(B
+$B$9(B ($BL5$/$F$b9=$$$^$;$s(B)$B!#$=$l$,J8;zNs$@$C$?$i%3%^%s%I$H$7$F;H$o$l!"(B
+@code{nil} $B$^$?$O>JN,$5$l$?>l9g$O%3%^%s%I$rF~NO$9$k$3$H$rMW5a$5$l$^$9!#(B
+$B$=$l$,(B @code{default} $B$H$$$&%7%s%\%k$@$C$?>l9g(B
+$B$O!"$b$7(B @code{gnus-summary-pipe-output-default-command} $BJQ?t$K@_Dj$5$l(B
+$B$F$$$k%3%^%s%I$^$?$O:G8e$KJ]B8$N$?$a$K;H$o$l$?%3%^%s%I$,$"$l$P!"$=$l$,;H(B
+$B$o$l$^$9!#%3%^%s%I$O%7%'%k$,2r<a$G$-$kJ8;zNs(B ($BNc$($P<B9T%3%^%s%I$NL>A0$H(B
+$B0z?t(B) $B$G$J$1$l$P$J$j$^$;$s!#(B
 @end table
 
 $B$=$l$>$l$NJQ?t$N%7%s%\%k$O0J2<$NB0@-(B (property) $B$r;}$D$3$H$,$G$-$^$9(B:
@@ -8419,9 +8434,9 @@ MH $B%i%$%V%i%j!<$N(B @code{rcvstore} $B$r;H$C$F!"5-;v$r(B MH $B%U%)%k%@!<$
 @item :decode
 @code{nil} $B$G$O$J$$CM$,@_Dj$5$l$F$$$k$H%G%3!<%I$7$?5-;v$rJ]B8$7$^$9!#(B
 @code{gnus-summary-save-in-file}$B!"(B@code{gnus-summary-save-body-in-file}$B!"(B
-@code{gnus-summary-write-to-file} $B$*$h(B
-$B$S(B @code{gnus-summary-write-body-to-file} $B$G$@$1!"$3$l$r@_Dj$9$k0U5A$,$"(B
-$B$j$^$9!#(B
+@code{gnus-summary-write-to-file}$B!"(B
+@code{gnus-summary-write-body-to-file} $B$*$h(B
+$B$S(B @code{gnus-summary-save-in-pipe} $B$G$@$1!"$3$l$r@_Dj$9$k0U5A$,$"$j$^$9!#(B
 
 @item :function
 $B5-;v$r%U%!%$%k$K>e=q$9$k$N$G$O$J$/!"DI2C$9$k$?$a$NBe$o$j$N4X?t$r;XDj$7$^(B
