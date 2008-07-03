@@ -8428,7 +8428,7 @@ MH $B%i%$%V%i%j!<$N(B @code{rcvstore} $B$r;H$C$F!"5-;v$r(B MH $B%U%)%k%@!<$
 $B0z?t(B) $B$G$J$1$l$P$J$j$^$;$s!#(B
 @end table
 
-$B$=$l$>$l$NJQ?t$N%7%s%\%k$O0J2<$NB0@-(B (property) $B$r;}$D$3$H$,$G$-$^$9(B:
+$B$=$l$>$l$N4X?t%7%s%\%k$O0J2<$NB0@-(B (property) $B$r;}$D$3$H$,$G$-$^$9(B:
 
 @table @code
 @item :decode
