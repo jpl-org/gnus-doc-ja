@@ -24314,11 +24314,15 @@ Nnimap バックエンドの場合、ディフォルトでは記事のボディーがダウンロード
   "SPAM の処理を Vipul の Razor に委ねてから、
 それに期限切れ消去可能の印を付けます。"
   (interactive)
-  (let ((decode (get 'gnus-summary-save-in-pipe :decode)))
+  (let ((decode (get 'gnus-summary-save-in-pipe :decode))
+        (headers (get 'gnus-summary-save-in-pipe :headers))
+        (gnus-save-all-headers t))
     (put 'gnus-summary-save-in-pipe :decode nil)
+    (put 'gnus-summary-save-in-pipe :headers nil)
     (unwind-protect
         (gnus-summary-save-in-pipe "spamassassin -r")
-      (put 'gnus-summary-save-in-pipe :decode decode)))
+      (put 'gnus-summary-save-in-pipe :decode decode)
+      (put 'gnus-summary-save-in-pipe :headers headers)))
   (gnus-summary-mark-as-expirable 1))
 @end lisp
 
