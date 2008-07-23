@@ -24320,7 +24320,7 @@ Nnimap バックエンドの場合、ディフォルトでは記事のボディーがダウンロード
     (put 'gnus-summary-save-in-pipe :decode nil)
     (put 'gnus-summary-save-in-pipe :headers nil)
     (unwind-protect
-        (gnus-summary-save-in-pipe "spamassassin -r")
+        (gnus-summary-save-in-pipe "razor-report -f -d")
       (put 'gnus-summary-save-in-pipe :decode decode)
       (put 'gnus-summary-save-in-pipe :headers headers)))
   (gnus-summary-mark-as-expirable 1))
