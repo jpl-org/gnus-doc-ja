@@ -8427,9 +8427,9 @@ MH $B%i%$%V%i%j!<$N(B @code{rcvstore} $B$r;H$C$F!"5-;v$r(B MH $B%U%)%k%@!<$
 $B<B9T2DG=$J%3%^%s%IL>$H!"$b$7$"$l$P0z?t$G$9!#(B
 @item @code{nil}@*
 $B%_%K%P%C%U%!!<$G%3%^%s%I$rF~NO$7$^$9!#(B
-@item the symbol @code{default}@*
-$BJQ?t(B @code{gnus-summary-pipe-output-default-command} $B$,;}$C$F$$$kCM!"$^(B
-$B$?$O:G8e$KJ]B8$N$?$a$K;H$o$l$?%3%^%s%I$GCV$-49$($i$l$^$9!#(B
+@item $B%7%s%\%k(B @code{default}@*
+@code{gnus-summary-pipe-output-default-command} $BJQ?t$,;}$C$F$$$kCM!"$^$?(B
+$B$O:G8e$KJ]B8$N$?$a$K;H$o$l$?%3%^%s%I$GCV$-49$($i$l$^$9!#(B
 @end itemize
 
 RAW $B$K(B @code{nil} $B0J30$NCM$rM?$($k$H(B @code{:decode} $B$*$h(B
