@@ -8418,14 +8418,23 @@ MH $B%i%$%V%i%j!<$N(B @code{rcvstore} $B$r;H$C$F!"5-;v$r(B MH $B%U%)%k%@!<$
 
 @item gnus-summary-save-in-pipe
 @findex gnus-summary-save-in-pipe
-$B5-;v$r%7%'%k%3%^%s%I$K%Q%$%W$7$^$9!#$3$N4X?t$O0l$D$N0z?t$r<u$1IU$1$^(B
-$B$9(B ($BL5$/$F$b9=$$$^$;$s(B)$B!#$=$l$,J8;zNs$@$C$?$i%3%^%s%I$H$7$F;H$o$l!"(B
-@code{nil} $B$^$?$O>JN,$5$l$?>l9g$O%3%^%s%I$rF~NO$9$k$3$H$rMW5a$5$l$^$9!#(B
-$B$=$l$,(B @code{default} $B$H$$$&%7%s%\%k$@$C$?>l9g(B
-$B$O!"$b$7(B @code{gnus-summary-pipe-output-default-command} $BJQ?t$K@_Dj$5$l(B
-$B$F$$$k%3%^%s%I$^$?$O:G8e$KJ]B8$N$?$a$K;H$o$l$?%3%^%s%I$,$"$l$P!"$=$l$,;H(B
-$B$o$l$^$9!#%3%^%s%I$O%7%'%k$,2r<a$G$-$kJ8;zNs(B ($BNc$($P<B9T%3%^%s%I$NL>A0$H(B
-$B0z?t(B) $B$G$J$1$l$P$J$j$^$;$s!#(B
+$B5-;v$r%7%'%k%3%^%s%I$K%Q%$%W$7$^$9!#$3$N4X?t$OFs$D$N0z?t(B COMMAND $B$*$h(B
+$B$S(B RAW $B$r<u$1IU$1$^$9(B ($BL5$/$F$b9=$$$^$;$s(B)$B!#M-8z$J(B COMMAND $B$NCM$O<!$NDL(B
+$B$j$G$9(B:
+
+@itemize @bullet
+@item $BJ8;zNs(B@*
+$B<B9T2DG=$J%3%^%s%IL>$H!"$b$7$"$l$P0z?t$G$9!#(B
+@item @code{nil}@*
+$B%_%K%P%C%U%!!<$G%3%^%s%I$rF~NO$7$^$9!#(B
+@item the symbol @code{default}@*
+$BJQ?t(B @code{gnus-summary-pipe-output-default-command} $B$,;}$C$F$$$kCM!"$^(B
+$B$?$O:G8e$KJ]B8$N$?$a$K;H$o$l$?%3%^%s%I$GCV$-49$($i$l$^$9!#(B
+@end itemize
+
+RAW $B$K(B @code{nil} $B0J30$NCM$rM?$($k$H(B @code{:decode} $B$*$h(B
+$B$S(B @code{:headers} $BB0@-(B ($B8e=R(B) $B$,L5;k$5$l!"$9$Y$F$N%X%C%@!<$r4^$`@8(B
+$B$N(B ($B%G%3!<%I$5$l$F$$$J$$(B) $B5-;v$,%Q%$%W$KEO$5$l$^$9!#(B
 @end table
 
 $B$=$l$>$l$N4X?t%7%s%\%k$O0J2<$NB0@-(B (property) $B$r;}$D$3$H$,$G$-$^$9(B:
@@ -24314,15 +24323,7 @@ Nnimap $B%P%C%/%(%s%I$N>l9g!"%G%#%U%)%k%H$G$O5-;v$N%\%G%#!<$,%@%&%s%m!<%I(B
   "SPAM $B$N=hM}$r(B Vipul $B$N(B Razor $B$K0Q$M$F$+$i!"(B
 $B$=$l$K4|8B@Z$l>C5n2DG=$N0u$rIU$1$^$9!#(B"
   (interactive)
-  (let ((decode (get 'gnus-summary-save-in-pipe :decode))
-        (headers (get 'gnus-summary-save-in-pipe :headers))
-        (gnus-save-all-headers t))
-    (put 'gnus-summary-save-in-pipe :decode nil)
-    (put 'gnus-summary-save-in-pipe :headers nil)
-    (unwind-protect
-        (gnus-summary-save-in-pipe "razor-report -f -d")
-      (put 'gnus-summary-save-in-pipe :decode decode)
-      (put 'gnus-summary-save-in-pipe :headers headers)))
+  (gnus-summary-save-in-pipe "razor-report -f -d" t)
   (gnus-summary-mark-as-expirable 1))
 @end lisp
 
