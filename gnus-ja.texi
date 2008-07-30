@@ -7921,11 +7921,13 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに、すべての「ずれ」
 
 @findex gnus-article-sort-functions
 @findex gnus-article-sort-by-date
+@findex gnus-article-sort-by-most-recent-date
 @findex gnus-article-sort-by-score
 @findex gnus-article-sort-by-subject
 @findex gnus-article-sort-by-author
 @findex gnus-article-sort-by-random
 @findex gnus-article-sort-by-number
+@findex gnus-article-sort-by-most-recent-number
 何か変な理由でスレッド表示を使っていないのなら、変
 数 @code{gnus-article-sort-functions} をいじくる必要があります。これ
 は @code{gnus-thread-sort-functions} と非常に似ていますが、記事の比較に
@@ -10542,6 +10544,12 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セットに関する他の秘訣:
 @findex gnus-summary-sort-by-number
 記事番号によって並べ替えます (@code{gnus-summary-sort-by-number})。
 
+@item C-c C-s C-m C-n
+@kindex C-c C-s C-n (概略)
+@findex gnus-summary-sort-by-most-recent-number
+最新の記事番号によって並べ替えま
+す (@code{gnus-summary-sort-by-most-recent-number})。
+
 @item C-c C-s C-a
 @kindex C-c C-s C-a (概略)
 @findex gnus-summary-sort-by-author
@@ -10561,6 +10569,12 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セットに関する他の秘訣:
 @kindex C-c C-s C-d (概略)
 @findex gnus-summary-sort-by-date
 日付によって並べ替えます (@code{gnus-summary-sort-by-date})。
+
+@item C-c C-s C-m C-d
+@kindex C-c C-s C-m C-d (概略)
+@findex gnus-summary-sort-by-most-recent-date
+最新の日付によって並べ替えま
+す (@code{gnus-summary-sort-by-most-recent-date})。
 
 @item C-c C-s C-l
 @kindex C-c C-s C-l (概略)
@@ -10593,6 +10607,8 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セットに関する他の秘訣:
 に基づいて並べ替えられ、それはあなたが求めていることとは異なっているかも
 しれません。スレッドを使うかどうかを切り替えるには @kbd{T T} を打ってく
 ださい (@pxref{Thread Commands})。
+
+接頭引数を与えると並べ替えの順序が逆になります。
 
 @node Finding the Parent
 @section 親記事を探す
