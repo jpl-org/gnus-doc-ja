@@ -4450,9 +4450,11 @@ mh= ... 索引を付ける nnml/mh フォルダー ...
 mbox= ... 索引を付ける mbox フォルダー ...
 @end example
 
-Mairix で索引を付けたいすべての maildir/nnml フォルダーと mbox ファイル
-を (基点ディレクトリーへの相対値で!) 指定しましょう。詳しく
-は mairixrc の man ページを見てください。
+Mairix で索引を付けたいすべてのメールフォルダーと mbox ファイルを (基点
+ディレクトリーへの相対値で!) これで指定します。@code{nnml} バックエンド
+はメールを MH 形式で保存するので、それらのディレクトリーを @code{mh} 行
+に置いておかなければならないことに注意してください。さらに詳しいことにつ
+いては、この章の最後にある例と mairixrc の man ページを見てください。
 
 @example
 omit=zz_mairix-*
@@ -4522,14 +4524,16 @@ database=~/.mairixdatabase
 い。
 
 @item
-Mairix がその検索結果を格納する @strong{メールバックエンド} です。今のと
-ころ @code{nnmaildir}、@code{nnimap} および @code{nnml} がサポートされて
-います。上で説明したように、ローカルに格納されるメールのためには、あなた
-がメールを格納している既存のメールバックエンドにすれば良いでしょう。しか
-し @code{nnmairix} 専用に、例えば新しい @code{nnmaildir} サーバーを
-第二の (secondary) 選択方法に加えることもできます (@pxref{Finding the
-News})。Mairix を @acronym{IMAP} サーバー上で遠隔動作させたいのならば、
-そこでそれに対応する @code{nnimap} バックエンドを選ばなければなりません。
+Mairix がその検索結果を格納する @strong{バックエンド・サーバー} の名前で
+す。これは @code{nnml:mymail} のような完全なサーバー名でなければなりませ
+ん。今のところ @code{nnmaildir}、@code{nnimap} および @code{nnml} でアク
+セスするサーバーがサポートされています。上で説明したように、ローカルに格
+納されるメールのためには、あなたがメールを格納している既存のサーバーにす
+れば良いでしょう。しかし @code{nnmairix} 専用に、例えば新し
+い @code{nnmaildir} サーバーを第二の (secondary) 選択方法に加えることも
+できます (@pxref{Finding the News})。Mairix を @acronym{IMAP} サーバー上
+で遠隔動作させたいのならば、そこでそれに対応する @code{nnimap} サーバー
+を選ばなければなりません。
 
 @item
 @vindex nnmairix-mairix-search-options
