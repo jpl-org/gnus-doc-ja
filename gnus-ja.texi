@@ -829,6 +829,7 @@ Various
 * Fuzzy Matching::              $BBg$-$J$R$:$s$@2;(B (big fuzz) $B$C$F2?(B?
 * Thwarting Email Spam::        $BMj$s$G$b$$$J$$9-9p%a!<%k$rHr$1$k4JC1$JJ}K!(B
 * Spam Package::                Spam $B$r_I2a$7$F=hM}$9$k$?$a$N%Q%C%1!<%8(B
+* The Gnus Registry::           $B5-;v$r(B Message-ID $B$GC)$k$?$a$N%Q%C%1!<%8(B
 * Other modes::                 $BB>$N%b!<%I$H$NAj8_:nMQ(B
 * Various Various::             $BK\Ev$K$$$m$$$m$J$b$N(B
 
@@ -22426,6 +22427,7 @@ Gnus $B$O0lF|$K0l2s%9%3%"$r8:?j$5$;$h$&$H$7$^$9!#Nc$($P(B Gnus $B$r;MF|4VAv$i
 * Fuzzy Matching::              $BBg$-$J$R$:$s$@2;(B (big fuzz) $B$C$F2?(B?
 * Thwarting Email Spam::        $BMj$s$G$b$$$J$$9-9p%a!<%k$rHr$1$k4JC1$JJ}K!(B
 * Spam Package::                Spam $B$r_I2a$7$F=hM}$9$k$?$a$N%Q%C%1!<%8(B
+* The Gnus Registry::           $B5-;v$r(B Message-ID $B$GC)$k$?$a$N%Q%C%1!<%8(B
 * Other modes::                 $BB>$N%b!<%I$H$NAj8_:nMQ(B
 * Various Various::             $BK\Ev$K$$$m$$$m$J$b$N(B
 @end menu
@@ -26072,6 +26074,215 @@ Spam $B$N3X=,(B: (spam-stat-process-spam-directory "~/Mail/mail/spam")
 $B<-=q$N%5%$%:$r>.$5$/$9$k(B: (spam-stat-reduce-size)
 $B<-=q$r%;!<%V(B: (spam-stat-save)
 @end example
+
+@node The Gnus Registry
+@section Gnus $B%l%8%9%H%j!<(B
+@cindex registry
+@cindex split
+@cindex track
+
+Gnus $B%l%8%9%H%j!<$O5-;v$N(B Message-ID $B$r85$K$9$Y$F$N%P%C%/%(%s%I$r2#CGE*(B
+$B$KDI@W$9$k$?$a$N%Q%C%1!<%8$G$9!#$3$l$,Ds6!$9$k$$$/$D$b$"$kAGE($J;v$r$9$l(B
+$B$P!"(BGnus $B%f!<%6!<$O6a=j$N?M$?$A$+$iA"$^$7$,$i$l!">220$,$?$@$G;6H1$7$F$/(B
+$B$l$k$h$&$K$J$j!"@$3&$G5/$-$kMM!9$JLdBj$N@lLg2H$K$J$k$3$H$,$G$-$k$G$7$g$&!#(B
+$B$+$J$jAG@2$i$7$$5!G=$,K~:\$G$9!#$&!<$`!"A4It$,$=$&$G$O$J$$$+$b$7$l$^$;$s(B
+$B$1$l$I$M!#(B
+
+$B$8$-$K>\$7$/@bL@$7$^$9$,!"$^$:$O$=$l$i$N5!G=$NAa8+I=$r7G$2$F$*$-$^$7$g$&!#(B
+$B$"$J$?$NCm0UNO$,;}B3$7$J$$$+$b$7$l$J$$$N$G(B@dots{} $B$$$d!"2?$G$b$J$$$G$9!#(B
+
+@enumerate
+@item $B5-;v$r$=$l$i$N?F$KJ,3d$9$k(B
+$B5DO@$rF1$8%0%k!<%W$GB3$1$i$l$k$h$&$K$9$k5!G=$G$9!#(BMessage-ID $B$K2C$($FI=(B
+$BBj$HAw?.<T$r;H$&$3$H$,$G$-$^$9!#$3$l$K$O$$$/$D$+$N$d$jJ}$,$"$j$^$9!#(B
+
+@item $BFH<+$N%U%i%0$H%-!<%o!<%I$r5-O?$9$k(B
+$B%l%8%9%H%j!<$O5-;v$N$?$a$NFH<+$N%U%i%0$H%-!<%o!<%I$r5-O?$9$k$3$H$,$G$-$^(B
+$B$9!#$3$l$GNc$($P5-;v$K(B ``To-Do'' $B$N0u$rIU$1$k$3$H$,$G$-!"5-;v$,(B nnimap$B!"(B
+nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$^(B
+$B$9!#(B
+
+@item $BG$0U$N%G!<%?$r5-O?$9$k(B
+$B%l%8%9%H%j!<$O5-;v$N$?$a$N$I$s$J%G!<%?$G$b5-21$7$F$*$/$3$H$,$G$-$^$9!#4J(B
+$BC1$J(B Elisp $B%$%s%?!<%U%'!<%9$G$9$,!#AH$_9~$^$l$F$$$k5U0z$-5!G=$rM-8z$K$7(B
+$B$F$*$/$H!"FCDj$N>r7o$K9g$&$9$Y$F$N5-;v$r$9$P$d$/8+$D$1$k$3$H$,$G$-$^$9!#(B
+@end enumerate
+
+@menu
+* Setup::
+* Fancy splitting to parent::
+* Store custom flags and keywords::
+* Store arbitrary data::
+@end menu
+
+@node Setup
+@subsection $B@_Dj(B
+
+$BNI$/$7$?$3$H$K(B Gnus $B%l%8%9%H%j!<$N@_Dj$O$H$F$b4JC1$G$9(B:
+
+@lisp
+(setq gnus-registry-max-entries 2500
+      gnus-registry-use-long-group-names t)
+
+(gnus-registry-initialize)
+@end lisp
+
+$B$3$l$O(B Gnus $B$,(B newsrc $B$r%;!<%V$9$k$H$-$N=hM}$K%l%8%9%H%j!<$r%;!<%V$9$k=h(B
+$BM}$r2C$($^$9(B ($B$=$l$O(B Gnus $B$r=*N;$9$k$H$-$H(B @code{*Group*} $B%P%C%U%!!<(B
+$B$G(B @kbd{s} $B$r2!$7$?$H$-$KH/F0$7$^$9!#$5$i$K$3$l$O(B Gnus $B$N5-;v$K4X$9$kF0(B
+$B:n(B ($B%3%T!<!"0\F0$J$I(B) $B$K%l%8%9%H%j!<$rA`:n$9$k5!G=$r2C$($k$N$G!"$3$N=i4|(B
+$B2=$K$h$k7k2L$r85$KLa$9$N$O4JC1$G$O$"$j$^$;$s!#$=$N!"$"$^$jL{2w$G$O$J$$>\(B
+$B:Y$K$D$$$F$O(B @code{gnus-registry-initialize} $B$r8+$F$/$@$5$$!#(B
+
+$B0J2<$O%l%8%9%H%j!<$N;}$A<g$,;H$&$?$a$NB>$N@_Dj$G$9(B ($B$=$l$i$rL5F\Ce$K%3%T!<(B
+$B$9$kA0$K!"$=$l$i$,2?$r$9$k$+$rM}2r$7$F$/$@$5$$(B)$B!#(B
+
+@lisp
+(setq
+ gnus-registry-split-strategy 'majority
+ gnus-registry-ignored-groups '(("nntp" t)
+                                ("nnrss" t)
+                                ("spam" t)
+                                ("train" t))
+ gnus-registry-max-entries 500000
+ gnus-registry-use-long-group-names t
+ gnus-registry-track-extra '(sender subject))
+@end lisp
+
+$B$3$l$i$,0UL#$9$k$N$O!"$"$A$3$A$K$"$k$?$/$5$s$N5-;v$rJ];}$7!"D9$$%0%k!<%W(B
+$BL>$r;H$$!"Aw?.<T$HI=Bj$G(B ($BC1$J$k?F$N(B Message-ID $B$G$G$O$J$/(B) $B5-;v$rDI@W$7!"(B
+$BF~$C$F$-$?5-;v$r%l%8%9%H%j!<$,J,3d$9$k$H$-$K5-;v$N9T$-@h$H$7$F0l$D0J>e$N(B
+$B8uJd$,$"$C$?$iB??t7h$G7h$a$k!"$H$$$&$3$H$G$9!#2C$($F(B ``nntp''$B!"(B``nnrss''$B!"(B
+``spam'' $B$^$?$O(B ``train'' $B$K9gCW$9$k%0%k!<%W$N5-;v$r%l%8%9%H%j!<$KL5;k$5(B
+$B$;$^$9!#(B
+
+$B$"$J$?$,$3$N$9$Y$F$K46LC$r<u$1$k$3$H$O5?$$$"$j$^$;$s$,!"$3$&MW5a$7$b$9$k(B
+$B$G$7$g$&!#!V;d$O(B Gnus $B%f!<%6!<$G%+%9%?%^%$%:$9$k$3$H$,@8$-$,$$$G$9!#$b$C(B
+$B$H2<$5$$!W!#$G$O=t@_Dj$N0lHLE*$J@bL@$K;2$j$^$7$g$&!#(B
+
+@defvar gnus-registry-unfollowed-groups
+@code{gnus-registry-split-fancy-with-parent} $B$,DI@W$7$J$$%0%k!<%W$G$9!#(B
+$B$=$l$i$O!"$G$b%l%8%9%H%j!<$K5-O?$5$l$^$9!#$3$l$O@55,I=8=$N%j%9%H$G$9!#(B
+@end defvar
+
+@defvar gnus-registry-ignored-groups
+$B%l%8%9%H%j!<$K5-O?$5$l$J$$%0%k!<%W$G$9!#$3$l$O@55,I=8=$N%j%9%H$G!"%0%k!<(B
+$B%W(B/$B%H%T%C%/$N%+%9%?%^%$%:$G@_Dj$9$k$3$H$b$G$-$^$9(B ($B$J$N$G!"FCDj$N%0%k!<(B
+$B%W$^$?$O%H%T%C%/A4BN$r!"L5;k$5$;$?$j0];}$5$;$k$3$H$,$G$-$^$9(B)$B!#(B
+@end defvar
+
+@defvar gnus-registry-use-long-group-names
+$B%l%8%9%H%j!<$,D9$$%0%k!<%WL>$r;H$&$+$I$&$+$r;XDj$7$^$9!#(B@code{t} $B$K@_Dj(B
+$B$9$k$3$H$r?J$a$^$9$,!"$=$&$7$J$/$F$b$9$Y$FF/$-$^$9!#>-Mh$N5!G=$GI,MW$K$J(B
+$B$k$G$7$g$&!#(B
+@end defvar
+
+@defvar gnus-registry-max-entries
+$B%l%8%9%H%j!<$,J];}$9$k9`L\$N?t(B ($B@0?t$^$?$OL5@)8B$r0UL#$9(B
+$B$k(B @code{nil}) $B$G$9!#(B
+@end defvar
+
+@defvar gnus-registry-cache-file
+Gnus $B$NA`:n$rDL$8$F%l%8%9%H%j!<$,5-O?$5$l$k%U%!%$%k$G$9!#(B
+@end defvar
+
+@c TRANSLATEME
+@node Fancy splitting to parent
+@subsection Fancy splitting to parent
+
+Simply put, this lets you put followup e-mail where it belongs.
+
+Every message has a Message-ID, which is unique, and the registry
+remembers it.  When the message is moved or copied, the registry will
+notice this and offer the new group as a choice to the splitting
+strategy.  
+
+When a followup is made, usually it mentions the original message's
+Message-ID in the headers.  The registry knows this and uses that
+mention to find the group where the original message lives.  You only
+have to put a rule like this:
+
+@lisp
+(setq nnimap-my-split-fancy '(|
+
+      ;; split to parent: you need this
+      (: gnus-registry-split-fancy-with-parent)
+
+      ;; other rules, as an example
+      (: spam-split)
+      ;; default mailbox
+      "mail")
+@end lisp
+
+in your fancy split setup.  In addition, you may want to customize the
+following variables.
+
+@defvar gnus-registry-track-extra
+This is a list of symbols, so it's best to change it from the
+Customize interface.  By default it's nil, but you may want to track
+subject and sender as well when splitting by parent.  It may work
+for you.  It can be annoying if your mail flow is large and people
+don't stick to the same groups.
+@end defvar
+
+@defvar gnus-registry-split-strategy
+This is a symbol, so it's best to change it from the Customize
+interface.  By default it's nil, but you may want to set it to
+@code{'majority} or @code{'first} to split by sender or subject based
+on the majority of matches or on the first found.
+@end defvar
+
+@node Store custom flags and keywords
+@subsection Store custom flags and keywords
+
+The registry lets you set custom flags and keywords per message.  You
+can use the Gnus->Registry Marks menu or the @kbd{M M x} keyboard
+shortcuts, where @code{x} is the first letter of the mark's name.
+
+@defvar gnus-registry-marks
+The custom marks that the registry can use.  You can modify the
+default list, if you like.  If you do, you'll have to exit Emacs
+before they take effect (you can also unload the registry and reload
+it or evaluate the specific macros you'll need, but you probably don't
+want to bother).  Use the Customize interface to modify the list.
+
+By default this list has the Important, Work, Personal, To-Do, and
+Later marks.  They all have keyboard shortcuts like @kbd{M M i} for
+Important, using the first letter.
+@end defvar
+
+@defun gnus-registry-mark-article
+Call this function to mark an article with a custom registry mark.  It
+will offer the available marks for completion.
+@end defun
+
+@node Store arbitrary data
+@subsection Store arbitrary data
+
+The registry has a simple API that uses a Message-ID as the key to
+store arbitrary data (as long as it can be converted to a list for
+storage).
+
+@defun gnus-registry-store-extra-entry (id key value)
+Store @code{value} in the extra data key @code{key} for message
+@code{id}.
+@end defun
+
+@defun gnus-registry-delete-extra-entry (id key)
+Delete the extra data key @code{key} for message @code{id}.
+@end defun
+
+@defun gnus-registry-fetch-extra (id key)
+Get the extra data key @code{key} for message @code{id}.
+@end defun
+
+@defvar gnus-registry-extra-entries-precious
+If any extra entries are precious, their presence will make the
+registry keep the whole entry forever, even if there are no groups for
+the Message-ID and if the size limit of the registry is reached.  By
+default this is just @code{'(marks)} so the custom registry marks are
+precious.
+@end defvar
 
 @node Other modes
 @section $BB>$N%b!<%I$H$NAj8_:nMQ(B
