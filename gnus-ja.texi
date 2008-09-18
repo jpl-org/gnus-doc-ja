@@ -26116,9 +26116,9 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 
 @menu
 * Setup::
-* Fancy splitting to parent::
-* Store custom flags and keywords::
-* Store arbitrary data::
+* Fancy splitting to parent::   $B?F$X$NFC5iJ,3d(B
+* Store custom flags and keywords:: $BFH<+$N%U%i%0$H%-!<%o!<%I$N5-O?(B
+* Store arbitrary data::        $BG$0U$N%G!<%?$N5-O?(B
 @end menu
 
 @node Setup
@@ -26192,21 +26192,20 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 Gnus $B$NA`:n$rDL$8$F%l%8%9%H%j!<$,5-O?$5$l$k%U%!%$%k$G$9!#(B
 @end defvar
 
-@c TRANSLATEME
 @node Fancy splitting to parent
-@subsection Fancy splitting to parent
+@subsection $B?F$X$NFC5iJ,3d(B
 
-Simply put, this lets you put followup e-mail where it belongs.
+$B4JC1$K8@$&$H!"$3$l$G%U%)%m!<%"%C%W$NEE;R%a!<%k$r!"$=$l$,$"$k$Y$->l=j$KCV(B
+$B$/$3$H$,$G$-$^$9!#(B
 
-Every message has a Message-ID, which is unique, and the registry
-remembers it.  When the message is moved or copied, the registry will
-notice this and offer the new group as a choice to the splitting
-strategy.  
+$B$9$Y$F$N5-;v$O8GM-$N(B Message-ID $B$r;}$C$F$$$F!"%l%8%9%H%j!<$O$=$l$r5-21$7(B
+$B$^$9!#5-;v$r0\F0$^$?$O%3%T!<$9$k$H$-!"%l%8%9%H%j!<$O$=$N$3$H$K5$IU$$$F!"(B
+$BJ,3dJ}K!$N$R$H$D$NA*Br;h$H$7$F?7$7$$%0%k!<%W$rDs0F$7$^$9!#(B
 
-When a followup is made, usually it mentions the original message's
-Message-ID in the headers.  The registry knows this and uses that
-mention to find the group where the original message lives.  You only
-have to put a rule like this:
+$B%U%)%m!<%"%C%W$9$k$H$-!"8@5Z$9$kBP>]$H$J$k85$N5-;v$N(B Message-ID $B$ODL>o%X%C(B
+$B%@!<$K$"$j$^$9!#%l%8%9%H%j!<$O$=$l$rCN$j!"$=$N5-:\FbMF$r;H$C$F85$N5-;v$,(B
+$B$I$3$K$"$k$+$rC5$7$^$9!#$"$J$?$,FC5iJ,3d$N@_Dj$KCV$$$F$*$/I,MW$,$"$k$N$O!"(B
+$B$3$N$h$&$J5,B'$@$1$G$9(B:
 
 @lisp
 (setq nnimap-my-split-fancy '(|
@@ -26220,74 +26219,76 @@ have to put a rule like this:
       "mail")
 @end lisp
 
-in your fancy split setup.  In addition, you may want to customize the
-following variables.
+$B$5$i$K!"0J2<$NJQ?t$r%+%9%?%^%$%:$9$kI,MW$,$"$k$G$7$g$&!#(B
 
 @defvar gnus-registry-track-extra
-This is a list of symbols, so it's best to change it from the
-Customize interface.  By default it's nil, but you may want to track
-subject and sender as well when splitting by parent.  It may work
-for you.  It can be annoying if your mail flow is large and people
-don't stick to the same groups.
+$B$3$l$O%7%s%\%k$N%j%9%H$G$9!#%+%9%?%^%$%:$N%$%s%?!<%U%'!<%9$+$iJQ99$9$k$N(B
+$B$K$O!"$=$l$,%Y%9%H$G$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9$,!"?F$GJ,3d$9$k$K(B
+$B$O(B @code{subject} $B$H(B @code{sender} $B$bDI@W$9$kI,MW$,$"$k$G$7$g$&!#$=$l$O(B
+$BF/$/$+$b$7$l$^$;$s!#%a!<%k$NN.DLNL$,Bg$-$/$F?M!9$,F1$8%0%k!<%W$K$H$I$^$C(B
+$B$F$$$J$$$H!"HQ$o$7$/$J$k>l9g$,$"$j$^$9!#(B
 @end defvar
 
 @defvar gnus-registry-split-strategy
-This is a symbol, so it's best to change it from the Customize
-interface.  By default it's nil, but you may want to set it to
-@code{'majority} or @code{'first} to split by sender or subject based
-on the majority of matches or on the first found.
+$B$3$l$O%7%s%\%k$G$9!#%+%9%?%^%$%:$N%$%s%?!<%U%'!<%9$+$iJQ99$9$k$N$K$O!"$=(B
+$B$l$,%Y%9%H$G$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9$,!"9gCW$NB??t7h$^$?$O:G=i(B
+$B$K8+$D$+$C$?$b$N$K4p$E$$$F(B @code{sender} $B$+(B @code{subject} $B$GJ,3d$9$k$K(B
+$B$O(B @code{majority} $B$^$?$O(B @code{first} $B$K@_Dj$9$kI,MW$,$"$k$G$7$g$&!#(B
 @end defvar
 
 @node Store custom flags and keywords
-@subsection Store custom flags and keywords
+@subsection $BFH<+$N%U%i%0$H%-!<%o!<%I$N5-O?(B
 
-The registry lets you set custom flags and keywords per message.  You
-can use the Gnus->Registry Marks menu or the @kbd{M M x} keyboard
-shortcuts, where @code{x} is the first letter of the mark's name.
+$B%l%8%9%H%j!<$r;H$C$F!"FH<+$N%U%i%0$H%-!<%o!<%I$r%a%C%;!<%8$4$H$K@_Dj$9$k(B
+$B$3$H$,$G$-$^$9!#(BGnus->Registry Marks $B%a%K%e!<$+(B @kbd{M M x} $B%7%g!<%H%+%C(B
+$B%H!&%-!<$r;H$C$F$/$@$5$$!#$3$3$G(B @code{x} $B$O0u$NL>A0$N:G=i$NJ8;z$G$9!#(B
 
 @defvar gnus-registry-marks
-The custom marks that the registry can use.  You can modify the
-default list, if you like.  If you do, you'll have to exit Emacs
-before they take effect (you can also unload the registry and reload
-it or evaluate the specific macros you'll need, but you probably don't
-want to bother).  Use the Customize interface to modify the list.
+$B%l%8%9%H%j!<$,07$&$3$H$,$G$-$kFH<+$N0u$N%j%9%H$G$9!#$b$7$=$&$7$?$$$J$i!"(B
+$B%G%#%U%)%k%H$N%j%9%H$rJQ99$9$k$3$H$,$G$-$^$9!#$=$l$r9T$J$&$N$J$i$P!"$=$l(B
+$B$i$,8z2L$r5Z$\$9A0$K(B Emacs $B$r=*N;$5$;$kI,MW$,$"$j$^$9(B ($B%l%8%9%H%j!<$rH4(B
+$B$-<h$C$F(B (unload $B$7$F(B) $B$+$i:FFI$_9~$_(B (reload) $B$9$k$+!"$^$?$OI,MW$G$"$m(B
+$B$&FCJL$J%^%/%m$r<B9T$9$k$3$H$b$G$-$^$9$,!"$?$V$s$=$s$JLLE]$J$3$H$OK>$^$J(B
+$B$$$G$7$g$&(B)$B!#%+%9%?%^%$%:$N%$%s%?!<%U%'!<%9$r;H$C$F!"$=$N%j%9%H$rJQ99$7(B
+$B$F$/$@$5$$!#(B
 
-By default this list has the Important, Work, Personal, To-Do, and
-Later marks.  They all have keyboard shortcuts like @kbd{M M i} for
-Important, using the first letter.
+$B%G%#%U%)%k%H$G$3$N%j%9%H$K$O(B @code{Important}$B!"(B@code{Work}$B!"(B
+@code{Personal}$B!"(B@code{To-Do} $B$=$l$K(B @code{Later} $B$N0u$,$"$j$^$9!#$=$l$i(B
+$B$9$Y$F$K!"(B@code{Important} $B$N$?$a$N(B @kbd{M M i} $B$N$h$&$K!":G=i$NJ8;z$r;H(B
+$B$&%7%g!<%H%+%C%H!&%-!<$,MQ0U$5$l$F$$$^$9!#(B
 @end defvar
 
 @defun gnus-registry-mark-article
-Call this function to mark an article with a custom registry mark.  It
-will offer the available marks for completion.
+$BFH<+$N%l%8%9%H%j!<$N0u$r5-;v$KIU2C$9$k$?$a$K;H$&4X?t$G$9!#Jd40$N$?$a$K!"(B
+$BMxMQ$G$-$k0u$rDs<($7$^$9!#(B
 @end defun
 
 @node Store arbitrary data
-@subsection Store arbitrary data
+@subsection $BG$0U$N%G!<%?$N5-O?(B
 
-The registry has a simple API that uses a Message-ID as the key to
-store arbitrary data (as long as it can be converted to a list for
-storage).
+$B%l%8%9%H%j!<$K$OG$0U$N%G!<%?$r5-O?$9$k$?$a$K!"(BMessage-ID $B$r%-!<$H$7$F;H(B
+$B$&4JC1$J%$%s%?!<%U%'!<%9$,$"$j$^$9(B ($B%G!<%?$OJ]B8$9$k$?$a$K$G$-$k8B$j0l$D(B
+$B$N%j%9%H$KJQ49$5$l$^$9(B)$B!#(B
 
 @defun gnus-registry-store-extra-entry (id key value)
-Store @code{value} in the extra data key @code{key} for message
-@code{id}.
+$B5-;v(B @code{id} $B$N$?$a$NFCJL$J%G!<%?!&%-!<(B @code{key} $B$K(B @code{value} $B$r(B
+$B5-O?$7$^$9!#(B
 @end defun
 
 @defun gnus-registry-delete-extra-entry (id key)
-Delete the extra data key @code{key} for message @code{id}.
+$B5-;v(B @code{id} $B$N$?$a$NFCJL$J%G!<%?!&%-!<(B @code{key} $B$r>C5n$7$^$9!#(B
 @end defun
 
 @defun gnus-registry-fetch-extra (id key)
-Get the extra data key @code{key} for message @code{id}.
+$B5-;v(B @code{id} $B$N$?$a$NFCJL$J%G!<%?!&%-!<(B @code{key} $B$r<h$j9~$_$^$9!#(B
 @end defun
 
 @defvar gnus-registry-extra-entries-precious
-If any extra entries are precious, their presence will make the
-registry keep the whole entry forever, even if there are no groups for
-the Message-ID and if the size limit of the registry is reached.  By
-default this is just @code{'(marks)} so the custom registry marks are
-precious.
+$BFCJL$J%(%s%H%j!<$,5.=E$G$"$k$J$i!"$?$H$($=$N(B Message-ID $B$N5-;v$N%0%k!<%W(B
+$B$,L5$/$F$b!"$^$?%l%8%9%H%j!<$N%5%$%:$N@)8B$KC#$7$F$b!"$=$l$i$,B8:_$7$F$$(B
+$B$k$H%l%8%9%H%j!<$O$9$Y$F$N%(%s%H%j!<$r1J5W$KJ];}$7$^$9!#%G%#%U%)%k%H$G$O(B
+$B$3$l$O$^$5$K(B @code{(marks)} $B$J$N$G!"FH<+$N%l%8%9%H%j!<$N0u$O5.=E$G$"$k$H(B
+$B8+$J$5$l$^$9!#(B
 @end defvar
 
 @node Other modes
