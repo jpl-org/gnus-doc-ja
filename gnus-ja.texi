@@ -26232,8 +26232,8 @@ Gnus の操作を通じてレジストリーが記録されるファイルです。
 @defvar gnus-registry-split-strategy
 これはシンボルです。カスタマイズのインターフェースから変更するのには、そ
 れがベストです。ディフォルトは @code{nil} ですが、合致の多数決または最初
-に見つかったものに基づいて @code{sender} か @code{subject} で分割するに
-は @code{majority} または @code{first} に設定する必要があるでしょう。
+に見つかったものに基づいて送信者 (sender) または表題 (subject) で分割す
+るには @code{majority} または @code{first} に設定する必要があるでしょう。
 @end defvar
 
 @node Store custom flags and keywords
