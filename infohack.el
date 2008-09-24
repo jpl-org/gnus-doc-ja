@@ -36,6 +36,29 @@
     (delete-region (1+ (match-beginning 0))
 		   (search-forward "\n@end iflatex\n"))))
 
+(defun infohack-include-files ()
+  "Insert @include files."
+  (goto-char (point-min))
+  (set-syntax-table texinfo-format-syntax-table)
+  (let (start texinfo-command-end filename)
+    (while (re-search-forward "^@include" nil t)
+      (setq start (match-beginning 0)
+	    texinfo-command-end (point)
+	    filename (texinfo-parse-line-arg))
+      (delete-region start (point-at-bol 2))
+      (message "Reading included file: %s" filename)
+      (save-excursion
+	(save-restriction
+	  (narrow-to-region
+	   (point)
+	   (+ (point) (car (cdr (insert-file-contents filename)))))
+	  (goto-char (point-min))
+	  ;; Remove `@setfilename' line from included file, if any,
+	  ;; so @setfilename command not duplicated.
+	  (if (re-search-forward "^@setfilename" (point-at-eol 100) t)
+	      (delete-region (point-at-bol 1)
+			     (point-at-bol 2))))))))
+
 (defun infohack (file)
   (let ((dest-directory default-directory)
 	(max-lisp-eval-depth (max max-lisp-eval-depth 600))
@@ -48,6 +71,7 @@
     (setq buffer-read-only nil)
     (setq coding-system buffer-file-coding-system)
     (infohack-remove-unsupported)
+    (infohack-include-files)
     (texinfo-every-node-update) 
     (texinfo-format-buffer t) ;; Don't save any file.
     (setq default-directory dest-directory)
@@ -125,38 +149,6 @@ Both characters must have the same length of multi-byte form."
 	  (setq buffer-read-only nil)
 	  (buffer-disable-undo (current-buffer))
 	  (setq coding-system-for-write buffer-file-coding-system)
-	  ;; process @include before updating node
-	  ;; This might produce some problem if we use @lowersection or
-	  ;; such.
-	  (let ((input-directory default-directory)
-		(texinfo-command-end))
-	    (while (re-search-forward "^@include" nil t)
-	      (setq texinfo-command-end (point))
-	      (let ((filename (concat input-directory
-				      (texinfo-parse-line-arg))))
-		(re-search-backward "^@include")
-		(delete-region (point) (save-excursion
-					 (forward-line 1)
-					 (point)))
-		(message "Reading included file: %s" filename)
-		(save-excursion
-		  (save-restriction
-		    (narrow-to-region
-		     (point) (+ (point)
-				(car (cdr (insert-file-contents filename)))))
-		    (goto-char (point-min))
-		    ;; Remove `@setfilename' line from included file,
-		    ;; if any, so @setfilename command not duplicated.
-		    (if (re-search-forward "^@setfilename"
-					   (save-excursion
-					     (forward-line 100)
-					     (point))
-					   t)
-			(progn
-			  (beginning-of-line)
-			  (delete-region (point) (save-excursion
-						   (forward-line 1)
-						   (point))))))))))
 	  ;; Remove ignored areas.
 	  (goto-char (point-min))
 	  (while (re-search-forward "^@ignore[\t\r ]*$" nil t)
@@ -174,7 +166,7 @@ Both characters must have the same length of multi-byte form."
 					nil t)
 		     (not (string-match "\\.info$" (match-string 1))))
 	    (insert ".info"))
-	  (texinfo-mode)
+	  (infohack-include-files)
 	  (texinfo-every-node-update)
 	  (set-buffer-modified-p nil)
 	  (message "texinfo formatting %s..." file)
