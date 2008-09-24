@@ -2266,6 +2266,11 @@ well.\n\n"} です。
 @vindex message-interactive
 @code{nil} でなかったら、メッセージを送信するときにエラーが出るのを待っ
 て表示します。@code{nil} だったら、エラーの報告をメールで行ないます。
+
+@item message-confirm-send
+@vindex message-confirm-send
+@code{nil} でなかったら、実際にメッセージを送信する前に y/n で確認を求め
+ます。
 @end table
 
 @node Message Buffers
