@@ -2269,8 +2269,7 @@ well.\n\n"} です。
 
 @item message-confirm-send
 @vindex message-confirm-send
-@code{nil} でなかったら、実際にメッセージを送信する前に y/n で確認を求め
-ます。
+@code{nil} でなかったら、Gnus はメッセージを送信するときに確認を求めます。
 @end table
 
 @node Message Buffers
