@@ -1,3 +1,9 @@
+2008-09-25  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* infohack.el: Don't do a workaround reducing the number of split Info
+	files if Info-split-threshold has been introduced in Emacs; adjust the
+	number of split for old Emacsen.
+
 2008-05-21  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Gnus-Doc-Ja: The version for No Gnus v0.10 is released.
