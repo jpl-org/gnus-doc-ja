@@ -1984,15 +1984,12 @@ Yank されたメッセージを字下げするための空白の数です。
 @item message-cite-function
 @vindex message-cite-function
 @findex message-cite-original
-@findex sc-cite-original
 @findex message-cite-original-without-signature
-@cindex Supercite
 元記事を引用するための関数です。ディフォルト
 は @code{message-cite-original} で、これは単純に元のメッセージを挿入して、
 それぞれの行の頭に @samp{> } をくっ付けます。
 @code{message-cite-original-without-signature} は同様のことをしますが、
-署名を省きます。Supercite を使うために、この変数
-を @code{sc-cite-original} に設定することもできます。
+署名を省きます。
 
 @item message-indent-citation-function
 @vindex message-indent-citation-function
