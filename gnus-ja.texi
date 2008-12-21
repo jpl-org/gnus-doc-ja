@@ -1620,7 +1620,7 @@ Gnus (のプログラム) が読み込まれるときに実行されるフックです。何
 
 @item gnus-before-startup-hook
 @vindex gnus-before-startup-hook
-Gnus の起動に成功した後に実行されるフックです。
+Gnus が起動するとき、最初に呼ばれるフックです。
 
 @item gnus-startup-hook
 @vindex gnus-startup-hook
@@ -6103,6 +6103,7 @@ Summary Buffer} を参照してください。
 得しますが、記事をトリートメントする関数は実行しません。これは、サーバー
 から来たままの『生の』記事をもたらします。
 
+@cindex charset, view article with different charset
 接頭引数を与えると、手動で文字セットの操作を行なうことができます。
 @kbd{C-u 0 g cn-gb-2312 RET} により、メッセージはあたか
 も @code{cn-gb-2312} 文字セットでエンコードされたかのようにデコードされ
