@@ -22161,9 +22161,9 @@ Gnus $B$O(B @code{rn} $B$N>C5n%U%!%$%k$i$7$-$b$N$K=P2q$&$H!"2?$H$+$=$l$r2r<a$
 @file{gnus-kill-to-score.el} $B%Q%C%1!<%8$r;H$&$3$H$,$G$-$^$9!#$=$&$G$J$1(B
 $B$l$P!"<j$GJQ49$7$J$1$l$P$J$i$J$$$G$7$g$&!#(B
 
-$B>C5n%U%!%$%k$+$i%9%3%"%U%!%$%k$X$NJQ49%Q%C%1!<%8$O!"I8=`$G$O(B Gnus $B$K$O4^(B
-$B$^$l$F$$$^$;$s!#(B
-@uref{http://www.stud.ifi.uio.no/~larsi/ding-various/gnus-kill-to-score.el} $B$+(B
+$B>C5n%U%!%$%k$+$i%9%3%"%U%!%$%k$X$NJQ49%Q%C%1!<%8$O!"I8=`$G$O(B Emacs $B$K$O(B
+$B4^$^$l$F$$$^$;$s!#$=$l$O(B Gnus $B$NG[I[$N(B contrib $B%G%#%l%/%H%j!<!"$^$?(B
+$B$O(B @uref{http://heim.ifi.uio.no/~larsi/ding-various/gnus-kill-to-score.el} $B$+(B
 $B$iF~<j$9$k$3$H$,$G$-$^$9!#(B
 
 $B$"$J$?$N>C5n%U%!%$%k$,Hs>o$KJ#;($J$N$G$"$l$P(B---$B$=$l(B
