@@ -15,7 +15,7 @@ Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BNo Gnus v0.11 $B$KBP1~$7$^$9!#(
 $BL>$K$9$k$3$H$O$G$-$^$;$s!#$"$i$+$8$a(B PATH $B4D6-JQ?t$r@_Dj$7$F$/$@$5$$!#(B
 $BNc$G$9(B:
 
-% ./configure --with-emacs=emacs-22.2 --infodir=/usr/local/info
+% ./configure --with-emacs=emacs-22.3 --infodir=/usr/local/info
 
 Gnus $B$N%P%C%U%!!<$G(B `C-c C-i' $B$r%?%$%W$9$k$+(B message $B%P%C%U%!!<$G(B
 `M-x message-info' $B$r%?%$%W$7$?$H$-$KF|K\8lHG$N(B Info $B%^%K%e%"%k$rFI$_(B
@@ -100,9 +100,20 @@ pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
 
 Gnus $B$KIUB0$7$F$$$k(B README $B%U%!%$%k$NA4Lu(B
 =========================================
+* $BFbMF(B
+
 $B$3$N%Q%C%1!<%8$K$O3+H/HG$N(B Gnus $B$,F~$C$F$$$^$9!#(Blisp $B%G%#%l%/%H%j!<$K(B
 $B$O(B lisp $B%U%!%$%k$N%=!<%9$,$"$j!"(Btexi $B%G%#%l%/%H%j!<$K$O(B Gnus $B$N(B info
 $B$N%Z!<%8$,$"$j$^$9!#(B
+
+* Emacsen
+
+No Gnus $B$O(B Emacs 21 $B$+(B XEmacs 21.4 $B$h$j8E$$$b$N$G$OA4A3F0$-$^$;$s!#(B
+
+Emacs $B$N3+H/HG(B (Emacs 23) $B$N%f!<%6!<$K$O!"(BEmaacs $B$KIUB0$7$F$$$kHG$N$b(B
+$B$N$r;H$&$3$H$r6/$/>)Ne$7$^$9!#(B
+
+* $B%;%C%H%"%C%W(B
 
 Gnus $B$r;H$&$K$O!"$^$:3+:-$7$F%U%!%$%k$r<h$j=P$7$F$/$@$5$$!#$3$l$rFI$s(B
 $B$G$$$k$N$G$9$+$i!"$"$J$?$,$=$l$r9T$J$C$?$N$OL@$i$+$G$9$M!#(B
@@ -133,8 +144,6 @@ Gnus $B$N%^%K%e%"%k$rFI$a$k$h$&$K$9$k$K$O!"$3$N$h$&$J$b$N$r;H$C$F$/$@$5(B
   (if (featurep 'xemacs)
       (add-to-list 'Info-directory-list "~/ngnus-0.11/texi/")
     (add-to-list 'Info-default-directory-list "~/ngnus-0.11/texi/"))
-
-No Gnus $B$O(B Emacs 21.1 $B$+(B XEmacs 21.4 $B$h$j8E$$$b$N$G$OA4A3F0$-$^$;$s!#(B
 
 Gnus $B$N%^%K%e%"%k$r%3%s%Q%$%k$9$k$K$O!"$+$J$j?7$7$$(B Emacs $B$+$H$F$b?7$7(B
 $B$$HG$N(B texinfo $B%D!<%k$,I,MW$G$9!#(B
