@@ -1,5 +1,5 @@
 ;;; infohack.el --- a hack to format info file.
-;; Copyright (C)  2001, 2003, 2004, 2008  Free Software Foundation, Inc.
+;; Copyright (C)  2001, 2003, 2004, 2008, 2009  Free Software Foundation, Inc.
 
 ;; Author: Shenghuo Zhu <zsh@cs.rochester.edu>
 ;; Keywords: info
@@ -174,7 +174,12 @@ Both characters must have the same length of multi-byte form."
 	  (texinfo-every-node-update)
 	  (set-buffer-modified-p nil)
 	  (message "texinfo formatting %s..." file)
-	  (let ((si:message (symbol-function 'message)))
+	  (let ((si:message (symbol-function 'message))
+		(coding (or (and (string-match "\\`Japanese"
+					       current-language-environment)
+				 (boundp 'locale-coding-system)
+				 locale-coding-system)
+			    'iso-2022-7bit)))
 	    ;; Encode messages to terminal.
 	    (fset
 	     'message
@@ -185,11 +190,11 @@ Both characters must have the same length of multi-byte form."
 				  (equal (car args) buffer-file-name))
 		       (funcall ,si:message "%s"
 				(encode-coding-string (apply 'format fmt args)
-						      'iso-2022-7bit))))
+						      ',coding))))
 		`(lambda (fmt &rest args)
 		   (funcall ,si:message "%s"
 			    (encode-coding-string (apply 'format fmt args)
-						  'iso-2022-7bit))))))
+						  ',coding))))))
 	    (unwind-protect
 		(texinfo-format-buffer nil)
 	      (fset 'message si:message)))

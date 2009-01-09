@@ -1,3 +1,8 @@
+2009-01-09  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* infohack.el (infohack-texi-format): Use locale-coding-system for
+	Emacs to encode Japanese messages.
+
 2008-09-25  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* infohack.el: Don't do a workaround reducing the number of split Info
