@@ -4235,14 +4235,17 @@ Gnus
 @code{gnus-group-name-charset-group-alist} の最後の素子のせいですべ
 て @code{utf-8} になるでしょう。
 
-さて、非-@acronym{ASCII} グループ名のための重要な変数がもう一つあります。
-@emph{XEmacs ユーザーは必ず設定してください}。Emacs ユーザーは必ずしも行
-なう必要はありません:
+さて、非-@acronym{ASCII} グループ名のための重要な変数がもう一つあります:
 
 @table @code
 @item nnmail-pathname-coding-system
-この変数の値は coding system もしくは @code{nil} (それがディフォルト) で
-す。@code{nnml} バックエンド、@code{nnrss} バックエンド、
+@vindex nnmail-pathname-coding-system
+この変数の値は coding system もしくは @code{nil} でなければなりません。
+ディフォルトは Emacs では @code{nil}、または XEmacs で
+は @code{file-name} という coding system の aliasee (@code{file-name} を
+別名に持つ、ある coding system) です。
+
+@code{nnml} バックエンド、@code{nnrss} バックエンド、
 @acronym{NNTP} 印 (@pxref{NNTP marks})、エージェント、およびキャッシュは、
 それらのファイルとディレクトリーで非-@acronym{ASCII} グループ名を使いま
 す。この変数は、それらのファイル名とディレクトリー名をエンコードおよびデ
@@ -4251,15 +4254,15 @@ Gnus
 
 XEmacs (@code{mule} 機能付き) では、@code{file-name-coding-system} はファ
 イル名をエンコードおよびデコードするのに用いられる coding system を指定
-する唯一の手段です。したがって、
-@emph{あなた (XEmacs ユーザー) は} @code{nnmail-pathname-coding-system} を
-非-@acronym{ASCII} グループ名をエンコードおよびデコードするのに適切
-な coding system に @emph{設定しなければなりません}。一
-方 Emacs は @code{file-name-coding-system} の値が @code{nil} だった場合、
-@code{default-file-name-coding-system} の値を使用します。通
-常 @code{default-file-name-coding-system} の値は言語環境に従って初期化さ
-れるので、その値が非-@acronym{ASCII} グループ名をエンコードおよびデコー
-ドするために適切であれば、何もする必要は無いでしょう。
+する唯一の手段です。一方 Emacs は @code{file-name-coding-system} の値
+が @code{nil} だった場合、または @code{nil} であ
+る @code{nnmail-pathname-coding-system} の値にそれが束縛される場合、
+@code{default-file-name-coding-system} の値を使用します。
+
+通常 Emacs における @code{default-file-name-coding-system} または XEmacs
+における @code{nnmail-pathname-coding-system} の値は言語環境に従って初期
+化されるので、その値が非-@acronym{ASCII} グループ名をエンコードおよびデ
+コードするために適切であれば、何もする必要は無いでしょう。
 
 この変数 (または @code{default-file-name-coding-system}) の値は、必ずし
 も @code{gnus-group-name-charset-method-alist} およ
@@ -4267,13 +4270,13 @@ XEmacs (@code{mule} 機能付き) では、@code{file-name-coding-system} 
 $B$G$"$kI,MW$O$"$j$^$;$s!#
 
 例えば中国語で綴られたニュースグループを講読したいのに、
-@code{default-file-name-coding-system} がディフォルト
-で @code{iso-latin-1} に初期化されてしまうのならば、それは Emacs ユーザー
-でも @code{nnmail-pathname-coding-system} を設定しなければならない最も典
-型的な場合です。@code{utf-8} coding system はそのための良い候補です。あ
-るいはこの変数を設定する代わりに、
-@code{default-file-name-coding-system} が適切な値に初期化されるように、
-あなたのシステムの言語環境を変更しても良いでしょう。
+@code{default-file-name-coding-system} またはこの変数がディフォルト
+で @code{iso-latin-1} に初期化されてしまうのならば、それ
+は @code{nnmail-pathname-coding-system} をカスタマイズしなければならない
+最も典型的な場合です。@code{utf-8} coding system はそのための良い候補で
+す。あるいは @code{default-file-name-coding-system} またはこの変数が適切
+な値に初期化されるように、あなたのシステムの言語環境を変更しても良いでしょ
+う。
 @end table
 
 記事を非-@acronym{ASCII} グループから他のグループにコピーまたは移動する
@@ -17417,13 +17420,9 @@ RET RET y} のようなことを唱え、そしてグループを講読することです。
 @code{nnrss} バックエンドは、それぞれの @code{nnrss} グループのためのデー
 タ・ファイルを @code{nnrss-directory} (下記参照) に保存します。
 非-@acronym{ASCII} 文字を含んでいるファイル名
-は、@code{nnmail-pathname-coding-system} 変数で指定された coding
-system でエンコードされます。それが @code{nil} であると、Emacs で
-は coding system はディフォルト
-で @code{default-file-name-coding-system} の値になります。あなた
-が XEmacs を使っていて、非-@acronym{ASCII} グループ名を使いたければ、
-@code{nnmail-pathname-coding-system} 変数の値を適切に設定しなければなり
-ません。
+は、@code{nnmail-pathname-coding-system} 変数または他のもので指定され
+た coding system でエンコードされます。詳細はここ (@pxref{Non-ASCII Group
+Names}) を見てください。
 
 @code{nnrss} バックエンドは、それぞれが @samp{text/plain} パート
 と @samp{text/html} パートを含んでい
