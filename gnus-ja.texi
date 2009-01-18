@@ -7148,8 +7148,8 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 $B$l$PJXMx$J$3$H$,$"$j$^$9!#B?$/$N@)8BL?Na$,;}$D8z2L$O!"35N,%P%C%U%!!<$+$i(B
 $B>/$7(B ($B$b$7$/$OB?$/(B) $B$N5-;v$r:o=|$9$k$3$H$G$9!#(B
 
-$B$9$Y$F$N@)8BL?Na$O%5!<%P!<$+$i$9$G$K<hF@$5$l$?5-;v$N0lItJ,$K:nMQ$7$^$9!#(B
-$B$3$l$i$NL?Na$O$I$l$b%5!<%P!<$KDI2C$N5-;v$rMW5a$7$^$;$s!#(B
+$B@)8BL?Na$O%5!<%P!<$+$i$9$G$K<hF@$5$l$?5-;v$N0lItJ,$K:nMQ$7$^$9!#$3$l$i$N(B
+$BL?Na$O%5!<%P!<$KDI2C$N5-;v$rMW5a$7$^$;$s!#(B
 
 @table @kbd
 @item / /
@@ -7308,19 +7308,6 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 $B$9(B (@code{gnus-summary-limit-mark-excluded-as-read})$B!#@\F,0z?t$,M?$($i$l(B
 $B$k$H!"2D;k$HJ]N1$N$_$N0u$N5-;v$b4{FI$H$7$F0u$rIU$1$^$9!#(B
 
-@item / N
-@kindex / N ($B35N,(B)
-@findex gnus-summary-insert-new-articles
-$B$9$Y$F$N?7$7$$5-;v$r35N,%P%C%U%!!<$KA^F~$7$^$9!#(B
-@var{back-end}@code{-get-new-mail} $B$,Hs(B-@code{nil} $B$@$C$?$i!"?7$7$$%a!<(B
-$B%k$NE~Mh$rD4$Y$k$H$$$&$3$H$G$9!#(B
-
-@item / o
-@kindex / o ($B35N,(B)
-@findex gnus-summary-insert-old-articles
-$B$9$Y$F$N8E$$5-;v$r35N,%P%C%U%!!<$KA^F~$7$^$9!#?tCM$N@\F,0z?t$,M?$($i$l$k(B
-$B$H!"$=$N8D?t$N5-;v$r<h$j9~$_$^$9!#(B
-
 @item / b
 @kindex / b ($B35N,(B)
 @findex gnus-summary-limit-to-bodies
@@ -7335,6 +7322,23 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @findex gnus-summary-limit-to-headers
 $B$3$NA0$N%3%^%s%I$K;w$F$$$^$9$,!"Be$o$j$K$3$l$O!"$"$k@55,I=8=$K%X%C%@!<$,(B
 $B9gCW$9$k5-;v$@$1$K@)8B$7$^$9(B (@code{gnus-summary-limit-to-headers})$B!#(B
+@end table
+
+$B0J2<$O@)8BL?Na$G$O$"$j$^$;$s$,!"F1MM$K@\F,%-!<(B @kbd{/} $B$r;H$$$^$9!#(B
+
+@table @kbd
+@item / N
+@kindex / N ($B35N,(B)
+@findex gnus-summary-insert-new-articles
+$B$9$Y$F$N?7$7$$5-;v$r35N,%P%C%U%!!<$KA^F~$7$^$9!#(B
+@var{back-end}@code{-get-new-mail} $B$,Hs(B-@code{nil} $B$@$C$?$i!"?7$7$$%a!<(B
+$B%k$NE~Mh$rD4$Y$k$H$$$&$3$H$G$9!#(B
+
+@item / o
+@kindex / o ($B35N,(B)
+@findex gnus-summary-insert-old-articles
+$B$9$Y$F$N8E$$5-;v$r35N,%P%C%U%!!<$KA^F~$7$^$9!#?tCM$N@\F,0z?t$,M?$($i$l$k(B
+$B$H!"$=$N8D?t$N5-;v$r<h$j9~$_$^$9!#(B
 @end table
 
 @node Threading
