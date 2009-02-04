@@ -101,7 +101,7 @@ manual}.  EasyPG $B$O(B Emacs 23 $B$K4^$^$l$F$$$^$9$,!"C1FH$G$bMxMQ2DG=$G$9!#
 @item
 $BF~$C$F$-$?%a!<%k$r0l;~C_$($k%U%!%$%k(B (@file{Incoming*}) $B$N8E$$$b$N$O!"B((B
 $B;~$G$O$J$/2?F|$+8e$K>C5n$5$l$^$9!#(B@xref{Mail Source Customization}.
-@c Gnus 5.10.10/No Gnus 0.8 $B$N?75!G=(B
+(Gnus 5.10.10/No Gnus 0.8 $B$N?75!G=(B)
 @c $B$3$N%(%s%H%j!<$O(B "Oort Gnus" $B@a$K$b$"$j$^$9!#(B
 @end itemize
 
