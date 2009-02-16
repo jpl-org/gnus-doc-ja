@@ -1,3 +1,9 @@
+2009-02-16  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* auth-ja.texi: New file.
+
+	* Makefile.in: Add it.
+
 2009-01-09  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* infohack.el (infohack-texi-format): Use locale-coding-system for

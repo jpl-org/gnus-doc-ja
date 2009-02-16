@@ -3,7 +3,7 @@ DVIPDFMX=@DVIPDFMX@
 EMACS=@EMACS@
 EMACSINFO=$(EMACS) -batch -q -no-site-file -l infohack.el -f batch-makeinfo
 INFO_DEPS=gnus-ja.info message-ja.info emacs-mime-ja.info\
- pgg-ja.info sasl-ja.info sieve-ja.info gnus-coding-ja.info
+ pgg-ja.info sasl-ja.info sieve-ja.info gnus-coding-ja.info auth-ja.info
 INSTALL=@INSTALL@
 INSTALL_DATA=@INSTALL_DATA@
 INSTALL_INFO=install-info
@@ -46,7 +46,7 @@ install: all
 	else : ; fi
 
 dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi\
- pgg-ja.dvi sasl-ja.dvi sieve-ja.dvi gnus-coding-ja.dvi
+ pgg-ja.dvi sasl-ja.dvi sieve-ja.dvi gnus-coding-ja.dvi auth-ja.dvi
 
 .texi.dvi:
 	sed -e '/@iflatex/,/@end iflatex/d' $< > gnustmp.texi
@@ -54,13 +54,13 @@ dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi\
 	rm -f gnustmp.*
 
 pdf: gnus-ja.pdf message-ja.pdf emacs-mime-ja.pdf\
- pgg-ja.pdf sasl-ja.pdf sieve-ja.pdf gnus-coding-ja.pdf
+ pgg-ja.pdf sasl-ja.pdf sieve-ja.pdf gnus-coding-ja.pdf auth-ja.pdf
 
 .texi.pdf:
 	i=`basename $@ .pdf`; $(MAKE) $$i.dvi; $(DVIPDFMX) $$i
 
 ps: gnus-ja.ps message-ja.ps emacs-mime-ja.ps\
- pgg-ja.ps sasl-ja.ps sieve-ja.ps gnus-coding-ja.ps
+ pgg-ja.ps sasl-ja.ps sieve-ja.ps gnus-coding-ja.ps auth-ja.ps
 
 .texi.ps:
 	i=`basename $@ .ps`; $(MAKE) $$i.dvi; $(PDVIPS) $$i
