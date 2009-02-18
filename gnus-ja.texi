@@ -23556,17 +23556,20 @@ NoCeM メッセージを発行する人はたくさんいます。このリストでは、誰の言うこ
 @item gnus-nocem-verifyer
 @vindex gnus-nocem-verifyer
 @findex gnus-nocem-epg-verify
+@findex pgg-verify
 これは NoCeM 発行者が本人であることを検証する関数でなくてはなりません。
-ディフォルトは @code{gnus-nocem-epg-verify} で、これは検証に成功したら
-非-@code{nil} を返し、そうでなければ (NoCeM メッセージが署名されていない
-場合を含みます) @code{nil} を返します。もしこれが非常に遅くて、検証結果
-を気にしない (これはたぶん危険です) のであれば、この変数を @code{nil} に
-することができます。
+EasyPG が利用できる場合、この変数はディフォルト
+で @code{gnus-nocem-epg-verify} になりますが、そうでなけれ
+ば @code{pgg-verify} になります。その関数は、検証に成功したら
+非-@code{nil} を、そうでなければ (NoCeM メッセージが署名されていない場合
+を含みます) @code{nil} を返さなければなりません。もしこれが非常に遅くて、
+検証結果を気にしない (これはたぶん危険です) のであれば、この変数
+を @code{nil} にすることができます。
 
 以前、ディフォルトは Mailcrypt の関数である @code{mc-verify} でした。ま
 だそれを使うことができますが、PGP の公開鍵を GnuPG の鍵束に加えることを
-厭わなければ、GnuPG とともに動作するディフォルトの関数に変えることができ
-ます。
+厭わなければ、GnuPG とともに動作する @code{gnus-nocem-epg-verify} また
+は @code{pgg-verify} に変えることができます。
 
 @item gnus-nocem-directory
 @vindex gnus-nocem-directory
