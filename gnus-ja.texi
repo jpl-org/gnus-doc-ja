@@ -8266,7 +8266,7 @@ Gnus $B$O$b$N$4$H$r@5$7$/$9$k$?$a$NFs$D$N%3%^%s%I$rDs6!$7$^$9!#(B
 $B$G(B @var{n} $B8D$N8E$$5-;v$r8e$N:F<hF@$N$?$a$K%P%C%U%!!<$KN/$a$F$*$-$^$9!#(B
 $B$3$NJQ?t$,(B @code{nil} $B$G$O$J$/!"?tCM$G$b$J$$>l9g!"(B
 Gnus $B$O(B @emph{$B$9$Y$F(B} $B$N4{FI5-;v$rC_$($^$9!#$=$l$O(B Emacs $B$,GzH/$9$k$^$G(B
-$B@)8B$J$/KD$l>e$,$C$F!"%^%7%s$,$"$J$?$b$m$H$bMn$A$F$7$^$&$H$$$&$3$H$G$9!#(B
+$B:]8B$J$/KD$l>e$,$C$F!"%^%7%s$,$"$J$?$b$m$H$bMn$A$F$7$^$&$H$$$&$3$H$G$9!#(B
 $B;d$O$_$J$5$s$,$$$D$bCm0U$rBU$i$J$$$h$&$K$9$k$?$a$K!"$3$3$K=q$-2C$($^$7$?!#(B
 
 $B%G%#%U%)%k%HCM$O(B 20 $B$G$9!#(B
@@ -23466,17 +23466,17 @@ Gnus $B$O$5$^$6$^$J!V%O%s%I%i!<!W(B($B=hM}$r9T$J$o$;$k$?$a$N$b$N(B) $B$rDj5
 
 Spam $B$O$5$^$6$^$JH?(B spam $B5!4X$K$h$C$F!"DL>o0lF|$+$=$3$i$G<h$j>C$7$5$l$^(B
 $B$9!#DL>o$3$l$i$N5!4X$O!"0l=o$K(B @dfn{NoCeM} $B%a%C%;!<%8$bAw$j=P$7$^$9!#(B
-@dfn{NoCeM} $B$O!H(Bno see-'em$B!I(B($BH`$i$r8+$?$/$J$$(B) $B$HH/2;$5$l!"0UL#$O$=$NL>(B
-$BA0$NDL$j$G$9(B---$B$3$l$i$N%a%C%;!<%8$O5$$K?($k5-;v$r!"$D$^$j!">C$7$F$7$^$$(B
-$B$^$9!#(B
+@dfn{NoCeM} $B$O!H(Bno see-'em$B!I(B($B$=$l$i$r8+$?$/$J$$(B) $B$HH/2;$5$l!"0UL#$O$=$N(B
+$BL>A0$NDL$j$G$9(B---$B$3$l$i$N%a%C%;!<%8$O5$$K?($k5-;v$r!"$D$^$j!">C$7$F$7$^(B
+$B$$$^$9!#(B
 
 $B$I$&$;$=$l$i$N5-;v$,<h$j>C$7$5$l$F$7$^$&$N$J$i!"$3$l$i$N(B NoCeM $B%a%C%;!<(B
-$B%8$O2?$K;H$o$l$k$N$G$7$g$&(B? $B$"$k%5%$%H$G$O<h$j>C$7%a%C%;!<%8$r=E;k$7$^$;(B
+$B%8$O2?$NLr$KN)$D$N$G$7$g$&(B? $B$"$k%5%$%H$G$O<h$j>C$7%a%C%;!<%8$r=E;k$7$^$;(B
 $B$s!#$^$?!"$"$k%5%$%H$G$OFCDj$N?t?M$+$i$N<h$j>C$7%a%C%;!<%8$@$1$rB:=E$7$^(B
 $B$9!#$=$3$G!"$"$J$?$O(B NoCeM $B%a%C%;!<%8$r;H$$$?$/$J$k$+$b$7$l$J$$$o$1$G$9!#(B
-$B$3$l$i$O(B @samp{alt.nocem.misc} $B%K%e!<%9%0%k!<%W$GG[I[$5$l$F$$$^$9(B ($BLu(B
-$BCm(B: $BB>$K(B @samp{fj.news.lists.filters} $B$d(B @samp{news.lists.filters} $B$J$I(B
-$B$G$bFH<+$N(B NoCeM $B%a%C%;!<%8$,G[I[$5$l$F$$$^$9(B)$B!#(B
+$B$3$l$i$O(B @samp{news.lists.filters} $B$d(B @samp{alt.nocem.misc} $B$J$I$N%K%e!<(B
+$B%9%0%k!<%W$GG[I[$5$l$F$$$^$9(B ($BLuCm(B: @samp{fj.news.lists.filters} $B$b!"$=(B
+$B$N$?$a$N%K%e!<%9%0%k!<%W$G$9(B)$B!#(B
 
 Gnus $B$O$3$N%0%k!<%W$N%a%C%;!<%8$r<+F0E*$KFI$_!"2r<a$9$k$3$H$,$G$-!"$3$l(B
 $B$G(B spam $B$r>C$75n$j$^$9!#(B
@@ -23503,21 +23503,24 @@ Gnus $B$O$3$N%0%k!<%W$N%j%9%H$+$i(B NoCeM $B%a%C%;!<%8$rC5$7$^$9!#%G%#%U%)%k%
 $B$O<!$NDL$j$G$9(B:
 
 @lisp
-("news.lists.filters" "news.admin.net-abuse.bulletins"
- "alt.nocem.misc" "news.admin.net-abuse.announce")
+("news.lists.filters" "alt.nocem.misc")
 @end lisp
 
 @item gnus-nocem-issuers
 @vindex gnus-nocem-issuers
-NoCeM $B%a%C%;!<%8$rH/9T$9$k?M$O$?$/$5$s$$$^$9!#$3$N%j%9%H$G$O!"C/$N$$$&$3(B
+NoCeM $B%a%C%;!<%8$rH/9T$9$k?M$O$?$/$5$s$$$^$9!#$3$N%j%9%H$G$O!"C/$N8@$&$3(B
 $B$H$K=>$$$?$$$+$r;XDj$7$^$9!#%G%#%U%)%k%H$O<!$NDL$j$G$9(B:
 
 @lisp
-("Automoose-1" "clewis@@ferret.ocunix.on.ca"
- "cosmo.roadkill" "SpamHippo" "hweede@@snafu.de")
+("Adri Verhoef"
+ "alba-nocem@@albasani.net"
+ "bleachbot@@httrack.com"
+ "news@@arcor-online.net"
+ "news@@uni-berlin.de"
+ "nocem@@arcor.de"
+ "pgpmoose@@killfile.org"
+ "xjsppl@@gmx.de")
 @end lisp
-
-$BH`$i$O$_$s$J!"N)GI$G9b7i$J;TL1$G$9!#(B
 
 $B$3$N%j%9%H$K4^$a$i$l$kM-L>$JH?(B spam $B2H$?$A(B
 $B$O(B @uref{http://www.xs4all.nl/~rosalind/nocemreg/nocemreg.html} $B$K:\$C$F(B
@@ -23552,9 +23555,9 @@ NoCeM $B%a%C%;!<%8$rH/9T$9$k?M$O$?$/$5$s$$$^$9!#$3$N%j%9%H$G$O!"C/$N$$$&$3(B
 
 @item gnus-nocem-verifyer
 @vindex gnus-nocem-verifyer
-@findex pgg-verify
+@findex gnus-nocem-epg-verify
 $B$3$l$O(B NoCeM $BH/9T<T$,K\?M$G$"$k$3$H$r8!>Z$9$k4X?t$G$J$/$F$O$J$j$^$;$s!#(B
-$B%G%#%U%)%k%H$O(B @code{pgg-verify} $B$G!"$3$l$O8!>Z$K@.8y$7$?$i(B
+$B%G%#%U%)%k%H$O(B @code{gnus-nocem-epg-verify} $B$G!"$3$l$O8!>Z$K@.8y$7$?$i(B
 $BHs(B-@code{nil} $B$rJV$7!"$=$&$G$J$1$l$P(B (NoCeM $B%a%C%;!<%8$,=pL>$5$l$F$$$J$$(B
 $B>l9g$r4^$_$^$9(B) @code{nil} $B$rJV$7$^$9!#$b$7$3$l$,Hs>o$KCY$/$F!"8!>Z7k2L(B
 $B$r5$$K$7$J$$(B ($B$3$l$O$?$V$s4m81$G$9(B) $B$N$G$"$l$P!"$3$NJQ?t$r(B @code{nil} $B$K(B
@@ -23585,9 +23588,9 @@ NoCeM $B%a%C%;!<%8$rH/9T$9$k?M$O$?$/$5$s$$$^$9!#$3$N%j%9%H$G$O!"C/$N$$$&$3(B
 
 @item gnus-nocem-check-article-limit
 @vindex gnus-nocem-check-article-limit
-$B$9$Y$F$N(B NoCeM $B%0%k!<%W$K$*$1$k%A%'%C%/$9$k5-;v$N:GBg?t$r;XDj$7$^$9(B ($BLu(B
-$BCm(B: @code{nil} $B$GL5@)8B(B)$B!#(BNoCeM $B%0%k!<%W$O5pBg$K$J$k$3$H$,$"$j!"$=$&$J$k(B
-$B$H=hM}$,$H$F$bCY$/$J$j$^$9!#(B
+$B$9$Y$F$N(B NoCeM $B%0%k!<%W$K$*$1$k%A%'%C%/$9$k5-;v$N:GBg?t$r;XDj$7$^$9!#(B
+@code{nil} $B$GL5@)8B$K$J$j$^$9!#(BNoCeM $B%0%k!<%W$O5pBg$K$J$k$3$H$,$"$j!"$=(B
+$B$&$J$k$H=hM}$,$H$F$bCY$/$J$j$^$9!#(B
 @end table
 
 NoCeM $B$r;H$&$H!"$b$7$+$9$k$H%a%b%j6t$$$K$J$k$+$b$7$l$^$;$s!#$"$J$?$,$?$/(B
