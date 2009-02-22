@@ -6,7 +6,7 @@
 
 @dircategory Emacs
 @direntry
-* auth-source: (auth-ja).   The Emacs auth-source library (Japanese).
+* auth-source-ja: (auth-ja).   The Emacs auth-source library (Japanese).
 @end direntry
 
 @settitle Emacs auth-source Library @value{VERSION}
