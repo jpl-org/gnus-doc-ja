@@ -49,7 +49,6 @@ developing GNU and promoting software freedom.''
 @iftex
 @finalout
 @end iftex
-@setchapternewpage odd
 
 @titlepage
 @title Message Manual
@@ -60,10 +59,16 @@ developing GNU and promoting software freedom.''
 @vskip 0pt plus 1filll
 @insertcopying
 @end titlepage
-@page
+
+@summarycontents
+@contents
 
 @node Top
 @top Message
+
+@ifnottex
+@insertcopying
+@end ifnottex
 
 Gnus $B$N$9$Y$F$N%a%C%;!<%8$N:n@.(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$O!"%a%C%;!<%8(B
 $B%b!<%I$N%P%C%U%!!<$G9T$J$$$^$9!#(B
@@ -2471,8 +2476,6 @@ Message $B$O;v<B>e$=$l<+?H$NJQ?t$7$+;H$o$:(B (*)$B!"8E$$(B @code{mail-} $BJ
 @chapter Key Index
 @printindex ky
 
-@summarycontents
-@contents
 @bye
 
 @c Local Variables:

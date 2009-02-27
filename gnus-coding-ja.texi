@@ -15,7 +15,8 @@
 @end direntry
 
 @copying
-Copyright (c) 2004, 2005, 2007, 2008, 2009  Free Software Foundation, Inc.
+Copyright @copyright{} 2004, 2005, 2007, 2008, 2009  Free Software
+Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -65,10 +66,14 @@ license to the document, as described in section 6 of the license.
 @c かが直してくれることを期待して、私たちはこれを CVS に置きました。;-)
 @c 一部を直してくれるだけでもありがたいです。
 
+@ifnottex
 @node Top
 @top Gnus Coding Style and Maintainance Guide
 
 このマニュアルは @dots{} を説明します。
+
+@insertcopying
+@end ifnottex
 
 @menu
 * Gnus Coding Style:: Gnus でコードを書くときの流儀

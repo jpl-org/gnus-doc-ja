@@ -1,6 +1,7 @@
 \input texinfo                  @c -*-texinfo-*-
 
 @setfilename pgg-ja
+@settitle PGG @value{VERSION}
 @iftex
 @firstparagraphindent insert
 @end iftex
@@ -8,7 +9,8 @@
 @set VERSION 0.1
 
 @copying
-This file describes PGG, an Emacs interface to various PGP implementations.
+このファイルは様々な PGP の実装への Emacs インターフェースである PGG
+@value{VERSION} を説明します。
 
 Copyright @copyright{} 2001, 2003, 2004, 2005, 2006, 2007, 2008, 2009
 Free Software Foundation, Inc.
@@ -42,8 +44,6 @@ developing GNU and promoting software freedom.''
 * PGG-ja: (pgg-ja).        Emacs interface to various PGP implementations (Ja).
 @end direntry
 
-@settitle PGG @value{VERSION}
-
 @titlepage
 @title PGG
 
@@ -53,15 +53,19 @@ developing GNU and promoting software freedom.''
 @vskip 0pt plus 1filll
 @insertcopying
 @end titlepage
-@page
+
+@contents
 
 @node Top
 @top PGG
 
-これは PGG のマニュアルです。PGG は、安全な通信のための様々なツール
-と Emacs の仲を取り持つライブラリーです。また、PGG は MIME メッセージの
-暗号化と解読、それに署名と検証のための単純なユーザーインタフェースも提供
-します。
+PGG は、安全な通信のための様々なツールと Emacs の仲を取り持つライブラリー
+です。また、PGG は MIME メッセージの暗号化と解読、それに署名と検証のため
+の単純なユーザーインタフェースも提供します。
+
+@ifnottex
+@insertcopying
+@end ifnottex
 
 @menu
 * Overview::                    PGG とは
@@ -505,8 +509,6 @@ PGG は OpenPGP パケットに対応した独自のメッセージ解析を行ないます。
 @unnumbered Variable Index
 @printindex vr
 
-@summarycontents
-@contents
 @bye
 
 @c Local Variables:

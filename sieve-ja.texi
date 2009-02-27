@@ -57,10 +57,11 @@ developing GNU and promoting software freedom.''
 @insertcopying
 @end titlepage
 
+@summarycontents
+@contents
+
 @node Top
 @top Sieve Support for Emacs
-
-このマニュアルは Emacs Sieve パッケージの説明書です。
 
 これは Sieve モードと「Sieve-管理」(Manage Sieve) のためのユーザーズマニュ
 アルとして、および @samp{sieve-manage} プロトコルを扱う Emacs Lisp
@@ -70,9 +71,11 @@ Sieve はサーバー側でメールを濾過するための言語です。その言語は RFC
 3028 に文書化されています。このマニュアルの目的は言語を説明することでは
 ないので、RFC 3028 は手元に置いておいてください。
 
-まともな Sieve の資料は @uref{http://www.cyrusoft.com/sieve/} にあります。
-
 訳注: Sieve == 篩 (ふるい)
+
+@ifnottex
+@insertcopying
+@end ifnottex
 
 @menu
 * Installation::          このパッケージを使うための準備
@@ -359,8 +362,6 @@ Sieve スクリプトを遠隔管理するためのプロトコル
 @unnumbered Index
 @printindex cp
 
-@summarycontents
-@contents
 @bye
 
 @c Local Variables:

@@ -60,6 +60,8 @@ developing GNU and promoting software freedom.''
 @insertcopying
 @end titlepage
 
+@contents
+
 @node Top
 @top Emacs MIME
 
@@ -78,6 +80,10 @@ RFC2045 ($B%$%s%?!<%M%C%H!&%a%C%;!<%8$NK\J8$N=q<0(B), RFC2046 ($B%a%G%#%"%?%$
 $BD%(B), RFC2048 ($BEPO?<jB3(B), RFC2049 ($BE,9g4p=`$H;vNc(B)$B!#(B@acronym{MIME} $B$K=`5r(B
 $B$7$?%=%U%H%&%'%"$r=q$3$&$H;W$C$F$$$k?M$OC/$G$b!">/$J$/$H(B
 $B$b(B RFC2045 $B$H(B RFC2047 $B$OFI$s$G$*$/$3$H$r6/$/4+$a$^$9!#(B
+
+@ifnottex
+@insertcopying
+@end ifnottex
 
 @menu
 * Decoding and Viewing::  $B%G%3!<%I$HI=<($N$?$a$NOHAH$_(B
@@ -1899,8 +1905,6 @@ Content Type$B!#(B
 @chapter Index
 @printindex cp
 
-@summarycontents
-@contents
 @bye
 
 @c Local Variables:

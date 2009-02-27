@@ -6,16 +6,11 @@
 @end iftex
 
 @set VERSION 0.2
-
-@dircategory Emacs
-@direntry
-* SASL-ja: (sasl-ja).           The Emacs SASL library (Japanese).
-@end direntry
-
 @settitle Emacs SASL Library @value{VERSION}
 
 @copying
-このファイルは Emacs SASL ライブラリーを説明します。
+このファイルは Emacs SASL ライブラリー、バージョン @value{VERSION} を説
+明します。
 
 Copyright @copyright{} 2000, 2004, 2005, 2006, 2007, 2008, 2009
 Free Software Foundation, Inc.
@@ -54,10 +49,13 @@ license to the document, as described in section 6 of the license.
 @end quotation
 @end copying
 
-@tex
+@dircategory Emacs
+@direntry
+* SASL-ja: (sasl-ja).           The Emacs SASL library (Japanese).
+@end direntry
 
 @titlepage
-@title Emacs SASL Library
+@title Emacs SASL Library @value{VERSION}
 
 @author by Daiki Ueno
 @page
@@ -65,17 +63,16 @@ license to the document, as described in section 6 of the license.
 @vskip 0pt plus 1filll
 @insertcopying
 @end titlepage
-@page
-
-@end tex
 
 @node Top
 @top Emacs SASL
 
-このマニュアルは Emacs SASL ライブラリーを説明します。
+SASL は異なるプロトコルを使うアプリケーション間で、複数の認証メカニズム
+を共有するための共通インターフェースです。
 
-異なるプロトコルを使うアプリケーション間で、複数の認証メカニズムを共有す
-るための共通インターフェースです。
+@ifnottex
+@insertcopying
+@end ifnottex
 
 @menu
 * Overview::                    Emacs SASL ライブラリーとは

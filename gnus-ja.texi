@@ -330,10 +330,6 @@ developing GNU and promoting software freedom.''
 @end iflatex
 @end iftex
 
-@ifnottex
-@insertcopying
-@end ifnottex
-
 @dircategory Emacs
 @direntry
 * Gnus-ja: (gnus-ja).           The newsreader Gnus (Japanese).
@@ -341,7 +337,6 @@ developing GNU and promoting software freedom.''
 @iftex
 @finalout
 @end iftex
-@setchapternewpage odd
 
 @titlepage
 @title Gnus Manual
@@ -351,6 +346,9 @@ developing GNU and promoting software freedom.''
 @vskip 0pt plus 1filll
 @insertcopying
 @end titlepage
+
+@summarycontents
+@contents
 
 @node Top
 @top The Gnus Newsreader
@@ -362,6 +360,10 @@ Gnus $B$r;H$&$3$H$K$h$C$F(B Emacs $B$G%K%e!<%9$r(B ($B$=$l$K%a!<%k$b(B) $
 $B$H;W$&$J$i$P!"$9$Y$F$rF1;~$KMQ$$$k$3$H$b$G$-$^$9!#(B
 
 $B$3$N@bL@=q$O(B No Gnus v0.11 $B$KBP1~$7$^$9!#(B
+
+@ifnottex
+@insertcopying
+@end ifnottex
 @end ifinfo
 @iftex
 
@@ -686,7 +688,7 @@ Mail Sources
 Choosing a Mail Back End
 
 * Unix Mail Box::               ($B$H$F$b(B) $BI8=`E*$J(B Un*x mbox $B$r;H$&(B
-* Rmail Babyl::                 Emacs $B$N%W%m%0%i%`$O(B Rmail $B$N(B Babyl $B%U%)!<%^%C%H$r;H$&(B
+* Babyl::                       Rmail $B$N5l%P!<%8%g%s$O(B Babyl $B$r;H$&(B
 * Mail Spool::                  $B$"$J$?$N%a!<%k$r;dE*$J%9%W!<%k$KN/$a$k(B?
 * MH Spool::                    mhspool $B$N$h$&$J%P%C%/%(%s%I(B
 * Maildir::                     $B$b$&0l$D$N#1%U%!%$%k(B/$B#1%a%C%;!<%87A<0(B
@@ -8313,7 +8315,8 @@ Gnus $B$O$?$/$5$s$NJ}K!$G5-;v$rJ]B8$9$k$3$H$,$G$-$^$9!#0J2<$N$b$N$OHs>o$K(B
 @kindex O r ($B35N,(B)
 @findex gnus-summary-save-article-rmail
 $B8=:_$N5-;v$r(B Rmail $B$NMM<0$GJ]B8$7$^(B
-$B$9(B (@code{gnus-summary-save-article-rmail})$B!#(B
+$B$9(B (@code{gnus-summary-save-article-rmail})$B!#$3$l$O(B Emacs 23 $B$+$i(B mbox
+$B$K$J$j$^$9!#5l%P!<%8%g%s$G$O(B Babyl $B$G$7$?!#(B
 
 @item O f
 @kindex O f ($B35N,(B)
@@ -8397,9 +8400,13 @@ Gnus $B$r;W$$DL$j$KF0:n$5$;$k$?$a$K!"JQ(B
 @findex gnus-summary-save-in-rmail
 @vindex gnus-rmail-save-name
 @findex gnus-plain-save-name
-$B$3$l$,%G%#%U%)%k%H$G!"(B@dfn{Babyl} $B$H$$$&MM<0$G$9!#JQ(B
-$B?t(B @code{gnus-ramil-save-name} $B$K@_Dj$5$l$F$$$k4X?t$r!"5-;v$rJ]B8$9$k%U%!(B
-$B%$%k$NL>A0$r<hF@$9$k$?$a$K;H$$$^$9!#%G%#%U%)%k%H(B
+$B$3$l$,%G%#%U%)%k%H$G!"(BRmail $B%Q%C%1!<%8$G;H$o$l$F$$$k$b$N$G$9!#(BEmacs
+23 $B$+$i(B Rmail $B$OI8=`$N(B mbox $BMM<0$r;H$&$h$&$K$J$j$^$7$?!#$=$l0JA0$K(B
+$B$O(B @dfn{Babyl} $BMM<0$H$$$&$b$N$,;H$o$l$F$$$^$7$?!#$=$N$?$a!"4{B8(B
+$B$N(B Babyl $B%U%!%$%k$KDI2C$9$k$N$G$J$1$l$P!"(BEmacs 23 $B$+$i$3$N%3%^%s%I(B
+$B$O(B mbox $BMM<0$G=q$-$^$9!#8E$$%P!<%8%g%s$N(B Emacs $B$G$O!">o$K(B Babyl $BMM<0$r;H(B
+$B$$$^$9!#JQ?t(B @code{gnus-ramil-save-name} $B$K@_Dj$5$l$F$$$k4X?t$r!"5-;v$r(B
+$BJ]B8$9$k%U%!%$%k$NL>A0$r<hF@$9$k$?$a$K;H$$$^$9!#%G%#%U%)%k%H(B
 $B$O(B @code{gnus-plain-save-name} $B$G$9!#(B
 
 @item gnus-summary-save-in-mail
@@ -16287,12 +16294,12 @@ Quoted Readable $B%(%s%3!<%I$r%G%3!<%I$7$^$9(B ($BLuCm(B: $B<B:]$K9T$J$&$N
 @vindex nnmh-get-new-mail
 @vindex nnfolder-get-new-mail
 $B$G$b!"$=$l$O9T$-2a$.$G$7$g$&!#$"$J$?$,!"Nc$($P(B @code{nnml} $B$G%a!<%k$rFI(B
-$B$`$3$H$H!"$7$^$$$3$s$G$"$k8E$$(B Rmail $B%U%!%$%k$r(B @code{nnbabyl} $B$r;H$C$F(B
-$B$6$C$HGA$/$3$H$@$1$G!"$^$C$?$/K~B-$7$F$$$F$$$k$N$J$i$P!#$9$Y$F$N%P%C%/%((B
-$B%s%I$K$O(B  $B%P%C%/%(%s%I(B-@code{get-new-mail}  $B$H$$$&JQ?t$,$"$j$^$9!#$b(B
-$B$7(B @code{nnbabyl} $B$,%a!<%k$rFI$_9~$_$r$d$a$5$;$?$$$N$G$"$l$P!"$=$N%0%k!<(B
-$B%W$N2>A[%5!<%P!<JT=8$7$F!"(B@code{nnbabyl-get-new-mail} $B$r(B @code{nil} $B$K@_(B
-$BDj$7$^$7$g$&!#(B
+$B$`$3$H$H!"$7$^$$$3$s$G$"$k8E$$(B (Emacs 23 $B$h$jA0$N(B) Rmail $B%U%!%$%k(B
+$B$r(B @code{nnbabyl} $B$r;H$C$F$6$C$HGA$/$3$H$@$1$G!"$^$C$?$/K~B-$7$F$$$F$$$k(B
+$B$N$J$i$P!#$9$Y$F$N%P%C%/%(%s%I$K$O(B  $B%P%C%/%(%s%I(B-@code{get-new-mail} $B$H(B
+$B$$$&JQ?t$,$"$j$^$9!#$b$7(B @code{nnbabyl} $B$,%a!<%k$rFI$_9~$_$r$d$a$5$;$?$$(B
+$B$N$G$"$l$P!"$=$N%0%k!<%W$N2>A[%5!<%P!<JT=8$7$F!"(B
+@code{nnbabyl-get-new-mail} $B$r(B @code{nil} $B$K@_Dj$7$^$7$g$&!#(B
 
 $B$9$Y$F$N%a!<%k%P%C%/%(%s%I$O!"F~$C$F$/$k%a!<%k$rFI$_9~$`$H$-$K!"J]B8$5$l(B
 $B$k$Y$-5-;v$KHO0O$r69$a$F(B @code{nn}*@code{-prepare-save-mail-hook} $B$r8F$S(B
@@ -16311,7 +16318,7 @@ Quoted Readable $B%(%s%3!<%I$r%G%3!<%I$7$^$9(B ($BLuCm(B: $B<B:]$K9T$J$&$N
 
 @menu
 * Unix Mail Box::               ($B$H$F$b(B) $BI8=`E*$J(B Un*x mbox $B$r;H$&(B
-* Rmail Babyl::                 Emacs $B$N%W%m%0%i%`$O(B Rmail $B$N(B Babyl $B%U%)!<%^%C%H$r;H$&(B
+* Babyl::                       Rmail $B$N5l%P!<%8%g%s$O(B Babyl $B$r;H$&(B
 * Mail Spool::                  $B$"$J$?$N%a!<%k$r;dE*$J%9%W!<%k$KN/$a$k(B?
 * MH Spool::                    mhspool $B$N$h$&$J%P%C%/%(%s%I(B
 * Maildir::                     $B$b$&0l$D$N#1%U%!%$%k(B/$B#1%a%C%;!<%87A<0(B
@@ -16349,27 +16356,26 @@ Quoted Readable $B%(%s%3!<%I$r%G%3!<%I$7$^$9(B ($BLuCm(B: $B<B:]$K9T$J$&$N
 $B%W$KJ,3d$7$^$9!#%G%#%U%)%k%H$O(B @code{t} $B$G$9!#(B
 @end table
 
-@node Rmail Babyl
-@subsubsection Rmail Babyl
+@node Babyl
+@subsubsection Babyl
 @cindex nnbabyl
-@cindex Rmail mbox
 
 @vindex nnbabyl-active-file
 @vindex nnbabyl-mbox-file
 @dfn{nnbabyl} $B%P%C%/%(%s%I$O%a!<%k$r3JG<$9$k$?$a$K(B Babyl $B%a!<%k%\%C%/(B
-$B%9(B ($BJLL>(B @dfn{Rmail mbox}) $B$r;H$$$^$9!#(B@code{nnbabyl} $B$O$=$l$>$l$N5-;v$K(B
-$B$=$l$,$I$N%0%k!<%W$KB0$7$F$$$k$+$r<($9DI2C$N%X%C%@!<$r2C$($^$9!#(B
+$B%9$r;H$$$^$9!#(B@code{nnbabyl} $B$O$=$l$>$l$N5-;v$K$=$l$,$I$N%0%k!<%W$KB0$7(B
+$B$F$$$k$+$r<($9DI2C$N%X%C%@!<$r2C$($^$9!#(B
 
 $B2>A[%5!<%P!<$N@_Dj(B:
 
 @table @code
 @item nnbabyl-mbox-file
 @vindex nnbabyl-mbox-file
-Rmail mbox $B%U%!%$%k$NL>A0!#%G%#%U%)%k%H$O(B @file{~/RMAIL} $B$G$9!#(B
+Babyl $B%U%!%$%k$NL>A0!#%G%#%U%)%k%H$O(B @file{~/RMAIL} $B$G$9!#(B
 
 @item nnbabyl-active-file
 @vindex nnbabyl-active-file
-Rmail mbox $B$N$?$a$N%"%/%F%#%V%U%!%$%k$NL>A0!#%G%#%U%)%k%H(B
+Babyl $B%U%!%$%k$N$?$a$N%"%/%F%#%V%U%!%$%k$NL>A0!#%G%#%U%)%k%H(B
 $B$O(B @file{~/.rmail-active} $B$G$9!#(B
 
 @item nnbabyl-get-new-mail
@@ -16960,7 +16966,8 @@ Babyl $B$K$O%a!<%k$rJQ49$9$k$?$a$N!"$=$lMQ$NFbIt7A<0$,$"$j$^$7$?!#$=$NJQ49(B
 Gnus $B$O(B ($B$3$N7o$K4X$7$F$O(B VM $B$b(B) $B$3$N7A<0$r%5%]!<%H$7B3$1$F$$$^$9!#$=$l(B
 $B$O!"$=$N%a!<%i!<FCM-$N%X%C%@!<(B/$B%9%F!<%?%9!&%S%C%H$H$$$&$b$N$,!"$+$J$jNI(B
 $B<A$@$HG'$a$i$l$F$$$k$+$i$G$9!#(BRmail $B<+?H$b$b$A$m$s$^$@B8:_$7$F$$$F!":#$G(B
-$B$b(B Stallman $B$K$h$C$F0];}$5$l$F$$$^$9!#(B
+$B$b(B Emacs $B$NCf$G0];}$5$l$F$$$^$9!#(BEmacs 23 $B$+$i!"(BBabyl $B$KBe$o$C$FI8=`(B
+$B$N(B mbox $BMM<0$,;H$o$l$k$h$&$K$J$j$^$7$?!#(B
 
 $B>e5-$NN>J}$N7A<0$O!"%a!<%k$r%U%!%$%k%7%9%F%`$K$*$1$kC10l$N%U%!%$%k$KCV$$(B
 $B$?$^$^$K$9$k$N$G!"%a!<%k$r8+$k$?$S$K%U%!%$%kA4BN$r2r@O$7$J$1$l$P$J$j$^$;(B
@@ -18415,9 +18422,8 @@ Gnus $B$O$?$@C1$K%K%e!<%9$d%a!<%k$rFI$`0J>e$N$3$H$,$G$-$^$9!#0J2<$K<($9J}(B
 
 @table @code
 @cindex Babyl
-@cindex Rmail mbox
 @item babyl
-Babyl (Rmail) $B7A<0$N%a!<%k%\%C%/%9!#(B
+Babyl $BMM<0!#(B
 
 @cindex mbox
 @cindex Unix mbox
@@ -28392,6 +28398,7 @@ X-Faces $B%X%C%@!<$NA^F~$,4JC1$K$J$j$^$7$?!#(B@xref{X-Face}.
 @item
 @code{message-insinuate-rmail}
 
+@c FIXME $B$=$l$O(B 'message-user-agent $B$G$O$@$a$G$9$+(B?
 @code{(message-insinuate-rmail)} $B$H(B @code{(setq mail-user-agent
 'gnus-user-agent)} $B$r(B @file{~/.emacs} $B$K2C$($k$3$H$K$h$C$F!"(B
 @code{message-mode} $B$G%a%C%;!<%8$N:n@.!"JV?.$*$h$SE>Aw$r9T$J$&$h$&(B
@@ -30028,7 +30035,7 @@ description-buffer = *description-line
 
 @lisp
 ;;; @r{nndir.el --- $BC10l$N%G%#%l%/%H%j!<$r%K%e!<%9%0%k!<%W$K$9$k(B}
-;; @r{Copyright (C) 1995,96 Free Software Foundation, Inc.}
+;; @r{Copyright (C) 1995,1996 Free Software Foundation, Inc.}
 
 ;;; @r{Code:}
 
@@ -30776,8 +30783,6 @@ Gnus $B$O(B Emacs Lisp $B$K$h$C$F=q$+$l$F$$$F!"%$%s%?!<%W%j%?!<$G<B9T$5$l$k$?
 @chapter Key Index
 @printindex ky
 
-@summarycontents
-@contents
 @bye
 
 @iftex
