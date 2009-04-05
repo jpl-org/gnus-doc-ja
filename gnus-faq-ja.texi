@@ -2180,7 +2180,7 @@ gmane.emacs.gnus.user} $B$G$bMxMQ2D(B) $B!#3+H/HG$N(B Gnus $B$KBP$9$k<ALd$,
 
 Big8 ($BLuCm(B: comp, humanities, misc, news, rec, sci, soc, talk $B$NH,Bg%K%e!<(B
 $B%9%0%k!<%W(B) $B$K$H$I$^$C$F$$$?$$$N$J$i$P!"(B
-@samp{news.software.newssreaders} $B$b$^$?!"$$$/$i$+$N(B Gnus $B$N%f!<%6!<$K$h$C(B
+@samp{news.software.readers} $B$b$^$?!"$$$/$i$+$N(B Gnus $B$N%f!<%6!<$K$h$C(B
 $B$FFI$^$l$F$$$^$9(B ($B$G$b!"E*3N$J=u$1$rF@$k$3$H$,$G$-$k8+9~$_$H$$$&E@$G$O!"(B
 $B>e5-$N%0%k!<%W$NJ}$,$O$k$+$KNI$$$G$7$g$&(B)$B!#%I%$%D8l$rOC$9?M8~$1$K(B
 $B$O(B @samp{de.comm.software.gnus} $B$,$"$j$^$9!#(B
