@@ -1,19 +1,13 @@
 \input texinfo                  @c -*-texinfo-*-
-
 @setfilename auth-ja
 @settitle Emacs auth-source Library @value{VERSION}
-@set VERSION 0.1
 
-@dircategory Emacs
-@direntry
-* Auth-source-ja: (auth-ja).   The Emacs auth-source library (Japanese).
-@end direntry
+@set VERSION 0.1
 
 @copying
 このファイルは Emacs auth-source ライブラリーを説明します。
 
-Copyright @copyright{} 2008, 2009
-Free Software Foundation, Inc.
+Copyright @copyright{} 2008, 2009 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -51,27 +45,30 @@ license to the document, as described in section 6 of the license.
 @end quotation
 @end copying
 
-@tex
+@dircategory Emacs
+@direntry
+* Auth-source-ja: (auth-ja).   The Emacs auth-source library (Japanese).
+@end direntry
 
 @titlepage
 @title Emacs auth-source Library
-
 @author by Ted Zlatanov
 @page
-
 @vskip 0pt plus 1filll
 @insertcopying
 @end titlepage
-@page
 
-@end tex
+@contents
 
+@ifnottex
 @node Top
 @top Emacs auth-source
 このマニュアルは Emacs auth-source ライブラリーを説明します。
 
 利用者の便宜のために、複数のアプリケーションで、(Emacs またはファイルに
 ある) 一つの設定を共有するための手段です。
+
+@insertcopying
 
 @menu
 * Overview::                    auth-source ライブラリーの概要
@@ -81,6 +78,7 @@ license to the document, as described in section 6 of the license.
 * Function Index::
 * Variable Index::
 @end menu
+@end ifnottex
 
 @node Overview
 @chapter 概要
@@ -202,8 +200,6 @@ auth-source ライブラリーには、外部で使うための関数は一つしかありません。
 @chapter Variable Index
 @printindex vr
 
-@summarycontents
-@contents
 @bye
 
 @c Local Variables:
