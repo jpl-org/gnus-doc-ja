@@ -556,8 +556,8 @@ Message は普通はうまく動作しますが、ときどき間違えもします。それらの間違
 @findex message-goto-bcc
 @code{Bcc} ヘッダーに行きます (@code{message-goto-bcc})。
 
-@item C-c C-f C-f
-@kindex C-c C-f C-f
+@item C-c C-f C-w
+@kindex C-c C-f C-w
 @findex message-goto-fcc
 @code{Fcc} ヘッダーに行きます (@code{message-goto-fcc})。
 
@@ -586,8 +586,8 @@ Message は普通はうまく動作しますが、ときどき間違えもします。それらの間違
 @code{Distribution} ヘッダーに行きま
 す (@code{message-goto-distribution})。
 
-@item C-c C-f C-o
-@kindex C-c C-f C-o
+@item C-c C-f C-f
+@kindex C-c C-f C-f
 @findex message-goto-followup-to
 @code{Followup-To} ヘッダーに行きます (@code{message-goto-followup-to})。
 
