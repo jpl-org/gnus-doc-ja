@@ -443,7 +443,9 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 $B0BA4$J(B URL $BL>!"$9$J$o$A(B @acronym{HTML} $B%a!<%k$rIA2h$9$k$H$-$K8D?M>pJs$,(B
 $BN.=P$7$=$&$b$J$$(B URL $B$K9gCW$9$k@55,I=8=$G$9(B ($B%G%#%U%)%k%HCM(B
 $B$O(B @samp{\\`cid:} $B$G$9(B)$B!#(B@code{nil} $B$K$9$k$H!"$9$Y$F$N(B URL $B$,0BA4$@$HH=(B
-$BCG$7$^$9!#(B
+$BCG$7$^$9!#(BGnus $B$G$O!"$3$l$O(B @code{gnus-safe-html-newsgroups} $B$NCM$K1~$8(B
+$B$F>e=q$-$5$l$^$9!#(B@xref{Various Various, ,$B$$$m$$$m$N$$$m$$$m(B, gnus-ja,
+The Gnus Manual}.
 
 @item mm-inline-text-html-with-w3m-keymap
 @vindex mm-inline-text-html-with-w3m-keymap

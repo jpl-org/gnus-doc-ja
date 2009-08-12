@@ -327,6 +327,16 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 
 @item @kbd{W e} で @file{all.SCORE} ファイルをグループバッファーから編集
 することができます。
+
+@item
+@code{gnus-mark-copied-or-moved-articles-as-expirable} を @code{nil} で
+はない値に設定することによって、読み終わった記事を auto-expire が有効に
+なっているグループにコピーするか移動するとき、それらに期限切れ消去可能の
+印を自動的に付けるようにすることができます。ディフォルト値
+は @code{nil} で、記事のコピーと移動の動作は従来通りです。つまり、記事
+を auto-expire が有効になっていないグループにコピーするか移動するときに
+期限切れ消去可能の印が削除される以外は、印は変化しません。@xref{Expiring
+Mail}.
 @end itemize
 @end itemize
 @c
