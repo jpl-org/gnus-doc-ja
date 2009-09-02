@@ -83,14 +83,9 @@ license to the document, as described in section 6 of the license.
 @node Overview
 @chapter 概要
 
-auth-source は先進的で拡張性があり、エンタープライズ級の認証ライブラリー
-です。最新のデザインパターンを使用、1800 の単体デストを有し、21 の工業会
-の基調講演で取り上げられました。将来性があり、バグが無いことが数学的に証
-明されていて、メモリーを食い潰すための 6つの XML 解析器を内蔵しています。
-
-ほんの冗談ですよ。auth-source ライブラリーは、「サーバー名とポートはわかっ
-てるんだけど、ユーザー名とパスワードは何だっけ?」という昔ながらの熱烈な
-問いへの答を見つけるための、Emacs と Gnus 用の数ある単純な手段の一つです。
+auth-source ライブラリーは、「サーバー名とポートはわかってるんだけど、ユー
+ザー名とパスワードは何だっけ?」という昔ながらの熱烈な問いへの答を見つけ
+るための、Emacs と Gnus 用の数ある単純な手段の一つです。
 
 実際には auth-source ライブラリーは単なるユーザー名 (いわゆる login) と
 パスワード以外のものも扱うことができますが、今日の Emacs と Gnus ではそ
@@ -103,29 +98,35 @@ auth-source は先進的で拡張性があり、エンタープライズ級の認証ライブラリー
 
 ``Netrc'' ファイルは事実上の標準です。それらはこのようになっています:
 @example
-machine mymachine login myloginname password mypassword port myport
+machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @var{myport}
 @end example
+
+machine はサーバーです (DNS 名または IP アドレス)。
 
 ポートの指定は無くても構いません。無い場合、auth-source はどんなポート
 も OK なのだと解釈します。実際のところ、ポートはプロトコルの名前かポート
-番号のどちらでも良いので、もしそうしたいのならば、ポート 143 とプロトコ
-ル ``imap'' のための項目を別々に持つことができます。ともあれ、もしポート
-の指定が要らない場合は省略しても構いません。``Netrc'' ファイルは通
-常 @code{.authinfo} または @code{.netrc} と呼ばれます。今で
-は @code{.authinfo} の方が普及しているようなので、後でわかるよう
-に auth-source ライブラリーはそれをディフォルトにすることによって、この
-混乱を助長しています。
+番号のどちらでも良いので、もしそうしたいのならば、ポート @var{143} とプ
+ロトコル @code{imap} のための項目を別々に持つことができます。ともあれ、
+もしポートの指定が要らない場合は省略しても構いません。
 
-もしポートで問題があるのなら @var{auth-source-debug} を @code{t} に設定
+login と password は、サーバーに対して簡潔にあなたのログイン資格を証明す
+るためのものです。
+
+``Netrc'' ファイルは通常 @code{.authinfo} または @code{.netrc} と呼ばれ
+ます。今では @code{.authinfo} の方が普及しているようなので、後でわかるよ
+うに auth-source ライブラリーはそれをディフォルトにすることによって、こ
+の混乱を助長しています。
+
+もしポートで問題があるのなら @code{auth-source-debug} を @code{t} に設定
 して、ライブラリーがどのポートをチェックしているか
 を @code{*Messages*} バッファーで見てください。同様に他のどんな問題につ
-いても、何がチェックされているかを調べるのが、あなたの第 1歩です。第2 の
+いても、何がチェックされているかを調べるのが、あなたの第一歩です。第二の
 ステップはもちろんそれについての blog を書いて、コメントで回答を待つこと
 です。
 
-変数 @var{auth-sources} をカスタマイズすることができます。もし古いバージョ
-ンの Emacs を使っているか、何かの理由のために auth-source ライブラリーが
-読み込まれない場合、次のものが必要になるでしょう。
+変数 @code{auth-sources} をカスタマイズすることができます。もし古いバー
+ジョンの Emacs を使っているか、何かの理由のために auth-source ライブラリー
+が読み込まれない場合、次のものが必要になるでしょう。
 
 @lisp
 (require 'auth-source)             ;; おそらく不要
@@ -133,9 +134,9 @@ machine mymachine login myloginname password mypassword port myport
 @end lisp
 
 @defvar auth-sources
-@var{auth-sources} 変数は、個々のホストとプロトコルのための netrc ファイ
-ルがどこに在るかを auth-source ライブラリーに知らせます。好みに応じてど
-うにでもできますが、ディフォルトの最も簡潔な設定は次の通りです:
+@code{auth-sources} 変数は、個々のホストとプロトコルのための netrc ファ
+イルがどこに在るかを auth-source ライブラリーに知らせます。好みに応じて
+どうにでもできますが、ディフォルトの最も簡潔な設定は次の通りです:
 
 @lisp
 (setq auth-sources '((:source "~/.authinfo.gpg" :host t :protocol t)))
@@ -146,15 +147,15 @@ machine mymachine login myloginname password mypassword port myport
 ので、そのファイルがあれば、これは機能します。あなたが netrc ファイルを
 移設しない限り。
 
-特定のホストかプロトコルのエントリーを複数 @var{auth-sources} に追加する
-ことによって、そのホストかプロトコルに特化した netrc ファイルを持つこと
-ができます。普通これは必要ありませんが、netrc ファイルを共有したり変わっ
+特定のホストかプロトコルのエントリーを複数 @code{auth-sources} に追加す
+ることによって、そのホストかプロトコルに特化した netrc ファイルを持つこ
+とができます。普通これは必要ありませんが、netrc ファイルを共有したり変わっ
 た設定がある場合は意味があるかもしれません (90% の Emacs ユーザーは変な
 設定を持っていて、残りの 10% は @emph{本当に} 変わっています)。
 @end defvar
 
-もし @var{auth-sources} をカスタマイズしないと、ディフォルトで生活するこ
-とになるでしょう。そのディフォルトとは、どんなホストもポートについて
+もし @code{auth-sources} をカスタマイズしないと、ディフォルトで生活する
+ことになるでしょう。そのディフォルトとは、どんなホストもポートについて
 も netrc ファイル @code{~/.authinfo.gpg} を参照するということです。これ
 は暗号化されたファイルです。EPA を使えるようにしている場合に限りますが、
 それが強く推奨されます。
@@ -212,10 +213,10 @@ auth-source ライブラリーには、外部で使うための関数は一つしかありません。
 @defun auth-source-user-or-password mode host port
 ホスト @var{host} およびポート @var{port} のための @var{mode} で決まる、
 適切な認証トークンを取り込みます。
-@var{auth-source-debug} が @code{t} だったらデバッグのためのメッセージを
-表示します。ログを採るための関数を使うには、@var{auth-source-debug} をそ
-の関数に設定してください。渡されるパラメーターは @code{message} 関数が受
-け取るものと同じです。つまり様式使用の文字列と任意のパラメーターです。
+@code{auth-source-debug} が @code{t} だったらデバッグのためのメッセージ
+を表示します。ログを採るための関数を使うには、@code{auth-source-debug}
+をその関数に設定してください。渡されるパラメーターは @code{message} 関数
+が受け取るものと同じです。つまり様式使用の文字列と任意のパラメーターです。
 
 もし @var{mode} が文字列のリストならば、関数は文字列のリスト
 か @code{nil} を返します (そのため、もう 1回 netrc ファイルを解析せずに
