@@ -11839,7 +11839,7 @@ Gnus は署名されたメッセージを検証したり、暗号化されたメッセージをデコー
 の署名のための鍵を使い、@code{guided} では署名のための鍵をメニューから選
 びます。
 
-@item mm-decrypt-option
+@item mm-encrypt-option
 @vindex mm-encrypt-option
 暗号化されたパートを作成するためのオプション。@code{nil} で
 は @samp{From:} ヘッダーを受取人として最初に合致する公開鍵を使い、
