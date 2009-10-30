@@ -570,7 +570,7 @@ Customizing Threading
 
 Decoding Articles
 
-* Uuencoded Articles::          $B5-;v$r(B uuencode $B$9$k(B
+* Uuencoded Articles::          $B5-;v$r(B uudecode $B$9$k(B
 * Shell Archives::              shar $B5-;v$r2rE`$9$k(B
 * PostScript Files::            $B%]%9%H%9%/%j%W%H$rJ,3d$9$k(B
 * Other Files::                 $BIaDL$NJ]B8$H(B binhex.
@@ -8640,7 +8640,7 @@ Gnus $B$K5-;v$rJ]B8$9$k>l=j$r$[$N$a$+$9$3$H$,$G$-$^$9!#Nc$($P(B Gnus $B$K4XO"
 @end quotation
 
 @menu
-* Uuencoded Articles::          $B5-;v$r(B uuencode $B$9$k(B
+* Uuencoded Articles::          $B5-;v$r(B uudecode $B$9$k(B
 * Shell Archives::              shar $B5-;v$r2rE`$9$k(B
 * PostScript Files::            $B%]%9%H%9%/%j%W%H$rJ,3d$9$k(B
 * Other Files::                 $BIaDL$NJ]B8$H(B binhex.
