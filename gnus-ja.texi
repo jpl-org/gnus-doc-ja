@@ -13235,8 +13235,7 @@ subject from date id references chars lines xref extra の各ヘッダーから
          (body "You are fired.\n\nSincerely, your boss.")
          (organization "Important Work, Inc"))
         ("nnml:.*"
-         (From (save-excursion
-                 (set-buffer gnus-article-buffer)
+         (From (with-current-buffer gnus-article-buffer
                  (message-fetch-field "to"))))
         ("^nn.+:"
          (signature-file "~/.mail-signature"))))
