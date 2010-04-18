@@ -26669,6 +26669,10 @@ Ingebrigtsen) $B$O(B Gnus $B$r=q$-D>$=$&$H7h?4$7$^$7$?!#(B
 
 2004$BG/(B1$B7n(B4$BF|$K(B No Gnus $B$,;O$^$j$^$7$?!#(B
 
+2010$BG/(B4$B7n(B19$BF|!"(BGnus $B$N3+H/$O(B Git $B$K0\9T$7$^$7$?!#>\:Y(B
+$B$O(B http://git.gnus.org $B$r8+$F$/$@$5$$(B ($B2DG=$J$i(B http://www.gnus.org $B$O$=(B
+$B$N>pJs$G99?7$5$l$k$G$7$g$&!#(B)
+
 $B@\F,8l$r;}$C$?HG$N(B Gnus---$B!H(B(ding) Gnus$B!I(B,$B!H(BSeptember Gnus$B!I(B,$B!H(BRed
 Gnus$B!I(B,$B!H(BQuassia Gnus$B!I(B,$B!H(BPterodactyl Gnus$B!I(B,$B!H(BOort Gnus$B!I(B,$B!H(BNo
 Gnus$B!I(B---$B$K=P2q$C$F$b!":.Mp$7$J$$$G$/$@$5$$!#$"$J$?$,62$,$C$F$$$k$3$H$r(B
@@ -28072,8 +28076,9 @@ MS $B%&%#%s%I%&%:$G(B Gnus $B$r%$%s%9%H!<%k$9$k$K$O(B @file{make.bat} $B$r;
 $B0J2<$NJQ99$N7k2L!"$b$O$d(B @file{~/News/overview/} $B%G%#%l%/%H%j!<$OMW$j$^(B
 $B$;$s!#$9$Y$F$N3,AX$r0BA4$K:o=|$9$k$3$H$,$G$-$^$9!#(B
 
-@c FIXME: `gnus-load' $B$K$D$$$F8@5Z$7$F$$$k(B README $B$,!"(BCVS $B$K$O4^$^$l$F$$(B
-@c $B$^$;$s!#;d$?$A$O$3$N9`L\$N$?$a$N$h$jNI$$>l=j$r8+$D$1$k$Y$-$G$9!#(B
+@c FIXME: `gnus-load' $B$K$D$$$F8@5Z$7$F$$$k(B README $B$,!"%j%]%8%H%j!<$K$O4^(B
+@c $B$^$l$F$$$^$;$s!#;d$?$A$O$3$N9`L\$N$?$a$N$h$jNI$$>l=j$r8+$D$1$k$Y$-$G(B
+@c $B$9!#(B
 @item
 @code{(require 'gnus-load)}
 
