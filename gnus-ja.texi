@@ -16859,8 +16859,8 @@ Gnus が @code{nnmaildir} に印のセットを格納することを要求すると、
 @cindex mbox folders
 @cindex mail folders
 
-@code{nnfolder} はそれぞれのメールグループを別々ファイルに格納するバック
-エンドです。それぞれのファイルは標準の Un*x mbox 様式です。
+@code{nnfolder} はそれぞれのメールグループを別々のファイルに格納するバッ
+クエンドです。それぞれのファイルは標準の Un*x mbox 様式です。
 @code{nnfolder} は記事番号と到着時刻を見失わないようにするための追加のヘッ
 ダーを加えます。
 
