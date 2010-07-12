@@ -47,7 +47,7 @@ license to the document, as described in section 6 of the license.
 
 @dircategory Emacs
 @direntry
-* Auth-source-ja: (auth-ja).   The Emacs auth-source library (Japanese).
+* Auth-source-ja: (auth-ja).    The Emacs auth-source library (Japanese).
 @end direntry
 
 @titlepage

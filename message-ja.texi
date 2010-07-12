@@ -43,8 +43,8 @@ developing GNU and promoting software freedom.''
 
 @dircategory Emacs
 @direntry
-* Message-ja: (message-ja).     Mail and news composition mode that goes
-                                with Gnus (Japanese).
+* Message-ja: (message-ja).     Mail and news composition mode that
+                                  goes with Gnus (Japanese).
 @end direntry
 @iftex
 @finalout

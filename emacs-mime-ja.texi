@@ -44,7 +44,9 @@ developing GNU and promoting software freedom.''
 @c
 @dircategory Emacs
 @direntry
-* Emacs MIME-ja: (emacs-mime-ja). Emacs MIME de/composition library (Japanese).
+* Emacs MIME-ja: (emacs-mime-ja).
+                                Emacs MIME de/composition library
+                                  (Japanese).
 @end direntry
 @iftex
 @finalout

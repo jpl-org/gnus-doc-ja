@@ -41,7 +41,8 @@ developing GNU and promoting software freedom.''
 
 @dircategory Emacs
 @direntry
-* Sieve-ja: (sieve-ja).         Managing Sieve scripts in Emacs (Japanese).
+* Sieve-ja: (sieve-ja).         Managing Sieve scripts in Emacs
+                                  (Japanese).
 @end direntry
 @iftex
 @finalout
@@ -237,7 +238,7 @@ Sieve を熟知していないなら、この章にほんの少しだけあるコードの断片を利用
 require "fileinto";
 
 if address "sender" "owner-w3-beta@@xemacs.org" @{
-	fileinto "INBOX.w3-beta";
+        fileinto "INBOX.w3-beta";
 @}
 @end example
 
@@ -247,7 +248,7 @@ if address "sender" "owner-w3-beta@@xemacs.org" @{
 
 @example
 if header :contains "Delivered-To" "auc-tex@@sunsite.dk" @{
-	fileinto "INBOX.auc-tex";
+        fileinto "INBOX.auc-tex";
 @}
 @end example
 
@@ -258,7 +259,7 @@ if header :contains "Delivered-To" "auc-tex@@sunsite.dk" @{
 
 @example
 if address ["to", "cc"] "kerberos@@mit.edu" @{
-	fileinto "INBOX.kerberos";
+        fileinto "INBOX.kerberos";
 @}
 @end example
 
