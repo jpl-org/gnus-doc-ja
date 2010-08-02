@@ -4108,13 +4108,13 @@ Gnus
 
 @table @code
 @item subscribe
-トピックで新しいグループを購読している場
-合 (@pxref{Subscription Methods})、@code{subscribe} トピックパラメーター
-はどのグループがどのトピックに行くかを指定します。値はそのトピックに行く
-グループに合致する正規表現である必要があります。
+トピックで新しいグループを購読し始める場
+合 (@pxref{Subscription Methods}) に、どのグループがどのトピックに行くか
+を @code{subscribe} トピックパラメーターで指定します。値はそのトピックに
+行くグループに合致する正規表現である必要があります。
 
 @item subscribe-level
-トピックで新しいグループを購読している場
+トピックで新しいグループを購読し始める場
 合 (@code{subscribe} パラメーターを参照)、そのグループの購読度のレベル
 は @code{gnus-level-default-subscribed} の代わり
 に @code{subscribe-level} トピックパラメーターの値になります。
