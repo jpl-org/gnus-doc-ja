@@ -419,13 +419,13 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
 @acronym{HTML} $B$rIA2h$9$k$?$a$K;H$&4X?t$rA*Br$7$^$9!#$9$G$KMQ0U$7$F$"$k(B
-$BIA2h%W%m%0%i%`$O!"(B@code{w3}, @code{w3m}@footnote{emacs-w3m $B$K$D$$$F$N>\(B
-$B:Y$O(B @uref{http://emacs-w3m.namazu.org/} $B$r8+$F$/$@$5$$!#(B},
-@code{links}, @code{lynx}, @code{w3m-standalone} $B$^$?(B
-$B$O(B @code{html2text} $B$N%7%s%\%k72$N$&$A$N0l$D$r;XDj$9$k$3$H$K$h$C$FA*Br$7(B
-$B$^$9!#$b$7(B @code{nil} $B$@$C$?$i!"30It%S%e!<%o!<$r;H$$$^$9!#$5$i$K4X?t(B ($B0z(B
-$B?t$H$7$F(B @acronym{MIME} $B%O%s%I%k$,M?$($i$l$F8F$P$l$k(B) $B$r@_Dj$9$k$3$H$b$G(B
-$B$-$^$9!#(B
+$BIA2h%W%m%0%i%`$O!"(B@code{gnus-article-html}, @code{w3},
+@code{w3m}@footnote{emacs-w3m $B$K$D$$$F$N>\:Y(B
+$B$O(B @uref{http://emacs-w3m.namazu.org/} $B$r8+$F$/$@$5$$!#(B}, @code{links},
+@code{lynx}, @code{w3m-standalone} $B$^$?$O(B @code{html2text} $B$N%7%s%\%k72(B
+$B$N$&$A$N0l$D$r;XDj$9$k$3$H$K$h$C$FA*Br$7$^$9!#$b$7(B @code{nil} $B$@$C$?$i!"(B
+$B30It%S%e!<%o!<$r;H$$$^$9!#$5$i$K4X?t(B ($B0z?t$H$7$F(B @acronym{MIME} $B%O%s%I%k(B
+$B$,M?$($i$l$F8F$P$l$k(B) $B$r@_Dj$9$k$3$H$b$G$-$^$9!#(B
 
 @item mm-inline-text-html-with-images
 @vindex mm-inline-text-html-with-images

@@ -613,6 +613,8 @@ Article Buffer
 
 * Hiding Headers::              どのヘッダーを表示するかを決める
 * Using MIME::                  読む前に記事を @acronym{MIME} に通す
+@c TRANSLATEME
+* HTML::                        Reading @acronym{HTML} messages.
 * Customizing Articles::        記事の見栄えを仕立てる
 * Article Keymap::              記事バッファーで使えるキー操作
 * Misc Article::                その他
@@ -5929,6 +5931,12 @@ Gnus が次のグループ移動することを確認するためにキー入力を求めた場合、
 
 この変数は数値でも構いません。その場合は、ウィンドウの先頭からその数の行
 だけ下がった位置に常にポイントがあるように制御されます。
+
+@c TRANSLATEME
+@item gnus-summary-stop-at-end-of-message
+@vindex gnus-summary-stop-at-end-of-message
+If non-@code{nil}, don't go to the next article when hitting
+@kbd{SPC}, and you're at the end of the article.
 @end table
 
 @node Choosing Articles
@@ -6615,6 +6623,13 @@ Gnus は @code{Cancel-Lock} ヘッダー (@pxref{Canceling News,
 あなたは遅延記事の送信にデーモンを使いたいのでしょうね。でも、それを設定
 することを忘れないでくださいね。:-)
 @end table
+
+@c TRANSLATEME
+When delaying an article with @kbd{C-c C-j}, Message mode will
+automatically add a @code{"Date"} header with the current time.  In
+many cases you probably want the @code{"Date"} header to reflect the
+time the message is sent instead.  To do this, you have to delete
+@code{Date} from @code{message-draft-headers}.
 
 @node Marking Articles
 @section 記事に印を付ける
@@ -8070,6 +8085,17 @@ Gnus はあなたが読むであろう記事よりもたくさんの記事を取得します。これは
 これらの関数は何度も何度も呼ばれるので、Gnus を遅くしすぎないように、短
 く簡潔であるのが好ましいです。このようなものをバイトコンパイルするのは、
 おそらく良い着想でしょう。
+
+@c TRANSLATEME
+@vindex gnus-async-post-fetch-function
+@findex gnus-html-prefetch-images
+After an article has been prefetched, this
+@code{gnus-async-post-fetch-function} will be called.  The buffer will
+be narrowed to the region of the article that was fetched.  A useful
+value would be @code{gnus-html-prefetch-images}, which will prefetch
+and store images referenced in the article, so that you don't have to
+wait for them to be fetched when you read the article.  This is useful
+for @acronym{HTML} messages that have external images.
 
 @vindex gnus-prefetched-article-deletion-strategy
 記事は非同期バッファーから遅かれ早かれ削除されなければなりません。
@@ -11972,6 +11998,8 @@ List-Archive フィールドがあったら、メーリングリストのアーカイブを閲覧し
 @menu
 * Hiding Headers::              どのヘッダーを表示するかを決める
 * Using MIME::                  読む前に記事を @acronym{MIME} に通す
+@c TRANSLATEME
+* HTML::                        Reading @acronym{HTML} messages.
 * Customizing Articles::        記事の見栄えを仕立てる
 * Article Keymap::              記事バッファーで使えるキー操作
 * Misc Article::                その他
@@ -12264,6 +12292,46 @@ Emacs @acronym{MIME} マニュアルで述べられています。
 トのことです。げほげほ。
 
 @ref{MIME Commands} も見てください。
+
+@c TRANSLATEME
+@node HTML
+@section @acronym{HTML}
+@cindex @acronym{HTML}
+
+If you have @code{w3m} installed on your system, Gnus can display
+@acronym{HTML} articles in the article buffer.  There are many Gnus
+add-ons for doing this, using various approaches, but there's one
+(sort of) built-in method that's used by default.
+
+For a complete overview, consult @xref{Display Customization,
+,Display Customization, emacs-mime, The Emacs MIME Manual}.  This
+section only describes the default method.
+
+@table @code
+@item mm-text-html-renderer
+@vindex mm-text-html-renderer
+If set to @code{gnus-article-html}, Gnus will use the built-in method,
+that's based on @code{curl} and @code{w3m}.
+
+@item gnus-html-cache-directory
+@vindex gnus-html-cache-directory
+Gnus will download and cache images according to how
+@code{mm-w3m-safe-url-regexp} is set.  These images will be stored in
+this directory.
+
+@item gnus-html-cache-size
+@vindex gnus-html-cache-size
+When @code{gnus-html-cache-size} bytes have been used in that
+directory, the oldest files will be deleted.  The default is 500MB.
+
+@item gnus-html-frame-width
+@vindex gnus-html-frame-width
+The width to use when rendering HTML.  The default is 70.
+@end table
+
+To use this, make sure that you have @code{w3m} and @code{curl}
+installed.  If you have, then Gnus should display @acronym{HTML}
+automatically.
 
 @node Customizing Articles
 @section 記事のカスタマイズ
@@ -13343,6 +13411,10 @@ Headers, ,メッセージヘッダー, message-ja, The Message Manual}.
 送りたくないメッセージがいくつかあるのであれば、@kbd{D t} 命
 令 (@code{gnus-draft-toggle-sending}) を使ってメッセージに送信不可の印を
 付けることができます。これは切り替え命令です。
+
+@c TRANSLATEME
+Finally, if you want to delete a draft, use the normal @kbd{B DEL}
+command (@pxref{Mail Group Commands}).
 
 @node Rejected Articles
 @section 拒否された記事
