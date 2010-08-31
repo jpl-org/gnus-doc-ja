@@ -701,7 +701,6 @@ Browsing the Web
 
 * Archiving Mail::
 * Web Searches::                $BJ8;zNs$K9gCW$9$k5-;v$+$i%0%k!<%W$r:n$k(B
-* Slashdot::                    Slashdot $B$N%3%a%s%H$rFI$`(B
 * Ultimate::                    Ultimate Bulletin Board $B%7%9%F%`(B
 * Web Archive::                 $B%&%'%V$KJ]4I$5$l$?%a!<%j%s%0%j%9%H$rFI$`(B
 * RSS::                         RDF Site Summary $B$rFI$`(B
@@ -1303,7 +1302,7 @@ Gnus $B$O(B @code{ask-server} $BL?Na$r$=$l$>$l$NA*BrJ}K!$KBP$7$F<B9T$7!"IaDL$
 $B$J(B @code{subscribe} $B%Q%i%a!<%?!<(B
 
 @example
-"nnslashdot"
+"nnml"
 @end example
 
 $B$O!"$=$N@55,I=8=$K9gCW$9$k$9$Y$F$N%0%k!<%W$O$=$N%H%T%C%/$N2<$G9XFI$5$l$k(B
@@ -1390,32 +1389,12 @@ options -n !alt.all !rec.all sci.all
 $B$i(B @code{gnus-select-method} $B$rJQ99$7$?$H$-$O!"(B@file{.newsrc} $B%U%!%$%k$O(B
 $BLr$KN)$?$J$/$J$j$^$9!#(B
 
-Gnus $B$O(B @file{.newsrc} $B%U%!%$%k$r$"$k%5!<%P!<MQ$+$iJL$N%5!<%P!<MQ$KJQ49(B
-$B$9$k4X?t$rFs!";0MQ0U$7$F$$$^$9!#$=$l$i$K$O0l$D6&DLE@$,$"$j$^$9(B---$B<B9T$K(B
-$B$J$,!<!<$$;~4V$,$+$+$k$3$H$G$9!#$*$=$i$/!"$I$&$7$F$bI,MW$K$J$C$?$H$-0J30(B
-$B$K$3$N4X?t$r;H$*$&$H$O;W$o$J$$$G$7$g$&!#(B
-
-@kindex M-x gnus-change-server
-@findex gnus-change-server
-$B$b$7N>J}$N%5!<%P!<$K@\B3$G$-$k$J$i!"(BGnus $B$O$"$J$?$,FI$s$@5-;v$9$Y$F$KBP(B
-$B$7$F%X%C%@!<(B (headers) $B$rMW5a$7$F!"(B@code{Message-ID} $B$rHf3S$7!"FI$s$@5-(B
-$B;v$H5-;v$N0u$r?7$7$/5-O?$7$^$9!#(B@kbd{M-x gnus-change-server} $B%3%^%s%I$O(B
-$B$3$l$r$9$Y$F$N4pK\%0%k!<%W$KBP$7$F9T$J$$$^$9!#$=$N%3%^%s%I$O0\F0@h$NJ}(B
-$BK!(B (the method) $B$rF~NO$9$k$3$H$rMW5a$7$^$9!#(B
-
-@kindex M-x gnus-group-move-group-to-server
-@findex gnus-group-move-group-to-server
-$B8D!9$N%0%k!<%W$r(B @kbd{M-x gnus-group-move-group-to-server} $BL?Na$G0\(B
-$BF0$9$k$3$H$b$G$-$^$9!#$3$l$O$"$k%5!<%P!<$+$iJL$N%5!<%P!<$X0l$D(B
-$B$N(B ($B30It(B) $B%0%k!<%W$r0\F0$7$?$$$H$-$KLr$KN)$A$^$9!#(B
-
 @kindex M-x gnus-group-clear-data-on-native-groups
 @findex gnus-group-clear-data-on-native-groups
-$B8E$$%5!<%P!<$H?7$7$$%5!<%P!<$NN>J}$K@\B3$9$k$3$H$,$G$-$J$$$H$-!"0u$HFI$s(B
-$B$@HO0O$O$9$Y$F0UL#$,L5$/$J$j$^$9!#$=$N$h$&$J$H$-(B
-$B$O(B @kbd{M-x gnus-group-clear-data-on-native-groups} $B%3%^%s%I$r;H$C$F!"4p(B
-$BK\%0%k!<%W$K4X$9$k%G!<%?$r$9$Y$F>C5n$9$k$3$H$,$G$-$^$9!#$3$N%3%^%s%I$OCm(B
-$B0U$7$F;H$C$F$/$@$5$$!#(B
+@c TRANSLATEME
+You can use the @kbd{M-x gnus-group-clear-data-on-native-groups}
+command to clear out all data that you have on your native groups.
+Use with caution.
 
 @kindex M-x gnus-group-clear-data
 @findex gnus-group-clear-data
@@ -6224,7 +6203,8 @@ Summary Buffer} $B$r;2>H$7$F$/$@$5$$!#(B
 @findex gnus-summary-wide-reply-with-original
 $B8=:_$N5-;v$K855-;v$r4^$s$@9-$$JVEz$N%a!<%k$rAw$j$^(B
 $B$9(B (@code{gnus-summary-wide-reply-with-original})$B!#$3$NL?Na$O%W%m%;%9(B/$B@\(B
-$BF,0z?t$N=,47$r;H$$$^$9!#(B
+$BF,0z?t$N=,47$r;H$$$^$9!#$?$@$7!"<u<h?M$N7hDj$K$O:G=i$N5-;v$N%X%C%@!<$@$1(B
+$B$r;H$$$^$9!#(B
 
 @item S v
 @kindex S v ($B35N,(B)
@@ -6291,8 +6271,6 @@ Summary Buffer} $B$r;2>H$7$F$/$@$5$$!#(B
 $B9FMM<0$r;H$&$+$r?R$M$^$9!#(B
 
 @item S i
-@itemx i
-@kindex i ($B35N,(B)
 @kindex S i ($B35N,(B)
 @findex gnus-summary-news-other-window
 $B%K%e!<%9$r:n@.$7$^$9(B (@code{gnus-summary-news-other-window})$B!#%G%#%U%)%k(B
@@ -17222,7 +17200,6 @@ Gnus $B$O$3$l$i$N%=!<%9$X$N%$%s%?!<%U%'!<%9$rDs6!$9$k%P%C%/%(%s%I72$r>/$7(B
 @menu
 * Archiving Mail::
 * Web Searches::                $BJ8;zNs$K9gCW$9$k5-;v$+$i%0%k!<%W$r:n$k(B
-* Slashdot::                    Slashdot $B$N%3%a%s%H$rFI$`(B
 * Ultimate::                    Ultimate Bulletin Board $B%7%9%F%`(B
 * Web Archive::                 $B%&%'%V$KJ]4I$5$l$?%a!<%j%s%0%j%9%H$rFI$`(B
 * RSS::                         RDF Site Summary $B$rFI$`(B
@@ -17368,90 +17345,6 @@ Gnus $B$r;H$($P%V%i%&%6!<L5$7$G8!:w$9$k$3$H$,$G$-$^$9!#(B
 @code{Message-ID} $B$r85$K$7$F5-;v$r<hF@$9$k$?$a$N!"(BURL $B%U%)!<%^%C%H$NJ8;z(B
 $BNs$G$9!#(B
 @end table
-@end table
-
-@node Slashdot
-@subsection Slashdot
-@cindex Slashdot
-@cindex nnslashdot
-
-@uref{http://slashdot.org/, Slashdot} $B$O?M5$$N$"$k%K%e!<%9%5%$%H$G!"%K%e!<(B
-$B%95-;v$K4X$7$F3hH/$J5DO@$,$J$5$l$F$$$^$9!#(B@code{nnslashdot} $B$G$OJXMx$JJ}(B
-$BK!$G$3$N2q5D<<$rFI$`$3$H$,$G$-$^$9!#(B
-
-$B$3$3$+$iFI$`$?$a$N0lHV4JC1$JJ}K!$O!"0J2<$N$h$&$J$b$N(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$k$3$H$G$9!#(B
-
-@lisp
-(setq gnus-secondary-select-methods
-      '((nnslashdot "")))
-@end lisp
-
-$B$3$l$O(B Gnus $B$K(B @code{nnslashdot} $B%P%C%/%(%s%I$KBP$7$F?7$7$$%3%a%s%H$H%0(B
-$B%k!<%W$r?R$M$5$;$^$9!#(B@kbd{F} $BL?Na$O$=$l$>$l$N?7$7$$%K%e!<%95-;v$r?7$7(B
-$B$$(B Gnus $B$N%0%k!<%W$H$7$F:n$k$N$G!"$3$l$i$N%0%k!<%W$KF~$k$3$H$K$h$C$F%3%a(B
-$B%s%H$rFI$`$3$H$,$G$-$^$9!#(B($B%G%#%U%)%k%H$N9VFIJ}K!$G$O!"?7$7$$%0%k!<%W$r(B
-$B%>%s%S$H$7$F:n$k$3$H$KCm0U$7$F$/$@$5$$!#B>$NJ}K!$r;H$&$3$H$b$G$-$^(B
-$B$9(B (@pxref{Subscription Methods})$B!#(B
-
-$B8E$$(B @code{nnslashdot} $B%0%k!<%W$r:o=|$7$?$$>l9g$K$O!"(B@kbd{G DEL} $B$,:G$b(B
-$B<j7Z$JF;6q$G$9(B (@pxref{Foreign Groups})$B!#(B
-
-@code{nnslashdot} $B$N%3%a%s%H$K%U%)%m!<%"%C%W(B ($B$^$?$O?7$7$$%3%a%s%H$NEj(B
-$B9F(B) $B$r$9$k$H$-$O!"$$$/$D$+$N7Z$$(B @acronym{HTML} $BJQ49$,9T$J$o$l$^$9!#FC(B
-$B$K(B @samp{> } $B$G0zMQ$5$l$?%F%-%9%H$OBe$o$j$K(B @samp{blockquote} $B$G0zMQ$5$l!"(B
-$B=pL>$K$O$=$l$>$l$N9T$N:G8e$K(B @samp{br} $B$,DI2C$5$l$^$9!#$=$l0J30$O!"%a%C(B
-$B%;!<%8%P%C%U%!!<$KD>@\(B @acronym{HTML} $B$r=q$/$3$H$,$G$-$^$9!#(BSlashdot $B$O(B
-$B$$$/$D$+$N(B @acronym{HTML} $BMM<0$r$U$k$$Mn$H$9$3$H$K5$$rIU$1$F$/$@$5$$!#(B
-
-$B0J2<$NJQ?t$G?6$kIq$$$rJQ$($k$3$H$,$G$-$^$9(B:
-
-@table @code
-@item nnslashdot-threaded
-@code{nnslashdot} $B$,%0%k!<%W$r%9%l%C%I$GI=<($9$k$+$I$&$+$r;XDj$7$^$9!#%G%#(B
-$B%U%)%k%H$O(B @code{t} $B$G$9!#%9%l%C%I$rI=<($G$-$k$h$&$K$9$k$?$a$K$O!"(B
-@code{nnslashdot} $B$O%0%k!<%W$N$9$Y$F$N%3%a%s%H$r40A4$K<hF@$9$kI,MW$,$"$j(B
-$B$^$9!#%9%l%C%II=<($,MW5a$5$l$F$$$J$$$H!"(B@code{nnslashdot} $B$O<B:]$KMxMQ<T(B
-$B$,M_$7$$%3%a%s%H$@$1$r<hF@$7$^$9!#%9%l%C%I$NJ}$,2wE,$G$9$,!"%9%l%C%IL5$7(B
-$B$N>l9g$h$j!"$:$C$H$:$C$HCY$/$J$j$^$9!#(B
-
-@item nnslashdot-login-name
-@vindex nnslashdot-login-name
-$BEj9F;~$K;H$&%m%0%$%sL>$G$9!#(B
-
-@item nnslashdot-password
-@vindex nnslashdot-password
-$BEj9F;~$K;H$&%Q%9%o!<%I$G$9!#(B
-
-@item nnslashdot-directory
-@vindex nnslashdot-directory
-@code{nnslashdot} $B$,%U%!%$%k$rJ]B8$9$k>l=j$G$9!#%G%#%U%)%k%H(B
-$B$O(B @file{~/News/slashdot/} $B$G$9!#(B
-
-@item nnslashdot-active-url
-@vindex nnslashdot-active-url
-$B%K%e!<%95-;v$N>pJs$H%3%a%s%H$r<hF@$9$k$?$a$K;H$o$l$k(B @acronym{URL} $B$N%U%)!<(B
-$B%^%C%HJ8;zNs$G$9!#%G%#%U%)%k%H(B
-$B$O(B @samp{http://slashdot.org/search.pl?section=&min=%d} $B$G$9!#(B
-
-@item nnslashdot-comments-url
-@vindex nnslashdot-comments-url
-$B%3%a%s%H$r<hF@$9$k$?$a$K;H$o$l$k(B @acronym{URL} $B$N%U%)!<%^%C%HJ8;zNs$G$9!#(B
-
-@item nnslashdot-article-url
-@vindex nnslashdot-article-url
-$B%K%e!<%95-;v$r<hF@$9$k$?$a$K;H$o$l$k(B @acronym{URL} $B$N%U%)!<%^%C%HJ8;zNs(B
-$B$G$9!#%G%#%U%)%k%H(B
-$B$O(B @samp{http://slashdot.org/article.pl?sid=%s&mode=nocomment} $B$G$9!#(B
-
-@item nnslashdot-threshold
-@vindex nnslashdot-threshold
-$B%9%3%"$N$7$-$$CM$G$9!#%G%#%U%)%k%H$O(B -1 $B$G$9!#(B
-
-@item nnslashdot-group-number
-@vindex nnslashdot-group-number
-$B:G?7$N(B 10 $B8D$K2C$($F99?7$rB3$1$k8E$$%0%k!<%W$N?t$G$9!#%G%#%U%)%k%H(B
-$B$O(B 0 $B$G$9!#(B
 @end table
 
 @node Ultimate
@@ -29161,9 +29054,8 @@ Emacs $B$r%m!<%+%k$N%^%7%s$G<B9T$7$F$$$F!"Hs>o$K:Y$$$R$b$N8~$3$&$N%^%7%s$+(B
 @code{nnspool-nov-is-evil} $B$*$h$S(B @code{nnwarchive-nov-is-evil} $B$,$"$j$^(B
 $B$9!#(B@code{gnus-nov-is-evil} $B$K(B @code{nil} $B0J30$NCM$rM?$($k$H!"$=$l$i$9$Y(B
 $B$F$NJQ?t$r>e=q$-$7$F$7$^$&$3$H$KCm0U$7$F$/$@$5$$!#(B@footnote{$B$b$C$H(B
-$B$b(B @code{nnkiboze}, @code{nnslashdot}, @code{nnultimate} $B$*$h(B
-$B$S(B @code{nnwfm} $B$N3F%P%C%/%(%s%I$K$O!"$=$l$i@lMQ$N(B nn*-nov-is-evil $B$,$"(B
-$B$j$^$;$s$,!#(B}
+$B$b(B @code{nnkiboze}, @code{nnultimate} $B$*$h$S(B @code{nnwfm} $B$N3F%P%C%/%(%s(B
+$B%I$K$O!"$=$l$i@lMQ$N(B nn*-nov-is-evil $B$,$"$j$^$;$s$,!#(B}
 @end table
 
 @node Slow Terminal Connection
