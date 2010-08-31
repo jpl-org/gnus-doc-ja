@@ -613,8 +613,7 @@ Article Buffer
 
 * Hiding Headers::              どのヘッダーを表示するかを決める
 * Using MIME::                  読む前に記事を @acronym{MIME} に通す
-@c TRANSLATEME
-* HTML::                        Reading @acronym{HTML} messages.
+* HTML::                        @acronym{HTML} メッセージを読む
 * Customizing Articles::        記事の見栄えを仕立てる
 * Article Keymap::              記事バッファーで使えるキー操作
 * Misc Article::                その他
@@ -1391,10 +1390,9 @@ options -n !alt.all !rec.all sci.all
 
 @kindex M-x gnus-group-clear-data-on-native-groups
 @findex gnus-group-clear-data-on-native-groups
-@c TRANSLATEME
-You can use the @kbd{M-x gnus-group-clear-data-on-native-groups}
-command to clear out all data that you have on your native groups.
-Use with caution.
+@kbd{M-x gnus-group-clear-data-on-native-groups} コマンドを使って、基本
+グループに関するデータをすべて消去することができます。注意して使ってくだ
+さい。
 
 @kindex M-x gnus-group-clear-data
 @findex gnus-group-clear-data
@@ -5911,11 +5909,10 @@ Gnus が次のグループ移動することを確認するためにキー入力を求めた場合、
 この変数は数値でも構いません。その場合は、ウィンドウの先頭からその数の行
 だけ下がった位置に常にポイントがあるように制御されます。
 
-@c TRANSLATEME
 @item gnus-summary-stop-at-end-of-message
 @vindex gnus-summary-stop-at-end-of-message
-If non-@code{nil}, don't go to the next article when hitting
-@kbd{SPC}, and you're at the end of the article.
+もし @code{nil} でなければ、@kbd{SPC} を叩いても次の記事に行かずに、その
+記事の最後にとどまります。
 @end table
 
 @node Choosing Articles
@@ -6602,12 +6599,11 @@ Gnus は @code{Cancel-Lock} ヘッダー (@pxref{Canceling News,
 することを忘れないでくださいね。:-)
 @end table
 
-@c TRANSLATEME
-When delaying an article with @kbd{C-c C-j}, Message mode will
-automatically add a @code{"Date"} header with the current time.  In
-many cases you probably want the @code{"Date"} header to reflect the
-time the message is sent instead.  To do this, you have to delete
-@code{Date} from @code{message-draft-headers}.
+@kbd{C-c C-j} で記事を遅延させると Message モードは自動的に現在時刻
+で @code{"Date"} ヘッダーを付加します。おそらく多くの場合、代わりにその
+メッセージを送信した時刻を @code{"Date"} ヘッダーに反映させたいでしょう。
+そのためには @code{message-draft-headers} から @code{Date} を削除してく
+ださい。
 
 @node Marking Articles
 @section 記事に印を付ける
@@ -8064,16 +8060,14 @@ Gnus はあなたが読むであろう記事よりもたくさんの記事を取得します。これは
 く簡潔であるのが好ましいです。このようなものをバイトコンパイルするのは、
 おそらく良い着想でしょう。
 
-@c TRANSLATEME
 @vindex gnus-async-post-fetch-function
 @findex gnus-html-prefetch-images
-After an article has been prefetched, this
-@code{gnus-async-post-fetch-function} will be called.  The buffer will
-be narrowed to the region of the article that was fetched.  A useful
-value would be @code{gnus-html-prefetch-images}, which will prefetch
-and store images referenced in the article, so that you don't have to
-wait for them to be fetched when you read the article.  This is useful
-for @acronym{HTML} messages that have external images.
+記事を先行取得した後に、この @code{gnus-async-post-fetch-function} が呼
+ばれます。そのときバッファーは取り込んだ記事の領域に狭められています。有
+用な値は @code{gnus-html-prefetch-images} で、これはその記事が参照する画
+像を先行取得および保存して、その記事を読むときにそれらの取得を待たなくて
+も良いようにします。@acronym{HTML} メッセージが外部参照の画像を持ってい
+るときに便利です。
 
 @vindex gnus-prefetched-article-deletion-strategy
 記事は非同期バッファーから遅かれ早かれ削除されなければなりません。
@@ -11976,8 +11970,7 @@ List-Archive フィールドがあったら、メーリングリストのアーカイブを閲覧し
 @menu
 * Hiding Headers::              どのヘッダーを表示するかを決める
 * Using MIME::                  読む前に記事を @acronym{MIME} に通す
-@c TRANSLATEME
-* HTML::                        Reading @acronym{HTML} messages.
+* HTML::                        @acronym{HTML} メッセージを読む
 * Customizing Articles::        記事の見栄えを仕立てる
 * Article Keymap::              記事バッファーで使えるキー操作
 * Misc Article::                その他
@@ -12271,45 +12264,44 @@ Emacs @acronym{MIME} マニュアルで述べられています。
 
 @ref{MIME Commands} も見てください。
 
-@c TRANSLATEME
 @node HTML
 @section @acronym{HTML}
 @cindex @acronym{HTML}
 
-If you have @code{w3m} installed on your system, Gnus can display
-@acronym{HTML} articles in the article buffer.  There are many Gnus
-add-ons for doing this, using various approaches, but there's one
-(sort of) built-in method that's used by default.
+もし @code{w3m} があなたのシステムにインストールしてあれば、Gnus は記事
+バッファーに @acronym{HTML} 記事を表示することができます。これを行なうた
+めの様々なやり方の付加機能がありますが、ディフォルトで使われるそんな一つ
+の手法が組み込みで用意されています。
 
-For a complete overview, consult @xref{Display Customization,
-,Display Customization, emacs-mime, The Emacs MIME Manual}.  This
-section only describes the default method.
+完全な概要については @xref{Display Customization, ,Display Customization,
+emacs-mime-ja, The Emacs MIME Manual}, を参照してください。この章はディ
+フォルトの機能だけを説明します。
 
 @table @code
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
-If set to @code{gnus-article-html}, Gnus will use the built-in method,
-that's based on @code{curl} and @code{w3m}.
+もしこれが @code{gnus-article-html} に設定されていると、
+Gnus は @code{curl} と @code{w3m} を利用するその組み込み機能を使います。
 
 @item gnus-html-cache-directory
 @vindex gnus-html-cache-directory
-Gnus will download and cache images according to how
-@code{mm-w3m-safe-url-regexp} is set.  These images will be stored in
-this directory.
+Gnus は @code{mm-w3m-safe-url-regexp} がどう設定されているかに応じて画像
+をダウンロードしてキャッシュしますが、それらの画像はこのディレクトリーに
+保存されます。
 
 @item gnus-html-cache-size
 @vindex gnus-html-cache-size
-When @code{gnus-html-cache-size} bytes have been used in that
-directory, the oldest files will be deleted.  The default is 500MB.
+そのディレクトリーで、@code{gnus-html-cache-size} で指定されたバイト数を
+越える古いファイルは消去されます。ディフォルトは 500MB です。
 
 @item gnus-html-frame-width
 @vindex gnus-html-frame-width
-The width to use when rendering HTML.  The default is 70.
+HTML を描画するときの幅です。ディフォルトは 70 です。
 @end table
 
-To use this, make sure that you have @code{w3m} and @code{curl}
-installed.  If you have, then Gnus should display @acronym{HTML}
-automatically.
+これを使うためには @code{w3m} と @code{curl} がインストールされている必
+要があります。もしあれば Gnus は自動的に @acronym{HTML} を表示するはずで
+す。
 
 @node Customizing Articles
 @section 記事のカスタマイズ
@@ -13390,9 +13382,8 @@ Headers, ,メッセージヘッダー, message-ja, The Message Manual}.
 令 (@code{gnus-draft-toggle-sending}) を使ってメッセージに送信不可の印を
 付けることができます。これは切り替え命令です。
 
-@c TRANSLATEME
-Finally, if you want to delete a draft, use the normal @kbd{B DEL}
-command (@pxref{Mail Group Commands}).
+最後に。もし下書きの記事を消したいときは、通常の @kbd{B DEL} コマンドを
+使ってください (@pxref{Mail Group Commands})。
 
 @node Rejected Articles
 @section 拒否された記事
