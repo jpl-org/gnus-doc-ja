@@ -637,7 +637,7 @@ Select Methods
 * Getting Mail::                個人的なメールを Gnus で読む
 * Browsing the Web::            大量のウェブの資源からメッセージを取得する
 * IMAP::                        Gnus を @acronym{IMAP} のクライアントとして使う
-* Other Sources::               ディレクトリー、ファイル、SOUP パケットを読む
+* Other Sources::               ディレクトリー、ファイルを読む
 * Combined Groups::             複数のグループを一つのグループに合併させる
 * Email Based Diary::           日程をメールで管理する
 * Gnus Unplugged::              ニュースとメールをオフラインで読む
@@ -700,8 +700,6 @@ Browsing the Web
 
 * Archiving Mail::
 * Web Searches::                文字列に合致する記事からグループを作る
-* Ultimate::                    Ultimate Bulletin Board システム
-* Web Archive::                 ウェブに保管されたメーリングリストを読む
 * RSS::                         RDF Site Summary を読む
 * Customizing W3::              Gnus から Emacs/W3 を操作する
 
@@ -719,18 +717,11 @@ Other Sources
 * Directory Groups::            ディレクトリーをニュースグループのように読む
 * Anything Groups::             Dired?  誰が dired なんて使うの?
 * Document Groups::             個別のファイル群はグループの素
-* SOUP::                        @sc{soup} パケットを「オフライン」で読む
 * Mail-To-News Gateways::       メールからニュースへのゲートウェイを通して記事を投稿する
 
 Document Groups
 
 * Document Server Internals::   あなた独自の文書種別を追加する方法
-
-SOUP
-
-* SOUP Commands::               @sc{soup} パケットを作って送り出す命令
-* SOUP Groups::                 @sc{soup} パケットを読むためのバックエンド
-* SOUP Replies::                メールとニュースを @code{nnsoup} に引き継がせる方法
 
 Combined Groups
 
@@ -6709,10 +6700,6 @@ Articles})。
 @vindex gnus-canceled-mark
 取り消された記事 (@code{gnus-canceled-mark})。
 
-@item F
-@vindex gnus-souped-mark
-@sc{soup} されている記事 (@code{gnus-souped-mark})。@xref{SOUP}.
-
 @item Q
 @vindex gnus-sparse-mark
 まばらに参照された記事 (@code{gnus-sparse-mark})。
@@ -7637,8 +7624,7 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに、すべての「ずれ」
 これはあまり役に立たない、いささかはっきりしない変数です。ニュースではな
 いグループにおいて、概略バッファーを作るためにバックエンドが極めて多くの
 ものを取り込まなければならず、しかも親記事を辿ることができない場合に使う
-ことを想定しています。それは主に @code{nnultimate} グループのような、ウェ
-ブに基づいたグループでの場合です。
+ことを想定しています。それは主にウェブに基づいたグループでの場合です。
 
 そんなグループを使わない場合はディフォルトの @code{nil} のままにしておく
 のが無難です。使いたい場合はグループ名に合致する正規表現か、すべてのグルー
@@ -12283,11 +12269,23 @@ emacs-mime-ja, The Emacs MIME Manual}, を参照してください。この章はディ
 もしこれが @code{gnus-article-html} に設定されていると、
 Gnus は @code{curl} と @code{w3m} を利用するその組み込み機能を使います。
 
+@item gnus-blocked-images
+@vindex gnus-blocked-images
+@acronym{URL} がこの正規表現に合致する画像は取得も表示もされません。例え
+ば ``ads'' という文字列をそれらの内に持つすべての @acronym{URL} を阻止す
+るには、以下のようにしてください:
+
+@lisp
+(setq gnus-blocked-images "ads")
+@end lisp
+
+ディフォルトではすべての外部からの画像を阻止します。
+
 @item gnus-html-cache-directory
 @vindex gnus-html-cache-directory
-Gnus は @code{mm-w3m-safe-url-regexp} がどう設定されているかに応じて画像
-をダウンロードしてキャッシュしますが、それらの画像はこのディレクトリーに
-保存されます。
+Gnus は @code{gnus-blocked-images} がどう設定されているかに応じて画像を
+ダウンロードしてキャッシュしますが、それらの画像はこのディレクトリーに保
+存されます。
 
 @item gnus-html-cache-size
 @vindex gnus-html-cache-size
@@ -13515,7 +13513,7 @@ Message Manual}, を参照してください。
 * Getting Mail::                個人的なメールを Gnus で読む
 * Browsing the Web::            大量のウェブの資源からメッセージを取得する
 * IMAP::                        Gnus を @acronym{IMAP} のクライアントとして使う
-* Other Sources::               ディレクトリー、ファイル、SOUP パケットを読む
+* Other Sources::               ディレクトリー、ファイルを読む
 * Combined Groups::             複数のグループを一つのグループに合併させる
 * Email Based Diary::           日程をメールで管理する
 * Gnus Unplugged::              ニュースとメールをオフラインで読む
@@ -17191,8 +17189,6 @@ Gnus はこれらのソースへのインターフェースを提供するバックエンド群を少し
 @menu
 * Archiving Mail::
 * Web Searches::                文字列に合致する記事からグループを作る
-* Ultimate::                    Ultimate Bulletin Board システム
-* Web Archive::                 ウェブに保管されたメーリングリストを読む
 * RSS::                         RDF Site Summary を読む
 * Customizing W3::              Gnus から Emacs/W3 を操作する
 @end menu
@@ -17336,70 +17332,6 @@ Gnus を使えばブラウザー無しで検索することができます。
 @code{Message-ID} を元にして記事を取得するための、URL フォーマットの文字
 列です。
 @end table
-@end table
-
-@node Ultimate
-@subsection Ultimate
-@cindex nnultimate
-@cindex Ultimate Bulletin Board
-
-@uref{http://www.ultimatebb.com/, The Ultimate Bulletin Board} はおそら
-く一番良く使われているウェブ掲示板システムでしょう。とても規則的で良質な
-インターフェースを持っていて、Gnus がグループを最新の状態に保っておくた
-めに必要な情報を得ることが可能です。
-
-@code{nnultimate} を始めるための一番簡単な方法は、グループバッファーで以
-下のようなものをすることです: @kbd{B nnultimate RET
-http://www.tcj.com/messboard.ubbcgi/ RET}。(興味のある会議室
-の @acronym{URL} (@samp{Ultimate.cgi} 等を最後に含んでいないもの) に変え
-てください。Ultimate ウェブサイトにはたくさん挙げられています。) それか
-らサーバーバッファーで興味のあるグループを購読し、グループバッファーから
-それらを読んでください。
-
-以下の @code{nnutimate} 変数が変更可能です:
-
-@table @code
-@item nnultimate-directory
-@vindex nnultimate-directory
-@code{nnultimate} がファイルを保存するディレクトリーです。ディフォルト
-は @file{~/News/ultimate/} です。
-@end table
-
-@node Web Archive
-@subsection Web Archive
-@cindex nnwarchive
-@cindex Web Archive
-
-いくつかのメーリングリストは、
-@uref{http://www.egroups.com/} や @uref{http://www.mail-archive.com/} の
-ようなウェブサーバーでだけ、そのアーカイブを持っています。それはとても規
-則的で良質なインターフェースを持っているので、Gnus がグループを最新の状
-態に保っておくために必要な情報を得ることが可能です。
-
-@findex gnus-group-make-warchive-group
-@code{nnwarchive} を始めるための一番簡単な方法は、グループバッファーで以
-下のようなものをすることです: @kbd{M-x gnus-group-make-warchive-group
-RET @var{an_egroup} RET egroups RET www.egroups.com RET
-@var{your@@email.address} RET}。(@var{an_egroup} を購読しているメーリン
-グリストに、@var{your@@emailaddress} を電子メールアドレスに置き換えてく
-ださい。) または @kbd{B nnwarchive RET mail-archive RET} でバックエンド
-をブラウズしてください。
-
-以下の @code{nnwarchive} 変数が変更可能です:
-
-@table @code
-@item nnwarchive-directory
-@vindex nnwarchive-directory
-@code{nnwarchive} がファイルを保存するディレクトリーです。ディフォルト
-は @file{~/News/warchive} です。
-
-@item nnwarchive-login
-@vindex nnwarchive-login
-ウェブサーバーでのアカウント名です。
-
-@item nnwarchive-passwd
-@vindex nnwarchive-passwd
-ウェブサーバーでのアカウントのパスワードです。
 @end table
 
 @node RSS
@@ -18314,7 +18246,6 @@ Gnus はただ単にニュースやメールを読む以上のことができます。以下に示す方
 * Directory Groups::            ディレクトリーをニュースグループのように読む
 * Anything Groups::             Dired?  誰が dired なんて使うの?
 * Document Groups::             個別のファイル群はグループの素
-* SOUP::                        @sc{soup} パケットを「オフライン」で読む
 * Mail-To-News Gateways::       メールからニュースへのゲートウェイを通して記事を投稿する
 @end menu
 
@@ -18685,276 +18616,6 @@ Clarinet のニュース項目を要約したまとめ送り。
 別である場合は @code{t} を返し、その種別かもしれないときは数値を返さなく
 てはなりません。高い数値は高い可能性を意味し、低い数値は低い可能性を意味
 します。@samp{0} は正しい値の中でもっとも低い数値です。
-
-@node SOUP
-@subsection SOUP
-@cindex SOUP
-@cindex offline
-
-PC の世界の人々はよく、「オフライン」ニュースリーダーについて話をしてい
-ます。それらはリーダーとニュース配送を合体させた、奇っ怪なものどもです。
-内蔵モデムプログラム付きでね。うげーっ!
-
-もちろん、我らが Unix キチガイの人間ども (原典: Unix Weenie types of
-human beans) は @code{uucp} だとか @code{nntpd} のようなものを使い、神の
-領域たるメール、ニュースの配送を正しく設定するのです。そして…、僕たちは
-ただ普通のニュースリーダーを使います。
-
-しかし、あなたがとても遅いモデムを持っていてこれらを正しく設定することに
-興味が無ければ、ほんの少し脳みそに楽をさせる方をするのも時には便利でしょ
-う。
-
-@sc{soup} というファイル形式は、ニュースとメールをサーバーから家のマシン
-へと転送し、それをまた戻すために開発されました。ちょっと面倒くさいかもし
-れませんがね。
-
-はじめにいくつか用語を:
-
-@table @dfn
-@item server
-これは外の世界に繋がっていて、あなたがニュースやメールを送受信するマシン
-です。
-
-@item home machine
-これはあなたが実際に読んだり返事を書いたりしたいマシンです。これは普通、
-他の世界といかなる形でも接続されていません。
-
-@item packet
-メッセージや命令を含んでいる何か。パケットには二種類あります。
-
-@table @dfn
-@item message packets
-これはサーバーで作られるパケットで、普通はあなたが読むためのたくさんのメッ
-セージを含んでいます。これらはディフォルトでは @file{SoupoutX.tgz} とい
-う名前です。ここで @var{x} は数字です。
-
-@item response packets
-このパケットは自宅マシンで作られるパケットで、普通はあなたが書いた返事を
-含んでいます。これらはディフォルトでは @file{SoupinX.tgz} という名前です。
-ここで @var{x} は数字です。
-@end table
-@end table
-
-@enumerate
-@item
-まずサーバーにログインして @sc{soup} パケットを作りましょう。
-@sc{soup} 専用に供されたもの (@code{awk} プログラムのようなもの) を使っ
-ても良いし、Gnus の @sc{soup} 命令を使ってパケットを作っても良いで
-す (@kbd{O s} や @kbd{G s b} に続いて @kbd{G s p}) (@pxref{SOUP
-Commands})。
-
-@item
-パケットを自宅に転送しましょう。電車に、船に、自動車に、あるいはモデムに、
-でも結構です。
-
-@item
-パケットをあなたのホームディレクトリーに置きましょう。
-
-@item
-基本サーバーか二次サーバーとして @code{nnsoup} バックエンドを使うように
-して、あなたの自宅のマシンで Gnus に火を入れましょう。
-
-@item
-ニュース記事やメールを読んで、必要なものに返事やフォロー記事を書きましょ
-う (@pxref{SOUP Replies})。
-
-@item
-これらの返事を @sc{soup} パケットにまとめるために、@kbd{G s r} 命令を実
-行しましょう。
-
-@item
-このパケットをサーバーに転送しましょう。
-
-@item
-このパケットを Gnus の @kbd{G s s} 命令で送信しましょう。
-
-@item
-あとはこれを死ぬまで繰り返しましょう。
-@end enumerate
-
-というわけで、読むために @code{nnsoup} を使い、それらの @sc{soup} パケッ
-トをまとめて送り出すためには Gnus を使うという分業システムが手に入りまし
-た。
-
-@menu
-* SOUP Commands::               @sc{soup} パケットを作って送り出す命令
-* SOUP Groups::                 @sc{soup} パケットを読むためのバックエンド
-* SOUP Replies::                メールとニュースを @code{nnsoup} に引き継がせる方法
-@end menu
-
-@node SOUP Commands
-@subsubsection SOUP 命令
-
-これらは @sc{soup} パケットを作成して操作するための命令です。
-
-@table @kbd
-@item G s b
-@kindex G s b (グループ)
-@findex gnus-group-brew-soup
-現在のグループのすべての未読記事をパケットにまとめま
-す (@code{gnus-group-brew-soup})。このコマンドはプロセス/接頭引数の習慣
-に従います。
-
-@item G s w
-@kindex G s w (グループ)
-@findex gnus-soup-save-areas
-すべての @sc{soup} データファイルを保存しま
-す (@code{gnus-soup-save-areas})。
-
-@item G s s
-@kindex G s s (グループ)
-@findex gnus-soup-send-replies
-返信パケットからすべての返信を送出します (@code{gnus-soup-send-replies})。
-
-@item G s p
-@kindex G s p (グループ)
-@findex gnus-soup-pack-packet
-すべてのファイルを @sc{soup} パケットにまとめま
-す (@code{gnus-soup-pack-packet})。
-
-@item G s r
-@kindex G s r (グループ)
-@findex nnsoup-pack-replies
-すべての返信を返信パケットにまとめます (@code{nnsoup-pack-replies})。
-
-@item O s
-@kindex O s (概略)
-@findex gnus-soup-add-article
-この概略モード命令は、現在の記事を @sc{soup} パケットに追加しま
-す (@code{gnus-soup-add-article})。これはプロセス/接頭引数の習慣に従いま
-す (@pxref{Process/Prefix})。
-@end table
-
-Gnus がこれらすべてのものをどこに置くかをカスタマイズするための、いくつ
-かの変数があります。
-
-@table @code
-@item gnus-soup-directory
-@vindex gnus-soup-directory
-@sc{soup} パケットの作成中に Gnus が中間ファイルを保存するディレクトリー
-です。ディフォルトは @file{~/SoupBrew/} です。
-
-@item gnus-soup-replies-directory
-@vindex gnus-soup-replies-directory
-返信パケットの送信中に Gnus が使用する一時ディレクトリーです。
-@file{~/SoupBrew/SoupReplies/} がディフォルトです。
-
-@item gnus-soup-prefix-file
-@vindex gnus-soup-prefix-file
-Gnus が最後に使った接頭語を保存するファイル名です。ディフォルト
-は @samp{gnus-prefix} です。
-
-@item gnus-soup-packer
-@vindex gnus-soup-packer
-@sc{soup} パケットをまとめる命令を作るためのフォーマット文字列です。ディ
-フォルトは @samp{tar cf - %s | gzip > $HOME/Soupout%d.tgz} です。
-
-@item gnus-soup-unpacker
-@vindex gnus-soup-unpacker
-@sc{soup} パケットを取り出す命令を作るためのフォーマット文字列です。ディ
-フォルトは @samp{gunzip -c %s | tar xvf -} です。
-
-@item gnus-soup-packet-directory
-@vindex gnus-soup-packet-directory
-Gnus が返信パケットを探す場所です。ディフォルトは @file{~/} です。
-
-@item gnus-soup-packet-regexp
-@vindex gnus-soup-packet-regexp
-@code{gnus-soup-packet-directory} にある @sc{soup} パケットに合致する正
-規表現です。
-@end table
-
-@node SOUP Groups
-@subsubsection SOUP グループ
-@cindex nnsoup
-
-@code{nnsoup} は @sc{soup} パケットを読むためのバックエンドです。これは
-入ってきたパケットを読み込み、それを取り出し、あなたの都合が良いときにそ
-こで読むディレクトリーに展開します。
-
-これらはこの振る舞いをカスタマイズできる変数です:
-
-@table @code
-@item nnsoup-tmp-directory
-@vindex nnsoup-tmp-directory
-@code{nnsoup} が @sc{soup} パケットを展開するとき、このディレクトリー内
-で行ないます (ディフォルトは @file{/tmp/})。
-
-@item nnsoup-directory
-@vindex nnsoup-directory
-次に @code{nnsoup} は、それぞれのメッセージと索引ファイルをこのディレク
-トリーに移動させます。ディフォルトは @file{~/SOUP/} です。
-
-@item nnsoup-replies-directory
-@vindex nnsoup-replies-directory
-すべての返信は、返信パケットにまとめられる前にこのディレクトリーに格納さ
-れます。ディフォルトは @file{~/SOUP/replies/} です。
-
-@item nnsoup-replies-format-type
-@vindex nnsoup-replies-format-type
-返信パケットの @sc{soup} 形式です。ディフォルトは @samp{?n} (rnews) で、
-この変数には触るべきではないと私は思います。たぶん文書に明記すべきでさえ
-なかったね。しまった! もう手遅れか。
-
-@item nnsoup-replies-index-type
-@vindex nnsoup-replies-index-type
-返信パケットの索引の種類です。ディフォルトは @samp{?n} で、意味は「なし」
-です。これもいじるんじゃないよ!
-
-@item nnsoup-active-file
-@vindex nnsoup-active-file
-@code{nnsoup} がたくさんの情報を格納する場所です。これは @code{nntp} で
-言うところの「アクティブファイル」ではなく、Emacs Lisp のファイルです。
-このファイルを無くしてしまったり、何か壊してしまったら、あなたは死にます。
-ディフォルトは @file{~/SOUP/active} です。
-
-@item nnsoup-packer
-@vindex nnsoup-packer
-返信 @sc{soup} パケットをまとめる命令を作るためのフォーマット文字列です。
-ディフォルトは @samp{tar cf - %s | gzip > $HOME/Soupin%d.tgz} です。
-
-@item nnsoup-unpacker
-@vindex nnsoup-unpacker
-入ってくる @sc{soup} パケットを展開するための命令文字列の形式です。ディ
-フォルトは @samp{gunzip -c %s | tar xvf -} です。
-
-@item nnsoup-packet-directory
-@vindex nnsoup-packet-directory
-入ってきたパケットを @code{nnsoup} が探す場所です。ディフォルト
-は @file{~/} です。
-
-@item nnsoup-packet-regexp
-@vindex nnsoup-packet-regexp
-入ってきた @sc{soup} パケットに合致する正規表現です。ディフォルト
-は @samp{Soupout} です。
-
-@item nnsoup-always-save
-@vindex nnsoup-always-save
-@code{nil} 以外であれば、メッセージを一通投稿する度にその返信バッファー
-を保存します。
-@end table
-
-@node SOUP Replies
-@subsubsection SOUP 返信
-
-単に @code{nnsoup} を使うだけで、自動的に送信したニュース記事やメール
-が @sc{soup} 返信パケットに納まるわけではありません。そうするためには、
-もうちょっと働かなくてはなりません。
-
-@findex nnsoup-set-variables
-@code{nnsoup-set-variables} 命令は、あなたのすべてのフォローアップ記事と
-返信が @sc{soup} システムの処理に渡るように、適切な変数を設定します。
-
-具体的には、これが実際に行なわれることです。
-
-@lisp
-(setq message-send-news-function 'nnsoup-request-post)
-(setq message-send-mail-function 'nnsoup-request-mail)
-@end lisp
-
-本当にそれだけです。ニュース記事だけを @sc{soup} システムに処理させたけ
-れば、最初の行だけを使ってください。メールだけを @sc{soup} させたいなら、
-二番目を使ってください。
 
 @node Mail-To-News Gateways
 @subsection メールからニュースへのゲートウェイ
@@ -29041,12 +28702,12 @@ Emacs をローカルのマシンで実行していて、非常に細いひもの向こうのマシンか
 
 他のバックエンドのための変数として @code{nndiary-nov-is-evil},
 @code{nndir-nov-is-evil}, @code{nnfolder-nov-is-evil},
-@code{nnimap-nov-is-evil}, @code{nnml-nov-is-evil},
-@code{nnspool-nov-is-evil} および @code{nnwarchive-nov-is-evil} がありま
-す。@code{gnus-nov-is-evil} に @code{nil} 以外の値を与えると、それらすべ
-ての変数を上書きしてしまうことに注意してください。@footnote{もっと
-も @code{nnkiboze}, @code{nnultimate} および @code{nnwfm} の各バックエン
-ドには、それら専用の nn*-nov-is-evil がありませんが。}
+@code{nnimap-nov-is-evil}, @code{nnml-nov-is-evil} およ
+び @code{nnspool-nov-is-evil} があります。
+@code{gnus-nov-is-evil} に @code{nil} 以外の値を与えると、それらすべての
+変数を上書きしてしまうことに注意してください。@footnote{もっと
+も @code{nnkiboze} および @code{nnwfm} の各バックエンドには、それら専用
+の nn*-nov-is-evil がありませんが。}
 @end table
 
 @node Slow Terminal Connection

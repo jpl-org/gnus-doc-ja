@@ -194,6 +194,37 @@ Message は返答がどこに行くかを決定するために標準の方法を使いますが、
 合致するアドレスは @code{Cc} ヘッダーから取り除かれます。@code{nil} にす
 ると、あなたの名前だけが取り除かれます。
 
+@vindex message-prune-recipient-rules
+@code{message-prune-recipient-rules} は、広い返答をするときに特定のアド
+レスを取り除くために使います。重複したアドレスのようなものを削除するため
+に使うという意味です。これはリストのリストです。最初の要素は、ある規則を
+適用するための、特定のアドレスに合致する正規表現です。そして 2つ目は、取
+り除くべきアドレスに合致するための、最初の正規表現に基づいて拡張される正
+規表現です。
+
+と、説明はややこしいのですが、使うのは簡単です。
+
+例えば @samp{foo@@example.org} からメールを受け取ったのだけれど、
+Cc のリストに実は同じ人の @samp{foo@@zot.example.org} が含まれていると、
+広い返答はそれら両方のアドレス宛てに出て行ってしまうでしょう。
+
+これを避けるには、以下のようなことをすれば良いのです:
+
+@lisp
+(setq message-prune-recipient-rules
+      '(("^\\([^@@]+\\)@@\\(.*\\)" "\\1@@.*[.]\\2")))
+@end lisp
+
+例えばもし、@samp{cvs@@example.org} からのメッセージに対するすべての広い
+返答がそのアドレスだけに行き、他には行かないようにしたい (つまり受取人の
+リストに @samp{cvs@@example.org} があったら、他のすべての受取人を宛先か
+ら除外したい) のであれば:
+
+@lisp
+(setq message-prune-recipient-rules
+      '(("cvs@@example.org" ".")))
+@end lisp
+
 @vindex message-wide-reply-confirm-recipients
 @code{message-wide-reply-confirm-recipients} が非-@code{nil} だったら、
 複数の受取人に返答したいかどうかの確認を求められます。ディフォルト
