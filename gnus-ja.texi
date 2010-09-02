@@ -726,7 +726,6 @@ Document Groups
 Combined Groups
 
 * Virtual Groups::              $B$?$/$5$s$N%0%k!<%W$N5-;v$r9gJ;$9$k(B
-* Kibozed Groups::              $B%K%e!<%9%9%W!<%k$NCf$+$i$N5-;v$r8!:w$9$k(B
 
 Email Based Diary
 
@@ -2588,14 +2587,6 @@ Gnus $B%"!<%+%$%V%0%k!<%W$r:n@.$7$^(B
 $B$F$N5-;v$r4^$`%0%k!<%W$,(B @code{gnus-group-archive-directory} $B$r4p$K:n@.(B
 $B$5$l$^$9!#(B
 
-@item G k
-@kindex G k ($B%0%k!<%W(B)
-@findex gnus-group-make-kiboze-group
-@cindex nnkiboze
-kiboze $B%0%k!<%W$r:n@.$7$^$9!#%W%m%s%W%H$GL>A0$H!"(Bkiboze $B%0%k!<%W$K!V4^$a(B
-$B$?$$!W%0%k!<%W$K9g$&@55,I=8=$H!"%X%C%@!<$K9g$&J8;zNs$NAH$rF~NO$7$^(B
-$B$9(B (@code{gnus-group-make-kiboze-group})$B!#(B@xref{Kibozed Groups}.
-
 @item G D
 @kindex G D ($B%0%k!<%W(B)
 @findex gnus-group-enter-directory
@@ -4343,8 +4334,7 @@ Windows ($B$H(B cygwin)$B!"(BMac OS X $B$*$h$S(B Solaris $B$N$b$H$G$bF0:n
 $B;H$C$F$$$k>l9g$O%3%T!<$,:n$i$l$^$9(B)$B!#(BMairix $B$O$=$N$h$&$J2>A[%U%)%k%@!<$K(B
 $B$9$G$K8!:w7k2L$rDs<($7$F$$$k$N$G!"$"$k%a!<%k8!:w$N7k2L$rDs<($9$k!V8-$$!W(B
 $B%a!<%k!&%U%)%k%@!<$r:n@.$9$k$?$a$K30It$N%W%m%0%i%`$H$7$F;HMQ$9$k$N$KHs>o(B
-$B$K$h$/E,$7$F$$$^$9!#$3$l$O(B Kiboze $B%0%k!<%W(B (@pxref{Kibozed Groups}) $B$K;w(B
-$B$F$$$^$9$,!"$O$k$+$KB.$$$G$9!#(B
+$B$K$h$/E,$7$F$$$^$9!#(B
 
 @node nnmairix requirements
 @subsubsection nnmairix $B$r;H$&$?$a$KI,MW$J$3$H(B
@@ -12295,6 +12285,14 @@ Gnus $B$O(B @code{gnus-blocked-images} $B$,$I$&@_Dj$5$l$F$$$k$+$K1~$8$F2hA|$r
 @item gnus-html-frame-width
 @vindex gnus-html-frame-width
 HTML $B$rIA2h$9$k$H$-$NI}$G$9!#%G%#%U%)%k%H$O(B 70 $B$G$9!#(B
+
+@item gnus-max-image-proportion
+@vindex gnus-max-image-proportion
+$BI=<($5$l$k2hA|$,!"$=$l$i$,$"$k%&%#%s%I%&$KBP$7$F$I$l$/$i$$Bg$-$$$+$rI=$9(B
+$BCM$G$9!#(B0.7 $B$H$$$&CM(B ($B%G%#%U%)%k%H(B) $B$O!"$=$l$i$,%&%#%s%I%&$NI}$H9b$5(B
+$B$N(B 70% $B$r<h$k$3$H$,$G$-$k$3$H$r0UL#$7$^$9!#2hA|$,$3$l$h$jBg$-$/$F!"$+(B
+$B$D(B Emacs $B$,$=$l$r9T$J$&$3$H$,$G$-$k$J$i$P(B ($BLuCm(B: ImageMagick $B%i%$%V%i%j!<(B
+$B$r;H$&$h$&$K9=C[$5$l$F$$$k$J$i$P(B)$B!"$3$l$i$N4p=`$K9g$&$h$&$K=L>.$5$l$^$9!#(B
 @end table
 
 $B$3$l$r;H$&$?$a$K$O(B @code{w3m} $B$H(B @code{curl} $B$,%$%s%9%H!<%k$5$l$F$$$kI,(B
@@ -18697,7 +18695,6 @@ Gnus $B$O!"$9$Y$F$N%0%k!<%W$N<oN`$r:.9g$7$F!"Bg$-$J%0%k!<%W$K9gJ;$5$;$k$3(B
 
 @menu
 * Virtual Groups::              $B$?$/$5$s$N%0%k!<%W$N5-;v$r9gJ;$9$k(B
-* Kibozed Groups::              $B%K%e!<%9%9%W!<%k$NCf$+$i$N5-;v$r8!:w$9$k(B
 @end menu
 
 @node Virtual Groups
@@ -18787,59 +18784,6 @@ Gnus $B$K5-;v$O%K%e!<%9$G$O$J$$%P%C%/%(%s%I$+$i$d$C$FMh$?$H9p$2$^$9!#(B($BC1$
 @code{nnvirtual} $B%0%k!<%W$O!"5-;v$H0u0J30$O9=@.MWAG$N%0%k!<%W$+$i7Q>5$7(B
 $B$^$;$s(B---$BNc$($P%0%k!<%W%Q%i%a!<%?!<$b$=$&$J$N$G$9$,!"$=$l$i$O7Q>5$5$l$^(B
 $B$;$s!#(B
-
-@node Kibozed Groups
-@subsection Kiboze $B%0%k!<%W(B
-@cindex nnkiboze
-@cindex kibozing
-
-@acronym{OED} ($B%*%C%/%9%U%)!<%I1Q8lBg<-E5(B) $B$K$h$l$P!"(B@dfn{Kiboze} $B$9$k!"(B
-$B$H$O!"!V%K%e!<%9%9%W!<%kA4BN(B ($B$"$k$$$O$=$N0lIt(B) $B$r(B grep $B$9$k$3$H!W$HDj5A(B
-$B$5$l$F$$$^$9!#(B@code{nnkiboze} $B$O$3$l$r$"$J$?$N$?$a$K9T$J$C$F$/$l$k%P%C%/(B
-$B%(%s%I$G$9!#4r$7$$$J$"(B! $B$3$l$G$I$s$J(B @acronym{NNTP} $B%5!<%P!<$G$b!"MW$j$b(B
-$B$7$J$$8!:w$G;_$^$C$F$7$^$&$^$G9s;H$9$k$3$H$,$G$-$k$>!#$"$"!"$J$s$F9,$;$J(B
-$B$s$@(B!
-
-@kindex G k ($B%0%k!<%W(B)
-kiboze $B%0%k!<%W$r:n$k$K$O!"%0%k!<%W%P%C%U%!!<$G(B @kbd{G k} $BL?Na$r;H$C$F$/(B
-$B$@$5$$!#(B
-
-@code{nnkiboze} $BJ}K!$K$*$1$k%"%I%l%9Ms$O!"(B@code{nnvirtual} $B$HF1MM$K!"(B
-@code{nnkiboze} $B$K!V4^$a$?$$!W%0%k!<%W$K9gCW$9$k@55,I=8=$G$9!#$3$3(B
-$B$,(B @code{nnkiboze} $B$H(B @code{nnvirtual} $B%P%C%/%(%s%I$N:G$bN`;w$7$F$$$kE@(B
-$B$G$9!#(B
-
-$B9=@.MWAG$N%0%k!<%W$rNs5s$9$k$3$N@55,I=8=$K2C$($F!"(B@code{nnkiboze} $B%0%k!<(B
-$B%W$K$O!"%0%k!<%WFb$N$I$N5-;v$r4^$a$k$+$r7h$a$k%9%3%"%U%!%$%k$,$J$/$F$O$J(B
-$B$j$^$;$s(B (@pxref{Scoring})$B!#(B
-
-@kindex M-x nnkiboze-generate-groups
-@findex nnkiboze-generate-groups
-$B$"$J$?$,M_$7$$(B @code{nnkiboze} $B%0%k!<%W$r:n@.$7$?8e$G!"(B
-@kbd{M-x nnkiboze-generate-groups} $B$r<B9T$7$J$1$l$P$J$j$^$;$s!#$3$NL?Na(B
-$B$O;~4V$,$+$+$j$^$9!#$H$C$F$b$+$+$j$^$9!#$9$4$/!"$9$4!<$/$+$+$j$^$9!#(B
-Gnus $B$O$=$N(B @code{nnkiboze} $B%0%k!<%W$N0lIt$H$J$k$Y$-5-;v$,$"$k$+$I$&$+$r(B
-$BD4$Y$k$?$a$K!"A4It$N9=@.MWAG$N%0%k!<%W$NA4It$N5-;v$+$i%X%C%@!<$r<hF@$7!"(B
-$B$=$l$i$9$Y$F$KBP$7$F%9%3%"=hM}$r<B9T$7$J$/$F$O$J$i$J$$$N$G$9!#(B
-
-$B8BDj$7$?@55,I=8=$r;H$C$F!"9=@.MWAG$N%0%k!<%W$N?t$rM^$($F$/$@$5$$!#$5$b$J(B
-$B$$$H!"%7%9%F%`4IM}<T$O$"$J$?$KJD8}$7$F$7$^$$!"(B@acronym{NNTP} $B%5!<%P!<$+(B
-$B$i$"$J$?$rDI$$=P$7$FFsEY$HF~$l$J$$$h$&$K$7$F$7$^$&$+$b$7$l$^$;$s!#$b$C$H(B
-$BJQ$J$3$H$@$C$F5/$3$j$^$7$?!#(B
-
-@code{nnkiboze} $B$r9=@.$9$k%0%k!<%W$O@8$-$F$$$kI,MW$O$"$j$^$;$s(B---$B;`$s$G(B
-$B$$$F$bNI$$$7!"30It%0%k!<%W$G$b9=$$$^$;$s!#L5@)8B$G$9!#(B
-
-@vindex nnkiboze-directory
-@code{nnkiboze} $B%0%k!<%W$r@8@.$9$k$H!"Fs$D$N%U%!%$%k(B
-$B$,(B @code{nnkiboze-directory} $B$K=q$-9~$^$l$^$9!#$=$N%G%#%U%)%k%H(B
-$B$O(B @file{~/News/kiboze/} $B$G$9!#0lJ}$O$=$N%0%k!<%W$N$9$Y$F$N5-;v(B
-$B$N(B @acronym{NOV} $B%X%C%@!<9T$r4^$_!"$b$&0lJ}$O9=@.MWAG$N5-;v$r8+$D$1$k$?(B
-$B$a$K$I$N%0%k!<%W$,8!:w$5$l$?$+$N>pJs$r3JG<$9$k!"(B@file{.newsrc} $B$NJd=u%U%!(B
-$B%$%k$G$9!#(B
-
-$B4{FI$K$J$C$?(B @code{nnkiboze} $B%0%k!<%W$N5-;v$O!"$=$l$i$N5-;v(B
-$B$N(B @acronym{NOV} $B9T$,(B @acronym{NOV} $B%U%!%$%k$+$i:o=|$5$l$^$9!#(B
 
 @node Email Based Diary
 @section $BEE;R%a!<%k$K$h$kF|Dx4IM}(B
@@ -26983,10 +26927,6 @@ Gnus $B$O(B @file{.emacs} $B%U%!%$%k$r$0$A$c$0$A$c$K$9$k$3$H$rHr$1$k$?$a$K!":
 $BL\$G=hM}$r<B9T$9$k$3$H$,$G$-$^$9(B (@pxref{Process/Prefix})$B!#(B
 
 @item
-$B%0%k!<%W72$N0lIt$r(B grep $B$7$F!"$=$N7k2L$+$i0l$D$N%0%k!<%W$r:n$k$3$H$,$G$-(B
-$B$^$9(B (@pxref{Kibozed Groups})$B!#(B
-
-@item
 $B%0%k!<%W$N0lMw$r!"$(!<$H!"$I$s$J>r7o$G$G$b!"I=<($9$k$3$H$,$G$-$^(B
 $B$9(B (@pxref{Listing Groups})$B!#(B
 
@@ -28705,9 +28645,7 @@ Emacs $B$r%m!<%+%k$N%^%7%s$G<B9T$7$F$$$F!"Hs>o$K:Y$$$R$b$N8~$3$&$N%^%7%s$+(B
 @code{nnimap-nov-is-evil}, @code{nnml-nov-is-evil} $B$*$h(B
 $B$S(B @code{nnspool-nov-is-evil} $B$,$"$j$^$9!#(B
 @code{gnus-nov-is-evil} $B$K(B @code{nil} $B0J30$NCM$rM?$($k$H!"$=$l$i$9$Y$F$N(B
-$BJQ?t$r>e=q$-$7$F$7$^$&$3$H$KCm0U$7$F$/$@$5$$!#(B@footnote{$B$b$C$H(B
-$B$b(B @code{nnkiboze} $B$*$h$S(B @code{nnwfm} $B$N3F%P%C%/%(%s%I$K$O!"$=$l$i@lMQ(B
-$B$N(B nn*-nov-is-evil $B$,$"$j$^$;$s$,!#(B}
+$BJQ?t$r>e=q$-$7$F$7$^$&$3$H$KCm0U$7$F$/$@$5$$!#(B
 @end table
 
 @node Slow Terminal Connection
