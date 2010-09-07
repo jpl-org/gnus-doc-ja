@@ -10093,6 +10093,13 @@ Gnus でメールを読むことの利点は、それが単純なバグを素晴らしい不条理に置
 @findex gnus-article-remove-images
 記事バッファーからすべての画像を削除しま
 す (@code{gnus-article-remove-images})。
+
+@item W D W
+@kindex W D W (Summary)
+@findex gnus-html-show-images
+@code{gnus-article-html} で描画した @acronym{HTML} 記事を読んでいるとき
+に、阻止された画像をこのコマンドでバッファーに挿入することができま
+す (@code{gnus-html-show-images})。
 @end table
 
 @node Article Signature
