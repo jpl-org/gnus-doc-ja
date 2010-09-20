@@ -9592,6 +9592,9 @@ Emacs MIME Manual}) で設定された関数を使いますが、変
 りです:
 
 @table @code
+@item gnus-article-html
+w3m を使って Gnus に描画させます。
+
 @item w3
 Emacs/W3 を使います。
 
