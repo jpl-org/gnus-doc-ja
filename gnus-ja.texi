@@ -29225,13 +29225,16 @@ field      = <text except TAB>
 当のグループと記事番号を知ることができるようになるでしょう。これが不可能
 な場合は、記事の取得に成功したときに @code{t} を返さなければなりません。
 
-@item (nnchoke-request-group GROUP &optional SERVER FAST)
+@item (nnchoke-request-group GROUP &optional SERVER FAST INFO)
 
 @var{group} のデータを取得します。この関数には @var{group} を現在のグルー
 プにするという副作用もあります。
 
 @var{fast} が設定されたなら、有用なデータを返す面倒を行なわずに、単
 に @var{group} を現在のグループにします。
+
+@var{info} が与えられると、バックエンドがグループの情報構
+造 (@var{info}) を更新することを可能にします。
 
 これが結果のデータの例と、定義それ自体です:
 
