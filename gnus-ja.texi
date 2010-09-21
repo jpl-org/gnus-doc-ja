@@ -18160,7 +18160,7 @@ read, seen/unseen $B%U%i%0$NJ];}(B) $B$rM?$($k$3$H$K$h$C$F!"$=$N%j%9%H$K9VFIE
 @cindex expunge
 @cindex manual expunging
 @kindex G x ($B%0%k!<%W(B)
-@findex gnus-group-nnimap-expunge
+@findex gnus-group-expunge-group
 @code{nnimap-expunge-on-close} $B$K(B @code{never} $B$r@_Dj$7$F$$$k>l9g$K$O!"(B
 $B%a!<%k%\%C%/%9$N$9$Y$F$N>C5n(B (deleted) $B$5$l$?5-;v$r<jF0$G:o(B
 $B=|(B (expunge) $B$9$kI,MW$,$"$k$G$7$g$&!#$^$5$K$3$l$,(B @kbd{G x} $B$,9T$J$&$3$H(B
