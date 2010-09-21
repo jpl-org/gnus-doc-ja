@@ -1509,21 +1509,9 @@ RFC2047 は二つのエンコーディングの形式を定めています。一つは @code{Q}
 
 @item rfc2047-encode-parameter
 @findex rfc2047-encode-parameter
-パラメーターを RFC2047 ふうの様式でエンコードします。これ
-は @code{rfc2231-encode-string} の置き換えです。@xref{rfc2231}.
-
-ファイルを @acronym{MIME} のパートとして添付するとき、
-非-@acronym{ASCII} 文字を含むファイル名を指定するには RFC2231 のエンコー
-ディングを使わなければなりません。しかし、実際問題として多くのメールソフ
-トがそれをサポートしていないので、受信者は正しいファイル名を抽出すること
-ができません。代わりに RFC2047 ふうのエンコーディングが広く受け入れられ
-ています。そんな情けない風潮を甘受して、この関数は RFC2047 によく似たエ
-ンコーディングの機能を提供します。これを使うには @file{~/.gnus.el} ファ
-イルに次の行を入れてください:
-
-@lisp
-(defalias 'mail-header-encode-parameter 'rfc2047-encode-parameter)
-@end lisp
+パラメーターを RFC2047 ふうの様式でエンコードします。これは関
+数 @code{rfc2231-encode-string} の代用です。それが標準なのですが、多くの
+メイラーがサポートしません。@xref{rfc2231}.
 @end table
 
 @node time-date
