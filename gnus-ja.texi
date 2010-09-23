@@ -1981,9 +1981,7 @@ Gnus $B$O(B @code{gnus-user-format-function-}@samp{X} $B4X?t$r8F$S=P$7$^$9!#$
 @vindex gnus-group-update-hook
 @findex gnus-group-highlight-line
 @code{gnus-group-update-hook} $B$O%0%k!<%W9T$,JQ99$5$l$?$H$-$K8F$S=P$5$l$^(B
-$B$9!#$3$l$O(B @code{gnus-visual} $B$,(B @code{nil} $B$N$H$-$O8F$S=P$5$l$^$;$s!#$3(B
-$B$N%U%C%/$O%G%#%U%)%k%H$G$O(B @code{gnus-group-highlight-line} $B$r8F$S=P$7$^(B
-$B$9!#(B
+$B$9!#$3$l$O(B @code{gnus-visual} $B$,(B @code{nil} $B$N$H$-$O8F$S=P$5$l$^$;$s!#(B
 
 @node Group Maneuvering
 @section $B%0%k!<%WA`:n(B
