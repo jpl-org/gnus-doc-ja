@@ -1644,7 +1644,13 @@ Maintenance})。
 @item gnus-startup-jingle
 @vindex gnus-startup-jingle
 上の変数が @code{nil} でないときに演奏される短い曲です。ディフォルト
-は @samp{Tuxdemoon.Jingle4.au} です。
+は @samp{Tuxedomoon.Jingle4.au} です。
+
+@item gnus-use-backend-marks
+@vindex gnus-use-backend-marks
+もし @code{nil} でなかったら Gnus は記事の印を @file{.newsrc.eld} ファイ
+ルとバックエンドの両方に格納します。これはグループの操作をいくらか遅くし
+ます。
 @end table
 
 @node Group Buffer
