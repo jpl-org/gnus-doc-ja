@@ -593,7 +593,7 @@ Article Treatment
 * Article Buttons::             URL $B$d(B Message-ID $B$d%"%I%l%9$J$I$r%/%j%C%/$9$k(B
 * Article Button Levels::       $B%\%?%s$N8+$(J}$r@)8f$9$k(B
 * Article Date::                $B$0$:$0$:8@$&$J!"@$3&;~$@(B!
-* Article Display::             X-Face, Picons, Smileys $B$rI=<($9$k(B
+* Article Display::             X-Face, Picons, Smileys, Gravatars $B$rI=<($9$k(B
 * Article Signature::           $B=pL>$C$F2?(B?
 * Article Miscellanea::         $BB>$N$$$m$$$m$J$b$N(B
 
@@ -842,6 +842,7 @@ Image Enhancements
 * Face::                        $B$h$j%U%!%s%-!<$G$A$C$A$c$J%+%i!<$N3($rI=<($9$k(B
 * Smileys::                     $B9,$;$J4i$r$^$5$K$=$N$h$&$KI=<($9$k(B
 * Picons::                      $B$"$J$?$,FI$s$G$$$k$b$N$N3($rI=<($9$kJ}K!(B
+* Gravatars::                   $B$"$J$?$,FI$s$G$$$k?M!9$N%"%P%?!<$rI=<($7$^$9(B
 * XVarious::                    XEmacs $B$N$?$a$N(B Gnus $B$NJQ?t(B
 
 Thwarting Email Spam
@@ -2576,20 +2577,6 @@ Gnus $B$ODL>o!"(B@code{gnus-activate-level} $B$+$=$l$h$j>.$5$$%l%Y%k$N%0%k!<%
 @findex gnus-group-make-help-group
 
 Gnus $B%X%k%W%0%k!<%W$r:n@.$7$^$9(B (@code{gnus-group-make-help-group})$B!#(B
-
-@item G a
-@kindex G a ($B%0%k!<%W(B)
-@cindex (ding) archive
-@cindex archive group
-@findex gnus-group-make-archive-group
-@vindex gnus-group-archive-directory
-@vindex gnus-group-recent-archive-directory
-Gnus $B%"!<%+%$%V%0%k!<%W$r:n@.$7$^(B
-$B$9(B (@code{gnus-group-make-archive-group})$B!#%G%#%U%)%k%H$G$O:G$b:G6a$N5-(B
-$B;v$r;X$7$F$$$k%0%k!<%W$,:n@.$5$l$^$9(B
-$B$,(B (@code{gnus-group-recent-archive-directory})$B!"@\F,0z?t$rM?$($k$H$9$Y(B
-$B$F$N5-;v$r4^$`%0%k!<%W$,(B @code{gnus-group-archive-directory} $B$r4p$K:n@.(B
-$B$5$l$^$9!#(B
 
 @item G D
 @kindex G D ($B%0%k!<%W(B)
@@ -5142,19 +5129,6 @@ Gnus $B$O(B @acronym{FAQ} $B$r(B @code{gnus-group-faq-directory} $B$+$i<hF@
 $B$b$7:G=i$N%5%$%H$+$i$N<hF@$,<:GT$7$?>l9g!"(B
 Gnus $B$O(B @code{gnus-group-faq-directory} $B$NCM$r$9$Y$F!"0l$D0l$D%*!<%W%s$7(B
 $B$F$_$h$&$H$7$^$9!#(B
-
-@item H c
-@kindex H c ($B%0%k!<%W(B)
-@findex gnus-group-fetch-charter
-@vindex gnus-group-charter-alist
-@cindex charter
-$B8=:_$N%0%k!<%W$N7{>O$r(B web $B%V%i%&%6!<$G3+$3$&$H$7$^(B
-$B$9(B (@code{gnus-group-fetch-charter})$B!#@\F,0z?t$,M?$($i$l$k$H%0%k!<%WL>$r(B
-$B?R$M$^$9!#(B
-
-Gnus $B$O(B @code{gnus-group-charter-alist} $B$r;H$C$F7{>O$N=j:_$rC5$7$^$9!#=j(B
-$B:_$,$o$+$i$J$+$C$?$i!"(BGnus $B$O$=$N%0%k!<%W$N%3%s%H%m!<%k%a%C%;!<%8$r<hF@(B
-$B$7$^$9!#$=$l$K$O7{>O$r4^$s$G$$$k$3$H$,$"$j$^$9$+$i!#(B
 
 @item H C
 @kindex H C ($B%0%k!<%W(B)
@@ -9027,7 +9001,8 @@ Gnus $B$O%U%!%$%kL>$K4p$E$$$F7?$r?dB,$7$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#(B
 * Article Buttons::             URL $B$d(B Message-ID $B$d%"%I%l%9$J$I$r%/%j%C%/$9$k(B
 * Article Button Levels::       $B%\%?%s$N8+$(J}$r@)8f$9$k(B
 * Article Date::                $B$0$:$0$:8@$&$J!"@$3&;~$@(B!
-* Article Display::             X-Face, Picons, Smileys $B$rI=<($9$k(B
+* Article Display::             $B$$$m$s$J$b$N$rI=<($9$k(B:
+                                X-Face, Picons, Smileys, Gravatars
 * Article Signature::           $B=pL>$C$F2?(B?
 * Article Miscellanea::         $BB>$N$$$m$$$m$J$b$N(B
 @end menu
@@ -10040,6 +10015,7 @@ Gnus $B$G%a!<%k$rFI$`$3$H$NMxE@$O!"$=$l$,C1=c$J%P%0$rAG@2$i$7$$IT>rM}$KCV(B
 @cindex picons
 @cindex x-face
 @cindex smileys
+@cindex gravatars
 
 $B$3$l$i$N%3%^%s%I$O!"$$$m$s$J<h$k$KB-$i$J$$%.%_%C%/(B (gimmicks) $B$NI=<($r!"(B
 $B$=$l$i$r%5%]!<%H$7$F$$$k(B Emacs $B$N5-;v%P%C%U%!!<$KDI2C$7$^$9!#(B
@@ -10055,6 +10031,9 @@ Gnus $B$G%a!<%k$rFI$`$3$H$NMxE@$O!"$=$l$,C1=c$J%P%0$rAG@2$i$7$$IT>rM}$KCV(B
 
 $B0lJ}(B Picon $B$O$"$J$?<+?H$N%7%9%F%`$K0MB8$7!"(BGnus $B$O%X%C%@!<$K9gCW$9$k$"$J(B
 $B$?$N;}$AJ*$rC5$7$F$_$^$9(B (@pxref{Picons})$B!#(B
+
+Gravatars $B$O(B @uref{http://www.gravatar.com/} $B$+$i%*%s%i%$%s$G<hF@$7$^(B
+$B$9(B (@pxref{Gravatars})$B!#(B
 
 $B$3$l$i$9$Y$F$N5!G=$O%H%0%k$G$9!#$b$7$9$G$K$=$l$i$,B8:_$7$F$$$?$J$i$P!"$=(B
 $B$l$i$O:o=|$5$l$^$9!#(B
@@ -10094,6 +10073,17 @@ Gnus $B$G%a!<%k$rFI$`$3$H$NMxE@$O!"$=$l$,C1=c$J%P%0$rAG@2$i$7$$IT>rM}$KCV(B
 $B$9$Y$F$N%K%e!<%9%X%C%@!<(B ($B$9$J$o(B
 $B$A(B @code{Newsgroups} $B$H(B @code{Followup-To}) $B$r(B Picon $B2=$7$^(B
 $B$9(B (@code{gnus-treat-newsgroups-picon})$B!#(B
+
+@item W D g
+@kindex W D g ($B35N,(B)
+@findex gnus-treat-from-gravatar
+@code{From} $B%X%C%@!<$r%"%P%?!<2=$7$^$9(B (@code{gnus-treat-from-gravatar})$B!#(B
+
+@item W D h
+@kindex W D h ($B35N,(B)
+@findex gnus-treat-mail-gravatar
+$B%a!<%k%X%C%@!<$<$s$V(B ($B$D$^$j(B @code{Cc}$B!"(B@code{To}) $B$r%"%P%?!<2=$7$^(B
+$B$9(B (@code{gnus-treat-from-gravatar})$B!#(B
 
 @item W D D
 @kindex W D D ($B35N,(B)
@@ -11350,20 +11340,6 @@ Gnus $B$O(B @code{Message-ID} $B$rIU$1BX$($F(B ($BI=<($N$?$a$@$1$K(B) $B$
 @node Summary Group Information
 @subsection $B35N,%0%k!<%W>pJs(B
 
-@table @kbd
-@item H f
-@kindex H f ($B35N,(B)
-@findex gnus-summary-fetch-faq
-@vindex gnus-group-faq-directory
-$B8=:_$N%0%k!<%W$N(B @acronym{FAQ} (frequently asked questions ($BIQHK$K$5$l$k(B
-$B<ALd(B) $B$N%j%9%H(B) $B$r<hF@$7$h$&$H$7$^$9(B (@code{gnus-summary-fetch-faq})$B!#(B
-Gnus $B$O(B @code{gnus-group-faq-directory} ($BDL>o$3$l$O1s3V%^%7%s$N%G%#%l%/(B
-$B%H%j!<(B) $B$+$i(B @acronym{FAQ} $B$r<hF@$7$h$&$H$7$^$9!#$3$NJQ?t$O%G%#%l%/%H%j!<(B
-$B$N%j%9%H$G$"$k$3$H$b$G$-$^$9!#$=$N>l9g!"$3$NL?Na$K@\F,0z?t$rM?$($k$3$H$K(B
-$B$h$C$F$$$m$$$m$J%5%$%H$+$iA*$V$3$H$,$G$-$^$9!#$*$=$i(B
-$B$/(B @code{ange-ftp} $B$b$7$/$O(B @code{efs} $B$,%U%!%$%k$N<hF@$K;H$o$l$k$G$7$g(B
-$B$&!#(B
-
 @item H d
 @kindex H d ($B35N,(B)
 @findex gnus-summary-describe-group
@@ -12405,6 +12381,8 @@ HTML $B$rIA2h$9$k$H$-$NI}$G$9!#%G%#%U%)%k%H$O(B 70 $B$G$9!#(B
 @vindex gnus-treat-from-picon
 @vindex gnus-treat-mail-picon
 @vindex gnus-treat-newsgroups-picon
+@vindex gnus-treat-from-gravatar
+@vindex gnus-treat-mail-gravatar
 @vindex gnus-treat-display-smileys
 @vindex gnus-treat-body-boundary
 @vindex gnus-treat-display-x-face
@@ -12471,6 +12449,11 @@ HTML $B$rIA2h$9$k$H$-$NI}$G$9!#%G%#%U%)%k%H$O(B 70 $B$G$9!#(B
 @item gnus-treat-newsgroups-picon (head)
 
 @xref{Picons}.
+
+@item gnus-treat-from-gravatar (head)
+@item gnus-treat-mail-gravatar (head)
+
+@xref{Gravatars}.
 
 @item gnus-treat-display-smileys (t, integer)
 
@@ -23358,6 +23341,7 @@ Emacs 22 $B$O$7$^$9!#(B}$B$N$G!"(BGnus $B$O$3$l$rMxMQ$9$k$3$H$K$7$^$7$?!#(
 * Face::                        $B$h$j%U%!%s%-!<$G$A$C$A$c$J%+%i!<$N3($rI=<($9$k(B
 * Smileys::                     $B9,$;$J4i$r$^$5$K$=$N$h$&$KI=<($9$k(B
 * Picons::                      $B$"$J$?$,FI$s$G$$$k$b$N$N3($rI=<($9$kJ}K!(B
+* Gravatars::                   $B$"$J$?$,FI$s$G$$$k?M!9$N%"%P%?!<$rI=<($7$^$9(B
 * XVarious::                    XEmacs $B$N$?$a$N(B Gnus $B$NJQ?t(B
 @end menu
 
@@ -23669,6 +23653,49 @@ Picon $B$N%U%!%$%kL>$H$7$F;n$7$F$_$k=g$KJB$Y$i$l$?3HD%;R$N%j%9%H$G$9!#%G%#(B
 $B%U%)%k%H$O(B @code{("xpm" "gif" "xbm")} $B$+$i(B Emacs $B$KAH$_9~$^$l$F$$$J$$$b(B
 $B$N$r=|30$7$?$b$N$G$9!#(B
 @end table
+
+@c TRANSLATEME
+@node Gravatars
+@subsection Gravatars
+
+@iftex
+@iflatex
+\include{gravatars}
+@end iflatex
+@end iftex
+
+A gravatar is an image registered to an e-mail address.
+
+You can submit yours on-line at @uref{http://www.gravatar.com}.
+
+The following variables offer control over how things are displayed.
+
+@table @code
+
+@item gnus-gravatar-size
+@vindex gnus-gravatar-size
+The size in pixels of gravatars. Gravatars are always square, so one
+number for the size is enough.
+
+@item gnus-gravatar-relief
+@vindex gnus-gravatar-relief
+If non-nil, adds a shadow rectangle around the image. The value,
+relief, specifies the width of the shadow lines, in pixels. If relief
+is negative, shadows are drawn so that the image appears as a pressed
+button; otherwise, it appears as an unpressed button.
+
+@end table
+
+If you want to see them in the From field, set:
+@lisp
+(setq gnus-treat-from-gravatar 'head)
+@end lisp
+
+If you want to see them in the Cc and To fields, set:
+
+@lisp
+(setq gnus-treat-mail-gravatar 'head)
+@end lisp
 
 @node XVarious
 @subsection $B$5$^$6$^$J(B XEmacs $BJQ?t(B
