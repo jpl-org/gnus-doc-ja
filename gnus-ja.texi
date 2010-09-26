@@ -26930,8 +26930,6 @@ MS $B%&%#%s%I%&%:$G(B Gnus $B$r%$%s%9%H!<%k$9$k$K$O(B @file{make.bat} $B$r;
 
 @acronym{TLS}/@acronym{SSL} $B$,!"(B@file{tls.el} $B$H(B GNUTLS $B$r2p$7(B
 $B$F(B @acronym{IMAP} $B$H(B @acronym{NNTP} $B$G%5%]!<%H$5$l$k$h$&$K$J$j$^$7$?!#(B
-($B%5!<%I%Q!<%F%#!<$N(B) @file{ssl.el} $B$H(B OpenSSL $B$K$h$k8E(B
-$B$$(B @acronym{TLS}/@acronym{SSL} $B$O!"$^$@F/$-$^$9!#(B
 
 @item
 $B2~NI$5$l$?(B spam $BBP935!G=!#(B

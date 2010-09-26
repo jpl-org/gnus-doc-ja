@@ -1097,8 +1097,7 @@ $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 ような、外部の OpenPGP の実装を必要とします。OpenPGP より以前の実装であ
 る PGP 2.x と PGP 5.x もサポートします。PGP の実装への一つの Emacs イン
 ターフェースである (@pxref{Top, ,PGG, pgg-ja, PGG Manual}) が含まれてい
-ますが、Mailcrypt と Florian Weimer さんの @code{gpg.el} もサポートしま
-す。@xref{PGP Compatibility}.
+ますが、Mailcrypt もサポートします。@xref{PGP Compatibility}.
 
 @cindex gpg-agent
 Message はデータを暗号化するために内部的に GnuPG (@command{gpg} コマン
