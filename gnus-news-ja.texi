@@ -114,6 +114,12 @@ manual}.  EasyPG $B$O(B Emacs 23 $B$K4^$^$l$F$$$^$9$,!"C1FH$G$bMxMQ2DG=$G$9!#
 @c ***********************
 
 @itemize @bullet
+@c TRANSLATEME
+@item
+Symbols like @code{gcc-self} now has the same presedence rules in
+@code{gnus-parameters} as other ``real'' variables: The last match
+wins instead of the first match.
+
 @item
 $BF~$C$F$-$?%a!<%k$r0l;~C_$($k%U%!%$%k(B (@file{Incoming*}) $B$N8E$$$b$N$O!"B((B
 $B;~$G$O$J$/2?F|$+8e$K>C5n$5$l$^$9!#(B@xref{Mail Source Customization}.
@@ -262,6 +268,16 @@ Headers, ,$B%a%C%;!<%8%X%C%@!<(B, message-ja, Message Manual}.
 $B$9!#(B
 @end itemize
 
+@c TRANSLATEME
+@item Changes in Browse Server mode
+
+@itemize @bullet
+@item Gnus' sophisticated subscription methods are now available in
+Browse Server buffers as well using the variable
+@code{gnus-browse-subscribe-newsgroup-method}.
+
+@end itemize
+
 @item $B%P%C%/%(%s%I$NJQ99(B
 
 @itemize @bullet
@@ -353,6 +369,9 @@ Headers, ,$B%a%C%;!<%8%X%C%@!<(B, message-ja, Message Manual}.
 $B$r(B auto-expire $B$,M-8z$K$J$C$F$$$J$$%0%k!<%W$K%3%T!<$9$k$+0\F0$9$k$H$-$K(B
 $B4|8B@Z$l>C5n2DG=$N0u$,:o=|$5$l$k0J30$O!"0u$OJQ2=$7$^$;$s!#(B@xref{Expiring
 Mail}.
+
+@c TRANSLATEME
+@item NoCeM support has been removed.
 @end itemize
 @end itemize
 @c

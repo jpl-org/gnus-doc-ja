@@ -634,9 +634,9 @@ Select Methods
 
 * Server Buffer::               $B2>A[%5!<%P!<$r:n$C$FJT=8$9$k(B
 * Getting News::                USENET $B%K%e!<%9$r(B Gnus $B$GFI$`(B
+* Using @acronym{IMAP}::        @acronym{IMAP} $B$+$i%a!<%k$rFI$`(B
 * Getting Mail::                $B8D?ME*$J%a!<%k$r(B Gnus $B$GFI$`(B
 * Browsing the Web::            $BBgNL$N%&%'%V$N;q8;$+$i%a%C%;!<%8$r<hF@$9$k(B
-* IMAP::                        Gnus $B$r(B @acronym{IMAP} $B$N%/%i%$%"%s%H$H$7$F;H$&(B
 * Other Sources::               $B%G%#%l%/%H%j!<!"%U%!%$%k$rFI$`(B
 * Combined Groups::             $BJ#?t$N%0%k!<%W$r0l$D$N%0%k!<%W$K9gJ;$5$;$k(B
 * Email Based Diary::           $BF|Dx$r%a!<%k$G4IM}$9$k(B
@@ -702,15 +702,6 @@ Browsing the Web
 * Web Searches::                $BJ8;zNs$K9gCW$9$k5-;v$+$i%0%k!<%W$r:n$k(B
 * RSS::                         RDF Site Summary $B$rFI$`(B
 * Customizing W3::              Gnus $B$+$i(B Emacs/W3 $B$rA`:n$9$k(B
-
-@acronym{IMAP}
-
-* Splitting in IMAP::           nnimap $B$G%a!<%k$rJ,3d$9$k(B
-* Expiring in IMAP::            nnimap $B$K$h$k%a!<%k$N4|8B@Z$l>C5n(B
-* Editing IMAP ACLs::           $BB>$NMxMQ<T$N%a!<%k%\%C%/%9$X$N%"%/%;%9$r@)8B(B/$B5v2D$9$k(B
-* Expunging mailboxes::         $B!V%a!<%k%\%C%/%905=L!W%\%?%s$HEy2A$J$b$N(B
-* A note on namespaces::        Gnus $B$G(B @acronym{IMAP} $BL>A06u4V$r;H$&(B ($B;H$o$J$$(B) $BJ}K!(B
-* Debugging IMAP::              $B$b$N$4$H$,F/$+$J$$$H$-$K$9$k$Y$-$3$H(B
 
 Other Sources
 
@@ -813,7 +804,6 @@ Various
 * Highlighting and Menus::      $B%P%C%U%!!<$rAGE($G?4CO$h$/8+$;$k(B
 * Buttons::                     $B$?$C$?==2s$?$?$$$?$@$1$Gg'>d1j$K$J$k(B!
 * Daemons::                     Gnus $B$O$"$J$?$NN"$G;E;v$r$9$k$3$H$,$G$-$k(B
-* NoCeM::                       Spam $B$dB>$NB@$j$d$9$$?);v$rHr$1$kJ}K!(B
 * Undo::                        $B$$$/$D$+$NF0:n$O85$KLa$9$3$H$,$G$-$k(B
 * Predicate Specifiers::        $B=R8l$r@_Dj$9$k(B
 * Moderation::                  $B$"$J$?$,%b%G%l!<%?!<$@$C$?$i$I$&$9$k$+(B
@@ -1637,15 +1627,6 @@ Maintenance})$B!#(B
 @item gnus-no-groups-message
 @vindex gnus-no-groups-message
 $B%0%k!<%W$,0l$D$bB8:_$7$J$$$H$-$K(B Gnus $B$,I=<($9$k%a%C%;!<%8$G$9!#(B
-
-@item gnus-play-startup-jingle
-@vindex gnus-play-startup-jingle
-$B$b$7(B @code{nil} $B$G$J$$$H!"5/F0;~$K(B Gnus $B$NC;$$6J$r1iAU$7$^$9!#(B
-
-@item gnus-startup-jingle
-@vindex gnus-startup-jingle
-$B>e$NJQ?t$,(B @code{nil} $B$G$J$$$H$-$K1iAU$5$l$kC;$$6J$G$9!#%G%#%U%)%k%H(B
-$B$O(B @samp{Tuxedomoon.Jingle4.au} $B$G$9!#(B
 
 @item gnus-use-backend-marks
 @vindex gnus-use-backend-marks
@@ -3560,9 +3541,14 @@ kill $B$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#
 @item u
 @kindex u ($B1\Mw(B)
 @findex gnus-browse-unsubscribe-current-group
+@vindex gnus-browse-subscribe-newsgroup-method
 $B8=:_$N%0%k!<%W$rHs9XFI$K$7$^$9!#$H8@$&$h$j$O(B ($BLuCm(B: $B$3$N%3%^%s%I$O%H%0%k(B
 $B$J$N$G(B)$B!"$3$N>l9g$O9XFI$9$k$3$H$K$J$k$N$G$7$g$&$1$l(B
 $B$I(B (@code{gnus-browse-unsubscribe-current-group})$B!#(B
+@c TRANSLATEME
+You can affect the way the new group is entered into the Group buffer
+using the variable @code{gnus-browse-subscribe-newsgroup-method}.  See
+@pxref{Subscription Methods} for available options.
 
 @item l
 @itemx q
@@ -9836,18 +9822,6 @@ Message-ID $B$@$C$?$i(B @code{mid} $B$r!"%a!<%k%"%I%l%9$@$C$?$i(B @code{mail
 $B4X?t(B @code{gnus-button-mid-or-mail-heuristic} $B$G;H$o$l$k(B @code{(RATE
 . REGEXP)} $BBP$NO"A[%j%9%H$G$9!#(B
 @c
-@c Stuff related to gnus-button-tex-level
-
-@item gnus-button-ctan-handler
-@findex gnus-button-ctan-handler
-CTAN $B%j%s%/$NI=<($K;H$&4X?t$G$9!#(BURL $BL>$NJ8;zNs$r!"0z?t$H$7$F0l$D<u$1IU(B
-$B$1$J$1$l$P$J$j$^$;$s!#(B
-
-@item gnus-ctan-url
-@vindex gnus-ctan-url
-@code{gnus-button-ctan-handler} $B$G;H$o$l$k(B CTAN (Comprehensive TeX
-Archive Network) $B%"!<%+%$%V$N%G%#%l%/%H%j!<$G$9!#(B
-@c
 @c Misc stuff
 
 @item gnus-article-button-face
@@ -9916,14 +9890,6 @@ Message-ID$B!"%a!<%k%"%I%l%9$*$h$S%K%e!<%9$N(B URL $B$NI=<($r@)8f$7$^$9!#4XO"
 @code{gnus-button-prefer-mid-or-mail},
 @code{gnus-button-mid-or-mail-heuristic} $B$*$h(B
 $B$S(B @code{gnus-button-mid-or-mail-heuristic-alist} $B$,$"$j$^$9!#(B
-
-@item gnus-button-tex-level
-@vindex gnus-button-tex-level
-@TeX{} $B$^$?$O(B LaTex $B$X$N;2>H!"Nc$($P(B CTAN $B$N(B URL $B$NI=<($r@)8f$7$^$9!#JQ(B
-$B?t(B @code{gnus-ctan-url},
-@code{gnus-button-ctan-handler},
-@code{gnus-button-ctan-directory-regexp} $B$*$h(B
-$B$S(B @code{gnus-button-handle-ctan-bogus-regexp} $B$r8+$F$/$@$5$$!#(B
 @end table
 
 @node Article Date
@@ -10568,6 +10534,17 @@ Gnus $B8GM-$G$O$J$$$1$l$I!"Lr$KN)$D$+$b$7$l$J$$J8;z%;%C%H$K4X$9$kB>$NHk7m(B:
 $B$9(B (@code{gnus-summary-print-article})$B!#(B@code{gnus-ps-print-hook} $B$,%P%C(B
 $B%U%!!<$r0u:~$9$kD>A0$K<B9T$5$l$^$9!#B>$K(B Muttprint $B$r;H$C$F0u:~$9$k$3$H(B
 $B$b$G$-$^$9(B (@pxref{Saving Articles})$B!#(B
+
+@c TRANSLATEME
+@item A C
+@vindex gnus-fetch-partial-articles
+@findex gnus-summary-show-complete-article
+If @code{gnus-fetch-partial-articles} is non-@code{nil}, Gnus will
+fetch partial articles, if the backend it fetches them from supports
+it.  Currently only @code{nnimap} does.  If you're looking at a
+partial article, and want to see the complete article instead, then
+the @kbd{A C} command (@code{gnus-summary-show-complete-article}) will
+do so.
 @end table
 
 @node Summary Sorting
@@ -11658,8 +11635,7 @@ Gnus $B$N(B info $B$N@a(B (node) $B$K0\F0$7$^$9(B (@code{gnus-info-find-no
 $BJL!9$KEj9F$7$J$$8B$j$O!#F1$85-;v$rJ#?t$N%0%k!<%W$K(B ($B%/%m%9%]%9%H$G$O$G$O(B
 $B$J$/(B) $BEj9F$9$k$3$H$O(B @dfn{spamming} $B$H8F$P$l!"$"$J$?$O$=$N$h$&$JA~$`$Y$-(B
 $BHH:a$r9T$J$&$b$N$KBP$7$F!"K!N'$K$h$C$FIT2w$J5-;v$rAw$k$3$H$,5AL3$E$1$i$l(B
-$B$F$$$^$9!#(Bspam $B$r?6$$Mn$9$?$a$K!"(BNoCeM $B$G=hM}$9$k$3$H$r;n$7$F$_$kI,MW$,(B
-$B$"$k$+$b$7$l$^$;$s(B (@pxref{NoCeM})$B!#(B
+$B$F$$$^$9!#(B
 
 $B3P$($F$*$$$F$/$@$5$$(B: $B%/%m%9%]%9%H$O$^$"9=$$$^$;$s$,!"F1$85-;v$rJL!9$KJ#(B
 $B?t$N%0%k!<%W$KEj9F$9$k$N$O5v$5$l$^$;$s!#BgNL$N%/%m%9%]%9(B
@@ -11789,7 +11765,7 @@ Gnus $B$O=pL>$5$l$?%a%C%;!<%8$r8!>Z$7$?$j!"0E9f2=$5$l$?%a%C%;!<%8$r%G%3!<(B
 $BAu$G$"$k(B GnuPG $B$N$h$&$J$b$N$r%$%s%9%H!<%k$7$J$1$l$P$J$j$^$;$s!#(BEmacs $B$K(B
 $B4^$^$l$F$$$k(B GnuPG $B$X$N%$%s%?!<%U%'!<%9$O(B EasyPG $B$H$$$&$b$N(B (@pxref{Top,
 ,EasyPG, epa, EasyPG Assistant user's manual}) $B$G$9$,!"(BPGG (@pxref{Top,
-,PGG, pgg-ja, PGG Manual})$B!"(BMailcrypt $B$*$h$S(B gpg.el $B$b%5%]!<%H$7$^$9!#(B
+,PGG, pgg-ja, PGG Manual}) $B$*$h$S(B Mailcrypt $B$b%5%]!<%H$7$^$9!#(B
 
 @item
 @acronym{S/MIME} $B$N%a%C%;!<%8$r07$&$K$O!"(BOpenSSL $B$r%$%s%9%H!<%k$9$kI,MW(B
@@ -11830,8 +11806,8 @@ Gnus $B$O=pL>$5$l$?%a%C%;!<%8$r8!>Z$7$?$j!"0E9f2=$5$l$?%a%C%;!<%8$r%G%3!<(B
 @vindex mml1991-use
 @acronym{PGP} $B$N%a%C%;!<%8$N$?$a$N!"(BOpenPGP $B$N<BAu$X$N(B elisp $B%$%s%?!<%U%'!<(B
 $B%9$r<($9%7%s%\%k$G$9!#%G%#%U%)%k%H$O(B @code{epg} $B$G$9$,!"8eJ}8_49$N$?$a(B
-$B$K(B @code{pgg}$B!"(B@code{mailcrypt} $B$*$h$S(B @code{gpg} $B$b%5%]!<%H$7$^$9!#%G%#(B
-$B%U%)%k%H$G$O!"(BGnus $B$O$3$N=gHV$G:G=i$K8+$D$+$k%$%s%?!<%U%'!<%9$r;H$$$^$9!#(B
+$B$K(B @code{pgg} $B$*$h$S(B @code{mailcrypt} $B$b%5%]!<%H$7$^$9!#%G%#%U%)%k%H$G$O!"(B
+Gnus $B$O$3$N=gHV$G:G=i$K8+$D$+$k%$%s%?!<%U%'!<%9$r;H$$$^$9!#(B
 
 @item mml2015-use
 @vindex mml2015-use
@@ -13502,9 +13478,9 @@ Message Manual}, $B$r;2>H$7$F$/$@$5$$!#(B
 @menu
 * Server Buffer::               $B2>A[%5!<%P!<$r:n$C$FJT=8$9$k(B
 * Getting News::                USENET $B%K%e!<%9$r(B Gnus $B$GFI$`(B
+* Using @acronym{IMAP}::        @acronym{IMAP} $B$+$i%a!<%k$rFI$`(B
 * Getting Mail::                $B8D?ME*$J%a!<%k$r(B Gnus $B$GFI$`(B
 * Browsing the Web::            $BBgNL$N%&%'%V$N;q8;$+$i%a%C%;!<%8$r<hF@$9$k(B
-* IMAP::                        Gnus $B$r(B @acronym{IMAP} $B$N%/%i%$%"%s%H$H$7$F;H$&(B
 * Other Sources::               $B%G%#%l%/%H%j!<!"%U%!%$%k$rFI$`(B
 * Combined Groups::             $BJ#?t$N%0%k!<%W$r0l$D$N%0%k!<%W$K9gJ;$5$;$k(B
 * Email Based Diary::           $BF|Dx$r%a!<%k$G4IM}$9$k(B
@@ -13914,6 +13890,15 @@ Message Manual}, $B$r;2>H$7$F$/$@$5$$!#(B
 @findex gnus-server-remove-denials
 Gnus $B$,@\B3$r5qH]$5$l$?$9$Y$F$N%5!<%P!<$N!"$9$Y$F$N0u$r>C5n$7(B
 $B$^$9(B (@code{gnus-server-remove-denials})$B!#(B
+
+@c TRANSLATEME
+@item c
+@kindex c ($B%5!<%P!<(B)
+@findex gnus-server-copy-server
+Copy a server and give it a new name
+(@code{gnus-server-copy-server}).  This can be useful if you have a
+complex method definition, and want to use the same definition towards
+a different (physical) server.
 
 @item L
 @kindex L ($B%5!<%P!<(B)
@@ -14559,6 +14544,121 @@ A $B$N$?$a$N0u%U%!%$%k$rF1$8$K$9$k$3$H$,$G$-$k$N$G!"Fs$D$N%[%9%H4V$G$=$N%5!<(B
 $B$G!"$=$3$G<B9T$7$^$9!#(B
 @end table
 
+@c TRANSLATEME
+@node Using @acronym{IMAP}
+@section Using @acronym{IMAP}
+@cindex imap
+
+The most popular mail backend is probably @code{nnimap}, which
+provides access to @acronym{IMAP} servers.  @acronym{IMAP} servers
+store mail remotely, so the client doesn't store anything locally.
+This means that it's a convenient choice when you're reading your mail
+from different locations, or with different user agents.
+
+@menu
+* Connecting to an @acronym{IMAP} Server::     Getting started with @acronym{IMAP}.
+* Customizing the @acronym{IMAP} Connection::  Variables for @acronym{IMAP} connection.
+* Client-Side @acronym{IMAP} Splitting::       Put mail in the correct mail box.
+@end menu
+
+
+@node Connecting to an @acronym{IMAP} Server
+@subsection Connecting to an @acronym{IMAP} Server
+
+Connecting to an @acronym{IMAP} can be very easy.  Type @kbd{B} in the
+group buffer, or (if your primary interest is reading email), say
+something like:
+
+@example
+(setq gnus-select-method
+      '(nnimap "imap.gmail.com"))
+@end example
+
+You'll be prompted for a user name and password.  If you grow tired of
+that, then add the following to your @file{~/.authinfo} file:
+
+@example
+machine imap.gmail.com login <username> password <password> port imap
+@end example
+
+That should basically be it for most users.
+
+
+@node Customizing the @acronym{IMAP} Connection
+@subsection Customizing the @acronym{IMAP} Connection
+
+Here's an example method that's more complex:
+
+@example
+(nnimap "imap.gmail.com"
+        (nnimap-inbox "INBOX")
+        (nnimap-split-methods ,nnmail-split-methods)
+        (nnimap-expunge t)
+        (nnimap-stream 'ssl)
+        (nnir-search-engine imap)
+        (nnimap-expunge-inbox t))
+@end example
+
+@table @code
+@item nnimap-address
+The address of the server, like @samp{imap.gmail.com}.
+
+@item nnimap-server-port
+If the server uses a non-standard port, that can be specified here.  A
+typical port would be @samp{imap} or @samp{imaps}.
+
+@item nnimap-stream
+How @code{nnimap} should connect to the server.  Possible values are:
+
+@table @code
+@item ssl
+This is the default, and this uses standard
+@acronym{TLS}/@acronym{SSL} connection.
+
+@item network
+Non-encrypted and unsafe straight socket connection.
+
+@item starttls
+Encrypted @acronym{STARTTLS} over the normal @acronym{IMAP} port.
+
+@item shell
+If you need to tunnel via other systems to connect to the server, you
+can use this option, and customize @code{nnimap-shell-program} to be
+what you need.
+
+@end table
+
+@item nnimap-authenticator
+Some @acronym{IMAP} servers allow anonymous logins.  In that case,
+this should be set to @code{anonymous}.
+
+@item nnimap-streaming
+Virtually all @code{IMAP} server support fast streaming of data.  If
+you have problems connecting to the server, try setting this to @code{nil}.
+
+@end table
+
+
+@node Client-Side @acronym{IMAP} Splitting
+@subsection Client-Side @acronym{IMAP} Splitting
+
+Many people prefer to do the sorting/splitting of mail into their mail
+boxes on the @acronym{IMAP} server.  That way they don't have to
+download the mail they're not all that interested in.
+
+If you do want to do client-side mail splitting, then the following
+variables are relevant:
+
+@table @code
+@item nnimap-inbox
+This is the @acronym{IMAP} mail box that will be scanned for new mail.
+
+@item nnimap-split-methods
+Uses the same syntax as @code{nnmail-split-methods} (@pxref{Splitting
+Mail}).
+
+@end table
+
 @node Getting Mail
 @section $B%a!<%k<hF@(B
 @cindex reading mail
@@ -15152,12 +15252,8 @@ Maildir $B%a!<%k%=!<%9$NNc$r$U$?$D(B:
 @acronym{IMAP} $B$r$=$l$,0U?^$5$l$?$h$&$J%M%C%H%o!<%/>e$G%a!<%k$rFI$`%W%m(B
 $B%H%3%k$H$7$F$O(B ($B$9$J$o$A(B @code{nnimap} $B$G(B) $B;H$$$?$/$J$$$H$-$O!"(BGnus $B$G(B
 $B$O(B @acronym{POP} $B%5!<%P!<$HF1MM$K07$C$F!";XDj$5$l$?(B @acronym{IMAP} $B%a!<(B
-$B%k%\%C%/%9$+$i5-;v$r<hF@$9$k$3$H$,$G$-$^$9!#>\$7$/$O(B @ref{IMAP} $B$r;2>H$7(B
-$B$F$/$@$5$$!#(B
-
-Kerberos, GSSAPI, @acronym{TLS}/@acronym{SSL} $B$*$h$S(B STARTTLS $B$N$?$a$N30(B
-$BIt%W%m%0%i%`$H%i%$%V%i%j!<$,I,MW$G$"$k$3$H$KN10U$7$F$/$@$5$$!#(B
-@xref{IMAP}.
+$B%k%\%C%/%9$+$i5-;v$r<hF@$9$k$3$H$,$G$-$^$9!#>\$7$/(B
+$B$O(B @ref{Using @acronym{IMAP}} $B$r;2>H$7$F$/$@$5$$!#(B
 
 $B%-!<%o!<%I(B:
 
@@ -15627,7 +15723,7 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
 $B%(%s%I$N>l9g!"%G%#%U%)%k%H$G$O5-;v$N%\%G%#!<$,%@%&%s%m!<%I$5$l$J$$$3$H$K(B
 $BCm0U$7$F$/$@$5$$!#$=$l$r$9$k$?$a$K(B
 $B$O(B @code{nnimap-split-download-body} $B$r(B @code{t} $B$K@_Dj$9$kI,MW$,$"$j$^(B
-$B$9(B (@pxref{Splitting in IMAP})$B!#(B
+$B$9(B (@pxref{Client-Side @acronym{IMAP} Splitting})$B!#(B
 
 @item (! @var{func} @var{split})
 $BJ,3d$,%j%9%H$G:G=i$NMWAG$,(B @code{!} $B$@$C$?$i!"(B@var{split} $B$,<B9T$5$l!"(B
@@ -17514,718 +17610,6 @@ Gnus $B$O%&%'%V%Z!<%8$r<hF@$9$k$?$a$K(B url $B%i%$%V%i%j!<$r!"%&%'%V%Z!<%8$rI
 $B$3$l$r$"$J$?$N(B .emacs $B%U%!%$%k$K=q$-9~$s$G$/$@$5$$!#$=$&$9$l$P!"(BGnus $B$N(B
 $B5-;v%P%C%U%!!<$G(B W3 $B$,IA2h$7$?(B @acronym{HTML} $B%j%s%/$rC!$/$H!"(B
 @code{browse-url} $B$r;H$C$F$=$N%j%s%/$r;2>H$7$F$/$l$k$G$7$g$&!#(B
-
-@node IMAP
-@section IMAP
-@cindex nnimap
-@cindex @acronym{IMAP}
-
-@acronym{IMAP} $B$O%a!<%k(B ($B$b$7$/$O!"%K%e!<%9!"$b$7$/$O(B @dots{}) $B$rFI$`$?(B
-$B$a$N%M%C%H%o!<%/%W%m%H%3%k$G$9!#8=BeIw$N(B @acronym{NNTP} $B$H9M$($F$/$@$5$$!#(B
-@acronym{IMAP} $B%5!<%P!<$X$N@\B3$O%K%e!<%9%5!<%P!<$X$N@\B3$HHs>o$K;w$F$$(B
-$B$F!"$=$N%5!<%P!<$N%M%C%H%o!<%/%"%I%l%9$r;XDj$9$k$@$1$K$J$C$F$$$^$9!#(B
-
-@acronym{IMAP} $B$K$OFs$D$NFC<A$,$"$j$^$9!#0l$D$O!"(B
-@acronym{IMAP} $B$O(B @acronym{POP} $B$G$G$-$k$3$H$OA4It$G$-$k!"$=$l$f(B
-$B$((B @acronym{POP++} $B$N$h$&$K$b8+$($k$H$$$&$3$H!#Fs$DL\$O!"(B
-@acronym{IMAP} $B$O(B @acronym{NNTP} $B$,%K%e!<%9$rCyB"$9$k%W%m%H%3%k$G$"$k$h(B
-$B$&$K!"%a!<%k$rCyB"$9$k%W%m%H%3%k$G$"$k$H$$$&$3$H$G$9!#$7$+$7$J$,(B
-$B$i(B @acronym{IMAP} $B$O(B @acronym{NNTP} $B$h$jB?$/$N5!G=$rDs6!$7$^$9!#%a!<%k$O(B
-$BFI$_=q$-$,$G$-$k$N$KBP$7$F!"%K%e!<%9$O$@$$$?$$$K$*$$$FFI$`$@$1$G$9$+$i!#(B
-
-@acronym{IMAP} $B$r(B @acronym{POP++} $B$N$h$&$K;H$$$?$$$H$-$O!"(B
-@code{mail-sources} $B$K(B imap $B$N9`L\$rEPO?$7$F$/$@$5$$!#$3$l$K$h$C(B
-$B$F(B Gnus $B$O(B @acronym{IMAP} $B%5!<%P!<$+$i%a!<%k$r<h$j9~$s$G!"%m!<%+%k%G%#%9(B
-$B%/$K3JG<$7$^$9!#$3$3$G$O$=$N;H$$J}$N@bL@$O$7$^$;$s$+$i!"(B
-@ref{Mail Sources} $B$r;2>H$7$F$/$@$5$$!#(B
-
-@acronym{IMAP} $B$r%a!<%k$rCyB"$9$k%W%m%H%3%k$H$7$F;H$$$?$$$H$-$O!"(B
-@code{gnus-secondary-select-methods} $B$K(B nnimap $B$N9`L\$rEPO?$7$F$/$@$5$$!#(B
-$B$3$l$K$h$C$F(B Gnus $B$O(B @acronym{IMAP} $B%5!<%P!<$K3JG<$5$l$F$$$k%a!<%k$rA`:n(B
-$B$9$k$h$&$K$J$j$^$9!#$3$l$,$3$3$G@bL@$9$k<oN`$N;H$$J}$G$9!#(B
-
-$B$$$/$D$+$N(B @acronym{IMAP} $B%5!<%P!<$r(B @file{~/.gnus.el} $B$G@_Dj$9$k$H!"$?(B
-$B$V$s0J2<$N$h$&$J$b$N$K$J$k$G$7$g$&!#(B($BCm(B: @acronym{TLS}/@acronym{SSL} $B$G(B
-$B$O30It%W%m%0%i%`$H%i%$%V%i%j!<$,I,MW$G$9!#0J2<$r;2>H$7$F$/$@$5$$!#(B)
-
-@lisp
-(setq gnus-secondary-select-methods
-      '((nnimap "simpleserver") ; @r{$BFC<l$G$O$J$$@_Dj(B}
-        ; @r{$B$b$7$+$7$?$i(B SSH $B%]!<%H$r%U%)%o!<%I$7$?%5!<%P!<(B:}
-        (nnimap "dolk"
-                (nnimap-address "localhost")
-                (nnimap-server-port 1430))
-        ; @r{$B%m!<%+%k%[%9%H$G2TF0$7$F$$$k(B UW $B%5!<%P!<(B:}
-        (nnimap "barbar"
-                (nnimap-server-port 143)
-                (nnimap-address "localhost")
-                (nnimap-list-pattern ("INBOX" "mail/*")))
-        ; @r{$BF?L>$G;H$($k(B cyrus $B$N8x=0%5!<%P!<(B:}
-        (nnimap "cyrus.andrew.cmu.edu"
-                (nnimap-authenticator anonymous)
-                (nnimap-list-pattern "archive.*")
-                (nnimap-stream network))
-        ; @r{$BI8=`$G$O$J$$%]!<%H$N(B @acronym{SSL} $B%5!<%P!<(B:}
-        (nnimap "vic20"
-                (nnimap-address "vic20.somewhere.com")
-                (nnimap-server-port 9930)
-                (nnimap-stream ssl))))
-@end lisp
-
-$B?7$7$$%5!<%P!<$rDj5A$7$?8e$G!"(B@kbd{U} $B$N$h$&$J(B Gnus $B$NDL>o$N%3%^%s%I$r%0(B
-$B%k!<%W%P%C%U%!!<$G;H$&(B (@pxref{Subscription Commands}) $B$+!"$^$?$O%5!<%P!<(B
-$B%P%C%U%!!<(B (@pxref{Server Buffer}) $B$r2p$7$F!"$=$N%5!<%P!<$N%0%k!<%W$r9V(B
-$BFI$9$k$3$H$,$G$-$^$9!#(B
-
-$B0J2<$NJQ?t$O2>A[(B @code{nnimap} $B%5!<%P!<$r:n@.$9$k$?$a$K;H$&$3$H$,$G$-$^(B
-$B$9!#(B
-
-@table @code
-@item nnimap-address
-@vindex nnimap-address
-$B1s3V(B @acronym{IMAP} $B%5!<%P!<$N%"%I%l%9$G$9!#;XDj$5$l$F$$$J$$>l9g$O2>A[%5!<(B
-$B%P!<$NL>A0$K$J$j$^$9!#(B
-
-@item nnimap-server-port
-@vindex nnimap-server-port
-$B@\B3$9$k%5!<%P!<$N%]!<%H$G$9!#%G%#%U%)%k%H$O%]!<%H(B 143$B!"$^$?(B
-$B$O(B @acronym{TLS}/@acronym{SSL} $B$G$O(B 993 $B$G$9!#(B
-
-$B$3$l$O@0?t$G$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F$/$@$5$$!#0J2<$O%5!<%P!<;XDj$N(B
-$BNc$G$9(B:
-
-@lisp
-(nnimap "mail.server.com"
-        (nnimap-server-port 4711))
-@end lisp
-
-@item nnimap-list-pattern
-@vindex nnimap-list-pattern
-$B;H$&$3$H$,$G$-$k%0%k!<%W$r@)8B$9$k$?$a$N!"%a!<%k%\%C%/%9$NJ8;zNs$^$?$OJ8(B
-$B;zNs$N%j%9%H$G$9!#$3$l$O!"%5!<%P!<$KHs>o$KB?$/$N%a!<%k%\%C%/%9$,$"$k$1$l(B
-$B$I!"6=L#$N$"$k$b$N$O>/$7$@$1$G$"$k$H$-$K;HMQ$7$^$9!#$$$/$D$+$N%5!<%P!<$O(B
-$B%[!<%`%G%#%l%/%H%j!<$r(B @acronym{IMAP} $B7PM3$G%"%/%;%9$G$-$k$h$&$K$9$k$N$G!"(B
-$B$=$N>l9g$O$*$=$i$/%a!<%k%\%C%/%9$r(B @file{~/Mail/*} $B$K@)8B$7$?$$$G$7$g$&!#(B
-
-$BJ8;zNs$O(B REFERENCE $B$H>e5-$NJ8;zNs$H$N(B cons $B$G$"$k$3$H$b$G$-$^$9!#$I(B
-$B$N(B REFERENCE $B$,;HMQ$5$l$k$+$O%5!<%P!<$K$h$j$^$9$,!"%o%7%s%H%sBg3X$N%5!<(B
-$B%P!<$G$O!"%a!<%k%\%C%/%9$HO"7k$5$l$k%G%#%l%/%H%j!<$G$9!#(B
-
-$B0J2<$O%5!<%P!<;XDj$NNc$G$9(B:
-
-@lisp
-(nnimap "mail.server.com"
-        (nnimap-list-pattern ("INBOX" "Mail/*" "alt.sex.*"
-                               ("~friend/Mail/" . "list/*"))))
-@end lisp
-
-@item nnimap-stream
-@vindex nnimap-stream
-$B%5!<%P!<$K@\B3$9$k$H$-$K;H$o$l$k%9%H%j!<%`$N7?$G$9!#%G%#%U%)%k%H$G(B
-$B$O(B nnimap $B$O(B @acronym{TLS}/@acronym{SSL} $B$r=|$/0J2<$N$9$Y$F$r<+F0E*$K8!(B
-$BCN$7$F$=$l$r;H$$$^$9!#(B(@acronym{TLS}/@acronym{SSL} $B$r;H(B
-$B$&(B @acronym{IMAP} $B$O(B STARTTLS $B$GCV$-49$($i$l$F$$$^$9!#$3$l$O<+F08!=P$G$-(B
-$B$^$9$,!"$^$@9-HO0O$KG[Hw$5$l$F$$$^$;$s!#(B)
-
-$B0J2<$O%5!<%P!<;XDj$NNc$G$9(B:
-
-@lisp
-(nnimap "mail.server.com"
-        (nnimap-stream ssl))
-@end lisp
-
-@code{nnimap-stream} $B$NCM$O%7%s%\%k$G$"$k$3$H$KCm0U$7$F$/$@$5$$(B!
-
-@itemize @bullet
-@item
-@dfn{gssapi:} GSSAPI ($BIaDL$O(B Kerberos 5) $B$G@\B3$7$^$9!#(B@samp{gsasl} $B$^$?(B
-$B$O(B @samp{imtest} $B%W%m%0%i%`$,I,MW$G$9!#(B
-@item
-@dfn{kerberos4:} Kerberos 4 $B$G@\B3$7$^$9!#(B@samp{imtest} $B%W%m%0%i%`$,I,MW(B
-$B$G$9!#(B
-@item
-@dfn{starttls:} STARTTLS $B3HD%(B (@acronym{TLS}/@acronym{SSL} $B$KN`;w(B) $B$r2p(B
-$B$7$F@\B3$7$^$9!#(B@samp{starttls.el} $B30It%i%$%V%i%j!<$H(B @samp{starttls} $B%W(B
-$B%m%0%i%`$,I,MW$G$9!#(B
-@item
-@dfn{tls:} @acronym{TLS} $B$rDL$7$F@\B3$7$^$9!#(B
-GNUTLS (@samp{gnutls-cli} $B%W%m%0%i%`(B) $B$,I,MW$G$9!#(B
-@item
-@dfn{ssl:} @acronym{SSL} $B$rDL$7$F@\B3$7$^$9!#(BOpenSSL (@samp{openssl} $B%W(B
-$B%m%0%i%`(B) $B$+(B SSLeay (@samp{s_client}) $B$,I,MW$G$9!#(B
-@item
-@dfn{shell:} $B%7%'%kL?Na$r;H$C$F(B @acronym{IMAP} $B@\B3$r3+;O$7$^$9!#(B
-@item
-@dfn{network:} $B@8$N(B TCP/IP $B$N%M%C%H%o!<%/@\B3$G$9!#(B
-@end itemize
-
-@vindex imap-kerberos4-program
-@samp{imtest} $B%W%m%0%i%`$O(B Cyrus IMAPD $B$K4^$^$l$F$$$^$9!#$b$7(B 2.0.14 $BL$(B
-$BK~$N(B Cyrus IMAPD $B$K4^$^$l$F$$$k(B @samp{imtest} ($B%P!<%8%g%s(B 1.5.x $B$*$h(B
-$B$S(B 1.6.x) $B$r;H$C$F$$$k$J$i!"(B@code{imap-process-connection-type} $B$r$$$8$C(B
-$B$F!"(B@file{imap.el} $B$,(B @samp{imtest} $B$HDL?.$9$k$H$-$K!"%Q%$%W$G$O$J$/(B
-$B$F(B pty $B$r;H$&$h$&$K$5$;$kI,MW$,$"$j$^$9!#$=$&$9$k$H$"$J$?(B
-$B$O(B @acronym{IMAP} $B%3%^%s%I$N9T$ND9$5$N@)8B$KG:$^$5$l!"%a!<%k%\%C%/%9$K$?(B
-$B$/$5$s$N5-;v$,$"$k>l9g$K$O!"(BGnus $B$,L54|8B$K%O%s%0$9$k$h$&$K8+$($k$+$b$7(B
-$B$l$^$;$s!#JQ?t(B @code{imap-kerberos4-program} $B$O(B imtest $B%W%m%0%i%`$KEO$9(B
-$B%Q%?%a!<%?$r4^$_$^$9!#(B
-
-@acronym{TLS} $B@\B3$G$O(B GNUTLS $BM3Mh$N(B @code{gnutls-cli} $B%W%m%0%i%`$,I,MW(B
-$B$G$9!#(B@uref{http://www.gnu.org/software/gnutls/} $B$+$i<j$KF~$l$k$3$H$,$G(B
-$B$-$^$9!#(B
-
-@vindex imap-gssapi-program
-$B$3$N%Q%i%a!<%?!<$O!"I{%7%'%k$G(B GSSAPI $BG'>Z$K$h$k(B @acronym{IMAP} $B@\B3$r5/(B
-$BF0$9$k$?$a$N%3%^%s%I9T$N%j%9%H$r;XDj$7$^$9!#$3$l$i$O@\B3$,3NN)$9$k$^$G!"(B
-$B$^$?$O%j%9%H$,;H$$?T$/$5$l$k$^$G!"=g$0$j$K;n$5$l$^$9!#%G%#%U%)%k%H$G$O!"(B
-@uref{http://www.gnu.org/software/gsasl/} $B$K$"$k(B GNU SASL $B$K$h(B
-$B$k(B @samp{gsasl} $B$H!"(BCyrus IMAPD $B$K$h$k(B @samp{imtest} $B%W%m%0%i(B
-$B%`(B (@code{imap-kerberos4-program} $B;2>H(B) $B$,;n$5$l$^$9!#(B
-
-@vindex imap-ssl-program
-@acronym{SSL} $B@\B3$N$?$a$N(B OpenSSL $B%W%m%0%i%`(B
-$B$O(B @uref{http://www.openssl.org/} $B$+$iF~<j$G$-$^$9!#(BOpenSSL $B$O0JA0(B
-$B$O(B SSLeay $B$H$7$FCN$i$l$F$$$?$b$N$G!"(Bnnimap $B$O$=$l$b%5%]!<%H$7$^$9!#$7$+(B
-$B$7(B SSLeay $B$N:G?7HG$G$"$k(B 0.9.x $B$K$O!"$=$l$rLr$KN)$?$J$/$7$F$7$^$&=EBg$J(B
-$B%P%0$,$"$k$3$H$,CN$i$l$F$$$^$9!#0JA0$NHG!"FC$K(B SSLeay 0.8.x $B$O;H$($k$3$H(B
-$B$,$o$+$C$F$$$^$9!#JQ?t(B @code{imap-ssl-program} $B$O(B OpenSSL/SSLeay $B$KEO$9(B
-$B%Q%?%a!<%?$r4^$_$^$9!#(B
-
-@vindex imap-shell-program
-@vindex imap-shell-host
-@code{shell} $B%9%H%j!<%`$r;H$&(B @acronym{IMAP} $B@\B3$G$O!"2?$N%W%m%0%i%`$r(B
-$B8F$V$+$rJQ?t(B @code{imap-shell-program} $B$G;XDj$7$^$9!#2?J*$b$=$N%W%m%0%i(B
-$B%`$N=PNO$r<YKb$7$J$$$h$&$K$7$F$/$@$5$$!#Nc$($P%(%i!<=PNO$O(B void $B$K?6$jJ,(B
-$B$1$^$7$g$&!#(B
-
-@item nnimap-authenticator
-@vindex nnimap-authenticator
-$B%5!<%P!<$K@\B3$9$k$?$a$K;H$o$l$kG'>Z<jCJ$G$9!#%G%#%U%)%k%H$G$O(B nnimap $B$O(B
-$B%5!<%P!<$K$G$-$k:G$b0BA4$JG'>Z<jCJ$r;H$$$^$9!#(B
-
-$B0J2<$O%5!<%P!<;XDj$NNc$G$9(B:
-
-@lisp
-(nnimap "mail.server.com"
-        (nnimap-authenticator anonymous))
-@end lisp
-
-@code{nnimap-authenticator} $B$NCM$O%7%s%\%k$G$"$k$3$H$KCm0U$7$F$/$@$5$$(B!
-
-@itemize @bullet
-@item
-@dfn{gssapi:} GSSAPI ($BIaDL$O(B Kerberos 5) $BG'>Z$G$9!#30It%W%m%0%i(B
-$B%`(B @code{gsasl} $B$^$?$O(B @code{imtest} $B$,I,MW$G$9!#(B
-@item
-@dfn{kerberos4:} Kerberos 4 $B$K$h$kG'>Z$G$9!#30It%W%m%0%i(B
-$B%`(B @code{imtest} $B$,I,MW$G$9!#(B
-@item
-@dfn{digest-md5:} DIGEST-MD5 $B$G0E9f2=$5$l$?(B $BMxMQ<TL>(B/$B%Q%9%o!<%I(B $B$G$9!#30(B
-$BIt%i%$%V%i%j!<(B @file{digest-md5.el} $B$,I,MW$G$9!#(B
-@item
-@dfn{cram-md5:} CRAM-MD5 $B$G0E9f2=$5$l$?(B $BMxMQ<TL>(B/$B%Q%9%o!<%I(B $B$G$9!#(B
-@item
-@dfn{login:} LOGIN $B7PM3$G$N@8$N(B $BMxMQ<TL>(B/$B%Q%9%o!<%I(B $B$G$9!#(B
-@item
-@dfn{anonymous:} $BEE;R%a!<%k%"%I%l%9$r%Q%9%o!<%I$H$7$FM?$(!"!H(Banonymous$B!I(B
-$B$H$7$F%m%0%$%s$7$^$9!#(B
-@end itemize
-
-@item nnimap-expunge-on-close
-@cindex expunging
-@vindex nnimap-expunge-on-close
-$B%Q%k%a%K%G%9$H0c$C$F!"(B@acronym{IMAP} $B$N@_7W<TC#$O!"B8:_$7$F$$$J$$$b$N$,(B
-$B<B:]$K$OB8:_$7$F$$$k$H7h$a$^$7$?!#$b$C$H>\$7$/@bL@$9$k$H!"(B
-@acronym{IMAP} $B$K$O<B:]$K$O5-;v$r>C5n$;$:$K(B @code{Deleted} $B$H$$$&0u$r5-(B
-$B;v$KIU$1$k$H$$$&35G0$,$"$j$^$9!#$3$l(B ($B$9$J$o$A(B @code{Deleted} $B$N0u$rIU$1(B
-$B$k$3$H(B) $B$,(B Gnus $B$G5-;v$r>C5n$9$k$H$-$K(B nnimap $B$,9T$J$&$3$H$G(B
-$B$9(B (@kbd{B DEL} $B$J$I$G(B)$B!#(B($BLuCm(B: $B%Q%k%a%K%G%9$O5*85A0(B 5 $B@$5*$N%.%j%7%"(B
-$B$N(B Elea $BGI$NE/3X<T!#(B)
-
-$B5-;v$r(B @code{Deleted} $B%U%i%0$G0u$rIU$1$?$H$-$K$OK\Ev$O>C5n$5$l$F$$$J$$$N(B
-$B$G!"<B:]$K>C5n$9$k$?$a$NJ}K!$,I,MW$H$J$j$^$9!#$^$@$I$&$I$&$a$0$j$r$7$F$$(B
-$B$k$h$&$K46$8$^$9$+(B?
-
-$BEAE}E*$K(B nnimap $B$O%a!<%k%\%C%/%9$rJD$8$k$H$-$K(B @code{Deleted} $B$H$$$&0u$N(B
-$BIU$$$?$9$Y$F$N5-;v$r>C5n$7$F$-$^$7$?$,!":#$G$O$3$N%5!<%P!<JQ?t$K$h$C$F@_(B
-$BDj$9$k$3$H$,2DG=$K$J$j$^$7$?!#(B
-
-$B2DG=$JA*Br;h$O(B:
-
-@table @code
-@item always
-$B$3$l$,%G%#%U%)%k%H$N?6Iq$$$G!"%a!<%k%\%C%/%9$rJD$8$k$H$-$K!H(BDeleted$B!I$H(B
-$B$7$F0u$,IU$1$i$l$F$$$k5-;v$r>C5n$7$^$9!#(B
-@item never
-$B7h$7$F5-;v$r>C5n$7$^$;$s!#8=:_$O>C5n$N0u$,IU$$$?5-;v$r(B nnimap $B$GI=<($9$k(B
-$BJ}K!$O$"$j$^$;$s$,!"B>$N(B @acronym{IMAP} $B%/%i%$%"%s%H$G$O$G$-$k$+$b$7$l$^(B
-$B$;$s!#$$$D$b<j$G(B EXPUNGE $B%3%^%s%I$rH/9T$7$?$$$J$i$P!"(B@ref{Expunging
-mailboxes} $B$r;2>H$7$F$/$@$5$$!#(B
-@item ask
-$B%a!<%k%\%C%/%9$rJD$8$k$H$-$K!"(Bnnimap $B$,>C5n$5$l$?5-;v$r:o=|$9$k$+$I$&$+(B
-$B$r?R$M$^$9!#(B
-@end table
-
-@item nnimap-importantize-dormant
-@vindex nnimap-importantize-dormant
-$BHs(B-@code{nil} ($B%G%#%U%)%k%H(B) $B$@$C$?$i!"B>$N(B @acronym{IMAP} $B%/%i%$%"%s%H(B
-$B$N$?$a$KJ]N15-;v$K2D;k5-;v$H$7$F(B ($B$b(B) $B0u$rIU$1$^$9(B ($BLuCm(B: $BJ]N1(B==dormant$B!"(B
-$B2D;k(B==ticked)$B!#(BGnus $B$NFbIt$G$O!"EvA3$J$,$iJ]N15-;v$K$OJ]N15-;v$H$7$F$N$_(B
-$B0u$,IU$1$i$l$^$9!#0lJ}$3$l$O!"J]N15-;v$r!"B>$N(B @acronym{IMAP} $B%/%i%$%"%s(B
-$B%H$K$*$$$F!"$"$?$+$b2D;k5-;v$N$h$&$K$-$oN)$?$;$^$9!#(B($BJL$N8@$$J}$r$9$k$H!"(B
-Gnus $B$K$OFs$D$N!V2D;k!W0u$,$"$j!"(B@acronym{IMAP} $B$K$O$O$?$C$?0l$D$@$H$$$&(B
-$B$3$H$G$9!#(B)
-
-$B$*$=$i$/$3$l$r$$$8$kM#0l$NM}M3$O!"$"$J$?$,MxMQ<T$4$H$K1JB3E*$JJ]N1%U%i%0(B
-$B$rIU$1$h$&$H$7$F$$$k$+$I$&$+$H$$$&$3$H$G$7$g$&!#$3$s$J46$8$G(B:
-
-@lisp
-(setcdr (assq 'dormant nnimap-mark-to-flag-alist)
-        (format "gnus-dormant-%s" (user-login-name)))
-(setcdr (assq 'dormant nnimap-mark-to-predicate-alist)
-        (format "KEYWORD gnus-dormant-%s" (user-login-name)))
-@end lisp
-
-$B$3$N>l9g!"$"$J$?$OMxMQ<T$4$H$NJ]N1%U%i%0$,IU$$$F$$$k5-;v$,!"B>$NMxMQ<T$K(B
-$B$O2D;k5-;v$H$7$F8+$($k$h$&$K$7$?$/$J$$$N$G$7$g$&$M!#(B
-
-@item nnimap-expunge-search-string
-@cindex expunging
-@vindex nnimap-expunge-search-string
-@cindex expiring @acronym{IMAP} mail
-$B$3$NJQ?t$K$O!"4|8B@Z$l>C5n$9$k$N$,K>$^$7$$5-;v$rC5$9$H$-$K%5!<%P!<$KAw$C(B
-$B$?(B @acronym{IMAP} $B$N8!:w%3%^%s%I$,F~$C$F$$$^$9!#%G%#%U%)%k%H(B
-$B$O(B @code{"UID %s NOT SINCE %s"} $B$G!"$3$3$G:G=i$N(B @code{%s} $B$O(B UID $B$N0lB7(B
-$B$$$GCV$-49$($i$l!"FsHVL\$N(B @code{%s} $B$OF|IU$GCV$-49$($i$l$^$9!#(B
-
-$B$3$NBe$o$j$K;H$$$b$N$K$J$kCM$O$?$V$s(B @code{"UID %s NOT SENTSINCE %s"} $B$@(B
-$B$1$G!"$=$l$O(B nnimap $B$K5-;v$NFbItE*$JF|IU$NBe$o$j$K(B Date: $B$r;H$&$h$&$K$5(B
-$B$;$^$9!#(B $B;H$&$3$H$,$G$-$kJ8;zNs$K4X$9$k$5$i$J$k>pJs$O!"(BRFC 2060 $B$N(B
-$BBh(B 6.4.4 $B>O$r8+$F$/$@$5$$!#(B
-
-$B$7$+$7$J$,$i(B @code{nnimap-search-uids-not-since-is-evil} $B$,??$K$J$C$F$$(B
-$B$k$H!"8e=R$N$h$&$K8!:wO@M}$,H?E>$5$l$k$N$G!"$3$NJQ?t$OL58z$K$J$j$^$9!#(B
-
-@item nnimap-authinfo-file
-@vindex nnimap-authinfo-file
-$B%5!<%P!<$K%m%0%$%s$9$k$?$a$K;H$&G'>Z>pJs(B (credentials) $B$r4^$`%U%!%$%k$G(B
-$B$9!#$=$N7A<0$O(B @code{ftp} $B$N(B @file{~/.netrc} $B%U%!%$%k$H(B ($B$[$H$s$I(B) $BF1$8(B
-$B$G$9!#87L)$JMM<0$K$D$$$F$O!"JQ?t(B @code{nntp-authinfo-file} $B$r8+$F$/$@$5(B
-$B$$!#$=$7$F(B @ref{NNTP} $B$b8+$F$/$@$5$$!#(BIMAP $B%5!<%P!<MQ$N(B .authinfo $B9T$NNc(B
-$B$G$9(B:
-
-@example
-machine students.uio.no login larsi password geheimnis port imap
-@end example
-
-$B0BA4$J(B IMAP $B$G;H$o$l$k<B:]$N%]!<%HHV9f$O(B port 993 $B$G$9$,!"(B
-@code{nnimap-stream} $B$H$7$F(B @code{tls} $B$^$?$O(B @code{ssl} $B$r;H$&>l9g!"$=(B
-$B$l$O(B @code{port imap} $B$^$?$O(B @code{port 143} $B$G$J$1$l$P$J$i$J$$$3$H$KCm(B
-$B0U$7$F$/$@$5$$!#JX59>e(B Gnus $B$O(B @code{port imap} $B$NF15A8l$H$7(B
-$B$F(B @code{port imaps} $B$r<u$1F~$l$^$9!#(B
-
-@item nnimap-need-unselect-to-notice-new-mail
-@vindex nnimap-need-unselect-to-notice-new-mail
-$B%a!<%k%\%C%/%972$G?7Ce%a!<%k$rC5$9A0$K!"$=$l$i$rL$A*Br$K$7$^$9!#$$$/$D$+(B
-$B$N%5!<%P!<$,!"2?$i$+$N>u67$N85$G$3$l$rI,MW$H$9$k$h$&$G$9!#(BCourier
-1.7.1 $B$O$=$&$@$H$$$&Js9p$,$"$j$^$7$?!#(B
-
-@item nnimap-nov-is-evil
-@vindex nnimap-nov-is-evil
-@cindex Courier @acronym{IMAP} server
-@cindex @acronym{NOV}
-
-@acronym{NOV} $B%G!<%?%Y!<%9$r:n$i$J$$$+!"$^$?$O%m!<%+%k$N$b$N$r;H$$$^$9!#(B
-$B%G%#%U%)%k%H$O(B @code{gnus-agent} $B$NCM$G$9!#(B
-
-$BIaDL(B @acronym{NOV} $B%G!<%?%Y!<%9$r;H$&$H%X%C%@!<$N<hF@$,$H$F$bB.$/$J$j$^(B
-$B$9$,!"$"$k<o$N%5!<%P!<(B ($BFC$K$$$/$D$+$N(B Courier $B$NHG(B) $B$G$OHs>o$KCY(B
-$B$$(B @code{UID SEARCH UID} $B%3%^%s%I$r;H$$$^$9!#(BGnus $B%(!<%8%'%s%H$O!"$=$NCY(B
-$B$$%3%^%s%I$r;H$o$:$K(B @acronym{NOV} $B%G!<%?%Y!<%9$K>pJs$r%-%c%C%7%e$9$k$N(B
-$B$G!"$3$NJQ?t$N%G%#%U%)%k%HCM$O!"%(!<%8%'%s%H$,;H$o$l$k>l9g$O??$K!"$=$&$G(B
-$B$J$$>l9g$O56$K$J$j$^$9!#(B
-
-@item nnimap-search-uids-not-since-is-evil
-@vindex nnimap-search-uids-not-since-is-evil
-@cindex Courier @acronym{IMAP} server
-@cindex expiring @acronym{IMAP} mail
-
-@code{UID SEARCH UID @var{message numbers} NOT SINCE @var{date}} $B%3%^%s(B
-$B%I$r;H$o$J$$$h$&$K$7$^$9!#$=$l$O!"$"$k<o$N(B @acronym{IMAP} $B%5!<%P!<(B ($BFC$K(B
-$B$$$/$D$+$N(B Courier $B$NHG(B) $B$G$OHs>o$KCY$/$J$j$^$9!#Be$o$j(B
-$B$K(B @code{UID SEARCH SINCE @var{date}} $B$r;H$C$F!"(BGnus $B$G4|8B@Z$l>C5n$9$k(B
-$B5-;v$N%j%9%H$+$iM>J,$J$b$N$r<h$j=|$-$^$9!#(B
-
-Gnus $B$,%a!<%k$N4|8B@Z$l>C5n(B (@pxref{Expiring Mail}) $B$r9T$&$H$-$O!"4|8B@Z(B
-$B$l>C5n$7$F$b$h$$5-;v$N%j%9%H$,;O$a$K$"$j!"(BIMAP $B%5!<%P!<$K!V$3$l$i$N5-;v(B
-$B$N$&$A!"0l=54V$h$j8E$$$b$N$O$I$l(B?$B!W$N$h$&$JLd$$$rH/$7$^$9!#$3$l$O40A4$K(B
-$B9gM}E*$J<ALd$K8+$($^$9$,!"8+$?$H$3$m$$$/$D$+$N(B IMAP $B%5!<%P!<$O!"$9$Y$F$N(B
-$B8E$$5-;v$K$D$$$F4|8B@Z$l>C5n$NBP>]$+$I$&$+$rD4$Y$k$N$G!"$=$l$KEz$($k$?$a(B
-$B$KD9$$;~4V$,$+$+$j$^$9!#IT;W5D$J$3$H$K!V(B@emph{$B$9$Y$F(B} $B$N5-;v$N$&$A!"0l=5(B
-$B4V$h$j8E$$$b$N$O$I$l(B?$B!W$H$$$&<ALd$NJ}$,$a$C$]$&B.$/Ez$($,JV$C$F$/$k$N$G!"(B
-$B$3$NJQ?t$r@_Dj$7$F(B Gnus $B$K$3$N<ALd$r=P$5$;$k$3$H$K$h$C$F!"K\Mh$N<ALd$=$N(B
-$B$b$N$X$NEz$rF@$k$3$H$,$G$-$k$N$G$9!#(B
-
-$B$3$NLdBj$O<B:]$K$"$J$?$KG&$S4s$C$F$/$k$G$7$g$&!#:G=i$N$3$m$O!"(BGnus $B$r@_(B
-$BDj$7$F!"$9$Y$F$,$&$^$/$$$C$?$H$7$F$b!"$$$C$?$sFs!A;0@iDL$N%a%C%;!<%8$,N/(B
-$B$^$C$?$J$i$P!"$"$J$?$O(B Gnus $B$NCY$$$3$H$r$N$N$7$j$O$8$a$k$G$7$g$&!#0lJ}!"(B
-$B$"$J$?$,BgNL$NEE;R%a!<%k$r$?$C$?0l=54V$G<u$1<h$k$N$G$"$l$P!"$3$NJQ?t$r@_(B
-$BDj$9$k$H(B Gnus $B$H(B IMAP $B%5!<%P!<4V$NDL?.NL$NA}Bg$r>7$/$G$7$g$&!#(B
-
-@item nnimap-logout-timeout
-@vindex nnimap-logout-timeout
-
-$B$"$k<o$N%M%C%H%o!<%/(B ($BNc$($P(B @acronym{VPN}) $B$r7PM3$7$F(B @acronym{IMAP} $B%5!<(B
-$B%P!<$K@\B3$9$k>l9g$K!"%5!<%P!<$X$N@\B3$rJD$8$k$3$H$,$G$-$J$$$3$H$,$"$j$^(B
-$B$9!#$=$N>l9g!"%5!<%P!<$,$"$kM}M3(B ($BE57?E*$K$O%?%$%`%"%&%H(B) $B$G@\B3$rJD$8$F(B
-$B$7$^$C$?$H$7$F$b!"(BEmacs $B$H%m!<%+%k!&%M%C%H%o!<%/$N4V$N@\B3$,@8$-$F$$$k$h(B
-$B$&$K4QB,$5$l$k$G$7$g$&!#$=$N7k2L(B Emacs $B$O(B Emacs $B$,Aw$C(B
-$B$?(B @code{LOGOUT} $BL?Na$KBP$9$k%5!<%P!<$+$i$NJVEz$rBT$AB3$1$^$9!"$H8@$&$+(B
-$B%O%s%0$7$^$9!#$=$N$h$&$J%M%C%H%o!<%/$K$$$k$N$G$"$l$P!"$3$NJQ?t$KIC?t$r@_(B
-$BDj$9$k$3$H$OLr$KN)$A$^$9!#$=$l$,@_Dj$5$l$k$H(B Emacs $B$,(B @code{LOGOUT} $BL?Na(B
-$B$rAw$C$F$+$i$3$NIC?t8e$K!"%O%s%0$7$?@\B3$O6/@)E*$K=*N;$5$;$i$l$^$9!#$=$l(B
-$B$O>.$52a$.$kCM$G$O$$$1$^$;$s$,!"Bg$-2a$.$kCM$bITJX$G$7$g$&!#$*$=$i$/(B
-$BCM(B 1.0 $B$ONI$$L\0B$G$9!#$G$bB>$NCM$r$$$/$D$+;n$7$F$_$k2ACM$,$"$k$+$b$7$l(B
-$B$^$;$s!#(B
-
-$B0J2<$O%5!<%P!<;XDj$NNc$G$9(B:
-
-@lisp
-(nnimap "mail.server.com"
-        (nnimap-logout-timeout 1.0))
-@end lisp
-@end table
-
-@menu
-* Splitting in IMAP::           nnimap $B$G%a!<%k$rJ,3d$9$k(B
-* Expiring in IMAP::            nnimap $B$K$h$k%a!<%k$N4|8B@Z$l>C5n(B
-* Editing IMAP ACLs::           $BB>$NMxMQ<T$N%a!<%k%\%C%/%9$X$N%"%/%;%9$r@)8B(B/$B5v2D$9$k(B
-* Expunging mailboxes::         $B!V%a!<%k%\%C%/%905=L!W%\%?%s$HEy2A$J$b$N(B
-* A note on namespaces::        Gnus $B$G(B @acronym{IMAP} $BL>A06u4V$r;H$&(B ($B;H$o$J$$(B) $BJ}K!(B
-* Debugging IMAP::              $B$b$N$4$H$,F/$+$J$$$H$-$K$9$k$Y$-$3$H(B
-@end menu
-
-@node Splitting in IMAP
-@subsection IMAP $B$G$NJ,3d(B
-@cindex splitting imap mail
-
-$BJ,3d$O(B Gnus $B$NMxMQ<T$,2?G/$b0&MQ$7$F$-$?$b$N$G!":#$d;D$j$N@$3&$bDI$$Ce$3(B
-$B$&$H$7$F$$$^$9!#$($(!"H`$i$K$O>!<j$KL4$r8+$F$$$F$b$i$$$^$7$g$&!#%5!<%P!<(B
-$BB&$GJ,3d$G$-$k(B @acronym{IMAP} $B%5!<%P!<$O$"$^$jB?$/$J$/!"$7$+$b$=$l$i$OI8(B
-$B=`$G$O$J$$%W%m%H%3%k$r;H$C$F$$$k$h$&$G$9!#$D$^(B
-$B$j(B Gnus $B$N(B @acronym{IMAP} $B%5%]!<%H$O!"<+J,<+?H$GJ,3d$r$7$J$1$l$P$J$i$J$$(B
-$B$H$$$&$3$H$G$9!#(B
-
-$B$=$7$F<B:]$K$7$^$9!#(B
-
-($B$D$$$G$K8@$($P!"$_$s$J$,L48+$F$$$?$N$G$7$g$&$M!#$=$N7k2L(B Sieve $B$O;T>l@j(B
-$BM-N($rA}$7$F!"$$$/$D$b$N(B IMAP $B%5!<%P!<$K$h$C$F%5%]!<%H$5$l$k$h$&$K$J$j$^(B
-$B$7$?!#9,$$$K(B Gnus $B$b$=$l$r%5%]!<%H$7$^$9!#(B@xref{Sieve Commands}.)
-
-$B4XO"$9$kJQ?t$O;0$D$G$9(B:
-
-@table @code
-@item nnimap-split-crosspost
-@cindex splitting, crosspost
-@cindex crosspost
-@vindex nnimap-split-crosspost
-@code{nil} $B$G$J$1$l$P!"J#?t$NJ,3d5,B'$,$=$N%a!<%k$H9gCW$7$?$H$-$K%/%m%9(B
-$B%]%9%H$r$7$^$9!#(B@code{nil} $B$J$i$P!"(B@code{nnimap-split-rule} $B$G:G=i$K8+$D(B
-$B$+$C$?$b$N$,;H$o$l$^$9!#(B
-
-Nnmail $B$GBP1~$9$k$b$N(B: @code{nnmail-crosspost}.
-
-@item nnimap-split-inbox
-@cindex splitting, inbox
-@cindex inbox
-@vindex nnimap-split-inbox
-$BJ,3d$N85$H$J$k(B @acronym{IMAP} $B$N%a!<%k%\%C%/%9$NL>A0$r;XDj$9$kJ8;zNs$+J8(B
-$B;zNs$N%j%9%H$G$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G!"J,3d$O;HMQ$7$J$$$h$&$K$J$C(B
-$B$F$$$^$9(B!
-
-@lisp
-(setq nnimap-split-inbox
-      '("INBOX" ("~/friend/Mail" . "lists/*") "lists.imap"))
-@end lisp
-
-Nnmail $B$KBP1~$9$k$b$N$O$"$j$^$;$s!#(B
-
-@item nnimap-split-rule
-@cindex splitting, rules
-@vindex nnimap-split-rule
-@code{nnimap-split-inbox} $B$G8+$D$+$C$??7$7$$%a!<%k$O!"$3$NJQ?t$K=>$C$FJ,(B
-$B3d$5$l$^$9!#(B
-
-$B$3$NJQ?t$O%j%9%H$N%j%9%H$+$i@.$j$^$9!#I{%j%9%H$N:G=i$NMWAG(B
-$B$O(B @acronym{IMAP} $B$N%a!<%k%\%C%/%9$G!"Fs$D$a$NMWAG$N@55,I=8=$K9gCW$7$?5-(B
-$B;v$N0\F0@h$r;XDj$7$^$9!#$o$+$j$^$7$?$+(B? $B$$$$$(!";d$b$o$+$j$^$;$s!#Nc$,I,(B
-$BMW$G$9!#(B
-
-@lisp
-(setq nnimap-split-rule
-      '(("INBOX.nnimap"
-         "^Sender: owner-nnimap@@vic20.globalcom.se")
-        ("INBOX.junk"    "^Subject:.*MAKE MONEY")
-        ("INBOX.private" "")))
-@end lisp
-
-$B$3$l$O(B nnimap $B%a!<%j%s%0%j%9%H$+$i$N$9$Y$F$N5-;v$r%a!<%k%\%C%/(B
-$B%9(B INBOX.nnimap $B$KF~$l!"(BSubject: $B9T$K(B MAKE MONEY $B$N$"$k$9$Y$F$N5-;v(B
-$B$r(B INBOX.junk $B$KF~$l!"$=$NB>$9$Y$F$N$b$N$r(B INBOX.private $B$KF~$l$^$9!#(B
-
-$B:G=i$NJ8;zNs$O!"(Breplace-match $B$G9gCW$7$?%F%-%9%H$+$iI{I=8=$rA^F~$9$k$H$-(B
-$B$K;HMQ$5$l$k$N$HF1$8$h$&$J!"(B@samp{\\1} $B7A<0$r4^$`$3$H$,$G$-$^$9!#Nc$($P(B:
-
-@lisp
-("INBOX.lists.\\1"     "^Sender: owner-\\([a-z-]+\\)@@")
-@end lisp
-
-$B:G=i$NMWAG$r%7%s%\%k(B @code{junk} $B$K$7$F!"9gCW$9$k%a%C%;!<%8$rC1$K>C$9$Y(B
-$B$-$G$"$k$3$H$rI=$9$3$H$b$G$-$^$9!#5$$rIU$1$F;H$C$F$/$@$5$$!#(B
-
-$BFs$DL\$NMWAG$O4X?t$G$"$k$3$H$b$G$-$^$9!#$=$N>l9g$O!"$=$N5,B'$N:G=i$NMWAG(B
-$B$r0z?t$H$7$F!"5-;v$N%X%C%@!<$,$"$k%P%C%U%!!<$G8F$P$l$^$9!#%a!<%k$,$=$N%0(B
-$B%k!<%W$KB0$9$k$H9M$($k>l9g$O!"(B@code{nil} $B$G$J$$CM$rJV$9I,MW$,$"$j$^$9!#(B
-
-Nnmail $B$NMxMQ<T$O!":G8e$N@55,I=8=$O$9$Y$F$N5-;v$K9gCW$9$k$h$&$K!"6u$G$J(B
-$B$/$F$O$J$i$J$$$3$H$r3P$($F$$$k$+$b$7$l$^$;$s(B ($B>e$NNc$N$h$&$K(B)$B!#$3$l(B
-$B$O(B nnimap $B$G$OI,MW$G$O$"$j$^$;$s!#@55,I=8=$N$I$l$K$b9gCW$7$J$$5-;v(B
-$B$O(B inbox $B$+$i0\F0$5$l$^$;$s!#(B(inbox $B$KL$FI5-;v$rBgNL$KCV$$$F$*$/$H!"J,3d(B
-$B$N%3!<%I$O?7$7$$%a!<%k$r<hF@$9$k$H$-$K$=$l$i$9$Y$F$rD4$Y$k$N$G!"<B9TB.EY(B
-$B$K1F6A$9$k$+$b$7$l$^$;$s!#(B)
-
-$B$3$l$i$N5,B'$OO"A[%j%9%H$N:G=i$+$i=*$j$K8~$+$C$F<B9T$5$l$^$9!#%/%m%9%]%9(B
-$B%H$rM-8z$K$7$F$$$J$$8B$j!":G=i$K9gCW$7$?5,B'$,!V>!$A!W$^$9!#M-8z$K$7$F$$(B
-$B$k>l9g$O!"$9$Y$F$N9gCW$7$?5,B'$,!V>!$A!W$^$9!#(B
-
-$B$3$NJQ?t$O$=$NCM$H$7$F4X?t$r;}$D$3$H$b$G$-$^$9!#$=$N4X?t$O5-;v$N%X%C%@!<(B
-$B$NItJ,$KHO0O$,69$a$i$l$?>uBV$G8F$P$l!"5-;v$N0\F0@h$@$H;W$&%0%k!<%W$rJV$9(B
-$B$b$N$G$J$1$l$P$J$j$^$;$s!#(B@code{nnimap-split-fancy} $B$r;2>H$7$F$/$@$5$$!#(B
-
-$BJ,3d%3!<%I$OI,MW$J$i%a!<%k%\%C%/%9$r:n@.$7$h$&$H$7$^$9!#(B
-
-$B0[$J$k2>A[%5!<%P!<Kh$K0c$&J,3d$N5,B'$r;H$C$?$j!"$=$l$I$3$m$+F1$8%5!<%P!<(B
-$B$N0[$J$k(B inbox $BKh$K0c$&J,3d$N5,B'$r;H$&$3$H$,$G$-$k$h$&$K$9$k$?$a$K!"$3(B
-$B$NJQ?t$N9=J8$O0J2<$N$d$jJ}$G3HD%$5$l$F$$$^$9!#(B
-
-@lisp
-(setq nnimap-split-rule
-      '(("my1server"    (".*"    (("ding"    "ding@@gnus.org")
-                                  ("junk"    "From:.*Simon")))
-        ("my2server"    ("INBOX" nnimap-split-fancy))
-        ("my[34]server" (".*"    (("private" "To:.*Simon")
-                                  ("junk"    my-junk-func)))))
-@end lisp
-
-$B2>A[%5!<%P!<L>$O!"F1$85,B'$rJ#?t$N%5!<%P!<$KE,MQ$G$-$k$h$&$K!"<B:]$K$O@5(B
-$B5,I=8=$K$J$C$F$$$^$9!#$3$NNc$G$O%5!<(B
-$B%P!<(B @code{my3server} $B$H(B @code{my4server} $B$NN>J}$,F1$85,B'$r;H$$$^$9!#F1(B
-$BMM$K(B inbox $BJ8;zNs$b@55,I=8=$G$9!#<B:]$NJ,3d$N5,B'$O!"A0$K@bL@$7$?$h$&$K!"(B
-$B4X?t$+!"%0%k!<%W(B/$B@55,I=8=$^$?$O%0%k!<%W(B/$B4X?t$rMWAG72$H$9$k%j%9%H!"$NN>J}(B
-$B$G$9!#(B
-
-Nnmail $B$GBP1~$9$k$b$N(B: @code{nnmail-split-methods}.
-
-@item nnimap-split-predicate
-@cindex splitting
-@vindex nnimap-split-predicate
-$B$3$N=R8l$K9gCW$9$k(B @code{nnimap-split-inbox} $B$K$"$k%a!<%k$OJ,3d$5$l$^$9!#(B
-$B$3$l$OJ8;zNs$G!"%G%#%U%)%k%H$O(B @samp{UNSEEN UNDELETED} $B$G$9!#(B
-
-inbox $B$K$"$k%a!<%k$rFI$`$?$a$KJL$N(B @acronym{IMAP} $B%/%i%$%"%s%H$r;H$C$F$$(B
-$B$k$,!"9XFIEY$K4X$o$i$:$K$9$Y$F$N5-;v$r(B Gnus $B$KJ,3d$5$;$?$$$J$i$P!"$3$l$O(B
-$BLr$KN)$D$+$b$7$l$^$;$s!#$=$N>l9g$O(B @samp{UNDELETED} $B$KJQ$($l$PNI$$$G$7$g(B
-$B$&!#(B
-
-@item nnimap-split-fancy
-@cindex splitting, fancy
-@findex nnimap-split-fancy
-@vindex nnimap-split-fancy
-$BFC5iJ,3d$r;H$$$?$$$J$i$P!"(B@code{nnimap-split-rule} $B$NCM(B
-$B$r(B @code{nnmail-split-fancy} $B$K@_Dj$9$k$3$H$,$G$-$^$9!#(B
-@xref{Fancy Mail Splitting}.
-
-$B$7$+$7(B nnmail $B$H(B nnimap $B$H$G0[$J$kFC5iJ,3dJ}<0$r;}$D$h$&$K$9$k$K$O!"(B
-@code{nnimap-split-rule} $B$NCM$r(B @code{nnimap-split-fancy} $B$K@_Dj$7$F!"(B
-nnimap $BFCM-$NFC5iJ,3dJ}<0$r(B @code{nnimap-split-fancy} $B$KDj5A$7$F$/$@$5$$!#(B
-
-$BNc(B:
-
-@lisp
-(setq nnimap-split-rule 'nnimap-split-fancy
-      nnimap-split-fancy ...)
-@end lisp
-
-Nnmail $B$GBP1~$9$k$b$N(B: @code{nnmail-split-fancy}.
-
-@item nnimap-split-download-body
-@findex nnimap-split-download-body
-@vindex nnimap-split-download-body
-$BJ,3d$7$F$$$k:GCf$K$9$Y$F$N5-;v$r%@%&%s%m!<%I$9$k$K$O!"Hs(B-@code{nil} $B$K@_(B
-$BDj$7$F$/$@$5$$!#$3$l$OIaDL$OI,MW$H$7$J$$$7!"$b$N$4$H$rAjEv$KCY$/$7$F$7$^(B
-$B$&$G$7$g$&!#5-;v$rJ,3d$9$k$?$a$K$=$NK\J8$rJ,@O$9$k9bEY$J4X?t$r;H$$$?$$>l(B
-$B9g$K$O!"I,MW$+$b$7$l$^$;$s!#(B
-@end table
-
-@node Expiring in IMAP
-@subsection IMAP $B$G$N4|8B@Z$l>C5n(B
-@cindex expiring @acronym{IMAP} mail
-
-@code{nnimap} $B$O40A4$J(B @code{nnmail} $BM3Mh$N%P%C%/%(%s%I$G$O$"$j$^$;$s$,!"(B
-$BI8=`E*$J$?$$$F$$$N4|8B@Z$l>C5n(B (@pxref{Expiring Mail}) $B$N5!G=$r%5%]!<%H(B
-$B$7$^$9!#(B@acronym{IMAP} $B$NJ,3d(B (@pxref{Splitting in IMAP}) $B$G(B
-$B$O(B @code{nnmail} $B$NJQ?t$rJ#@=$7$J$$(B ($BNc$($P(B @var{nnimap-expiry-wait} $B$r(B
-$B@8@.$7$J$$(B) $BE@$,0c$&$N$G$9$,!"(B@code{nnmail} $B$NJQ?t$rN.MQ$7$^$9!#0J2<(B
-$B$O(B @code{nnimap} $B$N4|8B@Z$l>C5n$N=hM}$G;H$o$l$kJQ?t$G$9!#(B
-
-$B$^$?!"4|8B@Z$l>C5n$N0u$,$I$N$h$&$K(B @acronym{IMAP} $B%5!<%P!<$K5-O?$5$l$k$+(B
-$B$K$D$$$F$b!"$3$3$G8@5Z$7$F$*$/$N$,E,@Z$G$7$g$&!#4|8B@Z$l>C5n$N0u(B
-$B$O(B @code{imap} $B%/%i%$%"%s%HFCM-$N0u$G$"$k(B @code{gnus-expire} $B$KJQ49$5$l!"(B
-$B%a%C%;!<%8$K5-O?$5$l$^$9!#$=$&$9$k$N$O!"$*$=$i$/(B Gnus $B$@$1$,E,@Z(B
-$B$K(B @code{gnus-expire} $B$N0u$rM}2r$7$F07$&$+$i$G$9!#$b$C$H$bB>$N%/%i%$%"%s(B
-$B%H$O!"%a%C%;!<%8$N%/%i%$%"%s%HFCM-$N%U%i%0$r8+$5$;$F$/$l$k$G$7$g$&$,!#$3(B
-$B$N$3$H$O!"%/%i%$%"%s%HFCM-$N%U%i%0$r915WE*$K%a%C%;!<%8$KJ]B8$9$k$3$H$r!"(B
-$B%5!<%P!<$,%5%]!<%H$7$J$1$l$P$J$i$J$$$3$H$b0UL#$7$^$9!#$?$$$F$$$O%5%]!<%H(B
-$B$7$^$9!#9,$$$K$b!#(B
-
-$B$b$7(B @acronym{IMAP} $B%a!<%k$N4|8B@Z$l>C5n$,$H$F$bCY$/46$8$i$l$k$N$J$i$P!"(B
-$B%5!<%P!<JQ?t(B @code{nnimap-search-uids-not-since-is-evil} $B$r@_Dj$9$k$3$H(B
-$B$r;n$7$F$_$F$/$@$5$$!#(B
-
-@table @code
-@item nnmail-expiry-wait
-@item nnmail-expiry-wait-function
-$B$3$l$i$NJQ?t$O40A4$K%5%]!<%H$5$l$F$$$^$9!#4|8B@Z$l>C5n$NCM$O!"?t!"%7%s%\(B
-$B%k$N(B @code{immediate} $B$^$?$O(B @code{never} $B$G$9!#(B
-
-@item nnmail-expiry-target
-$B$3$NJQ?t$O%5%]!<%H$5$l$F$$$F!"FbItE*$K$O$3$l$r07$&(B @code{nnmail} $B4X?t$r(B
-$B8F$V$3$H$K$h$C$F<BAu$5$l$F$$$^$9!#$=$l$K$O!"9T$-@h$,F1$8%5!<%P!<(B
-$B$N(B @acronym{IMAP} $B%0%k!<%W$@$C$?$i!"5-;v$rDI2C$9$kBe$o$j$K%3%T!<$9$k(B ($B%"%C(B
-$B%W%m!<%I$7D>$9(B) $B$H$$$&:GE,2=$b4^$_$^$9!#(B
-@end table
-
-@node Editing IMAP ACLs
-@subsection IMAP $B$N(B ACL $B$rJT=8$9$k(B
-@cindex editing imap acls
-@cindex Access Control Lists
-@cindex Editing @acronym{IMAP} ACLs
-@kindex G l ($B%0%k!<%W(B)
-@findex gnus-group-nnimap-edit-acl
-
-ACL $B$O(B Access Control List ($B;HMQ@)8B0lMw(B) $B$NN,$G$9!#(B@acronym{IMAP} $B$G(B
-$B$O!"(BACL $B$OB>$NMxMQ<T$K$h$k$"$J$?$N%a!<%k%\%C%/%9$N;HMQ$r@)8B(B ($B$b$7$/$O5v(B
-$B2D(B) $B$9$k$?$a$K;H$o$l$F$$$^$9!#$9$Y$F$N(B @acronym{IMAP} $B%5!<%P!<$K$3$N5!G=(B
-$B$,$"$k$o$1$G$O$J$$$N$G!"L5$$%5!<%P!<$G$3$l$r;H$&$H%(%i!<$,H/@8$7$^$9!#(B
-
-$B$"$k%a!<%k%\%C%/%9$N$?$a$N(B ACL $B$rJT=8$9$k$K$O!"(B
-@kbd{G l} (@code{gnus-group-edit-nnimap-acl}) $B$r%?%$%W$7$F$/$@$5$$!#$=$&(B
-$B$9$k$H!">\$7$$@bL@$r$H$b$J$C$?(B ACL $BJT=8%&%#%s%I%&$,8=$l$^$9!#(B
-
-$B;H$&$3$H$,$"$j$=$&$JNc(B:
-
-@itemize @bullet
-@item
-$B$"$J$?$N%a!<%j%s%0%j%9%H$N%a!<%k%\%C%/%9$G!H(Banyone$B!I$K!H(Blrs$B!I8"(B (lookup,
-read, seen/unseen $B%U%i%0$NJ];}(B) $B$rM?$($k$3$H$K$h$C$F!"$=$N%j%9%H$K9VFIEP(B
-$BO?$7$J$/$F$b!"F1$8%5!<%P!<$NB>$NMxMQ<T$,FI$`$3$H$,$G$-$^$9!#(B
-@item
-$B>/$J$/$H$b(B Cyrus $B$N%5!<%P!<$G$O!"C/$b$,!H(Bplussing$B!I$r;H$&$3$H$,$G$-$k$h(B
-$B$&$K$9$k$?$a$K$O!"MxMQ<T!H(Banyone$B!I$KEj9F(B ("p") $B$N5v2D$rM?$($kI,MW$,$"$j(B
-$B$^$9(B ($B!H(Bplussing$B!I$H$O$9$J$o$A!"(Buser+mailbox@@domain $B08$F$KAw$i$l$?%a!<(B
-$B%k$,(B INBOX.mailbox $B$H$$$&(B @acronym{IMAP} $B$N%a!<%k%\%C%/%9$KFO$/$h$&$K$9(B
-$B$k$3$H$G$9(B)$B!#(B
-@end itemize
-
-@node Expunging mailboxes
-@subsection $B%a!<%k%\%C%/%9$N:o=|(B
-@cindex expunging
-
-@cindex expunge
-@cindex manual expunging
-@kindex G x ($B%0%k!<%W(B)
-@findex gnus-group-expunge-group
-@code{nnimap-expunge-on-close} $B$K(B @code{never} $B$r@_Dj$7$F$$$k>l9g$K$O!"(B
-$B%a!<%k%\%C%/%9$N$9$Y$F$N>C5n(B (deleted) $B$5$l$?5-;v$r<jF0$G:o(B
-$B=|(B (expunge) $B$9$kI,MW$,$"$k$G$7$g$&!#$^$5$K$3$l$,(B @kbd{G x} $B$,9T$J$&$3$H(B
-$B$G$9!#(B
-
-$B:#$N$H$3$m>C5n$5$l$?5-;v$rI=<($9$kJ}K!$O$"$j$^$;$s!#$?$@>C5n$G$-$k$@$1$G(B
-$B$9!#(B
-
-@node A note on namespaces
-@subsection $BL>A06u4V$K4X$9$kCm0U(B
-@cindex IMAP namespace
-@cindex namespaces
-
-@acronym{IMAP} $B%W%m%H%3%k$K$OL>A06u4V(B (namespaces) $B$H8F$P$l$k35G0$,$"$j!"(B
-$B0J2<$N(B RFC2060 $B$NJ8=q$G5-=R$5$l$F$$$^$9(B:
-
-@example
-5.1.2.  $B%a!<%k%\%C%/%9L>A06u4VL?L>5,B'(B
-
-   $B=,47$K$h$j(B "#" $B$G;O$^$C$F$$$k$9$Y$F$N%a!<%k%\%C%/%9L>$N:G=i$N3,AXMWAG(B
-   $B$O!";D$j$NL>A0$N(B "$BL>A06u4V(B" $B$r<($7$F$$$k!#$3$l$O!"$=$l$>$lFH<+$NL>A0(B
-   $B6u4V$r;}$D0[$J$k%a!<%k%\%C%/%9J]4I$N4V$G$N!"[#Kf$5$r<h$j=|$/$3$H$r2D(B
-   $BG=$K$9$k!#(B
-
-      $BNc$($P(B USENET $B%K%e!<%9%0%k!<%W$X$N%"%/%;%9$rDs6!$9$k<BAu$O!"(BUSENET
-      $B%K%e!<%9%0%k!<%WL>A06u4V$rB>$N%a!<%k%\%C%/%9$+$iJ,N%$9$k$?$a$K!"(B
-      "#news" $BL>A06u4V$rMQ$$$F$b$h$$!#$3$&$7$F(B comp.mail.misc $B%K%e!<%9%0(B
-      $B%k!<%W$O(B "#news.comp.mail.misc" $B$H$$$&%a!<%k%\%C%/%9L>$r;}$A!"L>A0(B
-      "comp.mail.misc" $B$OJL$N%*%V%8%'%/%H(B ($BNc$($P!"MxMQ<T$N8D?M%a!<%k%\%C(B
-      $B%/%9(B) $B$r;X$9$3$H$O$"$j$&$k!#(B
-
-($BLuCp(B: http://kame.zit.to/~obata/imap/rfc/rfc2060ja.txt $B$h$jE>:\(B)
-@end example
-
-Gnus $B$K$*$1$k(B @acronym{IMAP} $B$N<BAu$rJ]>Z$9$k5-=R$,$3$NJ8=q$K$OL5$$0lJ}(B
-$B$G!"$$$/$D$+$N%5!<%P!<$O(B Gnus $B$N%a!<%k%\%C%/%9$NL>A0$N;H$$J}$G$OF0:n$7$J(B
-$B$$$d$jJ}$GL>A06u4V@\F,8l(B (namespace prefix) $B$r;H$C$F$$$^$9!#(B
-
-$B6qBNE*$K$O!"%o%7%s%H%sBg3X$N(B @acronym{IMAP} $B%5!<%P!<(B
-$B$O(B @code{#driver.mbx/read-mail} $B$N$h$&$J%a!<%k%\%C%/%9L>$r;H$C$F$$$F!"$=(B
-$B$l$O(B @sc{create} $B$H(B @sc{append} $B%3%^%s%I$G$@$1M-8z$G$9!#%a!<%k%\%C%/%9$,(B
-$B:n$i$l$?8e(B ($B$^$?$O%a%C%;!<%8$,%a!<%k%\%C%/%9$KDI2C$5$l$?8e(B) $B$G$O!"$=$l$O(B
-$BL>A06u4V@\F,8l$rIU$1$:$K%"%/%;%9!"$9$J$o$A(B @code{read-mail} $B$5$l$J$1$l$P(B
-$B$J$j$^$;$s!#(BGnus $B$OMxMQ<T$,(B CREATE $B$H(B APPEND $B%3%^%s%I$@$1$GF~NO$7$?%a!<(B
-$B%k%\%C%/%9L>$rJ]>Z$G$-$J$$$N$G!"@dBP$KL>A06u4V@\F,8l$,IU$$$?%a!<%k%\%C%/(B
-$B%9L>$r(B Gnus $B$G;H$C$F$O$$$1$^$;$s!#(B
-
-@code{#driver.*/} $B$K$D$$$F!"$I$N$h$&$K@\F,8l$r;H$($PNI$$$+$K$D$$$F$N$5$i(B
-$B$J$k>pJs$O!"(BUoW IMAPD $B$NJ8=q$r8+$F$/$@$5$$!#$=$l$i$O6/NO$J9)6q$J$N$G!"$I(B
-$B$s$J8z2L$,$"$k$+$,3N$+$J>l9g$@$1;H$C$F$/$@$5$$!#(B
-
-@node Debugging IMAP
-@subsection IMAP $B$N%G%P%C%0(B
-@cindex IMAP debugging
-@cindex protocol dump (IMAP)
-
-@acronym{IMAP} $B$O(B @acronym{NNTP} $B$d(B @acronym{POP3} $B$h$j$b$C$HJ#;($J%W%m(B
-$B%H%3%k$G$9!#<BAu>e$N%P%0$,L5$$$H$O8@$$@Z$l$J$$$N$G!";d$?$A$O!"$9$0$K$=$l(B
-$B$i$rD>$9$?$a$K:GA1$r?T$/$7$^$9!#$"$J$?$,4qL/$J?6$kIq$$$K=P2q$C$?$H$7$?$i!"(B
-$B%5!<%P!<$+(B Gnus $B$N$I$A$i$+$K%P%0$,$"$k2DG=@-$,$"$j$^$9!#(B
-
-$B$"$J$?$,0lHLE*$J%M%C%H%o!<%/!&%W%m%H%3%k$K@:DL$7$F$$$k$J$i$P!"(BGnus $B$H%5!<(B
-$B%P!<$N4V$G$d$j$H$j$5$l$k%W%m%H%3%k!&%@%s%W$rFI$`$3$H$K$h$C$F!"$*$=$i$/$$(B
-$B$/$D$+$N<j3]$+$j$rCj=P$9$k$3$H$,$G$-$k$G$7$g$&!#@:DL$7$F$$$J$/$F$b!"%W%m(B
-$B%H%3%k!&%@%s%W$r(B IMAP $B$K4X$9$k%P%0Js9p$K4^$a$l$P!"$=$NLdBj$N2r7h$K$H$C$F(B
-$B=EMW$J%G!<%?$G;d$?$A$r=u$1$k$3$H$K$J$j$^$9!#$7$?$,$C$F(B Gnus $B$N(B IMAP $B%P%0(B
-$B$rJs9p$9$k$H$-$K!"%W%m%H%3%k!&%@%s%W$r4^$a$k$3$H$r6/$/>)Ne$7$^$9!#(B
-
-@vindex imap-log
-$B%W%m%H%3%k!&%@%s%W$O!"$=$l$rM-8z$K$7$F$$$k$H$?$/$5$s$N%G!<%?$r@8@.$9$k$N(B
-$B$G!"%G%#%U%)%k%H$G$OL58z$K$J$C$F$$$^$9!#M-8z$K$9$k$K$O!"0J2<$N$h$&(B
-$B$K(B @code{imap-log} $B$r@_Dj$7$F$/$@$5$$(B:
-
-@lisp
-(setq imap-log t)
-@end lisp
-
-$B$3$l$O%5!<%P!<$H$N$d$j$H$j$r2?$G$b(B @code{imap.el} $B%Q%C%1!<%8$K5-O?$5$;$^(B
-$B$9!#$=$N5-O?$O(B @samp{*imap-log*} $B$H$$$&%P%C%U%!!<$K3JG<$5$l$^$9!#$H$-$H(B
-$B$7$F!"(B@code{BAD} $B$H$$$&;%$,IU$1$i$l$k%(%i!<%a%C%;!<%8$rC5$7$F$/$@$5$$!#(B
-$B$G$b!"%P%0$rDs=P$9$k$H$-$O!"$9$Y$F$N%G!<%?$r4^$a$k$h$&$K$7$F$/$@$5$$!#(B
 
 @node Other Sources
 @section $B$=$NB>$N%0%k!<%W8;(B
@@ -22056,7 +21440,6 @@ Gnus $B$O0lF|$K0l2s%9%3%"$r8:?j$5$;$h$&$H$7$^$9!#Nc$($P(B Gnus $B$r;MF|4VAv$i
 * Highlighting and Menus::      $B%P%C%U%!!<$rAGE($G?4CO$h$/8+$;$k(B
 * Buttons::                     $B$?$C$?==2s$?$?$$$?$@$1$Gg'>d1j$K$J$k(B!
 * Daemons::                     Gnus $B$O$"$J$?$NN"$G;E;v$r$9$k$3$H$,$G$-$k(B
-* NoCeM::                       Spam $B$dB>$NB@$j$d$9$$?);v$rHr$1$kJ}K!(B
 * Undo::                        $B$$$/$D$+$NF0:n$O85$KLa$9$3$H$,$G$-$k(B
 * Predicate Specifiers::        $B=R8l$r@_Dj$9$k(B
 * Moderation::                  $B$"$J$?$,%b%G%l!<%?!<$@$C$?$i$I$&$9$k$+(B
@@ -23045,13 +22428,12 @@ Gnus $B$O$5$^$6$^$J!V%O%s%I%i!<!W(B($B=hM}$r9T$J$o$;$k$?$a$N$b$N(B) $B$rDj5
 (gnus-demon-add-handler 'gnus-demon-close-connections 30 t)
 @end lisp
 
-@findex gnus-demon-add-nocem
 @findex gnus-demon-add-scanmail
 @findex gnus-demon-add-rescan
 @findex gnus-demon-add-scan-timestamps
 @findex gnus-demon-add-disconnection
 $B$3$N$?$a$N4{@=$N4X?t$,$$$/$D$+:n@.$5$l$F$$$^$9(B:
-@code{gnus-demon-add-nocem}, @code{gnus-demon-add-disconnection},
+@code{gnus-demon-add-disconnection},
 @code{gnus-demon-add-nntp-close-connection},
 @code{gnus-demon-add-scan-timestamps}, @code{gnus-demon-add-rescan}, $B$*(B
 $B$h$S(B @code{gnus-demon-add-scanmail} $B$G$9!#$3$l$i$N5!G=$rI,MW$H$9$k$J$i$P!"(B
@@ -23068,152 +22450,6 @@ Gnus $B$O$5$^$6$^$J!V%O%s%I%i!<!W(B($B=hM}$r9T$J$o$;$k$?$a$N$b$N(B) $B$rDj5
 $B$9$Y$F$N%K%e!<%9$H%a!<%k$rFsICKh$KD4$Y$^$o$94X?t$rIU$12C$($?$j$9$k$3$H$O!"(B
 $B$I$s$JN)GI$J%7%9%F%`$+$i$b3N<B$KDI$$=P$5$l$kJ}K!$G$9!#$*9T57NI$/$7$^$7$g(B
 $B$&!#(B
-
-@node NoCeM
-@section NoCeM
-@cindex nocem
-@cindex spam
-
-@dfn{Spam} $B$H$O!"F1$85-;v$r2?2s$b2?2s$b2?2s$bEj9F$9$k$3$H$G$9!#(BSpam $B$O0-(B
-$B$$$3$H$G$9!#(BSpam $B$O6'0-$G$9!#(B
-
-Spam $B$O$5$^$6$^$JH?(B spam $B5!4X$K$h$C$F!"DL>o0lF|$+$=$3$i$G<h$j>C$7$5$l$^(B
-$B$9!#DL>o$3$l$i$N5!4X$O!"0l=o$K(B @dfn{NoCeM} $B%a%C%;!<%8$bAw$j=P$7$^$9!#(B
-@dfn{NoCeM} $B$O!H(Bno see-'em$B!I(B($B$=$l$i$r8+$?$/$J$$(B) $B$HH/2;$5$l!"0UL#$O$=$N(B
-$BL>A0$NDL$j$G$9(B---$B$3$l$i$N%a%C%;!<%8$O5$$K?($k5-;v$r!"$D$^$j!">C$7$F$7$^(B
-$B$$$^$9!#(B
-
-$B$I$&$;$=$l$i$N5-;v$,<h$j>C$7$5$l$F$7$^$&$N$J$i!"$3$l$i$N(B NoCeM $B%a%C%;!<(B
-$B%8$O2?$NLr$KN)$D$N$G$7$g$&(B? $B$"$k%5%$%H$G$O<h$j>C$7%a%C%;!<%8$r=E;k$7$^$;(B
-$B$s!#$^$?!"$"$k%5%$%H$G$OFCDj$N?t?M$+$i$N<h$j>C$7%a%C%;!<%8$@$1$rB:=E$7$^(B
-$B$9!#$=$3$G!"$"$J$?$O(B NoCeM $B%a%C%;!<%8$r;H$$$?$/$J$k$+$b$7$l$J$$$o$1$G$9!#(B
-$B$3$l$i$O(B @samp{news.lists.filters} $B$d(B @samp{alt.nocem.misc} $B$J$I$N%K%e!<(B
-$B%9%0%k!<%W$GG[I[$5$l$F$$$^$9(B ($BLuCm(B: @samp{fj.news.lists.filters} $B$b!"$=(B
-$B$N$?$a$N%K%e!<%9%0%k!<%W$G$9(B)$B!#(B
-
-Gnus $B$O$3$N%0%k!<%W$N%a%C%;!<%8$r<+F0E*$KFI$_!"2r<a$9$k$3$H$,$G$-!"$3$l(B
-$B$G(B spam $B$r>C$75n$j$^$9!#(B
-
-$B$b$A$m$s!"$3$l$i$r%+%9%?%^%$%:$9$k$?$a$NJQ?t$,$$$/$D$+$"$j$^$9(B:
-
-@table @code
-@item gnus-use-nocem
-@vindex gnus-use-nocem
-$B$b$N$4$H$r;O$a$5$;$k$K$O!"$3$NJQ?t$r(B @code{t} $B$K@_Dj$7$F$/$@$5$$!#%G%#%U%)(B
-$B%k%H$G$O(B @code{nil} $B$G$9!#(B
-
-$B$3$NJQ?t$K%0%k!<%W%l%Y%k$H$7$F@5$N?tCM$r@_Dj$9$k$3$H$b$G$-$^$9!#$=$N>l9g!"(B
-$B$3$NCM$,(B @code{gnus} $B$d(B @code{gnus-group-get-new-news} $B$J$I$N%3%^%s%I$N(B
-$B@\F,0z?t$H$7$FM?$($k%0%k!<%W%l%Y%k0J2<$@$C$?$i!"(BGnus $B$O?7Ce%K%e!<%9$r%A%'%C(B
-$B%/$9$k$H$-$K(B NoCeM $B%a%C%;!<%8$rAv::$7$^$9!#$5$b$J$1$l$P!"$=$l$i$N%3%^%s(B
-$B%I$K$3$NCM$h$j>.$5$$%0%k!<%W%l%Y%k$rM?$($k$H!"(BGnus $B$O(B NoCeM $B%a%C%;!<%8$r(B
-$BAv::$7$^$;$s!#Nc$($P!"%a!<%k%0%k!<%W$G(B 1 $B$+(B 2 $B$r;H$C$F$$$F%K%e!<%9%0%k!<(B
-$B%W$N%l%Y%k$,%G%#%U%)%k%H$N$^$^$@$C$?$i!"(B3 $B$,:G$bNI$$A*Br$G$9!#(B
-
-@item gnus-nocem-groups
-@vindex gnus-nocem-groups
-Gnus $B$O$3$N%0%k!<%W$N%j%9%H$+$i(B NoCeM $B%a%C%;!<%8$rC5$7$^$9!#%G%#%U%)%k%H(B
-$B$O<!$NDL$j$G$9(B:
-
-@lisp
-("news.lists.filters" "alt.nocem.misc")
-@end lisp
-
-@item gnus-nocem-issuers
-@vindex gnus-nocem-issuers
-NoCeM $B%a%C%;!<%8$rH/9T$9$k?M$O$?$/$5$s$$$^$9!#$3$N%j%9%H$G$O!"C/$N8@$&$3(B
-$B$H$K=>$$$?$$$+$r;XDj$7$^$9!#%G%#%U%)%k%H$O<!$NDL$j$G$9(B:
-
-@lisp
-("Adri Verhoef"
- "alba-nocem@@albasani.net"
- "bleachbot@@httrack.com"
- "news@@arcor-online.net"
- "news@@uni-berlin.de"
- "nocem@@arcor.de"
- "pgpmoose@@killfile.org"
- "xjsppl@@gmx.de")
-@end lisp
-
-$B$3$N%j%9%H$K4^$a$i$l$kM-L>$JH?(B spam $B2H$?$A(B
-$B$O(B @uref{http://www.xs4all.nl/~rosalind/nocemreg/nocemreg.html} $B$K:\$C$F(B
-$B$$$^$9!#(B
-
-$B$3$l$i$9$Y$F$N?M!9$N(B NoCeM $B%a%C%;!<%8$KN10U$9$kI,MW$O$"$j$^$;$s(B---$B8@$&$3(B
-$B$H$rJ9$-$?$$?M$@$1$GNI$$$N$G$9!#$^$?!"$=$l$i$N?M$?$A$+$i$N(B NoCeM $B%a%C%;!<(B
-$B%8$r!"$9$Y$F<u$1F~$l$kI,MW$b$"$j$^$;$s!#$=$l$>$l$N(B NoCeM $B%a%C%;!<%8$O!"(B
-$B$=$N%a%C%;!<%8$N87L)$J(B ($BB?>/$O87L)!"$?$$$F$$$O$=$&$G$b$J$$(B) $BDj5A$rM?$($k(B
-$B<oJL(B @dfn{type} $B%X%C%@!<$r;}$C$F$$$^$9!#0lHLE*$J<oJL$O(B @samp{spam},
-@samp{spew}, @samp{mmf}, @samp{binary}, $B$*$h$S(B @samp{troll} $B$G$9!#$3$l$r(B
-$B;XDj$9$k$K$O!"%j%9%H$NCf$G(B @code{($BH/9T<T(B $B>r7o(B@dots{})} $B$H$$$&MWAG$r;H$&(B
-$BI,MW$,$"$j$^$9!#$=$l$>$l$N>r7o$O!"J8;zNs(B ($B;H$$$?$$<oJL$K9gCW$9$k@55,I=(B
-$B8=(B) $B$^$?$O(B @code{(not $BJ8;zNs(B)} $B$H$$$&7A<0$N%j%9%H(B ($B$3$N>l9g$N!VJ8;zNs!W(B
-$B$O;H$$$?$/$J$$<oJL$K9gCW$9$k@55,I=8=(B) $B$N$I$A$i$+$G$9!#(B
-
-$BNc$($P!"(BChris Lewis $B$+$i$N!"(B@samp{troll} $B%a%C%;!<%80J30$N$9$Y$F(B
-$B$N(B NoCeM $B%a%C%;!<%8$rM_$7$$>l9g$K$O!"$3$&$9$l$PNI$$$G$7$g$&(B:
-
-@lisp
-("clewis@@ferret.ocunix.on.ca" ".*" (not "troll"))
-@end lisp
-
-$B0lJ}!"H`$N(B @samp{spam} $B$H(B @samp{spew} $B%a%C%;!<%80J30$O2?$bMW$i$J$$$N$G$"(B
-$B$l$P!"0J2<$N$h$&$K$G$-$^$9(B:
-
-@lisp
-("clewis@@ferret.ocunix.on.ca" (not ".*") "spew" "spam")
-@end lisp
-
-$B$3$N;XDj$O:8$+$i1&$KE,MQ$5$l$^$9!#(B
-
-@item gnus-nocem-verifyer
-@vindex gnus-nocem-verifyer
-@findex gnus-nocem-epg-verify
-@findex pgg-verify
-$B$3$l$O(B NoCeM $BH/9T<T$,K\?M$G$"$k$3$H$r8!>Z$9$k4X?t$G$J$/$F$O$J$j$^$;$s!#(B
-EasyPG $B$,MxMQ$G$-$k>l9g!"$3$NJQ?t$O%G%#%U%)%k%H(B
-$B$G(B @code{gnus-nocem-epg-verify} $B$K$J$j$^$9$,!"$=$&$G$J$1$l(B
-$B$P(B @code{pgg-verify} $B$K$J$j$^$9!#$=$N4X?t$O!"8!>Z$K@.8y$7$?$i(B
-$BHs(B-@code{nil} $B$r!"$=$&$G$J$1$l$P(B (NoCeM $B%a%C%;!<%8$,=pL>$5$l$F$$$J$$>l9g(B
-$B$r4^$_$^$9(B) @code{nil} $B$rJV$5$J$1$l$P$J$j$^$;$s!#$b$7$3$l$,Hs>o$KCY$/$F!"(B
-$B8!>Z7k2L$r5$$K$7$J$$(B ($B$3$l$O$?$V$s4m81$G$9(B) $B$N$G$"$l$P!"$3$NJQ?t(B
-$B$r(B @code{nil} $B$K$9$k$3$H$,$G$-$^$9!#(B
-
-$B0JA0!"%G%#%U%)%k%H$O(B Mailcrypt $B$N4X?t$G$"$k(B @code{mc-verify} $B$G$7$?!#$^(B
-$B$@$=$l$r;H$&$3$H$,$G$-$^$9$,!"(BPGP $B$N8x3+80$r(B GnuPG $B$N80B+$K2C$($k$3$H$r(B
-$B1^$o$J$1$l$P!"(BGnuPG $B$H$H$b$KF0:n$9$k(B @code{gnus-nocem-epg-verify} $B$^$?(B
-$B$O(B @code{pgg-verify} $B$KJQ$($k$3$H$,$G$-$^$9!#(B
-
-@item gnus-nocem-directory
-@vindex gnus-nocem-directory
-$B$3$l$O(B Gnus $B$,(B NoCeM $B%-%c%C%7%e%U%!%$%k$rJ]B8$9$k>l=j$G$9!#%G%#%U%)%k%H(B
-$B$O(B @file{~/News/NoCeM/} $B$G$9!#(B
-
-@item gnus-nocem-expiry-wait
-@vindex gnus-nocem-expiry-wait
-$B8E$$(B NoCeM $B9`L\$r%-%c%C%7%e$+$i>C$9$^$G$NF|?t!#%G%#%U%)%k%H$O(B 15 $B$G$9!#(B
-$B$3$l$rC;$/$9$k$[$I(B Gnus $B$OB.$/$J$j$^$9$,!"8E$$(B spam $B$r8+$k$3$H$K$J$C$F$7(B
-$B$^$&$+$b$7$l$^$;$s!#(B
-
-@item gnus-nocem-check-from
-@vindex gnus-nocem-check-from
-$BHs(B-@code{nil} $B$G$O!"5-;v$N%\%G%#!<$K$"$kH/9T?M$N@5Ev@-$rD4$Y$^$9!#$=$&$G(B
-$B$J$$>l9g$O!"Cx<T$,@5$7$$H/9T?M$G$J$/$F$b5$$K$;$:$K5-;v$r<h$j9~$_$^$9$,!"(B
-$B$b$7$"$J$?$,@5$7$$H/9T?M$r8+J,$1$i$l$k$J$i$P!"$=$&$7$?J}$,$H$F$bB.$/$J$k(B
-$B$G$7$g$&!#(B
-
-@item gnus-nocem-check-article-limit
-@vindex gnus-nocem-check-article-limit
-$B$9$Y$F$N(B NoCeM $B%0%k!<%W$K$*$1$k%A%'%C%/$9$k5-;v$N:GBg?t$r;XDj$7$^$9!#(B
-@code{nil} $B$GL5@)8B$K$J$j$^$9!#(BNoCeM $B%0%k!<%W$O5pBg$K$J$k$3$H$,$"$j!"$=(B
-$B$&$J$k$H=hM}$,$H$F$bCY$/$J$j$^$9!#(B
-@end table
-
-NoCeM $B$r;H$&$H!"$b$7$+$9$k$H%a%b%j6t$$$K$J$k$+$b$7$l$^$;$s!#$"$J$?$,$?$/(B
-$B$5$s$N@8$-$?%0%k!<%W(B ($B$D$^$j9XFI$"$k$$$OHs9XFI%0%k!<%W(B) $B$r;}$C$F$$$k$H!"(B
-Emacs $B$N%W%m%;%9$OBg$-$/$J$C$F$7$^$&$G$7$g$&!#$b$7$3$l$,LdBj$G$"$l$P!"Hs(B
-$B9XFI$N%0%k!<%W$rA4It(B ($B$"$k$$$O$=$NB?$/$r(B) $B>C$75n$C$F(B (kill $B$7$F(B) $B$7$^$&(B
-$B$Y$-$G$9(B (@pxref{Subscription Commands})$B!#(B
 
 @node Undo
 @section $B$d$jD>$7(B
@@ -24028,7 +23264,7 @@ Spam $B$rHr$1$k$?$a$NA0>O$N%R%s%H$,==J,$@$C$?F|!9$O2a$.5n$j$^$7$?!#:#$G$O(B
 Nnimap $B%P%C%/%(%s%I$N>l9g!"%G%#%U%)%k%H$G$O5-;v$N%\%G%#!<$,%@%&%s%m!<%I(B
 $B$5$l$J$$$3$H$KCm0U$7$F$/$@$5$$!#$=$l$r$9$k$?$a$K(B
 $B$O(B @code{nnimap-split-download-body} $B$r(B @code{t} $B$K@_Dj$9$kI,MW$,$"$j$^(B
-$B$9(B (@pxref{Splitting in IMAP})$B!#(B
+$B$9(B (@pxref{Client-Side @acronym{IMAP} Splitting})$B!#(B
 
 $B0J>e$,$3$l$K4X$9$k$3$H$G$9!#$"$k<o$N(B spam $B$O$I$&$7$F$bAGDL$j$7$F$7$^$$$,(B
 $B$A$J$N$G!"(Bspam $B$rFI$`$O$a$K$J$C$?$H$-$K8F$V$?$a$N5$$NMx$$$?4X?t$,I,MW$G(B
@@ -24319,7 +23555,7 @@ IMAP $B$NMxMQ<T$X$NCm0U(B: spam $B%P%C%/%(%s%I$H$7(B
 $B%a%C%;!<%8$NK\J8$b<h$j9~$`$3$H$r;X<($9$k$3$H$,$G$-$^$9!#$=$l(B
 $B$O(B @acronym{IMAP} $B$rCY$/$7$F$7$^$&$N$G!"%G%#%U%)%k%H$G$O@_Dj$5$l$^$;$s!#(B
 $B$=$7$F!"MxMQ<T$KBe$o$C$F$=$l$r9T$J$&$3$H$O!"E,@Z$JH=CG$G$O$"$j$^$;$s!#(B
-@xref{Splitting in IMAP}.
+@xref{Client-Side @acronym{IMAP} Splitting}.
 
 @code{spam-use-*} $BJQ?t$r;H$C$F!"(B@code{spam-split} $B$,;H$&0l$D0J>e(B
 $B$N(B spam $B%P%C%/%(%s%I$r@_Dj$7$J$1$l$P$J$j$^$;$s!#(B@xref{Spam Back Ends}.
@@ -27169,14 +26405,6 @@ Gnus $B$O(B SOUP $B%Q%1%C%H$r:n@.(B/$BFI$_9~$_$r$9$k$?$a$N?7$7$$%P%C%/%(%s
 \marginpar[\mbox{}\hfill\epsfig{figure=ps/fseptember,height=5cm}]{\epsfig{figure=ps/fseptember,height=5cm}}
 @end iflatex
 @end iftex
-
-@item
-Gnus $B$O(B spam $B$r:,@d$d$7$K$9$k$?$a$K!"(BNoCeM $B%U%!%$%k$rMxMQ$G$-$k$h$&$K$J(B
-$B$j$^$7$?(B (@pxref{NoCeM})$B!#(B
-
-@lisp
-(setq gnus-use-nocem t)
-@end lisp
 
 @item
 $B%0%k!<%W$r>o$K8+$($k$h$&$K$7$F$*$/$3$H$,(B ($BLuCm(B: $B$=$N%0%k!<%W$KL$FI5-;v$,(B
