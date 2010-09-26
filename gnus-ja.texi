@@ -22885,6 +22885,12 @@ Picon データベースの場所です。これは @file{news}, @file{domains},
 Picon のファイル名として試してみる順に並べられた拡張子のリストです。ディ
 フォルトは @code{("xpm" "gif" "xbm")} から Emacs に組み込まれていないも
 のを除外したものです。
+
+@item gnus-picon-inhibit-top-level-domains
+@vindex gnus-picon-inhibit-top-level-domains
+もし @code{nil} ではない (それがディフォルト) 値だったら、
+@samp{.net} や @samp{.de} のようなものについて picons を表示しません。普
+通それらはあまり面白いものではありません。
 @end table
 
 @c TRANSLATEME

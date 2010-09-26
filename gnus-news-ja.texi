@@ -75,8 +75,9 @@ Emacs 23 $B$G$O!"(BGnus $B$O5-;v$N%I%i%U%H$H(B @file{~/.newsrc.eld} $B$rJ]B
 @itemize @bullet
 @item @code{nnimap} $B$N?7%P!<%8%g%s(B
 
-@code{nnimap} $B$O$[$H$s$I$N8_49@-$rJ]$C$F:F<BAu$5$l$^$7$?!#(B
-@c $BHs8_49$N9`L\$r@bL@!#(B
+@code{nnimap} $B$O$[$H$s$I$N8_49@-$rJ]$C$F:F<BAu$5$l$^$7$?!#?7$7$$%$%s%?!<(B
+$B%U%'!<%9$K$D$$$F$N@bL@$O(B Gnus $B%^%K%e%"%k$r8+$F$/$@$5$$!#FC(B
+$B$K(B @code{nnimap-inbox} $B$H%/%i%$%"%s%HB&$G$NJ,3dJ}K!$,JQ2=$7$F$$$^$9!#(B
 
 @item Gnus $B$O(B Emacs Lisp @acronym{SASL} $B%i%$%V%i%j!<$r4^$`$h$&$K$J$j$^$7(B
 $B$?!#(B
