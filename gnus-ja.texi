@@ -3544,11 +3544,10 @@ kill $B$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#
 @vindex gnus-browse-subscribe-newsgroup-method
 $B8=:_$N%0%k!<%W$rHs9XFI$K$7$^$9!#$H8@$&$h$j$O(B ($BLuCm(B: $B$3$N%3%^%s%I$O%H%0%k(B
 $B$J$N$G(B)$B!"$3$N>l9g$O9XFI$9$k$3$H$K$J$k$N$G$7$g$&$1$l(B
-$B$I(B (@code{gnus-browse-unsubscribe-current-group})$B!#(B
-@c TRANSLATEME
-You can affect the way the new group is entered into the Group buffer
-using the variable @code{gnus-browse-subscribe-newsgroup-method}.  See
-@pxref{Subscription Methods} for available options.
+$B$I(B (@code{gnus-browse-unsubscribe-current-group})$B!#?7$7$$%0%k!<%W$r%0%k!<(B
+$B%W%P%C%U%!!<$KJTF~$9$kJ}K!$r!"JQ(B
+$B?t(B @code{gnus-browse-subscribe-newsgroup-method} $B$r;H$C$F@)8f$9$k$3$H$,(B
+$B$G$-$^$9!#MxMQ$G$-$k%*%W%7%g%s$K$D$$$F$O(B: @xref{Subscription Methods}.
 
 @item l
 @itemx q
@@ -10535,16 +10534,15 @@ Gnus $B8GM-$G$O$J$$$1$l$I!"Lr$KN)$D$+$b$7$l$J$$J8;z%;%C%H$K4X$9$kB>$NHk7m(B:
 $B%U%!!<$r0u:~$9$kD>A0$K<B9T$5$l$^$9!#B>$K(B Muttprint $B$r;H$C$F0u:~$9$k$3$H(B
 $B$b$G$-$^$9(B (@pxref{Saving Articles})$B!#(B
 
-@c TRANSLATEME
 @item A C
 @vindex gnus-fetch-partial-articles
 @findex gnus-summary-show-complete-article
-If @code{gnus-fetch-partial-articles} is non-@code{nil}, Gnus will
-fetch partial articles, if the backend it fetches them from supports
-it.  Currently only @code{nnimap} does.  If you're looking at a
-partial article, and want to see the complete article instead, then
-the @kbd{A C} command (@code{gnus-summary-show-complete-article}) will
-do so.
+$B$b$7(B @code{gnus-fetch-partial-articles} $B$,(B @code{nil} $B0J30$NCM$@$C$?$i!"(B
+$B%P%C%/%(%s%I$,%5%]!<%H$7$F$$$l$P(B Gnus $B$OJ,3d$5$l$?5-;v$r<h$j9~$_$^$9!#:#(B
+$B$N$H$3$m(B @code{nnimap} $B$@$1$,9T$J$$$^$9!#$b$7J,3d$5$l$?5-;v$N0lIt$r8+$F(B
+$B$$$k$H$-$K!"$=$&$G$O$J$/$F40A4$J5-;v$r8+$kI,MW$,$"$k$J$i$P!"(B
+@kbd{A C} $B%3%^%s%I(B (@code{gnus-summary-show-complete-article}) $B$,$=$&$7(B
+$B$^$9!#(B
 @end table
 
 @node Summary Sorting
@@ -13891,14 +13889,13 @@ Message Manual}, $B$r;2>H$7$F$/$@$5$$!#(B
 Gnus $B$,@\B3$r5qH]$5$l$?$9$Y$F$N%5!<%P!<$N!"$9$Y$F$N0u$r>C5n$7(B
 $B$^$9(B (@code{gnus-server-remove-denials})$B!#(B
 
-@c TRANSLATEME
 @item c
 @kindex c ($B%5!<%P!<(B)
 @findex gnus-server-copy-server
-Copy a server and give it a new name
-(@code{gnus-server-copy-server}).  This can be useful if you have a
-complex method definition, and want to use the same definition towards
-a different (physical) server.
+$B%5!<%P!<$r%3%T!<$7$F?7$7$$L>A0$rIU$1$^(B
+$B$9(B (@code{gnus-server-copy-server})$B!#$3$l$O!"J#;($J@\B3J}K!$NDj5A$,$9$G(B
+$B$K$"$C$F!"$=$l$HF1$8Dj5A$r0[$J$k(B ($BJ*M}(B) $B%5!<%P!<$N$?$a$K;H$&I,MW$,$"$k>l(B
+$B9g$KLrN)$D$O$:$G$9!#(B
 
 @item L
 @kindex L ($B%5!<%P!<(B)
@@ -14544,50 +14541,47 @@ A $B$N$?$a$N0u%U%!%$%k$rF1$8$K$9$k$3$H$,$G$-$k$N$G!"Fs$D$N%[%9%H4V$G$=$N%5!<(B
 $B$G!"$=$3$G<B9T$7$^$9!#(B
 @end table
 
-@c TRANSLATEME
 @node Using @acronym{IMAP}
-@section Using @acronym{IMAP}
+@section @acronym{IMAP} $B$+$i%a!<%k$rFI$`(B
 @cindex imap
 
-The most popular mail backend is probably @code{nnimap}, which
-provides access to @acronym{IMAP} servers.  @acronym{IMAP} servers
-store mail remotely, so the client doesn't store anything locally.
-This means that it's a convenient choice when you're reading your mail
-from different locations, or with different user agents.
+$B$*$=$i$/:G$b?M5$$,$"$k%a!<%k!&%P%C%/%(%s%I$O(B @code{nnimap} $B$G$9!#$=$l(B
+$B$O(B @acronym{IMAP} $B%5!<%P!<$K@\B3$7$^$9!#(B@acronym{IMAP} $B%5!<%P!<$O%a!<%k(B
+$B$r%5!<%P!<$K3JG<$9$k$N$G!"%/%i%$%"%s%H$O2?$b%m!<%+%k$K3JG<$7$^$;$s!#$b$7!"(B
+$B$$$m$$$m$J>l=j$+$i!"$^$?$O$$$m$$$m$J%f!<%6!<!&%(!<%8%'%s%H$G%a!<%k$rFI$s(B
+$B$G$$$k$N$G$"$l$P!"$=$l$OJXMx$JA*Br$@$H8@$($^$9!#(B
 
 @menu
-* Connecting to an @acronym{IMAP} Server::     Getting started with @acronym{IMAP}.
-* Customizing the @acronym{IMAP} Connection::  Variables for @acronym{IMAP} connection.
-* Client-Side @acronym{IMAP} Splitting::       Put mail in the correct mail box.
+* Connecting to an @acronym{IMAP} Server::     @acronym{IMAP} $B$r;O$a$k(B
+* Customizing the @acronym{IMAP} Connection::  @acronym{IMAP} $B@\B3$N$?$a$NJQ?t(B
+* Client-Side @acronym{IMAP} Splitting::       $B@5$7$$%a!<%k%\%C%/%9$K%a!<%k$rCV$/(B
 @end menu
 
-
 @node Connecting to an @acronym{IMAP} Server
-@subsection Connecting to an @acronym{IMAP} Server
+@subsection @acronym{IMAP} $B%5!<%P!<$K@\B3$9$k(B
 
-Connecting to an @acronym{IMAP} can be very easy.  Type @kbd{B} in the
-group buffer, or (if your primary interest is reading email), say
-something like:
+@acronym{IMAP} $B%5!<%P!<$X$N@\B3$O$H$F$b4JC1$J$O$:$G$9!#%0%k!<%W%P%C%U%!!<(B
+$B$G(B @kbd{B} $B$rC!$/$+!"$^$?$O(B ($B$b$7$"$J$?$NBh0l$N4X?4;v$,%a!<%k$rFI$`$3$H(B
+$B$G$"$k$J$i(B) $B0J2<$N$h$&$J$3$H$r$7$F$/$@$5$$(B:
 
 @example
 (setq gnus-select-method
       '(nnimap "imap.gmail.com"))
 @end example
 
-You'll be prompted for a user name and password.  If you grow tired of
-that, then add the following to your @file{~/.authinfo} file:
+$B%f!<%6!<L>$H%Q%9%o!<%I$r?R$M$i$l$^$9!#$=$l$KK0$-$?$J$i!"0J2<$N$b$N(B
+$B$r(B @file{~/.authinfo} $B%U%!%$%k$K2C$($F$/$@$5$$(B:
 
 @example
 machine imap.gmail.com login <username> password <password> port imap
 @end example
 
-That should basically be it for most users.
-
+$B$[$H$s$I$N%f!<%6!<$K$O!"$=$l$@$1$GNI$$$O$:$G$9!#(B
 
 @node Customizing the @acronym{IMAP} Connection
-@subsection Customizing the @acronym{IMAP} Connection
+@subsection @acronym{IMAP} $B@\B3$r%+%9%?%^%$%:$9$k(B
 
-Here's an example method that's more complex:
+$B$b$C$HJ#;($J@\B3J}K!$NNc(B:
 
 @example
 (nnimap "imap.gmail.com"
@@ -14601,62 +14595,59 @@ Here's an example method that's more complex:
 
 @table @code
 @item nnimap-address
-The address of the server, like @samp{imap.gmail.com}.
+$B%5!<%P!<$N%"%I%l%9$G$9!#(B@samp{imap.gmail.com} $B$N$h$&$J$b$N!#(B
 
 @item nnimap-server-port
-If the server uses a non-standard port, that can be specified here.  A
-typical port would be @samp{imap} or @samp{imaps}.
+$B%5!<%P!<$N%]!<%H$,I8=`$H$O0[$J$k$J$i!"$3$3$G@_Dj$G$-$^$9!#BeI=E*$J%]!<%H(B
+$B$O(B @samp{imap} $B$"$k$$$O(B @samp{imaps} $B$G$7$g$&!#(B
 
 @item nnimap-stream
-How @code{nnimap} should connect to the server.  Possible values are:
+@code{nnimap} $B$,$I$&$d$C$F%5!<%P!<$K@\B3$9$k$+$r;XDj$7$^$9!#;H$($kCM$O(B:
 
 @table @code
 @item ssl
-This is the default, and this uses standard
-@acronym{TLS}/@acronym{SSL} connection.
+$B$3$l$O%G%#%U%)%k%H$G!"I8=`$N(B @acronym{TLS}/@acronym{SSL} $B@\B3$r;H$$$^$9!#(B
 
 @item network
-Non-encrypted and unsafe straight socket connection.
+$B0E9f2=$5$l$J$$$N$G0BA4$G$O$J$$!"%9%H%l!<%H$J%=%1%C%H@\B3$G$9!#(B
 
 @item starttls
-Encrypted @acronym{STARTTLS} over the normal @acronym{IMAP} port.
+$B@55,$N(B @acronym{IMAP} $B%]!<%H>e$G0E9f2=$5$l$?(B @acronym{STARTTLS} $B$r;H$$$^(B
+$B$9!#(B
 
 @item shell
-If you need to tunnel via other systems to connect to the server, you
-can use this option, and customize @code{nnimap-shell-program} to be
-what you need.
-
+$B$b$7%5!<%P!<$K@\B3$9$k$?$a$KB>$N%[%9%H$r%H%s%M%k$9$kI,MW$,$"$k$J$i!"$3$N(B
+$B%*%W%7%g%s$r;H$C$F(B @code{nnimap-shell-program} $B$rI,MW$K1~$8$F%+%9%?%^%$(B
+$B%:$9$k$3$H$,$G$-$^$9!#(B
 @end table
 
 @item nnimap-authenticator
-Some @acronym{IMAP} servers allow anonymous logins.  In that case,
-this should be set to @code{anonymous}.
+$B$$$/$D$+$N(B @acronym{IMAP} $B%5!<%P!<$OF?L>%m%0%$%s$r5vMF$7$F$$$^$9!#$=$N>l(B
+$B9g!"$3$l$r(B @code{anonymous} $B$K@_Dj$9$kI,MW$,$"$j$^$9!#(B
 
 @item nnimap-streaming
-Virtually all @code{IMAP} server support fast streaming of data.  If
-you have problems connecting to the server, try setting this to @code{nil}.
-
+$B;v<B>e$9$Y$F$N(B @acronym{IMAP} $B%5!<%P!<$O%G!<%?$N9bB.%9%H%j!<%_%s%0$r%5%]!<(B
+$B%H$7$F$$$^$9!#$b$7%5!<%P!<$X$N@\B3$KLdBj$,$"$k$N$J$i!"$3$l(B
+$B$r(B @code{nil} $B$K@_Dj$7$F$_$F$/$@$5$$!#(B
 @end table
 
-
 @node Client-Side @acronym{IMAP} Splitting
-@subsection Client-Side @acronym{IMAP} Splitting
+@subsection $B%/%i%$%"%s%HB&$G$N(B @acronym{IMAP} $BJ,3d(B
 
-Many people prefer to do the sorting/splitting of mail into their mail
-boxes on the @acronym{IMAP} server.  That way they don't have to
-download the mail they're not all that interested in.
+$BB?$/$N?M!9$,!"%a!<%k$r(B @acronym{IMAP} $B%5!<%P!<>e$N$=$l$>$l$N%a!<%k%\%C%/(B
+$B%9$KJB$S49$((B/$BJ,3d$9$k$3$H$r9%$_$^$9!#$=$&$9$l$P!"$5$[$I4X?4$,L5$$%a!<%k(B
+$B$r%@%&%s%m!<%I$9$kI,MW$,$"$j$^$;$s!#(B
 
-If you do want to do client-side mail splitting, then the following
-variables are relevant:
+$B$b$7%/%i%$%"%s%HB&$G%a!<%kJ,3d$r$9$kI,MW$,$"$k$N$J$i!"4XO"$9$kJQ?t$O<!$N(B
+$BDL$j$G$9(B:
 
 @table @code
 @item nnimap-inbox
-This is the @acronym{IMAP} mail box that will be scanned for new mail.
+$B?7Ce%a!<%k$,D4$Y$i$l$k(B @acronym{IMAP} $B%a!<%k%\%C%/%9$G$9!#(B
 
 @item nnimap-split-methods
-Uses the same syntax as @code{nnmail-split-methods} (@pxref{Splitting
-Mail}).
-
+@code{nnmail-split-methods} $B$HF1$89=J8$r;H$$$^$9(B (@pxref{Splitting
+Mail})$B!#(B
 @end table
 
 @node Getting Mail
