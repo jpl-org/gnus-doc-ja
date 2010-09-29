@@ -11315,6 +11315,7 @@ Gnus $B$O(B @code{Message-ID} $B$rIU$1BX$($F(B ($BI=<($N$?$a$@$1$K(B) $B$
 @node Summary Group Information
 @subsection $B35N,%0%k!<%W>pJs(B
 
+@table @kbd
 @item H d
 @kindex H d ($B35N,(B)
 @findex gnus-summary-describe-group
