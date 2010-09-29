@@ -634,7 +634,7 @@ Select Methods
 
 * Server Buffer::               仮想サーバーを作って編集する
 * Getting News::                USENET ニュースを Gnus で読む
-* Using @acronym{IMAP}::        @acronym{IMAP} からメールを読む
+* Using IMAP::                  @acronym{IMAP} からメールを読む
 * Getting Mail::                個人的なメールを Gnus で読む
 * Browsing the Web::            大量のウェブの資源からメッセージを取得する
 * Other Sources::               ディレクトリー、ファイルを読む
@@ -13477,7 +13477,7 @@ Message Manual}, を参照してください。
 @menu
 * Server Buffer::               仮想サーバーを作って編集する
 * Getting News::                USENET ニュースを Gnus で読む
-* Using @acronym{IMAP}::        @acronym{IMAP} からメールを読む
+* Using IMAP::                  @acronym{IMAP} からメールを読む
 * Getting Mail::                個人的なメールを Gnus で読む
 * Browsing the Web::            大量のウェブの資源からメッセージを取得する
 * Other Sources::               ディレクトリー、ファイルを読む
@@ -14542,7 +14542,7 @@ A のための印ファイルを同じにすることができるので、二つのホスト間でそのサー
 で、そこで実行します。
 @end table
 
-@node Using @acronym{IMAP}
+@node Using IMAP
 @section @acronym{IMAP} からメールを読む
 @cindex imap
 
@@ -14553,12 +14553,12 @@ A のための印ファイルを同じにすることができるので、二つのホスト間でそのサー
 でいるのであれば、それは便利な選択だと言えます。
 
 @menu
-* Connecting to an @acronym{IMAP} Server::     @acronym{IMAP} を始める
-* Customizing the @acronym{IMAP} Connection::  @acronym{IMAP} 接続のための変数
-* Client-Side @acronym{IMAP} Splitting::       正しいメールボックスにメールを置く
+* Connecting to an IMAP Server::               @acronym{IMAP} を始める
+* Customizing the IMAP Connection::            @acronym{IMAP} 接続のための変数
+* Client-Side IMAP Splitting::                 正しいメールボックスにメールを置く
 @end menu
 
-@node Connecting to an @acronym{IMAP} Server
+@node Connecting to an IMAP Server
 @subsection @acronym{IMAP} サーバーに接続する
 
 @acronym{IMAP} サーバーへの接続はとても簡単なはずです。グループバッファー
@@ -14579,7 +14579,7 @@ machine imap.gmail.com login <username> password <password> port imap
 
 ほとんどのユーザーには、それだけで良いはずです。
 
-@node Customizing the @acronym{IMAP} Connection
+@node Customizing the IMAP Connection
 @subsection @acronym{IMAP} 接続をカスタマイズする
 
 もっと複雑な接続方法の例:
@@ -14632,7 +14632,7 @@ machine imap.gmail.com login <username> password <password> port imap
 を @code{nil} に設定してみてください。
 @end table
 
-@node Client-Side @acronym{IMAP} Splitting
+@node Client-Side IMAP Splitting
 @subsection クライアント側での @acronym{IMAP} 分割
 
 多くの人々が、メールを @acronym{IMAP} サーバー上のそれぞれのメールボック
@@ -15245,7 +15245,7 @@ Maildir メールソースの例をふたつ:
 トコルとしては (すなわち @code{nnimap} で) 使いたくないときは、Gnus で
 は @acronym{POP} サーバーと同様に扱って、指定された @acronym{IMAP} メー
 ルボックスから記事を取得することができます。詳しく
-は @ref{Using @acronym{IMAP}} を参照してください。
+は @ref{Using IMAP} を参照してください。
 
 キーワード:
 
@@ -15715,7 +15715,7 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが、ときど
 エンドの場合、ディフォルトでは記事のボディーがダウンロードされないことに
 注意してください。それをするために
 は @code{nnimap-split-download-body} を @code{t} に設定する必要がありま
-す (@pxref{Client-Side @acronym{IMAP} Splitting})。
+す (@pxref{Client-Side IMAP Splitting})。
 
 @item (! @var{func} @var{split})
 分割がリストで最初の要素が @code{!} だったら、@var{split} が実行され、
@@ -23262,7 +23262,7 @@ Spam を避けるための前章のヒントが十分だった日々は過ぎ去りました。今では
 Nnimap バックエンドの場合、ディフォルトでは記事のボディーがダウンロード
 されないことに注意してください。それをするために
 は @code{nnimap-split-download-body} を @code{t} に設定する必要がありま
-す (@pxref{Client-Side @acronym{IMAP} Splitting})。
+す (@pxref{Client-Side IMAP Splitting})。
 
 以上がこれに関することです。ある種の spam はどうしても素通りしてしまいが
 ちなので、spam を読むはめになったときに呼ぶための気の利いた関数が必要で
@@ -23553,7 +23553,7 @@ IMAP の利用者への注意: spam バックエンドとし
 メッセージの本文も取り込むことを指示することができます。それ
 は @acronym{IMAP} を遅くしてしまうので、ディフォルトでは設定されません。
 そして、利用者に代わってそれを行なうことは、適切な判断ではありません。
-@xref{Client-Side @acronym{IMAP} Splitting}.
+@xref{Client-Side IMAP Splitting}.
 
 @code{spam-use-*} 変数を使って、@code{spam-split} が使う一つ以上
 の spam バックエンドを設定しなければなりません。@xref{Spam Back Ends}.
