@@ -22885,7 +22885,6 @@ Picon のファイル名として試してみる順に並べられた拡張子のリストです。ディ
 通それらはあまり面白いものではありません。
 @end table
 
-@c TRANSLATEME
 @node Gravatars
 @subsection Gravatars
 
@@ -22895,34 +22894,34 @@ Picon のファイル名として試してみる順に並べられた拡張子のリストです。ディ
 @end iflatex
 @end iftex
 
-A gravatar is an image registered to an e-mail address.
+Gravatar はそれぞれの電子メールアドレスに対応して登録された画像です。
 
-You can submit yours on-line at @uref{http://www.gravatar.com}.
+あなたのものを @uref{http://www.gravatar.com} にオンラインで置くことがで
+きます。
 
-The following variables offer control over how things are displayed.
+以下の変数は、それらがどのように表示されるかの制御を提供します。
 
 @table @code
-
 @item gnus-gravatar-size
 @vindex gnus-gravatar-size
-The size in pixels of gravatars. Gravatars are always square, so one
-number for the size is enough.
+Gravatars の画素のサイズ。Gravatars は常に正方形なので、サイズの指定には
+単一の数値で十分です。
 
 @item gnus-gravatar-relief
 @vindex gnus-gravatar-relief
-If non-nil, adds a shadow rectangle around the image. The value,
-relief, specifies the width of the shadow lines, in pixels. If relief
-is negative, shadows are drawn so that the image appears as a pressed
-button; otherwise, it appears as an unpressed button.
-
+@code{nil} でなければ画像に矩形の陰を付けます。値 @code{relief} は陰の幅
+のライン数を画素数で指定します。もし @code{relief} の値が負だったら押し
+込まれたボタンのように、そうでなければ出っ張ったボタンのように表示されま
+す。
 @end table
 
-If you want to see them in the From field, set:
+それらを From フィールドで見たいなら、こうしてください:
+
 @lisp
 (setq gnus-treat-from-gravatar 'head)
 @end lisp
 
-If you want to see them in the Cc and To fields, set:
+もしそれらを Cc と To フィールドで見たいなら、こうです:
 
 @lisp
 (setq gnus-treat-mail-gravatar 'head)
