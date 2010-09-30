@@ -10537,12 +10537,11 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セットに関する他の秘訣:
 @item A C
 @vindex gnus-fetch-partial-articles
 @findex gnus-summary-show-complete-article
-もし @code{gnus-fetch-partial-articles} が @code{nil} 以外の値だったら、
-バックエンドがサポートしていれば Gnus は分割された記事を取り込みます。今
-のところ @code{nnimap} だけが行ないます。もし分割された記事の一部を見て
-いるときに、そうではなくて完全な記事を見る必要があるならば、
-@kbd{A C} コマンド (@code{gnus-summary-show-complete-article}) がそうし
-ます。
+もし @code{<backend>-fetch-partial-articles} が @code{nil} 以外の値だっ
+たら、バックエンドがサポートしていれば Gnus は記事の部分を取り込みます。
+今のところ @code{nnimap} だけが行ないます。もし記事の部分を見ているとき
+に、そうではなく完全な記事を見る必要があるならば、@kbd{A C} コマン
+ド (@code{gnus-summary-show-complete-article}) がそうします。
 @end table
 
 @node Summary Sorting
@@ -14543,7 +14542,7 @@ A のための印ファイルを同じにすることができるので、二つのホスト間でそのサー
 @end table
 
 @node Using IMAP
-@section @acronym{IMAP} からメールを読む
+@section IMAP を使う
 @cindex imap
 
 おそらく最も人気があるメール・バックエンドは @code{nnimap} です。それ
@@ -14553,13 +14552,13 @@ A のための印ファイルを同じにすることができるので、二つのホスト間でそのサー
 でいるのであれば、それは便利な選択だと言えます。
 
 @menu
-* Connecting to an IMAP Server::               @acronym{IMAP} を始める
-* Customizing the IMAP Connection::            @acronym{IMAP} 接続のための変数
-* Client-Side IMAP Splitting::                 正しいメールボックスにメールを置く
+* Connecting to an IMAP Server::     @acronym{IMAP} を始める
+* Customizing the IMAP Connection::  @acronym{IMAP} 接続のための変数
+* Client-Side IMAP Splitting::       正しいメールボックスにメールを置く
 @end menu
 
 @node Connecting to an IMAP Server
-@subsection @acronym{IMAP} サーバーに接続する
+@subsection IMAP サーバーに接続する
 
 @acronym{IMAP} サーバーへの接続はとても簡単なはずです。グループバッファー
 で @kbd{B} を叩くか、または (もしあなたの第一の関心事がメールを読むこと
@@ -14580,14 +14579,14 @@ machine imap.gmail.com login <username> password <password> port imap
 ほとんどのユーザーには、それだけで良いはずです。
 
 @node Customizing the IMAP Connection
-@subsection @acronym{IMAP} 接続をカスタマイズする
+@subsection IMAP 接続をカスタマイズする
 
 もっと複雑な接続方法の例:
 
 @example
 (nnimap "imap.gmail.com"
         (nnimap-inbox "INBOX")
-        (nnimap-split-methods ,nnmail-split-methods)
+        (nnimap-split-methods default)
         (nnimap-expunge t)
         (nnimap-stream 'ssl)
         (nnir-search-engine imap)
@@ -14630,10 +14629,16 @@ machine imap.gmail.com login <username> password <password> port imap
 事実上すべての @acronym{IMAP} サーバーはデータの高速ストリーミングをサポー
 トしています。もしサーバーへの接続に問題があるのなら、これ
 を @code{nil} に設定してみてください。
+
+@item nnimap-fetch-partial-articles
+もし @code{nil} 以外の値だったら、サーバーから記事の部分を取り込みます。
+もし文字列が設定されていたら、それは正規表現であると解釈され、そのタイプ
+が合致する部分が取り込まれます。例えば @samp{"text/"} 場合はすべてのテキ
+スト型の部分を取り込みますが、残りはサーバーに置いたままになります。
 @end table
 
 @node Client-Side IMAP Splitting
-@subsection クライアント側での @acronym{IMAP} 分割
+@subsection クライアント側での IMAP 分割
 
 多くの人々が、メールを @acronym{IMAP} サーバー上のそれぞれのメールボック
 スに並び換え/分割することを好みます。そうすれば、さほど関心が無いメール
@@ -14648,7 +14653,8 @@ machine imap.gmail.com login <username> password <password> port imap
 
 @item nnimap-split-methods
 @code{nnmail-split-methods} と同じ構文を使います (@pxref{Splitting
-Mail})。
+Mail})。ただし @code{default} というシンボルである場合は例外で、
+@code{nnmail-split-methods} の値を使います。
 @end table
 
 @node Getting Mail
@@ -22907,12 +22913,9 @@ Gravatar はそれぞれの電子メールアドレスに対応して登録された画像です。
 Gravatars の画素のサイズ。Gravatars は常に正方形なので、サイズの指定には
 単一の数値で十分です。
 
-@item gnus-gravatar-relief
-@vindex gnus-gravatar-relief
-@code{nil} でなければ画像に矩形の陰を付けます。値 @code{relief} は陰の幅
-のライン数を画素数で指定します。もし @code{relief} の値が負だったら押し
-込まれたボタンのように、そうでなければ出っ張ったボタンのように表示されま
-す。
+@item gnus-gravatar-properties
+@vindex gnus-gravatar-properties
+Gravatar 画像に適用する属性のリストです。
 @end table
 
 それらを From フィールドで見たいなら、こうしてください:
