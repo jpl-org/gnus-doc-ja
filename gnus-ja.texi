@@ -14164,6 +14164,11 @@ default force yes
 
 $B$9$Y$F$N%5!<%P!<$,?d>)(B ID $B$r%5%]!<%H$7$F$$$k$o$1$G$O$J$$$3$H$KCm0U$7$F$/(B
 $B$@$5$$!#$3$l$ONc$($P(B INN 2.3.0 $B0J>e$GF0:n$7$^$9!#(B
+
+@item nntp-server-list-active-group
+$B$b$7(B @code{nil} $B$@$C$?$i(B @samp{LIST ACTIVE} $B$NBe$o$j$K>o(B
+$B$K(B @samp{GROUP} $B$r;H$$$^$9!#$3$l$OIaDLCY$$$N$G$9$,!"8m$C$F(B active $B%U%!%$(B
+$B%k$rIQHK$K99?7$7$J$$$h$&$K@_Dj$5$l$F$$$k%5!<%P!<$G$O=u$1$K$J$k$O$:$G$9!#(B
 @end table
 
 @menu
@@ -14588,7 +14593,7 @@ machine imap.gmail.com login <username> password <password> port imap
         (nnimap-inbox "INBOX")
         (nnimap-split-methods default)
         (nnimap-expunge t)
-        (nnimap-stream 'ssl)
+        (nnimap-stream ssl)
         (nnir-search-engine imap)
         (nnimap-expunge-inbox t))
 @end example
@@ -14655,6 +14660,9 @@ machine imap.gmail.com login <username> password <password> port imap
 @code{nnmail-split-methods} $B$HF1$89=J8$r;H$$$^$9(B (@pxref{Splitting
 Mail})$B!#$?$@$7(B @code{default} $B$H$$$&%7%s%\%k$G$"$k>l9g$ONc30$G!"(B
 @code{nnmail-split-methods} $B$NCM$r;H$$$^$9!#(B
+
+@item nnimap-split-fancy
+@code{nnmail-split-fancy} $B$HF1$89=J8$r;H$$$^$9!#(B
 @end table
 
 @node Getting Mail
@@ -15339,43 +15347,6 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
 (imap :server "mail.mycorp.com"
       :stream kerberos4
       :fetchflag "\\Seen")
-@end lisp
-
-@item webmail
-@uref{http://www.hotmail.com/}, @uref{http://webmail.netscape.com/},
-@uref{http://www.netaddress.com/}, @uref{http://www.yahoo.com/} $B$J$I$N%&%'(B
-$B%V%a!<%k%5!<%P!<$+$i%a!<%k$r<hF@$7$^$9!#(B
-
-$BCm(B: $B%&%'%V%a!<%k$O%/%C%-!<$KBg$-$/0MB8$7$^$9!#(Burl "4.0pre.46" $B$r;H$&>l9g(B
-$B$O(B "one-line-cookie" $B%Q%C%A$rEv$F$kI,MW$,$"$j$^$9!#(B
-
-$B7Y9p(B: $B%a!<%k$,<:$o$l$k$+$b$7$l$^$;$s!#L5J]>Z$G$9!#(B
-
-$B%-!<%o!<%I(B:
-
-@table @code
-@item :subtype
-$B%&%'%V%a!<%k%5!<%P!<$N7?$G$9!#%G%#%U%)%k%H$O(B @code{hotmail} $B$G$9!#B>$N8u(B
-$BJd$K$O(B @code{netscape}, @code{netaddress}, @code{my-deja} $B$,$"$j$^$9!#(B
-
-@item :user
-$B%&%'%V%a!<%k%5!<%P!<$KEO$9MxMQ<TL>$G$9!#%G%#%U%)%k%H$O%m%0%$%sL>$G$9!#(B
-
-@item :password
-$B%&%'%V%a!<%k%5!<%P!<$KEO$9%Q%9%o!<%I$G$9!#;XDj$7$J$$>l9g$O!"MxMQ<T$OF~NO(B
-$B$9$k$3$H$rB%$5$l$^$9!#(B
-
-@item :dontexpunge
-@code{nil} $B$G$J$+$C$?$i!"L$FI$N5-;v$@$1$r<hF@$7!"$+$D<hF@8e$K$=$l$i$r$4(B
-$B$_H"$N%U%)%k%@!<$K0\F0$7$^$;$s!#(B
-@end table
-
-$B%&%'%V%a!<%k$N%=!<%9$NNc$G$9(B:
-
-@lisp
-(webmail :subtype 'hotmail
-         :user "user-name"
-         :password "secret")
 @end lisp
 
 @item group
@@ -23850,8 +23821,9 @@ From Ted Zlatanov <tzz@@lifelogs.com>.
  spam-move-spam-nonspam-groups-only nil
  spam-mark-only-unseen-as-spam t
  spam-mark-ham-unread-before-move-from-spam-group t
- nnimap-split-rule 'nnimap-split-fancy
  ;; @r{$B$"$J$?$N@_Dj$KDI2C$9$kA0$K!"$3$l$,2?$r$9$k$+M}2r$;$h(B!}
+ ;; @r{nnimap $BMQ$K$?$V$s(B nnimap-split-methods $B$r@_Dj$9$kI,MW$"$j!#(B}
+ ;; @r{$B%^%K%e%"%k;2>H!#(B}
  nnimap-split-fancy '(|
                       ;; @r{References $B$r?F$^$GC)$C$F$=$l$i$N%0%k!<%W(B}
                       ;; @r{$B$rF~$l$k!#(B}
@@ -24506,8 +24478,9 @@ Source Specifiers} $B$+$iAv$i$;$k$3$H$G$9!#$3$NJ}K!$K$O!"MxMQ<T(B
 @example
 (setq spam-use-spamoracle t
       spam-split-group "Junk"
+      ;; @r{nnimap $BMQ$K$?$V$s(B nnimap-split-methods $B$r@_Dj$9$kI,MW$"$j!#(B}
+      ;; @r{$B%^%K%e%"%k;2>H!#(B}
       nnimap-split-inbox '("INBOX")
-      nnimap-split-rule 'nnimap-split-fancy
       nnimap-split-fancy '(| (: spam-split) "INBOX"))
 @end example
 
@@ -25814,10 +25787,9 @@ ding $B%a!<%j%s%0%j%9%H$H(B Gnus $B%K%e!<%9%0%k!<%W$K$*$1$k5DO@$O!"=c?h$K8x=0
 $BG_ED@/?.(B---$B85$N(B @sc{gnus} $B$r=q$$$??M$G$9!#(B
 
 @item
-Shenghuo Zhu---uudecode.el, mm-uu.el, rfc1843.el, webmail.el,
-nnwarchive, $B$=$l$K0lHLE*$J%P%0=$@5!"?7$7$$5!G=$J$I$O$b$H$h(B
-$B$j(B @acronym{MIME} $B$HB>$N7A<0$N%(%s%3!<%I(B/$B%G%3!<%I$K4XO"$9$k$[$s$H$&$KB?(B
-$B$/$N$b$N!#(B
+Shenghuo Zhu---uudecode.el, mm-uu.el, rfc1843.el, nnwarchive, $B$=$l$K0lHL(B
+$BE*$J%P%0=$@5!"?7$7$$5!G=$J$I$O$b$H$h$j(B @acronym{MIME} $B$HB>$N7A<0$N%(%s%3!<(B
+$B%I(B/$B%G%3!<%I$K4XO"$9$k$[$s$H$&$KB?$/$N$b$N!#(B
 
 @item
 Per Abrahamsen---custom$B!"%9%3%"!"%O%$%i%$%H$H(B @sc{soup} $B%3!<%I(B ($BB>$NB?$/(B
