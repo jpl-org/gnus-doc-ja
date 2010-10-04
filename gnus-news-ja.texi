@@ -369,6 +369,8 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 Mail}.
 
 @item NoCeM のサポートは削除されました。
+
+@item Carpal modeは削除されました。
 @end itemize
 @end itemize
 @c

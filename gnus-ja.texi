@@ -802,7 +802,6 @@ Various
 * Compilation::                 Gnus $B$rB.$/$9$k$K$O(B
 * Mode Lines::                  $B%b!<%I9T$K>pJs$rI=<($9$k(B
 * Highlighting and Menus::      $B%P%C%U%!!<$rAGE($G?4CO$h$/8+$;$k(B
-* Buttons::                     $B$?$C$?==2s$?$?$$$?$@$1$Gg'>d1j$K$J$k(B!
 * Daemons::                     Gnus $B$O$"$J$?$NN"$G;E;v$r$9$k$3$H$,$G$-$k(B
 * Undo::                        $B$$$/$D$+$NF0:n$O85$KLa$9$3$H$,$G$-$k(B
 * Predicate Specifiers::        $B=R8l$r@_Dj$9$k(B
@@ -12613,6 +12612,11 @@ Gnus $B$O%5!<%P!<$+$i$=$N5-;v$r<h$C$F$3$h$&$H$7$^(B
 $BMQ$7$^$9(B ($B$3$l$O%G%#%U%)%k%H$G$9(B)$B!#(B@code{nil} $B$G$"$l$P!"3F%0%k!<%WKh$N8G(B
 $BM-$N5-;v%P%C%U%!!<$r;}$D$h$&$K$J$j$^$9!#(B
 
+@item gnus-widen-article-window
+@cindex gnus-widen-article-window
+$B$b$7(B @code{nil} $B$G$J$+$C$?$i(B @kbd{h} $B%3%^%s%I$G5-;v$rA*$V$H$-$K5-;v%&%#(B
+$B%s%I%&$r%U%l!<%`A4BN$r@j$a$k$h$&$K3HBg$7$^$9!#(B
+
 @vindex gnus-article-decode-hook
 @item gnus-article-decode-hook
 @cindex @acronym{MIME}
@@ -21418,7 +21422,6 @@ Gnus $B$O0lF|$K0l2s%9%3%"$r8:?j$5$;$h$&$H$7$^$9!#Nc$($P(B Gnus $B$r;MF|4VAv$i
 * Compilation::                 Gnus $B$rB.$/$9$k$K$O(B
 * Mode Lines::                  $B%b!<%I9T$K>pJs$rI=<($9$k(B
 * Highlighting and Menus::      $B%P%C%U%!!<$rAGE($G?4CO$h$/8+$;$k(B
-* Buttons::                     $B$?$C$?==2s$?$?$$$?$@$1$Gg'>d1j$K$J$k(B!
 * Daemons::                     Gnus $B$O$"$J$?$NN"$G;E;v$r$9$k$3$H$,$G$-$k(B
 * Undo::                        $B$$$/$D$+$NF0:n$O85$KLa$9$3$H$,$G$-$k(B
 * Predicate Specifiers::        $B=R8l$r@_Dj$9$k(B
@@ -21868,8 +21871,7 @@ Gnus $B$ODL>o$[$H$s$I$N%P%C%U%!!<$G!"%]%$%s%H$r3F9T$N$"$i$+$8$a7h$a$i$l$?(B
 $B$i$$$N6u4V$rM?$($i$l$k$Y$-$+$r8=$7$^$9!#$3$l$O$3$NJQ?t$NH4?h$G$9(B:
 
 @lisp
-((group (vertical 1.0 (group 1.0 point)
-                      (if gnus-carpal (group-carpal 4))))
+((group (vertical 1.0 (group 1.0 point)))
  (article (vertical 1.0 (summary 0.25 point)
                         (article 1.0))))
 @end lisp
@@ -21907,7 +21909,6 @@ Gnus $B$ODL>o$[$H$s$I$N%P%C%U%!!<$G!"%]%$%s%H$r3F9T$N$"$i$+$8$a7h$a$i$l$?(B
 @lisp
 (article (vertical 1.0 (group 4)
                        (summary 0.25 point)
-                       (if gnus-carpal (summary-carpal 4))
                        (article 1.0)))
 @end lisp
 
@@ -21918,20 +21919,16 @@ Gnus $B$ODL>o$[$H$s$I$N%P%C%U%!!<$G!"%]%$%s%H$r3F9T$N$"$i$+$8$a7h$a$i$l$?(B
 $B$b$7!VJ,3d!W$,(B @code{eval} ($BI>2A(B) $B$5$l$k$b$N$N$h$&$K8+$($k$H$-$O(B ($B@53N$K(B
 $B8@$&$H(B---$BJ,3d$N(B @code{car} $B$,4X?t$+86;O4X?t(B (subr) $B$G$"$k$H$-$O(B)$B!"$3$NJ,(B
 $B3d$O(B @code{eval} $B$5$l$^$9!#7k2L$,(B @code{nil} $B$G$J$$$J$i!"$=$l$OJ,3d$H$7(B
-$B$FMQ$$$i$l$^$9!#$3$l$O!"(B@code{gnus-carpal} $B$,(B @code{nil} $B$G$"$l$P;0$D$N(B
-$B%P%C%U%!!<$,!"(B@code{gnus-carpal} $B$,(B @code{nil} $B$G$J$$$J$i!";M$D$N%P%C%U%!!<(B
-$B$,B8:_$9$k$3$H$K$J$k$H$$$&$3$H$G$9!#(B
+$B$FMQ$$$i$l$^$9!#(B
 
 $B$^$@J#;($G$O$J$$$G$9$C$F(B? $B$=$l$G$O!"Bg$-$5$H$7$F$3$l$r;n$7$F$_$F$/$@$5$$(B:
 
 @lisp
 (article (horizontal 1.0
              (vertical 0.5
-                 (group 1.0)
-                 (gnus-carpal 4))
+                 (group 1.0))
              (vertical 1.0
                  (summary 0.25 point)
-                 (summary-carpal 4)
                  (article 1.0))))
 @end lisp
 
@@ -22290,60 +22287,6 @@ Gnus $B$O$3$l$i$N%P%$%H%3%s%Q%$%k$5$l$?;XDj$r(B @file{.newsrc.eld} $B%U%!%$%k
 @vindex gnus-score-menu-hook
 $B%9%3%"%b!<%I(B (score mode) $B$N%a%K%e!<$r:n@.$7$?8e$K8F$P$l$k%U%C%/$G$9!#(B
 @end table
-
-@node Buttons
-@section $B%\%?%s(B
-@cindex buttons
-@cindex mouse
-@cindex click
-
-$B:G?7N.9T$N%^%&%9(B @dfn{mouse} $BAuCV$,!"6a$4$m$G$O$A$c$s$H$7$?A`:nK!$r3X$S(B
-$B$?$,$i$J$$<c<T$d$+$C$3$$$$$3$I$b$?$A$N4V$GBg?M5$$G$9!#$=$l$G$O;d$,(B Tops
-20 $B%7%9%F%`>e$G(B Emacs $B$r;H$C$F$$$?:"$N!"(B'89 $BG/$N2F$r;W$$5/$3$7$F$_$^$7$g(B
-$B$&!#(B300 $B?M$NMxMQ<T$,!"0l$D$N%^%7%s>e$G!"$_$s$J$,(B Simula $B%3%s%Q%$%i$rAv$i(B
-$B$;$F$$$^$7$?!#$"$"!"$P$+$P$+$7$$(B!
-
-$B$[$s$H$&$K!#(B
-
-@vindex gnus-carpal
-$B$5$F!"(B@code{gnus-carpal} $B$r(B @code{t} $B$K@_Dj$9$k$3$H$K$h$C$F!"%/%j%C%/$9(B
-$B$k$@$1$G2?$G$b$G$-$k%\%?%s$@$i$1$N%P%C%U%!!<$r(B Gnus $B$KI=<($5$;$k$3$H$,$G(B
-$B$-$^$9!#$H$C$F$b4JC1$G$9!"$[$s$H$&$K!#;X05NEK!$N@h@8$K65$($F$"$2$F$/$@$5(B
-$B$$(B ($BLuCm(B: carpal $B$H$O<j<s$N9|$N$3$H(B)$B!#(B
-
-@table @code
-@item gnus-carpal-mode-hook
-@vindex gnus-carpal-mode-hook
-$B$9$Y$F$N<j<s%b!<%I%P%C%U%!!<$G<B9T$9$k%U%C%/$G$9!#(B
-
-@item gnus-carpal-button-face
-@vindex gnus-carpal-button-face
-$B%\%?%s$K;H$o$l$k%U%'!<%9$G$9!#(B
-
-@item gnus-carpal-header-face
-@vindex gnus-carpal-header-face
-$B<j<s%P%C%U%!!<$N%X%C%@!<$G;HMQ$5$l$k%U%'!<%9$G$9!#(B
-
-@item gnus-carpal-group-buffer-buttons
-@vindex gnus-carpal-group-buffer-buttons
-$B%0%k!<%W%P%C%U%!!<$N%\%?%s$G$9!#(B
-
-@item gnus-carpal-summary-buffer-buttons
-@vindex gnus-carpal-summary-buffer-buttons
-$B35N,%P%C%U%!!<$N%\%?%s$G$9!#(B
-
-@item gnus-carpal-server-buffer-buttons
-@vindex gnus-carpal-server-buffer-buttons
-$B%5!<%P!<%P%C%U%!!<$N%\%?%s$G$9!#(B
-
-@item gnus-carpal-browse-buffer-buttons
-@vindex gnus-carpal-browse-buffer-buttons
-$B1\Mw%P%C%U%!!<$N%\%?%s$G$9!#(B
-@end table
-
-$B$9$Y$F$N(B @code{buttons} $BJQ?t$O%j%9%H$G$9!#$3$l$i$N%j%9%H$NMWAG$O!"(B
-$B$=$N(B @code{car} $B$N9`$,I=<($5$l$kJ8$r4^$s$G$$$F!"$=$N(B @code{cdr} $B$N9`$,4X(B
-$B?t%7%s%\%k$K$J$C$F$$$k(B cons $B%;%k$+!"$b$7$/$O$?$@$NJ8;zNs$N$I$A$i$+$G$9!#(B
 
 @node Daemons
 @section $B%G!<%b%s(B
@@ -26229,10 +26172,6 @@ Buttons})$B!#(B
 @item
 Gnus $B$N%&%#%s%I%&$H%U%l!<%`$N@_Dj$G$?$/$5$s$NJQ$J$3$H$r$G$-$k$h$&$K$J$j(B
 $B$^$7$?(B (@pxref{Window Layout})$B!#(B
-
-@item
-$B%-!<%\!<%I$r;H$&Be$o$j$K!"%\%?%s$r%/%j%C%/$G$-$k$h$&$K$J$j$^$7(B
-$B$?(B (@pxref{Buttons})$B!#(B
 @end itemize
 
 @node September Gnus
