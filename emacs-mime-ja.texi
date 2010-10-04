@@ -403,7 +403,13 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 $B7W$C$F!"$=$l$,%&%#%s%I%&$K9g$o$J$$>l9g$O!"%i%$%V%i%j!<$O$=$l$r30It$G(B ($BNc(B
 $B$($P(B @samp{ImageMagick} $B$d(B @samp{xv} $B$G(B) $BI=<($7$^$9!#$3$NJQ?t(B
 $B$r(B @code{t} $B$K@_Dj$9$k$H!"$3$N8!::$r$5$;$J$/$7$F!"%i%$%V%i%j!<$K$9$Y$F$N(B
-$B2hA|$r%5%$%:$K4X$o$j$J$/%$%s%i%$%s$GI=<($5$;$^$9!#(B
+$B2hA|$r%5%$%:$K4X$o$j$J$/%$%s%i%$%s$GI=<($5$;$^$9!#$b$7$3$NJQ?t(B
+$B$r(B @code{resize} $B$K$9$k$H!"(BEmacs $B$K2hA|$N%5%$%:$rJQ99$9$kG=NO$,$"$l$P!"(B
+$B2hA|$O%&%#%s%I%&$K9g$&$h$&$K%5%$%:$,JQ99$5$l$FI=<($5$l$^$9!#(B
+
+@item mm-inline-large-images-proportion
+@vindex mm-inline-images-max-proportion
+$BBg$-$J2hA|$N%5%$%:$rJQ99$9$k$H$-$N3d9g!#(B
 
 @item mm-inline-override-types
 @vindex mm-inline-override-types
