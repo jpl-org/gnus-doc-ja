@@ -4,9 +4,6 @@
 @c Copyright (C) 1995, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
 @c   2009, 2010 Free Software Foundation, Inc.
 @c
-@c Do not modify this file, it was generated from gnus-faq.xml, available from
-@c <URL:http://my.gnus.org/FAQ/>.
-@c
 @setfilename gnus-faq-ja
 @settitle Frequently Asked Questions
 @c %**end of header
@@ -32,20 +29,10 @@
 
 @subheading $BMWLs(B
 
-$B$3$l$O?7$7$$(B Gnus $B$N$h$/?R$M$i$l$k<ALd$N%j%9%H$G$9!#(BWeb $B%V%i%&%6!<$,$"$l(B
-$B$P(B @uref{http://my.gnus.org/FAQ/} $B$K$"$k8x<0$J%O%$%Q!<%F%-%9%HHG$rFI$`$3(B
-$B$H$,$G$-$^$9!#(BDocbook $B$N%=!<%9(B
-$B$O(B @uref{http://sourceforge.net/projects/gnus/,
-http://sourceforge.net} $B$+$i<j$KF~$l$k$3$H$,$G$-$^$9!#(B
+$B$3$l$O?7$7$$(B Gnus $B$N$h$/?R$M$i$l$k<ALd$N%j%9%H$G$9!#(B
 
-$B5!G=$K4X$9$k$3$H$dDs0F$O(B @email{faq-discuss@@my.gnus.org, FAQ
-discussion $B%a!<%j%s%0%j%9%H(B} $B$KAw$C$F$/$@$5$$!#$3$N%a!<%j%s%0%j%9%H(B
-$B$O(B @uref{http://smarden.org/qconfirm/index.html, qconfirm} $B$K$h$C$F!"$4(B
-$B$_%a!<%k$+$i<i$i$l$F$$$^$9!#;22C<T$+$i$NEj9F$O<+F0E*$KDL2a$9$k$G$7$g$&!#(B
-$B$5$i$K6u$N%a!<%k$r(B @email{faq-discuss-subscribe@@my.gnus.org} $B$KAw$k$+!"(B
-@uref{http://mail1.kens.com/cgi-bin/ezmlm-browse?command=monthbythread%26list=faq-discuss,
-$B$3$3(B} $B$r1\Mw$9$k$3$H$K$h$C$F$b!"$3$N%a!<%j%s%0%j%9%H$r9VFI$9$k$3$H$,$G$-(B
-$B$^$9(B ($B;DG0$J$,$i8=:_$O2u$l$F$$$^$9(B)$B!#(B
+$B5!G=$K4X$9$k$3$H$dDs0F$O(B @email{ding@@gnus.org, ding list} $B$KAw$C$F$/$@(B
+$B$5$$!#(B
 
 @node FAQ - Changes
 @subheading $BJQ99MzNr(B
@@ -85,16 +72,14 @@ Gnus 5 $B$O:G?7$N(B ($B$=$7$F:G$b0NBg$J(B) $B:nIJ$G$9!#%*%j%8%J%k$NHG$O(B 
 $B$=$l0JA0$K$9$P$i$7$$;E;v$r$7$F$/$l$?(B Steve Baur $B$H(B Per Abrahamsen $B$K46<U(B
 $B$rI=L@$7$F$$$^$9!#;d$?$A$bF1$8$3$H$r$7$^$7$g$&(B - $B$"$j$,$H$&(B Justin!
 
-Web $B%V%i%&%6!<$,$"$l$P(B @uref{http://my.gnus.org/FAQ/} $B$K$"$k8x<0$J%O%$%Q!<(B
-$B%F%-%9%HHG$rFI$`$3$H$,$G$-$^$9!#$3$NHG$O!"%f%H%l%R%HBg3X!"%*%C%/%9%U%)!<(B
-$B%I!"(BSmart Pages$B!"%*%O%$%*=#N)Bg3X$KJ]B8$5$l$F$$$kHs8x<0$J%O%$%Q!<%F%-%9(B
-$B%HHG$dB>$N(B FAQ $B$N%"!<%+%$%V$KHf$Y$F!"$O$k$+$KNI$$$b$N$G$9!#JL$N%U%)!<%^%C(B
-$B%H$G$=$l$r<j$KF~$l$k$?$a$N>pJs$,M_$7$$$J$i!"0J2<$K$"$k<ALd=8$r8+$F$/$@$5(B
-$B$$!#(B
+$B$3$NHG$O!"%f%H%l%R%HBg3X!"%*%C%/%9%U%)!<%I!"(BSmart Pages$B!"%*%O%$%*=#N)Bg(B
+$B3X$KJ]B8$5$l$F$$$kHs8x<0$J%O%$%Q!<%F%-%9%HHG$dB>$N(B FAQ $B$N%"!<%+%$%V$KHf(B
+$B$Y$F!"$O$k$+$KNI$$$b$N$G$9!#JL$N%U%)!<%^%C%H$G$=$l$r<j$KF~$l$k$?$a$N>pJs(B
+$B$,M_$7$$$J$i!"0J2<$K$"$k<ALd=8$r8+$F$/$@$5$$!#(B
 
 $B$3$3$K$"$k>pJs$O!"(BGnus $B3+H/%a!<%j%s%0%j%9%H$N1g=u$G%3%s%Q%$%k$5$l$^$7$?!#(B
-$B$I$s$J%(%i!<$"$k$$$O%_%9%W%j%s%H$b(B my.gnus.org $B%A!<%`$,HH$7$?8m$j$G$9!#(B
-$B$9$_$^$;$s!#(B
+$B$I$s$J%(%i!<$"$k$$$O%_%9%W%j%s%H$b(B Gnus $B%A!<%`$,HH$7$?8m$j$G$9!#$9$_$^$;(B
+$B$s!#(B
 
 $BLuCm(B: $B$=$7$F$I$s$J8mLu$N@UG$$b(B gnus-doc-ja $B%A!<%`$K$"$j$^$9!#(B
 
@@ -1075,8 +1060,7 @@ Outlook $B$r8+6l$7$/$J$/$5$;$^$9!#$3$l$O!"%^%$%/%m%=%U%H$N@=IJ$r;H$C$F$$$k(B
 $B$b(B yes $B$J$N$G$9$+$i!#(B:-) $B$3$l$O;0CJ3,$N:n6H$K$J$j$^$9!#$^$:!"$=$l$i$NEj(B
 $B9F$N$?$a$N%U%'!<%9(B ($B35N,9T$,$I$s$J$U$&$K8+$($k$+$N;EMM(B) $B$r:n$j$^$7$g$&!#(B
 $BB3$$$F!"$=$l$i$K$$$/$P$/$+$NFCJL$J%9%3%"$rM?$($^$7$g$&!#:G8e$K!"$=$N?7$7(B
-$B$$%U%'!<%9$r;H$&$h$&$K(B Gnus $B$K;X<($7$^$7$g$&!#$=$l$r$I$&9T$J$&$+$N>\$7$$(B
-$B@bL@$,(B @uref{http://my.gnus.org/node/view/224, my.gnus.org} $B$K$"$j$^$9!#(B
+$B$$%U%'!<%9$r;H$&$h$&$K(B Gnus $B$K;X<($7$^$7$g$&!#(B
 
 @node FAQ 4-12
 @subsubheading $B<ALd(B 4.12
@@ -1446,7 +1430,7 @@ ispell} $B$^$?$OF1(B @uref{http://aspell.sourceforge.net/, aspell} $B$rE,Ev(
 $B$J(B path $B$K%$%s%9%H!<%k$7$F$*$/$3$H$G$9!#<!(B
 $B$K(B @uref{http://www.kdstevens.com/~stevens/ispell-page.html,
 ispell.el} $B$H!"=q$$$?$=$N>l$G%9%Z%k%A%'%C%/$r$7$F$/$l(B
-$B$k(B @uref{http://www-sop.inria.fr/mimosa/personnel/Manuel.Serrano/flyspell/flyspell.html,
+$B$k(B @uref{http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html,
 flyspell.el} $B$rMQ0U$7$F$/$@$5$$!#(B@file{ispell.el} $B$O(B Emacs $B$H$H$b$KG[I[(B
 $B$5$l$F$$$k$@$1$G$O$J$/!"(BXEmacs $B%Q%C%1!<%8%7%9%F%`$K$h$C$F$b<j$KF~$l$k$3(B
 $B$H$,$G$-$^$9!#(B@file{flyspell.el} $B$b(B Emacs $B$KF1:-$5$l$F$$$k$N$H$H$b$K!"%Q%C(B
@@ -2003,13 +1987,12 @@ Leafnode} $B$d(B @uref{http://infa.abo.fi/~patrik/sn/, sn} $B$N$h$&$K>.5,LO(
 $B$s(B @uref{http://www.isc.org/products/INN/, inn} $B$N$h$&$JK\3JE*$J%K%e!<%9(B
 $B%5!<%P!<$r%$%s%9%H!<%k$9$k$3$H$b$G$-$^$9!#%a!<%k$N<h$j9~$_$K;H$&$b$N$G?M(B
 $B5$$,$"$k$N$O(B @uref{http://www.catb.org/~esr/fetchmail/, fetchmail} $B$*$h(B
-$B$S(B @uref{http://www.qcc.ca/~charlesc/software/getmail-3.0/, getmail} $B$G(B
-$B$9!#$=$l$i$K%a!<%k$r%G%#%9%/$K=q$-9~$`$h$&$K;X<($7$F$/$@$5$$!#(BGnus $B$O$=(B
-$B$3$+$iFI$`$3$H$K$J$j$^$9!#:G8e$G$9$,$*$m$=$+$K$G$-$J$$$N$O%a!<%k$NAw?.$G(B
-$B$9!#$3$l$K$O$"$i$f$k(B MTA$B!"Nc$($P(B @uref{http://www.sendmail.org/,
-sendmail}, @uref{http://www.qmail.org/, postfix},
-@uref{http://www.exim.org/, exim} $B$^$?$O(B @uref{http://www.qmail.org/,
-qmail} $B$r;H$&$3$H$,$G$-$^$9!#(B
+$B$S(B @uref{http://pyropus.ca/software/getmail/, getmail} $B$G$9!#$=$l$i$K%a!<(B
+$B%k$r%G%#%9%/$K=q$-9~$`$h$&$K;X<($7$F$/$@$5$$!#(BGnus $B$O$=$3$+$iFI$`$3$H$K(B
+$B$J$j$^$9!#:G8e$G$9$,$*$m$=$+$K$G$-$J$$$N$O%a!<%k$NAw?.$G$9!#$3$l$K$O$"$i(B
+$B$f$k(B MTA$B!"Nc$($P(B @uref{http://www.sendmail.org/, sendmail},
+@uref{http://www.qmail.org/, postfix}, @uref{http://www.exim.org/,
+exim} $B$^$?$O(B @uref{http://www.qmail.org/, qmail} $B$r;H$&$3$H$,$G$-$^$9!#(B
 
 Windows $B>.20$N$?$a$K$O(B @uref{http://www.tglsoft.de/, Hamster} $B$r?d$7$^$9!#(B
 $B$=$l$O>.$5$/$F%U%j!<$J%*!<%W%s%=!<%9$N%W%m%0%i%`$G!"1s3V%5!<%P!<$+$i%a!<(B
@@ -2156,11 +2139,7 @@ Gnus $B%^%K%e%"%k0J30$K(B message, emacs-mime, sieve $B$*$h$S(B pgg $B$N%^%
 
 @subsubheading $B2sEz(B
 
-$BFs$D$N:G$b=EMW$J$b$N(B
-$B$O(B @uref{http://www.gnus.org, $B8x<0(B Gnus $B%&%'%V%5%$%H(B} $B$H!"$=$N;PKe%5%$%H(B
-$B$G$"$k(B @uref{http://my.gnus.org, my.gnus.org (MGO)} $B$G$9!#8e<T$K(B
-$B$O(B Lisp $B$NCGJR!"(BHowTo$B!"%A%e!<%H%j%"%k(B ($BL$40@.(B)$B!"$*$h$S$3$N(B FAQ $B$,$"$j$^(B
-$B$9!#(B
+$B:G$b=EMW$J$b$N$O(B @uref{http://www.gnus.org, $B8x<0(B Gnus $B%&%'%V%5%$%H(B} $B$G$9!#(B
 
 $BB>$K$b6=L#?<$$%5%$%H$,$"$C$?$i65$($F$/$@$5$$!#(B
 

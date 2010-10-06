@@ -1152,11 +1152,8 @@ pgg-ja, The PGG Manual}, も参照してください。
 あなたが送信したものを理解できないことを発見することになるでしょう。一つ
 の解は、代わりに PGP 2.x を使うこと (すなわち、もし @code{pgg} を使って
 いるのであれば、@code{pgg-default-scheme} を @code{pgp} に設定するこ
-と) です。GnuPG を使いたいのであれば、@code{gpg-2comp} という互換を実現
-するスクリプ
-ト @uref{http://muppet.faveve.uni-stuttgart.de/~gero/gpg-2comp/} を入手
-して、使うことができます。さらに PGP 2.x を使っている仲間に、GnuPG に乗
-り換えることを説得しても良いでしょう。
+と) です。さらに PGP 2.x を使っている仲間に、GnuPG に乗り換えることを説
+得しても良いでしょう。
 @vindex mml-signencrypt-style-alist
 最後の代替手段として、署名と暗号化の動作を二段階 (分離署名してからメッセー
 ジを暗号化する) にすることができます。この振る舞いを変更したいのであれば、
