@@ -301,6 +301,11 @@ API の関数には以下のものがあります:
 @findex sieve-manage-close
 サーバーとの接続を閉じます。
 
+@item sieve-manage-authenticate
+@findex sieve-manage-authenticate
+サーバーの認証を受けます。
+Authenticate to the server.
+
 @item sieve-manage-capability
 @findex sieve-manage-capability
 サーバーがサポートしている機能のリストを返します。
