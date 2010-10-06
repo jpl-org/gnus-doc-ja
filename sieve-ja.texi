@@ -274,10 +274,6 @@ if address ["to", "cc"] "kerberos@@mit.edu" @{
 customize-group RET sieve RET}):
 
 @table @code
-@item sieve-manage-default-user
-@vindex sieve-manage-default-user
-ディフォルトのユーザー名を設定します。
-
 @item sieve-manage-default-port
 @vindex sieve-manage-default-port
 仕様するディフォルトのポートを設定します。提案されているポート番号
@@ -304,10 +300,6 @@ API の関数には以下のものがあります:
 @item sieve-manage-close
 @findex sieve-manage-close
 サーバーとの接続を閉じます。
-
-@item sieve-manage-authenticate
-@findex sieve-manage-authenticate
-サーバーを認証します。
 
 @item sieve-manage-capability
 @findex sieve-manage-capability
