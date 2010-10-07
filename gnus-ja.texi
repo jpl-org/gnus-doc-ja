@@ -22840,6 +22840,12 @@ Gravatars $B$N2hAG$N%5%$%:!#(BGravatars $B$O>o$K@5J}7A$J$N$G!"%5%$%:$N;XDj$K$
 @item gnus-gravatar-properties
 @vindex gnus-gravatar-properties
 Gravatar $B2hA|$KE,MQ$9$kB0@-$N%j%9%H$G$9!#(B
+
+@item gnus-gravatar-too-ugly
+@vindex gnus-gravatar-too-ugly
+$BI=<($5$l$k$Y$-$G$O$J$$%"%P%?!<$N!";}$A<g$?$A$N%a!<%k%"%I%l%9$^$?$OL>A0$K(B
+$B9gCW$9$k@55,I=8=!"$^$?$O(B @code{nil}$B!#%G%#%U%)%k%H(B
+$B$G(B @code{gnus-article-x-face-too-ugly} $B$NCM$K$J$j$^$9(B (@pxref{X-Face})$B!#(B
 @end table
 
 $B$=$l$i$r(B From $B%U%#!<%k%I$G8+$?$$$J$i!"$3$&$7$F$/$@$5$$(B:
