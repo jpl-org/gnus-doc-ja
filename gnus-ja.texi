@@ -9563,6 +9563,9 @@ Emacs MIME Manual}) $B$G@_Dj$5$l$?4X?t$r;H$$$^$9$,!"JQ(B
 $B$j$G$9(B:
 
 @table @code
+@item mm-shr
+Gnus $B$N4J0W(B html $BIA2h4o(B (shr) $B$r;H$$$^$9!#(B
+
 @item gnus-article-html
 w3m $B$r;H$C$F(B Gnus $B$KIA2h$5$;$^$9!#(B
 
@@ -10722,8 +10725,14 @@ Gnus $B$O$9$G$K<hF@$7$F$"$k%X%C%@!<$?$A$NCf$G(B @code{Message-ID} $B$rC5$7$^$
 $B$"$^$jM%2m$JJ}K!$G$d$C$F$$$k$o$1$G$O$"$j$^$;$s!#(B@code{nnmbox},
 @code{nnbabyl}, @code{nnmaildir} $B$*$h$S(B @code{nnml} $B$,$I$N%0%k!<%W$+$i$G(B
 $B$b5-;v$rA\:w$G$-$k$N$KBP$7$F!"(B@code{nnfolder} $B$H(B @code{nnimap} $B$O8=:_$N(B
-$B%0%k!<%W$KEj9F$5$l$?5-;v$7$+C5$9$3$H$,$G$-$^$;$s!#(B($B$=$NB>$N$b$N$O;~4V$,(B
-$B$+$+$j$9$.$^$9!#(B) @code{nnmh} $B$G$O$^$C$?$/IT2DG=$G$9!#(B
+$B%0%k!<%W$KEj9F$5$l$?5-;v$7$+C5$9$3$H$,$G$-$^$;$s!#(B@code{nnmh} $B$G$O$^$C$?(B
+$B$/IT2DG=$G$9!#(B
+
+@c TRANSLATEME
+Fortunately, the special @code{nnregistry} back end is able to locate
+articles in any groups, regardless of their back end (@pxref{Registry
+Article Refer Method, fetching by @code{Message-ID} using the
+registry}).
 
 @node Alternative Approaches
 @section $BBeBX<jCJ(B
@@ -12228,7 +12237,7 @@ emacs-mime-ja, The Emacs MIME Manual}, $B$r;2>H$7$F$/$@$5$$!#$3$N>O$O%G%#(B
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
 $B$b$7$3$l$,(B @code{gnus-article-html} $B$K@_Dj$5$l$F$$$k$H!"(B
-Gnus $B$O(B @code{curl} $B$H(B @code{w3m} $B$rMxMQ$9$k$=$NAH$_9~$_5!G=$r;H$$$^$9!#(B
+Gnus $B$O(B @code{w3m} $B$rMxMQ$9$k$=$NAH$_9~$_5!G=$r;H$$$^$9!#(B
 
 @item gnus-blocked-images
 @vindex gnus-blocked-images
@@ -24957,6 +24966,14 @@ Gnus $B%l%8%9%H%j!<$O5-;v$N(B Message-ID $B$r85$K$9$Y$F$N%P%C%/%(%s%I$r2#CGE*
 $B5DO@$rF1$8%0%k!<%W$GB3$1$i$l$k$h$&$K$9$k5!G=$G$9!#(BMessage-ID $B$K2C$($FI=(B
 $BBj$HAw?.<T$r;H$&$3$H$,$G$-$^$9!#$3$l$K$O$$$/$D$+$N$d$jJ}$,$"$j$^$9!#(B
 
+@c TRANSLATEME
+@item
+Refer to messages by ID
+
+Commands like @code{gnus-summary-refer-parent-article} can take
+advantage of the registry to jump to the referred article, regardless
+of the group the message is in.
+
 @item
 $BFH<+$N%U%i%0$H%-!<%o!<%I$r5-O?$9$k(B
 
@@ -24976,6 +24993,8 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 @menu
 * Setup::
 * Fancy splitting to parent::   $B?F$X$NFC5iJ,3d(B
+@c TRANSLATEME
+* Registry Article Refer Method:: Fetching by @code{Message-ID} Using the Registry
 * Store custom flags and keywords:: $BFH<+$N%U%i%0$H%-!<%o!<%I$N5-O?(B
 * Store arbitrary data::        $BG$0U$N%G!<%?$N5-O?(B
 @end menu
@@ -25050,6 +25069,43 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 @defvar gnus-registry-cache-file
 Gnus $B$NA`:n$rDL$8$F%l%8%9%H%j!<$,5-O?$5$l$k%U%!%$%k$G$9!#(B
 @end defvar
+
+@c TRANSLATEME
+@node Registry Article Refer Method
+@subsection Fetching by @code{Message-ID} Using the Registry
+
+The registry knows how to map each @code{Message-ID} to the group it's
+in.  This can be leveraged to enhance the ``article refer method'',
+the thing that tells Gnus how to look up an article given its
+Message-ID (@pxref{Finding the Parent}).
+
+@vindex nnregistry
+@vindex gnus-refer-article-method
+
+The @code{nnregistry} refer method does exactly that.  It has the
+advantage that an article may be found regardless of the group it's
+in---provided its @code{Message-ID} is known to the registry.  It can
+be enabled by augmenting the start-up file with something along these
+lines:
+
+@example
+;; Keep enough entries to have a good hit rate when referring to an
+;; article using the registry.  Use long group names so that Gnus
+;; knows where the article is.
+(setq gnus-registry-max-entries 2500
+      gnus-registry-use-long-group-names t)
+
+(gnus-registry-initialize)
+
+(setq gnus-refer-article-method
+      '(current
+        (nnregistry)
+        (nnweb "gmane" (nnweb-type gmane))))
+@end example
+
+The example above instructs Gnus to first look up the article in the
+current group, or, alternatively, using the registry, and finally, if
+all else fails, using Gmane.
 
 @node Fancy splitting to parent
 @subsection $B?F$X$NFC5iJ,3d(B
