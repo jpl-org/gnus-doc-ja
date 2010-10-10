@@ -23396,12 +23396,14 @@ Spam $B_I2a4o$,(B spam $B%a%C%;!<%8$K0u$rIU$1$=$3$J$C$?$i!"%0%k!<%W$rH4$1=P$k
 $B$,$=$l$K0u$rIU$1$F$bNI$$$G$7$g$&!#(B
 
 @table @kbd
-@item M-d
+@item $
+@itemx M-d
 @itemx M s x
 @itemx S x
-@kindex M-d
-@kindex S x
-@kindex M s x
+@kindex $ ($B35N,(B)
+@kindex M-d ($B35N,(B)
+@kindex S x ($B35N,(B)
+@kindex M s x ($B35N,(B)
 @findex gnus-summary-mark-as-spam
 $B8=:_$N5-;v$K(B spam $B0u$rIU$1$F!"(B@samp{$} $B0u$rI=<($7$^(B
 $B$9(B (@code{gnus-summary-mark-as-spam})$B!#(B
