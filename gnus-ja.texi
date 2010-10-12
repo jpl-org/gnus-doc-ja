@@ -10728,11 +10728,10 @@ Gnus $B$O$9$G$K<hF@$7$F$"$k%X%C%@!<$?$A$NCf$G(B @code{Message-ID} $B$rC5$7$^$
 $B%0%k!<%W$KEj9F$5$l$?5-;v$7$+C5$9$3$H$,$G$-$^$;$s!#(B@code{nnmh} $B$G$O$^$C$?(B
 $B$/IT2DG=$G$9!#(B
 
-@c TRANSLATEME
-Fortunately, the special @code{nnregistry} back end is able to locate
-articles in any groups, regardless of their back end (@pxref{Registry
-Article Refer Method, fetching by @code{Message-ID} using the
-registry}).
+$B9,$$$K$bFCJL$J%P%C%/%(%s%I$G$"$k(B @code{nnregistry} $B$O!"$I$s$J%0%k!<%W$K(B
+$B$"$k5-;v$G$b%P%C%/%(%s%I$K4X78L5$/8+$D$1=P$9$3$H$,$G$-$^$9!#(B
+@xref{Registry Article Refer Method, @code{Message-ID} $B$K4p$E$$$F%l%8%9(B
+$B%H%j!<$G5-;v$r<hF@$9$k(B}.
 
 @node Alternative Approaches
 @section $BBeBX<jCJ(B
@@ -24968,13 +24967,12 @@ Gnus $B%l%8%9%H%j!<$O5-;v$N(B Message-ID $B$r85$K$9$Y$F$N%P%C%/%(%s%I$r2#CGE*
 $B5DO@$rF1$8%0%k!<%W$GB3$1$i$l$k$h$&$K$9$k5!G=$G$9!#(BMessage-ID $B$K2C$($FI=(B
 $BBj$HAw?.<T$r;H$&$3$H$,$G$-$^$9!#$3$l$K$O$$$/$D$+$N$d$jJ}$,$"$j$^$9!#(B
 
-@c TRANSLATEME
 @item
-Refer to messages by ID
+ID $B$K4p$E$$$F%a%C%;!<%8$r>H2q$9$k(B
 
-Commands like @code{gnus-summary-refer-parent-article} can take
-advantage of the registry to jump to the referred article, regardless
-of the group the message is in.
+@code{gnus-summary-refer-parent-article} $B$N$h$&$J%3%^%s%I$O!">H2q$9$k5-(B
+$B;v$K9T$/$9$k$?$a$K!"$=$N%a%C%;!<%8$,$"$k%0%k!<%W$K$+$+$o$i$:!"%l%8%9%H%j!<(B
+$B$rMxMQ$9$k$3$H$,$G$-$^$9!#(B
 
 @item
 $BFH<+$N%U%i%0$H%-!<%o!<%I$r5-O?$9$k(B
@@ -24995,8 +24993,7 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 @menu
 * Setup::
 * Fancy splitting to parent::   $B?F$X$NFC5iJ,3d(B
-@c TRANSLATEME
-* Registry Article Refer Method:: Fetching by @code{Message-ID} Using the Registry
+* Registry Article Refer Method:: @code{Message-ID} $B$K4p$E$$$F%l%8%9%H%j!<$G5-;v$r<hF@$9$k(B
 * Store custom flags and keywords:: $BFH<+$N%U%i%0$H%-!<%o!<%I$N5-O?(B
 * Store arbitrary data::        $BG$0U$N%G!<%?$N5-O?(B
 @end menu
@@ -25072,28 +25069,25 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 Gnus $B$NA`:n$rDL$8$F%l%8%9%H%j!<$,5-O?$5$l$k%U%!%$%k$G$9!#(B
 @end defvar
 
-@c TRANSLATEME
 @node Registry Article Refer Method
-@subsection Fetching by @code{Message-ID} Using the Registry
+@subsection @code{Message-ID} $B$K4p$E$$$F%l%8%9%H%j!<$G5-;v$r<hF@$9$k(B
 
-The registry knows how to map each @code{Message-ID} to the group it's
-in.  This can be leveraged to enhance the ``article refer method'',
-the thing that tells Gnus how to look up an article given its
-Message-ID (@pxref{Finding the Parent}).
+$B%l%8%9%H%j!<$O!"$=$l$>$l$N(B @code{Message-ID} $B$N5-;v$,B8:_$9$k%0%k!<%W$r(B
+$BCN$C$F$$$^$9!#$3$l$O!V5-;v$r;2>H$9$kJ}K!!W$9$J$o$A!V$"$k(B Message-ID $B$N5-(B
+$B;v$r;2>H$9$kJ}K!$r(B Gnus $B$K;X<($9$k$b$N!W$rA}6/$9$k$?$a$K$F$3F~$l$9$k$3$H(B
+$B$,$G$-$^$9!#(B@xref{Finding the Parent}.
 
 @vindex nnregistry
 @vindex gnus-refer-article-method
-
-The @code{nnregistry} refer method does exactly that.  It has the
-advantage that an article may be found regardless of the group it's
-in---provided its @code{Message-ID} is known to the registry.  It can
-be enabled by augmenting the start-up file with something along these
-lines:
+@code{nnregistry} $B;2>HJ}K!$O$^$5$K$=$l$r$7$^$9!#$=$l$K$O!"5-;v$,$=$l$,$"(B
+$B$k%0%k!<%W$K$+$+$o$i$:8+$D$+$k$+$b$7$l$J$$$H$$$&FCD9$,$"$j$^$9(B---$B$b$7$=(B
+$B$N(B @code{Message-ID} $B$r%l%8%9%H%j!<$,CN$C$F$$$l$P!#$=$l$O!"0J2<$NJ}?K$K(B
+$B1h$C$F!"$"$k$b$N$G5/F0%U%!%$%k$rA}Bg$9$k$3$H$K$h$j2DG=$K$J$k$O$:$G$9(B:
 
 @example
-;; Keep enough entries to have a good hit rate when referring to an
-;; article using the registry.  Use long group names so that Gnus
-;; knows where the article is.
+;; $B%l%8%9%H%j!<$r;H$C$F5-;v$r;2>H$9$k>l9g$KNI9%$J%R%C%HN($rF@$k$?$a(B
+;; $B$K$O!"==J,$J%(%s%H%j!<$r0];}$9$k$h$&$K$7$F$/$@$5$$!#5-;v$,$I$3$K(B
+;; $B$"$k$+$r(B Gnus $B$KCN$i$;$k$?$a$K!"D9$$%0%k!<%WL>$r;HMQ$7$F$/$@$5$$!#(B
 (setq gnus-registry-max-entries 2500
       gnus-registry-use-long-group-names t)
 
@@ -25105,9 +25099,9 @@ lines:
         (nnweb "gmane" (nnweb-type gmane))))
 @end example
 
-The example above instructs Gnus to first look up the article in the
-current group, or, alternatively, using the registry, and finally, if
-all else fails, using Gmane.
+$B>e5-$NNc$O!":G=i$O8=:_$N%0%k!<%W$NCf$G!"$"$k$$$O%l%8%9%H%j!<$r;H$C$F!"$=(B
+$B$7$F$=$l$i$9$Y$F$,<:GT$7$?$i(B Gmane $B$r;H$C$F5-;v$rC5$9$3$H$r(B Gnus $B$K;X<((B
+$B$7$^$9!#(B
 
 @node Fancy splitting to parent
 @subsection $B?F$X$NFC5iJ,3d(B
