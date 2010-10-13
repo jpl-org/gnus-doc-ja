@@ -193,9 +193,9 @@ login $B$H(B password $B$O!"%5!<%P!<$KBP$7$F4J7i$K$"$J$?$N%m%0%$%s;q3J$r>ZL@$
 
 $B$b$7(B @code{auth-sources} $B$r%+%9%?%^%$%:$7$J$$$H!"%G%#%U%)%k%H$G@83h$9$k(B
 $B$3$H$K$J$k$G$7$g$&!#$=$N%G%#%U%)%k%H$H$O!"$I$s$J%[%9%H$b%]!<%H$K$D$$$F(B
-$B$b(B netrc $B%U%!%$%k(B @code{~/.authinfo.gpg} $B$r;2>H$9$k$H$$$&$3$H$G$9!#$3$l(B
-$B$O(B GnuPG $B$G0E9f2=$5$l$?%U%!%$%k$G$9!#(B@xref{GnuPG and EasyPG Assistant
-Configuration}.
+$B$b(B netrc $B%U%!%$%k(B @file{~/.authinfo.gpg} $B$r;2>H$9$k$H$$$&$3$H$G$9!#$3$l(B
+$B$O(B GnuPG $B$G0E9f2=$5$l$?%U%!%$%k$G$9(B (@pxref{GnuPG and EasyPG Assistant
+Configuration})$B!#(B
 
 $B<B:]$K;H$($k:G$b4JC1$J(B netrc $B9T$NNc$O!"%]!<%H$,L5$$$b$N$G$9!#(B
 
@@ -284,9 +284,8 @@ auth-source $B%i%$%V%i%j!<$K$O!"30It$G;H$&$?$a$N4X?t$O0l$D$7$+$"$j$^$;$s!#(B
 $B$O(B @file{~/.authinfo.gpg} (GnuPG $B$G0E9f2=$5$l$?%U%!%$%k(B) $B$rFI$_9~$_$^$9!#(B
 
 Emacs 23 $B0J9_$G$O(B @code{*.gpg} $B%U%!%$%k$N0E9f$r<+F0E*$K2r$/$?$a$N%*%W%7%g(B
-$B%s(B @code{auto-encryption-mode} $B$,$"$j$^$9!#$=$l$O%G%#%U%)%k%H$GM-8z$K$J$C(B
-$B$F$$$k$N$G!"@_Dj$OITMW$G$9!#$b$72?$i$+$NM}M3$G(B Emacs $B$N=i4|$NHG$r;H$C$F(B
-$B$$$k>l9g$O!"0J2<$,I,MW$G$9(B:
+$B%s(B @code{auto-encryption-mode} $B$,$"$j$^$9!#%G%#%U%)%k%H$GM-8z$G$9!#$b$7(B
+$B2?$i$+$NM}M3$G(B Emacs $B$N=i4|$NHG$r;H$C$F$$$k>l9g$O!"0J2<$,I,MW$G$9(B:
 
 @lisp
 (require 'epa-file)
@@ -294,18 +293,16 @@ Emacs 23 $B0J9_$G$O(B @code{*.gpg} $B%U%!%$%k$N0E9f$r<+F0E*$K2r$/$?$a$N%*%W%7
 @end lisp
 
 $B$"$J$?$N(B GnuPG $B$N%Q%9%o!<%I$,%-%c%C%7%e$5$l$k$h$&$K$7$?$$$J$i!"(B
-@code{gpg-agent} $B$^$?$O(B EasyPG $B%"%7%9%"%s%H(B (@pxref{Caching Passphrases,
-, Caching Passphrases, epa}) $B$r@_Dj$7$F$/$@$5$$!#(B
+@code{gpg-agent} $B$^$?$O(B EasyPG $B%"%7%9%"%s%H$r@_Dj$7$F$/$@$5$$!#(B
+@xref{Caching Passphrases, , Caching Passphrases, epa}.
 
 $B<jAa$/;H$$;O$a$k$K$O!"$^$:0J2<$N@_Ld$KBP$9$kEz$rMQ0U$7$F$/$@$5$$(B:
 
 @enumerate
 @item
 GnuPG $B$N%P!<%8%g%s(B 1 $B$G$O$J$/!"%P!<%8%g%s(B 2 $B$r;H$C$F$$$^$9$+(B?
-
 @item
 $B8x3+800E9f$G$J$J$/!"6&DL800E9f$r;H$C$F$$$^$9$+(B?
-
 @item
 gpg-agent $B$r;H$$$?$$$G$9$+(B?
 @end enumerate
