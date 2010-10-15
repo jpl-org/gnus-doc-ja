@@ -293,8 +293,8 @@ Emacs 23 $B0J9_$G$O(B @code{*.gpg} $B%U%!%$%k$N0E9f$r<+F0E*$K2r$/$?$a$N%*%W%7
 @end lisp
 
 $B$"$J$?$N(B GnuPG $B$N%Q%9%o!<%I$,%-%c%C%7%e$5$l$k$h$&$K$7$?$$$J$i!"(B
-@code{gpg-agent} $B$^$?$O(B EasyPG $B%"%7%9%"%s%H$r@_Dj$7$F$/$@$5$$!#(B
-@xref{Caching Passphrases, , Caching Passphrases, epa}.
+@code{gpg-agent} $B$^$?$O(B EasyPG $B%"%7%9%"%s%H$r@_Dj$7$F$/$@$5(B
+$B$$(B (@pxref{Caching Passphrases, , Caching Passphrases, epa})$B!#(B
 
 $B<jAa$/;H$$;O$a$k$K$O!"$^$:0J2<$N@_Ld$KBP$9$kEz$rMQ0U$7$F$/$@$5$$(B:
 
