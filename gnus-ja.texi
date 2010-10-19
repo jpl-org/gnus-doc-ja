@@ -17759,6 +17759,10 @@ Netscape のメールボックス。
 @item lanl-gov-announce
 ロスアラモス国立研究所 (LANL) Gov Announce からの発表メッセージ。
 
+@cindex git commit messages
+@item git
+@code{git} で commit したことを伝えるメッセージ。
+
 @cindex forwarded messages
 @item rfc822-forward
 RFC822 で転送されたメッセージ。
