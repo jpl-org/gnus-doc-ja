@@ -14624,7 +14624,7 @@ machine imap.gmail.com login <username> password <password> port imap
 
 @item nnimap-server-port
 サーバーのポートが標準とは異なるなら、ここで設定できます。代表的なポート
-は @samp{imap} あるいは @samp{imaps} でしょう。
+は @code{"imap"} あるいは @code{"imaps"} でしょう。
 
 @item nnimap-stream
 @code{nnimap} がどうやってサーバーに接続するかを指定します。使える値は:
