@@ -1078,6 +1078,9 @@ and Soft Newlines, emacs, Emacs Manual}) に従い、メッセージをデコードす
 ハード改行文字が無ければ、流動 (flowed) テキストのためのエンコードは行な
 いません。
 
+バッファーに改行文字があるとき、流動テキストにエンコードすることを有効ま
+たは無効にするために @code{mml-enable-flowed} 変数をカスタマイズできます。
+
 流動 (flowed) テキストをデコードするとき、ソフト改行文字を持つ各行
 は @code{fill-flowed-display-column} で決定される桁の後ろで折り畳まれて
 耳を揃えられ (filled され) ます。ディフォルトでは @code{fill-column} の

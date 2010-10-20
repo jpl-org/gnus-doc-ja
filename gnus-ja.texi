@@ -9554,19 +9554,16 @@ URL に含まれる改行を削除します。いくつかのメイラーは、行を短くするために
 Article}) で定義されている文字セットが使われます。(訳注: 実質的には「文
 字セット」ではなくて @code{coding-system} です。)
 
-@vindex gnus-article-wash-function
 ディフォルトでは @acronym{HTML} の変換に @code{mm-text-html-renderer}
 (@pxref{Display Customization, ,表示のカスタマイズ, emacs-mime-ja, The
-Emacs MIME Manual}) で設定された関数を使いますが、変
-数 @code{gnus-article-wash-function} が設定されていると、記事の洗濯では
-それが優先されます。使うことができる、あらかじめ用意された関数は以下の通
-りです:
+Emacs MIME Manual}) で設定された関数を使います。使うことができる、あらか
+じめ用意された関数は以下の通りです:
 
 @table @code
-@item mm-shr
+@item shr
 Gnus の簡易 html 描画器 (shr) を使います。
 
-@item gnus-article-html
+@item gnus-w3m
 w3m を使って Gnus に描画させます。
 
 @item w3
@@ -9588,10 +9585,6 @@ Emacs/W3 を使います。
 html2text (シンプルな @acronym{HTML} コンバーターで、Gnus に含まれていま
 す) を使います。
 @end table
-
-訳注: 例えば @code{mm-text-html-renderer} を @code{w3m} などに設定してあっ
-て正しく動作するのならば、@code{gnus-article-wash-function} はディフォル
-トの @code{nil} のままにしておいて構いません。
 
 @item W b
 @kindex W b (概略)
@@ -12240,15 +12233,22 @@ Gnus は @code{w3m} を利用するその組み込み機能を使います。
 
 @item gnus-blocked-images
 @vindex gnus-blocked-images
-@acronym{URL} がこの正規表現に合致する画像は取得も表示もされません。例え
-ば ``ads'' という文字列をそれらの内に持つすべての @acronym{URL} を阻止す
-るには、以下のようにしてください:
+
+@acronym{URL} がこの正規表現に合致する外部画像は取得も表示もされません。
+例えば ``ads'' という文字列をそれらの内に持つすべての @acronym{URL} を阻
+止するには、以下のようにしてください:
 
 @lisp
 (setq gnus-blocked-images "ads")
 @end lisp
 
-ディフォルトではすべての外部からの画像を阻止します。
+これは評価されるべき関数でも構いません。その場合、それはグループ名をパラ
+メーターとして呼ばれます。ディフォルト値
+は @code{gnus-block-private-groups} で、ニュースグループの記事ではないど
+んなものに対しても @samp{"."} を返します。これはメールを読むときに外部画
+像を取得しないということで、それによってあなたがメールを読んだかどうかを
+追跡するために誰も web bugs (訳注: インターネットユーザを追跡するための
+ツール) の類を使えないようにします。
 
 @item gnus-html-cache-directory
 @vindex gnus-html-cache-directory

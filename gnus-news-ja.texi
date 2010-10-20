@@ -130,6 +130,9 @@ manual}.  EasyPG $B$O(B Emacs 23 $B$K4^$^$l$F$$$^$9$,!"C1FH$G$bMxMQ2DG=$G$9!#
 @item $B35N,%b!<%I$H5-;v%b!<%I$NJQ99(B
 
 @itemize @bullet
+@item @acronym{HTML} $B$r$I$&IA2h$9$k$+$r7h$a$k$N$O!"8=:_$O$?$C$?$R$H$D$N(B
+$BJQ?t$G$9(B: @code{mm-text-html-renderer}.
+
 @item $BG4Ce5-;v%P%C%U%!!<$r;H$($k$h$&$K$J$j$^$7$?!#$3$l$O!"JL$N5-;v$rA*Br(B
 $B$7$?$H$-$K:FMxMQ$5$l$J$$5-;v%P%C%U%!!<$G$9!#(B@xref{Sticky Articles}.
 @c
