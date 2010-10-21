@@ -17500,15 +17500,6 @@ Language) $B$G%m!<%I(B/$B%;!<%V$9$k$?$a$K!"0J2<$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9
 $B$i(B feed $B$rFI$_$^$9!#(B@code{nnrss-generate-download-script} $B%3%^%s%I$r;H$&(B
 $B$3$H$K$h$C$F!"(B@command{wget} $B$r;H$C$?%@%&%s%m!<%I!&%9%/%j%W%H$r:n$k$3$H(B
 $B$,$G$-$^$9!#(B
-
-@item nnrss-wash-html-in-text-plain-parts
-@code{nil} $B$G$O$J$$CM$K$9$k$H(B @code{nnrss} $B$O(B @samp{text/plain} $B%Q!<%H$K(B
-$B$"$k%F%-%9%H$r(B @acronym{HTML} $B$H$7$FIA2h$7$^$9!#%F%-%9%H$NIA2h$K(B
-$B$O(B @code{mm-text-html-renderer} $BJQ?t(B (@pxref{Display Customization,
-,$BI=<($N%+%9%?%^%$%:(B, emacs-mime-ja, The Emacs MIME Manual}) $B$GDj5A$5$l$?(B
-$B4X?t$,;H$o$l$^$9!#(B@code{nil} $B$@$C$?$i(B ($B$=$l$,%G%#%U%)%k%H$G$9(B)$B!"%F%-%9%H(B
-$B$OC1$K@^$jJV$5$l$k$@$1$G$9!#$b$7(B @samp{text/html} $B%Q!<%H$r8+$k$N$,9%$_$J(B
-$B$i$P!"(B@code{nil} $B$N$^$^$K$7$F$*$$$F$/$@$5$$!#(B
 @end table
 
 $B35N,%P%C%U%!!<$K@bL@$rI=<($5$;$?$$$J$i$P!"0J2<$N%3!<%I$,Lr$KN)$D$G$7$g$&!#(B
