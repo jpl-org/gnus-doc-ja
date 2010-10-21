@@ -232,6 +232,9 @@ Picon はテキストの対象物の右側に表示できるようになりました。
 @item Message モードの変更
 
 @itemize @bullet
+@item すべての送信済みメッセージのディフォルトの保存先が、月ごと
+の nnfolder アーカイブになりました。
+
 @item Gnus は“hashcash”client puzzle anti-spam の機構をサポートします。
 @code{(setq message-generate-hashcash t)} で有効になります。
 @xref{Hashcash}.
