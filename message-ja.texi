@@ -1464,6 +1464,7 @@ Message $B$,(B Gnus $B>e$GAv$C$F$$$k>l9g!"%a%C%;!<%8%P%C%U%!!<$O%I%i%U%H%0%k!
 @item message-default-headers
 @vindex message-default-headers
 $B$3$NJ8;zNs$O$9$Y$F$N%a%C%;!<%8%P%C%U%!!<$N%X%C%@!<$N:G8e$KA^F~$5$l$^$9!#(B
+$B$3$l$,$b$74X?t$J$i!"$=$l$,JV$9La$jCM$,A^F~$5$l$^$9!#(B
 
 @item message-subject-re-regexp
 @vindex message-subject-re-regexp
