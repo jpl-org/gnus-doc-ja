@@ -2187,6 +2187,13 @@ Generation Commands})。
 @section 購読制御コマンド
 @cindex subscription
 
+以下のコマンド群は、グループバッファーで (それぞれのグループを) 講読する
+かどうかの管理をできるようにします。もしたくさんのグループを講読したいの
+であれば @ref{Server Buffer} に行って、そこで @kbd{RET} か @kbd{SPC} を
+使ってサーバーを選ぶ方がおそらくもっと便利かもしれません。その
+後 @ref{Browse Foreign Server} で列挙しているコマンドが、手元で使えるよ
+うになります。
+
 @table @kbd
 @item S t
 @itemx u
