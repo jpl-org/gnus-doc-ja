@@ -2379,7 +2379,9 @@ Gnus $B$O%l%Y%k(B 1 $B$+$i(B @code{gnus-level-subscribed} ($B$3$NCM$r4^$`(
 
 @vindex gnus-group-default-list-level
 $B%G%#%U%)%k%H$G$O(B @code{gnus-group-default-list-level} $B$HF1$8$+$=$l$h$j>.(B
-$B$5$$%l%Y%k$N%0%k!<%W$,!"%0%k!<%W%P%C%U%!!<$K0lMwI=<($5$l$^$9!#(B
+$B$5$$%l%Y%k$N%0%k!<%W$,!"%0%k!<%W%P%C%U%!!<$K0lMwI=<($5$l$^$9!#$3$NJQ?t$O(B
+$B4X?t$G$"$k$3$H$b$G$-$^$9!#$=$N>l9g!"4X?t$,8F$P$l$F$=$N7k2L$,CM$H$7$F;H$o(B
+$B$l$^$9!#(B
 
 @vindex gnus-group-list-inactive-groups
 @code{gnus-group-list-inactive-groups} $B$,(B @code{nil} $B0J30$G$"$l$P!"L$FI(B
