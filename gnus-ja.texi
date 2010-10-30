@@ -1032,22 +1032,6 @@ Gnus $B$O(B @code{gnus-nntpserver-file} ($B@_Dj$5$l$F$$$J$$>l9g(B
 $B$9!#$b$7$=$l$b<:GT$7$?$J$i!"(BGnus $B$O(B Emacs $B$,F0:n$7$F$$$k%5!<%P!<(B
 $B$r(B @acronym{NNTP} $B%5!<%P!<$H$7$F;H$*$&$H$7$^$9!#?oJ,$JEv$F?dNL$G$9$1$I$M!#(B
 
-@vindex gnus-nntp-server
-@code{gnus-nntp-server} $B$,@_Dj$5$l$F$$$k$H!"$3$NJQ?t(B
-$B$O(B @code{gnus-select-method} $B$h$j$bM%@h$5$l$^$9!#$G$9$+(B
-$B$i(B @code{gnus-nntp-server} $B$O(B @code{nil} $B$K@_Dj$9$k$Y$-$G!"$=$l$,%G%#%U%)(B
-$B%k%H$G$9!#(B
-
-@vindex gnus-secondary-servers
-@vindex gnus-nntp-server
-Gnus $B$K(B @acronym{NNTP} $B%5!<%P!<$NL>A0$rBPOCE*$K;XDj$9$k$3$H$b$G$-$^$9!#(B
-@code{gnus} $B$K?tCM$G$J$$@\F,0z?t$rEO$9$H(B ($BNc(B: @kbd{C-u M-x gnus})$B!"(B
-Gnus $B$O(B @code{gnus-secondary-servers} $B%j%9%H(B ($B$b$7B8:_$9$k$J$i$P(B) $B$+$i%5!<(B
-$B%P!<$rA*$V$3$H$,$G$-$k$h$&$K$7$^$9!#$?$@C1$K@\B3$7$?$$$H;W$C$?%5!<%P!<$N(B
-$BL>A0$rBG$D$3$H$b$G$-$^$9!#(B($B$3$l$O(B @code{gnus-nntp-server} $B$r@_Dj$7!"$3$l(B
-$B$O8e$N(B Emacs $B$N%;%C%7%g%s$G(B @kbd{M-x gnus} $B$H$9$k$H!"(BGnus $B$OF1$8%5!<%P!<(B
-$B$K@\B3$7$h$&$H$9$k$H$$$&$3$H$G$9!#(B)
-
 @findex gnus-group-browse-foreign-server
 @kindex B ($B%0%k!<%W(B)
 $B$7$+$7!"IaCJF|>oE*$K$O0l$D$N(B @acronym{NNTP} $B%5!<%P!<$r;H$$!"0c$C$?%5!<%P!<(B
@@ -14692,6 +14676,11 @@ Mail})$B!#$?$@$7(B @code{default} $B$H$$$&%7%s%\%k$G$"$k>l9g$ONc30$G!"(B
 
 @item nnimap-split-fancy
 @code{nnmail-split-fancy} $B$HF1$89=J8$r;H$$$^$9!#(B
+
+@item nnimap-unsplittable-articles
+$BJ,3d$r9T$J$C$F$$$k$H$-$KL5;k$9$Y$-%U%i%0$N%7%s%\%k$N%j%9%H!#$9$J$o$A!"$=(B
+$B$l$i$N%U%i%0$r$b$C$F$$$k5-;v$O!"J,3d$r9T$J$&BP>]$H$7$F9MN8$5$l$J$$$H$$$&(B
+$B$3$H$G$9!#%G%#%U%k%H$O(B @samp{(%Deleted %Seen)} $B$G$9!#(B
 @end table
 
 @node Getting Mail
@@ -29623,11 +29612,11 @@ Gnus $B$O(B Emacs Lisp $B$K$h$C$F=q$+$l$F$$$F!"%$%s%?!<%W%j%?!<$G<B9T$5$l$k$?
 $B$H$$$&$3$H$G$9!#(B
 
 $B0lJ}!"%^%K%e%"%k(B
-$B$,!V(B@code{gnus-nntp-server} $B$r(B @samp{nntp.ifi.uio.no} $B$K@_Dj$7$J$5$$!W$H(B
-$B8@$C$?$J$i!"$=$l$O(B
+$B$,!V(B@code{gnus-nntp-server-file} $B$r(B @file{/etc/nntpserver} $B$K@_Dj$7$J$5(B
+$B$$!W$H8@$C$?$J$i!"$=$l$O(B
 
 @lisp
-(setq gnus-nntp-server "nntp.ifi.uio.no")
+(setq gnus-nntp-server-file "/etc/nntpserver")
 @end lisp
 
 $B$H$$$&$3$H$G$9!#(B
