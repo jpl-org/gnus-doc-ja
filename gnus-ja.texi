@@ -5107,25 +5107,6 @@ Gnus $B$O(B @acronym{FAQ} $B$r(B @code{gnus-group-faq-directory} $B$+$i<hF@
 Gnus $B$O(B @code{gnus-group-faq-directory} $B$NCM$r$9$Y$F!"0l$D0l$D%*!<%W%s$7(B
 $B$F$_$h$&$H$7$^$9!#(B
 
-@item H C
-@kindex H C ($B%0%k!<%W(B)
-@findex gnus-group-fetch-control
-@vindex gnus-group-fetch-control-use-browse-url
-@cindex control message
-$B$=$N%0%k!<%W$N%3%s%H%m!<%k%a%C%;!<%8$r(B @code{ftp.isc.org} $B$N5-O?8K$+$i<h(B
-$BF@$7$^$9(B (@code{gnus-group-fetch-control})$B!#@\F,0z?t$,M?$($i$l$k$H%0%k!<(B
-$B%WL>$r?R$M$^$9!#(B
-
-@code{gnus-group-fetch-control-use-browse-url} $B$,Hs(B-@code{nil} $B$@$C$?$i!"(B
-Gnus $B$O(B @code{browse-url} $B$r;H$C$F%3%s%H%m!<%k%a%C%;!<%8$r3+$-$^$9!#$=$&(B
-$B$G$J$$>l9g$O(B @code{ange-ftp} $B$r;H$C$F<hF@$5$l!"0l;~%0%k!<%W$KI=<($5$l$^(B
-$B$9!#(B
-
-$B%3%s%H%m!<%k%a%C%;!<%8$O05=L$5$l$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#$3$N%3%^%s(B
-$B%I$r;H$&$K$O(B @code{auto-compression-mode} $B$r(B on $B$K$7$F$*$/I,MW$,$"$j$^(B
-$B$9(B (@pxref{Compressed Files, ,Compressed Files, emacs, The Emacs
-Editor})$B!#(B
-
 @item H d
 @itemx C-c C-d
 @c @icon{gnus-group-describe-group}
