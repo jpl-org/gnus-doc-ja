@@ -6021,8 +6021,9 @@ Summary Buffer} を参照してください。
 @findex gnus-summary-show-article
 @vindex gnus-summary-show-article-charset-alist
 現在の記事を (再) 取得します。もし接頭引数が与えられると、現在の記事を取
-得しますが、記事をトリートメントする関数は実行しません。これは、サーバー
-から来たままの『生の』記事をもたらします。
+得しますが、記事をトリートメントする関数は実行しません。もし接頭引数
+が 2回与えられると (つまり @kbd{C-u C-u g'})、サーバーから来たままの完全
+な『生の』記事を表示します。
 
 @cindex charset, view article with different charset
 接頭引数を与えると、手動で文字セットの操作を行なうことができます。
@@ -13204,13 +13205,13 @@ Lisp フォームのリスト。それぞれのフォームが評価され、最初に返ってき
 が @code{nil} だったら、そのヘッダー名は削除されます。もし属性名
 が @code{eval} だったらその様式が評価され、結果は捨てられます。
 
-属性値は文字列 (そのまま使われます)、引数の無い関数 (返り値が使われます)、
-変数 (その値が使われます) またはリスト (それは @code{評価} されて、返り
-値が使われます) であることができます。関数と S式 (sexp) はセットアップさ
-れつつあるメッセージバッファーで呼ばれるか評価されます。現在の記事のヘッ
-ダー群は変数 @code{message-reply-headers} から得られます。これは number
-subject from date id references chars lines xref extra の各ヘッダーから
-成るベクトルです。
+属性値は文字列、引数の無い関数 (返り値が使われます)、変数 (その値が使わ
+れます) またはリスト (それは @code{評価} されて、返り値が使われます) で
+あることができます。関数と S式 (sexp) はセットアップされつつあるメッセー
+ジバッファーで呼ばれるか評価されます。現在の記事のヘッダー群は変
+数 @code{message-reply-headers} から得られます。これは number subject
+from date id references chars lines xref extra の各ヘッダーから成るベク
+トルです。
 
 @vindex message-reply-headers
 作成しようとしているメッセージがニュース記事かメールメッセージであるかを
