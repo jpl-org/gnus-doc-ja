@@ -4485,7 +4485,10 @@ Mairix $B$,$=$N8!:w7k2L$r3JG<$9$k(B @strong{$B%P%C%/%(%s%I!&%5!<%P!<(B} $B$
 $BG<$5$l$k%a!<%k$N$?$a$K$O!"$"$J$?$,%a!<%k$r3JG<$7$F$$$k4{B8$N%5!<%P!<$K$9(B
 $B$l$PNI$$$G$7$g$&!#$7$+$7(B @code{nnmairix} $B@lMQ$K!"Nc$($P?7$7(B
 $B$$(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B%5!<%P!<$rBhFs$N(B (secondary) $BA*Br(B
-$BJ}K!$K2C$($k$3$H$b$G$-$^$9(B (@pxref{Finding the News})$B!#(B
+$BJ}K!$K2C$($k$3$H$b$G$-$^$9(B (@pxref{Finding the News})$B!#$b$7$^$5$KBhFs(B
+$B$N(B @code{nnml} $B%5!<%P!<$r(B mairix $BMQ$K;H$C$F$$$k$N$G$"$l$P!"%5!<%P!<JQ(B
+$B?t(B @code{nnml-get-new-mail} $B$r3N<B$K(B @code{nil} $B$K@_Dj$7$F$/$@$5$$!#$5$b(B
+$B$J$$$H%a!<%k$r<:$&$3$H$K$J$j$+$M$^$;$s(B (@pxref{nnmairix caveats})$B!#(B
 Mairix $B$r(B @acronym{IMAP} $B%5!<%P!<>e$G1s3VF0:n$5$;$?$$$N$J$i$P!"$=$3$G$=(B
 $B$l$KBP1~$9$k(B @code{nnimap} $B%5!<%P!<$rA*$P$J$1$l$P$J$j$^$;$s!#(B
 
