@@ -14591,9 +14591,7 @@ machine imap.gmail.com login <username> password <password> port imap
         (nnimap-inbox "INBOX")
         (nnimap-split-methods default)
         (nnimap-expunge t)
-        (nnimap-stream ssl)
-        (nnir-search-engine imap)
-        (nnimap-expunge-inbox t))
+        (nnimap-stream ssl))
 @end example
 
 @table @code
@@ -14627,6 +14625,11 @@ machine imap.gmail.com login <username> password <password> port imap
 @item nnimap-authenticator
 いくつかの @acronym{IMAP} サーバーは匿名ログインを許容しています。その場
 合、これを @code{anonymous} に設定する必要があります。
+
+@item nnimap-expunge
+もし @code{nil} でなければ、記事を消去した後でそれらを目録から削除します。
+これはサーバーに UID EXPUNGE の機能があれば常に実行されますが、ディフォ
+ルトではサーバーにそのコマンドが無ければ実行しません。
 
 @item nnimap-streaming
 事実上すべての @acronym{IMAP} サーバーはデータの高速ストリーミングをサポー
