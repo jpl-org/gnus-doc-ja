@@ -14627,7 +14627,7 @@ machine imap.gmail.com login <username> password <password> port imap
 合、これを @code{anonymous} に設定する必要があります。
 
 @item nnimap-expunge
-もし @code{nil} でなければ、記事を消去した後でそれらを目録から削除します。
+もし @code{nil} でなければ、記事を消去した後でそれらを永久に取り除きます。
 これはサーバーに UID EXPUNGE の機能があれば常に実行されますが、ディフォ
 ルトではサーバーにそのコマンドが無ければ実行しません。
 
