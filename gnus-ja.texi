@@ -9418,6 +9418,17 @@ Sm*rtq**t*s はもっと多くの引用文字を提供するために、マ■■■ソ■■が勝手
 号 (") などがあるべきところに @code{\222} や @code{\264} のようなものが
 見えてしまったら、洗濯してみてください。
 
+@item W A
+@kindex W A (概略)
+@findex gnus-article-treat-non-ascii
+@cindex Unicode
+@cindex Non-@acronym{ASCII}
+多くの非-@acronym{ASCII} 文字をそれらと等価な @acronym{ASCII} 文字に変換
+します (@code{gnus-article-treat-non-ascii})。これは、フォントに制限があっ
+て、アクセント文字や「進んでいる」句読点などを表示しない端末では、たいて
+いの場合に役立ちます。例えば @samp{»} から @samp{>>} への変換などを行な
+います。
+
 @item W Y f
 @kindex W Y f (概略)
 @findex gnus-article-outlook-deuglify-article
