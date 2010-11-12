@@ -9418,8 +9418,8 @@ Sm*rtq**t*s はもっと多くの引用文字を提供するために、マ■■■ソ■■が勝手
 号 (") などがあるべきところに @code{\222} や @code{\264} のようなものが
 見えてしまったら、洗濯してみてください。
 
-@item W A
-@kindex W A (概略)
+@item W U
+@kindex W U (概略)
 @findex gnus-article-treat-non-ascii
 @cindex Unicode
 @cindex Non-@acronym{ASCII}
