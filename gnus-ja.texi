@@ -12222,7 +12222,6 @@ Gnus は @code{w3m} を利用するその組み込み機能を使います。
 
 @item gnus-blocked-images
 @vindex gnus-blocked-images
-
 @acronym{URL} がこの正規表現に合致する外部画像は取得も表示もされません。
 例えば ``ads'' という文字列をそれらの内に持つすべての @acronym{URL} を阻
 止するには、以下のようにしてください:
@@ -12238,6 +12237,8 @@ Gnus は @code{w3m} を利用するその組み込み機能を使います。
 像を取得しないということで、それによってあなたがメールを読んだかどうかを
 追跡するために誰も web bugs (訳注: インターネットユーザを追跡するための
 ツール) の類を使えないようにします。
+
+@code{gnus-inhibit-images} も参照してください (@pxref{Misc Article})。
 
 @item gnus-html-cache-directory
 @vindex gnus-html-cache-directory
@@ -12706,6 +12707,15 @@ Gnus はサーバーからその記事を取ってこようとしま
 照してください。これに
 は @uref{http://www.gnu.org/software/libidn/, GNU Libidn} が必要で、この
 変数はそれをインストールしてある場合だけ有効になります。
+
+@vindex gnus-inhibit-images
+@item gnus-inhibit-images
+もし @code{nil} でなければ、記事のボディーでの画像のインライン表示を禁止
+します。これは @acronym{MIME} パートとして記事にある画像、およ
+び @code{mm-text-html-renderer} (@pxref{Display Customization, ,表示のカ
+スタマイズ, emacs-mime-ja, The Emacs MIME Manual}) が @code{shr} また
+は @code{gnus-w3m} である場合に表示された @acronym{HTML} 記事の画像に対
+して有効です。
 @end table
 
 @node Composing Messages
