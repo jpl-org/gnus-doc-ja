@@ -13612,6 +13612,11 @@ Message Manual}, を参照してください。
 @findex gnus-server-edit-server
 サーバーを編集します (@code{gnus-server-edit-server})。
 
+@item S
+@kindex S (サーバー)
+@findex gnus-server-show-server
+サーバーの定義を表示します (@code{gnus-server-show-server})。
+
 @item SPACE
 @kindex SPACE (サーバー)
 @findex gnus-server-read-server
