@@ -14213,7 +14213,9 @@ default force yes
 @table @code
 @findex nntp-open-network-stream
 @item nntp-open-network-stream
-これはディフォルトで、単純に遠隔システムの何らかのポートに接続します。
+これはディフォルトで、単純に遠隔システムのポートもしくは別のものに接続し
+ます。もし Emacs とサーバーの両方がサポートしていれば、その接続は自動的
+に暗号化された @acronym{STARTTLS} 接続に昇格されます。
 
 @findex nntp-open-tls-stream
 @item nntp-open-tls-stream
@@ -14632,11 +14634,17 @@ machine imap.gmail.com login <username> password <password> port imap
 @code{nnimap} がどうやってサーバーに接続するかを指定します。使える値は:
 
 @table @code
+@item undecided
+これがディフォルトです。最初に @code{ssl} 設定を、次に @code{network} 設
+定を試します。
+
 @item ssl
-これはディフォルトで、標準の @acronym{TLS}/@acronym{SSL} 接続を使います。
+標準の @acronym{TLS}/@acronym{SSL} 接続を使います。
 
 @item network
-暗号化されないので安全ではない、ストレートなソケット接続です。
+暗号化されないので安全ではない、ストレートなソケット接続です。しかし、も
+し Emacs とサーバーの両方がサポートしていれば、暗号化され
+た @acronym{STARTTLS} 接続に昇格します。
 
 @item starttls
 正規の @acronym{IMAP} ポート上で暗号化された @acronym{STARTTLS} を使いま
