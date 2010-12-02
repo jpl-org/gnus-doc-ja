@@ -13121,23 +13121,6 @@ Lisp フォームのリスト。それぞれのフォームが評価され、最初に返ってき
 これは保管をしないようにします。
 
 @table @code
-@item gnus-outgoing-message-group
-@vindex gnus-outgoing-message-group
-すべての外にいくメッセージはこのグループに入れられます。もしすべての外に
-行くメールと記事を @samp{nnml:archive} グループに保管したいのであれば、
-この変数をその値に設定してください。この変数はグループ名のリストであるこ
-ともできます。
-
-もしそれぞれのメッセージをどのグループに入れるかをもっと制御したいのであ
-れば、この変数を現在のニュースグループ名を調べて、適切なグループ名 (もし
-くは名前のリスト) を返す関数に設定することができます。
-
-この変数は @code{gnus-message-archive-group} の代わりに使うことができま
-すが、後者の方が好ましい方法です。
-
-(訳注:「後者」とは @code{gnus-message-archive-group} のこと。前者より四ヶ
-月遅れて、1996年1月に新設されました。)
-
 @item gnus-gcc-mark-as-read
 @vindex gnus-gcc-mark-as-read
 もし非-@code{nil} なら、@code{Gcc} の記事に既読の印を付けます。
