@@ -6023,10 +6023,10 @@ Summary Buffer} を参照してください。
 @kindex g (概略)
 @findex gnus-summary-show-article
 @vindex gnus-summary-show-article-charset-alist
-現在の記事を (再) 取得します。もし接頭引数が与えられると、現在の記事を取
-得しますが、記事をトリートメントする関数は実行しません。もし接頭引数
-が 2回与えられると (つまり @kbd{C-u C-u g'})、サーバーから来たままの完全
-な『生の』記事を表示します。
+現在の記事を (再) 取得します (@code{gnus-summary-show-article})。もし接
+頭引数が一つ与えられると、サーバーから来たままの完全な『生の』記事を表示
+します。もし接頭引数が 2回与えられると (つまり @kbd{C-u C-u g'})、現在の
+記事を取得しますが、記事をトリートメントする関数は実行しません。
 
 @cindex charset, view article with different charset
 接頭引数を与えると、手動で文字セットの操作を行なうことができます。
