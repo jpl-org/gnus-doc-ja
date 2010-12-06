@@ -13662,6 +13662,9 @@ Message Manual}, を参照してください。
 り除くので、正しい全記事数を得ることができるようになります。
 @end table
 
+サーバーを閉じ、禁止し、および再開するための他のコマンドについて
+は @ref{Unavailable Servers}。
+
 @node Example Methods
 @subsection 方法の例
 
