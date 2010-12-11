@@ -14203,6 +14203,9 @@ default force yes
 ます。もし Emacs とサーバーの両方がサポートしていれば、その接続は自動的
 に暗号化された @acronym{STARTTLS} 接続に昇格されます。
 
+@item network-only
+上記に同じ。ただし自動で @acronym{STARTTLS} への昇格は行ないません。
+
 @findex nntp-open-tls-stream
 @item nntp-open-tls-stream
 「安全な」チャンネルを使ってサーバーに接続します。これを使うために
