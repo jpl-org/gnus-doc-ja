@@ -411,6 +411,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 * Composing Messages::       $B%a!<%k$H%K%e!<%9$rAw$k$?$a$N>pJs(B
 * Select Methods::           Gnus $B$O$9$Y$F$N%a%C%;!<%8$r$$$m$$$m$JA*BrJ}K!$GFI$`(B
 * Scoring::                  $B5-;v$KCM$rIU$1$k(B
+* Searching::                $B%a!<%k$H%K%e!<%9$N8!:w%(%s%8%s(B
 * Various::                  $B0lHLE*$J@_Dj(B
 * The End::                  $B$5$i$P!"$=$7$F$5$h$&$J$i(B
 * Appendices::               $BMQ8l!"(BEmacs $BF~Lg!"(B@acronym{FAQ}$B!"Nr;K!"FbIt9=B$(B
@@ -432,7 +433,6 @@ Other related manuals
 Starting Gnus
 
 * Finding the News::            $B%K%e!<%9$r<hF@$9$kJ}K!$rA*$V(B
-* The First Time::              $B:G=i$K5/F0$7$?$H$-$K(B Gnus $B$O2?$r$9$k$+(B
 * The Server is Down::          $B$=$s$J$H$-!"$I$&$9$l$P%a!<%k$rFI$a$k$+(B
 * Slave Gnusae::                $BF1;~$K0l$D0J>e$N(B Gnus $B$r:nF0$5$;$k$3$H$,$G$-$k(B
 * Fetching a Group::            $B%0%k!<%W$rFI$`$?$a$@$1$K(B Gnus $B$r5/F0$9$k(B
@@ -468,7 +468,6 @@ Group Buffer
 * Exiting Gnus::                $B%K%e!<%9$rFI$`$N$r$d$a$F!";E;v$r$7$h$&(B
 * Group Topics::                $B%0%k!<%W$r@Z$j:.$<$F!"%H%T%C%/$4$H$KJ,3d$9$k(B
 * Non-ASCII Group Names::       $B1Q;z0J30$NL>A0$N%0%k!<%W$X$N%"%/%;%9(B
-* Searching::                   $B%a!<%k$N8!:w%(%s%8%s(B
 * Misc Group Stuff::            $BB>$K$G$-$k$3$H(B
 
 Group Buffer Format
@@ -791,6 +790,21 @@ Advanced Scoring
 * Advanced Scoring Examples::   $B$I$N$h$&$K8+$($k$+(B
 * Advanced Scoring Tips::       $B$=$l$r:GBg8B$KMxMQ$9$k(B
 
+Searching
+
+* nnir::                        $B$$$m$s$J%(%s%8%s$G8!:w$9$k(B
+* nnmairix::                    Mairix $B$G8!:w$9$k(B
+
+nnir
+
+* What is nnir::                nnir $B$O2?$r$9$k$+(B
+* Basic Usage::                 $B4JC1$J8!:w$N$7$+$?(B
+* Setting up nnir::             nnir $B$N@_DjJ}K!(B
+
+Setting up nnir
+
+* Associating Engines::         $B%(%s%8%s$H$N4XO"IU$1(B
+
 Various
 
 * Process/Prefix::              $BB?$/$NL?Na$G;H$o$l$k=,47(B
@@ -963,7 +977,6 @@ for Heathens} $B$rFI$s$G$/$@$5$$!#(B
 
 @menu
 * Finding the News::      $B%K%e!<%9$r<hF@$9$kJ}K!$rA*$V(B
-* The First Time::        $B:G=i$K5/F0$7$?$H$-$K(B Gnus $B$O2?$r$9$k$+(B
 * The Server is Down::    $B$=$s$J$H$-!"$I$&$9$l$P%a!<%k$rFI$a$k$+(B
 * Slave Gnusae::          $BF1;~$K0l$D0J>e$N(B Gnus $B$r:nF0$5$;$k$3$H$,$G$-$k(B
 * Fetching a Group::      $B%0%k!<%W$rFI$`$?$a$@$1$K(B Gnus $B$r5/F0$9$k(B
@@ -1064,28 +1077,6 @@ Gnus $B$O(B @code{gnus-nntpserver-file} ($B@_Dj$5$l$F$$$J$$>l9g(B
 $BJ]B8$7$^$9!#$3$N5!G=$O(B Gnus $B$,%$%s%9%H!<%k$5$l$F$$$kJ#?t$N%[%9%H4V$G0u$r(B
 $B6&M-$9$k$3$H$rMF0W$K$7$^$9$,!"?7Ce5-;v$N<hF@$r$A$g$C$HCY$/$9$k$+$b$7$l$^(B
 $B$;$s!#>\:Y$K$D$$$F$O(B @ref{NNTP marks} $B$r;2>H$7$F$/$@$5$$!#(B
-
-@node The First Time
-@section $B0lHV=i$a(B
-@cindex first time usage
-
-$B5/F0MQ%U%!%$%k$,B8:_$7$J$$$H$-$O(B (@pxref{Startup Files})$B!"(BGnus $B$O$I$N%0(B
-$B%k!<%W$,%G%#%U%)%k%H$G9XFI$5$l$F$$$k$Y$-$+$r7hDj$7$h$&$H$7$^$9!#(B
-
-@vindex gnus-default-subscribed-newsgroups
-$BJQ?t(B @code{gnus-default-subscribed-newsgroups} $B$,@_Dj$5$l$F$$$k$H!"(B
-Gnus $B$O$=$N%j%9%H$NCf$N%0%k!<%W$r9XFI$7!";D$j$r:o=|$7$^$9!#%7%9%F%`4IM}(B
-$B<T$O$3$NJQ?t$r2?$+Lr$KN)$D$b$N$K@_Dj$7$F$*$/$3$H$,K>$^$l$^$9!#(B
-
-$B$=$&$G$J$$$H$-$O!"(BGnus $B$O>/?t$NE,Ev$J%0%k!<%W$r9XFI$7$^$9(B ($BNc(B:
-@samp{*.newusers})$B!#(B($B!VE,Ev$J!W$O$3$3$G$O!V$"$J$?$,FI$`$Y$-$G$"$k(B
-$B$H(B Lars $B$5$s$,9M$($k$b$N!W$H$$$&$h$&$KDj5A$5$l$F$$$^$9(B)
-
-$B$^$?!"$?$$$F$$$N6&DL$NLdBj$N2r7h$N<j=u$1$K$J$k$h$&!"(BGnus $B$K4X$9$kJ8=q$N(B
-$B%0%k!<%W$b9XFI$9$k$3$H$K$J$k$G$7$g$&!#(B
-
-@code{gnus-default-subscribed-newsgroups} $B$,(B @code{t} $B$N$H$-$O!"(BGnus $B$O(B
-$B?7$7$$%0%k!<%W$r07$&$N$KIaDL$N4X?t$r;H$$!"FCJL$J$3$H$O2?$b$7$^$;$s!#(B
 
 @node The Server is Down
 @section $B%5!<%P!<$,Mn$A$F$$$k(B
@@ -1325,11 +1316,18 @@ options -n !alt.all !rec.all sci.all
 $B0lJ}$NJQ?t$OMxMQ<T$,$$$8$/$k$N$K;H$o$l$k$N$KBP$7$F!"$3$NJQ?t$O$$$/$D$+$N(B
 $B4pK\E*$J5,B'$r@_Dj$9$k$?$a$N$b$N$G$9!#%G%#%U%)%k%H$G$O$3$NJQ?t$O%a!<%k%P%C(B
 $B%/%(%s%I(B (@code{nnml}, @code{nnbabyl}, @code{nnfolder}, @code{nnmbox},
-@code{nnmh} $B$*$h$S(B @code{nnmaildir}) $B$+$i$G$-$k$9$Y$F$N?7$7$$%0%k!<%W$r(B
-$B9XFI$9$k$h$&$K$J$C$F$$$^$9!#$=$l$,7y$G$"$l$P!"$3$NJQ?t$r(B @code{nil} $B$K@_(B
-$BDj$7$F$/$@$5$$!#(B
+@code{nnmh}, @code{nnimap} $B$*$h$S(B @code{nnmaildir}) $B$+$i$G$-$k$9$Y$F$N?7(B
+$B$7$$%0%k!<%W$r9XFI$9$k$h$&$K$J$C$F$$$^$9!#$=$l$,7y$G$"$l$P!"$3$NJQ?t$r(B
+@code{nil} $B$K@_Dj$7$F$/$@$5$$!#(B
 
-$B$3$N@55,I=8=$K9gCW$9$k?7$7$$%0%k!<%W(B
+@vindex gnus-auto-subscribed-categories
+$B$3$l$@$1$G$b==J,$G$9$,!"$5$i$K(B @code{gnus-auto-subscribed-categories} $B$O!"(B
+$B$=$l$i$NA*BrJ}K!$,B0$9$k%+%F%4%j!<$K4p$E$$$F9VFI$5$l$k$Y$-$G$"$k$3$H$rL@(B
+$B<($G$-$k$h$&$K$7$^$9!#%G%#%U%)%k%H$O(B @samp{(mail post-mail)} $B$G!"%a!<%k(B
+$B$N$h$&$J%P%C%/%(%s%I$K4p$E$/?7$7$$%0%k!<%W$O!"$9$Y$F<+F0E*$K9VFI$5$l$k$O(B
+$B$:$G$9!#(B
+
+$B$3$l$i$NJQ?t$K9gCW$9$k?7$7$$%0%k!<%W(B
 $B$O(B @code{gnus-subscribe-options-newsgroup-method} $B$r;H$C$F9XFI$5$l$^$9!#(B
 
 @node Changing Servers
@@ -1675,7 +1673,6 @@ Maintenance})$B!#(B
 * Exiting Gnus::                $B%K%e!<%9FI$`$N$r$d$a$F!";E;v$r$7$h$&(B
 * Group Topics::                $B%0%k!<%W$r@Z$j:.$<$F!"%H%T%C%/$4$H$KJ,3d$9$k(B
 * Non-ASCII Group Names::       $B1Q;z0J30$NL>A0$N%0%k!<%W$X$N%"%/%;%9(B
-* Searching::                   $B%a!<%k$N8!:w%(%s%8%s(B
 * Misc Group Stuff::            $BB>$K$G$-$k$3$H(B
 @end menu
 
@@ -4224,720 +4221,6 @@ XEmacs (@code{mule} $B5!G=IU$-(B) $B$G$O!"(B@code{file-name-coding-system} 
 $B>l9g!"%0%k!<%WL>$r%(%s%3!<%I$*$h$S%G%3!<%I$9$k$?$a$NJ8;z%;%C%H$,N>J}$N%0(B
 $B%k!<%W$GF1$8$G$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F$/$@$5$$!#$5$b$J$$$H5-;v%P%C(B
 $B%U%!!<$K(B Newsgroups $B%X%C%@!<$,@5$7$/I=<($5$l$J$$$G$7$g$&!#(B
-
-@node Searching
-@section $B8!:w(B
-
-@menu
-* nnir::                     IMAP $B$r(B swish $B$d(B namazu $B$J$I$G8!:w$9$k(B
-* nnmairix::                 maildir$B!"(BMH$B!"(Bmbox $B$r(B Mairix $B$G8!:w$9$k(B
-@end menu
-
-@cindex Searching
-FIXME: $B$3$N@a$O=q$-$+$1$G$9!#(B
-
-FIXME: Gnus $B$,8!:w$K4X$7$F$G$-$k$3$H$N4JC1$J$"$i$^$7$r2C$($k!#(Bnnir,
-nnmairix, contrib/gnus-namazu $B$N4J7i$JHf3S$b$^$?NI$$$@$m$&!#(B
-
-FIXME: @ref{Searching for Articles} $B$H$N0c$$$r@bL@$7$F!"$=$l$i$X$N%j%U%!(B
-$B%l%s%9$H5U$+$i$N%j%U%!%l%s%9$rDI2C$9$k!#(B
-
-@node nnir
-@subsection nnir
-
-FIXME; $B$^$:$O(B @file{nnir} $B$K$"$k%3%a%s%H$r(B texi $B$KJQ49$9$k!#(B
-@cindex nnir
-
-@node nnmairix
-@subsection nnmairix
-
-($BLuCm(B: Mairix $B$O(B @acronym{ASCII} $BJ8;z$7$+%5%]!<%H$7$^$;$s!#(B)
-
-@cindex mairix
-@cindex nnmairix
-$B$3$N9`$O!"%a!<%k$K:w0z$rIU$1$F(B Gnus $BFb$G8!:w$9$k$?$a$K!"$I$&$d$C(B
-$B$F(B mairix $B$H%P%C%/%(%s%I(B @code{nnmairix} $B$r@_Dj$9$k$+$r@bL@$7$^$9!#$5$i(B
-$B$K(B mairix $B8!:w$K7k$SIU$1$i$l$F<+F0E*$K99?7$5$l$k915WE*(B
-$B$J(B ``$B8-$$(B'' (smart $B$J(B) $B%0%k!<%W$r:n$k$3$H$,$G$-$^$9!#(B
-
-@menu
-* About mairix::                $B%a!<%k8!:w%(%s%8%s(B mairix $B$K$D$$$F(B
-* nnmairix requirements::       nnmairix $B$r;H$&$?$a$KI,MW$J$3$H(B
-* What nnmairix does::          nnmairix $B$O<B:]$K2?$r$9$k$N$+(B?
-* Setting up mairix::           mairix $B$N@_Dj(B
-* Configuring nnmairix::        nnmairix $B%P%C%/%(%s%I$N@_Dj(B
-* nnmairix keyboard shortcuts:: $BMxMQ$G$-$k%7%g!<%H%+%C%H%-!<(B
-* Propagating marks::           nnmairix $B%0%k!<%W$N0u$rEAHB$5$;$kJ}K!(B
-* nnmairix tips and tricks::    $B%R%s%H!"$3$D!"$*$h$S$$$/$D$+$NNc(B
-* nnmairix caveats::            $B$5$i$KCN$C$F$*$/I,MW$,$"$k$3$H(B
-@end menu
-
-@c FIXME: $B$3$N9`$N%^!<%/%"%C%W$O2~A1$9$kI,MW$,$"$k!#(B
-@c $BNc$($P(B @samp$B!"(B@var$B!"(B@file$B!"(B@command $B$J$I$r2C$($k!#(B
-@c (info "(texinfo)Indicating") $B$r;2>H!#(B
-@node About mairix
-@subsubsection $B%a!<%k8!:w%(%s%8%s(B mairix $B$K$D$$$F(B
-
-Mairix $B$O%m!<%+%k$K3JG<$5$l$?%a!<%k$K:w0z$rIU$1$?$jC18l$r8!:w$9$k$?$a$N(B
-$BF;6q$G$9!#=q$$$?$N$O(B Richard Curnow $B$G(B GPL $B$G%i%$%;%s%9$5$l$^$9!#(B
-Mairix $B$O:G$b%]%T%e%i!<$J(B GNU/Linux $B$NG[I[$KIUB0$7$F$$$^$9$,!"(B
-Windows ($B$H(B cygwin)$B!"(BMac OS X $B$*$h$S(B Solaris $B$N$b$H$G$bF0:n$7$^$9!#%[!<(B
-$B%`%Z!<%8$O(B @uref{http://www.rpcurnow.force9.co.uk/mairix/index.html} $B$G(B
-$B$9!#(B
-
-@code{nnir} $B%P%C%/%(%s%I$r2p$7$F;H$&$3$H$,$G$-$k(B swish++ $B$d(B namazu $B$N$h(B
-$B$&$JB>$N8!:w%D!<%k$[$I$K$O(B mairix $B$OM;DL$,$-$+$J$$$+$b$7$l$^$;$s$,!"$=$l(B
-$B$K$O?.$8$i$l$J$$$[$IB.$$$H$$$&$9$P$i$7$$FCD9$,$"$j$^$9!#8=:_$N%7%9%F%`$G(B
-$B$O(B 1$BIC$G2?@iDL$b$N%a!<%k$N%X%C%@!<$H5-;v$N%\%G%#!<$N6y!9$^$G$rMF0W$KA\$9(B
-$B$3$H$,$G$-$^$9!#8!:w$9$k$?$a$KI,MW$J%G!<%?%Y!<%9$N9=C[$K$O(B 1$B!A(B2$BJ,$+$+$k(B
-$B$+$b$7$l$^$;$s$,!"0lEY$=$l$r40A4$K9T$J$($PNI$$$N$G$9!#$=$l0J8e!"99?7$ODI(B
-$B2CE*(B ($B%$%s%/%j%a%s%?%k(B) $B$K9T$J$o$l$k$3$H$b$"$C$F!"K\Ev$KB.$$$N$G$9!#IU$1(B
-$B2C$($F$*$/$H!"(Bmairix $B$N@_Dj$O$H$F$b$d$5$7$$$G$9!#(B
-
-$B$7$+$7:G9bB.$GF0$+$9$?$a$K(B mairix $B$O(B @code{Maildir} $B$^$?$O(B @code{MH} $B$N(B
-$B7A<0(B ($B$3$l$O(B @code{nnml} $B%P%C%/%(%s%I$r4^$_$^$9(B) $B$G3JG<$5$l$?%a!<%k$G;H(B
-$B$o$J$1$l$P$J$j$^$;$s!#$b$C$H$b(B mbox $B$G$bF0:n$9$k$N$G$9$1$l$I!#(BMairix $B$O(B
-$B<B:]$N%a%C%;!<%8%U%!%$%k$r;X$7<($9%7%s%\%j%C%/%j%s%/$r!V2>A[!W(B
-$B$N(B maildir/MH $B%U%)%k%@!<$KCV$/$3$H$K$h$C$F8!:w7k2L$rDs<($7$^$9(B (mbox $B$r(B
-$B;H$C$F$$$k>l9g$O%3%T!<$,:n$i$l$^$9(B)$B!#(BMairix $B$O$=$N$h$&$J2>A[%U%)%k%@!<$K(B
-$B$9$G$K8!:w7k2L$rDs<($7$F$$$k$N$G!"$"$k%a!<%k8!:w$N7k2L$rDs<($9$k!V8-$$!W(B
-$B%a!<%k!&%U%)%k%@!<$r:n@.$9$k$?$a$K30It$N%W%m%0%i%`$H$7$F;HMQ$9$k$N$KHs>o(B
-$B$K$h$/E,$7$F$$$^$9!#(B
-
-@node nnmairix requirements
-@subsubsection nnmairix $B$r;H$&$?$a$KI,MW$J$3$H(B
-
-Mairix $B$O%m!<%+%k$J%a!<%k$r8!:w$7$^$9(B---$B$D$^$j(B mairix $B$O%a!<%k!&%U%)%k%@!<(B
-$B$rI,$:D>@\$K%"%/%;%9$G$-$J$1$l$P$J$j$^$;$s!#$b$7%a!<%k$,JL$N%5!<%P!<(B ($BNc(B
-$B$($P(B @acronym{IMAP} $B%5!<%P!<(B) $B$K$"$C$F!"$?$^$?$^(B shell $B$G%"%/%;%9$9$k$3(B
-$B$H$,$G$-$k$N$J$i$P!"(B@code{nnmairix} $B$ONc$($P(B ssh $B$r2p$7$F(B mairix $B$r1s3V(B
-$B$GF0:n$5$;$k$3$H$b$G$-$^$9!#(B
-
-$B2C$($F!"(B@code{nnmairix} $B$O(B Gnus $B$N%P%C%/%(%s%I(B @code{nnml}$B!"(B
-@code{nnmaildir} $B$*$h$S(B @code{nnimap} $B$@$1$r%5%]!<%H$7$^$9!#(B
-@code{nnmairix} $B$r;H$&$K$O!"I,$:$3$l$i$N%P%C%/%(%s%I$N0l$D$r;H$o$J$1$l$P(B
-$B$J$j$^$;$s!#(B@code{nnmbox}$B!"(B@code{nnfolder} $B$^$?$O(B @code{nnmh} $B$N$h$&$JB>(B
-$B$N%P%C%/%(%s%I$G$OF0:n$7$J$$$G$7$g$&!#(B
-
-$B$b$7$I$&$7$F$b(B mbox $B$r;H$o$J$1$l$P$J$i$J$/$F!"$=$l$G(B
-$B$b(B @code{nnmairix} $B$r;H$$$?$$$N$J$i$P!"%m!<%+%k$J(B @acronym{IMAP} $B%5!<%P!<(B
-$B$rN)$A>e$2$k$3$H$K$h$C$F(B @code{nnimap} $B$r2p$7$F%"%/%;%9$9$k$3$H$,$G$-$^(B
-$B$9!#$3$l$O$$$/$D$+$N(B mbox $B%U%!%$%k$K%"%/%;%9$9$k$?$a$K$7$F$O$+$J$jBg$,$+(B
-$B$j$J:n6H$K$J$k$N$G!"$b$&(B MH $B$+(B Maildir $B$KJQ$($F$7$^$$$^$7$g$&!#$=$l$G(B
-$B$b(B mbox $B$r;H$&$3$H$KK\Ev$KK\Ev$K>pG.$r;}$C$F$$$k$N$J$i!"(BEmacs 23 $B$KIUB0(B
-$B$7$F$$$k(B @file{mairix.el} $B%Q%C%1!<%8$r8&5f$9$kI,MW$,$"$k$G$7$g$&!#(B
-
-@node What nnmairix does
-@subsubsection nnmairix $B$O<B:]$K2?$r$9$k$N$+(B?
-
-$B%P%C%/%(%s%I(B @code{nnmairix} $B$O!"$"$k8!:w8l$G(B mairix $B$K?R$M$?$j%G!<%?%Y!<(B
-$B%9$r99?7$5$;$k$?$a$K(B Gnus $B$+$i(B mairix $B$r8F$V$3$H$r2DG=$K$7$^$9!#35N,%P%C(B
-$B%U%!!<$G%a%C%;!<%8$r8+$F$$$k4V!"$"$i$+$8$aMQ0U$5$l$F$$$k(B mairix $B$r8F$V$?(B
-$B$a$N$$$/$D$+$N%7%g!<%H%+%C%H$r;H$&$3$H$,$G$-$^$9!#Nc$($P8=:_8+$F$$$k%a%C(B
-$B%;!<%8$NAw?.<T$+$i$N$9$Y$F$N%a!<%k$r$9$P$d$/C5$7$?$j!"%a!<%k$,0[$J$C$?%U%)(B
-$B%k%@!<$K$"$C$F$b!"$=$N%a%C%;!<%8$K4XO"$7$F$$$kA4BN$N%9%l%C%I$rI=<($9$k$J(B
-$B$I$G$9!#(B
-
-$B$5$i$K!"$"$k(B mairix $B8!:w$K7k$SIU$$$?915WE*$J(B @code{nnmairix} $B%0%k!<%W$r(B
-$B:n$k$3$H$,$G$-$^$9!#$3$NNc$G$O!"$"$kAw?.<T$+$iMh$F!"$+$D!"$"$kI=Bj9T(B ($B$^(B
-$B$?$O(B Message-ID $B$K4p$E$/0l$D$NFCDj$N%9%l%C%I$5$((B) $B$r;}$D%a!<%k$r4^$`%0%k!<(B
-$B%W$rMF0W$K:n$k$3$H$,$G$-$^$9!#$3$l$i$N%U%)%k%@!<$G?7$7$$%a!<%k$r%A%'%C%/(B
-$B$9$k(B ($BNc$($P(B @kbd{g} $B$^$?$O(B @kbd{M-g} $B$r2!$9(B) $B$H!"(Bmairix $B$r8F$V$3$H$K$h$C(B
-$B$F$=$l$i<+BN$,<+F0E*$K99?7$7$^$9!#(B
-
-Mairix $B$O$9$G$K%0%k!<%W$r:n$C$F$$$F!"(BGnus $B$G%"%/%;%9$G$-$k$h$&$K$=$l$i$N(B
-$B%a!<%k$X$N%j%s%/$rMQ0U$7$F$$$k$N$K!"$$$C$?$$$J$<(B @code{nnmairix} $B$,I,MW(B
-$B$J$N$+$H?R$M$k$+$b$7$l$^$;$s$M!#$=$&$G$O$"$j$^$;$s$+(B? $B$(!<$H!"$=$l$OF0(B
-$B$/(B@emph{$B$+$b(B}$B$7$l$^$;$s$,!"$@$a$J$3$H$,B?$$$G$7$g$&(B---$BLdBjL5$7$K$O!#:G$b(B
-$B$"$j$=$&$J$N$O!"5-;v?t$,$*$+$7$/$J$C$F!"$7$+$b;~!9$O(B Gnus $B$,$"$k$O$:$@$H(B
-$B8@$$D%$k%a!<%k$,$9$G$K%-%c%s%;%k$5$l$F$$$F%"%/%;%9$G$-$J$$$3$H$r;W$$CN$i(B
-$B$5$l$k$3$H$G$7$g$&!#$3$l$O!"$b$N$4$H$,(B Gnus $B$N8e$m$K1#$l$F5/$3$C$F$$$k$H(B
-$B$-!"(BGnus $B$OK\Ev$OITK~$K;W$C$F$$$k$H$$$&;v<B$N$?$a$G$9!#Nc$((B
-$B$P(B @acronym{IMAP} $B%5!<%P!<$G(B mairix $B$r;H$C$F$$$k$N$J$i!"$b$&0l$D$NLdBj$O(B
-$B%a!<%k%P%C%/%(%s%I<+BN$G$"$k$+$b$7$l$^$;$s(B (mairix $B$,8!:w%0%k!<%W$NFbMF(B
-$B$rJQ$($?$H$-!"(BDovecot $B$O4V0c$C$?:w0z%U%!%$%k$K$D$$$F;d$KITJ?$r8@$$$^$7$?(B)$B!#(B
-@code{nnmairix} $B$r;H$($P!"$3$l$i$NLdBj$O2sHr$5$l$k$O$:$G$9!#(B
-
-$B<B$O(B @code{nnmairix} $B$O%a!<%k%P%C%/%(%s%I$G$O$"$j$^$;$s(B---$B$=$l(B
-$B$O(B mairix $B$,8!:w7k2L$r3JG<$9$k!VK\Ev$N!W%a!<%k%P%C%/%(%s%I$H(B Gnus $B%U%m%s(B
-$B%H%(%s%I$N4V$K0LCV$7$F$$$F!"$`$7$m<B:]$K$O%i%C%Q!<$K;w$F$$$^$9!#(B
-Mairix $B%U%)%k%@!<$N$?$a$K;0$D$N0[$J$k%a!<%k%P%C%/%(%s%I(B @code{nnml}$B!"(B
-@code{nnmaildir} $B$^$?$O(B @code{nnimap} $B$NCf$+$iA*$V$3$H$,$G$-$^$9!#(B
-@code{nnmairix} $B$O8!:w7k2L$r$3$N%a!<%k%P%C%/%(%s%I(B
-$B$N(B @code{zz_mairix-<NAME>-<NUMBER>} $B$H$$$&L>A0$N%U%)%k%@!<$K3JG<$9$k$?$a(B
-$B$K(B mairix $B%P%$%J%j!<$r8F$S$^$9$,!"$=$l$i$N%U%)%k%@!<$O(B Gnus $B%U%m%s%H%(%s(B
-$B%I$K$OL>A0$,(B @code{<NAME>} $B$@$1$K$J$C$FEO$5$l$^$9!#$9$G$K%a!<%k$r3JG<$7(B
-$B$F$$$k4{B8$N%a!<%k%P%C%/%(%s%I$r;H$&$3$H$,$G$-$^$9$,!"$"$J$?$NB>$N%a!<%k(B
-$B$HJB$Y$F?7$7$$%a!<%k%0%k!<%W$r:n$k(B @code{nnmairix} $B$,5$;}$A0-$$$N$G$"$l(B
-$B$P!"Nc$($P?7$7$$(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B%5!<%P!<(B
-$B$r(B mairix $B@lMQ$K:n$k$3$H$b$G$-$^$9!#$?$@$7!"$=$l$i$N%5!<%P!<$,4V0c$C$F?7(B
-$BCe%a!<%k$r<h$j9~$s$G$7$^$o$J$$$h$&$K$7$F$/$@$5(B
-$B$$(B (@pxref{nnmairix caveats})$B!#$b$7(B @code{nnimap} $B$H$H$b(B
-$B$K(B @acronym{IMAP} $B%5!<%P!<$G(B mairix $B$r%j%b!<%H$K;H$$$?$$$N$G$"$l$P!"FCJL(B
-$B$J;v>p$,@8$8$^$9(B---$B$3$3$G$O(B mairix $B%U%)%k%@!<$HB>$N%a!<%k$,F1(B
-$B$8(B @code{nnimap} $B%P%C%/%(%s%I>e$K$J$1$l$P$J$j$^$;$s!#(B
-
-@node Setting up mairix
-@subsubsection mairix $B$N@_Dj(B
-
-$B$^$:$O%a!<%k%U%)%k%@!<$N%P%C%/%"%C%W$r:n$j$^$7$g$&(B (@pxref{nnmairix
-caveats})$B!#(B
-
-Mairix $B$N@_Dj$O4JC1$G$9!#(B($B>/$J$/$H$b(B) $B0J2<$N%(%s%H%j!<$r4^(B
-$B$`(B @file{.mairixrc} $B%U%!%$%k$r:n$C$F$/$@$5$$(B:
-
-@example
-# Your Maildir/MH base folder
-base=~/Maildir
-@end example
-
-$B$3$l$O$9$Y$F$N%a!<%k$N4pE@$K$J$k%U%)%k%@!<$G$9!#0J2<$N$9$Y$F$N%G%#%l%/%H(B
-$B%j!<$O$3$N%U%)%k%@!<$r4pE@$KAjBPE*$JCM$r$H$j$^$9!#(B
-@code{nnmairix} $B$r(B @code{nnimap} $B$G;H$$$?$$>l9g!"$3$N4pE@$N%G%#%l%/%H%j!<(B
-$B$O(B @acronym{IMAP} $B%5!<%P!<$,%a!<%k%U%)%k%@!<$r3JG<$9$k%a!<%k%G%#%l%/%H%j!<(B
-$B$rI=$9$b$N$G$J$1$l$P$J$j$^$;$s(B!
-
-@example
-maildir= ... $B:w0z$rIU$1$k(B maildir $B%U%)%k%@!<(B ...
-mh= ... $B:w0z$rIU$1$k(B nnml/mh $B%U%)%k%@!<(B ...
-mbox= ... $B:w0z$rIU$1$k(B mbox $B%U%)%k%@!<(B ...
-@end example
-
-Mairix $B$G:w0z$rIU$1$?$$$9$Y$F$N%a!<%k%U%)%k%@!<$H(B mbox $B%U%!%$%k$r$3$l(B
-$B$G(B ($B4pE@%G%#%l%/%H%j!<$X$NAjBPCM$G(B!) $B;XDj$7$^$9!#(B@code{nnml} $B%P%C%/%(%s(B
-$B%I$O%a!<%k$r(B MH $B7A<0$GJ]B8$9$k$N$G!"$=$l$i$N%G%#%l%/%H%j!<(B
-$B$r(B @code{mh} $B9T$KCV$$$F$*$+$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F$/$@$5$$!#$5$i(B
-$B$K>\$7$$$3$H$K$D$$$F$O!"$3$N>O$N:G8e$K$"$kNc$H(B mairixrc $B$N(B man $B%Z!<%8$r(B
-$B8+$F$/$@$5$$!#(B
-
-@example
-omit=zz_mairix-*
-@end example
-
-@vindex nnmairix-group-prefix
-$B$3$l$O(B mairix $B$N8!:w7k2L$K6vA3$K:w0zIU$1$r$7$F$7$^$o$J$$$?$a$N$b$N$G$9!#(B
-$B$3$l$i$N%U%)%k%@!<$N@\F,<-$O!"JQ?t(B @code{nnmairix-group-prefix} $B$GJQ$($k(B
-$B$3$H$,$G$-$^$9!#(B
-
-@example
-mformat= ... 'maildir' $B$^$?$O(B 'mh' ...
-database= ... $B%G!<%?%Y!<%9!&%U%!%$%k$NCV$->l=j(B ...
-@end example
-
-@code{mformat} $B$N@_Dj$O(B mairix $B8!:w%U%)%k%@!<$X$N=PNO7A<0$r;XDj$7$^$9!#(B
-$B8!:w7k2L$K(B @code{nnml} $B$G%"%/%;%9$7$?$$>l9g$O!"$3$l$r(B @code{mh} $B$K@_Dj$7(B
-$B$F$/$@$5$$!#$5$b$J$1$l$P(B @code{maildir} $B$rA*$S$^$7$g$&!#(B
-
-$BMWLs$9$k$?$a$K!";d$N(B @file{.mairixrc} $B%U%!%$%k$rC;$/$7$?$b$N$rNc$K5s$2$^(B
-$B$7$g$&(B:
-
-@example
-base=~/Maildir
-maildir=.personal:.work:.logcheck:.sent
-mh=../Mail/nnml/*...
-mbox=../mboxmail/mailarchive_year*
-mformat=maildir
-omit=zz_mairix-*
-database=~/.mairixdatabase
-@end example
-
-$B$3$N>l9g!"4pE@$N%G%#%l%/%H%j!<$O(B @file{~/Maildir} $B$G!"$=$3$K;d$N$9$Y$F(B
-$B$N(B Maildir $B%U%)%k%@!<$,3JG<$5$l$F$$$^$9!#$4Mw$N$h$&$K$=$l$>$l$N%U%)%k%@!<(B
-$B$O%3%m%s$G6h@Z$i$l$F$$$^$9!#$J$<$I$N%U%)%k%@!<$b%I%C%H$G;O$^$k$N$+$C(B
-$B$F(B? $B$=$l$O;d$,(B @acronym{IMAP} $B%5!<%P!<$H$7$F(B Dovecot $B$r;H$$!"$5$i$K$=$l(B
-$B$O(B @code{Maildir++} $B%U%)%k%@!<$r;H$&$+$i$G$9!#(B@code{nnmairix} $B$r%F%9%H$9(B
-$B$k$?$a$K(B @file{~/Mail/nnml} $B$K%;!<%V$5$l$F$$$k(B @code{nnml} $B$N%a!<%k$b$$(B
-$B$/$D$+;}$C$F$$$^$9!#$3$l$O(B @code{base} $B%G%#%l%/%H%j!<$X$NAjBPCM$G;XDj$7(B
-$B$J$1$l$P$J$i$J$$$N$G(B @code{../Mail} $B$NI=5-$,I,MW$G$9!#(B@code{*...} $B$G=*$o(B
-$B$k9T$O!"$3$N%G%#%l%/%H%j!<$K$"$k$9$Y$F$N%U%!%$%k$r:F5"E*$KAv::$9$k$?$a$G(B
-$B$"$k$3$H$KCm0U$7$F$/$@$5$$!#;08D$N%I%C%HL5$7$N%o%$%k%I%+!<%I(B @code{*} $B$G(B
-$B$O:F5"E*$KF/$-$^$;$s!#$5$i$K;d$O(B @file{~/mboxmail} $B$N$"$?$j$K%"!<%+%$%V(B
-$B$5$l$?%a!<%k$r4^$`8E$$(B @code{mbox} $B%U%!%$%k$r;}$C$F$$$^$9!#$=$NB>$N9T$N(B
-$B0UL#$O8@$&$^$G$b$J$$$G$9$M!#(B
-
-$B>\:Y$*$h$S$5$i$J$k%*%W%7%g%s$K$D$$$F$O(B @code{mairixrc} $B$N(B man $B%Z!<%8$r8+(B
-$B$F$/$@$5$$!#$H$j$o$1%o%$%k%I%+!<%I$N;H$$J}$O!":#$^$G;H$C$F$$$?$N$H$O>/$7(B
-$B0c$&$G$7$g$&!#(B
-
-$B$5$"!"$=$l$G$O:G=i$K(B @code{mairix} $B$r<B9T$7$F:w0z$r:n$j$^$7$g$&!#$3$l$K(B
-$B$O?tJ,$+$+$k$G$7$g$&!#$G$b$"$i$f$k:w0z$,DI2CE*(B ($B%$%s%/%j%a%s%?%k(B) $B$K99?7(B
-$B$r9T$J$&$N$GHs>o$KB.$$$G$9!#(B
-
-@node Configuring nnmairix
-@subsubsection nnmairix $B%P%C%/%(%s%I$N@_Dj(B
-
-$B%0%k!<%W%b!<%I(B
-$B$G(B @kbd{G b c} (@code{nnmairix-create-server-and-default-group}) $B$r%?%$(B
-$B%W$7$F$/$@$5$$!#$3$l$OI,MW$J$9$Y$F$N>pJs$r<ALd$7$F!"(B@code{nnmairix} $B%5!<(B
-$B%P!<$r30It(B (foreign) $B%0%k!<%W$H$7$F:n@.$7$^$9!#0J2<$r;XDj$9$kI,MW$,$"$k(B
-$B$G$7$g$&(B:
-
-@itemize @bullet
-@item
-@code{nnmairix} $B%5!<%P!<$N(B @strong{$BL>A0(B} $B$G$9(B---$B9%$-$J$b$N$rA*$s$G$/$@$5(B
-$B$$!#(B
-
-@item
-Mairix $B$,$=$N8!:w7k2L$r3JG<$9$k(B @strong{$B%P%C%/%(%s%I!&%5!<%P!<(B} $B$NL>A0$G(B
-$B$9!#$3$l$O(B @code{nnml:mymail} $B$N$h$&$J40A4$J%5!<%P!<L>$G$J$1$l$P$J$j$^$;(B
-$B$s!#:#$N$H$3$m(B @code{nnmaildir}$B!"(B@code{nnimap} $B$*$h$S(B @code{nnml} $B$G%"%/(B
-$B%;%9$9$k%5!<%P!<$,%5%]!<%H$5$l$F$$$^$9!#>e$G@bL@$7$?$h$&$K!"%m!<%+%k$K3J(B
-$BG<$5$l$k%a!<%k$N$?$a$K$O!"$"$J$?$,%a!<%k$r3JG<$7$F$$$k4{B8$N%5!<%P!<$K$9(B
-$B$l$PNI$$$G$7$g$&!#$7$+$7(B @code{nnmairix} $B@lMQ$K!"Nc$($P?7$7(B
-$B$$(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B%5!<%P!<$rBhFs$N(B (secondary) $BA*Br(B
-$BJ}K!$K2C$($k$3$H$b$G$-$^$9(B (@pxref{Finding the News})$B!#$b$7$^$5$KBhFs(B
-$B$N(B @code{nnml} $B%5!<%P!<$r(B mairix $BMQ$K;H$C$F$$$k$N$G$"$l$P!"%5!<%P!<JQ(B
-$B?t(B @code{nnml-get-new-mail} $B$r3N<B$K(B @code{nil} $B$K@_Dj$7$F$/$@$5$$!#$5$b(B
-$B$J$$$H%a!<%k$r<:$&$3$H$K$J$j$+$M$^$;$s(B (@pxref{nnmairix caveats})$B!#(B
-Mairix $B$r(B @acronym{IMAP} $B%5!<%P!<>e$G1s3VF0:n$5$;$?$$$N$J$i$P!"$=$3$G$=(B
-$B$l$KBP1~$9$k(B @code{nnimap} $B%5!<%P!<$rA*$P$J$1$l$P$J$j$^$;$s!#(B
-
-@item
-@vindex nnmairix-mairix-search-options
-Mairix $B%P%$%J%j!<$r8F$V$?$a$N(B @strong{$B%3%^%s%I(B} $B$G$9!#DL>o$3$l$OC1(B
-$B$K(B @code{mairix} $B$GNI$$$N$G$9$,!"Nc$($P(B @acronym{IMAP} $B%5!<%P!<>e(B
-$B$G(B mairix $B$r1s3VF0:n$5$;$?$$$N$G$"$l$P!"(B@code{ssh SERVER mairix} $B$N$h$&(B
-$B$J$b$N$K$9$k$3$H$b$G$-$^$9!#(BMairix $B$X$N%G%#%U%)%k%H$N%*%W%7%g%s$r2C$($?(B
-$B$$>l9g!"$=$l$r$3$3$G$d$C$F$b9=$$$^$;$s!#$G$b!"Be$o$j$KJQ(B
-$B?t(B @code{nnmairix-mairix-search-options} $B$r;H$&J}$,NI$$$G$9!#(B
-
-@item
-@strong{$B%G%#%U%)%k%H$N8!:w%0%k!<%W(B} $B$NL>A0$G$9!#$3$l$O(B mairix $B$N$9$Y$F$N(B
-$B8!:w7k2L!"$D$^$j915WE*$J(B @code{nnmairix} $B%0%k!<%W$K7k$SIU$1$i$l$J$$$9$Y(B
-$B$F$N8!:w7k2L$r3JG<$9$k%0%k!<%W$G$9!#9%$-$J$b$N$rA*$s$G$/$@$5$$!#(B
-
-@item
-$B$b$7%a!<%k%P%C%/%(%s%I$,(B @code{nnimap} $B$+(B @code{nnmaildir} $B$@$C$?$i!"(B
-@strong{Maildir++} $B$D$^$j1#$5$l$?(B (= @samp{.} $B$G;O$^$k(B ) maildir $B%U%)%k(B
-$B%@!<$r;H$&$+$I$&$+$r?R$M$i$l$k$G$7$g$&!#Nc$($P(B Dovecot @acronym{IMAP} $B%5!<(B
-$B%P!<$r;H$C$F$$$k>l9g$O!"$=$3$G(B @samp{yes} $B$H2sEz$7$J$1$l$P$J$j$^$;$s!#$=(B
-$B$l0J30$N>l9g$O(B @samp{no} $B$HEz$($k$Y$-$G$9!#(B
-@end itemize
-
-@node nnmairix keyboard shortcuts
-@subsubsection $BMxMQ$G$-$k%7%g!<%H%+%C%H%-!<(B
-
-$B%0%k!<%W%b!<%I$G(B:
-
-@table @kbd
-@item G b c
-@kindex G b c ($B%0%k!<%W(B)
-@findex nnmairix-create-server-and-default-group
-@code{nnmairix} $B%5!<%P!<$H!"$3$N%5!<%P!<$N$?$a$N%G%#%U%)%k%H$N8!:w%0%k!<(B
-$B%W$r:n$j$^$9(B (@code{nnmairix-create-server-and-default-group})$B!#$3$l$O$9(B
-$B$G$K9T$J$C$F$*$$$F$"$kI,MW$,$"$j$^$9(B (@pxref{Configuring nnmairix})$B!#(B
-
-@item G b s
-@kindex G b s ($B%0%k!<%W(B)
-@findex nnmairix-search
-Mairix $B$KAw$i$l$k8!:w8l$rM?$($^$9!#8!:w7k2L$O%G%#%U%)%k%H$N8!:w%0%k!<%W(B
-$B$K3JG<$5$l!"$=$l$O<+F0E*$KI=<($5$l$^$9(B (@code{nnmairix-search})$B!#(B
-
-@item G b m
-@kindex G b m ($B%0%k!<%W(B)
-@findex nnmairix-widget-search
-Mairix $B$N8!:w$^$?$O915WE*$J%0%k!<%W$r$b$C$H2wE,$K!">o$K%0%k!<%W$N%+%9%?(B
-$B%^%$%:$K;w$?%0%i%U%#%C%/$J%&%#%8%'%C%H$r;H$C$F:n$k$h$&$K$7$^$9!#$=$l$,$I(B
-$B$s$J$b$N$+$rCN$k$K$O!"$^$:$O;n$7$F$_$F$/$@$5(B
-$B$$(B (@code{nnmairix-widget-search})$B!#(B
-
-@item G b i
-@kindex G b i ($B%0%k!<%W(B)
-@findex nnmairix-search-interactive
-$B$b$&0l$D$N2wE,$J(B mairix $B8!:w%3%^%s%I$G$9$,!"%_%K%P%C%U%!!<$7$+;H$$$^$;(B
-$B$s(B (@code{nnmairix-search-interactive})$B!#(B
-
-@item G b g
-@kindex G b g ($B%0%k!<%W(B)
-@findex nnmairix-create-search-group
-$B8!:w$K4XO"$5$;$i$l$?915WE*$J%0%k!<%W$r:n$j$^(B
-$B$9(B (@code{nnmairix-create-search-group})$B!#$3$N%0%k!<%W$r(B @kbd{g} $B$^$?(B
-$B$O(B @kbd{M-g} $B$G99?7$9$k$H$-$K(B @code{nnmairix} $B%P%C%/%(%s%I$O<+F0E*(B
-$B$K(B mairix $B$r8F$S$^$9!#(B
-
-@item G b q
-@kindex G b q ($B%0%k!<%W(B)
-@findex nnmairix-group-change-query-this-group
-$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N8!:w>r7o$rJQ99$7$^(B
-$B$9(B (@code{nnmairix-group-change-query-this-group})$B!#(B
-
-@item G b t
-@kindex G b t ($B%0%k!<%W(B)
-@findex nnmairix-group-toggle-threads-this-group
-$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N(B `$B%9%l%C%I(B' $B%Q%i%a!<%?!<$r%H%0(B
-$B%k$K@Z$jBX$($^$9!#$D$^$j8+$D$+$C$?%a%C%;!<%8$N$9$Y$F$N%9%l%C%I$r8+$?$$>l(B
-$B9g$K;H$$$^$9(B (@code{nnmairix-group-toggle-threads-this-group})$B!#(B
-
-@item G b u
-@kindex G b u ($B%0%k!<%W(B)
-@findex nnmairix-update-database
-@vindex nnmairix-mairix-update-options
-$B%G!<%?%Y!<%9$r99?7$9$k$?$a$K(B mairix $B%P%$%J%j!<$r8F$S$^(B
-$B$9(B (@code{nnmairix-update-database})$B!#%G%#%U%)%k%H$N%Q%i%a!<%?!<$O!"$3$l(B
-$B$r$G$-$k$@$1B.$/$9$k$?$a$N(B @code{-F} $B$*$h$S(B @code{-Q} $B$G$9(B ($B$3$l$i$N%G%#(B
-$B%U%)%k%H$N%*%W%7%g%s$rDj5A$9$k$K$OJQ(B
-$B?t(B @code{nnmairix-mairix-update-options} $B$r8+$F$/$@$5$$(B)$B!#(B
-
-@item G b r
-@kindex G b r ($B%0%k!<%W(B)
-@findex nnmairix-group-toggle-readmarks-this-group
-$B$3$N(B @code{nnmairix} $B%0%k!<%W$N5-;v$r>o$K4{FI$^$?$OL$FI$KJ]$D$+!"$^$?$O(B
-$B0u$rJQ99$7$J$$$h$&$K$7$^(B
-$B$9(B (@code{nnmairix-group-toggle-readmarks-this-group})$B!#(B
-
-@item G b d
-@kindex G b d ($B%0%k!<%W(B)
-@findex nnmairix-group-delete-recreate-this-group
-$B!VK\Ev$N!W%a!<%k%P%C%/%(%s%I$G(B @code{nnmairix} $B%0%k!<%W$r:n$jD>$7$^(B
-$B$9(B (@code{nnmairix-group-delete-recreate-this-group})$B!#(B
-@code{nnmairix} $B%0%k!<%W$N5-;v?t$,$$$D$b4V0c$C$F$$$k>l9g$K!"$3$l$r9T$J$&(B
-$B$3$H$,$G$-$^$9!#(B
-
-@item G b a
-@kindex G b a ($B%0%k!<%W(B)
-@findex nnmairix-group-toggle-allowfast-this-group
-$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N$?$a$N(B @code{allow-fast} $B%Q%i%a!<(B
-$B%?!<$r%H%0%k$K@Z$jBX$($^(B
-$B$9(B (@code{nnmairix-group-toggle-allowfast-this-group})$B!#%G%#%U%)%k%H(B
-$B$N(B @code{nnmairix} $B$NF0:n$O!"%0%k!<%W$r99?7$7$?$jF~$C$?$H$-$K(B mairix $B$N(B
-$B8!:w$r9T$J$&$3$H$G$9!#(B@code{allow-fast} $B%Q%i%a!<%?!<$,@_Dj$5$l$k$H!"%0%k!<(B
-$B%WF~$C$?$H$-$G$O$J$/!"L@<(E*$K%0%k!<%W$r99?7$9$k$H$-$@$1(B mairix $B$,8F$P$l(B
-$B$^$9!#$3$l$O%0%k!<%W$KF~$k$H$-$KB.$/$J$j$^$9$,!"99?7$7$?$H$-$H$^(B
-$B$@(B mairix $B%G!<%?%Y!<%9$KL5$$%0%k!<%W$KF~$k$H$-$N4|4V$K2?$+$,JQ2=$7$?>l9g(B
-$B$K!"<BBN$NL5$$%7%s%\%j%C%/%j%s%/$r@8$8$5$;$k$+$b$7$l$^$;$s!#(B
-
-@item G b p
-@kindex G b p ($B%0%k!<%W(B)
-@findex nnmairix-group-toggle-propmarks-this-group
-$B$3$N%0%k!<%W$N0u$rEAHB$5$;$k$+$I$&$+$r%H%0%k$K@Z$jBX$($^(B
-$B$9(B (@code{nnmairix-group-toggle-propmarks-this-group})$B!#(B
-(@pxref{Propagating marks})$B!#(B
-
-@item G b o
-@kindex G b o ($B%0%k!<%W(B)
-@findex nnmairix-propagate-marks
-$B0u$r<gF0$GEAHB$5$;$^$9(B (@code{nnmairix-propagate-marks})$B!#$3$l(B
-$B$O(B @code{nnmairix-propagate-marks-upon-close} $B$,(B @code{nil} $B$G$"$k>l9g$@(B
-$B$1I,MW$G$9!#(B
-@end table
-
-$B35N,%b!<%I$G(B:
-
-@table @kbd
-@item $ m
-@kindex $ m ($B35N,(B)
-@findex nnmairix-widget-search-from-this-article
-$B8=:_$N%a%C%;!<%8$K4p$E$$$?(B mairix $B$N8!:w$^$?$O%0%k!<%W$r!"%0%i%U%#%C%/$J(B
-$B%&%#%8%'%C%H$r;H$C$F:n$j$^$9(B (@code{nnmairix-widget-search} $B$HF1$8$G(B
-$B$9(B) (@code{nnmairix-widget-search-from-this-article})$B!#(B
-
-@item $ g
-@kindex $ g ($B35N,(B)
-@findex nnmairix-create-search-group-from-message
-$B8=:_$N%a%C%;!<%8$K4p$E$$$?8!:w>r7o$G?7$7$$8!:w%0%k!<%W$rBPOCE*$K:n$j$^$9!#(B
-$B%0%i%U%#%C%/$J%&%#%8%'%C%H$NBe$o$j$K%_%K%P%C%U%!!<$r;H$$$^$9(B
-$B$,(B (@code{nnmairix-create-search-group-from-message})$B!#(B
-
-@item $ t
-@kindex $ t ($B35N,(B)
-@findex nnmairix-search-thread-this-article
-$B8=:_$N5-;v$N%9%l%C%I$rA\$7$^(B
-$B$9(B (@code{nnmairix-search-thread-this-article})$B!#;v<B>e$3$l$O8=:_$N5-;v(B
-$B$N(B @samp{m:msgid} $B$G(B @code{nnmairix-search} $B$r8F$s$G%9%l%C%I$rF@$k$?$a$N(B
-$B%7%g!<%H%+%C%H$G$9!#(B
-
-@item $ f
-@kindex $ f ($B35N,(B)
-@findex nnmairix-search-from-this-article
-$B8=:_$N5-;v$NAw?.<T$+$i$N$9$Y$F$N%a%C%;!<%8$rC5$7$^(B
-$B$9(B (@code{nnmairix-search-from-this-article})$B!#$3$l(B
-$B$O(B @samp{f:From} $B$G(B @code{nnmairix-search} $B$r8F$V$?$a$N%7%g!<%H%+%C%H$G(B
-$B$9!#(B
-
-@item $ o
-@kindex $ o ($B35N,(B)
-@findex nnmairix-goto-original-article
-($B$3$l$,;H$($k$N$O(B @code{nnmairix} $B%0%k!<%W$@$1$G$9(B!) $B$3$N5-;v$K@5$7$$Ej(B
-$B9FMM<0(B (posting styles) $B$H%0%k!<%W%Q%i%a!<%?!<$rE,MQ$7$FJV?.$9$k$?$a$K!"(B
-$B$3$N5-;v$,85!9Mh$?%0%k!<%W$rFCDj$7$F!"$=$N%0%k!<%W$G$=$N5-;v$rI=<($7$h$&(B
-$B$H$7$^$9(B (@code{nnmairix-goto-original-article})$B!#$3$N4X?t$O$b$7MxMQ2DG=(B
-$B$J$i%l%8%9%H%j!<$r;H$$$^$9$,!"BeBX<jCJ$H$7$F5-;v%U%!%$%k$NL>A0$rJ,@O$9$k(B
-$B$3$H$b$G$-$^$9!#(B
-
-@item $ u
-@kindex $ u ($B35N,(B)
-@findex nnmairix-remove-tick-mark-original-article
-$B85$N5-;v$+$i!"$b$7$"$l$P2D;k5-;v$N0u(B (tick mark) $B$r<h$j=|$-$^(B
-$B$9(B (@code{nnmairix-remove-tick-mark-original-article}) (@pxref{nnmairix
-tips and tricks})$B!#(B
-@end table
-
-@node Propagating marks
-@subsubsection nnmairix $B%0%k!<%W$N0u$rEAHB$5$;$kJ}K!(B
-
-$B=i$a$K(B: $B0u$rEAHB$5$;$k5!G=$r8zN(NI$/;H$&$?$a$K$O!"<B:]$K$O%Q%C%A$rEv$F(B
-$B$?(B mairix $B$N%P%$%J%j!<$,I,MW$G$9!#$=$&$7$J$$$H$$$D$b(B mairix $B%G!<%?%Y!<%9(B
-$B$r99?7$7$J$1$l$P$J$i$J$$$G$7$g$&!#%Q%C%A$O$3$3$G<j$KF~$j$^$9(B:
-
-@uref{http://www.randomsample.de/mairix-maildir-patch.tar}
-
-$B$3$N%Q%C%A$K$O(B mairix v0.21 $B$N%=!<%9%3!<%I$,I,MW$G$9!#$=$l$KIU$$$F$$(B
-$B$k(B readme $B%U%!%$%k$G$I$s$J$3$H$b@bL@$5$l$F$$$^$9!#0u$NEAHB$r;H$o$J$/$F$b(B
-$BNI$$$H;W$&$J$i$3$l$i$N%Q%C%A$rEv$F$J$/$F$b9=$$$^$;$s$,!"$=$l$G$b$J$*!"$=(B
-$B$l$i$O(B maildir $B%U%i%0$NJQ99$K$^$D$o$k$d$C$+$$$4$H$r=$@5$7$F$b$/$l$k$N$G(B
-$BM-MQ$G$7$g$&!#(B
-
-$B%Q%C%A$rEv$F$?(B mairix $B$N%P%$%J%j!<$H$H$b$K(B @code{nnmairix} $B$r%a!<%kJ,(B
-$B3d(B (@pxref{Fancy Mail Splitting}) $B$NBe$o$j$H$7$F;H$&$3$H$,$G$-$^$9!#Nc$((B
-$B$P(B @samp{david@@foobar.com} $B$+$i$N$9$Y$F$N%a!<%k$r$"$k%0%k!<%W$KJ|$j9~$`(B
-$BBe$o$j$K!"C1$K(B @samp{f:david@@foobar.com} $B$rC5$98!:w%0%k!<%W$r:n$k$3$H$,(B
-$B$G$-$^$9!#<B$N$H$3$m$3$l$,!V8-$$%U%)%k%@!<!W$N4N?4$J$H$3$m$G!"C1$K$9$Y$F(B
-$B$r0l$D$N%a!<%k%U%)%k%@!<$KJ|$j9~$s$@$i!"J,3d$9$kBe$o$j$KF0E*$K8!:w7k2L$r(B
-$B:n$k$N$G$9!#$3$l$O!"$7$?$$$H$-$O$$$D$G$b%U%)%k%@!<$rJQ99$G$-$k$N$G!"$h$j(B
-$BM;DL$,8z$-$^$9!#$3$N$3$H$O!"$"$J$?$,<B:]$N%a!<%k%0%k!<%W$NBe$o$j$K!"$$$D(B
-$B$b$O(B @code{nnmairix} $B%0%k!<%W$K$"$k%a!<%k$rFI$`$G$"$m$&$3$H$b0E<($7$^$9!#(B
-
-$B$7$+$7!"0l$DLdBj$,$"$j$^$9!#(B@samp{david@@foobar.com} $B$+$i?7$7$$%a!<%k$r(B
-$B<u$1<h$C$?$H$9$k$H!"$=$l$OFs$D$N%0%k!<%W$K8=$l$k$N$G$9!#!V<B:]!W$N%0%k!<(B
-$B%W(B ($BNc$($P(B INBOX) $B$*$h$S(B @code{nnmairix} $B8!:w%0%k!<%W$G$9(B ($B8e<T$O!"$b(B
-$B$7(B mairix $B%G!<%?%Y!<%9$r99?7$7$F$"$l$P(B)$B!#(B@code{nnmairix} $B%0%k!<%W$KF~$C(B
-$B$F$=$N%a!<%k$rFI$`$H4{FI$N0u$,IU$-$^$9$,!"$=$l$O(B @code{nnmairix} $B%0%k!<(B
-$B%W$G$@$1$G$9(B---$B!V<B:]!W$N%a!<%k%0%k!<%W$G$OL$FI$N$^$^$G$9!#(B
-
-$B$=$N%a!<%k%0%k!<%W$r%-%c%C%A%"%C%W$9$k(B ($B$9$Y$F$N5-;v$r4{FI$K$9$k(B) $B$3$H$O(B
-$B$G$-$^$9!#$7$+$7$3$l$OB`6~$@$7!"$=$N$?$a$N(B @code{nnmairix} $B%0%k!<%W$r:n$C(B
-$B$F$$$J$$%a!<%k$r8+Mn$H$9$+$b$7$l$J$$E@$G;v8N$r5/$3$7$d$9$$$G$7$g$&!#$b$A(B
-$B$m$s:G=i$K(B @code{nnmairix-goto-original-article} (@pxref{nnmairix
-keyboard shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G(B
-$B$-$^$9$,!"$=$l$O$b$C$H$d$C$+$$$G$7$g$&!#(B
-
-$BL@$i$+$K!"85$N5-;v$K$I$&$K$+$7$F0u$r<+F0E*$KIU$1$k$3$H$G$-$l$P!"$=$l$,:G(B
-$B$b3Z$J$d$jJ}$G$7$g$&!#$3$l$,$^$5$K(B @emph{$B0u$NEAHB(B} $B$,9T$J$*$&$H$7$F$$$k(B
-$B$3$H$G$9!#(B
-
-$B%G%#%U%)%k%H$G$O0u$NEAHB$O$7$J$$$h$&$K$J$C$F$$$^$9!#$"$k%0%k!<%W$N$?$a$N(B
-$B$=$l$O(B @code{nnmairix-group-toggle-propmarks-this-group} (@kbd{G b p} $B$K(B
-$B%P%$%s%I$5$l$F$$$^$9(B) $B$GM-8z$K$9$k$3$H$,$G$-$^$9!#$3$N4X?t$O%G%#%U%)%k%H(B
-$B$N8!:w%0%k!<%W$G;H$*$&$H$9$k$H7Y9p$rH/$7$^$9!#$J$<$+$H8@$&$H%G%#%U%)%k%H(B
-$B$N8!:w%0%k!<%W$O0l;~E*$J8!:w$N$?$a$K$"$k$N$G!"0u$,6vA3$K$3$N%0%k!<%W$+$i(B
-$BEAHB$7$F$7$^$$$d$9$$$+$i$G$9!#$b$C$H$bK\Ev$K$=$l$r$d$j$?$$$N$J$i!"$=$N7Y(B
-$B9p$rL5;k$9$k$3$H$O$G$-$^$9!#(B
-
-$B0u$NEAHB$rM-8z$K$7$F$"$k$H(B @code{nnmairix} $B%0%k!<%W$GIU$1$?$9$Y$F$N0u$,(B
-$B85$N%0%k!<%W$KEAHB$9$k$O$:$G$9!#Nc$($P5-;v$K2D;k(B (tick) $B$N0u$r(B ($B%G%#%U%)(B
-$B%k%H$G$O(B @kbd{!} $B$G(B) $BIU$1$k$H!"$3$N0u$OKbK!$N$h$&$K85$N5-;v$K$bIU$/$O$:(B
-$B$G$9!#(B
-
-$B$"$J$?$,CN$C$F$$$kI,MW$,$"$k!"$^$?$OL5$$!"$5$i$J$k$3$H$,$i$,$"$j$^$9(B:
-
-@vindex nnmairix-propagate-marks-upon-close
-$B0u$O$9$0$K$G$O$J$/!"%0%k!<%W$rJD$8$?$H$-$@$1IU$1$i$l$^$9!#$3$l$O0u$NEAHB(B
-$B$r@-5^$K9T$J$o$J$$0J30$K(B maildir $B%U%!%$%k$r07$&$H$-$N%7%s%\%j%C%/%j%s%/(B
-$B$K$^$D$o$kLdBj$N2sHr$b$7$^$9(B ($B%U%i%0$NJQ99$O%U%!%$%kL>$NJQ2=$rH<$&$N$G(B)$B!#(B
-$B0u$NEAHB$r(B @code{nnmairix-propagate-marks-upon-close} $B$rDL$8$F@)8f$9$k$3(B
-$B$H$b$G$-$^$9(B ($B>\$7$/$OJQ?t$N@bL@$r8+$F$/$@$5$$(B)$B!#(B
-
-$BEvA3$J$,$i!"$"$J$?$,0u$rIU$1$?$$$"$i$f$k5-;v$N$?$a$K(B @code{nnmairix} $B$O(B
-$B85$N%0%k!<%W$rD4$Y$J$1$l$P$J$i$J$$$G$7$g$&!#85$N%0%k!<%W$rFCDj$9$k$?$a(B
-$B$K(B @code{nnmairix} $B$O!"$b$7;H$($k$J$i:G=i$K%l%8%9%H%j!<$r;H$$$^$9!#%l%8(B
-$B%9%H%j!<$OHs>o$KB.$$$G$9!#$7$?$,$C$F0u$NEAHB$r;H$&$J$iK\Ev$K%l%8%9%H%j!<(B
-$B$r;H$($k$h$&$K$9$Y$-$G$9!#K\Ev$K!#(BRAM $B$H%G%#%9%/$NMFNL$K?4G[$,L5$$$J(B
-$B$i(B @code{gnus-registry-max-entries} $B$r==J,$KBg$-$JCM$K@_Dj$7$F$/$@$5$$!#(B
-$BBg;v$r<h$k$?$a$K$O!"$*$*$h$=(B mairix $B$G:w0z$rIU$1$k%a!<%k$NNL$rA*$s$G$/$@(B
-$B$5$$!#(B
-
-@vindex nnmairix-only-use-registry
-$B%l%8%9%H%j!<$r;H$$$?$/$J$$!"$^$?$O%l%8%9%H%j!<$,$^$@85$N5-;v$r8+$?$3$H$,(B
-$BL5$$>l9g!"$=$N5-;v$N%U%!%$%kL>$rFCDj$9$k$?$a$K(B @code{nnmairix} $B$ODI2C(B
-$B$N(B mairix $B8!:w$r9T$J$$$^$9!#$b$A$m$s$3$l$O%l%8%9%H%j!<$h$jCY$/$J$j$^(B
-$B$9(B---$B$b$7$3$N$d$jJ}$G?tI4$J$$$7$O?t@i$N0u$rIU$1$k$H!"$$$/$i$+;~4V$,$+$+(B
-$B$k$+$b$7$l$^$;$s!#$3$N>u67(B
-$B$O(B @code{nnmairix-only-use-registry} $B$r(B @code{t} $B$K@_Dj$9$k$3$H$K$h$C$F(B
-$BHr$1$k$3$H$,$G$-$^$9!#(B
-
-$B$*$=$i$/$"$J$?$O5UJ}8~$K$b0u$rEAHB$5$;$?$$$G$7$g$&!#$D$^$j!VK\Ev$N!W%a!<(B
-$B%k%0%k!<%W$G5-;v$K2D;k(B (tick) $B0u$rIU$1$?$i(B @code{nnmairix} $B%0%k!<%W$K$"(B
-$B$kF1$85-;v$b2D;k$K$J$C$FM_$7$$$H$$$&$3$H$G$9!#$$$/$D$+$N$b$C$H$b$JM}M3$K(B
-$B$h$j!"$3$l$O(B maildir $B$r;H$&>l9g$@$18zN(E*$K9T$J$&$3$H$,$G$-$^$9!#$9$0$K(B
-$BL7=b$7$?$3$H$r8@$$$^$9$,!"$=$l$O(B @code{nnmaildir} $B$G$OF/$-$^$;$s!#$J$<$J(B
-$B$i(B @code{nnmaildir} $B$O0u$r30It$N$7$+$b%U%!%$%k$G$O$J$$$H$3$m$K3JG<$9$k$+(B
-$B$i$G$9!#$7$?$,$C$F(B @code{nnmairix} $B%0%k!<%W$X$N0u$NEAHB$O!"DL>o$O%U%!%$(B
-$B%k7A<0$H$7$F(B maildir $B$r;H$&(B @acronym{IMAP} $B%5!<%P!<$N>l9g$@$1F/$-$^$9!#(B
-
-@vindex nnmairix-propagate-marks-to-nnmairix-groups
-$B:#$3$N@_Dj:n6H$r9T$J$C$F$$$k$N$J(B
-$B$i(B @code{nnmairix-propagate-marks-to-nnmairix-groups} $B$r(B @code{t} $B$K@_Dj(B
-$B$7$F2?$,5/$-$k$+8+$F$/$@$5$$!#$b$7$"$J$?$,8+$k$b$N$,9%$-$G$O$J$$$J$i$P!"(B
-$B:F$S$=$l$r(B @code{nil} $B$KLa$7$^$7$g$&!#0l$D$NLdBj$OL$FI5-;v$N?t$r4V0c$($k(B
-$B$3$H$+$b$7$l$^$;$s!#$3$l$O85$N%0%k!<%W$G5-;v$r>C5n$7$?$j!"$^$?$O4|8B@Z$l(B
-$B>C5n$5$l$?$H$-$KIaDL$K5/$-$^$9!#$3$l$,5/$-$?$i$=$N%P%C%/%(%s%I$G(B @kbd{G
-b d} $B$r;H$C$F!"$=$N(B @code{nnmairix} $B%0%k!<%W$r:n$jD>$7$F$/$@$5$$!#(B
-
-@node nnmairix tips and tricks
-@subsubsection $B%R%s%H!"$3$D!"$*$h$S$$$/$D$+$NNc(B
-
-@itemize
-@item
-$B%a!<%k$N%A%'%C%/(B
-
-@findex nnmairix-update-groups
-$B;d$OBg;v$J%a!<%k$N%0%k!<%W$r%0%k!<%W%l%Y%k(B 1 $B$K$7$F$$$^$9!#(BMairix $B%0%k!<(B
-$B%W$N%0%k!<%W%l%Y%k$O(B 5 $B$J$N$G!"$=$l$i$O5/F0;~$K%A%'%C%/$5$l$^$;(B
-$B$s(B (@pxref{Group Levels})$B!#(B
-
-$B%a!<%k$r%A%'%C%/$9$k$?$a$K;d$O0J2<$r;H$C$F$$$^$9(B:
-
-@lisp
-(defun my-check-mail-mairix-update (level)
-  (interactive "P")
-  ;; $B@\F,0z?t$,M?$($i$l$J$+$C$?$i%l%Y%k$r(B 1 $B$K@_Dj$9$k!#(B
-  (gnus-group-get-new-news (or level 1))
-  (nnmairix-update-groups "mairixsearch" t t)
-  (gnus-group-list-groups))
-
-(define-key gnus-group-mode-map "g" 'my-check-mail-mairix-update)
-@end lisp
-
-@samp{"mairixsearch"} $B$NBe$o$j$K$"$J$?$N(B @code{nnmairix} $B%5!<%P!<$NL>A0(B
-$B$r;H$$$^$7$g$&!#>\$7$/$O(B @code{nnmairix-update-groups} $B$N@bL@$r8+$F$/$@(B
-$B$5$$!#(B
-
-@item
-$B2D;k(B (ticked) $B5-;v$N$?$a$N8!:w%0%k!<%W$NNc(B
-
-$BNc$($P$9$Y$F$N2D;k5-;v$N$?$a$N%0%k!<%W$r:n$k$3$H$,$G$-$^$9!#$=$3$G$O5-;v(B
-$B$,>o$KL$FI$K$J$C$F$$$^$9(B:
-
-@kbd{G b g} $B$r$?$?$$$F%0%k!<%WL>$rF~NO$7!"8!:w>r7o$H$7$F(B @samp{F:f} $B$r;H$C(B
-$B$F$/$@$5$$!#$=$7$F%9%l%C%I$r4^$a$J$$$h$&$K$7$^$9!#(B
-
-$B<!$K(B @kbd{G b p} $B$r;H$C$F$3$N%0%k!<%W$N$?$a$N0u$NEAHB$rM-8z$K$7$^$7$g$&!#(B
-$B$=$&$7$?$i(B @kbd{G b r} $B$rFs2s;H$C$F!V>o$KL$FI!W5!G=$rM-8z$K$7$^$9!#(B
-
-$B$3$l$O$3$l$GNI$$$G$7$g$&(B---$B$7$+$7$I$&$d$C$F(B @code{nnmairix} $B%0%k!<%W$N2D(B
-$B;k0u$r>C$7$?$iNI$$$G$7$g$&$+(B? $B$=$l$K$OFs$D$NA*Br;h$,$"$j$^$9(B:
-@code{nnmairix-remove-tick-mark-original-article} (@kbd{$ u} $B$K%P%$%s%I(B
-$B$5$l$F$$$^$9(B) $B$r;H$C$F85$N5-;v$+$i2D;k0u$r<h$j=|$/$3$H$,$G$-$^$9!#$b$&0l(B
-$B$D$N2DG=$J$3$H(B
-$B$O(B @code{nnmairix-propagate-marks-to-nnmairix-groups} $B$r(B @code{t} $B$K@_Dj(B
-$B$9$k$3$H$G$9!#$7$+$7>e5-$N$3$N%*%W%7%g%s$K4X$9$k%3%a%s%H$r8+$F$/$@$5$$!#(B
-$B$b$7$=$l$,F0:n$9$k$J$i2D;k0u$O(B @code{nnmairix} $B%0%k!<%W$K$"$k$O$:$G!"$=(B
-$B$l$i$O$$$D$b$N$h$&$K!"Nc$($P5-;v$r4{FI$K$9$k$3$H$K$h$C$F<h$j=|$/$3$H$,$G(B
-$B$-$^$9!#(B
-
-$B85$N5-;v$+$i2D;k0u$r<h$j=|$/$H!"(Bmairix $B%G!<%?%Y!<%9$r99?7$7$+$D%0%k!<%W(B
-$B$r99?7$7$?8e$G!"$=$N5-;v$O(B @code{nnmairix} $B%0%k!<%W$+$i>C$(5n$k$O$:$G$9!#(B
-$B9,$$$K$^$5$K$=$l$r9T$J$&$?$a$N4X?t$,$"$j$^$9(B:
-@code{nnmairix-update-groups} $B$G$9!#>\$7$/$OA0=R$N%3!<%I$NCGJR$H4X?t$N@b(B
-$BL@$r8+$F$/$@$5$$!#(B
-
-@item
-$B%a!<%k%0%k!<%W$N<+F09VFI$N<h$j07$$(B
-
-$B@h$K@bL@$7$?$h$&$K!"$9$Y$F$N(B @code{nnmairix} $B%0%k!<%W$O<B:]$K(B
-$B$O(B @samp{zz_mairix-<NAME>-<NUMBER>} $B$NMM<0$G%a!<%k%P%C%/%(%s%I$K3JG<$5$l(B
-$B$^$9!#$=$l$i$O%5!<%P!<%P%C%U%!!<$G$=$N%P%C%/%(%s%I$KF~$k$H8+$k$3$H$,$G$-(B
-$B$^$9!#$3$l$i$N%0%k!<%W$r9VFI$7$F$O$$$1$^$;$s(B! $B;DG0$J$,$i$3$l$i$N%0%k!<%W(B
-$B$O(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B$r;H$&$HDL>o(B @emph{$B<+F09VFI(B} $B$K$J(B
-$B$j$^$9!#$D$^$j(B @samp{zz_mairix*} $BMM<0$N%0%k!<%W$,FMA3%0%k!<%W%P%C%U%!!<(B
-$B$K8=$l$k$N$r8+$k$3$H$K$J$j$^$9!#$b$7$3$l$,5/$3$C$?$iC1$K(B @kbd{C-k} $B$G$=(B
-$B$l$i$N%0%k!<%W$r(B kill $B$7$F$/$@$5$$!#$3$l$rHr$1$k$K(B
-$B$O(B @code{gnus-auto-subscribed-groups} $B$r(B @code{nil} $B$K@_Dj$7$F<+F09VFI$r(B
-$B915WE*$KL58z$K$9$k(B (@pxref{Filtering New Groups} $B$+!"$^$?$O$b$7$3$N5!G=(B
-$B$r0];}$7$?$$$N$G$"$l$P(B @samp{zz_} $B$G$O$8$^$k$9$Y$F$N%0%k!<%W$G$=$l$rL58z(B
-$B$K$9$k0J2<$N$=$N>l$7$N$.$N<j$r;H$C$F$/$@$5$$(B:
-
-@lisp
-(setq gnus-auto-subscribed-groups
-      "^\\(nnml\\|nnfolder\\|nnmbox\\|nnmh\\|nnbabyl\\|nnmaildir\\).*:\\([^z]\\|z$\\|\\z[^z]\\|zz$\\|zz[^_]\\|zz_$\\).*")
-@end lisp
-@end itemize
-
-@node nnmairix caveats
-@subsubsection $B$5$i$KCN$C$F$*$/I,MW$,$"$k$3$H(B
-
-@itemize
-@item
-$BBhFs$N(B @code{nnml} $B%5!<%P!<$r!"$^$5$K(B nnmairix $B$N$?$a$K:n$k$3$H$,$G$-$^(B
-$B$9!#$7$+$7$=$N>l9g!"BP1~$9$k%5!<%P!<JQ?t(B @code{nnml-get-new-mail} $B$rL@<((B
-$BE*$K(B @code{nil} $B$K@_Dj$9$kI,MW$,$"$j$^$9!#$=$&$7$F$*$+$J$$$H?7Ce%a!<%k$,(B
-$B$3$NBhFs$N%5!<%P!<$K<h$j9~$^$l$F$7$^$&$+$b$7$l$^$;$s(B ($B$=$7$F!"$=$l$i$rFs(B
-$BEY$H8+$k$3$H$O$J$$$G$7$g$&(B)$B!#%5!<%P!<Dj5A$NNc$G$9(B:
-
-@lisp
-(nnml "mairix" (nnml-directory "mairix") (nnml-get-new-mail nil))
-@end lisp
-
-(@code{nnmaildir} $B$K$b%5!<%P!<JQ?t(B @code{get-new-mail} $B$,$"$k$N$G$9$,!"(B
-$B$=$l$O%G%#%U%)%k%H$G(B @code{nil} $B$J$N$G!"(B@code{nnmaildir} $B%5!<%P!<$r$^$5(B
-$B$K(B mairix $BMQ$K;H$&>l9g$G$b!"$=$l$rL@<(E*$K@_Dj$9$kI,MW$O$"$j$^$;$s!#(B)
-
-@item
-$B$b$7(B Gnus $B%l%8%9%H%j!<$r;H$C$F$$$k$J$i(B:
-@code{nnmairix} $B%0%k!<%W$G%l%8%9%H%j!<$r;H$&(B ($B$=$l$i$N%0%k!<%W(B
-$B$r(B @code{gnus-registry-unfollowed-groups} $B$K4^$a$k(B) $B$3$H$O$7$J$$$G$/$@$5(B
-$B$$!#$b$7(B @code{gnus-registry-split-fancy-with-parent} $B$r;H$C$F$$$k$J(B
-$B$i(B @emph{$BFCJL$JCm0U(B} $B$,I,MW$G$9!#J,3d$5$l$F(B @code{nnmairix} $B%0%k!<%W$KF~$C(B
-$B$?%a!<%k$O!"DL>o$=$N%0%k!<%W$N?7Ce%a!<%k$r%A%'%C%/$7$?$H$?$s$K1J5W$KL5$/(B
-$B$J$C$F$7$^$$$^$9(B ($B$O$$!";d$O$=$l$r$d$C$F$7$^$$$^$7$?(B@dots{})$B!#(B
-
-@item
-$B$7$?$,$C$F(B:
-@emph{$B@dBP$K!"CG$8$F(B}$B!VK\Ev$N!W%a!<%k$r(B @code{nnmairix} $B%0%k!<%W$KF~$l$F(B
-$B$O$$$1$^$;$s(B ($B$H$K$+$/$=$l$,$G$-$k$Y$-$G$O$"$j$^$;$s(B)$B!#(B
-
-@item
-$B$b$7(B Gnus $B%(!<%8%'%s%H(B (@pxref{Gnus Unplugged}) $B$r;H$C$F$$$k$J$i(B:
-@code{nnmairix} $B%0%k!<%W$r%(!<%8%'%s%H2=$7$J$$$G$/$@$5$$(B ($B$b$C$H$b!"$=$l(B
-$B$r$d$C$?$i2?$,5/$-$k$+;d$OCN$j$^$;$s$,(B)$B!#(B
-
-@item
-Mairix $B$O(B @acronym{US}-@acronym{ASCII} $BJ8;z$@$1$r%5%]!<%H$7$^$9!#(B
-
-@item
-@code{nnmairix} $B$O(B mairix $B$,8F$P$l$?8e$G(B Gnus $B$K%a!<%k%P%C%/%(%s%I$N%0%k!<(B
-$B%W$r40A4$KFI$_D>$5$;$k!"$+$J$jNO$^$+$;$J<jCJ$r;H$$$^$9(B---$B$D$^$jC1=c$K$=(B
-$B$N%a!<%k%P%C%/%(%s%I$N%0%k!<%W$r>C$7$F:n$jD>$7$^$9!#$3$l$^$G$N$H$3$m!"$3(B
-$B$l$O2?$iLdBjL5$/F/$-!"(B@code{nnmairix} $B$,$=$l<+?H$N$b$N0J30$N%a!<%k%0%k!<(B
-$B%W$r:o=|$9$k$H$O;W$($^$;$s!#$7$+$7$H$K$+$/K\Ev$K!"%a!<%k%U%)%k%@!<$N%P%C(B
-$B%/%"%C%W$r;}$D$Y$-$G$9!#(B
-
-@item
-$B$9$Y$F$NI,MW$J>pJs$O%0%k!<%W%Q%i%a!<%?!<$K3JG<$5$l$^$9(B (@pxref{Group
-Parameters})$B!#$3$l$K$O%"%/%F%#%V%U%!%$%k$rI,MW$H$7$J$$$H$$$&MxE@$,$"$j$^(B
-$B$9$,!"$=$l$O0E$K(B @code{nnmairix} $B%0%k!<%W$r(B kill $B$9$k$H1J5W$K<:$o$l$F$7(B
-$B$^$&$3$H$r$b0UL#$7$^$9!#(B
-
-@item
-@findex nnmairix-purge-old-groups
-$B$?$/$5$s$N(B @code{nnmairix} $B%0%k!<%W$r:n$C$F(B kill $B$9$k$H!"%a!<%k%P%C%/%((B
-$B%s%I$N%5!<%P!<$K(B ``zz_mairix-*'' $B$H$$$&L>A0$N%0%k!<%W$,N/$^$C$F$7$^$$$^(B
-$B$9!#$b$O$dITMW$K$J$C$?8E$$%0%k!<%W$r:o=|$9$k$K(B
-$B$O(B @code{nnmairix-purge-old-groups} $B$r8F$s$G$/$@$5$$!#$3$l$OEv(B
-$BA3(B @code{zz_mairix-<NAME>-<NUMBER>} $B$NMM<0$G$O$I$s$J!VK\Ev$N!W%a!<%k$b%U%)(B
-$B%k%@!<$K%;!<%V$7$J$$$3$H$rA[Dj$7$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#(B
-@code{nnmairix} $B%0%k!<%W$N@\F,<-$OJQ?t(B @code{nnmairix-group-prefix} $B$rJQ(B
-$B99$9$k$3$H$K$h$C$FJQ$($k$3$H$,$G$-$^$9!#(B
-
-@item
-$B0J2<$O@h$K8@5Z$7$?(B mairix $B$N$?$a$N%Q%C(B
-$B%A(B (@pxref{Propagating marks}) $B$r(B @emph{$B;H$o$J$$(B} $B>l9g$@$1$KEv$F$O$^$j$^(B
-$B$9(B:
-
-@code{nnmairix} $B$r(B maildir $B%U%)%k%@!<$H$H$b$K;H$&$HLdBj$,5/$-$k>l9g$,$"(B
-$B$j$^$9!#$=$l$O(B maildir $B$,%a!<%k$N%U%i%0$r(B @samp{Seen} $B$^$?(B
-$B$O(B @samp{Replied} $B$N$h$&$K!"$=$l$>$lJ8;z(B @samp{S} $B$*$h$S(B @samp{R} $B$r%a%C(B
-$B%;!<%8$N%U%!%$%kL>$KIU$12C$($k$3$H$K$h$C$F3JG<$9$k$H$$$&;v<B$K$h$j$^$9!#(B
-$B$3$l$O!":#$N$H$3$m!"?7$7$$%a!<%k$,FO$$$?$H$-$@$1$G$J$/%a!<%k$N%U%i%0$,JQ(B
-$B2=$7$?$H$-$b!"(Bmairix $B$N%G!<%?%Y!<%9$r99?7$7$J$1$l$P$J$i$J$$$G$"$m$&$3$H(B
-$B$r0E<($7$F$$$^$9!#F1$8$3$H$,!"$^$@(B @samp{new} $B%U%)%k%@!<$K$"$k$&$A$K:w0z(B
-$B$,:n$i$l$?$b$N$N(B Gnus $B$,$=$N%a!<%k$r8+$?$H$-$K(B @samp{cur} $B$K0\$5$l$??7$7(B
-$B$$%a!<%k$K$bEv$F$O$^$j$^$9!#$3$l$,5/$-$?8e$G%G!<%?%Y!<%9$r99?7$7$J$$$H!"(B
-mairix $B8!:w$OB8:_$7$J$$%U%!%$%k$r;X$9%7%s%\%j%C%/%j%s%/$r$b$?$i$7$^$9!#(B
-Gnus $B$G$ODL>o$=$l$i$N%a%C%;!<%8$O%X%C%@!<$K(B ``(none)'' $B$,I=<($5$l$F8=$l!"(B
-$B%"%/%;%9$9$k$3$H$,$G$-$^$;$s!#$b$7$3$l$,5/$3$C$?>l9g!"IaDL(B
-$B$O(B @kbd{G b u} $B$r;H$$!"$+$D%0%k!<%W$r99?7$9$l$P2r7h$7$^$9!#(B
-@end itemize
 
 @node Misc Group Stuff
 @section $B$=$NB>$N%0%k!<%W4XO"(B
@@ -21406,6 +20689,1045 @@ and `gnus-score-decay-scale'."
 
 Gnus $B$O0lF|$K0l2s%9%3%"$r8:?j$5$;$h$&$H$7$^$9!#Nc$($P(B Gnus $B$r;MF|4VAv$i(B
 $B$;$F$$$J$$$H!"(BGnus $B$O%9%3%"$r;M2s8:?j$5$;$^$9!#(B
+
+@node Searching
+@chapter $B8!:w(B
+@cindex searching
+
+@c TRANSLATEME>
+FIXME: Add a brief overview of Gnus search capabilities.  A brief
+comparison of nnir, nnmairix, contrib/gnus-namazu would be nice
+as well.
+
+This chapter describes tools for searching groups and servers for
+articles matching a query and then retrieving those articles. Gnus
+provides a simpler mechanism for searching through articles in a summary buffer
+to find those matching a pattern. @xref{Searching for Articles}.
+@c TRANSLATEME<
+
+@menu
+* nnir::                     $B$$$m$s$J%(%s%8%s$G8!:w$9$k(B
+* nnmairix::                 Mairix $B$G8!:w$9$k(B
+@end menu
+
+@c TRANSLATEME>
+@node nnir
+@section nnir
+@cindex nnir
+
+This section describes how to use @code{nnir} to search for articles
+within gnus.
+
+@menu
+* What is nnir::                What does nnir do?
+* Basic Usage::                 How to perform simple searches.
+* Setting up nnir::             How to set up nnir.
+@end menu
+
+@node What is nnir
+@subsection What is nnir
+
+@code{nnir} is a gnus interface to a number of tools for searching
+through mail and news repositories. Different backends (like
+@code{nnimap} and @code{nntp}) work with different tools (called
+@dfn{engines} in nnir lingo), but all use the same basic search
+interface.
+
+The @code{nnimap} and @code{gmane} search engines should work with no
+configuration. Other engines require a local index that needs to be
+created and maintained outside of Gnus.
+
+@node Basic Usage
+@subsection Basic Usage
+
+In the group buffer typing @kbd{G G} will search the group on the
+current line by calling @code{gnus-group-make-nnir-group}.  This prompts
+for a query string, creates an ephemeral @code{nnir} group containing
+the articles that match this query, and takes you to a summary buffer
+showing these articles. Articles may then be read, moved and deleted
+using the usual commands.
+
+The @code{nnir} group made in this way is an @code{ephemeral} group, and
+some changes are not permanent: aside from reading, moving, and
+deleting, you can't act on the original article. But there is an
+alternative: you can @emph{warp} to the original group for the article
+on the current line with @kbd{A W}, aka
+@code{gnus-warp-to-article}. Even better, the function
+@code{gnus-summary-refer-thread}, bound by default in summary buffers to
+@kbd{A T}, will first warp to the original group before it works its
+magic and includes all the articles in the thread. From here you can
+read, move and delete articles, but also copy them, alter article marks,
+whatever. Go nuts.
+
+You say you want to search more than just the group on the current line?
+No problem: just process-mark the groups you want to search. You want
+even more? Calling for an nnir search with the cursor on a topic heading
+will search all the groups under that heading.
+
+Still not enough? OK, in the server buffer
+@code{gnus-group-make-nnir-group} (now bound to @kbd{G}) will search all
+groups from the server on the current line. Too much? Want to ignore
+certain groups when searching, like spam groups? Just customize
+@code{nnir-ignored-newsgroups}.
+
+One more thing: individual search engines may have special search
+features. You can access these special features by giving a prefix-arg
+to @code{gnus-group-make-nnir-group}. If you are searching multiple
+groups with different search engines you will be prompted for the
+special search features for each engine separately.
+
+@node Setting up nnir
+@subsection Setting up nnir
+
+To set up nnir you may need to do some prep work. Firstly, you may need
+to configure the search engines you plan to use. Some of them, like
+@code{imap} and @code{gmane}, need no special configuration. Others,
+like @code{namazu} and @code{swish}, require configuration as described
+below. Secondly, you need to associate a search engine with a server or
+a backend.
+
+If you just want to use the @code{imap} engine to search @code{nnimap}
+servers, and the @code{gmane} engine to search @code{gmane} then you
+don't have to do anything. But you might want to read the details of the
+query language anyway.
+
+@menu
+* Associating Engines::                 How to associate engines.
+* The imap Engine::                     Imap configuration and usage.
+* The gmane Engine::                    Gmane configuration and usage.
+* The swish++ Engine::                  Swish++ configuration and usage.
+* The swish-e Engine::                  Swish-e configuration and usage.
+* The namazu Engine::                   Namazu configuration and usage.
+* The hyrex Engine::                    Hyrex configuration and usage.
+* Customizations::                      User customizable settings.
+@end menu
+
+@node Associating Engines
+@subsubsection Associating Engines
+
+When searching a group, @code{nnir} needs to know which search engine to
+use. You can configure a given server to use a particular engine by
+setting the server variable @code{nnir-search-engine} to the engine
+name. For example to use the @code{namazu} engine to search the server
+named @code{home} you can use
+
+@lisp
+(setq gnus-secondary-select-methods '(
+      (nnml "home"
+            (nnimap-address "localhost")
+            (nnir-search-engine namazu))))
+@end lisp
+
+Alternatively you might want to use a particular engine for all servers
+with a given backend. For example, you might want to use the @code{imap}
+engine for all servers using the @code{nnimap} backend. In this case you
+can customize the variable @code{nnir-method-default-engines}. This is
+an alist of pairs of the form @code{(backend . engine)}. By default this
+variable is set to use the @code{imap} engine for all servers using the
+@code{nnimap} backend, and the @code{gmane} backend for @code{nntp}
+servers. (Don't worry, the @code{gmane} search engine won't actually try
+to search non-gmane @code{nntp} servers.) But if you wanted to use
+@code{namazu} for all your servers with an @code{nnimap} backend you
+could change this to
+
+@lisp
+'((nnimap . namazu)
+  (nntp . gmane))
+@end lisp
+
+@node The imap Engine
+@subsubsection The imap Engine
+
+The @code{imap} engine requires no configuration.
+
+Queries using the @code{imap} engine follow a simple query language.
+The search is always case-insensitive and supports the following
+features (inspired by the Google search input language):
+
+@table @samp
+@item Boolean query operators
+AND, OR, and NOT are supported, and parentheses can be used to control
+operator precedence, e.g. (emacs OR xemacs) AND linux. Note that
+operators must be written with all capital letters to be
+recognised. Also preceding a term with a - sign is equivalent to NOT
+term.
+
+@item Automatic AND queries
+If you specify multiple words then they will be treated as an AND
+expression intended to match all components.
+
+@item Phrase searches
+If you wrap your query in double-quotes then it will be treated as a
+literal string.
+@end table
+
+By default the whole message will be searched. The query can be limited
+to a specific part of a message by using a prefix-arg. After inputting
+the query this will prompt (with completion) for a message part.
+Choices include ``Whole message'', ``Subject'', ``From'', and
+``To''. Any unrecognized input is interpreted as a header name. For
+example, typing @kbd{Message-ID} in response to this prompt will limit
+the query to the Message-ID header.
+
+Finally selecting ``Imap'' will interpret the query as a raw
+@acronym{IMAP} search query. The format of such queries can be found in
+RFC3501.
+
+If you don't like the default of searching whole messages you can
+customize @code{nnir-imap-default-search-key}. For example to use
+@acronym{IMAP} queries by default
+
+@lisp
+(setq nnir-imap-default-search-key "Imap")
+@end lisp
+
+@node The gmane Engine
+@subsubsection The gmane Engine
+
+The @code{gmane} engine requires no configuration.
+
+Gmane queries follow a simple query language:
+
+@table @samp
+@item Boolean query operators
+AND, OR, NOT (or AND NOT), and XOR are supported, and brackets can be
+used to control operator precedence, e.g. (emacs OR xemacs) AND linux.
+Note that operators must be written with all capital letters to be
+recognised.
+
+@item Required and excluded terms
++ and - can be used to require or exclude terms, e.g. football -american
+
+@item Unicode handling
+The search engine converts all text to utf-8, so searching should work
+in any language.
+
+@item Stopwords
+Common English words (like 'the' and 'a') are ignored by default. You
+can override this by prefixing such words with a + (e.g. +the) or
+enclosing the word in quotes (e.g. "the").
+@end table
+
+The query can be limited to articles by a specific author using a
+prefix-arg. After inputting the query this will prompt for an author
+name (or part of a name) to match.
+
+@node The swish++ Engine
+@subsubsection The swish++ Engine
+
+FIXEM: Say something more here.
+
+Documentation for swish++ may be found at the swish++ sourceforge page:
+@uref{http://swishplusplus.sourceforge.net}
+
+@node The swish-e Engine
+@subsubsection The swish-e Engine
+
+FIXEM: Say something more here.
+
+Documentation for swish-e may be found at the swish-e homepage
+@uref{http://swish-e.org}
+
+@node The namazu Engine
+@subsubsection The namazu Engine
+
+Using the namazu engine requires creating and maintaining index files.
+One directory should contain all the index files, and nnir must be told
+where to find them by setting the @code{nnir-namazu-index-directory}
+variable.
+
+To work correctly the @code{nnir-namazu-remove-prefix} variable must
+also be correct. This is the prefix to remove from each file name
+returned by Namazu in order to get a proper group name (albeit with `/'
+instead of `.').
+
+For example, suppose that Namazu returns file names such as
+@samp{/home/john/Mail/mail/misc/42}.  For this example, use the
+following setting: @code{(setq nnir-namazu-remove-prefix
+"/home/john/Mail/")} Note the trailing slash.  Removing this prefix from
+the directory gives @samp{mail/misc/42}.  @code{nnir} knows to remove
+the @samp{/42} and to replace @samp{/} with @samp{.} to arrive at the
+correct group name @samp{mail.misc}.
+
+Extra switches may be passed to the namazu search command by setting the
+variable @code{nnir-namazu-additional-switches}.  It is particularly
+important not to pass any any switches to namazu that will change the
+output format.  Good switches to use include `--sort', `--ascending',
+`--early' and `--late'.  Refer to the Namazu documentation for further
+information on valid switches.
+
+Mail must first be indexed  with the `mknmz' program.  Read the documentation
+for namazu to create a configuration file. Here is an example:
+
+@cartouche
+@example
+ package conf;  # Don't remove this line!
+
+ # Paths which will not be indexed. Don't use `^' or `$' anchors.
+ $EXCLUDE_PATH = "spam|sent";
+
+ # Header fields which should be searchable. case-insensitive
+ $REMAIN_HEADER = "from|date|message-id|subject";
+
+ # Searchable fields. case-insensitive
+ $SEARCH_FIELD = "from|date|message-id|subject";
+
+ # The max length of a word.
+ $WORD_LENG_MAX = 128;
+
+ # The max length of a field.
+ $MAX_FIELD_LENGTH = 256;
+@end example
+@end cartouche
+
+For this example, mail is stored in the directories @samp{~/Mail/mail/},
+@samp{~/Mail/lists/} and @samp{~/Mail/archive/}, so to index them go to
+the index directory set in @code{nnir-namazu-index-directory} and issue
+the following command:
+
+@example
+mknmz --mailnews ~/Mail/archive/ ~/Mail/mail/ ~/Mail/lists/
+@end example
+
+For maximum searching efficiency you might want to have a cron job run
+this command periodically, say every four hours.
+
+@node The hyrex Engine
+@subsubsection The hyrex Engine
+FIXME: Add documentation.
+
+@node Customizations
+@subsubsection Custimozations
+
+@table @code
+@item nnir-method-default-engines
+Alist of server backend - search engine pairs. The default associations
+are
+@example
+(nnimap . imap)
+(nntp . gmane)
+@end example
+
+@item nnir-ignored-newsgroups
+A regexp to match newsgroups in the active file that should be skipped
+when searching all groups on a server.
+
+@item nnir-summary-line-format
+The format specification to be used for lines in an nnir summary buffer.
+All the items from `gnus-summary-line-format' are available, along with
+three items unique to nnir summary buffers:
+
+@example
+%Z    Search retrieval score value (integer)
+%G    Article original full group name (string)
+%g    Article original short group name (string)
+@end example
+
+If nil (the default) this will use @code{gnus-summary-line-format}.
+
+@item nnir-retrieve-headers-override-function
+If non-nil, a function that retrieves article headers rather than using
+the gnus built-in function.  This function takes an article list and
+group as arguments and populates the `nntp-server-buffer' with the
+retrieved headers. It should then return either 'nov or 'headers
+indicating the retrieved header format. Failure to retrieve headers
+should return @code{nil}
+
+If this variable is nil, or if the provided function returns nil for a
+search result, @code{gnus-retrieve-headers} will be called instead."
+@end table
+@c TRANSLATEME<
+
+@node nnmairix
+@section nnmairix
+
+($BLuCm(B: Mairix $B$O(B @acronym{ASCII} $BJ8;z$7$+%5%]!<%H$7$^$;$s!#(B)
+
+@cindex mairix
+@cindex nnmairix
+$B$3$N9`$O!"%a!<%k$K:w0z$rIU$1$F(B Gnus $BFb$G8!:w$9$k$?$a$K!"$I$&$d$C(B
+$B$F(B mairix $B$H%P%C%/%(%s%I(B @code{nnmairix} $B$r@_Dj$9$k$+$r@bL@$7$^$9!#$5$i(B
+$B$K(B mairix $B8!:w$K7k$SIU$1$i$l$F<+F0E*$K99?7$5$l$k915WE*(B
+$B$J(B ``$B8-$$(B'' (smart $B$J(B) $B%0%k!<%W$r:n$k$3$H$,$G$-$^$9!#(B
+
+@menu
+* About mairix::                $B%a!<%k8!:w%(%s%8%s(B mairix $B$K$D$$$F(B
+* nnmairix requirements::       nnmairix $B$r;H$&$?$a$KI,MW$J$3$H(B
+* What nnmairix does::          nnmairix $B$O<B:]$K2?$r$9$k$N$+(B?
+* Setting up mairix::           mairix $B$N@_Dj(B
+* Configuring nnmairix::        nnmairix $B%P%C%/%(%s%I$N@_Dj(B
+* nnmairix keyboard shortcuts:: $BMxMQ$G$-$k%7%g!<%H%+%C%H%-!<(B
+* Propagating marks::           nnmairix $B%0%k!<%W$N0u$rEAHB$5$;$kJ}K!(B
+* nnmairix tips and tricks::    $B%R%s%H!"$3$D!"$*$h$S$$$/$D$+$NNc(B
+* nnmairix caveats::            $B$5$i$KCN$C$F$*$/I,MW$,$"$k$3$H(B
+@end menu
+
+@c FIXME: $B$3$N9`$N%^!<%/%"%C%W$O2~A1$9$kI,MW$,$"$k!#(B
+@c $BNc$($P(B @samp$B!"(B@var$B!"(B@file$B!"(B@command $B$J$I$r2C$($k!#(B
+@c (info "(texinfo)Indicating") $B$r;2>H!#(B
+@node About mairix
+@subsection $B%a!<%k8!:w%(%s%8%s(B mairix $B$K$D$$$F(B
+
+Mairix $B$O%m!<%+%k$K3JG<$5$l$?%a!<%k$K:w0z$rIU$1$?$jC18l$r8!:w$9$k$?$a$N(B
+$BF;6q$G$9!#=q$$$?$N$O(B Richard Curnow $B$G(B GPL $B$G%i%$%;%s%9$5$l$^$9!#(B
+Mairix $B$O:G$b%]%T%e%i!<$J(B GNU/Linux $B$NG[I[$KIUB0$7$F$$$^$9$,!"(B
+Windows ($B$H(B cygwin)$B!"(BMac OS X $B$*$h$S(B Solaris $B$N$b$H$G$bF0:n$7$^$9!#%[!<(B
+$B%`%Z!<%8$O(B @uref{http://www.rpcurnow.force9.co.uk/mairix/index.html} $B$G(B
+$B$9!#(B
+
+@code{nnir} $B%P%C%/%(%s%I$r2p$7$F;H$&$3$H$,$G$-$k(B swish++ $B$d(B namazu $B$N$h(B
+$B$&$JB>$N8!:w%D!<%k$[$I$K$O(B mairix $B$OM;DL$,$-$+$J$$$+$b$7$l$^$;$s$,!"$=$l(B
+$B$K$O?.$8$i$l$J$$$[$IB.$$$H$$$&$9$P$i$7$$FCD9$,$"$j$^$9!#8=:_$N%7%9%F%`$G(B
+$B$O(B 1$BIC$G2?@iDL$b$N%a!<%k$N%X%C%@!<$H5-;v$N%\%G%#!<$N6y!9$^$G$rMF0W$KA\$9(B
+$B$3$H$,$G$-$^$9!#8!:w$9$k$?$a$KI,MW$J%G!<%?%Y!<%9$N9=C[$K$O(B 1$B!A(B2$BJ,$+$+$k(B
+$B$+$b$7$l$^$;$s$,!"0lEY$=$l$r40A4$K9T$J$($PNI$$$N$G$9!#$=$l0J8e!"99?7$ODI(B
+$B2CE*(B ($B%$%s%/%j%a%s%?%k(B) $B$K9T$J$o$l$k$3$H$b$"$C$F!"K\Ev$KB.$$$N$G$9!#IU$1(B
+$B2C$($F$*$/$H!"(Bmairix $B$N@_Dj$O$H$F$b$d$5$7$$$G$9!#(B
+
+$B$7$+$7:G9bB.$GF0$+$9$?$a$K(B mairix $B$O(B @code{Maildir} $B$^$?$O(B @code{MH} $B$N(B
+$B7A<0(B ($B$3$l$O(B @code{nnml} $B%P%C%/%(%s%I$r4^$_$^$9(B) $B$G3JG<$5$l$?%a!<%k$G;H(B
+$B$o$J$1$l$P$J$j$^$;$s!#$b$C$H$b(B mbox $B$G$bF0:n$9$k$N$G$9$1$l$I!#(BMairix $B$O(B
+$B<B:]$N%a%C%;!<%8%U%!%$%k$r;X$7<($9%7%s%\%j%C%/%j%s%/$r!V2>A[!W(B
+$B$N(B maildir/MH $B%U%)%k%@!<$KCV$/$3$H$K$h$C$F8!:w7k2L$rDs<($7$^$9(B (mbox $B$r(B
+$B;H$C$F$$$k>l9g$O%3%T!<$,:n$i$l$^$9(B)$B!#(BMairix $B$O$=$N$h$&$J2>A[%U%)%k%@!<$K(B
+$B$9$G$K8!:w7k2L$rDs<($7$F$$$k$N$G!"$"$k%a!<%k8!:w$N7k2L$rDs<($9$k!V8-$$!W(B
+$B%a!<%k!&%U%)%k%@!<$r:n@.$9$k$?$a$K30It$N%W%m%0%i%`$H$7$F;HMQ$9$k$N$KHs>o(B
+$B$K$h$/E,$7$F$$$^$9!#(B
+
+@node nnmairix requirements
+@subsection nnmairix $B$r;H$&$?$a$KI,MW$J$3$H(B
+
+Mairix $B$O%m!<%+%k$J%a!<%k$r8!:w$7$^$9(B---$B$D$^$j(B mairix $B$O%a!<%k!&%U%)%k%@!<(B
+$B$rI,$:D>@\$K%"%/%;%9$G$-$J$1$l$P$J$j$^$;$s!#$b$7%a!<%k$,JL$N%5!<%P!<(B ($BNc(B
+$B$($P(B @acronym{IMAP} $B%5!<%P!<(B) $B$K$"$C$F!"$?$^$?$^(B shell $B$G%"%/%;%9$9$k$3(B
+$B$H$,$G$-$k$N$J$i$P!"(B@code{nnmairix} $B$ONc$($P(B ssh $B$r2p$7$F(B mairix $B$r1s3V(B
+$B$GF0:n$5$;$k$3$H$b$G$-$^$9!#(B
+
+$B2C$($F!"(B@code{nnmairix} $B$O(B Gnus $B$N%P%C%/%(%s%I(B @code{nnml}$B!"(B
+@code{nnmaildir} $B$*$h$S(B @code{nnimap} $B$@$1$r%5%]!<%H$7$^$9!#(B
+@code{nnmairix} $B$r;H$&$K$O!"I,$:$3$l$i$N%P%C%/%(%s%I$N0l$D$r;H$o$J$1$l$P(B
+$B$J$j$^$;$s!#(B@code{nnmbox}$B!"(B@code{nnfolder} $B$^$?$O(B @code{nnmh} $B$N$h$&$JB>(B
+$B$N%P%C%/%(%s%I$G$OF0:n$7$J$$$G$7$g$&!#(B
+
+$B$b$7$I$&$7$F$b(B mbox $B$r;H$o$J$1$l$P$J$i$J$/$F!"$=$l$G(B
+$B$b(B @code{nnmairix} $B$r;H$$$?$$$N$J$i$P!"%m!<%+%k$J(B @acronym{IMAP} $B%5!<%P!<(B
+$B$rN)$A>e$2$k$3$H$K$h$C$F(B @code{nnimap} $B$r2p$7$F%"%/%;%9$9$k$3$H$,$G$-$^(B
+$B$9!#$3$l$O$$$/$D$+$N(B mbox $B%U%!%$%k$K%"%/%;%9$9$k$?$a$K$7$F$O$+$J$jBg$,$+(B
+$B$j$J:n6H$K$J$k$N$G!"$b$&(B MH $B$+(B Maildir $B$KJQ$($F$7$^$$$^$7$g$&!#$=$l$G(B
+$B$b(B mbox $B$r;H$&$3$H$KK\Ev$KK\Ev$K>pG.$r;}$C$F$$$k$N$J$i!"(BEmacs 23 $B$KIUB0(B
+$B$7$F$$$k(B @file{mairix.el} $B%Q%C%1!<%8$r8&5f$9$kI,MW$,$"$k$G$7$g$&!#(B
+
+@node What nnmairix does
+@subsection nnmairix $B$O<B:]$K2?$r$9$k$N$+(B?
+
+$B%P%C%/%(%s%I(B @code{nnmairix} $B$O!"$"$k8!:w8l$G(B mairix $B$K?R$M$?$j%G!<%?%Y!<(B
+$B%9$r99?7$5$;$k$?$a$K(B Gnus $B$+$i(B mairix $B$r8F$V$3$H$r2DG=$K$7$^$9!#35N,%P%C(B
+$B%U%!!<$G%a%C%;!<%8$r8+$F$$$k4V!"$"$i$+$8$aMQ0U$5$l$F$$$k(B mairix $B$r8F$V$?(B
+$B$a$N$$$/$D$+$N%7%g!<%H%+%C%H$r;H$&$3$H$,$G$-$^$9!#Nc$($P8=:_8+$F$$$k%a%C(B
+$B%;!<%8$NAw?.<T$+$i$N$9$Y$F$N%a!<%k$r$9$P$d$/C5$7$?$j!"%a!<%k$,0[$J$C$?%U%)(B
+$B%k%@!<$K$"$C$F$b!"$=$N%a%C%;!<%8$K4XO"$7$F$$$kA4BN$N%9%l%C%I$rI=<($9$k$J(B
+$B$I$G$9!#(B
+
+$B$5$i$K!"$"$k(B mairix $B8!:w$K7k$SIU$$$?915WE*$J(B @code{nnmairix} $B%0%k!<%W$r(B
+$B:n$k$3$H$,$G$-$^$9!#$3$NNc$G$O!"$"$kAw?.<T$+$iMh$F!"$+$D!"$"$kI=Bj9T(B ($B$^(B
+$B$?$O(B Message-ID $B$K4p$E$/0l$D$NFCDj$N%9%l%C%I$5$((B) $B$r;}$D%a!<%k$r4^$`%0%k!<(B
+$B%W$rMF0W$K:n$k$3$H$,$G$-$^$9!#$3$l$i$N%U%)%k%@!<$G?7$7$$%a!<%k$r%A%'%C%/(B
+$B$9$k(B ($BNc$($P(B @kbd{g} $B$^$?$O(B @kbd{M-g} $B$r2!$9(B) $B$H!"(Bmairix $B$r8F$V$3$H$K$h$C(B
+$B$F$=$l$i<+BN$,<+F0E*$K99?7$7$^$9!#(B
+
+Mairix $B$O$9$G$K%0%k!<%W$r:n$C$F$$$F!"(BGnus $B$G%"%/%;%9$G$-$k$h$&$K$=$l$i$N(B
+$B%a!<%k$X$N%j%s%/$rMQ0U$7$F$$$k$N$K!"$$$C$?$$$J$<(B @code{nnmairix} $B$,I,MW(B
+$B$J$N$+$H?R$M$k$+$b$7$l$^$;$s$M!#$=$&$G$O$"$j$^$;$s$+(B? $B$(!<$H!"$=$l$OF0(B
+$B$/(B@emph{$B$+$b(B}$B$7$l$^$;$s$,!"$@$a$J$3$H$,B?$$$G$7$g$&(B---$BLdBjL5$7$K$O!#:G$b(B
+$B$"$j$=$&$J$N$O!"5-;v?t$,$*$+$7$/$J$C$F!"$7$+$b;~!9$O(B Gnus $B$,$"$k$O$:$@$H(B
+$B8@$$D%$k%a!<%k$,$9$G$K%-%c%s%;%k$5$l$F$$$F%"%/%;%9$G$-$J$$$3$H$r;W$$CN$i(B
+$B$5$l$k$3$H$G$7$g$&!#$3$l$O!"$b$N$4$H$,(B Gnus $B$N8e$m$K1#$l$F5/$3$C$F$$$k$H(B
+$B$-!"(BGnus $B$OK\Ev$OITK~$K;W$C$F$$$k$H$$$&;v<B$N$?$a$G$9!#Nc$((B
+$B$P(B @acronym{IMAP} $B%5!<%P!<$G(B mairix $B$r;H$C$F$$$k$N$J$i!"$b$&0l$D$NLdBj$O(B
+$B%a!<%k%P%C%/%(%s%I<+BN$G$"$k$+$b$7$l$^$;$s(B (mairix $B$,8!:w%0%k!<%W$NFbMF(B
+$B$rJQ$($?$H$-!"(BDovecot $B$O4V0c$C$?:w0z%U%!%$%k$K$D$$$F;d$KITJ?$r8@$$$^$7$?(B)$B!#(B
+@code{nnmairix} $B$r;H$($P!"$3$l$i$NLdBj$O2sHr$5$l$k$O$:$G$9!#(B
+
+$B<B$O(B @code{nnmairix} $B$O%a!<%k%P%C%/%(%s%I$G$O$"$j$^$;$s(B---$B$=$l(B
+$B$O(B mairix $B$,8!:w7k2L$r3JG<$9$k!VK\Ev$N!W%a!<%k%P%C%/%(%s%I$H(B Gnus $B%U%m%s(B
+$B%H%(%s%I$N4V$K0LCV$7$F$$$F!"$`$7$m<B:]$K$O%i%C%Q!<$K;w$F$$$^$9!#(B
+Mairix $B%U%)%k%@!<$N$?$a$K;0$D$N0[$J$k%a!<%k%P%C%/%(%s%I(B @code{nnml}$B!"(B
+@code{nnmaildir} $B$^$?$O(B @code{nnimap} $B$NCf$+$iA*$V$3$H$,$G$-$^$9!#(B
+@code{nnmairix} $B$O8!:w7k2L$r$3$N%a!<%k%P%C%/%(%s%I(B
+$B$N(B @code{zz_mairix-<NAME>-<NUMBER>} $B$H$$$&L>A0$N%U%)%k%@!<$K3JG<$9$k$?$a(B
+$B$K(B mairix $B%P%$%J%j!<$r8F$S$^$9$,!"$=$l$i$N%U%)%k%@!<$O(B Gnus $B%U%m%s%H%(%s(B
+$B%I$K$OL>A0$,(B @code{<NAME>} $B$@$1$K$J$C$FEO$5$l$^$9!#$9$G$K%a!<%k$r3JG<$7(B
+$B$F$$$k4{B8$N%a!<%k%P%C%/%(%s%I$r;H$&$3$H$,$G$-$^$9$,!"$"$J$?$NB>$N%a!<%k(B
+$B$HJB$Y$F?7$7$$%a!<%k%0%k!<%W$r:n$k(B @code{nnmairix} $B$,5$;}$A0-$$$N$G$"$l(B
+$B$P!"Nc$($P?7$7$$(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B%5!<%P!<(B
+$B$r(B mairix $B@lMQ$K:n$k$3$H$b$G$-$^$9!#$?$@$7!"$=$l$i$N%5!<%P!<$,4V0c$C$F?7(B
+$BCe%a!<%k$r<h$j9~$s$G$7$^$o$J$$$h$&$K$7$F$/$@$5(B
+$B$$(B (@pxref{nnmairix caveats})$B!#$b$7(B @code{nnimap} $B$H$H$b(B
+$B$K(B @acronym{IMAP} $B%5!<%P!<$G(B mairix $B$r%j%b!<%H$K;H$$$?$$$N$G$"$l$P!"FCJL(B
+$B$J;v>p$,@8$8$^$9(B---$B$3$3$G$O(B mairix $B%U%)%k%@!<$HB>$N%a!<%k$,F1(B
+$B$8(B @code{nnimap} $B%P%C%/%(%s%I>e$K$J$1$l$P$J$j$^$;$s!#(B
+
+@node Setting up mairix
+@subsection mairix $B$N@_Dj(B
+
+$B$^$:$O%a!<%k%U%)%k%@!<$N%P%C%/%"%C%W$r:n$j$^$7$g$&(B (@pxref{nnmairix
+caveats})$B!#(B
+
+Mairix $B$N@_Dj$O4JC1$G$9!#(B($B>/$J$/$H$b(B) $B0J2<$N%(%s%H%j!<$r4^(B
+$B$`(B @file{.mairixrc} $B%U%!%$%k$r:n$C$F$/$@$5$$(B:
+
+@example
+# Your Maildir/MH base folder
+base=~/Maildir
+@end example
+
+$B$3$l$O$9$Y$F$N%a!<%k$N4pE@$K$J$k%U%)%k%@!<$G$9!#0J2<$N$9$Y$F$N%G%#%l%/%H(B
+$B%j!<$O$3$N%U%)%k%@!<$r4pE@$KAjBPE*$JCM$r$H$j$^$9!#(B
+@code{nnmairix} $B$r(B @code{nnimap} $B$G;H$$$?$$>l9g!"$3$N4pE@$N%G%#%l%/%H%j!<(B
+$B$O(B @acronym{IMAP} $B%5!<%P!<$,%a!<%k%U%)%k%@!<$r3JG<$9$k%a!<%k%G%#%l%/%H%j!<(B
+$B$rI=$9$b$N$G$J$1$l$P$J$j$^$;$s(B!
+
+@example
+maildir= ... $B:w0z$rIU$1$k(B maildir $B%U%)%k%@!<(B ...
+mh= ... $B:w0z$rIU$1$k(B nnml/mh $B%U%)%k%@!<(B ...
+mbox= ... $B:w0z$rIU$1$k(B mbox $B%U%)%k%@!<(B ...
+@end example
+
+Mairix $B$G:w0z$rIU$1$?$$$9$Y$F$N%a!<%k%U%)%k%@!<$H(B mbox $B%U%!%$%k$r$3$l(B
+$B$G(B ($B4pE@%G%#%l%/%H%j!<$X$NAjBPCM$G(B!) $B;XDj$7$^$9!#(B@code{nnml} $B%P%C%/%(%s(B
+$B%I$O%a!<%k$r(B MH $B7A<0$GJ]B8$9$k$N$G!"$=$l$i$N%G%#%l%/%H%j!<(B
+$B$r(B @code{mh} $B9T$KCV$$$F$*$+$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F$/$@$5$$!#$5$i(B
+$B$K>\$7$$$3$H$K$D$$$F$O!"$3$N>O$N:G8e$K$"$kNc$H(B mairixrc $B$N(B man $B%Z!<%8$r(B
+$B8+$F$/$@$5$$!#(B
+
+@example
+omit=zz_mairix-*
+@end example
+
+@vindex nnmairix-group-prefix
+$B$3$l$O(B mairix $B$N8!:w7k2L$K6vA3$K:w0zIU$1$r$7$F$7$^$o$J$$$?$a$N$b$N$G$9!#(B
+$B$3$l$i$N%U%)%k%@!<$N@\F,<-$O!"JQ?t(B @code{nnmairix-group-prefix} $B$GJQ$($k(B
+$B$3$H$,$G$-$^$9!#(B
+
+@example
+mformat= ... 'maildir' $B$^$?$O(B 'mh' ...
+database= ... $B%G!<%?%Y!<%9!&%U%!%$%k$NCV$->l=j(B ...
+@end example
+
+@code{mformat} $B$N@_Dj$O(B mairix $B8!:w%U%)%k%@!<$X$N=PNO7A<0$r;XDj$7$^$9!#(B
+$B8!:w7k2L$K(B @code{nnml} $B$G%"%/%;%9$7$?$$>l9g$O!"$3$l$r(B @code{mh} $B$K@_Dj$7(B
+$B$F$/$@$5$$!#$5$b$J$1$l$P(B @code{maildir} $B$rA*$S$^$7$g$&!#(B
+
+$BMWLs$9$k$?$a$K!";d$N(B @file{.mairixrc} $B%U%!%$%k$rC;$/$7$?$b$N$rNc$K5s$2$^(B
+$B$7$g$&(B:
+
+@example
+base=~/Maildir
+maildir=.personal:.work:.logcheck:.sent
+mh=../Mail/nnml/*...
+mbox=../mboxmail/mailarchive_year*
+mformat=maildir
+omit=zz_mairix-*
+database=~/.mairixdatabase
+@end example
+
+$B$3$N>l9g!"4pE@$N%G%#%l%/%H%j!<$O(B @file{~/Maildir} $B$G!"$=$3$K;d$N$9$Y$F(B
+$B$N(B Maildir $B%U%)%k%@!<$,3JG<$5$l$F$$$^$9!#$4Mw$N$h$&$K$=$l$>$l$N%U%)%k%@!<(B
+$B$O%3%m%s$G6h@Z$i$l$F$$$^$9!#$J$<$I$N%U%)%k%@!<$b%I%C%H$G;O$^$k$N$+$C(B
+$B$F(B? $B$=$l$O;d$,(B @acronym{IMAP} $B%5!<%P!<$H$7$F(B Dovecot $B$r;H$$!"$5$i$K$=$l(B
+$B$O(B @code{Maildir++} $B%U%)%k%@!<$r;H$&$+$i$G$9!#(B@code{nnmairix} $B$r%F%9%H$9(B
+$B$k$?$a$K(B @file{~/Mail/nnml} $B$K%;!<%V$5$l$F$$$k(B @code{nnml} $B$N%a!<%k$b$$(B
+$B$/$D$+;}$C$F$$$^$9!#$3$l$O(B @code{base} $B%G%#%l%/%H%j!<$X$NAjBPCM$G;XDj$7(B
+$B$J$1$l$P$J$i$J$$$N$G(B @code{../Mail} $B$NI=5-$,I,MW$G$9!#(B@code{*...} $B$G=*$o(B
+$B$k9T$O!"$3$N%G%#%l%/%H%j!<$K$"$k$9$Y$F$N%U%!%$%k$r:F5"E*$KAv::$9$k$?$a$G(B
+$B$"$k$3$H$KCm0U$7$F$/$@$5$$!#;08D$N%I%C%HL5$7$N%o%$%k%I%+!<%I(B @code{*} $B$G(B
+$B$O:F5"E*$KF/$-$^$;$s!#$5$i$K;d$O(B @file{~/mboxmail} $B$N$"$?$j$K%"!<%+%$%V(B
+$B$5$l$?%a!<%k$r4^$`8E$$(B @code{mbox} $B%U%!%$%k$r;}$C$F$$$^$9!#$=$NB>$N9T$N(B
+$B0UL#$O8@$&$^$G$b$J$$$G$9$M!#(B
+
+$B>\:Y$*$h$S$5$i$J$k%*%W%7%g%s$K$D$$$F$O(B @code{mairixrc} $B$N(B man $B%Z!<%8$r8+(B
+$B$F$/$@$5$$!#$H$j$o$1%o%$%k%I%+!<%I$N;H$$J}$O!":#$^$G;H$C$F$$$?$N$H$O>/$7(B
+$B0c$&$G$7$g$&!#(B
+
+$B$5$"!"$=$l$G$O:G=i$K(B @code{mairix} $B$r<B9T$7$F:w0z$r:n$j$^$7$g$&!#$3$l$K(B
+$B$O?tJ,$+$+$k$G$7$g$&!#$G$b$"$i$f$k:w0z$,DI2CE*(B ($B%$%s%/%j%a%s%?%k(B) $B$K99?7(B
+$B$r9T$J$&$N$GHs>o$KB.$$$G$9!#(B
+
+@node Configuring nnmairix
+@subsection nnmairix $B%P%C%/%(%s%I$N@_Dj(B
+
+$B%0%k!<%W%b!<%I(B
+$B$G(B @kbd{G b c} (@code{nnmairix-create-server-and-default-group}) $B$r%?%$(B
+$B%W$7$F$/$@$5$$!#$3$l$OI,MW$J$9$Y$F$N>pJs$r<ALd$7$F!"(B@code{nnmairix} $B%5!<(B
+$B%P!<$r30It(B (foreign) $B%0%k!<%W$H$7$F:n@.$7$^$9!#0J2<$r;XDj$9$kI,MW$,$"$k(B
+$B$G$7$g$&(B:
+
+@itemize @bullet
+@item
+@code{nnmairix} $B%5!<%P!<$N(B @strong{$BL>A0(B} $B$G$9(B---$B9%$-$J$b$N$rA*$s$G$/$@$5(B
+$B$$!#(B
+
+@item
+Mairix $B$,$=$N8!:w7k2L$r3JG<$9$k(B @strong{$B%P%C%/%(%s%I!&%5!<%P!<(B} $B$NL>A0$G(B
+$B$9!#$3$l$O(B @code{nnml:mymail} $B$N$h$&$J40A4$J%5!<%P!<L>$G$J$1$l$P$J$j$^$;(B
+$B$s!#:#$N$H$3$m(B @code{nnmaildir}$B!"(B@code{nnimap} $B$*$h$S(B @code{nnml} $B$G%"%/(B
+$B%;%9$9$k%5!<%P!<$,%5%]!<%H$5$l$F$$$^$9!#>e$G@bL@$7$?$h$&$K!"%m!<%+%k$K3J(B
+$BG<$5$l$k%a!<%k$N$?$a$K$O!"$"$J$?$,%a!<%k$r3JG<$7$F$$$k4{B8$N%5!<%P!<$K$9(B
+$B$l$PNI$$$G$7$g$&!#$7$+$7(B @code{nnmairix} $B@lMQ$K!"Nc$($P?7$7(B
+$B$$(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B%5!<%P!<$rBhFs$N(B (secondary) $BA*Br(B
+$BJ}K!$K2C$($k$3$H$b$G$-$^$9(B (@pxref{Finding the News})$B!#$b$7$^$5$KBhFs(B
+$B$N(B @code{nnml} $B%5!<%P!<$r(B mairix $BMQ$K;H$C$F$$$k$N$G$"$l$P!"%5!<%P!<JQ(B
+$B?t(B @code{nnml-get-new-mail} $B$r3N<B$K(B @code{nil} $B$K@_Dj$7$F$/$@$5$$!#$5$b(B
+$B$J$$$H%a!<%k$r<:$&$3$H$K$J$j$+$M$^$;$s(B (@pxref{nnmairix caveats})$B!#(B
+Mairix $B$r(B @acronym{IMAP} $B%5!<%P!<>e$G1s3VF0:n$5$;$?$$$N$J$i$P!"$=$3$G$=(B
+$B$l$KBP1~$9$k(B @code{nnimap} $B%5!<%P!<$rA*$P$J$1$l$P$J$j$^$;$s!#(B
+
+@item
+@vindex nnmairix-mairix-search-options
+Mairix $B%P%$%J%j!<$r8F$V$?$a$N(B @strong{$B%3%^%s%I(B} $B$G$9!#DL>o$3$l$OC1(B
+$B$K(B @code{mairix} $B$GNI$$$N$G$9$,!"Nc$($P(B @acronym{IMAP} $B%5!<%P!<>e(B
+$B$G(B mairix $B$r1s3VF0:n$5$;$?$$$N$G$"$l$P!"(B@code{ssh SERVER mairix} $B$N$h$&(B
+$B$J$b$N$K$9$k$3$H$b$G$-$^$9!#(BMairix $B$X$N%G%#%U%)%k%H$N%*%W%7%g%s$r2C$($?(B
+$B$$>l9g!"$=$l$r$3$3$G$d$C$F$b9=$$$^$;$s!#$G$b!"Be$o$j$KJQ(B
+$B?t(B @code{nnmairix-mairix-search-options} $B$r;H$&J}$,NI$$$G$9!#(B
+
+@item
+@strong{$B%G%#%U%)%k%H$N8!:w%0%k!<%W(B} $B$NL>A0$G$9!#$3$l$O(B mairix $B$N$9$Y$F$N(B
+$B8!:w7k2L!"$D$^$j915WE*$J(B @code{nnmairix} $B%0%k!<%W$K7k$SIU$1$i$l$J$$$9$Y(B
+$B$F$N8!:w7k2L$r3JG<$9$k%0%k!<%W$G$9!#9%$-$J$b$N$rA*$s$G$/$@$5$$!#(B
+
+@item
+$B$b$7%a!<%k%P%C%/%(%s%I$,(B @code{nnimap} $B$+(B @code{nnmaildir} $B$@$C$?$i!"(B
+@strong{Maildir++} $B$D$^$j1#$5$l$?(B (= @samp{.} $B$G;O$^$k(B ) maildir $B%U%)%k(B
+$B%@!<$r;H$&$+$I$&$+$r?R$M$i$l$k$G$7$g$&!#Nc$($P(B Dovecot @acronym{IMAP} $B%5!<(B
+$B%P!<$r;H$C$F$$$k>l9g$O!"$=$3$G(B @samp{yes} $B$H2sEz$7$J$1$l$P$J$j$^$;$s!#$=(B
+$B$l0J30$N>l9g$O(B @samp{no} $B$HEz$($k$Y$-$G$9!#(B
+@end itemize
+
+@node nnmairix keyboard shortcuts
+@subsection nnmairix $B$GMxMQ$G$-$k%7%g!<%H%+%C%H%-!<(B
+
+$B%0%k!<%W%b!<%I$G(B:
+
+@table @kbd
+@item G b c
+@kindex G b c ($B%0%k!<%W(B)
+@findex nnmairix-create-server-and-default-group
+@code{nnmairix} $B%5!<%P!<$H!"$3$N%5!<%P!<$N$?$a$N%G%#%U%)%k%H$N8!:w%0%k!<(B
+$B%W$r:n$j$^$9(B (@code{nnmairix-create-server-and-default-group})$B!#$3$l$O$9(B
+$B$G$K9T$J$C$F$*$$$F$"$kI,MW$,$"$j$^$9(B (@pxref{Configuring nnmairix})$B!#(B
+
+@item G b s
+@kindex G b s ($B%0%k!<%W(B)
+@findex nnmairix-search
+Mairix $B$KAw$i$l$k8!:w8l$rM?$($^$9!#8!:w7k2L$O%G%#%U%)%k%H$N8!:w%0%k!<%W(B
+$B$K3JG<$5$l!"$=$l$O<+F0E*$KI=<($5$l$^$9(B (@code{nnmairix-search})$B!#(B
+
+@item G b m
+@kindex G b m ($B%0%k!<%W(B)
+@findex nnmairix-widget-search
+Mairix $B$N8!:w$^$?$O915WE*$J%0%k!<%W$r$b$C$H2wE,$K!">o$K%0%k!<%W$N%+%9%?(B
+$B%^%$%:$K;w$?%0%i%U%#%C%/$J%&%#%8%'%C%H$r;H$C$F:n$k$h$&$K$7$^$9!#$=$l$,$I(B
+$B$s$J$b$N$+$rCN$k$K$O!"$^$:$O;n$7$F$_$F$/$@$5(B
+$B$$(B (@code{nnmairix-widget-search})$B!#(B
+
+@item G b i
+@kindex G b i ($B%0%k!<%W(B)
+@findex nnmairix-search-interactive
+$B$b$&0l$D$N2wE,$J(B mairix $B8!:w%3%^%s%I$G$9$,!"%_%K%P%C%U%!!<$7$+;H$$$^$;(B
+$B$s(B (@code{nnmairix-search-interactive})$B!#(B
+
+@item G b g
+@kindex G b g ($B%0%k!<%W(B)
+@findex nnmairix-create-search-group
+$B8!:w$K4XO"$5$;$i$l$?915WE*$J%0%k!<%W$r:n$j$^(B
+$B$9(B (@code{nnmairix-create-search-group})$B!#$3$N%0%k!<%W$r(B @kbd{g} $B$^$?(B
+$B$O(B @kbd{M-g} $B$G99?7$9$k$H$-$K(B @code{nnmairix} $B%P%C%/%(%s%I$O<+F0E*(B
+$B$K(B mairix $B$r8F$S$^$9!#(B
+
+@item G b q
+@kindex G b q ($B%0%k!<%W(B)
+@findex nnmairix-group-change-query-this-group
+$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N8!:w>r7o$rJQ99$7$^(B
+$B$9(B (@code{nnmairix-group-change-query-this-group})$B!#(B
+
+@item G b t
+@kindex G b t ($B%0%k!<%W(B)
+@findex nnmairix-group-toggle-threads-this-group
+$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N(B `$B%9%l%C%I(B' $B%Q%i%a!<%?!<$r%H%0(B
+$B%k$K@Z$jBX$($^$9!#$D$^$j8+$D$+$C$?%a%C%;!<%8$N$9$Y$F$N%9%l%C%I$r8+$?$$>l(B
+$B9g$K;H$$$^$9(B (@code{nnmairix-group-toggle-threads-this-group})$B!#(B
+
+@item G b u
+@kindex G b u ($B%0%k!<%W(B)
+@findex nnmairix-update-database
+@vindex nnmairix-mairix-update-options
+$B%G!<%?%Y!<%9$r99?7$9$k$?$a$K(B mairix $B%P%$%J%j!<$r8F$S$^(B
+$B$9(B (@code{nnmairix-update-database})$B!#%G%#%U%)%k%H$N%Q%i%a!<%?!<$O!"$3$l(B
+$B$r$G$-$k$@$1B.$/$9$k$?$a$N(B @code{-F} $B$*$h$S(B @code{-Q} $B$G$9(B ($B$3$l$i$N%G%#(B
+$B%U%)%k%H$N%*%W%7%g%s$rDj5A$9$k$K$OJQ(B
+$B?t(B @code{nnmairix-mairix-update-options} $B$r8+$F$/$@$5$$(B)$B!#(B
+
+@item G b r
+@kindex G b r ($B%0%k!<%W(B)
+@findex nnmairix-group-toggle-readmarks-this-group
+$B$3$N(B @code{nnmairix} $B%0%k!<%W$N5-;v$r>o$K4{FI$^$?$OL$FI$KJ]$D$+!"$^$?$O(B
+$B0u$rJQ99$7$J$$$h$&$K$7$^(B
+$B$9(B (@code{nnmairix-group-toggle-readmarks-this-group})$B!#(B
+
+@item G b d
+@kindex G b d ($B%0%k!<%W(B)
+@findex nnmairix-group-delete-recreate-this-group
+$B!VK\Ev$N!W%a!<%k%P%C%/%(%s%I$G(B @code{nnmairix} $B%0%k!<%W$r:n$jD>$7$^(B
+$B$9(B (@code{nnmairix-group-delete-recreate-this-group})$B!#(B
+@code{nnmairix} $B%0%k!<%W$N5-;v?t$,$$$D$b4V0c$C$F$$$k>l9g$K!"$3$l$r9T$J$&(B
+$B$3$H$,$G$-$^$9!#(B
+
+@item G b a
+@kindex G b a ($B%0%k!<%W(B)
+@findex nnmairix-group-toggle-allowfast-this-group
+$B%+!<%=%k0LCV$N(B @code{nnmairix} $B%0%k!<%W$N$?$a$N(B @code{allow-fast} $B%Q%i%a!<(B
+$B%?!<$r%H%0%k$K@Z$jBX$($^(B
+$B$9(B (@code{nnmairix-group-toggle-allowfast-this-group})$B!#%G%#%U%)%k%H(B
+$B$N(B @code{nnmairix} $B$NF0:n$O!"%0%k!<%W$r99?7$7$?$jF~$C$?$H$-$K(B mairix $B$N(B
+$B8!:w$r9T$J$&$3$H$G$9!#(B@code{allow-fast} $B%Q%i%a!<%?!<$,@_Dj$5$l$k$H!"%0%k!<(B
+$B%WF~$C$?$H$-$G$O$J$/!"L@<(E*$K%0%k!<%W$r99?7$9$k$H$-$@$1(B mairix $B$,8F$P$l(B
+$B$^$9!#$3$l$O%0%k!<%W$KF~$k$H$-$KB.$/$J$j$^$9$,!"99?7$7$?$H$-$H$^(B
+$B$@(B mairix $B%G!<%?%Y!<%9$KL5$$%0%k!<%W$KF~$k$H$-$N4|4V$K2?$+$,JQ2=$7$?>l9g(B
+$B$K!"<BBN$NL5$$%7%s%\%j%C%/%j%s%/$r@8$8$5$;$k$+$b$7$l$^$;$s!#(B
+
+@item G b p
+@kindex G b p ($B%0%k!<%W(B)
+@findex nnmairix-group-toggle-propmarks-this-group
+$B$3$N%0%k!<%W$N0u$rEAHB$5$;$k$+$I$&$+$r%H%0%k$K@Z$jBX$($^(B
+$B$9(B (@code{nnmairix-group-toggle-propmarks-this-group})$B!#(B
+(@pxref{Propagating marks})$B!#(B
+
+@item G b o
+@kindex G b o ($B%0%k!<%W(B)
+@findex nnmairix-propagate-marks
+$B0u$r<gF0$GEAHB$5$;$^$9(B (@code{nnmairix-propagate-marks})$B!#$3$l(B
+$B$O(B @code{nnmairix-propagate-marks-upon-close} $B$,(B @code{nil} $B$G$"$k>l9g$@(B
+$B$1I,MW$G$9!#(B
+@end table
+
+$B35N,%b!<%I$G(B:
+
+@table @kbd
+@item $ m
+@kindex $ m ($B35N,(B)
+@findex nnmairix-widget-search-from-this-article
+$B8=:_$N%a%C%;!<%8$K4p$E$$$?(B mairix $B$N8!:w$^$?$O%0%k!<%W$r!"%0%i%U%#%C%/$J(B
+$B%&%#%8%'%C%H$r;H$C$F:n$j$^$9(B (@code{nnmairix-widget-search} $B$HF1$8$G(B
+$B$9(B) (@code{nnmairix-widget-search-from-this-article})$B!#(B
+
+@item $ g
+@kindex $ g ($B35N,(B)
+@findex nnmairix-create-search-group-from-message
+$B8=:_$N%a%C%;!<%8$K4p$E$$$?8!:w>r7o$G?7$7$$8!:w%0%k!<%W$rBPOCE*$K:n$j$^$9!#(B
+$B%0%i%U%#%C%/$J%&%#%8%'%C%H$NBe$o$j$K%_%K%P%C%U%!!<$r;H$$$^$9(B
+$B$,(B (@code{nnmairix-create-search-group-from-message})$B!#(B
+
+@item $ t
+@kindex $ t ($B35N,(B)
+@findex nnmairix-search-thread-this-article
+$B8=:_$N5-;v$N%9%l%C%I$rA\$7$^(B
+$B$9(B (@code{nnmairix-search-thread-this-article})$B!#;v<B>e$3$l$O8=:_$N5-;v(B
+$B$N(B @samp{m:msgid} $B$G(B @code{nnmairix-search} $B$r8F$s$G%9%l%C%I$rF@$k$?$a$N(B
+$B%7%g!<%H%+%C%H$G$9!#(B
+
+@item $ f
+@kindex $ f ($B35N,(B)
+@findex nnmairix-search-from-this-article
+$B8=:_$N5-;v$NAw?.<T$+$i$N$9$Y$F$N%a%C%;!<%8$rC5$7$^(B
+$B$9(B (@code{nnmairix-search-from-this-article})$B!#$3$l(B
+$B$O(B @samp{f:From} $B$G(B @code{nnmairix-search} $B$r8F$V$?$a$N%7%g!<%H%+%C%H$G(B
+$B$9!#(B
+
+@item $ o
+@kindex $ o ($B35N,(B)
+@findex nnmairix-goto-original-article
+($B$3$l$,;H$($k$N$O(B @code{nnmairix} $B%0%k!<%W$@$1$G$9(B!) $B$3$N5-;v$K@5$7$$Ej(B
+$B9FMM<0(B (posting styles) $B$H%0%k!<%W%Q%i%a!<%?!<$rE,MQ$7$FJV?.$9$k$?$a$K!"(B
+$B$3$N5-;v$,85!9Mh$?%0%k!<%W$rFCDj$7$F!"$=$N%0%k!<%W$G$=$N5-;v$rI=<($7$h$&(B
+$B$H$7$^$9(B (@code{nnmairix-goto-original-article})$B!#$3$N4X?t$O$b$7MxMQ2DG=(B
+$B$J$i%l%8%9%H%j!<$r;H$$$^$9$,!"BeBX<jCJ$H$7$F5-;v%U%!%$%k$NL>A0$rJ,@O$9$k(B
+$B$3$H$b$G$-$^$9!#(B
+
+@item $ u
+@kindex $ u ($B35N,(B)
+@findex nnmairix-remove-tick-mark-original-article
+$B85$N5-;v$+$i!"$b$7$"$l$P2D;k5-;v$N0u(B (tick mark) $B$r<h$j=|$-$^(B
+$B$9(B (@code{nnmairix-remove-tick-mark-original-article}) (@pxref{nnmairix
+tips and tricks})$B!#(B
+@end table
+
+@node Propagating marks
+@subsection nnmairix $B%0%k!<%W$N0u$rEAHB$5$;$kJ}K!(B
+
+$B=i$a$K(B: $B0u$rEAHB$5$;$k5!G=$r8zN(NI$/;H$&$?$a$K$O!"<B:]$K$O%Q%C%A$rEv$F(B
+$B$?(B mairix $B$N%P%$%J%j!<$,I,MW$G$9!#$=$&$7$J$$$H$$$D$b(B mairix $B%G!<%?%Y!<%9(B
+$B$r99?7$7$J$1$l$P$J$i$J$$$G$7$g$&!#%Q%C%A$O$3$3$G<j$KF~$j$^$9(B:
+
+@uref{http://www.randomsample.de/mairix-maildir-patch.tar}
+
+$B$3$N%Q%C%A$K$O(B mairix v0.21 $B$N%=!<%9%3!<%I$,I,MW$G$9!#$=$l$KIU$$$F$$(B
+$B$k(B readme $B%U%!%$%k$G$I$s$J$3$H$b@bL@$5$l$F$$$^$9!#0u$NEAHB$r;H$o$J$/$F$b(B
+$BNI$$$H;W$&$J$i$3$l$i$N%Q%C%A$rEv$F$J$/$F$b9=$$$^$;$s$,!"$=$l$G$b$J$*!"$=(B
+$B$l$i$O(B maildir $B%U%i%0$NJQ99$K$^$D$o$k$d$C$+$$$4$H$r=$@5$7$F$b$/$l$k$N$G(B
+$BM-MQ$G$7$g$&!#(B
+
+$B%Q%C%A$rEv$F$?(B mairix $B$N%P%$%J%j!<$H$H$b$K(B @code{nnmairix} $B$r%a!<%kJ,(B
+$B3d(B (@pxref{Fancy Mail Splitting}) $B$NBe$o$j$H$7$F;H$&$3$H$,$G$-$^$9!#Nc$((B
+$B$P(B @samp{david@@foobar.com} $B$+$i$N$9$Y$F$N%a!<%k$r$"$k%0%k!<%W$KJ|$j9~$`(B
+$BBe$o$j$K!"C1$K(B @samp{f:david@@foobar.com} $B$rC5$98!:w%0%k!<%W$r:n$k$3$H$,(B
+$B$G$-$^$9!#<B$N$H$3$m$3$l$,!V8-$$%U%)%k%@!<!W$N4N?4$J$H$3$m$G!"C1$K$9$Y$F(B
+$B$r0l$D$N%a!<%k%U%)%k%@!<$KJ|$j9~$s$@$i!"J,3d$9$kBe$o$j$KF0E*$K8!:w7k2L$r(B
+$B:n$k$N$G$9!#$3$l$O!"$7$?$$$H$-$O$$$D$G$b%U%)%k%@!<$rJQ99$G$-$k$N$G!"$h$j(B
+$BM;DL$,8z$-$^$9!#$3$N$3$H$O!"$"$J$?$,<B:]$N%a!<%k%0%k!<%W$NBe$o$j$K!"$$$D(B
+$B$b$O(B @code{nnmairix} $B%0%k!<%W$K$"$k%a!<%k$rFI$`$G$"$m$&$3$H$b0E<($7$^$9!#(B
+
+$B$7$+$7!"0l$DLdBj$,$"$j$^$9!#(B@samp{david@@foobar.com} $B$+$i?7$7$$%a!<%k$r(B
+$B<u$1<h$C$?$H$9$k$H!"$=$l$OFs$D$N%0%k!<%W$K8=$l$k$N$G$9!#!V<B:]!W$N%0%k!<(B
+$B%W(B ($BNc$($P(B INBOX) $B$*$h$S(B @code{nnmairix} $B8!:w%0%k!<%W$G$9(B ($B8e<T$O!"$b(B
+$B$7(B mairix $B%G!<%?%Y!<%9$r99?7$7$F$"$l$P(B)$B!#(B@code{nnmairix} $B%0%k!<%W$KF~$C(B
+$B$F$=$N%a!<%k$rFI$`$H4{FI$N0u$,IU$-$^$9$,!"$=$l$O(B @code{nnmairix} $B%0%k!<(B
+$B%W$G$@$1$G$9(B---$B!V<B:]!W$N%a!<%k%0%k!<%W$G$OL$FI$N$^$^$G$9!#(B
+
+$B$=$N%a!<%k%0%k!<%W$r%-%c%C%A%"%C%W$9$k(B ($B$9$Y$F$N5-;v$r4{FI$K$9$k(B) $B$3$H$O(B
+$B$G$-$^$9!#$7$+$7$3$l$OB`6~$@$7!"$=$N$?$a$N(B @code{nnmairix} $B%0%k!<%W$r:n$C(B
+$B$F$$$J$$%a!<%k$r8+Mn$H$9$+$b$7$l$J$$E@$G;v8N$r5/$3$7$d$9$$$G$7$g$&!#$b$A(B
+$B$m$s:G=i$K(B @code{nnmairix-goto-original-article} (@pxref{nnmairix
+keyboard shortcuts}) $B$r;H$C$F$+$i85$N%0%k!<%W$G$=$N%a!<%k$rFI$`$3$H$O$G(B
+$B$-$^$9$,!"$=$l$O$b$C$H$d$C$+$$$G$7$g$&!#(B
+
+$BL@$i$+$K!"85$N5-;v$K$I$&$K$+$7$F0u$r<+F0E*$KIU$1$k$3$H$G$-$l$P!"$=$l$,:G(B
+$B$b3Z$J$d$jJ}$G$7$g$&!#$3$l$,$^$5$K(B @emph{$B0u$NEAHB(B} $B$,9T$J$*$&$H$7$F$$$k(B
+$B$3$H$G$9!#(B
+
+$B%G%#%U%)%k%H$G$O0u$NEAHB$O$7$J$$$h$&$K$J$C$F$$$^$9!#$"$k%0%k!<%W$N$?$a$N(B
+$B$=$l$O(B @code{nnmairix-group-toggle-propmarks-this-group} (@kbd{G b p} $B$K(B
+$B%P%$%s%I$5$l$F$$$^$9(B) $B$GM-8z$K$9$k$3$H$,$G$-$^$9!#$3$N4X?t$O%G%#%U%)%k%H(B
+$B$N8!:w%0%k!<%W$G;H$*$&$H$9$k$H7Y9p$rH/$7$^$9!#$J$<$+$H8@$&$H%G%#%U%)%k%H(B
+$B$N8!:w%0%k!<%W$O0l;~E*$J8!:w$N$?$a$K$"$k$N$G!"0u$,6vA3$K$3$N%0%k!<%W$+$i(B
+$BEAHB$7$F$7$^$$$d$9$$$+$i$G$9!#$b$C$H$bK\Ev$K$=$l$r$d$j$?$$$N$J$i!"$=$N7Y(B
+$B9p$rL5;k$9$k$3$H$O$G$-$^$9!#(B
+
+$B0u$NEAHB$rM-8z$K$7$F$"$k$H(B @code{nnmairix} $B%0%k!<%W$GIU$1$?$9$Y$F$N0u$,(B
+$B85$N%0%k!<%W$KEAHB$9$k$O$:$G$9!#Nc$($P5-;v$K2D;k(B (tick) $B$N0u$r(B ($B%G%#%U%)(B
+$B%k%H$G$O(B @kbd{!} $B$G(B) $BIU$1$k$H!"$3$N0u$OKbK!$N$h$&$K85$N5-;v$K$bIU$/$O$:(B
+$B$G$9!#(B
+
+$B$"$J$?$,CN$C$F$$$kI,MW$,$"$k!"$^$?$OL5$$!"$5$i$J$k$3$H$,$i$,$"$j$^$9(B:
+
+@vindex nnmairix-propagate-marks-upon-close
+$B0u$O$9$0$K$G$O$J$/!"%0%k!<%W$rJD$8$?$H$-$@$1IU$1$i$l$^$9!#$3$l$O0u$NEAHB(B
+$B$r@-5^$K9T$J$o$J$$0J30$K(B maildir $B%U%!%$%k$r07$&$H$-$N%7%s%\%j%C%/%j%s%/(B
+$B$K$^$D$o$kLdBj$N2sHr$b$7$^$9(B ($B%U%i%0$NJQ99$O%U%!%$%kL>$NJQ2=$rH<$&$N$G(B)$B!#(B
+$B0u$NEAHB$r(B @code{nnmairix-propagate-marks-upon-close} $B$rDL$8$F@)8f$9$k$3(B
+$B$H$b$G$-$^$9(B ($B>\$7$/$OJQ?t$N@bL@$r8+$F$/$@$5$$(B)$B!#(B
+
+$BEvA3$J$,$i!"$"$J$?$,0u$rIU$1$?$$$"$i$f$k5-;v$N$?$a$K(B @code{nnmairix} $B$O(B
+$B85$N%0%k!<%W$rD4$Y$J$1$l$P$J$i$J$$$G$7$g$&!#85$N%0%k!<%W$rFCDj$9$k$?$a(B
+$B$K(B @code{nnmairix} $B$O!"$b$7;H$($k$J$i:G=i$K%l%8%9%H%j!<$r;H$$$^$9!#%l%8(B
+$B%9%H%j!<$OHs>o$KB.$$$G$9!#$7$?$,$C$F0u$NEAHB$r;H$&$J$iK\Ev$K%l%8%9%H%j!<(B
+$B$r;H$($k$h$&$K$9$Y$-$G$9!#K\Ev$K!#(BRAM $B$H%G%#%9%/$NMFNL$K?4G[$,L5$$$J(B
+$B$i(B @code{gnus-registry-max-entries} $B$r==J,$KBg$-$JCM$K@_Dj$7$F$/$@$5$$!#(B
+$BBg;v$r<h$k$?$a$K$O!"$*$*$h$=(B mairix $B$G:w0z$rIU$1$k%a!<%k$NNL$rA*$s$G$/$@(B
+$B$5$$!#(B
+
+@vindex nnmairix-only-use-registry
+$B%l%8%9%H%j!<$r;H$$$?$/$J$$!"$^$?$O%l%8%9%H%j!<$,$^$@85$N5-;v$r8+$?$3$H$,(B
+$BL5$$>l9g!"$=$N5-;v$N%U%!%$%kL>$rFCDj$9$k$?$a$K(B @code{nnmairix} $B$ODI2C(B
+$B$N(B mairix $B8!:w$r9T$J$$$^$9!#$b$A$m$s$3$l$O%l%8%9%H%j!<$h$jCY$/$J$j$^(B
+$B$9(B---$B$b$7$3$N$d$jJ}$G?tI4$J$$$7$O?t@i$N0u$rIU$1$k$H!"$$$/$i$+;~4V$,$+$+(B
+$B$k$+$b$7$l$^$;$s!#$3$N>u67(B
+$B$O(B @code{nnmairix-only-use-registry} $B$r(B @code{t} $B$K@_Dj$9$k$3$H$K$h$C$F(B
+$BHr$1$k$3$H$,$G$-$^$9!#(B
+
+$B$*$=$i$/$"$J$?$O5UJ}8~$K$b0u$rEAHB$5$;$?$$$G$7$g$&!#$D$^$j!VK\Ev$N!W%a!<(B
+$B%k%0%k!<%W$G5-;v$K2D;k(B (tick) $B0u$rIU$1$?$i(B @code{nnmairix} $B%0%k!<%W$K$"(B
+$B$kF1$85-;v$b2D;k$K$J$C$FM_$7$$$H$$$&$3$H$G$9!#$$$/$D$+$N$b$C$H$b$JM}M3$K(B
+$B$h$j!"$3$l$O(B maildir $B$r;H$&>l9g$@$18zN(E*$K9T$J$&$3$H$,$G$-$^$9!#$9$0$K(B
+$BL7=b$7$?$3$H$r8@$$$^$9$,!"$=$l$O(B @code{nnmaildir} $B$G$OF/$-$^$;$s!#$J$<$J(B
+$B$i(B @code{nnmaildir} $B$O0u$r30It$N$7$+$b%U%!%$%k$G$O$J$$$H$3$m$K3JG<$9$k$+(B
+$B$i$G$9!#$7$?$,$C$F(B @code{nnmairix} $B%0%k!<%W$X$N0u$NEAHB$O!"DL>o$O%U%!%$(B
+$B%k7A<0$H$7$F(B maildir $B$r;H$&(B @acronym{IMAP} $B%5!<%P!<$N>l9g$@$1F/$-$^$9!#(B
+
+@vindex nnmairix-propagate-marks-to-nnmairix-groups
+$B:#$3$N@_Dj:n6H$r9T$J$C$F$$$k$N$J(B
+$B$i(B @code{nnmairix-propagate-marks-to-nnmairix-groups} $B$r(B @code{t} $B$K@_Dj(B
+$B$7$F2?$,5/$-$k$+8+$F$/$@$5$$!#$b$7$"$J$?$,8+$k$b$N$,9%$-$G$O$J$$$J$i$P!"(B
+$B:F$S$=$l$r(B @code{nil} $B$KLa$7$^$7$g$&!#0l$D$NLdBj$OL$FI5-;v$N?t$r4V0c$($k(B
+$B$3$H$+$b$7$l$^$;$s!#$3$l$O85$N%0%k!<%W$G5-;v$r>C5n$7$?$j!"$^$?$O4|8B@Z$l(B
+$B>C5n$5$l$?$H$-$KIaDL$K5/$-$^$9!#$3$l$,5/$-$?$i$=$N%P%C%/%(%s%I$G(B @kbd{G
+b d} $B$r;H$C$F!"$=$N(B @code{nnmairix} $B%0%k!<%W$r:n$jD>$7$F$/$@$5$$!#(B
+
+@node nnmairix tips and tricks
+@subsection nnmairix $B$N%R%s%H!"$3$D!"$*$h$S$$$/$D$+$NNc(B
+
+@itemize
+@item
+$B%a!<%k$N%A%'%C%/(B
+
+@findex nnmairix-update-groups
+$B;d$OBg;v$J%a!<%k$N%0%k!<%W$r%0%k!<%W%l%Y%k(B 1 $B$K$7$F$$$^$9!#(BMairix $B%0%k!<(B
+$B%W$N%0%k!<%W%l%Y%k$O(B 5 $B$J$N$G!"$=$l$i$O5/F0;~$K%A%'%C%/$5$l$^$;(B
+$B$s(B (@pxref{Group Levels})$B!#(B
+
+$B%a!<%k$r%A%'%C%/$9$k$?$a$K;d$O0J2<$r;H$C$F$$$^$9(B:
+
+@lisp
+(defun my-check-mail-mairix-update (level)
+  (interactive "P")
+  ;; $B@\F,0z?t$,M?$($i$l$J$+$C$?$i%l%Y%k$r(B 1 $B$K@_Dj$9$k!#(B
+  (gnus-group-get-new-news (or level 1))
+  (nnmairix-update-groups "mairixsearch" t t)
+  (gnus-group-list-groups))
+
+(define-key gnus-group-mode-map "g" 'my-check-mail-mairix-update)
+@end lisp
+
+@samp{"mairixsearch"} $B$NBe$o$j$K$"$J$?$N(B @code{nnmairix} $B%5!<%P!<$NL>A0(B
+$B$r;H$$$^$7$g$&!#>\$7$/$O(B @code{nnmairix-update-groups} $B$N@bL@$r8+$F$/$@(B
+$B$5$$!#(B
+
+@item
+$B2D;k(B (ticked) $B5-;v$N$?$a$N8!:w%0%k!<%W$NNc(B
+
+$BNc$($P$9$Y$F$N2D;k5-;v$N$?$a$N%0%k!<%W$r:n$k$3$H$,$G$-$^$9!#$=$3$G$O5-;v(B
+$B$,>o$KL$FI$K$J$C$F$$$^$9(B:
+
+@kbd{G b g} $B$r$?$?$$$F%0%k!<%WL>$rF~NO$7!"8!:w>r7o$H$7$F(B @samp{F:f} $B$r;H$C(B
+$B$F$/$@$5$$!#$=$7$F%9%l%C%I$r4^$a$J$$$h$&$K$7$^$9!#(B
+
+$B<!$K(B @kbd{G b p} $B$r;H$C$F$3$N%0%k!<%W$N$?$a$N0u$NEAHB$rM-8z$K$7$^$7$g$&!#(B
+$B$=$&$7$?$i(B @kbd{G b r} $B$rFs2s;H$C$F!V>o$KL$FI!W5!G=$rM-8z$K$7$^$9!#(B
+
+$B$3$l$O$3$l$GNI$$$G$7$g$&(B---$B$7$+$7$I$&$d$C$F(B @code{nnmairix} $B%0%k!<%W$N2D(B
+$B;k0u$r>C$7$?$iNI$$$G$7$g$&$+(B? $B$=$l$K$OFs$D$NA*Br;h$,$"$j$^$9(B:
+@code{nnmairix-remove-tick-mark-original-article} (@kbd{$ u} $B$K%P%$%s%I(B
+$B$5$l$F$$$^$9(B) $B$r;H$C$F85$N5-;v$+$i2D;k0u$r<h$j=|$/$3$H$,$G$-$^$9!#$b$&0l(B
+$B$D$N2DG=$J$3$H(B
+$B$O(B @code{nnmairix-propagate-marks-to-nnmairix-groups} $B$r(B @code{t} $B$K@_Dj(B
+$B$9$k$3$H$G$9!#$7$+$7>e5-$N$3$N%*%W%7%g%s$K4X$9$k%3%a%s%H$r8+$F$/$@$5$$!#(B
+$B$b$7$=$l$,F0:n$9$k$J$i2D;k0u$O(B @code{nnmairix} $B%0%k!<%W$K$"$k$O$:$G!"$=(B
+$B$l$i$O$$$D$b$N$h$&$K!"Nc$($P5-;v$r4{FI$K$9$k$3$H$K$h$C$F<h$j=|$/$3$H$,$G(B
+$B$-$^$9!#(B
+
+$B85$N5-;v$+$i2D;k0u$r<h$j=|$/$H!"(Bmairix $B%G!<%?%Y!<%9$r99?7$7$+$D%0%k!<%W(B
+$B$r99?7$7$?8e$G!"$=$N5-;v$O(B @code{nnmairix} $B%0%k!<%W$+$i>C$(5n$k$O$:$G$9!#(B
+$B9,$$$K$^$5$K$=$l$r9T$J$&$?$a$N4X?t$,$"$j$^$9(B:
+@code{nnmairix-update-groups} $B$G$9!#>\$7$/$OA0=R$N%3!<%I$NCGJR$H4X?t$N@b(B
+$BL@$r8+$F$/$@$5$$!#(B
+
+@item
+$B%a!<%k%0%k!<%W$N<+F09VFI$N<h$j07$$(B
+
+$B@h$K@bL@$7$?$h$&$K!"$9$Y$F$N(B @code{nnmairix} $B%0%k!<%W$O<B:]$K(B
+$B$O(B @samp{zz_mairix-<NAME>-<NUMBER>} $B$NMM<0$G%a!<%k%P%C%/%(%s%I$K3JG<$5$l(B
+$B$^$9!#$=$l$i$O%5!<%P!<%P%C%U%!!<$G$=$N%P%C%/%(%s%I$KF~$k$H8+$k$3$H$,$G$-(B
+$B$^$9!#$3$l$i$N%0%k!<%W$r9VFI$7$F$O$$$1$^$;$s(B! $B;DG0$J$,$i$3$l$i$N%0%k!<%W(B
+$B$O(B @code{nnmaildir} $B$^$?$O(B @code{nnml} $B$r;H$&$HDL>o(B @emph{$B<+F09VFI(B} $B$K$J(B
+$B$j$^$9!#$D$^$j(B @samp{zz_mairix*} $BMM<0$N%0%k!<%W$,FMA3%0%k!<%W%P%C%U%!!<(B
+$B$K8=$l$k$N$r8+$k$3$H$K$J$j$^$9!#$b$7$3$l$,5/$3$C$?$iC1$K(B @kbd{C-k} $B$G$=(B
+$B$l$i$N%0%k!<%W$r(B kill $B$7$F$/$@$5$$!#$3$l$rHr$1$k$K(B
+$B$O(B @code{gnus-auto-subscribed-groups} $B$r(B @code{nil} $B$K@_Dj$7$F<+F09VFI$r(B
+$B915WE*$KL58z$K$9$k(B (@pxref{Filtering New Groups} $B$+!"$^$?$O$b$7$3$N5!G=(B
+$B$r0];}$7$?$$$N$G$"$l$P(B @samp{zz_} $B$G$O$8$^$k$9$Y$F$N%0%k!<%W$G$=$l$rL58z(B
+$B$K$9$k0J2<$N$=$N>l$7$N$.$N<j$r;H$C$F$/$@$5$$(B:
+
+@lisp
+(setq gnus-auto-subscribed-groups
+      "^\\(nnml\\|nnfolder\\|nnmbox\\|nnmh\\|nnbabyl\\|nnmaildir\\).*:\\([^z]\\|z$\\|\\z[^z]\\|zz$\\|zz[^_]\\|zz_$\\).*")
+@end lisp
+@end itemize
+
+@node nnmairix caveats
+@subsection nnmairix $B$G$5$i$KCN$C$F$*$/I,MW$,$"$k$3$H(B
+
+@itemize
+@item
+$BBhFs$N(B @code{nnml} $B%5!<%P!<$r!"$^$5$K(B nnmairix $B$N$?$a$K:n$k$3$H$,$G$-$^(B
+$B$9!#$7$+$7$=$N>l9g!"BP1~$9$k%5!<%P!<JQ?t(B @code{nnml-get-new-mail} $B$rL@<((B
+$BE*$K(B @code{nil} $B$K@_Dj$9$kI,MW$,$"$j$^$9!#$=$&$7$F$*$+$J$$$H?7Ce%a!<%k$,(B
+$B$3$NBhFs$N%5!<%P!<$K<h$j9~$^$l$F$7$^$&$+$b$7$l$^$;$s(B ($B$=$7$F!"$=$l$i$rFs(B
+$BEY$H8+$k$3$H$O$J$$$G$7$g$&(B)$B!#%5!<%P!<Dj5A$NNc$G$9(B:
+
+@lisp
+(nnml "mairix" (nnml-directory "mairix") (nnml-get-new-mail nil))
+@end lisp
+
+(@code{nnmaildir} $B$K$b%5!<%P!<JQ?t(B @code{get-new-mail} $B$,$"$k$N$G$9$,!"(B
+$B$=$l$O%G%#%U%)%k%H$G(B @code{nil} $B$J$N$G!"(B@code{nnmaildir} $B%5!<%P!<$r$^$5(B
+$B$K(B mairix $BMQ$K;H$&>l9g$G$b!"$=$l$rL@<(E*$K@_Dj$9$kI,MW$O$"$j$^$;$s!#(B)
+
+@item
+$B$b$7(B Gnus $B%l%8%9%H%j!<$r;H$C$F$$$k$J$i(B:
+@code{nnmairix} $B%0%k!<%W$G%l%8%9%H%j!<$r;H$&(B ($B$=$l$i$N%0%k!<%W(B
+$B$r(B @code{gnus-registry-unfollowed-groups} $B$K4^$a$k(B) $B$3$H$O$7$J$$$G$/$@$5(B
+$B$$!#$b$7(B @code{gnus-registry-split-fancy-with-parent} $B$r;H$C$F$$$k$J(B
+$B$i(B @emph{$BFCJL$JCm0U(B} $B$,I,MW$G$9!#J,3d$5$l$F(B @code{nnmairix} $B%0%k!<%W$KF~$C(B
+$B$?%a!<%k$O!"DL>o$=$N%0%k!<%W$N?7Ce%a!<%k$r%A%'%C%/$7$?$H$?$s$K1J5W$KL5$/(B
+$B$J$C$F$7$^$$$^$9(B ($B$O$$!";d$O$=$l$r$d$C$F$7$^$$$^$7$?(B@dots{})$B!#(B
+
+@item
+$B$7$?$,$C$F(B:
+@emph{$B@dBP$K!"CG$8$F(B}$B!VK\Ev$N!W%a!<%k$r(B @code{nnmairix} $B%0%k!<%W$KF~$l$F(B
+$B$O$$$1$^$;$s(B ($B$H$K$+$/$=$l$,$G$-$k$Y$-$G$O$"$j$^$;$s(B)$B!#(B
+
+@item
+$B$b$7(B Gnus $B%(!<%8%'%s%H(B (@pxref{Gnus Unplugged}) $B$r;H$C$F$$$k$J$i(B:
+@code{nnmairix} $B%0%k!<%W$r%(!<%8%'%s%H2=$7$J$$$G$/$@$5$$(B ($B$b$C$H$b!"$=$l(B
+$B$r$d$C$?$i2?$,5/$-$k$+;d$OCN$j$^$;$s$,(B)$B!#(B
+
+@item
+Mairix $B$O(B @acronym{US}-@acronym{ASCII} $BJ8;z$@$1$r%5%]!<%H$7$^$9!#(B
+
+@item
+@code{nnmairix} $B$O(B mairix $B$,8F$P$l$?8e$G(B Gnus $B$K%a!<%k%P%C%/%(%s%I$N%0%k!<(B
+$B%W$r40A4$KFI$_D>$5$;$k!"$+$J$jNO$^$+$;$J<jCJ$r;H$$$^$9(B---$B$D$^$jC1=c$K$=(B
+$B$N%a!<%k%P%C%/%(%s%I$N%0%k!<%W$r>C$7$F:n$jD>$7$^$9!#$3$l$^$G$N$H$3$m!"$3(B
+$B$l$O2?$iLdBjL5$/F/$-!"(B@code{nnmairix} $B$,$=$l<+?H$N$b$N0J30$N%a!<%k%0%k!<(B
+$B%W$r:o=|$9$k$H$O;W$($^$;$s!#$7$+$7$H$K$+$/K\Ev$K!"%a!<%k%U%)%k%@!<$N%P%C(B
+$B%/%"%C%W$r;}$D$Y$-$G$9!#(B
+
+@item
+$B$9$Y$F$NI,MW$J>pJs$O%0%k!<%W%Q%i%a!<%?!<$K3JG<$5$l$^$9(B (@pxref{Group
+Parameters})$B!#$3$l$K$O%"%/%F%#%V%U%!%$%k$rI,MW$H$7$J$$$H$$$&MxE@$,$"$j$^(B
+$B$9$,!"$=$l$O0E$K(B @code{nnmairix} $B%0%k!<%W$r(B kill $B$9$k$H1J5W$K<:$o$l$F$7(B
+$B$^$&$3$H$r$b0UL#$7$^$9!#(B
+
+@item
+@findex nnmairix-purge-old-groups
+$B$?$/$5$s$N(B @code{nnmairix} $B%0%k!<%W$r:n$C$F(B kill $B$9$k$H!"%a!<%k%P%C%/%((B
+$B%s%I$N%5!<%P!<$K(B ``zz_mairix-*'' $B$H$$$&L>A0$N%0%k!<%W$,N/$^$C$F$7$^$$$^(B
+$B$9!#$b$O$dITMW$K$J$C$?8E$$%0%k!<%W$r:o=|$9$k$K(B
+$B$O(B @code{nnmairix-purge-old-groups} $B$r8F$s$G$/$@$5$$!#$3$l$OEv(B
+$BA3(B @code{zz_mairix-<NAME>-<NUMBER>} $B$NMM<0$G$O$I$s$J!VK\Ev$N!W%a!<%k$b%U%)(B
+$B%k%@!<$K%;!<%V$7$J$$$3$H$rA[Dj$7$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+@code{nnmairix} $B%0%k!<%W$N@\F,<-$OJQ?t(B @code{nnmairix-group-prefix} $B$rJQ(B
+$B99$9$k$3$H$K$h$C$FJQ$($k$3$H$,$G$-$^$9!#(B
+
+@item
+$B0J2<$O@h$K8@5Z$7$?(B mairix $B$N$?$a$N%Q%C(B
+$B%A(B (@pxref{Propagating marks}) $B$r(B @emph{$B;H$o$J$$(B} $B>l9g$@$1$KEv$F$O$^$j$^(B
+$B$9(B:
+
+@code{nnmairix} $B$r(B maildir $B%U%)%k%@!<$H$H$b$K;H$&$HLdBj$,5/$-$k>l9g$,$"(B
+$B$j$^$9!#$=$l$O(B maildir $B$,%a!<%k$N%U%i%0$r(B @samp{Seen} $B$^$?(B
+$B$O(B @samp{Replied} $B$N$h$&$K!"$=$l$>$lJ8;z(B @samp{S} $B$*$h$S(B @samp{R} $B$r%a%C(B
+$B%;!<%8$N%U%!%$%kL>$KIU$12C$($k$3$H$K$h$C$F3JG<$9$k$H$$$&;v<B$K$h$j$^$9!#(B
+$B$3$l$O!":#$N$H$3$m!"?7$7$$%a!<%k$,FO$$$?$H$-$@$1$G$J$/%a!<%k$N%U%i%0$,JQ(B
+$B2=$7$?$H$-$b!"(Bmairix $B$N%G!<%?%Y!<%9$r99?7$7$J$1$l$P$J$i$J$$$G$"$m$&$3$H(B
+$B$r0E<($7$F$$$^$9!#F1$8$3$H$,!"$^$@(B @samp{new} $B%U%)%k%@!<$K$"$k$&$A$K:w0z(B
+$B$,:n$i$l$?$b$N$N(B Gnus $B$,$=$N%a!<%k$r8+$?$H$-$K(B @samp{cur} $B$K0\$5$l$??7$7(B
+$B$$%a!<%k$K$bEv$F$O$^$j$^$9!#$3$l$,5/$-$?8e$G%G!<%?%Y!<%9$r99?7$7$J$$$H!"(B
+mairix $B8!:w$OB8:_$7$J$$%U%!%$%k$r;X$9%7%s%\%j%C%/%j%s%/$r$b$?$i$7$^$9!#(B
+Gnus $B$G$ODL>o$=$l$i$N%a%C%;!<%8$O%X%C%@!<$K(B ``(none)'' $B$,I=<($5$l$F8=$l!"(B
+$B%"%/%;%9$9$k$3$H$,$G$-$^$;$s!#$b$7$3$l$,5/$3$C$?>l9g!"IaDL(B
+$B$O(B @kbd{G b u} $B$r;H$$!"$+$D%0%k!<%W$r99?7$9$l$P2r7h$7$^$9!#(B
+@end itemize
 
 @iftex
 @iflatex
