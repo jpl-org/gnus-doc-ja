@@ -797,9 +797,9 @@ Searching
 
 nnir
 
-* What is nnir::                nnir は何をするか?
+* What is nnir?::               @code{nnir} は何をするか?
 * Basic Usage::                 簡単な検索のしかた
-* Setting up nnir::             nnir の設定方法
+* Setting up nnir::             @code{nnir} の設定方法
 
 Setting up nnir
 
@@ -20714,19 +20714,19 @@ contrib/gnus-namazu の簡潔な比較もまた良し。
 この項は @code{nnir} を使って Gnus の記事を検索するやり方を説明します。
 
 @menu
-* What is nnir::                nnir は何をするか?
+* What is nnir?::               @code{nnir} は何をするか?
 * Basic Usage::                 簡単な検索のしかた
-* Setting up nnir::             nnir の設定方法
+* Setting up nnir::             @code{nnir} の設定方法
 @end menu
 
-@node What is nnir
+@node What is nnir?
 @subsection nnir とは?
 
 @code{nnir} はメールとニュースの倉庫を検索するための数ある道具へ
 の Gnus のインターフェースです。異なるバックエン
-ド (例えば @code{nnimap} と @code{nntp}) は異なる道具 (nnir 用語で言うと
-ころの @dfn{エンジン}) で動作しますが、すべて同じ基本的な検索インターフェー
-スを使います。
+ド (例えば @code{nnimap} と @code{nntp}) は異なる道具 (@code{nnir} 用語
+で言うところの @dfn{エンジン}) で動作しますが、すべて同じ基本的な検索イ
+ンターフェースを使います。
 
 @code{nnimap} および @code{gmane} 検索エンジンは設定無しで動くはずです。
 他のエンジンはローカルな索引を必要とします。それは Gnus の外で作り、かつ
@@ -20807,10 +20807,10 @@ nnir を設定するには、いくらか準備作業が必要です。まず、使おうと思ってい
 に @code{namazu} エンジンを使うには以下のようにします:
 
 @lisp
-(setq gnus-secondary-select-methods '(
-      (nnml "home"
-            (nnimap-address "localhost")
-            (nnir-search-engine namazu))))
+(setq gnus-secondary-select-methods
+      '((nnml "home"
+              (nnimap-address "localhost")
+              (nnir-search-engine namazu))))
 @end lisp
 
 あるいは、一つのバックエンドがまかなうすべてのサーバーのために、特定の一
@@ -21018,7 +21018,7 @@ mknmz --mailnews ~/Mail/archive/ ~/Mail/mail/ ~/Mail/lists/
 
 @node The hyrex Engine
 @subsubsection Hyrex エンジン
-FIXME: 説明を追加する。
+このエンジンはもはや使われていません。
 
 @node Customizations
 @subsubsection カスタマイズ
