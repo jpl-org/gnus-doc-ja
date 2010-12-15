@@ -797,13 +797,13 @@ Searching
 
 nnir
 
-* What is nnir::                nnir $B$O2?$r$9$k$+(B
+* What is nnir::                nnir $B$O2?$r$9$k$+(B?
 * Basic Usage::                 $B4JC1$J8!:w$N$7$+$?(B
 * Setting up nnir::             nnir $B$N@_DjJ}K!(B
 
 Setting up nnir
 
-* Associating Engines::         $B%(%s%8%s$H$N4XO"IU$1(B
+* Associating Engines::         $B%(%s%8%s$H4XO"IU$1$kJ}K!(B
 
 Various
 
@@ -20694,122 +20694,117 @@ Gnus $B$O0lF|$K0l2s%9%3%"$r8:?j$5$;$h$&$H$7$^$9!#Nc$($P(B Gnus $B$r;MF|4VAv$i
 @chapter $B8!:w(B
 @cindex searching
 
-@c TRANSLATEME>
-FIXME: Add a brief overview of Gnus search capabilities.  A brief
-comparison of nnir, nnmairix, contrib/gnus-namazu would be nice
-as well.
+FIXME: Gnus $B$N8!:w5!G=$K4X$9$kC;$$35MW$rDI2C!#(Bnnir, nnmairix,
+contrib/gnus-namazu $B$N4J7i$JHf3S$b$^$?NI$7!#(B
 
-This chapter describes tools for searching groups and servers for
-articles matching a query and then retrieving those articles. Gnus
-provides a simpler mechanism for searching through articles in a summary buffer
-to find those matching a pattern. @xref{Searching for Articles}.
-@c TRANSLATEME<
+$B$3$N>O$O!"$"$k8l$K9gCW$9$k5-;v$r%0%k!<%W$*$h$S%5!<%P!<$G8!:w$7$F$=$l$i$N(B
+$B5-;v$r<hF@$9$k$?$a$NF;6q$K$D$$$F@bL@$7$^$9!#(BGnus $B$O$=$l$i$N9gCW%Q%?!<%s(B
+$B$r35N,%P%C%U%!!<$N5-;v$?$A$rDL$7$F8!:w$9$k!"$h$jC1=c$J5!9=$rDs6!$7$^$9!#(B
+@xref{Searching for Articles}.
 
 @menu
 * nnir::                     $B$$$m$s$J%(%s%8%s$G8!:w$9$k(B
 * nnmairix::                 Mairix $B$G8!:w$9$k(B
 @end menu
 
-@c TRANSLATEME>
 @node nnir
 @section nnir
 @cindex nnir
 
-This section describes how to use @code{nnir} to search for articles
-within gnus.
+$B$3$N9`$O(B @code{nnir} $B$r;H$C$F(B Gnus $B$N5-;v$r8!:w$9$k$d$jJ}$r@bL@$7$^$9!#(B
 
 @menu
-* What is nnir::                What does nnir do?
-* Basic Usage::                 How to perform simple searches.
-* Setting up nnir::             How to set up nnir.
+* What is nnir::                nnir $B$O2?$r$9$k$+(B?
+* Basic Usage::                 $B4JC1$J8!:w$N$7$+$?(B
+* Setting up nnir::             nnir $B$N@_DjJ}K!(B
 @end menu
 
 @node What is nnir
-@subsection What is nnir
+@subsection nnir $B$H$O(B?
 
-@code{nnir} is a gnus interface to a number of tools for searching
-through mail and news repositories. Different backends (like
-@code{nnimap} and @code{nntp}) work with different tools (called
-@dfn{engines} in nnir lingo), but all use the same basic search
-interface.
+@code{nnir} $B$O%a!<%k$H%K%e!<%9$NAR8K$r8!:w$9$k$?$a$N?t$"$kF;6q$X(B
+$B$N(B Gnus $B$N%$%s%?!<%U%'!<%9$G$9!#0[$J$k%P%C%/%(%s(B
+$B%I(B ($BNc$($P(B @code{nnimap} $B$H(B @code{nntp}) $B$O0[$J$kF;6q(B (nnir $BMQ8l$G8@$&$H(B
+$B$3$m$N(B @dfn{$B%(%s%8%s(B}) $B$GF0:n$7$^$9$,!"$9$Y$FF1$84pK\E*$J8!:w%$%s%?!<%U%'!<(B
+$B%9$r;H$$$^$9!#(B
 
-The @code{nnimap} and @code{gmane} search engines should work with no
-configuration. Other engines require a local index that needs to be
-created and maintained outside of Gnus.
+@code{nnimap} $B$*$h$S(B @code{gmane} $B8!:w%(%s%8%s$O@_DjL5$7$GF0$/$O$:$G$9!#(B
+$BB>$N%(%s%8%s$O%m!<%+%k$J:w0z$rI,MW$H$7$^$9!#$=$l$O(B Gnus $B$N30$G:n$j!"$+$D(B
+$B0];}$7$J$1$l$P$J$j$^$;$s!#(B
 
 @node Basic Usage
-@subsection Basic Usage
+@subsection $B4pK\E*$J;H$$J}(B
 
-In the group buffer typing @kbd{G G} will search the group on the
-current line by calling @code{gnus-group-make-nnir-group}.  This prompts
-for a query string, creates an ephemeral @code{nnir} group containing
-the articles that match this query, and takes you to a summary buffer
-showing these articles. Articles may then be read, moved and deleted
-using the usual commands.
+$B%0%k!<%W%P%C%U%!!<$G(B @kbd{G G} $B$r%?%$%W$9$k$H!"(B
+@code{gnus-group-make-nnir-group} $B$r8F$V$3$H$K$h$C$F8=:_9T$N%0%k!<%W$r8!(B
+$B:w$7$^$9!#$3$l$O8!:w8l$NF~NO$rB%$7$F!"$=$l$K9gCW$9$k5-;v$r4^$`0l;~E*$J(B
+@code{nnir} $B%0%k!<%W$r:n$j!"$=$l$i$N5-;v$,$"$k35N,%P%C%U%!!<$rI=<($7$^$9!#(B
+$B$=$&$7$?$i!"8e$O$$$D$b$N%3%^%s%I$r;H$C$F5-;v$rFI$s$@$j!"0\F0$7$?$j!":o=|(B
+$B$7$?$j$9$l$PNI$$$N$G$9!#(B
 
-The @code{nnir} group made in this way is an @code{ephemeral} group, and
-some changes are not permanent: aside from reading, moving, and
-deleting, you can't act on the original article. But there is an
-alternative: you can @emph{warp} to the original group for the article
-on the current line with @kbd{A W}, aka
-@code{gnus-warp-to-article}. Even better, the function
-@code{gnus-summary-refer-thread}, bound by default in summary buffers to
-@kbd{A T}, will first warp to the original group before it works its
-magic and includes all the articles in the thread. From here you can
-read, move and delete articles, but also copy them, alter article marks,
-whatever. Go nuts.
+$B$3$N$h$&$K:n$i$l$?(B @code{nnir} $B%0%k!<%W$O0l;~E*(B (@code{ephemeral}) $B$J%0(B
+$B%k!<%W$J$N$G!"4{FI!"0\F0$*$h$S:o=|$OJL$H$7$F!"$$$/$D$+$NJQ99$O1JB3$7$^$;(B
+$B$s!#$D$^$j85$N5-;v$K<j$r2C$($k$3$H$O$G$-$^$;$s!#$7$+$7Be$o$j$N<j$,$"$j$^(B
+$B$9!#(B@kbd{A W} (@code{gnus-warp-to-article}) $B$G!"8=:_9T$N5-;v$N85$N5-;v(B
+$B$K(B @emph{$B%o!<%W(B} $B$G$-$k$N$G$9!#$5$i$KNI$$$N$O35N,%P%C%U%!!<(B
+$B$G(B @kbd{A T} $B$K%G%#%U%)%k%H$G3d$jEv$F$i$l$F$$$k4X(B
+$B?t(B @code{gnus-summary-refer-thread} $B$G!"$=$l$O$=$NKbK!$r9T$J$&A0!":G=i$K(B
+$B85$N%0%k!<%W$K%o!<%W$7$F!"$=$N%9%l%C%I$K$"$k$9$Y$F$N5-;v$r4^$a$^$9!#$=$3(B
+$B$+$i5-;v$rFI$_!"0\F0$7!"$^$?:o=|$G$-$k$@$1$G$J$/!"$=$l$i$r%3%T!<$7$?$j!"(B
+$B0u$rJQ99$7$?$j!"$=$NB>2?$G$b$G$-$^$9!#$"$"!"F,$,$*$+$7$/$J$j$=$&(B ($B86(B
+$BE5(B: ``Go nuts'')$B!#(B
 
-You say you want to search more than just the group on the current line?
-No problem: just process-mark the groups you want to search. You want
-even more? Calling for an nnir search with the cursor on a topic heading
-will search all the groups under that heading.
+$B8=:_9T$N%0%k!<%W$@$1$G$J$/!"B>$N%0%k!<%W$b8!:w$7$?$$$G$9$C$F(B?  $BLdBj$"$j(B
+$B$^$;$s!#C1$K8!:w$7$?$$%0%k!<%W$K%W%m%;%90u$rIU$1$F$/$@$5$$!#$5$i$K$b$C(B
+$B$H(B?  $B$=$l$J$i%H%T%C%/$N8+=P$7$K%+!<%=%k$rCV$$$F(B nnor $B8!:w$r<B9T$9$l$P!"(B
+$B$=$N8+=P$7$N2<$N$9$Y$F$N%0%k!<%W$r8!:w$7$F$/$l$k$G$7$g$&!#(B
 
-Still not enough? OK, in the server buffer
-@code{gnus-group-make-nnir-group} (now bound to @kbd{G}) will search all
-groups from the server on the current line. Too much? Want to ignore
-certain groups when searching, like spam groups? Just customize
-@code{nnir-ignored-newsgroups}.
+$B$^$@B-$j$J$$$s$G$9$+(B?  $B$h$m$7$$!"%5!<%P!<%P%C%U%!!<(B
+$B$G(B @code{gnus-group-make-nnir-group} ($B8=:_$O(B @kbd{G} $B$K3d$jEv$F$i$l$F$$(B
+$B$k(B) $B$r;H$($P!"8=:_9T$N%5!<%P!<$K$"$k$9$Y$F$N%0%k!<%W$r8!:w$G$-$^$9!#B?$9(B
+$B$.$^$9$+(B?  $B8!:w$9$k:]$K(B spam $B%0%k!<%W$N$h$&$J%0%k!<%W$rL5;k$7$?$$$H$$$&(B
+$B$3$H$G$9$M(B?  $B$G$"$l$P(B @code{nnir-ignored-newsgroups} $B$r%+%9%?%^%$%:$7$F(B
+$B$/$@$5$$!#(B
 
-One more thing: individual search engines may have special search
-features. You can access these special features by giving a prefix-arg
-to @code{gnus-group-make-nnir-group}. If you are searching multiple
-groups with different search engines you will be prompted for the
-special search features for each engine separately.
+$B$5$i$K$b$&0l$D!#8D!9$N8!:w%(%s%8%s$OFCJL$J8!:w5!G=$r;}$C$F$$$k$+$b$7$l$^(B
+$B$;$s!#$=$l$i$NFCJL$J8!:w5!G=$O!"(B@code{gnus-group-make-nnir-group} $B$K@\F,(B
+$B0z?t$rM?$($k$3$H$K$h$C$FMxMQ$G$-$^$9!#$b$7J#?t$N%0%k!<%W$r0[$J$k8!:w%(%s(B
+$B%8%s$G8!:w$9$k$N$G$"$l$P!"$=$l$>$l$N%(%s%8%sKh$KJL$l$FFCJL$J8!:w5!G=$r;H(B
+$B$&$+$I$&$+$r?R$M$i$l$k$G$7$g$&!#(B
 
 @node Setting up nnir
-@subsection Setting up nnir
+@subsection nnir $B$N@_DjJ}K!(B
 
-To set up nnir you may need to do some prep work. Firstly, you may need
-to configure the search engines you plan to use. Some of them, like
-@code{imap} and @code{gmane}, need no special configuration. Others,
-like @code{namazu} and @code{swish}, require configuration as described
-below. Secondly, you need to associate a search engine with a server or
-a backend.
+nnir $B$r@_Dj$9$k$K$O!"$$$/$i$+=`Hw:n6H$,I,MW$G$9!#$^$:!";H$*$&$H;W$C$F$$(B
+$B$k8!:w%(%s%8%s$r@_Dj$7$^$7$g$&!#$=$l$i$N$&$A$N$$$/$D$+!"Nc$((B
+$B$P(B @code{imap} $B$H(B @code{gmane} $B$K$D$$$F$OFCJL$J@_Dj$OMW$j$^$;$s!#B>$N!"(B
+$BNc$($P(B @code{namazu} $B$H(B @code{swish} $B$K$D$$$F$O8e=R$N@_Dj$,I,MW$G$9!#<!(B
+$B$K!"%5!<%P!<$^$?$O%P%C%/%(%s%I$H8!:w%(%s%8%s$r4XO"IU$1$kI,MW$,$"$j$^$9!#(B
 
-If you just want to use the @code{imap} engine to search @code{nnimap}
-servers, and the @code{gmane} engine to search @code{gmane} then you
-don't have to do anything. But you might want to read the details of the
-query language anyway.
+$B$b$7C1$K(B @code{nnimap} $B%5!<%P!<$r8!:w$9$k$?$a$K(B @code{imap} $B%(%s%8%s$r!"(B
+$B$=$7$F(B @code{gmane} $B$r8!:w$9$k$?$a$K(B @code{gmane} $B%(%s%8%s$r;H$$$?$$$N$G(B
+$B$"$l$P!"2?$b$9$kI,MW$O$"$j$^$;$s!#$7$+$7$J$,$i8!:w8l$N=q$-J}$N>\:Y@bL@$O!"(B
+$B$H$K$+$/FI$`I,MW$,$"$k$G$7$g$&!#(B
 
 @menu
-* Associating Engines::                 How to associate engines.
-* The imap Engine::                     Imap configuration and usage.
-* The gmane Engine::                    Gmane configuration and usage.
-* The swish++ Engine::                  Swish++ configuration and usage.
-* The swish-e Engine::                  Swish-e configuration and usage.
-* The namazu Engine::                   Namazu configuration and usage.
-* The hyrex Engine::                    Hyrex configuration and usage.
-* Customizations::                      User customizable settings.
+* Associating Engines::                 $B%(%s%8%s$H4XO"IU$1$kJ}K!(B
+* The imap Engine::                     Imap $B$N@_Dj$H;H$$J}(B
+* The gmane Engine::                    Gmane $B$N@_Dj$H;H$$J}(B
+* The swish++ Engine::                  Swish++ $B$N@_Dj$H;H$$J}(B
+* The swish-e Engine::                  Swish-e $B$N@_Dj$H;H$$J}(B
+* The namazu Engine::                   Namazu $B$N@_Dj$H;H$$J}(B
+* The hyrex Engine::                    Hyrex $B$N@_Dj$H;H$$J}(B
+* Customizations::                      $B%+%9%?%^%$%:$G$-$k@_Dj(B
 @end menu
 
 @node Associating Engines
-@subsubsection Associating Engines
+@subsubsection $B%(%s%8%s$H$N4XO"IU$1(B
 
-When searching a group, @code{nnir} needs to know which search engine to
-use. You can configure a given server to use a particular engine by
-setting the server variable @code{nnir-search-engine} to the engine
-name. For example to use the @code{namazu} engine to search the server
-named @code{home} you can use
+$B%0%k!<%W$r8!:w$9$k$H$-$K(B @code{nnir} $B$O$I$N8!:w%(%s%8%s$r;H$&$+$rCN$C$F(B
+$B$$$kI,MW$,$"$j$^$9!#%5!<%P!<JQ?t(B @code{nnir-search-engine} $B$r%(%s%8%s$N(B
+$BL>A0$K@_Dj$9$k$3$H$K$h$C$F!"=jDj$N%5!<%P!<$,FCDj$N%(%s%8%s$r;H$&$h$&$K@_(B
+$BDj$7$F$/$@$5$$!#Nc$($P(B @code{home} $B$H$$$&L>A0$N%5!<%P!<$r8!:w$9$k$?$a(B
+$B$K(B @code{namazu} $B%(%s%8%s$r;H$&$K$O0J2<$N$h$&$K$7$^$9(B:
 
 @lisp
 (setq gnus-secondary-select-methods '(
@@ -20818,17 +20813,18 @@ named @code{home} you can use
             (nnir-search-engine namazu))))
 @end lisp
 
-Alternatively you might want to use a particular engine for all servers
-with a given backend. For example, you might want to use the @code{imap}
-engine for all servers using the @code{nnimap} backend. In this case you
-can customize the variable @code{nnir-method-default-engines}. This is
-an alist of pairs of the form @code{(backend . engine)}. By default this
-variable is set to use the @code{imap} engine for all servers using the
-@code{nnimap} backend, and the @code{gmane} backend for @code{nntp}
-servers. (Don't worry, the @code{gmane} search engine won't actually try
-to search non-gmane @code{nntp} servers.) But if you wanted to use
-@code{namazu} for all your servers with an @code{nnimap} backend you
-could change this to
+$B$"$k$$$O!"0l$D$N%P%C%/%(%s%I$,$^$+$J$&$9$Y$F$N%5!<%P!<$N$?$a$K!"FCDj$N0l(B
+$B$D$N%(%s%8%s$r;H$&I,MW$,$"$k$+$b$7$l$^$;$s!#Nc$($P(B @code{nnimap} $B%P%C%/(B
+$B%(%s%I$r;H$&$9$Y$F$N%5!<%P!<$G(B @code{imap} $B%(%s%8%s$r;H$$$?$$>l9g$G$9!#(B
+$B$=$N>l9g$OJQ?t(B @code{nnir-method-default-engines} $B$r%+%9%?%^%$%:$7$F$/$@(B
+$B$5$$!#$3$l$O(B @code{(backend . engine)} $B7A<0$N%Z%"$NO"A[%j%9%H$G$9!#$3$N(B
+$BJQ?t$O%G%#%U%)%k%H$G$O(B @code{nnimap} $B%P%C%/%(%s%I$r;H$&$9$Y$F$N%5!<%P!<(B
+$B$G(B @code{imap} $B%(%s%8%s$r!"$=$7$F(B @code{nntp} $B%5!<%P!<$K(B
+$B$O(B @code{gmane} $B%(%s%8%s$r;H$&$h$&$K@_Dj$5$l$F$$$^$9!#(B(@code{gmane} $B8!:w(B
+$B%(%s%8%s$O(B gmane $B$G$O$J$$(B @code{nntp} $B%5!<%P!<$r<B:]$K8!:w$7$h$&$H$7$^$;(B
+$B$s$+$i!"$4?4G[$J$/!#(B)  $B$G$b(B @code{nnimap} $B%P%C%/%(%s%I$r;H$&$9$Y$F$N%5!<(B
+$B%P!<$N$?$a$K(B @code{namazu} $B$r;H$$$?$+$C$?$N$G$"$l$P!"0J2<$N$h$&$KJQ99$9(B
+$B$k$3$H$,$G$-$^$9(B:
 
 @lisp
 '((nnimap . namazu)
@@ -20836,235 +20832,236 @@ could change this to
 @end lisp
 
 @node The imap Engine
-@subsubsection The imap Engine
+@subsubsection Imap $B%(%s%8%s(B
 
-The @code{imap} engine requires no configuration.
+@code{imap} $B%(%s%8%s$O@_DjITMW$G$9!#(B
 
-Queries using the @code{imap} engine follow a simple query language.
-The search is always case-insensitive and supports the following
-features (inspired by the Google search input language):
+@code{imap} $B%(%s%8%s$r;H$&8!:w$K$O!"4JC1$J8!:w8l$N=q$-J}$,$"$j$^$9!#8!:w(B
+$B$O>o$KBgJ8;z$H>.J8;z$r6hJL$;$:!"0J2<$N5!G=$r;}$C$F$$$^$9(B (Google $B8!:w$N(B
+$B8!:w8l$N=q$-J}$KJo$C$F$$$^$9(B)$B!#(B
 
 @table @samp
-@item Boolean query operators
-AND, OR, and NOT are supported, and parentheses can be used to control
-operator precedence, e.g. (emacs OR xemacs) AND linux. Note that
-operators must be written with all capital letters to be
-recognised. Also preceding a term with a - sign is equivalent to NOT
-term.
+@item $B%V!<%j%"%s1i;;;R(B
+AND$B!"(BOR$B!"$*$h$S(B NOT $B$r%5%]!<%H$7!"1i;;;R$NM%@h=g0L$r@)8f$9$k$?$a$K3g8L$r(B
+$B;H$&$3$H$,$G$-$^$9!#Nc$($P!V(B(emacs OR xemacs) AND linux$B!W$N$h$&$K!#1i;;(B
+$B;R$O$=$l$G$"$k$HG'CN$5$l$k$?$a$K!"$9$Y$FBgJ8;z$G=q$+$J$1$l$P$J$i$J$$$3$H(B
+$B$KCm0U$7$F$/$@$5$$!#$5$i$K!"8l$K@hN)$D(B - $B5-9f$O!V(BNOT $B8l!W$HEy2A$G$9!#(B
 
-@item Automatic AND queries
-If you specify multiple words then they will be treated as an AND
-expression intended to match all components.
+@item $B<+F0(B AND $B8!:w(B
+$B$b$7J#?t$N8l$r;XDj$9$k$H!"$=$l$i$O$9$Y$F$NMWAG$K9gCW$9$k$3$H$r0U?^$7(B
+$B$?(B AND $B8!:w$H$7$F07$o$l$^$9!#(B
 
-@item Phrase searches
-If you wrap your query in double-quotes then it will be treated as a
-literal string.
+@item $B=O8l8!:w(B
+$B$b$78!:w8l$r(B 2$B=E0zMQId$G0O$`$H!"$=$l$O$R$H$^$H$^$j$NJ8;zNs$H$7$F07$o$l$^(B
+$B$9!#(B
 @end table
 
-By default the whole message will be searched. The query can be limited
-to a specific part of a message by using a prefix-arg. After inputting
-the query this will prompt (with completion) for a message part.
-Choices include ``Whole message'', ``Subject'', ``From'', and
-``To''. Any unrecognized input is interpreted as a header name. For
-example, typing @kbd{Message-ID} in response to this prompt will limit
-the query to the Message-ID header.
+$B%G%#%U%)%k%H$G$O%a%C%;!<%8A4BN$,8!:w$5$l$^$9!#@\F,0z?t$r;H$&$3$H$K$h$C$F!"(B
+$B8!:w$r%a%C%;!<%8$N;XDj$9$kItJ,$@$1$K@)8B$9$k$3$H$,$G$-!"$=$&$9$k$H8!:w8l(B
+$B$,F~NO$5$l$?8e$G!"%a%C%;!<%8$NItJ,$r(B ($BJd40IU$-$G(B) $B?R$M$i$l$^$9!#A*Br;h$K(B
+$B$O(B ``Whole message'' ($B%a%C%;!<%8A4BN(B)$B!"(B``Subject''$B!"(B``From''$B!"$*$h(B
+$B$S(B ``To'' $B$,$"$j$^$9!#$=$l0J30$O$I$s$JF~NO$b%X%C%@!<L>$G$"$k$H2r<a$5$l$^(B
+$B$9!#Nc$($P$3$NLd$$$K(B @kbd{Message-ID} $B$H%?%$%W$7$F1~$($k$H!"8!:w(B
+$B$O(B Message-ID $B%X%C%@!<$@$1$K@)8B$5$l$^$9!#(B
 
-Finally selecting ``Imap'' will interpret the query as a raw
-@acronym{IMAP} search query. The format of such queries can be found in
-RFC3501.
+$B:G=*E*$K(B ``Imap'' $B$rA*$V$H!"$=$l$O@8$N(B @acronym{IMAP} $B8!:w$H2r<a$5$l$^$9!#(B
+$B$=$N$h$&$J8!:w$N%U%)!<%^%C%H$O(B RFC3501 $B$G8+$D$+$k$O$:$G$9!#(B
 
-If you don't like the default of searching whole messages you can
-customize @code{nnir-imap-default-search-key}. For example to use
-@acronym{IMAP} queries by default
+$B$b$7%G%#%U%)%k%H$N%a%C%;!<%8A4BN8!:w$,9%$_$G$J$$$N$G$"$l(B
+$B$P(B @code{nnir-imap-default-search-key} $B$r%+%9%?%^%$%:$7$F$/$@$5$$!#%G%#(B
+$B%U%)%k%H$G(B @acronym{IMAP} $B8!:w$r;H$$$?$$>l9g$O!"$3$&$7$F$/$@$5$$(B:
 
 @lisp
 (setq nnir-imap-default-search-key "Imap")
 @end lisp
 
 @node The gmane Engine
-@subsubsection The gmane Engine
+@subsubsection Gmane $B%(%s%8%s(B
 
-The @code{gmane} engine requires no configuration.
+@code{gmane} $B%(%s%8%s$O@_DjITMW$G$9!#(B
 
-Gmane queries follow a simple query language:
+@code{gmane} $B%(%s%8%s$r;H$&8!:w$K$O!"4JC1$J8!:w8l$N=q$-J}$,$"$j$^$9!#(B
 
 @table @samp
-@item Boolean query operators
-AND, OR, NOT (or AND NOT), and XOR are supported, and brackets can be
-used to control operator precedence, e.g. (emacs OR xemacs) AND linux.
-Note that operators must be written with all capital letters to be
-recognised.
+@item $B%V!<%j%"%s1i;;;R(B
+AND$B!"(BOR$B!"(BNOT ($B$^$?$O(B AND NOT) $B$*$h$S(B XOR $B$r%5%]!<%H$7!"1i;;;R$NM%@h=g0L(B
+$B$r@)8f$9$k$?$a$K3g8L$r;H$&$3$H$,$G$-$^$9!#Nc$($P!V(B(emacs OR xemacs) AND
+linux$B!W$N$h$&$K!#1i;;;R$O$=$l$G$"$k$HG'CN$5$l$k$?$a$K!"$9$Y$FBgJ8;z$G=q(B
+$B$+$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F$/$@$5$$!#(B
 
-@item Required and excluded terms
-+ and - can be used to require or exclude terms, e.g. football -american
+@item $BI,?\$N!"$^$?$O=|30$9$Y$-8l(B
++ $B$H(B - $B$O8l$,I,?\$G$"$k$+!"$^$?$O=|30$9$Y$-$+$r;XDj$7$^$9!#Nc$((B
+$B$P(B: $B!V(Bfootball -american$B!W(B
 
-@item Unicode handling
-The search engine converts all text to utf-8, so searching should work
-in any language.
+@item Unicode $B$N<h07$$(B
+$B8!:w%(%s%8%s$O$9$Y$F$N%F%-%9%H$r(B utf-8 $B$KJQ49$9$k$N$G!"$I$s$J8@8l$G$b8!(B
+$B:w$G$-$k$O$:$G$9!#(B
 
 @item Stopwords
-Common English words (like 'the' and 'a') are ignored by default. You
-can override this by prefixing such words with a + (e.g. +the) or
-enclosing the word in quotes (e.g. "the").
+$B$"$j$U$l$?1QC18l(B ('the' $B$d(B 'a' $B$N$h$&$J$b$N(B) $B$O%G%#%U%)%k%H$GL5;k$5$l$^(B
+$B$9!#$=$N$h$&$JC18l$G$b(B + $B$rA0CV$-(B ($BNc(B: +the) $B$7$?$j!"0zMQId$G0O(B
+$B$`(B ($BNc(B: "the") $B$3$H$K$h$C$F8!:wBP>]$K$9$k$3$H$,$G$-$^$9!#(B
 @end table
 
-The query can be limited to articles by a specific author using a
-prefix-arg. After inputting the query this will prompt for an author
-name (or part of a name) to match.
+$B@\F,0z?t$r;H$&$3$H$K$h$C$F!"8!:w$r;XDj$7$?Cx<T$K$h$k5-;v$K8BDj$9$k$3$H$,(B
+$B$G$-$^$9!#$=$&$9$k$H8!:w8l$,F~NO$5$l$?8e$G!"9gCW$9$kCx<TL>(B ($B$^$?$OL>A0$N(B
+$B0lIt(B) $B$,?R$M$i$l$^$9!#(B
 
 @node The swish++ Engine
-@subsubsection The swish++ Engine
+@subsubsection Swish++ $B%(%s%8%s(B
 
-FIXEM: Say something more here.
+FIXEM: $B$3$3$G2?$+$b$C$H8@$&!#(B
 
-Documentation for swish++ may be found at the swish++ sourceforge page:
-@uref{http://swishplusplus.sourceforge.net}
+Swish++ $B$N;qNA$O(B sourceforge $B$N(B swish++ $B$N%Z!<%8$G8+$D$+$k$G$7$g(B
+$B$&(B: @uref{http://swishplusplus.sourceforge.net}
 
 @table @code
 @item nnir-swish++-program
-The name of the swish++ executable. Defaults to @code{search}
+Swish++ $B$N<B9T7A<0$NL>A0!#%G%#%U%)%k%H$O(B @code{search} $B$G$9!#(B
 
 @item nnir-swish++-additional-switches
-A list of strings to be given as additional arguments to
-swish++. @code{nil} by default.
+Swish++ $B$KDI2C$N0z?t$H$7$FM?$($i$l$kJ8;zNs$N%j%9%H!#%G%#%U%)%k%H(B
+$B$O(B @code{nil} $B$G$9!#(B
 
 @item nnir-swish++-remove-prefix
-The prefix to remove from each file name returned by swish++ in order
-to get a group name. By default this is @code{$HOME/Mail}.
+$B%0%k!<%WL>$rF@$k$?$a$K(B swish++ $B$,JV$9$=$l$>$l$N%U%!%$%kL>$+$i<h$j=|$/@\(B
+$BF,8l!#$3$l$O%G%#%U%)%k%H$G$O(B @code{$HOME/Mail} $B$G$9!#(B
 @end table
 
 @node The swish-e Engine
-@subsubsection The swish-e Engine
+@subsubsection Swish-e $B%(%s%8%s(B
 
-FIXEM: Say something more here.
+FIXEM: $B$3$3$G2?$+$b$C$H8@$&!#(B
 
-Documentation for swish-e may be found at the swish-e homepage
-@uref{http://swish-e.org}
+Swish-e $B$N;qNA$O(B swish-e $B%[!<%`%Z!<%8$G8+$D$+$k$G$7$g(B
+$B$&(B: @uref{http://swish-e.org}
 
 @table @code
-
 @item nnir-swish-e-program
-The name of the swish-e search program. Defaults to @code{swish-e}.
+Swish-e $B8!:w%W%m%0%i%`$NL>A0!#%G%#%U%)%k%H$O(B @code{swish-e} $B$G$9!#(B
 
 @item nnir-swish-e-additional-switches
-A list of strings to be given as additional arguments to
-swish-e. @code{nil} by default.
+Swish-e $B$KDI2C$N0z?t$H$7$FM?$($i$l$kJ8;zNs$N%j%9%H!#%G%#%U%)%k%H(B
+$B$O(B @code{nil} $B$G$9!#(B
 
 @item nnir-swish-e-remove-prefix
-The prefix to remove from each file name returned by swish-e in order
-to get a group name. By default this is @code{$HOME/Mail}.
-
+$B%0%k!<%WL>$rF@$k$?$a$K(B swish-e $B$,JV$9$=$l$>$l$N%U%!%$%kL>$+$i<h$j=|$/@\(B
+$BF,8l!#$3$l$O%G%#%U%)%k%H$G$O(B @code{$HOME/Mail} $B$G$9!#(B
 @end table
 
 @node The namazu Engine
-@subsubsection The namazu Engine
+@subsubsection Namazu $B%(%s%8%s(B
 
-Using the namazu engine requires creating and maintaining index files.
-One directory should contain all the index files, and nnir must be told
-where to find them by setting the @code{nnir-namazu-index-directory}
-variable.
+Namazu $B$r;H$&$K$O:w0z%U%!%$%k$r:n$C$F0];}$9$kI,MW$,$"$j$^$9!#$9$Y$F$N:w(B
+$B0z%U%!%$%k$O0l$D$N%G%#%l%/%H%j!<$KCV$$$F$"$k$O$:$G!"$=$N=j:_(B
+$B$r(B @code{nnir-namazu-index-directory} $BJQ?t$r@_Dj$9$k$3$H$K$h$C$F(B nnir $B$K(B
+$BEA$($J$1$l$P$J$j$^$;$s!#(B
 
-To work correctly the @code{nnir-namazu-remove-prefix} variable must
-also be correct. This is the prefix to remove from each file name
-returned by Namazu in order to get a proper group name (albeit with `/'
-instead of `.').
+$B@5$7$/F/$+$;$k$K$O(B @code{nnir-namazu-remove-prefix} $BJQ?t$b@5$7$/$J$1$l$P(B
+$B$J$j$^$;$s!#$3$l$O!"@5$7$$%0%k!<%WL>$rF@$k$?$a$K(B Namazu $B$,JV$9$=$l$>$l$N(B
+$B%U%!%$%kL>$+$i<h$j=|$/@\F,8l$G$9(B (`.' $B$O(B `/' $B$KCV$-Be$o$j$^$9$,(B)$B!#(B
 
-For example, suppose that Namazu returns file names such as
-@samp{/home/john/Mail/mail/misc/42}.  For this example, use the
-following setting: @code{(setq nnir-namazu-remove-prefix
-"/home/john/Mail/")} Note the trailing slash.  Removing this prefix from
-the directory gives @samp{mail/misc/42}.  @code{nnir} knows to remove
-the @samp{/42} and to replace @samp{/} with @samp{.} to arrive at the
-correct group name @samp{mail.misc}.
+$BNc$($P(B Namazu $B$,(B @samp{/home/john/Mail/mail/misc/42} $B$N$h$&$J%U%!%$%kL>(B
+$B$rJV$9$H$7$^$7$g$&!#$3$NNc$G$O<!$N@_Dj$r;H$C$F$/$@$5$$(B:
 
-Extra switches may be passed to the namazu search command by setting the
-variable @code{nnir-namazu-additional-switches}.  It is particularly
-important not to pass any any switches to namazu that will change the
-output format.  Good switches to use include `--sort', `--ascending',
-`--early' and `--late'.  Refer to the Namazu documentation for further
-information on valid switches.
+@lisp
+(setq nnir-namazu-remove-prefix "/home/john/Mail/")
+@end lisp
 
-Mail must first be indexed  with the `mknmz' program.  Read the documentation
-for namazu to create a configuration file. Here is an example:
+$B:G8e$N%9%i%C%7%e$KCm0U$7$F$/$@$5$$!#%G%#%l%/%H%j!<$+$i$3$N@\F,8l$r<h$j=|(B
+$B$/$H(B @samp{mail/misc/42} $B$K$J$j$^$9!#(B@code{nnir} $B$O@5$7$$%0%k!<%W(B
+$BL>(B @samp{mail.misc} $B$rF3$/$?$a$K(B @samp{/42} $B$r<h$j=|$$(B
+$B$F(B @samp{/} $B$r(B @samp{.} $B$GCV$-49$($k$Y$-$G$"$k$3$H$O>5CN$7$F$$$^$9!#(B
+
+$BB>$N%*%W%7%g%s$O(B @code{nnir-namazu-additional-switches} $B$r@_Dj$9$k$3$H$K(B
+$B$h$C$F(B namazu $B8!:w%3%^%s%I$KEO$5$l$^$9!#$H$j$o$1!"=PNO$N7A<0$rJQ99$7$F$7(B
+$B$^$&$I$s$J%*%W%7%g%s$b(B namazu $B$KEO$5$J$$$3$H$,=EMW$G$9!#;H$C$F$bNI$$%*%W(B
+$B%7%g%s$O(B `--sort'$B!"(B`--ascending'$B!"(B`--early' $B$*$h$S(B `--late' $B$G$9!#$5$i$J(B
+$B$kM-8z$J%*%W%7%g%s$K$D$$$F$O(B Namazu $B$N@bL@=q$r;2>H$7$F$/$@$5$$!#(B
+
+$B%a!<%k$O(B `mknmz' $B%W%m%0%i%`$G:G=i$K:w0zIU$1$5$l$J$1$l$P$J$j$^$;$s!#@_Dj(B
+$B%U%!%$%k$r:n$k$?$a$K$O(B namazu $B$N@bL@=q$rFI$s$G$/$@$5$$!#$3$3$KNc$,$"$j$^(B
+$B$9(B:
 
 @cartouche
 @example
- package conf;  # Don't remove this line!
+ package conf;  # $B$3$N9T$O>C$5$J$$$3$H(B!
 
- # Paths which will not be indexed. Don't use `^' or `$' anchors.
+ # $B:w0zIU$1$5$l$J$$%Q%9!#(B`^' $B$^$?$O(B `$' $B%"%s%+!<$r;H$o$J$$$3$H!#(B
  $EXCLUDE_PATH = "spam|sent";
 
- # Header fields which should be searchable. case-insensitive
+ # $B8!:w$9$Y$-%X%C%@!<!&%U%#!<%k%I!#BgJ8;z(B/$B>.J8;z$N6hJL$OL5$$!#(B
  $REMAIN_HEADER = "from|date|message-id|subject";
 
- # Searchable fields. case-insensitive
+ # $B8!:w$G$-$k%U%#!<%k%I!#BgJ8;z(B/$B>.J8;z$N6hJL$OL5$$!#(B
  $SEARCH_FIELD = "from|date|message-id|subject";
 
- # The max length of a word.
+ # $B:G$bD9$$8l$ND9$5!#(B
  $WORD_LENG_MAX = 128;
 
- # The max length of a field.
+ # $B:G$bD9$$%U%#!<%k%I$ND9$5!#(B
  $MAX_FIELD_LENGTH = 256;
 @end example
 @end cartouche
 
-For this example, mail is stored in the directories @samp{~/Mail/mail/},
-@samp{~/Mail/lists/} and @samp{~/Mail/archive/}, so to index them go to
-the index directory set in @code{nnir-namazu-index-directory} and issue
-the following command:
+$BNc$($P%a!<%k$,(B @samp{~/Mail/mail/}$B!"(B@samp{~/Mail/lists/} $B$*$h(B
+$B$S(B @samp{~/Mail/archive/} $B%G%#%l%/%H%j!<$K3JG<$5$l$k$N$G$"$l$P!"$=$l$i$K(B
+$B:w0zIU$1$r$9$k$?$a$K$O(B @code{nnir-namazu-index-directory} $B$K@_Dj$5$l$F$$(B
+$B$k:w0z%G%#%l%/%H%j!<$K9T$C$F!"0J2<$N%3%^%s%I$rH/9T$7$^$9!#(B
 
 @example
 mknmz --mailnews ~/Mail/archive/ ~/Mail/mail/ ~/Mail/lists/
 @end example
 
-For maximum searching efficiency you might want to have a cron job run
-this command periodically, say every four hours.
+$B:GBg$N8!:w8zN($rF@$k$?$a$K$O!"$3$N%3%^%s%I$rDj4|E*$K(B ($BNc$($P(B 4$B;~4VKh(B
+$B$K(B) $B<B9T$9$k(B cron $B%8%g%V$rAv$i$;$kI,MW$,$"$k$G$7$g$&!#(B
 
 @node The hyrex Engine
-@subsubsection The hyrex Engine
-FIXME: Add documentation.
+@subsubsection Hyrex $B%(%s%8%s(B
+FIXME: $B@bL@$rDI2C$9$k!#(B
 
 @node Customizations
-@subsubsection Custimozations
+@subsubsection $B%+%9%?%^%$%:(B
 
 @table @code
 @item nnir-method-default-engines
-Alist of server backend - search engine pairs. The default associations
-are
+$B%5!<%P!<$N%P%C%/%(%s%I$H8!:w%(%s%8%s$N%Z%"$h$j$J$kO"A[%j%9%H!#%G%#%U%)%k(B
+$B%H$N4XO"IU$1$O<!$NDL$j$G$9(B:
+
 @example
 (nnimap . imap)
 (nntp . gmane)
 @end example
 
 @item nnir-ignored-newsgroups
-A regexp to match newsgroups in the active file that should be skipped
-when searching all groups on a server.
+$B0l$D$N%5!<%P!<$K$"$k$9$Y$F$N%0%k!<%W$r8!:w$9$k$H$-$K!"(Bactive $B%U%!%$%k$K(B
+$B$"$kFI$_Ht$P$9$Y$-%K%e!<%9%0%k!<%W$K9gCW$9$k@55,I=8=!#(B
 
 @item nnir-summary-line-format
-The format specification to be used for lines in an nnir summary buffer.
-All the items from `gnus-summary-line-format' are available, along with
-three items unique to nnir summary buffers:
+nnir $B35N,%P%C%U%!!<$N9T$N$?$a$K;H$o$l$k=qK!;EMM!#(B
+@code{gnus-summary-line-format} $B$N$9$Y$F$N=qK!;EMM;X<(;R$H$H$b$K(B nnir $B35(B
+$BN,%P%C%U%!!<FH<+$N0J2<$N;0$D$N;X<(;R$r;H$&$3$H$,$G$-$^$9(B:
 
 @example
-%Z    Search retrieval score value (integer)
-%G    Article original full group name (string)
-%g    Article original short group name (string)
+%Z    $B8!:w7k2L$N%9%3%"$NCM(B ($B@0?t(B)
+%G    $B5-;v$,$"$C$?85$N40A4$J%0%k!<%WL>(B ($BJ8;zNs(B)
+%g    $B5-;v$,$"$C$?85$NC;=L7A$N%0%k!<%WL>(B ($BJ8;zNs(B)
 @end example
 
-If nil (the default) this will use @code{gnus-summary-line-format}.
+$B$b$7(B @code{nil} $B$@$C$?$i(B ($B$=$l$,%G%#%U%)%k%H(B)$B!"(B
+@code{gnus-summary-line-format} $B$r;H$$$^$9!#(B
 
 @item nnir-retrieve-headers-override-function
-If non-nil, a function that retrieves article headers rather than using
-the gnus built-in function.  This function takes an article list and
-group as arguments and populates the `nntp-server-buffer' with the
-retrieved headers. It should then return either 'nov or 'headers
-indicating the retrieved header format. Failure to retrieve headers
-should return @code{nil}
+$B$b$7(B @code{nil} $B$G$J$1$l$P!"(BGnus $B$KAH$_9~$^$l$F$$$k4X?t$r;H$o$:$K5-;v$N(B
+$B%X%C%@!<$r<hF@$9$k$?$a$N4X?t!#$3$N4X?t$O0z?t$H$7$F5-;v$N%j%9%H$H%0%k!<%W(B
+$B$r<h$j!"<hF@$7$?%X%C%@!<$G(B `nntp-server-buffer' $B$rK~$?$7$^$9!#$=$7$F!"<h(B
+$BF@$7$?%X%C%@!<$N7A<0$r<($9$?$a$K(B @code{nov} $B$^$?$O(B @code{headers} $B$rJV$5(B
+$B$J$1$l$P$J$j$^$;$s!#%X%C%@!<$N<hF@$K<:GT$7$?$H$-$O(B @code{nil} $B$rJV$7$^$9!#(B
 
-If this variable is nil, or if the provided function returns nil for a
-search result, @code{gnus-retrieve-headers} will be called instead."
+$B$b$7$3$NJQ?t$,(B @code{nil} $B$@$C$?$i!"$^$?$OMQ0U$7$?4X?t$,8!:w7k2L$H$7(B
+$B$F(B @code{nil} $B$rJV$7$?$i!"Be$o$j$K(B @code{gnus-retrieve-headers} $B$,8F$P$l(B
+$B$^$9!#(B
 @end table
-@c TRANSLATEME<
 
 @node nnmairix
 @section nnmairix
