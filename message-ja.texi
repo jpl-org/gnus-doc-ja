@@ -885,6 +885,10 @@ emacs-mime-ja, The Emacs MIME Manual}) を使えば、どんな複雑なマルチパー
 @cindex internationalized domain names
 @cindex non-ascii domain names
 
+@acronym{IDNA} は非-@acronym{ASCII} ドメイン名を可読
+な @acronym{ASCII} 文字列にエンコードするための標準の手段です。詳細
+は RFC 3490 で見つかります。
+
 Message は @acronym{IDNA} に準拠した送信エージェントです。利用者
 は @acronym{IDNA} のために一般には何もする必要がありません。
 Message は @code{From}、@code{To} および @code{Cc} ヘッダーにある

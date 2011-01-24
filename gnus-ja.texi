@@ -709,6 +709,7 @@ Other Sources
 * Anything Groups::             Dired?  誰が dired なんて使うの?
 * Document Groups::             個別のファイル群はグループの素
 * Mail-To-News Gateways::       メールからニュースへのゲートウェイを通して記事を投稿する
+* The Empty Backend::           ニュースを何も取得しないバックエンド
 
 Document Groups
 
@@ -16902,6 +16903,7 @@ Gnus はただ単にニュースやメールを読む以上のことができます。以下に示す方
 * Anything Groups::             Dired?  誰が dired なんて使うの?
 * Document Groups::             個別のファイル群はグループの素
 * Mail-To-News Gateways::       メールからニュースへのゲートウェイを通して記事を投稿する
+* The Empty Backend::           ニュースを何も取得しないバックエンド
 @end menu
 
 @node Directory Groups
@@ -17346,6 +17348,22 @@ To: alt-religion-emacs@@GATEWAY
 
 @lisp
 (setq gnus-post-method '(nngateway "GATEWAY.ADDRESS"))
+@end lisp
+
+@node The Empty Backend
+@subsection 空っぽのバックエンド
+@cindex nnnil
+
+実際は必要が無いのにどこかにバックエンドを設定しなければならない場合に、
+@code{nnnil} は代用として使うことができるバックエンドです。典型的な例は、
+第一の選択方法を必要としないが第二の (secondary) 選択方法だけを使いたい
+場合です:
+
+@lisp
+(setq gnus-select-method '(nnnil ""))
+(setq gnus-secondary-select-methods
+      '((nnimap "foo")
+        (nnml "")))
 @end lisp
 
 @node Combined Groups
