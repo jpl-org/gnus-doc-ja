@@ -9236,15 +9236,15 @@ X-Sent: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
 Gnus でメールを読むことの利点は、それが単純なバグを素晴らしい不条理に置
 き換えることです。
 
-この行が連続して更新されるようにしたいのであれば、
+この行はディフォルトでは継続的に更新されます。それをやめさせたいのなら、
 
+@vindex gnus-article-update-lapsed-header
 @lisp
-(gnus-start-date-timer)
+(setq gnus-article-update-lapsed-header nil)
 @end lisp
 
-を @file{~/.gnus.el} ファイルに入れるか、それを何かのフックで実行するよ
-うにすることができます。タイマーを止めたい場合は、
-@code{gnus-stop-date-timer} 命令を使ってください。
+を @file{~/.gnus.el} ファイルに入れてください。継続的な更新をやめさせた
+いだけならば、@code{gnus-stop-date-timer} 命令を使ってください。
 
 @item W T o
 @kindex W T o (概略)
