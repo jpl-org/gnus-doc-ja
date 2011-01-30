@@ -13981,6 +13981,18 @@ Mail})。ただし @code{default} というシンボルである場合は例外で、
 ことです。ディフルトは @samp{(%Deleted %Seen)} です。
 @end table
 
+以下は、クライアント側で ``特級'' メール分割を行なう @code{nnimap} バッ
+クエンドの完全な例です:
+
+@example
+(nnimap "imap.example.com"
+        (nnimap-inbox "INBOX")
+        (nnimap-split-methods
+         (| ("MailScanner-SpamCheck" "spam" "spam.detected")
+            (to "foo@@bar.com" "foo")
+            "undecided")))
+@end example
+
 @node Getting Mail
 @section メール取得
 @cindex reading mail
