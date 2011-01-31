@@ -9226,21 +9226,14 @@ UT (別名 GMT, ZULU) で日付を表示します (@code{gnus-article-date-ut})
 す (@code{gnus-article-date-lapsed})。こんなふうに。
 
 @example
-X-Sent: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
+Date: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
 @end example
-
-@vindex gnus-article-date-lapsed-new-header
-@code{gnus-article-date-lapsed-new-header} の値で、このヘッダーを既存
-の Date の下に追加するか、置き替えるかを指定します。
-
-Gnus でメールを読むことの利点は、それが単純なバグを素晴らしい不条理に置
-き換えることです。
 
 この行はディフォルトでは継続的に更新されます。それをやめさせたいのなら、
 
-@vindex gnus-article-update-lapsed-header
+@vindex gnus-article-update-date-headers
 @lisp
-(setq gnus-article-update-lapsed-header nil)
+(setq gnus-article-update-date-headers nil)
 @end lisp
 
 を @file{~/.gnus.el} ファイルに入れてください。継続的な更新をやめさせた
@@ -11642,13 +11635,7 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 @vindex gnus-treat-strip-trailing-blank-lines
 @vindex gnus-treat-unsplit-urls
 @vindex gnus-treat-wash-html
-@vindex gnus-treat-date-english
-@vindex gnus-treat-date-iso8601
-@vindex gnus-treat-date-lapsed
-@vindex gnus-treat-date-local
-@vindex gnus-treat-date-original
-@vindex gnus-treat-date-user-defined
-@vindex gnus-treat-date-ut
+@vindex gnus-treat-date
 @vindex gnus-treat-from-picon
 @vindex gnus-treat-mail-picon
 @vindex gnus-treat-newsgroups-picon
@@ -11704,13 +11691,36 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 
 @xref{Article Washing}.
 
-@item gnus-treat-date-english (head)
-@item gnus-treat-date-iso8601 (head)
-@item gnus-treat-date-lapsed (head)
-@item gnus-treat-date-local (head)
-@item gnus-treat-date-original (head)
-@item gnus-treat-date-user-defined (head)
-@item gnus-treat-date-ut (head)
+@item gnus-treat-date (head)
+
+日付ヘッダーを @code{gnus-article-date-headers} 変数に応じて変形/追加し
+ます。これは表示する Date ヘッダーのリストです。利用可能な形式は:
+
+@table @code
+@item ut
+協定世界時。GMT とか ZULU とも言います。
+
+@item local
+ユーザーのローカル時間帯。
+
+@item english
+英文として読める形式。
+
+@item lapsed
+メッセージが投稿されてからの経過時間。
+
+@item combined-elapsed
+元の Date ヘッダーと (短縮された) 経過時間。
+
+@item original
+元の Date ヘッダー。
+
+@item iso8601
+ISO8601 形式。つまり ``2010-11-23T22:05:21'' のようなもの。
+
+@item user-defined
+@code{gnus-article-time-format} 変数に従った形式。
+@end table
 
 @xref{Article Date}.
 
