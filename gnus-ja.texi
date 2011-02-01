@@ -11709,7 +11709,7 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 @item lapsed
 メッセージが投稿されてからの経過時間。
 
-@item combined-elapsed
+@item combined-lapsed
 元の Date ヘッダーと (短い形式の) 経過時間。
 
 @item original
