@@ -9236,8 +9236,7 @@ Date: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
 (setq gnus-article-update-date-headers nil)
 @end lisp
 
-を @file{~/.gnus.el} ファイルに入れてください。継続的な更新をやめさせた
-いだけならば、@code{gnus-stop-date-timer} 命令を使ってください。
+を @file{~/.gnus.el} ファイルに入れてください。
 
 @item W T o
 @kindex W T o (概略)
