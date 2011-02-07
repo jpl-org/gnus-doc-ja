@@ -1,5 +1,7 @@
 \input texinfo                  @c -*-texinfo-*-
 
+@include gnus-overrides-ja.texi
+
 @setfilename sasl-ja
 @iftex
 @firstparagraphindent insert
@@ -55,7 +57,12 @@ license to the document, as described in section 6 of the license.
 @end direntry
 
 @titlepage
+@ifset WEBHACKDEVEL
+@title Emacs SASL Library @value{VERSION} (DEVELOPMENT VERSION)
+@end ifset
+@ifclear WEBHACKDEVEL
 @title Emacs SASL Library @value{VERSION}
+@end ifclear
 
 @author by Daiki Ueno
 @page

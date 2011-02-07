@@ -1,5 +1,7 @@
 \input texinfo                  @c -*-texinfo-*-
 
+@include gnus-overrides-ja.texi
+
 @setfilename sieve-ja
 @settitle Emacs Sieve Manual
 @synindex fn cp
@@ -49,7 +51,12 @@ developing GNU and promoting software freedom.''
 @setchapternewpage odd
 
 @titlepage
+@ifset WEBHACKDEVEL
+@title Emacs Sieve Manual (DEVELOPMENT VERSION)
+@end ifset
+@ifclear WEBHACKDEVEL
 @title Emacs Sieve Manual
+@end ifclear
 
 @author by Simon Josefsson
 @page
