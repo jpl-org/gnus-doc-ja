@@ -5,7 +5,7 @@
 @setfilename auth-ja
 @settitle Emacs auth-source Library @value{VERSION}
 
-@set VERSION 0.2
+@set VERSION 0.3
 
 @copying
 $B$3$N%U%!%$%k$O(B Emacs auth-source $B%i%$%V%i%j!<$r@bL@$7$^$9!#(B
@@ -93,15 +93,19 @@ license to the document, as described in section 6 of the license.
 @node Overview
 @chapter $B35MW(B
 
-auth-source $B%i%$%V%i%j!<$O!"!V%5!<%P!<L>$H%]!<%H$O$o$+$C$F$k$s$@$1$I!"%f!<(B
-$B%6!<L>$H%Q%9%o!<%I$O2?$@$C$1(B?$B!W$H$$$&@N$J$,$i$NG.Nu$JLd$$$KEz$($k$?$a$N!"(B
-Emacs $B$H(B Gnus $BMQ$N?t$"$kC1=c$J<jCJ$N0l$D$G$9!#(B
+auth-source $B%i%$%V%i%j!<$O!"!V;d$N%f!<%6!<L>$H%Q%9%o!<%I$O2?$@$C$1(B?$B!W$H(B
+$B$$$&@N$J$,$i$NG.Nu$JLd$$$KEz$($k$?$a$N!"(BEmacs $B$H(B Gnus $BMQ$N?t$"$kC1=c$J<j(B
+$BCJ$N0l$D$G$9!#(B
 
-$B<B:]$K$O(B auth-source $B%i%$%V%i%j!<$OC1$J$k%f!<%6!<L>(B ($B$$$o$f$k(B login) $B$d(B
-$B%Q%9%o!<%I0J30$N$b$N$b07$&$3$H$,$G$-$^$9$,!":#F|$N(B Emacs $B$H(B Gnus $B$G$O$=(B
-$B$l$i(B 2$B$D$@$1$,;H$o$l$F$$$^$9!#F1MM$K(B auth-source $B%i%$%V%i%j!<$OB?$/$N5-(B
-$BO?7A<0!"8=:_$OEAE}E*$J(B ``netrc'' $B7A<0(B ($B$3$NJ8=q$N8e$NJ}$K$"$j$^$9(B) $B$^$?(B
-$B$O%7!<%/%l%C%H%5!<%S%9(B API $B$r%5%]!<%H$7$^$9!#(B
+($B$3$l$O2P;v$N$H$-$N!V>C2P4o$O$I$3$@(B?$B!W$H$$$&8E$/$+$i$NLd$$$H$O0[$J$j$^$9!#(B)
+
+Auth-source $B%i%$%V%i%j!<$OC1$J$k%f!<%6!<L>$d%Q%9%o!<%I(B ($B$$$o$f$kHkL)(B) $B0J(B
+$B30$N$b$N$b07$&$3$H$,$G$-$^$9!#(B
+
+$BF1MM$K(B auth-source $B%i%$%V%i%j!<$OB?$/$NCyB"%P%C%/%(%s%I!"8=:_$OEAE}E*(B
+$B$J(B ``netrc'' $B%P%/%(%s%I(B ($B$3$NJ8=q$N8e$NJ}$K$"$j$^$9(B) $B$^$?$O%7!<%/%l%C%H(B
+$B%5!<%S%9(B API $B$r%5%]!<%H$7$^$9!#$3$l$O(B EIEIO $B$K4p$E$$$?%P%/%(%s%I$G9T$J$o(B
+$B$l!"$b$7I,MW$J$i$"$J$?FH<+$N$b$N$r=q$/$3$H$,$G$-$^$9!#(B
 
 @node Help for users
 @chapter $BMxMQ<T$N$?$a$N%X%k%W(B
@@ -111,24 +115,39 @@ Emacs $B$H(B Gnus $BMQ$N?t$"$kC1=c$J<jCJ$N0l$D$G$9!#(B
 machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @var{myport}
 @end example
 
-machine $B$O%5!<%P!<$G$9(B (DNS $BL>$^$?$O(B IP $B%"%I%l%9(B)$B!#(B
+@code{machine} $B$O%5!<%P!<$G$9(B (DNS $BL>$^$?$O(B IP $B%"%I%l%9$N$I$A$i$+(B)$B!#(B
+@code{auth-source-search} $B8!:w$K$*$1$k(B @var{:host} $B$G$b$"$j$^$9!#(B
+@code{host} $B$b;H$&$3$H$,$G$-$^$9!#(B
 
-$B%]!<%H$N;XDj$OL5$/$F$b9=$$$^$;$s!#L5$$>l9g!"(Bauth-source $B$O$I$s$J%]!<%H(B
-$B$b(B OK $B$J$N$@$H2r<a$7$^$9!#<B:]$N$H$3$m!"%]!<%H$O%W%m%H%3%k$NL>A0$+%]!<%H(B
-$BHV9f$N$I$A$i$G$bNI$$$N$G!"$b$7$=$&$7$?$$$N$J$i$P!"%]!<%H(B @var{143} $B$H%W(B
-$B%m%H%3%k(B @code{imap} $B$N$?$a$N9`L\$rJL!9$K;}$D$3$H$,$G$-$^$9!#$H$b$"$l!"(B
-$B$b$7%]!<%H$N;XDj$,MW$i$J$$>l9g$O>JN,$7$F$b9=$$$^$;$s!#(B
+@code{port} $B$O@\B3$9$k%]!<%H$^$?$O%W%m%H%3%k$G$9!#(B
+@code{auth-source-search} $B8!:w$K$*$1$k(B @var{:port} $B$G$b$"$j$^$9!#(B
+@code{protocol} $B$b;H$&$3$H$,$G$-$^$9!#(B
 
-login $B$H(B password $B$O!"%5!<%P!<$KBP$7$F4J7i$K$"$J$?$N%m%0%$%s;q3J$r>ZL@$9(B
-$B$k$?$a$N$b$N$G$9!#(B
+@code{user} $B$O%f!<%6!<L>$G$9!#(B@code{auth-source-search} $B8!:w$K$*$1(B
+$B$k(B @var{:user} $B$G$b$"$j$^$9!#(B@code{login} $B$*$h$S(B @code{account} $B$b;H$&$3(B
+$B$H$,$G$-$^$9!#(B
+
+$B6uGrJ8;z$O(B auth-source $B$K4X$7$F$O>o$K(B OK $B$G$9(B ($BB>$N%W%m%0%i%`$K$ONI$/$J(B
+$B$$$+$b$7$l$^$;$s$,(B)$B!#%G!<%?$O0zMQId$G0O$s$G$/$@$5$$!#%G!<%?Cf$N0zMQId$O(B
+$B$"$J$?$NM=A[DL$j(B @code{\} $B$G%(%9%1!<%W$7$F$/$@$5$$!#(B
+
+$B$9$Y$F$3$l$i$OG$0U$G$9!#$I$3$G$bF1$8%Q%9%o!<%I$r;H$&$?$a$K!"$?$@C1$K(B
+
+@example
+password @var{mypassword}
+@end example
+
+$B$H@_Dj$9$k$3$H$,$G$-$^$9(B---$B$H$$$&$3$H$,2DG=$G$"$k$3$H$r<($7$F$$$k$N$G$"$C(B
+$B$F!"$=$l$r?d>)$7$F$$$k$o$1$G$O$"$j$^$;$s!#7+$jJV$7$^$9$,(B @emph{$B$3$l$O;H(B
+$B$o$J$$$G$/$@$5$$(B}$B!#$5$b$J$$$H$R$I$$L\$K2q$&$G$7$g$&!#(B
 
 ``Netrc'' $B%U%!%$%k$ODL>o(B @code{.authinfo} $B$^$?$O(B @code{.netrc} $B$H8F$P$l(B
 $B$^$9!#:#$G$O(B @code{.authinfo} $B$NJ}$,Ia5Z$7$F$$$k$h$&$J$N$G!"8e$G$o$+$k$h(B
 $B$&$K(B auth-source $B%i%$%V%i%j!<$O$=$l$r%G%#%U%)%k%H$K$9$k$3$H$K$h$C$F!"$3(B
 $B$N:.Mp$r=uD9$7$F$$$^$9!#(B
 
-$B$b$7%]!<%H$GLdBj$,$"$k$N$J$i(B @code{auth-source-debug} $B$r(B @code{t} $B$K@_Dj(B
-$B$7$F!"%i%$%V%i%j!<$,$I$N%]!<%H$r%A%'%C%/$7$F$$$k$+(B
+$B$b$78!:w$GLdBj$,$"$k$N$J$i(B @code{auth-source-debug} $B$r(B @code{t} $B$K@_Dj$7(B
+$B$F!"%i%$%V%i%j!<$,$I$N%[%9%H!"%]!<%H$*$h$S%f!<%6!<$r%A%'%C%/$7$F$$$k$+(B
 $B$r(B @code{*Messages*} $B%P%C%U%!!<$G8+$F$/$@$5$$!#F1MM$KB>$N$I$s$JLdBj$K$D(B
 $B$$$F$b!"2?$,%A%'%C%/$5$l$F$$$k$+$rD4$Y$k$N$,!"$"$J$?$NBh0lJb$G$9!#BhFs$N(B
 $B%9%F%C%W$O$b$A$m$s$=$l$K$D$$$F$N(B blog $B$r=q$$$F!"%3%a%s%H$G2sEz$rBT$D$3$H(B
@@ -154,12 +173,12 @@ login $B$H(B password $B$O!"%5!<%P!<$KBP$7$F4J7i$K$"$J$?$N%m%0%$%s;q3J$r>ZL@$
 (setq auth-sources '((:source "~/.authinfo.gpg" :host t :protocol t)))
 ;;; $B$[$\Ey2A$@$,!"$h$jC;$$(B ($B8e=R$N(B fallback $B$K$D$$$F$N5-=R$r;2>H(B)$B!#(B
 (setq auth-sources '((:source "~/.authinfo.gpg")))
+;;; $B$5$i$KC;$$(B @emph{$B%G%#%U%)%k%H(B}:
+(setq auth-sources '("~/.authinfo.gpg" "~/.authinfo"))
+;;; $B%7!<%/%l%C%H(B API $B$N(B @var{login} $B%3%l%/%7%g%s$r;H$&(B
+;;; (@pxref{Secret Service API})
+(setq auth-sources '("secrets:login"))
 @end lisp
-
-$B$3$l$O!V$I$s$J%[%9%H$N$I$N%]!<%H$G$b!"$3$NC10l$N%U%!%$%k$r;H$&!W$H$$$&0U(B
-$BL#$G$9!#AG@2$i$7$/4JC1$G$7$g$&!#<B:]$K$O8e<T$,$9$G$K%G%#%U%)%k%H$K$J$C$F(B
-$B$$$k$N$G!"$=$N%U%!%$%k$,$"$l$P!"$3$l$O5!G=$7$^$9!#$=$l$,$"$k$3$H$r3N$+$a(B
-$B$F$/$@$5$$!#(B
 
 $BFCDj$N%[%9%H$+%W%m%H%3%k$N%(%s%H%j!<$rJ#?t(B @code{auth-sources} $B$KDI2C$9(B
 $B$k$3$H$K$h$C$F!"$=$N%[%9%H$+%W%m%H%3%k$KFC2=$7$?(B netrc $B%U%!%$%k$r;}$D$3(B
@@ -167,36 +186,13 @@ login $B$H(B password $B$O!"%5!<%P!<$KBP$7$F4J7i$K$"$J$?$N%m%0%$%s;q3J$r>ZL@$
 $B$?@_Dj$,$"$k>l9g$O0UL#$,$"$k$+$b$7$l$^$;$s(B (90% $B$N(B Emacs $B%f!<%6!<$OJQ$J(B
 $B@_Dj$r;}$C$F$$$F!";D$j$N(B 10% $B$O(B @emph{$BK\Ev$K(B} $BJQ$o$C$F$$$^$9(B)$B!#(B
 
-$B$3$l$O!"$9$Y$F$N;2>H$K%7!<%/%l%C%H%5!<%S%9(B API $B$r;H$&Nc$G$9!#%G%U%)%k%H(B
-$B$N<}=8J*$r;H$$$^$9(B:
-
-@lisp
-(setq auth-sources '((:source (:secrets default))))
-@end lisp
-
-$B$=$7$F$3$l$O!":.:_$9$k(B 2$B$D$N%=!<%9$r;H$&Nc$G$9(B:
+$B$3$l$O!":.:_$9$k(B 2$B$D$N%=!<%9$r;H$&Nc$G$9(B:
 
 @lisp
 (setq auth-sources '((:source (:secrets default) :host "myserver" :user "joe")
-                     (:source "~/.authinfo.gpg")))
+                     "~/.authinfo.gpg"))
 @end lisp
 
-$B:GA1$N9gCW$O!"=i2s$NAv::$@$1$G(B ($B2<$+$i;O$^$k(B) $B=g=x$K$h$C$F7hDj$5$l$^(B
-$B$9(B ($B3FMWAG$O87L)$K>H9g$5$l$^$9(B)$B!#>e$NNc$G$O!"=i2s$NAv::$G%[%9(B
-$B%H(B @code{myserver} $B$X$NC10l$N9gCW$r8+$D$1$k$G$7$g$&!#(BNetrc $BA*Br$G$O!"$=(B
-$B$l$,$I$s$J%[%9%H$d%W%m%H%3%k$K$b0E$K(B (@emph{fallback} $B$H$7$F(B) $B9gCW$7$F$7(B
-$B$^$&$N$G!"<:GT$9$k$G$7$g$&!#(B@code{auth-sources} $B$K$*$1(B
-$B$k(B @code{:host t} $B$N@_DjCM$O!"(B@code{:host} $B$,L5$$>l9g$H0c$C$F!"=i2s$NAv(B
-$B::$K$*$1$k9gCW$rL\O@$s$@$b$N$G$"$k$H9MN8$5$l$^$9!#(B
-
-$B$5$F!"$b$7(B ``$BL$@_Dj(B'' $B$N%[%9%H$rC5$=$&$H$9$k$H!"$=$l$O$I$s$J%=!<%9$K$bL@(B
-$B$i$+$J9gCW$O$7$J$$$G$7$g$&!#(B2$B2sL\$NAv::(B (@emph{fallback} $B%Q%9(B) $B$G$O!"$9(B
-$B$Y$F$N0EL[$N9gCW$rD4$Y$F!"$=$l$i$r<}=8$7$^$9!#$=$l$i$O%9%3%"IU$1$5$l!"%9(B
-$B%3%"$K$h$C$FJB$YJQ$($i$l$^$9!#%9%3%"$O!"9gCW$9$kL@<(E*$J%Q%i%a!<%?!<$N?t(B
-$BCM$K4p$E$$$F$$$^$9!#>\:Y$O(B @code{auth-pick} $B4X?t$r;2>H$7$F$/$@$5$$!#(B
-
-$BLuCm(B fallback: $B$"$kMWAG$,;XDj$5$l$F$$$J$$$?$a$K87L)$J9gCW$,5/$3$i$J$/$F(B
-$B$b!"$"$k5,B'$K$h$C$FA*Br$9$kL\E*J*!"$"$k$$$OA*Br$9$k$3$H!#(B
 @end defvar
 
 $B$b$7(B @code{auth-sources} $B$r%+%9%?%^%$%:$7$J$$$H!"%G%#%U%)%k%H$G@83h$9$k(B
@@ -205,7 +201,10 @@ login $B$H(B password $B$O!"%5!<%P!<$KBP$7$F4J7i$K$"$J$?$N%m%0%$%s;q3J$r>ZL@$
 $B$O(B GnuPG $B$G0E9f2=$5$l$?%U%!%$%k$G$9(B (@pxref{GnuPG and EasyPG Assistant
 Configuration})$B!#(B
 
-$B<B:]$K;H$($k:G$b4JC1$J(B netrc $B9T$NNc$O!"%]!<%H$,L5$$$b$N$G$9!#(B
+$B$b$7$=$NFI$_9~$_$K<:GT$9$k$H!"0E9f2=$5$l$F$$$J$$(B netrc $B%U%!%$(B
+$B%k(B @code{~/.authinfo} $B$,;H$o$l$^$9!#(B
+
+$BBeI=E*$J(B netrc $B9T$NNc$O!"%]!<%H$,L5$$$b$N$G$9!#(B
 
 @example
 machine YOURMACHINE login YOU password YOURPASSWORD
@@ -250,39 +249,30 @@ TODO: $B$I$&F/$/$+$r0lHLE*$K!"(Bsecrets.el $B$O$I$&$d$k$+!"$$$/$D$+$NNc!#(B
 @node Help for developers
 @chapter $B3+H/<T$N$?$a$N%X%k%W(B
 
-auth-source $B%i%$%V%i%j!<$K$O!"30It$G;H$&$?$a$N4X?t$O0l$D$7$+$"$j$^$;$s!#(B
+auth-source $B%i%$%V%i%j!<$K$O!"30It$G;H$&$?$a$N4X?t$O>/$7$7$+$"$j$^$;$s!#(B
 
-@defun auth-source-user-or-password mode host port &optional username
-$B%[%9%H(B @var{host} $B$*$h$S%]!<%H(B @var{port} $B$N$?$a$N(B @var{mode} $B$G7h$^$kE,(B
-$B@Z$JG'>Z%H!<%/%s$r<h$j9~$_$^$9!#$b$7(B @var{username} $B$,M?$($i$l$l$P!"F1MM(B
-$B$K>H9g$5$l$^$9!#(B@code{auth-source-debug} $B$,(B @code{t} $B$@$C$?$i%G%P%C%0$N(B
-$B$?$a$N%a%C%;!<%8$rI=<($7$^$9!#%m%0$r:N$k$?$a$N4X?t$r;H$&$K$O!"(B
-@code{auth-source-debug} $B$r$=$N4X?t$K@_Dj$7$F$/$@$5$$!#EO$5$l$k%Q%i%a!<(B
-$B%?!<$O(B @code{message} $B4X?t$,<u$1<h$k$b$N$HF1$8$G$9!#$D$^$jMM<0;HMQ$NJ8;z(B
-$BNs$HG$0U$N%Q%i%a!<%?!<$G$9!#(B
+@defun auth-source-search SPEC
 
-$B$b$7(B @var{mode} $B$,J8;zNs$N%j%9%H$J$i$P!"4X?t$OJ8;zNs$N%j%9%H(B
-$B$+(B @code{nil} $B$rJV$7$^$9(B ($B$=$N$?$a!"$b$&(B 1$B2s(B netrc $B%U%!%$%k$r2r@O$;$:$K!"(B
-$B$^$?$O%7!<%/%l%C%H%5!<%S%9(B API $B$r>H9g$;$:$K:Q$_$^$9(B)$B!#:#$N$H$3(B
-$B$m(B ``login'' $B$H(B ``password'' $B$@$1$,G'$a$i$l$F$$$^$9$,!">-Mh$O$b$C$HB?$/(B
-$B$N$b$N$,DI2C$5$l$k$G$7$g$&!#(B
+TODO: $B$I$&$d$C$F(B docstring $B$r4^$a$k(B?
 
-@var{host} $B$O%[%9%HL>$NJ8;zNs$G$9!#(B
+@end defun
 
-@var{port} $B$O%W%m%H%3%kL>(B ($BNc$($P(B ``imap'') $B$^$?$O%]!<%HHV9f$G$9!#%f!<%6!<(B
-$B$N(B netrc $B%U%!%$%k$K$"$k%]!<%H$KBP1~$9$kJ8;zNs$G$J$1$l$P$J$j$^$;$s!#(B
+@defun auth-source-delete SPEC
 
-@var{username} $B$O%f!<%6!<L>$NJ8;zNs(B ($BNc$($P(B ``joe'') $B$G$9!#(B
+TODO: $B$I$&$d$C$F(B docstring $B$r4^$a$k(B?
 
-@example
-;; IMAP example
-(setq auth (auth-source-user-or-password
-            '("login" "password")
-            "anyhostnamehere"
-            "imap"))
-(nth 0 auth) ; $B%m%0%$%sL>(B
-(nth 1 auth) ; $B%Q%9%o!<%I(B
-@end example
+@end defun
+
+@defun auth-source-forget SPEC
+
+TODO: $B$I$&$d$C$F(B docstring $B$r4^$a$k(B?
+
+@end defun
+
+@defun auth-source-forget+ SPEC
+
+TODO: $B$I$&$d$C$F(B docstring $B$r4^$a$k(B?
+
 @end defun
 
 @node GnuPG and EasyPG Assistant Configuration
