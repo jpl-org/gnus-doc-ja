@@ -175,9 +175,9 @@ password @var{mypassword}
 (setq auth-sources '((:source "~/.authinfo.gpg")))
 ;;; さらに短い @emph{ディフォルト}:
 (setq auth-sources '("~/.authinfo.gpg" "~/.authinfo"))
-;;; シークレット API の @var{login} コレクションを使う
+;;; シークレット API の @var{Login} コレクションを使う
 ;;; (@pxref{Secret Service API})
-(setq auth-sources '("secrets:login"))
+(setq auth-sources '("secrets:Login"))
 @end lisp
 
 特定のホストかプロトコルのエントリーを複数 @code{auth-sources} に追加す
