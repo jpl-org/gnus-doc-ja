@@ -121,7 +121,6 @@ machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @
 
 @code{port} は接続するポートまたはプロトコルです。
 @code{auth-source-search} 検索における @var{:port} でもあります。
-@code{protocol} も使うことができます。
 
 @code{user} はユーザー名です。@code{auth-source-search} 検索におけ
 る @var{:user} でもあります。@code{login} および @code{account} も使うこ
@@ -169,8 +168,8 @@ password @var{mypassword}
 が、ディフォルトの最も簡潔な設定は次の通りです:
 
 @lisp
-;;; 旧ディフォルト: :host と :protocol が必要だったが、もはや不要。
-(setq auth-sources '((:source "~/.authinfo.gpg" :host t :protocol t)))
+;;; 旧ディフォルト: :host と :port が必要だったが、もはや不要。
+(setq auth-sources '((:source "~/.authinfo.gpg" :host t :port t)))
 ;;; ほぼ等価だが、より短い (後述の fallback についての記述を参照)。
 (setq auth-sources '((:source "~/.authinfo.gpg")))
 ;;; さらに短い @emph{ディフォルト}:
