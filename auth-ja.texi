@@ -279,6 +279,8 @@ TODO: どうやって docstring を含める?
 
 @code{auth-sources} をカスタマイズしない場合、auth-source ライブラリー
 は @file{~/.authinfo.gpg} (GnuPG で暗号化されたファイル) を読み込みます。
+その後で @file{~/.authinfo} を検査しますが、そのような暗号化されていない
+ファイルを使うことは推奨しません。
 
 Emacs 23 以降では @code{*.gpg} ファイルの暗号を自動的に解くためのオプショ
 ン @code{auto-encryption-mode} があります。ディフォルトで有効です。もし
