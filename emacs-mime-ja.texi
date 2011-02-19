@@ -43,7 +43,7 @@ developing GNU and promoting software freedom.''
 @c Node ``Interface Functions'' uses Latin-1 characters
 @c @documentencoding ISO-8859-1
 @c
-@dircategory Emacs
+@dircategory Emacs lisp libraries
 @direntry
 * Emacs MIME-ja: (emacs-mime-ja).
                                 Emacs MIME de/composition library

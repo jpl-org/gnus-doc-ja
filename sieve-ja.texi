@@ -40,7 +40,7 @@ developing GNU and promoting software freedom.''
 @end quotation
 @end copying
 
-@dircategory Emacs
+@dircategory Emacs network features
 @direntry
 * Sieve-ja: (sieve-ja).         Managing Sieve scripts in Emacs
                                   (Japanese).

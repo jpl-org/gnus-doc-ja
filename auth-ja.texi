@@ -48,7 +48,7 @@ license to the document, as described in section 6 of the license.
 @end quotation
 @end copying
 
-@dircategory Emacs
+@dircategory Emacs lisp libraries
 @direntry
 * Auth-source-ja: (auth-ja).    The Emacs auth-source library (Japanese).
 @end direntry

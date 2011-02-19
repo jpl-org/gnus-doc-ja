@@ -51,7 +51,7 @@ license to the document, as described in section 6 of the license.
 @end quotation
 @end copying
 
-@dircategory Emacs
+@dircategory Emacs network features
 @direntry
 * SASL-ja: (sasl-ja).           The Emacs SASL library (Japanese).
 @end direntry

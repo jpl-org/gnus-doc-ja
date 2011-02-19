@@ -40,7 +40,7 @@ developing GNU and promoting software freedom.''
 @end quotation
 @end copying
 
-@dircategory Emacs
+@dircategory Emacs network features
 @direntry
 * PGG-ja: (pgg-ja).             Emacs interface to various PGP
                                   implementations (Japanese).
