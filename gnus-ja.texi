@@ -22495,6 +22495,100 @@ Gnus はウィンドウの配置を変更しません。常に「正しい」ウィンドウ設定を強
 別のウィンドウで表示されるなら、ウィンドウの大きさが変更されることを避け
 るために @code{gnus-tree-minimize-window} をいじるのが良いでしょう。
 
+@subsection ウィンドウ配置の名称
+
+以下は現在知られているほとんどのウィンドウ配置とそれらの用途です:
+
+@itemize
+@item @code{group}
+
+グループバッファー。
+
+@item @code{summary}
+
+あるグループに入ってその概略 (だけ) を表示。
+
+@item @code{article}
+
+記事の選択。
+
+@item @code{server}
+
+サーバーバッファー。
+
+@item @code{browse}
+
+サーバーバッファーから閲覧するグループ。
+
+@item @code{message}
+
+(新しい) メッセージの作成。
+
+@item @code{only-article}
+
+記事バッファーだけの表示。
+
+@item @code{edit-article}
+
+記事の編集。
+
+@item @code{edit-form}
+
+グループパラメーターなどの編集。
+
+@item @code{edit-score}
+
+サーバーの定義の編集。
+
+@item @code{post}
+
+ニュース記事の作成。
+
+@item @code{reply}
+
+記事に元記事の引用無しで返信またはフォローアップ。
+
+@item @code{forward}
+
+記事の転送。
+
+@item @code{reply-yank}
+
+記事に元記事の引用付きで返信またはフォローアップ。
+
+@item @code{mail-bounce}
+
+メールの弾き返し。
+
+@item @code{pipe}
+
+記事を外部プロセスに送る。
+
+@item @code{bug}
+
+バグリポートを送る。
+
+@item @code{score-trace}
+
+スコア規則の表示。
+
+@item @code{score-words}
+
+スコアに使う単語の表示。
+
+@item @code{split-trace}
+
+分割されるメールの行方の表示。
+
+@item @code{compose-bounce}
+
+弾き返されたメールの再送信。
+
+@item @code{mml-preview}
+
+@acronym{MIME} パートの送信する前の下見。
+@end itemize
+
 @subsection ウィンドウ配置の例
 
 @itemize @bullet

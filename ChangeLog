@@ -1,3 +1,7 @@
+2011-02-21  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for No Gnus v0.11 is released.
+
 2010-09-02  TAKAHASHI Kaoru  <kaoru@kaisei.org>
 
 	* ptexinfmt.el (texinfo-multitable-widths): Use `make-char' instead of
