@@ -22160,7 +22160,7 @@ Gnus $B$OMxMQ<TDj5A;EMM$r3HD%$7$?(B @samp{%u&foo;} $B$N$h$&$J7A<0$b%5%]!<%H$7
 @code{gnus-balloon-face-*} $BJQ?t$O!"J8;zNs$+J8;zNs$rJV$94X?t$r;X$9%7%s%\(B
 $B%k$N$I$A$i$+$G$J$1$l$P$J$j$^$;$s!#$3$NB0@-$,@_Dj$5$l$F$$$k%F%-%9%H$N>e$r(B
 $B%^%&%9$,DL2a$9$k$H!"?a$-=P$7$,8=$l$FJ8;zNs$rI=<($7$^$9!#$3$l$N>\$7$$>pJs(B
-$B$O(B @xref{Tooltips, ,Tooltips, emacs, The Emacs Editor}, (GNU Emacs) $B$^$?(B
+$B$O(B @xref{Tooltips, ,Tooltips, emacs, The Emacs Editor}, (Emacs) $B$^$?(B
 $B$O(B @code{balloon-help-mode} (XEmacs) $B$N@bL@$r;2>H$7$F$/$@$5$$!#(B($B5;=QE*$J(B
 $BM}M3$N$?$a$K!"%.%#%a(B (guillemets) $B$O$3$N@a$G$O(B `$B!T(B' $B$H(B `$B!U(B' $B$G6a;w$5$l$^(B
 $B$7$?!#(B)
@@ -27358,10 +27358,10 @@ MS $B%&%#%s%I%&%:$G(B Gnus $B$r%$%s%9%H!<%k$9$k$K$O(B @file{make.bat} $B$r;
 $B%k$7$F$+$i(B Gnus $B$r%$%s%9%H!<%k$7$?$$$H$-$O!"(B@file{make.bat} $B$NBhFs0z?t(B
 $B$K(B @code{/copy} $B$rM?$($F$/$@$5$$!#(B
 
-@file{make.bat} $B$O%<%m$+$i=q$-D>$5$l$^$7$?!#(BXEmacs $B$H(B GNU Emacs $B$r<+F0G'(B
-$B<1$7!"(B@file{gnus-load.el} $B$r@8@.$7!"%3%s%Q%$%kCf$H(B info $B%U%!%$%k$N@8@.Cf(B
-$B$K%(%i!<$,5/$-$?$i9=C[=hM}$N:G8e$KJs9p$7$^$9!#(B@code{makeinfo} $B$,MxMQ2DG=(B
-$B$G$"$l$P$=$l$r;H$$!"$5$b$J$1$l$P(B @file{infohack.el} $B$KMj$j$^$9!#:#(B
+@file{make.bat} $B$O%<%m$+$i=q$-D>$5$l$^$7$?!#(BXEmacs $B$H(B Emacs $B$r<+F0G'<1$7!"(B
+@file{gnus-load.el} $B$r@8@.$7!"%3%s%Q%$%kCf$H(B info $B%U%!%$%k$N@8@.Cf$K%(%i!<(B
+$B$,5/$-$?$i9=C[=hM}$N:G8e$KJs9p$7$^$9!#(B@code{makeinfo} $B$,MxMQ2DG=$G$"$l$P(B
+$B$=$l$r;H$$!"$5$b$J$1$l$P(B @file{infohack.el} $B$KMj$j$^$9!#:#(B
 $B$d(B @file{make.bat} $B$O(B Gnus $B$rF0:n$5$;$k$?$a$KI,MW$J$9$Y$F$N%U%!%$%k$r%$(B
 $B%s%9%H!<%k$9$k$O$:$G!"BgBN$K$*$$$F(B Unix $B%7%9%F%`$K$*$1(B
 $B$k(B @code{configure; make; make install} $B%5%$%/%k$N40A4$JCV$-49$($K$J$j$^(B

@@ -141,9 +141,9 @@ password @var{mypassword}
 わないでください}。さもないとひどい目に会うでしょう。
 
 ``Netrc'' ファイルは通常 @code{.authinfo} または @code{.netrc} と呼ばれ
-ます。今では @code{.authinfo} の方が普及しているようなので、後でわかるよ
-うに auth-source ライブラリーはそれをディフォルトにすることによって、こ
-の混乱を助長しています。
+ます。今では @code{.authinfo} の方が普及しているようですが、後でわかるよ
+うに auth-source ライブラリーはそれらの両方を受け入れるために、この混乱
+を助長しています。
 
 もし検索で問題があるのなら @code{auth-source-debug} を @code{t} に設定し
 て、ライブラリーがどのホスト、ポートおよびユーザーをチェックしているか
@@ -173,7 +173,7 @@ password @var{mypassword}
 ;;; ほぼ等価だが、より短い (後述の fallback についての記述を参照)。
 (setq auth-sources '((:source "~/.authinfo.gpg")))
 ;;; さらに短い @emph{ディフォルト}:
-(setq auth-sources '("~/.authinfo.gpg" "~/.authinfo"))
+(setq auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
 ;;; シークレット API の @var{Login} コレクションを使う
 ;;; (@pxref{Secret Service API})
 (setq auth-sources '("secrets:Login"))
@@ -200,8 +200,8 @@ password @var{mypassword}
 は GnuPG で暗号化されたファイルです (@pxref{GnuPG and EasyPG Assistant
 Configuration})。
 
-もしその読み込みに失敗すると、暗号化されていない netrc ファイ
-ル @code{~/.authinfo} が使われます。
+もしその読み込みに失敗すると、暗号化されていない netrc ファイルであ
+る @code{~/.authinfo}、続いて @code{~/.netrc} が使われます。
 
 代表的な netrc 行の例は、ポートが無いものです。
 
