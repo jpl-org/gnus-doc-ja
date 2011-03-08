@@ -2335,8 +2335,7 @@ to whom*, *news on group* $B$J$I(B) $B$7$F!"$=$NL>A0$N4{B8$N%P%C%U%!!<$GJT=8$
 
 @item unique
 @item t
-$B%a%C%;!<%8$N$d$jJ}$G@8@.$5$l$?L>A0$G?7$7$$%P%C%U%!!<$r:n$j$^$9!#$3$l$,%G%#(B
-$B%U%)%k%H$G$9!#(B
+$B%a%C%;!<%8$N$d$jJ}$G@8@.$5$l$?L>A0$G?7$7$$%P%C%U%!!<$r:n$j$^$9!#(B
 
 @item unsent
 @code{unique} $B$K;w$F$$$^$9$,!"%P%C%U%!!<L>$,(B "*unsent " $B$G;O$^$j$^$9!#(B
@@ -2353,7 +2352,7 @@ to whom*, *news on group* $B$J$I(B) $B$7$F!"$=$NL>A0$N4{B8$N%P%C%U%!!<$GJT=8$
 $B$=$N4X?t$O?7$7$$%P%C%U%!!<L>$rJV$5$J$1$l$P$J$j$^$;$s!#(B
 @end table
 
-$B%G%#%U%)%k%HCM$O(B @code{unique} $B$G$9!#(B
+$B%G%#%U%)%k%HCM$O(B @code{unsent} $B$G$9!#(B
 
 @item message-max-buffers
 @vindex message-max-buffers
