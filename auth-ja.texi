@@ -145,12 +145,12 @@ password @var{mypassword}
 うに auth-source ライブラリーはそれらの両方を受け入れるために、この混乱
 を助長しています。
 
-もし検索で問題があるのなら @code{auth-source-debug} を @code{t} に設定し
-て、ライブラリーがどのホスト、ポートおよびユーザーをチェックしているか
-を @code{*Messages*} バッファーで見てください。同様に他のどんな問題につ
-いても、何がチェックされているかを調べるのが、あなたの第一歩です。第二の
-ステップはもちろんそれについての blog を書いて、コメントで回答を待つこと
-です。
+もし検索で問題があるのなら @code{auth-source-debug} を @code{trivia} に
+設定して、ライブラリーがどのホスト、ポートおよびユーザーをチェックしてい
+るかを @code{*Messages*} バッファーで見てください。同様に他のどんな問題
+についても、何がチェックされているかを調べるのが、あなたの第一歩です。第
+二のステップはもちろんそれについての blog を書いて、コメントで回答を待つ
+ことです。
 
 変数 @code{auth-sources} をカスタマイズすることができます。もし古いバー
 ジョンの Emacs を使っているか、何かの理由のために auth-source ライブラリー
@@ -248,6 +248,15 @@ TODO: どう働くかを一般的に、secrets.el はどうやるか、いくつかの例。
 @node Help for developers
 @chapter 開発者のためのヘルプ
 
+auth-source ライブラリーは、何らかの動作を行なった結果の記録を採ることが
+できます。
+
+@defvar auth-source-debug
+この変数を @code{trivia} にすると、@code{*Messages*} バッファーへのたく
+さんの出力を見ることができます。あるいはこれに @code{message} に似た関数
+を設定して、あなた独自のやり方で記録を採ることもできます。
+@end defvar
+
 auth-source ライブラリーには、外部で使うための関数は少ししかありません。
 
 @defun auth-source-search SPEC
@@ -255,6 +264,53 @@ auth-source ライブラリーには、外部で使うための関数は少ししかありません。
 TODO: どうやって docstring を含める?
 
 @end defun
+
+@c TRANSLATEME
+Let's take a look at an example of using @code{auth-source-search}
+from Gnus' @code{nnimap.el}.
+
+@example
+(defun nnimap-credentials (address ports)
+  (let* ((auth-source-creation-prompts
+          '((user  . "IMAP user at %h: ")
+            (secret . "IMAP password for %u@@%h: ")))
+         (found (nth 0 (auth-source-search :max 1
+                                           :host address
+                                           :port ports
+                                           :require '(:user :secret)
+                                           :create t))))
+    (if found
+        (list (plist-get found :user)
+              (let ((secret (plist-get found :secret)))
+                (if (functionp secret)
+                    (funcall secret)
+                  secret))
+              (plist-get found :save-function))
+      nil)))
+@end example
+
+This call requires the user and password (secret) to be in the
+results.  It also requests that an entry be created if it doesn't
+exist already.  While the created entry is being assembled, the shown
+prompts will be used to interact with the user.  The caller can also
+pass data in @code{auth-source-creation-defaults} to supply defaults
+for any of the prompts.
+
+Note that the password needs to be evaluated if it's a function.  It's
+wrapped in a function to provide some security.
+
+Later, after a successful login, @code{nnimal.el} calls the
+@code{:save-function} like so:
+
+@example
+(when (functionp (nth 2 credentials))
+   (funcall (nth 2 credentials)))
+@end example
+
+Which will work whether the @code{:save-function} was provided or not.
+@code{:save-function} will be provided only when a new entry was
+created, so this effectively says ``after a successful login, save the
+authentication information we just used, if it was newly created.''
 
 @defun auth-source-delete SPEC
 
