@@ -265,9 +265,8 @@ TODO: どうやって docstring を含める?
 
 @end defun
 
-@c TRANSLATEME
-Let's take a look at an example of using @code{auth-source-search}
-from Gnus' @code{nnimap.el}.
+では Gnus の @code{nnimap.el} から @code{auth-source-search} を使う例を
+見てみましょう。
 
 @example
 (defun nnimap-credentials (address ports)
@@ -289,28 +288,37 @@ from Gnus' @code{nnimap.el}.
       nil)))
 @end example
 
-This call requires the user and password (secret) to be in the
-results.  It also requests that an entry be created if it doesn't
-exist already.  While the created entry is being assembled, the shown
-prompts will be used to interact with the user.  The caller can also
-pass data in @code{auth-source-creation-defaults} to supply defaults
-for any of the prompts.
+@c 以下の訳文の質が悪いのは原文の出来の酷さのため。
+この呼び出しはその結果にユーザー名とパスワード (式中の @code{secret}) が
+含まれることを求めています。さらに、もしその項目がまだ無かったら作る必要
+もあります。その項目を作る際にユーザーとやり取りする場合は、式中にある質
+問文が使われます。この呼び出しは、ユーザーへの質問文のディフォルト値のた
+めに @code{auth-source-creation-defaults} にあるデータを渡すこともできま
+す。
 
-Note that the password needs to be evaluated if it's a function.  It's
-wrapped in a function to provide some security.
+パスワードがもし関数だったら、それは評価される必要があることに注意してく
+ださい。ある程度の安全対策として、それは関数で包まれています。
 
-Later, after a successful login, @code{nnimal.el} calls the
-@code{:save-function} like so:
+その後ログインに成功したら @code{nnimal.el} は次のよう
+に @code{:save-function} を呼びます:
 
 @example
 (when (functionp (nth 2 credentials))
    (funcall (nth 2 credentials)))
 @end example
 
-Which will work whether the @code{:save-function} was provided or not.
-@code{:save-function} will be provided only when a new entry was
-created, so this effectively says ``after a successful login, save the
-authentication information we just used, if it was newly created.''
+これは @code{:save-function} の有無に関わらす動作するでしょう。
+@code{:save-function}は新しい項目が作られたときだけ提供されるので、これ
+は実際に「ログイン成功後」なのです。そして我々がちょうど使っていた認証情
+報 (ただしこれが新た作られたものであるのなら) をセーブします。
+
+最初にそれが呼ばれた後、@code{:save-function} が再度走ることはありません
+(しかしもし @code{auth-source-debug} を @code{'trivia} に設定してあるな
+らば、そのことを多少記録します。これすなわち、それは鬱陶しい同じ質問が繰
+り返されることはないということです。
+
+したがって @code{:create t} を設定した API ユーザーの責任は、もし存在す
+るならば @code{:save-function} を呼ぶことです。
 
 @defun auth-source-delete SPEC
 

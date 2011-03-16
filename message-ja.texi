@@ -1960,6 +1960,26 @@ node) として使います。文字列だったら、その文字列を使います。それが文字列
 @section 挿入するための変数
 
 @table @code
+@item message-cite-style
+@vindex message-cite-style
+返信するときに使う総体的な様式です。引用と返信文の位置関係をどうするか、
+どんな形式で引用するか、シグネチャをどこに置くか、というような物事をこれ
+で決定します。
+
+値は @code{nil} (どの変数も覆しません) またはディフォルト値を覆すため
+の @code{(VARIABLE VALUE)} というペアの let 型リストのどちらかです。
+
+特定のグループのためにこの変数を設定するに
+は @code{gnus-posting-styles} を参照してください。よく使われているいろい
+ろなメール・エージェントをまねた設定が @code{message-cite-style-*} とい
+う変数に用意されています。
+
+@item message-cite-reply-position
+@vindex message-cite-reply-position
+返信文をどこに置くかを指定します。使うことができる様式には、インラインで
+返信するための @code{traditional}、先頭に返信文を書く (top-posting) ため
+の @code{above}、および文末に返信文を書くための @code{below} があります。
+
 @item message-ignored-cited-headers
 この正規表現に合致するすべてのヘッダーが、引用のために yank されたメッセー
 ジから取り除かれます。ディフォルトは @samp{.} で、すべてのヘッダーが取り
