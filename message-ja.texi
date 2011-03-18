@@ -91,7 +91,7 @@ Gnus $B$N$9$Y$F$N%a%C%;!<%8$N:n@.(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$O!"%a%C
 @end menu
 
 Message $B$O(B Gnus $B$H$H$b$KG[I[$5$l$^$9!#$3$N%^%K%e%"%k$KBP1~$9$k(B Gnus $B$NHG(B
-$B$O(B No Gnus v0.14 $B$G$9!#(B
+$B$O(B No Gnus v0.15 $B$G$9!#(B
 
 @node Interface
 @chapter $B%$%s%?!<%U%'!<%9(B
@@ -1202,6 +1202,9 @@ pgg-ja, The PGG Manual}, $B$b;2>H$7$F$/$@$5$$!#(B
 $B%]%$%s%H$H%^!<%/$N4V$NJ8$r>JN,$7$^$9(B (@code{message-elide-region})$B!#J8>O(B
 $B$O(B kill $B$5$l$F!"JQ?t(B @code{message-elide-ellipsis} $B$NCM$GCV$-49$($i$l$^(B
 $B$9!#%G%#%U%)%k%H$N>JN,Id9f$H$7$F;H$o$l$kCM$O(B (@samp{[...]}) $B$G$9!#(B
+
+$B$3$l$O=qK!;EMMJQ?t$J$N$G!":o=|$5$l$?9T?t$r!"$^$?$O:o=|$5$l$?J8;z?t$rI=<((B
+$B$5$;$k$?$a$K!"$=$l$>$l(B @samp{%l} $B$H(B @samp{%c} $B$r;H$&$3$H$,$G$-$^$9!#(B
 
 @item C-c M-k
 @kindex C-c M-k
