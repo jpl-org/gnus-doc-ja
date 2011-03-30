@@ -3273,6 +3273,12 @@ kill $B$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#
 $BJ]N15-;v$r;}$D%0%k!<%W$r$9$Y$FI=<($7$^(B
 $B$9(B (@code{gnus-group-list-dormant})$B!#(B
 
+@item A !
+@kindex A ! ($B%0%k!<%W(B)
+@findex gnus-group-list-ticked
+$B2D;k5-;v(B (ticked articles) $B$,$"$k%0%k!<%W$r$9$Y$FI=<($7$^(B
+$B$9(B (@code{gnus-group-list-ticked})$B!#(B
+
 @item A /
 @kindex A / ($B%0%k!<%W(B)
 @findex gnus-group-list-limit
