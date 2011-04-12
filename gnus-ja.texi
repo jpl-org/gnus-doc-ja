@@ -22507,7 +22507,7 @@ Gnus はウィンドウの配置を変更しません。常に「正しい」ウィンドウ設定を強
 
 以下は現在知られているほとんどのウィンドウ配置とそれらの用途です:
 
-@itemize
+@table
 @item @code{group}
 
 グループバッファー。
@@ -22595,7 +22595,7 @@ Gnus はウィンドウの配置を変更しません。常に「正しい」ウィンドウ設定を強
 @item @code{mml-preview}
 
 @acronym{MIME} パートの送信する前の下見。
-@end itemize
+@end table
 
 @subsection ウィンドウ配置の例
 
