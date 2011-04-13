@@ -1,3 +1,10 @@
+2011-04-13  TAKAHASHI Kaoru  <kaoru@kaisei.org>
+
+	* ptexinfmt.el: Use lexical binding.
+	(ptexinfmt-broken-facility): Rename _dummy argument.
+	(texinfo-enclosure-list, texinfo-alias-list): Add defvar stub for
+	lexical binding.
+
 2011-03-18  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Gnus-Doc-Ja: The version for No Gnus v0.15 is released.
