@@ -22507,92 +22507,92 @@ Gnus はウィンドウの配置を変更しません。常に「正しい」ウィンドウ設定を強
 
 以下は現在知られているほとんどのウィンドウ配置とそれらの用途です:
 
-@table
-@item @code{group}
+@table @code
+@item group
 
 グループバッファー。
 
-@item @code{summary}
+@item summary
 
 あるグループに入ってその概略 (だけ) を表示。
 
-@item @code{article}
+@item article
 
 記事の選択。
 
-@item @code{server}
+@item server
 
 サーバーバッファー。
 
-@item @code{browse}
+@item browse
 
 サーバーバッファーから閲覧するグループ。
 
-@item @code{message}
+@item message
 
 (新しい) メッセージの作成。
 
-@item @code{only-article}
+@item only-article
 
 記事バッファーだけの表示。
 
-@item @code{edit-article}
+@item edit-article
 
 記事の編集。
 
-@item @code{edit-form}
+@item edit-form
 
 グループパラメーターなどの編集。
 
-@item @code{edit-score}
+@item edit-score
 
 サーバーの定義の編集。
 
-@item @code{post}
+@item post
 
 ニュース記事の作成。
 
-@item @code{reply}
+@item reply
 
 記事に元記事の引用無しで返信またはフォローアップ。
 
-@item @code{forward}
+@item forward
 
 記事の転送。
 
-@item @code{reply-yank}
+@item reply-yank
 
 記事に元記事の引用付きで返信またはフォローアップ。
 
-@item @code{mail-bounce}
+@item mail-bounce
 
 メールの弾き返し。
 
-@item @code{pipe}
+@item pipe
 
 記事を外部プロセスに送る。
 
-@item @code{bug}
+@item bug
 
 バグリポートを送る。
 
-@item @code{score-trace}
+@item score-trace
 
 スコア規則の表示。
 
-@item @code{score-words}
+@item score-words
 
 スコアに使う単語の表示。
 
-@item @code{split-trace}
+@item split-trace
 
 分割されるメールの行方の表示。
 
-@item @code{compose-bounce}
+@item compose-bounce
 
 弾き返されたメールの再送信。
 
-@item @code{mml-preview}
+@item mml-preview
 
 @acronym{MIME} パートの送信する前の下見。
 @end table
