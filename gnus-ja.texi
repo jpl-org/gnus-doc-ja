@@ -4855,7 +4855,7 @@ Gnus は変数 @code{gnus-extract-address-components} の値を @code{From
 カーソルを (最初のコロンの後ろの代わりに) 置く場所。
 @item &user-date;
 経過時間の様式。いろいろな様式
-が @code{gnus-summary-user-date-format-alist} で定義されています。
+が @code{gnus-user-date-format-alist} で定義されています。
 @item u
 利用者定義指定子。フォーマット文字列の中の次の文字は英字でなければなりま
 せん。これにより Gnus は関数 @code{gnus-user-format-function-}@var{x} を
@@ -7143,7 +7143,9 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに、すべての「ずれ」
 それぞれの関数は二つのスレッドをとり、最初のスレッドがもう一方より先に並
 べ替えられるべきであれば @code{nil} でない値を返します。実際の並べ替えは、
 普通それぞれのスレッドの根本だけを調べることによって行なわれることに気を
-付けてください。
+付けてください。ただし @code{gnus-thread-sort-by-most-recent-number} お
+よび @code{gnus-thread-sort-by-most-recent-date} は、この規則に従いませ
+ん。
 
 二つ以上の関数を使う場合、並べ替えの第一の鍵はリストの最後の関数でなけれ
 ばなりません。並べ替え関数のリストのなるべく先頭に、おそらく常
