@@ -25679,7 +25679,7 @@ Gnus の操作を通じてレジストリーが記録されるファイルです。ディフォルトで
 ものの 2つが用意されています。
 
 @lisp
-;; 単一の文字で印を表示する。
+;; 単一の文字で印を表示する
 ;; (`gnus-registry-marks' の :char プロパティーを参照):
 ;; (defalias 'gnus-user-format-function-M
 ;;   'gnus-registry-user-format-function-M)
