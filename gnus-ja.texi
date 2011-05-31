@@ -25682,11 +25682,11 @@ Gnus の操作を通じてレジストリーが記録されるファイルです。ディフォルトで
 ;; 単一の文字で印を表示する
 ;; (`gnus-registry-marks' の :char プロパティーを参照):
 ;; (defalias 'gnus-user-format-function-M
-;;   'gnus-registry-user-format-function-M)
+;;   'gnus-registry-article-marks-to-chars)
 
 ;; 名前で印を表示する (`gnus-registry-marks' を参照):
 ;; (defalias 'gnus-user-format-function-M
-;;   'gnus-registry-user-format-function-M2)
+;;   'gnus-registry-article-marks-to-names)
 @end lisp
 
 @node Store arbitrary data
