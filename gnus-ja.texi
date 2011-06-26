@@ -5429,6 +5429,13 @@ Summary Buffer} を参照してください。
 頭引数の習慣を使います。ただし、受取人の決定には最初の記事のヘッダーだけ
 を使います。
 
+@item S L
+@kindex S L (概略)
+@findex gnus-summary-reply-to-list-with-original
+メーリングリストで配信されたメッセージに返事をするとき、元のメッセージの
+引用付きでそのメーリングリストに返信しま
+す (@code{gnus-summary-reply-to-list-with-original})。
+
 @item S v
 @kindex S v (概略)
 @findex gnus-summary-very-wide-reply
