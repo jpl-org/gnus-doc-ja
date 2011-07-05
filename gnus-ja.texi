@@ -15439,14 +15439,16 @@ nnml:mail.others:
 去可能」に「しない」なら、Gnus は「決して」それらの「記事」を消去しませ
 ん。
 
+@vindex gnus-auto-expirable-marks
 手作業で記事に期限切れ消去可能の印を付けなければならないわけではありませ
 ん。Gnus は“auto-expire”および“total-expire”と呼ばれる二つの機能を提
 供して、あなたの手助けをします。かいつまんで言えば“auto-expire”はあな
 たが記事を選択したときに Gnus が @kbd{E} を叩いてくれることを意味します。
 そして“total-expire”は、すべての既読の記事は期限切れ消去可能である
 と Gnus が解釈することを意味します。したがって @samp{E} の印が付けられた
-記事に加えて、@samp{r}, @samp{R}, @samp{O}, @samp{K}, @samp{Y} などの印
-が付けられた記事も期限切れ消去可能であると解釈されます。
+記事に加えて、@samp{r}, @samp{R}, @samp{O}, @samp{K}, @samp{Y} (およびそ
+の類) の印が付けられた記事も期限切れ消去可能であると解釈されます。これら
+の印の完全なリストは @code{gnus-auto-expirable-marks} にあります。
 
 では auto-expire または total-expire は、いつ使用されるべきなのでしょう
 か?  メーリングリストを購読しているほとんどの人々は、それぞれのリストが
