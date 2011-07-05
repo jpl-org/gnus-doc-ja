@@ -1307,6 +1307,10 @@ options -n !alt.all !rec.all sci.all
 $B$l$^$9!#$3$NJQ?t$O%G%#%U%)%k%H$G(B @code{gnus-subscribe-alphabetically} $B$K(B
 $B$J$j$^$9!#(B
 
+``options -n'' $B$N7A<0$OC1=c2a$.$^$9!#>e5-$N9=J8$O%5%]!<%H$7$F$$$k$b$N$N(B
+$B$9$Y$F$G$9!#$D$^$j!"$"$k%K%e!<%93,AX$r6/$$$F9VFI$9$k$3$H$b$G$-$k$7!"$"$k(B
+$B%K%e!<%93,AX$r9VFIBP>]$+$i=|30$9$k$3$H$b$G$-$k$H$$$&$3$H$G$9!#(B
+
 @vindex gnus-options-not-subscribe
 @vindex gnus-options-subscribe
 @file{.newsrc} $B%U%!%$%k$r$$$8$j$?$/$J$$>l9g$O!"(B
@@ -18745,9 +18749,8 @@ Variables}) $B$r@_Dj$9$k$3$H$,$G$-$^$9!#(BGnus $B$O$[$H$s$I3N$+$K$b$C$HCY$/$J
 $B0l$D$r$$$C$?$s;O$a$F$7$^$C$?$i(B (@kbd{C-g} $B$d$=$NB>$G(B) $BCfCG$9$k$3$H$b$"$^(B
 $B$jNI$$$3$H$G$O$"$j$^$;$s!#(B
 
-$BNc$($P(B @code{gnus-request-expire-articles} $B$N$h$&$JB>$N4X?t$O!"%(!<%8%'(B
-$B%s%H$r%0%k!<%W$KF14|$5$;$k$?$a$K(B @code{gnus-agent-expire} $B$r<B9T$9$k$+$b(B
-$B$7$l$J$$$3$H$KCm0U$7$F$/$@$5$$!#(B
+$BB>$N4X?t$,%(!<%8%'%s%H$r%0%k!<%W$KF14|$5$;$k$?$a(B
+$B$K(B @code{gnus-agent-expire} $B$r<B9T$9$k$+$b$7$l$J$$$3$H$KCm0U$7$F$/$@$5$$!#(B
 
 @code{agent-enable-expiration} $B$H$$$&%(!<%8%'%s%H$N%Q%i%a!<%?!<$r!"A*Br(B
 $B$7$?%0%k!<%W$G$N4|8B@Z$l>C5n$rM^@)$9$k$?$a$K;H$&$3$H$,$G$-$^$9!#(B
