@@ -2941,8 +2941,8 @@ Gmane.org $B$G0l;~E*$J%0%k!<%W$r9VFI$9$k$?$a$N%3%^%s%I$G$9!#5-;v(B
 $BMxMQ$G$-$k1i;;;R$O(B @code{not}, @code{and} $B$*$h$S(B @code{or} $B$G$9!#=R8l(B
 $B$O(B @code{tick}, @code{unsend}, @code{undownload}, @code{unread},
 @code{dormant}, @code{expire}, @code{reply}, @code{killed},
-@code{bookmark}, @code{score}, @code{save}, @code{cache}, @code{forward},
-@code{unseen} $B$*$h$S(B @code{recent} $B$r4^$_$^$9!#(B
+@code{bookmark}, @code{score}, @code{save}, @code{cache},
+@code{forward} $B$*$h$S(B @code{unseen} $B$r4^$_$^$9!#(B
 @end table
 
 @code{display} $B%Q%i%a!<%?!<$O!"35N,%P%C%U%!!<$r;XDj$7$?0lIt$NAH$@$1$K@)(B
@@ -6013,15 +6013,10 @@ Articles})$B!#(B
 ($B86J8$O(B saved==$BJ]B8$5$l$?(B) $B5-;v$O!"Fs7eL\$K(B @samp{S} $B$N0u$,IU$-$^(B
 $B$9(B (@code{gnus-saved-mark})$B!#(B
 
-@vindex gnus-recent-mark
-$B$^$@%5!<%P!<$,MxMQ<T$K8+$;$F$$$J$$5-;v$O!"Fs7eL\$K(B @samp{N} $B$N0u$,IU$-$^(B
-$B$9(B (@code{gnus-recent-mark})$B!#$?$$$F$$$N%5!<%P!<$O$3$N0u$r%5%]!<%H$;$:!"(B
-$B$=$N>l9g$OC1$KI=<($5$l$^$;$s!#(B@code{gnus-unseen-mark} $B$H8+Hf$Y$F$/$@$5$$!#(B
-
 @item
 @vindex gnus-unseen-mark
 $B$^$@(B Gnus $B$GFI$^$l$?$3$H$,$J$$5-;v$O!"Fs7eL\$K(B @samp{.} $B$N0u$,IU$-$^(B
-$B$9(B (@code{gnus-unseen-mark})$B!#(B@code{gnus-recent-mark} $B$H8+Hf$Y$F$/$@$5$$!#(B
+$B$9(B (@code{gnus-unseen-mark})$B!#(B
 
 @item
 @vindex gnus-downloaded-mark
@@ -21942,7 +21937,9 @@ Gnus $B$G$ODL>o$=$l$i$N%a%C%;!<%8$O%X%C%@!<$K(B ``(none)'' $B$,I=<($5$l$F8=$l
 
 @item gnus-interactive-exit
 @vindex gnus-interactive-exit
-Gnus $B$r=*N;$9$kA0$K3NG'$r5a$a$^$9!#%G%#%U%)%k%H$G(B @code{t} $B$G$9!#(B
+$B$b$7(B @code{nil} $B0J30$@$C$?$i(B Gnus $B$r=*N;$9$k$H$-$K3NG'$r5a$a$^$9!#(B
+@code{quiet} $B$K$7$F$*$/$H!"3h$-$F$$$k35N,%P%C%U%!!<$r3NG'L5$7$G<+F0E*$K(B
+$B99?7$7$^$9!#%G%#%U%)%k%HCM$O(B @code{t} $B$G$9!#(B
 @end table
 
 @node Symbolic Prefixes
@@ -27590,10 +27587,6 @@ Picon $B$O!"MxMQ<T!"%I%a%$%s!"$=$l$K%K%e!<%9%0%k!<%W$rI=8=$9$k$?$a$N!V8D?M(B
 $BHs(B-@code{nil} $B$K$9$k$H!"35N,%P%C%U%!!<$,:n$i$l$F$$$/MM;R$,I=<($5$l$^$9!#(B
 
 @item
-$B?7$7$$(B @code{recent} $B0u(B @samp{.} $B$G!"?75,$KFO$$$?%a%C%;!<%8$r(B ($BL$FI$@$1(B
-$B$l$I$b8E$$5-;v$H$O6hJL$7$F(B) $BI=<($7$^$9!#(B
-
-@item
 Gnus $B$O(B RFC 2369 $B$N%a!<%j%s%0%j%9%H$N%X%C%@!<$r%5%]!<%H$7$^$9!#$^$?!"%a!<(B
 $B%j%s%0%j%9%H$N%0%k!<%WMQ$K?t!9$N%3%^%s%I$rMQ0U$7$^$7$?!#(B@xref{Mailing
 List}.
@@ -29129,8 +29122,8 @@ Gnus $B$N%0%k!<%W>pJs(B (@pxref{Group Info}) $B$,!"%P%C%/%(%s%I$N$=$l$r2~JQ$9
 $B$9$Y$F$N0u$OJ]B8$7$^$9(B)$B!#(B@var{mark} $B$O0u$N%j%9%H$G$9!#$=$l$>$l$N0u$O%7%s(B
 $B%\%k$G$9!#8=:_;H$o$l$F$$$k0u$O(B @code{read}, @code{tick}, @code{reply},
 @code{expire}, @code{killed}, @code{dormant}, @code{save},
-@code{download}, @code{unsend}, @code{forward} $B$*$h$S(B @code{recent} $B$G$9(B
-$B$,!"$"$J$?$N%P%C%/%(%s%I$O!"2DG=$J$i$3$l$i$r@)8B$r$9$k$Y$-$G$O$"$j$^$;$s!#(B
+@code{download}, @code{unsend} $B$*$h$S(B @code{forward} $B$G$9$,!"$"$J$?$N%P%C(B
+$B%/%(%s%I$O!"2DG=$J$i$3$l$i$r@)8B$r$9$k$Y$-$G$O$"$j$^$;$s!#(B
 
 $BL7=b$9$kF0:n$,;XDj$5$l$?>l9g$O!"%j%9%H$N:G8e$NF0:n$,8zNO$r;}$D$b$N$K$J$k(B
 $B$Y$-$G$9!#$9$J$o$A!"(B@var{action} $B$,5-;v(B 1 $B$K(B @code{$B2D;k(B} $B0u$rDI2C$9$kMW(B
