@@ -1014,8 +1014,8 @@ for Heathens} $B$rFI$s$G$/$@$5$$!#(B
 $BJQ?t(B @code{gnus-select-method} $B$O(B Gnus $B$,$I$3$G%K%e!<%9$rC5$9$Y$-$+$r<((B
 $B$7$^$9!#$3$NJQ?t$O$O$8$a$NMWAG$,!VJ}K!!W!"FsHVL\$NMWAG$,!V>l=j!W$rI=$9%j(B
 $B%9%H$G$"$kI,MW$,$"$j$^$9!#$3$NJ}K!$O$"$J$?$N4pK\J}K!(B (native method) $B$K(B
-$B$J$j$^$9!#$3$NJ}K!$G<h$C$F$3$J$$%0%k!<%W$O$9$Y$F30It(B (foreign) $B%0%k!<%W(B
-$B$G$9!#(B
+$B$J$j$^$9!#$3$NJ}K!$G<h$C$F$3$J$$%0%k!<%W$O$9$Y$FBhFs$N(B (secondary) $BA*Br(B
+$BJ}K!$G<hF@$9$k%0%k!<%W$+!"$^$?$O30It(B (foreign) $B%0%k!<%W$G$9!#(B
 
 $BNc$($P(B @acronym{NNTP} $B%5!<%P!<(B @samp{news.somewhere.edu} $B$+$iKhF|(B ($BLt$N(B
 $B$h$&$K(B) $B0lDj$NNL$N%K%e!<%9$r@]<h$7$?$$$N$G$"$l$P!"(B
@@ -3288,8 +3288,11 @@ kill $B$5$l$?%0%k!<%W$r$9$Y$FI=<($7$^$9(B (@code{gnus-group-list-killed})$B!#
 @item A /
 @kindex A / ($B%0%k!<%W(B)
 @findex gnus-group-list-limit
-$B8=:_$NA*Br$5$l$?HO0O$K8BDj$7$?%0%k!<%W$rI=<($7$^(B
-$B$9(B (@code{gnus-group-list-limit})$B!#(B
+$B$5$i$K8=:_$NA*Br$5$l$?HO0O$K8BDj$7$?%0%k!<%W$rI=<($7$^(B
+$B$9(B (@code{gnus-group-list-limit})$B!#:G=i$K(B @kbd{A ?} $B$GJ]N15-;v$,$"$k%0%k!<(B
+$B%W$K@)8B$7$F$"$k$J$i!"(B@kbd{A / c} $B$G$5$i$K%-%c%C%7%e$5$l$?5-;v$,$"$k%0%k!<(B
+$B%W!"$D$^$jJ]N15-;v$,$"$C$F!"$+$D%-%c%C%7%e$5$l$?5-;v$b$"$k%0%k!<%W$K@)8B(B
+$B$9$k$3$H$,$G$-$^$9!#(B
 
 @item A f
 @kindex A f ($B%0%k!<%W(B)
@@ -28180,18 +28183,23 @@ Gnus $B$O4pACE*$J%a%G%#%"$r07$$$^$;$s!#8@$o$P$3$l$O!"$9$Y$F%P%C%/%(%s%I$K(B
 @item $B4pK\(B (native)
 @cindex native
 Gnus $B$O$$$D$b0l$D$NJ}K!(B ($B$H%P%C%/%(%s%I(B) $B$r!"%K%e!<%9$rF@$k$?$a$N!V4pK\!W(B
-$B$b$7$/$O%G%#%U%)%k%H$N<jCJ$H$7$F;H$$$^$9!#(B
+$B$b$7$/$O%G%#%U%)%k%H$N<jCJ$H$7$F;H$$$^$9!#!V4pK\!W$NA*BrJ}K!$G<hF@$9$k%0(B
+$B%k!<%W$O(B @samp{gnu.emacs.gnus} $B$N$h$&$JL>A0$K$J$j$^$9!#(B
 
 @item $B30It(B (foreign)
 @cindex foreign
 $BF1;~$KG$0U$N?t$N30It%0%k!<%W$r%"%/%;%9$G$-$k>uBV$K$9$k$3$H$b$G$-$^$9!#$3(B
 $B$l$i$O%K%e!<%9$r<hF@$9$k$?$a$N!"4pK\$G$O$J$/!"Fs<!$N$G$b$J$$%P%C%/%(%s%I(B
-$B$r;H$&%0%k!<%W$G$9!#(B
+$B$r;H$&%0%k!<%W$G$9!#30It%0%k!<%W(B
+$B$O(B @samp{nntp+news.gmane.org:gmane.emacs.gnus.devel} $B$N$h$&$JL>A0$K$J$j(B
+$B$^$9!#(B
 
 @item $BFs<!$N(B (secondary)
 @cindex secondary
 $BFs<!$N%P%C%/%(%s%I$O!"4pK\$H30It$N4V$/$i$$$K0LCV$9$k%P%C%/%(%s%I$G$9$,!"(B
-$B$[$H$s$I4pK\$HF1$8$h$&$KF0:n$9$k$b$N$G$9!#(B
+$B$[$H$s$I4pK\$HF1$8$h$&$KF0:n$9$k$b$N$G$9!#$7$+$7$=$l$i(B
+$B$b(B @samp{nntp+news.gmane.org:gmane.emacs.gnus.devel} $B$N$h$&$JL>A0$K$J$j(B
+$B$^$9!#(B
 
 @item $B5-;v(B (article)
 @cindex article
