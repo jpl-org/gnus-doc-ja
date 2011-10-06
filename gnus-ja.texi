@@ -28679,7 +28679,7 @@ Gnus $B$H$=$N%P%C%/%(%s%I$N4V$N%$%s%?!<%U%'!<%9(B ($B$3$l$O40A4$K5-=R$5$l$F$$
 
 @item gnus-get-info
 @findex gnus-get-info
-@var{group} $B$N%0%k!<%W>pJs$N%j%9%H$rJV$7$^$9!#(B
+@var{group} $B$N%0%k!<%W>pJs$N%j%9%H$rJV$7$^$9(B (@pxref{Group Info})$B!#(B
 
 @item gnus-group-unread
 @findex gnus-group-unread
@@ -28687,7 +28687,8 @@ Gnus $B$H$=$N%P%C%/%(%s%I$N4V$N%$%s%?!<%U%'!<%9(B ($B$3$l$O40A4$K5-=R$5$l$F$$
 
 @item gnus-active
 @findex gnus-active
-@var{group} $B$K4X$9$k%"%/%F%#%V%U%!%$%k$N9`L\$rJV$7$^$9!#(B
+@var{group} $B$K4X$9$k%"%/%F%#%V%U%!%$%k$N9`L\(B ($B:G>.$H:GBg$N5-;vHV9f(B) $B$rJV(B
+$B$7$^$9!#(B
 
 @item gnus-set-active
 @findex gnus-set-active
@@ -28721,7 +28722,9 @@ Gnus $B$r=*N;$9$k$H$-$K>C5n$9$k%P%C%U%!!<$N%j%9%H$K!"8=:_$N%P%C%U%!!<$rDI(B
 
 @item gnus-server-equal
 @findex gnus-server-equal
-$BFs$D$N2>A[%5!<%P!<$,F10l$+$I$&$+$r<($7$^$9!#(B
+$BFs$D$N2>A[%5!<%P!<$,<B<AE*$KF10l$+$I$&$+$r<($7$^$9!#Nc$($PFs$D$N2>A[%5!<(B
+$B%P!<$,0[$J$k=g=x$GJB$s$G$$$k%5!<%P!<!&%Q%i%a!<%?!<$r;}$C$F$$$F$b!"$3$N4X(B
+$B?t$O$=$l$i$rF10l$G$"$k$H8+$J$7$^$9!#(B
 
 @item gnus-group-native-p
 @findex gnus-group-native-p
@@ -28737,8 +28740,8 @@ Gnus $B$r=*N;$9$k$H$-$K>C5n$9$k%P%C%U%!!<$N%j%9%H$K!"8=:_$N%P%C%U%!!<$rDI(B
 
 @item gnus-group-find-parameter
 @findex gnus-group-find-parameter
-@var{group} $B$N%Q%i%a!<%?!<$N%j%9%H$rJV$7$^$9!#Fs$DL\$N0z?t$rM?$($k$H!"(B
-@var{group} $BMQ$N$=$N%Q%i%a!<%?!<$NCM$rJV$7$^$9!#(B
+@var{group} $B$N%Q%i%a!<%?!<$N%j%9%H$rJV$7$^$9(B (@pxref{Group Parameters})$B!#(B
+$BFs$DL\$N0z?t$rM?$($k$H!"(B@var{group} $BMQ$N$=$N%Q%i%a!<%?!<$NCM$rJV$7$^$9!#(B
 
 @item gnus-group-set-parameter
 @findex gnus-group-set-parameter
