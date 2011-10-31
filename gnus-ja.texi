@@ -894,7 +894,6 @@ Appendices
 History
 
 * Gnus Versions::               $B$I$s$J%P!<%8%g%s$N(B Gnus $B$,%j%j!<%9$5$l$F$$$k$+(B
-* Other Gnus Versions::         $B%j%j!<%9$5$l$F$$$kB>$N%P!<%8%g%s$N(B gnus
 * Why?::                        Gnus $B$NL\E*$O2?(B?
 * Compatibility::               Gnus $B$O(B @sc{gnus} $B$H$I$l$/$i$$8_49@-$,$"$k$N(B?
 * Conformity::                  Gnus $B$O$9$Y$F$NI8=`$rK~$?$=$&$H$9$k(B
@@ -25974,7 +25973,6 @@ Ingebrigtsen) $B$O(B Gnus $B$r=q$-D>$=$&$H7h?4$7$^$7$?!#(B
 
 @menu
 * Gnus Versions::               $B$I$s$J%P!<%8%g%s$N(B Gnus $B$,%j%j!<%9$5$l$F$$$k$+(B
-* Other Gnus Versions::         $B%j%j!<%9$5$l$F$$$kB>$N%P!<%8%g%s$N(B gnus
 * Why?::                        Gnus $B$NL\E*$O2?(B?
 * Compatibility::               Gnus $B$O(B @sc{gnus} $B$H$I$l$/$i$$8_49@-$,$"$k$N(B?
 * Conformity::                  Gnus $B$O$9$Y$F$NI8=`$rK~$?$=$&$H$9$k(B
@@ -26027,19 +26025,6 @@ Gnus$B!I(B---$B$K=P2q$C$F$b!":.Mp$7$J$$$G$/$@$5$$!#$"$J$?$,62$,$C$F$$$k$3$H$r
 $BCN$i$l$F$O$$$1$^$;$s!#8e$m$K2<$,$j$J$5$$!#$f$C$/$j$H!#B>$K2?$r$7$F$b!"Av$C(B
 $B$F$O$$$1$^$;$s!#$=$l$,FO$+$/$J$k$^$G!"@E$+$KJb$-5n$j$J$5$$!#@5$7$/%j%j!<(B
 $B%9$5$l$?HG$N(B Gnus $B$r8+$D$1$F!"Be$o$j$K$=$l$K$9$j4s$j$J$5$$!#(B
-
-@node Other Gnus Versions
-@subsection $BB>$N(B Gnus $B$N%P!<%8%g%s(B
-@cindex Semi-gnus
-
-Lars $B$5$s$,D4@=$7$F%j%j!<%9$7$?(B Gnus $B$K2C$($F!"F|K\$G$O(B Semi-gnus $B$N3+H/(B
-$B$,9T$J$o$l$F$$$^$9!#$3$l$O(B @acronym{SEMI} $B$H$$$&(B @acronym{MIME} $B$N5!G=$r(B
-$B<B8=$9$k$?$a$N%i%$%V%i%j!<$r;H$&$3$H$rA0Ds$H$7$F$$$^$9!#(B
-
-$B$3$l$i$N(B gnus $B$O!"<g$K(B Gnus 5.6 $B$H(B Pterodactyl Gnus $B$r85$K$7$F$$$^$9!#$=(B
-$B$l$i$O!H(BSemi-gnus$B!I$HAm>N$5$l!"(BT-gnus, Nana-gnus $B$*$h$S(B Chaos $B$N0[$J$C$?(B
-$B7OE}$,$"$j$^$9!#$3$l$i$O6/NO$J(B @acronym{MIME} $B$N5!G=$H3F9q8lBP1~$N5!G=$r(B
-$BDs6!$9$k$b$N$G!"FC$KF|K\?M$NMxMQ<T$K$H$C$FBg;v$J$b$N$G$9!#(B
 
 @node Why?
 @subsection $B$J$<(B?
