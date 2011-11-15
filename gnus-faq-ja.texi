@@ -1228,7 +1228,7 @@ Manual}) を参照してください。
    ("Spam" "^CC: .*azzrael@@t-online.invalid")
    ("Spam" "^X-Mailer-Version: 1.50 BETA")
    ("Uni" "^\\(CC:\\|To:\\).*localpart@@uni-koblenz.invalid.*")
-   ("Inbox" "^\\(CC:\\|To:\\).*\\(my\ name\\|address@@one.invalid\\|adress@@two.invalid\\)")
+   ("Inbox" "^\\(CC:\\|To:\\).*\\(my\ name\\|address@@one.invalid\\|address@@two.invalid\\)")
    ("Spam" "")))
 @end lisp
 
