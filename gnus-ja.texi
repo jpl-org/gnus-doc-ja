@@ -4405,24 +4405,6 @@ Gnus を再起動します (@code{gnus-group-restart})。これ
 @cindex information on groups
 
 @table @kbd
-@item H f
-@kindex H f (グループ)
-@findex gnus-group-fetch-faq
-@vindex gnus-group-faq-directory
-@cindex FAQ
-@cindex ange-ftp
-現在のグループの @acronym{FAQ} を取得しようとしま
-す (@code{gnus-group-fetch-faq})。
-Gnus は @acronym{FAQ} を @code{gnus-group-faq-directory} から取得しよう
-とします。これは通常リモートマシン上のディレクトリーです。この変数はディ
-レクトリーのリストであっても構いません。この場合、このコマンドに接頭引数
-を与えることでいくつかのサイトの中から選ぶことができます。ファイルの取得
-には @code{ange-ftp} (または @code{efs}) が使用されます。
-
-もし最初のサイトからの取得が失敗した場合、
-Gnus は @code{gnus-group-faq-directory} の値をすべて、一つ一つオープンし
-てみようとします。
-
 @item H d
 @itemx C-c C-d
 @c @icon{gnus-group-describe-group}

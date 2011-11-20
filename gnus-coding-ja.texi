@@ -1,7 +1,7 @@
 \input texinfo
 
 @setfilename gnus-coding-ja
-@settitle Gnus Coding Style and Maintainance Guide
+@settitle Gnus Coding Style and Maintenance Guide
 @syncodeindex fn cp
 @syncodeindex vr cp
 @syncodeindex pg cp
@@ -12,7 +12,7 @@
 @dircategory Emacs
 @direntry
 * Gnus Coding-ja: (gnus-coding-ja).
-                                Gnus Coding Style and Maintainance Guide.
+                                Gnus Coding Style and Maintenance Guide.
 @end direntry
 
 @copying
@@ -69,7 +69,7 @@ license to the document, as described in section 6 of the license.
 
 @ifnottex
 @node Top
-@top Gnus Coding Style and Maintainance Guide
+@top Gnus Coding Style and Maintenance Guide
 
 このマニュアルは @dots{} を説明します。
 
@@ -78,7 +78,7 @@ license to the document, as described in section 6 of the license.
 
 @menu
 * Gnus Coding Style:: Gnus でコードを書くときの流儀
-* Gnus Maintainance Guide:: Gnus の維持管理に関する手引
+* Gnus Maintenance Guide:: Gnus の維持管理に関する手引
 @end menu
 @c
 @c @ref{Gnus Reference Guide, ,Gnus リファレンスガイド, gnus-ja, The Gnus
@@ -280,7 +280,7 @@ Emacs 20.7 とそれ以上。
 XEmacs 21.1 とそれ以上。
 @end itemize
 
-@node Gnus Maintainance Guide
+@node Gnus Maintenance Guide
 @chapter Gnus の維持管理に関する手引
 
 @section 安定版と開発版
