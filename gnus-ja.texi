@@ -13514,7 +13514,7 @@ default force yes
 @findex nntp-open-tls-stream
 @item nntp-open-tls-stream
 $B!V0BA4$J!W%A%c%s%M%k$r;H$C$F%5!<%P!<$K@\B3$7$^$9!#$3$l$r;H$&$?$a$K(B
-$B$O(B @uref{http://www.gnu.org/software/gnutls/, GNUTLS} $B$r%$%s%9%H!<%k$7$F(B
+$B$O(B @uref{http://www.gnu.org/software/gnutls/, GnuTLS} $B$r%$%s%9%H!<%k$7$F(B
 $B$*$+$J$1$l$P$J$j$^$;$s!#$=$l$+$i%5!<%P!<$r<!$N$h$&$KDj5A$7$^$9(B:
 
 @lisp
@@ -27400,7 +27400,7 @@ MS $B%&%#%s%I%&%:$G(B Gnus $B$r%$%s%9%H!<%k$9$k$K$O(B @file{make.bat} $B$r;
 @item
 @acronym{TLS} $B%i%C%Q!<$,(B Gnus $B$KF1:-$5$l$^$7$?!#(B
 
-@acronym{TLS}/@acronym{SSL} $B$,!"(B@file{tls.el} $B$H(B GNUTLS $B$r2p$7(B
+@acronym{TLS}/@acronym{SSL} $B$,!"(B@file{tls.el} $B$H(B GnuTLS $B$r2p$7(B
 $B$F(B @acronym{IMAP} $B$H(B @acronym{NNTP} $B$G%5%]!<%H$5$l$k$h$&$K$J$j$^$7$?!#(B
 
 @item
