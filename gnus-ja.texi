@@ -20962,7 +20962,7 @@ linux」のように。演算子はそれであると認知されるために、すべて大文字で書
 @node The swish++ Engine
 @subsubsection Swish++ エンジン
 
-FIXEM: ここで何かもっと言う。
+FIXME: ここで何かもっと言う。
 
 Swish++ の資料は sourceforge の swish++ のページで見つかるでしょ
 う: @uref{http://swishplusplus.sourceforge.net}
@@ -20983,7 +20983,7 @@ Swish++ に追加の引数として与えられる文字列のリスト。ディフォルト
 @node The swish-e Engine
 @subsubsection Swish-e エンジン
 
-FIXEM: ここで何かもっと言う。
+FIXME: ここで何かもっと言う。
 
 Swish-e の資料は swish-e ホームページで見つかるでしょ
 う: @uref{http://swish-e.org}
