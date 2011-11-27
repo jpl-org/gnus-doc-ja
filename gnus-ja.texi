@@ -1728,7 +1728,7 @@ customize-apropos RET gnus-group-tool-bar} を試してみてください。この機
 @vindex gnus-group-line-format
 この形式は @code{gnus-group-line-format} 変数をいじることで、どんな風に
 でも変えられます。この変数は @code{format} の仕様風に動作します。つま
-り (あのクソ) C 言語を使う人たちのため、printf の仕様とほぼ同じです。
+り (あのクソ) C 言語を使う人たちのための printf の仕様とほぼ同じです。
 @xref{Formatting Variables}.
 
 上記の行を生成するのは @samp{%M%S%5y:%B%(%g%)\n} という値です。
