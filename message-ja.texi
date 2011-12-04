@@ -2003,7 +2003,7 @@ node) として使います。文字列だったら、その文字列を使います。それが文字列
 Hallvard B Furuseth <h.b.furuseth@@usit.uio.no> writes:
 @end example
 
-@c FIXME: `message-insert-formated-citation-line' と
+@c FIXME: `message-insert-formatted-citation-line' と
 @c `message-citation-line-format' を追加すべし。
 この関数が呼ばれたとき、ポイントはメッセージの本文の先頭に置かれるでしょ
 う。
