@@ -3141,8 +3141,10 @@ nntp+news.gnus.org:gmane.text.docbook.apps
          (broken-reply-to . t))))
 @end lisp
 
-文字列の値は、@code{to-group} の例が示すように、正規表現による置き換えを
-受けることがあります。
+グループ名が合致する最初の項が使われます。
+
+文字列のパラメーターは @code{to-group} の例が示すように正規表現による置
+き換えを受けることがあります。
 
 @vindex gnus-parameters-case-fold-search
 グループ名と @code{gnus-parameters} で指定されたこれらの正規表現の一つを
