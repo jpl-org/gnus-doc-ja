@@ -14,7 +14,7 @@
 このファイルは様々な PGP の実装への Emacs インターフェースである PGG
 @value{VERSION} を説明します。
 
-Copyright @copyright{} 2001, 2003-2011  Free Software Foundation, Inc.
+Copyright @copyright{} 2001, 2003-2012  Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
