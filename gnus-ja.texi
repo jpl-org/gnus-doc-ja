@@ -18008,10 +18008,8 @@ PPP $B$N@\B3(B ($B$+2?$+(B) $B$rJD$8$^$9!#$=$N8e$G%K%e!<%9$r%*%U%i%$%s$GFI$
 $B%U%!!<$K0\F0$7(B ($B%0%k!<%W%P%C%U%!!<$G(B @kbd{^})$B!"%(!<%8%'%s%H$K07$C$FM_$7(B
 $B$$%5!<%P!<(B ($BJ#?t2D(B) $B$G(B @kbd{J a} $B$r2!$9(B (@pxref{Server Agent
 Commands}) $B$+!"$^$?$O%(!<%8%'%s%H$K07$C$FM_$7$/$J$$$N$K<+F0E*$KDI2C$5$l(B
-$B$?%5!<%P!<$G(B @kbd{J r} $B$r2!$7$^$9!#%G%#%U%)%k%H$G(B
-$B$O(B @code{gnus-select-method} $B$H(B @code{gnus-secondary-select-methods} $B$K(B
-$B$"$k$9$Y$F$N(B @code{nntp} $B$H(B @code{nnimap} $B%5!<%P!<$,%(!<%8%'%s%H2=$5$l$^(B
-$B$9!#(B
+$B$?%5!<%P!<$G(B @kbd{J r} $B$r2!$7$^$9!#%G%#%U%)%k%H$G$O$I$N%?%$%W$N%5!<%P!<(B
+$B$b%(!<%8%'%s%H2=$5$l$^$;$s!#(B
 
 @item
 $B%@%&%s%m!<%IJ}?K$r7hDj$7$^$9!#$"$J$?$NJ}?K$r<BAu$9$k$?$a$K!"%(!<%8%'%s%H(B
@@ -19005,8 +19003,7 @@ unplugged $B$G$"$k$N$K$b$+$+$o$i$:(B @kbd{J S} $B$rC!$$$?>l9g$K!"(BGnus $B$
 $B%P!<$KBP$7$F(B @kbd{J a} $B$r<B9T$9$k$N$HF1$88z2L$,$"$j$^$9(B (@pxref{Server
 Agent Commands})$B!#$b$7%U%!%$%k$,B8:_$9$k$J$i$P!"$=$l$i$rDI2C$7$?$j:o=|$9(B
 $B$k$?$a$K%5!<%P!<$r<jF0$GA`:n$7$J$1$l$P$J$j$^$;$s!#$3$NJQ?t$O:G=i(B
-$B$K(B Gnus $B$r5/F0$7$?$H$-$@$1E,MQ$5$l$^$9!#%G%#%U%)%k%H$O(B @samp{(nntp
-nnimap)} $B$G$9!#(B
+$B$K(B Gnus $B$r5/F0$7$?$H$-$@$1E,MQ$5$l$^$9!#%G%#%U%)%k%H$O(B @samp{nil} $B$G$9!#(B
 @end table
 
 @node Example Setup
