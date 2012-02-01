@@ -57,7 +57,7 @@ developing GNU and promoting software freedom.''
 \makeindex
 \begin{document}
 
-\newcommand{\gnusversionname}{No Gnus v0.19}
+\newcommand{\gnusversionname}{Ma Gnus v0.2}
 \newcommand{\gnuschaptername}{}
 \newcommand{\gnussectionname}{}
 
@@ -365,7 +365,7 @@ Gnus $B$r;H$&$3$H$K$h$C$F(B Emacs $B$G%K%e!<%9$r(B ($B$=$l$K%a!<%k$b(B) $
 $B$"$i$f$k6K0-$J<jCJ$r6n;H$7$F<j$KF~$l$k$3$H$,$G$-$^$9!#1?;n$7$r$7$F$_$h$&(B
 $B$H;W$&$J$i$P!"$9$Y$F$rF1;~$KMQ$$$k$3$H$b$G$-$^$9!#(B
 
-$B$3$N@bL@=q$O(B No Gnus v0.19 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B Ma Gnus v0.2 $B$KBP1~$7$^$9!#(B
 
 @ifnottex
 @insertcopying
@@ -397,7 +397,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 $B$9!#(B
 @c
 @c $B0J2<$N9T$rJQ99$9$k$H$-$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
-$B$3$N@bL@=q$O(B No Gnus v0.19 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B Ma Gnus v0.2 $B$KBP1~$7$^$9!#(B
 
 @heading $B4XO"$9$kB>$N%^%K%e%"%k(B
 @itemize
@@ -910,7 +910,8 @@ New Features
 * Quassia Gnus::                2 $B$+$1$k(B 2 $B$O(B 4$B!"$b$7$/$O(B Gnus 5.6/5.7
 * Pterodactyl Gnus::            $B?@Hk$N?t$b(B P $B$G;O$^$k$1$l$I!#(BGnus 5.8/5.9 $B$NJLL>(B
 * Oort Gnus::                   $B5pBg$J!#1s$/MZ$+$J!#(BGnus 5.10/5.11$B!#(B
-* No Gnus::                     $BD6$d$P$$(B
+* No Gnus::                     $BD6$d$P$$!#(BGnus 5.12/5.13
+* Ma Gnus::                     $B=K(B Gnus 25 $B<~G/!#(B
 
 Customization
 
@@ -25977,6 +25978,7 @@ Ingebrigtsen) $B$O(B Gnus $B$r=q$-D>$=$&$H7h?4$7$^$7$?!#(B
 @cindex Pterodactyl Gnus
 @cindex Oort Gnus
 @cindex No Gnus
+@cindex Ma Gnus
 @cindex Gnus versions
 
 $B:G=i$N!V@5$7$$!W(BGnus 5 $B$N%j%j!<%9$O(B 1995$BG/(B11$B7n$K(B Emacs 19.30 $B$NG[I[$K4^(B
@@ -26005,12 +26007,14 @@ Ingebrigtsen) $B$O(B Gnus $B$r=q$-D>$=$&$H7h?4$7$^$7$?!#(B
 $B$O(B http://git.gnus.org $B$r8+$F$/$@$5$$(B ($B2DG=$J$i(B http://www.gnus.org $B$O$=(B
 $B$N>pJs$G99?7$5$l$k$G$7$g$&!#(B)
 
+2012$BG/(B1$B7n(B31$BF|!"(BMa Gnus $B$,;O$^$j$^$7$?!#(B
+
 $B@\F,8l$r;}$C$?HG$N(B Gnus---$B!H(B(ding) Gnus$B!I(B,$B!H(BSeptember Gnus$B!I(B,$B!H(BRed
 Gnus$B!I(B,$B!H(BQuassia Gnus$B!I(B,$B!H(BPterodactyl Gnus$B!I(B,$B!H(BOort Gnus$B!I(B,$B!H(BNo
-Gnus$B!I(B---$B$K=P2q$C$F$b!":.Mp$7$J$$$G$/$@$5$$!#$"$J$?$,62$,$C$F$$$k$3$H$r(B
-$BCN$i$l$F$O$$$1$^$;$s!#8e$m$K2<$,$j$J$5$$!#$f$C$/$j$H!#B>$K2?$r$7$F$b!"Av$C(B
-$B$F$O$$$1$^$;$s!#$=$l$,FO$+$/$J$k$^$G!"@E$+$KJb$-5n$j$J$5$$!#@5$7$/%j%j!<(B
-$B%9$5$l$?HG$N(B Gnus $B$r8+$D$1$F!"Be$o$j$K$=$l$K$9$j4s$j$J$5$$!#(B
+Gnus$B!I(B,$B!H(BMa Gnus$B!I(B---$B$K=P2q$C$F$b!":.Mp$7$J$$$G$/$@$5$$!#$"$J$?$,62$,$C(B
+$B$F$$$k$3$H$rCN$i$l$F$O$$$1$^$;$s!#8e$m$K2<$,$j$J$5$$!#$f$C$/$j$H!#B>$K2?(B
+$B$r$7$F$b!"Av$C$F$O$$$1$^$;$s!#$=$l$,FO$+$/$J$k$^$G!"@E$+$KJb$-5n$j$J$5$$!#(B
+$B@5$7$/%j%j!<%9$5$l$?HG$N(B Gnus $B$r8+$D$1$F!"Be$o$j$K$=$l$K$9$j4s$j$J$5$$!#(B
 
 @node Why?
 @subsection $B$J$<(B?
@@ -26612,7 +26616,8 @@ Gnus $B$N%"%k%U%!G[I[$K4^$^$l$F$$$k(B ChangeLog $B$O!"$=$l$>$l$N?M$?$A$,9T$J$
 * Quassia Gnus::                2 $B$+$1$k(B 2 $B$O(B 4$B!"$b$7$/$O(B Gnus 5.6/5.7
 * Pterodactyl Gnus::            $B?@Hk$N?t$b(B P $B$G;O$^$k$1$l$I!#(BGnus 5.8/5.9 $B$NJLL>(B
 * Oort Gnus::                   $B5pBg$J!#1s$/MZ$+$J!#(BGnus 5.10/5.11$B!#(B
-* No Gnus::                     $BD6$d$P$$(B
+* No Gnus::                     $BD6$d$P$$!#(BGnus 5.12/5.13
+* Ma Gnus::                     $B=K(B Gnus 25 $B<~G/!#(B
 @end menu
 
 $B$3$l$i$N%j%9%H$O!"$b$A$m$s(B @emph{$B$?$$$F$$$N(B} $B=EMW$J?7$7$$5!G=$K4X$9(B
@@ -28013,6 +28018,12 @@ No Gnus $B$N?7$7$$5!G=(B:
 
 @include gnus-news-ja.texi
 
+@node Ma Gnus
+@subsubsection Ma Gnus
+@cindex Ma Gnus
+
+$B$3$3$K$O$?$/$5$s$NJ8>O$,$+$+$l$k$G$7$g$&!#K\Ev$NDV$j$O!V??(B Gnus$B!W$G$9!#(B
+
 @iftex
 
 @page
@@ -28494,11 +28505,11 @@ Gnus $B$OH"$+$i=P$7$F$9$0$K(B @emph{$BHs>o$K(B} $B$h$/F0:n$7$^$9(B---$B$I
 $BEY(B Emacs $B$r=*N;$7$F:F5/F0$9$kI,MW$,$"$j$^$9!#(B
 
 @item
-@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{No Gnus v0.19} $B$N$h(B
+@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{Ma Gnus v0.2} $B$N$h$&(B
 @c $B$3$N9T$rJQ99$9$k>l9g$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
-$B$&$J$b$N$,=P$F$-$?$J$i!"@5$7$$%U%!%$%k$,FI$_9~$^$l$F$$$^$9!#$=$&$J$i$J$$(B
-$B$N$O8E$$(B @file{.el} $B%U%!%$%k$,;6$i$+$C$F$$$k$;$$$G$7$g$&!#$=$l$i$r>C$7$F(B
-$B$/$@$5$$!#(B
+$B$J$b$N$,=P$F$-$?$J$i!"@5$7$$%U%!%$%k$,FI$_9~$^$l$F$$$^$9!#$=$&$J$i$J$$$N(B
+$B$O8E$$(B @file{.el} $B%U%!%$%k$,;6$i$+$C$F$$$k$;$$$G$7$g$&!#$=$l$i$r>C$7$F$/(B
+$B$@$5$$!#(B
 
 @item
 @acronym{FAQ} $B$HF~Lg=q$rFI$`$?$a$K!"%X%k%W%0%k!<%W(B ($B%0%k!<%W%P%C%U%!!<(B
