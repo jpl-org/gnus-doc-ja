@@ -1650,6 +1650,31 @@ Manual}.  @code{opportunistic} にすると、ユーザーを待たせない場合に限り、
 ISP が @acronym{POP}-before-@acronym{SMTP} の認証を要求する場合に有用で
 す。@xref{POP before SMTP, , POP before SMTP, gnus-ja, The Gnus Manual}.
 
+@cindex X-Message-SMTP-Method
+もし複数の @acronym{SMTP} 設定を使うことができて、あるメッセージは一つ
+のメールサーバーを経由し、他のメッセージは別のものを通して出したい場合は、
+@samp{X-Message-SMTP-Method} ヘッダーを使うことができます。以下はサポー
+トされている値です:
+
+@table @samp
+@item smtpmail
+
+@example
+X-Message-SMTP-Method: smtp smtp.fsf.org 587
+@end example
+
+これは @samp{smtp.fsf.org} のポート 587 を経由してメッセージを送ります。
+
+@item sendmail
+
+@example
+X-Message-SMTP-Method: sendmail
+@end example
+
+これはローカルにインストールされている sendmail や exim などを経由してメッ
+セージを送ります。
+@end table
+
 @item message-mh-deletable-headers
 @vindex message-mh-deletable-headers
 ほとんどの版の MH は、この変数に設定されているヘッダーを含んでいるメッセー

@@ -2986,6 +2986,7 @@ Gmane.org で一時的なグループを講読するためのコマンドです。記事
 @example
 (posting-style
   (name "Funky Name")
+  ("X-Message-SMTP-Method" "smtp smtp.example.org 587")
   ("X-My-Header" "Funky Value")
   (signature "Funky Signature"))
 @end example
@@ -12566,7 +12567,8 @@ from date id references chars lines xref extra の各ヘッダーから成るベク
         ((posting-from-work-p) ;; @r{利用者が定義した関数}
          (signature-file "~/.work-signature")
          (address "user@@bar.foo")
-         (body "You are fired.\n\nSincerely, your boss.")
+         (body "お前はクビだ。\n\n親愛なるボスより。")
+         ("X-Message-SMTP-Method" "smtp smtp.example.org 587")
          (organization "Important Work, Inc"))
         ("nnml:.*"
          (From (with-current-buffer gnus-article-buffer
@@ -12580,6 +12582,11 @@ from date id references chars lines xref extra の各ヘッダーから成るベク
 さんのメーリングリストに参加している場合に便利でしょう。代わり
 に @code{message-alternative-emails} を使うこともできます。@xref{Message
 Headers, ,メッセージヘッダー, message-ja, The Message Manual}.
+
+「業務」様式の中で特に興味深いのは @samp{X-Message-SMTP-Method} ヘッダー
+です。それは Eメールをどうやって送るかを指定します。例えば、会社の規則に
+よっては特定の Eメールは特定の @acronym{SMTP} サーバーを通す必要があるで
+しょう。@xref{Mail Variables, ,メール変数, message-ja, Message Manual}.
 
 @node Drafts
 @section 下書き
