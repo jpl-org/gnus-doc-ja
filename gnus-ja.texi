@@ -14499,6 +14499,21 @@ fetchmail %u@@%s -P %p %t
 メールを取得する前に実行されるスクリプトです。構文は @code{:program} キー
 ワードと同じです。これは実行される関数であることもできます。
 
+これの良く知られている使い道は、@acronym{POP} サーバーに接続するため
+の SSH トンネルをお膳立てすることです、ここに例があります:
+
+@lisp
+(pop :server "127.0.0.1"
+     :port 1234
+     :user "foo"
+     :password "secret"
+     :prescript
+     "nohup ssh -f -L 1234:pop.server:110 remote.host sleep 3600 &")
+@end lisp
+
+(訳注: 原典
+は @url{http://article.gmane.org/gmane.emacs.gnus.general/81249}。)
+
 @item :postscript
 メールを取得した後で実行されるスクリプトです。構文は @code{:program} キー
 ワードと同じです。これは実行される関数であることもできます。
