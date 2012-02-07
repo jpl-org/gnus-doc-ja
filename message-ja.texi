@@ -1665,6 +1665,14 @@ X-Message-SMTP-Method: smtp smtp.fsf.org 587
 
 これは @samp{smtp.fsf.org} のポート 587 を経由してメッセージを送ります。
 
+@example
+X-Message-SMTP-Method: smtp smtp.fsf.org 587 other-user
+@end example
+
+これは上のものと同じですが、認証を行なうときに @samp{other-user} をユー
+ザー名として使います。これは、同じサーバーに複数の @acronym{SMTP} アカウ
+ントを持っている場合に役立ちます。
+
 @item sendmail
 
 @example
