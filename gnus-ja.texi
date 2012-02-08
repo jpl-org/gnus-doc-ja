@@ -2847,7 +2847,8 @@ Gmane.org で一時的なグループを講読するためのコマンドです。記事
 し @code{(gcc-self . none)} があれば、@code{Gcc:} 欄は生成されず、
 @code{(gcc-self . "string")} があればこの文字列はそのまま @code{gcc} 欄
 に挿入されます。このパラメーターは以下で説明するどんなディフォルト
-の @code{Gcc} の規則よりも優先されます (@pxref{Archived Messages})。
+の @code{Gcc} の規則よりも (再送するメッセージのための例外を除いて) 優先
+されます (@pxref{Archived Messages})。
 
 @strong{警告}: @code{nntp} (またはその種の) グループのパラメーターリスト
 に @code{(gcc-self . t)} を加えることに効力はありません。@code{nntp} サー
@@ -12449,6 +12450,22 @@ Lisp フォームのリスト。それぞれのフォームが評価され、最初に返ってき
 
 (訳注: 送信したメッセージと同じものを Gcc で保存する代わりに、添付ファイ
 ルをメッセージから切り離して、別にセーブするかどうかを制御する変数です。)
+
+@item gnus-gcc-self-resent-messages
+@vindex gnus-gcc-self-resent-messages
+@code{gcc-self} のようなものですが、@code{gnus-summary-resend-message}
+(@pxref{Summary Mail Commands}) が再送する変更されていないメッセージだけ
+に適用されます。この変数の @code{nil} 以外の値は、どんな @code{Gcc} ヘッ
+ダーよりも優先します。
+
+これがもし @code{none} だったら @code{Gcc} コピーは行なわれません。も
+し @code{t} だったら、再送するメッセージは現在のグループに @code{Gcc} コ
+ピーされます。もしこれが文字列だったら、それで再送するメッセージがコピー
+されるグループを指定します。@code{nil} だったら、もしあれば既存
+の @code{Gcc} ヘッダーに従って @code{Gcc} が行なわれます。これがも
+し @code{no-gcc-self} だったら (それがディフォルト)、再送するメッセージ
+は既存の @code{Gcc} ヘッダーが指定するものから現在のグループを除いたグルー
+プに @code{Gcc} コピーされます。
 @end table
 
 @node Posting Styles
