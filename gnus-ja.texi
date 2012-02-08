@@ -12453,10 +12453,10 @@ Lisp フォームのリスト。それぞれのフォームが評価され、最初に返ってき
 
 @item gnus-gcc-self-resent-messages
 @vindex gnus-gcc-self-resent-messages
-@code{gcc-self} のようなものですが、@code{gnus-summary-resend-message}
-(@pxref{Summary Mail Commands}) が再送する変更されていないメッセージだけ
-に適用されます。この変数の @code{nil} 以外の値は、どんな @code{Gcc} ヘッ
-ダーよりも優先します。
+@code{gcc-self} グループパラメーターのようなものですが、
+@code{gnus-summary-resend-message} (@pxref{Summary Mail Commands}) が再
+送する変更されていないメッセージだけに適用されます。この変数
+の @code{nil} 以外の値は、どんな @code{Gcc} ヘッダーよりも優先します。
 
 これがもし @code{none} だったら @code{Gcc} コピーは行なわれません。も
 し @code{t} だったら、再送するメッセージは現在のグループに @code{Gcc} コ
