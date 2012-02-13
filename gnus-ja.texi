@@ -14001,6 +14001,10 @@ machine imap.gmail.com login <username> password <password> port imap
 もし文字列が設定されていたら、それは正規表現であると解釈され、そのタイプ
 が合致する部分が取り込まれます。例えば @samp{"text/"} 場合はすべてのテキ
 スト型の部分を取り込みますが、残りはサーバーに置いたままになります。
+
+@item nnimap-record-commands
+もし @code{nil} でなければ、すべての @acronym{IMAP} コマンド
+を @samp{"*imap log*"} バッファーに記録します。
 @end table
 
 @node Client-Side IMAP Splitting
