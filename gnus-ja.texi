@@ -667,7 +667,6 @@ Getting News
 * Direct Functions::            $B%5!<%P!<$KD>@\@\B3$9$k(B
 * Indirect Functions::          $B%5!<%P!<$K4V@\E*$K@\B3$9$k(B
 * Common Variables::            $B$$$/$D$+$N@\B3MQ$N4X?t$,;2>H$9$kJQ?t(B
-* NNTP marks::                  @acronym{NNTP} $B%5!<%P!<MQ$N0u$NJ]B8(B
 
 Getting Mail
 
@@ -1079,11 +1078,6 @@ Gnus $B$O(B @code{gnus-nntpserver-file} ($B@_Dj$5$l$F$$$J$$>l9g(B
 
 @noindent
 $B$H@_Dj$7$^$9!#(B
-
-$BCm(B: @acronym{NNTP} $B%P%C%/%(%s%I$O0u%U%!%$%k(B (@pxref{NNTP marks}) $B$K0u$r(B
-$BJ]B8$7$^$9!#$3$N5!G=$O(B Gnus $B$,%$%s%9%H!<%k$5$l$F$$$kJ#?t$N%[%9%H4V$G0u$r(B
-$B6&M-$9$k$3$H$rMF0W$K$7$^$9$,!"?7Ce5-;v$N<hF@$r$A$g$C$HCY$/$9$k$+$b$7$l$^(B
-$B$;$s!#>\:Y$K$D$$$F$O(B @ref{NNTP marks} $B$r;2>H$7$F$/$@$5$$!#(B
 
 @node The Server is Down
 @section $B%5!<%P!<$,Mn$A$F$$$k(B
@@ -4223,11 +4217,10 @@ Gnus
 $B$O(B @code{file-name} $B$H$$$&(B coding system $B$N(B aliasee (@code{file-name} $B$r(B
 $BJLL>$K;}$D!"$"$k(B coding system) $B$G$9!#(B
 
-@code{nnml} $B%P%C%/%(%s%I!"(B@code{nnrss} $B%P%C%/%(%s%I!"(B
-@acronym{NNTP} $B0u(B (@pxref{NNTP marks})$B!"%(!<%8%'%s%H!"$*$h$S%-%c%C%7%e$O!"(B
-$B$=$l$i$N%U%!%$%k$H%G%#%l%/%H%j!<$GHs(B-@acronym{ASCII} $B%0%k!<%WL>$r;H$$$^(B
-$B$9!#$3$NJQ?t$O!"$=$l$i$N%U%!%$%kL>$H%G%#%l%/%H%j!<L>$r%(%s%3!<%I$*$h$S%G(B
-$B%3!<%I$9$k$H$-$KMQ$$$i$l$k(B coding system $B$r;XDj$9(B
+@code{nnml} $B%P%C%/%(%s%I!"(B@code{nnrss} $B%P%C%/%(%s%I!"%(!<%8%'%s%H!"$*$h(B
+$B$S%-%c%C%7%e$O!"$=$l$i$N%U%!%$%k$H%G%#%l%/%H%j!<$GHs(B-@acronym{ASCII} $B%0(B
+$B%k!<%WL>$r;H$$$^$9!#$3$NJQ?t$O!"$=$l$i$N%U%!%$%kL>$H%G%#%l%/%H%j!<L>$r%((B
+$B%s%3!<%I$*$h$S%G%3!<%I$9$k$H$-$KMQ$$$i$l$k(B coding system $B$r;XDj$9(B
 $B$k(B @code{file-name-coding-system} $B$NCM$r>e=q$-$7$^$9!#(B
 
 XEmacs (@code{mule} $B5!G=IU$-(B) $B$G$O!"(B@code{file-name-coding-system} $B$O%U%!(B
@@ -10607,8 +10600,7 @@ Gnus $B$O(B @code{Message-ID} $B$rIU$1BX$($F(B ($BI=<($N$?$a$@$1$K(B) $B$
 @vindex gnus-propagate-marks
 @item gnus-propagate-marks
 @code{nil} $B0J30$NCM$@$C$?$i!"0u$r%P%C%/%(%s%I$KEA$($^$9!#$=$l$i$r5-O?$9(B
-$B$k$?$a$G$9!#$b$C$H$-$a:Y$+$/$U$k$$$K$+$1$k$K$O(B @ref{NNTP marks} $B$*$h$S$=(B
-$B$NCg4V$r;2>H$7$F$/$@$5$$!#(B
+$B$k$?$a$G$9!#(B
 @end table
 
 @node Summary Group Information
@@ -13522,7 +13514,6 @@ default force yes
 * Direct Functions::            $B%5!<%P!<$KD>@\@\B3$9$k(B
 * Indirect Functions::          $B%5!<%P!<$K4V@\E*$K@\B3$9$k(B
 * Common Variables::            $B$$$/$D$+$N@\B3MQ$N4X?t$,;2>H$9$kJQ?t(B
-* NNTP marks::                  @acronym{NNTP} $B%5!<%P!<MQ$N0u$NJ]B8(B
 @end menu
 
 @node Direct Functions
@@ -13778,52 +13769,6 @@ default force yes
 @vindex nntp-netcat-switches
 @code{nntp-netcat-command} $B$KEO$9%9%$%C%A$N%j%9%H$G$9!#%G%#%U%)%k%H(B
 $B$O(B @samp{()} $B$G$9!#(B
-@end table
-
-@node NNTP marks
-@subsubsection NNTP marks
-@cindex storing NNTP marks
-
-Gnus $B$O(B @acronym{NNTP} $B%5!<%P!<$N$?$a$N5-;v$N0u(B (marks) (@pxref{Marking
-Articles}) $B$r0u%U%!%$%k$KJ]B8$7$^$9!#0u%U%!%$%k$O$"$k%0%k!<%W$G@_Dj$7$?(B
-$B0u$r5-O?$7!"$=$l$>$l$N%U%!%$%k$O!"BP1~$9$k%5!<%P!<$KBP$7$F@lMQ$G$9!#0u%U%!(B
-$B%$%k$O!"%K%e!<%9%5!<%P!<$K;w$F$$$k8EE5E*$J3,AX(B
-$B$G(B @file{~/News/marks} (@code{nntp-marks-directory}) $B$KJ]B8$5$l$^$9!#Nc(B
-$B$($P(B news.gmane.org $B%5!<%P!<$K$*$1$k(B @samp{gmane.discuss} $B%0%k!<%W$N$?$a(B
-$B$N0u%U%!%$%k(B
-$B$O(B @file{~/News/marks/news.gmane.org/gmane/discuss/.marks} $B$KJ]B8$5$l$^(B
-$B$9!#(B
-
-$B0u%U%!%$%k$OLr$KN)$A$^$9!#(B@file{~/News/marks} $B%G%#%l%/%H%j!<$O(B (rsync$B!"(B
-scp $B$^$?$OB>$N2?$+$r;H$C$F(B) Gnus $B$rAv$i$;$kJL$N%[%9%H$K%3%T!<$9$k$3$H$,(B
-$B$G$-!"$I$N5-;v$rFI$s$G0u$rIU$1$?$+$r$=$A$i$G:F8=$7$^$9!#(B
-@file{~/News/marks} $B$N%G!<%?$O!"(B@file{~/.newsrc.eld} $B$K$"$kF1$8$b$N$h$j(B
-$B$bM%@h$5$l$^$9!#(B
-
-$B0u%U%!%$%k$O!"$=$l$>$l$N%5!<%P!<$G$=$l@lMQ$KHs>o$KFC2=$5$l$k$3$H$KCm0U$7(B
-$B$F$/$@$5$$!#(BGnus $B$O5-;vHV9f$r5-21$9$k$N$G!"N>J}$N%[%9%H$GF1$8%5!<%P!<$r(B
-$B;H$C$F$$$J$$$H!"$b$N$4$H$O2u$l$F$7$^$&$G$7$g$&(B ($BBgDq$N(B @acronym{NNTP} $B%5!<(B
-$B%P!<$OB>$N$I$s$J%5!<%P!<$H$bF1$85-;vHV9f$r;H$$$^$;$s(B)$B!#$7$+$7!"$"$k%[%9(B
-$B%H$G%5!<%P!<(B A$B!"(BB$B!"(BC $B$r;H$$!"JL$N%[%9%H$G%5!<%P!<(B A$B!"(BD$B!"(BE $B$r;H$&>l9g$K$O!"(B
-A $B$N$?$a$N0u%U%!%$%k$rF1$8$K$9$k$3$H$,$G$-$k$N$G!"Fs$D$N%[%9%H4V$G$=$N%5!<(B
-$B%P!<$OF14|$9$k$G$7$g$&!#(B
-
-@acronym{NNTP} $B0u$N;HMQ$O@-G=$NNt2=$r>7$-!"(BGnus $B$r$N$m$/46$8$5$;$k2DG=@-(B
-$B$,$"$j$^$9!#$=$&$$$&>l9g$O(B @code{nntp-marks-is-evil} $BJQ?t$r(B @code{t} $B$K(B
-$B@_Dj$7$F$_$F$/$@$5$$!#$9$k$H!"0u$O(B @file{~/.newsrc.eld} ($B$@$1(B) $B$K3JG<$5(B
-$B$l$k$h$&$K$J$k$G$7$g$&!#(B
-
-$B4XO"$9$kJQ?t(B:
-
-@table @code
-@item nntp-marks-is-evil
-@vindex nntp-marks-is-evil
-$BHs(B-@code{nil} $B$@$C$?$i!"$3$N%P%C%/%(%s%I$O0u%U%!%$%k$rL5;k$7$^$9!#%G%#%U%)(B
-$B%k%H$O(B @code{nil} $B$G$9!#(B
-
-@item nntp-marks-directory
-@vindex nntp-marks-directory
-@acronym{NNTP} $B%0%k!<%W$N0u$,3JG<$5$l$k%G%#%l%/%H%j!<$G$9!#(B
 @end table
 
 @node News Spool
@@ -15962,22 +15907,6 @@ Babyl $B%U%!%$%k$N$?$a$N%"%/%F%#%V%U%!%$%k$NL>A0!#%G%#%U%)%k%H(B
 $B$N(B @acronym{NOV} $B%G!<%?%Y!<%9$b:n@.$7$J$1$l$P$J$j$^$;$s!#$3$l$N$?$a$K!"(B
 $B%a!<%k$rFI$`$3$H$K4X$7$F$O$?$V$s:GB.$N%P%C%/%(%s%I$K$J$k$N$G$9!#(B
 
-@cindex self contained nnml servers
-@cindex marks
-$B0u%U%!%$%k(B ($BLuCm(B: marks file) $B$,;H$o$l$k$H(B ($B$=$l$,%G%#%U%)%k%H$G$9$,(B)$B!"(B
-@code{nnml} $B%5!<%P!<$O(B @code{tar} $B$J$I$r;H$C$F%P%C%/%"%C%W$7$?$j!"8e$G$"(B
-$B$J$?$,IU$1$?0u$,$9$Y$FJ]$?$l$?>uBV$G(B Gnus $B$KLa$9(B ($BK\Mh$N(B @code{nnml} $B%5!<(B
-$B%P!<$K$h$C$FDI2C$9$k(B) $B$3$H$,$G$-$kFC<A$r;}$D$h$&$K$J$j$^$9!#%0%k!<%W$N0u(B
-$B$O$=$l$>$l$N(B @code{nnml} $B%0%k!<%W$N%G%#%l%/%H%j!<Fb$N!"DL(B
-$B>o(B @file{.marks} $B%U%!%$%k(B (@code{nnml-marks-file-name} $B$r;2>H(B) $B$K3JG<$5(B
-$B$l$^$9!#$^$?!"8D!9$N(B @code{nnml} $B%0%k!<%W$K$D$$$F$b%P%C%/%"%C%W$9$k$3$H(B
-$B$,2DG=$G!"$=$&$9$k$K$O(B ($B%P%C%/%"%C%W$r(B nnml $B%G%#%l%/%H%j!<$KLa$7$?8e(B
-$B$G(B) @kbd{G m} $B%-!<$r;H$C$F$=$N%0%k!<%W$r85$KLa$7$F$/$@$5$$!#(B
-
-$B2?$i$+$NM}M3$K$h$C$F(B @file{.marks} $B%U%!%$%k$,$*$+$7$/$J$C$F$$$k$H;W$C$?(B
-$B$H$-$O!"C1$K$=$l$iA4It$r>C$7$F$7$^$($PNI$$$G$7$g$&!#(BGnus $B$O<!2s5/F0$9$k(B
-$B$H$-$K!"$=$l$i$r@5$7$/:F:n@.$7$F$/$l$^$9!#(B
-
 $B2>A[%5!<%P!<$N@_Dj(B:
 
 @table @code
@@ -16014,15 +15943,6 @@ Babyl $B%U%!%$%k$N$?$a$N%"%/%F%#%V%U%!%$%k$NL>A0!#%G%#%U%)%k%H(B
 @item nnml-prepare-save-mail-hook
 @vindex nnml-prepare-save-mail-hook
 $BJ]B8$9$kA0$K0l$D$N5-;v$KHO0O$r69$a$F<B9T$9$k%U%C%/$G$9!#(B
-
-@item nnml-marks-is-evil
-@vindex nnml-marks-is-evil
-$BHs(B-@code{nil} $B$G$"$k$H!"$3$N%P%C%/%(%s%I$O$$$+$J$k(B @sc{$B0u(B} $B%U%!%$%k$bL5(B
-$B;k$7$^$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#(B
-
-@item nnml-marks-file-name
-@vindex nnml-marks-file-name
-$B!V0u!W%U%!%$%k$NL>A0$G$9!#%G%#%U%)%k%H$O(B @file{.marks} $B$G$9!#(B
 
 @item nnml-use-compressed-files
 @vindex nnml-use-compressed-files
@@ -16362,18 +16282,6 @@ Gnus $B$,(B @code{nnmaildir} $B$K0u$N%;%C%H$r3JG<$9$k$3$H$rMW5a$9$k$H!"(B
 @code{nnfolder} $B$O5-;vHV9f$HE~Ce;~9o$r8+<:$o$J$$$h$&$K$9$k$?$a$NDI2C$N%X%C(B
 $B%@!<$r2C$($^$9!#(B
 
-@cindex self contained nnfolder servers
-@cindex marks
-$B0u%U%!%$%k(B ($BLuCm(B: marks file) $B$,;H$o$l$k$H(B ($B$=$l$,%G%#%U%)%k%H$G$9$,(B)$B!"(B
-@code{nnfolder} $B%5!<%P!<$O(B @code{tar} $B$J$I$r;H$C$F%P%C%/%"%C%W$7$?$j!"8e(B
-$B$G$"$J$?$,IU$1$?0u$,$9$Y$FJ]$?$l$?>uBV$G(B Gnus $B$KLa$9(B ($BK\Mh(B
-$B$N(B @code{nnfolder} $B%5!<%P!<$K$h$C$FDI2C$9$k(B) $B$3$H$,$G$-$kFC<A$r;}$D$h$&(B
-$B$K$J$j$^$9!#%0%k!<%W$N0u$O(B @code{nnfolder} $B%G%#%l%/%H%j!<Fb$N!"(Bmbox $B%U%!(B
-$B%$%k$KDL>o(B @file{.mrk} (@code{nnfolder-marks-file-name} $B$r;2>H(B) $B$,IU2C$5(B
-$B$l$?L>A0$N%U%!%$%k$K3JG<$5$l$^$9!#$^$?!"8D!9$N(B @code{nnfolder} $B%0%k!<%W(B
-$B$K$D$$$F$b%P%C%/%"%C%W$9$k$3$H$,2DG=$G!"(B($B%P%C%/%"%C%W$r(B nnfolder $B%G%#%l(B
-$B%/%H%j!<$KLa$7$?8e$G(B) @kbd{G m} $B%-!<$r;H$($P!"$=$N%0%k!<%W$O85$KLa$j$^$9!#(B
-
 $B2>A[%5!<%P!<$N@_Dj(B:
 
 @table @code
@@ -16430,20 +16338,6 @@ Gnus $B$,(B @code{nnmaildir} $B$K0u$N%;%C%H$r3JG<$9$k$3$H$rMW5a$9$k$H!"(B
 @item nnfolder-nov-directory
 @vindex nnfolder-nov-directory
 @acronym{NOV} $B%U%!%$%k$,3JG<$5$l$k%G%#%l%/%H%j!<$G$9!#(B@code{nil} $B$@$C$?(B
-$B$i(B @code{nnfolder-directory} $B$,;H$o$l$^$9!#(B
-
-@item nnfolder-marks-is-evil
-@vindex nnfolder-marks-is-evil
-$BHs(B-@code{nil} $B$G$"$k$H!"$3$N%P%C%/%(%s%I$O$$$+$J$k(B @sc{$B0u(B} $B%U%!%$%k$r$b(B
-$BL5;k$7$^$9!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#(B
-
-@item nnfolder-marks-file-suffix
-@vindex nnfolder-marks-file-suffix
-@sc{$B0u(B} $B%U%!%$%k$N3HD%;R$G$9!#%G%#%U%)%k%H$O(B @file{.mrk} $B$G$9!#(B
-
-@item nnfolder-marks-directory
-@vindex nnfolder-marks-directory
-@sc{$B0u(B} $B%U%!%$%k$,3JG<$5$l$k%G%#%l%/%H%j!<$G$9!#(B@code{nil} $B$@$C$?(B
 $B$i(B @code{nnfolder-directory} $B$,;H$o$l$^$9!#(B
 @end table
 
@@ -16601,8 +16495,7 @@ maildir $B$O<u?.G[Aw$N$?$a$N%m%C%/$rI,MW$H$7$J$$$N$G!"$"$J$?$,%0%k!<%W$H$7(B
 @code{nnmaildir} $B$O%0%k!<%W$N5-;v$N0u$r!"$=$l$KBP1~$9$k(B maildir $B$K3JG<$7(B
 $B$^$9!#(BGnus $B$N30$+$i$=$l$i$r4JC1$KA`:n$G$-$k$h$&$K$9$k$?$a$K!"$=$N$h$&$K(B
 $B:n$i$l$F$$$k$N$G$9!#(Bmaildir $B$r(B tar $B$G$^$H$a$F$+$iJL$N$I$3$+$GE83+$7$F$b!"(B
-$B0u$O$=$N$^$^$G$9!#(B@code{nnml} $B$b0u$r3JG<$7$^$9$,!"(B
-@code{nnmaildir} $B$G(B Gnus $B$N30$+$i$=$l$i$r;H$&$h$&$K4JC1$G$O$"$j$^$;$s!#(B
+$B0u$O$=$N$^$^$G$9!#(B
 
 @code{nnmaildir} $B$OB.EY$r>e$2$k$?$a$K$+$J$j$NNL$N%a%b%j$r;H$$$^$9!#(B
 (@code{nnml} $B$N>l9g$O%U%!%$%k$K3JG<$7!"(B@code{nnmh} $B$G$O2?EY$b%a%C%;!<%8(B
@@ -16687,16 +16580,6 @@ Gnus $B$r=*N;$9$kI,MW$OL5$$$N$G!"J]B8$O(B @code{cron} $B$d$=$l$KN`$9$k$b$N$,9
 @ref{Asynchronous Fetching} $B$*$h$S$=$NB>$N$b$N$O%G!<%?$r>e=q$-$7$F<YKb$r(B
 $B$9$k$+$b$7$l$J$$$N$G!"%G!<%?$rI|5"$5$;$kA0$K(B Gnus $B$r=*N;$9$kI,MW$,$"$k$+(B
 $B$b$7$l$^$;$s!#(B
-
-$B$5$i$K!"8D!9$N(B @code{nnml}, @code{nnfolder} $B$^$?$O(B @code{nnmaildir} $B$N%0(B
-$B%k!<%W$r!"0u$rJ];}$7$D$DJ]B8$9$k$3$H$b$G$-$^$9!#(B@code{nnml} $B$^$?(B
-$B$O(B @code{nnmaildir} $B$G$O!"$=$N%0%k!<%W$N%G%#%l%/%H%j!<$K$"$k$9$Y$F$N%U%!(B
-$B%$%k$r%3%T!<$7$F$/$@$5$$!#(B@code{nnfolder} $B$G$O!"4pK\$N%U%)%k%@!<%U%!%$%k(B
-$B$=$N$b$N(B ($BNc$($P(B @file{FOO}) $B$H0u%U%!%$%k(B (@file{FOO.mrk}) $B$NN>J}$r%3%T!<(B
-$B$9$kI,MW$,$"$j$^$9!#%0%k!<%W$r85$KLa$9$K$O!"%0%k!<%W%P%C%U%!!<(B
-$B$G(B @kbd{G m} $B%-!<$r;H$$$^$7$g$&!#$=$N:G8e$N<j=g$,!"(BGnus $B$K?7$7$$%G%#%l%/(B
-$B%H%j!<$,$G$-$?$3$H$rCN$i$;$^$9!#(B@code{nnmaildir} $B$O<+F0E*$K?7$7$$%G%#%l(B
-$B%/%H%j!<$rCN$k$N$G!"$=$N>l9g(B @kbd{G m} $B$OITMW$G$9!#(B
 
 @node Web Searches
 @subsection $B%&%'%V8!:w(B
