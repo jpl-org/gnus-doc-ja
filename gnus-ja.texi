@@ -10596,11 +10596,6 @@ Gnus $B$O(B @code{Message-ID} $B$rIU$1BX$($F(B ($BI=<($N$?$a$@$1$K(B) $B$
 $B%j%9%H$J$N$G!"(B@code{setq} $B$h$j$O$`$7(B
 $B$m(B @code{add-to-list} $B$d(B @code{push} $B$J$I$r;H$C$F!"CM$r!VDI2C!W$7$?J}$,(B
 $BJXMx$+$b$7$l$^$;$s!#(B
-
-@vindex gnus-propagate-marks
-@item gnus-propagate-marks
-@code{nil} $B0J30$NCM$@$C$?$i!"0u$r%P%C%/%(%s%I$KEA$($^$9!#$=$l$i$r5-O?$9(B
-$B$k$?$a$G$9!#(B
 @end table
 
 @node Summary Group Information
