@@ -12538,6 +12538,13 @@ Lisp フォームのリスト。それぞれのフォームが評価され、最初に返ってき
 from date id references chars lines xref extra の各ヘッダーから成るベク
 トルです。
 
+属性値が文字列である場合、もし @code{match} が正規表現だった
+ら、@samp{gnus-match-substitute-replacement} はその属性値上で、位置パラ
+メーター @samp{\@var{n}} (訳注: 何番目の括弧に合致するかを @var{n} で指
+定するもの) を対応する合致した括弧で置き換えようとしま
+す (@pxref{Replacing Match,,Replacing the Text that Matched, elisp, The
+Emacs Lisp Reference Manual})。
+
 @vindex message-reply-headers
 作成しようとしているメッセージがニュース記事かメールメッセージであるかを
 調べたいときは、関
