@@ -12453,6 +12453,18 @@ Lisp フォームのリスト。それぞれのフォームが評価され、最初に返ってき
 し @code{no-gcc-self} だったら (それがディフォルト)、再送するメッセージ
 は既存の @code{Gcc} ヘッダーが指定するものから現在のグループを除いたグルー
 プに @code{Gcc} コピーされます。
+
+@item gnus-gcc-pre-body-encode-hook
+@vindex gnus-gcc-pre-body-encode-hook
+@itemx gnus-gcc-post-body-encode-hook
+@vindex gnus-gcc-post-body-encode-hook
+これらの hook は送信したメッセージを @code{Gcc} コピーする際、そのボディー
+をエンコードする前後に実行されます。Hook が実行されるときのバッファーに
+は、ヘッダーを含めたそのメッセージがあります。そのメッセージに対して行な
+われる変更は、元のメッセージではなく @code{Gcc} コピーだけに作用します。
+これらの hook はコピーを編集するため (そして続いて起こる何らかの変換に影
+響を及ぼすため)、例えば MML のセキュリティー・タグ (@pxref{Signing and
+encrypting}) を取り除くような用途に使うことができます。
 @end table
 
 @node Posting Styles
@@ -27952,6 +27964,19 @@ No Gnus の新しい機能:
 
 ここにはたくさんの文章がかかれるでしょう。本当の綴りは「真 Gnus」です。
 
+真 Gnus の新しい機能:
+
+@itemize @bullet
+@item Message モードの変更および関連する Gnus の機能
+@c ****************************************************
+@itemize @bullet
+@item
+新しい hook である @code{gnus-gcc-pre-body-encode-hook} およ
+び @code{gnus-gcc-post-body-encode-hook} が、送信したメッセージ
+を @code{Gcc} コピーする際、そのボディーをエンコードする前後に実行されま
+す。@xref{Archived Messages}.
+@end itemize
+@end itemize
 @iftex
 
 @page
