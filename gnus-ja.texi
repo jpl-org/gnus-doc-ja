@@ -12270,7 +12270,8 @@ Gnus はあなたが送ったメールとニュースを貯めておくためのいくつかの違った
 方法を提供します。ディフォルトの方法はメッセージを保存するため
 に「アーカイブ仮想サーバー」を使うことです。これを完全に禁止したいのであ
 れば、変数 @code{gnus-message-archive-group} を @code{nil} にしなければ
-なりません。それがディフォルトです。
+なりません。ディフォルトは "sent.%Y-%m" で、これは月が変わる毎に一つのアー
+カイブを作ります。
 
 グループで読んだ興味のあるメッセージの保存については、@kbd{B c}
 (@code{gnus-summary-copy-article}) コマンドを参照してくださ
@@ -13978,7 +13979,8 @@ machine imap.gmail.com login <username> password <password> port imap
 
 @table @code
 @item nnimap-inbox
-新着メールが調べられる @acronym{IMAP} メールボックスです。
+新着メールが調べられる @acronym{IMAP} メールボックスです。これはメールボッ
+クス名のリストでもかまいません。
 
 @item nnimap-split-methods
 @code{nnmail-split-methods} と同じ構文を使います (@pxref{Splitting
