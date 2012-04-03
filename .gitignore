@@ -1,0 +1,8 @@
+/*.dvi
+/*.info
+/*.info-[0-9]*
+/Makefile
+/autom4te.cache
+/config.*
+/gnustmp.*
+/missfont.log
