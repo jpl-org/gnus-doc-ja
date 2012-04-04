@@ -404,7 +404,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 @item Message manual: $B%a%C%;!<%8$N:n@.(B
 @item Emacs-MIME:     $B%a%C%;!<%8$N:n@.(B; @acronym{MIME} $B%Q!<%H(B
 @item Sieve:          Sieve $B%9%/%j%W%H$r(B Emacs $B$G4IM}(B
-@item PGG:            @acronym{PGP/MIME} $B$r(B Gnus $B$G(B
+@item EasyPG:         @acronym{PGP/MIME} $B$r(B Gnus $B$G(B
 @item SASL:           @acronym{SASL} $BG'>Z$r(B Emacs $B$G(B
 @end itemize
 @end iftex
@@ -425,12 +425,12 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 * Index::                    $BJQ?t!"4X?t!"35G0$N:w0z(B
 * Key Index::                $B%-!<:w0z(B
 
-Other related manuals
+$B4XO"$9$kB>$N%^%K%e%"%k(B
 
 * Message:(message-ja).      $B%a%C%;!<%8$N:n@.(B
 * Emacs-MIME:(emacs-mime-ja). $B%a%C%;!<%8$N:n@.(B; @acronym{MIME} $B%Q!<%H(B
 * Sieve:(sieve-ja).          Emacs $B$G(B Sieve $B%9%/%j%W%H$r4IM}$9$k(B
-* PGG:(pgg-ja).              Gnus $B$G(B @acronym{PGP/MIME} $B$r;H$&(B
+* EasyPG:(epa-ja).           Gnus $B$G(B @acronym{PGP/MIME} $B$r;H$&(B
 * SASL:(sasl-ja).            Emacs $B$G(B @acronym{SASL} $B$NG'>Z$r9T$J$&(B
 
 @detailmenu
@@ -21759,8 +21759,8 @@ Gnus $B$G$ODL>o$=$l$i$N%a%C%;!<%8$O%X%C%@!<$K(B ``(none)'' $B$,I=<($5$l$F8=$l
 @include message-ja.texi
 @chapter Sieve
 @include sieve-ja.texi
-@chapter PGG
-@include pgg-ja.texi
+@chapter EasyPG
+@include epa.texi
 @chapter SASL
 @include sasl-ja.texi
 @end iflatex
