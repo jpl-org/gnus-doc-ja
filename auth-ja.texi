@@ -245,12 +245,13 @@ machine yourmachine.com port scp login testuser password testpass
 
 @dfn{Secret Service API} $B$O%Q%9%o!<%I$dB>$N5!L)>pJs$r0BA4$KJ]B8$9$k$?$a(B
 $B$N(B @uref{http://www.freedesktop.org/wiki/Specifications/secret-storage-spec,,freedesktop.org} $B$K(B
-$B$h$kI8=`$G$9!#$=$l$K=`5r$9$k%G!<%b%s$N<BAu$O(B GNOME $B80%j%s%0$H(B KDE $B%&%)%l%C(B
-$B%H$G$9!#(B
+$B$h$kI8=`$G$9!#$3$N(B API $B$O(B GNOME $B80%j%s%0$H(B KDE $B%&%)%l%C%H$N$h$&$J%7%9%F(B
+$B%`!&%G!<%b%s(B ($B$=$l$>$l:G6a$O$?$$$F$$$N(B GNU/Linux $B%7%9%F%`$KHw$o$C$F(B
+$B$k(B GNOME $B$H(B KDE $B$N%Q%C%1!<%8(B) $B$K$h$C$F<BAu$5$l$^$9!#(B
 
-auth-source $B%i%$%V%i%j!<$O(B @file{secrets.el} $B%i%$%V%i%j!<$r$3$N5!G=$X$N(B
-$B%$%s%?!<%U%'!<%9$H$7$F;H$$$^$9!#$=$N%i%$%V%i%j!<$rB>$N%Q%C%1!<%8$G$b;H$&(B
-$B$3$H$,$G$-$^$9!#(B
+auth-source $B%i%$%V%i%j!<$O%7!<%/%l%C%H%5!<%S%9(B API $B$rDL$7$F$D$J(B
+$B$0(B @file{secrets.el} $B%i%$%V%i%j!<$r;H$$$^$9!#$=$N%i%$%V%i%j!<$rB>$N%Q%C(B
+$B%1!<%8$G$b;H$&$3$H$,$G$-$^$9!#(Bauth-source $B@lMQ$G$O$"$j$^$;$s!#(B
 
 @defvar secrets-enabled
 $B$3$NJQ?t$,(B @code{nil} $B$G$O$J$$CM$@$C$?$i(B @file{secrets.el} $B$rFI$_9~$s$@(B
@@ -258,62 +259,60 @@ auth-source $B%i%$%V%i%j!<$O(B @file{secrets.el} $B%i%$%V%i%j!<$r$3$N5!G=$X$N
 @end defvar
 
 @deffn Command secrets-show-secrets
-$B$3$N%3%^%s%I$O$9$Y$F$N%3%l%/%7%g%s!"(Bitem $B$*$h$S$=$l$i$NB0@-$rE@8!$7$^$9!#(B
+$B$3$N%3%^%s%I$O$9$Y$F$N%3%l%/%7%g%s!"(Bitem$B!"$*$h$S$=$l$i$NB0@-$rI=<($7$^$9!#(B
 @end deffn
 
-$B%7!<%/%l%C%H%5!<%S%9(B API $B$G4IM}$5$l$k$3$H$K$J$k%"%H%_%C%/%*%V%8%'%/%H(B
-$B$O(B @dfn{secret items} $B$G!"$=$l$i$O%"%W%j%1!<%7%g%s$,0BA4$KJ]B8$9$k$3$H$r(B
-$B0U?^$9$k2?$+$G$9!#NI$$Nc$O%Q%9%o!<%I$G!"%"%W%j%1!<%7%g%s$,$=$l$rJ]B8$7$F(B
-$B$*$$$F!"8eF|;H$&MQES$,$"$j$^$9!#(B
+$B%7!<%/%l%C%H%5!<%S%9(B API $B$K$h$C$F4IM}$5$l$k%"%H%_%C%/%*%V%8%'%/%H(B
+$B$O(B @dfn{secret items} $B$G$9!#$=$l$i$O%Q%9%o!<%I$N$h$&$J%"%W%j%1!<%7%g%s$,(B
+$B0BA4$KJ]B8$9$k$3$H$rI,MW$H$9$k$b$N$N=89g$G$9!#(BSecret items $B$O%i%Y%k(B ($BL>(B
+$BA0(B)$B!"(B@dfn{secret} ($B%Q%9%o!<%I$N$h$&$JJ8;zNs(B)$B!"$*$h$S%k%C%/%"%C%WB0@-$r;}(B
+$B$A$^$9!#B0@-$O8eF|(B secret item $B$r8!:w$7$?$j<h$j=P$9$?$a$K;H$&$3$H$,$G$-(B
+$B$^$9!#(B
 
-Secret items $B$O(B @dfn{collections} $B$K%0%k!<%W2=$5$l$^$9!#%3%l%/%7%g%s$O35(B
-$BG0>e(B @samp{$B80%j%s%0(B} $B$^$?$O(B @samp{$B%&%)%l%C%H(B} $B$H$$$&MQ8l$H;w$F$$$^$9!#0l(B
-$BHLE*$J%3%l%/%7%g%s$O(B @samp{"login"} $B$G$9!#%3%l%/%7%g%s$O%f!<%6!<$N5v2D$N(B
-$B2<$K915WE*$KJ]B8$5$l!"%f!<%6!<$N$9$k$3$H$K1~$8$F%"%/%;%9$9$k$3$H$,$G$-$^(B
-$B$9!#(B
+Secret items $B$O(B @dfn{collections} $B$K%0%k!<%W2=$5$l$^$9!#%3%l%/%7%g%s(B
+$B$O(B GNOME $B80%j%s%0$H(B KDE $B%&%)%l%C%H$G$O;~$K(B @samp{keyring} $B$^$?(B
+$B$O(B @samp{wallet} $B$H8F$P$l$^$9$,F1$8$b$N$G!"(Bsecrets $B$N=89g$G$9!#%3%l%/%7%g(B
+$B%s$O8D?M$N;}$AJ*$GJ]8n$5$l$F$$$F!";}$A<g$@$1$,$=$l$i$r3+$/$3$H$,$G$-$^$9!#(B
 
-$B%3%l%/%7%g%s$OJLL>$r;}$D$3$H$,$G$-$^$9!#$3$N;H$$J}$G$OM?$($i$l$k%3%l%/%7%g(B
-$B%s$N$?$a$KJLL>(B @samp{"default"} $B$r!"%3%l%/%7%g%s$,;H$o$l$k%/%i%$%"%s%H$K(B
-$BBP$7F)2a$K$7$F@_Dj$7$^$9!#B>$NJLL>$O(B ($B$^$@(B) $B%5%]!<%H$5$l$F$$$^$;$s!#JLL>(B
-$B$O$9$Y$F$N%"%W%j%1!<%7%g%s$+$i8+$($k$N$G!"$3$N@_Dj$O?5=E$K9T$J$o$J$1$l$P(B
-$B$J$j$^$;$s!#(B
+$B$b$C$H$b0lHLE*$J%3%l%/%7%g%s$O(B @code{"login"} $B$H8F$P$l$^$9!#(B
+
+$B%3%l%/%7%g%s$OJLL>$r;}$D$3$H$,$G$-$^$9!#0lHL$K(B @code{"default"} $B$H$$$&JL(B
+$BL>$,;H$o$l$k$N$G!"%/%i%$%"%s%H$O3+$/%3%l%/%7%g%s$NL@<(E*$JL>A0$rCN$C$F$$(B
+$B$kI,MW$,$"$j$^$;$s!#B>$NJLL>$O$^$@%5%]!<%H$5$l$F$$$^$;$s!#JLL>$O$I$3$+$i(B
+$B$G$b%"%/%;%9$G$-$k$N$G!"E,@Z$G$"$k$3$H$r3N?.$7$F$$$k>l9g$K8B$C$FJL(B
+$BL>(B @code{"default"} $B$r@_Dj$7$F$/$@$5$$!#(B
 
 @defun secrets-list-collections
-$B$3$N4X?t$O%3%l%/%7%g%sL>$N%j%9%H$rJV$7$^$9!#(B
+$B$3$N4X?t$O$9$Y$F$N%3%l%/%7%g%sL>$r%j%9%H$GJV$7$^$9!#(B
 @end defun
 
 @defun secrets-set-alias collection alias
 @var{alias} $B$r(B @var{collection} $B$H$$$&L>$N%3%l%/%7%g%s$NJLL>$H$7$F@_Dj$7(B
-$B$^$9!#$5$7$"$?$jJLL>(B @samp{"default"} $B$@$1$,%5%]!<%H$5$l$F$$$^$9!#(B
+$B$^$9!#:#$N$H$3$mJLL>(B @code{"default"} $B$@$1$,%5%]!<%H$5$l$F$$$^$9!#(B
 @end defun
 
 @defun secrets-get-alias alias
-@var{alias} $B$KAjEvBP1~$7$F$$$k%3%l%/%7%g%sL>$rJV$7$^$9!#$5$7$"$?$jJL(B
-$BL>(B @samp{"default"} $B$@$1$,%5%]!<%H$5$l$F$$$^$9!#(B
+@var{alias} $B$KAjEv$9$k%3%l%/%7%g%sL>$rJV$7$^$9!#:#$N$H$3$mJL(B
+$BL>(B @code{"default"} $B$@$1$,%5%]!<%H$5$l$F$$$^$9!#(B
 @end defun
 
 $B%3%l%/%7%g%s$O4X?t(B @code{secrets-create-collection} $B$*$h(B
-$B$S(B @code{secrets-delete-collection} $B$G:n$C$?$j:o=|$9$k$3$H$,$G$-$^$9!#(B
-$BDL>o$3$l$O(B Emacs $B$NCf$+$i$O;H$o$l$^$;$s!#0lHLE*$J(B @samp{"login"} $B$N$h$&(B
-$B$J%3%l%/%7%g%s$O7h$7$F:o=|$9$Y$-$G$O$"$j$^$;$s!#(B
+$B$S(B @code{secrets-delete-collection} $B$G:n$C$?$j:o=|$9$k$3$H$,$G$-$^$9!#DL(B
+$B>o$3$l$O(B Emacs $B$NCf$+$i$O9T$J$o$l$^$;$s!#(B@code{"login"} $B$N$h$&$JI8=`$N%3(B
+$B%l%/%7%g%s$r:o=|$7$J$$$G$/$@$5$$!#(B
 
-@samp{"session"} $B$H$$$&FCJL$J%3%l%/%7%g%s$,$"$j$^$9!#%/%i%$%"%s%H$N%;%C(B
-$B%7%g%s(B ($B8@$$49$($k$H(B Emacs $B$r=*N;$9$k$^$G$N;~4V(B) $B$K1~$8$?<wL?$r;}$A$^$9!#(B
-$B$3$l$O(B Emacs $B$,%7!<%/%l%C%H%5!<%S%9$N%$%s%?!<%U%'!<%9$r;H$&:]$K<+F0E*$K(B
-$B@8@.$5$l!"(BEmacs $B$,=*N;$9$k$H$-$K:o=|$5$l$^$9!#$7$?$,$C$FNW;~$K(B secret
-items $B$rJ]B8$7$?$j<h$j=P$9$?$a$K;H$&$3$H$,$G$-$^$9!#>pJs$,(B Emacs $B$h$jD9(B
-$B$/@8$-;D$k$Y$-$G$O$J$$>l9g!"$3$l$O1JB3$5$;$k%3%l%/%7%g%s$N@8@.$h$jM%@h$5(B
-$B$l$k$Y$-$G$9!#%;%C%7%g%s!&%3%l%/%7%g%s$O!"0J2<$N4X?t$G%3%l%/%7%g%s$N%Q%i(B
-$B%a!<%?!<$,I,MW$K$J$k$H$-$O$$$D$G$bJ8;zNs(B @samp{"session"} $B$^$?(B
-$B$O(B @code{nil} $B$N$I$A$i$+$G0z$/$3$H$,$G$-$^$9!#(B
-
-$B$9$G$K=R$Y$?$h$&$K%3%l%/%7%g%s$O(B secret items $B$r%0%k!<%W2=$7$?$b$N$G$9!#(B
-$B$R$H$D$N(B secret item $B$O(B @dfn{secret} ($BJ8;zNs$G$9(B) $B$H$$$&%i%Y%k$H8!:w2DG=(B
-$B$JB0@-$r;}$A$^$9!#B0@-$O8eF|(B secret item $B$rC5$7$F<h$j=P$9$?$a$K;H$&$3$H(B
-$B$,$G$-$^$9!#(B
+$BFCJL$J%3%l%/%7%g%s(B @code{"session"} $B$OBP1~$9$k%/%i%$%"%s%H(B ($B2f!9$N>l9g(B
+$B$O(B Emacs) $B$,Av$C$F$$$k4|4VB8:_$7$^$9!#$3$l$O(B Emacs $B$,%7!<%/%l%C%H%5!<%S(B
+$B%9$N%$%s%?!<%U%'!<%9$r;H$&:]$K<+F0E*$K:n$i$l!"(BEmacs $B$,=*N;$9$k$H$-$K:o=|(B
+$B$5$l$^$9!#$=$N8N$KNW;~$K(B secret items $B$rJ]B8$7$?$j<h$j=P$9$?$a$K;H$&$3$H(B
+$B$,$G$-$^$9!#(BSecret items $B$r(B Emacs $B$h$j1J$/@8$+$7$F$*$/$Y$-$G$O$J$$>l9g!"(B
+@code{"session"} $B%3%l%/%7%g%s$O1JB3$5$;$k%3%l%/%7%g%s$h$jM-Mx$G$9!#%3%l(B
+$B%/%7%g%s(B session $B$O0J2<$N4X?t$K$*$$$F%3%l%/%7%g%s$N%Q%i%a!<%?!<$,I,MW$K(B
+$B$J$k$H$-$O$$$D$G$b!"J8;zNs(B @code{"session"} $B$^$?$O(B @code{nil} $B$N$I$A$i$+(B
+$B$G0z$/$3$H$,$G$-$^$9!#(B
 
 @defun secrets-list-items collection
-@var{collection} $B$N$9$Y$F$N(B item $B$N%i%Y%k$N%j%9%H$rJV$7$^$9!#(B
+@var{collection} $B$N$9$Y$F$N(B item $B$N%i%Y%k$r%j%9%H$GJV$7$^$9!#(B
 @end defun
 
 @defun secrets-create-item collection item password &rest attributes
@@ -323,6 +322,8 @@ items $B$rJ]B8$7$?$j<h$j=P$9$?$a$K;H$&$3$H$,$G$-$^$9!#>pJs$,(B Emacs $B$h$jD9
 $B%k$G$9!#0J2<$KNc$r<($7$^$9(B:
 
 @example
+;; "session" $B$H$$$&%;%C%7%g%s!"%i%Y%k$O(B "my item" $B$G(B
+;; secret ($B%Q%9%o!<%I(B) $B$O(B "geheim"
 (secrets-create-item "session" "my item" "geheim"
  :method "sudo" :user "joe" :host "remote-host")
 @end example
@@ -338,9 +339,9 @@ items $B$rJ]B8$7$?$j<h$j=P$9$?$a$K;H$&$3$H$,$G$-$^$9!#>pJs$,(B Emacs $B$h$jD9
 $B$3$N4X?t$O(B @var{collection} $B$NCf$N(B @var{item} $B$H$$$&(B item $B$r<h$j=|$-$^$9!#(B
 @end defun
 
-Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k8!:w2DG=$JB0@-$O!"80$HCM$NBP$G$J$1$l(B
-$B$P$J$j$^$;$s!#80$O%3%m%s$G;O$^$k%-!<%o!<%I!&%7%s%\%k!"CM$OJ8;zNs$G$9!#$=(B
-$B$l$i$OM?$($i$l$?(B secret item $B$+$i<h$j=P$9$3$H$,$G$-!"$=$l$i$r;H$C(B
+Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k%k%C%/%"%C%WB0@-$O!"80$HCM$NBP$G$J$1(B
+$B$l$P$J$j$^$;$s!#80$O%3%m%s$G;O$^$k%-!<%o!<%I!&%7%s%\%k!"CM$OJ8;zNs$G$9!#(B
+$B$=$l$i$OM?$($i$l$?(B secret item $B$+$i<h$j=P$9$3$H$,$G$-!"$=$l$i$r;H$C(B
 $B$F(B item $B$r5U0z$-$9$k$3$H$,$G$-$^$9!#(B
 
 @defun secrets-get-attribute collection item attribute
@@ -350,9 +351,9 @@ Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k8!:w2DG=$JB0@-$O!"80$HCM$NBP$G$J$1$l(B
 @end defun
 
 @defun secrets-get-attributes collection item
-@var{collection} $B$NCf$G(B @var{item} $B$H$$$&%i%Y%k$,IU$$$F$$$k(B item $B$N8!:w(B
-$B2DG=$JB0@-$rJV$7$^$9!#3:Ev$9$k(B item $B$,L5$+$C$?$j(B item $B$,B0@-$r;}$C$F$$$J(B
-$B$$>l9g$O(B @code{nil} $B$rJV$7$^$9!#0J2<$KNc$r<($7$^$9(B:
+@var{collection} $B$NCf$G(B @var{item} $B$H$$$&%i%Y%k$,IU$$$F$$$k!"(Bitem $B$N%k%C(B
+$B%/%"%C%WB0@-$rJV$7$^$9!#3:Ev$9$k(B item $B$,L5$+$C$?$j(B item $B$,B0@-$r;}$C$F$$(B
+$B$J$$>l9g$O(B @code{nil} $B$rJV$7$^$9!#0J2<$KNc$r<($7$^$9(B:
 
 @example
 (secrets-get-attributes "session" "my item")
@@ -361,8 +362,8 @@ Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k8!:w2DG=$JB0@-$O!"80$HCM$NBP$G$J$1$l(B
 @end defun
 
 @defun secrets-search-items collection &rest attributes
-@var{collection} $B$NCf$G(B @var{attributes} $B$r;}$D(B item $B$rC5$7$^$9!#(B
-@var{attributes} $B$O(B @code{secrets-create-item} $B$G;H$o$l$?80$HCM$NBP$G$9!#(B
+@var{collection} $B$NCf$G9gCW$9$k(B @var{attributes} $B$r;}$D(B item $B$rC5$7$^$9!#(B
+@var{attributes} $B$O(B @code{secrets-create-item} $B$G;H$o$l$k80$HCM$NBP$G$9!#(B
 $B0J2<$KNc$r<($7$^$9(B:
 
 @example
@@ -370,6 +371,24 @@ Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k8!:w2DG=$JB0@-$O!"80$HCM$NBP$G$J$1$l(B
      @result{} ("my item" "another item")
 @end example
 @end defun
+
+auth-source $B%i%$%V%i%j!<$O(B @code{"secrets:COLLECTION"} $B$K9gCW$9(B
+$B$k(B source $B$r8!:w$9$k$H$-!"(B@file{secrets.el} $B%i%$%V%i%j!<$K2C$($F<!$N$h$&(B
+$B$K%7!<%/%l%C%H%5!<%S%9(B API $B$r;H$$$^$9!#Nc$($P(B @code{"session"} $B%3%l%/%7%g(B
+$B%s$r(B Emacs $B$,Av$C$F$$$k4V$@$13+$/$?$a$K(B @code{"secrets:session"} $B$r;H$&(B
+$B$3$H$,$G$-$^$9!#$"$k$$$O(B @code{"Login"} $B%3%l%/%7%g%s$r3+$/$?$a$K(B
+$B$O(B @code{"secrets:Login"} $B$,;H$($^$9!#FCJL$J>l9g$H$7(B
+$B$F(B @code{auth-sources} $B$NCf$G$OJLL>(B @code{"default"} $B$r<($9$?$a(B
+$B$K(B @code{default} $B$H$$$&%7%s%\%k(B ($BJ8;zNs$G$O$J$$(B) $B$r;H$&$3$H$,$G$-$^$9!#(B
+$B$3$3$K(B 3$B$D$N%3%l%/%7%g%s$r8!:w$7$F$9$k(B ($BL5$+$C$?(B
+$B$i(B @file{~/.authinfo.gpg} $B$r;H$&(B) $B$?$a$N$o$6$H$i$7$$Nc$,$"$j$^$9!#(B
+
+@example
+(setq auth-sources '(default
+                     "secrets:session"
+                     "secrets:Login"
+                     "~/.authinfo.gpg"))
+@end example
 
 @node Help for developers
 @chapter $B3+H/<T$N$?$a$N%X%k%W(B
