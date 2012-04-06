@@ -1,3 +1,8 @@
+2012-04-06  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* ptexinfmt.el (texinfo-format-syntax-table): Modify character syntax
+	of " and \ to w, as a workaround.
+
 2012-04-05  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* epa-ja.texi: New file.

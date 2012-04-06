@@ -62,6 +62,11 @@
 
 (require 'texinfmt)
 
+;; Work around a problem that double-quotes at bol disappear:
+;; @dfn{FOO} => FOO", ``BAR'' => BAR", \BAZ/ => BAZ/
+(modify-syntax-entry ?\" "w" texinfo-format-syntax-table)
+(modify-syntax-entry ?\\ "w" texinfo-format-syntax-table)
+
 ;;; Broken
 (defvar ptexinfmt-disable-broken-notice-flag t
   "If non-nil disable notice, when call `ptexinfmt-broken-facility'.
