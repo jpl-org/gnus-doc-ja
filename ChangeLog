@@ -1,3 +1,8 @@
+2012-04-11  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* pgg-ja.texi: Remove.
+	* Makefile.in: Do.
+
 2012-04-06  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* ptexinfmt.el (texinfo-format-syntax-table): Modify character syntax
