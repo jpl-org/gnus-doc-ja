@@ -1,0 +1,517 @@
+\input texinfo                  @c -*- mode: texinfo -*-
+@include gnus-overrides-ja.texi
+@c %**start of header
+@setfilename epa-ja
+@settitle EasyPG Assistant User's Manual
+@c %**end of header
+
+@set VERSION 1.0.0
+
+@copying
+これは EasyPG アシスタント @value{VERSION} の説明書です。
+
+Copyright @copyright{} 2007-2012 Free Software Foundation, Inc.
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover texts being ``A GNU Manual,''
+and with the Back-Cover Texts as in (a) below.  A copy of the license
+is included in the section entitled ``GNU Free Documentation License''
+in the Emacs manual.
+
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.3 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「GNU フリー文書利用許諾契約書」という章に含まれています。
+
+(a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
+modify this GNU manual.  Buying copies from the FSF supports it in
+developing GNU and promoting software freedom.''
+
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。FSF からの複写の購入は GNU の開発とソフトウェアの自由
+の促進を支援します。」
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license.
+
+この文書は「GNU フリー文書利用許諾契約書」に基づいて配布された収集著作物
+の一部です。もしあなたがこの文書を収集著作物から分離して配布したいときは、
+契約書の第 6 項に記述されているように、文書に契約書の複写を付加すること
+によって、行なうことができます。
+@end quotation
+@end copying
+
+@dircategory Emacs misc features
+@direntry
+* EasyPG Assistant: (epa-ja).   An Emacs user interface to GNU Privacy Guard (Japanese).
+@end direntry
+
+@titlepage
+@title EasyPG Assistant
+
+@author by Daiki Ueno
+@page
+
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@node Top
+@top EasyPG Assistant user's manual
+
+EasyPG アシスタントは GNU Privacy Guard (GnuPG, @pxref{Top, , Top,
+gnupg, Using the GNU Privacy Guard}) への Emacs ユーザーインターフェース
+です。
+
+EasyPG アシスタントは Emacs のためのオールインワン GnuPG インターフェー
+スである EasyPG というパッケージの一部です。EasyPG は EasyPG ライブラリー
+というライブラリー・インターフェースも含んでいます。
+
+@ifnottex
+@insertcopying
+@end ifnottex
+
+@menu
+* Overview::
+* Quick start::
+* Commands::
+* Caching Passphrases::
+* Bug Reports::
+@end menu
+
+@node Overview
+@chapter 概要
+
+EasyPG は以下の機能を提供します。
+
+@itemize @bullet
+@item 鍵の管理
+@item 領域の暗号や署名の操作
+@item ファイルの暗号や署名の操作
+@item Dired の統合
+@item Mail モードの統合
+@end itemize
+
+@node Quick start
+@chapter とりあえず始める
+
+EasyPG アシスタント・コマンドは @samp{epa-} で始まります。例えば、
+
+@itemize @bullet
+@item 鍵リングを眺めるには @kbd{M-x epa-list-keys}
+
+@item 領域のクリアテキスト署名を作るには @kbd{M-x epa-sign-region}
+
+@item ファイルを暗号化するには @kbd{M-x epa-encrypt-file}
+@end itemize
+
+EasyPG アシスタントは Emacs の他の機能性に統合することができるいくつかの
+暗号や署名の機能を提供します。例えば @samp{*.gpg} ファイルの暗号化と復号
+です。
+
+@node Commands
+@chapter コマンド
+
+この章は代表的な使い方のための様々なコマンドを紹介します。
+
+@menu
+* Key management::                      鍵の管理
+* Cryptographic operations on regions:: 領域の暗号や署名の操作
+* Cryptographic operations on files::   ファイルの暗号や署名の操作
+* Dired integration::                   Dired の統合
+* Mail-mode integration::               Mail モードの統合
+* Encrypting/decrypting *.gpg files::   *.gpg ファイルの暗号化と復号
+@end menu
+
+@node Key management
+@section 鍵の管理
+おそらく EasyPG アシスタントを使う最初の一歩は鍵リングを眺めることでしょ
+う。@kbd{M-x epa-list-keys} はコマンドラインから使
+う @samp{gpg--list-keys} に相当しています。
+
+@deffn Command epa-list-keys name mode
+公開鍵リングの @var{name} に合致するすべての鍵を表示します。
+@end deffn
+
+@noindent
+その出力は次のようなものです。
+
+@example
+  u A5B6B2D4B15813FE Daiki Ueno <ueno@@unixuser.org>
+@end example
+
+@noindent
+左端の桁の文字はその鍵の信頼度を表します。もし @samp{u} ならば、その鍵は
+究極的に信頼されるものとして印されています。二つ目の桁はその鍵の ID、残
+りはユーザー ID です。
+
+@key{TAB} で項目を移動できます。ある項目で @key{RET} をタイプするかマウ
+スの第1ボタンをクリックすると、選択した鍵のもっと詳細な情報を見ることが
+できます。
+
+@example
+ u Daiki Ueno <ueno@@unixuser.org>
+ u A5B6B2D4B15813FE 1024bits DSA
+        Created: 2001-10-09
+        Expires: 2007-09-04
+        Capabilities: sign certify
+        Fingerprint: 8003 7CD0 0F1A 9400 03CA  50AA A5B6 B2D4 B158 13FE
+ u 4447461B2A9BEA2D 2048bits ELGAMAL_E
+        Created: 2001-10-09
+        Expires: 2007-09-04
+        Capabilities: encrypt
+        Fingerprint: 9003 D76B 73B7 4A8A E588  10AF 4447 461B 2A9B EA2D
+@end example
+
+@noindent
+秘密鍵リングを眺めるには @kbd{M-x epa-list-secret-keys} を使ってください。
+
+@deffn Command epa-list-secret-keys name
+秘密鍵リングの中の @var{name} に合致するすべての鍵を表示します。
+@end deffn
+
+@noindent
+@samp{*Keys*} バッファーではいくつかのコマンドを利用できます。よくある用
+途はいくつかの鍵をファイルに書き出すことです。それには @kbd{m} をタイプ
+して鍵を選択し、@kbd{o} をタイプした後でファイル名を入力してください。
+
+以下は鍵の管理に関する他のコマンドです。それらのいくつかはファイルを対象
+に入出力を行ない、他は現在設定されている領域が対象になります。
+
+@deffn Command epa-insert-keys keys
+カーソルの後ろに選択された @var{keys} を挿入します。挿入する前に鍵を選択
+することを促されます。ディフォルトでは鍵を OpenPGP の装甲フォーマットで
+エンコードします。
+@end deffn
+
+@deffn Command epa-import-keys file
+鍵を @var{file} から鍵リングに取り込みます。
+@end deffn
+
+@deffn Command epa-import-keys-region start end
+鍵を @var{start} と @var{end} の間の現在の領域から鍵リングに取り込みます。
+@end deffn
+
+@deffn Command epa-import-armor-in-region start end
+鍵を @var{start} と @var{end} の間の現在の領域にある OpenPGP の装甲フォー
+マットから鍵リングに取り込みます。@code{epa-import-keys-region} との違い
+は @code{epa-import-armor-in-region} が領域にある装甲を探して、それらを
+逐一 @code{epa-import-keys-region} が処理することです。
+@end deffn
+
+@deffn Command epa-delete-keys allow-secret
+選択された鍵を取り除きます。@var{allow-secret} が @code{nil} でなかった
+ら秘密鍵も取り除きます。
+@end deffn
+
+@node Cryptographic operations on regions
+@section 領域の暗号や署名の操作
+
+@deffn Command epa-decrypt-region start end
+@var{start} と @var{end} の間の現在の領域を復号します。復号されたテキス
+トで領域を置き換えます。
+@end deffn
+
+@deffn Command epa-decrypt-armor-in-region start end
+@var{start} と @var{end} の間の現在の領域にある OpenPGP 装甲を復号します。
+@code{epa-decrypt-region} との違い
+は @code{epa-decrypt-armor-in-region} が領域にある装甲を探して、それらを
+逐一 @code{epa-decrypt-region} が処理することです。したがってこのコマン
+ドは装甲の前後にある元のテキストを改変しません。
+@end deffn
+
+@deffn Command epa-verify-region start end
+@var{start} と @var{end} の間の現在の領域を検証します。検証結果はミニバッ
+ファーかポップアップされるウィンドウに送ります。領域を署名されたテキスト
+で置き換えます。
+@end deffn
+
+@deffn Command epa-verify-cleartext-in-region
+@var{start} と @var{end} の間の現在の領域にある OpenPGP のクリアテキスト・
+ブロックを検証します。@code{epa-verify-region}との違い
+は @code{epa-verify-cleartext-in-region} が領域にあるクリアテキスト・ブ
+ロックを探して、それらを逐一 @code{epa-verify-region} が処理することです。
+したがってこのコマンドはクリアテキスト・ブロックの前後にある元のテキスト
+を改変しません。
+@end deffn
+
+@deffn Command epa-sign-region start end signers type
+@var{start} と @var{end} の間の現在の領域に署名します。ディフォルトでは
+クリアテキストの署名を作ります。接頭引数を与えると署名に使う鍵と署名のタ
+イプを選択することを促されます。
+@end deffn
+
+@deffn Command epa-encrypt-region start end recipients sign signers
+@var{start} と @var{end} の間の現在の領域を暗号化します。受取人を選択す
+ることを促されます。接頭引数を与えると暗号化する前にテキストに署名するか
+どうかを尋ねられ、yes と答えた場合は署名に使う鍵を選択することを促されま
+す。
+@end deffn
+
+@node Cryptographic operations on files
+@section ファイルの暗号や署名の操作
+
+@deffn Command epa-decrypt-file file
+@var{file} を復号します。
+@end deffn
+
+@deffn Command epa-verify-file file
+@var{file} を検証します。
+@end deffn
+
+@deffn Command epa-sign-file file signers type
+@var{file} に署名します。接頭引数を与えると署名に使う鍵と署名のタイプを
+選択することを促されます。
+@end deffn
+
+@deffn Command epa-encrypt-file file recipients
+@var{file} を暗号化します。受取人を選択することを促されます。
+@end deffn
+
+@node Dired integration
+@section Dired の統合
+
+EasyPG アシスタントは GNU Emacs の dired モードを拡張して、ファイルの暗
+号や署名の操作ができるようにします。例えば次のようなことができます。
+
+@example
+M-x dired
+(いくつかのファイルに選択マークを付けて)
+: e (or M-x epa-dired-do-encrypt)
+(`m' で受取人を選択して [OK] をクリック)
+@end example
+
+@noindent
+以下のキーが割り当てられています。
+
+@table @kbd
+@item : d
+@kindex @kbd{: d}
+@findex epa-dired-do-decrypt
+マークされたファイルを復号します。
+
+@item : v
+@kindex @kbd{: v}
+@findex epa-dired-do-verify
+マークされたファイルを検証します。
+
+@item : s
+@kindex @kbd{: s}
+@findex epa-dired-do-sign
+マークされたファイルに署名します。
+
+@item : e
+@kindex @kbd{: e}
+@findex epa-dired-do-encrypt
+マークされたファイルを暗号化します。
+@end table
+
+@node Mail-mode integration
+@section Mail モードの統合
+
+EasyPG アシスタントはインライン OpenPGP メッセージの作成を支援するために
+マイナーモード @code{epa-mail-mode} を提供します。インライン OpenPGP メッ
+セージは、現代的な MIME フォーマットを使わずに生の OpenPGP blobs (バイナ
+リーデータ) をメッセージの本分に埋め込むことによって、署名をしたり暗号化
+した電子メールを送る伝統的な形式です。
+
+注: インライン OpenPGP は推奨されません。PGP/MIME を使うことを考えるべき
+です。@uref{http://josefsson.org/inline-openpgp-considered-harmful.html,
+Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
+
+@noindent
+@code{epa-mail-mode} を有効にすると以下のキーが割り当てられます。このマ
+イナーモードを有効にするには @kbd{C-u 1 M-x epa-mail-mode} を実行するか、
+カスタムのインターフェースを通して行なってくださ
+い (@kbd{M-x customize-variable epa-global-mail-mode} を試してください)。
+
+@table @kbd
+@item C-c C-e C-d and C-c C-e d
+@kindex @kbd{C-c C-e C-d}
+@kindex @kbd{C-c C-e d}
+@findex epa-mail-decrypt
+現在のバッファーにある OpenPGP 装甲を復号します。
+
+@item C-c C-e C-v and C-c C-e v
+@kindex @kbd{C-c C-e C-v}
+@kindex @kbd{C-c C-e v}
+@findex epa-mail-verify
+現在のバッファーにある OpenPGP のクリアテキストで署名されたメッセージを
+検証します。
+
+@item C-c C-e C-s and C-c C-e s
+@kindex @kbd{C-c C-e C-s}
+@kindex @kbd{C-c C-e s}
+@findex epa-mail-sign
+現在のバッファーから署名されたメッセージを作ります。
+
+@item C-c C-e C-e and C-c C-e e
+@kindex @kbd{C-c C-e C-e}
+@kindex @kbd{C-c C-e e}
+@findex epa-mail-encrypt
+現在のバッファーから暗号化されたメッセージを作ります。ディフォルトではメー
+ルのヘッダーの @samp{to}、@samp{cc}、および @samp{bcc} フィールドから受
+取人リストを作ろうとします。受取人リストにあなたの鍵を含めたい場合
+は @file{~/.gnupg/gpg.conf} で @samp{encrypt-to} オプションを使ってくだ
+さい。
+@end table
+
+@node Encrypting/decrypting *.gpg files
+@section *.gpg ファイルの暗号化と復号
+デフィフォルトでは名前が @samp{.gpg} で終わるファイルは暗号化されたもの
+として扱われます。即ちそのようなファイルを開くと、暗号化されたままのもの
+ではなく復号されたテキストがバッファーに挿入されます。同様にバッファー
+を @samp{foo.gpg} ファイルにセーブすると暗号化されたデータが書かれます。
+
+暗号化されたファイルの名前パターンは @var{epa-file-name-regexp} で制御す
+ることができます。
+
+@defvar epa-file-name-regexp
+暗号化されたものとして扱われるファイル名に合致する正規表現です。
+@end defvar
+
+この動作は @kbd{M-x epa-file-disable} で無効に、そし
+て @kbd{M-x epa-file-enable} で元に戻すことができます。
+
+@deffn Command epa-file-disable
+*.gpg ファイルの自動暗号化/復号を無効にします。
+@end deffn
+
+@deffn Command epa-file-enable
+*.gpg ファイルの自動暗号化/復号を有効にします。
+@end deffn
+
+@noindent
+デフォルトでは @code{epa-file} は対称鍵暗号 (symmetric encryption)、言い
+換えるとパスワードに基づいた暗号を使おうとします。代わりに公開鍵暗
+号 (public key encryption) を使いたいのであれ
+ば @kbd{M-x epa-file-select-keys} を行なってください。するとキーを選択す
+るための対話窓がポップアップします。
+
+@deffn Command epa-file-select-keys
+現在開いているファイルを公開鍵で暗号化するための受取人の鍵を選択します。
+@end deffn
+
+変数 @code{epa-file-select-keys} でディフォルトの動作を変更することもで
+きます。
+
+@defvar epa-file-select-keys
+鍵を選択するための対話窓をポップアップするかどうかを制御します。
+@end defvar
+
+頻繁に開くファイルについては、どの暗号方式を使うべきかを @pxref{File
+Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこと
+は良い考えかもしれません。この目的にはローカル変
+数 @code{epa-file-encrypt-to} を使ってください。
+@vindex epa-file-encrypt-to
+
+例えば ELisp ファイルを電子メールアドレス @samp{ueno@@unixuser.org} に対
+応する公開鍵暗号で暗号化したいのであれば、そのファイルの先頭に以下の行を
+加えてください。
+
+@cartouche
+@lisp
+;; -*- epa-file-encrypt-to: ("ueno@@unixuser.org") -*-
+@end lisp
+@end cartouche
+
+逆にファイルを常に (@code{epa-file-select-keys} 変数の値に関わらず) 対称
+鍵暗号で暗号化したいのであれば、その行を以下のように変更してください。
+
+@cartouche
+@lisp
+;; -*- epa-file-encrypt-to: nil -*-
+@end lisp
+@end cartouche
+
+自動暗号化/復号の動作を制御する他の変数は以下の通りです。
+
+@defvar epa-file-cache-passphrase-for-symmetric-encryption
+@code{nil} 以外の値だったら対称鍵暗号のためのパスフレーズをキャッシュし
+ます。ディフォルト値は @code{nil} です。
+@end defvar
+
+@defvar epa-file-inhibit-auto-save
+@code{nil} 以外の値だったら開いている暗号化されたファイルの自動セーブを
+禁止します。ディフォルト値は @code{t} です。
+@end defvar
+
+@node Caching Passphrases
+@chapter Caching Passphrases
+
+もし同じファイルを開いて閉じる機会が度々あるのであれば、パスフレーズをタ
+イプするのはいらいらする仕事でしょう。GnuPG と EasyPG アシスタントはあな
+たのパスフレーズを記憶する機構を提供します。しかしながらその設定は少々込
+み入っています。それは、インストールされてい
+る GnuPG (GnuPG バージョン 1 か GnuPG バージョン 2 か)、暗号方式 (対称鍵
+か公開鍵か)、そして gpg-agent を使いたいかどうかによります。以下にいくつ
+かの設問があります。
+
+@enumerate
+@item
+GnuPG バージョン 1 の代わりに GnuPG バージョン 2 を使いますか?
+@item
+公開鍵暗号ではなく対称鍵暗号を使いますか?
+@item
+gpg-agent を使いたいですか?
+@end enumerate
+
+あなたの回答に対応する設定は次の通りです。
+
+@multitable {111} {222} {333} {configuration configuration configuration}
+@item @b{1} @tab @b{2} @tab @b{3} @tab Configuration
+@item Yes @tab Yes @tab Yes @tab gpg-agent を使えるようにしてください。
+@item Yes @tab Yes @tab No @tab gpg-agent 無しではできません。
+@item Yes @tab No @tab Yes @tab gpg-agent を使えるようにしてください。
+@item Yes @tab No @tab No @tab gpg-agent 無しではできません。
+@item No @tab Yes @tab Yes @tab Elisp のパスフレーズ・キャッシュを使ってください。
+@item No @tab Yes @tab No @tab Elisp のパスフレーズ・キャッシュを使ってください。
+@item No @tab No @tab Yes @tab gpg-agent を使えるようにしてください。
+@item No @tab No @tab No @tab gpg-agent 無しではできません。
+@end multitable
+
+gpg-agent を使えるようにするには GnuPG マニュアルの以下の説明に従ってく
+ださい。@xref{Invoking GPG-AGENT, , Invoking GPG-AGENT, gnupg}.
+
+Elisp のパスフレーズ・キャッシュを使うに
+は @code{epa-file-cache-passphrase-for-symmetric-encryption} 変数
+に @code{nil} 以外の値を設定してください。
+@xref{Encrypting/decrypting *.gpg files}.
+
+@node Bug Reports
+@chapter バグリポート
+
+EasyPG アシスタントのバグと諸問題は Emacs 開発チームが活発に対処していま
+す。新機能の要望と提案もおおいに歓迎します。@kbd{M-x report-emacs-bug}
+(@pxref{Bugs, ,Bugs, emacs, Reporting Bugs}) を使ってください。
+
+バグリポートを書くときは、その問題を再現するための操作を十分過ぎると思う
+ほど詳細に説明してください。さらにそのバグを修正するために必要な情報を以
+下のように集めてください。
+
+@itemize @bullet
+@item GnuPG のバージョン。@samp{gpg --version} が示すものです。
+@item GnuPG の設定。@file{~/.gnupg/gpg.conf} の中身です。
+@end itemize
+
+バグを知らせる前に @file{~/.emacs} ファイルで @code{epg-debug} 変数
+に @code{nil} 以外の値を設定して、そのバグを再度確認してください。そし
+て @samp{ *epg-debug*} バッファーの中身を含めてください。バッファー名の
+最初の文字は空白であることに注意してください。
+@bye
+
+@c Local Variables:
+@c coding: iso-2022-7bit
+@c fill-column: 72
+@c mode: texinfo
+@c use-kuten-for-period: t
+@c use-touten-for-comma: t
+@c End:
