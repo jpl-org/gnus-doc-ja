@@ -1,3 +1,10 @@
+2012-04-12  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* ptexinfmt.el (texinfo-format-comma): Support @comma.
+	(texinfo-format-parse-args): Tweak it so as to work for @comma.
+
+	* epa-ja.texi (Mail-mode integration): Use @comma{}.
+
 2012-04-11  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* pgg-ja.texi: Remove.

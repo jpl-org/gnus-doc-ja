@@ -1029,6 +1029,53 @@ which are indicated by the @copying ... @end copying command."
       (delete-region (match-beginning 0) (match-end 0))
       (texinfo-insertcopying))))
 
+
+;; @comma
+(if (fboundp 'texinfo-format-comma)
+    nil
+  (put 'comma 'texinfo-format 'texinfo-format-comma)
+  (defun texinfo-format-comma ()
+    (texinfo-parse-arg-discard)
+    (insert ",")
+    (put-text-property (1- (point)) (point) 'ignore t))
+
+  ;; Redefine this function so as to work for @comma
+  (defun texinfo-format-parse-args ()
+    (let ((start (1- (point)))
+	  next beg end
+	  args)
+      (search-forward "{")
+      (save-excursion
+	(texinfo-format-expand-region
+	 (point)
+	 (save-excursion (up-list 1) (1- (point)))))
+      ;; The following does not handle cross references of the form:
+      ;; `@xref{bullet, , @code{@@bullet}@{@}}.' because the
+      ;; re-search-forward finds the first right brace after the second
+      ;; comma.
+      (while (/= (preceding-char) ?\})
+	(skip-chars-forward " \t\n")
+	(setq beg (point))
+;;;	(re-search-forward "[},]")
+	;; Ignore commas that are derived from @comma{}.
+	(while (and (re-search-forward "[},]" nil t)
+		    (get-text-property (match-beginning 0) 'ignore)))
+;;;
+	(setq next (point))
+	(forward-char -1)
+	(skip-chars-backward " \t\n")
+	(setq end (point))
+	(cond ((< beg end)
+	       (goto-char beg)
+	       (while (search-forward "\n" end t)
+		 (replace-match " "))))
+	(push (if (> end beg) (buffer-substring-no-properties beg end))
+	      args)
+	(goto-char next))
+      ;;(if (eolp) (forward-char 1))
+      (setq texinfo-command-end (point))
+      (nreverse args))))
+
 (provide 'ptexinfmt)
 
 ;;; ptexinfmt.el ends here
