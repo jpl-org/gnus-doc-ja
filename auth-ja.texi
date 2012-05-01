@@ -195,13 +195,16 @@ password @var{mypassword}
 @end defvar
 
 もし @code{auth-sources} をカスタマイズしないと、ディフォルトで生活する
-ことになるでしょう。そのディフォルトとは、どんなホストもポートについて
-も netrc ファイル @file{~/.authinfo.gpg} を参照するということです。これ
-は GnuPG で暗号化されたファイルです (@pxref{GnuPG and EasyPG Assistant
-Configuration})。
+ことになるでしょう。そのディフォルトとは、どんなホストやポートについても
+暗号化されていない netrc ファイル @file{~/.authinfo} が使われるというこ
+とです。
 
-もしその読み込みに失敗すると、暗号化されていない netrc ファイルであ
-る @file{~/.authinfo}、続いて @file{~/.netrc} が使われます。
+もしそれに失敗すると、どんなホストやポートも netrc ファイ
+ル @file{~/.authinfo.gpg} で探します。こちらは GnuPG で暗号化されたファ
+イルです (@pxref{GnuPG and EasyPG Assistant Configuration})。
+
+(それも失敗する場合は) どんなホストやポートについても暗号化されていな
+い netrc ファイル @file{~/.netrc} が使われます。
 
 代表的な netrc 行の例は、ポートが無いものです。
 
