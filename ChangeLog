@@ -1,3 +1,7 @@
+2012-05-01  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Ma Gnus v0.5 is released.
+
 2012-04-12  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* ptexinfmt.el (texinfo-format-comma): Support @comma.
