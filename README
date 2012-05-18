@@ -1,4 +1,3 @@
-
 These are the complete Japanese translations of the Gnus Info manuals,
 corresponding to Ma Gnus v0.6.
 
@@ -27,8 +26,8 @@ can add the following advice to the ~/.gnus.el file:
 (defadvice Info-goto-node (around prefer-japanese-edition activate)
   "Prefer Japanese edition of Gnus Info manuals."
   (if (and (not (eq major-mode 'Info-mode))
-	   (string-match "\\`(\\(emacs-mime\\|gnus-coding\
-\\|gnus-faq\\|gnus\\|gnus-news\\|message\\|pgg\\|sasl\\|sieve\\))"
+	   (string-match "\\`(\\(emacs-mime\\|epa\\|gnus-coding\
+\\|gnus-faq\\|gnus\\|gnus-news\\|message\\|sasl\\|sieve\\))"
 			 (ad-get-arg 0)))
       (let ((orig (ad-get-arg 0)))
 	(ad-set-arg 0 (concat (substring (ad-get-arg 0)
@@ -74,25 +73,20 @@ or
 Otherwise, you may use the ready-made PDF files, which can be found in
 the same place where this package exists.
 
-Anonymous CVS
-=============
+Download
+========
 You can get the manuals of which translating is in progress:
 
-% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
-This is necessary only first.  Just type the RET key when you are
-asked for the password.
-
-% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout gnus-doc-ja
+(for the first time)
+  git clone http://git.gnus.org/gnus-doc-ja.git
+(subsequent)
+  cd gnus-doc-ja/
+  git pull origin master
 
 Join the translation
 ====================
-Anyone is welcome.  The place where the translation is being done is:
-
-% CVS_RSH=ssh cvs -d :ext:cvs@cvs.m17n.org:/cvs/root
-
-The name of the repository is gnus-doc-ja.  If you wish to have a
-write access, send an e-mail with a user name which you desire to use
-and the ssh2 public key to <cvs@cvs.m17n.org>.
+Anyone is welcome.  The place where the translation is being done is
+git.gnus.org, the name of the repository is gnus-doc-ja.
 
 *NOTE*
 There are many implicit conventions on terms, ways to write English
@@ -102,8 +96,4 @@ already been translated.
 
 Discussion
 ==========
-Use the semi-gnus-ja mailing list <semi-gnus-ja@meadowy.org> to
-discuss for the time being.
-
-
-
+Use the semi-gnus-ja mailing list (Japanese only) or the ding list.

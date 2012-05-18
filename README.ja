@@ -24,8 +24,8 @@ Gnus $B$N%P%C%U%!!<$G(B `C-c C-i' $B$r%?%$%W$9$k$+(B message $B%P%C%U%!!<$G
 (defadvice Info-goto-node (around prefer-japanese-edition activate)
   "$BF|K\8lHG$N(B Gnus $B%^%K%e%"%k$rM%@h$9$k!#(B"
   (if (and (not (eq major-mode 'Info-mode))
-	   (string-match "\\`(\\(emacs-mime\\|gnus-coding\
-\\|gnus-faq\\|gnus\\|gnus-news\\|message\\|pgg\\|sasl\\|sieve\\))"
+	   (string-match "\\`(\\(emacs-mime\\|epa\\|gnus-coding\
+\\|gnus-faq\\|gnus\\|gnus-news\\|message\\|sasl\\|sieve\\))"
 			 (ad-get-arg 0)))
       (let ((orig (ad-get-arg 0)))
 	(ad-set-arg 0 (concat (substring (ad-get-arg 0)
@@ -68,25 +68,20 @@ pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
 
 $B:n@.:Q$_$N(B PDF $B%U%!%$%k$,!"$3$N%Q%C%1!<%8$HF1$8>l=j$K$"$j$^$9!#(B
 
-$BF?L>(B CVS
-========
+$B%@%&%s%m!<%I(B
+============
 $B<!$N$h$&$K$7$F!"K]Lu:n6HCf$N%^%K%e%"%k$r<hF@$9$k$3$H$,$G$-$^$9!#(B
 
-% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
-$B:G=i$@$1I,MW$G$9!#%Q%9%o!<%I$r?R$M$i$l$?$iC1$K(B RET $B%-!<$r2!$7$F$/$@$5(B
-$B$$!#(B
-
-% cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout gnus-doc-ja
+($B=i2s(B)
+  git clone http://git.gnus.org/gnus-doc-ja.git
+($B<!$+$i(B)
+  cd gnus-doc-ja/
+  git pull origin master
 
 $BK]Lu:n6H$X$N;22C(B
 ================
-$B$I$J$?$G$b4?7^$7$^$9!#:n6H$r9T$J$C$F$$$k>l=j$O(B
-
-% CVS_RSH=ssh cvs -d :ext:cvs@cvs.m17n.org:/cvs/root
-
-$B$G!"%j%]%8%H%j$NL>A0$O(B gnus-doc-ja $B$G$9!#%"%+%&%s%H$r<hF@$9$k$K$O!"4u(B
-$BK>$9$k%f!<%6L>$H(B ssh2 $B$N8x3+80$r$=$($F!"(B<cvs@cvs.m17n.org> $B08$F$KJ?J8(B
-$B$N%a!<%k$rAw$C$F$/$@$5$$!#(B
+$B$I$J$?$G$b4?7^$7$^$9!#:n6H$r9T$J$C$F$$$k>l=j$O(B git.gnus.org$B!"%j%]%8%H(B
+$B%j$NL>A0$O(B gnus-doc-ja $B$G$9!#(B
 
 $B!vCm0U!v(B
 $BMQ8l$dOB1Q:.:_J8$NJ,$+$A=q$-$J$I$K4X$7$F!"B?$/$N0EL[$NN.57$,$"$j$^$9!#(B
@@ -95,7 +90,8 @@ pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
 
 $BO"Mm>l=j(B
 ========
-$BEvLL(B semi-gnus-ja $B%a!<%j%s%0%j%9%H(B <semi-gnus-ja@meadowy.org> $B$r;H$$$^$9!#(B
+semi-gnus-ja $B%a!<%j%s%0%j%9%H(B ($BF|K\8l$N$_(B) $B$^$?$O(B ding $B%a!<%j%s%0%j%9(B
+$B%H$r;H$C$F$/$@$5$$!#(B
 
 
 Gnus $B$KIUB0$7$F$$$k(B README $B%U%!%$%k$NA4Lu(B
