@@ -49,7 +49,7 @@ license to the document, as described in section 6 of the license.
 
 @dircategory Emacs misc features
 @direntry
-* EasyPG Assistant: (epa-ja).   An Emacs user interface to GNU Privacy Guard (Japanese).
+* EasyPG Assistant-ja: (epa-ja).   An Emacs user interface to GNU Privacy Guard (Japanese).
 @end direntry
 
 @titlepage
