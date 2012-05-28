@@ -390,8 +390,8 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 @end deffn
 
 @noindent
-デフォルトでは @code{epa-file} は対称鍵暗号 (symmetric encryption)、言い
-換えるとパスワードに基づいた暗号を使おうとします。代わりに公開鍵暗
+ディフォルトでは @code{epa-file} は対称鍵暗号 (symmetric encryption)、言
+い換えるとパスワードに基づいた暗号を使おうとします。代わりに公開鍵暗
 号 (public key encryption) を使いたいのであれ
 ば @kbd{M-x epa-file-select-keys} を行なってください。するとキーを選択す
 るための対話窓がポップアップします。
