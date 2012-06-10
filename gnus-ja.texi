@@ -819,7 +819,6 @@ Various
 * Formatting Variables::        $B%P%C%U%!!<$N8+1I$($r;XDj$9$k$3$H$,$G$-$k(B
 * Window Layout::               Gnus $B$N3F%P%C%U%!!<$N%&%#%s%I%&$r@_Dj$9$k(B
 * Faces and Fonts::             $B%U%'!<%9$,$I$N$h$&$K8+$($k$+$rJQ99$9$k(B
-* Compilation::                 Gnus $B$rB.$/$9$k$K$O(B
 * Mode Lines::                  $B%b!<%I9T$K>pJs$rI=<($9$k(B
 * Highlighting and Menus::      $B%P%C%U%!!<$rAGE($G?4CO$h$/8+$;$k(B
 * Daemons::                     Gnus $B$O$"$J$?$NN"$G;E;v$r$9$k$3$H$,$G$-$k(B
@@ -21776,7 +21775,6 @@ Gnus $B$G$ODL>o$=$l$i$N%a%C%;!<%8$O%X%C%@!<$K(B ``(none)'' $B$,I=<($5$l$F8=$l
 * Formatting Variables::        $B%P%C%U%!!<$N8+1I$($r;XDj$9$k$3$H$,$G$-$k(B
 * Window Layout::               Gnus $B$N3F%P%C%U%!!<$N%&%#%s%I%&$r@_Dj$9$k(B
 * Faces and Fonts::             $B%U%'!<%9$,$I$N$h$&$K8+$($k$+$rJQ99$9$k(B
-* Compilation::                 Gnus $B$rB.$/$9$k$K$O(B
 * Mode Lines::                  $B%b!<%I9T$K>pJs$rI=<($9$k(B
 * Highlighting and Menus::      $B%P%C%U%!!<$rAGE($G?4CO$h$/8+$;$k(B
 * Daemons::                     Gnus $B$O$"$J$?$NN"$G;E;v$r$9$k$3$H$,$G$-$k(B
@@ -22050,11 +22048,6 @@ Emacs $B$,(B @samp{%b} $B$r<u$1<h$C$F!"$=$N%b!<%I9TI=<(5!G=$K!V%P%C%U%!!<L>$r
 $BL5;k(B (ignore) $B$,:G=i$K9T$J$o$l$^$9!#$=$l$+$i@Z$jMn$H$7(B (cutting)$B!"<!$K:G(B
 $BBgI}$N@)8B(B (maxing)$B!"$=$7$F:G8e$NA`:n$G$"$k5M$a9~$_(B (padding) $B$,9T$J$o$l(B
 $B$^$9!#(B
-
-$B$b$7$"$J$?$,!"$3$l$i$N>e5i;2>H$r$?$/$5$s;H$C$F$$$k$J$i!"(BGnus $B$,$H$F$bCY(B
-$B$/$J$k$N$,$o$+$k$G$7$g$&!#$3$l$O$"$J$?$,9T$N308+$KK~B-$7$?$H$-(B
-$B$K(B @kbd{M-x gnus-compile} $B$r<B9T$9$k$3$H$K$h$C$F!"3JCJ$KB.EYDc2<$r8:$i$9(B
-$B$3$H$,$G$-$^$9!#(B@xref{Compilation}.
 
 @node User-Defined Specs
 @subsection $BMxMQ<TDj5A$N;XDj(B
@@ -22587,28 +22580,6 @@ Gnus $B$O%&%#%s%I%&$NG[CV$rJQ99$7$^$;$s!#>o$K!V@5$7$$!W%&%#%s%I%&@_Dj$r6/(B
 $BHs>o$K4JC1$G$9!#C1$K(B @kbd{M-x customize-face} $B$H$d$C$F!"JQ$($?$$%U%'!<%9(B
 $B$rA*$S=P$7$F!"I8=`$N%+%9%?%^%$%:%$%s%?!<%U%'!<%9$r;H$C$FJQ99$9$k$3$H$,$G(B
 $B$-$^$9!#(B
-
-@node Compilation
-@section $B%3%s%Q%$%k(B
-@cindex compilation
-@cindex byte-compilation
-
-@findex gnus-compile
-$B$"$N9T=qK!;EMM;XDjJQ?t$r3P$($F$$$^$9(B
-$B$+(B? @code{gnus-summary-line-format}, @code{gnus-group-line-format} $B$J$I(B
-$B$J$I$G$9!#$5$F!"(BGnus $B$O$3$l$i$NJQ?t$,2?$G$"$C$F$bCm0U$rJ'$$$^$9$,!";DG0(B
-$B$J$,$i$=$l$i$rJQ99$9$k$HBgJQ=EBg$JB.EYDc2<$r0z$-5/$3$9$3$H$K$J$j$^$9!#(B
-($B$3$l$i$NJQ?t$N%G%#%U%)%k%HCM$O!"$=$l$i$K4XO"IU$1$i$l$?%P%$%H%3%s%Q%$%k(B
-$B$5$l$?4X?t$r;}$C$F$$$^$9$,!"MxMQ<T:n@.$N$b$N$O$b$A$m$s$=$&$G$O$"$j$^$;(B
-$B$s!#(B)
-
-$B$3$l$r2~A1$9$k$?$a$K!"JQ?t$r$$$8$/$j$^$o$7$F!"(B($B$J$s$H$J$/(B) $BK~B-$7$?$H46(B
-$B$8$?8e$G!"(B@kbd{M-x gnus-compile} $B$r<B9T$9$k$3$H$,$G$-$^$9!#$3$l$O?7$7$$(B
-$B;XDj$,%P%$%H%3%s%Q%$%k$5$l!"$b$&0lEY:G9bB.EY$KI|5"$G$-$k$H$$$&$3$H$G$9!#(B
-Gnus $B$O$3$l$i$N%P%$%H%3%s%Q%$%k$5$l$?;XDj$r(B @file{.newsrc.eld} $B%U%!%$%k(B
-$B$KJ]B8$7$^$9!#(B($B$b$C$H$bMxMQ<T$,Dj5A$7$?4X?t$O!"$3$N4X?t$K$h$C$F%3%s%Q%$(B
-$B%k$5$l$^$;$s(B---$B$=$l$i$r(B @file{~/.gnus.el} $B%U%!%$%k$KFM$C9~$s$G$+$i!"<+J,(B
-$B$G$=$N%U%!%$%k$r%P%$%H%3%s%Q%$%k$7$J$1$l$P$J$j$^$;$s!#(B)
 
 @node Mode Lines
 @section $B%b!<%I9T(B
