@@ -4500,6 +4500,10 @@ Gnus に、あなたが最後にいつグループを読んだかを記録させると便利かもしれ
       "")))
 @end lisp
 
+動的に束縛されている変数 (@code{gnus-tmp-group} のようなもの) に何がある
+かを知るにはソースコードを眺める必要があります。変数名が複数の Gnus のバー
+ジョンを通して一定していることも保証されていません。
+
 @node File Commands
 @subsection ファイル命令
 @cindex file commands
