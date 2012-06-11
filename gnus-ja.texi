@@ -12152,26 +12152,19 @@ C-c})、Gnus は投稿にどの方法を使うかをあなたに尋ねます。
 @findex message-smtpmail-send-it
 @findex mail-source-touch-pop
 
-あなたの @acronym{ISP} は @acronym{POP}-before-@acronym{SMTP} 認証を要求
-しますか? それは、メールを送信する前の一定時間以内に @acronym{POP} メー
-ルサーバーに接続しなければならないかどうかです。もしそうならば、便利な手
-があります。それには @file{~/.gnus.el} ファイルに以下の行を入れてくださ
-い:
+あなたの @acronym{ISP} は @acronym{POP}-before-@acronym{SMTP} 認証を使い
+ますか?  この認証手順は、電子メールを送信する前に @acronym{POP} サーバー
+と通信することを要求します。それを行なうには @file{~/.gnus.el} ファイル
+に以下の行を入れてください:
 
 @lisp
-(setq message-send-mail-function 'message-smtpmail-send-it)
 (add-hook 'message-send-mail-hook 'mail-source-touch-pop)
 @end lisp
 
 @noindent
-これは、メールを送信するときはいつでも Gnus に前もって @acronym{POP} メー
-ルサーバーに接続させることを意味します。関
-数 @code{mail-source-touch-pop} は、メールを送信する直前に、メールを取得
-せずに @code{mail-sources} の値に従って @acronym{POP} 認証だけを行ないま
-す。@code{smtpmail-send-it} ではなくて、@code{message-send-mail-hook} を
-実行する @code{message-smtpmail-send-it} を使わなければならないことと、
-@acronym{POP} 接続のために @code{mail-sources} の値を正しく設定しなけれ
-ばならないことに注意してください。@xref{Mail Sources}.
+メールを送信する直前に、@code{mail-source-touch-pop} 関数はメールを取得
+せずに @code{mail-sources} の値に従って @acronym{POP} 認証を行ないます。
+@xref{Mail Sources}.
 
 もし @code{mail-sources} に二つ以上の @acronym{POP} メールサーバーを設定
 しているならば、それらの一つを @acronym{POP}-before-@acronym{SMTP} 認証
