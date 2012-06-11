@@ -23204,6 +23204,10 @@ Picon $B$NI=<($,$G$-$k$h$&$K$9$k$?$a$K$O!"(Bpicon $B%G!<%?%Y!<%9$,$"$k%G%#%l%
 @code{inline} $B$@$C$?$i%F%-%9%H7A<0$NI=8=$,CV$-49$($i$l$^$9!#(B
 @code{right} $B$@$C$?$i!"%F%-%9%H7A<0$NI=8=$N1&B&$K(B picon $B$,2C$($i$l$^$9!#(B
 
+@vindex gnus-picon-properties
+$BJQ?t(B @code{gnus-picon-properties} $B$NCM$O(B picon $B$KE,MQ$5$l$kB0@-$N%j%9%H(B
+$B$G$9!#(B
+
 $B$b$N$4$H$N=j:_$r4IM}$9$k$?$a$K!"0J2<$NJQ?t$r@_$1$F$$$^$9!#(B
 
 @table @code
