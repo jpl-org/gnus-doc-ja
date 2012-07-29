@@ -29514,7 +29514,7 @@ description-buffer = *description-line
 
 @lisp
 (("summary"
-  ("win95" -10000 nil s)
+  ("Windows 95" -10000 nil s)
   ("Gnus"))
  ("from"
   ("Lars" -1000))
