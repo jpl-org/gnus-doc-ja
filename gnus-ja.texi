@@ -2968,8 +2968,8 @@ Gmane.org で一時的なグループを講読するためのコマンドです。記事
 @item posting-style
 @cindex posting-style
 このグループの追加の投稿様式をここに保存することができま
-す (@pxref{Posting Styles})。書式は @code{gnus-posting-style} 連想リスト
-と同じですが、ここにはグループ名に合致する正規表現はありません (当然で
+す (@pxref{Posting Styles})。書式は @code{gnus-posting-styles} 連想リス
+トと同じですが、ここにはグループ名に合致する正規表現はありません (当然で
 す)。このグループの様式の要素は @code{gnus-posting-styles} で見つかった
 ものよりも優先されます。
 
