@@ -14504,60 +14504,39 @@ fetchmail %u@@%s -P %p %t
 @item :authentication
 これは @code{password} かシンボル @code{apop} のどちらかで、何の認証方式
 を使うかを指示します。ディフォルトは @code{password} です。
-@end table
-
-@vindex pop3-movemail
-@vindex pop3-leave-mail-on-server
-@code{:program} と @code{:function} キーワードが指定されていない場合
-は @code{pop3-movemail} が使われます。@code{pop3-movemail} を使う場合
-に @code{pop3-leave-mail-on-server} が非-@code{nil} だったら、メールは取
-得した後でも @acronym{POP} サーバーに残されます。@acronym{POP} サーバー
-はセッションとセッションの間の状態の情報を維持しないので、そこにあるクラ
-イアントが信頼できる情報と、実際にそこにあるものは一致しないかもしれない
-ことに注意してください。それらが一致しないと、メールをダブって受け取るか、
-またはすべてが崩壊して、あなたは壊れたメールボックスとともに置き去りにさ
-れる可能性があります。
-
-@quotation
-訳注: Gnus に含まれている @file{pop3.el} を使う場合
-に @code{pop3-leave-mail-on-server} を非-@code{nil} に設定するのは、あま
-り意味がありません。サーバーに残されたメールは、次回に (何度でも) 再び取
-り込まれてしまいます。一度取り込んだメールを二度と取得しないようにする機
-能を持つ @file{pop3.el} は T-gnus に含まれています。これは XEmacs 用に開
-発されたものが元になっています。しかし、残念ながら誰が開発したかがわかり
-ません。したがって FSF への正式な権利譲渡が行なわれていないので、Gnus に
-含めることができないのです。
-
-参考: 以下は T-gnus の @file{pop3.el} を使う場合に自動的に追加されるメー
-ルソース用のキーワードです:
-
-@table @code
-@item :connection
-サーバーに接続するときに使うストリームで、@code{ssl}、@code{tls} また
-は @code{nil} を指定することができます。ディフォルトは @code{nil} で、安
-全ではない接続を用います。@code{ssl} と @code{tls} では外部プログラムと
-ライブラリーが必要であることに注意してください:
-
-@table @code
-@item ssl
-@acronym{SSL} を使います。OpenSSL (@samp{openssl} プログラ
-ム) か SSLeay (@samp{s_client}) と外部ライブラリー @samp{ssl.el} が必要
-です。
-
-@item tls
-STARTTLS (@acronym{SSL} に類似) を使います。外部ライブラ
-リー @samp{starttls.el} と @samp{starttls} プログラムが必要です。
-@end table
 
 @item :leave
-非-@code{nil} でメールをサーバーに残し、メッセージの取得に UIDL を使いま
-す。ディフォルトは @code{nil} です。
+メールを取得後もサーバーに残すには @code{nil} 以外の値にします。
+@acronym{UIDL} で制御されるので、一度取得したメールを再び取り込むことは
+ありません。組み込み関数 @code{pop3-movemail} (ディフォルト) だけがこの
+キーワードをサポートします。
+
+@code{nil} でも数値でもない場合、すべてのメールをサーバーに残します。も
+しこれが数値だったら、最初に新着メールをチェックしたときからその日数だけ
+メールをサーバーに残します。@code{nil} の場合 (それがディフォルト)、サー
+バーにあるメールは取得後すぐに削除されます。
+
+@vindex pop3-uidl-file
+@code{pop3-uidl-file} 変数で @acronym{UIDL} データをローカルに格納するファ
+イルを指定します。ディフォルト値は @file{~/.pop3-uidl} です。
+
+@acronym{POP} サーバーはセッションとセッションの間の状態の情報を維持しな
+いので、クライアントがそこにあると思っているものと実際にあるものが一致し
+ないかもしれないことに注意してください。それらが一致しないと、メールをダ
+ブって受け取るか、またはすべてが崩壊して、あなたは壊れたメールボックスと
+ともに置き去りにされる可能性があります。
 @end table
-@end quotation
+
+@findex pop3-movemail
+@vindex pop3-leave-mail-on-server
+@code{:program} と @code{:function} キーワードが指定されていない場合
+は @code{pop3-movemail} が使われます。
 
 メールを @acronym{POP} サーバーから取得するための、いくつかの例を挙げま
-す。ディフォルトの利用者名を使って、ディフォルトの @acronym{POP} サーバー
-から取得し、ディフォルトの取得方法を使用します:
+す。
+
+ディフォルトの利用者名を使って、ディフォルトの @acronym{POP} サーバーか
+ら取得し、ディフォルトの取得方法を使用します:
 
 @lisp
 (pop)
@@ -14568,6 +14547,14 @@ STARTTLS (@acronym{SSL} に類似) を使います。外部ライブラ
 @lisp
 (pop :server "my.pop.server"
      :user "user-name" :password "secret")
+@end lisp
+
+サーバーに 14 日間メールを残します:
+
+@lisp
+(pop :server "my.pop.server"
+     :user "user-name" :password "secret"
+     :leave 14)
 @end lisp
 
 メールの移動に @samp{movemail} を使います:
