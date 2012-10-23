@@ -3103,7 +3103,7 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 
 @lisp
 (gnus-summary-prepared-hook
-  '(lambda nil (local-set-key "d" (local-key-binding "n"))))
+  (lambda nil (local-set-key "d" (local-key-binding "n"))))
 @end lisp
 
 そのグループに入ったときに @kbd{d} キーは記事に期限切れ消去の印を付けな
