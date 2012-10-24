@@ -1552,16 +1552,16 @@ RFC2047 は二つのエンコーディングの形式を定めています。一つは @code{Q}
 @result{} 905595714.0
 
 (seconds-to-time 905595714.0)
-@result{} (13818 19266 0)
+@result{} (13818 19266 0 0)
 
 (time-to-days '(13818 19266))
 @result{} 729644
 
 (days-to-time 729644)
-@result{} (961933 65536)
+@result{} (961933 512)
 
 (time-since '(13818 19266))
-@result{} (0 430)
+@result{} (6797 9607 984839 247000)
 
 (time-less-p '(13818 19266) '(13818 19145))
 @result{} nil
@@ -1582,7 +1582,7 @@ RFC2047 は二つのエンコーディングの形式を定めています。一つは @code{Q}
 (time-to-number-of-days
  (time-since
   (date-to-time "Mon, 01 Jan 2001 02:22:26 GMT")))
-@result{} 4.146122685185185
+@result{} 4314.095589286675
 @end example
 
 あと、@code{safe-date-to-time} というものもあります。これ
@@ -1597,7 +1597,7 @@ RFC822 (または類似の) 形式の日付の文字列。例: @code{"Sat Sep 12 12:2
 1998 +0200"}
 
 @item time
-Emacs の内部形式の時刻。例: @code{(13818 26466)}
+Emacs の内部形式の時刻。例: @code{(13818 26466 0 0)}
 
 @item seconds
 Emacs の内部形式の時刻を浮動小数で表したもの。例: @code{905595714.0}
