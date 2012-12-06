@@ -1580,6 +1580,10 @@ Gnus (のプログラム) が読み込まれるときに実行されるフックです。何
 @vindex gnus-before-startup-hook
 Gnus が起動するとき、最初に呼ばれるフックです。
 
+@item gnus-before-resume-hook
+@vindex gnus-before-resume-hook
+一時停止させられていた Gnus が再開するときに最初に呼ばれるフックです。
+
 @item gnus-startup-hook
 @vindex gnus-startup-hook
 Gnus が起動された後に、一番最後に実行されるフックです。
