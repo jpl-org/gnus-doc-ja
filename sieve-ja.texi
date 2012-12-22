@@ -14,7 +14,7 @@
 @copying
 This file documents the Emacs Sieve package.
 
-Copyright @copyright{} 2001-2012  Free Software Foundation, Inc.
+Copyright @copyright{} 2001-2012 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -31,12 +31,10 @@ is included in the section entitled ``GNU Free Documentation License''.
 「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
-modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.''
+modify this GNU manual.''
 
 (a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
-る自由があります。FSF からの複写の購入は GNU の開発とソフトウェアの自由
-の促進を支援します。」
+る自由があります。」
 @end quotation
 @end copying
 

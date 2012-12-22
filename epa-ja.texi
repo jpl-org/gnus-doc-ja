@@ -18,8 +18,7 @@ under the terms of the GNU Free Documentation License, Version 1.3 or
 any later version published by the Free Software Foundation; with no
 Invariant Sections, with the Front-Cover texts being ``A GNU Manual,''
 and with the Back-Cover Texts as in (a) below.  A copy of the license
-is included in the section entitled ``GNU Free Documentation License''
-in the Emacs manual.
+is included in the section entitled ``GNU Free Documentation License''.
 
 $B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
 $BBh(B 1.3 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
@@ -28,22 +27,10 @@ in the Emacs manual.
 $B!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^$9!#(B
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
-modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.''
+modify this GNU manual.
 
 (a) FSF $B$NN"I=;f%F%-%9%H(B:$B!V$"$J$?$K$O$3$N(B GNU Manual $B$rJ#@=$7$?$jJQ99$9(B
-$B$k<+M3$,$"$j$^$9!#(BFSF $B$+$i$NJ#<L$N9XF~$O(B GNU $B$N3+H/$H%=%U%H%&%'%"$N<+M3(B
-$B$NB%?J$r;Y1g$7$^$9!#!W(B
-
-This document is part of a collection distributed under the GNU Free
-Documentation License.  If you want to distribute this document
-separately from the collection, you can do so by adding a copy of the
-license to the document, as described in section 6 of the license.
-
-$B$3$NJ8=q$O!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$K4p$E$$$FG[I[$5$l$?<}=8Cx:nJ*(B
-$B$N0lIt$G$9!#$b$7$"$J$?$,$3$NJ8=q$r<}=8Cx:nJ*$+$iJ,N%$7$FG[I[$7$?$$$H$-$O!"(B
-$B7@Ls=q$NBh(B 6 $B9`$K5-=R$5$l$F$$$k$h$&$K!"J8=q$K7@Ls=q$NJ#<L$rIU2C$9$k$3$H(B
-$B$K$h$C$F!"9T$J$&$3$H$,$G$-$^$9!#(B
+$B$k<+M3$,$"$j$^$9!#!W(B
 @end quotation
 @end copying
 
@@ -85,6 +72,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$N$?$a$N%*!<%k%$%s%o%s(B GnuPG $B%$%s%?!<
 * Commands::
 * Caching Passphrases::
 * Bug Reports::
+* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
 @end menu
 
 @node Overview
@@ -506,6 +494,10 @@ EasyPG $B%"%7%9%?%s%H$N%P%0$H=tLdBj$O(B Emacs $B3+H/%A!<%`$,3hH/$KBP=h$7$F$$$
 $B$K(B @code{nil} $B0J30$NCM$r@_Dj$7$F!"$=$N%P%0$r:FEY3NG'$7$F$/$@$5$$!#$=$7(B
 $B$F(B @samp{ *epg-debug*} $B%P%C%U%!!<$NCf?H$r4^$a$F$/$@$5$$!#%P%C%U%!!<L>$N(B
 $B:G=i$NJ8;z$O6uGr$G$"$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+
+@node GNU Free Documentation License
+@appendix GNU Free Documentation License
+@include doclicense.texi
 @bye
 
 @c Local Variables:

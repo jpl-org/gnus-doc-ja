@@ -14,8 +14,7 @@
 このファイルは Emacs SASL ライブラリー、バージョン @value{VERSION} を説
 明します。
 
-Copyright @copyright{} 2000, 2004-2012
-Free Software Foundation, Inc.
+Copyright @copyright{} 2000, 2004-2012 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -32,22 +31,10 @@ is included in the section entitled ``GNU Free Documentation License''.
 「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
-modify this GNU manual.  Buying copies from the FSF supports it in
-developing GNU and promoting software freedom.''
+modify this GNU manual.''
 
 (a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
-る自由があります。FSF からの複写の購入は GNU の開発とソフトウェアの自由
-の促進を支援します。」
-
-This document is part of a collection distributed under the GNU Free
-Documentation License.  If you want to distribute this document
-separately from the collection, you can do so by adding a copy of the
-license to the document, as described in section 6 of the license.
-
-この文書は「GNU フリー文書利用許諾契約書」に基づいて配布された収集著作物
-の一部です。もしあなたがこの文書を収集著作物から分離して配布したいときは、
-契約書の第 6 項に記述されているように、文書に契約書の複写を付加すること
-によって、行なうことができます。
+る自由があります。」
 @end quotation
 @end copying
 
@@ -86,6 +73,7 @@ SASL は異なるプロトコルを使うアプリケーション間で、複数の認証メカニズム
 * How to use::                  アプリケーションに認証サポートを追加する
 * Data types::
 * Back end drivers::            独自のドライバーを書く
+* GNU Free Documentation License:: この文書の利用許諾契約書
 * Index::
 * Function Index::
 * Variable Index::
@@ -271,16 +259,20 @@ Emacs SASL ライブラリーを使うには、アプリケーション・プログラムの最初で、
 
 (まだ書かれていません)。
 
+@node GNU Free Documentation License
+@appendix GNU Free Documentation License
+@include doclicense.texi
+
 @node Index
-@chapter Index
+@unnumbered Index
 @printindex cp
 
 @node Function Index
-@chapter Function Index
+@unnumbered Function Index
 @printindex fn
 
 @node Variable Index
-@chapter Variable Index
+@unnumbered Variable Index
 @printindex vr
 
 @summarycontents
