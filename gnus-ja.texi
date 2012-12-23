@@ -12,7 +12,7 @@
 @end iftex
 
 @copying
-Copyright @copyright{} 1995-2012 Free Software Foundation, Inc.
+Copyright @copyright{} 1995--2012 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -1299,7 +1299,7 @@ options -n !alt.all !rec.all sci.all
 なります。
 
 ``options -n'' の形式は単純過ぎます。上記の構文はサポートしているものの
-すべてです。つまり、あるニュース階層を強いて講読することもできるし、ある
+すべてです: つまり、あるニュース階層を強いて講読することもできるし、ある
 ニュース階層を講読対象から除外することもできるということです。
 
 @vindex gnus-options-not-subscribe
@@ -15721,7 +15721,7 @@ Quoted Readable エンコードをデコードします (訳注: 実際に行なうの
 $Bいくつかのメーリングリストのメンバーなら、時々同じメールを二つ受け取るこ
 とがあるでしょう。これはとても煩わしいので、@code{nnmail} はそれが見つけ
 たどんな重複をも、調べて処理します。これをするために、@code{nnmail} は古
-い @code{Message-ID} を @code{nnmail-messagge-id-cache-file} (ディフォル
+い @code{Message-ID} を @code{nnmail-message-id-cache-file} (ディフォル
 トでは @file{~/.nnmail-cache}) に保存します。それに保存され
 る @code{Message-ID} のおおよその最大数は変
 数 @code{nnmail-message-id-cache-length} で制御され、ディフォルト
@@ -20829,7 +20829,8 @@ nnir を設定するには、いくらか準備作業が必要です。まず、使おうと思ってい
 AND、OR、および NOT をサポートし、演算子の優先順位を制御するために括弧を
 使うことができます。例えば「(emacs OR xemacs) AND linux」のように。演算
 子はそれであると認知されるために、すべて大文字で書かなければならないこと
-に注意してください。さらに、語に先立つ - 記号は「NOT 語」と等価です。
+に注意してください。さらに、語に先立つ @minus{} 記号は「NOT 語」と等価で
+す。
 
 @item 自動 AND 検索
 もし複数の語を指定すると、それらはすべての要素に合致することを意図し
@@ -20874,8 +20875,8 @@ linux」のように。演算子はそれであると認知されるために、すべて大文字で書
 かなければならないことに注意してください。
 
 @item 必須の、または除外すべき語
-+ と - は語が必須であるか、または除外すべきかを指定します。例え
-ば: 「football -american」
++ と @minus{} は語が必須であるか、または除外すべきかを指定します。例え
+ば: 「football @minus{}american」
 
 @item Unicode の取扱い
 検索エンジンはすべてのテキストを utf-8 に変換するので、どんな言語でも検
@@ -22220,7 +22221,7 @@ Gnus は通常ほとんどのバッファーで、ポイントを各行のあらかじめ決められた
 挙げられています。
 
 「値」(すなわち「分割」) は、それぞれのバッファーがどれくらいの空間を占
-めるべきかを指定します。@code{article} の分割を例に取ると
+めるべきかを指定します。@code{article} の分割を例に取ると:
 
 @lisp
 (article (vertical 1.0 (summary 0.25 point)
@@ -26063,14 +26064,14 @@ USEFOR は、Son-of-RFC 1036 に基づいて IETF の作業部会が RFC 10
 案した草稿を作成しました。その草稿が RFC として受け入れられたときに、
 Gnus タワーはその変更の実装を調べることになるでしょう。
 
-@item MIME - RFC 2045-2049 etc
+@item MIME---RFC 2045--2049 etc
 @cindex @acronym{MIME}
 @acronym{MIME} 関連のすべての RFC がサポートされています。
 
 @item Disposition Notifications - RFC 2298
 Message Mode は受信者からの開封確認を要求することができます。
 
-@item PGP - RFC 1991 and RFC 2440
+@item PGP---RFC 1991 and RFC 2440
 @cindex RFC 1991
 @cindex RFC 2440
 RFC 1991 は最初の @acronym{PGP} メッセージの規格で、Informational
@@ -26081,15 +26082,15 @@ Standards Track---国際標準とすべき仕様) に乗せられました。どちらも
 Gnus はエンコード (署名および暗号化) とデコード (認証および暗号のデコー
 ド) の両方をサポートします。
 
-@item PGP/MIME - RFC 2015/3156
+@item PGP/MIME---RFC 2015/3156
 RFC 2015 (RFC 1991 の代わりに RFC 2440 に基づいた 3156 で置き換えられま
 した) は、RFC 1991/2440 を @acronym{MIME} で囲う様式について述べています。
 Gnus はエンコードとデコードの両方をサポートします。
 
-@item S/MIME - RFC 2633
+@item S/MIME---RFC 2633
 RFC 2633 は @acronym{S/MIME} の形式について述べています。
 
-@item IMAP - RFC 1730/2060, RFC 2195, RFC 2086, RFC 2359, RFC 2595, RFC 1731
+@item IMAP---RFC 1730/2060, RFC 2195, RFC 2086, RFC 2359, RFC 2595, RFC 1731
 RFC 1730 は @acronym{IMAP} バージョン 4 で、RFC 2060 (@acronym{IMAP}
 4 改定 1) で多少更新されています。
 RFC 2195 は @acronym{IMAP} の CRAM-MD5 認証について述べています。
@@ -26143,7 +26144,7 @@ Gnus は二つのサイクルで開発されています。最初のサイクルでは開発メーリン
 Gnus のアルファリリースは“Oort Gnus”や“No Gnus”のような名前になって
 います。@xref{Gnus Versions}.
 
-のらくらと 10-100 くらいのアルファリリースをした後で、Gnus は「凍結」さ
+のらくらと 10--100 くらいのアルファリリースをした後で、Gnus は「凍結」さ
 れたと宣言され、バグ修正のみが適用されます。Gnus は接頭語を失い、その代
 わりに“Gnus 5.10.1”のように呼ばれます。これらは普通の人が使うことがで
 きるものと考えられ、主に @samp{gnu.emacs.gnus} ニュースグループで議論さ
@@ -27747,7 +27748,7 @@ Gnus はニュースの Cancel Locks をサポートします。
 
 @item
 Gnus は @acronym{PGP} (RFC 1991/2440)、@acronym{PGP/MIME} (RFC
-2015/3156) および @acronym{S/MIME} (RFC 2630-2633) をサポートします。
+2015/3156) および @acronym{S/MIME} (RFC 2630--2633) をサポートします。
 
 これには @acronym{S/MIME} と OpenPGP が実装されている必要があります。で
 も追加の Lisp ライブラリーは要りません。メッセージの作成時に、いくつかの
@@ -28158,11 +28159,12 @@ References などを含んでいます。
 
 @item レベル (level)
 @cindex levels
-それぞれのグループは何らかの「レベル」(1-9) で購読されています。低いレベ
-ルのものは高いレベルのものより「より」購読されています。実際のところ、レ
-ベル 1-5 のグループは「購読」; 6-7 は「未購読」; 8 は「ゾンビ」; 9 は
-「切られた」(killed) と見なされます。グループの一覧を表示したり、新しい
-記事を走査する命令は、すべて数値接頭引数を「動作レベル」として使います。
+それぞれのグループは何らかの「レベル」(1--9) で購読されています。低いレ
+ベルのものは高いレベルのものより「より」購読されています。実際のところ、
+レベル 1--5 のグループは「購読」; 6--7 は「未購読」; 8 は「ゾンビ」
+; 9 は「切られた」(killed) と見なされます。グループの一覧を表示したり、
+新しい記事を走査する命令は、すべて数値接頭引数を「動作レベル」として使い
+ます。
 
 @item 切られたグループ (killed groups)
 @cindex killed groups

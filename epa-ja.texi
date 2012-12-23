@@ -10,7 +10,7 @@
 @copying
 これは EasyPG アシスタント @value{VERSION} の説明書です。
 
-Copyright @copyright{} 2007-2012 Free Software Foundation, Inc.
+Copyright @copyright{} 2007--2012 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
