@@ -13942,7 +13942,10 @@ machine imap.gmail.com login <username> password <password> port imap
 
 @item nnimap-authenticator
 いくつかの @acronym{IMAP} サーバーは匿名ログインを許容しています。その場
-合、これを @code{anonymous} に設定する必要があります。
+合、これを @code{anonymous} に設定する必要があります。もしこの変数を設定
+しないと標準のログイン手順が使われます。特定のログイン手順を指定したいな
+ら、この変数を @code{login} (伝統的な @acronym{IMAP} のログイン手順)、
+@code{plain} または @code{cram-md5} のどれかを設定してください。
 
 @item nnimap-expunge
 もし @code{nil} でなければ、記事を消去した後でそれらを永久に取り除きます。
