@@ -175,7 +175,8 @@ password @var{mypassword}
 これは、混在する 2つのソースを使う例です:
 
 @lisp
-(setq auth-sources '((:source (:secrets default) :host "myserver" :user "joe")
+(setq auth-sources '((:source (:secrets default)
+                      :host "myserver" :user "joe")
                      "~/.authinfo.gpg"))
 @end lisp
 
