@@ -3,8 +3,8 @@
 @c %**start of header
 @c Copyright (C) 1995, 2001-2013 Free Software Foundation, Inc.
 @c
-@setfilename gnus-faq-ja
-@settitle Frequently Asked Questions
+@c @setfilename gnus-faq-ja
+@c @settitle Frequently Asked Questions
 @c %**end of header
 @c
 
@@ -34,7 +34,7 @@
 $B$5$$!#(B
 
 @node FAQ - Changes
-@subheading $BJQ99MzNr(B
+@subsection $BJQ99MzNr(B
 
 @itemize @bullet
 @item
@@ -47,7 +47,7 @@ x-face-file $B$r2C$($^$7$?!#(Bding $B$H(B gnu.emacs.gnus $B$N0c$$$r$O$C$-$j
 @end itemize
 
 @node FAQ - Introduction
-@subheading $B=x(B
+@subsection $B=x(B
 
 $B$3$l$O(B Gnus $B$N$h$/?R$M$i$l$k<ALd$N%j%9%H$G$9!#(B
 

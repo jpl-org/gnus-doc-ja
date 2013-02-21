@@ -685,6 +685,7 @@ Getting Mail
 Mail Sources
 
 * Mail Source Specifiers::      $B%a!<%k$N%=!<%9$,$I$3$+$r;XDj$9$k(B
+* Mail Source Functions::
 * Mail Source Customization::   $B$b$N$4$H$K1F6A$9$k$$$/$D$+$NJQ?t(B
 * Fetching Mail::               $B%a!<%k%=!<%9;X<(;R$r;H$&(B
 
@@ -14728,6 +14729,7 @@ UNDELETED} $B$O$*$=$i$/$?$$$F$$$N?M$K$O:GNI$NA*Br$G$7$g$&$,!"$H$-$I(B
 @end table
 @end table
 
+@node Mail Source Functions
 @subsubsection $B4X?t%$%s%?!<%U%'!<%9(B
 
 $B>e5-$N$$$/$D$+$N%-!<%o!<%I$O!"<B9T$9$k$?$a$N(B Lisp $B4X?t$r;XDj$7$^$9!#4X?t(B
@@ -15818,6 +15820,10 @@ Quoted Readable $B%(%s%3!<%I$r%G%3!<%I$7$^$9(B ($BLuCm(B: $B<B:]$K9T$J$&$N
 * Mail Spool::                  $B$"$J$?$N%a!<%k$r;dE*$J%9%W!<%k$KN/$a$k(B?
 * MH Spool::                    mhspool $B$N$h$&$J%P%C%/%(%s%I(B
 * Maildir::                     $B$b$&0l$D$N#1%U%!%$%k(B/$B#1%a%C%;!<%87A<0(B
+* nnmaildir Group Parameters::
+* Article Identification::
+* NOV Data::
+* Article Marks::
 * Mail Folders::                $B$=$l$>$l$N%0%k!<%W$KBP$7$F0l$D$N%U%!%$%k$r;}$D(B
 * Comparing Mail Back Ends::    $BF@<:$N?<$$F6;!(B
 @end menu
@@ -16119,6 +16125,7 @@ Gnus $B$N%0%k!<%W$H$7$F8=$o$l$k(B maildir $B$KG[Aw$5$l$?%a!<%k$r!"D>@\<j$K$9$
 $B$@$5$$!#(B
 @end table
 
+@node nnmaildir Group Parameters
 @subsubsection $B%0%k!<%W%Q%i%a!<%?!<(B
 
 @code{nnmaildir} $B$OJ#?t$N%0%k!<%W%Q%i%a!<%?!<$r;H$$$^$9!#$3$l$i$N$9$Y$F(B
@@ -16230,6 +16237,7 @@ Gnus $B$N%0%k!<%W$H$7$F8=$o$l$k(B maildir $B$KG[Aw$5$l$?%a!<%k$r!"D>@\<j$K$9$
 $B$+(B @code{read} $B$,L5$$5-;v$N?t$K!">/!9$NM>J,$r2C$($?$b$N(B) $B$G$9!#(B
 @end table
 
+@node Article Identification
 @subsubsection $B5-;v$N<1JL(B
 $B5-;v$O$=$l$>$l$N(B maildir $B$N(B @file{cur/} $B%G%#%l%/%H%j!<$K3JG<$5$l$^$9!#3F!9(B
 $B$N5-;v$K$O(B @code{uniq:info} $B$N$h$&$JL>A0$,IU$1$i$l$^$9!#$3$3(B
@@ -16241,6 +16249,7 @@ maildir $B$N(B @file{.nnmaildir/} $B%5%V%G%#%l%/%H%j!<$N?'!9$J>l=j$K!"BP1~$9$
 $B$G5-;v$rMW5a$7$?8e$G(B @code{nnmaildir-article-file-name} $BJQ?t$+$iF@$i$l$^(B
 $B$9!#(B
 
+@node NOV Data
 @subsubsection NOV $B%G!<%?(B
 @code{uniq} $B$K$h$C$F<1JL$5$l$k5-;v$O!"$=$N(B @acronym{NOV} $B%G!<%?(B ($B35N,%P%C(B
 $B%U%!!<$N9T$r@8@.$9$k$?$a$K;H$o$l$k(B) $B$r(B @file{.nnmaildir/nov/uniq} $B$K3JG<(B
@@ -16253,6 +16262,7 @@ maildir $B$N(B @file{.nnmaildir/} $B%5%V%G%#%l%/%H%j!<$N?'!9$J>l=j$K!"BP1~$9$
 $BHV9f$r3d$j?6$i$;$k$N$G!"(B@code{seen} $B0u!"%(!<%8%'%s%H!"$*$h$S%-%c%C%7%e$K(B
 $B$H$C$FLLE]$J$3$H$K$J$j$^$9!#(B
 
+@node Article Marks
 @subsubsection $B5-;v$N0u(B
 @file{.nnmaildir/marks/flag/uniq} $B%U%!%$%k$,$"$k>l9g$K!"(B@code{uniq} $B$K$h$C(B
 $B$F<1JL$5$l$k5-;v$O!"(B@code{flag} $B0u$r;}$D$b$N$H9M$($i$l$^$9!#(B
@@ -25403,8 +25413,8 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 
 @menu
 * Gnus Registry Setup::
-* Fancy splitting to parent::   $B?F$X$NFC5iJ,3d(B
 * Registry Article Refer Method:: @code{Message-ID} $B$K4p$E$$$F%l%8%9%H%j!<$G5-;v$r<hF@$9$k(B
+* Fancy splitting to parent::   $B?F$X$NFC5iJ,3d(B
 * Store custom flags and keywords:: $BFH<+$N%U%i%0$H%-!<%o!<%I$N5-O?(B
 * Store arbitrary data::        $BG$0U$N%G!<%?$N5-O?(B
 @end menu
