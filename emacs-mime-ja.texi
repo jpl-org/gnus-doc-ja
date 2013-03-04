@@ -38,8 +38,8 @@ modify this GNU manual.''
 @end quotation
 @end copying
 
-@c Node ``Interface Functions'' uses Latin-1 characters
-@c @documentencoding ISO-8859-1
+@c Node ``Interface Functions'' uses non-ASCII characters
+@c @documentencoding UTF-8
 @c
 @dircategory Emacs lisp libraries
 @direntry
