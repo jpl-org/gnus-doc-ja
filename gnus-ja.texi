@@ -9245,16 +9245,8 @@ UT (別名 GMT, ZULU) で日付を表示します (@code{gnus-article-date-ut})
 Date: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
 @end example
 
-この行はディフォルトでは継続的に更新されます。その頻度 (秒
-数) は @code{gnus-article-update-date-headers} 変数で制御されます。更新
-をやめさせたいのなら、
-
-@vindex gnus-article-update-date-headers
-@lisp
-(setq gnus-article-update-date-headers nil)
-@end lisp
-
-を @file{~/.gnus.el} ファイルに入れてください。
+この行を絶えず更新させるためには、頻度を秒数
+で @code{gnus-article-update-date-headers} 変数に設定してください。
 
 @item W T o
 @kindex W T o (概略)
