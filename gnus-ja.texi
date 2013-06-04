@@ -9246,7 +9246,8 @@ Date: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
 @end example
 
 この行を絶えず更新させるためには、頻度を秒数
-で @code{gnus-article-update-date-headers} 変数に設定してください。
+で @code{gnus-article-update-date-headers} 変数に設定してください (ディ
+フォルトは @code{nil} です)。
 
 @item W T o
 @kindex W T o (概略)
