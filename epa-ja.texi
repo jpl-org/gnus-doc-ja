@@ -247,8 +247,9 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 @node Cryptographic operations on files
 @section $B%U%!%$%k$N0E9f$d=pL>$NA`:n(B
 
-@deffn Command epa-decrypt-file file
-@var{file} $B$rI|9f$7$^$9!#(B
+@deffn Command epa-decrypt-file file &optional output
+@var{file} $B$rI|9f$7$^$9!#$b$7J#9g$7$?7k2L$r3JG<$9$k%U%!%$%k$NL>A0(B
+$B$r(B @var{output} $B$G;XDj$7$J$$$H!"$=$l$rF~NO$9$k$3$H$r5a$a$^$9!#(B
 @end deffn
 
 @deffn Command epa-verify-file file
