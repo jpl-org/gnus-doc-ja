@@ -160,7 +160,7 @@ Sieve $B%b!<%I$O@lMQ$NN,8lI=(B (@code{sieve-mode-abbrev-table}) $B$H9=J8%F!<%
 $B$N$,I=<($5$l$^$9(B:
 
 @example
-Server  : mailserver:2000
+Server  : mailserver:sieve
 
 2 scripts on server, press RET on a script name edits it, or
 press RET on <new script> to create a new script.
@@ -223,6 +223,11 @@ Sieve $B%b!<%I(B (@pxref{Sieve Mode}) $B$GJT=8$9$k$?$a$K!"8=:_$N6/D4I=<($5$l$
 @kindex h
 @findex sieve-help
 $B%_%K%P%C%U%!!<$K%X%k%W$rI=<($7$^$9!#(B
+
+@item Q
+@kindex Q
+@findex sieve-manage-quit
+$B!V(BSieve-$B4IM}!W$r=*N;$7$F@\B3$r@Z$j$^$9!#(B
 @end table
 
 @node Examples
@@ -347,7 +352,7 @@ Emacs Sieve $B%Q%C%1!<%8$O!">/$J$$$1$l$I$bA}Bg$9$k$3$H$,K>$^$l$k(B RFC $B72$*
 @item RFC3028
 Sieve: $B%a!<%k_I2a8@8l(B
 
-@item draft-martin-managesieve-03
+@item RFC5804
 Sieve $B%9%/%j%W%H$r1s3V4IM}$9$k$?$a$N%W%m%H%3%k(B
 @end table
 
