@@ -673,7 +673,7 @@ Getting Mail
 * Splitting Mail::              メールグループの作り方
 * Mail Sources::                どこからメールを取ってくるかを Gnus に知らせる方法
 * Mail Back End Variables::     メールの扱いをカスタマイズするための変数
-* Fancy Mail Splitting::        Gnus は入って来たメールを、身の毛のよだつような分割をすることができる
+* Fancy Mail Splitting::        Gnus は入って来たメールを鬼のように分割することができる
 * Group Mail Splitting::        グループをカスタマイズしてメールを分割する
 * Incorporating Old Mail::      あなたが持っている古いメールをどうするか?
 * Expiring Mail::               要らないメールを取り除く
@@ -14017,7 +14017,7 @@ Mail})。ただし @code{default} というシンボルである場合は例外で、
 * Splitting Mail::              メールグループの作り方
 * Mail Sources::                どこからメールを取ってくるかを Gnus に知らせる方法
 * Mail Back End Variables::     メールの扱いをカスタマイズするための変数
-* Fancy Mail Splitting::        Gnus は入って来たメールを、身の毛のよだつような分割をすることができる
+* Fancy Mail Splitting::        Gnus は入って来たメールを鬼のように分割することができる
 * Group Mail Splitting::        グループをカスタマイズしてメールを分割する
 * Incorporating Old Mail::      あなたが持っている古いメールをどうするか?
 * Expiring Mail::               要らないメールを取り除く
