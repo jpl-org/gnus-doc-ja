@@ -423,6 +423,9 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 * Index::                    $BJQ?t!"4X?t!"35G0$N:w0z(B
 * Key Index::                $B%-!<:w0z(B
 
+@c Doesn't work right in html.
+@c FIXME Do this in a more standard way.
+@ifinfo
 $B4XO"$9$kB>$N%^%K%e%"%k(B
 
 * Message:(message-ja).      $B%a%C%;!<%8$N:n@.(B
@@ -430,6 +433,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 * Sieve:(sieve-ja).          Emacs $B$G(B Sieve $B%9%/%j%W%H$r4IM}$9$k(B
 * EasyPG:(epa-ja).           Gnus $B$G(B @acronym{PGP/MIME} $B$r;H$&(B
 * SASL:(sasl-ja).            Emacs $B$G(B @acronym{SASL} $B$NG'>Z$r9T$J$&(B
++@end ifinfo
 
 @detailmenu
  --- The Detailed Node Listing ---
@@ -2673,11 +2677,11 @@ Gmane.org $B$G0l;~E*$J%0%k!<%W$r9VFI$9$k$?$a$N%3%^%s%I$G$9!#5-;v(B
 $B%k!<%WL>$H:G=i$N5-;vHV9f$*$h$S5-;v?t$NHO0O$O!"M?$($i$l(B
 $B$?(B @acronym{URL} $B$r85$K7hDj$5$l$^$9!#%5%]!<%H$5$l$F$$$k(B @acronym{URL} $B$N(B
 $B7A<0$O!"<!$N$H$*$j$G$9(B:
-@url{http://thread.gmane.org/gmane.foo.bar/12300/focus=12399},
-@url{http://thread.gmane.org/gmane.foo.bar/12345/},
-@url{http://article.gmane.org/gmane.foo.bar/12345/},
-@url{http://permalink.gmane.org/gmane.foo.bar/12345/}, $B$*$h(B
-$B$S(B @url{http://news.gmane.org/group/gmane.foo.bar/thread=12345}$B!#(B
+@indicateurl{http://thread.gmane.org/gmane.foo.bar/12300/focus=12399},
+@indicateurl{http://thread.gmane.org/gmane.foo.bar/12345/},
+@indicateurl{http://article.gmane.org/gmane.foo.bar/12345/},
+@indicateurl{http://permalink.gmane.org/gmane.foo.bar/12345/}, $B$*$h(B
+$B$S(B @indicateurl{http://news.gmane.org/group/gmane.foo.bar/thread=12345}$B!#(B
 
 @item gnus-read-ephemeral-emacs-bug-group
 @findex gnus-read-ephemeral-emacs-bug-group
@@ -3029,6 +3033,12 @@ Sieve $B$N(B @samp{IF} $B@)8f9=B$BN$,:n$i$l$^$9!#(B
 if address "sender" "sieve-admin@@extundo.com" @{
         fileinto "INBOX.list.sieve";
 @}
+@end example
+
+$B$5$i$K<!$N$h$&$JMWNN$G@55,I=8=$N3HD%$b;H$&$3$H$,$G$-$^$9(B:
+
+@example
+(sieve header :regex "list-id" "<c++std-\\1.accu.org>")
 @end example
 
 $BJ#?t$NEE;R%a!<%k%"%I%l%9$N$?$a$N%F%9%H$r@8@.$9$k$K$O!"(B@code{(sieve
@@ -6209,11 +6219,11 @@ Gnus $B%(!<%8%'%s%H(B (@pxref{Agent Basics}) $B$O$$$/$D$+$N5-;v$r<+F0E*$K%@%&
 @node Generic Marking Commands
 @subsection Generic Marking Commands
 
-$B5-;v$K2D;k$N0u$rIU$1$kL?Na(B (@kbd{!}) $B$K!"<!$N5-;v$K0\F0$7$F$b$i$$$?$$?M(B
-$B$,$$$^$9!#<!$NL$FI5-;v$K0\F0$7$F$b$i$$$?$$?M$b$$$^$9!#$5$i$K!"8=:_$N5-;v(B
-$B$KN1$^$C$F$$$F$b$i$$$?$$?M$b$$$k$G$7$g$&!#$=$7$F!"A0$N(B ($BL$FI$N(B) $B5-;v$K9T$C(B
-$B$FM_$7$$?M$,$$$k$H$O$^$@J9$$$?$3$H$O$"$j$^$;$s$,!"$=$&$7$?$$$H;W$&?M$b4V(B
-$B0c$$$J$/$$$k$H;W$$$^$9!#(B
+$B5-;v$K2D;k$N0u$rIU$1$k%3%^%s%I(B (@kbd{!}) $B$,!"(B($B0u$rIU$1$?8e$G(B) $B<!$N5-;v$K(B
+$B0\F0$9$k$3$H$rK>$`?M$,$$$^$9!#<!$NL$FI5-;v$K0\F0$7$F$b$i$$$?$$?M$b$$$^$9!#(B
+$B$5$i$K!"8=:_$N5-;v$KN1$^$C$F$$$F$b$i$$$?$$?M$b$$$k$G$7$g$&!#$=$7$F!"A0$N(B
+($BL$FI$N(B) $B5-;v$K9T$C$FM_$7$$?M$,$$$k$H$O$^$@J9$$$?$3$H$O$"$j$^$;$s$,!"$=(B
+$B$&$7$?$$$H;W$&?M$b4V0c$$$J$/$$$k$H;W$$$^$9!#(B
 
 $B$3$N8^$D$NF0:n$r8^$D$N0c$C$?0uIU$1L?Na$H3]$1;;$9$k$H!"$I$NL?Na$,2?$r$9$Y(B
 $B$-$+$NHs>o$KJ#;($JJQ?t$NAH$r;}$D$3$H$K$J$j$^$9!#(B
@@ -13560,9 +13570,13 @@ default force yes
 @findex nntp-open-ssl-stream
 @item nntp-open-ssl-stream
 $B!V0BA4$J!W%A%c%s%M%k$r;H$C$F%5!<%P!<$K@\B3$7$^$9!#$3$l$r;H$&$?$a$K(B
-$B$O(B @uref{http://www.openssl.org, OpenSSL} $B$^$?(B
-$B$O(B @uref{ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL, SSLeay} $B$r%$%s%9%H!<%k$7(B
-$B$F$*$+$J$1$l$P$J$j$^$;$s!#$=$l$+$i%5!<%P!<$r<!$N$h$&$KDj5A$7$^$9(B:
+$B$O(B @uref{http://www.openssl.org, OpenSSL}
+@ignore
+@c Defunct URL, ancient package, so don't mention it.
+$B$^$?$O(B @uref{ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL, SSLeay}
+@end ignore
+$B$r%$%s%9%H!<%k$7$F$*$+$J$1$l$P$J$j$^$;$s!#$=$l$+$i%5!<%P!<$r<!$N$h$&$KDj(B
+$B5A$7$^$9(B:
 
 @lisp
 ;; @r{$B%]!<%H(B 563 $B$,(B "snews" $B$H$7$F(B @file{/etc/services} $B$GDj5A:Q$_$G(B}
@@ -16692,8 +16706,8 @@ Gnus $B$r;H$($P%V%i%&%6!<L5$7$G8!:w$9$k$3$H$,$G$-$^$9!#(B
 $BMWLs$9$k$?$a$N%U%)!<%^%C%H$G$9!#$7$+$7!"4pK\E*$K%j%9%H$N$h$&$J$b$N$J$i2?(B
 $B$G$b!"(B@acronym{RSS} feed $B$H$7$FDs6!$9$k$3$H$,$G$-$^$9(B: weblogs,
 changelogs $B$"$k$$$O(B wiki ($BNc$((B
-$B$P(B @url{http://cliki.net/recent-changes.rdf}) $B$N:G?7$NJQ99$J$I$,BP>]$K$J(B
-$B$j$^$9!#(B
+$B$P(B @url{http://cliki.net/site/recent-changes}) $B$N:G?7$NJQ99$J$I$,BP>]$K(B
+$B$J$j$^$9!#(B
 
 @acronym{RSS} $B$O$H$F$b5,B'E*$GNI<A$J%$%s%?!<%U%'!<%9$r;}$C$F$$$k$N$G!"(B
 Gnus $B$,%0%k!<%W$r:G?7$N>uBV$KJ]$C$F$*$/$?$a$KI,MW$J>pJs$rF@$k$3$H$,2DG=(B
@@ -26123,7 +26137,7 @@ RFC 1731 $B$O(B @acronym{IMAP} $B$N(B GSSAPI/Kerberos4 $B$N<jK!$K$D$$$F=R$Y
 
 @itemize @bullet
 @item
-Emacs 21.1 $B$H$=$l0J>e!#(B
+Emacs 23.1 $B$H$=$l0J>e!#(B
 
 @item
 XEmacs 21.4 $B$H$=$l0J>e!#(B

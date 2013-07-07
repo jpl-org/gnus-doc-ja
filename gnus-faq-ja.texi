@@ -209,9 +209,8 @@ Emacs のどの版が必要ですか?
 
 @subsubheading 回答
 
-Gnus 5.10 は Emacs 20.7 以上、または XEmacs 21.1 以上を必要とします。開
-発版の Gnus (No Gnus として知られているも
-の) は Emacs 21 か XEmacs 21.4 を必要とします。
+Gnus 5.13 は Emacs 23.1 以上、または XEmacs 21.1 以上を必要とします。し
+かし、いくつかの機能は Emacs 24 でしか動作しません。
 
 @node FAQ 1-7
 @subsubheading 質問 1.7
@@ -1547,9 +1546,10 @@ cat file.face | sed 's/\\/\\\\/g;s/\"/\\\"/g;' > file.face.quoted
 @noindent
 @samp{compface} を使うことができなくても、オンラインの X-Face 変換器
 が @uref{http://www.dairiki.org/xface/} にあります。MS Windows を使って
-いるのならば、@uref{http://www.xs4all.nl/~walterln/winface/} か
-ら @samp{WinFace} プログラムを取って来て使うこともできます。後は、送信す
-る記事に X-Face を含めてくれるように Gnus に指示するだけです。それに
+いるのならば、 かつ
+て @indicateurl{http://www.xs4all.nl/~walterln/winface/} にあっ
+た @samp{WinFace} プログラムを使うこともできます。後は、送信する記事に
+X-Face を含めてくれるように Gnus に指示するだけです。それに
 は @file{~/.gnus.el} ファイルに以下のようなものを入れてください:
 
 @lisp
@@ -1840,8 +1840,13 @@ RET} を実行してください。さらに Gnus 5.10 以降で
 引を付けておけば、@code{nnir} の助けを借りることによって、索引が付けられ
 たメールを探して、検索の基準に合致するすべてのメールを含む一時的なグルー
 プを作ることができます。これがクールに聞こえるなら、
-@uref{ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/emacs/} また
-は @uref{ftp://ftp.is.informatik.uni-duisburg.de/pub/src/emacs/} か
+@c FIXME Isn't this file in Gnus?
+@ignore
+@c Dead link 2013/7.
+@uref{ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/emacs/}
+または
+@end ignore
+@uref{ftp://ftp.is.informatik.uni-duisburg.de/pub/src/emacs/} か
 ら @file{nnir.el} を持って来ましょう。使い方の説明は、そのファイルの始め
 の方にあります。
 
@@ -1957,7 +1962,7 @@ Gnus では、ニュースサーバーでニュース記事が期限切れ消去されるように、メー
 も安易な解は、@uref{http://www.leafnode.org/,
 Leafnode} や @uref{http://infa.abo.fi/~patrik/sn/, sn} のように小規模
 な @acronym{NNTP} サーバーを使うことです。もちろ
-ん @uref{http://www.isc.org/products/INN/, inn} のような本格的なニュース
+ん @uref{http://www.isc.org/software/inn/, inn} のような本格的なニュース
 サーバーをインストールすることもできます。メールの取り込みに使うもので人
 気があるのは @uref{http://www.catb.org/~esr/fetchmail/, fetchmail} およ
 び @uref{http://pyropus.ca/software/getmail/, getmail} です。それらにメー
