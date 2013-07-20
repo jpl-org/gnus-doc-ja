@@ -11618,6 +11618,11 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 (or last
     (typep "text/x-vcard"))
 @end lisp
+
+@item
+関数: 引数を受け取らない関数で、@code{nil} または non-@code{nil} を返し
+ます。現在の記事は変数 @code{gnus-article-buffer} の値が示すバッファーに
+あります。
 @end enumerate
 
 ここで「パート」という語が使われていることに気付いたと思います。これはメッ
