@@ -7186,10 +7186,13 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに、すべての「ずれ」
         gnus-thread-sort-by-score))
 @end lisp
 
-スレッドはディフォルトでは再帰的に、つまり最初に親 (root) の、次にサブの
-スレッドなどがソートされます。しかしスレッドの中の元の時系列を保つために
-親スレッドだけをソートしたいと思うな
-ら @code{gnus-sort-threads-recursively} を @code{nil} に設定してください。
+ディフォルトでは、スレッドはそのサブスレッドととも
+に @code{gnus-thread-sort-functions} の値にしたがってソートされますが、
+@code{gnus-subthread-sort-functions} をカスタマイズすることによって、サ
+ブスレッドをソートする順序を独自に定義することができます。例えば概略バッ
+ファー上で、親スレッドはスコアの高い順から低い順にソート、しかしサブスレッ
+ドはスコアとは無関係に古いものから新しいものへの順で時系列にソートされた
+ままにしておく、というようなことができます。
 
 @vindex gnus-thread-score-function
 変数 @code{gnus-thread-score-function} (ディフォルトは @code{+}) に設定
