@@ -20763,7 +20763,7 @@ contrib/gnus-namazu の簡潔な比較もまた良し。
 ループなので、既読、移動および削除は別として、いくつかの変更は永続しませ
 ん。つまり元の記事に手を加えることはできません。しかし代わりの手がありま
 す。@kbd{A W} (@code{gnus-warp-to-article}) で、現在行の記事の元の記事
-に @emph{ワープ} できるのです。さらに良いのは概略バッファー
+に @emph{ワープ} (ジャンプ) できるのです。さらに良いのは概略バッファー
 で @kbd{A T} にディフォルトで割り当てられている関
 数 @code{gnus-summary-refer-thread} で、それはその魔法を行なう前、最初に
 元のグループにワープして、そのスレッドにあるすべての記事を含めます。そこ
@@ -20810,6 +20810,7 @@ nnir を設定するには、いくらか準備作業が必要です。まず、使おうと思ってい
 * The swish++ Engine::                  Swish++ の設定と使い方
 * The swish-e Engine::                  Swish-e の設定と使い方
 * The namazu Engine::                   Namazu の設定と使い方
+* The notmuch Engine::                  Notmuch の設定と使い方
 * The hyrex Engine::                    Hyrex の設定と使い方
 * Customizations::                      カスタマイズできる設定
 @end menu
@@ -21033,6 +21034,23 @@ mknmz --mailnews ~/Mail/archive/ ~/Mail/mail/ ~/Mail/lists/
 
 最大の検索効率を得るためには、このコマンドを定期的に (例えば 4時間毎
 に) 実行する cron ジョブを走らせる必要があるでしょう。
+
+@node The notmuch Engine
+@subsubsection Notmuch エンジン
+
+@table @code
+@item nnir-notmuch-program
+Notmuch 検索エンジンの実行形式の名前です。ディフォルト
+は @samp{notmuch} です。
+
+@item nnir-notmuch-additional-switches
+@samp{notmuch} に追加の引数として与える文字列のリストです。
+
+@item nnir-notmuch-remove-prefix
+@samp{notmuch} が返すそれぞれのファイルの名前からグループ名を得る
+ために取り除く接頭辞です (得られる名前は @samp{.} の代わり
+に @samp{/} を使っているものですが)。これは正規表現です。
+@end table
 
 @node The hyrex Engine
 @subsubsection Hyrex エンジン
