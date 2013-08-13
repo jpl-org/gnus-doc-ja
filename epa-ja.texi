@@ -86,6 +86,7 @@ EasyPG $B$O0J2<$N5!G=$rDs6!$7$^$9!#(B
 @item $B%U%!%$%k$N0E9f$d=pL>$NA`:n(B
 @item Dired $B$NE}9g(B
 @item Mail $B%b!<%I$NE}9g(B
+@item *.gpg $B%U%!%$%k$N<+F00E9f2=(B/$BI|9f(B
 @end itemize
 
 @node Quick start
@@ -116,7 +117,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 * Cryptographic operations on files::   $B%U%!%$%k$N0E9f$d=pL>$NA`:n(B
 * Dired integration::                   Dired $B$NE}9g(B
 * Mail-mode integration::               Mail $B%b!<%I$NE}9g(B
-* Encrypting/decrypting *.gpg files::   *.gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
+* Encrypting/decrypting gpg files::     gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
 @end menu
 
 @node Key management
@@ -353,8 +354,8 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} $B$r;2>H$7$F$/$@$5$$!#(B
 $B$5$$!#(B
 @end table
 
-@node Encrypting/decrypting *.gpg files
-@section *.gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
+@node Encrypting/decrypting gpg files
+@section gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
 $B%G%#%U%)%k%H$G$OL>A0$,(B @samp{.gpg} $B$G=*$o$k%U%!%$%k$O0E9f2=$5$l$?$b$N$H(B
 $B$7$F07$o$l$^$9!#B($A$=$N$h$&$J%U%!%$%k$r3+$/$H!"0E9f2=$5$l$?$^$^$N$b$N$G(B
 $B$O$J$/I|9f$5$l$?%F%-%9%H$,%P%C%U%!!<$KA^F~$5$l$^$9!#F1MM$K%P%C%U%!!<(B
@@ -473,7 +474,7 @@ gpg-agent $B$r;H$($k$h$&$K$9$k$K$O(B GnuPG $B%^%K%e%"%k$N0J2<$N@bL@$K=>$C$F$/
 Elisp $B$N%Q%9%U%l!<%:!&%-%c%C%7%e$r;H$&$K(B
 $B$O(B @code{epa-file-cache-passphrase-for-symmetric-encryption} $BJQ?t(B
 $B$K(B @code{nil} $B0J30$NCM$r@_Dj$7$F$/$@$5$$!#(B
-@xref{Encrypting/decrypting *.gpg files}.
+@xref{Encrypting/decrypting gpg files}.
 
 @node Bug Reports
 @chapter $B%P%0%j%]!<%H(B
