@@ -896,13 +896,13 @@ This plain text part is an attachment.
 送出するメッセージで使う coding system の優先度を指定します。ディフォル
 ト値は @code{nil} です (その場合は Emacs におけるディフォルトの優先順位
 が適用されます) が、日本語環境で Emacs を実行する場合
-は @code{(iso-8859-1 iso-2022-jp iso-2022-jp-2 shift_jis utf-8)} になり
-ます。値は coding system のシンボルのリストです (coding system の別名を
-使っても構いません。設定するときは @kbd{M-x describe-coding-system} を使っ
-て、coding system の名前が正確であることを確かめてください)。例え
-ば UTF-8 を最優先とするように Emacs を設定したものの、可能な場合
-は ISO-8859-1 でメッセージを送信するようにしたいという場合だったら、こ
-の変数を @code{(iso-8859-1)} にすれば良いでしょう。
+は @code{(iso-8859-1 iso-2022-jp utf-8)} になります。値は coding
+system のシンボルのリストです (coding system の別名を使っても構いません。
+設定するときは @kbd{M-x describe-coding-system} を使って、coding
+system の名前が正確であることを確かめてください)。例えば UTF-8 を最優先
+とするように Emacs を設定したものの、可能な場合は ISO-8859-1 でメッセー
+ジを送信するようにしたいという場合だったら、この変数
+を @code{(iso-8859-1)} にすれば良いでしょう。
 @acronym{MML} の @code{charset} タグを使って、メッセージ毎にそれで指定し
 た値をこの変数より優先させることもできます (@pxref{MML Definition})。
 
@@ -941,7 +941,7 @@ This plain text part is an attachment.
           (mm-coding-system-priorities '(iso-8859-15 iso-8859-1 utf-8)))
          ("^fj\\." ;; Japanese
           (mm-coding-system-priorities
-           '(iso-8859-1 iso-2022-jp iso-2022-jp-2 shift_jis utf-8)))
+           '(iso-8859-1 iso-2022-jp utf-8)))
          ("^ru\\." ;; Cyrillic
           (mm-coding-system-priorities
            '(koi8-r iso-8859-5 iso-8859-1 utf-8))))
