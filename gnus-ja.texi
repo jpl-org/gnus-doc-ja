@@ -22641,7 +22641,7 @@ Gnus はウィンドウの配置を変更しません。常に「正しい」ウィンドウ設定を強
 わち情報でない部分) がどのくらいの長さであるかを指定します。もしモード行
 に追加の要素を入れたなら、この変数を修正する必要があります:
 
-@c Hook written by Francesco Potorti` <pot@cnuce.cnr.it>
+@c Hook written by Francesco Potortì <pot@cnuce.cnr.it>
 @lisp
 (add-hook 'display-time-hook
           (lambda () (setq gnus-mode-non-string-length
