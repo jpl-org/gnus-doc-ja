@@ -429,7 +429,7 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
 @acronym{HTML} $B$rIA2h$9$k$?$a$K;H$&4X?t$rA*Br$7$^$9!#$9$G$KMQ0U$7$F$"$k(B
-$BIA2h%W%m%0%i%`$O!"(B@code{gnus-article-html}, @code{w3},
+$BIA2h%W%m%0%i%`$O!"(B@code{gnus-article-html},
 @code{w3m}@footnote{emacs-w3m $B$K$D$$$F$N>\:Y(B
 $B$O(B @uref{http://emacs-w3m.namazu.org/} $B$r8+$F$/$@$5$$!#(B}, @code{links},
 @code{lynx}, @code{w3m-standalone} $B$^$?$O(B @code{html2text} $B$N%7%s%\%k72(B
@@ -443,12 +443,11 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 $B$i$^$/$d$+$i(B) $B$NH\Nt$J0-9*$_$,4^$^$l$F$$$k$+$b$7$l$^$;$s!#:G$b$"$j$=$&$J(B
 $B$N$O!"$"$J$?$,$=$N%a!<%k$rFI$s$@$3$H$r3NG'$9$k$?$a$N0U?^$,$"$k$3$H$G$9!#(B
 $B$3$N%*%W%7%g%s$r(B @code{nil} $B$K@_Dj$9$k(B ($B$=$l$,%G%#%U%)%k%H$G$9(B) $B$3$H$K$h$C(B
-$B$F!"$"$J$?$N8D?M>pJs$,N.=P$9$k$N$rKI$0$3$H$,$G$-$^$9!#:#$N$H$3(B
-$B$m(B Emacs/W3 $B$O$3$l$rL5;k$7$^$9!#(BEmacs-w3m $B$G$O!"$3$l$,(B @code{nil} $B$G$"$C(B
-$B$F$b!"2hA|$,Kd$a9~$^$l$?>l=j$G(B @kbd{t} $BL?Na$r;H$&$3$H$K$h$C$F2hA|$rI=<((B
-$B$9$k$3$H$,$G$-$^$9!#(B@footnote{@kbd{T} $BL?Na$O$9$Y$F$N2hA|$r<h$j9~$_$^$9!#(B
-@code{w3m-key-binding} $B%*%W%7%g%s$r(B @code{info} $B$K@_Dj$7$?>l9g$O!"Be$o$j(B
-$B$K(B @kbd{i} $B$+(B @kbd{I} $B$r;H$C$F$/$@$5$$!#(B}
+$B$F!"$"$J$?$N8D?M>pJs$,N.=P$9$k$N$rKI$0$3$H$,$G$-$^$9!#(BEmacs-w3m $B$G$O!"$3(B
+$B$l$,(B @code{nil} $B$G$"$C$F$b!"2hA|$,Kd$a9~$^$l$?>l=j$G(B @kbd{t} $BL?Na$r;H$&(B
+$B$3$H$K$h$C$F2hA|$rI=<($9$k$3$H$,$G$-$^$9!#(B@footnote{@kbd{T} $BL?Na$O$9$Y$F(B
+$B$N2hA|$r<h$j9~$_$^$9!#(B@code{w3m-key-binding} $B%*%W%7%g%s$r(B @code{info} $B$K(B
+$B@_Dj$7$?>l9g$O!"Be$o$j$K(B @kbd{i} $B$+(B @kbd{I} $B$r;H$C$F$/$@$5$$!#(B}
 
 @item mm-w3m-safe-url-regexp
 @vindex mm-w3m-safe-url-regexp

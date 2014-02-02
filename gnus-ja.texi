@@ -55,7 +55,7 @@ modify this GNU manual.''
 \makeindex
 \begin{document}
 
-\newcommand{\gnusversionname}{Ma Gnus v0.9}
+\newcommand{\gnusversionname}{Ma Gnus v0.10}
 \newcommand{\gnuschaptername}{}
 \newcommand{\gnussectionname}{}
 
@@ -363,7 +363,7 @@ Gnus $B$r;H$&$3$H$K$h$C$F(B Emacs $B$G%K%e!<%9$r(B ($B$=$l$K%a!<%k$b(B) $
 $B$"$i$f$k6K0-$J<jCJ$r6n;H$7$F<j$KF~$l$k$3$H$,$G$-$^$9!#1?;n$7$r$7$F$_$h$&(B
 $B$H;W$&$J$i$P!"$9$Y$F$rF1;~$KMQ$$$k$3$H$b$G$-$^$9!#(B
 
-$B$3$N@bL@=q$O(B Ma Gnus v0.9 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B Ma Gnus v0.10 $B$KBP1~$7$^$9!#(B
 
 @ifnottex
 @insertcopying
@@ -395,7 +395,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 $B$9!#(B
 @c
 @c $B0J2<$N9T$rJQ99$9$k$H$-$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
-$B$3$N@bL@=q$O(B Ma Gnus v0.9 $B$KBP1~$7$^$9!#(B
+$B$3$N@bL@=q$O(B Ma Gnus v0.10 $B$KBP1~$7$^$9!#(B
 
 @heading $B4XO"$9$kB>$N%^%K%e%"%k(B
 @itemize
@@ -708,7 +708,6 @@ Browsing the Web
 * Archiving Mail::
 * Web Searches::                $BJ8;zNs$K9gCW$9$k5-;v$+$i%0%k!<%W$r:n$k(B
 * RSS::                         RDF Site Summary $B$rFI$`(B
-* Customizing W3::              Gnus $B$+$i(B Emacs/W3 $B$rA`:n$9$k(B
 
 Other Sources
 
@@ -8881,9 +8880,6 @@ Gnus $B$N4J0W(B html $BIA2h4o(B (shr) $B$r;H$$$^$9!#(B
 @item gnus-w3m
 w3m $B$r;H$C$F(B Gnus $B$KIA2h$5$;$^$9!#(B
 
-@item w3
-Emacs/W3 $B$r;H$$$^$9!#(B
-
 @item w3m
 @uref{http://emacs-w3m.namazu.org/, emacs-w3m} $B$r;H$$$^$9!#(B
 
@@ -16576,11 +16572,7 @@ Gnus $B$O$3$l$i$N%=!<%9$X$N%$%s%?!<%U%'!<%9$rDs6!$9$k%P%C%/%(%s%I72$r>/$7(B
 * Archiving Mail::
 * Web Searches::                $BJ8;zNs$K9gCW$9$k5-;v$+$i%0%k!<%W$r:n$k(B
 * RSS::                         RDF Site Summary $B$rFI$`(B
-* Customizing W3::              Gnus $B$+$i(B Emacs/W3 $B$rA`:n$9$k(B
 @end menu
-
-$B$9$Y$F$N%&%'%V%=!<%9$O!"F0:n$5$;$k$?$a$K(B Emacs/W3 $B$H(B url $B%i%$%V%i%j!<!"(B
-$B$^$?$O$=$l$i$NBeBX$,I,MW$G$9!#(B
 
 $B$3$l$i$N%&%'%V%=!<%9$N0lHV$NLdBj$O!"D94|4V$OF0:n$7$J$$2DG=@-$,9b$$$3$H$G(B
 $B$9!#(B@acronym{HTML} $B$N%G!<%?$+$i>pJs$r=&$$=8$a$k$N$O$;$$$<$$?dB,$G!"$=$N(B
@@ -16661,10 +16653,6 @@ Gnus $B$r;H$($P%V%i%&%6!<L5$7$G8!:w$9$k$3$H$,$G$-$^$9!#(B
 $BDs6!$9$k$3$H$G$O$J$$$+$i$G$9!#(B@code{nnweb} $B$O$9$Y$F$N5-;v$+$i9-9p$r@v$$(B
 $BN.$7$F$7$^$&$N$G!"Ds6!<T$?$A$,%`%+$D$$$F$$$k$H;W$o$l$k$+$b$7$l$^$;$s!#$^(B
 $B$"8+$F$F$/$@$5$$!#(B
-
-@code{nnweb} $B$r;H$&$K$O!"(B@code{url} $B$H(B @code{W3} $B%Q%C%1!<%8!"$^$?$O$=$l(B
-$B$i$NBeBX(B (@samp{mm-url} $BJQ?t%0%k!<%W$KBP$7$F(B @code{customize-group} $B$r;n(B
-$B$7$F$_$F$/$@$5$$(B) $B$r%$%s%9%H!<%k$7$F$*$+$J$/$F$O$J$j$^$;$s!#(B
 
 $B0J2<$O2>A[%5!<%P!<JQ?t$G$9!#(B
 
@@ -16858,37 +16846,6 @@ The Emacs MIME Manual}) $B$K2C$($F$$$?$H$7$F$b!"FC$K(B @code{nnrss} $B%0%k!<%
  'gnus-parameters
  '("\\`nnrss:" (mm-discouraged-alternatives nil)))
 @end lisp
-
-@node Customizing W3
-@subsection W3 $B$N%+%9%?%^%$%:(B
-@cindex W3
-@cindex html
-@cindex url
-@cindex Netscape
-
-Gnus $B$O%&%'%V%Z!<%8$r<hF@$9$k$?$a$K(B url $B%i%$%V%i%j!<$r!"%&%'%V%Z!<%8$rI=(B
-$B<($9$k$?$a$K(B Emacs/W3 $B$r(B ($B$^$?$O$=$l$i$NBeBX$r(B) $B;H$$$^$9!#(BEmacs/W3 $B$N$3(B
-$B$H$O$=$N%^%K%e%"%k$K5-:\$5$l$F$$$^$9$,!"$3$3$G$O(B Gnus $B$NMxMQ<T$K$H$C$F$h(B
-$B$jE,@Z$J!"$$$/$D$+$N;vJA$r=R$Y$k$3$H$K$7$^$9!#(B
-
-$BNc$($P$h$/$"$k<ALd$O!"(BEmacs/W3 $B$K(B @code{browse-url} $B$N4X?t(B (Netscape $B$N(B
-$B$h$&$J30It%W%i%&%6!<$r8F$S$^$9(B) $B$r;H$C$F%j%s%/$r;2>H$5$;$k$K$O$I$&$7$?$i(B
-$B$h$$$+!"$H$$$&$b$N$G$9!#0J2<$O0l$D$NJ}K!$G$9(B:
-
-@lisp
-(eval-after-load "w3"
-  '(progn
-    (fset 'w3-fetch-orig (symbol-function 'w3-fetch))
-    (defun w3-fetch (&optional url target)
-      (interactive (list (w3-read-url-with-default)))
-      (if (eq major-mode 'gnus-article-mode)
-          (browse-url url)
-        (w3-fetch-orig url target)))))
-@end lisp
-
-$B$3$l$r$"$J$?$N(B .emacs $B%U%!%$%k$K=q$-9~$s$G$/$@$5$$!#$=$&$9$l$P!"(BGnus $B$N(B
-$B5-;v%P%C%U%!!<$G(B W3 $B$,IA2h$7$?(B @acronym{HTML} $B%j%s%/$rC!$/$H!"(B
-@code{browse-url} $B$r;H$C$F$=$N%j%s%/$r;2>H$7$F$/$l$k$G$7$g$&!#(B
 
 @node Other Sources
 @section $B$=$NB>$N%0%k!<%W8;(B
@@ -25892,8 +25849,8 @@ XEmacs $B$O%Q%C%1!<%8$N=89g$H$7$FG[I[$5$l$F$$$^$9!#(BGnus $B$N(B XEmacs $B%
 $B%8$,I,MW$H$9$k$b$N$O2?$G$"$l!"$"$J$?$O%$%s%9%H!<%k$9$Y$-$G$9!#:#$N$H$3$m(B
 $BI,MW$J$N$O(B @samp{gnus}, @samp{mail-lib}, @samp{xemacs-base},
 @samp{eterm}, @samp{sh-script}, @samp{net-utils}, @samp{os-utils},
-@samp{dired}, @samp{mh-e}, @samp{sieve}, @samp{ps-print}, @samp{W3},
-@samp{pgg}, @samp{mailcrypt}, @samp{ecrypto} $B$*$h$S(B @samp{sasl} $B$G$9!#(B
+@samp{dired}, @samp{mh-e}, @samp{sieve}, @samp{ps-print}, @samp{pgg},
+@samp{mailcrypt}, @samp{ecrypto} $B$*$h$S(B @samp{sasl} $B$G$9!#(B
 
 @node History
 @section $BNr;K(B
@@ -28480,7 +28437,7 @@ Gnus $B$OH"$+$i=P$7$F$9$0$K(B @emph{$BHs>o$K(B} $B$h$/F0:n$7$^$9(B---$B$I
 $BEY(B Emacs $B$r=*N;$7$F:F5/F0$9$kI,MW$,$"$j$^$9!#(B
 
 @item
-@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{Ma Gnus v0.9} $B$N$h$&(B
+@kbd{M-x gnus-version} $B$r;n$7$F$/$@$5$$!#$b$7(B @samp{Ma Gnus v0.10} $B$N$h$&(B
 @c $B$3$N9T$rJQ99$9$k>l9g$O(B ../Makefile.in $B$rD4@0$7$F$/$@$5$$!#(B
 $B$J$b$N$,=P$F$-$?$J$i!"@5$7$$%U%!%$%k$,FI$_9~$^$l$F$$$^$9!#$=$&$J$i$J$$$N(B
 $B$O8E$$(B @file{.el} $B%U%!%$%k$,;6$i$+$C$F$$$k$;$$$G$7$g$&!#$=$l$i$r>C$7$F$/(B
