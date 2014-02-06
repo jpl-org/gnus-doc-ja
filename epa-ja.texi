@@ -73,6 +73,9 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$N$?$a$N%*!<%k%$%s%o%s(B GnuPG $B%$%s%?!<
 * Caching Passphrases::
 * Bug Reports::
 * GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
+* Key Index::
+* Function Index::
+* Variable Index::
 @end menu
 
 @node Overview
@@ -347,11 +350,14 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} $B$r;2>H$7$F$/$@$5$$!#(B
 @kindex @kbd{C-c C-e C-e}
 @kindex @kbd{C-c C-e e}
 @findex epa-mail-encrypt
+@vindex epa-mail-aliases
 $B8=:_$N%P%C%U%!!<$+$i0E9f2=$5$l$?%a%C%;!<%8$r:n$j$^$9!#%G%#%U%)%k%H$G$O%a!<(B
 $B%k$N%X%C%@!<$N(B @samp{to}$B!"(B@samp{cc}$B!"$*$h$S(B @samp{bcc} $B%U%#!<%k%I$+$i<u(B
 $B<h?M%j%9%H$r:n$m$&$H$7$^$9!#<u<h?M%j%9%H$K$"$J$?$N80$r4^$a$?$$>l9g(B
 $B$O(B @file{~/.gnupg/gpg.conf} $B$G(B @samp{encrypt-to} $B%*%W%7%g%s$r;H$C$F$/$@(B
-$B$5$$!#(B
+$B$5$$!#$3$N4X?t$O(B @code{epa-mail-aliases} $B%j%9%H$r;H$C$F<u<h?M%"%I%l%9$r(B
+$B=q$-49$($^$9!#$=$N%*%W%7%g%s$rFCDj$N<u<h?M$r0E9f2=$NBP>]$H$7$J$$$?$a$K;H(B
+$B$&$3$H$b$G$-$^$9!#(B
 @end table
 
 @node Encrypting/decrypting gpg files
@@ -500,6 +506,18 @@ EasyPG $B%"%7%9%?%s%H$N%P%0$H=tLdBj$O(B Emacs $B3+H/%A!<%`$,3hH/$KBP=h$7$F$$$
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
 @include doclicense.texi
+
+@node Key Index
+@unnumbered Key Index
+@printindex ky
+
+@node Function Index
+@unnumbered Function Index
+@printindex fn
+
+@node Variable Index
+@unnumbered Variable Index
+@printindex vr
 @bye
 
 @c Local Variables:

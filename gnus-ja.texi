@@ -9514,6 +9514,18 @@ Gravatars $B$O(B @uref{http://www.gravatar.com/} $B$+$i%*%s%i%$%s$G<hF@$7$^(
 $B$9$Y$F$N(B @acronym{MIME} $B%Q!<%H$N@hF,$K%\%?%s$rIU2C$7$^$9!#Kd$a9~$^$l$?%Q!<(B
 $B%H$r%;!<%V(B ($B$^$?$OB>$NF0:n$r<B9T(B) $B$7$h$&$H$9$k$H$-$K!"$?$$$F$$JXMx$G$9!#(B
 
+@item W M h
+@kindex W M h (Summary)
+@findex gnus-mime-buttonize-attachments-in-header
+@vindex gnus-mime-display-attachment-buttons-in-header
+@acronym{MIME} $B%Q!<%H!&%\%?%s$r5-;v$N%X%C%@!<$N:G8e$KI=<($7$^(B
+$B$9(B (@code{gnus-mime-buttonize-attachments-in-header})$B!#$3$N%3%^%s%I$OI=(B
+$B<($r%H%0%k$G@Z$jBX$($^$9!#%X%C%@!<$K2C$($i$l$k%\%?%s$O5-;v$N%\%G%#!<$G%$(B
+$B%s%i%$%sI=<($G$-$J$$$b$N$@$1$G$9!#%\%?%s$r>o$KI=<($7$?$$$J(B
+$B$i(B @code{gnus-mime-display-attachment-buttons-in-header} $B$r(B @code{nil} $B0J(B
+$B30$NCM$K$7$F$/$@$5$$!#%G%#%U%)%k%H$O(B @code{t} $B$G$9!#%\%?%s$N8+1I$($rJQ$((B
+$B$k$K$O!"(B@code{gnus-header-face-alist} $B$r%+%9%?%^%$%:$7$F$/$@$5$$!#(B
+
 @item K m
 @kindex K m ($B35N,(B)
 @findex gnus-summary-repair-multipart
