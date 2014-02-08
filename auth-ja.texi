@@ -476,10 +476,10 @@ auth-source ライブラリーには、外部で使うための関数は少ししかありません。
 @node GnuPG and EasyPG Assistant Configuration
 @appendix GnuPG および EasyPG アシスタントの設定
 
-@code{auth-sources} をカスタマイズしない場合、auth-source ライブラリー
-は @file{~/.authinfo.gpg} (GnuPG で暗号化されたファイル) を読み込みます。
-その後で @file{~/.authinfo} を検査しますが、そのような暗号化されていない
-ファイルを使うことは推奨しません。
+もし変数 @code{auth-sources} が @file{~/.authinfo} より前
+に @file{~/.authinfo.gpg} を含んでいるならば、auth-source ライブラリーは
+暗号化されていないファイルより先に、まずは GnuPG で暗号化され
+た @file{.gpg} を読み込もうとします。
 
 Emacs 23 以降では @file{*.gpg} ファイルの暗号を自動的に解くためのオプショ
 ン @code{auto-encryption-mode} があります。ディフォルトで有効です。もし
