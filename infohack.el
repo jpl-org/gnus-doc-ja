@@ -1,5 +1,5 @@
 ;;; infohack.el --- a hack to format info file.
-;; Copyright (C)  2001, 2003, 2004, 2008, 2009  Free Software Foundation, Inc.
+;; Copyright (C) 2001-2014 Free Software Foundation, Inc.
 
 ;; Author: Shenghuo Zhu <zsh@cs.rochester.edu>
 ;; Keywords: info
@@ -17,9 +17,7 @@
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to the
-;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301, USA.
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
@@ -35,6 +33,19 @@
   (while (search-forward "\n@iflatex\n" nil t)
     (delete-region (1+ (match-beginning 0))
 		   (search-forward "\n@end iflatex\n"))))
+
+(defun infohack-replace-unsupported ()
+  (goto-char (point-min))
+  (while (search-forward "@indicateurl{" nil t)
+    (replace-match "@url{"))
+  (goto-char (point-min))
+  (while (search-forward "@enumerate" nil t)
+    (narrow-to-region (point)
+		      (or (re-search-forward "@end[\t ]+enumerate" nil t)
+			  (point-max)))
+    (goto-char (point-min))
+    (while (re-search-forward "@item[\t ]+\\([^\t\n ]\\)" nil t)
+      (replace-match "@item\n\\1"))))
 
 (defun infohack-include-files ()
   "Insert @include files."
@@ -72,6 +83,7 @@
     (setq coding-system buffer-file-coding-system)
     (infohack-remove-unsupported)
     (infohack-include-files)
+    (infohack-replace-unsupported)
     (texinfo-every-node-update) 
     (texinfo-format-buffer t) ;; Don't save any file.
     (setq default-directory dest-directory)
