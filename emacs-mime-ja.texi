@@ -676,6 +676,12 @@ Content-Type: text/enriched; charset=iso-2022-jp
 そのパートの本体が含むことになるファイルの名前で
 す (@code{Content-Disposition})。
 
+@item recipient-filename
+受取人に宛てて作成された @acronym{MIME} メッセージで、これをファイル名と
+して使います。つまり、もしそのファイルが手元では @file{foo.txt} であった
+としても、送られるメッセージの @code{Content-Disposition} では、この名前
+を使うということです。
+
 @item charset
 パートの内容物をエンコードするときに使われる文字セットで
 す (@code{Content-Type})。@xref{Charset Translation}.
