@@ -1000,7 +1000,7 @@ for Heathens} $B$rFI$s$G$/$@$5$$!#(B
 @cindex finding news
 
 $BBh0l$K!"(BGnus $B$,G'CN$7$F$$$k$9$Y$F$N%5!<%P!<$rNs5s$7$F$$(B
-$B$k(B @code{*Server*} $B$H$$$&FCJL$J%P%C%U%!!<$,$"$k$3$H$rCN$C$F$$$J$1$l$P$J(B
+$B$k(B @file{*Server*} $B$H$$$&FCJL$J%P%C%U%!!<$,$"$k$3$H$rCN$C$F$$$J$1$l$P$J(B
 $B$j$^$;$s!#$=$l$r8+$k$K$O%0%k!<%W%P%C%U%!!<$G(B @kbd{^} $B$r2!$7$F$/$@$5$$!#(B
 $B%5!<%P!<%P%C%U%!!<$G$O!"Dj5A$5$l$F$$$k$"$k%5!<%P!<$G(B @kbd{RET} $B$r2!$9$3(B
 $B$H$K$h$C$F!"$=$l$,<h$j07$C$F$$$k$9$Y$F$N%0%k!<%W$r(B ($B9VFI$7$F$$$k$+$I$&$+(B
@@ -5737,7 +5737,7 @@ Gnus $B$O(B @code{Cancel-Lock} $B%X%C%@!<(B (@pxref{Canceling News,
 
 $B$b$7$5$C$-5-;v$rEj9F$7$?$P$+$j$G$9$0$KJQ99$7$?$/$J$C$?>l9g!"5-;v$,:G=i$K(B
 $B$"$J$?$N%5%$%H$K8=$l$kA0$K<h$j>C$7(B/$BBeBX$r$9$k$?$a$N9*L/$J<jCJ$,$"$j$^$9!#(B
-$B$^$:!"Ej9F%P%C%U%!!<(B (@code{*sent ... *} $B$N$h$&$K$J$C$F$$$^$9(B) $B$KLa$C$F(B
+$B$^$:!"Ej9F%P%C%U%!!<(B (@file{*sent ...*} $B$N$h$&$K$J$C$F$$$^$9(B) $B$KLa$C$F(B
 $B$/$@$5$$!#$=$3$K$O$"$J$?$,$A$g$&$IEj9F$7$?5-;v$,$"$j!"$9$Y$F$N%X%C%@!<$,(B
 $B$=$N$^$^$"$j$^$9!#(B@code{Message-ID} $B%X%C%@!<$r(B @code{Cancel} $B$b$7$/(B
 $B$O(B @code{Supersedes} $B$KJQ99$7$F$/$@$5$$!#$=$7$F!"$$$D$b$d$C$F$$$k$h$&$K(B
@@ -10916,7 +10916,7 @@ Gnus $B$N(B info $B$N@a(B (node) $B$K0\F0$7$^$9(B (@code{gnus-info-find-no
 @code{gnus-kill-summary-on-exit} $B$r(B @code{nil} $B$K@_Dj$HNI$$$+$b$7$l$^$;(B
 $B$s!#$=$&$9$k$H(B Gnus $B$OH4$1=P$k$H$-$K35N,%P%C%U%!!<$r:o=|$7$^$;$s!#(B($B2?$H(B
 $B$$$&6C$-(B!) $BBe$o$j$K!"$=$l$O%P%C%U%!!<$NL>A0(B
-$B$r(B @samp{*Dead Summary ... *} $B$N$h$&$J$b$N$KJQ99$7$F!"(B
+$B$r(B @file{*Dead Summary ... *} $B$N$h$&$J$b$N$KJQ99$7$F!"(B
 @code{gnus-dead-summary-mode} $B$H$$$&%^%$%J!<%b!<%I$rF3F~$7$^$9!#:#$d$=$N(B
 $B%P%C%U%!!<$K@Z$jBX$($k$H!"$9$Y$F$N%-!<$,4X(B
 $B?t(B @code{gnus-summary-wake-up-the-dead} $B$K3d$jEv$F$i$l$F$$$k$3$H$K5$IU$/(B
@@ -13493,7 +13493,7 @@ default force yes
 @item nntp-record-commands
 @vindex nntp-record-commands
 $B$3$l$r(B @code{nil} $B$G$J$$CM$K$9$k$H!"(B@code{nntp} $B$O(B @acronym{NNTP} $B%5!<%P!<(B
-$B$KAw$C$?$9$Y$F$NL?Na$r(B ($B;~9o$H6&$K(B) @samp{*nntp-log*} $B%P%C%U%!!<$K5-O?$7(B
+$B$KAw$C$?$9$Y$F$NL?Na$r(B ($B;~9o$H6&$K(B) @file{*nntp-log*} $B%P%C%U%!!<$K5-O?$7(B
 $B$^$9!#$3$l$OF0:n$7$F$$$J$$$h$&$K8+$($k(B Gnus $B$N(B @acronym{NNTP} $B@\B3$r%G%P%C(B
 $B%0$7$F$$$k$H$-$KLr$KN)$A$^$9!#(B
 
@@ -19100,7 +19100,7 @@ Gnus $B$O35N,%P%C%U%!!<$r:n@.$9$kA0$K!"8=:_$N%0%k!<%W$KE,MQ$5$l$k$I$s$J(B
 @kindex V t ($B35N,(B)
 @findex gnus-score-find-trace
 $B8=:_$N5-;v$K;H$o$l$F$$$k$9$Y$F$N%9%3%"5,B'$rI=<($7$^(B
-$B$9(B (@code{gnus-score-find-trace})$B!#(B@code{*Score Trace*} $B%P%C%U%!!<$K$*$$(B
+$B$9(B (@code{gnus-score-find-trace})$B!#(B@file{*Score Trace*} $B%P%C%U%!!<$K$*$$(B
 $B$F!"8=:_$N9T$N%9%3%"5,B'$KBP1~$9$k%9%3%"%U%!%$%k$rJT=8$9$k$K(B
 $B$O(B @kbd{e} $B$r!"%9%3%"%U%!%$%k$N@6=q(B (@code{gnus-score-pretty-print}) $B$H(B
 $BJT=8$r9T$J$&$?$a$K$O(B @kbd{f} $B$r%?%$%W$7$F$/$@$5$$!#(B
@@ -25439,7 +25439,7 @@ nnml$B!"(Bnnmaildir $B$J$I$N$I$N%P%C%/%(%s%I$K$"$C$F$b!"$=$N%U%i%0$ON)$AB3$1$
 @end lisp
 
 $B$3$l$O(B Gnus $B$,(B newsrc $B$r%;!<%V$9$k$H$-$N=hM}$K%l%8%9%H%j!<$r%;!<%V$9$k=h(B
-$BM}$r2C$($^$9(B ($B$=$l$O(B Gnus $B$r=*N;$9$k$H$-$H(B @code{*Group*} $B%P%C%U%!!<(B
+$BM}$r2C$($^$9(B ($B$=$l$O(B Gnus $B$r=*N;$9$k$H$-$H(B @file{*Group*} $B%P%C%U%!!<(B
 $B$G(B @kbd{s} $B$r2!$7$?$H$-$KH/F0$7$^$9!#$5$i$K$3$l$O(B Gnus $B$N5-;v$K4X$9$kF0(B
 $B:n(B ($B%3%T!<!"0\F0$J$I(B) $B$K%l%8%9%H%j!<$rA`:n$9$k5!G=$r2C$($k$N$G!"$3$N=i4|(B
 $B2=$K$h$k7k2L$r85$KLa$9$N$O4JC1$G$O$"$j$^$;$s!#$=$N!"$"$^$jL{2w$G$O$J$$>\(B
@@ -25728,10 +25728,10 @@ Gnus $B$,%G!<%?$r3JG<$9$k$[$H$s$I$N%U%!%$%k$H%G%#%l%/%H%j!<$NL>A0$NJQ?t$O!"(B
 $B$3$NJQ?t$O(B @code{gnus-verbose} $B$H(B @code{gnus-verbose-backends} $B$G@)8f$5(B
 $B$l$F=PNO$5$l$k%a%C%;!<%8$K!";~9o(B ($B%?%$%`%9%?%s%W(B) $B$rIU2C$9$k$+$I$&$+$r@)(B
 $B8f$7$^$9!#%G%#%U%)%k%HCM$O;~9o$rIU2C$7$J$$$3$H$r0UL#$9$k(B @code{nil} $B$G$9!#(B
-@code{log} $B$@$C$?$i(B @samp{*Messages*} $B%P%C%U%!!<(B (XEmacs $B$G(B
-$B$O(B @samp{ *Message-Log*} $B%P%C%U%!!<(B) $B$KF~$k%a%C%;!<%8$@$1$K;~9o$rIU2C$7(B
-$B$^$9!#$b$7(B @code{nil} $B$G$b(B @code{log} $B$G$b$J$1$l$P!"%m%0$KF~$k%a%C%;!<%8(B
-$B$@$1$G$J$/!"%(%3!<%(%j%"$KI=<($5$l$k$b$N$K$b;~9o$rIU2C$7$^$9!#(B
+@code{log} $B$@$C$?$i(B @file{*Messages*} $B%P%C%U%!!<(B (XEmacs $B$G(B
+$B$O(B @w{@file{ *Message-Log*}} $B%P%C%U%!!<(B) $B$KF~$k%a%C%;!<%8$@$1$K;~9o$rIU(B
+$B2C$7$^$9!#$b$7(B @code{nil} $B$G$b(B @code{log} $B$G$b$J$1$l$P!"%m%0$KF~$k%a%C%;!<(B
+$B%8$@$1$G$J$/!"%(%3!<%(%j%"$KI=<($5$l$k$b$N$K$b;~9o$rIU2C$7$^$9!#(B
 
 @item nnheader-max-head-length
 @vindex nnheader-max-head-length
@@ -28732,8 +28732,8 @@ Gnus $B$,%P%C%/%(%s%I(B---$BNc$($P(B @code{nntp}---$B$K2?$+$N>pJs$rMW5a$9$k
 $B$&$+$r>o$K(B Gnus $B$,3NG'$9$kG$0U4X?t(B @dfn{optional functions} $B$G$9!#(B
 
 $B$3$l$i$9$Y$F$N4X?t$O!"$=$NLa$jCM$N%G!<%?$r(B @code{nntp-server-buffer}
-@w{(@samp{ *nntpd*})} $B%P%C%U%!!<$KJV$9$3$H$,5a$a$i$l$^$9!#$3$l$O$A$g$C$H(B
-$BIT1?$JL>A0IU$1$G$9$,!"$3$l$G2fK}$7$J$1$l$P$J$j$^$;$s!#;d$,7k2L$N%G!<(B
+(@file{ *nntpd*}) $B%P%C%U%!!<$KJV$9$3$H$,5a$a$i$l$^$9!#$3$l$O$A$g$C$HIT1?(B
+$B$JL>A0IU$1$G$9$,!"$3$l$G2fK}$7$J$1$l$P$J$j$^$;$s!#;d$,7k2L$N%G!<(B
 $B%?(B @dfn{resulting data} $B$H8@$C$?$H$-$O!"$=$N%P%C%U%!!<$NCf$N%G!<%?$r;X$7(B
 $B$F$$$^$9!#La$jCM(B @dfn{return value} $B$H8@$C$?$H$-$O!"4X?t8F$S=P$7$K$h$C$F(B
 $BJV$5$l$k4X?t$NCM$N$3$H$r8@$C$F$$$^$9!#4X?t$,<:GT$7$?$H$-$O!"La$jCM$H$7(B

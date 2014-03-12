@@ -132,9 +132,9 @@ password @var{mypassword}
 うに auth-source ライブラリーはそれらの両方を受け入れるために、この混乱
 を助長しています。
 
-もし検索で問題があるのなら @code{auth-source-debug} を @code{trivia} に
+もし検索で問題があるのなら @code{auth-source-debug} を @code{'trivia} に
 設定して、ライブラリーがどのホスト、ポートおよびユーザーをチェックしてい
-るかを @samp{*Messages*} バッファーで見てください。同様に他のどんな問題
+るかを @file{*Messages*} バッファーで見てください。同様に他のどんな問題
 についても、何がチェックされているかを調べるのが、あなたの第一歩です。第
 二のステップはもちろんそれについての blog を書いて、コメントで回答を待つ
 ことです。
@@ -388,7 +388,7 @@ auth-source ライブラリーは、何らかの動作を行なった結果の記録を採ることが
 できます。
 
 @defvar auth-source-debug
-この変数を @code{trivia} にすると、@samp{*Messages*} バッファーへのたく
+この変数を @code{'trivia} にすると、@file{*Messages*} バッファーへのたく
 さんの出力を見ることができます。あるいはこれに @code{message} に似た関数
 を設定して、あなた独自のやり方で記録を採ることもできます。
 @end defvar
