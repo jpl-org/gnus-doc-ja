@@ -747,8 +747,8 @@ Message は普通はうまく動作しますが、ときどき間違えもします。それらの間違
 @kindex C-c C-f t
 @findex message-reduce-to-to-cc
 @samp{To} ヘッダーの内容を @samp{Cc} か @samp{Bcc} ヘッダーの内容で置き
-換えます。(@samp{Cc} ヘッダーが無い場合に限って、代わりに @samp{Bcc} ヘッ
-ダーが使われます。)
+換えます (あるいはもし @samp{Cc} ヘッダーが無かったら、@samp{Bcc} ヘッダー
+の内容で置き換えます)。
 
 @item C-c C-f w
 @kindex C-c C-f w
