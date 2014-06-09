@@ -590,9 +590,10 @@ fetchmail $B$N$h$&$J%W%m%0%i%`$G%a!<%k$r<h$j9~$s$G!"(BGnus $B$,FI$`$3$H$K$J$C
 $B$,(B @acronym{POP3} $B%5!<%P!<$G$"$k$N$J$i!"$3$N$h$&$K@_Dj$7$F$/$@$5$$(B:
 
 @lisp
-(add-to-list 'mail-sources '(pop :server "pop.YourProvider.net"
-                                 :user "yourUserName"
-                                 :password "yourPassword"))
+(eval-after-load "mail-source"
+  '(add-to-list 'mail-sources '(pop :server "pop.YourProvider.net"
+                                    :user "yourUserName"
+                                    :password "yourPassword")))
 @end lisp
 
 @noindent
@@ -601,7 +602,8 @@ fetchmail $B$N$h$&$J%W%m%0%i%`$G%a!<%k$r<h$j9~$s$G!"(BGnus $B$,FI$`$3$H$K$J$C
 $B%W!<%k%U%!%$%k$+$iFI$_$?$$>l9g$O!"0J2<$N$h$&$K@_Dj$7$F$/$@$5$$(B:
 
 @lisp
-(add-to-list 'mail-sources '(file :path "/path/to/spool/file"))
+(eval-after-load "mail-source"
+  '(add-to-list 'mail-sources '(file :path "/path/to/spool/file"))
 @end lisp
 
 @noindent
@@ -610,8 +612,9 @@ fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$
 $B$3$s$J$U$&$K$7$^$7$g$&(B:
 
 @lisp
-(add-to-list 'mail-sources '(maildir :path "/path/to/Maildir/"
-                                     :subdirs ("cur" "new")))
+(eval-after-load "mail-source"
+  '(add-to-list 'mail-sources '(maildir :path "/path/to/Maildir/"
+                                        :subdirs ("cur" "new")))
 @end lisp
 
 @noindent
@@ -620,9 +623,10 @@ fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$
 $B@_Dj$O0J2<$N$h$&$K$J$j$^$9(B:
 
 @lisp
-(add-to-list 'mail-sources
-             '(directory :path "/path/to/procmail-dir/"
-                         :suffix ".prcml"))
+(eval-after-load "mail-source"
+  '(add-to-list 'mail-sources
+                '(directory :path "/path/to/procmail-dir/"
+                            :suffix ".prcml")))
 @end lisp
 
 @noindent
@@ -871,8 +875,10 @@ POP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$$h$&$K(B Gnus $B$K;X<($9
 @file{~/.gnus.el} $B%U%!%$%k$G0J2<$N@_Dj$r9T$J$C$F$/$@$5$$(B:
 
 @lisp
-(add-to-list 'mm-discouraged-alternatives "text/html")
-(add-to-list 'mm-discouraged-alternatives "text/richtext")
+(eval-after-load "mm-decode"
+ '(progn
+      (add-to-list 'mm-discouraged-alternatives "text/html")
+      (add-to-list 'mm-discouraged-alternatives "text/richtext")))
 @end lisp
 
 @noindent
@@ -1612,7 +1618,8 @@ Gnus 5.10 $B$O%G%#%U%)%k%H$G(B sender $B%X%C%@!<$r:n$i$J$$$N$G$9$1$l$I$M!#$^$
 $B$@$5$$(B:
 
 @lisp
-(add-to-list 'message-syntax-checks '(sender . disabled))
+(eval-after-load "message"
+  '(add-to-list 'message-syntax-checks '(sender . disabled)))
 @end lisp
 
 @node FAQ 5-11
@@ -1673,13 +1680,14 @@ Gnus 5.9 $B$+$=$l0JA0$N$b$N$r;H$C$F$$$k>l9g$O!"Be$o$j$K$3$l$r;H$C$F$/$@$5(B
 $B$$(B ($B?7$7$$HG$G$bF0:n$7$^$9(B):
 
 @lisp
-(let ((fqdn "yourmachine.yourdomain.tld")) ;; <-- $BJQ99$7$F$M(B!
-  (if (boundp 'message-user-fqdn)
-      (setq message-user-fqdn fqdn)
-    (gnus-message 1 "Redefining `message-make-fqdn'.")
-    (defun message-make-fqdn ()
-      "Return user's fully qualified domain name."
-      fqdn)))
+(eval-after-load "message"
+  '(let ((fqdn "yourmachine.yourdomain.tld")) ;; <-- $BJQ99$7$F$M(B!
+     (if (boundp 'message-user-fqdn)
+         (setq message-user-fqdn fqdn)
+       (gnus-message 1 "Redefining `message-make-fqdn'.")
+       (defun message-make-fqdn ()
+         "Return user's fully qualified domain name."
+         fqdn))))
 @end lisp
 
 @noindent
