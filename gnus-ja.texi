@@ -27957,6 +27957,20 @@ No Gnus の新しい機能:
 真 Gnus の新しい機能:
 
 @itemize @bullet
+@item インストールに関する変更
+@c ***************************
+
+@itemize @bullet
+@item
+インストールされる Lisp のソースファイルと info ファイルはディフォルト
+で gzip によって圧縮されます。
+
+もしそれらのファイルが圧縮されることを望まないのであれば、configure オプ
+ションの @samp{--without-compress-install} を使ってください。インストー
+ルされるディレクトリーにおいてコンパイルされた elc 版を持たない Lisp の
+ソースファイルは圧縮されません。
+@end itemize
+
 @item 概略モードと記事モードの変更
 @c *******************************
 
@@ -27970,6 +27984,7 @@ No Gnus の新しい機能:
 
 @item Message モードの変更および関連する Gnus の機能
 @c ****************************************************
+
 @itemize @bullet
 @item
 新しい hook である @code{gnus-gcc-pre-body-encode-hook} およ

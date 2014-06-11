@@ -1,3 +1,14 @@
+2014-06-11  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Makefile.in (install): Compress info files.
+
+	* configure.ac: Add --without-compress-install option; check for gzip.
+
+	* gnus-ja.texi (Ma Gnus): Mention that Lisp source files and info files
+	to be installed will be compressed by gzip by default.
+
+	* infohack.el (infohack, infohack-texi-format): Don't split info files.
+
 2014-05-01  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Gnus-Doc-Ja: The version for Ma Gnus v0.11 is released.

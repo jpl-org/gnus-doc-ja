@@ -18,4 +18,24 @@ AC_CHECK_PROG(PDVIPS, pdvips, pdvips, false)
 AC_CHECK_PROG(PTEX, ptex, ptex, false)
 AC_CHECK_PROG(TEXI2DVI, texi2dvi, texi2dvi, false)
 
+AC_PATH_PROG(GZIP_PROG, gzip)
+AC_ARG_WITH(compress-install,
+	[AS_HELP_STRING([[--without-compress-install]],
+		[do not compress .el and .info files when installing.])],
+	[ if test "${withval}" = no; then
+		COMPRESS_INSTALL=no;
+	  else
+		if test -n "${GZIP_PROG}"; then
+			COMPRESS_INSTALL=yes;
+		else
+			COMPRESS_INSTALL=no;
+		fi;
+	  fi ],
+	[ if test -n "${GZIP_PROG}"; then
+		COMPRESS_INSTALL=yes;
+	  else
+		COMPRESS_INSTALL=no;
+	  fi ])
+AC_SUBST(COMPRESS_INSTALL)
+
 AC_OUTPUT(Makefile)

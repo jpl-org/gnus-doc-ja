@@ -83,10 +83,10 @@
 	  (expand-file-name (file-name-nondirectory buffer-file-name)
 			    default-directory))
     (setq buffer-file-coding-system coding-system)
-    (if (> (buffer-size) (if (boundp 'Info-split-threshold)
-			     (+ 50000 Info-split-threshold)
-			   100000))
-	(Info-split))
+    ;;(if (> (buffer-size) (if (boundp 'Info-split-threshold)
+    ;;                         (+ 50000 Info-split-threshold)
+    ;;                       100000))
+    ;;    (Info-split))
     (save-buffer)))
 
 (eval-and-compile
@@ -120,28 +120,28 @@ Both characters must have the same length of multi-byte form."
 (require 'bytecomp)
 
 ;; Reduce the number of split Info files.
-(unless (boundp 'Info-split-threshold)
-  (if (featurep 'xemacs)
-      (if (load "informat.el" t t)
-	  (let* ((fn (symbol-function 'Info-split))
-		 (fns (prin1-to-string fn)))
-	    (load "informat.elc" t t)
-	    (when (and (string-match "\\([\t\n ]+\\)50000\\([\t\n )]+\\)" fns)
-		       (condition-case nil
-			   (setq fn (byte-compile
-				     (read (replace-match "\\1262144\\2"
-							  nil nil fns))))
-			 (error nil))
-		       (fset 'Info-split fn)))))
-    (require 'informat)
-    (let* ((fn (symbol-function 'Info-split))
-	   (fns (prin1-to-string fn)))
-      (when (string-match "\\([\t\n ]+\\)50000\\([\t\n ]+\\)" fns)
-	(condition-case nil
-	    (fset 'Info-split (read (replace-match "\\1262144\\2"
-						   nil nil fns)))
-	  (error
-	   (fset 'Info-split fn)))))))
+;;(unless (boundp 'Info-split-threshold)
+;;  (if (featurep 'xemacs)
+;;      (if (load "informat.el" t t)
+;;	  (let* ((fn (symbol-function 'Info-split))
+;;		 (fns (prin1-to-string fn)))
+;;	    (load "informat.elc" t t)
+;;	    (when (and (string-match "\\([\t\n ]+\\)50000\\([\t\n )]+\\)" fns)
+;;		       (condition-case nil
+;;			   (setq fn (byte-compile
+;;				     (read (replace-match "\\1262144\\2"
+;;							  nil nil fns))))
+;;			 (error nil))
+;;		       (fset 'Info-split fn)))))
+;;    (require 'informat)
+;;    (let* ((fn (symbol-function 'Info-split))
+;;	   (fns (prin1-to-string fn)))
+;;      (when (string-match "\\([\t\n ]+\\)50000\\([\t\n ]+\\)" fns)
+;;	(condition-case nil
+;;	    (fset 'Info-split (read (replace-match "\\1262144\\2"
+;;						   nil nil fns)))
+;;	  (error
+;;	   (fset 'Info-split fn)))))))
 
 (defun infohack-texi-format (file &optional addsuffix)
   (let ((auto-save-default nil)
@@ -200,7 +200,7 @@ Both characters must have the same length of multi-byte form."
 			    (encode-coding-string (apply 'format fmt args)
 						  ',coding))))))
 	    (unwind-protect
-		(texinfo-format-buffer nil)
+		(texinfo-format-buffer t)
 	      (fset 'message si:message)))
 	  (if (buffer-modified-p)
 	      (progn (message "Saving modified %s" (buffer-file-name))

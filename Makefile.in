@@ -15,6 +15,8 @@ TEXI2DVI=@TEXI2DVI@
 prefix=@prefix@
 datarootdir=@datarootdir@
 infodir=@infodir@
+GZIP_PROG = @GZIP_PROG@
+COMPRESS_INSTALL = @COMPRESS_INSTALL@
 
 .SUFFIXES: .pdf .ps .texi
 
@@ -25,16 +27,20 @@ webhack: clean
 	$(MAKE) pdf MAKEINFO_OPTS="-DWEBHACKDEVEL $(MAKEINFO_OPTS)"
 
 .texi.info:
-	@texi=$<; rm -f $@ $@-[0-9] $@-[0-9][0-9]; $(EMACSINFO) $$texi t
+	@texi=$<; rm -f $@ $@-[0-9]; $(EMACSINFO) $$texi t
 
 install: all
 	$(SHELL) ./mkinstalldirs "$(infodir)"
-	@list='$(INFO_DEPS)';\
-	for file in $$list; do\
-	  for ifile in `echo $$file $$file-[0-9] $$file-[0-9][0-9]`; do\
+	@for file in $(INFO_DEPS); do\
+	  rm -f "$(infodir)"/$$file{,-[0-9],.info,.info-[0-9]}; \
+	  rm -f "$(infodir)"/$$file{,-[0-9],.info,.info-[0-9]}.gz; \
+	  for ifile in `echo $$file $$file-[0-9]`; do\
 	    if test -f $$ifile; then\
 	      echo "$(INSTALL_DATA) $$ifile \"$(infodir)/$$ifile\"";\
 	      $(INSTALL_DATA) $$ifile "$(infodir)/$$ifile";\
+	      if test $(COMPRESS_INSTALL) = yes -a -n "$(GZIP_PROG)"; then\
+		$(GZIP_PROG) -9n "$(infodir)/$$ifile";\
+	      fi;\
 	    else : ; fi;\
 	  done;\
 	done
@@ -70,7 +76,7 @@ ps: gnus-ja.ps message-ja.ps emacs-mime-ja.ps epa-ja.ps\
 	i=`basename $@ .ps`; $(MAKE) $$i.dvi; $(PDVIPS) $$i
 
 clean:
-	rm -f *.dvi *.info *.info-[0-9] *.info-[0-9][0-9] *.orig *.pdf *.ps *~\
+	rm -f *.dvi *.info *.info-[0-9] *.orig *.pdf *.ps *~\
  gnustmp.* missfont.log
 
 distclean: clean
