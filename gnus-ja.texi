@@ -12574,7 +12574,8 @@ encrypting}) を取り除くような用途に使うことができます。
 from date id references chars lines xref extra の各ヘッダーから成るベク
 トルです。
 
-属性値が文字列である場合、もし @code{match} が正規表現だった
+属性値が文字列である場合、もし @code{match} が正規表現だったら、あるい
+はそれが @code{(header @var{match} @var{regexp})} の形式だった
 ら、@samp{gnus-match-substitute-replacement} はその属性値上で、位置パラ
 メーター @samp{\@var{n}} (訳注: 何番目の括弧に合致するかを @var{n} で指
 定するもの) を対応する合致した括弧で置き換えようとしま
@@ -12611,6 +12612,10 @@ Emacs Lisp Reference Manual})。
         ;; @r{Organization ヘッダーを付けよう。}
         ((header "to" "larsi.*org")
          (Organization "Somewhere, Inc."))
+        ;; @r{元のメッセージが送られてきた宛先と同じだが}
+        ;; @r{そのサブのアドレスから返事をします。}
+        ((header "x-original-to" "me\\(\\+.+\\)@@example.org")
+         (address "me\\1@@example.org"))
         ((posting-from-work-p) ;; @r{利用者が定義した関数}
          (signature-file "~/.work-signature")
          (address "user@@bar.foo")
