@@ -2841,11 +2841,19 @@ Gmane.org で一時的なグループを講読するためのコマンドです。記事
 
 @item gcc-self
 @cindex gcc-self
-グループパラメーターリストに @code{(gcc-self . t)} があれば、新しく作成
-するメッセージは現在のグループに @code{Gcc} されます。も
-し @code{(gcc-self . none)} があれば、@code{Gcc:} 欄は生成されず、
-@code{(gcc-self . "string")} があればこの文字列はそのまま @code{gcc} 欄
-に挿入されます。このパラメーターは以下で説明するどんなディフォルト
+グループパラメーターリストにもし @code{(gcc-self . t)} があると、新しく
+作成するメッセージは現在のグループに @code{gcc} されます。も
+し @code{(gcc-self . none)} があれば、@code{Gcc:} 欄は生成されません。も
+し @code{(gcc-self . "group")} があると、この文字列はそのま
+ま @code{Gcc:} ヘッダーとして挿入されます。それはグループ名でなければな
+りません。
+
+@code{gcc-self} の値は文字列と @code{t} のリストにすることも可能です。例
+えば @code{(gcc-self "group1" "group2" t)} は、新しく作成するメッセージ
+を @code{"group1"}、@code{"group2"}、および現在のグループ
+に @code{gcc} するということです。
+
+@code{gcc-self} パラメーターは後に説明するどんなディフォルト
 の @code{Gcc} の規則よりも (再送するメッセージのための例外を除いて) 優先
 されます (@pxref{Archived Messages})。
 
