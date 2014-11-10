@@ -11528,10 +11528,21 @@ Emacs @acronym{MIME} マニュアルで述べられています。
 @section @acronym{HTML}
 @cindex @acronym{HTML}
 
-もし @code{w3m} があなたのシステムにインストールしてあれば、Gnus は記事
-バッファーに @acronym{HTML} 記事を表示することができます。これを行なうた
-めの様々なやり方の付加機能がありますが、ディフォルトで使われるそんな一つ
-の手法が組み込みで用意されています。
+Gnus は @acronym{HTML} 記事を素敵に整形して記事バッファーに表示すること
+ができます。たくさんの方法がありますが、それらのうちの 2つがディフォルト
+の手段であると言えます。
+
+もし Emacs が libxml2 を使うように作られていれば、Gnus は純粋に Elisp で
+書かれていて Emacs に組み込まれている Simple HTML Renderer @code{shr} を
+使います。@footnote{@code{shr} は @acronym{HTML} 記事が指定する色を表示
+しますが、それらを読むことができるように調整しようとします。もっとコント
+ラストを強くしたいなら @pxref{FAQ 4-16} を見てください。}
+@code{shr} は Emacs のブラウザーであ
+る EWW (@pxref{EWW, ,EWW, emacs, The Emacs Manual}) でも使われます。
+
+Emacs に libxml2 のサポートが無くても @code{w3m} がインストールされてい
+れば、Gnus は @acronym{HTML} メールを描画して、その結果を記事バッファー
+に表示します (@code{gnus-w3m})。
 
 完全な概要については @xref{Display Customization, ,Display Customization,
 emacs-mime-ja, The Emacs MIME Manual}, を参照してください。この章はディ

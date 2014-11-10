@@ -772,6 +772,9 @@ POP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$$h$&$K(B Gnus $B$K;X<($9
 
 * FAQ 4-15:: $B!!$d$C$F$-$?%a!<%k$r$$$m$$$m$J%0%k!<%W$K?6$jJ,$1$k$K(B
                $B$O!"$I$&$7$?$iNI$$$G$9$+(B?
+
+* FAQ 4-16::   HTML $B%a!<%k$r8+$k$H$-%3%s%H%i%9%H$r$h$jNI$/$9$k$K(B
+               $B$O!"$I$&$9$l$PNI$$$G$9$+(B?
 @end menu
 
 @node FAQ 4-1
@@ -1210,6 +1213,21 @@ Manual}) $B$r;2>H$7$F$/$@$5$$!#(B
    ("Inbox" "^\\(CC:\\|To:\\).*\\(my\ name\\|address@@one.invalid\\|address@@two.invalid\\)")
    ("Spam" "")))
 @end lisp
+
+@node FAQ 4-16
+@subsubheading Question 4.16
+
+HTML $B%a!<%k$r8+$k$H$-%3%s%H%i%9%H$r$h$jNI$/$9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+
+@subsubheading Answer
+
+Gnus $B$KAH$_9~$^$l$F$$$k%7%s%W%k$J(B HTML $BIA2h(B
+$B4o(B (@code{mm-text-html-renderer} $B$,(B @code{shr} $B$G$"$k$H$-$K;H$&$b$N(B) $B$O!"(B
+HTML $B%a!<%k$NCf$G;XDj$5$l$F$$$k?'$r;H$$$^$9$,!"9u?'$NGX7J$KBP$7$F%@!<%/(B
+$B%0%l%$$N%F%-%9%H$rI=<($7$F$7$^$&$h$&$J>u67$rHr$1$k$?$a$K!"$=$l$i$N?'$rD4(B
+$B@0$7$^$9!#$7$+$7!"$=$l$G$b$^$@%3%s%H%i%9%H$,Dc2a$.$k$J$i!"JQ(B
+$B?t(B @code{shr-color-visible-distance-min} $B$*$h(B
+$B$S(B @code{shr-color-visible-luminance-min} $B$NCM$rA}$d$7$F$/$@$5$$!#(B
 
 @node FAQ 5 - Composing messages
 @subsection $B%a%C%;!<%8$N:n@.(B
