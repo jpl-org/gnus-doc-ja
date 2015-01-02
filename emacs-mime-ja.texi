@@ -14,7 +14,7 @@
 @copying
 このファイルは Emacs MIME インターフェースの機能を文書化したものです。
 
-Copyright @copyright{} 1998--2014 Free Software Foundation, Inc.
+Copyright @copyright{} 1998--2015 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
