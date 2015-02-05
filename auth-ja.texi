@@ -67,6 +67,7 @@ modify this GNU manual.''
 @menu
 * Overview::                    auth-source ライブラリーの概要
 * Help for users::
+* Multiple GMail accounts with Gnus::
 * Secret Service API::
 * Help for developers::
 * GnuPG and EasyPG Assistant Configuration::
@@ -236,6 +237,26 @@ machine yourmachine.com port scp login testuser password testpass
 項を使わなければ、最初の方で説明したように、すべての Tramp の方式に合致
 します。Tramp には 88 種類の接続方法があるので、変わった設定がある場合は
 これが必要かもしれません (それらについての以前のコメントを見てください)。
+
+@node Multiple GMail accounts with Gnus
+@chapter 複数の GMail アカウントを Gnus で扱う
+
+複数の GMail アカウントを Gnus で扱うには、別の名前で 2つのエントリー
+を @code{gnus-secondary-select-methods} に作る必要があります:
+
+@example
+(setq gnus-secondary-select-methods '((nnimap "gmail"
+                                         (nnimap-address "imap.gmail.com"))
+                                      (nnimap "gmail2"
+                                         (nnimap-address "imap.gmail.com"))))
+@end example
+
+そうすると netrc は次のようになるでしょう:
+
+@example
+machine gmail login account@@gmail.com password "accountpassword" port imap
+machine gmail2 login account2@@gmail.com password "account2password" port imap
+@end example
 
 @node Secret Service API
 @chapter シークレットサービス API
