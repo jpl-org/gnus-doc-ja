@@ -13923,6 +13923,7 @@ default force yes
 * Connecting to an IMAP Server::     @acronym{IMAP} を始める
 * Customizing the IMAP Connection::  @acronym{IMAP} 接続のための変数
 * Client-Side IMAP Splitting::       正しいメールボックスにメールを置く
+* Support for IMAP Extensions::      拡張とラベルをサーバーから取得する
 @end menu
 
 @node Connecting to an IMAP Server
@@ -14061,6 +14062,27 @@ Mail})。ただし @code{default} というシンボルである場合は例外で、
             (to "foo@@bar.com" "foo")
             "undecided")))
 @end example
+
+@node Support for IMAP Extensions
+@subsection IMAP 拡張のサポート
+
+@cindex Gmail
+@cindex X-GM-LABELS
+@cindex IMAP labels
+
+Google の Gmail を使っていると、メールを読んでいるときに Gmail ラベルを
+見たいときがあるでしょう。Gnus はその情報を提供することができます。その
+ためには変数 @code{gnus-extra-headers} の中で @samp{X-GM-LABELS} を要求
+してください。例えばこんなふうに:
+
+@example
+(setq gnus-extra-headers
+      '(To Newsgroups X-GM-LABELS))
+@end example
+
+これによって、後に参照できるように Gnus はメッセージヘッダーにラベルを追
+加します。その内容は常に括弧で囲まれたリストになります (中身が無い場合も
+あります。)。
 
 @node Getting Mail
 @section メール取得
