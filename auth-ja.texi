@@ -1,4 +1,4 @@
-n\input texinfo                  @c -*-texinfo-*-
+\input texinfo                  @c -*-texinfo-*-
 
 @include gnus-overrides-ja.texi
 
