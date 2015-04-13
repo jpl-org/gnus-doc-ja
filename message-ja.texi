@@ -2034,14 +2034,14 @@ node) として使います。文字列だったら、その文字列を使います。それが文字列
 Hallvard B Furuseth <h.b.furuseth@@usit.uio.no> writes:
 @end example
 
-@c FIXME: `message-insert-formatted-citation-line' と
-@c `message-citation-line-format' を追加すべし。
+@c FIXME: 'message-insert-formatted-citation-line' と
+@c 'message-citation-line-format' を追加すべし。
 この関数が呼ばれたとき、ポイントはメッセージの本文の先頭に置かれるでしょ
 う。
 
-なお Gnus には、`writes:' の上でクリックすると引用されたテキストを隠す機
-能があります。もしあなたが度を越して引用行を変更してしまうと、それを読む
-人たちも彼らの Gnus を対応させなければならなくなるでしょう。変
+なお Gnus には、@samp{writes:} の上でクリックすると引用されたテキストを
+隠す機能があります。もしあなたが度を越して引用行を変更してしまうと、それ
+を読む人たちも彼らの Gnus を対応させなければならなくなるでしょう。変
 数 @code{gnus-cite-attribution-suffix} を参照してください。詳細
 は @xref{Article Highlighting, ,記事のハイライト, gnus-ja, The Gnus
 Manual}, にあります。

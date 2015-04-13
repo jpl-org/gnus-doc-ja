@@ -12,9 +12,9 @@
 @c    under the above conditions, provided also that they
 @c    carry prominent notices stating who last changed them.
 @c
-@c This file contains a list of news features Gnus.  It is supposed to be
-@c included in `gnus.texi'.  `GNUS-NEWS' is automatically generated from
-@c this file (see `gnus-news.el').
+@c このファイルには Gnus の新しい機能のリストが入っていて、'gnus-ja.texi'
+@c に編入されます。'GNUS-NEWS' はこのファイルから自動的に生成されます。
+@c ('gnus-news.el' を見てください。)
 @c
 @itemize @bullet
 @item サポートしている Emacs のバージョン
