@@ -1,3 +1,8 @@
+2015-04-13  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* ptexinfmt.el (texinfo-format-syntax-table):
+	Modify character syntax of guillemets (`<<' and `>>') to w.
+
 2014-12-18  Eric Abrahamsen  <eric@ericabrahamsen.net>
 
 	* gnus-ja.texi (Gnus Registry Setup): Explain pruning changes. Mention

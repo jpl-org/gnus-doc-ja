@@ -66,6 +66,12 @@
 (modify-syntax-entry ?\" "w" texinfo-format-syntax-table)
 (modify-syntax-entry ?\\ "w" texinfo-format-syntax-table)
 
+;; Guillemets
+(modify-syntax-entry (make-char 'japanese-jisx0208 33 84)
+		     "w" texinfo-format-syntax-table)
+(modify-syntax-entry (make-char 'japanese-jisx0208 33 85)
+		     "w" texinfo-format-syntax-table)
+
 ;;; Broken
 (defvar ptexinfmt-disable-broken-notice-flag t
   "If non-nil disable notice, when call `ptexinfmt-broken-facility'.
