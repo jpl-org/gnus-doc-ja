@@ -1,3 +1,7 @@
+2014-05-02  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Ma Gnus v0.13 is released.
+
 2015-04-13  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* ptexinfmt.el (texinfo-format-syntax-table):
