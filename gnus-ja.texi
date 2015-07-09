@@ -13992,6 +13992,10 @@ machine imap.gmail.com login <username> password <password> port imap
 もしサーバーに接続するために他のホストをトンネルする必要があるなら、この
 オプションを使って @code{nnimap-shell-program} を必要に応じてカスタマイ
 ズすることができます。
+
+@item plain
+暗号化されておらず安全ではないストレートな接続。たと
+え @acronym{STARTTLS} が利用可能でも使いません。
 @end table
 
 @item nnimap-authenticator
