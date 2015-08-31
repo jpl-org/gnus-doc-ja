@@ -20686,8 +20686,8 @@ Gnus はこの問題の解決を助けるためにスコアを減衰させる機構を提供します。
 
 @lisp
 (defun gnus-decay-score (score)
-  "Decay SCORE according to `gnus-score-decay-constant'
-and `gnus-score-decay-scale'."
+  "Decay SCORE according to ‘gnus-score-decay-constant’
+and ‘gnus-score-decay-scale’."
   (let ((n (- score
               (* (if (< score 0) -1 1)
                  (min (abs score)
