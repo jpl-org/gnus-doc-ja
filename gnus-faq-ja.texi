@@ -1215,11 +1215,11 @@ Manual}) を参照してください。
 @end lisp
 
 @node FAQ 4-16
-@subsubheading Question 4.16
+@subsubheading 質問 4.16
 
 HTML メールを見るときコントラストをより良くするには、どうすれば良いですか?
 
-@subsubheading Answer
+@subsubheading 回答
 
 Gnus に組み込まれているシンプルな HTML 描画
 器 (@code{mm-text-html-renderer} が @code{shr} であるときに使うもの) は、
