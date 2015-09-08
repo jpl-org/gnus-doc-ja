@@ -1704,7 +1704,7 @@ Gnus 5.9 かそれ以前のものを使っている場合は、代わりにこれを使ってくださ
          (setq message-user-fqdn fqdn)
        (gnus-message 1 "Redefining `message-make-fqdn'.")
        (defun message-make-fqdn ()
-         "Return user’s fully qualified domain name."
+         "Return user's fully qualified domain name."
          fqdn))))
 @end lisp
 
@@ -1804,9 +1804,9 @@ Frank Haun @email{pille3003@@fhaun.de} が書いてくれたこのコードの切れ端
 
 @lisp
 (defun my-archive-article (&optional n)
-  "一個以上の記事を、対応する ‘nnml:’ グループにコピーします。
-例えば ‘gnus.ding’ の記事は ‘nnml:1.gnus.ding’ グループに行き、
-‘nnml:List-gnus.ding’ の記事は ‘nnml:1.List-gnus-ding’ に行きます。
+  "一個以上の記事を、対応する `nnml:' グループにコピーします。
+例えば `gnus.ding' の記事は `nnml:1.gnus.ding' グループに行き、
+`nnml:List-gnus.ding' の記事は `nnml:1.List-gnus-ding' に行きます。
 
 一個以上の記事を保存するには、概略バッファーでプロセス/接頭引数の
 習慣を使ってください。"
