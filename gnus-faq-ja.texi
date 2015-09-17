@@ -1564,7 +1564,7 @@ Database) でしょう。XEmacs のパッケージシステムを使うか、
 
 @example
 cat file.xbm | xbm2ikon | compface > file.face
-cat file.face | sed 's/\\/\\\\/g;s/\"/\\\"/g;' > file.face.quoted
+cat file.face | sed 's/["\\]/\\&/g' > file.face.quoted
 @end example
 
 @noindent
