@@ -7,7 +7,7 @@ INFO_DEPS=gnus-ja.info message-ja.info emacs-mime-ja.info epa-ja.info\
 INSTALL=@INSTALL@
 INSTALL_DATA=@INSTALL_DATA@
 INSTALL_INFO=install-info
-JBIBTEX=@JBIBTEX@
+PBIBTEX=@PBIBTEX@
 PDVIPS=@PDVIPS@
 PTEX=@PTEX@
 SHELL=/bin/sh
@@ -59,7 +59,7 @@ dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi epa-ja.dvi\
 
 .texi.dvi:
 	sed -e '/@iflatex/,/@end iflatex/d' $< > gnustmp.texi
-	env TEX=$(PTEX) BIBTEX=$(JBIBTEX) $(TEXI2DVI) -o $@ gnustmp.texi
+	env TEX=$(PTEX) BIBTEX=$(PBIBTEX) $(TEXI2DVI) -o $@ gnustmp.texi
 	rm -f gnustmp.*
 
 pdf: gnus-ja.pdf message-ja.pdf emacs-mime-ja.pdf epa-ja.pdf\

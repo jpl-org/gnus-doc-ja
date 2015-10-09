@@ -13,7 +13,7 @@ AC_ARG_WITH(emacs,[  --with-emacs            Use Emacs to build],
 AC_CHECK_PROG(EMACS, emacs, emacs, xemacs)
 
 AC_CHECK_PROG(DVIPDFMX, dvipdfmx, dvipdfmx, false)
-AC_CHECK_PROG(JBIBTEX, jbibtex, jbibtex, false)
+AC_CHECK_PROGS(PBIBTEX, pbibtex jbibtex, false)
 AC_CHECK_PROG(PDVIPS, pdvips, pdvips, false)
 AC_CHECK_PROG(PTEX, ptex, ptex, false)
 AC_CHECK_PROG(TEXI2DVI, texi2dvi, texi2dvi, false)
