@@ -4,6 +4,10 @@
 @setfilename epa-ja
 @settitle EasyPG Assistant User's Manual
 @c %**end of header
+@documentlanguage ja
+@iftex
+@usedvipdfmx
+@end iftex
 
 @set VERSION 1.0.0
 

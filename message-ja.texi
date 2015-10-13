@@ -7,8 +7,9 @@
 @synindex fn cp
 @synindex vr cp
 @synindex pg cp
+@documentlanguage ja
 @iftex
-@firstparagraphindent insert
+@usedvipdfmx
 @end iftex
 @copying
 This file documents Message, the Emacs message composition mode.

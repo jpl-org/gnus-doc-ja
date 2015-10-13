@@ -7,8 +7,9 @@
 @syncodeindex fn cp
 @syncodeindex vr cp
 @syncodeindex pg cp
+@documentlanguage ja
 @iftex
-@firstparagraphindent insert
+@usedvipdfmx
 @end iftex
 
 @copying

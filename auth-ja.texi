@@ -2,10 +2,15 @@
 
 @include gnus-overrides-ja.texi
 
-@setfilename auth-ja
-@settitle Emacs auth-source Library @value{VERSION}
+@c @set VERSION 0.3
 
-@set VERSION 0.3
+@setfilename auth-ja
+@c @settitle Emacs auth-source Library @value{VERSION}
+@settitle Emacs auth-source Library 0.3
+@documentlanguage ja
+@iftex
+@usedvipdfmx
+@end iftex
 
 @copying
 このファイルは Emacs auth-source ライブラリーを説明します。

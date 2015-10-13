@@ -1,3 +1,11 @@
+2015-10-13  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* auth-ja.texi, emacs-mime-ja.texi, epa-ja.texi, gnus-coding-ja.texi,
+	gnus-ja.texi, message-ja.texi, sasl-ja.texi, sieve-ja.texi:
+	Add bookmark to pdf output.
+
+	* txi-ja.tex: New file.
+
 2015-10-09  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* configure.ac:
