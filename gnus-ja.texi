@@ -433,7 +433,7 @@ Emacs $B$,J8>O$rJT=8$9$k?M$KNO$rM?$($k$h$&$K!"(BGnus $B$O%K%e!<%9$rFI$`?M$KNO
 * Sieve:(sieve-ja).          Emacs $B$G(B Sieve $B%9%/%j%W%H$r4IM}$9$k(B
 * EasyPG:(epa-ja).           Gnus $B$G(B @acronym{PGP/MIME} $B$r;H$&(B
 * SASL:(sasl-ja).            Emacs $B$G(B @acronym{SASL} $B$NG'>Z$r9T$J$&(B
-+@end ifinfo
+@end ifinfo
 
 @detailmenu
  --- The Detailed Node Listing ---
