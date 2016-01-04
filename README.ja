@@ -1,4 +1,4 @@
-Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BMa Gnus v0.12 $B$KBP1~$7$^$9!#(B
+Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BMa Gnus v0.14 $B$KBP1~$7$^$9!#(B
 
 $B%$%s%9%H!<%k(B
 ============
@@ -15,7 +15,7 @@ Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BMa Gnus v0.12 $B$KBP1~$7$^$9!#(
 $BL>$K$9$k$3$H$O$G$-$^$;$s!#$"$i$+$8$a(B PATH $B4D6-JQ?t$r@_Dj$7$F$/$@$5$$!#(B
 $BNc$G$9(B:
 
-% ./configure --with-emacs=emacs-22.3 --infodir=/usr/local/info
+% ./configure --with-emacs=emacs-24.5 --infodir=/usr/local/info
 
 Gnus $B$N%P%C%U%!!<$G(B `C-c C-i' $B$r%?%$%W$9$k$+(B message $B%P%C%U%!!<$G(B
 `M-x message-info' $B$r%?%$%W$7$?$H$-$KF|K\8lHG$N(B Info $B%^%K%e%"%k$rFI$_(B
