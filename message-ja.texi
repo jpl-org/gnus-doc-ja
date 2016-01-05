@@ -936,17 +936,90 @@ Libidn} をインストールしておかなければなりません。
 @cindex encrypt
 @cindex secure
 
-@acronym{MML} 言語を使うことによって、Message は電子署名された、または電
-子暗号化されたメッセージを作ることができます。Message (と言う
-か @acronym{MML}) は、現在 @acronym{PGP} (RFC 1991), @acronym{PGP/MIME}
-(RFC 2015/3156) および @acronym{S/MIME} をサポートしています。
+@c >TRANSLATEME
+@c DEL @acronym{MML} 言語を使うことによって、Message は電子署名された、または電
+@c DEL 子暗号化されたメッセージを作ることができます。Message (と言う
+@c DEL か @acronym{MML}) は、現在 @acronym{PGP} (RFC 1991), @acronym{PGP/MIME}
+@c DEL (RFC 2015/3156) および @acronym{S/MIME} をサポートしています。
+By default, e-mails are transmitted without any protection around the
+Internet, which implies that they can be read and changed by lots of
+different parties.  In particular, they are analyzed under bulk
+surveillance, which violates basic human rights.  To defend those
+rights, digital self-defense is necessary (in addition to legal
+changes), and encryption and digital signatures are powerful
+techniques for self-defense.  In essence, encryption ensures that
+only the intended recipient will be able to read a message, while
+digital signatures make sure that modifications to messages can be
+detected by the recipient.
 
+Nowadays, there are two major incompatible e-mail encryption
+standards, namely @acronym{OpenPGP} and @acronym{S/MIME}.  Both of
+these standards are implemented by the @uref{https://www.gnupg.org/,
+GNU Privacy Guard (GnuPG)}, which needs to be installed as external
+software in addition to GNU Emacs.  Before you can start to encrypt,
+decrypt, and sign messages, you need to create a so-called key-pair,
+which consists of a private key and a public key.  Your @emph{public} key
+(also known as @emph{certificate}, in particular with @acronym{S/MIME}), is
+used by others (a) to encrypt messages intended for you and (b) to verify
+digital signatures created by you.  In contrast, you use your @emph{private}
+key (a) to decrypt messages and (b) to sign messages.  (You may want to
+think of your public key as an open safe that you offer to others such
+that they can deposit messages and lock the door, while your private
+key corresponds to the opening combination for the safe.)
+
+Thus, you need to perform the following steps for e-mail encryption,
+typically outside Emacs.  See, for example, the
+@uref{https://www.gnupg.org/gph/en/manual.html, The GNU Privacy
+Handbook} for details covering the standard @acronym{OpenPGP} with
+@acronym{GnuPG}.
+@enumerate
+@item
+Install GnuPG.
+@item
+Create a key-pair for your own e-mail address.
+@item
+Distribute your public key, e.g., via upload to key servers.
+@item
+Import the public keys for the recipients to which you want to send
+encrypted e-mails.
+@end enumerate
+
+Whether to use the standard @acronym{OpenPGP} or @acronym{S/MIME} is
+beyond the scope of this documentation.  Actually, you can use one
+standard for one set of recipients and the other standard for
+different recipients (depending their preferences or capabilities).
+
+In case you are not familiar with all those acronyms: The standard
+@acronym{OpenPGP} is also called @acronym{PGP} (Pretty Good Privacy).
+The command line tools offered by @acronym{GnuPG} for
+@acronym{OpenPGP} are called @command{gpg} and @command{gpg2}, while
+the one for @acronym{S/MIME} is called @command{gpgsm}.  An
+alternative, but discouraged, tool for @acronym{S/MIME} is
+@command{openssl}.  To make matters worse, e-mail messages can be
+formed in two different ways with @acronym{OpenPGP}, namely
+@acronym{PGP} (RFC 1991/4880) and @acronym{PGP/MIME} (RFC 2015/3156).
+
+The good news, however, is the following: In GNU Emacs, Message
+supports all those variants, comes with reasonable defaults that can
+be customized according to your needs, and invokes the proper command
+line tools behind the scenes for encryption, decryption, as well as
+creation and verification of digital signatures.
+
+Message uses the @acronym{MML} language for the creation of signed
+and/or encrypted messages as explained in the following.
+@c <TRANSLATEME
+
+@c >TRANSLATEME
 @menu
 * Signing and encryption::      署名と暗号化のコマンド
 * Using S/MIME::                S/MIME を使う
-* Using PGP/MIME::              PGP/MIME を使う
+* Using OpenPGP::               OpenPGP を使う
+* Passphrase caching::          How to cache passphrases
 * PGP Compatibility::           古い実装との互換性
+* Encrypt-to-self::             Reading your own encrypted messages
+* Bcc Warning::                 Do not use encryption with Bcc headers
 @end menu
+@c <TRANSLATEME
 
 @node Signing and encryption
 @subsection 署名と暗号化のコマンド
@@ -1041,19 +1114,59 @@ Libidn} をインストールしておかなければなりません。
 @node Using S/MIME
 @subsection S/MIME を使う
 
-@emph{注意!}  この章は近代的な暗号法、@acronym{S/MIME}、さまざま
-な PKCS の標準、OpenSSL などの基礎に、あなたが精通していることを想定して
-います。
+@c >TRANSLATEME
+@c DEL @emph{注意!}  この章は近代的な暗号法、@acronym{S/MIME}、さまざま
+@c DEL な PKCS の標準、OpenSSL などの基礎に、あなたが精通していることを想定して
+@c DEL います。
+@acronym{S/MIME} requires an external implementation, such as
+@uref{https://www.gnupg.org/, GNU Privacy Guard} or
+@uref{https://www.openssl.org/, OpenSSL}.  The default Emacs interface
+to the S/MIME implementation is EasyPG (@pxref{Top,,EasyPG Assistant
+User's Manual, epa, EasyPG Assistant User's Manual}), which has been
+included in Emacs since version 23 and which relies on the command
+line tool @command{gpgsm} provided by @acronym{GnuPG}.  That tool
+implements certificate management, including certificate revocation
+and expiry, while such tasks need to be performed manually, if OpenSSL
+is used.
 
-Message (それに @acronym{MML}) が @acronym{S/MIME} をサポートするに
-は OpenSSL が必要です。OpenSSL は実際の @acronym{S/MIME} による署名/暗号
-化の処理を実行します。OpenSSL は @uref{http://www.openssl.org/} で見つか
-るでしょう。OpenSSL 0.9.6 以降のものが動作するはずです。バージョ
-ン 0.9.5a は証明書からメールアドレスを抽出することができません。またそれ
-は @acronym{MIME} のセパレータに余計な CR 文字を挿入するので、変なメール
-を送る人だと思われたくなければ、それを使うことを避けたいでしょう。(もっ
-ともあなたは @acronym{S/MIME} のメッセージを送った時点で、おそらくその変
-人コンテストでの勝利を逃してしまいましたが。)
+The choice between EasyPG and OpenSSL is controlled by the variable
+@code{mml-smime-use}, which needs to be set to the value @code{epg}
+for EasyPG.  Depending on your version of Emacs that value may be the
+default; if not, you can either customize that variable or place the
+following line in your @file{.emacs} file (that line needs to be
+placed above other code related to message/gnus/encryption):
+
+@lisp
+(require 'epg)
+@end lisp
+
+Moreover, you may want to customize the variables
+@code{mml-default-encrypt-method} and
+@code{mml-default-sign-method} to the string @code{"smime"}.
+
+That's all if you want to use S/MIME with EasyPG, and that's the
+recommended way of using S/MIME with Message.
+
+If you think about using OpenSSL instead of EasyPG, please read the
+BUGS section in the manual for the @command{smime} command coming with
+OpenSSL first.  If you still want to use OpenSSL, the following
+applies.
+
+@emph{Note!}  The remainder of this section assumes you have a basic
+familiarity with modern cryptography, @acronym{S/MIME}, various PKCS
+standards, OpenSSL and so on.
+@c <TRANSLATEME
+
+Message (それに @acronym{MML}) で @acronym{S/MIME} をサポートするため
+に OpenSSL を使うことができます。OpenSSL は実際の @acronym{S/MIME} によ
+る署名/暗号化の処理を実行します。
+OpenSSL は @uref{http://www.openssl.org/} で見つかるでしょう。
+OpenSSL 0.9.6 以降のものが動作するはずです。バージョン 0.9.5a は証明書か
+らメールアドレスを抽出することができません。またそれは @acronym{MIME} の
+セパレータに余計な CR 文字を挿入するので、変なメールを送る人だと思われた
+くなければ、それを使うことを避けたいでしょう。(もっともあなた
+は @acronym{S/MIME} のメッセージを送った時点で、おそらくその変人コンテス
+トでの勝利を逃してしまいましたが。)
 
 暗号化されたメールを送るために個人の証明書は要りません。もっとも Message
 (@acronym{MML}) は、通信したい相手の人の証明書を必要としますけれど。これ
@@ -1104,26 +1217,50 @@ $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 る) のであれば、パスフレーズの入力を要求されたとき、単に @kbd{RET} を押
 してください。
 
-@node Using PGP/MIME
-@subsection PGP/MIME を使う
+@node Using OpenPGP
+@subsection OpenPGP を使う
 
-@acronym{PGP/MIME} は @uref{http://www.gnupg.org/, GNU Privacy Guard} の
-ような、外部の OpenPGP の実装を必要とします。OpenPGP より以前の実装であ
+OpenPGP を使うには @uref{https://www.gnupg.org/, GNU Privacy Guard} のよ
+うな外部のソフトウェアが必要です。OpenPGP より以前の実装であ
 る PGP 2.x と PGP 5.x もサポートします。ディフォルトの PGP への Emacs イ
 ンターフェースは EasyPG (@pxref{Top,,EasyPG Assistant User's Manual,
 epa-ja, EasyPG Assistant User's Manual}) ですが、PGG (@pxref{Top, ,PGG,
 pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
 @xref{PGP Compatibility}.
 
-@cindex gpg-agent
-Message はデータを暗号化するために内部的に GnuPG (@command{gpg} コマン
-ド) を呼びます。また、ある場合 (例えば暗号の解読や署名を行なう場合) には、
-@command{gpg} はユーザーのパスフレーズを要求します。現
-在 @command{gpg} にパスフレーズを渡す方法として推奨されているのは、
-@command{gpg-agent} プログラムを使うことです。
+@c >TRANSLATEME
+As stated earlier, messages encrypted with OpenPGP can be formatted
+according to two different standards, namely @acronym{PGP} or
+@acronym{PGP/MIME}.  The variables
+@code{mml-default-encrypt-method} and
+@code{mml-default-sign-method} determine which variant to prefer,
+@acronym{PGP/MIME} by default.
 
-Emacs で @command{gpg-agent} を使うには、Emacs を起動する前にシェルで
-以下のコマンドを走らせる必要があります。
+@node Passphrase caching
+@subsection Passphrase caching
+@c <TRANSLATEME
+
+@cindex gpg-agent
+EasyPG を使う場合、Message はデータを暗号化するため内部的
+に GnuPG (the @command{gpg} または @command{gpgsm} command) を呼びます。
+また、ある特定の場合 (例えば暗号の解読や署名を行なう場合) に、
+@command{gpg}/@command{gpgsm} はユーザーのパスフレーズを要求します。現在
+パスフレーズを渡す方法として @command{gpg-agent} プログラムを使うことが
+推奨されています。
+
+@c >TRANSLATEME
+@c DEL Emacs で @command{gpg-agent} を使うには、Emacs を起動する前にシェルで
+@c DEL 以下のコマンドを走らせる必要があります。
+In particular, the @command{gpg-agent} program supports passphrase
+caching so that you do not need to enter your passphrase for every
+decryption/sign operation.  @xref{Agent Options, , , gnupg, Using the
+GNU Privacy Guard}.
+
+How to use @command{gpg-agent} in Emacs depends on your version of
+GnuPG.  With GnuPG version 2.1, @command{gpg-agent} is started
+automatically if necessary.  With older versions you may need to run
+the following command from the shell before starting Emacs.
+@c <TRANSLATEME
 
 @example
 eval `gpg-agent --daemon`
@@ -1135,14 +1272,23 @@ eval `gpg-agent --daemon`
 は @file{.bash_profile} に書き込むのは良い考えでしょう。@xref{Invoking
 GPG-AGENT, , , gnupg, Using the GNU Privacy Guard}.
 
-いったん @command{gpg-agent} が立ち上がると、それは @command{gpg} のため
-に必要に応じてパスフレーズを尋ねます。X ウィンドウ・システムでは、パスフ
-レーズを入力するための対話手段が新たに出現します。その対話手段は PIN
-Entry (@command{pinentry} コマンド) によって提供されますが、バージョ
-ン 0.7.2 のものは単一の tty 上の Emacs とは協調して動作することができま
-せん。したがって、もし文字コンソールを使っているのであれば、パスフレーズ
-を gpg-agent のキャッシュに前もって入れておかなければならないでしょう。
-以下のコマンドを、そのために使うことができます。
+@c >TRANSLATEME
+@c DEL いったん @command{gpg-agent} が立ち上がると、それは @command{gpg} のため
+@c DEL に必要に応じてパスフレーズを尋ねます。X ウィンドウ・システムでは、パスフ
+@c DEL レーズを入力するための対話手段が新たに出現します。その対話手段は PIN
+@c DEL Entry (@command{pinentry} コマンド) によって提供されますが、バージョ
+@c DEL ン 0.7.2 のものは単一の tty 上の Emacs とは協調して動作することができま
+@c DEL せん。したがって、もし文字コンソールを使っているのであれば、パスフレーズ
+@c DEL を gpg-agent のキャッシュに前もって入れておかなければならないでしょう。
+@c DEL 以下のコマンドを、そのために使うことができます。
+Once your @command{gpg-agent} is set up, it will ask you for a
+passphrase as needed for @command{gpg}.  Under the X Window System,
+you will see a new passphrase input dialog appear.  The dialog is
+provided by PIN Entry (the @command{pinentry} command), reasonably
+recent versions of which can also cooperate with Emacs on a text
+console.  If that does not work, you may need to put a passphrase into
+gpg-agent's cache beforehand.  The following command does the trick.
+@c <TRANSLATEME
 
 @example
 gpg --use-agent --sign < /dev/null > /dev/null
@@ -1184,6 +1330,39 @@ gpg --use-agent --sign < /dev/null > /dev/null
 
 (その問題に関するさらなる情報については、
 @uref{http://www.gnupg.org/gph/en/pgp2x.html} を参照してください。)
+
+@c >TRANSLATEME
+@node Encrypt-to-self
+@subsection Encrypt-to-self
+
+By default, messages are encrypted to all recipients (@code{To},
+@code{Cc}, @code{Bcc} headers).  Thus, you will not be able to decrypt
+your own messages.  To make sure that messages are also encrypted to
+your own key(s), several alternative solutions exist:
+@enumerate
+@item
+Use the @code{encrypt-to} option in the file @file{gpg.conf} (for
+OpenPGP) or @file{gpgsm.conf} (for @acronym{S/MIME} with EasyPG).
+@xref{Invoking GPG, , , gnupg, Using the GNU Privacy Guard}, or
+@xref{Invoking GPGSM, , , gnupg, Using the GNU Privacy Guard}.
+@item
+Include your own e-mail address (for which you created a key-pair)
+among the recipients.
+@item
+Customize the variable @code{mml-secure-openpgp-encrypt-to-self} (for
+OpenPGP) or @code{mml-secure-smime-encrypt-to-self} (for
+@acronym{S/MIME} with EasyPG).
+@end enumerate
+
+@node Bcc Warning
+@subsection Bcc Warning
+
+The @code{Bcc} header is meant to hide recipients of messages.
+However, when encrypted messages are used, the e-mail addresses of all
+@code{Bcc}-headers are given away to all recipients without
+warning, which is a bug, see
+@uref{https://debbugs.gnu.org/cgi/bugreport.cgi?bug=18718}.
+@c <TRANSLATEME
 
 @node Various Commands
 @section いろいろな命令
