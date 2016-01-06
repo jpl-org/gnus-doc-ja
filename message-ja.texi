@@ -936,42 +936,36 @@ Libidn} をインストールしておかなければなりません。
 @cindex encrypt
 @cindex secure
 
+電子メールはディフォルトでは何の保護もなしにインターネット中を駆け巡りま
+すが、それは様々なたくさんの人々が読んだり改変できることを示唆しています。
+とりわけ大量監視社会の下でそれらは解析され、基本的人権を侵害します。それ
+らの権利を守るためには (法改正に加えて) ディジタルな自己防衛が必須であり、
+暗号化とディジタル署名は自己防衛のための有効な手段になるでしょう。本質的
+には、暗号化は意図された受取人だけがメッセージを読むことができることを保
+証します。一方ディジタルな署名は、メッセージに対する改変を受取人が検知で
+きることを確実にします。
+
+現在は電子メールを暗号化するための互換性がない 2つの主要な標準があります。
+すなわち @acronym{OpenPGP} と @acronym{S/MIME} です。これらの標準は両方
+とも @uref{https://www.gnupg.org/, GNU Privacy Guard (GnuPG)} で実装され
+ていて、GNU Emacs に付け加える外部ソフトウェアとしてインストールする必要
+があります。暗号化、復号、およびメッセージへの署名を始める前に、秘密鍵と
+公開鍵で構成される、いわゆる鍵のペアを作っておかなければなりません。あな
+たの @emph{公開} 鍵 (またの名を、特に @acronym{S/MIME} で
+は @emph{証明書} と呼ぶ) は、(a) 他の人があなた宛てのメッセージを暗号化
+するため、および (b) あなたが作成したディジタルな署名を検証するため、に
+使います。対照的に @emph{秘密} 鍵は (a) メッセージを復号するため、およ
+び (b) メッセージに署名するため、に使います。(あなたの公開鍵は他の人がメッ
+セージを預け入れてドアを閉めることができるようにあなたが提供する開いた金
+庫、一方あなたの秘密鍵は金庫を開けるためのダイアルの数字の組合せに相当す
+ると見なすのが良いかもしれません。)
+
+そういうわけで、電子メールを暗号化するには一般には Emacs の外で以下の手
+順を踏む必要があります。@acronym{GnuPG} による @acronym{OpenPGP} の標準
+を含めて詳細を知るには、たとえ
+ば @uref{https://www.gnupg.org/gph/en/manual.html, The GNU Privacy
+Handbook} を参照してください。
 @c >TRANSLATEME
-@c DEL @acronym{MML} 言語を使うことによって、Message は電子署名された、または電
-@c DEL 子暗号化されたメッセージを作ることができます。Message (と言う
-@c DEL か @acronym{MML}) は、現在 @acronym{PGP} (RFC 1991), @acronym{PGP/MIME}
-@c DEL (RFC 2015/3156) および @acronym{S/MIME} をサポートしています。
-By default, e-mails are transmitted without any protection around the
-Internet, which implies that they can be read and changed by lots of
-different parties.  In particular, they are analyzed under bulk
-surveillance, which violates basic human rights.  To defend those
-rights, digital self-defense is necessary (in addition to legal
-changes), and encryption and digital signatures are powerful
-techniques for self-defense.  In essence, encryption ensures that
-only the intended recipient will be able to read a message, while
-digital signatures make sure that modifications to messages can be
-detected by the recipient.
-
-Nowadays, there are two major incompatible e-mail encryption
-standards, namely @acronym{OpenPGP} and @acronym{S/MIME}.  Both of
-these standards are implemented by the @uref{https://www.gnupg.org/,
-GNU Privacy Guard (GnuPG)}, which needs to be installed as external
-software in addition to GNU Emacs.  Before you can start to encrypt,
-decrypt, and sign messages, you need to create a so-called key-pair,
-which consists of a private key and a public key.  Your @emph{public} key
-(also known as @emph{certificate}, in particular with @acronym{S/MIME}), is
-used by others (a) to encrypt messages intended for you and (b) to verify
-digital signatures created by you.  In contrast, you use your @emph{private}
-key (a) to decrypt messages and (b) to sign messages.  (You may want to
-think of your public key as an open safe that you offer to others such
-that they can deposit messages and lock the door, while your private
-key corresponds to the opening combination for the safe.)
-
-Thus, you need to perform the following steps for e-mail encryption,
-typically outside Emacs.  See, for example, the
-@uref{https://www.gnupg.org/gph/en/manual.html, The GNU Privacy
-Handbook} for details covering the standard @acronym{OpenPGP} with
-@acronym{GnuPG}.
 @enumerate
 @item
 Install GnuPG.
