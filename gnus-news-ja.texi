@@ -383,7 +383,4 @@ Mail}.
 @c Local Variables:
 @c coding: iso-2022-7bit
 @c fill-column: 72
-@c mode: texinfo
-@c use-kuten-for-period: t
-@c use-touten-for-comma: t
 @c End:
