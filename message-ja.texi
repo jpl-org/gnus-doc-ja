@@ -1101,48 +1101,42 @@ GnuPG をインストール
 @node Using S/MIME
 @subsection S/MIME を使う
 
-@c >TRANSLATEME
-@c DEL @emph{注意!}  この章は近代的な暗号法、@acronym{S/MIME}、さまざま
-@c DEL な PKCS の標準、OpenSSL などの基礎に、あなたが精通していることを想定して
-@c DEL います。
-@acronym{S/MIME} requires an external implementation, such as
-@uref{https://www.gnupg.org/, GNU Privacy Guard} or
-@uref{https://www.openssl.org/, OpenSSL}.  The default Emacs interface
-to the S/MIME implementation is EasyPG (@pxref{Top,,EasyPG Assistant
-User's Manual, epa, EasyPG Assistant User's Manual}), which has been
-included in Emacs since version 23 and which relies on the command
-line tool @command{gpgsm} provided by @acronym{GnuPG}.  That tool
-implements certificate management, including certificate revocation
-and expiry, while such tasks need to be performed manually, if OpenSSL
-is used.
+@acronym{S/MIME} は @uref{https://www.gnupg.org/, GNU Privacy Guard} ま
+たは @uref{https://www.openssl.org/, OpenSSL} のような外部の実装を必要と
+します。@acronym{S/MIME} の実装へのディフォルトの Emacs インターフェース
+は EasyPG (@pxref{Top,,EasyPG Assistant User's Manual, epa-ja, EasyPG
+Assistant User's Manual}) す。それは Emacs 23 以降で含まれており、
+@acronym{GnuPG} が提供するコマンドライン・ツール @command{gpgsm} に依拠
+します。そのツールは証明書の管理 (取消しと期限切れ消去を含む) を行なう手
+段を提供します。ただし OpenSSL を使う場合、そのような操作は手動で行なわ
+なければなりません。
 
-The choice between EasyPG and OpenSSL is controlled by the variable
-@code{mml-smime-use}, which needs to be set to the value @code{epg}
-for EasyPG.  Depending on your version of Emacs that value may be the
-default; if not, you can either customize that variable or place the
-following line in your @file{.emacs} file (that line needs to be
-placed above other code related to message/gnus/encryption):
+EasyPG と OpenSSL の選択は変数 @code{mml-smime-use} で制御し、EasyPG を
+使うときは値を @code{epg} に設定する必要があります。Emacs のバージョンに
+よってはその値がディフォルトになりますが、もしそうなっていなければ変数の
+値をカスタマイズするか、または @file{.emacs} ファイルに以下の行を置いて
+ください (message/gnus/encryption に関する他のコードより前に置いておかな
+けばなりません)。
 
 @lisp
 (require 'epg)
 @end lisp
 
-Moreover, you may want to customize the variables
-@code{mml-default-encrypt-method} and
-@code{mml-default-sign-method} to the string @code{"smime"}.
+さらに変数 @code{mml-default-encrypt-method} およ
+び @code{mml-default-sign-method} を文字列 @code{"smime"} にカスタマイズ
+する必要があるでしょう。
 
-That's all if you want to use S/MIME with EasyPG, and that's the
-recommended way of using S/MIME with Message.
+以上が EasyPG で S/MIME を使いたい場合に行なうことのすべてで、Message で
+S/MIME を使う場合の推奨方法でもあります。
 
-If you think about using OpenSSL instead of EasyPG, please read the
-BUGS section in the manual for the @command{smime} command coming with
-OpenSSL first.  If you still want to use OpenSSL, the following
-applies.
+もし EasyPG の代わりに OpenSSL を使うことを考えているのなら、まず
+は OpenSSL と一緒に付いてくる @command{smime} コマンドのマニュアルにある
+BUG の項を読んでみてください。それでもなお OpenSSL を使いたいのであれば
+以下が適用されます。
 
-@emph{Note!}  The remainder of this section assumes you have a basic
-familiarity with modern cryptography, @acronym{S/MIME}, various PKCS
-standards, OpenSSL and so on.
-@c <TRANSLATEME
+@emph{注意!} この章の残りの部分は近代的な暗号法、@acronym{S/MIME}、さま
+ざまな PKCS の標準、OpenSSL などの基礎に、あなたが精通していることを想定
+しています。
 
 Message (それに @acronym{MML}) で @acronym{S/MIME} をサポートするため
 に OpenSSL を使うことができます。OpenSSL は実際の @acronym{S/MIME} によ
