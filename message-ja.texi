@@ -984,7 +984,7 @@ GnuPG をインストール
 は @acronym{PGP} (Pretty Good Privacy) とも呼ばれます。
 @acronym{GnuPG} が @acronym{OpenPGP} のために提供するコマンドライン・ツー
 ルは @command{gpg} と @command{gpg2} です。一方 @acronym{S/MIME} のため
-のそれは @command{gpgsm} です。代わりになるがあまり推奨できな
+のそれは @command{gpgsm} です。代わりになるけれどもあまり推奨できな
 い @acronym{S/MIME} のためのツールは @command{openssl} です。困ったこと
 に電子メールは 2つの異なる方法で生成されます; @acronym{OpenPGP}、つま
 り @acronym{PGP} (RFC 1991/4880)、およ
