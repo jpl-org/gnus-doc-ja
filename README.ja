@@ -1,4 +1,5 @@
-Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BMa Gnus v0.14 $B$KBP1~$7$^$9!#(B
+Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BEmacs 25.1 $B$KIUB0$9$k(B Gnus v5.13 $B$K(B
+$BBP1~$7$^$9!#(B
 
 $B%$%s%9%H!<%k(B
 ============
@@ -15,7 +16,7 @@ Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BMa Gnus v0.14 $B$KBP1~$7$^$9!#(
 $BL>$K$9$k$3$H$O$G$-$^$;$s!#$"$i$+$8$a(B PATH $B4D6-JQ?t$r@_Dj$7$F$/$@$5$$!#(B
 $BNc$G$9(B:
 
-% ./configure --with-emacs=emacs-24.5 --infodir=/usr/local/info
+% ./configure --with-emacs=emacs-25.1 --infodir=/usr/local/info
 
 Gnus $B$N%P%C%U%!!<$G(B `C-c C-i' $B$r%?%$%W$9$k$+(B message $B%P%C%U%!!<$G(B
 `M-x message-info' $B$r%?%$%W$7$?$H$-$KF|K\8lHG$N(B Info $B%^%K%e%"%k$rFI$_(B
@@ -42,21 +43,18 @@ Gnus $B$N%P%C%U%!!<$G(B `C-c C-i' $B$r%?%$%W$9$k$+(B message $B%P%C%U%!!<$G
 
 Gnus $B$NHG(B
 =========
-Emacs $B$K4^$^$l$F$$$k$b$N$G$O$J$/!"(BGnus $B%?%o!<$+$i%j%j!<%9$5$l$kHG$KBP(B
-$B1~$7$^$9!#F1;~4|$KJ#?t$N(B Gnus $B$NHG$,%j%j!<%9$5$l$k>l9g$O!"$h$j3+H/?'$N(B
-$B6/$$HG$,BP>]$K$J$k$G$7$g$&!#(B
+Emacs $B$NG[I[$K4^$^$l$F$$$k(B Gnus $B$NHG$KBP1~$7$^$9!#(B
 
 $B%j%j!<%9$5$l$?F|K\8l%^%K%e%"%k$N<hF@>l=j(B
 ========================================
 http://www.jpl.org/gnus-doc-ja.html
-$B$^$?$O(B ftp://ftp.jpl.org/pub/gnus-doc-ja/
 
-$B%j%j!<%9$5$l$?(B Gnus $B$N(B tarball $B$G$"$k(B xgnus-m.n.tar.gz $B$KBP1~$9$k(B Info
-$B%^%K%e%"%k$NF|K\8lHG$N(B tarball $B$O(B xgnus-m.n-doc-ja.tar.gz $B$G$9!#(B
+Emacs vR.S $B$KIUB0$9$k(B Gnus vP.Q $B$KBP1~$9$k(B tarball $B$O(B
+gnus-P.Q@R.S-doc.ja.tar.gz $B$G$9!#(B
 
 $B0u:~(B
 ====
-PDF $B$d(B PS $B%U%!%$%k$r:n$k$3$H$,$G$-$^$9!#$?$@$7(B dvipdfmx, jbibtex,
+PDF $B$d(B PS $B%U%!%$%k$r:n$k$3$H$,$G$-$^$9!#$?$@$7(B dvipdfmx, pbibtex,
 pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
 $B$$$J$1$l$P$J$j$^$;$s!#(Bconfigure $B$r9T$J$C$?8e$G!"0J2<$r<B9T$7$F$/$@$5$$!#(B
 
@@ -73,15 +71,15 @@ pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
 $B<!$N$h$&$K$7$F!"K]Lu:n6HCf$N%^%K%e%"%k$r<hF@$9$k$3$H$,$G$-$^$9!#(B
 
 ($B=i2s(B)
-  git clone http://git.gnus.org/gnus-doc-ja.git
+  git clone https://github.com/jpl-org/gnus-doc-ja.git
 ($B<!$+$i(B)
   cd gnus-doc-ja/
   git pull origin master
 
 $BK]Lu:n6H$X$N;22C(B
 ================
-$B$I$J$?$G$b4?7^$7$^$9!#:n6H$r9T$J$C$F$$$k>l=j$O(B git.gnus.org$B!"%j%]%8%H(B
-$B%j$NL>A0$O(B gnus-doc-ja $B$G$9!#(B
+$B$I$J$?$G$b4?7^$7$^$9!#:n6H$r9T$J$C$F$$$k>l=j$O(B
+https://github.com/jpl-org$B!"%j%]%8%H%j$NL>A0$O(B gnus-doc-ja $B$G$9!#(B
 
 $B!vCm0U!v(B
 $BMQ8l$dOB1Q:.:_J8$NJ,$+$A=q$-$J$I$K4X$7$F!"B?$/$N0EL[$NN.57$,$"$j$^$9!#(B
@@ -92,72 +90,3 @@ pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
 ========
 semi-gnus-ja $B%a!<%j%s%0%j%9%H(B ($BF|K\8l$N$_(B) $B$^$?$O(B ding $B%a!<%j%s%0%j%9(B
 $B%H$r;H$C$F$/$@$5$$!#(B
-
-
-Gnus $B$KIUB0$7$F$$$k(B README $B%U%!%$%k$NA4Lu(B
-=========================================
-* $BFbMF(B
-
-$B$3$N%Q%C%1!<%8$K$O3+H/HG$N(B Gnus $B$,F~$C$F$$$^$9!#(Blisp $B%G%#%l%/%H%j!<$K(B
-$B$O(B lisp $B%U%!%$%k$N%=!<%9$,$"$j!"(Btexi $B%G%#%l%/%H%j!<$K$O(B Gnus $B$N(B info
-$B$N%Z!<%8$,$"$j$^$9!#(B
-
-* Emacsen
-
-No Gnus $B$O(B Emacs 21 $B$+(B XEmacs 21.4 $B$h$j8E$$$b$N$G$OA4A3F0$-$^$;$s!#(B
-
-Emacs $B$N3+H/HG(B (Emacs 23) $B$N%f!<%6!<$K$O!"(BEmaacs $B$KIUB0$7$F$$$kHG$N$b(B
-$B$N$r;H$&$3$H$r6/$/>)Ne$7$^$9!#(B
-
-* $B%;%C%H%"%C%W(B
-
-Gnus $B$r;H$&$K$O!"$^$:3+:-$7$F%U%!%$%k$r<h$j=P$7$F$/$@$5$$!#$3$l$rFI$s(B
-$B$G$$$k$N$G$9$+$i!"$"$J$?$,$=$l$r9T$J$C$?$N$OL@$i$+$G$9$M!#(B
-
-$B%=!<%9%U%!%$%k$O@dBP$K%P%$%H%3%s%Q%$%k$9$k$Y$-$G$9!#$=$l$K$O!"$3$N%G%#(B
-$B%l%/%H%j!<$GC1$K(B "./configure && make" $B$r<B9T$9$l$PNI$$$G$9!#(B
-
-"make install" $B$r9T$J$C$F$O$$$1$^$;$s!#7+$jJV$7$^$9!#(B"make install" $B$r(B
-$B9T$J$C$F$O(B $B!v$$$1$^$;$s!v!#(B"make install" $B$r9T$J$C$F$+$i!VF0$+$J$$!W$H(B
-$B6l>p$r8@$o$l$k$H!";d$O$H$F$b:$$C$F$7$^$$$^$9!#(B"make install" $B$r9T$J$C(B
-$B$F6vA3$KF0$$$F$7$^$C$?$i!"$=$l$O$H$F$b7k9=$GAGE($G$9$,!"$^$C$?$/$"$j$=(B
-$B$&$b$J$$$3$H$G$9!#(B
-
-XEmacs $B$r;H$C$F$$$k>l9g$O!"!vI,$:!v(B "./configure && make EMACS=xemacs"
-$B$r<B9T$7$F$/$@$5$$!#(B
-
-$B<!$K!"$I$3$K(B Gnus $B$,$"$k$+$r(B Emacs $B$KEA$($kI,MW$,$"$j$^$9!#$=$l$K$O0J(B
-$B2<$N$h$&$J$b$N$r(B .emacs $B%U%!%$%k$+!"$^$?$O$=$&$$$&$b$N$r<}$a$F$*$/>l=j(B
-$B$K=q$-9~$a$PNI$$$G$7$g$&!#(B
-
-   (setq load-path (cons (expand-file-name "~/ngnus-0.11/lisp") load-path))
-   (require 'gnus-load)
-
-Gnus $B$N%^%K%e%"%k$rFI$a$k$h$&$K$9$k$K$O!"$3$N$h$&$J$b$N$r;H$C$F$/$@$5(B
-$B$$!#(B
-
-  (require 'info)
-  (if (featurep 'xemacs)
-      (add-to-list 'Info-directory-list "~/ngnus-0.11/texi/")
-    (add-to-list 'Info-default-directory-list "~/ngnus-0.11/texi/"))
-
-Gnus $B$N%^%K%e%"%k$r%3%s%Q%$%k$9$k$K$O!"$+$J$j?7$7$$(B Emacs $B$+$H$F$b?7$7(B
-$B$$HG$N(B texinfo $B%D!<%k$,I,MW$G$9!#(B
-
-$B$=$&$7$F(B `M-x gnus' $B$r$9$l$P!"$9$Y$F$,$&$^$/!D(B $B$&!<$`!D(B $B9T$/$O$:$J$s$G(B
-$B$9$,!"$b$7$+$7$?$i$@$a$+$b$7$l$^$;$s!#(B`debug-on-error' $B$r(B t $B$K@_Dj$7$F(B
-$B%P%C%/%H%l!<%9$r;d$K%a!<%k$7$F$/$@$5$$!#$"$k$$$O!"(BGnus $B$,$J$<@5$7$/F0(B
-$B:n$7$J$$$+$rD4$Y$F!"$=$l$rD>$7$F!"(Bdiff $B$r;d$KAw$kJ}$,MZ$+$KNI$$$G$9!#(B:-)
-
-$B;d$,$"$J$?$K<jEA$C$FM_$7$$$3$H$H=q$$$FM_$7$$$3$H$O!"<g$K<!$N;M$D$G$9(B:
-
-1) $B5/F0$9$k$H$-$K$9$Y$F$,3j$i$+$K9T$-$^$9$+(B? $B$^$?$O$J$<$@$a$G$9$+(B?
-
-2) $BIaDL$K%K%e!<%9$rFI$s$G$$$k$H$-$K!"$I$s$J%(%i!<$,5/$-$^$9$+(B?
-
-3) $BIaDL$O$7$J$$$3$H$G$b!"$=$l$r$9$k$H$I$s$J%(%i!<$,5/$-$^$9$+(B?
-
-4) $B7y$$$J5!G=!"9%$-$@$1$l$I$b>/$7$R$M$j$?$$$b$N!"$=$7$FM_$7$$5!G=!#(B
-
-$B$I$s$JHcI>$b!"%P%0$N=$@5$^$?$O6l>p$b!"$9$Y$F(B `bugs@gnus.org' $B$KAw$C$F(B
-$B$/$@$5$$!#(B
