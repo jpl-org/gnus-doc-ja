@@ -950,7 +950,7 @@ Libidn} をインストールしておかなければなりません。
 は両方とも @uref{https://www.gnupg.org/, GNU Privacy Guard (GnuPG)} で実
 装されていて、GNU Emacs に付け加える外部ソフトウェアとしてインストールす
 る必要があります。暗号化、解読、およびメッセージへの署名を始める前に、秘
-密鍵と公開鍵で構成される、いわゆる鍵のペアを作っておかなければなりません。
+密鍵と公開鍵で構成される、いわゆる鍵の対を作っておかなければなりません。
 あなたの @emph{公開} 鍵 (またの名を、特に @acronym{S/MIME} で
 は @emph{証明書} と呼ぶ) は、(a) 他の人があなた宛てのメッセージを暗号化
 するため、および (b) あなたが作成したディジタルな署名を検証するため、に
@@ -969,7 +969,7 @@ Handbook} を参照してください。
 @item
 GnuPG をインストール
 @item
-あなたのメールアドレスのための鍵のペアを作成
+あなたのメールアドレスのための鍵の対を作成
 @item
 公開鍵を公開 (たとえばキーサーバー経由で)
 @item
@@ -1296,29 +1296,30 @@ gpg --use-agent --sign < /dev/null > /dev/null
 (その問題に関するさらなる情報については、
 @uref{http://www.gnupg.org/gph/en/pgp2x.html} を参照してください。)
 
-@c >TRANSLATEME
 @node Encrypt-to-self
-@subsection Encrypt-to-self
+@subsection 自分が作った暗号化メッセージを読む
 
-By default, messages are encrypted to all recipients (@code{To},
-@code{Cc}, @code{Bcc} headers).  Thus, you will not be able to decrypt
-your own messages.  To make sure that messages are also encrypted to
-your own key(s), several alternative solutions exist:
+ディフォルトではメッセージはすべての受取人 (@code{To}, @code{Cc},
+@code{Bcc} ヘッダー) に宛てて暗号化されます。ということは、あなたはあな
+た自身のメッセージを解読できないのです。あなた自身の鍵に宛てても必ず暗号
+化するためには、いくつかのとりうる解があります:
 @enumerate
 @item
-Use the @code{encrypt-to} option in the file @file{gpg.conf} (for
-OpenPGP) or @file{gpgsm.conf} (for @acronym{S/MIME} with EasyPG).
-@xref{Invoking GPG, , , gnupg, Using the GNU Privacy Guard}, or
-@xref{Invoking GPGSM, , , gnupg, Using the GNU Privacy Guard}.
+@file{gpg.conf} ファイル (OpenPGP 用) または @file{gpgsm.conf} ファイ
+ル (EasyPG で @acronym{S/MIME} を使う場合用) で @code{encrypt-to} オプショ
+ンを使います。
+@xref{Invoking GPG, , , gnupg, Using the GNU Privacy Guard}, また
+は @xref{Invoking GPGSM, , , gnupg, Using the GNU Privacy Guard}。
 @item
-Include your own e-mail address (for which you created a key-pair)
-among the recipients.
+受取人の中にあなた自身の電子メールアドレス (作成した鍵の対が対象の) を含
+める。
 @item
-Customize the variable @code{mml-secure-openpgp-encrypt-to-self} (for
-OpenPGP) or @code{mml-secure-smime-encrypt-to-self} (for
-@acronym{S/MIME} with EasyPG).
+変数 @code{mml-secure-openpgp-encrypt-to-self} (OpenPGP 用) また
+は @code{mml-secure-smime-encrypt-to-self}
+(EasyPG で @acronym{S/MIME} を使う場合用) をカスタマイズする。
 @end enumerate
 
+@c >TRANSLATEME
 @node Bcc Warning
 @subsection Bcc Warning
 
@@ -2146,7 +2147,7 @@ node) として使います。文字列だったら、その文字列を使います。それが文字列
 で決定します。
 
 値は @code{nil} (どの変数も覆しません) またはディフォルト値を覆すため
-の @code{(VARIABLE VALUE)} というペアの let 型リストのどちらかです。
+の @code{(VARIABLE VALUE)} という対の let 型リストのどちらかです。
 
 特定のグループのためにこの変数を設定するに
 は @code{gnus-posting-styles} を参照してください。よく使われているいろい
