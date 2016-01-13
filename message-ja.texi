@@ -1226,19 +1226,15 @@ EasyPG を使う場合、Message はデータを暗号化するため内部的
 パスフレーズを渡す方法として @command{gpg-agent} プログラムを使うことが
 推奨されています。
 
-@c >TRANSLATEME
-@c DEL Emacs で @command{gpg-agent} を使うには、Emacs を起動する前にシェルで
-@c DEL 以下のコマンドを走らせる必要があります。
-In particular, the @command{gpg-agent} program supports passphrase
-caching so that you do not need to enter your passphrase for every
-decryption/sign operation.  @xref{Agent Options, , , gnupg, Using the
-GNU Privacy Guard}.
+特に @command{gpg-agent} プログラムはパスフレーズのキャッシュをサポート
+してくれるので、すべての解読/署名の操作でパスフレーズを入力する必要はあ
+りません。@xref{Agent Options, , , gnupg, Using the GNU Privacy Guard}.
 
-How to use @command{gpg-agent} in Emacs depends on your version of
-GnuPG.  With GnuPG version 2.1, @command{gpg-agent} is started
-automatically if necessary.  With older versions you may need to run
-the following command from the shell before starting Emacs.
-@c <TRANSLATEME
+では Emacs の中で @command{gpg-agent} を GnuPG のバージョンによって使い
+分けるにはどうすればよいでしょうか。GnuPG バージョン 2.1 では、もし必要
+なら自動で @command{gpg-agent} が起動します。古いバージョンで
+は Emacs を起動する前にシェルから以下のコマンドを走らせる必要があるでしょ
+う。
 
 @example
 eval `gpg-agent --daemon`
@@ -1250,23 +1246,14 @@ eval `gpg-agent --daemon`
 は @file{.bash_profile} に書き込むのは良い考えでしょう。@xref{Invoking
 GPG-AGENT, , , gnupg, Using the GNU Privacy Guard}.
 
-@c >TRANSLATEME
-@c DEL いったん @command{gpg-agent} が立ち上がると、それは @command{gpg} のため
-@c DEL に必要に応じてパスフレーズを尋ねます。X ウィンドウ・システムでは、パスフ
-@c DEL レーズを入力するための対話手段が新たに出現します。その対話手段は PIN
-@c DEL Entry (@command{pinentry} コマンド) によって提供されますが、バージョ
-@c DEL ン 0.7.2 のものは単一の tty 上の Emacs とは協調して動作することができま
-@c DEL せん。したがって、もし文字コンソールを使っているのであれば、パスフレーズ
-@c DEL を gpg-agent のキャッシュに前もって入れておかなければならないでしょう。
-@c DEL 以下のコマンドを、そのために使うことができます。
-Once your @command{gpg-agent} is set up, it will ask you for a
-passphrase as needed for @command{gpg}.  Under the X Window System,
-you will see a new passphrase input dialog appear.  The dialog is
-provided by PIN Entry (the @command{pinentry} command), reasonably
-recent versions of which can also cooperate with Emacs on a text
-console.  If that does not work, you may need to put a passphrase into
-gpg-agent's cache beforehand.  The following command does the trick.
-@c <TRANSLATEME
+いったん @command{gpg-agent} が立ち上がると、それは @command{gpg} のため
+に必要に応じてパスフレーズを尋ねます。X ウィンドウ・システムでは、パスフ
+レーズを入力するために新たな対話手段が出現します。その対話手段は PIN
+Entry (@command{pinentry} コマンド) によって提供され、その最近のバージョ
+ンはテキスト・コンソール上の Emacs とともに動作することもできます。もし
+うまきいかないときは、パスフレーズを gpg-agent のキャッシュに前もって入
+れておかなければならないでしょう。以下のコマンドを、そのために使うことが
+できます。
 
 @example
 gpg --use-agent --sign < /dev/null > /dev/null
