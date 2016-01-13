@@ -1209,17 +1209,14 @@ epa-ja, EasyPG Assistant User's Manual}) ですが、PGG (@pxref{Top, ,PGG,
 pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
 @xref{PGP Compatibility}.
 
-@c >TRANSLATEME
-As stated earlier, messages encrypted with OpenPGP can be formatted
-according to two different standards, namely @acronym{PGP} or
-@acronym{PGP/MIME}.  The variables
-@code{mml-default-encrypt-method} and
-@code{mml-default-sign-method} determine which variant to prefer,
-@acronym{PGP/MIME} by default.
+前に述べたように OpenPGP で暗号化されるメッセージは 2つの異なる標準、つ
+まり @acronym{PGP} または @acronym{PGP/MIME} でフォーマットすることがで
+きます。変数 @code{mml-default-encrypt-method} およ
+び @code{mml-default-sign-method} でどの種類を使うかを決定し、
+@acronym{PGP/MIME} がデフィフォルトです。
 
 @node Passphrase caching
-@subsection Passphrase caching
-@c <TRANSLATEME
+@subsection パスフレーズをキャッシュする
 
 @cindex gpg-agent
 EasyPG を使う場合、Message はデータを暗号化するため内部的
