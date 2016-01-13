@@ -1319,16 +1319,15 @@ gpg --use-agent --sign < /dev/null > /dev/null
 (EasyPG で @acronym{S/MIME} を使う場合用) をカスタマイズする。
 @end enumerate
 
-@c >TRANSLATEME
 @node Bcc Warning
-@subsection Bcc Warning
+@subsection Bcc があるとき暗号を使ってはだめ
 
-The @code{Bcc} header is meant to hide recipients of messages.
-However, when encrypted messages are used, the e-mail addresses of all
-@code{Bcc}-headers are given away to all recipients without
-warning, which is a bug, see
-@uref{https://debbugs.gnu.org/cgi/bugreport.cgi?bug=18718}.
-@c <TRANSLATEME
+@code{Bcc} ヘッダーはメッセージの受取人を隠すためのものです。しかし、も
+しメッセージが暗号化されると、@code{Bcc} ヘッダーにあるすべての電子メー
+ルアドレスは、すべての受取人に対して警告なしに明かされてしまいます。これ
+はバグです。
+@uref{https://debbugs.gnu.org/cgi/bugreport.cgi?bug=18718} を見てくださ
+い。(訳注: Emacs 25.1 で解決しています。)
 
 @node Various Commands
 @section いろいろな命令
