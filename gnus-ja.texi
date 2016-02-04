@@ -14062,7 +14062,7 @@ Mail})。ただし @code{default} というシンボルである場合は例外で、
 @example
 (nnimap "imap.example.com"
         (nnimap-inbox "INBOX")
-        (nnimap-split-methods
+        (nnimap-split-fancy
          (| ("MailScanner-SpamCheck" "spam" "spam.detected")
             (to "foo@@bar.com" "foo")
             "undecided")))
