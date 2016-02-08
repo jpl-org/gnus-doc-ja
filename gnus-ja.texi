@@ -4935,8 +4935,9 @@ Gnus は変数 @code{gnus-extract-address-components} の値を @code{From
 @vindex gnus-ignored-from-addresses
 @code{gnus-ignored-from-addresses} 変数はいつ @samp{%f} 概略行仕様
 が @code{To}, @code{Newsreader} や @code{From} ヘッダーを返せば良いかを
-決めます。この正規表現が @code{From} ヘッダーの内容と合致すると、
-@code{To} や @code{Newsreader} ヘッダーの値が代わりに使用されます。
+決めます。この変数は正規表現、または判断するための関数です。もしこれ
+が @code{From} ヘッダーの内容に合致すると、
+@code{To} や @code{Newsreader} ヘッダーの値が代わりに使われます。
 
 それらの @code{From} フィールドが入れ替わっている記事と、普通の記事を区
 別するために、概略行の @code{To} または @code{Newsgroups} ヘッダーに、あ
