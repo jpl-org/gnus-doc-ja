@@ -446,7 +446,7 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 Customization}) $B$,(B @code{shr} $B$^$?$O(B @code{w3m} $B$G$"$k>l9g$KI=<($5$l(B
 $B$?(B @acronym{HTML} $B5-;v$N2hA|$KBP$7$FM-8z$G$9!#(BGnus $B$G(B
 $B$O(B @code{gnus-inhibit-images} $B$NCM$G>e=q$-$5$l$^$9(B (@pxref{Misc Article,
-,Misc Article, gnus-ja, Gnus manual})$B!#(B
+,Misc Article, gnus-ja, Gnus manual})$B!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#(B
 
 @item mm-html-blocked-images
 @vindex mm-html-blocked-images
@@ -462,7 +462,8 @@ Customization}) $B$,(B @code{shr} $B$^$?$O(B @code{w3m} $B$G$"$k>l9g$KI=<($
 Customization}) $B$,(B @code{shr} $B$G$"$k>l9g$KM-8z$G$9!#(BGnus $B$G(B
 $B$O(B @code{gnus-blocked-images} $B$NCM$+!"$^$?(B
 $B$O(B @code{gnus-blocked-images} $B$K@_Dj$5$l$?4X?t$NLa$jCM$G>e=q$-$5$l$^(B
-$B$9(B (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})$B!#(B
+$B$9(B (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})$B!#%G%#%U%)%k%H(B
+$B$O(B @code{nil} $B$G$9!#(B
 
 @item mm-w3m-safe-url-regexp
 @vindex mm-w3m-safe-url-regexp
