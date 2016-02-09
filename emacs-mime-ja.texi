@@ -463,7 +463,7 @@ Customization}) が @code{shr} である場合に有効です。Gnus で
 は @code{gnus-blocked-images} の値か、また
 は @code{gnus-blocked-images} に設定された関数の戻り値で上書きされま
 す (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})。ディフォルト
-は @code{nil} です。
+は @code{""} で、すべての外部画像を阻止します。
 
 @item mm-w3m-safe-url-regexp
 @vindex mm-w3m-safe-url-regexp
