@@ -438,17 +438,31 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 $B30It%S%e!<%o!<$r;H$$$^$9!#$5$i$K4X?t(B ($B0z?t$H$7$F(B @acronym{MIME} $B%O%s%I%k(B
 $B$,M?$($i$l$F8F$P$l$k(B) $B$r@_Dj$9$k$3$H$b$G$-$^$9!#(B
 
-@item mm-inline-text-html-with-images
+@item mm-html-inhibit-images
+@vindex mm-html-inhibit-images
 @vindex mm-inline-text-html-with-images
-@acronym{HTML} $B%a!<%k$K$O(B @samp{<img>} $B%?%0$r;H$C$?(B spammers (spam $B$r$P(B
-$B$i$^$/$d$+$i(B) $B$NH\Nt$J0-9*$_$,4^$^$l$F$$$k$+$b$7$l$^$;$s!#:G$b$"$j$=$&$J(B
-$B$N$O!"$"$J$?$,$=$N%a!<%k$rFI$s$@$3$H$r3NG'$9$k$?$a$N0U?^$,$"$k$3$H$G$9!#(B
-$B$3$N%*%W%7%g%s$r(B @code{nil} $B$K@_Dj$9$k(B ($B$=$l$,%G%#%U%)%k%H$G$9(B) $B$3$H$K$h$C(B
-$B$F!"$"$J$?$N8D?M>pJs$,N.=P$9$k$N$rKI$0$3$H$,$G$-$^$9!#(BEmacs-w3m $B$G$O!"$3(B
-$B$l$,(B @code{nil} $B$G$"$C$F$b!"2hA|$,Kd$a9~$^$l$?>l=j$G(B @kbd{t} $BL?Na$r;H$&(B
-$B$3$H$K$h$C$F2hA|$rI=<($9$k$3$H$,$G$-$^$9!#(B@footnote{@kbd{T} $BL?Na$O$9$Y$F(B
-$B$N2hA|$r<h$j9~$_$^$9!#(B@code{w3m-key-binding} $B%*%W%7%g%s$r(B @code{info} $B$K(B
-$B@_Dj$7$?>l9g$O!"Be$o$j$K(B @kbd{i} $B$+(B @kbd{I} $B$r;H$C$F$/$@$5$$!#(B}
+$B$b$7(B @code{nil} $B$G$J$1$l$P!"5-;v$N%\%G%#!<$G$N2hA|$N%$%s%i%$%sI=<($r6X;_(B
+$B$7$^$9!#$3$l$O(B @code{mm-text-html-renderer} (@pxref{Display
+Customization}) $B$,(B @code{shr} $B$^$?$O(B @code{gnus-w3m} $B$G$"$k>l9g$KI=<($5(B
+$B$l$?(B @acronym{HTML} $B5-;v$N2hA|$KBP$7$FM-8z$G$9!#(BGnus $B$G(B
+$B$O(B @code{gnus-inhibit-images} $B$NCM$G>e=q$-$5$l$^$9(B (@pxref{Misc Article,
+,Misc Article, gnus-ja, Gnus manual})$B!#(B
+
+@item mm-html-blocked-images
+@vindex mm-html-blocked-images
+@acronym{URL} $B$,$3$N@55,I=8=$K9gCW$9$k30It2hA|$O<hF@$bI=<($b$5$l$^$;$s!#(B
+$BNc$($P(B ``ads'' $B$H$$$&J8;zNs$r$=$l$i$NFb$K;}$D$9$Y$F$N(B @acronym{URL} $B$rAK(B
+$B;_$9$k$K$O!"0J2<$N$h$&$K$7$F$/$@$5$$(B:
+
+@lisp
+(setq mm-html-blocked-images "ads")
+@end lisp
+
+$B$3$l$O(B @code{mm-text-html-renderer} (@pxref{Display
+Customization}) $B$,(B @code{shr} $B$G$"$k>l9g$KM-8z$G$9!#(BGnus $B$G(B
+$B$O(B @code{gnus-blocked-images} $B$NCM$+!"$^$?(B
+$B$O(B @code{gnus-blocked-images} $B$K@_Dj$5$l$?4X?t$NLa$jCM$G>e=q$-$5$l$^(B
+$B$9(B (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})$B!#(B
 
 @item mm-w3m-safe-url-regexp
 @vindex mm-w3m-safe-url-regexp
