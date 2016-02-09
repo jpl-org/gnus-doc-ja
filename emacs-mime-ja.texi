@@ -443,8 +443,8 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 @vindex mm-inline-text-html-with-images
 $B$b$7(B @code{nil} $B$G$J$1$l$P!"5-;v$N%\%G%#!<$G$N2hA|$N%$%s%i%$%sI=<($r6X;_(B
 $B$7$^$9!#$3$l$O(B @code{mm-text-html-renderer} (@pxref{Display
-Customization}) $B$,(B @code{shr} $B$^$?$O(B @code{gnus-w3m} $B$G$"$k>l9g$KI=<($5(B
-$B$l$?(B @acronym{HTML} $B5-;v$N2hA|$KBP$7$FM-8z$G$9!#(BGnus $B$G(B
+Customization}) $B$,(B @code{shr} $B$^$?$O(B @code{w3m} $B$G$"$k>l9g$KI=<($5$l(B
+$B$?(B @acronym{HTML} $B5-;v$N2hA|$KBP$7$FM-8z$G$9!#(BGnus $B$G(B
 $B$O(B @code{gnus-inhibit-images} $B$NCM$G>e=q$-$5$l$^$9(B (@pxref{Misc Article,
 ,Misc Article, gnus-ja, Gnus manual})$B!#(B
 
