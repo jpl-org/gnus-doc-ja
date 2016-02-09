@@ -462,8 +462,13 @@ Customization}) $B$,(B @code{shr} $B$^$?$O(B @code{w3m} $B$G$"$k>l9g$KI=<($
 Customization}) $B$,(B @code{shr} $B$G$"$k>l9g$KM-8z$G$9!#(BGnus $B$G(B
 $B$O(B @code{gnus-blocked-images} $B$NCM$+!"$^$?(B
 $B$O(B @code{gnus-blocked-images} $B$K@_Dj$5$l$?4X?t$NLa$jCM$G>e=q$-$5$l$^(B
-$B$9(B (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})$B!#%G%#%U%)%k%H(B
-$B$O(B @code{""} $B$G!"$9$Y$F$N30It2hA|$rAK;_$7$^$9!#(B
+$B$9(B (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})$B!#(B
+
+@acronym{HTML} $B%a!<%k$K$O(B @samp{<img>} $B%?%0$r;H$C$?(B spammers (spam $B$r$P(B
+$B$i$^$/$d$+$i(B) $B$NH\Nt$J0-9*$_$,4^$^$l$F$$$k$+$b$7$l$^$;$s!#:G$b$"$j$=$&$J(B
+$B$N$O!"$"$J$?$,$=$N%a!<%k$rFI$s$@$3$H$r3NG'$9$k$?$a$N0U?^$,$"$k$3$H$G$9!#(B
+$B$3$N%*%W%7%g%s$r(B @code{""} $B$K@_Dj$9$k(B ($B$=$l$,%G%#%U%)%k%H$G$9(B) $B$3$H$K$h$C(B
+$B$F!"$"$J$?$N8D?M>pJs$,N.=P$9$k$N$rKI$0$3$H$,$G$-$^$9!#(B
 
 @item mm-w3m-safe-url-regexp
 @vindex mm-w3m-safe-url-regexp
