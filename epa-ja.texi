@@ -469,8 +469,8 @@ Variables, , , emacs, the Emacs Manual} $B$r2p$7$F(B Emacs $B$KEA$($F$*$/$3$H
 $B$F$+$i(B @samp{gpgconf --reload gpg-agent} $B$r9T$J$&$3$H$K$h$C$F!"@_Dj(B
 $B$r(B gpg-agent $B$K:FFI$_9~$_$5$;$F$/$@$5$$!#(B}  $B$3$l$O(B Emacs $B$r1s3V$G!"$^$?(B
 $B$OJ8;zC<Kv$G;H$&$H$-$KLr$KN)$D$G$7$g$&!#$3$N5!G=$OB>$N%P!<%8%g%s$K$O$"$j(B
-$B$^$;$s!#$5$i$K8@$&$H(B 2.0 (2.0.29 $B$N;~E@(B) $B$,%0%i%U%#%+%k$JF~NOMW5a$r9T$J(B
-$B$&$3$H$rL58z$K$9$k<jN)$F$,$"$j$^$;$s!#(B
+$B$^$;$s!#$5$i$K8@$&$H(B 2.0 $B$G$O(B (2.0.29 $B$N;~E@$G$O(B) $B%0%i%U%#%+%k$JF~NOMW5a(B
+$B$r9T$J$&$3$H$rL58z$K$9$k<jN)$F$,$"$j$^$;$s!#(B
 @end itemize
 
 @node Caching Passphrases, Bug Reports, GnuPG version compatibility, Top
