@@ -55,7 +55,7 @@ modify this GNU manual.
 
 @contents
 
-@node Top
+@node Top, Overview, (dir), (dir)
 @top EasyPG Assistant user's manual
 
 EasyPG $B%"%7%9%?%s%H$O(B GNU Privacy Guard (GnuPG, @pxref{Top, , Top,
@@ -75,6 +75,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$N$?$a$N%*!<%k%$%s%o%s(B GnuPG $B%$%s%?!<
 * Quick start::
 * Commands::
 * Caching Passphrases::
+* GnuPG version compatibility::
 * Bug Reports::
 * GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
 * Key Index::
@@ -82,7 +83,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$N$?$a$N%*!<%k%$%s%o%s(B GnuPG $B%$%s%?!<
 * Variable Index::
 @end menu
 
-@node Overview
+@node Overview, Quick start, Top, Top
 @chapter $B35MW(B
 
 EasyPG $B$O0J2<$N5!G=$rDs6!$7$^$9!#(B
@@ -96,7 +97,7 @@ EasyPG $B$O0J2<$N5!G=$rDs6!$7$^$9!#(B
 @item *.gpg $B%U%!%$%k$N<+F00E9f2=(B/$BI|9f(B
 @end itemize
 
-@node Quick start
+@node Quick start, Commands, Overview, Top
 @chapter $B$H$j$"$($:;O$a$k(B
 
 EasyPG $B%"%7%9%?%s%H!&%3%^%s%I$O(B @samp{epa-} $B$G;O$^$j$^$9!#Nc$($P!"(B
@@ -113,7 +114,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 $B0E9f$d=pL>$N5!G=$rDs6!$7$^$9!#Nc$($P(B @file{*.gpg} $B%U%!%$%k$N0E9f2=$HI|9f(B
 $B$G$9!#(B
 
-@node Commands
+@node Commands, GnuPG version compatibility, Quick start, Top
 @chapter $B%3%^%s%I(B
 
 $B$3$N>O$OBeI=E*$J;H$$J}$N$?$a$NMM!9$J%3%^%s%I$r>R2p$7$^$9!#(B
@@ -127,7 +128,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 * Encrypting/decrypting gpg files::     gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
 @end menu
 
-@node Key management
+@node Key management, Cryptographic operations on regions, Commands, Commands
 @section $B80$N4IM}(B
 $B$*$=$i$/(B EasyPG $B%"%7%9%?%s%H$r;H$&:G=i$N0lJb$O80%j%s%0$rD/$a$k$3$H$G$7$g(B
 $B$&!#(B@kbd{M-x epa-list-keys} $B$O%3%^%s%I%i%$%s$+$i;H(B
@@ -208,7 +209,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 $B$iHkL)80$b<h$j=|$-$^$9!#(B
 @end deffn
 
-@node Cryptographic operations on regions
+@node Cryptographic operations on regions, Cryptographic operations on files, Key management, Commands
 @section $BNN0h$N0E9f$d=pL>$NA`:n(B
 
 @deffn Command epa-decrypt-region start end
@@ -252,7 +253,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 $B$9!#(B
 @end deffn
 
-@node Cryptographic operations on files
+@node Cryptographic operations on files, Dired integration, Cryptographic operations on regions, Commands
 @section $B%U%!%$%k$N0E9f$d=pL>$NA`:n(B
 
 @deffn Command epa-decrypt-file file &optional output
@@ -273,7 +274,7 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 @var{file} $B$r0E9f2=$7$^$9!#<u<h?M$rA*Br$9$k$3$H$rB%$5$l$^$9!#(B
 @end deffn
 
-@node Dired integration
+@node Dired integration, Mail-mode integration, Cryptographic operations on files, Commands
 @section Dired $B$NE}9g(B
 
 EasyPG $B%"%7%9%?%s%H$O(B GNU Emacs $B$N(B dired $B%b!<%I$r3HD%$7$F!"%U%!%$%k$N0E(B
@@ -311,7 +312,7 @@ M-x dired
 $B%^!<%/$5$l$?%U%!%$%k$r0E9f2=$7$^$9!#(B
 @end table
 
-@node Mail-mode integration
+@node Mail-mode integration, Encrypting/decrypting gpg files, Dired integration, Commands
 @section Mail $B%b!<%I$NE}9g(B
 
 EasyPG $B%"%7%9%?%s%H$O%$%s%i%$%s(B OpenPGP $B%a%C%;!<%8$N:n@.$r;Y1g$9$k$?$a$K(B
@@ -364,7 +365,7 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} $B$r;2>H$7$F$/$@$5$$!#(B
 $B$&$3$H$b$G$-$^$9!#(B
 @end table
 
-@node Encrypting/decrypting gpg files
+@node Encrypting/decrypting gpg files,  , Mail-mode integration, Commands
 @section gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
 $B%G%#%U%)%k%H$G$OL>A0$,(B @file{.gpg} $B$G=*$o$k%U%!%$%k$O0E9f2=$5$l$?$b$N$H(B
 $B$7$F07$o$l$^$9!#B($A$=$N$h$&$J%U%!%$%k$r3+$/$H!"0E9f2=$5$l$?$^$^$N$b$N$G(B
@@ -444,20 +445,47 @@ Variables, , , emacs, the Emacs Manual} $B$r2p$7$F(B Emacs $B$KEA$($F$*$/$3$H
 $B6X;_$7$^$9!#%G%#%U%)%k%HCM$O(B @code{t} $B$G$9!#(B
 @end defvar
 
-@node Caching Passphrases
+@node GnuPG version compatibility, Caching Passphrases, Commands, Top
+@chapter GnuPG $B$N%P!<%8%g%s$N8_49@-(B
+
+2016$BG/(B2$B7n8=:_(B GnuPG $B$K$O(B 3$B$D$N3hF0E*$J;^$,$"$j$^$9(B; 2.1$B!"(B2.0$B!"$*$h(B
+$B$S(B 1.4 $B$G$9!#$=$l$O$9$Y$F4pK\E*$J%f!<%9%1!<%9$G$O(B Emacs $B$H$H$b$K40`z$KF0(B
+$B:n$9$k$b$N$N!"(BEmacs $B$+$i;H$&$HL\$K8+$($k$+$b$7$l$J$$8_49@-$N$J$$FCD'$,$"(B
+$B$j$^$9!#(B
+
+@itemize
+@item
+2.1 $B$N80$r3JG<$9$k$?$a$N%U%)!<%^%C%H$O(B 1.4 $B$H0[$J$j$^$9!#$=$l$O(B 2.1 $B$G:n(B
+$B@.$5$l$?80$,(B 1.4 $B$G$O8+$($J$$$+$b$7$l$J$$$H$$$&$3$H$G$9!#(B
+
+@item
+2.1 $B$O(B gpg-agent $B$N$?$a$K8GDj$N(B Unix $B%I%a%$%s%=%1%C%H$r;H$$$^$9!#$=$7$F(B
+2.0 $B$H(B 1.4 $B$K$h$C$F;H$o$l$k(B @code{GPG_AGENT_INFO} $B4D6-JQ?t$rL5;k$7$^$9!#(B
+
+@item
+2.1 (2.1.5 $B0J9_(B) $B$O(B Emacs $B$N%_%K%P%C%U%!!<$+$iD>@\(B Pinentry $B$rF~NO$9$k$3(B
+$B$H$,$G$-$^$9!#(B@footnote{$B$3$N5!G=$r3h$+$9$K(B
+$B$O(B @file{~/.gnupg/gpg-agent.conf} $B$K(B @samp{allow-emacs-pinentry} $B$r2C$((B
+$B$F$+$i(B @samp{gpgconf --reload gpg-agent} $B$r9T$J$&$3$H$K$h$C$F!"@_Dj(B
+$B$r(B gpg-agent $B$K:FFI$_9~$_$5$;$F$/$@$5$$!#(B}  $B$3$l$O(B Emacs $B$r1s3V$G!"$^$?(B
+$B$OJ8;zC<Kv$G;H$&$H$-$KLr$KN)$D$G$7$g$&!#$3$N5!G=$OB>$N%P!<%8%g%s$K$O$"$j(B
+$B$^$;$s!#$5$i$K8@$&$H(B 2.0 (2.0.29 $B$N;~E@(B) $B$,%0%i%U%#%+%k$JF~NOMW5a$r9T$J(B
+$B$&$3$H$rL58z$K$9$k<jN)$F$,$"$j$^$;$s!#(B
+@end itemize
+
+@node Caching Passphrases, Bug Reports, GnuPG version compatibility, Top
 @chapter Caching Passphrases
 
 $B$b$7F1$8%U%!%$%k$r3+$$$FJD$8$k5!2q$,EY!9$"$k$N$G$"$l$P!"%Q%9%U%l!<%:$r%?(B
-$B%$%W$9$k$N$O$$$i$$$i$9$k;E;v$G$7$g$&!#(BGnuPG $B$H(B EasyPG $B%"%7%9%?%s%H$O$"$J(B
+$B%$%W$9$k$N$O$o$:$i$o$7$$;E;v$G$7$g$&!#(BGnuPG $B$H(B EasyPG $B%"%7%9%?%s%H$O$"$J(B
 $B$?$N%Q%9%U%l!<%:$r5-21$9$k5!9=$rDs6!$7$^$9!#$7$+$7$J$,$i$=$N@_Dj$O>/!99~(B
-$B$_F~$C$F$$$^$9!#$=$l$O!"%$%s%9%H!<%k$5$l$F$$(B
-$B$k(B GnuPG (GnuPG $B%P!<%8%g%s(B 1 $B$+(B GnuPG $B%P!<%8%g%s(B 2 $B$+(B)$B!"0E9fJ}<0(B ($BBP>N80(B
-$B$+8x3+80$+(B)$B!"$=$7$F(B gpg-agent $B$r;H$$$?$$$+$I$&$+$K$h$j$^$9!#0J2<$K$$$/$D(B
-$B$+$N@_Ld$,$"$j$^$9!#(B
+$B$_F~$C$F$$$^$9!#$=$l$O!"%$%s%9%H!<%k$5$l$F$$$k(B GnuPG @xref{GnuPG version
+compatibility}$B!"0E9fJ}<0(B ($BBP>N80$+8x3+80$+(B)$B!"$=$7$F(B gpg-agent $B$r;H$$$?$$(B
+$B$+$I$&$+$K$h$j$^$9!#0J2<$K$$$/$D$+$N@_Ld$,$"$j$^$9!#(B
 
 @enumerate
 @item
-GnuPG $B%P!<%8%g%s(B 1 $B$NBe$o$j$K(B GnuPG $B%P!<%8%g%s(B 2 $B$r;H$$$^$9$+(B?
+GnuPG $B%P!<%8%g%s(B 1.4 $B$NBe$o$j$K(B 2.1 $B$^$?$O(B 2.0 $B$r;H$$$^$9$+(B?
 @item
 $B8x3+800E9f$G$O$J$/BP>N800E9f$r;H$$$^$9$+(B?
 @item
@@ -486,7 +514,7 @@ Elisp $B$N%Q%9%U%l!<%:!&%-%c%C%7%e$r;H$&$K(B
 $B$K(B @code{nil} $B0J30$NCM$r@_Dj$7$F$/$@$5$$!#(B
 @xref{Encrypting/decrypting gpg files}.
 
-@node Bug Reports
+@node Bug Reports, GNU Free Documentation License, Caching Passphrases, Top
 @chapter $B%P%0%j%]!<%H(B
 
 EasyPG $B%"%7%9%?%s%H$N%P%0$H=tLdBj$O(B Emacs $B3+H/%A!<%`$,3hH/$KBP=h$7$F$$$^(B
@@ -507,19 +535,19 @@ EasyPG $B%"%7%9%?%s%H$N%P%0$H=tLdBj$O(B Emacs $B3+H/%A!<%`$,3hH/$KBP=h$7$F$$$
 $B$F(B @file{ *epg-debug*} $B%P%C%U%!!<$NCf?H$r4^$a$F$/$@$5$$!#%P%C%U%!!<L>$N(B
 $B:G=i$NJ8;z$O6uGr$G$"$k$3$H$KCm0U$7$F$/$@$5$$!#(B
 
-@node GNU Free Documentation License
+@node GNU Free Documentation License, Key Index, Bug Reports, Top
 @appendix GNU Free Documentation License
 @include doclicense.texi
 
-@node Key Index
+@node Key Index, Function Index, GNU Free Documentation License, Top
 @unnumbered Key Index
 @printindex ky
 
-@node Function Index
+@node Function Index, Variable Index, Key Index, Top
 @unnumbered Function Index
 @printindex fn
 
-@node Variable Index
+@node Variable Index,  , Function Index, Top
 @unnumbered Variable Index
 @printindex vr
 @bye
