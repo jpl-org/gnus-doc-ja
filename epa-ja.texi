@@ -455,16 +455,19 @@ Variables, , , emacs, the Emacs Manual} $B$r2p$7$F(B Emacs $B$KEA$($F$*$/$3$H
 
 @itemize
 @item
-2.1 $B$N80$r3JG<$9$k$?$a$N%U%)!<%^%C%H$O(B 1.4 $B$H0[$J$j$^$9!#$=$l$O(B 2.1 $B$G:n(B
-$B@.$5$l$?80$,(B 1.4 $B$G$O8+$($J$$$+$b$7$l$J$$$H$$$&$3$H$G$9!#(B
+GnuPG 2.1 $B$N80$r3JG<$9$k$?$a$N%U%)!<%^%C%H$O(B 1.4 $B$H0[$J$j$^$9!#$=$l(B
+$B$O(B GnuPG 2.1 $B$G:n@.$5$l$?80$,(B 1.4 $B$G$O8+$($J$$$+$b$7$l$J$$$H$$$&$3$H$G$9!#(B
 
 @item
-2.1 $B$O(B gpg-agent $B$N$?$a$K8GDj$N(B Unix $B%I%a%$%s%=%1%C%H$r;H$$$^$9!#$=$7$F(B
-2.0 $B$H(B 1.4 $B$K$h$C$F;H$o$l$k(B @code{GPG_AGENT_INFO} $B4D6-JQ?t$rL5;k$7$^$9!#(B
+GnuPG 2.1 $B$O(B gpg-agent $B$HDL?.$9$k$?$a$K8GDj%"%I%l%9$N(B Unix $B%I%a%$%s%=%1%C(B
+$B%H$r;H$$$^$9!#(BGnuPG 2.0 $B$H(B 1.4 $B$G;H$o$l$F$$$k(B @code{GPG_AGENT_INFO} $B4D6-(B
+$BJQ?t$OL5;k$7$^$9!#$3$N$3$H$O!"$b$7$"$J$?$N%7%9%F%`$K(B GnuPG 2.1 $B$H(B 1.4 $B$N(B
+$BN>J}$,$"$k$H$9$k$H!"(BGnuPG 1.4 $BM3Mh$N(B gpg $B%3%^%s%I$O(B 2.1 $B$,Ds6!$9(B
+$B$k(B gpg-agent $B$r(B ($B>/$J$/$H$b$=$N$^$^$G$O(B) $B;H$($J$$$3$H$r0UL#$7$^$9!#(B
 
 @item
-2.1 (2.1.5 $B0J9_(B) $B$O(B Emacs $B$N%_%K%P%C%U%!!<$+$iD>@\(B Pinentry $B$rF~NO$9$k$3(B
-$B$H$,$G$-$^$9!#(B@footnote{$B$3$N5!G=$r3h$+$9$K(B
+GnuPG 2.1 (2.1.5 $B0J9_(B) $B$O(B Emacs $B$N%_%K%P%C%U%!!<$+$iD>@\(B Pinentry $B$rF~NO(B
+$B$9$k$3$H$,$G$-$^$9!#(B@footnote{$B$3$N5!G=$r3h$+$9$K(B
 $B$O(B @file{~/.gnupg/gpg-agent.conf} $B$K(B @samp{allow-emacs-pinentry} $B$r2C$((B
 $B$F$+$i(B @samp{gpgconf --reload gpg-agent} $B$r9T$J$&$3$H$K$h$C$F!"@_Dj(B
 $B$r(B gpg-agent $B$K:FFI$_9~$_$5$;$F$/$@$5$$!#(B}  $B$3$l$O(B Emacs $B$r1s3V$G!"$^$?(B
