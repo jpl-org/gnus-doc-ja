@@ -386,12 +386,17 @@ Gnus $B$N3+H/$K$*$1$k;(B?$JJQ99$K$D$$$F$O!"C1$K(B Gnus $B$N(B Git $B$N44$rJ
 
 @heading @file{GNUS-NEWS}
 
-@file{texi/gnus-news.texi} $B$r85$K(B @file{GNUS-NEWS} $B$r@8@.$5$;$k$N$O!"(BNo
-Gnus $B$+$i;O$^$j$^$7$?!#(B@file{GNUS-NEWS} $B$OJT=8$7$J$$$G$/$@$5$$!#(B
-@file{texi/gnus-news.texi} $B$rJT=8$7!"(B@file{texi} $B%G%#%l%/%H%j!<(B
-$B$G(B @command{make GNUS-NEWS} $B$r%?%$%W$7$F$+$i!"(B
-@file{GNUS-NEWS} $B$H(B @file{texi/gnus-news.texi} $B$r%A%'%C%/%$%s$7$F$/$@$5(B
-$B$$!#(B
+@file{etc/GNUS-NEWS} $B$O(B @file{doc/misc/gnus-news.texi} $B$+$i@8@.$5$l$^$9!#(B
+@file{etc/GNUS-NEWS} $B$rJT=8$7$F$O$$$1$^$;$s!#(B
+@file{doc/misc/gnus-news.texi} $B$rJT=8$7!"(B@file{lisp} $B%G%#%l%/%H%j!<(B
+$B$G(B @command{make +update-gnus-news} $B$H%?%$%W$7$F$+(B
+$B$i(B @file{etc/GNUS-NEWS} $B$H(B @file{doc/misc/gnus-news.texi} $B$r%3%_%C%H$7$F(B
+$B$/$@$5$$!#(B
+
+$BLuCm(B: $B>e5-$O(B Emacs $B$N>l9g$K$D$$$F$N5-=R$G$9!#(B@file{gnus-news-ja.texi} $B$N(B
+$BFbMF$O(B @file{gnus-ja.texi} ($B8=:_(B
+$B$O(B @pxref{No Gnus, ,No Gnus, gnus-ja, The Gnus Manual}) $B$KAH$_9~$^$l$k$N(B
+$B$G!"(B@file{etc/GNUS-NEWS} $B$NF|K\8lLu$KAjEv$9$k$b$N$OMQ0U$7$F$$$^$;$s!#(B
 
 @heading defcustoms $B$G;H$&(B :version $B>pJs$NN.57(B
 
