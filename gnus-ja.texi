@@ -16888,9 +16888,9 @@ Language) $B$G%m!<%I(B/$B%;!<%V$9$k$?$a$K!"0J2<$N%3%^%s%I$r;H$&$3$H$b$G$-$^$9
           (gnus-summary-mark-as-read-forward 1))
       (gnus-summary-scroll-up arg))))
 
-(eval-after-load "gnus"
-  #'(define-key gnus-summary-mode-map
-      (kbd "<RET>") 'browse-nnrss-url))
+(with-eval-after-load "gnus"
+  (define-key gnus-summary-mode-map
+    (kbd "<RET>") 'browse-nnrss-url))
 (add-to-list 'nnmail-extra-headers nnrss-url-field)
 @end lisp
 
@@ -16905,11 +16905,11 @@ The Emacs MIME Manual}) $B$K2C$($F$$$?$H$7$F$b!"FC$K(B @code{nnrss} $B%0%k!<%
 
 @lisp
 ;; @r{@code{mm-discouraged-alternatives} $B$N%G%#%U%)%k%HCM$r@_Dj!#(B}
-(eval-after-load "gnus-sum"
-  '(add-to-list
-    'gnus-newsgroup-variables
-    '(mm-discouraged-alternatives
-      . '("text/html" "image/.*"))))
+(with-eval-after-load "gnus-sum"
+  (add-to-list
+   'gnus-newsgroup-variables
+   '(mm-discouraged-alternatives
+     . '("text/html" "image/.*"))))
 
 ;; @r{@code{nnrss} $B%0%k!<%W$G$O(B @samp{text/html} $B%Q!<%H$rI=<(!#(B}
 (add-to-list

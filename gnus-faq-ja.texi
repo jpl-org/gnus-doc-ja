@@ -590,10 +590,10 @@ fetchmail $B$N$h$&$J%W%m%0%i%`$G%a!<%k$r<h$j9~$s$G!"(BGnus $B$,FI$`$3$H$K$J$C
 $B$,(B @acronym{POP3} $B%5!<%P!<$G$"$k$N$J$i!"$3$N$h$&$K@_Dj$7$F$/$@$5$$(B:
 
 @lisp
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources '(pop :server "pop.YourProvider.net"
-                                    :user "yourUserName"
-                                    :password "yourPassword")))
+(with-eval-after-load "mail-source"
+  (add-to-list 'mail-sources '(pop :server "pop.YourProvider.net"
+                                   :user "yourUserName"
+                                   :password "yourPassword")))
 @end lisp
 
 @noindent
@@ -602,8 +602,8 @@ fetchmail $B$N$h$&$J%W%m%0%i%`$G%a!<%k$r<h$j9~$s$G!"(BGnus $B$,FI$`$3$H$K$J$C
 $B%W!<%k%U%!%$%k$+$iFI$_$?$$>l9g$O!"0J2<$N$h$&$K@_Dj$7$F$/$@$5$$(B:
 
 @lisp
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources '(file :path "/path/to/spool/file"))
+(with-eval-after-load "mail-source"
+  (add-to-list 'mail-sources '(file :path "/path/to/spool/file"))
 @end lisp
 
 @noindent
@@ -612,9 +612,9 @@ fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$
 $B$3$s$J$U$&$K$7$^$7$g$&(B:
 
 @lisp
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources '(maildir :path "/path/to/Maildir/"
-                                        :subdirs ("cur" "new")))
+(with-eval-after-load "mail-source"
+  (add-to-list 'mail-sources '(maildir :path "/path/to/Maildir/"
+                                       :subdirs ("cur" "new")))
 @end lisp
 
 @noindent
@@ -623,10 +623,10 @@ fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$
 $B@_Dj$O0J2<$N$h$&$K$J$j$^$9(B:
 
 @lisp
-(eval-after-load "mail-source"
-  '(add-to-list 'mail-sources
-                '(directory :path "/path/to/procmail-dir/"
-                            :suffix ".prcml")))
+(with-eval-after-load "mail-source"
+  (add-to-list 'mail-sources
+               '(directory :path "/path/to/procmail-dir/"
+                           :suffix ".prcml")))
 @end lisp
 
 @noindent
@@ -878,10 +878,9 @@ POP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$$h$&$K(B Gnus $B$K;X<($9
 @file{~/.gnus.el} $B%U%!%$%k$G0J2<$N@_Dj$r9T$J$C$F$/$@$5$$(B:
 
 @lisp
-(eval-after-load "mm-decode"
- '(progn
-      (add-to-list 'mm-discouraged-alternatives "text/html")
-      (add-to-list 'mm-discouraged-alternatives "text/richtext")))
+(with-eval-after-load "mm-decode"
+  (add-to-list 'mm-discouraged-alternatives "text/html")
+  (add-to-list 'mm-discouraged-alternatives "text/richtext"))
 @end lisp
 
 @noindent
@@ -1614,14 +1613,14 @@ X-Face $B$r4^$a$F$/$l$k$h$&$K(B Gnus $B$K;X<($9$k$@$1$G$9!#$=$l$K(B
 $B$^$@(B 5.8.8 $B$d(B 5.9 $B$r;H$C$F$$$k$N$J$i!"Be$o$j$K$3$l$r$I$&$>(B:
 
 @lisp
-(eval-after-load "gnus-msg"
-  '(unless (boundp 'gnus-confirm-mail-reply-to-news)
-     (defadvice gnus-summary-reply (around reply-in-news activate)
-       "Request confirmation when replying to news."
-       (interactive)
-       (when (or (not (gnus-news-group-p gnus-newsgroup-name))
-                 (y-or-n-p "Really reply by mail to article author? "))
-         ad-do-it))))
+(with-eval-after-load "gnus-msg"
+  (unless (boundp 'gnus-confirm-mail-reply-to-news)
+    (defadvice gnus-summary-reply (around reply-in-news activate)
+      "Request confirmation when replying to news."
+      (interactive)
+      (when (or (not (gnus-news-group-p gnus-newsgroup-name))
+                (y-or-n-p "Really reply by mail to article author? "))
+        ad-do-it))))
 @end lisp
 
 @node FAQ 5-10
@@ -1636,8 +1635,8 @@ Gnus 5.10 $B$O%G%#%U%)%k%H$G(B sender $B%X%C%@!<$r:n$i$J$$$N$G$9$1$l$I$M!#$^$
 $B$@$5$$(B:
 
 @lisp
-(eval-after-load "message"
-  '(add-to-list 'message-syntax-checks '(sender . disabled)))
+(with-eval-after-load "message"
+  (add-to-list 'message-syntax-checks '(sender . disabled)))
 @end lisp
 
 @node FAQ 5-11
@@ -1698,14 +1697,14 @@ Gnus 5.9 $B$+$=$l0JA0$N$b$N$r;H$C$F$$$k>l9g$O!"Be$o$j$K$3$l$r;H$C$F$/$@$5(B
 $B$$(B ($B?7$7$$HG$G$bF0:n$7$^$9(B):
 
 @lisp
-(eval-after-load "message"
-  '(let ((fqdn "yourmachine.yourdomain.tld")) ;; <-- $BJQ99$7$F$M(B!
-     (if (boundp 'message-user-fqdn)
-         (setq message-user-fqdn fqdn)
-       (gnus-message 1 "Redefining `message-make-fqdn'.")
-       (defun message-make-fqdn ()
-         "Return user's fully qualified domain name."
-         fqdn))))
+(with-eval-after-load "message"
+  (let ((fqdn "yourmachine.yourdomain.tld"));; <-- $BJQ99$7$F$M(B!
+    (if (boundp 'message-user-fqdn)
+        (setq message-user-fqdn fqdn)
+      (gnus-message 1 "Redefining `message-make-fqdn'.")
+      (defun message-make-fqdn ()
+        "Return user's fully qualified domain name."
+        fqdn))))
 @end lisp
 
 @noindent
@@ -2226,9 +2225,10 @@ gnus-ja, The Gnus Manual} $B$r;2>H$7$F$/$@$5$$!#$=$3$K$O!"$=$N=hM}$rB.$/$9(B
 $B$O!"(B@file{~/.gnus.el} $B%U%!%$%k$r%P%$%H%3%s%Q%$%k$9$k$3(B
 $B$H(B (@kbd{M-x byte-compile-file RET ~/.gnus.el RET} $B$r<B9T$9$k$3$H(B) $B$G$9!#(B
 $B:G8e$K!"(B@file{~/.gnus.el} $B%U%!%$%k$G(B @code{require} $B$r;H$C$F$$$k$J$i$P!"(B
-$B$=$l$i$r(B @code{eval-after-load} $B$GCV$-49$($k$3$H$,$G$-$k$G$7$g$&!#$=$l$O(B
-$BBP>]$N%b%8%e!<%k$r5/F0;~$G$O$J$/!"I,MW$K$J$C$?$H$-$KFI$_9~$`$h$&$K$7$^$9!#(B
-$B$"$J$?$N(B @file{~/.gnus.el} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$,$"$k>l9g$K$O!"(B
+$B$=$l$i$r(B @code{with-eval-after-load} $B$GCV$-49$($k$3$H$,$G$-$k$G$7$g$&!#(B
+$B$=$l$OBP>]$N%b%8%e!<%k$r5/F0;~$G$O$J$/!"I,MW$K$J$C$?$H$-$KFI$_9~$`$h$&$K(B
+$B$7$^$9!#$"$J$?$N(B @file{~/.gnus.el} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$,$"$k>l9g(B
+$B$K$O!"(B
 
 @lisp
 (require 'message)
@@ -2240,8 +2240,8 @@ Gnus $B$r5/F0$7$?$H$?$s$K(B @file{message.el} $B$,FI$_9~$^$l$^$9!#$3$l$r<!$N$
 $B$&$KCV$-49$($k$H!"(B
 
 @lisp
-(eval-after-load "message"
-  '(add-to-list 'message-syntax-checks '(sender . disabled)))
+(with-eval-after-load "message"
+  (add-to-list 'message-syntax-checks '(sender . disabled)))
 @end lisp
 
 @noindent
@@ -2251,9 +2251,10 @@ Gnus $B$r5/F0$7$?$H$?$s$K(B @file{message.el} $B$,FI$_9~$^$l$^$9!#$3$l$r<!$N$
 $B$K(B load $B$9$k$h$&$K$J$C$F$$$F!"Nc$($P(B @file{message.el} $B%b%8%e!<%k(B
 $B$O(B @file{~/.gnus.el} $B%U%!%$%k$rFI$_9~$`;~E@$G$9$G$K(B load $B$5$l$F$$$^$9!#(B
 $B$G$9$+$i>/$J$/$H$b(B @file{message.el} $B%b%8%e!<%k$KBP$7$F(B
-$B$O(B @code{require} $B$b(B @code{eval-after-load} $B$b;H$&I,MW$,$"$j$^$;$s!#<B32(B
-$B$O$"$j$^$;$s$,2?$N8z2L$b$"$j$^$;$s!#JQ?t(B @code{message-syntax-checks} $B$K(B
-$B9`L\$rDI2C$9$k>e5-$NNc$O!"C1$K0J2<$N$h$&$K=q$1$P==J,$G$9!#(B
+$B$O(B @code{require} $B$b(B @code{with-eval-after-load} $B$b;H$&I,MW$,$"$j$^$;$s!#(B
+$B<B32$O$"$j$^$;$s$,2?$N8z2L$b$"$j$^$;$s!#(B
+$BJQ?t(B @code{message-syntax-checks} $B$K9`L\$rDI2C$9$k>e5-$NNc$O!"C1$K0J2<$N(B
+$B$h$&$K=q$1$P==J,$G$9!#(B
 
 @lisp
 (add-to-list 'message-syntax-checks '(sender . disabled))
