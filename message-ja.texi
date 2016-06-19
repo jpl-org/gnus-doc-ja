@@ -82,7 +82,6 @@ Gnus $B$N$9$Y$F$N%a%C%;!<%8$N:n@.(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$O!"%a%C
 * Interface::         $B%a%C%;!<%8%P%C%U%!!<$N@_Dj(B
 * Commands::          $B%a%C%;!<%8%b!<%I$N%P%C%U%!!<$G<B9T$G$-$kL?Na(B
 * Variables::         $B%a%C%;!<%8%P%C%U%!!<$N%+%9%?%^%$%:(B
-* Compatibility::     $B%a%C%;!<%8$r2<0L8_49$K$9$k(B
 * Appendices::        $B$b$C$H5;=QE*$J$3$H(B
 * GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
 * Index::             $BJQ?t!"4X?t!"35G0$N:w0z(B
@@ -2619,23 +2618,6 @@ Message $B$O$3$l$i$N%j%9%H$rA`:n$9$k$?$a$K(B @code{message-add-action} $B4X?t
 $B$O(B @code{eval} ($BI>2A(B) $B$5$l$k<0$G$9!#(B
 
 $BLuCm(B: $B$?$V$s<B:]$N%=!<%9%3!<%I$r8+$?J}$,OC$,Aa$$$G$7$g$&!#(B
-
-@node Compatibility
-@chapter $B8_49@-(B
-@cindex compatibility
-
-Message $B$O;v<B>e$=$l<+?H$NJQ?t$7$+;H$o$:(B (*)$B!"8E$$(B @code{mail-} $BJQ?t$O9M(B
-$BN8$KF~$l$^$;$s!#$3$l$i$NJQ?t$r(B Message $B$,9M$($KF~$l$k$h$&$K$5$;$?$$$N$G(B
-$B$"$l$P!"0J2<$N$b$N$r(B @file{.emacs} $B%U%!%$%k$KF~$l$l$PNI$$$G$7$g$&(B:
-
-@lisp
-(require 'messcompat)
-@end lisp
-
-$B$3$l$OB?$/$N(B Message $BJQ?t$r!"$=$l$i$KBP1~$9$k(B @code{mail-} $BJQ?t$NCM$K4p(B
-$B$E$$$F=i4|2=$7$^$9!#(B
-
-$BLuCm(B*: $B<B:]$K$O?o=j$G(B Gnus $B$NJQ?t$r;H$C$F$$$^$9!#@$$NCf$&$^$/$$$-$^$;$s!#(B
 
 @node Appendices
 @chapter $BIU5-(B
