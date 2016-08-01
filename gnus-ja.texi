@@ -833,6 +833,7 @@ Various
 * Thwarting Email Spam::        $BMj$s$G$b$$$J$$9-9p%a!<%k$rHr$1$k4JC1$JJ}K!(B
 * Spam Package::                Spam $B$r_I2a$7$F=hM}$9$k$?$a$N%Q%C%1!<%8(B
 * The Gnus Registry::           $B5-;v$r(B Message-ID $B$GC)$k$?$a$N%Q%C%1!<%8(B
+* The Gnus Cloud::              Gnus $B$N0u$rF14|$9$k$?$a$N%Q%C%1!<%8(B
 * Other modes::                 $BB>$N%b!<%I$H$NAj8_:nMQ(B
 * Various Various::             $BK\Ev$K$$$m$$$m$J$b$N(B
 
@@ -21856,6 +21857,7 @@ Gnus $B$G$ODL>o$=$l$i$N%a%C%;!<%8$O%X%C%@!<$K(B ``(none)'' $B$,I=<($5$l$F8=$l
 * Thwarting Email Spam::        $BMj$s$G$b$$$J$$9-9p%a!<%k$rHr$1$k4JC1$JJ}K!(B
 * Spam Package::                Spam $B$r_I2a$7$F=hM}$9$k$?$a$N%Q%C%1!<%8(B
 * The Gnus Registry::           $B5-;v$r(B Message-ID $B$GC)$k$?$a$N%Q%C%1!<%8(B
+* The Gnus Cloud::              Gnus $B$N0u$rF14|$9$k$?$a$N%Q%C%1!<%8(B
 * Other modes::                 $BB>$N%b!<%I$H$NAj8_:nMQ(B
 * Various Various::             $BK\Ev$K$$$m$$$m$J$b$N(B
 @end menu
@@ -25718,6 +25720,97 @@ Gnus $B$NA`:n$rDL$8$F%l%8%9%H%j!<$,5-O?$5$l$k%U%!%$%k$G$9!#%G%#%U%)%k%H$G(B
 $B$,B8:_$7$F$$$k$H%l%8%9%H%j!<$O$9$Y$F$N%(%s%H%j!<$r1J5W$KJ];}$7$^$9!#%G%#(B
 $B%U%)%k%H$G$O$3$l$O$^$5$K(B @code{(marks)} $B$J$N$G!"FH<+$N%l%8%9%H%j!<$N0u$O(B
 $B5.=E$G$"$k$H8+$J$5$l$^$9!#(B
+@end defvar
+
+@node The Gnus Cloud
+@section Gnus $B%/%i%&%I(B
+@cindex cloud
+@cindex gnus-cloud
+@cindex synchronization
+@cindex sync
+@cindex synch
+
+Gnus $B%/%i%&%I$O0u$d;(B?$J%U%!%$%k$H%G!<%?$rJ#?t$N%^%7%s4V$GF14|$9$k$?$a(B
+$B$N0l$D$N<jCJ$G$9!#(B
+
+$B$9$Y$F$N0u(B ($B$I$N5-;v$rFI$s$@$+!"$I$l$,=EMW$+!"$J$I(B) $B$r?tBf$N%^%7%s$N4V$G(B
+$BF14|$5$;$?$$$H$$$&<{MW$,!"Hs>o$K$?$S$?$S@8$8$^$9!#(BIMAP $B$G$O%W%m%H%3%k$K(B
+$BAH$_9~$^$l$F$$$k$N$G!"B?$/$N%^%7%s$+$i(B nnimap $B%0%k!<%W$rFI$`$3$H$,$G$-$k(B
+$B$7!"$=$l$i$O<+F0E*$KF14|$5$l$^$9!#$7$+$7(B NNTP$B!"(Bnnrss$B!"$*$h$SB>$NB?$/$N%P%C(B
+$B%/%(%s%I$O0u$rC_$($J$$$N$G!"$=$l$O%m!<%+%k$K9T$J$o$J$1$l$P$J$j$^$;$s!#(B
+
+Gnus $B%/%i%&%I$O0u$H$"$J$?$,A*$s$@%U%!%$%k$r(B IMAP $B%5!<%P!<$NFCJL$J%U%)%k(B
+$B%@!<$K3JG<$7$^$9!#$=$l$O(B DropTorrentSyncBoxOakTree(TM) $B$N$h$&$J$b$N$G$9!#(B
+
+@menu
+* Gnus Cloud Setup::
+* Gnus Cloud Usage::
+@end menu
+
+@node Gnus Cloud Setup
+@subsection Gnus $B%/%i%&%I$N@_Dj(B
+
+Gnus $B%/%i%&%I$N@_Dj$K$O(B 1$BJ,$b$+$+$j$^$;$s!#%0%k!<%W%P%C%U%!!<$+$i(B:
+
+$B%5!<%P!<%P%C%U%!!<$K9T$/$?$a$K(B @kbd{^} $B$r2!$7$F$/$@$5$$!#$=$3$G(B
+$B$O(B Gnus $B$,CN$C$F$$$k$9$Y$F$N%5!<%P!<$,8+$($k$G$7$g(B
+$B$&!#(B@xref{Server Buffer}.
+
+$B$=$&$7$?$i%/%i%&%I$GF14|$5$;$?$$$I$s$J%5!<%P!<$G$b!"(B@kbd{i} $B$r2!$7$F;XDj(B
+$B$7$F$/$@$5$$(B ($B$=$l$i$N0u$,F14|$5$l$^$9(B)$B!#(B
+
+$B$=$7$F%/%i%&%I$N%[%9%H$K$J$kC10l$N%5!<%P!<$r(B @kbd{I} $B$r2!$7$F;XDj$7$F$/(B
+$B$@$5$$(B ($B$=$l$O(B IMAP $B%5!<%P!<$G$J$1$l$P$J$j$^$;$s!#$9$Y$F$NF14|%G!<%?$r;}(B
+$B$D%U%)%k%@!<$rDs6!$9$k$3$H$K$J$j$^$9(B)$B!#$3$l$O(B ($B%+%9%?%^%$%:$N<jCJ$r;H$C(B
+$B$F(B) $BJQ?t(B @code{gnus-cloud-method} $B$r@_Dj$7!"=i$a$F(B
+$B$N(B CloudSynchronizationDataPack(TM) $B$r%"%C%W%m!<%I$9$k$3$H$rB%$7$^$9!#(B
+
+@node Gnus Cloud Usage
+@subsection Gnus $B%/%i%&%I$N;H$$J}(B
+
+$B@_Dj$7$?8e$O!"%0%k!<%W%P%C%U%!!<$+$i$3$l$i$N%7%g!<%H%+%C%H$r;H$&$3$H$,$G(B
+$B$-$^$9(B:
+
+@table @kbd
+@item ~ RET
+@item ~ d
+@findex gnus-cloud-download-all-data
+@cindex cloud, download
+$B:G?7$N(B Gnus $B%/%i%&%I$N%G!<%?$r%@%&%s%m!<%I$7$^$9!#(B
+
+@item ~ u
+@item ~ ~
+@findex gnus-cloud-upload-all-data
+@cindex cloud, download
+$B%m!<%+%k$J(B Gnus $B%/%i%&%I$N%G!<%?$r%"%C%W%m!<%I$7$^$9!#?7$7(B
+$B$$(B CloudSynchronizationDataPack(TM) $B$r:n@.$7$^$9!#(B
+@end table
+
+$B$7$+$7BT$C$F$/$@$5$$!#$b$C$H$"$j$^$9!#$b$A$m$s!"$b$C$H!#$?$/$5$s!#0J2<$N(B
+$B$9$Y$F$r%+%9%?%^%$%:$G$-$^$9!#(B
+
+@defvar gnus-cloud-synced-files
+$B$9$Y$F$N(B CloudSynchronizationDataPack(TM) $B$NItJ,$K$J$k%U%!%$%k72$,$"$j$^(B
+$B$9!#$=$l$i$O%"%C%W%m!<%I$9$k$?$S$KIU$$$F9T$/$N$G!"Bg$-$J%U%!%$%k$r$?$/$5(B
+$B$sF14|$5$;$k$N$O$d$a$^$7$g$&!#(B100Kb $BL$K~$,%Y%9%H$G$9!#(B
+@end defvar
+
+@defvar gnus-cloud-storage-method
+$B$$$/$D$+$N3JG<J}K!$+$iA*$V$?$a$N$b$N$G$9!#(BEPG $B$N5!G=$r;H$&$3$H$r6/$/?d>)(B
+$B$7$^$9!#$b$7(B GnuPG $B$,%$%s%9%H!<%k$5$l$F$$$F(B EPG $B$,FI$_9~$^$l$F$$$l$P<+F0(B
+$B$GE,MQ$5$l$^$9!#$G$b(B Base64+gzip $B$+(B Base64 $B$r;H$C$?$j!"$^$?$O%(%s%3!<%I(B
+$B$7$J$$$3$H$b2DG=$G$9!#(B
+@end defvar
+
+@defvar gnus-cloud-interactive
+$B$3$l$,%;%C%H$5$l$F$$$k$H(B ($B%G%U%)%k%H$G%;%C%H(B)$B!"(BGnus $B%/%i%&%I%Q%C%1!<%8$O(B
+$B$$$m$s$J>lLL$G$"$J$?$K3NG'$r5a$a$^$9!#ITK~$K46$8$k$3$H$,$J$1$l$P!"$=$N$^(B
+$B$^$K$7$F$*$$$F$/$@$5$$!#(B
+@end defvar
+
+@defvar gnus-cloud-method
+CloudSynchronizationDataPack(TM) $B$r3JG<$9$k(B IMAP $B%5!<%P!<$NL>A0$G$9!#%5!<(B
+$B%P!<%P%C%U%!!<$+$i@_Dj$9$k$N$,:G$b4JC1$G$9(B (@pxref{Gnus Cloud Setup})$B!#(B
 @end defvar
 
 @node Other modes
