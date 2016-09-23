@@ -1,3 +1,7 @@
+2016-09-23  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 25.1 is released.
+
 2015-10-13  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* auth-ja.texi, emacs-mime-ja.texi, epa-ja.texi, gnus-coding-ja.texi,
