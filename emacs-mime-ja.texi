@@ -1855,12 +1855,6 @@ WAVE $B2;6A%U%!%$%k$O(B @code{wavplayer} $B$G:F@8$5$l$k$Y$-$G$"$k$3$H!"$=$7(
 $B$3$NJQ?t$O!"%P%C%/%"%C%W$5$l$?(B ($BLuCm(B: mailcap $B%U%!%$%k$NFbMF$r2r@O$7(B
 $B$F(B Emacs $B$,07$$0W$$7A<0$K$7$?(B) $BI=<(5,B'$r4^$s$G$$$k!"O"A[%j%9%H$NO"A[%j(B
 $B%9%H$G$9!#(B
-
-@item mailcap-user-mime-data
-@vindex mailcap-user-mime-data
-$B%+%9%?%^%$%:2DG=$J%S%e!<%o!<$N%j%9%H$G!"(B@code{mailcap-mime-data} $B$h$jM%(B
-$B@h$7$^$9!#(B
-@code{mailcap-mime-data}.
 @end table
 
 $B%$%s%?!<%U%'!<%94X?t(B:
