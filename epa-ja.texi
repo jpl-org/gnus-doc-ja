@@ -12,7 +12,7 @@
 @set VERSION 1.0.0
 
 @copying
-$B$3$l$O(B EasyPG $B%"%7%9%?%s%H(B @value{VERSION} $B$N@bL@=q$G$9!#(B
+これは EasyPG アシスタント @value{VERSION} の説明書です。
 
 Copyright @copyright{} 2007--2016 Free Software Foundation, Inc.
 
@@ -24,17 +24,17 @@ Invariant Sections, with the Front-Cover Texts being ``A GNU Manual,''
 and with the Back-Cover Texts as in (a) below.  A copy of the license
 is included in the section entitled ``GNU Free Documentation License''.
 
-$B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
-$BBh(B 1.3 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
-$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!H(BA GNU Manual$B!I$OI=I=;f(B
-$B%F%-%9%H!"0J2<$N(B (a) $B$ON"I=;f%F%-%9%H$G$9!#$3$NMxMQ5vBz7@Ls=q$NJ#<L$O(B
-$B!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^$9!#(B
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.3 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
 modify this GNU manual.
 
-(a) FSF $B$NN"I=;f%F%-%9%H(B:$B!V$"$J$?$K$O$3$N(B GNU Manual $B$rJ#@=$7$?$jJQ99$9(B
-$B$k<+M3$,$"$j$^$9!#!W(B
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。」
 @end quotation
 @end copying
 
@@ -58,13 +58,13 @@ modify this GNU manual.
 @node Top, Overview, (dir), (dir)
 @top EasyPG Assistant user's manual
 
-EasyPG $B%"%7%9%?%s%H$O(B GNU Privacy Guard (GnuPG, @pxref{Top, , Top,
-gnupg, Using the GNU Privacy Guard}) $B$X$N(B Emacs $B%f!<%6!<%$%s%?!<%U%'!<%9(B
-$B$G$9!#(B
+EasyPG アシスタントは GNU Privacy Guard (GnuPG, @pxref{Top, , Top,
+gnupg, Using the GNU Privacy Guard}) への Emacs ユーザーインターフェース
+です。
 
-EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$N$?$a$N%*!<%k%$%s%o%s(B GnuPG $B%$%s%?!<%U%'!<(B
-$B%9$G$"$k(B EasyPG $B$H$$$&%Q%C%1!<%8$N0lIt$G$9!#(BEasyPG $B$O(B EasyPG $B%i%$%V%i%j!<(B
-$B$H$$$&%i%$%V%i%j!<!&%$%s%?!<%U%'!<%9$b4^$s$G$$$^$9!#(B
+EasyPG アシスタントは Emacs のためのオールインワン GnuPG インターフェー
+スである EasyPG というパッケージの一部です。EasyPG は EasyPG ライブラリー
+というライブラリー・インターフェースも含んでいます。
 
 @ifnottex
 @insertcopying
@@ -77,82 +77,82 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$N$?$a$N%*!<%k%$%s%o%s(B GnuPG $B%$%s%?!<
 * Caching Passphrases::
 * GnuPG version compatibility::
 * Bug Reports::
-* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
+* GNU Free Documentation License:: この文書の利用許諾契約書
 * Key Index::
 * Function Index::
 * Variable Index::
 @end menu
 
 @node Overview, Quick start, Top, Top
-@chapter $B35MW(B
+@chapter 概要
 
-EasyPG $B$O0J2<$N5!G=$rDs6!$7$^$9!#(B
+EasyPG は以下の機能を提供します。
 
 @itemize @bullet
-@item $B80$N4IM}(B
-@item $BNN0h$N0E9f$d=pL>$NA`:n(B
-@item $B%U%!%$%k$N0E9f$d=pL>$NA`:n(B
-@item Dired $B$NE}9g(B
-@item Mail $B%b!<%I$NE}9g(B
-@item *.gpg $B%U%!%$%k$N<+F00E9f2=(B/$BI|9f(B
+@item 鍵の管理
+@item 領域の暗号や署名の操作
+@item ファイルの暗号や署名の操作
+@item Dired の統合
+@item Mail モードの統合
+@item *.gpg ファイルの自動暗号化/復号
 @end itemize
 
 @node Quick start, Commands, Overview, Top
-@chapter $B$H$j$"$($:;O$a$k(B
+@chapter とりあえず始める
 
-EasyPG $B%"%7%9%?%s%H!&%3%^%s%I$O(B @samp{epa-} $B$G;O$^$j$^$9!#Nc$($P!"(B
+EasyPG アシスタント・コマンドは @samp{epa-} で始まります。例えば、
 
 @itemize @bullet
-@item $B80%j%s%0$rD/$a$k$K$O(B @kbd{M-x epa-list-keys}
+@item 鍵リングを眺めるには @kbd{M-x epa-list-keys}
 
-@item $BNN0h$N%/%j%"%F%-%9%H=pL>$r:n$k$K$O(B @kbd{M-x epa-sign-region}
+@item 領域のクリアテキスト署名を作るには @kbd{M-x epa-sign-region}
 
-@item $B%U%!%$%k$r0E9f2=$9$k$K$O(B @kbd{M-x epa-encrypt-file}
+@item ファイルを暗号化するには @kbd{M-x epa-encrypt-file}
 @end itemize
 
-EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$N(B
-$B0E9f$d=pL>$N5!G=$rDs6!$7$^$9!#Nc$($P(B @file{*.gpg} $B%U%!%$%k$N0E9f2=$HI|9f(B
-$B$G$9!#(B
+EasyPG アシスタントは Emacs の他の機能性に統合することができるいくつかの
+暗号や署名の機能を提供します。例えば @file{*.gpg} ファイルの暗号化と復号
+です。
 
 @node Commands, GnuPG version compatibility, Quick start, Top
-@chapter $B%3%^%s%I(B
+@chapter コマンド
 
-$B$3$N>O$OBeI=E*$J;H$$J}$N$?$a$NMM!9$J%3%^%s%I$r>R2p$7$^$9!#(B
+この章は代表的な使い方のための様々なコマンドを紹介します。
 
 @menu
-* Key management::                      $B80$N4IM}(B
-* Cryptographic operations on regions:: $BNN0h$N0E9f$d=pL>$NA`:n(B
-* Cryptographic operations on files::   $B%U%!%$%k$N0E9f$d=pL>$NA`:n(B
-* Dired integration::                   Dired $B$NE}9g(B
-* Mail-mode integration::               Mail $B%b!<%I$NE}9g(B
-* Encrypting/decrypting gpg files::     gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
+* Key management::                      鍵の管理
+* Cryptographic operations on regions:: 領域の暗号や署名の操作
+* Cryptographic operations on files::   ファイルの暗号や署名の操作
+* Dired integration::                   Dired の統合
+* Mail-mode integration::               Mail モードの統合
+* Encrypting/decrypting gpg files::     gpg ファイルの暗号化と復号
 @end menu
 
 @node Key management, Cryptographic operations on regions, Commands, Commands
-@section $B80$N4IM}(B
-$B$*$=$i$/(B EasyPG $B%"%7%9%?%s%H$r;H$&:G=i$N0lJb$O80%j%s%0$rD/$a$k$3$H$G$7$g(B
-$B$&!#(B@kbd{M-x epa-list-keys} $B$O%3%^%s%I%i%$%s$+$i;H(B
-$B$&(B @samp{gpg--list-keys} $B$KAjEv$7$F$$$^$9!#(B
+@section 鍵の管理
+おそらく EasyPG アシスタントを使う最初の一歩は鍵リングを眺めることでしょ
+う。@kbd{M-x epa-list-keys} はコマンドラインから使
+う @samp{gpg--list-keys} に相当しています。
 
 @deffn Command epa-list-keys name mode
-$B8x3+80%j%s%0$N(B @var{name} $B$K9gCW$9$k$9$Y$F$N80$rI=<($7$^$9!#(B
+公開鍵リングの @var{name} に合致するすべての鍵を表示します。
 @end deffn
 
 @noindent
-$B$=$N=PNO$O<!$N$h$&$J$b$N$G$9!#(B
+その出力は次のようなものです。
 
 @example
   u A5B6B2D4B15813FE Daiki Ueno <ueno@@unixuser.org>
 @end example
 
 @noindent
-$B:8C<$N7e$NJ8;z$O$=$N80$N?.MjEY$rI=$7$^$9!#$b$7(B @samp{u} $B$J$i$P!"$=$N80$O(B
-$B5f6KE*$K?.Mj$5$l$k$b$N$H$7$F0u$5$l$F$$$^$9!#Fs$DL\$N7e$O$=$N80$N(B ID$B!";D(B
-$B$j$O%f!<%6!<(B ID $B$G$9!#(B
+左端の桁の文字はその鍵の信頼度を表します。もし @samp{u} ならば、その鍵は
+究極的に信頼されるものとして印されています。二つ目の桁はその鍵の ID、残
+りはユーザー ID です。
 
-@key{TAB} $B$G9`L\$r0\F0$G$-$^$9!#$"$k9`L\$G(B @key{RET} $B$r%?%$%W$9$k$+%^%&(B
-$B%9$NBh(B1$B%\%?%s$r%/%j%C%/$9$k$H!"A*Br$7$?80$N$b$C$H>\:Y$J>pJs$r8+$k$3$H$,(B
-$B$G$-$^$9!#(B
+@key{TAB} で項目を移動できます。ある項目で @key{RET} をタイプするかマウ
+スの第1ボタンをクリックすると、選択した鍵のもっと詳細な情報を見ることが
+できます。
 
 @example
  u Daiki Ueno <ueno@@unixuser.org>
@@ -169,254 +169,254 @@ EasyPG $B%"%7%9%?%s%H$O(B Emacs $B$NB>$N5!G=@-$KE}9g$9$k$3$H$,$G$-$k$$$/$D$+$
 @end example
 
 @noindent
-$BHkL)80%j%s%0$rD/$a$k$K$O(B @kbd{M-x epa-list-secret-keys} $B$r;H$C$F$/$@$5$$!#(B
+秘密鍵リングを眺めるには @kbd{M-x epa-list-secret-keys} を使ってください。
 
 @deffn Command epa-list-secret-keys name
-$BHkL)80%j%s%0$NCf$N(B @var{name} $B$K9gCW$9$k$9$Y$F$N80$rI=<($7$^$9!#(B
+秘密鍵リングの中の @var{name} に合致するすべての鍵を表示します。
 @end deffn
 
 @noindent
-@file{*Keys*} $B%P%C%U%!!<$G$O$$$/$D$+$N%3%^%s%I$rMxMQ$G$-$^$9!#$h$/$"$kMQ(B
-$BES$O$$$/$D$+$N80$r%U%!%$%k$K=q$-=P$9$3$H$G$9!#$=$l$K$O(B @kbd{m} $B$r%?%$%W(B
-$B$7$F80$rA*Br$7!"(B@kbd{o} $B$r%?%$%W$7$?8e$G%U%!%$%kL>$rF~NO$7$F$/$@$5$$!#(B
+@file{*Keys*} バッファーではいくつかのコマンドを利用できます。よくある用
+途はいくつかの鍵をファイルに書き出すことです。それには @kbd{m} をタイプ
+して鍵を選択し、@kbd{o} をタイプした後でファイル名を入力してください。
 
-$B0J2<$O80$N4IM}$K4X$9$kB>$N%3%^%s%I$G$9!#$=$l$i$N$$$/$D$+$O%U%!%$%k$rBP>](B
-$B$KF~=PNO$r9T$J$$!"B>$O8=:_@_Dj$5$l$F$$$kNN0h$,BP>]$K$J$j$^$9!#(B
+以下は鍵の管理に関する他のコマンドです。それらのいくつかはファイルを対象
+に入出力を行ない、他は現在設定されている領域が対象になります。
 
 @deffn Command epa-insert-keys keys
-$B%+!<%=%k$N8e$m$KA*Br$5$l$?(B @var{keys} $B$rA^F~$7$^$9!#A^F~$9$kA0$K80$rA*Br(B
-$B$9$k$3$H$rB%$5$l$^$9!#%G%#%U%)%k%H$G$O80$r(B OpenPGP $B$NAu9C%U%)!<%^%C%H$G(B
-$B%(%s%3!<%I$7$^$9!#(B
+カーソルの後ろに選択された @var{keys} を挿入します。挿入する前に鍵を選択
+することを促されます。ディフォルトでは鍵を OpenPGP の装甲フォーマットで
+エンコードします。
 @end deffn
 
 @deffn Command epa-import-keys file
-$B80$r(B @var{file} $B$+$i80%j%s%0$K<h$j9~$_$^$9!#(B
+鍵を @var{file} から鍵リングに取り込みます。
 @end deffn
 
 @deffn Command epa-import-keys-region start end
-$B80$r(B @var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$+$i80%j%s%0$K<h$j9~$_$^$9!#(B
+鍵を @var{start} と @var{end} の間の現在の領域から鍵リングに取り込みます。
 @end deffn
 
 @deffn Command epa-import-armor-in-region start end
-$B80$r(B @var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$K$"$k(B OpenPGP $B$NAu9C%U%)!<(B
-$B%^%C%H$+$i80%j%s%0$K<h$j9~$_$^$9!#(B@code{epa-import-keys-region} $B$H$N0c$$(B
-$B$O(B @code{epa-import-armor-in-region} $B$,NN0h$K$"$kAu9C$rC5$7$F!"$=$l$i$r(B
-$BC`0l(B @code{epa-import-keys-region} $B$,=hM}$9$k$3$H$G$9!#(B
+鍵を @var{start} と @var{end} の間の現在の領域にある OpenPGP の装甲フォー
+マットから鍵リングに取り込みます。@code{epa-import-keys-region} との違い
+は @code{epa-import-armor-in-region} が領域にある装甲を探して、それらを
+逐一 @code{epa-import-keys-region} が処理することです。
 @end deffn
 
 @deffn Command epa-delete-keys allow-secret
-$BA*Br$5$l$?80$r<h$j=|$-$^$9!#(B@var{allow-secret} $B$,(B @code{nil} $B$G$J$+$C$?(B
-$B$iHkL)80$b<h$j=|$-$^$9!#(B
+選択された鍵を取り除きます。@var{allow-secret} が @code{nil} でなかった
+ら秘密鍵も取り除きます。
 @end deffn
 
 @node Cryptographic operations on regions, Cryptographic operations on files, Key management, Commands
-@section $BNN0h$N0E9f$d=pL>$NA`:n(B
+@section 領域の暗号や署名の操作
 
 @deffn Command epa-decrypt-region start end
-@var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$rI|9f$7$^$9!#I|9f$5$l$?%F%-%9(B
-$B%H$GNN0h$rCV$-49$($^$9!#(B
+@var{start} と @var{end} の間の現在の領域を復号します。復号されたテキス
+トで領域を置き換えます。
 @end deffn
 
 @deffn Command epa-decrypt-armor-in-region start end
-@var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$K$"$k(B OpenPGP $BAu9C$rI|9f$7$^$9!#(B
-@code{epa-decrypt-region} $B$H$N0c$$(B
-$B$O(B @code{epa-decrypt-armor-in-region} $B$,NN0h$K$"$kAu9C$rC5$7$F!"$=$l$i$r(B
-$BC`0l(B @code{epa-decrypt-region} $B$,=hM}$9$k$3$H$G$9!#$7$?$,$C$F$3$N%3%^%s(B
-$B%I$OAu9C$NA08e$K$"$k85$N%F%-%9%H$r2~JQ$7$^$;$s!#(B
+@var{start} と @var{end} の間の現在の領域にある OpenPGP 装甲を復号します。
+@code{epa-decrypt-region} との違い
+は @code{epa-decrypt-armor-in-region} が領域にある装甲を探して、それらを
+逐一 @code{epa-decrypt-region} が処理することです。したがってこのコマン
+ドは装甲の前後にある元のテキストを改変しません。
 @end deffn
 
 @deffn Command epa-verify-region start end
-@var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$r8!>Z$7$^$9!#8!>Z7k2L$O%_%K%P%C(B
-$B%U%!!<$+%]%C%W%"%C%W$5$l$k%&%#%s%I%&$KAw$j$^$9!#NN0h$r=pL>$5$l$?%F%-%9%H(B
-$B$GCV$-49$($^$9!#(B
+@var{start} と @var{end} の間の現在の領域を検証します。検証結果はミニバッ
+ファーかポップアップされるウィンドウに送ります。領域を署名されたテキスト
+で置き換えます。
 @end deffn
 
 @deffn Command epa-verify-cleartext-in-region
-@var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$K$"$k(B OpenPGP $B$N%/%j%"%F%-%9%H!&(B
-$B%V%m%C%/$r8!>Z$7$^$9!#(B@code{epa-verify-region}$B$H$N0c$$(B
-$B$O(B @code{epa-verify-cleartext-in-region} $B$,NN0h$K$"$k%/%j%"%F%-%9%H!&%V(B
-$B%m%C%/$rC5$7$F!"$=$l$i$rC`0l(B @code{epa-verify-region} $B$,=hM}$9$k$3$H$G$9!#(B
-$B$7$?$,$C$F$3$N%3%^%s%I$O%/%j%"%F%-%9%H!&%V%m%C%/$NA08e$K$"$k85$N%F%-%9%H(B
-$B$r2~JQ$7$^$;$s!#(B
+@var{start} と @var{end} の間の現在の領域にある OpenPGP のクリアテキスト・
+ブロックを検証します。@code{epa-verify-region}との違い
+は @code{epa-verify-cleartext-in-region} が領域にあるクリアテキスト・ブ
+ロックを探して、それらを逐一 @code{epa-verify-region} が処理することです。
+したがってこのコマンドはクリアテキスト・ブロックの前後にある元のテキスト
+を改変しません。
 @end deffn
 
 @deffn Command epa-sign-region start end signers type
-@var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$K=pL>$7$^$9!#%G%#%U%)%k%H$G$O(B
-$B%/%j%"%F%-%9%H$N=pL>$r:n$j$^$9!#@\F,0z?t$rM?$($k$H=pL>$K;H$&80$H=pL>$N%?(B
-$B%$%W$rA*Br$9$k$3$H$rB%$5$l$^$9!#(B
+@var{start} と @var{end} の間の現在の領域に署名します。ディフォルトでは
+クリアテキストの署名を作ります。接頭引数を与えると署名に使う鍵と署名のタ
+イプを選択することを促されます。
 @end deffn
 
 @deffn Command epa-encrypt-region start end recipients sign signers
-@var{start} $B$H(B @var{end} $B$N4V$N8=:_$NNN0h$r0E9f2=$7$^$9!#<u<h?M$rA*Br$9(B
-$B$k$3$H$rB%$5$l$^$9!#@\F,0z?t$rM?$($k$H0E9f2=$9$kA0$K%F%-%9%H$K=pL>$9$k$+(B
-$B$I$&$+$r?R$M$i$l!"(Byes $B$HEz$($?>l9g$O=pL>$K;H$&80$rA*Br$9$k$3$H$rB%$5$l$^(B
-$B$9!#(B
+@var{start} と @var{end} の間の現在の領域を暗号化します。受取人を選択す
+ることを促されます。接頭引数を与えると暗号化する前にテキストに署名するか
+どうかを尋ねられ、yes と答えた場合は署名に使う鍵を選択することを促されま
+す。
 @end deffn
 
 @node Cryptographic operations on files, Dired integration, Cryptographic operations on regions, Commands
-@section $B%U%!%$%k$N0E9f$d=pL>$NA`:n(B
+@section ファイルの暗号や署名の操作
 
 @deffn Command epa-decrypt-file file &optional output
-@var{file} $B$rI|9f$7$^$9!#$b$7J#9g$7$?7k2L$r3JG<$9$k%U%!%$%k$NL>A0(B
-$B$r(B @var{output} $B$G;XDj$7$J$$$H!"$=$l$rF~NO$9$k$3$H$r5a$a$^$9!#(B
+@var{file} を復号します。もし複合した結果を格納するファイルの名前
+を @var{output} で指定しないと、それを入力することを求めます。
 @end deffn
 
 @deffn Command epa-verify-file file
-@var{file} $B$r8!>Z$7$^$9!#(B
+@var{file} を検証します。
 @end deffn
 
 @deffn Command epa-sign-file file signers type
-@var{file} $B$K=pL>$7$^$9!#@\F,0z?t$rM?$($k$H=pL>$K;H$&80$H=pL>$N%?%$%W$r(B
-$BA*Br$9$k$3$H$rB%$5$l$^$9!#(B
+@var{file} に署名します。接頭引数を与えると署名に使う鍵と署名のタイプを
+選択することを促されます。
 @end deffn
 
 @deffn Command epa-encrypt-file file recipients
-@var{file} $B$r0E9f2=$7$^$9!#<u<h?M$rA*Br$9$k$3$H$rB%$5$l$^$9!#(B
+@var{file} を暗号化します。受取人を選択することを促されます。
 @end deffn
 
 @node Dired integration, Mail-mode integration, Cryptographic operations on files, Commands
-@section Dired $B$NE}9g(B
+@section Dired の統合
 
-EasyPG $B%"%7%9%?%s%H$O(B GNU Emacs $B$N(B dired $B%b!<%I$r3HD%$7$F!"%U%!%$%k$N0E(B
-$B9f$d=pL>$NA`:n$,$G$-$k$h$&$K$7$^$9!#Nc$($P<!$N$h$&$J$3$H$,$G$-$^$9!#(B
+EasyPG アシスタントは GNU Emacs の dired モードを拡張して、ファイルの暗
+号や署名の操作ができるようにします。例えば次のようなことができます。
 
 @example
 M-x dired
-($B$$$/$D$+$N%U%!%$%k$KA*Br%^!<%/$rIU$1$F(B)
+(いくつかのファイルに選択マークを付けて)
 : e (or M-x epa-dired-do-encrypt)
-(`m' $B$G<u<h?M$rA*Br$7$F(B [OK] $B$r%/%j%C%/(B)
+(`m' で受取人を選択して [OK] をクリック)
 @end example
 
 @noindent
-$B0J2<$N%-!<$,3d$jEv$F$i$l$F$$$^$9!#(B
+以下のキーが割り当てられています。
 
 @table @kbd
 @item : d
 @kindex @kbd{: d}
 @findex epa-dired-do-decrypt
-$B%^!<%/$5$l$?%U%!%$%k$rI|9f$7$^$9!#(B
+マークされたファイルを復号します。
 
 @item : v
 @kindex @kbd{: v}
 @findex epa-dired-do-verify
-$B%^!<%/$5$l$?%U%!%$%k$r8!>Z$7$^$9!#(B
+マークされたファイルを検証します。
 
 @item : s
 @kindex @kbd{: s}
 @findex epa-dired-do-sign
-$B%^!<%/$5$l$?%U%!%$%k$K=pL>$7$^$9!#(B
+マークされたファイルに署名します。
 
 @item : e
 @kindex @kbd{: e}
 @findex epa-dired-do-encrypt
-$B%^!<%/$5$l$?%U%!%$%k$r0E9f2=$7$^$9!#(B
+マークされたファイルを暗号化します。
 @end table
 
 @node Mail-mode integration, Encrypting/decrypting gpg files, Dired integration, Commands
-@section Mail $B%b!<%I$NE}9g(B
+@section Mail モードの統合
 
-EasyPG $B%"%7%9%?%s%H$O%$%s%i%$%s(B OpenPGP $B%a%C%;!<%8$N:n@.$r;Y1g$9$k$?$a$K(B
-$B%^%$%J!<%b!<%I(B @code{epa-mail-mode} $B$rDs6!$7$^$9!#%$%s%i%$%s(B OpenPGP $B%a%C(B
-$B%;!<%8$O!"8=BeE*$J(B MIME $B%U%)!<%^%C%H$r;H$o$:$K@8$N(B OpenPGP blobs ($B%P%$%J(B
-$B%j!<%G!<%?(B) $B$r%a%C%;!<%8$NK\J,$KKd$a9~$`$3$H$K$h$C$F!"=pL>$r$7$?$j0E9f2=(B
-$B$7$?EE;R%a!<%k$rAw$kEAE}E*$J7A<0$G$9!#(B
+EasyPG アシスタントはインライン OpenPGP メッセージの作成を支援するために
+マイナーモード @code{epa-mail-mode} を提供します。インライン OpenPGP メッ
+セージは、現代的な MIME フォーマットを使わずに生の OpenPGP blobs (バイナ
+リーデータ) をメッセージの本分に埋め込むことによって、署名をしたり暗号化
+した電子メールを送る伝統的な形式です。
 
-$BCm(B: $B%$%s%i%$%s(B OpenPGP $B$O?d>)$5$l$^$;$s!#(BPGP/MIME $B$r;H$&$3$H$r9M$($k$Y$-(B
-$B$G$9!#(B@uref{http://josefsson.org/inline-openpgp-considered-harmful.html,
-Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} $B$r;2>H$7$F$/$@$5$$!#(B
+注: インライン OpenPGP は推奨されません。PGP/MIME を使うことを考えるべき
+です。@uref{http://josefsson.org/inline-openpgp-considered-harmful.html,
+Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 
 @noindent
-@code{epa-mail-mode} $B$rM-8z$K$9$k$H0J2<$N%-!<$,3d$jEv$F$i$l$^$9!#$3$N%^(B
-$B%$%J!<%b!<%I$rM-8z$K$9$k$K$O(B @kbd{C-u 1 M-x epa-mail-mode} $B$r<B9T$9$k$+!"(B
-$B%+%9%?%`$N%$%s%?!<%U%'!<%9$rDL$7$F9T$J$C$F$/$@$5(B
-$B$$(B (@kbd{M-x customize-variable epa-global-mail-mode} $B$r;n$7$F$/$@$5$$(B)$B!#(B
+@code{epa-mail-mode} を有効にすると以下のキーが割り当てられます。このマ
+イナーモードを有効にするには @kbd{C-u 1 M-x epa-mail-mode} を実行するか、
+カスタムのインターフェースを通して行なってくださ
+い (@kbd{M-x customize-variable epa-global-mail-mode} を試してください)。
 
 @table @kbd
 @item C-c C-e C-d and C-c C-e d
 @kindex @kbd{C-c C-e C-d}
 @kindex @kbd{C-c C-e d}
 @findex epa-mail-decrypt
-$B8=:_$N%P%C%U%!!<$K$"$k(B OpenPGP $BAu9C$rI|9f$7$^$9!#(B
+現在のバッファーにある OpenPGP 装甲を復号します。
 
 @item C-c C-e C-v and C-c C-e v
 @kindex @kbd{C-c C-e C-v}
 @kindex @kbd{C-c C-e v}
 @findex epa-mail-verify
-$B8=:_$N%P%C%U%!!<$K$"$k(B OpenPGP $B$N%/%j%"%F%-%9%H$G=pL>$5$l$?%a%C%;!<%8$r(B
-$B8!>Z$7$^$9!#(B
+現在のバッファーにある OpenPGP のクリアテキストで署名されたメッセージを
+検証します。
 
 @item C-c C-e C-s and C-c C-e s
 @kindex @kbd{C-c C-e C-s}
 @kindex @kbd{C-c C-e s}
 @findex epa-mail-sign
-$B8=:_$N%P%C%U%!!<$+$i=pL>$5$l$?%a%C%;!<%8$r:n$j$^$9!#(B
+現在のバッファーから署名されたメッセージを作ります。
 
 @item C-c C-e C-e and C-c C-e e
 @kindex @kbd{C-c C-e C-e}
 @kindex @kbd{C-c C-e e}
 @findex epa-mail-encrypt
 @vindex epa-mail-aliases
-$B8=:_$N%P%C%U%!!<$+$i0E9f2=$5$l$?%a%C%;!<%8$r:n$j$^$9!#%G%#%U%)%k%H$G$O%a!<(B
-$B%k$N%X%C%@!<$N(B @samp{to}$B!"(B@samp{cc}$B!"$*$h$S(B @samp{bcc} $B%U%#!<%k%I$+$i<u(B
-$B<h?M%j%9%H$r:n$m$&$H$7$^$9!#<u<h?M%j%9%H$K$"$J$?$N80$r4^$a$?$$>l9g(B
-$B$O(B @file{~/.gnupg/gpg.conf} $B$G(B @samp{encrypt-to} $B%*%W%7%g%s$r;H$C$F$/$@(B
-$B$5$$!#$3$N4X?t$O(B @code{epa-mail-aliases} $B%j%9%H$r;H$C$F<u<h?M%"%I%l%9$r(B
-$B=q$-49$($^$9!#$=$N%*%W%7%g%s$rFCDj$N<u<h?M$r0E9f2=$NBP>]$H$7$J$$$?$a$K;H(B
-$B$&$3$H$b$G$-$^$9!#(B
+現在のバッファーから暗号化されたメッセージを作ります。ディフォルトではメー
+ルのヘッダーの @samp{to}、@samp{cc}、および @samp{bcc} フィールドから受
+取人リストを作ろうとします。受取人リストにあなたの鍵を含めたい場合
+は @file{~/.gnupg/gpg.conf} で @samp{encrypt-to} オプションを使ってくだ
+さい。この関数は @code{epa-mail-aliases} リストを使って受取人アドレスを
+書き換えます。そのオプションを特定の受取人を暗号化の対象としないために使
+うこともできます。
 @end table
 
 @node Encrypting/decrypting gpg files,  , Mail-mode integration, Commands
-@section gpg $B%U%!%$%k$N0E9f2=$HI|9f(B
-$B%G%#%U%)%k%H$G$OL>A0$,(B @file{.gpg} $B$G=*$o$k%U%!%$%k$O0E9f2=$5$l$?$b$N$H(B
-$B$7$F07$o$l$^$9!#B($A$=$N$h$&$J%U%!%$%k$r3+$/$H!"0E9f2=$5$l$?$^$^$N$b$N$G(B
-$B$O$J$/I|9f$5$l$?%F%-%9%H$,%P%C%U%!!<$KA^F~$5$l$^$9!#F1MM$K%P%C%U%!!<(B
-$B$r(B @file{foo.gpg} $B%U%!%$%k$K%;!<%V$9$k$H0E9f2=$5$l$?%G!<%?$,=q$+$l$^$9!#(B
+@section gpg ファイルの暗号化と復号
+ディフォルトでは名前が @file{.gpg} で終わるファイルは暗号化されたものと
+して扱われます。即ちそのようなファイルを開くと、暗号化されたままのもので
+はなく復号されたテキストがバッファーに挿入されます。同様にバッファー
+を @file{foo.gpg} ファイルにセーブすると暗号化されたデータが書かれます。
 
-$B0E9f2=$5$l$?%U%!%$%k$NL>A0%Q%?!<%s$O(B @var{epa-file-name-regexp} $B$G@)8f$9(B
-$B$k$3$H$,$G$-$^$9!#(B
+暗号化されたファイルの名前パターンは @var{epa-file-name-regexp} で制御す
+ることができます。
 
 @defvar epa-file-name-regexp
-$B0E9f2=$5$l$?$b$N$H$7$F07$o$l$k%U%!%$%kL>$K9gCW$9$k@55,I=8=$G$9!#(B
+暗号化されたものとして扱われるファイル名に合致する正規表現です。
 @end defvar
 
-$B$3$NF0:n$O(B @kbd{M-x epa-file-disable} $B$GL58z$K!"$=$7(B
-$B$F(B @kbd{M-x epa-file-enable} $B$G85$KLa$9$3$H$,$G$-$^$9!#(B
+この動作は @kbd{M-x epa-file-disable} で無効に、そし
+て @kbd{M-x epa-file-enable} で元に戻すことができます。
 
 @deffn Command epa-file-disable
-*.gpg $B%U%!%$%k$N<+F00E9f2=(B/$BI|9f$rL58z$K$7$^$9!#(B
+*.gpg ファイルの自動暗号化/復号を無効にします。
 @end deffn
 
 @deffn Command epa-file-enable
-*.gpg $B%U%!%$%k$N<+F00E9f2=(B/$BI|9f$rM-8z$K$7$^$9!#(B
+*.gpg ファイルの自動暗号化/復号を有効にします。
 @end deffn
 
 @noindent
-$B%G%#%U%)%k%H$G$O(B @code{epa-file} $B$OBP>N800E9f(B (symmetric encryption)$B!"8@(B
-$B$$49$($k$H%Q%9%o!<%I$K4p$E$$$?0E9f$r;H$*$&$H$7$^$9!#Be$o$j$K8x3+800E(B
-$B9f(B (public key encryption) $B$r;H$$$?$$$N$G$"$l(B
-$B$P(B @kbd{M-x epa-file-select-keys} $B$r9T$J$C$F$/$@$5$$!#$9$k$H%-!<$rA*Br$9(B
-$B$k$?$a$NBPOCAk$,%]%C%W%"%C%W$7$^$9!#(B
+ディフォルトでは @code{epa-file} は対称鍵暗号 (symmetric encryption)、言
+い換えるとパスワードに基づいた暗号を使おうとします。代わりに公開鍵暗
+号 (public key encryption) を使いたいのであれ
+ば @kbd{M-x epa-file-select-keys} を行なってください。するとキーを選択す
+るための対話窓がポップアップします。
 
 @deffn Command epa-file-select-keys
-$B8=:_3+$$$F$$$k%U%!%$%k$r8x3+80$G0E9f2=$9$k$?$a$N<u<h?M$N80$rA*Br$7$^$9!#(B
+現在開いているファイルを公開鍵で暗号化するための受取人の鍵を選択します。
 @end deffn
 
-$BJQ?t(B @code{epa-file-select-keys} $B$G%G%#%U%)%k%H$NF0:n$rJQ99$9$k$3$H$b$G(B
-$B$-$^$9!#(B
+変数 @code{epa-file-select-keys} でディフォルトの動作を変更することもで
+きます。
 
 @defvar epa-file-select-keys
-$B80$rA*Br$9$k$?$a$NBPOCAk$r%]%C%W%"%C%W$9$k$+$I$&$+$r@)8f$7$^$9!#(B
+鍵を選択するための対話窓をポップアップするかどうかを制御します。
 @end defvar
 
-$BIQHK$K3+$/%U%!%$%k$K$D$$$F$O!"$I$N0E9fJ}<0$r;H$&$Y$-$+$r(B @pxref{File
-Variables, , , emacs, the Emacs Manual} $B$r2p$7$F(B Emacs $B$KEA$($F$*$/$3$H(B
-$B$ONI$$9M$($+$b$7$l$^$;$s!#$3$NL\E*$K$O%m!<%+%kJQ(B
-$B?t(B @code{epa-file-encrypt-to} $B$r;H$C$F$/$@$5$$!#(B
+頻繁に開くファイルについては、どの暗号方式を使うべきかを @pxref{File
+Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこと
+は良い考えかもしれません。この目的にはローカル変
+数 @code{epa-file-encrypt-to} を使ってください。
 @vindex epa-file-encrypt-to
 
-$BNc$($P(B ELisp $B%U%!%$%k$rEE;R%a!<%k%"%I%l%9(B @samp{ueno@@unixuser.org} $B$KBP(B
-$B1~$9$k8x3+800E9f$G0E9f2=$7$?$$$N$G$"$l$P!"$=$N%U%!%$%k$N@hF,$K0J2<$N9T$r(B
-$B2C$($F$/$@$5$$!#(B
+例えば ELisp ファイルを電子メールアドレス @samp{ueno@@unixuser.org} に対
+応する公開鍵暗号で暗号化したいのであれば、そのファイルの先頭に以下の行を
+加えてください。
 
 @cartouche
 @lisp
@@ -424,8 +424,8 @@ Variables, , , emacs, the Emacs Manual} $B$r2p$7$F(B Emacs $B$KEA$($F$*$/$3$H
 @end lisp
 @end cartouche
 
-$B5U$K%U%!%$%k$r>o$K(B (@code{epa-file-select-keys} $BJQ?t$NCM$K4X$o$i$:(B) $BBP>N(B
-$B800E9f$G0E9f2=$7$?$$$N$G$"$l$P!"$=$N9T$r0J2<$N$h$&$KJQ99$7$F$/$@$5$$!#(B
+逆にファイルを常に (@code{epa-file-select-keys} 変数の値に関わらず) 対称
+鍵暗号で暗号化したいのであれば、その行を以下のように変更してください。
 
 @cartouche
 @lisp
@@ -433,110 +433,110 @@ Variables, , , emacs, the Emacs Manual} $B$r2p$7$F(B Emacs $B$KEA$($F$*$/$3$H
 @end lisp
 @end cartouche
 
-$B<+F00E9f2=(B/$BI|9f$NF0:n$r@)8f$9$kB>$NJQ?t$O0J2<$NDL$j$G$9!#(B
+自動暗号化/復号の動作を制御する他の変数は以下の通りです。
 
 @defvar epa-file-cache-passphrase-for-symmetric-encryption
-@code{nil} $B0J30$NCM$@$C$?$iBP>N800E9f$N$?$a$N%Q%9%U%l!<%:$r%-%c%C%7%e$7(B
-$B$^$9!#%G%#%U%)%k%HCM$O(B @code{nil} $B$G$9!#(B
+@code{nil} 以外の値だったら対称鍵暗号のためのパスフレーズをキャッシュし
+ます。ディフォルト値は @code{nil} です。
 @end defvar
 
 @defvar epa-file-inhibit-auto-save
-@code{nil} $B0J30$NCM$@$C$?$i3+$$$F$$$k0E9f2=$5$l$?%U%!%$%k$N<+F0%;!<%V$r(B
-$B6X;_$7$^$9!#%G%#%U%)%k%HCM$O(B @code{t} $B$G$9!#(B
+@code{nil} 以外の値だったら開いている暗号化されたファイルの自動セーブを
+禁止します。ディフォルト値は @code{t} です。
 @end defvar
 
 @node GnuPG version compatibility, Caching Passphrases, Commands, Top
-@chapter GnuPG $B$N%P!<%8%g%s$N8_49@-(B
+@chapter GnuPG のバージョンの互換性
 
-2016$BG/(B2$B7n8=:_(B GnuPG $B$K$O(B 3$B$D$N3hF0E*$J;^$,$"$j$^$9(B; 2.1$B!"(B2.0$B!"$*$h(B
-$B$S(B 1.4 $B$G$9!#$=$l$O$9$Y$F4pK\E*$J%f!<%9%1!<%9$G$O(B Emacs $B$H$H$b$K40`z$KF0(B
-$B:n$9$k$b$N$N!"(BEmacs $B$+$i;H$&$HL\$K8+$($k$+$b$7$l$J$$8_49@-$N$J$$FCD'$,$"(B
-$B$j$^$9!#(B
+2016年2月現在 GnuPG には 3つの活動的な枝があります; 2.1、2.0、およ
+び 1.4 です。それはすべて基本的なユースケースでは Emacs とともに完璧に動
+作するものの、Emacs から使うと目に見えるかもしれない互換性のない特徴があ
+ります。
 
 @itemize
 @item
-GnuPG 2.1 $B$N80$r3JG<$9$k$?$a$N%U%)!<%^%C%H$O(B 1.4 $B$H0[$J$j$^$9!#$=$l(B
-$B$O(B GnuPG 2.1 $B$G:n@.$5$l$?80$,(B 1.4 $B$G$O8+$($J$$$+$b$7$l$J$$$H$$$&$3$H$G$9!#(B
+GnuPG 2.1 の鍵を格納するためのフォーマットは 1.4 と異なります。それ
+は GnuPG 2.1 で作成された鍵が 1.4 では見えないかもしれないということです。
 
 @item
-GnuPG 2.1 $B$O(B gpg-agent $B$HDL?.$9$k$?$a$K8GDj%"%I%l%9$N(B Unix $B%I%a%$%s%=%1%C(B
-$B%H$r;H$$$^$9!#(BGnuPG 2.0 $B$H(B 1.4 $B$G;H$o$l$F$$$k(B @code{GPG_AGENT_INFO} $B4D6-(B
-$BJQ?t$OL5;k$7$^$9!#$3$N$3$H$O!"$b$7$"$J$?$N%7%9%F%`$K(B GnuPG 2.1 $B$H(B 1.4 $B$N(B
-$BN>J}$,$"$k$H$9$k$H!"(BGnuPG 1.4 $BM3Mh$N(B gpg $B%3%^%s%I$O(B 2.1 $B$,Ds6!$9(B
-$B$k(B gpg-agent $B$r(B ($B>/$J$/$H$b$=$N$^$^$G$O(B) $B;H$($J$$$3$H$r0UL#$7$^$9!#(B
+GnuPG 2.1 は gpg-agent と通信するために固定アドレスの Unix ドメインソケッ
+トを使います。GnuPG 2.0 と 1.4 で使われている @code{GPG_AGENT_INFO} 環境
+変数は無視します。このことは、もしあなたのシステムに GnuPG 2.1 と 1.4 の
+両方があるとすると、GnuPG 1.4 由来の gpg コマンドは 2.1 が提供す
+る gpg-agent を (少なくともそのままでは) 使えないことを意味します。
 
 @item
-GnuPG 2.1 (2.1.5 $B0J9_(B) $B$O(B Emacs $B$N%_%K%P%C%U%!!<$+$iD>@\(B Pinentry $B$rF~NO(B
-$B$9$k$3$H$,$G$-$^$9!#(B@footnote{$B$3$N5!G=$r3h$+$9$K(B
-$B$O(B @file{~/.gnupg/gpg-agent.conf} $B$K(B @samp{allow-emacs-pinentry} $B$r2C$((B
-$B$F$+$i(B @samp{gpgconf --reload gpg-agent} $B$r9T$J$&$3$H$K$h$C$F!"@_Dj(B
-$B$r(B gpg-agent $B$K:FFI$_9~$_$5$;$F$/$@$5$$!#(B}  $B$3$l$O(B Emacs $B$r1s3V$G!"$^$?(B
-$B$OJ8;zC<Kv$G;H$&$H$-$KLr$KN)$D$G$7$g$&!#$3$N5!G=$OB>$N%P!<%8%g%s$K$O$"$j(B
-$B$^$;$s!#$5$i$K8@$&$H(B 2.0 $B$G$O(B (2.0.29 $B$N;~E@$G$O(B) $B%0%i%U%#%+%k$JF~NOMW5a(B
-$B$r9T$J$&$3$H$rL58z$K$9$k<jN)$F$,$"$j$^$;$s!#(B
+GnuPG 2.1 (2.1.5 以降) は Emacs のミニバッファーから直接 Pinentry を入力
+することができます。@footnote{この機能を活かすに
+は @file{~/.gnupg/gpg-agent.conf} に @samp{allow-emacs-pinentry} を加え
+てから @samp{gpgconf --reload gpg-agent} を行なうことによって、設定
+を gpg-agent に再読み込みさせてください。}  これは Emacs を遠隔で、また
+は文字端末で使うときに役に立つでしょう。この機能は他のバージョンにはあり
+ません。さらに言うと 2.0 では (2.0.29 の時点では) グラフィカルな入力要求
+を行なうことを無効にする手立てがありません。
 @end itemize
 
 @node Caching Passphrases, Bug Reports, GnuPG version compatibility, Top
 @chapter Caching Passphrases
 
-$B$b$7F1$8%U%!%$%k$r3+$$$FJD$8$k5!2q$,EY!9$"$k$N$G$"$l$P!"%Q%9%U%l!<%:$r%?(B
-$B%$%W$9$k$N$O$o$:$i$o$7$$;E;v$G$7$g$&!#(BGnuPG $B$H(B EasyPG $B%"%7%9%?%s%H$O$"$J(B
-$B$?$N%Q%9%U%l!<%:$r5-21$9$k5!9=$rDs6!$7$^$9!#$7$+$7$J$,$i$=$N@_Dj$O>/!99~(B
-$B$_F~$C$F$$$^$9!#$=$l$O!"%$%s%9%H!<%k$5$l$F$$$k(B GnuPG @xref{GnuPG version
-compatibility}$B!"0E9fJ}<0(B ($BBP>N80$+8x3+80$+(B)$B!"$=$7$F(B gpg-agent $B$r;H$$$?$$(B
-$B$+$I$&$+$K$h$j$^$9!#0J2<$K$$$/$D$+$N@_Ld$,$"$j$^$9!#(B
+もし同じファイルを開いて閉じる機会が度々あるのであれば、パスフレーズをタ
+イプするのはわずらわしい仕事でしょう。GnuPG と EasyPG アシスタントはあな
+たのパスフレーズを記憶する機構を提供します。しかしながらその設定は少々込
+み入っています。それは、インストールされている GnuPG @xref{GnuPG version
+compatibility}、暗号方式 (対称鍵か公開鍵か)、そして gpg-agent を使いたい
+かどうかによります。以下にいくつかの設問があります。
 
 @enumerate
 @item
-GnuPG $B%P!<%8%g%s(B 1.4 $B$NBe$o$j$K(B 2.1 $B$^$?$O(B 2.0 $B$r;H$$$^$9$+(B?
+GnuPG バージョン 1.4 の代わりに 2.1 または 2.0 を使いますか?
 @item
-$B8x3+800E9f$G$O$J$/BP>N800E9f$r;H$$$^$9$+(B?
+公開鍵暗号ではなく対称鍵暗号を使いますか?
 @item
-gpg-agent $B$r;H$$$?$$$G$9$+(B?
+gpg-agent を使いたいですか?
 @end enumerate
 
-$B$"$J$?$N2sEz$KBP1~$9$k@_Dj$O<!$NDL$j$G$9!#(B
+あなたの回答に対応する設定は次の通りです。
 
 @multitable {111} {222} {333} {configuration configuration configuration}
 @item @b{1} @tab @b{2} @tab @b{3} @tab Configuration
-@item Yes @tab Yes @tab Yes @tab gpg-agent $B$r;H$($k$h$&$K$7$F$/$@$5$$!#(B
-@item Yes @tab Yes @tab No @tab gpg-agent $BL5$7$G$O$G$-$^$;$s!#(B
-@item Yes @tab No @tab Yes @tab gpg-agent $B$r;H$($k$h$&$K$7$F$/$@$5$$!#(B
-@item Yes @tab No @tab No @tab gpg-agent $BL5$7$G$O$G$-$^$;$s!#(B
-@item No @tab Yes @tab Yes @tab Elisp $B$N%Q%9%U%l!<%:!&%-%c%C%7%e$r;H$C$F$/$@$5$$!#(B
-@item No @tab Yes @tab No @tab Elisp $B$N%Q%9%U%l!<%:!&%-%c%C%7%e$r;H$C$F$/$@$5$$!#(B
-@item No @tab No @tab Yes @tab gpg-agent $B$r;H$($k$h$&$K$7$F$/$@$5$$!#(B
-@item No @tab No @tab No @tab gpg-agent $BL5$7$G$O$G$-$^$;$s!#(B
+@item Yes @tab Yes @tab Yes @tab gpg-agent を使えるようにしてください。
+@item Yes @tab Yes @tab No @tab gpg-agent 無しではできません。
+@item Yes @tab No @tab Yes @tab gpg-agent を使えるようにしてください。
+@item Yes @tab No @tab No @tab gpg-agent 無しではできません。
+@item No @tab Yes @tab Yes @tab Elisp のパスフレーズ・キャッシュを使ってください。
+@item No @tab Yes @tab No @tab Elisp のパスフレーズ・キャッシュを使ってください。
+@item No @tab No @tab Yes @tab gpg-agent を使えるようにしてください。
+@item No @tab No @tab No @tab gpg-agent 無しではできません。
 @end multitable
 
-gpg-agent $B$r;H$($k$h$&$K$9$k$K$O(B GnuPG $B%^%K%e%"%k$N0J2<$N@bL@$K=>$C$F$/(B
-$B$@$5$$!#(B@xref{Invoking GPG-AGENT, , Invoking GPG-AGENT, gnupg}.
+gpg-agent を使えるようにするには GnuPG マニュアルの以下の説明に従ってく
+ださい。@xref{Invoking GPG-AGENT, , Invoking GPG-AGENT, gnupg}.
 
-Elisp $B$N%Q%9%U%l!<%:!&%-%c%C%7%e$r;H$&$K(B
-$B$O(B @code{epa-file-cache-passphrase-for-symmetric-encryption} $BJQ?t(B
-$B$K(B @code{nil} $B0J30$NCM$r@_Dj$7$F$/$@$5$$!#(B
+Elisp のパスフレーズ・キャッシュを使うに
+は @code{epa-file-cache-passphrase-for-symmetric-encryption} 変数
+に @code{nil} 以外の値を設定してください。
 @xref{Encrypting/decrypting gpg files}.
 
 @node Bug Reports, GNU Free Documentation License, Caching Passphrases, Top
-@chapter $B%P%0%j%]!<%H(B
+@chapter バグリポート
 
-EasyPG $B%"%7%9%?%s%H$N%P%0$H=tLdBj$O(B Emacs $B3+H/%A!<%`$,3hH/$KBP=h$7$F$$$^(B
-$B$9!#?75!G=$NMWK>$HDs0F$b$*$*$$$K4?7^$7$^$9!#(B@kbd{M-x report-emacs-bug}
-(@pxref{Bugs, ,Bugs, emacs, Reporting Bugs}) $B$r;H$C$F$/$@$5$$!#(B
+EasyPG アシスタントのバグと諸問題は Emacs 開発チームが活発に対処していま
+す。新機能の要望と提案もおおいに歓迎します。@kbd{M-x report-emacs-bug}
+(@pxref{Bugs, ,Bugs, emacs, Reporting Bugs}) を使ってください。
 
-$B%P%0%j%]!<%H$r=q$/$H$-$O!"$=$NLdBj$r:F8=$9$k$?$a$NA`:n$r==J,2a$.$k$H;W$&(B
-$B$[$I>\:Y$K@bL@$7$F$/$@$5$$!#$5$i$K$=$N%P%0$r=$@5$9$k$?$a$KI,MW$J>pJs$r0J(B
-$B2<$N$h$&$K=8$a$F$/$@$5$$!#(B
+バグリポートを書くときは、その問題を再現するための操作を十分過ぎると思う
+ほど詳細に説明してください。さらにそのバグを修正するために必要な情報を以
+下のように集めてください。
 
 @itemize @bullet
-@item GnuPG $B$N%P!<%8%g%s!#(B@samp{gpg --version} $B$,<($9$b$N$G$9!#(B
-@item GnuPG $B$N@_Dj!#(B@file{~/.gnupg/gpg.conf} $B$NCf?H$G$9!#(B
+@item GnuPG のバージョン。@samp{gpg --version} が示すものです。
+@item GnuPG の設定。@file{~/.gnupg/gpg.conf} の中身です。
 @end itemize
 
-$B%P%0$rCN$i$;$kA0$K(B @file{~/.emacs} $B%U%!%$%k$G(B @code{epg-debug} $BJQ?t(B
-$B$K(B @code{nil} $B0J30$NCM$r@_Dj$7$F!"$=$N%P%0$r:FEY3NG'$7$F$/$@$5$$!#$=$7(B
-$B$F(B @file{ *epg-debug*} $B%P%C%U%!!<$NCf?H$r4^$a$F$/$@$5$$!#%P%C%U%!!<L>$N(B
-$B:G=i$NJ8;z$O6uGr$G$"$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+バグを知らせる前に @file{~/.emacs} ファイルで @code{epg-debug} 変数
+に @code{nil} 以外の値を設定して、そのバグを再度確認してください。そし
+て @file{ *epg-debug*} バッファーの中身を含めてください。バッファー名の
+最初の文字は空白であることに注意してください。
 
 @node GNU Free Documentation License, Key Index, Bug Reports, Top
 @appendix GNU Free Documentation License
@@ -556,6 +556,5 @@ EasyPG $B%"%7%9%?%s%H$N%P%0$H=tLdBj$O(B Emacs $B3+H/%A!<%`$,3hH/$KBP=h$7$F$$$
 @bye
 
 @c Local Variables:
-@c coding: iso-2022-7bit
 @c fill-column: 72
 @c End:

@@ -13,7 +13,7 @@
 @end iftex
 
 @copying
-$B$3$N%U%!%$%k$O(B Emacs auth-source $B%i%$%V%i%j!<$r@bL@$7$^$9!#(B
+このファイルは Emacs auth-source ライブラリーを説明します。
 
 Copyright @copyright{} 2008--2016 Free Software Foundation, Inc.
 
@@ -25,17 +25,17 @@ Invariant Sections, with the Front-Cover Texts being ``A GNU Manual,''
 and with the Back-Cover Texts as in (a) below.  A copy of the license
 is included in the section entitled ``GNU Free Documentation License''.
 
-$B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
-$BBh(B 1.3 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
-$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!H(BA GNU Manual$B!I$OI=I=;f(B
-$B%F%-%9%H!"0J2<$N(B (a) $B$ON"I=;f%F%-%9%H$G$9!#$3$NMxMQ5vBz7@Ls=q$NJ#<L$O(B
-$B!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^$9!#(B
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.3 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
 modify this GNU manual.''
 
-(a) FSF $B$NN"I=;f%F%-%9%H(B:$B!V$"$J$?$K$O$3$N(B GNU Manual $B$rJ#@=$7$?$jJQ99$9(B
-$B$k<+M3$,$"$j$^$9!#!W(B
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。」
 @end quotation
 @end copying
 
@@ -62,21 +62,21 @@ modify this GNU manual.''
 @ifnottex
 @node Top
 @top Emacs auth-source
-$B$3$N%^%K%e%"%k$O(B Emacs auth-source $B%i%$%V%i%j!<$r@bL@$7$^$9!#(B
+このマニュアルは Emacs auth-source ライブラリーを説明します。
 
-$BMxMQ<T$NJX59$N$?$a$K!"J#?t$N%"%W%j%1!<%7%g%s$G!"(B(Emacs $B$^$?$O%U%!%$%k$K(B
-$B$"$k(B) $B0l$D$N@_Dj$r6&M-$9$k$?$a$N<jCJ$G$9!#(B
+利用者の便宜のために、複数のアプリケーションで、(Emacs またはファイルに
+ある) 一つの設定を共有するための手段です。
 
 @insertcopying
 
 @menu
-* Overview::                    auth-source $B%i%$%V%i%j!<$N35MW(B
+* Overview::                    auth-source ライブラリーの概要
 * Help for users::
 * Multiple GMail accounts with Gnus::
 * Secret Service API::
 * Help for developers::
 * GnuPG and EasyPG Assistant Configuration::
-* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
+* GNU Free Documentation License:: この文書の利用許諾契約書
 * Index::
 * Function Index::
 * Variable Index::
@@ -84,107 +84,107 @@ modify this GNU manual.''
 @end ifnottex
 
 @node Overview
-@chapter $B35MW(B
+@chapter 概要
 
-auth-source $B%i%$%V%i%j!<$O!"!V;d$N%f!<%6!<L>$H%Q%9%o!<%I$O2?$@$C$1(B?$B!W$H(B
-$B$$$&@N$J$,$i$NG.Nu$JLd$$$KEz$($k$?$a$N!"(BEmacs $B$H(B Gnus $BMQ$N?t$"$kC1=c$J<j(B
-$BCJ$N0l$D$G$9!#(B
+auth-source ライブラリーは、「私のユーザー名とパスワードは何だっけ?」と
+いう昔ながらの熱烈な問いに答えるための、Emacs と Gnus 用の数ある単純な手
+段の一つです。
 
-($B$3$l$O2P;v$N$H$-$N!V>C2P4o$O$I$3$@(B?$B!W$H$$$&8E$/$+$i$NLd$$$H$O0[$J$j$^$9!#(B)
+(これは火事のときの「消火器はどこだ?」という古くからの問いとは異なります。)
 
-Auth-source $B%i%$%V%i%j!<$OC1$J$k%f!<%6!<L>$d%Q%9%o!<%I(B ($B$$$o$f$kHkL)(B) $B0J(B
-$B30$N$b$N$b07$&$3$H$,$G$-$^$9!#(B
+Auth-source ライブラリーは単なるユーザー名やパスワード (いわゆる秘密) 以
+外のものも扱うことができます。
 
-$BF1MM$K(B auth-source $B%i%$%V%i%j!<$OB?$/$NCyB"%P%C%/%(%s%I!"8=:_$OEAE}E*(B
-$B$J(B ``netrc'' $B%P%C%/%(%s%I(B ($B$3$NJ8=q$N8e$NJ}$K$"$j$^$9(B) $B$^$?$O%7!<%/%l%C(B
-$B%H%5!<%S%9(B API $B$r%5%]!<%H$7$^$9!#$3$l$O(B EIEIO $B$K4p$E$$$?%P%C%/%(%s%I$G9T(B
-$B$J$o$l!"$b$7I,MW$J$i$"$J$?FH<+$N$b$N$r=q$/$3$H$,$G$-$^$9!#(B
+同様に auth-source ライブラリーは多くの貯蔵バックエンド、現在は伝統的
+な ``netrc'' バックエンド (この文書の後の方にあります) またはシークレッ
+トサービス API をサポートします。これは EIEIO に基づいたバックエンドで行
+なわれ、もし必要ならあなた独自のものを書くことができます。
 
 @node Help for users
-@chapter $BMxMQ<T$N$?$a$N%X%k%W(B
+@chapter 利用者のためのヘルプ
 
-``Netrc'' $B%U%!%$%k$O;v<B>e$NI8=`$G$9!#$=$l$i$O$3$N$h$&$K$J$C$F$$$^$9(B:
+``Netrc'' ファイルは事実上の標準です。それらはこのようになっています:
 @example
 machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @var{myport}
 @end example
 
-@code{machine} $B$O%5!<%P!<$G$9(B (DNS $BL>$^$?$O(B IP $B%"%I%l%9$N$I$A$i$+(B)$B!#(B
-@code{auth-source-search} $B8!:w$K$*$1$k(B @var{:host} $B$G$b$"$j$^$9!#(B
-@code{host} $B$b;H$&$3$H$,$G$-$^$9!#(B
+@code{machine} はサーバーです (DNS 名または IP アドレスのどちらか)。
+@code{auth-source-search} 検索における @var{:host} でもあります。
+@code{host} も使うことができます。
 
-@code{port} $B$O@\B3$9$k%]!<%H$^$?$O%W%m%H%3%k$G$9!#(B
-@code{auth-source-search} $B8!:w$K$*$1$k(B @var{:port} $B$G$b$"$j$^$9!#(B
+@code{port} は接続するポートまたはプロトコルです。
+@code{auth-source-search} 検索における @var{:port} でもあります。
 
-@code{user} $B$O%f!<%6!<L>$G$9!#(B@code{auth-source-search} $B8!:w$K$*$1(B
-$B$k(B @var{:user} $B$G$b$"$j$^$9!#(B@code{login} $B$*$h$S(B @code{account} $B$b;H$&$3(B
-$B$H$,$G$-$^$9!#(B
+@code{user} はユーザー名です。@code{auth-source-search} 検索におけ
+る @var{:user} でもあります。@code{login} および @code{account} も使うこ
+とができます。
 
-$B%7%s%0%k$^$?$O%@%V%k%/%*!<%H$G0O$`$3$H$K$h$C$F!"%Q%9%o!<%I$dB>$NMWAG$NCf(B
-$B$G6uGrJ8;z$r;H$&$3$H$,$G$-$^$9!#(B
+シングルまたはダブルクオートで囲むことによって、パスワードや他の要素の中
+で空白文字を使うことができます。
 
-$B%@%V%k%/%*!<%H$G0O$`$3$H$K$h$C$F!"%Q%9%o!<%I$dB>$NMWAG$NCf$G!"%"%]%9%H%m(B
-$B%U%#!<(B ($B!G(B) $B$r;H$&$3$H$,$G$-$^$9!#Nc$($P$3$s$J$U$&$K(B: @code{"he'llo"}@*
-$BF1MM$K%"%]%9%H%m%U%#!<$G0O$`$3$H$K$h$C$F!"%Q%9%o!<%I$dB>$NMWAG$NCf$G!"%@(B
-$B%V%k%/%*!<%H$r;H$&$3$H$,$G$-$^$9!#Nc$($P$3$s$J$U$&$K(B: @code{'he"llo'}@*
-$BN>J}$r:.$<$F;H$&$3$H$O$G$-$^$;$s(B($B$D$^$j%Q%9%o!<%I$J$I$NMWAG$O!"%"%]%9%H(B
-$B%m%U%#!<$H%@%V%k%/%*!<%H$NN>J}$r;}$D$3$H$O$G$-$^$;$s(B)$B!#(B
+ダブルクオートで囲むことによって、パスワードや他の要素の中で、アポストロ
+フィー (’) を使うことができます。例えばこんなふうに: @code{"he'llo"}@*
+同様にアポストロフィーで囲むことによって、パスワードや他の要素の中で、ダ
+ブルクオートを使うことができます。例えばこんなふうに: @code{'he"llo'}@*
+両方を混ぜて使うことはできません(つまりパスワードなどの要素は、アポスト
+ロフィーとダブルクオートの両方を持つことはできません)。
 
-$B$9$Y$F$3$l$i$OG$0U$G$9!#$I$3$G$bF1$8%Q%9%o!<%I$r;H$&$?$a$K!"$?$@C1$K(B
+すべてこれらは任意です。どこでも同じパスワードを使うために、ただ単に
 
 @example
 password @var{mypassword}
 @end example
 
-$B$H@_Dj$9$k$3$H$,$G$-$^$9(B---$B$H$$$&$3$H$,2DG=$G$"$k$3$H$r<($7$F$$$k$N$G$"$C(B
-$B$F!"$=$l$r?d>)$7$F$$$k$o$1$G$O$"$j$^$;$s!#7+$jJV$7$^$9$,(B @emph{$B$3$l$O;H(B
-$B$o$J$$$G$/$@$5$$(B}$B!#$5$b$J$$$H$R$I$$L\$K2q$&$G$7$g$&!#(B
+と設定することができます---ということが可能であることを示しているのであっ
+て、それを推奨しているわけではありません。繰り返しますが @emph{これは使
+わないでください}。さもないとひどい目に会うでしょう。
 
-``Netrc'' $B%U%!%$%k$ODL>o(B @file{.authinfo} $B$^$?$O(B @file{.netrc} $B$H8F$P$l(B
-$B$^$9!#:#$G$O(B @file{.authinfo} $B$NJ}$,Ia5Z$7$F$$$k$h$&$G$9$,!"8e$G$o$+$k$h(B
-$B$&$K(B auth-source $B%i%$%V%i%j!<$O$=$l$i$NN>J}$r<u$1F~$l$k$?$a$K!"$3$N:.Mp(B
-$B$r=uD9$7$F$$$^$9!#(B
+``Netrc'' ファイルは通常 @file{.authinfo} または @file{.netrc} と呼ばれ
+ます。今では @file{.authinfo} の方が普及しているようですが、後でわかるよ
+うに auth-source ライブラリーはそれらの両方を受け入れるために、この混乱
+を助長しています。
 
-$B$b$78!:w$GLdBj$,$"$k$N$J$i(B @code{auth-source-debug} $B$r(B @code{'trivia} $B$K(B
-$B@_Dj$7$F!"%i%$%V%i%j!<$,$I$N%[%9%H!"%]!<%H$*$h$S%f!<%6!<$r%A%'%C%/$7$F$$(B
-$B$k$+$r(B @file{*Messages*} $B%P%C%U%!!<$G8+$F$/$@$5$$!#F1MM$KB>$N$I$s$JLdBj(B
-$B$K$D$$$F$b!"2?$,%A%'%C%/$5$l$F$$$k$+$rD4$Y$k$N$,!"$"$J$?$NBh0lJb$G$9!#Bh(B
-$BFs$N%9%F%C%W$O$b$A$m$s$=$l$K$D$$$F$N(B blog $B$r=q$$$F!"%3%a%s%H$G2sEz$rBT$D(B
-$B$3$H$G$9!#(B
+もし検索で問題があるのなら @code{auth-source-debug} を @code{'trivia} に
+設定して、ライブラリーがどのホスト、ポートおよびユーザーをチェックしてい
+るかを @file{*Messages*} バッファーで見てください。同様に他のどんな問題
+についても、何がチェックされているかを調べるのが、あなたの第一歩です。第
+二のステップはもちろんそれについての blog を書いて、コメントで回答を待つ
+ことです。
 
-$BJQ?t(B @code{auth-sources} $B$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#$b$78E$$%P!<(B
-$B%8%g%s$N(B Emacs $B$r;H$C$F$$$k$+!"2?$+$NM}M3$N$?$a$K(B auth-source $B%i%$%V%i%j!<(B
-$B$,FI$_9~$^$l$J$$>l9g!"<!$N$b$N$,I,MW$K$J$k$G$7$g$&!#(B
+変数 @code{auth-sources} をカスタマイズすることができます。もし古いバー
+ジョンの Emacs を使っているか、何かの理由のために auth-source ライブラリー
+が読み込まれない場合、次のものが必要になるでしょう。
 
 @lisp
-(require 'auth-source)             ;; $B$*$=$i$/ITMW(B
-(customize-variable 'auth-sources) ;; $BG$0U!"0l2s$@$19T$J$C$F$/$@$5$$(B
+(require 'auth-source)             ;; おそらく不要
+(customize-variable 'auth-sources) ;; 任意、一回だけ行なってください
 @end lisp
 
 @defvar auth-sources
-@code{auth-sources} $BJQ?t$O!"8D!9$N%[%9%H$H%W%m%H%3%k$N$?$a$N(B netrc $B%U%!(B
-$B%$%k$^$?$O%7!<%/%l%C%H%5!<%S%9(B API $B$N<}=8J*$,$I$3$K:_$k$+(B
-$B$r(B auth-source $B%i%$%V%i%j!<$KCN$i$;$^$9!#9%$_$K1~$8$F$I$&$K$G$b$G$-$^$9(B
-$B$,!"%G%#%U%)%k%H$N:G$b4J7i$J@_Dj$O<!$NDL$j$G$9(B:
+@code{auth-sources} 変数は、個々のホストとプロトコルのための netrc ファ
+イルまたはシークレットサービス API の収集物がどこに在るか
+を auth-source ライブラリーに知らせます。好みに応じてどうにでもできます
+が、ディフォルトの最も簡潔な設定は次の通りです:
 
 @lisp
-;;; $B5l%G%#%U%)%k%H(B: :host $B$H(B :port $B$,I,MW$@$C$?$,!"$b$O$dITMW!#(B
+;;; 旧ディフォルト: :host と :port が必要だったが、もはや不要。
 (setq auth-sources '((:source "~/.authinfo.gpg" :host t :port t)))
-;;; $B$[$\Ey2A$@$,!"$h$jC;$$(B ($B8e=R$N(B fallback $B$K$D$$$F$N5-=R$r;2>H(B)$B!#(B
+;;; ほぼ等価だが、より短い (後述の fallback についての記述を参照)。
 (setq auth-sources '((:source "~/.authinfo.gpg")))
-;;; $B$5$i$KC;$$(B @emph{$B%G%#%U%)%k%H(B}:
+;;; さらに短い @emph{ディフォルト}:
 (setq auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
-;;; $B%7!<%/%l%C%H(B API $B$N(B @var{Login} $B%3%l%/%7%g%s$r;H$&(B
+;;; シークレット API の @var{Login} コレクションを使う
 ;;; (@pxref{Secret Service API})
 (setq auth-sources '("secrets:Login"))
 @end lisp
 
-$BFCDj$N%[%9%H$+%W%m%H%3%k$N%(%s%H%j!<$rJ#?t(B @code{auth-sources} $B$KDI2C$9(B
-$B$k$3$H$K$h$C$F!"$=$N%[%9%H$+%W%m%H%3%k$KFC2=$7$?(B netrc $B%U%!%$%k$r;}$D$3(B
-$B$H$,$G$-$^$9!#IaDL$3$l$OI,MW$"$j$^$;$s$,!"(Bnetrc $B%U%!%$%k$r6&M-$7$?$jJQ$o$C(B
-$B$?@_Dj$,$"$k>l9g$O0UL#$,$"$k$+$b$7$l$^$;$s(B (90% $B$N(B Emacs $B%f!<%6!<$OJQ$J(B
-$B@_Dj$r;}$C$F$$$F!";D$j$N(B 10% $B$O(B @emph{$BK\Ev$K(B} $BJQ$o$C$F$$$^$9(B)$B!#(B
+特定のホストかプロトコルのエントリーを複数 @code{auth-sources} に追加す
+ることによって、そのホストかプロトコルに特化した netrc ファイルを持つこ
+とができます。普通これは必要ありませんが、netrc ファイルを共有したり変わっ
+た設定がある場合は意味があるかもしれません (90% の Emacs ユーザーは変な
+設定を持っていて、残りの 10% は @emph{本当に} 変わっています)。
 
-$B$3$l$O!":.:_$9$k(B 2$B$D$N%=!<%9$r;H$&Nc$G$9(B:
+これは、混在する 2つのソースを使う例です:
 
 @lisp
 (setq auth-sources '((:source (:secrets default)
@@ -194,60 +194,60 @@ password @var{mypassword}
 
 @end defvar
 
-$B$b$7(B @code{auth-sources} $B$r%+%9%?%^%$%:$7$J$$$H!"%G%#%U%)%k%H$G@83h$9$k(B
-$B$3$H$K$J$k$G$7$g$&!#$=$N%G%#%U%)%k%H$H$O!"$I$s$J%[%9%H$d%]!<%H$K$D$$$F$b(B
-$B0E9f2=$5$l$F$$$J$$(B netrc $B%U%!%$%k(B @file{~/.authinfo} $B$,;H$o$l$k$H$$$&$3(B
-$B$H$G$9!#(B
+もし @code{auth-sources} をカスタマイズしないと、ディフォルトで生活する
+ことになるでしょう。そのディフォルトとは、どんなホストやポートについても
+暗号化されていない netrc ファイル @file{~/.authinfo} が使われるというこ
+とです。
 
-$B$b$7$=$l$K<:GT$9$k$H!"$I$s$J%[%9%H$d%]!<%H$b(B netrc $B%U%!%$(B
-$B%k(B @file{~/.authinfo.gpg} $B$GC5$7$^$9!#$3$A$i$O(B GnuPG $B$G0E9f2=$5$l$?%U%!(B
-$B%$%k$G$9(B (@pxref{GnuPG and EasyPG Assistant Configuration})$B!#(B
+もしそれに失敗すると、どんなホストやポートも netrc ファイ
+ル @file{~/.authinfo.gpg} で探します。こちらは GnuPG で暗号化されたファ
+イルです (@pxref{GnuPG and EasyPG Assistant Configuration})。
 
-($B$=$l$b<:GT$9$k>l9g$O(B) $B$I$s$J%[%9%H$d%]!<%H$K$D$$$F$b0E9f2=$5$l$F$$$J(B
-$B$$(B netrc $B%U%!%$%k(B @file{~/.netrc} $B$,;H$o$l$^$9!#(B
+(それも失敗する場合は) どんなホストやポートについても暗号化されていな
+い netrc ファイル @file{~/.netrc} が使われます。
 
-$BBeI=E*$J(B netrc $B9T$NNc$O!"%]!<%H$,L5$$$b$N$G$9!#(B
+代表的な netrc 行の例は、ポートが無いものです。
 
 @example
 machine YOURMACHINE login YOU password YOURPASSWORD
 @end example
 
-$B$3$l$O$I$NG'>Z%]!<%H$K$bBP1~$7$^$9!#4JC1$G$7$g$&(B?  $B$G$b(B SMTP $B%5!<%P!<(B
-$B$,(B IMAP $B%5!<%P!<$H0[$J$k%Q%9%o!<%I$rI,MW$H$9$k$=$N%^%7%s$N%]!<%H(B 433 $B$K(B
-$B$"$k$J$i$P!"$I$&$G$9$+!)(B
+これはどの認証ポートにも対応します。簡単でしょう?  でも SMTP サーバー
+が IMAP サーバーと異なるパスワードを必要とするそのマシンのポート 433 に
+あるならば、どうですか？
 
 @example
 machine YOURMACHINE login YOU password SMTPPASSWORD port 433
 machine YOURMACHINE login YOU password GENERALPASSWORD
 @end example
 
-url-auth $BG'>Z(B (HTTP/HTTPS) $B$N$?$a$K$O!"$3$l$r(B netrc $B%U%!%$%k$KCV$$$F$*$/(B
-$BI,MW$,$"$j$^$9(B:
+url-auth 認証 (HTTP/HTTPS) のためには、これを netrc ファイルに置いておく
+必要があります:
 
 @example
 machine yourmachine.com:80 port http login testuser password testpass
 @end example
 
-$B$3$l$O(B HTTP $B$G@\B3$9$k$I$s$J3&LL$HG'>ZJ}<0(B (basic $B$^$?$O(B digest) $B$K$bBP(B
-$B1~$7$^$9!#(BHTTPS $B$bF1MM$K@_Dj$7$^$9!#$b$C$H$-$a:Y$+$$@)8f$,I,MW$J$i!"(B
-url-auth $B$N%=!<%9%3!<%I$HJQ?t$rD4$Y$F$/$@$5$$!#(B
+これは HTTP で接続するどんな界面と認証方式 (basic または digest) にも対
+応します。HTTPS も同様に設定します。もっときめ細かい制御が必要なら、
+url-auth のソースコードと変数を調べてください。
 
-Tramp $B$NG'>Z$K$O$3$l$r;H$C$F$/$@$5$$(B:
+Tramp の認証にはこれを使ってください:
 
 @example
 machine yourmachine.com port scp login testuser password testpass
 @end example
 
-$B%]!<%H$O(B Tramp $B$N@\B3J}K!$r0UL#$9$k$3$H$KCm0U$7$F$/$@$5$$!#$b$7%]!<%H$N(B
-$B9`$r;H$o$J$1$l$P!":G=i$NJ}$G@bL@$7$?$h$&$K!"$9$Y$F$N(B Tramp $B$NJ}<0$K9gCW(B
-$B$7$^$9!#(BTramp $B$K$O(B 88 $B<oN`$N@\B3J}K!$,$"$k$N$G!"JQ$o$C$?@_Dj$,$"$k>l9g$O(B
-$B$3$l$,I,MW$+$b$7$l$^$;$s(B ($B$=$l$i$K$D$$$F$N0JA0$N%3%a%s%H$r8+$F$/$@$5$$(B)$B!#(B
+ポートは Tramp の接続方法を意味することに注意してください。もしポートの
+項を使わなければ、最初の方で説明したように、すべての Tramp の方式に合致
+します。Tramp には 88 種類の接続方法があるので、変わった設定がある場合は
+これが必要かもしれません (それらについての以前のコメントを見てください)。
 
 @node Multiple GMail accounts with Gnus
-@chapter $BJ#?t$N(B GMail $B%"%+%&%s%H$r(B Gnus $B$G07$&(B
+@chapter 複数の GMail アカウントを Gnus で扱う
 
-$BJ#?t$N(B GMail $B%"%+%&%s%H$r(B Gnus $B$G07$&$K$O!"JL$NL>A0$G(B 2$B$D$N%(%s%H%j!<(B
-$B$r(B @code{gnus-secondary-select-methods} $B$K:n$kI,MW$,$"$j$^$9(B:
+複数の GMail アカウントを Gnus で扱うには、別の名前で 2つのエントリー
+を @code{gnus-secondary-select-methods} に作る必要があります:
 
 @example
 (setq gnus-secondary-select-methods '((nnimap "gmail"
@@ -256,7 +256,7 @@ machine yourmachine.com port scp login testuser password testpass
                                          (nnimap-address "imap.gmail.com"))))
 @end example
 
-$B$=$&$9$k$H(B netrc $B$O<!$N$h$&$K$J$k$G$7$g$&(B:
+そうすると netrc は次のようになるでしょう:
 
 @example
 machine gmail login account@@gmail.com password "account password" port imap
@@ -264,119 +264,119 @@ machine gmail2 login account2@@gmail.com password "account2 password" port imap
 @end example
 
 @node Secret Service API
-@chapter $B%7!<%/%l%C%H%5!<%S%9(B API
+@chapter シークレットサービス API
 
-@dfn{Secret Service API} $B$O%Q%9%o!<%I$dB>$N5!L)>pJs$r0BA4$KJ]B8$9$k$?$a(B
-$B$N(B @uref{http://www.freedesktop.org/wiki/Specifications/secret-storage-spec,,freedesktop.org} $B$K(B
-$B$h$kI8=`$G$9!#$3$N(B API $B$O(B GNOME $B80%j%s%0$H(B KDE $B%&%)%l%C%H$N$h$&$J%7%9%F(B
-$B%`!&%G!<%b%s(B ($B$=$l$>$l:G6a$O$?$$$F$$$N(B GNU/Linux $B%7%9%F%`$KHw$o$C$F(B
-$B$k(B GNOME $B$H(B KDE $B$N%Q%C%1!<%8(B) $B$K$h$C$F<BAu$5$l$^$9!#(B
+@dfn{Secret Service API} はパスワードや他の機密情報を安全に保存するため
+の @uref{http://www.freedesktop.org/wiki/Specifications/secret-storage-spec,,freedesktop.org} に
+よる標準です。この API は GNOME 鍵リングと KDE ウォレットのようなシステ
+ム・デーモン (それぞれ最近はたいていの GNU/Linux システムに備わって
+る GNOME と KDE のパッケージ) によって実装されます。
 
-auth-source $B%i%$%V%i%j!<$O%7!<%/%l%C%H%5!<%S%9(B API $B$rDL$7$F$D$J(B
-$B$0(B @file{secrets.el} $B%i%$%V%i%j!<$r;H$$$^$9!#$=$N%i%$%V%i%j!<$rB>$N%Q%C(B
-$B%1!<%8$G$b;H$&$3$H$,$G$-$^$9!#(Bauth-source $B@lMQ$G$O$"$j$^$;$s!#(B
+auth-source ライブラリーはシークレットサービス API を通してつな
+ぐ @file{secrets.el} ライブラリーを使います。そのライブラリーを他のパッ
+ケージでも使うことができます。auth-source 専用ではありません。
 
 @defvar secrets-enabled
-$B$3$NJQ?t$,(B @code{nil} $B$G$O$J$$CM$@$C$?$i(B @file{secrets.el} $B$rFI$_9~$s$@(B
-$B8e$K%7!<%/%l%C%H%5!<%S%9(B API $B$rDs6!$9$k%G!<%b%s$rI=<($7$^$9!#(B
+この変数が @code{nil} ではない値だったら @file{secrets.el} を読み込んだ
+後にシークレットサービス API を提供するデーモンを表示します。
 @end defvar
 
 @deffn Command secrets-show-secrets
-$B$3$N%3%^%s%I$O$9$Y$F$N%3%l%/%7%g%s!"(Bitem$B!"$*$h$S$=$l$i$NB0@-$rI=<($7$^$9!#(B
+このコマンドはすべてのコレクション、item、およびそれらの属性を表示します。
 @end deffn
 
-$B%7!<%/%l%C%H%5!<%S%9(B API $B$K$h$C$F4IM}$5$l$k%"%H%_%C%/%*%V%8%'%/%H(B
-$B$O(B @dfn{secret items} $B$G$9!#$=$l$i$O%Q%9%o!<%I$N$h$&$J%"%W%j%1!<%7%g%s$,(B
-$B0BA4$KJ]B8$9$k$3$H$rI,MW$H$9$k$b$N$N=89g$G$9!#(BSecret items $B$O%i%Y%k(B ($BL>(B
-$BA0(B)$B!"(B@dfn{secret} ($B%Q%9%o!<%I$N$h$&$JJ8;zNs(B)$B!"$*$h$S%k%C%/%"%C%WB0@-$r;}(B
-$B$A$^$9!#B0@-$O8eF|(B secret item $B$r8!:w$7$?$j<h$j=P$9$?$a$K;H$&$3$H$,$G$-(B
-$B$^$9!#(B
+シークレットサービス API によって管理されるアトミックオブジェクト
+は @dfn{secret items} です。それらはパスワードのようなアプリケーションが
+安全に保存することを必要とするものの集合です。Secret items はラベル (名
+前)、@dfn{secret} (パスワードのような文字列)、およびルックアップ属性を持
+ちます。属性は後日 secret item を検索したり取り出すために使うことができ
+ます。
 
-Secret items $B$O(B @dfn{collections} $B$K%0%k!<%W2=$5$l$^$9!#%3%l%/%7%g%s(B
-$B$O(B GNOME $B80%j%s%0$H(B KDE $B%&%)%l%C%H$G$O;~$K(B @samp{keyring} $B$^$?(B
-$B$O(B @samp{wallet} $B$H8F$P$l$^$9$,F1$8$b$N$G!"(Bsecrets $B$N=89g$G$9!#%3%l%/%7%g(B
-$B%s$O8D?M$N;}$AJ*$GJ]8n$5$l$F$$$F!";}$A<g$@$1$,$=$l$i$r3+$/$3$H$,$G$-$^$9!#(B
+Secret items は @dfn{collections} にグループ化されます。コレクション
+は GNOME 鍵リングと KDE ウォレットでは時に @samp{keyring} また
+は @samp{wallet} と呼ばれますが同じもので、secrets の集合です。コレクショ
+ンは個人の持ち物で保護されていて、持ち主だけがそれらを開くことができます。
 
-$B$b$C$H$b0lHLE*$J%3%l%/%7%g%s$O(B @code{"login"} $B$H8F$P$l$^$9!#(B
+もっとも一般的なコレクションは @code{"login"} と呼ばれます。
 
-$B%3%l%/%7%g%s$OJLL>$r;}$D$3$H$,$G$-$^$9!#0lHL$K(B @code{"default"} $B$H$$$&JL(B
-$BL>$,;H$o$l$k$N$G!"%/%i%$%"%s%H$O3+$/%3%l%/%7%g%s$NL@<(E*$JL>A0$rCN$C$F$$(B
-$B$kI,MW$,$"$j$^$;$s!#B>$NJLL>$O$^$@%5%]!<%H$5$l$F$$$^$;$s!#JLL>$O$I$3$+$i(B
-$B$G$b%"%/%;%9$G$-$k$N$G!"E,@Z$G$"$k$3$H$r3N?.$7$F$$$k>l9g$K8B$C$FJL(B
-$BL>(B @code{"default"} $B$r@_Dj$7$F$/$@$5$$!#(B
+コレクションは別名を持つことができます。一般に @code{"default"} という別
+名が使われるので、クライアントは開くコレクションの明示的な名前を知ってい
+る必要がありません。他の別名はまだサポートされていません。別名はどこから
+でもアクセスできるので、適切であることを確信している場合に限って別
+名 @code{"default"} を設定してください。
 
 @defun secrets-list-collections
-$B$3$N4X?t$O$9$Y$F$N%3%l%/%7%g%sL>$r%j%9%H$GJV$7$^$9!#(B
+この関数はすべてのコレクション名をリストで返します。
 @end defun
 
 @defun secrets-set-alias collection alias
-@var{alias} $B$r(B @var{collection} $B$H$$$&L>$N%3%l%/%7%g%s$NJLL>$H$7$F@_Dj$7(B
-$B$^$9!#:#$N$H$3$mJLL>(B @code{"default"} $B$@$1$,%5%]!<%H$5$l$F$$$^$9!#(B
+@var{alias} を @var{collection} という名のコレクションの別名として設定し
+ます。今のところ別名 @code{"default"} だけがサポートされています。
 @end defun
 
 @defun secrets-get-alias alias
-@var{alias} $B$KAjEv$9$k%3%l%/%7%g%sL>$rJV$7$^$9!#:#$N$H$3$mJL(B
-$BL>(B @code{"default"} $B$@$1$,%5%]!<%H$5$l$F$$$^$9!#(B
+@var{alias} に相当するコレクション名を返します。今のところ別
+名 @code{"default"} だけがサポートされています。
 @end defun
 
-$B%3%l%/%7%g%s$O4X?t(B @code{secrets-create-collection} $B$*$h(B
-$B$S(B @code{secrets-delete-collection} $B$G:n$C$?$j:o=|$9$k$3$H$,$G$-$^$9!#DL(B
-$B>o$3$l$O(B Emacs $B$NCf$+$i$O9T$J$o$l$^$;$s!#(B@code{"login"} $B$N$h$&$JI8=`$N%3(B
-$B%l%/%7%g%s$r:o=|$7$J$$$G$/$@$5$$!#(B
+コレクションは関数 @code{secrets-create-collection} およ
+び @code{secrets-delete-collection} で作ったり削除することができます。通
+常これは Emacs の中からは行なわれません。@code{"login"} のような標準のコ
+レクションを削除しないでください。
 
-$BFCJL$J%3%l%/%7%g%s(B @code{"session"} $B$OBP1~$9$k%/%i%$%"%s%H(B ($B2f!9$N>l9g(B
-$B$O(B Emacs) $B$,Av$C$F$$$k4|4VB8:_$7$^$9!#$3$l$O(B Emacs $B$,%7!<%/%l%C%H%5!<%S(B
-$B%9$N%$%s%?!<%U%'!<%9$r;H$&:]$K<+F0E*$K:n$i$l!"(BEmacs $B$,=*N;$9$k$H$-$K:o=|(B
-$B$5$l$^$9!#$=$N8N$KNW;~$K(B secret items $B$rJ]B8$7$?$j<h$j=P$9$?$a$K;H$&$3$H(B
-$B$,$G$-$^$9!#(BSecret items $B$r(B Emacs $B$h$j1J$/@8$+$7$F$*$/$Y$-$G$O$J$$>l9g!"(B
-@code{"session"} $B%3%l%/%7%g%s$O1JB3$5$;$k%3%l%/%7%g%s$h$jM-Mx$G$9!#%3%l(B
-$B%/%7%g%s(B session $B$O0J2<$N4X?t$K$*$$$F%3%l%/%7%g%s$N%Q%i%a!<%?!<$,I,MW$K(B
-$B$J$k$H$-$O$$$D$G$b!"J8;zNs(B @code{"session"} $B$^$?$O(B @code{nil} $B$N$I$A$i$+(B
-$B$G0z$/$3$H$,$G$-$^$9!#(B
+特別なコレクション @code{"session"} は対応するクライアント (我々の場合
+は Emacs) が走っている期間存在します。これは Emacs がシークレットサービ
+スのインターフェースを使う際に自動的に作られ、Emacs が終了するときに削除
+されます。その故に臨時に secret items を保存したり取り出すために使うこと
+ができます。Secret items を Emacs より永く生かしておくべきではない場合、
+@code{"session"} コレクションは永続させるコレクションより有利です。コレ
+クション session は以下の関数においてコレクションのパラメーターが必要に
+なるときはいつでも、文字列 @code{"session"} または @code{nil} のどちらか
+で引くことができます。
 
 @defun secrets-list-items collection
-@var{collection} $B$N$9$Y$F$N(B item $B$N%i%Y%k$r%j%9%H$GJV$7$^$9!#(B
+@var{collection} のすべての item のラベルをリストで返します。
 @end defun
 
 @defun secrets-create-item collection item password &rest attributes
-$B$3$N4X?t$O%i%Y%k(B @var{item} $B$H%Q%9%o!<%I(B @var{password} $B$rHw$($??7$7(B
-$B$$(B item $B$r(B @var{collection} $B$NCf$K:n$j$^$9!#(B@var{attributes} $B$O@8@.$5$l(B
-$B$k(B item $B$K@_Dj$5$l$k80$HCM$NBP$G$9!#80$O%3%m%s$G;O$^$k%-!<%o!<%I!&%7%s%\(B
-$B%k$G$9!#0J2<$KNc$r<($7$^$9(B:
+この関数はラベル @var{item} とパスワード @var{password} を備えた新し
+い item を @var{collection} の中に作ります。@var{attributes} は生成され
+る item に設定される鍵と値の対です。鍵はコロンで始まるキーワード・シンボ
+ルです。以下に例を示します:
 
 @example
-;; "session" $B$H$$$&%;%C%7%g%s!"%i%Y%k$O(B "my item" $B$G(B
-;; secret ($B%Q%9%o!<%I(B) $B$O(B "geheim"
+;; "session" というセッション、ラベルは "my item" で
+;; secret (パスワード) は "geheim"
 (secrets-create-item "session" "my item" "geheim"
  :method "sudo" :user "joe" :host "remote-host")
 @end example
 @end defun
 
 @defun secrets-get-secret collection item
-@var{collection} $B$NCf$G(B @var{item} $B$H$$$&%i%Y%k$,IU$$$F$$(B
-$B$k(B item $B$N(B secret $B$rJV$7$^$9!#3:Ev$9$k(B item $B$,L5$$>l9g$O(B @code{nil} $B$rJV(B
-$B$7$^$9!#(B
+@var{collection} の中で @var{item} というラベルが付いてい
+る item の secret を返します。該当する item が無い場合は @code{nil} を返
+します。
 @end defun
 
 @defun secrets-delete-item collection item
-$B$3$N4X?t$O(B @var{collection} $B$NCf$N(B @var{item} $B$H$$$&(B item $B$r<h$j=|$-$^$9!#(B
+この関数は @var{collection} の中の @var{item} という item を取り除きます。
 @end defun
 
-Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k%k%C%/%"%C%WB0@-$O!"80$HCM$NBP$G$J$1(B
-$B$l$P$J$j$^$;$s!#80$O%3%m%s$G;O$^$k%-!<%o!<%I!&%7%s%\%k!"CM$OJ8;zNs$G$9!#(B
-$B$=$l$i$OM?$($i$l$?(B secret item $B$+$i<h$j=P$9$3$H$,$G$-!"$=$l$i$r;H$C(B
-$B$F(B item $B$r5U0z$-$9$k$3$H$,$G$-$^$9!#(B
+Secret item を生成する間に設定されるルックアップ属性は、鍵と値の対でなけ
+ればなりません。鍵はコロンで始まるキーワード・シンボル、値は文字列です。
+それらは与えられた secret item から取り出すことができ、それらを使っ
+て item を逆引きすることができます。
 
 @defun secrets-get-attribute collection item attribute
-@var{collection} $B$NCf$G(B @var{item} $B$H$$$&%i%Y%k$,IU$$$F$$$k(B item $B$N!"(B
-$B80(B @var{attribute} $B$KBP1~$9$kCM$rJV$7$^$9!#3:Ev$9$k(B item $B$,L5$+$C$?(B
-$B$j(B item $B$,$3$N80$r;}$C$F$$$J$$>l9g!"$3$N4X?t$O(B @code{nil} $B$rJV$7$^$9!#(B
+@var{collection} の中で @var{item} というラベルが付いている item の、
+鍵 @var{attribute} に対応する値を返します。該当する item が無かった
+り item がこの鍵を持っていない場合、この関数は @code{nil} を返します。
 @end defun
 
 @defun secrets-get-attributes collection item
-@var{collection} $B$NCf$G(B @var{item} $B$H$$$&%i%Y%k$,IU$$$F$$$k!"(Bitem $B$N%k%C(B
-$B%/%"%C%WB0@-$rJV$7$^$9!#3:Ev$9$k(B item $B$,L5$+$C$?$j(B item $B$,B0@-$r;}$C$F$$(B
-$B$J$$>l9g$O(B @code{nil} $B$rJV$7$^$9!#0J2<$KNc$r<($7$^$9(B:
+@var{collection} の中で @var{item} というラベルが付いている、item のルッ
+クアップ属性を返します。該当する item が無かったり item が属性を持ってい
+ない場合は @code{nil} を返します。以下に例を示します:
 
 @example
 (secrets-get-attributes "session" "my item")
@@ -385,9 +385,9 @@ Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k%k%C%/%"%C%WB0@-$O!"80$HCM$NBP$G$J$1(B
 @end defun
 
 @defun secrets-search-items collection &rest attributes
-@var{collection} $B$NCf$G9gCW$9$k(B @var{attributes} $B$r;}$D(B item $B$rC5$7$^$9!#(B
-@var{attributes} $B$O(B @code{secrets-create-item} $B$G;H$o$l$k80$HCM$NBP$G$9!#(B
-$B0J2<$KNc$r<($7$^$9(B:
+@var{collection} の中で合致する @var{attributes} を持つ item を探します。
+@var{attributes} は @code{secrets-create-item} で使われる鍵と値の対です。
+以下に例を示します:
 
 @example
 (secrets-search-items "session" :user "joe")
@@ -395,16 +395,16 @@ Secret item $B$r@8@.$9$k4V$K@_Dj$5$l$k%k%C%/%"%C%WB0@-$O!"80$HCM$NBP$G$J$1(B
 @end example
 @end defun
 
-auth-source $B%i%$%V%i%j!<$O(B @code{"secrets:COLLECTION"} $B$K9gCW$9(B
-$B$k(B source $B$r8!:w$9$k$H$-!"(B@file{secrets.el} $B%i%$%V%i%j!<$K2C$($F<!$N$h$&(B
-$B$K%7!<%/%l%C%H%5!<%S%9(B API $B$r;H$$$^$9!#Nc$($P(B @code{"session"} $B%3%l%/%7%g(B
-$B%s$r(B Emacs $B$,Av$C$F$$$k4V$@$13+$/$?$a$K(B @code{"secrets:session"} $B$r;H$&(B
-$B$3$H$,$G$-$^$9!#$"$k$$$O(B @code{"Login"} $B%3%l%/%7%g%s$r3+$/$?$a$K(B
-$B$O(B @code{"secrets:Login"} $B$,;H$($^$9!#FCJL$J>l9g$H$7(B
-$B$F(B @code{auth-sources} $B$NCf$G$OJLL>(B @code{"default"} $B$r<($9$?$a(B
-$B$K(B @code{default} $B$H$$$&%7%s%\%k(B ($BJ8;zNs$G$O$J$$(B) $B$r;H$&$3$H$,$G$-$^$9!#(B
-$B$3$3$K(B 3$B$D$N%3%l%/%7%g%s$r8!:w$7$F$9$k(B ($BL5$+$C$?(B
-$B$i(B @file{~/.authinfo.gpg} $B$r;H$&(B) $B$?$a$N$o$6$H$i$7$$Nc$,$"$j$^$9!#(B
+auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
+る source を検索するとき、@file{secrets.el} ライブラリーに加えて次のよう
+にシークレットサービス API を使います。例えば @code{"session"} コレクショ
+ンを Emacs が走っている間だけ開くために @code{"secrets:session"} を使う
+ことができます。あるいは @code{"Login"} コレクションを開くために
+は @code{"secrets:Login"} が使えます。特別な場合とし
+て @code{auth-sources} の中では別名 @code{"default"} を示すため
+に @code{default} というシンボル (文字列ではない) を使うことができます。
+ここに 3つのコレクションを検索してする (無かった
+ら @file{~/.authinfo.gpg} を使う) ためのわざとらしい例があります。
 
 @example
 (setq auth-sources '(default
@@ -414,27 +414,27 @@ auth-source $B%i%$%V%i%j!<$O(B @code{"secrets:COLLECTION"} $B$K9gCW$9(B
 @end example
 
 @node Help for developers
-@chapter $B3+H/<T$N$?$a$N%X%k%W(B
+@chapter 開発者のためのヘルプ
 
-auth-source $B%i%$%V%i%j!<$O!"2?$i$+$NF0:n$r9T$J$C$?7k2L$N5-O?$r:N$k$3$H$,(B
-$B$G$-$^$9!#(B
+auth-source ライブラリーは、何らかの動作を行なった結果の記録を採ることが
+できます。
 
 @defvar auth-source-debug
-$B$3$NJQ?t$r(B @code{'trivia} $B$K$9$k$H!"(B@file{*Messages*} $B%P%C%U%!!<$X$N$?$/(B
-$B$5$s$N=PNO$r8+$k$3$H$,$G$-$^$9!#$"$k$$$O$3$l$K(B @code{message} $B$K;w$?4X?t(B
-$B$r@_Dj$7$F!"$"$J$?FH<+$N$d$jJ}$G5-O?$r:N$k$3$H$b$G$-$^$9!#(B
+この変数を @code{'trivia} にすると、@file{*Messages*} バッファーへのたく
+さんの出力を見ることができます。あるいはこれに @code{message} に似た関数
+を設定して、あなた独自のやり方で記録を採ることもできます。
 @end defvar
 
-auth-source $B%i%$%V%i%j!<$K$O!"30It$G;H$&$?$a$N4X?t$O>/$7$7$+$"$j$^$;$s!#(B
+auth-source ライブラリーには、外部で使うための関数は少ししかありません。
 
 @defun auth-source-search &rest spec &key type max host user port secret require create delete &allow-other-keys
-$B$3$N4X?t$O(B @var{spec} $B$K=>$C$FG'>Z%P%C%/%(%s%I$rC5$7(B ($B$^$?$OJQ99$7(B) $B$^$9!#(B
-$B>\:Y$O$=$N4X?t$N(B doc-string $B$r8+$F$/$@$5$$!#(B
+この関数は @var{spec} に従って認証バックエンドを探し (または変更し) ます。
+詳細はその関数の doc-string を見てください。
 @c TODO more details.
 @end defun
 
-$B$G$O(B Gnus $B$N(B @code{nnimap.el} $B$+$i(B @code{auth-source-search} $B$r;H$&Nc$r(B
-$B8+$F$_$^$7$g$&!#(B
+では Gnus の @code{nnimap.el} から @code{auth-source-search} を使う例を
+見てみましょう。
 
 @example
 (defun nnimap-credentials (address ports)
@@ -456,107 +456,107 @@ auth-source $B%i%$%V%i%j!<$K$O!"30It$G;H$&$?$a$N4X?t$O>/$7$7$+$"$j$^$;$s!#(B
       nil)))
 @end example
 
-@c $B0J2<$NLuJ8$N<A$,0-$$$N$O86J8$N=PMh$N9s$5$N$?$a!#(B
-$B$3$N8F$S=P$7$O$=$N7k2L$K%f!<%6!<L>$H%Q%9%o!<%I(B ($B<0Cf$N(B @code{secret}) $B$,(B
-$B4^$^$l$k$3$H$r5a$a$F$$$^$9!#$5$i$K!"$b$7$=$N9`L\$,$^$@L5$+$C$?$i:n$kI,MW(B
-$B$b$"$j$^$9!#$=$N9`L\$r:n$k:]$K%f!<%6!<$H$d$j<h$j$9$k>l9g$O!"<0Cf$K$"$k<A(B
-$BLdJ8$,;H$o$l$^$9!#$3$N8F$S=P$7$O!"%f!<%6!<$X$N<ALdJ8$N%G%#%U%)%k%HCM$N$?(B
-$B$a$K(B @code{auth-source-creation-defaults} $B$K$"$k%G!<%?$rEO$9$3$H$b$G$-$^(B
-$B$9!#(B
+@c 以下の訳文の質が悪いのは原文の出来の酷さのため。
+この呼び出しはその結果にユーザー名とパスワード (式中の @code{secret}) が
+含まれることを求めています。さらに、もしその項目がまだ無かったら作る必要
+もあります。その項目を作る際にユーザーとやり取りする場合は、式中にある質
+問文が使われます。この呼び出しは、ユーザーへの質問文のディフォルト値のた
+めに @code{auth-source-creation-defaults} にあるデータを渡すこともできま
+す。
 
-$B%Q%9%o!<%I$,$b$74X?t$@$C$?$i!"$=$l$OI>2A$5$l$kI,MW$,$"$k$3$H$KCm0U$7$F$/(B
-$B$@$5$$!#$"$kDxEY$N0BA4BP:v$H$7$F!"$=$l$O4X?t$GJq$^$l$F$$$^$9!#(B
+パスワードがもし関数だったら、それは評価される必要があることに注意してく
+ださい。ある程度の安全対策として、それは関数で包まれています。
 
-$B$=$N8e%m%0%$%s$K@.8y$7$?$i(B @code{nnimap.el} $B$O<!$N$h$&(B
-$B$K(B @code{:save-function} $B$r8F$S$^$9(B:
+その後ログインに成功したら @code{nnimap.el} は次のよう
+に @code{:save-function} を呼びます:
 
 @example
 (when (functionp (nth 2 credentials))
    (funcall (nth 2 credentials)))
 @end example
 
-$B$3$l$O(B @code{:save-function} $B$NM-L5$K4X$o$i$9F0:n$9$k$G$7$g$&!#(B
-@code{:save-function}$B$O?7$7$$9`L\$,:n$i$l$?$H$-$@$1Ds6!$5$l$k$N$G!"$3$l(B
-$B$O<B:]$K!V%m%0%$%s@.8y8e!W$J$N$G$9!#$=$7$F2f!9$,$A$g$&$I;H$C$F$$$?G'>Z>p(B
-$BJs(B ($B$?$@$7$3$l$,?7$?:n$i$l$?$b$N$G$"$k$N$J$i(B) $B$r%;!<%V$7$^$9!#(B
+これは @code{:save-function} の有無に関わらす動作するでしょう。
+@code{:save-function}は新しい項目が作られたときだけ提供されるので、これ
+は実際に「ログイン成功後」なのです。そして我々がちょうど使っていた認証情
+報 (ただしこれが新た作られたものであるのなら) をセーブします。
 
-$B:G=i$K$=$l$,8F$P$l$?8e!"(B@code{:save-function} $B$,:FEYAv$k$3$H$O$"$j$^$;$s(B
-($B$7$+$7$b$7(B @code{auth-source-debug} $B$r(B @code{'trivia} $B$K@_Dj$7$F$"$k$J(B
-$B$i$P!"$=$N$3$H$rB?>/5-O?$7$^$9!#$3$l$9$J$o$A!"$=$l$O]5F+$7$$F1$8<ALd$,7+(B
-$B$jJV$5$l$k$3$H$O$J$$$H$$$&$3$H$G$9!#(B
+最初にそれが呼ばれた後、@code{:save-function} が再度走ることはありません
+(しかしもし @code{auth-source-debug} を @code{'trivia} に設定してあるな
+らば、そのことを多少記録します。これすなわち、それは鬱陶しい同じ質問が繰
+り返されることはないということです。
 
-$B$7$?$,$C$F(B @code{:create t} $B$r@_Dj$7$?(B API $B%f!<%6!<$N@UG$$O!"$b$7B8:_$9(B
-$B$k$J$i$P(B @code{:save-function} $B$r8F$V$3$H$G$9!#(B
+したがって @code{:create t} を設定した API ユーザーの責任は、もし存在す
+るならば @code{:save-function} を呼ぶことです。
 
 @defun auth-source-delete &rest spec &key delete &allow-other-keys
-$B$3$N4X?t$O(B @var{spec} $B$K9gCW$9$k%(%s%H%j!<$rG'>Z%P%C%/%(%s%I$+$i<h$j=|$-(B
-$B$^$9!#<h$j=|$+$l$?%(%s%H%j!<$rJV$7$^$9!#<B:]$K$O%P%C%/%(%s%I$O$=$l$i$N%((B
-$B%s%H%j!<$r<h$j=|$+$J$$$+$b$7$l$^$;$s!#(B
+この関数は @var{spec} に合致するエントリーを認証バックエンドから取り除き
+ます。取り除かれたエントリーを返します。実際にはバックエンドはそれらのエ
+ントリーを取り除かないかもしれません。
 @end defun
 
 @defun auth-source-forget spec
-$B$3$N4X?t$O87L)$K(B @var{spec} $B$K9gCW$9$k$9$Y$F$N%-%c%C%7%e$5$l$?%G!<%?$rK:(B
-$B$l(B ($BLuCm(B: $BL58z$K$7(B) $B$^$9!#$$$/$D$+$N%G!<%?$rK:$l$k$H$-$O(B @code{t} $B$r!"9g(B
-$BCW$9$k%G!<%?$,8+$D$+$i$J$+$C$?$H$-$O(B @code{nil} $B$rJV$7$^$9!#(B
+この関数は厳密に @var{spec} に合致するすべてのキャッシュされたデータを忘
+れ (訳注: 無効にし) ます。いくつかのデータを忘れるときは @code{t} を、合
+致するデータが見つからなかったときは @code{nil} を返します。
 @end defun
 
 @defun auth-source-forget+ &rest spec &allow-other-keys
-$B$3$N4X?t$O(B @var{spec} $B$K9gCW$9$k$9$Y$F$N%-%c%C%7%e$5$l$?%G!<%?$rK:$l(B ($BLu(B
-$BCm(B: $BL58z$K$7(B) $B$^$9!#K:$l$?%G!<%?$N?t$rJV$7$^$9!#(B
+この関数は @var{spec} に合致するすべてのキャッシュされたデータを忘れ (訳
+注: 無効にし) ます。忘れたデータの数を返します。
 @end defun
 
 @node GnuPG and EasyPG Assistant Configuration
-@appendix GnuPG $B$*$h$S(B EasyPG $B%"%7%9%?%s%H$N@_Dj(B
+@appendix GnuPG および EasyPG アシスタントの設定
 
-$B$b$7JQ?t(B @code{auth-sources} $B$,(B @file{~/.authinfo} $B$h$jA0(B
-$B$K(B @file{~/.authinfo.gpg} $B$r4^$s$G$$$k$J$i$P!"(Bauth-source $B%i%$%V%i%j!<$O(B
-$B0E9f2=$5$l$F$$$J$$%U%!%$%k$h$j@h$K!"$^$:$O(B GnuPG $B$G0E9f2=$5$l(B
-$B$?(B @file{.gpg} $B$rFI$_9~$b$&$H$7$^$9!#(B
+もし変数 @code{auth-sources} が @file{~/.authinfo} より前
+に @file{~/.authinfo.gpg} を含んでいるならば、auth-source ライブラリーは
+暗号化されていないファイルより先に、まずは GnuPG で暗号化され
+た @file{.gpg} を読み込もうとします。
 
-Emacs 23 $B0J9_$G$O(B @file{*.gpg} $B%U%!%$%k$N0E9f$r<+F0E*$K2r$/$?$a$N%*%W%7%g(B
-$B%s(B @code{auto-encryption-mode} $B$,$"$j$^$9!#%G%#%U%)%k%H$GM-8z$G$9!#$b$7(B
-$B2?$i$+$NM}M3$G(B Emacs $B$N=i4|$NHG$r;H$C$F$$$k>l9g$O!"0J2<$,I,MW$G$9(B:
+Emacs 23 以降では @file{*.gpg} ファイルの暗号を自動的に解くためのオプショ
+ン @code{auto-encryption-mode} があります。ディフォルトで有効です。もし
+何らかの理由で Emacs の初期の版を使っている場合は、以下が必要です:
 
 @lisp
 (require 'epa-file)
 (epa-file-enable)
 @end lisp
 
-$B$"$J$?$N(B GnuPG $B$N%Q%9%o!<%I$,%-%c%C%7%e$5$l$k$h$&$K$7$?$$$J$i!"(B
-@code{gpg-agent} $B$^$?$O(B EasyPG $B%"%7%9%"%s%H$r@_Dj$7$F$/$@$5(B
-$B$$(B (@pxref{Caching Passphrases, , Caching Passphrases, epa})$B!#(B
+あなたの GnuPG のパスワードがキャッシュされるようにしたいなら、
+@code{gpg-agent} または EasyPG アシスアントを設定してくださ
+い (@pxref{Caching Passphrases, , Caching Passphrases, epa})。
 
-$B<jAa$/;H$$;O$a$k$K$O!"$^$:0J2<$N@_Ld$KBP$9$kEz$rMQ0U$7$F$/$@$5$$(B:
+手早く使い始めるには、まず以下の設問に対する答を用意してください:
 
 @enumerate
 @item
-GnuPG $B$N%P!<%8%g%s(B 1 $B$G$O$J$/!"%P!<%8%g%s(B 2 $B$r;H$C$F$$$^$9$+(B?
+GnuPG のバージョン 1 ではなく、バージョン 2 を使っていますか?
 @item
-$B8x3+800E9f$G$J$J$/!"6&DL800E9f$r;H$C$F$$$^$9$+(B?
+公開鍵暗号でななく、共通鍵暗号を使っていますか?
 @item
-gpg-agent $B$r;H$$$?$$$G$9$+(B?
+gpg-agent を使いたいですか?
 @end enumerate
 
-$B0J2<$O>e5-$N<A5?$KBP$9$k$"$J$?$N2sEz$K4p$E$$$?@_Dj$G$9(B:
+以下は上記の質疑に対するあなたの回答に基づいた設定です:
 
 @multitable {111} {222} {333} {configuration configuration configuration}
 @item @b{1} @tab @b{2} @tab @b{3} @tab Configuration
-@item Yes @tab Yes @tab Yes @tab gpg-agent $B$r@_Dj$7$F$/$@$5$$!#(B
-@item Yes @tab Yes @tab No @tab gpg-agent $BL5$7$G$O$G$-$^$;$s!#(B
-@item Yes @tab No @tab Yes @tab gpg-agent $B$r@_Dj$7$F$/$@$5$$!#(B
-@item Yes @tab No @tab No @tab gpg-agent $BL5$7$G$O$G$-$^$;$s!#(B
-@item No @tab Yes @tab Yes @tab ELisp $BHG$N%Q%9%o!<%I!&%-%c%C%7%e$r@_Dj$7$F$/$@$5$$!#(B
-@item No @tab Yes @tab No @tab ELisp $BHG$N%Q%9%o!<%I!&%-%c%C%7%e$r@_Dj$7$F$/$@$5$$!#(B
-@item No @tab No @tab Yes @tab gpg-agent $B$r@_Dj$7$F$/$@$5$$!#(B
-@item No @tab No @tab No @tab gpg-agent $BL5$7$G$O$G$-$^$;$s!#(B
+@item Yes @tab Yes @tab Yes @tab gpg-agent を設定してください。
+@item Yes @tab Yes @tab No @tab gpg-agent 無しではできません。
+@item Yes @tab No @tab Yes @tab gpg-agent を設定してください。
+@item Yes @tab No @tab No @tab gpg-agent 無しではできません。
+@item No @tab Yes @tab Yes @tab ELisp 版のパスワード・キャッシュを設定してください。
+@item No @tab Yes @tab No @tab ELisp 版のパスワード・キャッシュを設定してください。
+@item No @tab No @tab Yes @tab gpg-agent を設定してください。
+@item No @tab No @tab No @tab gpg-agent 無しではできません。
 @end multitable
 
-gpg-agent $B$r@_Dj$9$k$K$O(B GnuPG $B%^%K%e%"%k(B (@pxref{Invoking GPG-AGENT, ,
-Invoking GPG-AGENT, gnupg}) $B$N@bL@$K=>$C$F$/$@$5$$!#(B
+gpg-agent を設定するには GnuPG マニュアル (@pxref{Invoking GPG-AGENT, ,
+Invoking GPG-AGENT, gnupg}) の説明に従ってください。
 
-ELisp $BHG$N%Q%9%o!<%I!&%-%c%C%7%e$r;H$&>l9g(B
-$B$O(B @code{epa-file-cache-passphrase-for-symmetric-encryption} $B$r@_Dj$7$F(B
-$B$/$@$5$$!#(B
+ELisp 版のパスワード・キャッシュを使う場合
+は @code{epa-file-cache-passphrase-for-symmetric-encryption} を設定して
+ください。
 
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
@@ -577,6 +577,5 @@ ELisp $BHG$N%Q%9%o!<%I!&%-%c%C%7%e$r;H$&>l9g(B
 @bye
 
 @c Local Variables:
-@c coding: iso-2022-7bit
 @c fill-column: 72
 @c End:

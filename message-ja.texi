@@ -14,8 +14,8 @@
 @copying
 This file documents Message, the Emacs message composition mode.
 
-$B$3$N%U%!%$%k$O(B Emacs $B$N%a%C%;!<%8:n@.%b!<%I$G$"$k(B Message $B$K4X$9$k@bL@J8(B
-$B=q$G$9!#(B
+このファイルは Emacs のメッセージ作成モードである Message に関する説明文
+書です。
 
 Copyright @copyright{} 1996--2016 Free Software Foundation, Inc.
 
@@ -27,17 +27,17 @@ Invariant Sections, with the Front-Cover Texts being ``A GNU Manual'',
 and with the Back-Cover Texts as in (a) below.  A copy of the license
 is included in the section entitled ``GNU Free Documentation License''.
 
-$B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
-$BBh(B 1.3 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
-$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!H(BA GNU Manual$B!I$OI=I=;f(B
-$B%F%-%9%H!"0J2<$N(B (a) $B$ON"I=;f%F%-%9%H$G$9!#$3$NMxMQ5vBz7@Ls=q$NJ#<L$O(B
-$B!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^$9!#(B
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.3 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
 modify this GNU manual.''
 
-(a) FSF $B$NN"I=;f%F%-%9%H(B:$B!V$"$J$?$K$O$3$N(B GNU Manual $B$rJ#@=$7$?$jJQ99$9(B
-$B$k<+M3$,$"$j$^$9!#!W(B
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。」
 @end quotation
 @end copying
 
@@ -75,85 +75,85 @@ modify this GNU manual.''
 @insertcopying
 @end ifnottex
 
-Gnus $B$N$9$Y$F$N%a%C%;!<%8$N:n@.(B ($B%a!<%k$H%K%e!<%9$NN>J}(B) $B$O!"%a%C%;!<%8(B
-$B%b!<%I$N%P%C%U%!!<$G9T$J$$$^$9!#(B
+Gnus のすべてのメッセージの作成 (メールとニュースの両方) は、メッセージ
+モードのバッファーで行ないます。
 
 @menu
-* Interface::         $B%a%C%;!<%8%P%C%U%!!<$N@_Dj(B
-* Commands::          $B%a%C%;!<%8%b!<%I$N%P%C%U%!!<$G<B9T$G$-$kL?Na(B
-* Variables::         $B%a%C%;!<%8%P%C%U%!!<$N%+%9%?%^%$%:(B
-* Appendices::        $B$b$C$H5;=QE*$J$3$H(B
-* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
-* Index::             $BJQ?t!"4X?t!"35G0$N:w0z(B
-* Key Index::         $B%a%C%;!<%8%b!<%I$N%-!<$N0lMw(B
+* Interface::         メッセージバッファーの設定
+* Commands::          メッセージモードのバッファーで実行できる命令
+* Variables::         メッセージバッファーのカスタマイズ
+* Appendices::        もっと技術的なこと
+* GNU Free Documentation License:: この文書の利用許諾契約書
+* Index::             変数、関数、概念の索引
+* Key Index::         メッセージモードのキーの一覧
 @end menu
 
-Message $B$O(B Gnus $B$H$H$b$KG[I[$5$l$^$9!#$3$N%^%K%e%"%k$KBP1~$9$k(B Gnus $B$NHG(B
-$B$O(B Emacs 25.1 $B$KIUB0$9$k(B Gnus v5.13 $B$G$9!#(B
+Message は Gnus とともに配布されます。このマニュアルに対応する Gnus の版
+は Emacs 25.1 に付属する Gnus v5.13 です。
 
 @node Interface
-@chapter $B%$%s%?!<%U%'!<%9(B
+@chapter インターフェース
 
-$B%W%m%0%i%`(B ($B$^$?$O?M(B) $B$,%a%C%;!<%8$KH?1~$7$?$$$H$-(B---$BJVEz!"%U%)%m!<%"%C(B
-$B%W!"E>Aw!"<h$j>C$7$r$7$?$$$H$-(B---$B$=$N%W%m%0%i%`(B ($B$^$?$O?M(B) $B$O$A$g$&$I$=(B
-$B$N%a%C%;!<%8$,$"$k%P%C%U%!!<$K%]%$%s%H$rCV$$$F!"I,MW$JL?Na$r8F$S=P$9$O$:(B
-$B$G$9!#$9$k$H(B @code{Message} $B$O!"E,@Z$J%X%C%@!<$GK~$?$7$??7$7(B
-$B$$(B @code{message} $B%b!<%I$N%P%C%U%!!<$r=P8=$5$;$F$/$l$k$N$G!"MxMQ<T$O%a%C(B
-$B%;!<%8$rAw$kA0$K$=$l$rJT=8$9$k$3$H$,$G$-$^$9!#(B
+プログラム (または人) がメッセージに反応したいとき---返答、フォローアッ
+プ、転送、取り消しをしたいとき---そのプログラム (または人) はちょうどそ
+のメッセージがあるバッファーにポイントを置いて、必要な命令を呼び出すはず
+です。すると @code{Message} は、適切なヘッダーで満たした新し
+い @code{message} モードのバッファーを出現させてくれるので、利用者はメッ
+セージを送る前にそれを編集することができます。
 
 @menu
-* New Mail Message::     $B???7$7$$%a!<%k%a%C%;!<%8$rJT=8$9$k(B
-* New News Message::     $B???7$7$$%K%e!<%9%a%C%;!<%8$rJT=8$9$k(B
-* Reply::                $B%a!<%k$GJVEz$9$k(B
-* Wide Reply::           $B$9$Y$F$N?M$?$A$K%a!<%k$G1~Ez$9$k(B
-* Followup::             $B%K%e!<%9$G%U%)%m!<%"%C%W$9$k(B
-* Canceling News::       $B%K%e!<%95-;v$r<h$j>C$9(B
-* Superseding::          $B%a%C%;!<%8$rCV$-49$($k(B
-* Forwarding::           $B%a%C%;!<%8$r%K%e!<%9$^$?$O%a!<%k$GE>Aw$9$k(B
-* Resending::            $B%a!<%k%a%C%;!<%8$r:FAw$9$k(B
-* Bouncing::             $BCF$+$l$?%a!<%k%a%C%;!<%8$r:FAw$9$k(B
-* Mailing Lists::        $B%a!<%j%s%0%j%9%H$K%a!<%k$rAw$k(B
+* New Mail Message::     真新しいメールメッセージを編集する
+* New News Message::     真新しいニュースメッセージを編集する
+* Reply::                メールで返答する
+* Wide Reply::           すべての人たちにメールで応答する
+* Followup::             ニュースでフォローアップする
+* Canceling News::       ニュース記事を取り消す
+* Superseding::          メッセージを置き換える
+* Forwarding::           メッセージをニュースまたはメールで転送する
+* Resending::            メールメッセージを再送する
+* Bouncing::             弾かれたメールメッセージを再送する
+* Mailing Lists::        メーリングリストにメールを送る
 @end menu
 
-Message $B%b!<%I$N%D!<%k%P!<$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B@kbd{M-x
-customize-apropos RET message-tool-bar} $B$r;n$7$F$_$F$/$@$5$$!#$3$N5!G=$r(B
-$BMxMQ$G$-$k$N$O(B Emacs $B$@$1$G$9$,!#(B
+Message モードのツールバーをカスタマイズすることができます。@kbd{M-x
+customize-apropos RET message-tool-bar} を試してみてください。この機能を
+利用できるのは Emacs だけですが。
 
 @node New Mail Message
-@section $B?7$7$$%a!<%k%a%C%;!<%8(B
+@section 新しいメールメッセージ
 
 @findex message-mail
-@code{message-mail} $BL?Na$O!"?7$7$$%a%C%;!<%8%P%C%U%!!<$r=P8=$5$;$^$9!#(B
+@code{message-mail} 命令は、新しいメッセージバッファーを出現させます。
 
-$BFs$D$N>JN,2DG=$J0z?t$,<u$1IU$1$i$l$^$9(B: $B:G=i$N$b$N$O(B @code{To} $B%X%C%@!<(B
-$B$H$7$F!"FsHVL\$O(B @code{Subject} $B%X%C%@!<$H$7$F;H$o$l$^$9!#$b$7$3$l$i(B
-$B$,(B @code{nil} $B$@$C$?$i!"$=$l$i$NFs$D$N%X%C%@!<$O6u$K$J$j$^$9!#(B
+二つの省略可能な引数が受け付けられます: 最初のものは @code{To} ヘッダー
+として、二番目は @code{Subject} ヘッダーとして使われます。もしこれら
+が @code{nil} だったら、それらの二つのヘッダーは空になります。
 
 @node New News Message
-@section $B?7$7$$%K%e!<%9%a%C%;!<%8(B
+@section 新しいニュースメッセージ
 
 @findex message-news
-@code{message-news} $BL?Na$O!"?7$7$$%a%C%;!<%8%P%C%U%!!<$r=P8=$5$;$^$9!#(B
+@code{message-news} 命令は、新しいメッセージバッファーを出現させます。
 
-$B$3$N4X?t$OFs$D$N>JN,2DG=$J0z?t$r<u$1IU$1$^$9!#:G=i$N$b$N(B
-$B$O(B @code{Newsgroups} $B%X%C%@!<$H$7$F!"Fs$DL\$N$b$N$O(B @code{Subject} $B%X%C(B
-$B%@!<$H$7$F;H$o$l$^$9!#$b$7$3$l$i$,(B @code{nil} $B$@$C$?$i!"$=$l$i$NFs$D$N%X%C(B
-$B%@!<$O6u$K$J$j$^$9!#(B
+この関数は二つの省略可能な引数を受け付けます。最初のもの
+は @code{Newsgroups} ヘッダーとして、二つ目のものは @code{Subject} ヘッ
+ダーとして使われます。もしこれらが @code{nil} だったら、それらの二つのヘッ
+ダーは空になります。
 
 @node Reply
-@section $BJVEz(B
+@section 返答
 
 @findex message-reply
-@code{message-reply} $B4X?t$O!"8=:_$N%P%C%U%!!<$K$"$k%a%C%;!<%8$X$NJVEz$N(B
-$B%a%C%;!<%8%P%C%U%!!<$r=P8=$5$;$^$9!#(B
+@code{message-reply} 関数は、現在のバッファーにあるメッセージへの返答の
+メッセージバッファーを出現させます。
 
 @vindex message-reply-to-function
-Message $B$OJVEz$,$I$3$K9T$/$+(B (@pxref{Responses}) $B$rI8=`$NJ}K!$G7hDj$7$^(B
-$B$9$,!"(B@code{message-reply-to-function} $BJQ?t$r$$$8$/$k$3$H$K$h$C$F!"$"$J(B
-$B$?$NI,MW$K1~$8$F$=$N?6$kIq$$$rJQ$($k$3$H$,$G$-$^$9!#(B
+Message は返答がどこに行くか (@pxref{Responses}) を標準の方法で決定しま
+すが、@code{message-reply-to-function} 変数をいじくることによって、あな
+たの必要に応じてその振る舞いを変えることができます。
 
-@code{From} $B$NBe$o$j$K(B @code{Sender} $B$KJVEz$rAw$j$?$$$N$G$"$l$P!"$3$N$h(B
-$B$&$J$3$H$,$G$-$^$9(B:
+@code{From} の代わりに @code{Sender} に返答を送りたいのであれば、このよ
+うなことができます:
 
 @lisp
 (setq message-reply-to-function
@@ -164,66 +164,66 @@ Message $B$OJVEz$,$I$3$K9T$/$+(B (@pxref{Responses}) $B$rI8=`$NJ}K!$G7hDj$7$^
               nil))))
 @end lisp
 
-$B$3$N4X?t$O!"JVEz$7$h$&$H$9$k5-;v$,%X%C%@!<ItJ,$K69$a$i$l$?%P%C%U%!!<$G8F(B
-$B$P$l$^$9!#(B
+この関数は、返答しようとする記事がヘッダー部分に狭められたバッファーで呼
+ばれます。
 
-$B$4Mw$N$h$&$K!"$3$N4X?t$O%j%9%H$rJV$5$J$1$l$P$J$j$^$;$s!#$3$N>l9g!"(BTo $B%X%C(B
-$B%@!<$,$=$&$J$k$Y$-$@$HH=CG$9$l$P(B @code{((To . "Whom"))} $B$rJV$7$^$9!#$=$&(B
-$B$G$J$1$l$PC1$K(B @code{nil} $B$rJV$9$@$1$G!"(BTo $B%X%C%@!<$r7hDj$9$kI8=`$NJ}K!(B
-$B$,;H$o$l$k$G$7$g$&!#(B
+ご覧のように、この関数はリストを返さなければなりません。この場合、To ヘッ
+ダーがそうなるべきだと判断すれば @code{((To . "Whom"))} を返します。そう
+でなければ単に @code{nil} を返すだけで、To ヘッダーを決定する標準の方法
+が使われるでしょう。
 
-$B%j%9%H$N$=$l$>$l$NMWAG$O(B cons $B%;%k$G$9!#(B@sc{car} $B$O%X%C%@!<$NL>A0(B ($BNc$((B
-$B$P(B @code{Cc}) $B$G!"(B@sc{cdr} $B$O%X%C%@!<$NCM(B ($BNc$((B
-$B$P(B @samp{larsi@@ifi.uio.no}) $B$G$9!#$3$l$i$9$Y$F$N%X%C%@!<$O!"Aw=P$5$l$k(B
-$B%a!<%k$N%X%C%@!<$KA^F~$5$l$^$9!#(B
+リストのそれぞれの要素は cons セルです。@sc{car} はヘッダーの名前 (例え
+ば @code{Cc}) で、@sc{cdr} はヘッダーの値 (例え
+ば @samp{larsi@@ifi.uio.no}) です。これらすべてのヘッダーは、送出される
+メールのヘッダーに挿入されます。
 
 @node Wide Reply
-@section $B9-$$JVEz(B
+@section 広い返答
 
 @findex message-wide-reply
-@code{message-wide-reply} $B$O!"8=:_$N%P%C%U%!!<$K$"$k%a%C%;!<%8$X$N9-$$JV(B
-$BEz$N%a%C%;!<%8%P%C%U%!!<$r=P8=$5$;$^$9!#!V9-$$JVEz!W$H$O(B @code{To}$B!"(B
-@code{From} ($B$^$?$O(B @code{Reply-to}) $B$*$h$S(B @code{Cc} $B%X%C%@!<$K5s$2$i$l(B
-$B$F$$$k$9$Y$F$N?M$?$A$KFO$/JVEz$G$9!#(B
+@code{message-wide-reply} は、現在のバッファーにあるメッセージへの広い返
+答のメッセージバッファーを出現させます。「広い返答」とは @code{To}、
+@code{From} (または @code{Reply-to}) および @code{Cc} ヘッダーに挙げられ
+ているすべての人たちに届く返答です。
 
 @vindex message-wide-reply-to-function
-Message $B$OJVEz$,$I$3$K9T$/$+$r7hDj$9$k$?$a$KI8=`$NJ}K!$r;H$$$^$9$,!"(B
-@code{message-wide-reply-to-function} $B$r$$$8$/$k$3$H$K$h$C$F!"?6$kIq$$$r(B
-$B$"$J$?$NI,MW$K9g$&$h$&$KJQ99$9$k$3$H$,$G$-$^$9!#$=$l(B
-$B$O(B @code{message-reply-to-function} $B$HF1$8$d$jJ}$G;H$o$l$^(B
-$B$9(B (@pxref{Reply})$B!#(B
+Message は返答がどこに行くかを決定するために標準の方法を使いますが、
+@code{message-wide-reply-to-function} をいじくることによって、振る舞いを
+あなたの必要に合うように変更することができます。それ
+は @code{message-reply-to-function} と同じやり方で使われま
+す (@pxref{Reply})。
 
 @vindex message-dont-reply-to-names
-$B@55,I=8=(B  @code{message-dont-reply-to-names} ($B$"$k$$$O$3$l$O@55,I=8=$N%j(B
-$B%9%H!"$^$?$OH=CG$9$k$?$a$N4X?t$G$b$h$$(B) $B$K9gCW$9$k%"%I%l%9(B
-$B$O(B @code{Cc} $B%X%C%@!<$+$i<h$j=|$+$l$^$9!#(B@code{nil} $B$K$9$k$H!"$"$J$?$NL>(B
-$BA0$@$1$,<h$j=|$+$l$^$9!#(B
+正規表現  @code{message-dont-reply-to-names} (あるいはこれは正規表現のリ
+スト、または判断するための関数でもよい) に合致するアドレス
+は @code{Cc} ヘッダーから取り除かれます。@code{nil} にすると、あなたの名
+前だけが取り除かれます。
 
 @vindex message-prune-recipient-rules
-@code{message-prune-recipient-rules} $B$O!"9-$$JVEz$r$9$k$H$-$KFCDj$N%"%I(B
-$B%l%9$r<h$j=|$/$?$a$K;H$$$^$9!#=EJ#$7$?%"%I%l%9$N$h$&$J$b$N$r:o=|$9$k$?$a(B
-$B$K;H$&$H$$$&0UL#$G$9!#$3$l$O%j%9%H$N%j%9%H$G$9!#:G=i$NMWAG$O!"$"$k5,B'$r(B
-$BE,MQ$9$k$?$a$N!"FCDj$N%"%I%l%9$K9gCW$9$k@55,I=8=$G$9!#$=$7$F(B 2$B$DL\$O!"<h(B
-$B$j=|$/$Y$-%"%I%l%9$K9gCW$9$k$?$a$N!":G=i$N@55,I=8=$K4p$E$$$F3HD%$5$l$k@5(B
-$B5,I=8=$G$9!#(B
+@code{message-prune-recipient-rules} は、広い返答をするときに特定のアド
+レスを取り除くために使います。重複したアドレスのようなものを削除するため
+に使うという意味です。これはリストのリストです。最初の要素は、ある規則を
+適用するための、特定のアドレスに合致する正規表現です。そして 2つ目は、取
+り除くべきアドレスに合致するための、最初の正規表現に基づいて拡張される正
+規表現です。
 
-$B$H!"@bL@$O$d$d$3$7$$$N$G$9$,!";H$&$N$O4JC1$G$9!#(B
+と、説明はややこしいのですが、使うのは簡単です。
 
-$BNc$($P(B @samp{foo@@example.org} $B$+$i%a!<%k$r<u$1<h$C$?$N$@$1$l$I!"(B
-Cc $B$N%j%9%H$K<B$OF1$8?M$N(B @samp{foo@@zot.example.org} $B$,4^$^$l$F$$$k$H!"(B
-$B9-$$JVEz$O$=$l$iN>J}$N%"%I%l%908$F$K=P$F9T$C$F$7$^$&$G$7$g$&!#(B
+例えば @samp{foo@@example.org} からメールを受け取ったのだけれど、
+Cc のリストに実は同じ人の @samp{foo@@zot.example.org} が含まれていると、
+広い返答はそれら両方のアドレス宛てに出て行ってしまうでしょう。
 
-$B$3$l$rHr$1$k$K$O!"0J2<$N$h$&$J$3$H$r$9$l$PNI$$$N$G$9(B:
+これを避けるには、以下のようなことをすれば良いのです:
 
 @lisp
 (setq message-prune-recipient-rules
       '(("^\\([^@@]+\\)@@\\(.*\\)" "\\1@@.*[.]\\2")))
 @end lisp
 
-$BNc$($P$b$7!"(B@samp{cvs@@example.org} $B$+$i$N%a%C%;!<%8$KBP$9$k$9$Y$F$N9-$$(B
-$BJVEz$,$=$N%"%I%l%9$@$1$K9T$-!"B>$K$O9T$+$J$$$h$&$K$7$?$$(B ($B$D$^$j<u<h?M$N(B
-$B%j%9%H$K(B @samp{cvs@@example.org} $B$,$"$C$?$i!"B>$N$9$Y$F$N<u<h?M$r08@h$+(B
-$B$i=|30$7$?$$(B) $B$N$G$"$l$P(B:
+例えばもし、@samp{cvs@@example.org} からのメッセージに対するすべての広い
+返答がそのアドレスだけに行き、他には行かないようにしたい (つまり受取人の
+リストに @samp{cvs@@example.org} があったら、他のすべての受取人を宛先か
+ら除外したい) のであれば:
 
 @lisp
 (setq message-prune-recipient-rules
@@ -231,195 +231,195 @@ Cc $B$N%j%9%H$K<B$OF1$8?M$N(B @samp{foo@@zot.example.org} $B$,4^$^$l$F$$$k$H!
 @end lisp
 
 @vindex message-wide-reply-confirm-recipients
-@code{message-wide-reply-confirm-recipients} $B$,Hs(B-@code{nil} $B$@$C$?$i!"(B
-$BJ#?t$N<u<h?M$KJVEz$7$?$$$+$I$&$+$N3NG'$r5a$a$i$l$^$9!#%G%#%U%)%k%H(B
-$B$O(B @code{nil} $B$G$9!#(B
+@code{message-wide-reply-confirm-recipients} が非-@code{nil} だったら、
+複数の受取人に返答したいかどうかの確認を求められます。ディフォルト
+は @code{nil} です。
 
 @node Followup
-@section $B%U%)%m!<%"%C%W(B
+@section フォローアップ
 
 @findex message-followup
-@code{message-followup} $BL?Na$O!"8=:_$N%P%C%U%!!<$K$"$k%a%C%;!<%8$K%U%)%m!<(B
-$B%"%C%W$9$k$?$a$N%a%C%;!<%8%P%C%U%!!<$r=P8=$5$;$^$9!#(B
+@code{message-followup} 命令は、現在のバッファーにあるメッセージにフォロー
+アップするためのメッセージバッファーを出現させます。
 
 @vindex message-followup-to-function
-Message $B$O%U%)%m!<%"%C%W$,$I$3$K9T$/$+$rI8=`$NJ}K!$r;H$C$F7hDj$7$^$9$,!"(B
-@code{message-followup-to-function} $B$r$$$8$/$k$3$H$K$h$C$F!"$"$J$?$NI,MW(B
-$B$K9g$&$h$&$K?6$kIq$$$rJQ99$9$k$3$H$,$G$-$^$9!#$=$l(B
-$B$O(B @code{message-reply-to-function} $B$HF1$8$d$jJ}$G;H$o$l$^(B
-$B$9(B (@pxref{Reply})$B!#(B
+Message はフォローアップがどこに行くかを標準の方法を使って決定しますが、
+@code{message-followup-to-function} をいじくることによって、あなたの必要
+に合うように振る舞いを変更することができます。それ
+は @code{message-reply-to-function} と同じやり方で使われま
+す (@pxref{Reply})。
 
 @vindex message-use-followup-to
-@code{message-use-followup-to} $BJQ?t$O(B @code{Followup-To} $B%X%C%@!<$K4X$7(B
-$B$F2?$r$9$k$+(B ($BLuCm(B: To $B%X%C%@!<$r$I$&$d$C$F7hDj$9$k$+(B) $B$r;XDj$7$^$9!#$=(B
-$B$l$,(B @code{use} $B$@$C$?$i!"$$$D$b$=$NCM$r;H$$$^$9!#$b$7(B @code{ask} $B$@$C$?(B
-$B$i(B ($B$3$l$,%G%#%U%)%k%H$G$9(B)$B!"$=$NCM$r;H$&$+$I$&$+$r?R$M$^$9!#$b(B
-$B$7(B @code{t} $B$@$C$?$i!"$=$NCM$,(B ($BJ8;zDL$j(B) @samp{poster} $B$G$J$$8B$j!"$=$N(B
-$BCM$r;H$$$^$9(B ($BLuCm(B: @code{message-use-followup-to} $B$NCM$,(B @code{t} $B$G!"(B
-@code{Followup-To} $B%X%C%@!<$NCM$,(B @samp{poster} $B$@$C$?$i!"$=$l$r;H$&$+$I(B
-$B$&$+$r?R$M$^$9!#$J$*!"<B:]$K(B To $B%X%C%@!<$K;H$o$l$k$N$O!"(B
-@code{Mail-Reply-To}$B!"(B@code{Reply-To} $B$*$h$S(B @code{From} $B%X%C%@!<$NCf$G!"(B
-$B:G=i$K8+$D$+$C$?%a!<%k%"%I%l%9$G$9(B)$B!#(B@code{nil} $B$G$"$l$P!"CM$r;H$$$^$;$s!#(B
+@code{message-use-followup-to} 変数は @code{Followup-To} ヘッダーに関し
+て何をするか (訳注: To ヘッダーをどうやって決定するか) を指定します。そ
+れが @code{use} だったら、いつもその値を使います。もし @code{ask} だった
+ら (これがディフォルトです)、その値を使うかどうかを尋ねます。も
+し @code{t} だったら、その値が (文字通り) @samp{poster} でない限り、その
+値を使います (訳注: @code{message-use-followup-to} の値が @code{t} で、
+@code{Followup-To} ヘッダーの値が @samp{poster} だったら、それを使うかど
+うかを尋ねます。なお、実際に To ヘッダーに使われるのは、
+@code{Mail-Reply-To}、@code{Reply-To} および @code{From} ヘッダーの中で、
+最初に見つかったメールアドレスです)。@code{nil} であれば、値を使いません。
 
 @node Canceling News
-@section $B%K%e!<%9$r<h$j>C$9(B
+@section ニュースを取り消す
 
 @findex message-cancel-news
-@code{message-cancel-news} $BL?Na$O!"8=:_$N%P%C%U%!!<$K$"$k5-;v$r<h$j>C$7(B
-$B$^$9!#(B
+@code{message-cancel-news} 命令は、現在のバッファーにある記事を取り消し
+ます。
 
 @vindex message-cancel-message
-@code{message-cancel-message} $B$NCM$,<h$j>C$75-;v$NK\J8$KA^F~$5$l$^$9!#%G%#(B
-$B%U%)%k%H$O(B @samp{I am canceling my own article.} $B$G$9!#(B
+@code{message-cancel-message} の値が取り消し記事の本文に挿入されます。ディ
+フォルトは @samp{I am canceling my own article.} です。
 
 @cindex Cancel Locks
 @vindex message-insert-canlock
 @cindex canlock
-Message $B$,%K%e!<%95-;v$r%]%9%H$9$k$H$-!"%G%#%U%)%k%H(B
-$B$G(B @code{Cancel-Lock} $B%X%C%@!<$rA^F~$7$^$9!#$3$l$O$"$J$?<+?H$,=q$$$?%a!<%C(B
-$B%;!<%8$r$"$J$?$@$1$,<h$j>C$9$3$H$,$G$-$k$3$H$rJ]>Z$9$k0E9f2=$5$l$?%X%C%@!<(B
-$B$G!"$9$0$l$b$N$G$9!#7gE@$O!"(B@file{.emacs} $B%U%!%$%k(B (Gnus $B$,HkL)$N(B cancel
-lock $B%Q%9%o!<%I(B ($B:G=i$K$3$N5!G=$r;H$&$H$-$K<+F0E*$K@8@.$5$l$^$9(B) $B$r3JG<(B
-$B$9$k>l=j(B) $B$r$J$/$7$F$7$^$&$H!"%a%C%;!<%8$N<h$j>C$7$,$G$-$J$/$J$C$F$7$^$&(B
-$B$3$H$G$9!#<+J,$G%Q%9%o!<%I$r4IM}$7$?$$$J$i$P!"0J2<$N$h$&$J$b$N(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F$/$@$5$$(B:
+Message がニュース記事をポストするとき、ディフォルト
+で @code{Cancel-Lock} ヘッダーを挿入します。これはあなた自身が書いたメーッ
+セージをあなただけが取り消すことができることを保証する暗号化されたヘッダー
+で、すぐれものです。欠点は、@file{.emacs} ファイル (Gnus が秘密の cancel
+lock パスワード (最初にこの機能を使うときに自動的に生成されます) を格納
+する場所) をなくしてしまうと、メッセージの取り消しができなくなってしまう
+ことです。自分でパスワードを管理したいならば、以下のようなもの
+を @file{~/.gnus.el} ファイルに入れてください:
 
 @lisp
 (setq canlock-password "geheimnis"
       canlock-password-for-verify canlock-password)
 @end lisp
 
-$B$=$N%X%C%@!<$rA^F~$9$k$+$I$&$+$O!"(B@code{message-insert-canlock} $BJQ?t$K$h$C(B
-$B$F@)8f$5$l$^$9!#(B
+そのヘッダーを挿入するかどうかは、@code{message-insert-canlock} 変数によっ
+て制御されます。
 
-$B$^$@B?$/$N%K%e!<%9%5!<%P!<$,(B @code{Cancel-Lock} $B%X%C%@!<$r=EMW;k$7$F$$$^(B
-$B$;$s$,!">-Mh$OJQ$o$k$3$H$,4|BT$5$l$^$9!#(B
+まだ多くのニュースサーバーが @code{Cancel-Lock} ヘッダーを重要視していま
+せんが、将来は変わることが期待されます。
 
 @node Superseding
-@section $B%K%e!<%95-;v$NCV$-49$((B
+@section ニュース記事の置き換え
 
 @findex message-supersede
-@code{message-supersede} $BL?Na$O!"8=:_$N%P%C%U%!!<$K$"$k%a%C%;!<%8$rCV$-(B
-$B49$($k$?$a$N%a%C%;!<%8%P%C%U%!!<$r=P8=$5$;$^$9!#(B
+@code{message-supersede} 命令は、現在のバッファーにあるメッセージを置き
+換えるためのメッセージバッファーを出現させます。
 
 @vindex message-ignored-supersedes-headers
-@code{message-ignored-supersedes-headers} $B$K9gCW$9$k%X%C%@!<$O?7$7$$%a%C(B
-$B%;!<%8%P%C%U%!!<$r=P8=$5$;$kA0$K<h$j=|$+$l$^$9!#%G%#%U%)%k%H$O(B@*
+@code{message-ignored-supersedes-headers} に合致するヘッダーは新しいメッ
+セージバッファーを出現させる前に取り除かれます。ディフォルトは@*
 @samp{^Path:\\|^Date\\|^NNTP-Posting-Host:\\|^Xref:\\|^Lines:\\|@*
 ^Received:\\|^X-From-Line:\\|^X-Trace:\\|^X-Complaints-To:\\|@*
 Return-Path:\\|^Supersedes:\\|^NNTP-Posting-Date:\\|^X-Trace:\\|@*
 ^X-Complaints-To:\\|^Cancel-Lock:\\|^Cancel-Key:\\|^X-Hashcash:\\|@*
-^X-Payment:\\|^Approved:} $B$G$9!#(B
+^X-Payment:\\|^Approved:} です。
 
 @node Forwarding
-@section $BE>Aw(B
+@section 転送
 
 @findex message-forward
-@code{message-forward} $BL?Na$O!"8=:_$N%P%C%U%!!<$K$"$k%a%C%;!<%8$rE>Aw$9(B
-$B$k$?$a$N%a%C%;!<%8%P%C%U%!!<$r=P8=$5$;$^$9!#@\F,0z?t$,M?$($i$l$k$H!"%K%e!<(B
-$B%9$r;H$C$FE>Aw$7$^$9!#(B
+@code{message-forward} 命令は、現在のバッファーにあるメッセージを転送す
+るためのメッセージバッファーを出現させます。接頭引数が与えられると、ニュー
+スを使って転送します。
 
 @table @code
 @item message-forward-ignored-headers
 @vindex message-forward-ignored-headers
-@code{nil} $B$G$J$1$l$P!"$3$N@55,I=8=$K9gCW$9$k$9$Y$F$N%X%C%@!<$,E>Aw$5$l(B
-$B$k%a%C%;!<%8$+$i:o=|$5$l$^$9!#(B
+@code{nil} でなければ、この正規表現に合致するすべてのヘッダーが転送され
+るメッセージから削除されます。
 
 @item message-forward-included-headers
 @vindex message-forward-included-headers
-@code{nil} $B$G$J$1$l$P!"%a%C%;!<%8$rE>Aw$9$k$H$-!"$3$N@55,I=8=$K9gCW$9$k(B
-$B%X%C%@!<$@$1$,J];}$5$l$^$9!#(B
+@code{nil} でなければ、メッセージを転送するとき、この正規表現に合致する
+ヘッダーだけが保持されます。
 
 @item message-make-forward-subject-function
 @vindex message-make-forward-subject-function
-$BE>Aw$5$l$k%a%C%;!<%8$N!"I=Bj%X%C%@!<$r:n$k$?$a$K8F$P$l$k4X?t$N%j%9%H$G$9!#(B
-$BA0$N4X?t$G:n$i$l$?I=Bj$O!"B3$/$=$l$>$l$N4X?t$KEO$5$l$^$9!#(B
+転送されるメッセージの、表題ヘッダーを作るために呼ばれる関数のリストです。
+前の関数で作られた表題は、続くそれぞれの関数に渡されます。
 
-$BDs6!$5$l$F$$$k4X?t$O<!$NDL$j$G$9(B:
+提供されている関数は次の通りです:
 
 @table @code
 @item message-forward-subject-author-subject
 @findex message-forward-subject-author-subject
-$B5-;v$N=P$I$3$m(B ($BCx<T$+%K%e!<%9%0%k!<%W(B) $B$r!"3g8L(B ([...]) $B$G0O$s$GI=Bj$N(B
-$BA0$KIU$1$^$9!#(B
+記事の出どころ (著者かニュースグループ) を、括弧 ([...]) で囲んで表題の
+前に付けます。
 
 @item message-forward-subject-fwd
-$B5-;v$NI=Bj$NA0$K(B @samp{Fwd:} $B$rCV$-$^$9!#(B
+記事の表題の前に @samp{Fwd:} を置きます。
 @end table
 
 @item message-wash-forwarded-subjects
 @vindex message-wash-forwarded-subjects
-$B$3$NJQ?t$,(B @code{t} $B$@$C$?$i!"0JA0$KE>Aw$5$l$?$3$H$r<($9:/(B
-$B@W(B (@samp{Fwd:}, @samp{Re:}, @samp{(fwd)} $B$N$h$&$J$b$N(B) $B$r!"?7$7$$I=Bj$r(B
-$BAH$_N)$F$kA0$K$O$.<h$j$^$9!#%G%#%U%)%k%HCM$O(B @code{nil} $B$G$9!#(B
+この変数が @code{t} だったら、以前に転送されたことを示す痕
+跡 (@samp{Fwd:}, @samp{Re:}, @samp{(fwd)} のようなもの) を、新しい表題を
+組み立てる前にはぎ取ります。ディフォルト値は @code{nil} です。
 
 @item message-forward-as-mime
 @vindex message-forward-as-mime
-$B$3$NJQ?t$,(B @code{t} ($B%G%#%U%)%k%H(B) $B$@$C$?$i!"E>Aw$5$l$k%a%C%;!<%8(B
-$B$O(B @acronym{MIME} RFC822 $B%Q!<%H$H$7$FKd$a9~$^$l$^$9!#(B@code{nil} $B$@$C$?>l(B
-$B9g$O!"0JA0$K(B @acronym{MIME} $B$KBP1~$7$F$$$J$+$C$?(B Gnus $B$,$7$?$h$&$K!"E>Aw(B
-$B$5$l$k%a%C%;!<%8$N%3%T!<$,!"$?$@C1$K?7$7$$%a%C%;!<%8$KKd$a9~$^$l$^$9!#(B
+この変数が @code{t} (ディフォルト) だったら、転送されるメッセージ
+は @acronym{MIME} RFC822 パートとして埋め込まれます。@code{nil} だった場
+合は、以前に @acronym{MIME} に対応していなかった Gnus がしたように、転送
+されるメッセージのコピーが、ただ単に新しいメッセージに埋め込まれます。
 
 @item message-forward-before-signature
 @vindex message-forward-before-signature
-$BHs(B-@code{nil} $B$@$C$?$i=pL>$NA0$K!"$=$l0J30$@$C$?$i8e$K!"E>Aw$9$k%a%C%;!<(B
-$B%8$rCV$-$^$9!#(B
+非-@code{nil} だったら署名の前に、それ以外だったら後に、転送するメッセー
+ジを置きます。
 @end table
 
 @node Resending
-@section $B:FAw(B
+@section 再送
 
 @findex message-resend
-@code{message-resend} $BL?Na$O!"MxMQ<T$K%"%I%l%9$rF~NO$9$k$3$H$rMW5a$7$F!"(B
-$B8=:_$N%P%C%U%!!<$K$"$k%a%C%;!<%8$r$=$N%"%I%l%9$K:FAw$7$^$9!#(B
+@code{message-resend} 命令は、利用者にアドレスを入力することを要求して、
+現在のバッファーにあるメッセージをそのアドレスに再送します。
 
 @vindex message-ignored-resent-headers
-$B@55,I=8=(B @code{message-ignored-resent-headers} $B$K9gCW$9$k%X%C%@!<$O!"%a%C(B
-$B%;!<%8$rAw$kA0$K<h$j=|$+$l$^$9!#(B
+正規表現 @code{message-ignored-resent-headers} に合致するヘッダーは、メッ
+セージを送る前に取り除かれます。
 
 @node Bouncing
-@section $BCF$+$l$?%a!<%k%a%C%;!<%8(B
+@section 弾かれたメールメッセージ
 
 @findex message-bounce
-@code{message-bounce} $BL?Na$O!"$b$78=:_$N%P%C%U%!!<$KCF$+$l$?%a!<%k%a%C%;!<(B
-$B%8$,$"$C$?$i!"CF$+$l$?$3$H$N>pJs$r<h$j=|$$$?%a%C%;!<%8%P%C%U%!!<$r=P8=$5(B
-$B$;$^$9!#!VCF$+$l$?%a%C%;!<%8!W$H$O!"0lHL$K$O(B @code{mailer-daemon} $B$+$iG[(B
-$BAwIT2D$H$7$FFM$-JV$5$l$?%a!<%k$G$9!#(B
+@code{message-bounce} 命令は、もし現在のバッファーに弾かれたメールメッセー
+ジがあったら、弾かれたことの情報を取り除いたメッセージバッファーを出現さ
+せます。「弾かれたメッセージ」とは、一般には @code{mailer-daemon} から配
+送不可として突き返されたメールです。
 
 @vindex message-ignored-bounced-headers
-$B@55,I=8=(B @code{message-ignored-bounced-headers} $B$K9gCW$9$k%X%C%@!<$O!"%P%C(B
-$B%U%!!<$r=P8=$5$;$kA0$K<h$j=|$+$l$^$9!#%G%#%U%)%k%H(B
-$B$O(B @samp{^\\(Received\\|Return-Path\\|Delivered-To\\):} $B$G$9!#(B
+正規表現 @code{message-ignored-bounced-headers} に合致するヘッダーは、バッ
+ファーを出現させる前に取り除かれます。ディフォルト
+は @samp{^\\(Received\\|Return-Path\\|Delivered-To\\):} です。
 
 @node Mailing Lists
-@section $B%a!<%j%s%0%j%9%H(B
+@section メーリングリスト
 
 @cindex Mail-Followup-To
-$B%a!<%j%s%0%j%9%H$KEj9F$9$k:]$K!"$=$NEj9F$KBP$9$k%U%)%m!<%"%C%W5-;v$r;XDj(B
-$B$7$?>l=j$KD>@\Aw$C$F$b$i$$$?$$$3$H$,$"$j$^$9!#(BMail-Followup-To (MFT) $B$O(B
-$B$^$5$K$3$l$r2DG=$K$9$k$?$a$K:n$i$l$^$7$?!#$3$l$,Lr$KN)$D>l9g$NNc$r;0$D(B:
+メーリングリストに投稿する際に、その投稿に対するフォローアップ記事を指定
+した場所に直接送ってもらいたいことがあります。Mail-Followup-To (MFT) は
+まさにこれを可能にするために作られました。これが役に立つ場合の例を三つ:
 
 @itemize @bullet
 @item
-$B%a!<%j%s%0%j%9%H$KEj9F$9$k?M$O!"Ej9F$7$??M$G$O$J$/!"%a!<%j%s%0%j%9%H$@$1(B
-$B$KJVEz$rAw$k$Y$-$G$"$k$3$H$r!"(BMFT $B$r;H$C$FI=8=$9$k$3$H$,$G$-$^$9!#$3$l$O!"(B
-$BEj9F<T$,$9$G$K$=$N%a!<%j%s%0%j%9%H$r9XFI$7$F$$$k>l9g$,3:Ev$7$^$9!#(B
+メーリングリストに投稿する人は、投稿した人ではなく、メーリングリストだけ
+に返答を送るべきであることを、MFT を使って表現することができます。これは、
+投稿者がすでにそのメーリングリストを購読している場合が該当します。
 
 @item
-$B%a!<%j%s%0%j%9%H$KEj9F$9$k?M$O!"%a!<%j%s%0%j%9%H$@$1$G$J$/Ej9F$7$??M$K$b(B
-$BJVEz$rAw$k$Y$-$G$"$k$3$H$r!"(BMFT $B$r;H$C$FI=8=$9$k$3$H$,$G$-$^$9!#$3$l$O!"(B
-$BEj9F<T$,$=$N%a!<%j%s%0%j%9%H$r9XFI$7$F$$$J$$>l9g$,3:Ev$7$^$9!#(B
+メーリングリストに投稿する人は、メーリングリストだけでなく投稿した人にも
+返答を送るべきであることを、MFT を使って表現することができます。これは、
+投稿者がそのメーリングリストを購読していない場合が該当します。
 
 @item
-$B%a%C%;!<%8$,J#?t$N%a!<%j%s%0%j%9%H$KEj9F$5$l$F$$$k>l9g$K!"$=$l0J9_$N5DO@(B
-$B$r0l$D$N%a!<%j%s%0%j%9%H$@$1$G9T$J$&$3$H$r;XDj$9$k$?$a$K$b(B MFT $B$r;H$&$3(B
-$B$H$,$G$-$^$9!#5DO@$,$$$/$D$+$N%a!<%j%s%0%j%9%H$G9T$J$o$l$F$7$^$&$H$P$i$P(B
-$B$i$K$J$j$d$9$$$7!"%U%)%m!<$9$k$N$,Fq$7$/$J$C$F$7$^$$$^$9$+$i!#(B
+メッセージが複数のメーリングリストに投稿されている場合に、それ以降の議論
+を一つのメーリングリストだけで行なうことを指定するためにも MFT を使うこ
+とができます。議論がいくつかのメーリングリストで行なわれてしまうとばらば
+らになりやすいし、フォローするのが難しくなってしまいますから。
 @end itemize
 
-Gnus $B$OB>$N?M$N%a%C%;!<%8$K$"$k(B MFT $B%X%C%@!<$rB:=E$7$^$9(B ($B$9$J$o$A!"$@$l(B
-$B$+JL$N?M$NEj9F$K%U%)%m!<%"%C%W$9$k$H$-(B)$B!#$^$?!"30$K=P$F9T$/%a%C%;!<%8$N(B
-$B$?$a$N!"F;M}$K$+$J$C$?(B MFT $B%X%C%@!<$r:n@.$9$k$3$H$N%5%]!<%H$bDs6!$7$^$9!#(B
+Gnus は他の人のメッセージにある MFT ヘッダーを尊重します (すなわち、だれ
+か別の人の投稿にフォローアップするとき)。また、外に出て行くメッセージの
+ための、道理にかなった MFT ヘッダーを作成することのサポートも提供します。
 @c
 @c @menu
 @c * Honoring an MFT post::        What to do when one already exists
@@ -427,18 +427,18 @@ Gnus $B$OB>$N?M$N%a%C%;!<%8$K$"$k(B MFT $B%X%C%@!<$rB:=E$7$^$9(B ($B$9$J$o$
 @c @end menu
 
 @c @node Composing with a MFT header
-@subsection  $B@5$7$$(B MFT $B%X%C%@!<$r<+F0E*$K:n$k(B
+@subsection  正しい MFT ヘッダーを自動的に作る
 
-$BEj9F$9$k5-;v$N(B MFT $B%X%C%@!<$r(B Gnus $B$,<+F0E*$K:n$C$F$/$l$k$h$&$K$9$k$?$a(B
-$B$NBh0lJb$O!"9XFI$7$F$$$k%a!<%j%s%0%j%9%H$N%"%I%l%9$N%j%9%H$r(B Gnus $B$KM?$((B
-$B$k$3$H$G$9!#0l$D0J>e$NJ}K!$G$3$l$r9T$J$&$3$H$,$G$-$^$9!#0J2<$NJQ?t$,<j$4(B
-$B$m$G$7$g$&!#(B
+投稿する記事の MFT ヘッダーを Gnus が自動的に作ってくれるようにするため
+の第一歩は、購読しているメーリングリストのアドレスのリストを Gnus に与え
+ることです。一つ以上の方法でこれを行なうことができます。以下の変数が手ご
+ろでしょう。
 
 @table @code
 @vindex message-subscribed-addresses
 @item message-subscribed-addresses
-$B$3$l$O9XFI$7$F$$$k%a!<%j%s%0%j%9%H$N%"%I%l%9$N%j%9%H$G$J$1$l$P$J$j$^$;$s!#(B
-$B%G%#%U%)%k%HCM$O(B @code{nil} $B$G$9!#Nc(B:
+これは購読しているメーリングリストのアドレスのリストでなければなりません。
+ディフォルト値は @code{nil} です。例:
 
 @lisp
 (setq message-subscribed-addresses
@@ -447,9 +447,9 @@ Gnus $B$OB>$N?M$N%a%C%;!<%8$K$"$k(B MFT $B%X%C%@!<$rB:=E$7$^$9(B ($B$9$J$o$
 
 @vindex message-subscribed-regexps
 @item message-subscribed-regexps
-$B$3$l$O9XFI$7$F$$$k%a!<%j%s%0%j%9%H$N%"%I%l%9$r<($9@55,I=8=$N%j%9%H$G$J$1(B
-$B$l$P$J$j$^$;$s!#%G%#%U%)%k%HCM$O(B @code{nil} $B$G$9!#>e5-$HF1$87k2L$r@.$7?k(B
-$B$2$?$$>l9g$NNc(B:
+これは購読しているメーリングリストのアドレスを示す正規表現のリストでなけ
+ればなりません。ディフォルト値は @code{nil} です。上記と同じ結果を成し遂
+げたい場合の例:
 
 @lisp
 (setq message-subscribed-regexps
@@ -458,15 +458,15 @@ Gnus $B$OB>$N?M$N%a%C%;!<%8$K$"$k(B MFT $B%X%C%@!<$rB:=E$7$^$9(B ($B$9$J$o$
 
 @vindex message-subscribed-address-functions
 @item message-subscribed-address-functions
-$B$3$l$O(B MFT $B%X%C%@!<$NCM$r7h$a$k$?$a$K(B ($B0lEY$K0l2s(B!!) $B8F$P$l$k4X?t$N%j%9(B
-$B%H$G$9!#$=$l$i$N4X?t$K$O0z?t$,L5$$$3$H$rCi9p$7$F$*$-$^$7$g$&!#%G%#%U%)%k(B
-$B%HCM$O(B @code{nil} $B$G$9!#(B
+これは MFT ヘッダーの値を決めるために (一度に一回!!) 呼ばれる関数のリス
+トです。それらの関数には引数が無いことを忠告しておきましょう。ディフォル
+ト値は @code{nil} です。
 
-Gnus $B$G$O$3$NJQ?t$N$?$a$KDj5A$5$l$?!"NI$$4X?t$N8uJd$,$"$j$^$9!#4X(B
-$B?t(B @code{gnus-find-subscribed-addresses} $B$O!"(B@code{subscribed} $B%0%k!<%W(B
-$B%Q%i%a!<%?!<(B (@pxref{Group Parameters, ,$B%0%k!<%W%Q%i%a!<%?!<(B, gnus-ja,
-The Gnus Manual}) $B$,Hs(B-@code{nil} $B$K@_Dj$5$l$F$$$k%0%k!<%W$KBP1~$9$k%"%I(B
-$B%l%9$N%j%9%H$rJV$7$^$9!#$3$s$J$U$&$K;H$C$F$/$@$5$$!#(B
+Gnus ではこの変数のために定義された、良い関数の候補があります。関
+数 @code{gnus-find-subscribed-addresses} は、@code{subscribed} グループ
+パラメーター (@pxref{Group Parameters, ,グループパラメーター, gnus-ja,
+The Gnus Manual}) が非-@code{nil} に設定されているグループに対応するアド
+レスのリストを返します。こんなふうに使ってください。
 
 @lisp
 (setq message-subscribed-address-functions
@@ -475,259 +475,259 @@ The Gnus Manual}) $B$,Hs(B-@code{nil} $B$K@_Dj$5$l$F$$$k%0%k!<%W$KBP1~$9$k%"%
 
 @vindex message-subscribed-address-file
 @item message-subscribed-address-file
-$B$"$J$?$O$b$7$+$7$?$i?l68$J?M(B ($B86E5(B: one organized human freak) $B$G!"9XFI(B
-$B$7$F$$$k$9$Y$F$N%a!<%j%s%0%j%9%H$N%"%I%l%9$N%j%9%H$rJL%U%!%$%k$G;}$C$F$$(B
-$B$k$+$b$7$l$^$;$s(B! $B$=$&$J$i$P!"C1$K$3$NJQ?t$r$=$N%U%!%$%kL>$K$9$k$3$H$K$h$C(B
-$B$F!"?M@8$OA1$-$b$N$K$J$k$G$7$g$&!#(B
+あなたはもしかしたら酔狂な人 (原典: one organized human freak) で、購読
+しているすべてのメーリングリストのアドレスのリストを別ファイルで持ってい
+るかもしれません! そうならば、単にこの変数をそのファイル名にすることによっ
+て、人生は善きものになるでしょう。
 @end table
 
-$B>e5-$NJ#?t$NJQ?t$r;H$&$3$H$,$G$-$^$9!#$=$l$i$NCM$O$9$Y$F!V2C$($i$l!W$^(B
-$B$9!#2?$i$+$N;H$($kJ}K!$G!#(B:-)
+上記の複数の変数を使うことができます。それらの値はすべて「加えられ」ま
+す。何らかの使える方法で。:-)
 
-$B$5$"MQ0U$,$G$-$^$7$?!#$$$D$b$N$h$&$K%a%C%;!<%8$N:n@.$r;O$a$^$7$g$&!#$=$7(B
-$B$F$$$D$bDL$j$KAw?.$7$^$7$g$&!#%a%C%;!<%8$,Aw=P$5$l$kD>A0(B
-$B$K(B Gnus $B$N(B MFT $B$r:n$k;E3]$1$,F0:n$7$F!"%a%C%;!<%8$,$9$G$K(B MFT $B%U%#!<%k%I(B
-$B$r;}$C$F$$$k$+$I$&$+$rD4$Y$^$9!#$b$7$=$l$,$"$k$J$i!"$=$l$OJ|$C$F$*$+$l$^(B
-$B$9(B ($B$=$N>l9g$K$=$l$,6u$C$]$@$C$?$i!"$=$N%U%#!<%k%I$,:o=|$5$l$F<+F0@8@.$5(B
-$B$l$?$b$N$GCV$-49$($i$l$k$3$H$O$"$j$^$;$s!#$3$l$O8D!9$N%a%C%;!<%8$K$D$$(B
-$B$F(B MFT $B$N@8@.$r6X;_$5$;$k4pK\$G$9(B)$B!#L5$+$C$?>l9g$O<u<h?M$N%"%I%l%9$N%j%9(B
-$B%H(B (To: $B$H(B Cc: $B%X%C%@!<$K$"$k(B) $B$r!"$=$l$i$N0l$D$,9XFI$7$F$$$k%a!<%j%s%0(B
-$B%j%9%H$N%"%I%l%9$+$I$&$+$rD4$Y$^$9!#$=$l$i$N$I$l$b$,%a!<%j%s%0%j%9%H$N%"(B
-$B%I%l%9$G$J$+$C$?$i!"(BMFT $B$O:n$i$l$^$;$s!#$=$l0J30$N>l9g$K$O(B MFT $B$,%X%C%@!<(B
-$B$KIU$12C$($i$l!"$=$NCM$O(B To: $B$H(B Cc: $B$K$"$k$9$Y$F$N%"%I%l%9$K@_Dj$5$l$^$9!#(B
+さあ用意ができました。いつものようにメッセージの作成を始めましょう。そし
+ていつも通りに送信しましょう。メッセージが送出される直前
+に Gnus の MFT を作る仕掛けが動作して、メッセージがすでに MFT フィールド
+を持っているかどうかを調べます。もしそれがあるなら、それは放っておかれま
+す (その場合にそれが空っぽだったら、そのフィールドが削除されて自動生成さ
+れたもので置き換えられることはありません。これは個々のメッセージについ
+て MFT の生成を禁止させる基本です)。無かった場合は受取人のアドレスのリス
+ト (To: と Cc: ヘッダーにある) を、それらの一つが購読しているメーリング
+リストのアドレスかどうかを調べます。それらのどれもがメーリングリストのア
+ドレスでなかったら、MFT は作られません。それ以外の場合には MFT がヘッダー
+に付け加えられ、その値は To: と Cc: にあるすべてのアドレスに設定されます。
 
 @kindex C-c C-f C-a
 @findex message-generate-unsubscribed-mail-followup-to
 @kindex C-c C-f C-m
 @findex message-goto-mail-followup-to
-$B$&!<$`!#$=$&$9$k$H$"$J$?$O!V9XFI$7$F$$$J$$%a!<%j%s%0%j%9%H$K%a!<%k$rAw?.(B
-$B$9$k$H$-$O$I$&$J$k$N(B?  $B;d$OM>J,$N%3%T!<$,M_$7$$$3$H$r(B MFT $B$G8@$$$?$$!W$H(B
-$B?R$M$^$9$M(B ($B$3$l$O(B MFT $B$,L5$$>l9g$HF1MM$K=hM}$5$l$k$G$7$g$&!#$7$+$7!"(B
-to-address $B$G@_Dj$5$l$?B>$NC/$+$h$jM%@h$5$;$k$?$a$K!"L@<(E*$J(B MFT $B$r;H$&(B
-$B$3$H$,$G$-$^$9(B)$B!#4X(B
-$B?t(B @code{message-generate-unsubscribed-mail-followup-to} $B$,Lr$KN)$D$+$b(B
-$B$7$l$^$;$s!#$3$l$O%G%#%U%)%k%H$G(B @kbd{C-c C-f C-a} $B$K3d$jEv$F$i$l$F$$$^(B
-$B$9!#$I$s$J>l9g$G$b!"$"$J$?$O<+J,$,A*$s$@(B MFT $B$rA^F~$9$k$3$H$,$G$-$^(B
-$B$9(B; $B$=$l$r;O$a$k$N$K(B @kbd{C-c C-f C-m}
-(@code{message-goto-mail-followup-to}) $B$,=u$1$F$/$l$k$G$7$g$&!#(B
+うーむ。そうするとあなたは「購読していないメーリングリストにメールを送信
+するときはどうなるの?  私は余分のコピーが欲しいことを MFT で言いたい」と
+尋ねますね (これは MFT が無い場合と同様に処理されるでしょう。しかし、
+to-address で設定された他の誰かより優先させるために、明示的な MFT を使う
+ことができます)。関
+数 @code{message-generate-unsubscribed-mail-followup-to} が役に立つかも
+しれません。これはディフォルトで @kbd{C-c C-f C-a} に割り当てられていま
+す。どんな場合でも、あなたは自分が選んだ MFT を挿入することができま
+す; それを始めるのに @kbd{C-c C-f C-m}
+(@code{message-goto-mail-followup-to}) が助けてくれるでしょう。
 @c
 @c @node Honoring an MFT post
-@subsection MFT $BEj9F$NB:=E(B
+@subsection MFT 投稿の尊重
 
 @vindex message-use-mail-followup-to
-$B%a!<%j%s%0%j%9%H$KEj9F$5$l$?5-;v$K%U%)%m!<%"%C%W$9$k$H$-!"$=$N5-;v(B
-$B$,(B MFT $B%X%C%@!<$r;}$C$F$$$?$i!"(BGnus $B$NF0:n$OJQ(B
-$B?t(B @code{message-use-mail-followup-to} $B$NCM$K$h$C$F7h$^$j$^$9!#$3$NCM$O(B
-$B0J2<$N$I$l$+$K$J$j$^$9(B:
+メーリングリストに投稿された記事にフォローアップするとき、その記事
+が MFT ヘッダーを持っていたら、Gnus の動作は変
+数 @code{message-use-mail-followup-to} の値によって決まります。この値は
+以下のどれかになります:
 
 @table @code
 @item use
-$B>o$K(B MFT $B$rB:=E$7$^$9!#%U%)%m!<%"%C%W5-;v$N(B To: $B$H(B Cc: $B%X%C%@!<$O!"85$N(B
-$B5-;v$N(B MFT $B%X%C%@!<$+$i0z$-=P$7$^$9!#$3$l$,%G%#%U%)%k%H$G$9!#(B
+常に MFT を尊重します。フォローアップ記事の To: と Cc: ヘッダーは、元の
+記事の MFT ヘッダーから引き出します。これがディフォルトです。
 
 @item nil
-$B>o$K(B MFT $B$rB:=E$7$^$;$s(B ($B40`z$KL5;k(B)$B!#(B
+常に MFT を尊重しません (完璧に無視)。
 
 @item ask
-$B$I$&$9$k$+$r?R$M$^$9!#(B
+どうするかを尋ねます。
 @end table
 
-MFT $B$rB:=E$9$k$3$H$ONI$$%M%A%1%C%H(B (netiquette) $B$G$"$k$H9M$($i$l$F$$$^$9!#(B
-$B$I$3$K%U%)%m!<%"%C%W$9$kI,MW$,$"$k$+$r!"%a%C%;!<%8$rEj9F$7$??M$O$"$J$?$h(B
-$B$j$h$/CN$C$F$$$k$O$:$G$9$+$i!#(B
+MFT を尊重することは良いネチケット (netiquette) であると考えられています。
+どこにフォローアップする必要があるかを、メッセージを投稿した人はあなたよ
+りよく知っているはずですから。
 
 @node Commands
-@chapter $BL?Na(B
+@chapter 命令
 
 @menu
-* Buffer Entry::        $B%a%C%;!<%8%P%C%U%!!<$KF~$C$?8e$NL?Na(B
-* Header Commands::     $B%X%C%@!<$K0\F0$^$?$O%X%C%@!<$rJQ99$9$k$?$a$NL?Na(B
-* Movement::            $B%a%C%;!<%8%P%C%U%!!<$NCf$rF0$-2s$k(B
-* Insertion::           $B%a%C%;!<%8%P%C%U%!!<$K$$$m$s$J$b$N$rA^F~$9$k(B
-* MIME::                @acronym{MIME} $B$K4X$9$k9M;!(B
-* IDNA::                $BHs(B-@acronym{ASCII} $B%I%a%$%sL>$K4X$9$k9M;!(B
-* Security::            $B%a%C%;!<%8$X$N=pL>$H0E9f2=(B
-* Various Commands::    $B$$$m$$$m$J$3$H(B
-* Sending::             $B<B:]$K%a%C%;!<%8$rAw$k(B
-* Mail Aliases::        $B%a!<%k$NJLL>$N;H$$J}(B
-* Spelling::            Emacs $B$K%9%Z%k%A%'%C%/$5$;$k(B
+* Buffer Entry::        メッセージバッファーに入った後の命令
+* Header Commands::     ヘッダーに移動またはヘッダーを変更するための命令
+* Movement::            メッセージバッファーの中を動き回る
+* Insertion::           メッセージバッファーにいろんなものを挿入する
+* MIME::                @acronym{MIME} に関する考察
+* IDNA::                非-@acronym{ASCII} ドメイン名に関する考察
+* Security::            メッセージへの署名と暗号化
+* Various Commands::    いろいろなこと
+* Sending::             実際にメッセージを送る
+* Mail Aliases::        メールの別名の使い方
+* Spelling::            Emacs にスペルチェックさせる
 @end menu
 
 @node Buffer Entry
-@section $B%P%C%U%!!<$KF~$k(B
+@section バッファーに入る
 @cindex undo
 @kindex C-_
 
-$B2?$+B>$N%a%C%;!<%8$K1~Ez$9$k$H$-$O!"$?$$$F$$%a%C%;!<%8%P%C%U%!!<$G=q$->e(B
-$B$2$^$9$h$M!#(BMessage $B$OB?$/$N0zMQJ8$r07$C$?$j!"=pL>$r:o=|$7$?$j!"J8>O$N@0(B
-$B7A$r$7$?$j!"$"$k$$$O$"$J$?$,;H$C$F$$$k@_Dj$K0MB8$9$k$$$m$s$J$3$H$r$7$^$9!#(B
-Message $B$OIaDL$O$&$^$/F0:n$7$^$9$,!"$H$-$I$-4V0c$($b$7$^$9!#$=$l$i$N4V0c(B
-$B$$$rMxMQ<T$,@5$9$3$H$,$G$-$k$h$&$K!"(BMessage $B$O$"$k$^$H$^$C$?F0:n$r<+F0E*(B
-$B$K9T$J$&A0$K%"%s%I%%(B ($B$d$jD>$7(B) $B$N6-3&$r@_Dj$7$^$9!#$=$l$K$h$C$F!"$[$s$N(B
-$B2?2s$+%"%s%I%%!&%-!<(B ($BDL>o(B @kbd{C-_}) $B$r2!$;$P!"L$JT=8$N%a%C%;!<%8$KLa$9(B
-$B$3$H$,$G$-$^$9!#(B
+何か他のメッセージに応答するときは、たいていメッセージバッファーで書き上
+げますよね。Message は多くの引用文を扱ったり、署名を削除したり、文章の整
+形をしたり、あるいはあなたが使っている設定に依存するいろんなことをします。
+Message は普通はうまく動作しますが、ときどき間違えもします。それらの間違
+いを利用者が正すことができるように、Message はあるまとまった動作を自動的
+に行なう前にアンドゥ (やり直し) の境界を設定します。それによって、ほんの
+何回かアンドゥ・キー (通常 @kbd{C-_}) を押せば、未編集のメッセージに戻す
+ことができます。
 
 @node Header Commands
-@section $B%X%C%@!<L?Na(B
+@section ヘッダー命令
 
-@subsection $B%X%C%@!<$K0\F0$9$k$?$a$NL?Na(B
+@subsection ヘッダーに移動するための命令
 
-$B0J2<$NL?Na$OBP>]$K$J$C$F$$$k%X%C%@!<$K0\F0$7$^$9!#B8:_$7$J$1$l$PA^F~$5$l(B
-$B$^$9!#(B
+以下の命令は対象になっているヘッダーに移動します。存在しなければ挿入され
+ます。
 
 @table @kbd
 @item C-c ?
 @kindex C-c ?
 @findex describe-mode
-$B%a%C%;!<%8%b!<%I$N@bL@$rI=<($7$^$9!#(B
+メッセージモードの説明を表示します。
 
 @item C-c C-r C-t
 @kindex C-c C-f C-t
 @findex message-goto-to
-@code{To} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-to})$B!#(B
+@code{To} ヘッダーに行きます (@code{message-goto-to})。
 
 @item C-c C-f C-o
 @kindex C-c C-f C-o
 @findex message-goto-from
-@code{From} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-from})$B!#(B($B%-!<%P%$%s%I(B
-$BCf$N!H(Bo$B!I$OAO:n<T(B (Originator) $B$KM3Mh$7$F$$$^$9!#(B)
+@code{From} ヘッダーに行きます (@code{message-goto-from})。(キーバインド
+中の“o”は創作者 (Originator) に由来しています。)
 
 @item C-c C-f C-b
 @kindex C-c C-f C-b
 @findex message-goto-bcc
-@code{Bcc} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-bcc})$B!#(B
+@code{Bcc} ヘッダーに行きます (@code{message-goto-bcc})。
 
 @item C-c C-f C-w
 @kindex C-c C-f C-w
 @findex message-goto-fcc
-@code{Fcc} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-fcc})$B!#(B
+@code{Fcc} ヘッダーに行きます (@code{message-goto-fcc})。
 
 @item C-c C-f C-c
 @kindex C-c C-f C-c
 @findex message-goto-cc
-@code{Cc} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-cc})$B!#(B
+@code{Cc} ヘッダーに行きます (@code{message-goto-cc})。
 
 @item C-c C-f C-s
 @kindex C-c C-f C-s
 @findex message-goto-subject
-@code{Subject} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-subject})$B!#(B
+@code{Subject} ヘッダーに行きます (@code{message-goto-subject})。
 
 @item C-c C-f C-r
 @kindex C-c C-f C-r
 @findex message-goto-reply-to
-@code{Reply-To} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-reply-to})$B!#(B
+@code{Reply-To} ヘッダーに行きます (@code{message-goto-reply-to})。
 
 @item C-c C-f C-n
 @kindex C-c C-f C-n
-@code{Neswsgroups} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-newsgroups})$B!#(B
+@code{Neswsgroups} ヘッダーに行きます (@code{message-goto-newsgroups})。
 
 @item C-c C-f C-d
 @kindex C-c C-f C-d
 @findex message-goto-distribution
-@code{Distribution} $B%X%C%@!<$K9T$-$^(B
-$B$9(B (@code{message-goto-distribution})$B!#(B
+@code{Distribution} ヘッダーに行きま
+す (@code{message-goto-distribution})。
 
 @item C-c C-f C-f
 @kindex C-c C-f C-f
 @findex message-goto-followup-to
-@code{Followup-To} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-followup-to})$B!#(B
+@code{Followup-To} ヘッダーに行きます (@code{message-goto-followup-to})。
 
 @item C-c C-f C-k
 @kindex C-c C-f C-k
 @findex message-goto-keywords
-@code{Keywords} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-keywords})$B!#(B
+@code{Keywords} ヘッダーに行きます (@code{message-goto-keywords})。
 
 @item C-c C-f C-u
 @kindex C-c C-f C-u
 @findex message-goto-summary
-@code{Summary} $B%X%C%@!<$K9T$-$^$9(B (@code{message-goto-summary})$B!#(B
+@code{Summary} ヘッダーに行きます (@code{message-goto-summary})。
 
 @item C-c C-f C-i
 @kindex C-c C-f C-i
 @findex message-insert-or-toggle-importance
-@samp{high} $B$H$$$&CM$r;}$D(B @samp{Importance:} $B%X%C%@!<$rA^F~$7$^$9!#$3$N(B
-$B%X%C%@!<$O<u?.<T$K$=$N%a%C%;!<%8$N=EMW@-$rCN$i$;$k$?$a$K;H$o$l$k$b$N$G$9!#(B
-$B$b$7%P%C%U%!!<$K$9$G$K$3$N%X%C%@!<$,$"$k>l9g$O!"(BRFC 1376 $B$K=`$8$?;0$D$N(B
-$BCM(B @samp{low}$B!"(B@samp{normal} $B$*$h$S(B @samp{high} $B$r=[4D$5$;$^$9!#(B
+@samp{high} という値を持つ @samp{Importance:} ヘッダーを挿入します。この
+ヘッダーは受信者にそのメッセージの重要性を知らせるために使われるものです。
+もしバッファーにすでにこのヘッダーがある場合は、RFC 1376 に準じた三つの
+値 @samp{low}、@samp{normal} および @samp{high} を循環させます。
 
 @item C-c C-f C-a
 @kindex C-c C-f C-a
 @findex message-generate-unsubscribed-mail-followup-to
-$B9VFI$7$F$$$J$$%a!<%j%s%0%j%9%H$KEj9F$9$k>l9g$K8+9g$C(B
-$B$?(B @samp{Mail-Followup-To:} $B%X%C%@!<$rA^F~$7$^$9!#9VFI$7$F$$$J$$%a!<%j%s(B
-$B%0%j%9%H$K855-;v$rEj9F$9$k$H$-$O!"(B@samp{Mail-Followup-To:} $B%X%C%@!<$K<j(B
-$B$G5-F~$7$J$1$l$P$J$j$^$;$s!#FbMF$O!"IaDL$O%a!<%j%s%0%j%9%H$N%"%I%l%9$H$"(B
-$B$J$?<+?H$N%"%I%l%9$G$9!#$3$N4X?t$O$=$N$h$&$J%X%C%@!<$r<+F0E*$KA^F~$7$^$9!#(B
-$B$3$l$O8=:_$N%a!<%k$N%P%C%U%!!<$+$i(B @samp{To:} $B%X%C%@!<$NFbMF$rH4$-=P$7!"(B
-$B$=$l$K8=:_$N(B @code{user-mail-address} $B$rDI2C$7$^$9!#(B
+講読していないメーリングリストに投稿する場合に見合っ
+た @samp{Mail-Followup-To:} ヘッダーを挿入します。講読していないメーリン
+グリストに元記事を投稿するときは、@samp{Mail-Followup-To:} ヘッダーに手
+で記入しなければなりません。内容は、普通はメーリングリストのアドレスとあ
+なた自身のアドレスです。この関数はそのようなヘッダーを自動的に挿入します。
+これは現在のメールのバッファーから @samp{To:} ヘッダーの内容を抜き出し、
+それに現在の @code{user-mail-address} を追加します。
 
-$B>JN,2DG=$J0z?t(B @code{include-cc} $B$,(B @code{nil} $B$G$O$J$$>l9g$O!"(B
-@samp{Cc:} $B%X%C%@!<$K$"$k%"%I%l%9$b(B @samp{Mail-Followup-To:} $B%X%C%@!<$K(B
-$BCV$+$l$^$9!#(B
+省略可能な引数 @code{include-cc} が @code{nil} ではない場合は、
+@samp{Cc:} ヘッダーにあるアドレスも @samp{Mail-Followup-To:} ヘッダーに
+置かれます。
 @end table
 
-@subsection $B%X%C%@!<$rJQ99$9$k$?$a$NL?Na(B
+@subsection ヘッダーを変更するための命令
 
 @table @kbd
 @item C-c C-o
 @kindex C-c C-o
 @findex message-sort-headers
 @vindex message-header-format-alist
-@code{message-header-format-alist} $B$K=>$C$F%X%C%@!<$rJB$YBX$($^(B
-$B$9(B (@code{message-sort-headers})$B!#(B
+@code{message-header-format-alist} に従ってヘッダーを並べ替えま
+す (@code{message-sort-headers})。
 
 @item C-c C-t
 @kindex C-c C-t
 @findex message-insert-to
-$B%U%)%m!<%"%C%W$7$h$&$H$9$k%a%C%;!<%8$N(B @code{Reply-To} $B$b$7$/(B
-$B$O(B @code{From} $B%X%C%@!<$r4^$`(B @code{To} $B%X%C%@!<$rA^F~$7$^(B
-$B$9(B (@code{message-insert-to})$B!#(B
+フォローアップしようとするメッセージの @code{Reply-To} もしく
+は @code{From} ヘッダーを含む @code{To} ヘッダーを挿入しま
+す (@code{message-insert-to})。
 
 @item C-c C-n
 @kindex C-c C-n
 @findex message-insert-newsgroups
-$BJVEz$7$h$&$H$9$k5-;v$N(B @code{Followup-To} $B$b$7$/$O!"(B@code{Nesgroups} $B%X%C(B
-$B%@!<$rH?1G$7$?(B @code{Newsgroups} $B%X%C%@!<$rA^F~$7$^(B
-$B$9(B (@code{message-insert-newsgroups})$B!#(B
+返答しようとする記事の @code{Followup-To} もしくは、@code{Nesgroups} ヘッ
+ダーを反映した @code{Newsgroups} ヘッダーを挿入しま
+す (@code{message-insert-newsgroups})。
 
 @item C-c C-l
 @kindex C-c C-l
 @findex message-to-list-only
-$B%a!<%j%s%0%j%9%H08$F$@$1$K%a%C%;!<%8$rAw$j$^$9!#(B
-@code{To:} $B$H(B @code{Cc:} $B%X%C%@!<$+$i!"$=$N%a!<%j%s%0%j%9%H0J30$N%"%I%l(B
-$B%9$r:o=|$7$^$9!#(B
+メーリングリスト宛てだけにメッセージを送ります。
+@code{To:} と @code{Cc:} ヘッダーから、そのメーリングリスト以外のアドレ
+スを削除します。
 
 @item C-c M-n
 @kindex C-c M-n
 @findex message-insert-disposition-notification-to
-$B3+Iu3NG'MW5a$rA^F~$7$^$9!#(B
-(@code{message-insert-disposition-notification-to})$B!#$b$7<u?.<T$,(B RFC
-2298 $B$r%5%]!<%H$7$F$$$l$P!"H`=w$O$=$N%a%C%;!<%8$r<u$1<h$C$?$3$H$rCN$i$;(B
-$B$F$/$l$k$G$7$g$&!#(B
+開封確認要求を挿入します。
+(@code{message-insert-disposition-notification-to})。もし受信者が RFC
+2298 をサポートしていれば、彼女はそのメッセージを受け取ったことを知らせ
+てくれるでしょう。
 
 @item M-x message-insert-importance-high
 @kindex M-x message-insert-importance-high
 @findex message-insert-importance-high
 @cindex Importance
-@samp{high} $B$H$$$&CM$r;}$D(B @samp{Importance} $B%X%C%@!<$r(B ($BI,MW$J$i$9$G$K(B
-$BB8:_$9$k$b$N$r>C5n$7$F$+$i(B) $BA^F~$7$^$9!#(B
+@samp{high} という値を持つ @samp{Importance} ヘッダーを (必要ならすでに
+存在するものを消去してから) 挿入します。
 
 @item M-x message-insert-importance-low
 @kindex M-x message-insert-importance-low
 @findex message-insert-importance-low
 @cindex Importance
-@samp{low} $B$H$$$&CM$r;}$D(B @samp{Importance} $B%X%C%@!<$r(B ($BI,MW$J$i$9$G$KB8(B
-$B:_$9$k$b$N$r>C5n$7$F$+$i(B) $BA^F~$7$^$9!#(B
+@samp{low} という値を持つ @samp{Importance} ヘッダーを (必要ならすでに存
+在するものを消去してから) 挿入します。
 
 @item C-c C-f s
 @kindex C-c C-f s
 @findex message-change-subject
 @cindex Subject
-$B8=:_$N(B @samp{Subject} $B%X%C%@!<$rJQ99$7$^$9!#?7$7$$(B @samp{Subject} $B$r?R$M(B
-$B$F(B @samp{(was: <$B8E$$I=Bj(B>)} $B$rDI2C$7$^$9!#$=$&$$$&5-;v$r<u$1<h$C$??M$,$5(B
-$B$i$KJV?.$9$k$H$-$K!"8E$$I=Bj$O:o=|$9$k$3$H$,$G$-$^$9!#(B
-@code{message-subject-trailing-was-query} (@ref{Message Headers}) $B$r8+$F(B
-$B$/$@$5$$!#(B
+現在の @samp{Subject} ヘッダーを変更します。新しい @samp{Subject} を尋ね
+て @samp{(was: <古い表題>)} を追加します。そういう記事を受け取った人がさ
+らに返信するときに、古い表題は削除することができます。
+@code{message-subject-trailing-was-query} (@ref{Message Headers}) を見て
+ください。
 
 @item C-c C-f x
 @kindex C-c C-f x
@@ -736,26 +736,26 @@ Message $B$OIaDL$O$&$^$/F0:n$7$^$9$,!"$H$-$I$-4V0c$($b$7$^$9!#$=$l$i$N4V0c(B
 @vindex message-cross-post-note-function
 @cindex X-Post
 @cindex cross-post
-$B%/%m%9%]%9%H$N$?$a$K!"BP>]%0%k!<%W$H$H$b$K(B @samp{FollowUp-To} $B%X%C%@!<$r(B
-$B@_Dj$7!"$=$NBP>]%0%k!<%W$,(B @samp{Newsgroups} $B%X%C%@!<$KB8:_$7$J$+$C$?$i(B
-$B$=$3$KDI2C$7!"$+$DK\J8$KCm0U=q$-$rF~$l$^$9!#(B
-@code{message-cross-post-default} $B$,(B @code{nil} $B$K$J$C$F$$$k$+!"$^$?$O$3(B
-$B$NL?Na$,@\F,0zIU$-$G8F$P$l$k$H!"(B@samp{Follow-Up} $B%X%C%@!<$,@_Dj$5$l$k$@(B
-$B$1$G!"(B@samp{Newsgroups} $B%X%C%@!<$X$NDI2C$O9T$J$o$l$^$;$s!#Cm0U=q$-$rF~$l(B
-$B$k4X?t$O(B @code{message-cross-post-note-function} $BJQ?t$G@)8f$5$l$^$9!#(B
+クロスポストのために、対象グループとともに @samp{FollowUp-To} ヘッダーを
+設定し、その対象グループが @samp{Newsgroups} ヘッダーに存在しなかったら
+そこに追加し、かつ本文に注意書きを入れます。
+@code{message-cross-post-default} が @code{nil} になっているか、またはこ
+の命令が接頭引付きで呼ばれると、@samp{Follow-Up} ヘッダーが設定されるだ
+けで、@samp{Newsgroups} ヘッダーへの追加は行なわれません。注意書きを入れ
+る関数は @code{message-cross-post-note-function} 変数で制御されます。
 
 @item C-c C-f t
 @kindex C-c C-f t
 @findex message-reduce-to-to-cc
-@samp{To} $B%X%C%@!<$NFbMF$r(B @samp{Cc} $B$+(B @samp{Bcc} $B%X%C%@!<$NFbMF$GCV$-(B
-$B49$($^$9(B ($B$"$k$$$O$b$7(B @samp{Cc} $B%X%C%@!<$,L5$+$C$?$i!"(B@samp{Bcc} $B%X%C%@!<(B
-$B$NFbMF$GCV$-49$($^$9(B)$B!#(B
+@samp{To} ヘッダーの内容を @samp{Cc} か @samp{Bcc} ヘッダーの内容で置き
+換えます (あるいはもし @samp{Cc} ヘッダーが無かったら、@samp{Bcc} ヘッダー
+の内容で置き換えます)。
 
 @item C-c C-f w
 @kindex C-c C-f w
 @findex message-insert-wide-reply
-$B=i$a$O$=$N%a%C%;!<%8$,9-$$JVEz$N$?$a$K:n$i$l$?$b$N$G$J$+$C$?>l9g$G$b!"9-(B
-$B$$JVEz$r$7$F$$$k$h$&$K(B @samp{To} $B$H(B @samp{Cc} $B%X%C%@!<$rA^F~$7$^$9!#(B
+初めはそのメッセージが広い返答のために作られたものでなかった場合でも、広
+い返答をしているように @samp{To} と @samp{Cc} ヘッダーを挿入します。
 
 @item C-c C-f a
 @kindex C-c C-f a
@@ -763,93 +763,93 @@ Message $B$OIaDL$O$&$^$/F0:n$7$^$9$,!"$H$-$I$-4V0c$($b$7$^$9!#$=$l$i$N4V0c(B
 @vindex message-archive-header
 @vindex message-archive-note
 @cindex X-No-Archive
-@samp{X-No-Archive: Yes} $B$r%X%C%@!<$KA^F~$7$F!"K\J8$KCm0U=q$-$rF~$l$^$9!#(B
-$B%X%C%@!<$HCm0U=q$-(B
-$B$O(B @code{message-archive-header} $B$H(B @code{message-archive-note} $B$r;H$C$F(B
-$B%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#@\F,0z?tIU$-$G8F$P$l$k$H!"A^F~$9$k%F%-%9(B
-$B%H$rMW5a$7$^$9!#K\J8$KCm0U=q$-$rF~$l$?$/$J$$>l9g$O!"(B
-@code{message-archive-note} $B$r(B @code{nil} $B$K$7$F$/$@$5$$!#(B
+@samp{X-No-Archive: Yes} をヘッダーに挿入して、本文に注意書きを入れます。
+ヘッダーと注意書き
+は @code{message-archive-header} と @code{message-archive-note} を使って
+カスタマイズすることができます。接頭引数付きで呼ばれると、挿入するテキス
+トを要求します。本文に注意書きを入れたくない場合は、
+@code{message-archive-note} を @code{nil} にしてください。
 @end table
 
 @node Movement
-@section $B0\F0(B
+@section 移動
 
 @table @kbd
 @item C-c C-b
 @kindex C-c C-b
 @findex message-goto-body
-$B%a%C%;!<%8$NK\J8$N@hF,$K0\F0$7$^$9(B (@code{message-goto-body})$B!#(B
+メッセージの本文の先頭に移動します (@code{message-goto-body})。
 
 @item C-c C-i
 @kindex C-c C-i
 @findex message-goto-signature
-$B%a%C%;!<%8$N=pL>$K0\F0$7$^$9(B (@code{message-goto-signature})$B!#(B
+メッセージの署名に移動します (@code{message-goto-signature})。
 
 @item C-a
 @kindex C-a
 @findex message-beginning-of-line
 @vindex message-beginning-of-line
-$B%X%C%@!<$NCM$N@hF,$K$$$k$H$-$O9T$N@hF,$K0\F0$7!"$=$&$G$J$$$H$-$O%X%C%@!<(B
-$B$NCM$N@hF,$K0\F0$7$^$9!#(B($B%X%C%@!<$NCM$H$$$&$N$O!"%X%C%@!<L>$*$h$S%3%m%s(B
-$B$N8e$K$"$k$b$N$G$9!#(B) $B$3$NF0:n$OJQ?t(B @code{message-beginning-of-line} $B$r(B
-$B%H%0%k@Z$jBX$($9$k$3$H$K$h$C$FL58z$K$9$k$3$H$,$G$-$^$9!#(B
+ヘッダーの値の先頭にいるときは行の先頭に移動し、そうでないときはヘッダー
+の値の先頭に移動します。(ヘッダーの値というのは、ヘッダー名およびコロン
+の後にあるものです。) この動作は変数 @code{message-beginning-of-line} を
+トグル切り替えすることによって無効にすることができます。
 @end table
 
 @node Insertion
-@section $BA^F~(B
+@section 挿入
 
 @table @kbd
 @item C-c C-y
 @kindex C-c C-y
 @findex message-yank-original
-$BJVEz$7$h$&$H$7$F$$$k%a%C%;!<%8$r%a%C%;!<%8%P%C%U%!!<$K(B yank $B$7$^(B
-$B$9(B (@code{messsage-yank-original})$B!#(B
+返答しようとしているメッセージをメッセージバッファーに yank しま
+す (@code{messsage-yank-original})。
 
 @item C-c C-M-y
 @kindex C-c C-M-y
 @findex message-yank-buffer
-$B%P%C%U%!!<L>$r?R$M$F!"$=$N%P%C%U%!!<$NFbMF$r%a%C%;!<%8%P%C%U%!!<(B
-$B$K(B yank $B$7$^$9(B (@code{message-yank-buffer})$B!#(B
+バッファー名を尋ねて、そのバッファーの内容をメッセージバッファー
+に yank します (@code{message-yank-buffer})。
 
 @item C-c C-q
 @kindex C-c C-q
 @findex message-fill-yanked-message
-Yank $B$5$l$?%a%C%;!<%8$r@^$jJV$7$F<*$rB7$($^(B
-$B$9(B (@code{message-fill-yanked-message})$B!#7Y9p(B: $B$b$7JQ$J$d$jJ}$G0zMQ$5$l(B
-$B$F$$$k$H!"(Byank $B$5$l$?J8>O$r$R$I$/$0$A$c$0$A$c$K$7$F$7$^$&$+$b$7$l$^$;$s!#(B
-$B$b$C$H$b!"$I$s$J$b$N$,0BA4$+$O!"$9$0$K$o$+$k$G$7$g$&$1$l$I!#$H$K$+$/!"2?(B
-$B$,5/$-$F$b(B @kbd{C-x u} (@code{undo}) $B$,;H$($k$N$@$+$iLdBjL5$$$3$H$@$1$O!"(B
-$B3P$($F$*$$$F$/$@$5$$!#(B
+Yank されたメッセージを折り返して耳を揃えま
+す (@code{message-fill-yanked-message})。警告: もし変なやり方で引用され
+ていると、yank された文章をひどくぐちゃぐちゃにしてしまうかもしれません。
+もっとも、どんなものが安全かは、すぐにわかるでしょうけれど。とにかく、何
+が起きても @kbd{C-x u} (@code{undo}) が使えるのだから問題無いことだけは、
+覚えておいてください。
 
 @item C-c C-w
 @kindex C-c C-w
 @findex message-insert-signature
-$B%P%C%U%!!<$N:G8e$K=pL>$rA^F~$7$^$9(B (@code{message-insert-signature})$B!#(B
+バッファーの最後に署名を挿入します (@code{message-insert-signature})。
 
 @item C-c M-h
 @kindex C-c M-h
 @findex message-insert-headers
-$B%a%C%;!<%8$N%X%C%@!<$rA^F~$7$^$9(B (@code{message-insert-headers})$B!#(B
+メッセージのヘッダーを挿入します (@code{message-insert-headers})。
 
 @item C-c M-m
 @kindex C-c M-m
 @findex message-mark-inserted-region
-$B8=:_$N5-;v$N$"$kNN0h$r!"$=$l$i$r0O$`$?$a$N%?%0$G0u$rIU$1$^$9!#(B
-@code{message-mark-insert-begin} $B$H(B @code{message-mark-insert-end} $B$r8+(B
-$B$F$/$@$5$$!#@\F,0z?t$rIU$1$F;H$&$H!"(Bslrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g(B
-$B$=$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B($BLuCm(B: $B$=(B
-$B$&$$$&%a%C%;!<%8$r(B Gnus $B$GI=<($9$k$H!"%G%#%U%)%k%H$G$O$=$NNN0h$,0l$D$N%Q!<(B
-$B%H$H$7$F07$o$l!"$^$?6/D4I=<($5$l$^$9!#(B)
+現在の記事のある領域を、それらを囲むためのタグで印を付けます。
+@code{message-mark-insert-begin} と @code{message-mark-insert-end} を見
+てください。接頭引数を付けて使うと、slrn ふうの verbatim (文章を一言一句
+そのまま表す) 記号の対 (@samp{#v+} と @samp{#v-}) を使います。(訳注: そ
+ういうメッセージを Gnus で表示すると、ディフォルトではその領域が一つのパー
+トとして扱われ、また強調表示されます。)
 
 @item C-c M-f
 @kindex C-c M-f
 @findex message-mark-insert-file
-$B8=:_$N5-;v$K%U%!%$%k$rA^F~$7$F!"$=$NNN0h$r0O$`$?$a$N%?%0$G0u$rIU$1$^$9!#(B
-@code{message-mark-insert-begin} $B$H(B @code{message-mark-insert-end} $B$r8+(B
-$B$F$/$@$5$$!#@\F,0z?t$rIU$1$F;H$&$H!"(Bslrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g(B
-$B$=$N$^$^I=$9(B) $B5-9f$NBP(B (@samp{#v+} $B$H(B @samp{#v-}) $B$r;H$$$^$9!#(B($BLuCm(B: $B$=(B
-$B$&$$$&%a%C%;!<%8$r(B Gnus $B$GI=<($9$k$H!"%G%#%U%)%k%H$G$O$=$NNN0h$,0l$D$N%Q!<(B
-$B%H$H$7$F07$o$l!"$^$?6/D4I=<($5$l$^$9!#(B)
+現在の記事にファイルを挿入して、その領域を囲むためのタグで印を付けます。
+@code{message-mark-insert-begin} と @code{message-mark-insert-end} を見
+てください。接頭引数を付けて使うと、slrn ふうの verbatim (文章を一言一句
+そのまま表す) 記号の対 (@samp{#v+} と @samp{#v-}) を使います。(訳注: そ
+ういうメッセージを Gnus で表示すると、ディフォルトではその領域が一つのパー
+トとして扱われ、また強調表示されます。)
 @end table
 
 @node MIME
@@ -859,75 +859,75 @@ Yank $B$5$l$?%a%C%;!<%8$r@^$jJV$7$F<*$rB7$($^(B
 @cindex multipart
 @cindex attachment
 
-Message $B$O(B @acronym{MIME} $B$KBP1~$7$?Aw?.MQ$N%(!<%8%'%s%H$G$9!#$U$D$&MxMQ(B
-$B<T$O!"(B@acronym{MIME} $B$K$9$k$?$a$K2?$+$9$kI,MW$O$"$j$^$;$s!#(BMessage $B$O<+(B
-$BF0E*$K(B @code{Content-Type} $B$*$h$S(B @code{Content-Transfer-Encoding} $B%X%C(B
-$B%@!<$rIU2C$7$^$9!#(B
+Message は @acronym{MIME} に対応した送信用のエージェントです。ふつう利用
+者は、@acronym{MIME} にするために何かする必要はありません。Message は自
+動的に @code{Content-Type} および @code{Content-Transfer-Encoding} ヘッ
+ダーを付加します。
 
 @findex mml-attach-file
 @kindex C-c C-a
-$BMxMQ<T$,(B @acronym{MIME} $B$G%^%k%A%Q!<%H$r;H$$$?$$:G$b0lHLE*$J$b$N$O!"Aw=P(B
-$B$9$k%a!<%k$K!VE:IU!W$rIU$12C$($k$3$H$G$7$g$&!#$3$l$O(B @kbd{C-c C-a} $BL?(B
-$BNa(B (@kbd{M-x mml-attach-file}) $B$G9T$J$&$3$H$,$G$-!"$=$N:]%U%!%$%kL>(B
-$B$H(B @acronym{MIME} $B%?%$%W$,?R$M$i$l$^$9!#(B
+利用者が @acronym{MIME} でマルチパートを使いたい最も一般的なものは、送出
+するメールに「添付」を付け加えることでしょう。これは @kbd{C-c C-a} 命
+令 (@kbd{M-x mml-attach-file}) で行なうことができ、その際ファイル名
+と @acronym{MIME} タイプが尋ねられます。
 
 @vindex mml-dnd-protocol-alist
 @vindex mml-dnd-attach-options
-$B$"$J$?$N(B Emacs $B$,%I%i%C%0!u%I%m%C%W$r%5%]!<%H$7$F$$$l$P!"(BMessage $B%P%C%U%!(B
-$B!<$K%U%!%$%k$r%I%m%C%W$9$k$3$H$b$G$-$^$9!#JQ(B
-$B?t(B @code{mml-dnd-protocol-alist} $B$G!"(BMessage $B%P%C%U%!!<$K%U%!%$%k$r%I%m%C(B
-$B%W$9$k$H$-$K$I$s$J$3$H$r9T$J$&$+$r;XDj$7$^$9!#JQ(B
-$B?t(B @code{mml-dnd-attach-options} $B$O!"%U%!%$%k$r%I%m%C%W$9$k$H$-$K$I(B
-$B$N(B @acronym{MIME} $B%*%W%7%g%s$r;XDj$7$?$$$+$r@)8f$7$^$9!#$=$l$r%j%9%H$K$9(B
-$B$k>l9g!"M-8z$J%*%W%7%g%s$O(B @code{type}, @code{description} $B$*$h(B
-$B$S(B @code{disposition} $B$G$9!#(B@code{disposition} $B$O0E$K(B @code{type} $B$r4^$_(B
-$B$^$9!#(B@code{nil} $B$@$C$?$i%*%W%7%g%s$r?R$M$^$;$s!#(B@code{t} $B$K$9$k$H!"%*%W(B
-$B%7%g%s$r;XDj$9$k$+$I$&$+$r?R$M$^$9!#(B
+あなたの Emacs がドラッグ＆ドロップをサポートしていれば、Message バッファ
+ーにファイルをドロップすることもできます。変
+数 @code{mml-dnd-protocol-alist} で、Message バッファーにファイルをドロッ
+プするときにどんなことを行なうかを指定します。変
+数 @code{mml-dnd-attach-options} は、ファイルをドロップするときにど
+の @acronym{MIME} オプションを指定したいかを制御します。それをリストにす
+る場合、有効なオプションは @code{type}, @code{description} およ
+び @code{disposition} です。@code{disposition} は暗に @code{type} を含み
+ます。@code{nil} だったらオプションを尋ねません。@code{t} にすると、オプ
+ションを指定するかどうかを尋ねます。
 
-$B$5$i$K(B @acronym{MML} $B8@8l(B (@pxref{Composing, ,MIME $B%a%C%;!<%8$N:n@.(B,
-emacs-mime-ja, The Emacs MIME Manual}) $B$r;H$($P!"$I$s$JJ#;($J%^%k%A%Q!<(B
-$B%H$G$b<+M3$K:n$k$3$H$,$G$-$^$9!#(B
+さらに @acronym{MML} 言語 (@pxref{Composing, ,MIME メッセージの作成,
+emacs-mime-ja, The Emacs MIME Manual}) を使えば、どんな複雑なマルチパー
+トでも自由に作ることができます。
 
 @node IDNA
-@section $B9q:]2=%I%a%$%sL>(B
+@section 国際化ドメイン名
 @cindex IDNA
 @cindex internationalized domain names
 @cindex non-ascii domain names
 
-@acronym{IDNA} $B$OHs(B-@acronym{ASCII} $B%I%a%$%sL>$r2DFI(B
-$B$J(B @acronym{ASCII} $BJ8;zNs$K%(%s%3!<%I$9$k$?$a$NI8=`$N<jCJ$G$9!#>\:Y(B
-$B$O(B RFC 3490 $B$G8+$D$+$j$^$9!#(B
+@acronym{IDNA} は非-@acronym{ASCII} ドメイン名を可読
+な @acronym{ASCII} 文字列にエンコードするための標準の手段です。詳細
+は RFC 3490 で見つかります。
 
-Message $B$O(B @acronym{IDNA} $B$K=`5r$7$?Aw?.%(!<%8%'%s%H$G$9!#MxMQ<T(B
-$B$O(B @acronym{IDNA} $B$N$?$a$K0lHL$K$O2?$b$9$kI,MW$,$"$j$^$;$s!#(B
-Message $B$O(B @code{From}$B!"(B@code{To} $B$*$h$S(B @code{Cc} $B%X%C%@!<$K$"$k(B
-$BHs(B-@acronym{ASCII} $B%I%a%$%sL>$r<+F0E*$K%(%s%3!<%I$7$^$9!#(B
+Message は @acronym{IDNA} に準拠した送信エージェントです。利用者
+は @acronym{IDNA} のために一般には何もする必要がありません。
+Message は @code{From}、@code{To} および @code{Cc} ヘッダーにある
+非-@acronym{ASCII} ドメイン名を自動的にエンコードします。
 
-$B$b$C$H(B @acronym{IDNA} $B$,M-L>$K$J$k$^$G$O!"(BMessage $B$O<B:]$K%I%a%$%sL>(B
-$B$r(B @acronym{IDNA} $B%(%s%3!<%I$9$Y$-$+$I$&$+$N3NG'$r5a$a$k$3$H$K$J$C$F$$$^(B
-$B$9!#:#$N$H$3$m$O!"MxMQ<T$N4v?M$+$O%I%a%$%sL>$KHs(B-@acronym{ASCII} $BJ8;z$r(B
-$B4^$`$3$H$,$G$-$k$3$H$K5$$E$$$F$$$J$$$+$b$7$l$J$$$N$G!"H`$i$,6vA3$K(B
-$BHs(B-@acronym{ASCII} $B%I%a%$%sL>$r%?%$%W$7$F$7$^$C$?$H$-$N$?$a$K0BA4%M%C%H(B
-$B$rD%$C$F$$$k$o$1$G$9!#(B
+もっと @acronym{IDNA} が有名になるまでは、Message は実際にドメイン名
+を @acronym{IDNA} エンコードすべきかどうかの確認を求めることになっていま
+す。今のところは、利用者の幾人かはドメイン名に非-@acronym{ASCII} 文字を
+含むことができることに気づいていないかもしれないので、彼らが偶然に
+非-@acronym{ASCII} ドメイン名をタイプしてしまったときのために安全ネット
+を張っているわけです。
 
 @vindex message-use-idna
-$BJQ?t(B @code{message-use-idna} $B$O(B @acronym{IDNA} $B$r;H$&$+$I$&$+$r@)8f$7$^(B
-$B$9!#$3$NJQ?t$,(B @code{nil} $B$@$C$?$i(B @acronym{IDNA} $B%(%s%3!<%I$O9T$J$o$l$^(B
-$B$;$s!#%7%s%\%k(B @code{ask} $B$K@_Dj$5$l$F$$$k$HMxMQ<T$O3NG'$r5a$a$i$l$^$9!#(B
-$B$^$?!"(B@code{t} $B$K@_Dj$5$l$F$$$k$H(B (@acronym{IDNA} $B$,40A4$KMxMQ2DG=$J$i$P!"(B
-$B$=$l$,%G%#%U%)%k%H$G$9(B)$B!"<+F0E*$K(B @acronym{IDNA} $B%(%s%3!<%I$,9T$J$o$l$^(B
-$B$9!#(B
+変数 @code{message-use-idna} は @acronym{IDNA} を使うかどうかを制御しま
+す。この変数が @code{nil} だったら @acronym{IDNA} エンコードは行なわれま
+せん。シンボル @code{ask} に設定されていると利用者は確認を求められます。
+また、@code{t} に設定されていると (@acronym{IDNA} が完全に利用可能ならば、
+それがディフォルトです)、自動的に @acronym{IDNA} エンコードが行なわれま
+す。
 
 @findex message-idna-to-ascii-rhs
-$B<B83E*$K(B @acronym{IDNA} $B%(%s%3!<%I$r9T$J$$$?$$$J$i$P!"(B($B%(%s%3!<%I$5$l$?(B
-$BHs(B-@acronym{ASCII} $B%I%a%$%sL>$rF@$k$?$a$K(B) $B%a%C%;!<%8$NJT=8Cf(B
-$B$K(B @kbd{M-x message-idna-to-ascii-rhs RET} $B$r%?%$%W$7$F$/$@$5$$!#(B
+実験的に @acronym{IDNA} エンコードを行ないたいならば、(エンコードされた
+非-@acronym{ASCII} ドメイン名を得るために) メッセージの編集中
+に @kbd{M-x message-idna-to-ascii-rhs RET} をタイプしてください。
 
-$B$3$N5!G=$r;H$&$K$O(B @uref{http://www.gnu.org/software/libidn/, GNU
-Libidn} $B$r%$%s%9%H!<%k$7$F$*$+$J$1$l$P$J$j$^$;$s!#(B
+この機能を使うには @uref{http://www.gnu.org/software/libidn/, GNU
+Libidn} をインストールしておかなければなりません。
 
 @node Security
-@section $B%;%-%e%j%F%#!<(B
+@section セキュリティー
 @cindex Security
 @cindex S/MIME
 @cindex PGP
@@ -936,352 +936,352 @@ Libidn} $B$r%$%s%9%H!<%k$7$F$*$+$J$1$l$P$J$j$^$;$s!#(B
 @cindex encrypt
 @cindex secure
 
-$BEE;R%a!<%k$O%G%#%U%)%k%H$G$O2?$NJ]8n$b$J$7$K%$%s%?!<%M%C%HCf$r6n$1=d$j$^(B
-$B$9$,!"$=$l$OMM!9$J$?$/$5$s$N?M!9$,FI$s$@$j2~JQ$G$-$k$3$H$r<(:6$7$F$$$^$9!#(B
-$B$H$j$o$1BgNL4F;k<R2q$N2<$G$O!"$=$l$i$O2r@O$5$l4pK\E*?M8"$r?/32$7$^$9!#$=(B
-$B$l$i$N8"Mx$r<i$k$?$a$K$O(B ($BK!2~@5$K2C$($F(B) $B%G%#%8%?%k$J<+8JKI1R$,I,?\$G$"(B
-$B$j!"0E9f2=$H%G%#%8%?%k=pL>$O<+8JKI1R$N$?$a$NM-8z$J<jCJ$K$J$k$G$7$g$&!#K\(B
-$B<AE*$K$O!"0E9f2=$O0U?^$5$l$?<u<h?M$@$1$,%a%C%;!<%8$rFI$`$3$H$,$G$-$k$3$H(B
-$B$rJ]>Z$7$^$9!#0lJ}%G%#%8%?%k$J=pL>$O!"%a%C%;!<%8$KBP$9$k2~JQ$r<u<h?M$,8!(B
-$BCN$G$-$k$3$H$r3N<B$K$7$^$9!#(B
+電子メールはディフォルトでは何の保護もなしにインターネット中を駆け巡りま
+すが、それは様々なたくさんの人々が読んだり改変できることを示唆しています。
+とりわけ大量監視社会の下では、それらは解析され基本的人権を侵害します。そ
+れらの権利を守るためには (法改正に加えて) ディジタルな自己防衛が必須であ
+り、暗号化とディジタル署名は自己防衛のための有効な手段になるでしょう。本
+質的には、暗号化は意図された受取人だけがメッセージを読むことができること
+を保証します。一方ディジタルな署名は、メッセージに対する改変を受取人が検
+知できることを確実にします。
 
-$BEv@a$G$O!"EE;R%a!<%k$r0E9f2=$9$k$?$a$N8_49@-$,$J$$(B 2$B$D$N<gMW$JI8=`$,$"$j(B
-$B$^$9!#$9$J$o$A(B @acronym{OpenPGP} $B$H(B @acronym{S/MIME} $B$G$9!#$3$l$i$NI8=`(B
-$B$ON>J}$H$b(B @uref{https://www.gnupg.org/, GNU Privacy Guard (GnuPG)} $B$G<B(B
-$BAu$5$l$F$$$F!"(BGNU Emacs $B$KIU$12C$($k30It%=%U%H%&%'%"$H$7$F%$%s%9%H!<%k$9(B
-$B$kI,MW$,$"$j$^$9!#0E9f2=!"2rFI!"$*$h$S%a%C%;!<%8$X$N=pL>$r;O$a$kA0$K!"Hk(B
-$BL)80$H8x3+80$G9=@.$5$l$k!"$$$o$f$k80$NBP$r:n$C$F$*$+$J$1$l$P$J$j$^$;$s!#(B
-$B$"$J$?$N(B @emph{$B8x3+(B} $B80(B ($B$^$?$NL>$r!"FC$K(B @acronym{S/MIME} $B$G(B
-$B$O(B @emph{$B>ZL@=q(B} $B$H8F$V(B) $B$O!"(B(a) $BB>$N?M$,$"$J$?08$F$N%a%C%;!<%8$r0E9f2=(B
-$B$9$k$?$a!"$*$h$S(B (b) $B$"$J$?$,:n@.$7$?%G%#%8%?%k$J=pL>$r8!>Z$9$k$?$a!"$K(B
-$B;H$$$^$9!#BP>HE*$K(B @emph{$BHkL)(B} $B80$O(B (a) $B%a%C%;!<%8$r2rFI$9$k$?$a!"$*$h(B
-$B$S(B (b) $B%a%C%;!<%8$K=pL>$9$k$?$a!"$K;H$$$^$9!#(B($B$"$J$?$N8x3+80$OB>$N?M$,%a%C(B
-$B%;!<%8$rMB$1F~$l$F%I%"$rJD$a$k$3$H$,$G$-$k$h$&$K$"$J$?$,Ds6!$9$k3+$$$?6b(B
-$B8K!"0lJ}$"$J$?$NHkL)80$O6b8K$r3+$1$k$?$a$N%@%$%"%k$N?t;z$NAH9g$;$KAjEv$9(B
-$B$k$H8+$J$9$N$,NI$$$+$b$7$l$^$;$s!#(B)
+当節では、電子メールを暗号化するための互換性がない 2つの主要な標準があり
+ます。すなわち @acronym{OpenPGP} と @acronym{S/MIME} です。これらの標準
+は両方とも @uref{https://www.gnupg.org/, GNU Privacy Guard (GnuPG)} で実
+装されていて、GNU Emacs に付け加える外部ソフトウェアとしてインストールす
+る必要があります。暗号化、解読、およびメッセージへの署名を始める前に、秘
+密鍵と公開鍵で構成される、いわゆる鍵の対を作っておかなければなりません。
+あなたの @emph{公開} 鍵 (またの名を、特に @acronym{S/MIME} で
+は @emph{証明書} と呼ぶ) は、(a) 他の人があなた宛てのメッセージを暗号化
+するため、および (b) あなたが作成したディジタルな署名を検証するため、に
+使います。対照的に @emph{秘密} 鍵は (a) メッセージを解読するため、およ
+び (b) メッセージに署名するため、に使います。(あなたの公開鍵は他の人がメッ
+セージを預け入れてドアを閉めることができるようにあなたが提供する開いた金
+庫、一方あなたの秘密鍵は金庫を開けるためのダイアルの数字の組合せに相当す
+ると見なすのが良いかもしれません。)
 
-$B$=$&$$$&$o$1$G!"EE;R%a!<%k$r0E9f2=$9$k$K$O0lHL$K$O(B Emacs $B$N30$G0J2<$N<j(B
-$B=g$rF'$`I,MW$,$"$j$^$9!#(B@acronym{GnuPG} $B$K$h$k(B @acronym{OpenPGP} $B$NI8=`(B
-$B$r4^$a$F>\:Y$rCN$k$K$O!"$?$H$((B
-$B$P(B @uref{https://www.gnupg.org/gph/en/manual.html, The GNU Privacy
-Handbook} $B$r;2>H$7$F$/$@$5$$!#(B
+そういうわけで、電子メールを暗号化するには一般には Emacs の外で以下の手
+順を踏む必要があります。@acronym{GnuPG} による @acronym{OpenPGP} の標準
+を含めて詳細を知るには、たとえ
+ば @uref{https://www.gnupg.org/gph/en/manual.html, The GNU Privacy
+Handbook} を参照してください。
 @enumerate
 @item
-GnuPG $B$r%$%s%9%H!<%k(B
+GnuPG をインストール
 @item
-$B$"$J$?$N%a!<%k%"%I%l%9$N$?$a$N80$NBP$r:n@.(B
+あなたのメールアドレスのための鍵の対を作成
 @item
-$B8x3+80$r8x3+(B ($B$?$H$($P%-!<%5!<%P!<7PM3$G(B)
+公開鍵を公開 (たとえばキーサーバー経由で)
 @item
-$B0E9f%a!<%k$rAw$j$?$$Aj<j$N8x3+80$rF~<j(B
+暗号メールを送りたい相手の公開鍵を入手
 @end enumerate
 
-@acronym{OpenPGP} $BI8=`$H(B @acronym{S/MIME} $BI8=`$N$I$A$i$r;H$&$Y$-$+$K$D$$(B
-$B$F$O!"$3$NJ8=q$,4XCN$9$k$H$3$m$G$O$"$j$^$;$s!#<B:]$K$O(B ($BAj<j$N9%$_$dG=NO(B
-$B$K1~$8$F(B) $B$"$kAj<j$K$O0lJ}$N!"JL$NAj<j$K$OB>J}$NI8=`$r;H$&$3$H$,$G$-$^$9!#(B
+@acronym{OpenPGP} 標準と @acronym{S/MIME} 標準のどちらを使うべきかについ
+ては、この文書が関知するところではありません。実際には (相手の好みや能力
+に応じて) ある相手には一方の、別の相手には他方の標準を使うことができます。
 
-$B$3$l$i$9$Y$F$NF,;z8l$K@:DL$7$F$$$J$$?M$N$?$a$K(B: @acronym{OpenPGP} $BI8=`(B
-$B$O(B @acronym{PGP} (Pretty Good Privacy) $B$H$b8F$P$l$^$9!#(B
-@acronym{GnuPG} $B$,(B @acronym{OpenPGP} $B$N$?$a$KDs6!$9$k%3%^%s%I%i%$%s!&%D!<(B
-$B%k$O(B @command{gpg} $B$H(B @command{gpg2} $B$G$9!#0lJ}(B @acronym{S/MIME} $B$N$?$a(B
-$B$N$=$l$O(B @command{gpgsm} $B$G$9!#Be$o$j$K$J$k$1$l$I$b$"$^$j?d>)$G$-$J(B
-$B$$(B @acronym{S/MIME} $B$N$?$a$N%D!<%k$O(B @command{openssl} $B$G$9!#:$$C$?$3$H(B
-$B$KEE;R%a!<%k$O(B 2$B$D$N0[$J$kJ}K!$G@8@.$5$l$^$9(B; @acronym{OpenPGP}$B!"$D$^(B
-$B$j(B @acronym{PGP} (RFC 1991/4880)$B!"$*$h(B
-$B$S(B @acronym{PGP/MIME} (RFC 2015/3156) $B$G$9!#(B
+これらすべての頭字語に精通していない人のために: @acronym{OpenPGP} 標準
+は @acronym{PGP} (Pretty Good Privacy) とも呼ばれます。
+@acronym{GnuPG} が @acronym{OpenPGP} のために提供するコマンドライン・ツー
+ルは @command{gpg} と @command{gpg2} です。一方 @acronym{S/MIME} のため
+のそれは @command{gpgsm} です。代わりになるけれどもあまり推奨できな
+い @acronym{S/MIME} のためのツールは @command{openssl} です。困ったこと
+に電子メールは 2つの異なる方法で生成されます; @acronym{OpenPGP}、つま
+り @acronym{PGP} (RFC 1991/4880)、およ
+び @acronym{PGP/MIME} (RFC 2015/3156) です。
 
-$B$7$+$7NI$$%K%e!<%9$r$*EA$($7$^$7$g$&(B: GNU Emacs $B$K$*$$$F(B Message $B$O$=$l(B
-$B$i$9$Y$F$NA*Br;h$r!"MQES$K1~$8$F%+%9%?%^%$%:$G$-$k9gM}E*$J%G%#%U%)%k%H@_(B
-$BDj$H$H$b$K%5%]!<%H$7!"0E9f2=!"2rFI$J$i$S$K%G%#%8%?%k=pL>$N:n@.$H8!>Z$N$?(B
-$B$a$K!"IqBfN"$GE,@Z$J%3%^%s%I%i%$%s!&%D!<%k$r8F$S=P$7$^$9!#(B
+しかし良いニュースをお伝えしましょう: GNU Emacs において Message はそれ
+らすべての選択肢を、用途に応じてカスタマイズできる合理的なディフォルト設
+定とともにサポートし、暗号化、解読ならびにディジタル署名の作成と検証のた
+めに、舞台裏で適切なコマンドライン・ツールを呼び出します。
 
-$B0J2<$G@bL@$9$k$h$K!"(BMessage $B$O=pL>IU$-!"$^$?$O0E9f2=%a%C%;!<%8$r:n@.$9$k(B
-$B$?$a$K(B @acronym{MML} $B8@8l$r;H$$$^$9!#(B
+以下で説明するよに、Message は署名付き、または暗号化メッセージを作成する
+ために @acronym{MML} 言語を使います。
 
 @menu
-* Signing and encryption::      $B=pL>$H0E9f2=$N%3%^%s%I(B
-* Using S/MIME::                S/MIME $B$r;H$&(B
-* Using OpenPGP::               OpenPGP $B$r;H$&(B
-* Passphrase caching::          $B%Q%9%U%l!<%:$r%-%c%C%7%e$9$k(B
-* PGP Compatibility::           $B8E$$<BAu$H$N8_49@-(B
-* Encrypt-to-self::             $B<+J,$,:n$C$?0E9f2=%a%C%;!<%8$rFI$`(B
-* Bcc Warning::                 Bcc $B$,$"$k$H$-0E9f$r;H$C$F$O$@$a(B
+* Signing and encryption::      署名と暗号化のコマンド
+* Using S/MIME::                S/MIME を使う
+* Using OpenPGP::               OpenPGP を使う
+* Passphrase caching::          パスフレーズをキャッシュする
+* PGP Compatibility::           古い実装との互換性
+* Encrypt-to-self::             自分が作った暗号化メッセージを読む
+* Bcc Warning::                 Bcc があるとき暗号を使ってはだめ
 @end menu
 
 @node Signing and encryption
-@subsection $B=pL>$H0E9f2=$N%3%^%s%I(B
+@subsection 署名と暗号化のコマンド
 
-@acronym{MIME} $B%Q!<%H$KBP$7$F%;%-%e%j%F%#!<$NA`:n$r9T$J$&$?$a(B
-$B$N(B @acronym{MML} $B$X$N;X<($O!"0J2<$N$h$&$K=pL>$N>l9g$O(B @kbd{C-c C-m s} $B%-!<(B
-$B%^%C%W$r;H$C$F!"0E9f2=$N>l9g$O(B @kbd{C-c C-m c} $B%-!<%^%C%W$r;H$C$F9T$J$$(B
-$B$^$9!#(B
+@acronym{MIME} パートに対してセキュリティーの操作を行なうため
+の @acronym{MML} への指示は、以下のように署名の場合は @kbd{C-c C-m s} キー
+マップを使って、暗号化の場合は @kbd{C-c C-m c} キーマップを使って行ない
+ます。
 
 @table @kbd
 @item C-c C-m s s
 @kindex C-c C-m s s
 @findex mml-secure-message-sign-smime
 
-@acronym{S/MIME} $B$r;H$C$F8=:_$N%a%C%;!<%8$KEE;R=pL>$7$^$9!#(B
+@acronym{S/MIME} を使って現在のメッセージに電子署名します。
 
 @item C-c C-m s o
 @kindex C-c C-m s o
 @findex mml-secure-message-sign-pgp
 
-@acronym{PGP} $B$r;H$C$F8=:_$N%a%C%;!<%8$KEE;R=pL>$7$^$9!#(B
+@acronym{PGP} を使って現在のメッセージに電子署名します。
 
 @item C-c C-m s p
 @kindex C-c C-m s p
 @findex mml-secure-message-sign-pgpmime
 
-@acronym{PGP/MIME} $B$r;H$C$F8=:_$N%a%C%;!<%8$KEE;R=pL>$7$^$9!#(B
+@acronym{PGP/MIME} を使って現在のメッセージに電子署名します。
 
 @item C-c C-m c s
 @kindex C-c C-m c s
 @findex mml-secure-message-encrypt-smime
 
-@acronym{S/MIME} $B$r;H$C$F8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
+@acronym{S/MIME} を使って現在のメッセージを電子暗号化します。
 
 @item C-c C-m c o
 @kindex C-c C-m c o
 @findex mml-secure-message-encrypt-pgp
 
-@acronym{PGP} $B$r;H$C$F8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
+@acronym{PGP} を使って現在のメッセージを電子暗号化します。
 
 @item C-c C-m c p
 @kindex C-c C-m c p
 @findex mml-secure-message-encrypt-pgpmime
 
-@acronym{PGP/MIME} $B$r;H$C$F8=:_$N%a%C%;!<%8$rEE;R0E9f2=$7$^$9!#(B
+@acronym{PGP/MIME} を使って現在のメッセージを電子暗号化します。
 
 @item C-c C-m C-n
 @kindex C-c C-m C-n
 @findex mml-unsecure-message
-$B%a%C%;!<%8$+$i%;%-%e%j%F%#!<4XO"$N(B @acronym{MML} $B%?%0$r:o=|$7$^$9!#(B
+メッセージからセキュリティー関連の @acronym{MML} タグを削除します。
 @end table
 
-$B$3$l$i$NL?Na$O!"$=$N>l$G%a%C%;!<%8$K=pL>$7$?$j0E9f2=$9$k$o$1$G$O$J$/!"C1(B
-$B$K%;%-%e%j%F%#!<$N$?$a$NE,@Z$J(B @acronym{MML} $B%?%0$rA^F~$7$F!"%a%C%;!<%8(B
-$B$,<B:]$KAw?.$5$l$k$H$-$K$=$NF0:n$r<B9T$9$k$h$&$K!"(B@acronym{MML} $B%(%s%8%s(B
-$B$K;X<($rM?$($k$@$1$G$9!#$=$l$i$OB>$N;E;v!"Nc$($P0E9f2=$5$l$?%a!<%k$rAw$j(B
-$B$?$$Aj<j$N?M$N(B @acronym{S/MIME} $B$N>ZL@=q$rC5$7$F!"<h$j4s$;$k$h$&$J$3$H$b(B
-$B9T$J$&$+$b$7$l$^$;$s!#(Bmml $B2r@O%(%s%8%s$,(B @acronym{MML} $B$G=q$+$l$?%a%C%;!<(B
-$B%8$rE,@Z$K(B @acronym{MIME} $B%a%C%;!<%8$KJQ49$9$k$H$-!"%;%-%e%j%F%#!<$N$?$a(B
-$B$N%?%0$O!"%Q!<%H$^$?$O%^%k%A%Q!<%H$N$I$A$i$+$N%?%0$GCV$-49$($i$l$^$9!#%a%C(B
-$B%;!<%8$,B>$N(B mml $B%Q!<%H$b4^$s$G$$$k>l9g$K$O%^%k%A%Q!<%H$N%?%0$,;H$o$l!"(B
-$BB>$N%Q!<%H$,L5$$>l9g$OC10l$N%Q!<%H$N%?%0$,;H$o$l$k$G$7$g$&!#$3$N$h$&$K$7(B
-$B$F!"=pL>$5$l$k(B/$B0E9f2=$5$l$k%^%k%A%Q!<%H$N%a%C%;!<%8$KBP$7!"%a%C%;!<%8!&(B
-$B%b!<%I$O!V@5$7$$$3$H(B ($BEPO?>&I8(B)$B!W(B($B86J8(B: the Right Thing (TM)) $B$r9T$J$$$^(B
-$B$9!#(B
+これらの命令は、その場でメッセージに署名したり暗号化するわけではなく、単
+にセキュリティーのための適切な @acronym{MML} タグを挿入して、メッセージ
+が実際に送信されるときにその動作を実行するように、@acronym{MML} エンジン
+に指示を与えるだけです。それらは他の仕事、例えば暗号化されたメールを送り
+たい相手の人の @acronym{S/MIME} の証明書を探して、取り寄せるようなことも
+行なうかもしれません。mml 解析エンジンが @acronym{MML} で書かれたメッセー
+ジを適切に @acronym{MIME} メッセージに変換するとき、セキュリティーのため
+のタグは、パートまたはマルチパートのどちらかのタグで置き換えられます。メッ
+セージが他の mml パートも含んでいる場合にはマルチパートのタグが使われ、
+他のパートが無い場合は単一のパートのタグが使われるでしょう。このようにし
+て、署名される/暗号化されるマルチパートのメッセージに対し、メッセージ・
+モードは「正しいこと (登録商標)」(原文: the Right Thing (TM)) を行ないま
+す。
 
-$B=pL>$=$7$FFC$K0E9f2=$O$7$P$7$P5!L)>pJs$rAw?.$9$k$H$-$K;H$o$l$k$N$G!"%a!<(B
-$B%k$,K\Ev$K=pL>$^$?$O0E9f2=$5$l$k$3$H$r3N$+$a$k$?$a$N2?$i$+$N<jCJ$rI,MW$H(B
-$B$9$k$G$7$g$&!#>e5-$N=pL>(B/$B0E9f2=$N$?$a$NL?Na$r<B9T$7$?8e$G$J$i!"(B
-@kbd{C-u C-c RET P} (@code{mml-preview}) $B$r;H$&$3$H$K$h$C$F@8$N5-;v$r2<(B
-$B8+$9$k$3$H$,2DG=$G$9!#$=$&$7$F!"$"$J$?$N0JA0$KBg@Z$@$C$??M$K4X$9$k!"$"$k(B
-$B$$$O!"$3$NA0$NLk$NJQ$J%Q!<%F%#!<$G!"$"$N$*$+$7$J?H$J$j$N?M$,<B:]$K$d$C$?(B
-$B$3$H$K4X$9$k$"$J$?$ND9$$GME]$,!"K\Ev$K0E9f2=$5$l$FAw?.$5$l$k$G$"$m$&$3$H(B
-$B$r3NG'$9$k$3$H$,$G$-$^$9!#(B
+署名そして特に暗号化はしばしば機密情報を送信するときに使われるので、メー
+ルが本当に署名または暗号化されることを確かめるための何らかの手段を必要と
+するでしょう。上記の署名/暗号化のための命令を実行した後でなら、
+@kbd{C-u C-c RET P} (@code{mml-preview}) を使うことによって生の記事を下
+見することが可能です。そうして、あなたの以前に大切だった人に関する、ある
+いは、この前の夜の変なパーティーで、あのおかしな身なりの人が実際にやった
+ことに関するあなたの長い罵倒が、本当に暗号化されて送信されるであろうこと
+を確認することができます。
 
-@emph{$BCm0U(B!}  @acronym{PGP/MIME} $B$H(B @acronym{S/MIME} $B$N$I$A$i(B
-$B$b(B RFC822 $B%X%C%@!<$r=pL>(B/$B0E9f2=$7$^$;$s!#$=$l$i$O(B @acronym{MIME} $B%Q!<%H(B
-$B$K$N$_:nMQ$7$^$9!#5!L)$NI=Bj$H$H$b$K%a!<%k$rAw$C$F$7$^$&A0$K!"$3$N$3$H$r(B
-$B4N$KL?$8$F$*$$$F$/$@$5$$!#(B
+@emph{注意!}  @acronym{PGP/MIME} と @acronym{S/MIME} のどちら
+も RFC822 ヘッダーを署名/暗号化しません。それらは @acronym{MIME} パート
+にのみ作用します。機密の表題とともにメールを送ってしまう前に、このことを
+肝に命じておいてください。
 
-$B%a%C%;!<%8$r0E9f2=$9$k$H$-!"(BGnus $B$O%G%#%U%)%k%H$G!V=pL>(B+$B0E9f2=!W(B($B%a%C%;!<(B
-$B%8$KBP$7$F=pL>$H0E9f2=$NN>J}$,9T$J$o$l$k(B) $B%b!<%I$r;H$$$^$9!#FCDj$N%a%C%;!<(B
-$B%8$KBP$7$F$3$l$r9T$J$o$;$?$/$J$$$J$i$P!"(B
-@code{mml-secure-message-encrypt-*} $BL?Na$K@\F,0z?t$rM?$($F(B ($BNc$((B
-$B$P(B @kbd{C-u C-c C-m c p} $B$r;H$C$F(B) $B$/$@$5$$!#(B
+メッセージを暗号化するとき、Gnus はディフォルトで「署名+暗号化」(メッセー
+ジに対して署名と暗号化の両方が行なわれる) モードを使います。特定のメッセー
+ジに対してこれを行なわせたくないならば、
+@code{mml-secure-message-encrypt-*} 命令に接頭引数を与えて (例え
+ば @kbd{C-u C-c C-m c p} を使って) ください。
 
-$B>e5-$N%;%-%e%j%F%#!<L?Na$r<B:]$K;H$&$N$O$5$[$IFq$7$/$"$j$^$;$s!#>/$J$/$H(B
-$B$b!"$9$Y$F$N4X78$9$k%W%m%0%i%`$,E,@Z$KDL?.$79g$&$3$H$r3N$+$a$k$3$H$HHf3S(B
-$B$7$F!#$=$3$G!"30It$N$I$s$J%i%$%V%i%j!<$^$?$O%W%m%0%i%`$,I,MW$+$K$D$$$F!"(B
-$B$*$h$S$$$/$D$+$N:3:Y$G0lHLE*$J%R%s%H$r=R$Y$k$3$H$K$7$^$9!#(B
+上記のセキュリティー命令を実際に使うのはさほど難しくありません。少なくと
+も、すべての関係するプログラムが適切に通信し合うことを確かめることと比較
+して。そこで、外部のどんなライブラリーまたはプログラムが必要かについて、
+およびいくつかの些細で一般的なヒントを述べることにします。
 
 @node Using S/MIME
-@subsection S/MIME $B$r;H$&(B
+@subsection S/MIME を使う
 
-@acronym{S/MIME} $B$O(B @uref{https://www.gnupg.org/, GNU Privacy Guard} $B$^(B
-$B$?$O(B @uref{https://www.openssl.org/, OpenSSL} $B$N$h$&$J30It$N<BAu$rI,MW$H(B
-$B$7$^$9!#(B@acronym{S/MIME} $B$N<BAu$X$N%G%#%U%)%k%H$N(B Emacs $B%$%s%?!<%U%'!<%9(B
-$B$O(B EasyPG (@pxref{Top,,EasyPG Assistant User's Manual, epa-ja, EasyPG
-Assistant User's Manual}) $B$G$9!#$=$l$O(B Emacs 23 $B0J9_$G4^$^$l$F$*$j!"(B
-@acronym{GnuPG} $B$,Ds6!$9$k%3%^%s%I%i%$%s!&%D!<%k(B @command{gpgsm} $B$K0M5r(B
-$B$7$^$9!#$=$N%D!<%k$O>ZL@=q$N4IM}(B ($B<h>C$7$H4|8B@Z$l>C5n$r4^$`(B) $B$r9T$J$&<j(B
-$BCJ$rDs6!$7$^$9!#$?$@$7(B OpenSSL $B$r;H$&>l9g!"$=$N$h$&$JA`:n$O<jF0$G9T$J$o(B
-$B$J$1$l$P$J$j$^$;$s!#(B
+@acronym{S/MIME} は @uref{https://www.gnupg.org/, GNU Privacy Guard} ま
+たは @uref{https://www.openssl.org/, OpenSSL} のような外部の実装を必要と
+します。@acronym{S/MIME} の実装へのディフォルトの Emacs インターフェース
+は EasyPG (@pxref{Top,,EasyPG Assistant User's Manual, epa-ja, EasyPG
+Assistant User's Manual}) です。それは Emacs 23 以降で含まれており、
+@acronym{GnuPG} が提供するコマンドライン・ツール @command{gpgsm} に依拠
+します。そのツールは証明書の管理 (取消しと期限切れ消去を含む) を行なう手
+段を提供します。ただし OpenSSL を使う場合、そのような操作は手動で行なわ
+なければなりません。
 
-EasyPG $B$H(B OpenSSL $B$NA*Br$OJQ?t(B @code{mml-smime-use} $B$G@)8f$7!"(BEasyPG $B$r(B
-$B;H$&$H$-$OCM$r(B @code{epg} $B$K@_Dj$9$kI,MW$,$"$j$^$9!#(BEmacs $B$N%P!<%8%g%s$K(B
-$B$h$C$F$O$=$NCM$,%G%#%U%)%k%H$K$J$j$^$9$,!"$b$7$=$&$J$C$F$$$J$1$l$PJQ?t$N(B
-$BCM$r%+%9%?%^%$%:$9$k$+!"$^$?$O(B @file{.emacs} $B%U%!%$%k$K0J2<$N9T$rCV$$$F(B
-$B$/$@$5$$(B (message/gnus/encryption $B$K4X$9$kB>$N%3!<%I$h$jA0$KCV$$$F$*$+$J(B
-$B$1$P$J$j$^$;$s(B)$B!#(B
+EasyPG と OpenSSL の選択は変数 @code{mml-smime-use} で制御し、EasyPG を
+使うときは値を @code{epg} に設定する必要があります。Emacs のバージョンに
+よってはその値がディフォルトになりますが、もしそうなっていなければ変数の
+値をカスタマイズするか、または @file{.emacs} ファイルに以下の行を置いて
+ください (message/gnus/encryption に関する他のコードより前に置いておかな
+けばなりません)。
 
 @lisp
 (require 'epg)
 @end lisp
 
-$B$5$i$KJQ?t(B @code{mml-default-encrypt-method} $B$*$h(B
-$B$S(B @code{mml-default-sign-method} $B$rJ8;zNs(B @code{"smime"} $B$K%+%9%?%^%$%:(B
-$B$9$kI,MW$,$"$k$G$7$g$&!#(B
+さらに変数 @code{mml-default-encrypt-method} およ
+び @code{mml-default-sign-method} を文字列 @code{"smime"} にカスタマイズ
+する必要があるでしょう。
 
-$B0J>e$,(B EasyPG $B$G(B S/MIME $B$r;H$$$?$$>l9g$K9T$J$&$3$H$N$9$Y$F$G!"(BMessage $B$G(B
-S/MIME $B$r;H$&>l9g$N?d>)J}K!$G$b$"$j$^$9!#(B
+以上が EasyPG で S/MIME を使いたい場合に行なうことのすべてで、Message で
+S/MIME を使う場合の推奨方法でもあります。
 
-$B$b$7(B EasyPG $B$NBe$o$j$K(B OpenSSL $B$r;H$&$3$H$r9M$($F$$$k$N$J$i!"$^$:(B
-$B$O(B OpenSSL $B$H0l=o$KIU$$$F$/$k(B @command{smime} $B%3%^%s%I$N%^%K%e%"%k$K$"$k(B
-BUG $B$N9`$rFI$s$G$_$F$/$@$5$$!#$=$l$G$b$J$*(B OpenSSL $B$r;H$$$?$$$N$G$"$l$P(B
-$B0J2<$,E,MQ$5$l$^$9!#(B
+もし EasyPG の代わりに OpenSSL を使うことを考えているのなら、まず
+は OpenSSL と一緒に付いてくる @command{smime} コマンドのマニュアルにある
+BUG の項を読んでみてください。それでもなお OpenSSL を使いたいのであれば
+以下が適用されます。
 
-@emph{$BCm0U(B!} $B$3$N>O$N;D$j$NItJ,$O6aBeE*$J0E9fK!!"(B@acronym{S/MIME}$B!"$5$^(B
-$B$6$^$J(B PKCS $B$NI8=`!"(BOpenSSL $B$J$I$N4pAC$K!"$"$J$?$,@:DL$7$F$$$k$3$H$rA[Dj(B
-$B$7$F$$$^$9!#(B
+@emph{注意!} この章の残りの部分は近代的な暗号法、@acronym{S/MIME}、さま
+ざまな PKCS の標準、OpenSSL などの基礎に、あなたが精通していることを想定
+しています。
 
-Message ($B$=$l$K(B @acronym{MML}) $B$G(B @acronym{S/MIME} $B$r%5%]!<%H$9$k$?$a(B
-$B$K(B OpenSSL $B$r;H$&$3$H$,$G$-$^$9!#(BOpenSSL $B$O<B:]$N(B @acronym{S/MIME} $B$K$h(B
-$B$k=pL>(B/$B0E9f2=$N=hM}$r<B9T$7$^$9!#(B
-OpenSSL $B$O(B @uref{http://www.openssl.org/} $B$G8+$D$+$k$G$7$g$&!#(B
-OpenSSL 0.9.6 $B0J9_$N$b$N$,F0:n$9$k$O$:$G$9!#%P!<%8%g%s(B 0.9.5a $B$O>ZL@=q$+(B
-$B$i%a!<%k%"%I%l%9$rCj=P$9$k$3$H$,$G$-$^$;$s!#$^$?$=$l$O(B @acronym{MIME} $B$N(B
-$B%;%Q%l!<%?$KM>7W$J(B CR $BJ8;z$rA^F~$9$k$N$G!"JQ$J%a!<%k$rAw$k?M$@$H;W$o$l$?(B
-$B$/$J$1$l$P!"$=$l$r;H$&$3$H$rHr$1$?$$$G$7$g$&!#(B($B$b$C$H$b$"$J$?(B
-$B$O(B @acronym{S/MIME} $B$N%a%C%;!<%8$rAw$C$?;~E@$G!"$*$=$i$/$=$NJQ?M%3%s%F%9(B
-$B%H$G$N>!Mx$rF($7$F$7$^$$$^$7$?$,!#(B)
+Message (それに @acronym{MML}) で @acronym{S/MIME} をサポートするため
+に OpenSSL を使うことができます。OpenSSL は実際の @acronym{S/MIME} によ
+る署名/暗号化の処理を実行します。
+OpenSSL は @uref{http://www.openssl.org/} で見つかるでしょう。
+OpenSSL 0.9.6 以降のものが動作するはずです。バージョン 0.9.5a は証明書か
+らメールアドレスを抽出することができません。またそれは @acronym{MIME} の
+セパレータに余計な CR 文字を挿入するので、変なメールを送る人だと思われた
+くなければ、それを使うことを避けたいでしょう。(もっともあなた
+は @acronym{S/MIME} のメッセージを送った時点で、おそらくその変人コンテス
+トでの勝利を逃してしまいましたが。)
 
-$B0E9f2=$5$l$?%a!<%k$rAw$k$?$a$K8D?M$N>ZL@=q$OMW$j$^$;$s!#$b$C$H$b(B Message
-(@acronym{MML}) $B$O!"DL?.$7$?$$Aj<j$N?M$N>ZL@=q$rI,MW$H$7$^$9$1$l$I!#$3$l(B
-$B$O(B @kbd{C-c C-m c s} $B$r%?%$%W$7$?$H$-$K?R$M$i$l$^$9!#:#$N$H$3$m!">ZL@=q(B
-$B$r%m!<%+%k%U%!%$%k$+$i<h$j=P$9$+(B DNS $B$+$i<h$j4s$;$k$+$N!"Fs$D$NJ}K!$,$"(B
-$B$j$^$9!#%m!<%+%k%U%!%$%k$rA*Br$7$?>l9g!"$=$l$O(B @acronym{PEM} $B7A<0$K$h(B
-$B$k(B X.509 $B>ZL@=q$r4^$s$G$$$kI,MW$,$"$j$^$9!#(BDNS $B$rA*$s$@>l9g$K$O!"$=$N>Z(B
-$BL@=q$,3JG<$5$l$F$$$k%I%a%$%sL>$r?R$M$i$l$^$9(B ($B%G%#%U%)%k%H$O>e<j$K?dB,$7(B
-$B$?$b$N$G$9(B)$B!#;d$,?.$8$k8B(B
-$B$j(B Message (@acronym{MML}) $B$O(B @acronym{S/MIME} $B$N>ZL@=q$r(B DNS $B$+$i<h$j4s(B
-$B$;$k@$3&=i$N%a!<%k!&%(!<%8%'%s%H$J$N$G!"$"$^$j$?$/$5$s$N>ZL@=q$,$=$3$G8+(B
-$B$D$+$k$3$H$OL5$$$G$7$g$&!#>/$J$/$H$b0l$D$@$1(B
-$B$O(B @code{simon.josefsson.org} $B%I%a%$%s(B ($BLuCm(B: $B86Cx<T$N%5%$%H(B) $B$K3JG<$5$l(B
-$B$?$b$N$,$"$k$O$:$G$9$,!#(BLDAP $B$O>ZL@=q$rG[5k$9$k$?$a$N$b$C$HIa5Z$7$F$$$k(B
-$B<jK!$G!"$=$l$r%5%]!<%H$9$k$3$H$,7W2h$5$l$F$$$^$9!#(B($BOC$OJQ$o$j$^$9$,!"(B
-@code{ldapsearch} $B$r%3%^%s%I%i%$%s$+$i<B9T$7$F>ZL@=q$r%U%!%$%k$K<h$j9~$_!"(B
-$B$=$l$r;H$&$3$H$,$G$-$^$9$h!#(B)
+暗号化されたメールを送るために個人の証明書は要りません。もっとも Message
+(@acronym{MML}) は、通信したい相手の人の証明書を必要としますけれど。これ
+は @kbd{C-c C-m c s} をタイプしたときに尋ねられます。今のところ、証明書
+をローカルファイルから取り出すか DNS から取り寄せるかの、二つの方法があ
+ります。ローカルファイルを選択した場合、それは @acronym{PEM} 形式によ
+る X.509 証明書を含んでいる必要があります。DNS を選んだ場合には、その証
+明書が格納されているドメイン名を尋ねられます (ディフォルトは上手に推測し
+たものです)。私が信じる限
+り Message (@acronym{MML}) は @acronym{S/MIME} の証明書を DNS から取り寄
+せる世界初のメール・エージェントなので、あまりたくさんの証明書がそこで見
+つかることは無いでしょう。少なくとも一つだけ
+は @code{simon.josefsson.org} ドメイン (訳注: 原著者のサイト) に格納され
+たものがあるはずですが。LDAP は証明書を配給するためのもっと普及している
+手法で、それをサポートすることが計画されています。(話は変わりますが、
+@code{ldapsearch} をコマンドラインから実行して証明書をファイルに取り込み、
+それを使うことができますよ。)
 
-$B%a%C%;!<%8$N=pL>$K$D$$$F$O!"$"$k<o$N@_DjL5$7$G$O(B OpenSSL $B$O=pL>$N=hM}$r(B
-$B<B9T$9$k$3$H$,$G$-$^$;$s!#$H$j$o$1!"$"$J$?$NHkL)80(B (private key) $B$H>ZL@(B
-$B=q$,$I$3$K3JG<$5$l$F$$$k$+$r65$($F$"$2$kI,MW$,$"$j$^$9!#(B@acronym{MML} $B$O(B
-$B$=$NL>$K$U$5$o$7$$(B @code{smime.el} $B$H$$$&(B OpenSSL $B$X$N(B Emacs $B%$%s%?!<%U%'!<(B
-$B%9$r;H$$$^$9$,!"$=$l$O$3$N@_Dj$K;H$&$?$a$N$?$a$N(B @code{custom} $B%0%k!<%W(B
-$B$r;}$C$F$$$^$9!#$G$9$+$i(B @kbd{M-x customize-group RET smime RET} $B$r;n$7(B
-$B$F!"D/$a$F$_$F$/$@$5$$!#(B
+メッセージの署名については、ある種の設定無しでは OpenSSL は署名の処理を
+実行することができません。とりわけ、あなたの秘密鍵 (private key) と証明
+書がどこに格納されているかを教えてあげる必要があります。@acronym{MML} は
+その名にふさわしい @code{smime.el} という OpenSSL への Emacs インターフェー
+スを使いますが、それはこの設定に使うためのための @code{custom} グループ
+を持っています。ですから @kbd{M-x customize-group RET smime RET} を試し
+て、眺めてみてください。
 
-$B8=:_$O!"(BCA ($B$^$?$O(B RA) $B$HDL?.$7$F$"$J$?<+?H$N>ZL@=q$r@8@.$9$k$3$H$O%5%]!<(B
-$B%H$5$l$F$$$^$;$s!#$=$l$K7W2h$b$"$j$^$;$s!#;d$O(B Netscape $B$r;H$C$F!"%M%C%H(B
-$B>e$K$"$kBg$-$J(B CA $B$N0l$D$+$iL5NA$N(B @acronym{S/MIME} $B$N>ZL@=q$r$b$i$$$^$7(B
-$B$?!#(BNetscape $B$OHkL)80$H>ZL@=q$r(B PKCS #12 $B7A<0$GM"=P(B (export) $B$9$k$3$H$,(B
-$B$G$-$^$9!#(BOpenSSL $B$r;H$C$F!"$3$l$r0J2<$N$h$&$K(B PEM $B7A<0$K$h$k(B
-$BAG(B (plain) $B$N(B X.509 $B>ZL@=q$KJQ49$7$F$/$@$5$$!#(B
+現在は、CA (または RA) と通信してあなた自身の証明書を生成することはサポー
+トされていません。それに計画もありません。私は Netscape を使って、ネット
+上にある大きな CA の一つから無料の @acronym{S/MIME} の証明書をもらいまし
+た。Netscape は秘密鍵と証明書を PKCS #12 形式で輸出 (export) することが
+できます。OpenSSL を使って、これを以下のように PEM 形式による
+素 (plain) の X.509 証明書に変換してください。
 
 @example
 $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 @end example
 
-@code{smime-keys} $BJQ?t$,(B @file{key+cert.pem} $B%U%!%$%k$r;X$7<($9$h$&$K$7(B
-$B$J$1$l$P$J$j$^$;$s!#:#$d!"$"$J$?$O=pL>$5$l$?%a%C%;!<%8$rAw?.$G$-$k$O$:$G(B
-$B$9!#(B
+@code{smime-keys} 変数が @file{key+cert.pem} ファイルを指し示すようにし
+なければなりません。今や、あなたは署名されたメッセージを送信できるはずで
+す。
 
-@emph{$BCm0U(B!}  $B$"$J$?$N80$O:#!"0E9f2=$5$l$:$K%U%!%$%k$K3JG<$5$l$?$N$G!"$=(B
-$B$l$N07$$$K$O5$$rIU$1$F$/$@$5$$!#0E9f2=$5$l$?80$r%U%!%$%k$K3JG<$9$k5!G=$O(B
-$B%5%]!<%H$5$l$F$$$^$9!#$=$N>l9g$O(B OpenSSL $B$r8F$S=P$9A0$K(B Gnus $B$,%Q%9%U%l!<(B
-$B%:$r?R$M$k$G$7$g$&!#$I$&$d$C$F$=$l$r@.$7?k$2$k$+$K$D$$$F$O(B OpenSSL $B$N%I(B
-$B%-%e%a%s%H$rFI$s$G$/$@$5$$!#0E9f2=$5$l$F$$$J$$80$r;H$&(B ($BNc$($P$=$l$i$,0BA4(B
-$B$J%9%H%l!<%8$K$"$k!"$^$?$O$"$J$?$,0BA4$J%7%s%0%k!&MxMQ<T$N%^%7%s$K$$(B
-$B$k(B) $B$N$G$"$l$P!"%Q%9%U%l!<%:$NF~NO$rMW5a$5$l$?$H$-!"C1$K(B @kbd{RET} $B$r2!(B
-$B$7$F$/$@$5$$!#(B
+@emph{注意!}  あなたの鍵は今、暗号化されずにファイルに格納されたので、そ
+れの扱いには気を付けてください。暗号化された鍵をファイルに格納する機能は
+サポートされています。その場合は OpenSSL を呼び出す前に Gnus がパスフレー
+ズを尋ねるでしょう。どうやってそれを成し遂げるかについては OpenSSL のド
+キュメントを読んでください。暗号化されていない鍵を使う (例えばそれらが安全
+なストレージにある、またはあなたが安全なシングル・利用者のマシンにい
+る) のであれば、パスフレーズの入力を要求されたとき、単に @kbd{RET} を押
+してください。
 
 @node Using OpenPGP
-@subsection OpenPGP $B$r;H$&(B
+@subsection OpenPGP を使う
 
-OpenPGP $B$r;H$&$K$O(B @uref{https://www.gnupg.org/, GNU Privacy Guard} $B$N$h(B
-$B$&$J30It$N%=%U%H%&%'%"$,I,MW$G$9!#(BOpenPGP $B$h$j0JA0$N<BAu$G$"(B
-$B$k(B PGP 2.x $B$H(B PGP 5.x $B$b%5%]!<%H$7$^$9!#%G%#%U%)%k%H$N(B PGP $B$X$N(B Emacs $B%$(B
-$B%s%?!<%U%'!<%9$O(B EasyPG (@pxref{Top,,EasyPG Assistant User's Manual,
-epa-ja, EasyPG Assistant User's Manual}) $B$G$9$,!"(BPGG (@pxref{Top, ,PGG,
-pgg-ja, PGG Manual}) $B$H(B Mailcrypt $B$b%5%]!<%H$7$^$9!#(B
+OpenPGP を使うには @uref{https://www.gnupg.org/, GNU Privacy Guard} のよ
+うな外部のソフトウェアが必要です。OpenPGP より以前の実装であ
+る PGP 2.x と PGP 5.x もサポートします。ディフォルトの PGP への Emacs イ
+ンターフェースは EasyPG (@pxref{Top,,EasyPG Assistant User's Manual,
+epa-ja, EasyPG Assistant User's Manual}) ですが、PGG (@pxref{Top, ,PGG,
+pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
 @xref{PGP Compatibility}.
 
-$BA0$K=R$Y$?$h$&$K(B OpenPGP $B$G0E9f2=$5$l$k%a%C%;!<%8$O(B 2$B$D$N0[$J$kI8=`!"$D(B
-$B$^$j(B @acronym{PGP} $B$^$?$O(B @acronym{PGP/MIME} $B$G%U%)!<%^%C%H$9$k$3$H$,$G(B
-$B$-$^$9!#JQ?t(B @code{mml-default-encrypt-method} $B$*$h(B
-$B$S(B @code{mml-default-sign-method} $B$G$I$N<oN`$r;H$&$+$r7hDj$7!"(B
-@acronym{PGP/MIME} $B$,%G%U%#%U%)%k%H$G$9!#(B
+前に述べたように OpenPGP で暗号化されるメッセージは 2つの異なる標準、つ
+まり @acronym{PGP} または @acronym{PGP/MIME} でフォーマットすることがで
+きます。変数 @code{mml-default-encrypt-method} およ
+び @code{mml-default-sign-method} でどの種類を使うかを決定し、
+@acronym{PGP/MIME} がデフィフォルトです。
 
 @node Passphrase caching
-@subsection $B%Q%9%U%l!<%:$r%-%c%C%7%e$9$k(B
+@subsection パスフレーズをキャッシュする
 
 @cindex gpg-agent
-EasyPG $B$r;H$&>l9g!"(BMessage $B$O%G!<%?$r0E9f2=$9$k$?$aFbItE*(B
-$B$K(B GnuPG (the @command{gpg} $B$^$?$O(B @command{gpgsm} command) $B$r8F$S$^$9!#(B
-$B$^$?!"$"$kFCDj$N>l9g(B ($BNc$($P0E9f$N2rFI$d=pL>$r9T$J$&>l9g(B) $B$K!"(B
-@command{gpg}/@command{gpgsm} $B$O%f!<%6!<$N%Q%9%U%l!<%:$rMW5a$7$^$9!#8=:_(B
-$B%Q%9%U%l!<%:$rEO$9J}K!$H$7$F(B @command{gpg-agent} $B%W%m%0%i%`$r;H$&$3$H$,(B
-$B?d>)$5$l$F$$$^$9!#(B
+EasyPG を使う場合、Message はデータを暗号化するため内部的
+に GnuPG (the @command{gpg} または @command{gpgsm} command) を呼びます。
+また、ある特定の場合 (例えば暗号の解読や署名を行なう場合) に、
+@command{gpg}/@command{gpgsm} はユーザーのパスフレーズを要求します。現在
+パスフレーズを渡す方法として @command{gpg-agent} プログラムを使うことが
+推奨されています。
 
-$BFC$K(B @command{gpg-agent} $B%W%m%0%i%`$O%Q%9%U%l!<%:$N%-%c%C%7%e$r%5%]!<%H(B
-$B$7$F$/$l$k$N$G!"$9$Y$F$N2rFI(B/$B=pL>$NA`:n$G%Q%9%U%l!<%:$rF~NO$9$kI,MW$O$"(B
-$B$j$^$;$s!#(B@xref{Agent Options, , , gnupg, Using the GNU Privacy Guard}.
+特に @command{gpg-agent} プログラムはパスフレーズのキャッシュをサポート
+してくれるので、すべての解読/署名の操作でパスフレーズを入力する必要はあ
+りません。@xref{Agent Options, , , gnupg, Using the GNU Privacy Guard}.
 
-$B$G$O(B Emacs $B$NCf$G(B @command{gpg-agent} $B$r(B GnuPG $B$N%P!<%8%g%s$K$h$C$F;H$$(B
-$BJ,$1$k$K$O$I$&$9$l$P$h$$$G$7$g$&$+!#(BGnuPG $B%P!<%8%g%s(B 2.1 $B$G$O!"$b$7I,MW(B
-$B$J$i<+F0$G(B @command{gpg-agent} $B$,5/F0$7$^$9!#8E$$%P!<%8%g%s$G(B
-$B$O(B Emacs $B$r5/F0$9$kA0$K%7%'%k$+$i0J2<$N%3%^%s%I$rAv$i$;$kI,MW$,$"$k$G$7$g(B
-$B$&!#(B
+では Emacs の中で @command{gpg-agent} を GnuPG のバージョンによって使い
+分けるにはどうすればよいでしょうか。GnuPG バージョン 2.1 では、もし必要
+なら自動で @command{gpg-agent} が起動します。古いバージョンで
+は Emacs を起動する前にシェルから以下のコマンドを走らせる必要があるでしょ
+う。
 
 @example
 eval `gpg-agent --daemon`
 @end example
 
-$B$3$l$O(B @command{gpg-agent} $B$r<B9T$9$k$H$H$b(B
-$B$K(B @command{gpg} $B$,(B @command{gpg-agent} $B$HDL?.$G$-$k$h$&$K!"4D6-JQ(B
-$B?t(B @code{GPG_AGENT_INFO} $B$r@_Dj$7$^$9!#$3$l$r(B @file{.xsession} $B$^$?(B
-$B$O(B @file{.bash_profile} $B$K=q$-9~$`$N$ONI$$9M$($G$7$g$&!#(B@xref{Invoking
+これは @command{gpg-agent} を実行するととも
+に @command{gpg} が @command{gpg-agent} と通信できるように、環境変
+数 @code{GPG_AGENT_INFO} を設定します。これを @file{.xsession} また
+は @file{.bash_profile} に書き込むのは良い考えでしょう。@xref{Invoking
 GPG-AGENT, , , gnupg, Using the GNU Privacy Guard}.
 
-$B$$$C$?$s(B @command{gpg-agent} $B$,N)$A>e$,$k$H!"$=$l$O(B @command{gpg} $B$N$?$a(B
-$B$KI,MW$K1~$8$F%Q%9%U%l!<%:$r?R$M$^$9!#(BX $B%&%#%s%I%&!&%7%9%F%`$G$O!"%Q%9%U(B
-$B%l!<%:$rF~NO$9$k$?$a$K?7$?$JBPOC<jCJ$,=P8=$7$^$9!#$=$NBPOC<jCJ$O(B PIN
-Entry (@command{pinentry} $B%3%^%s%I(B) $B$K$h$C$FDs6!$5$l!"$=$N:G6a$N%P!<%8%g(B
-$B%s$O%F%-%9%H!&%3%s%=!<%k>e$N(B Emacs $B$H$H$b$KF0:n$9$k$3$H$b$G$-$^$9!#$b$7(B
-$B$&$^$-$$$+$J$$$H$-$O!"%Q%9%U%l!<%:$r(B gpg-agent $B$N%-%c%C%7%e$KA0$b$C$FF~(B
-$B$l$F$*$+$J$1$l$P$J$i$J$$$G$7$g$&!#0J2<$N%3%^%s%I$r!"$=$N$?$a$K;H$&$3$H$,(B
-$B$G$-$^$9!#(B
+いったん @command{gpg-agent} が立ち上がると、それは @command{gpg} のため
+に必要に応じてパスフレーズを尋ねます。X ウィンドウ・システムでは、パスフ
+レーズを入力するために新たな対話手段が出現します。その対話手段は PIN
+Entry (@command{pinentry} コマンド) によって提供され、その最近のバージョ
+ンはテキスト・コンソール上の Emacs とともに動作することもできます。もし
+うまきいかないときは、パスフレーズを gpg-agent のキャッシュに前もって入
+れておかなければならないでしょう。以下のコマンドを、そのために使うことが
+できます。
 
 @example
 gpg --use-agent --sign < /dev/null > /dev/null
 @end example
 
 @node PGP Compatibility
-@subsection $B8E$$<BAu$H$N8_49@-(B
+@subsection 古い実装との互換性
 
 @vindex gpg-temp-directory
-$BCm(B: $B$b$7(B @code{gpg.el} $B$r;H$&$N$G$"$l$P!"(B@code{gpg-temp-directory} $B$G;X(B
-$BDj$5$l$k%G%#%l%/%H%j!<$N%Q!<%_%C%7%g%s$,I,$:(B 0700 $B$K$J$C$F$$$k$h$&$K$7$F(B
-$B$/$@$5$$!#(B
+注: もし @code{gpg.el} を使うのであれば、@code{gpg-temp-directory} で指
+定されるディレクトリーのパーミッションが必ず 0700 になっているようにして
+ください。
 
-$B$"$J$?$N(B PGP $B$N<BAu$N%I%-%e%a%s%H$G>\$7$/=R$Y$i$l$F$$$k$N$G!"$"$J$?<+?H(B
-$B$N$?$a$N80$N@8@.$N$7$+$?$O!"$=$l$K>y$j$^$9!#(B
+あなたの PGP の実装のドキュメントで詳しく述べられているので、あなた自身
+のための鍵の生成のしかたは、それに譲ります。
 
-$B$b$7$"$J$?$,8E$$(B PGP 2.x $B$N80$r(B GnuPG $B$KM"F~$7$F$"$C$F!"(BPGP 2.x $B$r;H$C$F(B
-$B$$$kCg4V$K=pL>$5$l$+$D0E9f2=$5$l$?%a%C%;!<%8$rAw$j$?$$$H$9$k$H!"<u?.<T$O(B
-$B$"$J$?$,Aw?.$7$?$b$N$rM}2r$G$-$J$$$3$H$rH/8+$9$k$3$H$K$J$k$G$7$g$&!#0l$D(B
-$B$N2r$O!"Be$o$j$K(B PGP 2.x $B$r;H$&$3$H(B ($B$?$H$($P(B@: $B$b$7(B @code{pgg} $B$r;H$C$F(B
-$B$$$k$N$G$"$l$P!"(B@code{pgg-default-scheme} $B$r(B @code{pgp} $B$K@_Dj$9$k$3(B
-$B$H(B) $B$G$9!#$5$i$K(B PGP 2.x $B$r;H$C$F$$$kCg4V$K!"(BGnuPG $B$K>h$j49$($k$3$H$r@b(B
-$BF@$7$F$bNI$$$G$7$g$&!#(B
+もしあなたが古い PGP 2.x の鍵を GnuPG に輸入してあって、PGP 2.x を使って
+いる仲間に署名されかつ暗号化されたメッセージを送りたいとすると、受信者は
+あなたが送信したものを理解できないことを発見することになるでしょう。一つ
+の解は、代わりに PGP 2.x を使うこと (たとえば@: もし @code{pgg} を使って
+いるのであれば、@code{pgg-default-scheme} を @code{pgp} に設定するこ
+と) です。さらに PGP 2.x を使っている仲間に、GnuPG に乗り換えることを説
+得しても良いでしょう。
 @vindex mml-signencrypt-style-alist
-$B:G8e$NBeBX<jCJ$H$7$F!"=pL>$H0E9f2=$NF0:n$rFsCJ3,(B ($BJ,N%=pL>$7$F$+$i%a%C%;!<(B
-$B%8$r0E9f2=$9$k(B) $B$K$9$k$3$H$,$G$-$^$9!#$3$N?6$kIq$$$rJQ99$7$?$$$N$G$"$l$P!"(B
-@code{mml-signencrypt-style-alist} $BJQ?t$r%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9!#(B
-$BNc$($P(B:
+最後の代替手段として、署名と暗号化の動作を二段階 (分離署名してからメッセー
+ジを暗号化する) にすることができます。この振る舞いを変更したいのであれば、
+@code{mml-signencrypt-style-alist} 変数をカスタマイズすることができます。
+例えば:
 
 @lisp
 (setq mml-signencrypt-style-alist '(("smime" separate)
@@ -1290,223 +1290,223 @@ gpg --use-agent --sign < /dev/null > /dev/null
                                     ("pgpmime" separate)))
 @end lisp
 
-$B$3$l$O=pL>$H0E9f2=$rFsCJ3,$G9T$J$o$;$k$3$H$K$h$C$F!"(BPGP version 2 $B$,M}2r(B
-$B$G$-$k%a%C%;!<%8$r@8@.$7$^$9!#(B
+これは署名と暗号化を二段階で行なわせることによって、PGP version 2 が理解
+できるメッセージを生成します。
 
-($B$=$NLdBj$K4X$9$k$5$i$J$k>pJs$K$D$$$F$O!"(B
-@uref{http://www.gnupg.org/gph/en/pgp2x.html} $B$r;2>H$7$F$/$@$5$$!#(B)
+(その問題に関するさらなる情報については、
+@uref{http://www.gnupg.org/gph/en/pgp2x.html} を参照してください。)
 
 @node Encrypt-to-self
-@subsection $B<+J,$,:n$C$?0E9f2=%a%C%;!<%8$rFI$`(B
+@subsection 自分が作った暗号化メッセージを読む
 
-$B%G%#%U%)%k%H$G$O%a%C%;!<%8$O$9$Y$F$N<u<h?M(B (@code{To}, @code{Cc},
-@code{Bcc} $B%X%C%@!<(B) $B$K08$F$F0E9f2=$5$l$^$9!#$H$$$&$3$H$O!"$"$J$?$O$"$J(B
-$B$?<+?H$N%a%C%;!<%8$r2rFI$G$-$J$$$N$G$9!#$"$J$?<+?H$N80$K08$F$F$bI,$:0E9f(B
-$B2=$9$k$?$a$K$O!"$$$/$D$+$N$H$j$&$k2r$,$"$j$^$9(B:
+ディフォルトではメッセージはすべての受取人 (@code{To}, @code{Cc},
+@code{Bcc} ヘッダー) に宛てて暗号化されます。ということは、あなたはあな
+た自身のメッセージを解読できないのです。あなた自身の鍵に宛てても必ず暗号
+化するためには、いくつかのとりうる解があります:
 @enumerate
 @item
-@file{gpg.conf} $B%U%!%$%k(B (OpenPGP $BMQ(B) $B$^$?$O(B @file{gpgsm.conf} $B%U%!%$(B
-$B%k(B (EasyPG $B$G(B @acronym{S/MIME} $B$r;H$&>l9gMQ(B) $B$G(B @code{encrypt-to} $B%*%W%7%g(B
-$B%s$r;H$$$^$9!#(B
-@xref{Invoking GPG, , , gnupg, Using the GNU Privacy Guard}, $B$^$?(B
-$B$O(B @xref{Invoking GPGSM, , , gnupg, Using the GNU Privacy Guard}$B!#(B
+@file{gpg.conf} ファイル (OpenPGP 用) または @file{gpgsm.conf} ファイ
+ル (EasyPG で @acronym{S/MIME} を使う場合用) で @code{encrypt-to} オプショ
+ンを使います。
+@xref{Invoking GPG, , , gnupg, Using the GNU Privacy Guard}, また
+は @xref{Invoking GPGSM, , , gnupg, Using the GNU Privacy Guard}。
 @item
-$B<u<h?M$NCf$K$"$J$?<+?H$NEE;R%a!<%k%"%I%l%9(B ($B:n@.$7$?80$NBP$,BP>]$N(B) $B$r4^(B
-$B$a$k!#(B
+受取人の中にあなた自身の電子メールアドレス (作成した鍵の対が対象の) を含
+める。
 @item
-$BJQ?t(B @code{mml-secure-openpgp-encrypt-to-self} (OpenPGP $BMQ(B) $B$^$?(B
-$B$O(B @code{mml-secure-smime-encrypt-to-self}
-(EasyPG $B$G(B @acronym{S/MIME} $B$r;H$&>l9gMQ(B) $B$r%+%9%?%^%$%:$9$k!#(B
+変数 @code{mml-secure-openpgp-encrypt-to-self} (OpenPGP 用) また
+は @code{mml-secure-smime-encrypt-to-self}
+(EasyPG で @acronym{S/MIME} を使う場合用) をカスタマイズする。
 @end enumerate
 
 @node Bcc Warning
-@subsection Bcc $B$,$"$k$H$-0E9f$r;H$C$F$O$@$a(B
+@subsection Bcc があるとき暗号を使ってはだめ
 
-@code{Bcc} $B%X%C%@!<$O%a%C%;!<%8$N<u<h?M$r1#$9$?$a$N$b$N$G$9!#$7$+$7!"$b(B
-$B$7%a%C%;!<%8$,0E9f2=$5$l$k$H!"(B@code{Bcc} $B%X%C%@!<$K$"$k$9$Y$F$NEE;R%a!<(B
-$B%k%"%I%l%9$O!"$9$Y$F$N<u<h?M$KBP$7$F7Y9p$J$7$KL@$+$5$l$F$7$^$$$^$9!#$3$l(B
-$B$O%P%0$G$9!#(B
-@uref{https://debbugs.gnu.org/cgi/bugreport.cgi?bug=18718} $B$r8+$F$/$@$5(B
-$B$$!#(B($BLuCm(B: Emacs 25.1 $B$G2r7h$7$F$$$^$9!#(B)
+@code{Bcc} ヘッダーはメッセージの受取人を隠すためのものです。しかし、も
+しメッセージが暗号化されると、@code{Bcc} ヘッダーにあるすべての電子メー
+ルアドレスは、すべての受取人に対して警告なしに明かされてしまいます。これ
+はバグです。
+@uref{https://debbugs.gnu.org/cgi/bugreport.cgi?bug=18718} を見てくださ
+い。(訳注: Emacs 25.1 で解決しています。)
 
 @node Various Commands
-@section $B$$$m$$$m$JL?Na(B
+@section いろいろな命令
 
 @table @kbd
 @item C-c C-r
 @kindex C-c C-r
 @findex message-caesar-buffer-body
-$B8=:_$N%a%C%;!<%8$r%+%(%5%kJQ49(B ($BJLL>(B rot13) $B$7$^(B
-$B$9(B (@code{message-caesar-buffer-body})$B!#$"$kHO0O$K%P%C%U%!!<$,69$a$i$l$F(B
-$B$$$?>l9g$O!"%P%C%U%!!<$N8+$($kItJ,$@$1$rJQ49$7$^$9!#?tCM@\F,0z?t$OJ8Cf$N(B
-$B%"%k%U%!%Y%C%H$r2?J8;zJ,2sE>$5$;$k$+$r;XDj$7$^$9!#%G%#%U%)%k%H$O(B 13 $B$G$9!#(B
+現在のメッセージをカエサル変換 (別名 rot13) しま
+す (@code{message-caesar-buffer-body})。ある範囲にバッファーが狭められて
+いた場合は、バッファーの見える部分だけを変換します。数値接頭引数は文中の
+アルファベットを何文字分回転させるかを指定します。ディフォルトは 13 です。
 
 @item C-c C-e
 @kindex C-c C-e
 @findex message-elide-region
 @vindex message-elide-ellipsis
-$B%]%$%s%H$H%^!<%/$N4V$NJ8$r>JN,$7$^$9(B (@code{message-elide-region})$B!#J8>O(B
-$B$O(B kill $B$5$l$F!"JQ?t(B @code{message-elide-ellipsis} $B$NCM$GCV$-49$($i$l$^(B
-$B$9!#%G%#%U%)%k%H$N>JN,Id9f$H$7$F;H$o$l$kCM$O(B (@samp{[...]}) $B$G$9!#(B
+ポイントとマークの間の文を省略します (@code{message-elide-region})。文章
+は kill されて、変数 @code{message-elide-ellipsis} の値で置き換えられま
+す。ディフォルトの省略符号として使われる値は (@samp{[...]}) です。
 
-$B$3$l$O=qK!;EMMJQ?t$J$N$G!":o=|$5$l$?9T?t$r!"$^$?$O:o=|$5$l$?J8;z?t$rI=<((B
-$B$5$;$k$?$a$K!"$=$l$>$l(B @samp{%l} $B$H(B @samp{%c} $B$r;H$&$3$H$,$G$-$^$9!#(B
+これは書法仕様変数なので、削除された行数を、または削除された文字数を表示
+させるために、それぞれ @samp{%l} と @samp{%c} を使うことができます。
 
 @item C-c M-k
 @kindex C-c M-k
 @findex message-kill-address
-$B8=:_0LCV$N%"%I%l%9$r:o=|$7$^$9(B ($BLuCm(B: $B$3$NL?Na$O:n<T$d=P$I$3$m$,ITL@$G!"(B
-$B$5$i$K0-$$$3$H$KIT40A4$JL?Na$K8+$($^$9!#I,$:>C$7$?$$%"%I%l%9$N@hF,$K%]%$(B
-$B%s%H$rCV$$$F;H$C$F$/$@$5$$!#(B)
+現在位置のアドレスを削除します (訳注: この命令は作者や出どころが不明で、
+さらに悪いことに不完全な命令に見えます。必ず消したいアドレスの先頭にポイ
+ントを置いて使ってください。)
 
 @item C-c C-z
 @kindex C-c C-z
 @findex message-kill-to-signature
-$B8=:_0LCV$+$i=pL>$^$G!"$^$?$O$=$l$,L5$1$l$P5-;v$N:G8e$^$G$NJ8$r(B kill $B$7$^(B
-$B$9(B (@code{message-kill-to-signature})$B!#(B
+現在位置から署名まで、またはそれが無ければ記事の最後までの文を kill しま
+す (@code{message-kill-to-signature})。
 
 @item C-c C-v
 @kindex C-c C-v
 @findex message-delete-not-region
-$B%a%C%;!<%8$NK\J8$K$*$$$F!"NN0h$,@_Dj$5$l$?>l=j0J30$N$9$Y$F$NJ8$r>C5n$7$^(B
-$B$9(B (@code{message-delete-not-region})$B!#(B
+メッセージの本文において、領域が設定された場所以外のすべての文を消去しま
+す (@code{message-delete-not-region})。
 
 @item M-RET
 @kindex M-RET
 @findex message-newline-and-reformat
-$B;MK\$N6u9T$rA^F~$7$^$9!#$=$7$F!"$b$7%]%$%s%H$,0zMQJ8$NCf4V$K$"$C$?$N$J$i(B
-$B$P!"0zMQJ8$r@07A$7D>$7$^$9!#(B
+四本の空行を挿入します。そして、もしポイントが引用文の中間にあったのなら
+ば、引用文を整形し直します。
 
-$BNc$G$9(B:
+例です:
 
 @example
-> $B$3$l$O2?$+$N0zMQJ8$G$9!#(B $B$=$7$F!"$3$3$K$O$b$C$H0zMQJ8$,$"$j$^$9!#(B
+> これは何かの引用文です。 そして、ここにはもっと引用文があります。
 @end example
 
-$B%]%$%s%H$,!V$=$7$F!W$NA0$K$"$k$H$-$K(B @kbd{M-RET} $B$r2!$9$H!"0J2<$N$h$&$K(B
-$B$J$j$^$9(B:
+ポイントが「そして」の前にあるときに @kbd{M-RET} を押すと、以下のように
+なります:
 
 @example
-> $B$3$l$O2?$+$N0zMQJ8$G$9!#(B
+> これは何かの引用文です。
 
 *
 
-> $B$=$7$F!"$3$3$K$O$b$C$H0zMQJ8$,$"$j$^$9!#(B
+> そして、ここにはもっと引用文があります。
 @end example
 
-@samp{*} $B$O%]%$%s%H$,CV$+$l$k>l=j$G$9!#(B
+@samp{*} はポイントが置かれる場所です。
 
 @item C-c M-r
 @kindex C-c M-r
 @findex message-rename-buffer
-$B%P%C%U%!!<$NL>A0$rJQ99$7$^$9(B (@code{message-rename-buffer})$B!#@\F,0z?t$,(B
-$BM?$($i$l$k$H!"?7$7$$%P%C%U%!!<L>$NF~NO$rMW5a$7$^$9!#(B
+バッファーの名前を変更します (@code{message-rename-buffer})。接頭引数が
+与えられると、新しいバッファー名の入力を要求します。
 
 @item TAB
 @kindex TAB
 @findex message-tab
 @vindex message-tab-body-function
-@code{message-tab-body-function} $B$,(B @code{nil} $B$G$J$+$C$?$i!"$=$l$,;XDj(B
-$B$9$k4X?t$r<B9T$7$^$9!#$5$b$J$1$l$P!"(B
-@code{text-mode-map} $B$+(B @code{global-map} $B$N(B @kbd{TAB} $B%-!<$K3d$jEv$F$i(B
-$B$l$F$$$kL?Na$r;H$$$^$9!#(B
+@code{message-tab-body-function} が @code{nil} でなかったら、それが指定
+する関数を実行します。さもなければ、
+@code{text-mode-map} か @code{global-map} の @kbd{TAB} キーに割り当てら
+れている命令を使います。
 @end table
 
 @node Sending
-@section $BAw?.(B
+@section 送信
 
 @table @kbd
 @item C-c C-c
 @kindex C-c C-c
 @findex message-send-and-exit
-$B%a%C%;!<%8$rAw?.$7!"8=:_$N%P%C%U%!!<$r(B @code{bury-buffer} $B$7$^(B
-$B$9(B (@code{message-send-and-exit})$B!#(B
+メッセージを送信し、現在のバッファーを @code{bury-buffer} しま
+す (@code{message-send-and-exit})。
 
 @quotation
-$BLuCm(B: @code{bury-buffer} $B$O;XDj$7$?%P%C%U%!!<$r8=:_$N(B Emacs $B>e$KB8:_$9$k(B
-$B%P%C%U%!!<$N%j%9%H$N:G8e$NMWAG$K$9$k4X?t$G!"0lHL$K=EMWEY$,Dc$/$J$C$?%P%C(B
-$B%U%!!<$KBP$7$F<B9T$5$l$^$9!#$=$l$r8+$?$$>l9g$O(B @kbd{C-x C-b} $B$r;H$C$F$/(B
-$B$@$5$$!#$?$@$7%P%C%U%!!<$NL>A0$,(B @samp{*sent ... *} $B$KJQ$o$C$F$$$k$O$:$G(B
-$B$9!#(B
+訳注: @code{bury-buffer} は指定したバッファーを現在の Emacs 上に存在する
+バッファーのリストの最後の要素にする関数で、一般に重要度が低くなったバッ
+ファーに対して実行されます。それを見たい場合は @kbd{C-x C-b} を使ってく
+ださい。ただしバッファーの名前が @samp{*sent ... *} に変わっているはずで
+す。
 @end quotation
 
 @item C-c C-s
 @kindex C-c C-s
 @findex message-send
-$B%a%C%;!<%8$rAw?.$7$^$9(B (@code{message-send})$B!#(B
+メッセージを送信します (@code{message-send})。
 
 @item C-c C-d
 @kindex C-c C-d
 @findex message-dont-send
-$B%a%C%;!<%8%P%C%U%!!<$r(B @code{bury-buffer} $B$7$F(B ($BAw?.$;$:$K(B) $B=*N;$7$^(B
-$B$9(B (@code{message-dont-send})$B!#(B
+メッセージバッファーを @code{bury-buffer} して (送信せずに) 終了しま
+す (@code{message-dont-send})。
 
 @item C-c C-k
 @kindex C-c C-k
 @findex message-kill-buffer
-$B%a%C%;!<%8%P%C%U%!!<$r(B kill $B$7$F(B ($BAw?.$;$:$K(B) $B=*N;$7$^(B
-$B$9(B (@code{message-kill-buffer})$B!#(B
+メッセージバッファーを kill して (送信せずに) 終了しま
+す (@code{message-kill-buffer})。
 @end table
 
 @node Mail Aliases
-@section $B%a!<%k$NJLL>(B
+@section メールの別名
 @cindex mail aliases
 @cindex aliases
 @cindex completion
 @cindex ecomplete
 
 @vindex message-mail-alias-type
-@code{message-mail-alias-type} $B$H$$$&JQ?t$G!"$I$N$h$&$J7?$N%a!<%k$NJL(B
-$BL>(B (mail alias) $B$N?-D%$r;H$&$+$r@)8f$7$^$9!#:#$N$H$3$mFs$D$NMM<0!"(B
-@code{mailabbrev} $B$H(B @code{ecomplete} $B$r;H$&$3$H$,$G$-$^$9!#$b$7$3$NJQ?t(B
-$B$,(B @code{nil} $B$K$J$C$F$$$k$H!"%a!<%k$NJLL>$N?-D%$O9T$J$o$l$^$;$s!#(B
+@code{message-mail-alias-type} という変数で、どのような型のメールの別
+名 (mail alias) の伸張を使うかを制御します。今のところ二つの様式、
+@code{mailabbrev} と @code{ecomplete} を使うことができます。もしこの変数
+が @code{nil} になっていると、メールの別名の伸張は行なわれません。
 
-@code{Mailabbrev} $B$O(B @file{/etc/mailrc} $B$H(B @file{~/.mailrc} $B%U%!%$%k$r2r(B
-$B@O$9$k$3$H$K$h$C$FF0:n$7$^$9!#$=$l$i$N%U%!%$%k$O<!$N$h$&$K$J$C$F$$$^$9(B:
+@code{Mailabbrev} は @file{/etc/mailrc} と @file{~/.mailrc} ファイルを解
+析することによって動作します。それらのファイルは次のようになっています:
 
 @example
 alias lmi "Lars Magne Ingebrigtsen <larsi@@ifi.uio.no>"
 alias ding "ding@@ifi.uio.no (ding mailing list)"
 @end example
 
-$B$3$N$h$&$J9T$r(B @file{~/.mailrc} $B%U%!%$%k$KDI2C$7$F$*$1$P!"(B
-@code{To} $B$d(B @code{Cc} ($B$J$I(B) $B$N%X%C%@!<$G(B @samp{lmi} $B$H=q$$(B
-$B$F(B @kbd{SPC} $B$r2!$9$@$1$G!"$=$NJLL>$r?-D%$7$F$/$l$k$O$:$G$9!#(B
+このような行を @file{~/.mailrc} ファイルに追加しておけば、
+@code{To} や @code{Cc} (など) のヘッダーで @samp{lmi} と書い
+て @kbd{SPC} を押すだけで、その別名を伸張してくれるはずです。
 
-$B%a%C%;!<%8$rAw$k$H$-$K$O?-D%$O9T$J$o$l$^$;$s(B---$B$9$Y$F$N?-D%$OL@<(E*(B
-$B$K(B ($BLuCm(B: $B<B:]$K<+J,$G%a!<%k$r=q$$$F$$$k$H$-$K(B) $B9T$J$o$l$J$/$F$O$J$j$^$;(B
-$B$s!#(B
+メッセージを送るときには伸張は行なわれません---すべての伸張は明示的
+に (訳注: 実際に自分でメールを書いているときに) 行なわれなくてはなりませ
+ん。
 
-@code{ecomplete} $B$r;H$C$F$$$k$H!"(B@code{To} $B$H(B @code{Cc} $B%X%C%@!<$K$"$k$9(B
-$B$Y$F$N%"%I%l%9$,!"<+F0E*$K(B @file{~/.ecompleterc} $B%U%!%$%k$K3JG<$5$l$^$9!#(B
-@code{To} $B$H(B @code{Cc} $B%X%C%@!<$K%F%-%9%H$r=q$-9~$s$@$H$-$K!"(B
-@code{ecomplete} $B$O$=$3$K3JG<$5$l$F$$$kCM$rD4$Y$F!"$I$s$JJd408uJd$,$"$k(B
-$B$+$r!V%(%l%/%H%j%C%/!W$K(B ($BLuCm(B: $B9*L/$J$d$jJ}$G(B) $B65$($F$/$l$k$G$7$g$&!#$=(B
-$B$l$i$NJd408uJd$N0l$D$rC5$9$K$O!"(B@kbd{M-n} $B%3%^%s%I$G%j%9%H$r2<$KFI$_?J$s(B
-$B$G$/$@$5$$!#%j%9%H$r>:$k$N$O(B @kbd{M-p}$B!"$=$7$FA*Br$9$k$N$O(B @kbd{RET} $B$G(B
-$B$9!#(B
+@code{ecomplete} を使っていると、@code{To} と @code{Cc} ヘッダーにあるす
+べてのアドレスが、自動的に @file{~/.ecompleterc} ファイルに格納されます。
+@code{To} と @code{Cc} ヘッダーにテキストを書き込んだときに、
+@code{ecomplete} はそこに格納されている値を調べて、どんな補完候補がある
+かを「エレクトリック」に (訳注: 巧妙なやり方で) 教えてくれるでしょう。そ
+れらの補完候補の一つを探すには、@kbd{M-n} コマンドでリストを下に読み進ん
+でください。リストを昇るのは @kbd{M-p}、そして選択するのは @kbd{RET} で
+す。
 
 @node Spelling
-@section Emacs $B$K%9%Z%k%A%'%C%/$5$;$k(B
+@section Emacs にスペルチェックさせる
 @cindex spelling
 @findex ispell-message
 
-$B%a%C%;!<%8$r(B Emacs $B$G%9%Z%k%A%'%C%/$9$k$?$a$KIa5Z$7$F$$$kFs$D$NJ}K!$H$7(B
-$B$F(B @code{ispell} $B$H(B @code{flyspell} $B$,$"$j$^$9!#(B@code{ispell} $B$NJ}$O@N$+(B
-$B$i$"$C$F!"$?$V$s$h$j0lHLE*$J%Q%C%1!<%8$G$9!#$"$J$?$O:G=i$K%a%C%;!<%8$r=q(B
-$B$$$F$+$i!"Nc$K$h$C$FA4BN$r(B @code{ispell} $B$KDL$7!"$9$Y$F$N=q$-B;$8$r=$@5(B
-$B$9$k$G$7$g$&!#%a%C%;!<%8$rAw?.$9$k$H$-$K$=$l$r<+F0E*$K9T$J$&$?$a$K$O!"(B
-@file{.emacs} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$rF~$l$F$/$@$5$$!#(B
+メッセージを Emacs でスペルチェックするために普及している二つの方法とし
+て @code{ispell} と @code{flyspell} があります。@code{ispell} の方は昔か
+らあって、たぶんより一般的なパッケージです。あなたは最初にメッセージを書
+いてから、例によって全体を @code{ispell} に通し、すべての書き損じを修正
+するでしょう。メッセージを送信するときにそれを自動的に行なうためには、
+@file{.emacs} ファイルに以下のようなものを入れてください。
 
 @lisp
 (add-hook 'message-send-hook 'ispell-message)
 @end lisp
 
 @vindex ispell-message-dictionary-alist
-$B$"$J$?$,JL$N8@8l$G=q$/=,47$r;}$C$F$$$k$N$J$i$P!"JQ(B
-$B?t(B @code{ispell-message-dictionary-alist} $B$G@Z$jBX$($k$3$H$,$G$-$^$9!#(B
-($BLuCm(B: $B0J2<$NO"A[%j%9%H$N3FMWAG$G!"%X%C%@!<$N$I$l$+$K9gCW$9$k@55,I=8=$H(B
-$B<-=q$r;XDj$7$^$9!#$?$@$7(B @samp{japanese} $B$H$$$&<-=q$O$"$j$^$;$s(B ($B$?$V$s(B)$B!#(B)
+あなたが別の言語で書く習慣を持っているのならば、変
+数 @code{ispell-message-dictionary-alist} で切り替えることができます。
+(訳注: 以下の連想リストの各要素で、ヘッダーのどれかに合致する正規表現と
+辞書を指定します。ただし @samp{japanese} という辞書はありません (たぶん)。)
 
 @lisp
 (setq ispell-message-dictionary-alist
@@ -1514,15 +1514,15 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
         (".*" . "default")))
 @end lisp
 
-@code{ispell} $B$O%$%s%9%H!<%k$5$l$F$$$k(B @samp{ispell} $B%W%m%0%i%`$K0MB8$7(B
-$B$^$9!#(B
+@code{ispell} はインストールされている @samp{ispell} プログラムに依存し
+ます。
 
-$B?M5$$,$"$k$b$&0l$D$NJ}K!$O(B @code{flyspell} $B$r;H$&$3$H$G$9!#$3$N%Q%C%1!<(B
-$B%8$O$"$J$?$,=q$$$F$$$k:GCf$K%9%Z%k%A%'%C%/$r9T$J$$!"$$$m$s$JJ}K!$G4V0c$C(B
-$B$?%9%Z%k$N8l$r;XE&$7$F$/$l$^$9!#(B
+人気があるもう一つの方法は @code{flyspell} を使うことです。このパッケー
+ジはあなたが書いている最中にスペルチェックを行ない、いろんな方法で間違っ
+たスペルの語を指摘してくれます。
 
-@code{flyspell} $B$r;H$&$K$O!"0J2<$N$h$&$J$b$N$r(B @file{.emacs} $B%U%!%$%k$K(B
-$BF~$l$F$/$@$5$$!#(B
+@code{flyspell} を使うには、以下のようなものを @file{.emacs} ファイルに
+入れてください。
 
 @lisp
 (defun my-message-setup-routine ()
@@ -1530,39 +1530,39 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 (add-hook 'message-setup-hook 'my-message-setup-routine)
 @end lisp
 
-@code{flyspell} $B$O%$%s%9%H!<%k$5$l$F$$$k(B @samp{ispell} $B%W%m%0%i%`$K0MB8(B
-$B$7$^$9!#(B
+@code{flyspell} はインストールされている @samp{ispell} プログラムに依存
+します。
 
 @node Variables
-@chapter $BJQ?t(B
+@chapter 変数
 
 @menu
-* Message Headers::             $B%a%C%;!<%8%X%C%@!<$K4X$9$k0lHLE*$J$3$H(B
-* Mail Headers::                $B%a!<%k$N%X%C%@!<$r%+%9%?%^%$%:$9$k(B
-* Mail Variables::              $BB>$N%a!<%kJQ?t(B
-* News Headers::                $B%K%e!<%9$N%X%C%@!<$r%+%9%?%^%$%:$9$k(B
-* News Variables::              $BB>$N%K%e!<%9JQ?t(B
-* Insertion Variables::         $B$I$&A^F~$9$k$+$r%+%9%?%^%$%:$9$k(B
-* Various Message Variables::   $BB>$N%a%C%;!<%8JQ?t(B
-* Sending Variables::           $BAw?.$N$?$a$NJQ?t(B
-* Message Buffers::             Message $B$,%P%C%U%!!<$NL>A0$rIU$1$kJ}K!(B
-* Message Actions::             $B=*N;$9$k$H$-$K<B9T$9$k$3$H(B
+* Message Headers::             メッセージヘッダーに関する一般的なこと
+* Mail Headers::                メールのヘッダーをカスタマイズする
+* Mail Variables::              他のメール変数
+* News Headers::                ニュースのヘッダーをカスタマイズする
+* News Variables::              他のニュース変数
+* Insertion Variables::         どう挿入するかをカスタマイズする
+* Various Message Variables::   他のメッセージ変数
+* Sending Variables::           送信のための変数
+* Message Buffers::             Message がバッファーの名前を付ける方法
+* Message Actions::             終了するときに実行すること
 @end menu
 
 @node Message Headers
-@section $B%a%C%;!<%8%X%C%@!<(B
+@section メッセージヘッダー
 
-Message $B$O%a%C%;!<%8$r:n@.$9$kJ,Ln$NBh0l@~$K$"$C$F!"6K$a$F0UM_E*$G$9!#$=(B
-$B$N;HL?$O%K%e!<%9$H%a!<%k$N%(!<%8%'%s%H$rE}9g$9$k$3$H$G$9!#%a!<%k$H%K%e!<(B
-$B%9$r0l=o$KAw$k$3$H$r2DG=$K$9$k$?$a$K$O!"%a%C%;!<%8$r%a!<%k$GAw$C$?$b$N$H(B
-$B%K%e!<%9$GAw$C$?$b$N$,$h$/;w$?8+1I$($K$J$k$h$&$K!"(BMessage $B$O$9$Y$F$N%X%C(B
-$B%@!<$r$=$l<+?H$G:n@.$7$J$1$l$P$J$j$^$;$s!#(B
+Message はメッセージを作成する分野の第一線にあって、極めて意欲的です。そ
+の使命はニュースとメールのエージェントを統合することです。メールとニュー
+スを一緒に送ることを可能にするためには、メッセージをメールで送ったものと
+ニュースで送ったものがよく似た見栄えになるように、Message はすべてのヘッ
+ダーをそれ自身で作成しなければなりません。
 
 @table @code
 @item message-generate-headers-first
 @vindex message-generate-headers-first
-@code{t} $B$@$C$?$i!"$9$Y$F$NI,MW$J%X%C%@!<$r%a%C%;!<%8$r=q$-;O$a$kA0$K:n(B
-$B@.$7$^$9!#$3$l$O:n@.$9$k%X%C%@!<$N%j%9%H$G$"$C$F$b9=$$$^$;$s(B:
+@code{t} だったら、すべての必要なヘッダーをメッセージを書き始める前に作
+成します。これは作成するヘッダーのリストであっても構いません:
 
 @lisp
 (setq message-generate-headers-first
@@ -1570,29 +1570,29 @@ Message $B$O%a%C%;!<%8$r:n@.$9$kJ,Ln$NBh0l@~$K$"$C$F!"6K$a$F0UM_E*$G$9!#$=(B
 @end lisp
 
 @vindex message-required-headers
-$BJQ?t(B @code{message-required-headers}$B!"(B
-@code{message-required-mail-headers} $B$*$h(B
-$B$S(B @code{message-required-news-headers} $B$O!"$I$N%X%C%@!<$,I,MW$+$r;XDj$7(B
-$B$^$9!#(B
+変数 @code{message-required-headers}、
+@code{message-required-mail-headers} およ
+び @code{message-required-news-headers} は、どのヘッダーが必要かを指定し
+ます。
 
-$BJQ?t(B @code{message-deletable-headers} ($B8e=R(B) $B$N@_Dj$K$h$C$F$O!"$$$/$D$+(B
-$B$N%X%C%@!<$,Aw?.$9$kA0$K>C$5$l$F:n$jD>$5$l$k$3$H$KCm0U$7$F$/$@$5$$!#(B
+変数 @code{message-deletable-headers} (後述) の設定によっては、いくつか
+のヘッダーが送信する前に消されて作り直されることに注意してください。
 
 @item message-draft-headers
 @vindex message-draft-headers
-Message $B$,(B Gnus $B>e$GAv$C$F$$$k>l9g!"%a%C%;!<%8%P%C%U%!!<$O%I%i%U%H%0%k!<(B
-$B%W$H4XO"IU$1$i$l$F$$$^$9!#(B@code{message-draft-headers} $B$O!"$=$N%I%i%U%H(B
-$B%0%k!<%W$K%I%i%U%H$,5-O?$5$l$k$H$-$K!"$I$N%X%C%@!<$,:n@.$5$l$k$Y$-$+$r;X(B
-$B<($7$^$9!#(B
+Message が Gnus 上で走っている場合、メッセージバッファーはドラフトグルー
+プと関連付けられています。@code{message-draft-headers} は、そのドラフト
+グループにドラフトが記録されるときに、どのヘッダーが作成されるべきかを指
+示します。
 
 @item message-from-style
 @vindex message-from-style
-@code{From} $B%X%C%@!<$r$I$&$$$&8+1I$($K$9$k$+$r;XDj$7$^$9!#0J2<$N;M$D$NCM(B
-$B$,;H$($^$9(B:
+@code{From} ヘッダーをどういう見栄えにするかを指定します。以下の四つの値
+が使えます:
 
 @table @code
 @item nil
-$B%"%I%l%9$@$1$G$9(B---@samp{king@@grassland.com}.
+アドレスだけです---@samp{king@@grassland.com}.
 
 @item parens
 @samp{king@@granssland.com (Elvis Parsley)}.
@@ -1601,47 +1601,47 @@ Message $B$,(B Gnus $B>e$GAv$C$F$$$k>l9g!"%a%C%;!<%8%P%C%U%!!<$O%I%i%U%H%0%k!
 @samp{Elvis Parsley <king@@grassland.com>}.
 
 @item default
-$B0zMQId$G0O$`I,MW$,$"$k>l9g(B (*) $B$O(B @code{parens} $B$HF1MM$N8+1I$($K$7$^$9!#(B
-$B$=$&$G$J$1$l$P(B @code{angles} $B$N>l9g$HF1$8$h$&$J8+1I$($K$7$^$9!#(B
-@code{parens} $B$N7A<0$r;H$C$F$b$J$*0zMQId$G0O$^$J$1$l$P$J$i$J$$>l(B
-$B9g(B (*) $B$O!"M-L5$r8@$o$:$K(B @code{angles} $B$N7A<0$r;H$$$^$9!#(B
+引用符で囲む必要がある場合 (*) は @code{parens} と同様の見栄えにします。
+そうでなければ @code{angles} の場合と同じような見栄えにします。
+@code{parens} の形式を使ってもなお引用符で囲まなければならない場
+合 (*) は、有無を言わずに @code{angles} の形式を使います。
 
-$BLuCm(B*: $B%U%k%M!<%`$NItJ,$,FC<lJ8;z$r4^$s$G$$$k>l9g(B
+訳注*: フルネームの部分が特殊文字を含んでいる場合
 @end table
 
 @item message-deletable-headers
 @vindex message-deletable-headers
-$BA0$b$C$F(B Message $B$,:n@.$7$?%X%C%@!<$N$&$A!"$3$N%j%9%H$K4^$^$l$F$$$k$b$N(B
-$B$OEj9F$9$kA0$K:o=|$5$l$^$9!#5-;v$rEj9F$7$?$H$7$^$7$g$&!#$=$l$+$i!"$$$?$:(B
-$B$i9%$-$J$"$J$?$O$=$l$r$I$3$+JL$N%0%k!<%W$K:F$SEj9F$9$k$3$H$r7h?4$7$?$N$G!"(B
-@file{*post-buf*} $B%P%C%U%!!<$KLa$C$F(B @code{Newsgroups} $B9T$rJT=8$7!":F$S(B
-$BAw$j=P$7$?$H$7$^$9!#%G%#%U%)%k%H$G$O!"$3$NJQ?t$OA0$K:n$i$l$?8E(B
-$B$$(B @code{Message-ID} $B$r<h$j=|$$$F!"?7$7$$$b$N$r:n$k$3$H$r3N<B$K$7$^$9!#(B
-$B$b$7$3$l$,9T$J$o$l$J$$$H!"$*$=$i$/Dk9qA4BN$,LGK4$7$FL5@/I\>uBV$,$O$S$3$j!"(B
-$BG-$,FsK\$NB-$GJb$-;O$a$F@$3&$r;YG[$9$k$G$7$g$&!#EA$(J9$/$H$3$m$K$h$l$P!#(B
+前もって Message が作成したヘッダーのうち、このリストに含まれているもの
+は投稿する前に削除されます。記事を投稿したとしましょう。それから、いたず
+ら好きなあなたはそれをどこか別のグループに再び投稿することを決心したので、
+@file{*post-buf*} バッファーに戻って @code{Newsgroups} 行を編集し、再び
+送り出したとします。ディフォルトでは、この変数は前に作られた古
+い @code{Message-ID} を取り除いて、新しいものを作ることを確実にします。
+もしこれが行なわれないと、おそらく帝国全体が滅亡して無政府状態がはびこり、
+猫が二本の足で歩き始めて世界を支配するでしょう。伝え聞くところによれば。
 
 @item message-default-headers
 @vindex message-default-headers
-$BAw?.$9$k%a%C%;!<%8$KA^F~$5$l$k%X%C%@!<9T$G$9!#JT=8A0$KA^F~$5$l$k$N$G!"=q(B
-$B$-49$($?$j:o=|$G$-$^$9!#$b$7J8;zNs$K@_Dj$5$l$F$$$l$P!"$=$N$^$^A^F~$5$l$^(B
-$B$9!#$b$74X?t$K@_Dj$5$l$F$$$k$H!"8F$P$l$F$=$N7k2L$,A^F~$5$l$^$9!#(B
+送信するメッセージに挿入されるヘッダー行です。編集前に挿入されるので、書
+き換えたり削除できます。もし文字列に設定されていれば、そのまま挿入されま
+す。もし関数に設定されていると、呼ばれてその結果が挿入されます。
 
 @item message-subject-re-regexp
 @vindex message-subject-re-regexp
 @cindex Aw
 @cindex Sv
 @cindex Re
-$B%a%C%;!<%8$X$N1~Ez$K$O(B @samp{Re: } $B$G;O$^$kI=Bj$,$"$j$^$9!#$3$l$O1QC18l(B
-$B$N!H(Bresponse$B!I$NN,$G$O(B @emph{$B$"$j$^$;$s(B}$B!#%i%F%s8l$G!V$=$l$K1~Ez$7$F!W(B
-(in response to) $B$H8@$&0UL#$G$9!#L565M\$JGO</<T$I$b$O$3$N;v<B$r$H$jB;$M(B
-$B$F!"Be$o$j$K4w$^$o$7$$(B @samp{Aw: } (antwort) $B$d(B @samp{Sv: } (svar) $B$r;H(B
-$B$&$h$&$K!"H`$i$N%=%U%H%&%'%"$r!V9q:]2=!W$7$^$7$?!#$=$l$OL50UL#$@$7<Y0-$G(B
-$B$9!#$7$+$7!"$"$J$?$O$3$l$i$N<Y0-$JF;6q$r;H$&MxMQ<T$H1~BP$7$J$1$l$P$J$i$J(B
-$B$$$+$b$7$l$^$;$s!#$=$&$$$&>l9g$K$O!"$3$NJQ?t$r$=$l$i$N@\F,8l$K9gCW$9$k@5(B
-$B5,I=8=$K@_Dj$9$k$3$H$,$G$-$^$9!#;d$G$9$+(B?  $B;d$O5,3J$K=>$o$J$$%a!<%k$O$?(B
-$B$@<N$F5n$C$F$$$k$@$1$G$9!#(B
+メッセージへの応答には @samp{Re: } で始まる表題があります。これは英単語
+の“response”の略では @emph{ありません}。ラテン語で「それに応答して」
+(in response to) と言う意味です。無教養な馬鹿者どもはこの事実をとり損ね
+て、代わりに忌まわしい @samp{Aw: } (antwort) や @samp{Sv: } (svar) を使
+うように、彼らのソフトウェアを「国際化」しました。それは無意味だし邪悪で
+す。しかし、あなたはこれらの邪悪な道具を使う利用者と応対しなければならな
+いかもしれません。そういう場合には、この変数をそれらの接頭語に合致する正
+規表現に設定することができます。私ですか?  私は規格に従わないメールはた
+だ捨て去っているだけです。
 
-$B$3$l$O!"JV;v$r$9$k$H$-$K$=$l$i$N%X%C%@!<$KBP=h$9$k$?$a$NCM$NNc$G$9(B:
+これは、返事をするときにそれらのヘッダーに対処するための値の例です:
 
 @lisp
 (setq message-subject-re-regexp
@@ -1668,97 +1668,97 @@ Message $B$,(B Gnus $B>e$GAv$C$F$$$k>l9g!"%a%C%;!<%8%P%C%U%!!<$O%I%i%U%H%0%k!
 @vindex message-subject-trailing-was-query
 @vindex message-subject-trailing-was-ask-regexp
 @vindex message-subject-trailing-was-regexp
-$BI=Bj$N9T$K$V$i2<$,$C$F$$$k(B @samp{(was: <$B8E$$I=Bj(B>)} $B$r$I$&$9$k$+$r@)8f$7(B
-$B$^$9!#(B@code{nil} $B$@$C$?$iI=Bj$r$=$N$^$^$K$7$F$*$-$^$9!#(B@code{ask} $B$H$$$&(B
-$B%7%s%\%k$@$C$?$i!"$I$&$9$k$+$rMxMQ<T$K?R$M$^$9!#I=Bj(B
-$B$,(B @code{message-subject-trailing-was-ask-regexp} $B$K9gCW$9$k>l9g$@$1$G$9(B
-$B$,!#(B@code{message-subject-trailing-was-query} $B$,(B @code{t} $B$@$C$?$i!">o$K(B
-$B$V$i2<$,$C$?8E$$I=Bj$r$O$.<h$j$^$9!#$=$N>l9g(B
-$B$O(B @code{message-subject-trailing-was-regexp} $B$,;H$o$l$^$9!#(B
+表題の行にぶら下がっている @samp{(was: <古い表題>)} をどうするかを制御し
+ます。@code{nil} だったら表題をそのままにしておきます。@code{ask} という
+シンボルだったら、どうするかを利用者に尋ねます。表題
+が @code{message-subject-trailing-was-ask-regexp} に合致する場合だけです
+が。@code{message-subject-trailing-was-query} が @code{t} だったら、常に
+ぶら下がった古い表題をはぎ取ります。その場合
+は @code{message-subject-trailing-was-regexp} が使われます。
 
 @item message-alternative-emails
 @vindex message-alternative-emails
-$B$"$J$?$NBhFs!"Bh;0$N%a!<%k%"%I%l%9$K9gCW$9$k@55,I=8=!"$^$?$OH=CG$9$k$?$a(B
-$B$N4X?t$G$9!#85$N5-;v$N(B To$B!"(BCc $B$^$?$O(B From $B%X%C%@!<$K$"$C$F!"$3$NJQ?t$K9g(B
-$BCW$9$k:G=i$N%"%I%l%9$,!"%G%#%U%)%k%H$N(B From $B$NCM$rCV$-49$($F!"=P$F9T$/%a%C(B
-$B%;!<%8$N(B From $BMs$H$7$F;H$o$l$^$9!#(B
+あなたの第二、第三のメールアドレスに合致する正規表現、または判断するため
+の関数です。元の記事の To、Cc または From ヘッダーにあって、この変数に合
+致する最初のアドレスが、ディフォルトの From の値を置き換えて、出て行くメッ
+セージの From 欄として使われます。
 
-$BNc$($P$"$J$?$,(B john@@home.net $B$*$h$S(B john.doe@@work.com $B$H$$$&BhFs$NEE;R(B
-$B%a!<%k%"%I%l%9$r;}$C$F$$$F!"$=$l$i$K08$F$FAw$i$l$F$-$?%a%C%;!<%8$KJV?.$9(B
-$B$k$H$-$K!"$=$l$i$r(B From $BMs$G;H$$$?$1$l$P!"$3$NJQ?t$r<!$N$h$&$K@_Dj$9$l$P(B
-$BNI$$$G$7$g$&(B:
+例えばあなたが john@@home.net および john.doe@@work.com という第二の電子
+メールアドレスを持っていて、それらに宛てて送られてきたメッセージに返信す
+るときに、それらを From 欄で使いたければ、この変数を次のように設定すれば
+良いでしょう:
 
 @lisp
 (setq message-alternative-emails
       (regexp-opt '("john@@home.net" "john.doe@@work.com")))
 @end lisp
 
-$B$3$NJQ?t$O!"Ej9FMM<0(B (posting styles) $B$d(B @code{message-setup-hook} $B$r<B(B
-$B9T$9$k$3$H$K$h$C$F@_Dj$5$l$k$I$s$J$b$N$h$j$bM%@h$7$^$9!#(B
+この変数は、投稿様式 (posting styles) や @code{message-setup-hook} を実
+行することによって設定されるどんなものよりも優先します。
 
 @item message-allow-no-recipients
 @vindex message-allow-no-recipients
-@code{Gcc} $B$H(B @code{Fcc} $B0J30$K<u<h?M$,$$$J$+$C$?>l9g(B ($BLuCm(B: To, Cc,
-Newsgroups $B$J$I$,6u$@$C$?>l9g(B) $B$K!"2?$r$9$k$+$r@_Dj$7$^$9!#(B
-@code{always} $B$@$C$?$iAw?.$G$-$^$9$,!"(B@code{never} $B$@$C$?$iAw?.$G$-$^$;(B
-$B$s!#(B@code{ask} ($B$=$l$,%G%#%U%)%k%H(B) $B$@$C$?$i!"$I$&$9$k$+$r?R$M$i$l$^$9!#(B
+@code{Gcc} と @code{Fcc} 以外に受取人がいなかった場合 (訳注: To, Cc,
+Newsgroups などが空だった場合) に、何をするかを設定します。
+@code{always} だったら送信できますが、@code{never} だったら送信できませ
+ん。@code{ask} (それがディフォルト) だったら、どうするかを尋ねられます。
 
 @item message-hidden-headers
 @vindex message-hidden-headers
-$B@55,I=8=!"@55,I=8=$N%j%9%H!"$^$?$O:G=i$NMWAG$,(B @code{not} $B$G;D$j$,@55,I=(B
-$B8=$G$"$k%j%9%H$G$9!#%a%C%;!<%8$r:n@.$7$F$$$k$H$-$K!"$I$N%X%C%@!<$r1#$7$?(B
-$B$^$^$K$7$F$*$/$+$r7h$a$^$9!#(B
+正規表現、正規表現のリスト、または最初の要素が @code{not} で残りが正規表
+現であるリストです。メッセージを作成しているときに、どのヘッダーを隠した
+ままにしておくかを決めます。
 
 @lisp
 (setq message-hidden-headers
       '(not "From" "Subject" "To" "Cc" "Newsgroups"))
 @end lisp
 
-$B$=$l$i$N%X%C%@!<$O!"$=$l$i0J30$NItJ,$K%P%C%U%!!<$r69$a$k$3(B
-$B$H(B (narrowing) $B$K$h$C$F1#$5$l$^$9!#(B@kbd{M-x widen} $B$r;H$&$3$H$K$h$C$F!"(B
-$B$=$l$i$,8+$($k$h$&$K$9$k$3$H$,$G$-$^$9!#(B
+それらのヘッダーは、それら以外の部分にバッファーを狭めるこ
+と (narrowing) によって隠されます。@kbd{M-x widen} を使うことによって、
+それらが見えるようにすることができます。
 
 @item message-header-synonyms
 @vindex message-header-synonyms
-$B;w$?0UL#$r;}$D%X%C%@!<L>$N%j%9%H$N%j%9%H$G$9!#Nc$($P$3$N%j%9%H(B
-$B$,(B @code{Cc} $B$H(B @code{To} $B$rMWAG$K;}$D%j%9%H$r4^$s$G$$$k$H!"%a%C%;!<%8$,(B
-$B$9$G$K<u?.<T$K(B @code{Cc} $B$5$l$F$$$k>l9g!"(B
-@code{message-carefully-insert-headers} $B$O(B @code{To} $B%X%C%@!<$rA^F~$7$^(B
-$B$;$s!#(B
+似た意味を持つヘッダー名のリストのリストです。例えばこのリスト
+が @code{Cc} と @code{To} を要素に持つリストを含んでいると、メッセージが
+すでに受信者に @code{Cc} されている場合、
+@code{message-carefully-insert-headers} は @code{To} ヘッダーを挿入しま
+せん。
 @end table
 
 @node Mail Headers
-@section $B%a!<%k%X%C%@!<(B
+@section メールヘッダー
 
 @table @code
 @item message-required-mail-headers
 @vindex message-required-mail-headers
-$B$3$NJQ?t$N9=J8$K$D$$$F$O(B @ref{News Headers} $B$r;2>H$7$F$/$@$5$$!#%G%#%U%)(B
-$B%k%H$O(B @code{(From Subject Date (optional . In-Reply-To) Message-ID
-(optional . User-Agent))} $B$G$9!#(B
+この変数の構文については @ref{News Headers} を参照してください。ディフォ
+ルトは @code{(From Subject Date (optional . In-Reply-To) Message-ID
+(optional . User-Agent))} です。
 
 @item message-ignored-mail-headers
 @vindex message-ignored-mail-headers
-$B%a!<%k$r=P$9A0$K<h$j=|$+$l$k%X%C%@!<$N@55,I=8=$G$9!#(B
-$B%G%#%U%)%k%H$O(B@*
+メールを出す前に取り除かれるヘッダーの正規表現です。
+ディフォルトは@*
 @samp{^[GF]cc:\\|^Resent-Fcc:\\|^Xref:\\|^X-Draft-From:\\|@*
-^X-Gnus-Agent-Meta-Information:} $B$G$9!#(B
+^X-Gnus-Agent-Meta-Information:} です。
 
 @item message-default-mail-headers
 @vindex message-default-mail-headers
-$B$3$NJ8;zNs$O%a!<%k$H$7$F=i4|2=$5$l$?$9$Y$F$N%a%C%;!<%8%P%C%U%!!<$N!"%X%C(B
-$B%@!<$N:G8eHx$KA^F~$5$l$^$9!#(B
+この文字列はメールとして初期化されたすべてのメッセージバッファーの、ヘッ
+ダーの最後尾に挿入されます。
 
 @item message-generate-hashcash
 @vindex message-generate-hashcash
-$B%a%C%;!<%8$N$?$a$N(B @samp{X-Hashcash} $B%X%C%@!<$r7W;;$7$FIU2C$9$Y$-$+$I$&(B
-$B$+$r;X<($9$kJQ?t$G$9!#(B@xref{Hashcash, ,Hashcash, gnus-ja, The Gnus
-Manual}.  @code{opportunistic} $B$K$9$k$H!"%f!<%6!<$rBT$?$;$J$$>l9g$K8B$j!"(B
-$B%X%C%@!<$r:n$j$^$9!#(B
+メッセージのための @samp{X-Hashcash} ヘッダーを計算して付加すべきかどう
+かを指示する変数です。@xref{Hashcash, ,Hashcash, gnus-ja, The Gnus
+Manual}.  @code{opportunistic} にすると、ユーザーを待たせない場合に限り、
+ヘッダーを作ります。
 @end table
 
 @node Mail Variables
-@section $B%a!<%kJQ?t(B
+@section メール変数
 
 @table @code
 @item message-send-mail-function
@@ -1771,36 +1771,36 @@ Manual}.  @code{opportunistic} $B$K$9$k$H!"%f!<%6!<$rBT$?$;$J$$>l9g$K8B$j!"(B
 @findex smtpmail-send-it
 @findex feedmail-send-it
 @findex message-send-mail-with-mailclient
-$B8=:_$N%P%C%U%!!<$r%a!<%k$H$7$FAw$k$?$a$K;H$o$l$k4X?t$G$9!#%G%#%U%)%k%H(B
-$B$O(B @code{message-send-mail-with-sendmail}$B!"$^$?$O%7%9%F%`$K$h$C$F(B
-$B$O(B @code{smtpmail-send-it} $B$G$9!#B>(B
-$B$K(B @code{message-send-mail-with-mailclient},
+現在のバッファーをメールとして送るために使われる関数です。ディフォルト
+は @code{message-send-mail-with-sendmail}、またはシステムによって
+は @code{smtpmail-send-it} です。他
+に @code{message-send-mail-with-mailclient},
 @code{message-send-mail-with-mh}, @code{message-send-mail-with-qmail},
-@code{message-smtpmail-send-it} $B$*$h$S(B @code{feedmail-send-it} $B$,;H$($^(B
-$B$9!#(B
+@code{message-smtpmail-send-it} および @code{feedmail-send-it} が使えま
+す。
 
-$B4X?t(B @code{message-send-mail-with-sendmail} $B$O5-;v$r=gHVBT$A$KF~$l$?(B
-$B$j(B (queuing) $BAw?.$9$k$?$a$K!"5-;v$r(B @code{sendmail} $B%3%^%s%I$K%Q%$%W$7$^(B
-$B$9!#%m!<%+%k%7%9%F%`$,(B @code{sendmail} $B$G%a!<%k$rAw?.$9$k$h$&$K@_Dj$5$l(B
-$B$F$$$J$/$F$b!"1s3V(B @acronym{SMTP} $B%5!<%P!<$K@\B3$9$k$3$H$,$G$-$k$N$G$"$l(B
-$B$P!"(B@code{message-send-mail-function} $B$r(B @code{smtpmail-send-it} $B$K@_Dj(B
-$B$9$k$3$H$,$G$-$^$9!#(B@code{smtpmail} $B%Q%C%1!<%8$r;H$&$?$a$K@5$7$$@_Dj$,$J(B
-$B$5$l$F$$$k$+$I$&$+3NG'$7$F$/$@$5$$!#Nc$G$9(B:
+関数 @code{message-send-mail-with-sendmail} は記事を順番待ちに入れた
+り (queuing) 送信するために、記事を @code{sendmail} コマンドにパイプしま
+す。ローカルシステムが @code{sendmail} でメールを送信するように設定され
+ていなくても、遠隔 @acronym{SMTP} サーバーに接続することができるのであれ
+ば、@code{message-send-mail-function} を @code{smtpmail-send-it} に設定
+することができます。@code{smtpmail} パッケージを使うために正しい設定がな
+されているかどうか確認してください。例です:
 
 @lisp
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-default-smtp-server "YOUR SMTP HOST")
 @end lisp
 
-$B$3$l$H;w$?$b$N$K(B @code{message-smtpmail-send-it} $B$,$"$j$^$9!#(B
-ISP $B$,(B @acronym{POP}-before-@acronym{SMTP} $B$NG'>Z$rMW5a$9$k>l9g$KM-MQ$G(B
-$B$9!#(B@xref{POP before SMTP, , POP before SMTP, gnus-ja, The Gnus Manual}.
+これと似たものに @code{message-smtpmail-send-it} があります。
+ISP が @acronym{POP}-before-@acronym{SMTP} の認証を要求する場合に有用で
+す。@xref{POP before SMTP, , POP before SMTP, gnus-ja, The Gnus Manual}.
 
 @cindex X-Message-SMTP-Method
-$B$b$7J#?t$N(B @acronym{SMTP} $B@_Dj$r;H$&$3$H$,$G$-$F!"$"$k%a%C%;!<%8$O0l$D(B
-$B$N%a!<%k%5!<%P!<$r7PM3$7!"B>$N%a%C%;!<%8$OJL$N$b$N$rDL$7$F=P$7$?$$>l9g$O!"(B
-@samp{X-Message-SMTP-Method} $B%X%C%@!<$r;H$&$3$H$,$G$-$^$9!#0J2<$O%5%]!<(B
-$B%H$5$l$F$$$kCM$G$9(B:
+もし複数の @acronym{SMTP} 設定を使うことができて、あるメッセージは一つ
+のメールサーバーを経由し、他のメッセージは別のものを通して出したい場合は、
+@samp{X-Message-SMTP-Method} ヘッダーを使うことができます。以下はサポー
+トされている値です:
 
 @table @samp
 @item smtpmail
@@ -1809,15 +1809,15 @@ ISP $B$,(B @acronym{POP}-before-@acronym{SMTP} $B$NG'>Z$rMW5a$9$k>l9g$KM-MQ$G
 X-Message-SMTP-Method: smtp smtp.fsf.org 587
 @end example
 
-$B$3$l$O(B @samp{smtp.fsf.org} $B$N%]!<%H(B 587 $B$r7PM3$7$F%a%C%;!<%8$rAw$j$^$9!#(B
+これは @samp{smtp.fsf.org} のポート 587 を経由してメッセージを送ります。
 
 @example
 X-Message-SMTP-Method: smtp smtp.fsf.org 587 other-user
 @end example
 
-$B$3$l$O>e$N$b$N$HF1$8$G$9$,!"G'>Z$r9T$J$&$H$-$K(B @samp{other-user} $B$r%f!<(B
-$B%6!<L>$H$7$F;H$$$^$9!#$3$l$O!"F1$8%5!<%P!<$KJ#?t$N(B @acronym{SMTP} $B%"%+%&(B
-$B%s%H$r;}$C$F$$$k>l9g$KLrN)$A$^$9!#(B
+これは上のものと同じですが、認証を行なうときに @samp{other-user} をユー
+ザー名として使います。これは、同じサーバーに複数の @acronym{SMTP} アカウ
+ントを持っている場合に役立ちます。
 
 @item sendmail
 
@@ -1825,115 +1825,115 @@ X-Message-SMTP-Method: smtp smtp.fsf.org 587 other-user
 X-Message-SMTP-Method: sendmail
 @end example
 
-$B$3$l$O%m!<%+%k$K%$%s%9%H!<%k$5$l$F$$$k(B sendmail $B$d(B exim $B$J$I$r7PM3$7$F%a%C(B
-$B%;!<%8$rAw$j$^$9!#(B
+これはローカルにインストールされている sendmail や exim などを経由してメッ
+セージを送ります。
 @end table
 
 @item message-mh-deletable-headers
 @vindex message-mh-deletable-headers
-$B$[$H$s$I$NHG$N(B MH $B$O!"$3$NJQ?t$K@_Dj$5$l$F$$$k%X%C%@!<$r4^$s$G$$$k%a%C%;!<(B
-$B%8$r?)$o$5$l$k$N$r7y$$$^$9!#$3$NJQ?t$,(B @code{nil} $B$G$J$$(B ($B$3$l$,%G%#%U%)(B
-$B%k%H$G$9$,(B) $B$J$i!"$3$l$i$N%X%C%@!<$O(B MH $B$r2p$7$F%a%C%;!<%8$rAw$kA0$K<h$j(B
-$B=|$+$l$^$9!#$"$J$?$N(B MH $B$,$3$l$i$N%X%C%@!<$r07$&$3$H$,$G$-$k$N$G$"$l$P!"(B
-@code{nil} $B$K@_Dj$7$F$/$@$5$$!#(B
+ほとんどの版の MH は、この変数に設定されているヘッダーを含んでいるメッセー
+ジを食わされるのを嫌います。この変数が @code{nil} でない (これがディフォ
+ルトですが) なら、これらのヘッダーは MH を介してメッセージを送る前に取り
+除かれます。あなたの MH がこれらのヘッダーを扱うことができるのであれば、
+@code{nil} に設定してください。
 
 @item message-qmail-inject-program
 @vindex message-qmail-inject-program
 @cindex qmail
-qmail-inject $B%W%m%0%i%`$,$"$k>l=j$G$9!#(B
+qmail-inject プログラムがある場所です。
 
 @item message-qmail-inject-args
 @vindex message-qmail-inject-args
-qmail-inject $B%W%m%0%i%`$KEO$90z?t$G$9!#$3$l$OJ8;zNs$N%j%9%H$G!"$=$l$>$l(B
-$B$N0z?t$O0l$D$NJ8;zNs$G$J$1$l$P$J$j$^$;$s!#$3$l$O4X?t$G$b9=$$$^$;$s!#(B
+qmail-inject プログラムに渡す引数です。これは文字列のリストで、それぞれ
+の引数は一つの文字列でなければなりません。これは関数でも構いません。
 
-$BNc$($P!"%a!<%k$,CF$+$l$F$7$^$C$?>l9g$N@5$7$$La$j@h$r;XDj$7$?$j!"%a!<%j%s(B
-$B%0%j%9%H$N%5!<%P!<$N%"%I%l%9$N;EMM5,Dj$KBP=h$9$k$?$a$K!H(Benvelope sender$B!I(B
-$B$N%"%I%l%9$r@_Dj$7$?$$>l9g$O!"$3$NJQ?t(B
-$B$r(B @code{'("-f" "you@@some.where")} $B$K$9$l$PNI$$$G$7$g$&!#(B
+例えば、メールが弾かれてしまった場合の正しい戻り先を指定したり、メーリン
+グリストのサーバーのアドレスの仕様規定に対処するために“envelope sender”
+のアドレスを設定したい場合は、この変数
+を @code{'("-f" "you@@some.where")} にすれば良いでしょう。
 
-$BLuCm(B:$B!H(Benvelope sender$B!I$O%a!<%k$rAw?.$9$k$H$-$K(B MTA $B$KEO$9??$NAw?.<T$N(B
-$B%"%I%l%9$G!"%X%C%@!<$N(B @samp{From:} $B9T$K=q$/$b$N$H$OJL$G$9!#(B
+訳注:“envelope sender”はメールを送信するときに MTA に渡す真の送信者の
+アドレスで、ヘッダーの @samp{From:} 行に書くものとは別です。
 
 @item message-sendmail-f-is-evil
 @vindex message-sendmail-f-is-evil
 @cindex sendmail
-@code{nil} $B$G$O$J$$CM$K$9$k$H!"(Bsendmail $B$N%3%^%s%I9T(B
-$B$K(B @samp{-f username} $B$rIU2C$7$^$;$s!#$=$&$9$k$3$H$O!"IU2C$9$k$h$&$K$7$F(B
-$B$*$/$h$j<Y0-$G$9$i$"$k$G$7$g$&!#(B
+@code{nil} ではない値にすると、sendmail のコマンド行
+に @samp{-f username} を付加しません。そうすることは、付加するようにして
+おくより邪悪ですらあるでしょう。
 
-$BLuCm(B: $B%G%#%U%)%k%H$G$O!H(Benvelope sender$B!I$r;XDj$9$k$?$a$KIU2C$7$^$9!#(B
-sendmail $B$N%G%#%U%)%k%H$NF0:n$G$O!"$=$l$r;XDj$5$l$k$H!V??$NAw?.<T$,=q$-(B
-$B49$($i$l$?!W$H$$$&0UL#$K$b2r<a$5$l$k$3$H$,=q$+$l(B
-$B$?(B @samp{X-Authentication-Warning:} $B%X%C%@!<$rDI2C$7$^$9!#(B
+訳注: ディフォルトでは“envelope sender”を指定するために付加します。
+sendmail のディフォルトの動作では、それを指定されると「真の送信者が書き
+換えられた」という意味にも解釈されることが書かれ
+た @samp{X-Authentication-Warning:} ヘッダーを追加します。
 
 @item message-sendmail-envelope-from
 @vindex message-sendmail-envelope-from
-@code{message-sendmail-f-is-evil} $B$,(B @code{nil} $B$N$H$-!"$3$NJ8;zNs(B
-$B$G(B @acronym{SMTP} $B%(%s%Y%m!<%W$G;H$&%"%I%l%9(B ($B!H(Benvelope sender$B!I(B) $B$r;X(B
-$BDj$7$^$9!#(B@code{nil} $B$@$C$?$i(B @code{user-mail-address} $B$r;H$$$^$9!#(B
-@code{header} $B$H$$$&%7%s%\%k$@$C$?$i!"%a%C%;!<%8$N(B @samp{From} $B%X%C%@!<(B
-$B$r;H$$$^$9!#(B
+@code{message-sendmail-f-is-evil} が @code{nil} のとき、この文字列
+で @acronym{SMTP} エンベロープで使うアドレス (“envelope sender”) を指
+定します。@code{nil} だったら @code{user-mail-address} を使います。
+@code{header} というシンボルだったら、メッセージの @samp{From} ヘッダー
+を使います。
 
 @item message-mailer-swallows-blank-line
 @vindex message-mailer-swallows-blank-line
-$B%7%9%F%`$N%a%$%i!<$,%X%C%@!<$HK\J8$r0l=o$K$7$F$7$^$&>l9g$O(B @code{nil} $B$G(B
-$B$O$J$$CM$K@_Dj$7$F$/$@$5$$!#(B(SunOS 4 $B$K$*$$$F(B sendmail $B$,%j%b!<%H%b!<%I(B
-$B$GF0:n$9$k>l9g$,3:Ev$7$^$9!#(B) $BCM$O!">c32$,<B:]$K5/$-$k$+$I$&$+$r%F%9%H$9(B
-$B$k$?$a$N<0$K$9$Y$-$G$9!#(B
+システムのメイラーがヘッダーと本文を一緒にしてしまう場合は @code{nil} で
+はない値に設定してください。(SunOS 4 において sendmail がリモートモード
+で動作する場合が該当します。) 値は、障害が実際に起きるかどうかをテストす
+るための式にすべきです。
 
-$BLuCm(B: $B6qBNE*$K$O!"K\J8$NBh0l9TL\0J9_$K%X%C%@!<$N$h$&$J%F%-%9%H$,$"$k$H!"(B
-$B$=$l$i$,%X%C%@!<$N0lIt$@$H8+$J$5$l$F$7$^$&LdBj$G$9!#(B
+訳注: 具体的には、本文の第一行目以降にヘッダーのようなテキストがあると、
+それらがヘッダーの一部だと見なされてしまう問題です。
 
 @item message-send-mail-partially-limit
 @vindex message-send-mail-partially-limit
 @cindex split large message
-message/partial $B$H$7$FAw?.$5$l$k%a%C%;!<%8$N%5%$%:$N@)8B$G$9!#$=$l$r1[$((B
-$B$?$i%a%C%;!<%8$rJ,3d$7$FAw$k$Y$-%a%C%;!<%8$NBg$-$5$N2<8B$r!"J8;z?t$G49;;(B
-$B$7$?CM$G$9(B ($BLuCm(B: $BF|K\8lE*$K$O!V2<8B!W$G$O$J$/!V>e8B!W(B)$B!#(B@code{nil} $B$@$C(B
-$B$?$i(B ($B$=$l$,%G%#%U%)%k%H$G$9(B)$B!"%5%$%:$OL5@)8B$K$J$j$^$9!#(B
+message/partial として送信されるメッセージのサイズの制限です。それを越え
+たらメッセージを分割して送るべきメッセージの大きさの下限を、文字数で換算
+した値です (訳注: 日本語的には「下限」ではなく「上限」)。@code{nil} だっ
+たら (それがディフォルトです)、サイズは無制限になります。
 @end table
 
 @node News Headers
-@section $B%K%e!<%9%X%C%@!<(B
+@section ニュースヘッダー
 
 @vindex message-required-news-headers
-@code{message-required-news-headers} $B$O%X%C%@!<$N%7%s%\%k$N%j%9%H$G$9!#(B
-$B$3$l$i$N%X%C%@!<$O<+F0E*$K:n@.$5$l$k$+!"$b$7$/$O$=$l$,IT2DG=$G$"$l$P(B ($BLu(B
-$BCm(B: $BCM$,<+F0$GDj$^$i$J$1$l$P(B)$B!"MxMQ<T$KF~NO$7$F$b$i$&$3$H$rMW5a$7$^$9!#(B
-$B0J2<$N%7%s%\%k$,;H$($^$9(B:
+@code{message-required-news-headers} はヘッダーのシンボルのリストです。
+これらのヘッダーは自動的に作成されるか、もしくはそれが不可能であれば (訳
+注: 値が自動で定まらなければ)、利用者に入力してもらうことを要求します。
+以下のシンボルが使えます:
 
 @table @code
 @item From
 @cindex From
 @findex user-full-name
 @findex user-mail-address
-$B$3$NI,?\$N%X%C%@!<$O(B @code{message-make-from} $B4X?t$K$h$C$F:n$i$l$^$9!#$=(B
-$B$l$OJQ?t(B @code{message-from-style}, @code{user-full-name},
-@code{user-mail-address} $B$K0MB8$7$^$9!#(B
+この必須のヘッダーは @code{message-make-from} 関数によって作られます。そ
+れは変数 @code{message-from-style}, @code{user-full-name},
+@code{user-mail-address} に依存します。
 
 @item Subject
 @cindex Subject
-$B$3$NI,?\$N%X%C%@!<$O!"$^$@B8:_$7$J$$>l9g$OF~NO$r5a$a$i$l$^$9!#(B
+この必須のヘッダーは、まだ存在しない場合は入力を求められます。
 
 @item Newsgroups
 @cindex Newsgroups
-$B$3$NI,?\$N%X%C%@!<$O!"5-;v$rEj9F$9$k%K%e!<%9%0%k!<%W$r;XDj$7$^$9!#$^$@B8(B
-$B:_$7$J$$>l9g$OF~NO$r5a$a$i$l$^$9!#(B
+この必須のヘッダーは、記事を投稿するニュースグループを指定します。まだ存
+在しない場合は入力を求められます。
 
 @item Organization
 @cindex organization
 @vindex message-user-organization
 @vindex message-user-organization-file
-$B$3$N$"$C$F$bL5$/$F$bNI$$%X%C%@!<$O!"(B@code{message-user-organization} $BJQ(B
-$B?t$K1~$8$?CM$,:n$i$l$^$9!#$3$NJQ?t$,(B @code{t} $B$@$C$?(B
-$B$i(B @code{message-user-organization-file} $B$,;H$o$l$^$9!#$3$NJQ?t$OJ8;zNs(B
-$B$G$bNI$$$7(B ($B$=$N>l9g$O$=$NJ8;zNs$,;H$o$l$^$9(B)$B!"4X?t$G$"$C$F$b9=$$$^$;(B
-$B$s(B ($B$=$N4X?t$O0z?tL5$7$G8F$P$l!"J8;zNs$rJV$5$J$1$l$P$J$j$^$;$s(B)$B!#(B
+このあっても無くても良いヘッダーは、@code{message-user-organization} 変
+数に応じた値が作られます。この変数が @code{t} だった
+ら @code{message-user-organization-file} が使われます。この変数は文字列
+でも良いし (その場合はその文字列が使われます)、関数であっても構いませ
+ん (その関数は引数無しで呼ばれ、文字列を返さなければなりません)。
 
 @item Lines
 @cindex Lines
-$B$3$N$"$C$F$bL5$/$F$bNI$$%X%C%@!<$O(B Message $B$,7W;;$7$F:n$j$^$9!#(B
+このあっても無くても良いヘッダーは Message が計算して作ります。
 
 @item Message-ID
 @cindex Message-ID
@@ -1943,413 +1943,413 @@ message/partial $B$H$7$FAw?.$5$l$k%a%C%;!<%8$N%5%$%:$N@)8B$G$9!#$=$l$r1[$((B
 @findex system-name
 @cindex Sun
 @cindex i-did-not-set--mail-host-address--so-tickle-me
-$B$3$NI,?\$N%X%C%@!<$O(B Message $B$K$h$C$F:n@.$5$l$^$9!#F|IU!";~9o!"(B ($B%m!<%+(B
-$B%kIt$N$?$a$N(B) $BMxMQ<TL>!"$*$h$S%I%a%$%sIt$K4p$E$$$?%f%K!<%/$J(B ID $B$G$9!#%I(B
-$B%a%$%sIt$K$D$$$F$O!"M-8z$J(B FQDN ($B40A4$K>r7o$rK~$?$7$?%I%a%$%sL>(B) $B$i$7$$(B
-$B$b$N$,8+$D$+$i$J$$>l9g!"(Bmessage $B$O(B @code{message-user-fqdn},
-@code{system-name}, @code{mail-host-address} $B$*$h(B
-$B$S(B @code{message-user-mail-address} ($B$9$J$o(B
-$B$A(B @code{user-mail-address}) $B$r(B ($B$3$N=g$G(B) $BC5$7$^$9!#(B
+この必須のヘッダーは Message によって作成されます。日付、時刻、 (ローカ
+ル部のための) 利用者名、およびドメイン部に基づいたユニークな ID です。ド
+メイン部については、有効な FQDN (完全に条件を満たしたドメイン名) らしい
+ものが見つからない場合、message は @code{message-user-fqdn},
+@code{system-name}, @code{mail-host-address} およ
+び @code{message-user-mail-address} (すなわ
+ち @code{user-mail-address}) を (この順で) 探します。
 
 @item User-Agent
 @cindex User-Agent
-$B$3$N$"$C$F$bL5$/$F$bNI$$%X%C%@!<$O!"%m!<%+%kJQ(B
-$B?t(B @code{message-newsreader} $B$K=>$C$F:n$i$l$^$9!#(B
+このあっても無くても良いヘッダーは、ローカル変
+数 @code{message-newsreader} に従って作られます。
 
 @item In-Reply-To
-$B$3$N$"$C$F$bL5$/$F$bNI$$%X%C%@!<$O!"JVEz$7$h$&$H$7$F$$$k5-;v(B
-$B$N(B @code{Date} $B$H(B @code{From} $B%X%C%@!<$r85$K:n$i$l$^$9!#(B
+このあっても無くても良いヘッダーは、返答しようとしている記事
+の @code{Date} と @code{From} ヘッダーを元に作られます。
 
 @item Expires
 @cindex Expires
 @vindex message-expires
-$B$3$N$"$m$&$,L5$+$m$&$,K\Ev$K$I$&$G$bNI$$%X%C%@!<$O!"(B
-@code{message-expires} $BJQ?t$K=>$C$FA^F~$5$l$^$9!#$3$l$r;H$&$3$H$O6/$/Hs(B
-$BFq$5$l$F$$$k$N$G!"<+J,$,2?$r$7$F$$$k$+$r$o$+$C$F$$$J$$$J$i!";H$&$Y$-$G$O(B
-$B$"$j$^$;$s!#(B
+このあろうが無かろうが本当にどうでも良いヘッダーは、
+@code{message-expires} 変数に従って挿入されます。これを使うことは強く非
+難されているので、自分が何をしているかをわかっていないなら、使うべきでは
+ありません。
 
 @item Distribution
 @cindex Distribution
 @vindex message-distribution-function
-$B$3$N$"$C$F$bL5$/$F$bNI$$%X%C%@!<$O!"(B
-@code{message-distribution-function} $BJQ?t$,;XDj$9$k4X?t$,:n$j$^$9!#$3$l(B
-$B$r;H$&$3$H$OHsFq$5$l$F$$$F!"Hs>o$K8m2r$5$l$?%X%C%@!<$G$9!#(B
+このあっても無くても良いヘッダーは、
+@code{message-distribution-function} 変数が指定する関数が作ります。これ
+を使うことは非難されていて、非常に誤解されたヘッダーです。
 
-$BLuCm(B: @code{message-distribution-function} $B$N%G%#%U%)%k%HCM(B
-$B$O(B @code{nil} $B$J$N$G!"$=$N$^$^$G$O$3$l$r;XDj$7$F(B
-$B$b(B @samp{Distribution:} $B%X%C%@!<$OA^F~$5$l$^$;$s!#(B@kbd{C-c C-f C-d} $BL?Na(B
-$B$r;H$C$F!"<j$G5-F~$9$k$3$H$O$G$-$^$9!#$?$@$7G[AwHO0O$N@)8B$O%K%e!<%9%5!<(B
-$B%P!<$,4IM}$9$Y$-$G$"$C$F!"MxMQ<T$,5-F~$9$kI,MW$OIaDL$OL5$$$O$:$G$9!#(B
+訳注: @code{message-distribution-function} のディフォルト値
+は @code{nil} なので、そのままではこれを指定して
+も @samp{Distribution:} ヘッダーは挿入されません。@kbd{C-c C-f C-d} 命令
+を使って、手で記入することはできます。ただし配送範囲の制限はニュースサー
+バーが管理すべきであって、利用者が記入する必要は普通は無いはずです。
 
 @item Path
 @cindex path
 @vindex message-user-path
-$B$3$N$"$m$&$,L5$+$m$&$,K\Ev$K$I$&$G$bNI$$%X%C%@!<$O!"$*$=$i$/7h$7$F(B ($BMxMQ(B
-$B<T$,(B) $B;H$C$F$O$$$1$J$$$b$N$G$9!#$7$+$7$$$/$D$+$N(B @emph{$B$H$F$b(B} $B8E$$%5!<(B
-$B%P!<$O!"$3$N%X%C%@!<$,B8:_$9$k$3$H$,I,MW$J$N$G$9!#(B
-@code{message-user-path} $BJQ?t$,!"$3$N(B @code{Path} $B%X%C%@!<$r$I$&$$$&8+1I(B
-$B$($K$9$k$+$r$5$i$K@)8f$7$^$9!#(B@code{nil} $B$@$C$?$i%5!<%P!<L>$rC<E@(B (leaf
-node) $B$H$7$F;H$$$^$9!#J8;zNs$@$C$?$i!"$=$NJ8;zNs$r;H$$$^$9!#$=$l$,J8;zNs(B
-$B$G$b(B @code{nil} $B$G$b$J$+$C$?$i!"MxMQ<T$NL>A0$@$1$r;H$$$^$9!#$7$+$7!"$3$N(B
-$BJQ?t$r$$$8$/$i$J$1$l$P$J$i$J$/$J$k5!2q$OHs>o$K>/$J$$$G$7$g$&!#(B
+このあろうが無かろうが本当にどうでも良いヘッダーは、おそらく決して (利用
+者が) 使ってはいけないものです。しかしいくつかの @emph{とても} 古いサー
+バーは、このヘッダーが存在することが必要なのです。
+@code{message-user-path} 変数が、この @code{Path} ヘッダーをどういう見栄
+えにするかをさらに制御します。@code{nil} だったらサーバー名を端点 (leaf
+node) として使います。文字列だったら、その文字列を使います。それが文字列
+でも @code{nil} でもなかったら、利用者の名前だけを使います。しかし、この
+変数をいじくらなければならなくなる機会は非常に少ないでしょう。
 @end table
 
 @cindex Mime-Version
-$B2C$($F!"$3$N%j%9%H$K(B cons $B$rF~$l$k$3$H$,$G$-$^$9!#$3(B
-$B$N(B cons $B$N(B @sc{car} $B$O%7%s%\%k$G$J$1$l$P$J$j$^$;$s!#$=$N%7%s%\%k$NL>A0$O(B
-$B%X%C%@!<L>$G$9!#$^$?(B @sc{cdr} $B$O!"$3$N%X%C%@!<$NCM$H$7$F$=$N$^$^F~$l$i$l(B
-$B$kJ8;zNs$+4X?t$N$I$A$i$+$G$9!#$=$N4X?t$O0z?tL5$7$G8F$S=P$5$l!"A^F~$9$kJ8(B
-$B;zNs$rJV$9$b$N$G$J$1$l$P$J$j$^$;$s!#Nc$($P(B @code{Mime-Version: 1.0} $B$rA^(B
-$BF~$7$?$$>l9g$O!"%j%9%H$K(B @code{(Mime-Version . "1.0")} $B$rF~$l$F$/$@$5$$!#(B
+加えて、このリストに cons を入れることができます。こ
+の cons の @sc{car} はシンボルでなければなりません。そのシンボルの名前は
+ヘッダー名です。また @sc{cdr} は、このヘッダーの値としてそのまま入れられ
+る文字列か関数のどちらかです。その関数は引数無しで呼び出され、挿入する文
+字列を返すものでなければなりません。例えば @code{Mime-Version: 1.0} を挿
+入したい場合は、リストに @code{(Mime-Version . "1.0")} を入れてください。
 
-@sc{car} $B$,(B @code{optional} $B$G$"$k(B cons $B$r%j%9%H$,4^$s$G$$$k>l9g$O!"$=(B
-$B$N(B cons $B$N(B @sc{cdr} $B$,(B @code{nil} $B$G$J$$$H$-$@$1(B ($B$=$N(B @sc{cdr} $B$,(B) $BA^F~(B
-$B$5$l$^$9!#(B
+@sc{car} が @code{optional} である cons をリストが含んでいる場合は、そ
+の cons の @sc{cdr} が @code{nil} でないときだけ (その @sc{cdr} が) 挿入
+されます。
 
-$B$3$N%j%9%H$+$i$"$k9`L\$r>C$7$?$$$H$-$O!"0J2<$N(B Lisp $B$N@Z$lC<$,Lr$KN)$D$G(B
-$B$7$g$&!#B>$NMWAG$r:o=|$7$?$$$H$-$O$=$l$K9g$o$;$F$/$@$5$$!#(B
+このリストからある項目を消したいときは、以下の Lisp の切れ端が役に立つで
+しょう。他の要素を削除したいときはそれに合わせてください。
 
 @lisp
 (setq message-required-news-headers
       (delq 'Message-ID message-required-news-headers))
 @end lisp
 
-$B=P$F9T$/%K%e!<%95-;v$r%+%9%?%^%$%:$9$k$?$a$NB>$NJQ?t(B:
+出て行くニュース記事をカスタマイズするための他の変数:
 
 @table @code
 @item message-syntax-checks
 @vindex message-syntax-checks
-$B=P$F9T$/%a%C%;!<%8$N!"$I$N9=J8$N8!::$r$9$Y$-$G$O$J$$$+$r@)8f$7$^$9!#Nc$((B
-$B$P!"D9$$=pL>$N8!::$r6X;_$9$k$K$O!"$3$N%j%9%H$K(B
+出て行くメッセージの、どの構文の検査をすべきではないかを制御します。例え
+ば、長い署名の検査を禁止するには、このリストに
 
 @lisp
 (signature . disabled)
 @end lisp
 
-$B$r2C$($F$/$@$5$$!#(B
+を加えてください。
 
-$BM-8z$J8!::$O0J2<$NDL$j$G$9(B ($BLuCm(B: $B$3$l$i$N8!::$N0lIt$O%a!<%k$G$b9T$J$o$l(B
-$B$^$9(B):
+有効な検査は以下の通りです (訳注: これらの検査の一部はメールでも行なわれ
+ます):
 
 @table @code
 @item approved
 @cindex approved
-$B5-;v$K(B @code{Approved} $B%X%C%@!<$,$"$k$+$I$&$+$rD4$Y$^$9!#$=$l$O;J2q<T$N(B
-$B$h$&$J?M$@$1$,4^$a$k$O$:$N$b$N$G$9!#(B
+記事に @code{Approved} ヘッダーがあるかどうかを調べます。それは司会者の
+ような人だけが含めるはずのものです。
 @item continuation-headers
-$B6uGr$G;O$^$i$J$$7QB3$7$?%X%C%@!<9T$,$"$k$+$I$&$+$rD4$Y$^$9!#(B
+空白で始まらない継続したヘッダー行があるかどうかを調べます。
 @item control-chars
-$B;H$C$F$O$$$1$J$$J8;z$rD4$Y$^$9!#(B
+使ってはいけない文字を調べます。
 @item empty
-$B5-;v$,6u$+$I$&$+$rD4$Y$^$9!#(B
+記事が空かどうかを調べます。
 @item existing-newsgroups
-@code{Newsgroups} $B$H(B @code{Follouup-to} $B%X%C%@!<$K5-F~$5$l$F$$$k%K%e!<%9(B
-$B%0%k!<%W$,B8:_$9$k$+$I$&$+$rD4$Y$^$9!#(B
+@code{Newsgroups} と @code{Follouup-to} ヘッダーに記入されているニュース
+グループが存在するかどうかを調べます。
 @item from
-@code{From} $B%X%C%@!<$,$^$H$b$+$I$&$+$rD4$Y$^$9!#(B
+@code{From} ヘッダーがまともかどうかを調べます。
 @item illegible-text
-$BK\J8$K0u;z$G$-$J$$J8;z$,$"$k$+$I$&$+$rD4$Y$^$9!#(B
+本文に印字できない文字があるかどうかを調べます。
 @item invisible-text
-$B%P%C%U%!!<$K8+$($J$$%F%-%9%H$,$"$k$+$I$&$+$rD4$Y$^$9!#(B
+バッファーに見えないテキストがあるかどうかを調べます。
 @item long-header-lines
-$BD9$9$.$k%X%C%@!<9T$rD4$Y$^$9!#(B
+長すぎるヘッダー行を調べます。
 @item long-lines
 @cindex long lines
-$BK\J8$NCf$ND9$9$.$k9T$rD4$Y$^$9!#(B
+本文の中の長すぎる行を調べます。
 @item message-id
-@code{Message-ID} $B$,9=J8E*$K$^$H$b$+$I$&$+$rD4$Y$^$9!#(B
+@code{Message-ID} が構文的にまともかどうかを調べます。
 @item multiple-headers
-$BJ#?t$NF1$8%X%C%@!<$NB8:_$rD4$Y$^$9!#(B
+複数の同じヘッダーの存在を調べます。
 @item new-text
-$B%a%C%;!<%8$K?7$7$$J8$,$"$k$+$I$&$+(B ($BLuCm(B: $B0zMQ$P$+$j$G$J$$$+$I$&$+(B) $B$rD4(B
-$B$Y$^$9!#(B
+メッセージに新しい文があるかどうか (訳注: 引用ばかりでないかどうか) を調
+べます。
 @item newsgroups
-$B6u$G$J$$(B @code{Newsgroups} $B%X%C%@!<$,$"$k$+$I$&$+$rD4$Y$^$9!#(B
+空でない @code{Newsgroups} ヘッダーがあるかどうかを調べます。
 @item quoting-style
-$B:G8e$N0zMQItJ,$KB3$/%F%-%9%H$,$"$k$+$I$&$+$rD4$Y$^$9!#(B
+最後の引用部分に続くテキストがあるかどうかを調べます。
 @item repeated-newsgroups
-@code{Newsgroups} $B$H(B @code{Followup-to} $B%X%C%@!<$G!"F1$8%0%k!<%WL>$,7+$j(B
-$BJV$7;H$o$l$F$$$k$+$I$&$+$rD4$Y$^$9!#(B
+@code{Newsgroups} と @code{Followup-to} ヘッダーで、同じグループ名が繰り
+返し使われているかどうかを調べます。
 @item reply-to
-@code{Reply-To} $B%X%C%@!<$,$^$H$b$+$I$&$+$rD4$Y$^$9!#(B
+@code{Reply-To} ヘッダーがまともかどうかを調べます。
 @item sender
 @cindex Sender
-@code{From} $B%X%C%@!<$,JQ$@$C$?$i!"?7$7$$(B @code{Sender} $B%X%C%@!<$rA^F~$7(B
-$B$^$9!#(B
+@code{From} ヘッダーが変だったら、新しい @code{Sender} ヘッダーを挿入し
+ます。
 @item sendsys
 @cindex sendsys
-@samp{Sendsys:} $B$+(B @samp{Version:} $B%X%C%@!<$,$"$k$+$I$&$+$rD4$Y$^$9(B ($BLu(B
-$BCm(B: $B$$$:$l$b%K%e!<%9$N4IM}?M$@$1$,;H$&$b$N$G$9(B)$B!#(B
+@samp{Sendsys:} か @samp{Version:} ヘッダーがあるかどうかを調べます (訳
+注: いずれもニュースの管理人だけが使うものです)。
 @item shoot
-@code{Message-ID} $B%X%C%@!<$N%I%a%$%s9`$,$^$H$b$+$I$&$+$rD4$Y$^$9!#(B
+@code{Message-ID} ヘッダーのドメイン項がまともかどうかを調べます。
 @item shorten-followup-to
-$BEj9F$9$k%0%k!<%W$N?t$r(B @code{Followup-to} $B%X%C%@!<$rIU$12C$($k$3$H(B
-$B$K$h$C$F>/$J$/$9$k$+$I$&$+$rD4$Y$^$9(B ($BLuCm(B: $BJ#?t$N%K%e!<%9%0%k!<(B
-$B%W$KEj9F$9$k5-;v$K(B @code{Followup-to} $B%X%C%@!<$,L5$$>l9g$KH/F0$5$l!"(B
-@code{Followup-to} $B%X%C%@!<$K5-F~$9$kCM$NF~NO$rMW5a$7$^$9(B)$B!#(B
+投稿するグループの数を @code{Followup-to} ヘッダーを付け加えること
+によって少なくするかどうかを調べます (訳注: 複数のニュースグルー
+プに投稿する記事に @code{Followup-to} ヘッダーが無い場合に発動され、
+@code{Followup-to} ヘッダーに記入する値の入力を要求します)。
 @item signature
-$B=pL>$ND9$5$rD4$Y$^$9!#(B
+署名の長さを調べます。
 @item size
-$B%5%$%:$,Bg$-$9$.$J$$$+$I$&$+$rD4$Y$^$9!#(B
+サイズが大きすぎないかどうかを調べます。
 @item subject
-$B6u$G$J$$(B @code{Subject} $B%X%C%@!<$,$"$k$+$I$&$+$rD4$Y$^$9!#(B
+空でない @code{Subject} ヘッダーがあるかどうかを調べます。
 @item subject-cmsg
-$B%K%e!<%9$N%3%s%H%m!<%k%a%C%;!<%8$N$h$&$JI=Bj$,$"$k$+$I$&$+$rD4$Y$^$9!#(B
-($BLuCm(B: $BI=Bj$,(B @samp{cmsg} $B$G;O$^$k$b$N$G!"%K%e!<%9$N4IM}?M$@$1$,;H$$$^$9!#(B
-$B0lHL$NMxMQ<T$,%K%e!<%95-;v$N<h$j>C$7(B (cancel) $B$r9T$J$&$H$-$K$b;H$$$^$9$,!"(B
-$B$=$N>l9g$O!"$3$N8!::$rDL$i$:$K!"$=$l@lMQ$NOHAH$_$G<B9T$5$l$^$9!#(B)
+ニュースのコントロールメッセージのような表題があるかどうかを調べます。
+(訳注: 表題が @samp{cmsg} で始まるもので、ニュースの管理人だけが使います。
+一般の利用者がニュース記事の取り消し (cancel) を行なうときにも使いますが、
+その場合は、この検査を通らずに、それ専用の枠組みで実行されます。)
 @item valid-newsgroups
-@code{Newsgroups} $B$H(B @code{Followup-to} $B%X%C%@!<$,9=J8E*$K@5$7$$$+$I$&$+(B
-$B$rD4$Y$^$9!#(B
+@code{Newsgroups} と @code{Followup-to} ヘッダーが構文的に正しいかどうか
+を調べます。
 @end table
 
-$B%G%#%U%)%k%H$G$O!"$3$l$i$9$Y$F$N>r7o$,D4$Y$i$l$^$9!#$?$@(B
-$B$7(B @code{message-insert-canlock} $B$,(B @code{nil} $B$@$C$?$i%G%#%U%)%k%H$G$O(B
-$B8!::$,9T$J$o$l$J$$(B @code{sender} $B$r=|$-$^$9!#(B@xref{Canceling News}.
+ディフォルトでは、これらすべての条件が調べられます。ただ
+し @code{message-insert-canlock} が @code{nil} だったらディフォルトでは
+検査が行なわれない @code{sender} を除きます。@xref{Canceling News}.
 
 @item message-ignored-news-headers
 @vindex message-ignored-news-headers
-$BEj9F$9$kA0$K<h$j=|$+$l$k%X%C%@!<$N@55,I=8=$G$9!#(B
-$B%G%#%U%)%k%H$O(B@*
+投稿する前に取り除かれるヘッダーの正規表現です。
+ディフォルトは@*
 @samp{^NNTP-Posting-Host:\\|^Xref:\\|^[BGF]cc:\\|^Resent-Fcc:\\|@*
-^X-Draft-From:\\|^X-Gnus-Agent-Meta-Information:} $B$G$9!#(B
+^X-Draft-From:\\|^X-Gnus-Agent-Meta-Information:} です。
 
 @item message-default-news-headers
 @vindex message-default-news-headers
-$B$3$NJ8;zNs$O%K%e!<%9$H$7$F=i4|2=$5$l$?$9$Y$F$N%a%C%;!<%8%P%C%U%!!<$N!"%X%C(B
-$B%@!<$N:G8eHx$KA^F~$5$l$^$9!#(B
+この文字列はニュースとして初期化されたすべてのメッセージバッファーの、ヘッ
+ダーの最後尾に挿入されます。
 @end table
 
 @node News Variables
-@section $B%K%e!<%9JQ?t(B
+@section ニュース変数
 
 @table @code
 @item message-send-news-function
 @vindex message-send-news-function
-$B8=:_$N%P%C%U%!!<$r%K%e!<%9$H$7$FAw$k$?$a$K;H$o$l$k4X?t$G$9!#%G%#%U%)%k%H(B
-$B$O(B @code{mesage-send-news} $B$G$9!#(B
+現在のバッファーをニュースとして送るために使われる関数です。ディフォルト
+は @code{mesage-send-news} です。
 
 @item message-post-method
 @vindex message-post-method
-$B$G$-$"$,$C$?%K%e!<%9%a%C%;!<%8$rEj9F$9$k$?$a$K;H$o$l$k(B Gnus $B$N!VA*BrJ}K!!W(B
-($B>\:Y$O(B Gnus $B%^%K%e%"%k$r8+$F$/$@$5$$(B) $B$G$9!#(B
+できあがったニュースメッセージを投稿するために使われる Gnus の「選択方法」
+(詳細は Gnus マニュアルを見てください) です。
 @end table
 
 @node Insertion Variables
-@section $BA^F~$9$k$?$a$NJQ?t(B
+@section 挿入するための変数
 
 @table @code
 @item message-cite-style
 @vindex message-cite-style
-$BJV?.$9$k$H$-$K;H$&AmBNE*$JMM<0$G$9!#0zMQ$HJV?.J8$N0LCV4X78$r$I$&$9$k$+!"(B
-$B$I$s$J7A<0$G0zMQ$9$k$+!"%7%0%M%A%c$r$I$3$KCV$/$+!"$H$$$&$h$&$JJ*;v$r$3$l(B
-$B$G7hDj$7$^$9!#(B
+返信するときに使う総体的な様式です。引用と返信文の位置関係をどうするか、
+どんな形式で引用するか、シグネチャをどこに置くか、というような物事をこれ
+で決定します。
 
-$BCM$O(B @code{nil} ($B$I$NJQ?t$bJ$$7$^$;$s(B) $B$^$?$O%G%#%U%)%k%HCM$rJ$$9$?$a(B
-$B$N(B @code{(VARIABLE VALUE)} $B$H$$$&BP$N(B let $B7?%j%9%H$N$I$A$i$+$G$9!#(B
+値は @code{nil} (どの変数も覆しません) またはディフォルト値を覆すため
+の @code{(VARIABLE VALUE)} という対の let 型リストのどちらかです。
 
-$BFCDj$N%0%k!<%W$N$?$a$K$3$NJQ?t$r@_Dj$9$k$K(B
-$B$O(B @code{gnus-posting-styles} $B$r;2>H$7$F$/$@$5$$!#$h$/;H$o$l$F$$$k$$$m$$(B
-$B$m$J%a!<%k!&%(!<%8%'%s%H$r$^$M$?@_Dj$,(B @code{message-cite-style-*} $B$H$$(B
-$B$&JQ?t$KMQ0U$5$l$F$$$^$9!#(B
+特定のグループのためにこの変数を設定するに
+は @code{gnus-posting-styles} を参照してください。よく使われているいろい
+ろなメール・エージェントをまねた設定が @code{message-cite-style-*} とい
+う変数に用意されています。
 
 @item message-cite-reply-position
 @vindex message-cite-reply-position
-$BJV?.J8$r$I$3$KCV$/$+$r;XDj$7$^$9!#;H$&$3$H$,$G$-$kMM<0$K$O!"%$%s%i%$%s$G(B
-$BJV?.$9$k$?$a$N(B @code{traditional}$B!"@hF,$KJV?.J8$r=q$/(B (top-posting) $B$?$a(B
-$B$N(B @code{above}$B!"$*$h$SJ8Kv$KJV?.J8$r=q$/$?$a$N(B @code{below} $B$,$"$j$^$9!#(B
+返信文をどこに置くかを指定します。使うことができる様式には、インラインで
+返信するための @code{traditional}、先頭に返信文を書く (top-posting) ため
+の @code{above}、および文末に返信文を書くための @code{below} があります。
 
 @item message-ignored-cited-headers
-$B$3$N@55,I=8=$K9gCW$9$k$9$Y$F$N%X%C%@!<$,!"0zMQ$N$?$a$K(B yank $B$5$l$?%a%C%;!<(B
-$B%8$+$i<h$j=|$+$l$^$9!#%G%#%U%)%k%H$O(B @samp{.} $B$G!"$9$Y$F$N%X%C%@!<$,<h$j(B
-$B=|$+$l$k$H8@$&$3$H$G$9!#(B
+この正規表現に合致するすべてのヘッダーが、引用のために yank されたメッセー
+ジから取り除かれます。ディフォルトは @samp{.} で、すべてのヘッダーが取り
+除かれると言うことです。
 
 @item message-cite-prefix-regexp
 @vindex message-cite-prefix-regexp
-$B9T$N0zMQ@\F,8l$H$7$F8+$J$9$3$H$,$G$-$k$b$N$K:GBg8B$K9gCW$9$k@55,I=8=$G$9!#(B
+行の引用接頭語として見なすことができるものに最大限に合致する正規表現です。
 
 @item message-citation-line-function
 @vindex message-citation-line-function
 @cindex attribution line
-$B0zMQ9T$rA^F~$9$k$?$a$K8F$P$l$k4X?t$G$9!#%G%#%U%)%k%H(B
-$B$O(B @code{message-insert-citation-line} $B$G!"$3$l$O0zMQ9T$r<!$N$h$&$K$7$^(B
-$B$9(B:
+引用行を挿入するために呼ばれる関数です。ディフォルト
+は @code{message-insert-citation-line} で、これは引用行を次のようにしま
+す:
 
 @example
 Hallvard B Furuseth <h.b.furuseth@@usit.uio.no> writes:
 @end example
 
-@c FIXME: 'message-insert-formatted-citation-line' $B$H(B
-@c 'message-citation-line-format' $B$rDI2C$9$Y$7!#(B
-$B$3$N4X?t$,8F$P$l$?$H$-!"%]%$%s%H$O%a%C%;!<%8$NK\J8$N@hF,$KCV$+$l$k$G$7$g(B
-$B$&!#(B
+@c FIXME: 'message-insert-formatted-citation-line' と
+@c 'message-citation-line-format' を追加すべし。
+この関数が呼ばれたとき、ポイントはメッセージの本文の先頭に置かれるでしょ
+う。
 
-$B$J$*(B Gnus $B$K$O!"(B@samp{writes:} $B$N>e$G%/%j%C%/$9$k$H0zMQ$5$l$?%F%-%9%H$r(B
-$B1#$95!G=$,$"$j$^$9!#$b$7$"$J$?$,EY$r1[$7$F0zMQ9T$rJQ99$7$F$7$^$&$H!"$=$l(B
-$B$rFI$`?M$?$A$bH`$i$N(B Gnus $B$rBP1~$5$;$J$1$l$P$J$i$J$/$J$k$G$7$g$&!#JQ(B
-$B?t(B @code{gnus-cite-attribution-suffix} $B$r;2>H$7$F$/$@$5$$!#>\:Y(B
-$B$O(B @xref{Article Highlighting, ,$B5-;v$N%O%$%i%$%H(B, gnus-ja, The Gnus
-Manual}, $B$K$"$j$^$9!#(B
+なお Gnus には、@samp{writes:} の上でクリックすると引用されたテキストを
+隠す機能があります。もしあなたが度を越して引用行を変更してしまうと、それ
+を読む人たちも彼らの Gnus を対応させなければならなくなるでしょう。変
+数 @code{gnus-cite-attribution-suffix} を参照してください。詳細
+は @xref{Article Highlighting, ,記事のハイライト, gnus-ja, The Gnus
+Manual}, にあります。
 
 @item message-yank-prefix
 @vindex message-yank-prefix
 @cindex yanking
 @cindex quoting
-$B5-;v$KJVEz$+%U%)%m!<%"%C%W$r$9$k$H$-$O!"IaDL$O$"$J$?$,1~Ez$7$h$&$H$7$F$$(B
-$B$k?M$r0zMQ$7$?$$$G$7$g$&!#0zMQJ8$NA^F~$O!H(Byank$B!I$9$k$3$H$K$h$C$F9T$J$o$l!"(B
-$B$=$l$>$l$N(B yank $B$5$l$?9T$NA0$K(B @code{message-yank-prefix} $B$,IU$1$i$l$^(B
-$B$9(B ($B$9$G$K0zMQId(B @code{message-yank-cited-prefix} $B$,IU$$$F$$$k9T$H!"(B
-@code{message-yank-empty-prefix} $B$,IU$1$i$l$?6u9T$OBP>]30$G$9(B)$B!#%G%#%U%)(B
-$B%k%H$O(B @samp{> } $B$G$9!#(B
+記事に返答かフォローアップをするときは、普通はあなたが応答しようとしてい
+る人を引用したいでしょう。引用文の挿入は“yank”することによって行なわれ、
+それぞれの yank された行の前に @code{message-yank-prefix} が付けられま
+す (すでに引用符 @code{message-yank-cited-prefix} が付いている行と、
+@code{message-yank-empty-prefix} が付けられた空行は対象外です)。ディフォ
+ルトは @samp{> } です。
 
 @item message-yank-cited-prefix
 @vindex message-yank-cited-prefix
 @cindex yanking
 @cindex cited
 @cindex quoting
-$B$9$G$K0zMQ$5$l$?%F%-%9%H$r4^$`5-;v$+$i(B yank $B$9$k$H$-!"$=$l$>$l$N9T$K$O$3(B
-$B$NJQ?t$NCM$,A0CV$5$l$^$9!#%G%#%U%)%k%H$O(B @samp{>} $B$G$9!#(B
-@code{message-yank-prefix} $B$b;2>H$7$F$/$@$5$$!#(B
+すでに引用されたテキストを含む記事から yank するとき、それぞれの行にはこ
+の変数の値が前置されます。ディフォルトは @samp{>} です。
+@code{message-yank-prefix} も参照してください。
 
 @item message-yank-empty-prefix
 @vindex message-yank-empty-prefix
 @cindex yanking
 @cindex quoting
-$B5-;v$+$i%F%-%9%H$r0zMQ$9$k$H$-!"$=$l$>$l$N6u9T$K$3$NJQ?t$NCM$,A0CV$5$l$^(B
-$B$9!#%G%#%U%)%k%H$O(B @samp{>} $B$G$9!#$3$NJQ?t$r6uJ8;z$K@_Dj$9$k$3$H$K$h$C$F!"(B
-$B0zMQ$5$l$?%F%-%9%H$r<+F0E*$KCJMnJ,$1$9$k$3$H$,$G$-$^$9!#(B
-@code{message-yank-prefix} $B$b;2>H$7$F$/$@$5$$!#(B
+記事からテキストを引用するとき、それぞれの空行にこの変数の値が前置されま
+す。ディフォルトは @samp{>} です。この変数を空文字に設定することによって、
+引用されたテキストを自動的に段落分けすることができます。
+@code{message-yank-prefix} も参照してください。
 
 @item message-indentation-spaces
 @vindex message-indentation-spaces
-Yank $B$5$l$?%a%C%;!<%8$r;z2<$2$9$k$?$a$N6uGr$N?t$G$9!#(B
+Yank されたメッセージを字下げするための空白の数です。
 
 @item message-cite-function
 @vindex message-cite-function
 @findex message-cite-original
 @findex message-cite-original-without-signature
-$B855-;v$r0zMQ$9$k$?$a$N4X?t$G$9!#%G%#%U%)%k%H(B
-$B$O(B @code{message-cite-original} $B$G!"$3$l$OC1=c$K85$N%a%C%;!<%8$rA^F~$7$F!"(B
-$B$=$l$>$l$N9T$NF,$K(B @samp{> } $B$r$/$CIU$1$^$9!#(B
-@code{message-cite-original-without-signature} $B$OF1MM$N$3$H$r$7$^$9$,!"(B
-$B=pL>$r>J$-$^$9!#(B
+元記事を引用するための関数です。ディフォルト
+は @code{message-cite-original} で、これは単純に元のメッセージを挿入して、
+それぞれの行の頭に @samp{> } をくっ付けます。
+@code{message-cite-original-without-signature} は同様のことをしますが、
+署名を省きます。
 
 @item message-indent-citation-function
 @vindex message-indent-citation-function
-$B%a!<%k%P%C%U%!!<$KA^F~$5$l$?0zMQJ8$r=$@5$9$k$?$a$N4X?t$G$9!#$3$l$O4X?t$N(B
-$B%j%9%H$G$"$k$3$H$b$G$-$^$9!#$=$l$>$l$N4X?t(B
-$B$O(B @code{(point)} $B$H(B @code{(mark t)} $B$N4V$G0zMQ$r8+$D$1$k$3$H$,$G$-$^$9!#(B
-$B$=$7$F$=$l$>$l$N4X?t$O!"=$@5$5$l$?0zMQJ8$N<~$j(B ($B$N=$@5A0$HF1Ey$N>l=j(B) $B$K(B
-$B%]%$%s%H$H%^!<%/$,CV$+$l$?$^$^$K$J$C$F$$$k$h$&$K$7$J$1$l$P$J$j$^$;$s!#(B
+メールバッファーに挿入された引用文を修正するための関数です。これは関数の
+リストであることもできます。それぞれの関数
+は @code{(point)} と @code{(mark t)} の間で引用を見つけることができます。
+そしてそれぞれの関数は、修正された引用文の周り (の修正前と同等の場所) に
+ポイントとマークが置かれたままになっているようにしなければなりません。
 
 @item message-mark-insert-begin
 @vindex message-mark-insert-begin
-$BA^F~$5$l$?2?$i$+$N%F%-%9%H$N;O$^$j$K!"0u$rIU$1$k$?$a$NJ8;zNs$G$9!#(B
+挿入された何らかのテキストの始まりに、印を付けるための文字列です。
 
 @item message-mark-insert-end
 @vindex message-mark-insert-end
-$BA^F~$5$l$?2?$i$+$N%F%-%9%H$N=*$j$K!"0u$rIU$1$k$?$a$NJ8;zNs$G$9!#(B
+挿入された何らかのテキストの終りに、印を付けるための文字列です。
 
 @item message-signature
 @vindex message-signature
-$B%a%C%;!<%8%P%C%U%!!<$N:G8e$KA^F~$5$l$kJ8;zNs$G$9!#$b$7(B @code{t} ($B$3$l$,(B
-$B%G%#%U%)%k%H$G$9(B) $B$G$"$l$P!"%U%!%$%k(B @code{message-signature-file} $B$,Be(B
-$B$o$j$KA^F~$5$l$^$9!#$b$74X?t$G$"$l$P!"4X?t$N7k2L$,Be$o$j$K;H$o$l$^$9!#$b(B
-$B$7<0$G$"$l$P!"<0$N7k2L$,JQ$o$j$K;H$o$l$^$9!#$3$NJQ?t$,(B @code{nil} $B$@$C$?(B
-$B$i!"=pL>$O$^$C$?$/A^F~$5$l$^$;$s!#(B
+メッセージバッファーの最後に挿入される文字列です。もし @code{t} (これが
+ディフォルトです) であれば、ファイル @code{message-signature-file} が代
+わりに挿入されます。もし関数であれば、関数の結果が代わりに使われます。も
+し式であれば、式の結果が変わりに使われます。この変数が @code{nil} だった
+ら、署名はまったく挿入されません。
 
 @item message-signature-file
 @vindex message-signature-file
-$B%P%C%U%!!<$N:G8e$KA^F~$5$l$k!"=pL>$NF~$C$F$$$k%U%!%$%k$G$9!#%G%#%l%/%H%j!<(B
-$B$,;XDj$5$l$F$$$k$H!"(B@code{message-signature-directory} $B$NCM$O$?$H$(@_Dj(B
-$B$5$l$F$$$F$bL5;k$5$l$^$9!#%G%#%U%)%k%H$O(B @file{~/.signature} $B$G$9!#(B
+バッファーの最後に挿入される、署名の入っているファイルです。ディレクトリー
+が指定されていると、@code{message-signature-directory} の値はたとえ設定
+されていても無視されます。ディフォルトは @file{~/.signature} です。
 
 @item message-signature-directory
 @vindex message-signature-directory
-$B=pL>%U%!%$%k$rCV$/%G%#%l%/%H%j!<$NL>A0$G$9!#$=$&$$$&%U%!%$%k$r$?$/$5$s;}$C(B
-$B$F$$$k$J$i$P!"Nc$($PEj9FMM<0(B (Gnus posting styles) $B$G$=$l$i$r@Z$jBX$($k(B
-$B:]$KLrN)$A$^$9!#$b$7(B @code{nil} $B$@$C$?$i(B ($B$=$l$,%G%#%U%)%k%H(B)$B!"(B
-@code{message-signature-file} $B$,%G%#%l%/%H%j!<$b;XDj$9$k$H8+$J$5$l$^$9!#(B
+署名ファイルを置くディレクトリーの名前です。そういうファイルをたくさん持っ
+ているならば、例えば投稿様式 (Gnus posting styles) でそれらを切り替える
+際に役立ちます。もし @code{nil} だったら (それがディフォルト)、
+@code{message-signature-file} がディレクトリーも指定すると見なされます。
 
 @item message-signature-insert-empty-line
 @vindex message-signature-insert-empty-line
-@code{t} ($B%G%#%U%)%k%HCM(B) $B$@$C$?$i!"=pL>$HK\J8$rJ,N%$9$k5-9f$NA0$K6u9T$,(B
-$BA^F~$5$l$^$9!#(B
+@code{t} (ディフォルト値) だったら、署名と本文を分離する記号の前に空行が
+挿入されます。
 @end table
 
-RFC1036bis $B$O!"=pL>$O$=$NA0$K(B @samp{-- } $B$N;0J8;z$@$1$N9T$,$"$k$Y$-$G$"(B
-$B$k$H8@$C$F$$$k$3$H$KCm0U$7$F$/$@$5$$!#$3$l$O<u$1<j$,<+F0E*$K=pL>$rG'<1$7(B
-$B$F!"=hM}$r$9$k$3$H$r4JC1$K$9$k$?$a$G$9!#$G$9$+$i!"$=$N!"$"$J$?$NH~$7$$%G(B
-$B%6%$%s$r!"$=$l$,BfL5$7$K$7$F$$$k$H46$8$F$b!"$=$l$i$NJ8;z$r<h$j=|$+$J$$$G(B
-$B$/$@$5$$!#(B
+RFC1036bis は、署名はその前に @samp{-- } の三文字だけの行があるべきであ
+ると言っていることに注意してください。これは受け手が自動的に署名を認識し
+て、処理をすることを簡単にするためです。ですから、その、あなたの美しいデ
+ザインを、それが台無しにしていると感じても、それらの文字を取り除かないで
+ください。
 
-$B=pL>$O;M9T$h$jB?$/$J$k$Y$-$G$OL5$$$H8@$&$3$H$bCm0U$7$F$/$@$5$$!#(B
-@acronym{ASCII} $B$N3($rF~$l$k$3$H$O!"3'$K$"$J$?$,GO</$G2?$b=EMW$J$3$H$O8@(B
-$B$o$J$$$H$$$&$3$H$r?.$8$5$;$k$?$a$N8z2LE*$JJ}K!$G$9!#(B
+署名は四行より多くなるべきでは無いと言うことも注意してください。
+@acronym{ASCII} の絵を入れることは、皆にあなたが馬鹿で何も重要なことは言
+わないということを信じさせるための効果的な方法です。
 
 @node Various Message Variables
-@section $B$$$m$$$m$J%a%C%;!<%8JQ?t(B
+@section いろいろなメッセージ変数
 
 @table @code
 @item message-default-charset
 @vindex message-default-charset
 @cindex charset
-@acronym{MIME} $BJ8;z%;%C%HL>$N%7%s%\%k$G$9!#%a%C%;!<%8Fb$N(B
-$BHs(B-@acronym{ASCII} $BJ8;z$O!"$3$NJ8;z%;%C%H$r;H$C$F%(%s%3!<%I$5$l$k$3$H$K(B
-$B$J$C$F$$$^$9!#%G%#%U%)%k%H$O(B @sc{mule} $B5!G=$,L5$$(B Emacsen $B$G(B
-$B$O(B @code{iso-8859-1} $B$G$9!#$=$l0J30$G$O(B @code{nil} $B$G!"MxMQ<T$K?R$M$k$3(B
-$B$H$r0UL#$7$^$9!#(B($B$3$NJQ?t$O(B @sc{mule} $B5!G=$,L5$$(B Emacs $B$G$N$_;H$o$l$^$9!#(B)
-@sc{mule} $B$+$i(B @acronym{MIME} $B$X$NCV$-49$(=hM}$N>\:Y(B
-$B$O(B @xref{Charset Translation, ,$BJ8;z%;%C%H$NJQ49(B, emacs-mime-ja, Emacs
-MIME Manual}, $B$r;2>H$7$F$/$@$5$$!#(B
+@acronym{MIME} 文字セット名のシンボルです。メッセージ内の
+非-@acronym{ASCII} 文字は、この文字セットを使ってエンコードされることに
+なっています。ディフォルトは @sc{mule} 機能が無い Emacsen で
+は @code{iso-8859-1} です。それ以外では @code{nil} で、利用者に尋ねるこ
+とを意味します。(この変数は @sc{mule} 機能が無い Emacs でのみ使われます。)
+@sc{mule} から @acronym{MIME} への置き換え処理の詳細
+は @xref{Charset Translation, ,文字セットの変換, emacs-mime-ja, Emacs
+MIME Manual}, を参照してください。
 
 @item message-fill-column
 @vindex message-fill-column
 @cindex auto-fill
-$B%a%C%;!<%8%P%C%U%!!<$G9T$,$3$N7e?t$r1[$($k$H<+F0E*$J@^$jJV$7$r5/$3$9$Y$-!"(B
-$B%P%C%U%!!<%m!<%+%k$JCM$G$9!#(B@code{nil} $B$G$O$J$$CM(B ($B%G%#%U%)%k%H(B) $B$G%a%C(B
-$B%;!<%8%P%C%U%!!<$N<+F0@^$jJV$7$,(B ON $B$K$J$j$^$9!#(B
+メッセージバッファーで行がこの桁数を越えると自動的な折り返しを起こすべき、
+バッファーローカルな値です。@code{nil} ではない値 (ディフォルト) でメッ
+セージバッファーの自動折り返しが ON になります。
 
 @item message-signature-separator
 @vindex message-signature-separator
-$B=pL>$HK\J8$rJ,N%$9$k5-9f$K9gCW$9$k@55,I=8=$G$9!#%G%#%U%)%k%H(B
-$B$O(B @samp{^-- *$} $B$G$9!#(B
+署名と本文を分離する記号に合致する正規表現です。ディフォルト
+は @samp{^-- *$} です。
 
 @item mail-header-separator
 @vindex mail-header-separator
-$B%X%C%@!<$rK\J8$+$iJ,$1$k$?$a$K;H$o$l$kJ8;zNs$G$9!#%G%#%U%)%k%H(B
-$B$O(B @samp{--text follows this line--} $B$G$9!#(B
+ヘッダーを本文から分けるために使われる文字列です。ディフォルト
+は @samp{--text follows this line--} です。
 
 @item message-directory
 @vindex message-directory
-$B%a!<%k$K4X78$9$kB?$/$N=hM}$G;H$o$l$k%G%#%l%/%H%j!<$G$9!#%G%#%U%)%k%H(B
-$B$O(B @file{~/Mail/} $B$G$9!#%a!<%k$K4X$9$kB>$N%U%!%$%kL>$d%G%#%l%/%H%j!<L>$r(B
-$B;XDj$9$kJQ?t$NCM$O!"$3$N(B @code{message-directory} $B$NCM$r4pE@$K$7$FGI@8$7(B
-$B$^$9!#(B
+メールに関係する多くの処理で使われるディレクトリーです。ディフォルト
+は @file{~/Mail/} です。メールに関する他のファイル名やディレクトリー名を
+指定する変数の値は、この @code{message-directory} の値を基点にして派生し
+ます。
 
 @item message-auto-save-directory
 @vindex message-auto-save-directory
-Gnus $B$,F0:n$7$F$$$J$$$H$-$K(B Message $B$,%P%C%U%!!<$r<+F0J]B8$9$k%G%#%l%/%H(B
-$B%j!<$G$9!#(B@code{nil} $B$@$C$?$i(B Message $B$O<+F0J]B8$r9T$J$$$^$;$s!#%G%#%U%)(B
-$B%k%H$O(B @file{~/Mail/drafts/} $B$G$9!#(B
+Gnus が動作していないときに Message がバッファーを自動保存するディレクト
+リーです。@code{nil} だったら Message は自動保存を行ないません。ディフォ
+ルトは @file{~/Mail/drafts/} です。
 
 @item message-signature-setup-hook
 @vindex message-signature-setup-hook
-$B%a%C%;!<%8%P%C%U%!!<$r=i4|2=$9$k$H$-$K<B9T$5$l$k%U%C%/$G$9!#$=$l$O%X%C%@!<(B
-$B$,A^F~$5$l$?8e$N!"$^$@=pL>$,A^F~$5$l$F$$$J$$$H$-$K<B9T$5$l$^$9!#(B
+メッセージバッファーを初期化するときに実行されるフックです。それはヘッダー
+が挿入された後の、まだ署名が挿入されていないときに実行されます。
 
 @item message-setup-hook
 @vindex message-setup-hook
-$B%a%C%;!<%8%P%C%U%!!<$r=i4|2=$9$k=hM}$N:G8e$K!"$^$@(B yank $B$5$l$kJ8>O$,A^F~(B
-$B$5$l$F$$$J$$$H$-$K<B9T$5$l$k%U%C%/$G$9!#(B
+メッセージバッファーを初期化する処理の最後に、まだ yank される文章が挿入
+されていないときに実行されるフックです。
 
 @item message-header-setup-hook
 @vindex message-header-setup-hook
-$B%X%C%@!<$r=i4|2=$7$?8e$K!"%X%C%@!<$KHO0O$r69$a$F8F$P$l$k%U%C%/$G$9!#(B
+ヘッダーを初期化した後に、ヘッダーに範囲を狭めて呼ばれるフックです。
 
-$BNc$($P!"(BGnus $B$r<B9T$7$F$$$F!"$9$Y$F$N%K%e!<%95-;v$H%a!<%j%s%0%j%9%H$KAw(B
-$B$k$9$Y$F$N%a%C%;!<%8$K(B @samp{Mail-Copies-To} $B%X%C%@!<$rA^F~$7$?$$$N$G$"(B
-$B$l$P!"0J2<$N$h$&$J$3$H$,$G$-$^$9(B:
+例えば、Gnus を実行していて、すべてのニュース記事とメーリングリストに送
+るすべてのメッセージに @samp{Mail-Copies-To} ヘッダーを挿入したいのであ
+れば、以下のようなことができます:
 
 @lisp
 (defun my-message-header-setup-hook ()
@@ -2365,10 +2365,10 @@ Gnus $B$,F0:n$7$F$$$J$$$H$-$K(B Message $B$,%P%C%U%!!<$r<+F0J]B8$9$k%G%#%l%/%
 
 @item message-send-hook
 @vindex message-send-hook
-$B%a%C%;!<%8$rAw$kA0$K<B9T$5$l$k%U%C%/$G$9!#(B
+メッセージを送る前に実行されるフックです。
 
-$B$b$7Aw$kA0$KFCDj$N%X%C%@!<$r2C$($?$$$N$G$"$l$P!"(B
-@code{message-add-header} $B4X?t$r$3$N%U%C%/$K;H$&$3$H$,$G$-$^$9!#Nc$($P(B:
+もし送る前に特定のヘッダーを加えたいのであれば、
+@code{message-add-header} 関数をこのフックに使うことができます。例えば:
 @findex message-add-header
 
 @lisp
@@ -2378,51 +2378,51 @@ Gnus $B$,F0:n$7$F$$$J$$$H$-$K(B Message $B$,%P%C%U%!!<$r<+F0J]B8$9$k%G%#%l%/%
   (message-add-header "X-Whatever: no"))
 @end lisp
 
-$B$3$N4X?t$O!"$=$N%X%C%@!<$,$9$G$KB8:_$7$F$$$k>l9g$O%X%C%@!<$r2C$($^$;$s!#(B
+この関数は、そのヘッダーがすでに存在している場合はヘッダーを加えません。
 
 @item message-send-mail-hook
 @vindex message-send-mail-hook
-$B%a!<%k%a%C%;!<%8$rAw$kA0$K<B9T$5$l$k%U%C%/$G$9!#$3$N%U%C%/$OHs>o$KCY$$;~(B
-$B4|(B---$B%a%C%;!<%8$,%a!<%k$H$7$F<B:]$KAw?.$5$l$kD>A0(B---$B$K<B9T$5$l$^$9!#(B
+メールメッセージを送る前に実行されるフックです。このフックは非常に遅い時
+期---メッセージがメールとして実際に送信される直前---に実行されます。
 
 @item message-send-news-hook
 @vindex message-send-news-hook
-$B%K%e!<%9%a%C%;!<%8$rAw$kA0$K<B9T$5$l$k%U%C%/$G$9!#$3$N%U%C%/$OHs>o$KCY$$(B
-$B;~4|(B---$B%a%C%;!<%8$,%K%e!<%9$H$7$F<B:]$KAw?.$5$l$kD>A0(B---$B$K<B9T$5$l$^$9!#(B
+ニュースメッセージを送る前に実行されるフックです。このフックは非常に遅い
+時期---メッセージがニュースとして実際に送信される直前---に実行されます。
 
 @item message-sent-hook
 @vindex message-sent-hook
-$B%a%C%;!<%8$rAw$C$?8e$G<B9T$5$l$k%U%C%/$G$9!#(B
+メッセージを送った後で実行されるフックです。
 
 @item message-cancel-hook
 @vindex message-cancel-hook
-$B%K%e!<%95-;v$N<h$j>C$7(B (cancel) $B$r9T$J$&$H$-$K<B9T$5$l$k%U%C%/$G$9!#(B
+ニュース記事の取り消し (cancel) を行なうときに実行されるフックです。
 
 @item message-mode-syntax-table
 @vindex message-mode-syntax-table
-$B%a%C%;!<%8%b!<%I$N%P%C%U%!!<$G;H$o$l$k9=J8%F!<%V%k$G$9!#(B
+メッセージモードのバッファーで使われる構文テーブルです。
 
 @item message-cite-articles-with-x-no-archive
 @vindex message-cite-articles-with-x-no-archive
-$BHs(B-@code{nil} $B$@$C$?$i!"(B@samp{X-No-Archive} $B$,@_Dj$5$l$F$$$k5-;v$+$i0zMQ(B
-$B$5$l$?%F%-%9%H$r<h$j=|$-$^$;$s!#$3$NJQ?t$,(B @code{nil} $B$K$J$C$F$$$F$b!"(B
-@code{undo} $B$N%-!<A`:n$r9T$J$&$3$H$K$h$C$F<h$j=|$+$l$?%F%-%9%H$r85$KLa$9(B
-$B$3$H$,$G$-$^$9!#(B
+非-@code{nil} だったら、@samp{X-No-Archive} が設定されている記事から引用
+されたテキストを取り除きません。この変数が @code{nil} になっていても、
+@code{undo} のキー操作を行なうことによって取り除かれたテキストを元に戻す
+ことができます。
 
 @item message-strip-special-text-properties
 @vindex message-strip-special-text-properties
-Emacs $B$O%a%C%;!<%8:n@.$r$$$m$$$m$K2u$7$F$7$^$&$3$H$,$G$-$kB?$/$NFCJL$J%F(B
-$B%-%9%HB0@-(B (text properties) $B$r;}$C$F$$$^$9!#$3$NJQ?t$,Hs(B-@code{nil} $B$K(B
-$B@_Dj$5$l$F$$$k$H!"(Bmessage $B$O$=$l$i$NB0@-$r%a%C%;!<%8$r:n@.$9$k%P%C%U%!!<(B
-$B$+$iGm$.<h$j$^$9!#$7$+$7$$$/$D$+$N%Q%C%1!<%8$O!"F0:n$9$k$?$a$K$=$l$i$NB0(B
-$B@-$,B8:_$7$F$$$k$3$H$,I,MW$G$9!#$=$l$i$N%Q%C%1!<%8$N0l$D$r;H$&$N$J$i$P!"(B
-$B$3$N%*%W%7%g%s$r(B off $B$K$7$F!"%a%C%;!<%8$,2u$l$F$7$^$o$J$$$3$H$r5'$C$F$/(B
-$B$@$5$$!#(B
+Emacs はメッセージ作成をいろいろに壊してしまうことができる多くの特別なテ
+キスト属性 (text properties) を持っています。この変数が非-@code{nil} に
+設定されていると、message はそれらの属性をメッセージを作成するバッファー
+から剥ぎ取ります。しかしいくつかのパッケージは、動作するためにそれらの属
+性が存在していることが必要です。それらのパッケージの一つを使うのならば、
+このオプションを off にして、メッセージが壊れてしまわないことを祈ってく
+ださい。
 
-$BLuCm(B: $BF|K\8lF~NO$N$?$a$N%Q%C%1!<%8$G$"$k(B tamago $BBh;MHG$O!"$^$5$K%F%-%9%H(B
-$BB0@-$r9*$_$K6n;H$7$F$$$^$9!#$=$N$?$a!"$3$NJQ?t$,Hs(B-@code{nil} $B$K@_Dj$5$l(B
-$B$F$$$F$b!"(Bmessage $B$O(B tamago $B$,;H$&%F%-%9%HB0@-$@$1$OFCJL07$$$7$F!"Gm$.<h(B
-$B$i$J$$$h$&$K$J$C$F$$$^$9!#(B
+訳注: 日本語入力のためのパッケージである tamago 第四版は、まさにテキスト
+属性を巧みに駆使しています。そのため、この変数が非-@code{nil} に設定され
+ていても、message は tamago が使うテキスト属性だけは特別扱いして、剥ぎ取
+らないようになっています。
 
 @item message-send-method-alist
 @vindex message-send-method-alist
@@ -2430,8 +2430,8 @@ Emacs $B$O%a%C%;!<%8:n@.$r$$$m$$$m$K2u$7$F$7$^$&$3$H$,$G$-$kB?$/$NFCJL$J%F(B
 @findex message-news-p
 @findex message-send-via-mail
 @findex message-send-via-news
-$B%a%C%;!<%8$rAw=P$9$k$?$a$NJ}K!$r;XDj$9$kO"A[%j%9%H$G$9!#$=$l$>$l$NMWAG$O(B
-$B<!$N7A<0$K$J$C$F$$$^$9(B:
+メッセージを送出するための方法を指定する連想リストです。それぞれの要素は
+次の形式になっています:
 
 @lisp
 (@var{type} @var{predicate} @var{function})
@@ -2439,134 +2439,134 @@ Emacs $B$O%a%C%;!<%8:n@.$r$$$m$$$m$K2u$7$F$7$^$&$3$H$,$G$-$kB?$/$NFCJL$J%F(B
 
 @table @var
 @item type
-$BJ}K!$N8F>N$r;XDj$9$k%7%s%\%k$G$9!#(B
+方法の呼称を指定するシンボルです。
 
 @item predicate
-$B$=$N%a%C%;!<%8$,(B @var{type} $B$N7?$N%a%C%;!<%8$G$"$k$+$I$&$+$rH=Dj$9$k$?$a(B
-$B$K!"0z?tL5$7$G8F$P$l$k4X?t$G$9!#4X?t$O$=$N%a%C%;!<%8$,$"$k%P%C%U%!!<$G8F(B
-$B$S=P$5$l$^$9!#(B
+そのメッセージが @var{type} の型のメッセージであるかどうかを判定するため
+に、引数無しで呼ばれる関数です。関数はそのメッセージがあるバッファーで呼
+び出されます。
 
 @item function
-@var{predicate} $B$,(B @code{nil} $B$G$O$J$$CM$rJV$7$?$H$-$K8F$P$l$k4X?t$G$9!#(B
-@var{function} $B$O0l$D$N0z?t(B---$B@\F,0z?t(B ($BLuCm(B: @kbd{C-c C-c} $BL?Na$K@hN)$C(B
-$B$FM?$($i$l$?@\F,0z?t(B)---$B$H6&$K8F$P$l$^$9!#(B
+@var{predicate} が @code{nil} ではない値を返したときに呼ばれる関数です。
+@var{function} は一つの引数---接頭引数 (訳注: @kbd{C-c C-c} 命令に先立っ
+て与えられた接頭引数)---と共に呼ばれます。
 @end table
 
-$B%G%#%U%)%k%H$O<!$N$h$&$K$J$C$F$$$^$9(B:
+ディフォルトは次のようになっています:
 
 @lisp
 ((news message-news-p message-send-via-news)
  (mail message-mail-p message-send-via-mail))
 @end lisp
 
-@code{message-news-p} $B4X?t$O$=$N%a%C%;!<%8$,%K%e!<%95-;v$N$h$&$K8+$($k>l(B
-$B9g$K(B @code{nil} $B$G$O$J$$CM$rJV$7!"(B@code{message-send-via-news} $B4X?t(B
-$B$O(B @code{message-send-news-function} $BJQ?t(B (@pxref{News Variables}) $B$K@_(B
-$BDj$5$l$?4X?t$r8F$S=P$7$F!"$=$N%a%C%;!<%8$rAw?.$7$^$9!#(B
-@code{message-mail-p} $B4X?t$O$=$N%a%C%;!<%8$,%a!<%k$N$h$&$K8+$($k>l9g(B
-$B$K(B @code{nil} $B$G$O$J$$CM$rJV$7!"(B@code{message-send-via-mail} $B4X?t(B
-$B$O(B @code{message-send-mail-function} $BJQ?t(B (@pxref{Mail Variables}) $B$K@_(B
-$BDj$5$l$?4X?t$r8F$S=P$7$F!"$=$N%a%C%;!<%8$rAw?.$7$^$9!#(B
+@code{message-news-p} 関数はそのメッセージがニュース記事のように見える場
+合に @code{nil} ではない値を返し、@code{message-send-via-news} 関数
+は @code{message-send-news-function} 変数 (@pxref{News Variables}) に設
+定された関数を呼び出して、そのメッセージを送信します。
+@code{message-mail-p} 関数はそのメッセージがメールのように見える場合
+に @code{nil} ではない値を返し、@code{message-send-via-mail} 関数
+は @code{message-send-mail-function} 変数 (@pxref{Mail Variables}) に設
+定された関数を呼び出して、そのメッセージを送信します。
 
-@code{message-send-method-alist} $B$N3FMWAG$O@hF,$+$i=g$K$9$Y$F;n$5$l$k$N(B
-$B$G!"Nc$($PM-8z$J(B @samp{Newsgroups:} $B%X%C%@!<$H(B @samp{To:} $B%X%C%@!<$NN>J}(B
-$B$r;}$C$F$$$k%a%C%;!<%8$O!"$^$:%K%e!<%9$H$7$FAw?.$5$l$?8e$K%a!<%k$H$7$F$b(B
-$BAw?.$5$l$^$9!#(B
+@code{message-send-method-alist} の各要素は先頭から順にすべて試されるの
+で、例えば有効な @samp{Newsgroups:} ヘッダーと @samp{To:} ヘッダーの両方
+を持っているメッセージは、まずニュースとして送信された後にメールとしても
+送信されます。
 @end table
 
 @node Sending Variables
-@section $BAw$k$?$a$NJQ?t(B
+@section 送るための変数
 
 @table @code
 @item message-fcc-handler-function
 @vindex message-fcc-handler-function
-$B=P$F9T$/5-;v$rJ]B8$9$k$?$a$K8F$P$l$k4X?t$G$9!#$3$N4X?t$O5-;v$r3JG<$9$k$?(B
-$B$a$N%U%!%$%kL>$H6&$K8F$P$l$^$9!#%G%#%U%)%k%H$N4X?t$O(B Unix mailbox $BMM<0$G(B
-$BJ]B8$9$k(B @code{message-output} $B$G$9!#(B
+出て行く記事を保存するために呼ばれる関数です。この関数は記事を格納するた
+めのファイル名と共に呼ばれます。ディフォルトの関数は Unix mailbox 様式で
+保存する @code{message-output} です。
 
 @item message-courtesy-message
 @vindex messsage-courtesy-messsage
-$BJ#9g%a%C%;!<%8(B ($BLuCm(B: $B%K%e!<%9$H%a!<%k$NN>J}$GAw?.$9$k%a%C%;!<%8(B) $B$rAw$k(B
-$B$H$-$K!"$3$NJ8;zNs$,%a!<%k$GAw$i$l$kJ#@=$NJ}$NK\J8$N@hF,$KA^F~$5$l$^$9!#(B
-$B$b$7$=$NJ8;zNs$,(B @samp{%s} $B=qK!;EMM$r4^$s$G$$$?$i!"5-;v$,Ej9F$5$l$?%K%e!<(B
-$B%9%0%k!<%W$,$=$3$KA^F~$5$l$^$9!#$3$NJQ?t$,(B @code{nil} $B$@$C$?$i!"$=$N$h$&(B
-$B$J?F@Z%a%C%;!<%8$O2C$($i$l$^$;$s!#%G%#%U%)%k%HCM$O(B @samp{"The following
+複合メッセージ (訳注: ニュースとメールの両方で送信するメッセージ) を送る
+ときに、この文字列がメールで送られる複製の方の本文の先頭に挿入されます。
+もしその文字列が @samp{%s} 書法仕様を含んでいたら、記事が投稿されたニュー
+スグループがそこに挿入されます。この変数が @code{nil} だったら、そのよう
+な親切メッセージは加えられません。ディフォルト値は @samp{"The following
 message is a courtesy copy of an article\nthat has been posted to %s as
-well.\n\n"} $B$G$9!#(B
+well.\n\n"} です。
 
 @item message-fcc-externalize-attachments
 @vindex message-fcc-externalize-attachments
-@code{nil} $B$@$C$?$i!"(BFcc $B$GJ]B8$9$k%a%C%;!<%8$N%3%T!<$KDL>o$N%Q!<%H$H$7(B
-$B$F%U%!%$%k$rE:IU$7$^$9!#Hs(B-@code{nil} $B$@$C$?>l9g$O!"30It%Q!<%H$H$7$F%m!<(B
-$B%+%k%U%!%$%k$rE:IU$7$^$9(B ($BLuCm(B: $B$=$N%Q!<%H$r%m!<%+%k%U%!%$%k$K=q$-=P$7(B
-$B$F!"%a%C%;!<%8$K$O$=$N%U%!%$%k$N3JG<>l=j$r<($9%?%0$@$1$r4^$s$G$$$k%Q!<%H(B
-$B$rIU$1$^$9(B)$B!#(B
+@code{nil} だったら、Fcc で保存するメッセージのコピーに通常のパートとし
+てファイルを添付します。非-@code{nil} だった場合は、外部パートとしてロー
+カルファイルを添付します (訳注: そのパートをローカルファイルに書き出し
+て、メッセージにはそのファイルの格納場所を示すタグだけを含んでいるパート
+を付けます)。
 
 @item message-interactive
 @vindex message-interactive
-@code{nil} $B$G$J$+$C$?$i!"%a%C%;!<%8$rAw?.$9$k$H$-$K%(%i!<$,=P$k$N$rBT$C(B
-$B$FI=<($7$^$9!#(B@code{nil} $B$@$C$?$i!"%(%i!<$NJs9p$r%a!<%k$G9T$J$$$^$9!#(B
+@code{nil} でなかったら、メッセージを送信するときにエラーが出るのを待っ
+て表示します。@code{nil} だったら、エラーの報告をメールで行ないます。
 
 @item message-confirm-send
 @vindex message-confirm-send
-@code{nil} $B$G$J$+$C$?$i!"(BGnus $B$O%a%C%;!<%8$rAw?.$9$k$H$-$K3NG'$r5a$a$^$9!#(B
+@code{nil} でなかったら、Gnus はメッセージを送信するときに確認を求めます。
 @end table
 
 @node Message Buffers
-@section $B%a%C%;!<%8%P%C%U%!!<(B
+@section メッセージバッファー
 
-Message $B$O$"$J$?$,%a%C%;!<%8%P%C%U%!!<$rMW5a$7$?$H$-$K!"%f%K!<%/$J(B ($BM#0l(B
-$BL5Fs$N(B) $B%P%C%U%!!<L>$G?7$7$$%P%C%U%!!<$r:n$j$^$9!#%a%C%;!<%8$rAw$C$?$H$-(B
-$B$K!"%P%C%U%!!<$OIaDL$O:o=|$5$l$^$;$s!#$=$NL>A0$OJQ99$5$l$F!"FCDj$N?t$N8E(B
-$B$$%a%C%;!<%8%P%C%U%!!<$,;D$5$l$^$9!#(B
+Message はあなたがメッセージバッファーを要求したときに、ユニークな (唯一
+無二の) バッファー名で新しいバッファーを作ります。メッセージを送ったとき
+に、バッファーは普通は削除されません。その名前は変更されて、特定の数の古
+いメッセージバッファーが残されます。
 
 @table @code
 @item message-generate-new-buffers
 @vindex message-generate-new-buffers
-$B%a%C%;!<%8$r=q$/$?$a$K?7$7$$%a%C%;!<%8%P%C%U%!!<$r:n$k$+$I$&$+$r@)8f$7$^(B
-$B$9!#<!$NCM$,M-8z$G$9(B:
+メッセージを書くために新しいメッセージバッファーを作るかどうかを制御しま
+す。次の値が有効です:
 
 @table @code
 @item nil
-$B%a%C%;!<%8$N$d$jJ}$G%P%C%U%!!<$NL>A0(B ($BNc$($P(B *mail*, *news*, *mail to
-whom*, *news on group* $B$J$I(B) $B$r@8@.$7$F!"$=$NL>A0$N4{B8$N%P%C%U%!!<$GJT(B
-$B=8$rB39T$7$^$9!#$=$N$h$&$J%P%C%U%!!<$,L5$$>l9g$O!"?7$?$K:n$i$l$^$9!#(B
+メッセージのやり方でバッファーの名前 (例えば *mail*, *news*, *mail to
+whom*, *news on group* など) を生成して、その名前の既存のバッファーで編
+集を続行します。そのようなバッファーが無い場合は、新たに作られます。
 
 @item unique
 @item t
-$B%a%C%;!<%8$N$d$jJ}$G@8@.$5$l$?L>A0$G?7$7$$%P%C%U%!!<$r:n$j$^$9!#(B
+メッセージのやり方で生成された名前で新しいバッファーを作ります。
 
 @item unsent
-@code{unique} $B$K;w$F$$$^$9$,!"%P%C%U%!!<L>$,(B "*unsent " $B$G;O$^$j$^$9!#(B
+@code{unique} に似ていますが、バッファー名が "*unsent " で始まります。
 
 @item standard
-@code{nil} $B$K;w$F$$$^$9$,!"(B*mail message* $B$N$h$&$J!"$h$jC1=c$J%P%C%U%!!<(B
-$BL>$K$J$j$^$9!#(B
+@code{nil} に似ていますが、*mail message* のような、より単純なバッファー
+名になります。
 @end table
 
 @table @var
 @item function
-$B$b$7$3$l$,4X?t$@$C$?$i!"$=$N4X?t$r;0$D$N0z?t(B---$B$=$N7?!"Aw$j@h$N%"%I%l%9!"(B
-$B%0%k!<%WL>(B---$B$H6&$K8F$S$^$9(B ($B$3$l$i$N$I$l$b$,(B @code{nil} $B$G$"$j$($^$9(B)$B!#(B
-$B$=$N4X?t$O?7$7$$%P%C%U%!!<L>$rJV$5$J$1$l$P$J$j$^$;$s!#(B
+もしこれが関数だったら、その関数を三つの引数---その型、送り先のアドレス、
+グループ名---と共に呼びます (これらのどれもが @code{nil} でありえます)。
+その関数は新しいバッファー名を返さなければなりません。
 @end table
 
-$B%G%#%U%)%k%HCM$O(B @code{unsent} $B$G$9!#(B
+ディフォルト値は @code{unsent} です。
 
 @item message-max-buffers
 @vindex message-max-buffers
-$B$3$NJQ?t$O$I$N$/$i$$8E$$%a%C%;!<%8%P%C%U%!!<$r;D$7$F$*$/$+$r;XDj$7$^$9!#(B
-$B$3$l$h$jB?$$%a%C%;!<%8%P%C%U%!!<$,$"$l$P!"0lHV8E$$%P%C%U%!!<$,:o=|$5$l$^(B
-$B$9!#%G%#%U%)%k%H$O(B 10 $B$G$9!#$3$NJQ?t$,(B @code{nil} $B$@$C$?$i!"8E$$%a%C%;!<(B
-$B%8%P%C%U%!!<$O:o=|$5$l$^$;$s!#(B
+この変数はどのくらい古いメッセージバッファーを残しておくかを指定します。
+これより多いメッセージバッファーがあれば、一番古いバッファーが削除されま
+す。ディフォルトは 10 です。この変数が @code{nil} だったら、古いメッセー
+ジバッファーは削除されません。
 
 @item message-send-rename-function
 @vindex message-send-rename-function
-$B%a%C%;!<%8$rAw$C$?8e$G!"%P%C%U%!!<$NL>A0$O!"Nc$((B
-$B$P(B @samp{*reply to Lars*} $B$+$i(B @samp{*sent reply to Lars*} $B$KJQ99$5$l$^(B
-$B$9!#$b$7$3$l$,9%$-$G$O$J$$$N$J$i$P!"$3$NJQ?t$r$"$J$?$N9%$-$JJ}K!$G%P%C(B
-$B%U%!!<$NL>A0$rJQ99$9$k4X?t$K@_Dj$7$F$/$@$5$$!#$=$b$=$b%P%C%U%!!<L>$rJQ99(B
-$B$9$k$3$H$r9%$^$J$$$N$G$"$l$P!"<!$N$h$&$K$9$l$PNI$$$G$7$g$&(B:
+メッセージを送った後で、バッファーの名前は、例え
+ば @samp{*reply to Lars*} から @samp{*sent reply to Lars*} に変更されま
+す。もしこれが好きではないのならば、この変数をあなたの好きな方法でバッ
+ファーの名前を変更する関数に設定してください。そもそもバッファー名を変更
+することを好まないのであれば、次のようにすれば良いでしょう:
 
 @lisp
 (setq message-send-rename-function 'ignore)
@@ -2574,35 +2574,35 @@ whom*, *news on group* $B$J$I(B) $B$r@8@.$7$F!"$=$NL>A0$N4{B8$N%P%C%U%!!<$GJT
 
 @item message-kill-buffer-on-exit
 @vindex message-kill-buffer-on-exit
-@code{nil} $B$G$J$1$l$P!"=*N;;~$K$9$0$K%P%C%U%!!<$r:o=|$7$^$9!#(B
+@code{nil} でなければ、終了時にすぐにバッファーを削除します。
 @end table
 
 @node Message Actions
-@section $B%a%C%;!<%8$,@A$1Ii$&;E;v(B
+@section メッセージが請け負う仕事
 
-Message $B$,%K%e!<%9(B/$B%a!<%k%j!<%@!<$+$i;H$o$l$F$$$k$H$-$K!"%j!<%@!<$K$O%a%C(B
-$B%;!<%8$,Aw$i$l$?8e$G9T$J$&2?$i$+$N;E;v$,2]$;$i$l$k$3$H$,$h$/$"$j$^$9!#$*(B
-$B$=$i$/A0$N%&%#%s%I%&G[CV$KLa$7$?$j!"5-;v$K$=$l$,JVEz$5$l$?$3$H$rI=$90u$r(B
-$BIU$1$k$h$&$J$3$H$G$7$g$&!#(B
+Message がニュース/メールリーダーから使われているときに、リーダーにはメッ
+セージが送られた後で行なう何らかの仕事が課せられることがよくあります。お
+そらく前のウィンドウ配置に戻したり、記事にそれが返答されたことを表す印を
+付けるようなことでしょう。
 
 @vindex message-kill-actions
 @vindex message-postpone-actions
 @vindex message-exit-actions
 @vindex message-send-actions
-$BMxMQ<T$O$$$m$$$m$JJ}K!$G%a%C%;!<%8%P%C%U%!!<$r=*$o$i$;$k$3$H$,$G$-$^$9!#(B
-$B:G$bNI$/$"$k$N$O(B @kbd{C-c C-c} $B$G!"$=$l$O%a%C%;!<%8$rAw$C$F=*N;$7$^$9!#(B
-$BB>$N2DG=@-$H$7$F$O(B @kbd{C-c C-s} $B$,$"$j$^$9!#$3$l$O%a%C%;!<%8$rAw$k$@$1(B
-$B$G$9!#(B@kbd{C-c C-d} $B$O%a%C%;!<%8$r8e$GJT=8$9$k$3$H$K$7$F!"%a%C%;!<%8%P%C(B
-$B%U%!!<$r(B @code{bury-buffer} $B$7$^$9(B ($BLuCm(B: $B$=$l$r(B Emacs $B>e$KB8:_$9$k%P%C(B
-$B%U%!!<$N%j%9%H$N:G8e$NMWAG$K$7$F1#$7$^$9(B)$B!#$=$7$F(B @kbd{C-c C-k} $B$O%a%C%;!<(B
-$B%8%P%C%U%!!<$r:o=|$7$^$9!#$3$l$i$N$=$l$>$l$NF0:n$O!"$=$l$i$H4XO"IU$1$i$l(B
-$B$?@A$1Ii$$;E;v$r4^$s$G$$$k%j%9%H$r;}$C$F$$$^$9!#$=$N%j%9%H(B
-$B$O(B @code{message-send-actions}, @code{message-exit-actions},
-@code{message-postpone-actions} $B$*$h$S(B @code{message-kill-actions} $B$G$9!#(B
+利用者はいろいろな方法でメッセージバッファーを終わらせることができます。
+最も良くあるのは @kbd{C-c C-c} で、それはメッセージを送って終了します。
+他の可能性としては @kbd{C-c C-s} があります。これはメッセージを送るだけ
+です。@kbd{C-c C-d} はメッセージを後で編集することにして、メッセージバッ
+ファーを @code{bury-buffer} します (訳注: それを Emacs 上に存在するバッ
+ファーのリストの最後の要素にして隠します)。そして @kbd{C-c C-k} はメッセー
+ジバッファーを削除します。これらのそれぞれの動作は、それらと関連付けられ
+た請け負い仕事を含んでいるリストを持っています。そのリスト
+は @code{message-send-actions}, @code{message-exit-actions},
+@code{message-postpone-actions} および @code{message-kill-actions} です。
 
-Message $B$O$3$l$i$N%j%9%H$rA`:n$9$k$?$a$K(B @code{message-add-action} $B4X?t(B
-$B$rMQ0U$7$F$$$^$9!#Bh0l0z?t$O2C$($i$l$k@A$1Ii$$;E;v$G!";D$j$N0z?t$O$I$N%j(B
-$B%9%H$K$3$N@A$1Ii$$;E;v$r2C$($k$+$r;XDj$7$^$9!#$3$l$O(B Gnus $B$+$i;H$&Nc$G$9(B:
+Message はこれらのリストを操作するために @code{message-add-action} 関数
+を用意しています。第一引数は加えられる請け負い仕事で、残りの引数はどのリ
+ストにこの請け負い仕事を加えるかを指定します。これは Gnus から使う例です:
 
 @lisp
   (message-add-action
@@ -2610,33 +2610,33 @@ Message $B$O$3$l$i$N%j%9%H$rA`:n$9$k$?$a$K(B @code{message-add-action} $B4X?t
    'exit 'postpone 'kill)
 @end lisp
 
-$B$3$l$O%a%C%;!<%8%P%C%U%!!<$,:o=|(B (kill)$B!"1d4|(B (postpone)$B!"=*N;(B (kill) $B$5(B
-$B$l$?$H$-$K!"(BGnus $B$N%&%#%s%I%&G[CV$rI|3h$5$;$k$?$a$N$b$N$G$9!#(B
+これはメッセージバッファーが削除 (kill)、延期 (postpone)、終了 (kill) さ
+れたときに、Gnus のウィンドウ配置を復活させるためのものです。
 
-$BBh0l0z?t$KM?$($k!V@A$1Ii$$;E;v!W$O<!$N$I$l$+$G$9(B: $BIaDL$N4X?t!"(B
-@code{car} $B$,4X?t$G(B @sc{cdr} $B$,0z?t$N%j%9%H$G$"$k%j%9%H!"$^$?(B
-$B$O(B @code{eval} ($BI>2A(B) $B$5$l$k<0$G$9!#(B
+第一引数に与える「請け負い仕事」は次のどれかです: 普通の関数、
+@code{car} が関数で @sc{cdr} が引数のリストであるリスト、また
+は @code{eval} (評価) される式です。
 
-$BLuCm(B: $B$?$V$s<B:]$N%=!<%9%3!<%I$r8+$?J}$,OC$,Aa$$$G$7$g$&!#(B
+訳注: たぶん実際のソースコードを見た方が話が早いでしょう。
 
 @node Appendices
-@chapter $BIU5-(B
+@chapter 付記
 
 @menu
-* Responses:: $B1~Ez$,$I$3$K9T$/$+$r7hDj$9$kI8=`$N5,B'(B
+* Responses:: 応答がどこに行くかを決定する標準の規則
 @end menu
 
 @node Responses
-@section $B1~Ez(B
+@section 応答
 
-$B%a%C%;!<%8$,$I$3$K9T$/$+$r7hDj$9$k$?$a$K!"%G%#%U%)%k%H$G$O0J2<$N%"%k%4%j(B
-$B%:%`$,;H$o$l$^$9!#(B
+メッセージがどこに行くかを決定するために、ディフォルトでは以下のアルゴリ
+ズムが使われます。
 
 @table @dfn
 @item reply
-$B!VJVEz!W(B(reply) $B$O!"%a%C%;!<%8$rAw$C$??M(B @emph{$B$@$1(B} $B$K%a!<%k$G1~Ez$7$?(B
-$B$$$H$-$N$b$N$G$9!#<u<h?M$O0l?M$7$+$$$^$;$s!#<u<h?M$,C/$G$"$k$+$r7hDj$9$k(B
-$B$?$a$K!"0J2<$N%X%C%@!<$r=gHV$KD4$Y$^$9(B:
+「返答」(reply) は、メッセージを送った人 @emph{だけ} にメールで応答した
+いときのものです。受取人は一人しかいません。受取人が誰であるかを決定する
+ために、以下のヘッダーを順番に調べます:
 
 @table @code
 @item Reply-To
@@ -2645,29 +2645,29 @@ Message $B$O$3$l$i$N%j%9%H$rA`:n$9$k$?$a$K(B @code{message-add-action} $B4X?t
 @end table
 
 @item wide reply
-$B!V9-$$JVEz!W(B(wide reply) $B$O!"1~Ez$7$h$&$H$7$F$$$k%a%C%;!<%8$K=q$+$l$F$$(B
-$B$?(B @emph{$B$9$Y$F$N(B} $B?M!9$X$N%a!<%k$K$h$k1~Ez$G$9!#0J2<$N%X%C%@!<$+$iCj=P(B
-$B$7$?$9$Y$F$N%a!<%k%"%I%l%9$rO"7k$7$F!"=P$F9T$/(B @code{To}/@code{Cc} $B%X%C(B
-$B%@!<$r:n$j$^$9(B:
+「広い返答」(wide reply) は、応答しようとしているメッセージに書かれてい
+た @emph{すべての} 人々へのメールによる応答です。以下のヘッダーから抽出
+したすべてのメールアドレスを連結して、出て行く @code{To}/@code{Cc} ヘッ
+ダーを作ります:
 
 @table @code
 @item From
-(@code{Reply-To} $B$,L5$$8B$j$3$l$,;H$o$l$^$9$,!"$"$k>l9g$OBe$o$j$K$=$l$,(B
-$B;H$o$l$^$9(B)$B!#(B
+(@code{Reply-To} が無い限りこれが使われますが、ある場合は代わりにそれが
+使われます)。
 
 @item Cc
 
 @item To
 @end table
 
-@code{Mail-Copies-To} $B%X%C%@!<$,B8:_$7$F$$$?$J$i$P!"$=$l$b08@h$N%j%9%H$K(B
-$B2C$($i$l$^$9!#$3$N%X%C%@!<$,(B @samp{never} $B$@$C$?$i!"(B@code{From} ($B$^$?(B
-$B$O(B @code{Reply-To}) $B$N%a!<%k%"%I%l%9$r=|30$7$J$1$l$P$J$i$J$$$H$$$&$3$H$G(B
-$B$9!#(B
+@code{Mail-Copies-To} ヘッダーが存在していたならば、それも宛先のリストに
+加えられます。このヘッダーが @samp{never} だったら、@code{From} (また
+は @code{Reply-To}) のメールアドレスを除外しなければならないということで
+す。
 
 @item followup
-$B!V%U%)%m!<%"%C%W!W(B(followup) $B$O%K%e!<%9$GAw$k1~Ez$G$9!#0J2<$N%X%C(B
-$B%@!<(B ($BM%@h=g0L$,9b$$=g$KJB$s$G$$$^$9(B) $B$G!"$I$3$K1~Ez$rAw$k$+$r7hDj$7$^$9(B:
+「フォローアップ」(followup) はニュースで送る応答です。以下のヘッ
+ダー (優先順位が高い順に並んでいます) で、どこに応答を送るかを決定します:
 
 @table @code
 @item Followup-To
@@ -2675,16 +2675,16 @@ Message $B$O$3$l$i$N%j%9%H$rA`:n$9$k$?$a$K(B @code{message-add-action} $B4X?t
 @item Newsgroups
 @end table
 
-$B$b$7(B @code{Mail-Copies-To} $B%X%C%@!<$,$"$C$?$J$i$P!"$=$l(B
-$B$,(B @samp{never} $B$G$J$$8B$j!"?7$7$$(B @code{Cc} $B%X%C%@!<$N4p$H$7$F;H$o$l$^(B
-$B$9!#(B
+もし @code{Mail-Copies-To} ヘッダーがあったならば、それ
+が @samp{never} でない限り、新しい @code{Cc} ヘッダーの基として使われま
+す。
 @end table
 
 @node GNU Free Documentation License
-@chapter GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
+@chapter GNU フリー文書利用許諾契約書
 
-$BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
-$BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+訳注: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+非公式な日本語訳} があります。
 
 @include doclicense.texi
 
@@ -2699,7 +2699,6 @@ Message $B$O$3$l$i$N%j%9%H$rA`:n$9$k$?$a$K(B @code{message-add-action} $B4X?t
 @bye
 
 @c Local Variables:
-@c coding: iso-2022-7bit
 @c fill-column: 72
 @c End:
 @item

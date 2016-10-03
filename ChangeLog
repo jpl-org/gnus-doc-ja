@@ -1,3 +1,11 @@
+2016-10-03  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* README.ja, auth-ja.texi, emacs-mime-ja.texi, epa-ja.texi,
+	gnus-coding-ja.texi, gnus-faq-ja.texi, gnus-ja.texi, gnus-news-ja.texi,
+	message-ja.texi, sasl-ja.texi, sieve-ja.texi:
+	Use utf-8 instead of iso-2022-7bit for encoding contents.
+	Suggested by Byung-Hee HWANG <soyeomul@doraji.xyz>.
+
 2016-09-23  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 25.1 is released.

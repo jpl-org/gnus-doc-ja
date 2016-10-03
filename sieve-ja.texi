@@ -25,17 +25,17 @@ Invariant Sections, with the Front-Cover Texts being ``A GNU Manual'',
 and with the Back-Cover Texts as in (a) below.  A copy of the license
 is included in the section entitled ``GNU Free Documentation License''.
 
-$B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
-$BBh(B 1.3 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
-$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!H(BA GNU Manual$B!I$OI=I=;f(B
-$B%F%-%9%H!"0J2<$N(B (a) $B$ON"I=;f%F%-%9%H$G$9!#$3$NMxMQ5vBz7@Ls=q$NJ#<L$O(B
-$B!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^$9!#(B
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.3 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
 modify this GNU manual.''
 
-(a) FSF $B$NN"I=;f%F%-%9%H(B:$B!V$"$J$?$K$O$3$N(B GNU Manual $B$rJ#@=$7$?$jJQ99$9(B
-$B$k<+M3$,$"$j$^$9!#!W(B
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。」
 @end quotation
 @end copying
 
@@ -69,41 +69,41 @@ modify this GNU manual.''
 @node Top
 @top Sieve Support for Emacs
 
-$B$3$l$O(B Sieve $B%b!<%I$H!V(BSieve-$B4IM}!W(B(Manage Sieve) $B$N$?$a$N%f!<%6!<%:%^%K%e(B
-$B%"%k$H$7$F!"$*$h$S(B @samp{sieve-manage} $B%W%m%H%3%k$r07$&(B Emacs Lisp
-API $B$N$?$a$N%j%U%!%l%s%9%^%K%e%"%k$H$7$F3hMQ$5$l$k$3$H$r0U?^$7$F$$$^$9!#(B
+これは Sieve モードと「Sieve-管理」(Manage Sieve) のためのユーザーズマニュ
+アルとして、および @samp{sieve-manage} プロトコルを扱う Emacs Lisp
+API のためのリファレンスマニュアルとして活用されることを意図しています。
 
-Sieve $B$O%5!<%P!<B&$G%a!<%k$r_I2a$9$k$?$a$N8@8l$G$9!#$=$N8@8l$O(B RFC
-3028 $B$KJ8=q2=$5$l$F$$$^$9!#$3$N%^%K%e%"%k$NL\E*$O8@8l$r@bL@$9$k$3$H$G$O(B
-$B$J$$$N$G!"(BRFC 3028 $B$O<j85$KCV$$$F$*$$$F$/$@$5$$!#(B
+Sieve はサーバー側でメールを濾過するための言語です。その言語は RFC
+3028 に文書化されています。このマニュアルの目的は言語を説明することでは
+ないので、RFC 3028 は手元に置いておいてください。
 
-$BLuCm(B: Sieve == $BdA(B ($B$U$k$$(B)
+訳注: Sieve == 篩 (ふるい)
 
 @ifnottex
 @insertcopying
 @end ifnottex
 
 @menu
-* Installation::          $B$3$N%Q%C%1!<%8$r;H$&$?$a$N=`Hw(B
-* Sieve Mode::            Sieve $B%9%/%j%W%H$NJT=8(B
-* Managing Sieve::        $B1s3V%5!<%P!<>e$N(B Sieve $B%9%/%j%W%H$r4IM}$9$k(B
-* Examples ::             Sieve $B%3!<%I$NJRNZ(B
-* Manage Sieve API ::     $B!V(BSieve-$B4IM}!W%W%m%H%3%k(B API $B$N%$%s%?!<%U%'!<%9(B
-* Standards::             $B;H$o$l$F$$$k(B RFC $B$H:n6HJ8=q$N35N,(B
-* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
-* Index::                 $B4X?t$*$h$SJQ?t$N:w0z(B
+* Installation::          このパッケージを使うための準備
+* Sieve Mode::            Sieve スクリプトの編集
+* Managing Sieve::        遠隔サーバー上の Sieve スクリプトを管理する
+* Examples ::             Sieve コードの片鱗
+* Manage Sieve API ::     「Sieve-管理」プロトコル API のインターフェース
+* Standards::             使われている RFC と作業文書の概略
+* GNU Free Documentation License:: この文書の利用許諾契約書
+* Index::                 関数および変数の索引
 @end menu
 
 @node Installation
-@chapter $B%$%s%9%H!<%k(B
+@chapter インストール
 @cindex Install
 @cindex Setup
 
-Sieve $B%Q%C%1!<%8$O$"$J$?$N(B Emacs $B$NHG$KIUB0$7$F$$$F!"$9$0$K;H$($k$h$&$K(B
-$B$J$C$F$$$k$O$:$G$9!#(B
+Sieve パッケージはあなたの Emacs の版に付属していて、すぐに使えるように
+なっているはずです。
 
-$B$=$&$J$C$F$$$J$$$N$G$"$l$P!"$3$N%Q%C%1!<%8$r<j:n6H$G@_Dj$9$k$?$a$K!"0J2<(B
-$B$N%3%^%s%I$r(B @code{~/.emacs} $B%U%!%$%k$K=q$-9~$s$G$/$@$5$$(B:
+そうなっていないのであれば、このパッケージを手作業で設定するために、以下
+のコマンドを @code{~/.emacs} ファイルに書き込んでください:
 
 @lisp
 (autoload 'sieve-mode "sieve-mode")
@@ -114,51 +114,51 @@ Sieve $B%Q%C%1!<%8$O$"$J$?$N(B Emacs $B$NHG$KIUB0$7$F$$$F!"$9$0$K;H$($k$h$&$K
 @end lisp
 
 @node Sieve Mode
-@chapter Sieve $B%b!<%I(B
+@chapter Sieve モード
 
-Sieve $B%b!<%I$O!"9=J8$K4p$E$$$?%$%s%G%s%H!"(Bfont-lock $B$N%5%]!<%H!"$*$h(B
-$B$S(B Sieve $B%9%/%j%W%H$r3Z$KJT=8$G$-$k$h$&$K$9$k$?$a$N$=$NB>$NJXMx$J5!G=$r(B
-$BDs6!$7$^$9!#(B
+Sieve モードは、構文に基づいたインデント、font-lock のサポート、およ
+び Sieve スクリプトを楽に編集できるようにするためのその他の便利な機能を
+提供します。
 
-$B$3$N%a%8%c!<%b!<%I$K@Z$jBX$($k$K$O(B @samp{M-x sieve-mode} $B$r;H$C$F$/$@$5(B
-$B$$!#$3$N%3%^%s%I$O(B @code{sieve-mode-hook} $B$GM?$($i$l$?%U%C%/$r<B9T$7$^$9!#(B
+このメジャーモードに切り替えるには @samp{M-x sieve-mode} を使ってくださ
+い。このコマンドは @code{sieve-mode-hook} で与えられたフックを実行します。
 
 @vindex sieve-mode-map
 @vindex sieve-mode-syntax-table
-Sieve $B%b!<%I$O(B @code{c-mode} $B$+$iGI@8$7$F$$$F!"%3%a%s%H$N9=J80J30$O$H$F(B
-$B$b;w$F$$$^$9!#%$%s%G%s%H$r%+%9%?%^%$%:$9$kJQ?t$,$"$k$N$HF1MM$K!"%-!<%^%C(B
-$B%W(B (@code{sieve-mode-map}) $B$O(B @code{c-mode} $B$N$b$N$r<u$17Q$.$^$9!#(B
-Sieve $B%b!<%I$O@lMQ$NN,8lI=(B (@code{sieve-mode-abbrev-table}) $B$H9=J8%F!<%V(B
-$B%k(B (@code{sieve-mode-syntax-table}) $B$r;}$C$F$$$^$9!#(B
+Sieve モードは @code{c-mode} から派生していて、コメントの構文以外はとて
+も似ています。インデントをカスタマイズする変数があるのと同様に、キーマッ
+プ (@code{sieve-mode-map}) は @code{c-mode} のものを受け継ぎます。
+Sieve モードは専用の略語表 (@code{sieve-mode-abbrev-table}) と構文テーブ
+ル (@code{sieve-mode-syntax-table}) を持っています。
 
-$BJT=8$KLrN)$D4X?t$K2C$($F!"(BSieve $B%b!<%I$K$O(B Sieve $B%9%/%j%W%H$r1s3V4IM}$9(B
-$B$k$?$a$N%-!<@_Dj$b$"$j$^$9!#(B@xref{Managing Sieve}.
+編集に役立つ関数に加えて、Sieve モードには Sieve スクリプトを遠隔管理す
+るためのキー設定もあります。@xref{Managing Sieve}.
 
 @table @kbd
 @item C-c RET
 @kindex C-c RET
 @findex sieve-manage
 @cindex manage remote sieve script
-$B!V(BSieve-$B4IM}!W%W%m%H%3%k(B (Managesieve protocol) $B$r;H$C$F!"1s3V%5!<%P!<$K(B
-$B@\B3$7$^$9!#(B
+「Sieve-管理」プロトコル (Managesieve protocol) を使って、遠隔サーバーに
+接続します。
 
 @item C-c C-l
 @kindex C-c C-l
 @findex sieve-upload
 @cindex upload sieve script
-$B8=:_@\B3$7$F$$$k%5!<%P!<$K(B Sieve $B%9%/%j%W%H$r%"%C%W%m!<%I$7$^$9!#(B
+現在接続しているサーバーに Sieve スクリプトをアップロードします。
 @end table
 
 @node Managing Sieve
-@chapter Sieve $B$N4IM}(B
+@chapter Sieve の管理
 
-$B!V(BSieve-$B4IM}!W$O!"1s3V%5!<%P!<$K$"$k(B Sieve $B%9%/%j%W%H$rI=<($9$k$?$a$K;H(B
-$B$o$l$kFCJL$J%b!<%I$G$9!#$=$l$O(B @kbd{M-x sieve-manage RET} $B$G5/F0$7!"$=$N(B
-$B%5!<%P!<$K$*$1$k%f!<%6!<L>$H!"I,MW$J>l9g$K$O;q3J>ZL@=q(B (credentials) $B$N(B
-$BF~NO$r5a$a$^$9!#(B
+「Sieve-管理」は、遠隔サーバーにある Sieve スクリプトを表示するために使
+われる特別なモードです。それは @kbd{M-x sieve-manage RET} で起動し、その
+サーバーにおけるユーザー名と、必要な場合には資格証明書 (credentials) の
+入力を求めます。
 
-$B%5!<%P!<$H$N@\B3$K@.8y$9$k$H!"!V(BSieve-$B4IM}!W%P%C%U%!!<$K$O0J2<$N$h$&$J$b(B
-$B$N$,I=<($5$l$^$9(B:
+サーバーとの接続に成功すると、「Sieve-管理」バッファーには以下のようなも
+のが表示されます:
 
 @example
 Server  : mailserver:sieve
@@ -170,31 +170,31 @@ press RET on <new script> to create a new script.
         template.siv
 @end example
 
-$B%9%/%j%W%H$N0l$D$,6/D4I=<($5$l!"I8=`$N%]%$%s%H0\F0%3%^%s%I(B (@kbd{<up>},
-@kbd{<down>} $B$J$I(B) $B$G%j%9%HFb$r0\F0$9$k$3$H$,$G$-$^$9!#(B
+スクリプトの一つが強調表示され、標準のポイント移動コマンド (@kbd{<up>},
+@kbd{<down>} など) でリスト内を移動することができます。
 
-$B0J2<$N%3%^%s%I$,!V(BSieve-$B4IM}!W%P%C%U%!!<$GMxMQ2DG=$G$9(B:
+以下のコマンドが「Sieve-管理」バッファーで利用可能です:
 
 @table @kbd
 @item m
 @kindex m
 @findex sieve-activate
-$B8=:_$N6/D4I=<($5$l$?%9%/%j%W%H$r3h@-2=$7$^$9!#(B
+現在の強調表示されたスクリプトを活性化します。
 
 @item u
 @kindex u
 @findex sieve-deactivate
-$B8=:_$N6/D4I=<($5$l$?%9%/%j%W%H$rIT3h@-2=$7$^$9!#(B
+現在の強調表示されたスクリプトを不活性化します。
 
 @item C-M-?
 @kindex C-M-?
 @findex sieve-deactivate-all
-$B$9$Y$F$N%9%/%j%W%H$rIT3h@-2=$7$^$9!#(B
+すべてのスクリプトを不活性化します。
 
 @item r
 @kindex r
 @findex sieve-remove
-$B8=:_$N6/D4I=<($5$l$?%9%/%j%W%H$r<h$j=|$-$^$9!#(B
+現在の強調表示されたスクリプトを取り除きます。
 
 @item RET
 @item mouse-2
@@ -203,46 +203,46 @@ press RET on <new script> to create a new script.
 @kindex mouse-2
 @kindex f
 @findex sieve-edit-script
-$B%5!<%P!<%P%C%U%!!<$r1#$7$F!"8=:_$N6/D4I=<($5$l$?%9%/%j%W%H$r(B Sieve $B%b!<(B
-$B%I(B (@pxref{Sieve Mode}) $B$GJT=8$9$k$?$a$N?7$7$$%P%C%U%!!<$K%@%&%s%m!<%I$7(B
-$B$^$9!#(B
+サーバーバッファーを隠して、現在の強調表示されたスクリプトを Sieve モー
+ド (@pxref{Sieve Mode}) で編集するための新しいバッファーにダウンロードし
+ます。
 
 @item o
 @kindex o
 @findex sieve-edit-script-other-window
-Sieve $B%b!<%I(B (@pxref{Sieve Mode}) $B$GJT=8$9$k$?$a$K!"8=:_$N6/D4I=<($5$l$?(B
-$B%9%/%j%W%H$r4^$s$G$$$k?7$7$$%P%C%U%!!<$r!"JL%&%#%s%I%&$G:n@.$7$^$9!#(B
+Sieve モード (@pxref{Sieve Mode}) で編集するために、現在の強調表示された
+スクリプトを含んでいる新しいバッファーを、別ウィンドウで作成します。
 
 @item q
 @kindex q
 @findex sieve-bury-buffer
-$B@\B3$r@Z$i$:$K!V(BSieve-$B4IM}!W%P%C%U%!!<$r1#$7$^$9!#(B
+接続を切らずに「Sieve-管理」バッファーを隠します。
 
 @item ?
 @item h
 @kindex ?
 @kindex h
 @findex sieve-help
-$B%_%K%P%C%U%!!<$K%X%k%W$rI=<($7$^$9!#(B
+ミニバッファーにヘルプを表示します。
 
 @item Q
 @kindex Q
 @findex sieve-manage-quit
-$B!V(BSieve-$B4IM}!W$r=*N;$7$F@\B3$r@Z$j$^$9!#(B
+「Sieve-管理」を終了して接続を切ります。
 @end table
 
 @node Examples
-@chapter $BNc(B
+@chapter 例
 
-Sieve $B$r=OCN$7$F$$$J$$$J$i!"$3$N>O$K$[$s$N>/$7$@$1$"$k%3!<%I$NCGJR$rMxMQ(B
-$B$9$l$PNI$$$G$7$g$&!#(BSieve $B8@8l$G%<%m$+$i5,B'$r=q$/$3$H$,$b$C$H2wE,$K46$8(B
-$B$i$l$k$h$&$K$J$k$^$G$O!"$=$l$i$r%+%C%H!u%Z!<%9%H$7$F9%$-$J$h$&$KJQ99$7$F(B
-$B$/$@$5$$!#(B
+Sieve を熟知していないなら、この章にほんの少しだけあるコードの断片を利用
+すれば良いでしょう。Sieve 言語でゼロから規則を書くことがもっと快適に感じ
+られるようになるまでは、それらをカット＆ペーストして好きなように変更して
+ください。
 
-$B0J2<$N40A4$J(B Sieve $B%9%/%j%W%H$O!"9gCW$9$k(B @samp{Sender:} $B%X%C%@!<$r;}$D(B
-$B$9$Y$F$N%a%C%;!<%8$r!";XDj$5$l$?%a!<%k%\%C%/%9$K3JG<$7$^$9!#B?$/$N%a!<%j(B
-$B%s%0%j%9%H$,$3$N7A<0$r;H$C$F$$$^$9!#:G=i$N9T$O(B Sieve $B%5!<%P!<$,3N<B(B
-$B$K(B @code{fileinto} $B%3%^%s%I$rM}2r$G$-$k$h$&$K$9$k$?$a$N$b$N$G$9!#(B
+以下の完全な Sieve スクリプトは、合致する @samp{Sender:} ヘッダーを持つ
+すべてのメッセージを、指定されたメールボックスに格納します。多くのメーリ
+ングリストがこの形式を使っています。最初の行は Sieve サーバーが確実
+に @code{fileinto} コマンドを理解できるようにするためのものです。
 
 @example
 require "fileinto";
@@ -252,9 +252,9 @@ if address "sender" "owner-w3-beta@@xemacs.org" @{
 @}
 @end example
 
-$B>/?t$N%a!<%j%s%0%j%9%H$O(B @samp{Sender:} $B%X%C%@!<$r;H$$$^$;$s$,!"$"$kJL$N(B
-$B%X%C%@!<$KFHFC$N<1JL;R$,$"$j$^$9!#0J2<$N%9%/%j%W%H$O40A4$G$O$J$/!"$9$G(B
-$B$K(B @code{fileinto} $B$,FI$_9~$^$l$F$$$k$3$H$r2>Dj$7$F$$$^$9!#(B
+少数のメーリングリストは @samp{Sender:} ヘッダーを使いませんが、ある別の
+ヘッダーに独特の識別子があります。以下のスクリプトは完全ではなく、すで
+に @code{fileinto} が読み込まれていることを仮定しています。
 
 @example
 if header :contains "Delivered-To" "auc-tex@@sunsite.dk" @{
@@ -262,10 +262,10 @@ if header :contains "Delivered-To" "auc-tex@@sunsite.dk" @{
 @}
 @end example
 
-$B:G8e$O!"$I$s$JFHFC$N<1JL;R$b;}$C$F$$$J$$@dK>E*$J%a!<%j%s%0%j%9%H$N$?$a$K!"(B
-@samp{To:} $B$H(B @samp{Cc} $B%X%C%@!<$K$*$1$k9gCW$r6/$$$i$l$kNc$G$9!#A0$N$b$N(B
-$B$HF1MM$K!"$3$NCGJR$O(B @code{fileinto} $B$,FI$_9~$^$l$F$$$k$3$H$r2>Dj$7$F$$(B
-$B$^$9!#(B
+最後は、どんな独特の識別子も持っていない絶望的なメーリングリストのために、
+@samp{To:} と @samp{Cc} ヘッダーにおける合致を強いられる例です。前のもの
+と同様に、この断片は @code{fileinto} が読み込まれていることを仮定してい
+ます。
 
 @example
 if address ["to", "cc"] "kerberos@@mit.edu" @{
@@ -274,94 +274,94 @@ if address ["to", "cc"] "kerberos@@mit.edu" @{
 @end example
 
 @node Manage Sieve API
-@chapter $B!V(BSieve-$B4IM}!W$N(B API
+@chapter 「Sieve-管理」の API
 
-@file{sieve-manage.el} $B%i%$%V%i%j!<$K$O(B @sc{managesieve} $B%W%m%H%3%k$G%5!<(B
-$B%P!<$HOC$9$?$a$N!"Dc3,AX$N4X?t72$,$"$j$^$9!#(B
+@file{sieve-manage.el} ライブラリーには @sc{managesieve} プロトコルでサー
+バーと話すための、低階層の関数群があります。
 
-$B$$$/$D$+$N!"%f!<%6!<$,8+$k$3$H$,$G$-$kJQ?t$,$"$j!"$=$l$i$9$Y$F(B
-$B$O(B @code{sieve} $B%0%k!<%W$G%+%9%?%^%$%:$9$k$3$H$,$G$-$^$9(B (@kbd{M-x
+いくつかの、ユーザーが見ることができる変数があり、それらすべて
+は @code{sieve} グループでカスタマイズすることができます (@kbd{M-x
 customize-group RET sieve RET}):
 
 @table @code
 @item sieve-manage-default-port
 @vindex sieve-manage-default-port
-$B;EMM$9$k%G%#%U%)%k%H$N%]!<%H$r@_Dj$7$^$9!#Ds0F$5$l$F$$$k%]!<%HHV9f(B
-$B$O(B @code{2000} $B$G$9!#(B
+仕様するディフォルトのポートを設定します。提案されているポート番号
+は @code{2000} です。
 
 @item sieve-manage-log
 @vindex sieve-manage-log
-$BHs(B-@code{nil} $B$@$C$?$i!"$d$j<h$j$7$?%W%m%H%3%k$N7k2L$,5-O?$5$l$k%P%C%U%!!<(B
-$BL>$NJ8;zNs$G$J$1$l$P$J$j$^$;$s(B ($B%G%P%C%0$9$k$H$-$K;H$$$^$9(B)$B!#(B
+非-@code{nil} だったら、やり取りしたプロトコルの結果が記録されるバッファー
+名の文字列でなければなりません (デバッグするときに使います)。
 @end table
 
-API $B$N4X?t$K$O0J2<$N$b$N$,$"$j$^$9(B:
+API の関数には以下のものがあります:
 
 @table @code
 @item sieve-manage-open
 @findex sieve-manage-open
-$B!V(BSieve-$B4IM}!W%5!<%P!<$K@\B3$7!"B>$N$9$Y$F$N(B API $B$G;H$&%P%C%U%!!<$rJV$7(B
-$B$^$9!#(B
+「Sieve-管理」サーバーに接続し、他のすべての API で使うバッファーを返し
+ます。
 
 @item sieve-manage-opened
 @findex sieve-manage-opened
-$B%5!<%P!<$H@\B3$7$F$$$k$+H]$+$r8!::$7$^$9!#(B
+サーバーと接続しているか否かを検査します。
 
 @item sieve-manage-close
 @findex sieve-manage-close
-$B%5!<%P!<$H$N@\B3$rJD$8$^$9!#(B
+サーバーとの接続を閉じます。
 
 @item sieve-manage-authenticate
 @findex sieve-manage-authenticate
-$B%5!<%P!<$NG'>Z$r<u$1$^$9!#(B
+サーバーの認証を受けます。
 
 @item sieve-manage-capability
 @findex sieve-manage-capability
-$B%5!<%P!<$,%5%]!<%H$7$F$$$k5!G=$N%j%9%H$rJV$7$^$9!#(B
+サーバーがサポートしている機能のリストを返します。
 
 @item sieve-manage-listscripts
 @findex sieve-manage-listscripts
-$B%5!<%P!<$K$"$k%9%/%j%W%H$rNs5s$7$^$9!#(B
+サーバーにあるスクリプトを列挙します。
 
 @item sieve-manage-havespace
 @findex sieve-manage-havespace
-$BM?$($i$l$?%5%$%:$N%9%/%j%W%H$N$?$a$N6u$-$,$"$l$P!"Hs(B-@code{nil} $B$rJV$7$^(B
-$B$9!#(B
+与えられたサイズのスクリプトのための空きがあれば、非-@code{nil} を返しま
+す。
 
 @item sieve-manage-getscript
 @findex sieve-manage-getscript
-$B%5!<%P!<$+$i%9%/%j%W%H$r%@%&%s%m!<%I$7$^$9!#(B
+サーバーからスクリプトをダウンロードします。
 
 @item sieve-manage-putscript
 @findex sieve-manage-putscript
-$B%5!<%P!<$K%9%/%j%W%H$r%"%C%W%m!<%I$7$^$9!#(B
+サーバーにスクリプトをアップロードします。
 
 @item sieve-manage-setactive
 @findex sieve-manage-setactive
-$B%5!<%P!<$K$"$k$I$N%9%/%j%W%H$,3h$-$F$$$k$O$:$G$"$k$+$r<($7$^$9!#(B
+サーバーにあるどのスクリプトが活きているはずであるかを示します。
 @end table
 
 @node Standards
-@chapter $BI8=`(B
+@chapter 標準
 
-Emacs Sieve $B%Q%C%1!<%8$O!">/$J$$$1$l$I$bA}Bg$9$k$3$H$,K>$^$l$k(B RFC $B72$*(B
-$B$h$SAp9FJ8=q$N!"$9$Y$F$^$?$O0lItJ,$r<BAu$7$^$9!#$3$N>O$G$O4XO"$9$k$b$N$r(B
-$BNs5s$7$^$9!#$=$l$i$O$9$Y$F(B @uref{http://quimby.gnus.org/notes/} $B$+$iF~<j(B
-$B$9$k$3$H$,$G$-$^$9!#(B
+Emacs Sieve パッケージは、少ないけれども増大することが望まれる RFC 群お
+よび草稿文書の、すべてまたは一部分を実装します。この章では関連するものを
+列挙します。それらはすべて @uref{http://quimby.gnus.org/notes/} から入手
+することができます。
 
 @table @dfn
 @item RFC3028
-Sieve: $B%a!<%k_I2a8@8l(B
+Sieve: メール濾過言語
 
 @item RFC5804
-Sieve $B%9%/%j%W%H$r1s3V4IM}$9$k$?$a$N%W%m%H%3%k(B
+Sieve スクリプトを遠隔管理するためのプロトコル
 @end table
 
 @node GNU Free Documentation License
-@chapter GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
+@chapter GNU フリー文書利用許諾契約書
 
-$BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
-$BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+訳注: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+非公式な日本語訳} があります。
 
 @include doclicense.texi
 
@@ -372,6 +372,5 @@ Sieve $B%9%/%j%W%H$r1s3V4IM}$9$k$?$a$N%W%m%H%3%k(B
 @bye
 
 @c Local Variables:
-@c coding: iso-2022-7bit
 @c fill-column: 72
 @c End:

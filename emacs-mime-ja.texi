@@ -13,7 +13,7 @@
 @end iftex
 
 @copying
-$B$3$N%U%!%$%k$O(B Emacs MIME $B%$%s%?!<%U%'!<%9$N5!G=$rJ8=q2=$7$?$b$N$G$9!#(B
+このファイルは Emacs MIME インターフェースの機能を文書化したものです。
 
 Copyright @copyright{} 1998--2016 Free Software Foundation, Inc.
 
@@ -25,17 +25,17 @@ Invariant Sections, with the Front-Cover Texts being ``A GNU Manual'',
 and with the Back-Cover Texts as in (a) below.  A copy of the license
 is included in the section entitled ``GNU Free Documentation License''.
 
-$B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
-$BBh(B 1.3 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
-$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!H(BA GNU Manual$B!I$OI=I=;f(B
-$B%F%-%9%H!"0J2<$N(B (a) $B$ON"I=;f%F%-%9%H$G$9!#$3$NMxMQ5vBz7@Ls=q$NJ#<L$O(B
-$B!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^$9!#(B
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.3 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
 modify this GNU manual.''
 
-(a) FSF $B$NN"I=;f%F%-%9%H(B:$B!V$"$J$?$K$O$3$N(B GNU Manual $B$rJ#@=$7$?$jJQ99$9(B
-$B$k<+M3$,$"$j$^$9!#!W(B
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。」
 @end quotation
 @end copying
 
@@ -72,72 +72,72 @@ modify this GNU manual.''
 @node Top
 @top Emacs MIME
 
-$B$3$N%^%K%e%"%k$O(B @acronym{MIME} $B%a%C%;!<%8$N:n@.$HI=<($K;H$o$l$k%i%$%V%i(B
-$B%j!<$rJ8=q2=$7$?$b$N$G$9!#(B
+このマニュアルは @acronym{MIME} メッセージの作成と表示に使われるライブラ
+リーを文書化したものです。
 
-$B$3$N%^%K%e%"%k$O(B @acronym{MIME} $B$N%(%s%3!<%I(B/$B%G%3!<%I=hM}$N?6$kIq$$$rJQ(B
-$B99$7$?$$MxMQ<T!"(BEmacs @acronym{MIME} $B%i%$%V%i%j!<$,$I$N$h$&$KF0:n$9$k$+(B
-$B$r$b$C$H>\$7$/CN$j$?$$MxMQ<T!"$*$h$S(B @acronym{MIME} $B$NMWAG$rA`:n$9$k4X?t(B
-$B$dL?Na$r=q$-$?$$?M$?$A$rBP>]$K$7$F$$$^$9!#(B
+このマニュアルは @acronym{MIME} のエンコード/デコード処理の振る舞いを変
+更したい利用者、Emacs @acronym{MIME} ライブラリーがどのように動作するか
+をもっと詳しく知りたい利用者、および @acronym{MIME} の要素を操作する関数
+や命令を書きたい人たちを対象にしています。
 
-@acronym{MIME} $B$O(B @dfn{Multipurpose Internet Mail Extensions} $B$N>JN,I=5-(B
-$B$G$9!#$3$NI8=`$OB??t$N(B RFC $B$KJ8=q2=$5$l$F$$$F!"<g$J$b$N$O<!$NDL$j$G$9(B:
-RFC2045 ($B%$%s%?!<%M%C%H!&%a%C%;!<%8$NK\J8$N=q<0(B), RFC2046 ($B%a%G%#%"%?%$(B
-$B%W(B), RFC2047 ($BHs(B-@acronym{ASCII} $B%F%-%9%H$N$?$a$N%a%C%;!<%8%X%C%@!<$N3H(B
-$BD%(B), RFC2048 ($BEPO?<jB3(B), RFC2049 ($BE,9g4p=`$H;vNc(B)$B!#(B@acronym{MIME} $B$K=`5r(B
-$B$7$?%=%U%H%&%'%"$r=q$3$&$H;W$C$F$$$k?M$OC/$G$b!">/$J$/$H(B
-$B$b(B RFC2045 $B$H(B RFC2047 $B$OFI$s$G$*$/$3$H$r6/$/4+$a$^$9!#(B
+@acronym{MIME} は @dfn{Multipurpose Internet Mail Extensions} の省略表記
+です。この標準は多数の RFC に文書化されていて、主なものは次の通りです:
+RFC2045 (インターネット・メッセージの本文の書式), RFC2046 (メディアタイ
+プ), RFC2047 (非-@acronym{ASCII} テキストのためのメッセージヘッダーの拡
+張), RFC2048 (登録手続), RFC2049 (適合基準と事例)。@acronym{MIME} に準拠
+したソフトウェアを書こうと思っている人は誰でも、少なくと
+も RFC2045 と RFC2047 は読んでおくことを強く勧めます。
 
 @ifnottex
 @insertcopying
 @end ifnottex
 
 @menu
-* Decoding and Viewing::  $B%G%3!<%I$HI=<($N$?$a$NOHAH$_(B
-* Composing::             @acronym{MML}; @acronym{MIME} $B%Q!<%H5-=RMQ8@8l(B
-* Interface Functions::   $B4pK\E*$J4X?t$NCj>]2=(B
-* Basic Functions::       $B%f!<%F%#%j%F%#!<$*$h$S4pK\E*$J2r@O$N$?$a$N4X?t(B
-* Standards::             $B;H$o$l$F$$$k(B RFC $B$H:n6HJ8=q$N35N,(B
-* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
-* Index::                 $B4X?t$*$h$SJQ?t$N:w0z(B
+* Decoding and Viewing::  デコードと表示のための枠組み
+* Composing::             @acronym{MML}; @acronym{MIME} パート記述用言語
+* Interface Functions::   基本的な関数の抽象化
+* Basic Functions::       ユーティリティーおよび基本的な解析のための関数
+* Standards::             使われている RFC と作業文書の概略
+* GNU Free Documentation License:: この文書の利用許諾契約書
+* Index::                 関数および変数の索引
 @end menu
 
 @node Decoding and Viewing
-@chapter $B%G%3!<%I$HI=<((B
+@chapter デコードと表示
 
-$B$3$N>O$O!">e0L3,AX$G$N(B @acronym{MIME} $B%a%C%;!<%8$N%G%3!<%I$HI=<($r07$$$^(B
-$B$9!#(B
+この章は、上位階層での @acronym{MIME} メッセージのデコードと表示を扱いま
+す。
 
-$B$=$N<g$JL\E*$O!":G=i$K(B @acronym{MIME} $B$N5-;v$r2r@O$7$F$+$i!"$=$N2r@O$N7k(B
-$B2L$H$7$FJV$5$l$k!V%O%s%I%k!W$N%j%9%H$K4p$E$$$F!"B>$N%W%m%0%i%`$,=hM}$r9T(B
-$B$J$&$3$H$,$G$-$k$h$&$K$9$k$3$H$G$9!#(B
+その主な目的は、最初に @acronym{MIME} の記事を解析してから、その解析の結
+果として返される「ハンドル」のリストに基づいて、他のプログラムが処理を行
+なうことができるようにすることです。
 
 @menu
-* Dissection::             @acronym{MIME} $B%a%C%;!<%8$N2r@O(B
-* Non-MIME::               $BHs(B-@acronym{MIME} $B%a%C%;!<%8$N2r@O(B
-* Handles::                $B%O%s%I%k$N<h$j07$$(B
-* Display::                $B%O%s%I%k$NI=<((B
-* Display Customization::  $BI=<($K1F6A$r5Z$\$9JQ?t(B
-* Files and Directories::  $BE:IU%U%!%$%k$NJ]B8$HL?L>(B
-* New Viewers::            $B<+J,MQ%S%e!<%o!<$N=q$-J}(B
+* Dissection::             @acronym{MIME} メッセージの解析
+* Non-MIME::               非-@acronym{MIME} メッセージの解析
+* Handles::                ハンドルの取り扱い
+* Display::                ハンドルの表示
+* Display Customization::  表示に影響を及ぼす変数
+* Files and Directories::  添付ファイルの保存と命名
+* New Viewers::            自分用ビューワーの書き方
 @end menu
 
 @node Dissection
-@section $B2rBN(B
+@section 解体
 
-@code{mm-dissect-buffer} $B$O(B @acronym{MIME} $B5-;v$N2rBN$rC4Ev$9$k4X?t$G$9!#(B
-$B%^%k%A%Q!<%H$N%a%C%;!<%8$,M?$($i$l$k$H!"%a%C%;!<%8$r:F5"E*$K7!$j2<$2$F9=(B
-$BB$$r$?$I$j!"$=$N%a%C%;!<%8$N9=B$$rIA<L$9$k(B @acronym{MIME} $B%O%s%I%k$NLZ9=(B
-$BB$$rJV$7$^$9!#(B
+@code{mm-dissect-buffer} は @acronym{MIME} 記事の解体を担当する関数です。
+マルチパートのメッセージが与えられると、メッセージを再帰的に掘り下げて構
+造をたどり、そのメッセージの構造を描写する @acronym{MIME} ハンドルの木構
+造を返します。
 
 @node Non-MIME
-@section $BHs(B-MIME
+@section 非-MIME
 @vindex mm-uu-configure-list
 
-Gnus $B$O$$$/$D$+$N(B @acronym{MIME} $B$G$O$J$$E:IU%U%!%$%k$bM}2r$7$^$9!#$=$l(B
-$B$i$O(B postscript, uuencode, binhex, yenc, shar, forward, gnatsweb, pgp,
-diff $B$N$h$&$J$b$N$G$9!#$=$l$>$l$N5!G=$O!"(B@code{mm-uu-configure-list} $B$K(B
-$B9`L\$rDI2C$9$k$3$H$K$h$C$FL58z$K$9$k$3$H$,$G$-$^$9!#Nc$G$9!#(B
+Gnus はいくつかの @acronym{MIME} ではない添付ファイルも理解します。それ
+らは postscript, uuencode, binhex, yenc, shar, forward, gnatsweb, pgp,
+diff のようなものです。それぞれの機能は、@code{mm-uu-configure-list} に
+項目を追加することによって無効にすることができます。例です。
 
 @lisp
 (require 'mm-uu)
@@ -147,226 +147,226 @@ diff $B$N$h$&$J$b$N$G$9!#$=$l$>$l$N5!G=$O!"(B@code{mm-uu-configure-list} $B$K
 @table @code
 @item postscript
 @findex postscript
-$B%]%9%H%9%/%j%W%H$N%U%!%$%k!#(B
+ポストスクリプトのファイル。
 
 @item uu
 @findex uu
-Uuencode $B$5$l$?%U%!%$%k!#(B
+Uuencode されたファイル。
 
 @item binhex
 @findex binhex
-Binhex $B$G%(%s%3!<%I$5$l$?%U%!%$%k!#(B
+Binhex でエンコードされたファイル。
 
 @item yenc
 @findex yenc
-Yenc $B$G%(%s%3!<%I$5$l$?%U%!%$%k!#(B
+Yenc でエンコードされたファイル。
 
 @item shar
 @findex shar
-Shar $B$G:n$i$l$?%"!<%+%$%V!&%U%!%$%k!#(B
+Shar で作られたアーカイブ・ファイル。
 
 @item forward
 @findex forward
-@acronym{MIME} $B$r;H$o$:$KE>Aw$5$l$?%a%C%;!<%8!#(B
+@acronym{MIME} を使わずに転送されたメッセージ。
 
 @item gnatsweb
 @findex gnatsweb
-Gnatsweb $B$NE:IU%U%!%$%k!#(B
+Gnatsweb の添付ファイル。
 
 @item pgp-signed
 @findex pgp-signed
-@acronym{PGP} $B$G=pL>$5$l$?J?J8(B (clear text, $B$R$i$V$s(B)$B!#(B
+@acronym{PGP} で署名された平文 (clear text, ひらぶん)。
 
 @item pgp-encrypted
 @findex pgp-encrypted
-@acronym{PGP} $B$G0E9f2=$5$l$?J?J8(B (clear text, $B$R$i$V$s(B)$B!#(B
+@acronym{PGP} で暗号化された平文 (clear text, ひらぶん)。
 
 @item pgp-key
 @findex pgp-key
-@acronym{PGP} $B$N8x3+80!#(B
+@acronym{PGP} の公開鍵。
 
 @item emacs-sources
 @findex emacs-sources
 @vindex mm-uu-emacs-sources-regexp
-Emacs $B$N%=!<%9%3!<%I!#$3$N9`L\$O(B @code{mm-uu-emacs-sources-regexp} $B$K9g(B
-$BCW$9$k%0%k!<%W$G$N$_F0:n$7$^$9!#(B
+Emacs のソースコード。この項目は @code{mm-uu-emacs-sources-regexp} に合
+致するグループでのみ動作します。
 
 @item diff
 @vindex diff
 @vindex mm-uu-diff-groups-regexp
-$B%Q%C%A!#$3$l$O!"%3%_%C%H$5$l$?%U%!%$%k$N:9J,$,<+F0E*$KAw$i$l$k%0%k!<%W$r(B
-$BBP>]$K$7$?$b$N$G$9!#(B@code{mm-uu-diff-groups-regexp} $B$K9gCW$9$k%0%k!<%W$G(B
-$B$N$_F0:n$7$^$9!#(B
+パッチ。これは、コミットされたファイルの差分が自動的に送られるグループを
+対象にしたものです。@code{mm-uu-diff-groups-regexp} に合致するグループで
+のみ動作します。
 
 @item verbatim-marks
 @cindex verbatim-marks
-Slrn $B$U$&$N(B verbatim ($BJ8>O$r0l8@0l6g$=$N$^$^I=$9(B) $B5-9f$NBP!#(B
+Slrn ふうの verbatim (文章を一言一句そのまま表す) 記号の対。
 
-($BLuCm(B: @samp{#v+} $B$H(B @samp{#v-} $B$NFs9T$G0O$^$l$?%F%-%9%H(B
-$B$r(B @acronym{MIME} $B%Q!<%H$K8+N)$F$^$9!#(B)
+(訳注: @samp{#v+} と @samp{#v-} の二行で囲まれたテキスト
+を @acronym{MIME} パートに見立てます。)
 
 @item LaTeX
 @cindex LaTeX
-LaTeX $B$NJ88%!#(B@code{mm-uu-tex-groups-regexp} $B$K9gCW$9$kL>A0$N%0%k!<%W$G(B
-$B$N$_F0:n$7$^$9!#(B
+LaTeX の文献。@code{mm-uu-tex-groups-regexp} に合致する名前のグループで
+のみ動作します。
 @end table
 
 @cindex text/x-verbatim
-@c @vindex $B$O(B face $B$N$?$a$KE,@Z$+(B?
+@c @vindex は face のために適切か?
 @vindex mm-uu-extract
-$B$$$/$D$+$N(B @acronym{MIME} $B$G$O$J$$E:IU$O(B @code{mm-uu-extract} $B$H$$$&%U%'!<(B
-$B%9$r;H$C$FI=<($5$l$^$9!#%G%#%U%)%k%H$G$O$=$l$i$N%Q!<%H(B
-$B$K(B @acronym{MIME} $B%\%?%s$,IU$-$^$;$s!#(B@kbd{K b}
-(@code{gnus-summary-display-buttonized}) $B$r;H$&(B
-$B$+(B @code{gnus-buttonized-mime-types} $B$K(B @code{text/x-verbatim} $B$r2C$($k(B
-$B$3$H$K$h$C$F!"%\%?%s$NI=<($r6/@)$9$k$3$H$,$G$-$^$9!#(B@xref{MIME Commands,
-,MIME $B%3%^%s%I(B, gnus-ja, The Gnus Manual}.
+いくつかの @acronym{MIME} ではない添付は @code{mm-uu-extract} というフェー
+スを使って表示されます。ディフォルトではそれらのパート
+に @acronym{MIME} ボタンが付きません。@kbd{K b}
+(@code{gnus-summary-display-buttonized}) を使う
+か @code{gnus-buttonized-mime-types} に @code{text/x-verbatim} を加える
+ことによって、ボタンの表示を強制することができます。@xref{MIME Commands,
+,MIME コマンド, gnus-ja, The Gnus Manual}.
 
-($BLuCm(B: $B$3$3$GEbFM$K(B @code{text/x-verbatim} $B$N$3$H$,=P$F$/$k$N$O!"%U%'!<(B
-$B%9$,;H$o$l$F%\%?%s$,IU$+$J$$BeI=E*$J%Q!<%H$,(B @code{verbatim-marks} $B$@$+(B
-$B$i$G$9!#(B)
+(訳注: ここで唐突に @code{text/x-verbatim} のことが出てくるのは、フェー
+スが使われてボタンが付かない代表的なパートが @code{verbatim-marks} だか
+らです。)
 
 @node Handles
-@section $B%O%s%I%k(B
+@section ハンドル
 
-@acronym{MIME} $B%O%s%I%k$O!"(B@acronym{MIME} $B$N9=@.MWAG$r40A4$KIA<L$9$k%j%9(B
-$B%H$G$9!#(B
+@acronym{MIME} ハンドルは、@acronym{MIME} の構成要素を完全に描写するリス
+トです。
 
-$B%O%s%I%k$NMWAG$r%"%/%;%9$9$k$?$a$K!"0J2<$N%^%/%m$r;H$&$3$H$,$G$-$^$9(B:
+ハンドルの要素をアクセスするために、以下のマクロを使うことができます:
 
 @table @code
 @item mm-handle-buffer
 @findex mm-handle-buffer
-$B%G%3!<%I$5$l$F$$$J$$(B @acronym{MIME} $B%Q!<%H$NFbMFJ*$rJ];}$7$F$$$k%P%C%U%!!<(B
-$B$rJV$7$^$9!#(B
+デコードされていない @acronym{MIME} パートの内容物を保持しているバッファー
+を返します。
 
 @item mm-handle-type
 @findex mm-handle-type
-$B%Q!<%H$N2r@O$5$l$?(B @code{Content-Type} $B$rJV$7$^$9!#(B
+パートの解析された @code{Content-Type} を返します。
 
 @item mm-handle-encoding
 @findex mm-handle-encoding
-$B%Q!<%H$N(B @code{Content-Transfer-Encoding} $B$rJV$7$^$9!#(B
+パートの @code{Content-Transfer-Encoding} を返します。
 
 @item mm-handle-undisplayer
 @findex mm-handle-undisplayer
-$BI=<($5$l$F$$$k%Q!<%H$r>C$9$3$H$,$G$-$k$b$N(B ($BLuCm(B: $B4X?t$J$I(B) $B$r(B ($B$=$l$,I=(B
-$B<($5$l$F$$$k>l9g$K(B) $BJV$7$^$9!#(B
+表示されているパートを消すことができるもの (訳注: 関数など) を (それが表
+示されている場合に) 返します。
 
 @item mm-handle-set-undisplayer
 @findex mm-handle-set-undisplayer
-$BI=<($5$l$F$$$k%Q!<%H$r>C$9$3$H$,$G$-$k$b$N(B ($BLuCm(B: $B4X?t$J$I(B) $B$r@_Dj$7$^$9!#(B
+表示されているパートを消すことができるもの (訳注: 関数など) を設定します。
 
 @item mm-handle-disposition
 @findex mm-handle-disposition
-$B%Q!<%H$N2r@O$5$l$?(B @code{Content-Disposition} ($BLuCm(B: $BG[CV;XDj(B) $B$rJV$7$^(B
-$B$9!#(B
+パートの解析された @code{Content-Disposition} (訳注: 配置指定) を返しま
+す。
 
 @item mm-get-content-id
-@code{Content-ID} $B$G;2>H$5$l$k%O%s%I%k(B ($BC1?t$^$?$OJ#?t(B) $B$rJV$7$^$9!#(B
+@code{Content-ID} で参照されるハンドル (単数または複数) を返します。
 @end table
 
 @node Display
-@section $BI=<((B
+@section 表示
 
-$BI=<($7!">C5n$7!"J]B8$9$k$?$a$N4X?t$G$9!#(B
+表示し、消去し、保存するための関数です。
 
 @table @code
 @item mm-display-part
 @findex mm-display-part
-$B%Q!<%H$rI=<($7$^$9!#(B
+パートを表示します。
 
 @item mm-remove-part
 @findex mm-remove-part
-$B%Q!<%H$r(B ($B$=$l$,I=<($5$l$F$$$?$i(B) $B>C5n$7$^$9!#(B
+パートを (それが表示されていたら) 消去します。
 
 @item mm-inlinable-p
 @findex mm-inlinable-p
-@acronym{MIME} $B%?%$%W$,%$%s%i%$%s$GI=<(2DG=$+$I$&$+$rJV$7$^$9!#(B
+@acronym{MIME} タイプがインラインで表示可能かどうかを返します。
 
 @item mm-automatic-display-p
 @findex mm-automatic-display-p
-@acronym{MIME} $B%?%$%W$,<+F0E*$KI=<($5$l$k$Y$-$+$I$&$+$rJV$7$^$9!#(B
+@acronym{MIME} タイプが自動的に表示されるべきかどうかを返します。
 
 @item mm-destroy-part
 @findex mm-destroy-part
-$B%Q!<%H$K$h$C$F;H$o$l$F$$$k$9$Y$F$N;q8;$r3+J|$7$^$9(B ($BLuCm(B: $B%Q!<%H$NI=<(!"(B
-$B$*$h$S%Q!<%H$r2rBN$7$FF@$?8D!9$NItIJ$r0l;~E*$KJ];}$7$F$$$k%P%C%U%!!<$d%U%!(B
-$B%$%k$r>C5n$7$^$9(B)$B!#(B
+パートによって使われているすべての資源を開放します (訳注: パートの表示、
+およびパートを解体して得た個々の部品を一時的に保持しているバッファーやファ
+イルを消去します)。
 
 @item mm-save-part
 @findex mm-save-part
-$B%Q!<%H$r%U%!%$%k$KJ]B8$7$^$9!#(B
+パートをファイルに保存します。
 
 @item mm-pipe-part
 @findex mm-pipe-part
-$B%Q!<%H$r2?$+$N%W%m%;%9$K%Q%$%W$7$^$9!#(B
+パートを何かのプロセスにパイプします。
 
 @item mm-interactively-view-part
 @findex mm-interactively-view-part
-$B%Q!<%H$rI=<($9$k$?$a$K;H$&(B mailcap $B$N<jCJ$rMxMQ<T$,F~NO$9$k$3$H$r5a$a$F!"(B
-$B$=$l$r;H$C$FI=<($7$^$9!#(B
+パートを表示するために使う mailcap の手段を利用者が入力することを求めて、
+それを使って表示します。
 @end table
 
 @node Display Customization
-@section $BI=<($N%+%9%?%^%$%:(B
+@section 表示のカスタマイズ
 
 @table @code
 @item mm-inline-media-tests
 @vindex mm-inline-media-tests
-$B$3$l$OO"A[%j%9%H$G$9!#80(B ($BBh0lMWAG(B) $B$O(B @acronym{MIME} $B%?%$%W!"BhFsMWAG$O(B
-$B%Q!<%H$r!V%$%s%i%$%s!W$G(B ($B$9$J$o$A(B Emacs $B$N2hLL$KKd$a9~$s$G(B) $BI=<($9$k$?(B
-$B$a$N4X?t!"$=$7$FBh;0MWAG$O$=$N%Q!<%H$,%$%s%i%$%s$GI=<($9$k$3$H$,2DG=$+$I(B
-$B$&$+$rD4$Y$k$?$a$K(B @code{eval} ($BI>2A(B) $B$5$l$k<0$G$9!#(B
+これは連想リストです。鍵 (第一要素) は @acronym{MIME} タイプ、第二要素は
+パートを「インライン」で (すなわち Emacs の画面に埋め込んで) 表示するた
+めの関数、そして第三要素はそのパートがインラインで表示することが可能かど
+うかを調べるために @code{eval} (評価) される式です。
 
-$B$3$NJQ?t$O!"$"$k%Q!<%H$,%$%s%i%$%sI=<(2DG=$+$I$&$+$H!"$b$72DG=$J$i$=$N$d(B
-$B$jJ}$r;XDj$7$^$9!#%Q!<%H$,8=<B$K%$%s%i%$%sI=<($5$l$F$$$k$+$I$&$+$r<($9$b(B
-$B$N$G$O$"$j$^$;$s!#(B
+この変数は、あるパートがインライン表示可能かどうかと、もし可能ならそのや
+り方を指定します。パートが現実にインライン表示されているかどうかを示すも
+のではありません。
 
 @item mm-inlined-types
 @vindex mm-inlined-types
-$B0lJ}$3$l$O!">e5-$NJQ?t$K$h$C$F@_Dj$5$l$?>r7o$rK~B-$7$?>l9g$K!"%$%s%i%$%s(B
-$BI=<($r9T$J$&%?%$%W$r<($7$^$9!#$3$l$O(B @acronym{MIME} $B%a%G%#%"%?%$%W$N%j%9(B
-$B%H$G$9!#(B($BLuCm(B: $B$=$l$>$l$NMWAG$O@55,I=8=$G$9!#(B)
+一方これは、上記の変数によって設定された条件を満足した場合に、インライン
+表示を行なうタイプを示します。これは @acronym{MIME} メディアタイプのリス
+トです。(訳注: それぞれの要素は正規表現です。)
 
 @item mm-automatic-display
 @vindex mm-automatic-display
-$B$3$l$O>e5-$NJQ?t$,G'$a$k%?%$%W$K8B$C$F!V<+F0E*!W$KI=<($5$l$k%?%$%W$N%j%9(B
-$B%H$G$9!#$D$^$j!"%$%s%i%$%sI=<($,2DG=$J%Q!<%H$@$1$,<+F0E*$KI=<($5$l$^$9!#(B
+これは上記の変数が認めるタイプに限って「自動的」に表示されるタイプのリス
+トです。つまり、インライン表示が可能なパートだけが自動的に表示されます。
 
 @item mm-automatic-external-display
 @vindex mm-automatic-external-display
-$B$3$l$O30It%S%e!<%o!<$G<+F0E*$KI=<($5$l$k%?%$%W$N%j%9%H$G$9!#(B
+これは外部ビューワーで自動的に表示されるタイプのリストです。
 
 @item mm-keep-viewer-alive-types
 @vindex mm-keep-viewer-alive-types
-$B$3$l$O!"JL$N5-;v$rA*Br$7$F$b30It%S%e!<%o!<$,(B kill $B$5$l$J$$%a%G%#%"%?%$%W(B
-$B$N%j%9%H$G$9!#(B
+これは、別の記事を選択しても外部ビューワーが kill されないメディアタイプ
+のリストです。
 
-$BLuCm(B: postscript $B$d(B dvi $B$J$I(B ($BJQ?t$N%G%#%U%)%k%HCM$r;2>H$N$3$H(B) $B$N$h$&$K!"(B
-$BFI$`$N$K;~4V$,$+$+$k$+$b$7$l$J$$%Q!<%H$N%?%$%W$r4^$`%j%9%H$G$9!#0lJ}!"$3(B
-$B$l$K4^$^$l$J$$C1=c$J2hA|$N%Q!<%H$J$I$O!"$=$l$,4^$^$l$F$$$?5-;v$NI=<($r$d(B
-$B$a$?$H$-$K!"<+F0E*$K30It%S%e!<%o!<$,(B kill $B$5$l$^$9!#(B
+訳注: postscript や dvi など (変数のディフォルト値を参照のこと) のように、
+読むのに時間がかかるかもしれないパートのタイプを含むリストです。一方、こ
+れに含まれない単純な画像のパートなどは、それが含まれていた記事の表示をや
+めたときに、自動的に外部ビューワーが kill されます。
 
 @item mm-attachment-override-types
 @vindex mm-attachment-override-types
-$B$$$/$D$+$N(B @acronym{MIME} $B%(!<%8%'%s%H$O!VE:IU%U%!%$%k!W(B(attachment) $B$N(B
-$BG[CV;XDj(B (content-disposition) $B$r;}$D%Q!<%H$r@8@.$7$^$9!#$3$NJQ?t$K4^$^(B
-$B$l$k(B @acronym{MIME} $B%?%$%W$N>l9g$O$=$s$JG[CV;XDj$rL5;k$7$F!"$=$N%Q!<%H$r(B
-$B%$%s%i%$%sI=<($9$k$3$H$,$G$-$k$h$&$K$7$^$9!#(B($B$=$N%Q!<%H$r%$%s%i%$%sI=<((B
-$B$9$k$3$H$,2DG=$G!";d$?$A$,$=$&$9$k$3$H$rK>$`>l9g$K8B$C$F!"G[CV;XDj$,L5;k(B
-$B$5$l$k$3$H$KCm0U$7$F$/$@$5$$!#(B)
+いくつかの @acronym{MIME} エージェントは「添付ファイル」(attachment) の
+配置指定 (content-disposition) を持つパートを生成します。この変数に含ま
+れる @acronym{MIME} タイプの場合はそんな配置指定を無視して、そのパートを
+インライン表示することができるようにします。(そのパートをインライン表示
+することが可能で、私たちがそうすることを望む場合に限って、配置指定が無視
+されることに注意してください。)
 
 @item mm-discouraged-alternatives
 @vindex mm-discouraged-alternatives
-@samp{multipart/alternative} $B$K4^$^$l$F$$$k!"8+$?$/$J$$%Q!<%H(B
-$B$N(B @acronym{MIME} $B%?%$%W$N%j%9%H$G$9!#%a%C%;!<%8$N8eH>$K$"$k%Q!<%H$,:G$b(B
-$BK-$+$JFbMF$K$J$C$F$$$k$HA[Dj$7$F$$$k$N$G!"I=<(%(!<%8%'%s%H$O$=$l$rI=<($9(B
-$B$k$3$H$K$J$C$F$$$^$9!#$7$+$7!"MxMQ<T$OBe$o$j$KB>$N%?%$%W$r8+$k$3$H$r9%$`(B
-$B$+$b$7$l$^$;$s!#$3$N%j%9%H$O!"$I$s$J%?%$%W$r:G$b8+$?$/$J$$$+$r;XDj$9$k$?(B
-$B$a$K;H$$$^$9!#Nc$($P$b$7(B @samp{text/html} $B%Q!<%H$r$<$s$<$s8+$?$/$J$/$F!"(B
-@samp{text/richtext} $B%Q!<%H$O$"$^$j8+$?$/$J$$$H$$$&$3$H$G$"$l$P!"0J2<$N(B
-$B$h$&$K@k8@$9$k$3$H$,$G$-$^$9(B:
+@samp{multipart/alternative} に含まれている、見たくないパート
+の @acronym{MIME} タイプのリストです。メッセージの後半にあるパートが最も
+豊かな内容になっていると想定しているので、表示エージェントはそれを表示す
+ることになっています。しかし、利用者は代わりに他のタイプを見ることを好む
+かもしれません。このリストは、どんなタイプを最も見たくないかを指定するた
+めに使います。例えばもし @samp{text/html} パートをぜんぜん見たくなくて、
+@samp{text/richtext} パートはあまり見たくないということであれば、以下の
+ように宣言することができます:
 
 @lisp
 (setq mm-discouraged-alternatives
@@ -375,14 +375,14 @@ LaTeX $B$NJ88%!#(B@code{mm-uu-tex-groups-regexp} $B$K9gCW$9$kL>A0$N%0%k!<%W$G
       (remove "text/html" mm-automatic-display))
 @end lisp
 
-$B$5$i$K!"$3$l$K(B @code{"image/.*"} $B$rDI2C$9$k$3$H$OLr$KN)$D$G$7$g$&!#(B
-Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|(B
-$B$r;H$C$F$$$k$3$H$,$"$k$N$G!"$"$J$?$O$=$l0J30$N%Q!<%H$,$"$k$3$H$K5$$,IU$+(B
-$B$J$$$+$b$7$l$^$;$s!#(B@code{gnus-buttonized-mime-types} $B$b;2>H$7$F$/$@$5(B
-$B$$(B (@pxref{MIME Commands, ,MIME $B%3%^%s%I(B, gnus-ja, The Gnus Manual})$B!#(B
-@code{gnus-buttonized-mime-types} $B$K(B @code{"multipart/alternative"} $B$rDI(B
-$B2C$7$?8e$G$O!"8+$?$$B&$r<j$GA*$V$3$H$,$G$-$^$9!#Nc$($P!"$3$N$h$&$K@_Dj$9(B
-$B$k$l$PNI$$$G$7$g$&(B:
+さらに、これに @code{"image/.*"} を追加することは役に立つでしょう。
+Spammers は @samp{multipart/alternative} メッセージの優先される側で画像
+を使っていることがあるので、あなたはそれ以外のパートがあることに気が付か
+ないかもしれません。@code{gnus-buttonized-mime-types} も参照してくださ
+い (@pxref{MIME Commands, ,MIME コマンド, gnus-ja, The Gnus Manual})。
+@code{gnus-buttonized-mime-types} に @code{"multipart/alternative"} を追
+加した後では、見たい側を手で選ぶことができます。例えば、このように設定す
+るれば良いでしょう:
 
 @lisp
 (setq gnus-buttonized-mime-types
@@ -391,8 +391,8 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
       '("text/html" "image/.*"))
 @end lisp
 
-$B$3$N>l9g!"(BGnus $B$O$=$N$h$&$J<oN`$N(B spam $B%a%C%;!<%8$N$?$a$K!"0J2<$N$h$&$K(B
-$B%i%8%*%\%?%s$rI=<($9$k$G$7$g$&(B:
+この場合、Gnus はそのような種類の spam メッセージのために、以下のように
+ラジオボタンを表示するでしょう:
 
 @example
 1.  (*) multipart/alternative  ( ) image/gif
@@ -402,175 +402,175 @@ Spammers $B$O(B @samp{multipart/alternative} $B%a%C%;!<%8$NM%@h$5$l$kB&$G2hA|
 
 @item mm-inline-large-images
 @vindex mm-inline-large-images
-$B%&%#%s%I%&$h$jBg$-$J%$%s%i%$%s2hA|$rI=<($9$k$H!"(BEmacs $B$O%9%/%m!<%k$9$k$3(B
-$B$H$,$G$-$^$;$s!#$D$^$j2hA|$NA4BN$r8+$k$3$H$,$G$-$J$$$H$$$&$3$H$G$9!#$3$l(B
-$B$rHr$1$k$?$a$K!"%i%$%V%i%j!<$O$=$l$r%$%s%i%$%sI=<($9$kA0$K2hA|$N%5%$%:$r(B
-$B7W$C$F!"$=$l$,%&%#%s%I%&$K9g$o$J$$>l9g$O!"%i%$%V%i%j!<$O$=$l$r30It$G(B ($BNc(B
-$B$($P(B @samp{ImageMagick} $B$d(B @samp{xv} $B$G(B) $BI=<($7$^$9!#$3$NJQ?t(B
-$B$r(B @code{t} $B$K@_Dj$9$k$H!"$3$N8!::$r$5$;$J$/$7$F!"%i%$%V%i%j!<$K$9$Y$F$N(B
-$B2hA|$r%5%$%:$K4X$o$j$J$/%$%s%i%$%s$GI=<($5$;$^$9!#$b$7$3$NJQ?t(B
-$B$r(B @code{resize} $B$K$9$k$H!"(BEmacs $B$K2hA|$N%5%$%:$rJQ99$9$kG=NO$,$"$l$P!"(B
-$B2hA|$O%&%#%s%I%&$K9g$&$h$&$K%5%$%:$,JQ99$5$l$FI=<($5$l$^$9!#(B
+ウィンドウより大きなインライン画像を表示すると、Emacs はスクロールするこ
+とができません。つまり画像の全体を見ることができないということです。これ
+を避けるために、ライブラリーはそれをインライン表示する前に画像のサイズを
+計って、それがウィンドウに合わない場合は、ライブラリーはそれを外部で (例
+えば @samp{ImageMagick} や @samp{xv} で) 表示します。この変数
+を @code{t} に設定すると、この検査をさせなくして、ライブラリーにすべての
+画像をサイズに関わりなくインラインで表示させます。もしこの変数
+を @code{resize} にすると、Emacs に画像のサイズを変更する能力があれば、
+画像はウィンドウに合うようにサイズが変更されて表示されます。
 
 @item mm-inline-large-images-proportion
 @vindex mm-inline-images-max-proportion
-$BBg$-$J2hA|$N%5%$%:$rJQ99$9$k$H$-$N3d9g!#(B
+大きな画像のサイズを変更するときの割合。
 
 @item mm-inline-override-types
 @vindex mm-inline-override-types
-@code{mm-inlined-types} $B$O!"Nc$($P$9$Y$F$N(B @samp{text/.*} $B%Q!<%H$r%$%s%i(B
-$B%$%s$GI=<($9$k$3$H$r;X<($9$k$h$&$J@55,I=8=$r4^$s$G$$$k$+$b$7$l$^$;$s!#0l(B
-$BJ}!"%$%s%i%$%sI=<($,2DG=$@$1$l$I$bE:IU%U%!%$%k$H$7$F07$$$?$$%?%$%W$,$"$k(B
-$B$J$i$P!"$=$N%?%$%W$K9gCW$9$k@55,I=8=$N%j%9%H$r$3$NJQ?t$K@_Dj$9$k$3$H$K$h$C(B
-$B$F!"$=$l$r<B8=$9$k$3$H$,$G$-$^$9!#Nc$((B
-$B$P(B @code{mm-inlined-types} $B$,(B @samp{text/.*} $B$r4^$s$G$$$k$b$N$H$9$k$H!"(B
-$B$3$NJQ?t$K(B @samp{text/html} $B$r4^$^$;$k$3$H$K$h$C$F!"(B@samp{text/html} $B%Q!<(B
-$B%H$OE:IU%U%!%$%k$H$7$F07$o$l$k$h$&$K$J$j$^$9!#(B
+@code{mm-inlined-types} は、例えばすべての @samp{text/.*} パートをインラ
+インで表示することを指示するような正規表現を含んでいるかもしれません。一
+方、インライン表示が可能だけれども添付ファイルとして扱いたいタイプがある
+ならば、そのタイプに合致する正規表現のリストをこの変数に設定することによっ
+て、それを実現することができます。例え
+ば @code{mm-inlined-types} が @samp{text/.*} を含んでいるものとすると、
+この変数に @samp{text/html} を含ませることによって、@samp{text/html} パー
+トは添付ファイルとして扱われるようになります。
 
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
-@acronym{HTML} $B$rIA2h$9$k$?$a$K;H$&4X?t$rA*Br$7$^$9!#$9$G$KMQ0U$7$F$"$k(B
-$BIA2h%W%m%0%i%`$O!"(B@code{gnus-article-html},
-@code{w3m}@footnote{emacs-w3m $B$K$D$$$F$N>\:Y(B
-$B$O(B @uref{http://emacs-w3m.namazu.org/} $B$r8+$F$/$@$5$$!#(B}, @code{links},
-@code{lynx}, @code{w3m-standalone} $B$^$?$O(B @code{html2text} $B$N%7%s%\%k72(B
-$B$N$&$A$N0l$D$r;XDj$9$k$3$H$K$h$C$FA*Br$7$^$9!#$b$7(B @code{nil} $B$@$C$?$i!"(B
-$B30It%S%e!<%o!<$r;H$$$^$9!#$5$i$K4X?t(B ($B0z?t$H$7$F(B @acronym{MIME} $B%O%s%I%k(B
-$B$,M?$($i$l$F8F$P$l$k(B) $B$r@_Dj$9$k$3$H$b$G$-$^$9!#(B
+@acronym{HTML} を描画するために使う関数を選択します。すでに用意してある
+描画プログラムは、@code{gnus-article-html},
+@code{w3m}@footnote{emacs-w3m についての詳細
+は @uref{http://emacs-w3m.namazu.org/} を見てください。}, @code{links},
+@code{lynx}, @code{w3m-standalone} または @code{html2text} のシンボル群
+のうちの一つを指定することによって選択します。もし @code{nil} だったら、
+外部ビューワーを使います。さらに関数 (引数として @acronym{MIME} ハンドル
+が与えられて呼ばれる) を設定することもできます。
 
 @item mm-html-inhibit-images
 @vindex mm-html-inhibit-images
 @vindex mm-inline-text-html-with-images
-$B$b$7(B @code{nil} $B$G$J$1$l$P!"5-;v$N%\%G%#!<$G$N2hA|$N%$%s%i%$%sI=<($r6X;_(B
-$B$7$^$9!#$3$l$O(B @code{mm-text-html-renderer} (@pxref{Display
-Customization}) $B$,(B @code{shr} $B$^$?$O(B @code{w3m} $B$G$"$k>l9g$KI=<($5$l(B
-$B$?(B @acronym{HTML} $B5-;v$N2hA|$KBP$7$FM-8z$G$9!#(BGnus $B$G(B
-$B$O(B @code{gnus-inhibit-images} $B$NCM$G>e=q$-$5$l$^$9(B (@pxref{Misc Article,
-,Misc Article, gnus-ja, Gnus manual})$B!#%G%#%U%)%k%H$O(B @code{nil} $B$G$9!#(B
+もし @code{nil} でなければ、記事のボディーでの画像のインライン表示を禁止
+します。これは @code{mm-text-html-renderer} (@pxref{Display
+Customization}) が @code{shr} または @code{w3m} である場合に表示され
+た @acronym{HTML} 記事の画像に対して有効です。Gnus で
+は @code{gnus-inhibit-images} の値で上書きされます (@pxref{Misc Article,
+,Misc Article, gnus-ja, Gnus manual})。ディフォルトは @code{nil} です。
 
 @item mm-html-blocked-images
 @vindex mm-html-blocked-images
-@acronym{URL} $B$,$3$N@55,I=8=$K9gCW$9$k30It2hA|$O<hF@$bI=<($b$5$l$^$;$s!#(B
-$BNc$($P(B ``ads'' $B$H$$$&J8;zNs$r$=$l$i$NFb$K;}$D$9$Y$F$N(B @acronym{URL} $B$rAK(B
-$B;_$9$k$K$O!"0J2<$N$h$&$K$7$F$/$@$5$$(B:
+@acronym{URL} がこの正規表現に合致する外部画像は取得も表示もされません。
+例えば ``ads'' という文字列をそれらの内に持つすべての @acronym{URL} を阻
+止するには、以下のようにしてください:
 
 @lisp
 (setq mm-html-blocked-images "ads")
 @end lisp
 
-$B$3$l$O(B @code{mm-text-html-renderer} (@pxref{Display
-Customization}) $B$,(B @code{shr} $B$G$"$k>l9g$KM-8z$G$9!#(BGnus $B$G(B
-$B$O(B @code{gnus-blocked-images} $B$NCM$+!"$^$?(B
-$B$O(B @code{gnus-blocked-images} $B$K@_Dj$5$l$?4X?t$NLa$jCM$G>e=q$-$5$l$^(B
-$B$9(B (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})$B!#(B
+これは @code{mm-text-html-renderer} (@pxref{Display
+Customization}) が @code{shr} である場合に有効です。Gnus で
+は @code{gnus-blocked-images} の値か、また
+は @code{gnus-blocked-images} に設定された関数の戻り値で上書きされま
+す (@pxref{HTML, ,HTML, gnus-ja, Gnus manual})。
 
-@acronym{HTML} $B%a!<%k$K$O(B @samp{<img>} $B%?%0$r;H$C$?(B spammers (spam $B$r$P(B
-$B$i$^$/$d$+$i(B) $B$NH\Nt$J0-9*$_$,4^$^$l$F$$$k$+$b$7$l$^$;$s!#:G$b$"$j$=$&$J(B
-$B$N$O!"$"$J$?$,$=$N%a!<%k$rFI$s$@$3$H$r3NG'$9$k$?$a$N0U?^$,$"$k$3$H$G$9!#(B
-$B$3$N%*%W%7%g%s$r(B @code{""} $B$K@_Dj$9$k(B ($B$=$l$,%G%#%U%)%k%H$G$9(B) $B$3$H$K$h$C(B
-$B$F!"$"$J$?$N8D?M>pJs$,N.=P$9$k$N$rKI$0$3$H$,$G$-$^$9!#(B
+@acronym{HTML} メールには @samp{<img>} タグを使った spammers (spam をば
+らまくやから) の卑劣な悪巧みが含まれているかもしれません。最もありそうな
+のは、あなたがそのメールを読んだことを確認するための意図があることです。
+このオプションを @code{""} に設定する (それがディフォルトです) ことによっ
+て、あなたの個人情報が流出するのを防ぐことができます。
 
 @item mm-w3m-safe-url-regexp
 @vindex mm-w3m-safe-url-regexp
-$B0BA4$J(B URL $BL>!"$9$J$o$A(B @acronym{HTML} $B%a!<%k$rIA2h$9$k$H$-$K8D?M>pJs$,(B
-$BN.=P$7$=$&$b$J$$(B URL $B$K9gCW$9$k@55,I=8=$G$9(B ($B%G%#%U%)%k%HCM(B
-$B$O(B @samp{\\`cid:} $B$G$9(B)$B!#(B@code{nil} $B$K$9$k$H!"$9$Y$F$N(B URL $B$,0BA4$@$HH=(B
-$BCG$7$^$9!#(BGnus $B$G$O!"$3$l$O(B @code{gnus-safe-html-newsgroups} $B$NCM$K1~$8(B
-$B$F>e=q$-$5$l$^$9!#(B@xref{Various Various, ,$B$$$m$$$m$N$$$m$$$m(B, gnus-ja,
+安全な URL 名、すなわち @acronym{HTML} メールを描画するときに個人情報が
+流出しそうもない URL に合致する正規表現です (ディフォルト値
+は @samp{\\`cid:} です)。@code{nil} にすると、すべての URL が安全だと判
+断します。Gnus では、これは @code{gnus-safe-html-newsgroups} の値に応じ
+て上書きされます。@xref{Various Various, ,いろいろのいろいろ, gnus-ja,
 The Gnus Manual}.
 
 @item mm-inline-text-html-with-w3m-keymap
 @vindex mm-inline-text-html-with-w3m-keymap
-$B$3$N%*%W%7%g%s$rHs(B-@code{nil} $B$K@_Dj$9$k$3$H$K$h$C$F!"%$%s%i%$%sI=<($5$l(B
-$B$?(B text/html $B%Q!<%H$G(B emacs-w3m $B$NL?Na%-!<$r;H$&$3$H$,$G$-$^$9!#%G%#%U%)(B
-$B%k%HCM$O(B @code{t} $B$G$9!#(B
+このオプションを非-@code{nil} に設定することによって、インライン表示され
+た text/html パートで emacs-w3m の命令キーを使うことができます。ディフォ
+ルト値は @code{t} です。
 
 @item mm-external-terminal-program
 @vindex mm-external-terminal-program
-$B30It$NC<Kv$r5/F0$9$k$?$a$K;H$o$l$k%W%m%0%i%`$G$9!#(B
+外部の端末を起動するために使われるプログラムです。
 
 @item mm-enable-external
 @vindex mm-enable-external
-$B30It$N(B @acronym{MIME} $B%O%s%I%i!<$r;H$&$Y$-$+$I$&$+$r;XDj$7$^$9!#(B
+外部の @acronym{MIME} ハンドラーを使うべきかどうかを指定します。
 
-@code{t} $B$@$C$?$i!"Dj5A$5$l$F$$$k$9$Y$F$N30It$N(B @acronym{MIME} $B%O%s%I%i!<(B
-$B$,;H$o$l$^$9!#(B@code{nil} $B$K$9$k$H!"%U%!%$%k$O%G%#%9%/$KJ]B8$5$l$^(B
-$B$9(B (@code{mailcap-save-binary-file})$B!#$3$l$,(B @code{ask} $B$H$$$&%7%s%\%k$@$C(B
-$B$?$i!"30It$N(B @acronym{MIME} $B%O%s%I%i!<$,5/F0$5$l$kA0$K?R$M$i$l$k$G$7$g$&!#(B
+@code{t} だったら、定義されているすべての外部の @acronym{MIME} ハンドラー
+が使われます。@code{nil} にすると、ファイルはディスクに保存されま
+す (@code{mailcap-save-binary-file})。これが @code{ask} というシンボルだっ
+たら、外部の @acronym{MIME} ハンドラーが起動される前に尋ねられるでしょう。
 
-Mailcap (@pxref{mailcap}) $B$r2p$7$FE:IU%U%!%$%k$NI=<($r;O$a$k$H!"0BA4$J(B
-$B%S%e!<%o!<$r:G$b0BA4$J%*%W%7%g%s$G;H$&$3$H$r;n$_$^$9(B ($BE:IU%U%!%$%k$r%G%#(B
-$B%9%/$KJ]B8$7$F!"0[$J$k<jCJ(B ($B%3%^%s%I%i%$%s$+%@%V%k%/%j%C%/(B) $B$G$=$NI=<($r(B
-$B;O$a$k>l9g$H$O0c$$$^$9(B)$B!#$H$K$+$/!"I,$:$I$s$J30It%W%m%0%i%`$b;H$o$J$$$h(B
-$B$&$K$7$?$$$N$G$"$l$P!"$3$NJQ?t$r(B @code{nil} $B$+(B @code{ask} $B$K@_Dj$7$F$/$@(B
-$B$5$$!#(B
+Mailcap (@pxref{mailcap}) を介して添付ファイルの表示を始めると、安全な
+ビューワーを最も安全なオプションで使うことを試みます (添付ファイルをディ
+スクに保存して、異なる手段 (コマンドラインかダブルクリック) でその表示を
+始める場合とは違います)。とにかく、必ずどんな外部プログラムも使わないよ
+うにしたいのであれば、この変数を @code{nil} か @code{ask} に設定してくだ
+さい。
 @end table
 
 @node Files and Directories
-@section $B%U%!%$%k$H%G%#%l%/%H%j!<(B
+@section ファイルとディレクトリー
 
 @table @code
 @item mm-default-directory
 @vindex mm-default-directory
-$BE:IU%U%!%$%k$rJ]B8$9$k$?$a$N!"%G%#%U%)%k%H$N%G%#%l%/%H%j!<$G$9!#(B
-@code{nil} $B$@$C$?$i(B @code{default-directory} $B$r;H$$$^$9!#(B
+添付ファイルを保存するための、ディフォルトのディレクトリーです。
+@code{nil} だったら @code{default-directory} を使います。
 
 @item mm-tmp-directory
 @vindex mm-tmp-directory
-$B0l;~%U%!%$%k$r3JG<$9$k$?$a$N%G%#%l%/%H%j!<$G$9!#(B
+一時ファイルを格納するためのディレクトリーです。
 
 @item mm-file-name-rewrite-functions
 @vindex mm-file-name-rewrite-functions
-@acronym{MIME} $B%Q!<%H$N%U%!%$%kL>$r=q$-49$($k$?$a$K;H$o$l$k4X?t$N%j%9%H(B
-$B$G$9!#$=$l$>$l$N4X?t$O%U%!%$%kL>$KBP$7$F=g7+$j$K<B9T$5$l$^$9(B ($BLuCm(B: $B$"$k(B
-$B4X?t$NLa$jCM$,<!$N4X?t$N0z?t$K$J$j$^$9(B)$B!#=PMh9g$$$N4X?t$O0J2<$NDL$j$G$9!#(B
+@acronym{MIME} パートのファイル名を書き換えるために使われる関数のリスト
+です。それぞれの関数はファイル名に対して順繰りに実行されます (訳注: ある
+関数の戻り値が次の関数の引数になります)。出来合いの関数は以下の通りです。
 
 @table @code
 @item mm-file-name-delete-control
 @findex mm-file-name-delete-control
-$B$9$Y$F$N@)8fJ8;z$r>C5n$7$^$9!#(B
+すべての制御文字を消去します。
 
 @item mm-file-name-delete-gotchas
 @findex mm-file-name-delete-gotchas
-$B7g4Y$,$"$k%7%'%k%9%/%j%W%H$G;H$o$l$k$H0U?^$7$J$$7k2L$r@8$8$kJ8;z!"$9$J$o(B
-$B$A(B @samp{|}, @samp{>} $B$*$h$S(B @samp{<}$B!"2C$($F:G=i$NJ8;z$H$7$F;H$o$l(B
-$B$k(B @samp{-} $B$H(B @samp{.} $B$r>C5n$7$^$9!#(B
+欠陥があるシェルスクリプトで使われると意図しない結果を生じる文字、すなわ
+ち @samp{|}, @samp{>} および @samp{<}、加えて最初の文字として使われ
+る @samp{-} と @samp{.} を消去します。
 
 @item mm-file-name-delete-whitespace
 @findex mm-file-name-delete-whitespace
-$B$9$Y$F$N6uGrJ8;z$r<h$j=|$-$^$9!#(B
+すべての空白文字を取り除きます。
 
 @item mm-file-name-trim-whitespace
 @findex mm-file-name-trim-whitespace
-$B@hF,$HKvHx$N6uGrJ8;z$r<h$j=|$-$^$9!#(B
+先頭と末尾の空白文字を取り除きます。
 
 @item mm-file-name-collapse-whitespace
 @findex mm-file-name-collapse-whitespace
-$BJ#?t$NO"B3$7$?6uGrJ8;z$rC10l$N%9%Z!<%9J8;z$GCV$-49$($^$9!#(B
+複数の連続した空白文字を単一のスペース文字で置き換えます。
 
 @item mm-file-name-replace-whitespace
 @findex mm-file-name-replace-whitespace
 @vindex mm-file-name-replace-whitespace
-$B6uGrJ8;z$r2<@~(B (underscore) $B$GCV$-49$($^$9!#2<@~$,$*9%$_$G$J$1$l$P!"B>$N(B
-$BJ8;z$r(B @code{mm-file-name-replace-whitespace} $BJQ?t$K@_Dj$7$F$/$@$5$$!#(B
+空白文字を下線 (underscore) で置き換えます。下線がお好みでなければ、他の
+文字を @code{mm-file-name-replace-whitespace} 変数に設定してください。
 @end table
 
-Emacs $BI8=`$N4X?t$G$"$k(B @code{capitalize}, @code{downcase},
-@code{upcase} $B$*$h$S(B @code{upcase-initials} $B$bLr$KN)$D$3$H$,$"$k$+$b$7$l(B
-$B$^$;$s!#(B
+Emacs 標準の関数である @code{capitalize}, @code{downcase},
+@code{upcase} および @code{upcase-initials} も役に立つことがあるかもしれ
+ません。
 
 @item mm-path-name-rewrite-functions
 @vindex mm-path-name-rewrite-functions
-@acronym{MIME} $B%Q!<%H$N%U%k!&%U%!%$%kL>$r=q$-49$($k$?$a$K;H$o$l$k4X?t$N(B
-$B%j%9%H$G$9!#$3$l$O%Q!<%H$r30It$GI=<($9$k$H$-(B ($B$9$J$o$A!"M;DL$N8z$+$J$$%W(B
-$B%m%0%i%`$,!"%U%!%$%k$,J]B8$5$l$?>l=j$r8+$D$1$k$3$H$,$G$-$k$h$&$K!"@dBP%Q(B
-$B%9L>$rJQ49$9$k$?$a(B) $B$K;H$o$l$^$9!#(B
+@acronym{MIME} パートのフル・ファイル名を書き換えるために使われる関数の
+リストです。これはパートを外部で表示するとき (すなわち、融通の効かないプ
+ログラムが、ファイルが保存された場所を見つけることができるように、絶対パ
+ス名を変換するため) に使われます。
 @end table
 
 @node New Viewers
-@section $B?7$7$$%S%e!<%o!<(B
+@section 新しいビューワー
 
-$B$3$l$O(B @code{text/enriched} $B%Q!<%H$r%$%s%i%$%sI=<($9$k%S%e!<%o!<$NNc$G$9(B:
+これは @code{text/enriched} パートをインライン表示するビューワーの例です:
 
 @lisp
 (defun mm-display-enriched-inline (handle)
@@ -583,62 +583,62 @@ Emacs $BI8=`$N4X?t$G$"$k(B @code{capitalize}, @code{downcase},
     (mm-insert-inline handle text)))
 @end lisp
 
-$B$3$N4X?t$,%Q%i%a!<%?!<$H$7$F(B @acronym{MIME} $B%O%s%I%k$r<u$1<h$k$3$H$,$o$+(B
-$B$j$^$9$M!#$=$l$O0l;~%P%C%U%!!<$K:n6H>l=j$r0\$7!"%Q!<%H$N%F%-%9%H$rA^F~$7!"(B
-$B$=$N%F%-%9%H$K2?$+$N=hM}$r;\$7!"7k2L$r3P$($F$*$$$F!"4X?t$,8F$P$l$?$H$-$N(B
-$B%P%C%U%!!<$KLa$C$F$=$N7k2L$rA^F~$7$^$9!#(B
+この関数がパラメーターとして @acronym{MIME} ハンドルを受け取ることがわか
+りますね。それは一時バッファーに作業場所を移し、パートのテキストを挿入し、
+そのテキストに何かの処理を施し、結果を覚えておいて、関数が呼ばれたときの
+バッファーに戻ってその結果を挿入します。
 
-$B$3$3$K$"$kFs$D$N=EMW$J$*=u$14X?t(B
-$B$O(B @code{mm-insert-part} $B$H(B @code{mm-insert-inline} $B$G$9!#:G=i$N4X?t$O!"(B
-$B%O%s%I%k$N%F%-%9%H$r8=:_$N%P%C%U%!!<$KA^F~$7$^$9!#$3$l$OJ8;z%;%C%H$*$h$S(B
-$B%(%s%3!<%G%#%0(B (content transfer decoding) $B$r<h$j07$$$^$9!#FsHVL\$N4X?t(B
-$B$O!"A^F~$7$m$H8@$C$?$I$s$J%F%-%9%H$G$bC1$KA^F~$7$^$9$,!"%F%-%9%H$r<j7Z$J(B
-$BJ}K!$G!VI=<($5$l$J$/$9$k!W(B(undisplayed $B$K$9$k(B) $B$3$H$,$G$-$k$h$&$J=t@_Dj(B
-$B$r$b9T$J$$$^$9!#(B
+ここにある二つの重要なお助け関数
+は @code{mm-insert-part} と @code{mm-insert-inline} です。最初の関数は、
+ハンドルのテキストを現在のバッファーに挿入します。これは文字セットおよび
+エンコーディグ (content transfer decoding) を取り扱います。二番目の関数
+は、挿入しろと言ったどんなテキストでも単に挿入しますが、テキストを手軽な
+方法で「表示されなくする」(undisplayed にする) ことができるような諸設定
+をも行ないます。
 
 @node Composing
-@chapter MIME $B%a%C%;!<%8$N:n@.(B
+@chapter MIME メッセージの作成
 @cindex Composing
 @cindex MIME Composing
 @cindex MML
 @cindex MIME Meta Language
 
-@acronym{MIME} $B%a%C%;!<%8$N:n@.$O$&$s$6$j$9$k;E;v$@$74JC1$G$b$"$j$^$;$s!#(B
-$B$=$3$G!"(B@acronym{MML} (@acronym{MIME} Meta Language) $B$H$$$&8@8l$r2r@O$7(B
-$B$F!"(B@acronym{MIME} $B%a%C%;!<%8$r@8@.$9$k$?$a$N!"(B@code{mml} $B$H$$$&%i%$%V%i(B
-$B%j!<$,:n$i$l$^$7$?!#(B
+@acronym{MIME} メッセージの作成はうんざりする仕事だし簡単でもありません。
+そこで、@acronym{MML} (@acronym{MIME} Meta Language) という言語を解析し
+て、@acronym{MIME} メッセージを生成するための、@code{mml} というライブラ
+リーが作られました。
 
 @findex mml-generate-mime
-$B<gMW$J%$%s%?!<%U%'!<%94X?t$O(B @code{mml-generate-mime} $B$G$9!#$3$l$O8=:_(B
-$B$N(B ($B69$a$i$l$?(B) $B%P%C%U%!!<$NFbMFJ*$rD4$Y$F!"(B@acronym{MIME} $B%a%C%;!<%8$r(B
-$B4^$`J8;zNs$rJV$7$^$9!#(B
+主要なインターフェース関数は @code{mml-generate-mime} です。これは現在
+の (狭められた) バッファーの内容物を調べて、@acronym{MIME} メッセージを
+含む文字列を返します。
 
 @menu
-* Simple MML Example::             @acronym{MML} $BJ8=q$NNc(B
-* MML Definition::                 $B$9$Y$F$NM-8z$J(B @acronym{MML} $BMWAG(B
-* Advanced MML Example::           $B$b$&0l$D$N(B @acronym{MML} $BJ8=q$NNc(B
-* Encoding Customization::         $B%(%s%3!<%G%#%s%0$K:nMQ$9$kJQ?t(B
-* Charset Translation::            @sc{mule} $BJ8;z%;%C%H$+$i(B @acronym{MIME} $BJ8;z%;%C%H$X$N3d$jEv$F(B
-* Conversion::                     @acronym{MIME} $B$+$i(B @acronym{MML} $B$X!"$*$h$S$=$N5U(B
-* Flowed text::                    $B%=%U%H$*$h$S%O!<%I2~9T(B
+* Simple MML Example::             @acronym{MML} 文書の例
+* MML Definition::                 すべての有効な @acronym{MML} 要素
+* Advanced MML Example::           もう一つの @acronym{MML} 文書の例
+* Encoding Customization::         エンコーディングに作用する変数
+* Charset Translation::            @sc{mule} 文字セットから @acronym{MIME} 文字セットへの割り当て
+* Conversion::                     @acronym{MIME} から @acronym{MML} へ、およびその逆
+* Flowed text::                    ソフトおよびハード改行
 @end menu
 
 @node Simple MML Example
-@section $BC1=c$J(B MML $B$NNc(B
+@section 単純な MML の例
 
-@samp{multipart/alternative} $B$NC1=c$JNc$G$9(B:
+@samp{multipart/alternative} の単純な例です:
 
 @example
 <#multipart type=alternative>
 This is a plain text part.
-$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
+これはプレーンテキストのパートです。
 <#part type=text/enriched>
 <center>This is a centered enriched part</center>
-<center>$B$3$l$OCf?4$KCV$+$l$k(B enriched $B%Q!<%H$G$9(B</center>
+<center>これは中心に置かれる enriched パートです</center>
 <#/multipart>
 @end example
 
-$B$3$l$r(B @code{mml-generate-mime} $B$KDL$9$H!"<!$N$b$N$,F@$i$l$^$9(B:
+これを @code{mml-generate-mime} に通すと、次のものが得られます:
 
 @example
 Content-Type: multipart/alternative; boundary="=-=-="
@@ -647,189 +647,189 @@ Content-Type: multipart/alternative; boundary="=-=-="
 Content-Type: text/plain; charset=iso-2022-jp
 
 This is a plain text part.
-$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
+これはプレーンテキストのパートです。
 
 --=-=-=
 Content-Type: text/enriched; charset=iso-2022-jp
 
 <center>This is a centered enriched part</center>
-<center>$B$3$l$OCf?4$KCV$+$l$k(B enriched $B%Q!<%H$G$9(B</center>
+<center>これは中心に置かれる enriched パートです</center>
 
 --=-=-=--
 @end example
 
-($B<B:]$K$O!"F|K\8l$NItJ,$O(B @samp{charset=iso-2022-jp} $B$G%(%s%3!<%I$5$l$?(B
-$B$b$N$K$J$j$^$9!#(B)
+(実際には、日本語の部分は @samp{charset=iso-2022-jp} でエンコードされた
+ものになります。)
 
 @node MML Definition
-@section MML $B$NDj5A(B
+@section MML の定義
 
-@acronym{MML} $B8@8l$O$H$F$bC1=c$G$9!#(BSGML $B%"%W%j%1!<%7%g%s$K>/$7;w$F$$$^(B
-$B$9$,!"0[$J$k$b$N$G$9!#(B
+@acronym{MML} 言語はとても単純です。SGML アプリケーションに少し似ていま
+すが、異なるものです。
 
-@acronym{MML} $B$N<gMW$J35G0$O!V%Q!<%H!W$G$9!#$=$l$>$l$N%Q!<%H$r0[$J$k%?%$(B
-$B%W$K$7$?$j!"0[$J$kJ8;z%;%C%H$r;H$&$3$H$,$G$-$^$9!#%Q!<%H(B
-$B$O(B @samp{<#part ...>} $B%?%0$G5-=R$7$^$9!#%^%k%A%Q!<%H7?$N%Q!<%H(B
-$B$O(B @samp{<#multipart ...>} $B%?%0$G;O$a$^$9!#$=$l$>$l$N%Q!<%H(B
-$B$O(B @samp{<#/part>} $B%?%0$+(B @samp{<#/multipart>} $B%?%0$G=*C<$7$^$9$,!"(B($B$=$l(B
-$B$i$,L5$/$F$b(B) @samp{<#part ...>} $B$G;O$^$C$?%?%0$O<!$N%Q!<%H$N;O$^$j$K$h$C(B
-$B$F$bJD$8$i$l$^$9!#(B
+@acronym{MML} の主要な概念は「パート」です。それぞれのパートを異なるタイ
+プにしたり、異なる文字セットを使うことができます。パート
+は @samp{<#part ...>} タグで記述します。マルチパート型のパート
+は @samp{<#multipart ...>} タグで始めます。それぞれのパート
+は @samp{<#/part>} タグか @samp{<#/multipart>} タグで終端しますが、(それ
+らが無くても) @samp{<#part ...>} で始まったタグは次のパートの始まりによっ
+ても閉じられます。
 
-@samp{<#external ...>} $B%?%0$H$$$&$b$N$b$"$j$^$9!#$3$l(B
-$B$O(B @samp{external/message-body} $B7?$N%Q!<%H$r5-=R$9$k$?$a$K;H$o$l$^$9!#(B
+@samp{<#external ...>} タグというものもあります。これ
+は @samp{external/message-body} 型のパートを記述するために使われます。
 
-$B$=$l$>$l$N%?%0$O!V(Bparameter=$BCM!W$N7A<0$G!"0l$D0J>e$N%Q%i%a!<%?!<$r4^$`$3(B
-$B$H$,$G$-$^$9(B ($B$b$A$m$sL5$$$3$H$b$"$j$^$9(B)$B!#CM$r%/%)!<%F!<%7%g%s%^!<(B
-$B%/(B ("...") $B$G0O$`$3$H$,$G$-$^$9$,!"CM$,6uGrJ8;z$r4^$`>l9g0J30$O0O$`I,MW(B
-$B$,$"$j$^$;$s!#$7$?$,$C$F!"(B@samp{filename=/home/user/#hello$^yes} $B$O40A4(B
-$B$KM-8z$G$9!#(B
+それぞれのタグは「parameter=値」の形式で、一つ以上のパラメーターを含むこ
+とができます (もちろん無いこともあります)。値をクォーテーションマー
+ク ("...") で囲むことができますが、値が空白文字を含む場合以外は囲む必要
+がありません。したがって、@samp{filename=/home/user/#hello$^yes} は完全
+に有効です。
 
-$B0J2<$N%Q%i%a!<%?!<$O(B @acronym{MML} $B$G;H$o$l$k$b$N$G$9!#0UL#$r;}$?$J$$%Q(B
-$B%i%a!<%?!<$OL5;k$5$l$^$9!#(B@acronym{MML} $B%Q%i%a!<%?!<$NL>A0(B
-$B$O(B @acronym{MIME} $B%Q%i%a!<%?!<$NL>A0$HF1$8$G!"3g8L$NCf$KIU5-$7$F$"$k$N$O!"(B
-$B$=$l$,;H$o$l$k%X%C%@!<$G$9!#(B
+以下のパラメーターは @acronym{MML} で使われるものです。意味を持たないパ
+ラメーターは無視されます。@acronym{MML} パラメーターの名前
+は @acronym{MIME} パラメーターの名前と同じで、括弧の中に付記してあるのは、
+それが使われるヘッダーです。
 
 @table @samp
 @item type
-$B%Q!<%H$N(B @acronym{MIME} $B%?%$%W$G$9(B (@code{Content-Type})$B!#(B
+パートの @acronym{MIME} タイプです (@code{Content-Type})。
 
 @item filename
-$B$=$N%Q!<%H$NK\BN$,4^$`$3$H$K$J$k%U%!%$%k$NL>A0$G(B
-$B$9(B (@code{Content-Disposition})$B!#(B
+そのパートの本体が含むことになるファイルの名前で
+す (@code{Content-Disposition})。
 
 @item recipient-filename
-$B<u<h?M$K08$F$F:n@.$5$l$?(B @acronym{MIME} $B%a%C%;!<%8$G!"$3$l$r%U%!%$%kL>$H(B
-$B$7$F;H$$$^$9!#$D$^$j!"$b$7$=$N%U%!%$%k$,<j85$G$O(B @file{foo.txt} $B$G$"$C$?(B
-$B$H$7$F$b!"Aw$i$l$k%a%C%;!<%8$N(B @code{Content-Disposition} $B$G$O!"$3$NL>A0(B
-$B$r;H$&$H$$$&$3$H$G$9!#(B
+受取人に宛てて作成された @acronym{MIME} メッセージで、これをファイル名と
+して使います。つまり、もしそのファイルが手元では @file{foo.txt} であった
+としても、送られるメッセージの @code{Content-Disposition} では、この名前
+を使うということです。
 
 @item charset
-$B%Q!<%H$NFbMFJ*$r%(%s%3!<%I$9$k$H$-$K;H$o$l$kJ8;z%;%C%H$G(B
-$B$9(B (@code{Content-Type})$B!#(B@xref{Charset Translation}.
+パートの内容物をエンコードするときに使われる文字セットで
+す (@code{Content-Type})。@xref{Charset Translation}.
 
 @item name
-$B%Q!<%H$r%U%!%$%k$KJ]B8$9$k$H$-$N%U%!%$%kL>$r<(:6$9$k$?$a$K;H$o$l$k$+$b$7(B
-$B$l$^$;$s(B (@code{Content-Type})$B!#(B
+パートをファイルに保存するときのファイル名を示唆するために使われるかもし
+れません (@code{Content-Type})。
 
 @item disposition
-$BG[CV;XDj$K;H$$$^$9!#M-8z$JCM$O(B @samp{inline} $B$H(B @samp{attachment} $B$G(B
-$B$9(B (@code{Content-Disposition})$B!#(B
+配置指定に使います。有効な値は @samp{inline} と @samp{attachment} で
+す (@code{Content-Disposition})。
 
 @item encoding
-$BM-8z$JCM$O(B @samp{7bit}, @samp{8bit}, @samp{quoted-printable} $B$*$h(B
-$B$S(B @samp{base64} $B$G$9(B (@code{Content-Transfer-Encoding})$B!#(B@xref{Charset
+有効な値は @samp{7bit}, @samp{8bit}, @samp{quoted-printable} およ
+び @samp{base64} です (@code{Content-Transfer-Encoding})。@xref{Charset
 Translation}.
 
 @item description
-$B%Q!<%H$N@bL@=q$-$G$9(B (@code{Content-Description})$B!#(B
+パートの説明書きです (@code{Content-Description})。
 
 @item creation-date
-$B%Q!<%H$,:n@.$5$l$?;~9o(B (RFC822 $B7A<0(B) $B$G$9(B (@code{Content-Disposition})$B!#(B
+パートが作成された時刻 (RFC822 形式) です (@code{Content-Disposition})。
 
 @item modification-date
-$B%Q!<%H$,JQ99$5$l$?;~9o(B (RFC822 $B7A<0(B) $B$G$9(B (@code{Content-Disposition})$B!#(B
+パートが変更された時刻 (RFC822 形式) です (@code{Content-Disposition})。
 
 @item read-date
-$B%Q!<%H$,FI$^$l$?;~9o(B (RFC822 $B7A<0(B) $B$G$9(B (@code{Content-Disposition})$B!#(B
+パートが読まれた時刻 (RFC822 形式) です (@code{Content-Disposition})。
 
 @item recipients
-$B%Q!<%H$rC/08$F$K0E9f2=(B/$B=pL>$9$k$+$r;XDj$7$^$9!#$3$l$O(B To/CC $B$r4p$K$7$?<+(B
-$BF08!=P$h$j$bM%@h$5$l$^$9!#(B
+パートを誰宛てに暗号化/署名するかを指定します。これは To/CC を基にした自
+動検出よりも優先されます。
 
 @item sender
-$B%Q!<%H$K=pL>$9$k$H$-$NL>5A$G$9!#$3$N%U%#!<%k%I$O%G%#%U%)%k%H$N80$,;H$o$l(B
-$B$J$$$h$&$K$9$k$?$a$K;H$o$l$^$9!#(B
+パートに署名するときの名義です。このフィールドはディフォルトの鍵が使われ
+ないようにするために使われます。
 
 @item size
-$B%Q!<%H$N%5%$%:$r(B octet (8-bit) $B$NC10L$GI=$7$^(B
-$B$9(B (@code{Content-Disposition})$B!#(B
+パートのサイズを octet (8-bit) の単位で表しま
+す (@code{Content-Disposition})。
 
 @item sign
-$B$3$N(B @acronym{MML} $B$N%Q!<%H$K!"2?$N5;=Q<jCJ(B (@code{smime}, @code{pgp} $B$^(B
-$B$?$O(B @code{pgpmime}) $B$G=pL>$9$k$+$r;XDj$7$^$9!#(B
+この @acronym{MML} のパートに、何の技術手段 (@code{smime}, @code{pgp} ま
+たは @code{pgpmime}) で署名するかを指定します。
 
 @item encrypt
-$B$3$N(B @acronym{MML} $B$N%Q!<%H$r!"2?$N5;=Q<jCJ(B (@code{smime}, @code{pgp} $B$^(B
-$B$?$O(B @code{pgpmime}) $B$G0E9f2=$9$k$+$r;XDj$7$^$9!#(B
+この @acronym{MML} のパートを、何の技術手段 (@code{smime}, @code{pgp} ま
+たは @code{pgpmime}) で暗号化するかを指定します。
 @end table
 
-$B0J2<$O(B @samp{text/plain} $B$N$?$a$N%Q%i%a!<%?!<$G$9(B:
+以下は @samp{text/plain} のためのパラメーターです:
 
 @table @samp
 @item format
-$B%F%-%9%H$r@07A$9$k$?$a$N%Q%i%a!<%?!<$G!"M-8z$JCM$O(B @samp{fixed} ($B%G%#%U%)(B
-$B%k%H(B) $B$H(B @samp{flowed} $B$G$9!#IaDL$O$3$l$r<j$G@_Dj$7$^$;$s!#$=$l$O!"%F%-(B
-$B%9%H$NK\J8$,!"(BRFC 2646 $B$GDj$a$i$l$?FCJL$JJ}K!$G@07A$5$l$k$3$H$rI,MW$H$9(B
-$B$k$+$i$G$9!#(B@xref{Flowed text}.
+テキストを整形するためのパラメーターで、有効な値は @samp{fixed} (ディフォ
+ルト) と @samp{flowed} です。普通はこれを手で設定しません。それは、テキ
+ストの本文が、RFC 2646 で定められた特別な方法で整形されることを必要とす
+るからです。@xref{Flowed text}.
 @end table
 
-$B0J2<$O(B @samp{application/octet-stream} $B$N$?$a$N%Q%i%a!<%?!<$G$9(B:
+以下は @samp{application/octet-stream} のためのパラメーターです:
 
 @table @samp
 @item type
-$B%Q!<%H$N%?%$%W$G$9(B (@code{Content-Type})$B!#$3$l$O?M4V$,FI$`$3$H$rA[Dj$7$?!"(B
-$BHs8x<0$J$b$N$G$9!#(B
+パートのタイプです (@code{Content-Type})。これは人間が読むことを想定した、
+非公式なものです。
 @end table
 
-$B0J2<$O(B @samp{message/external-body} $B$N$?$a$N%Q%i%a!<%?!<$G$9(B:
+以下は @samp{message/external-body} のためのパラメーターです:
 
 @table @samp
 @item access-type
-$B%U%!%$%k$r<hF@$9$k$?$a$N!"%5%]!<%H$5$l$F$$$k%"%/%;%9<jCJ$r<($98l$G$9!#CM(B
-$B$O(B @samp{ftp}, @samp{anon-ftp}, @samp{tftp}, @samp{localfile} $B$*$h(B
-$B$S(B @samp{mailserver} $B$N$I$l$+$G$9!#(B(@code{Content-Type}.)
+ファイルを取得するための、サポートされているアクセス手段を示す語です。値
+は @samp{ftp}, @samp{anon-ftp}, @samp{tftp}, @samp{localfile} およ
+び @samp{mailserver} のどれかです。(@code{Content-Type}.)
 
 @item expiration
-$B%U%!%$%k$,<hF@$G$-$J$/$J$k$+$b$7$l$J$$F|;~(B (RFC822 $B7A<0(B) $B$G$9!#(B
+ファイルが取得できなくなるかもしれない日時 (RFC822 形式) です。
 (@code{Content-Type}.)
 
 @item size
-Octet (8-bit) $B$NC10L$GI=$7$?%U%!%$%k$N%5%$%:$G$9!#(B(@code{Content-Type}.)
+Octet (8-bit) の単位で表したファイルのサイズです。(@code{Content-Type}.)
 
 @item permission
-$BM-8z$JCM$O(B @samp{read} $B$H(B @samp{read-write} $B$G$9(B (@code{Content-Type})$B!#(B
+有効な値は @samp{read} と @samp{read-write} です (@code{Content-Type})。
 @end table
 
-$B0J2<$O(B @samp{sign=smime} $B$N$?$a$N%Q%i%a!<%?!<$G$9(B:
+以下は @samp{sign=smime} のためのパラメーターです:
 
 @table @samp
 @item keyfile
-$B=pL>$9$k?M$N80$H>ZL@=q$r4^$s$G$$$k%U%!%$%k$G$9!#(B
+署名する人の鍵と証明書を含んでいるファイルです。
 @end table
 
-$B0J2<$O(B @samp{encrypt=smime} $B$N$?$a$N%Q%i%a!<%?!<$G$9(B:
+以下は @samp{encrypt=smime} のためのパラメーターです:
 
 @table @samp
 @item certfile
-$B<u<h?M$N>ZL@=q$r4^$s$G$$$k%U%!%$%k$G$9!#(B
+受取人の証明書を含んでいるファイルです。
 @end table
 
 @node Advanced MML Example
-@section $B9bEY$J(B MML $B$NNc(B
+@section 高度な MML の例
 
-$BJ#;($J%^%k%A%Q!<%H!&%a%C%;!<%8$NNc$G$9!#$3$l$O(B @samp{multipart/mixed} $B$G(B
-$B$9!#B??t$N%Q!<%H$r4^$s$G$$$F!"$=$N0l$D$O(B @samp{multipart/alternative} $B$G(B
-$B$9!#(B
+複雑なマルチパート・メッセージの例です。これは @samp{multipart/mixed} で
+す。多数のパートを含んでいて、その一つは @samp{multipart/alternative} で
+す。
 
 @example
 <#multipart type=mixed>
 <#part type=image/jpeg filename=~/rms.jpg disposition=inline>
 <#multipart type=alternative>
 This is a plain text part.
-$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
+これはプレーンテキストのパートです。
 <#part type=text/enriched name=enriched.txt>
 <center>This is a centered enriched part</center>
-<center>$B$3$l$OCf?4$KCV$+$l$k(B enriched $B%Q!<%H$G$9(B</center>
+<center>これは中心に置かれる enriched パートです</center>
 <#/multipart>
 This is a new plain text part.
-$B$3$l$O?7$7$$%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
+これは新しいプレーンテキストのパートです。
 <#part disposition=attachment>
 This plain text part is an attachment.
-$B$3$N%W%l!<%s%F%-%9%H$N%Q!<%H$OE:IU%U%!%$%k$G$9!#(B
+このプレーンテキストのパートは添付ファイルです。
 <#/multipart>
 @end example
 
-$B$=$7$F!"$3$l$,7k2L$N(B @acronym{MIME} $B%a%C%;!<%8$G$9(B:
+そして、これが結果の @acronym{MIME} メッセージです:
 
 @example
 Content-Type: multipart/mixed; boundary="=-=-="
@@ -863,13 +863,13 @@ Content-Type: multipart/alternative; boundary="==-=-="
 Content-Type: text/plain; charset=iso-2022-jp
 
 This is a plain text part.
-$B$3$l$O%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
+これはプレーンテキストのパートです。
 
 --==-=-=
 Content-Type: text/enriched; charset=iso-2022-jp; name=enriched.txt
 
 <center>This is a centered enriched part</center>
-<center>$B$3$l$OCf?4$KCV$+$l$k(B enriched $B%Q!<%H$G$9(B</center>
+<center>これは中心に置かれる enriched パートです</center>
 
 --==-=-=--
 
@@ -877,31 +877,31 @@ Content-Type: text/enriched; charset=iso-2022-jp; name=enriched.txt
 Content-Type: text/plain; charset=iso-2022-jp
 
 This is a new plain text part.
-$B$3$l$O?7$7$$%W%l!<%s%F%-%9%H$N%Q!<%H$G$9!#(B
+これは新しいプレーンテキストのパートです。
 
 --=-=-=
 Content-Type: text/plain; charset=iso-2022-jp
 Content-Disposition: attachment
 
 This plain text part is an attachment.
-$B$3$N%W%l!<%s%F%-%9%H$N%Q!<%H$OE:IU%U%!%$%k$G$9!#(B
+このプレーンテキストのパートは添付ファイルです。
 
 --=-=-=--
 @end example
 
-($B<B:]$K$O!"F|K\8l$NItJ,$O(B @samp{charset=iso-2022-jp} $B$G%(%s%3!<%I$5$l$?(B
-$B$b$N$K$J$j$^$9!#(B)
+(実際には、日本語の部分は @samp{charset=iso-2022-jp} でエンコードされた
+ものになります。)
 
 @node Encoding Customization
-@section $B%(%s%3!<%G%#%s%0$N%+%9%?%^%$%:(B
+@section エンコーディングのカスタマイズ
 
 @table @code
 @item mm-body-charset-encoding-alist
 @vindex mm-body-charset-encoding-alist
-@acronym{MIME} $BJ8;z%;%C%H$K3d$jEv$F$k%(%s%3!<%G%#%s%0$G$9!#$3$NJQ?t$O!"(B
-$BNc$($PB>$NMW7o$K$h$C$FFCDj$N%(%s%3!<%G%#%s%0$,6/@)$5$l$J$$$H$-$K!"DL>o;H(B
-$B$o$l$^$9(B ($BEE;R=pL>$5$l$?%a%C%;!<%8$O(B 7bit $B%(%s%3!<%G%#%s%0$rI,MW$H$7$^$9(B)$B!#(B
-$B%G%#%U%)%k%HCM$O<!$NDL$j$G$9!#(B
+@acronym{MIME} 文字セットに割り当てるエンコーディングです。この変数は、
+例えば他の要件によって特定のエンコーディングが強制されないときに、通常使
+われます (電子署名されたメッセージは 7bit エンコーディングを必要とします)。
+ディフォルト値は次の通りです。
 
 @lisp
 ((iso-2022-jp . 7bit)
@@ -911,46 +911,46 @@ This plain text part is an attachment.
  (utf-16le . base64))
 @end lisp
 
-$BNc$($P(B ISO-8859-1 $BJ8;z%;%C%H$,(B quoted-printable $B$G%(%s%3!<%I$5$l$J$$$h$&(B
-$B$K$7$?$$>l9g$O!"$3$NJQ?t$K(B @code{(iso-8859-1 . 8bit)} $B$rDI2C$9$l$PNI$$$G(B
-$B$7$g$&!#(B@acronym{MML} $B$N(B @code{encoding} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=(B
-$B$l$G;XDj$7$?CM$r$3$NJQ?t$h$jM%@h$5$;$k$3$H$b$G$-$^(B
-$B$9(B (@pxref{MML Definition})$B!#(B
+例えば ISO-8859-1 文字セットが quoted-printable でエンコードされないよう
+にしたい場合は、この変数に @code{(iso-8859-1 . 8bit)} を追加すれば良いで
+しょう。@acronym{MML} の @code{encoding} タグを使って、メッセージ毎にそ
+れで指定した値をこの変数より優先させることもできま
+す (@pxref{MML Definition})。
 
 @item mm-coding-system-priorities
 @vindex mm-coding-system-priorities
-$BAw=P$9$k%a%C%;!<%8$G;H$&(B coding system $B$NM%@hEY$r;XDj$7$^$9!#%G%#%U%)%k(B
-$B%HCM$O(B @code{nil} $B$G$9(B ($B$=$N>l9g$O(B Emacs $B$K$*$1$k%G%#%U%)%k%H$NM%@h=g0L(B
-$B$,E,MQ$5$l$^$9(B) $B$,!"F|K\8l4D6-$G(B Emacs $B$r<B9T$9$k>l9g(B
-$B$O(B @code{(iso-8859-1 iso-2022-jp utf-8)} $B$K$J$j$^$9!#CM$O(B coding
-system $B$N%7%s%\%k$N%j%9%H$G$9(B (coding system $B$NJLL>$r;H$C$F$b9=$$$^$;$s!#(B
-$B@_Dj$9$k$H$-$O(B @kbd{M-x describe-coding-system} $B$r;H$C$F!"(Bcoding
-system $B$NL>A0$,@53N$G$"$k$3$H$r3N$+$a$F$/$@$5$$(B)$B!#Nc$($P(B UTF-8 $B$r:GM%@h(B
-$B$H$9$k$h$&$K(B Emacs $B$r@_Dj$7$?$b$N$N!"2DG=$J>l9g$O(B ISO-8859-1 $B$G%a%C%;!<(B
-$B%8$rAw?.$9$k$h$&$K$7$?$$$H$$$&>l9g$@$C$?$i!"$3$NJQ?t(B
-$B$r(B @code{(iso-8859-1)} $B$K$9$l$PNI$$$G$7$g$&!#(B
-@acronym{MML} $B$N(B @code{charset} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=$l$G;XDj$7(B
-$B$?CM$r$3$NJQ?t$h$jM%@h$5$;$k$3$H$b$G$-$^$9(B (@pxref{MML Definition})$B!#(B
+送出するメッセージで使う coding system の優先度を指定します。ディフォル
+ト値は @code{nil} です (その場合は Emacs におけるディフォルトの優先順位
+が適用されます) が、日本語環境で Emacs を実行する場合
+は @code{(iso-8859-1 iso-2022-jp utf-8)} になります。値は coding
+system のシンボルのリストです (coding system の別名を使っても構いません。
+設定するときは @kbd{M-x describe-coding-system} を使って、coding
+system の名前が正確であることを確かめてください)。例えば UTF-8 を最優先
+とするように Emacs を設定したものの、可能な場合は ISO-8859-1 でメッセー
+ジを送信するようにしたいという場合だったら、この変数
+を @code{(iso-8859-1)} にすれば良いでしょう。
+@acronym{MML} の @code{charset} タグを使って、メッセージ毎にそれで指定し
+た値をこの変数より優先させることもできます (@pxref{MML Definition})。
 
 @quotation
-$BLuCm(B: $BF|K\8l4D6-$H$O(B @code{current-language-environment} $BJQ?t$NCM(B
-$B$,(B @samp{Japanese} $B$K$J$C$F$$$k4D6-$N$3$H$G$9!#F|K\8l$N%a%C%;!<%8$N%(%s(B
-$B%3!<%I$K$OEAE}E*$K(B @code{iso-2022-jp} $B$,;H$o$l$F$$$k$N$KBP$7!"(BEmacs $B$GDj(B
-$B$a$i$l$?M%@h=g0L$K4p$E$/$H(B @code{euc-jp} $B$d(B @code{shift_jis} $B$J$I$,Bh0l(B
-$B8uJd$K$J$C$F$7$^$&>l9g$,$"$k$N$G!"$3$NCM$,(B @code{nil} $B$G$O$h$m$7$/$J$$$N(B
-$B$G$9!#(B
+訳注: 日本語環境とは @code{current-language-environment} 変数の値
+が @samp{Japanese} になっている環境のことです。日本語のメッセージのエン
+コードには伝統的に @code{iso-2022-jp} が使われているのに対し、Emacs で定
+められた優先順位に基づくと @code{euc-jp} や @code{shift_jis} などが第一
+候補になってしまう場合があるので、この値が @code{nil} ではよろしくないの
+です。
 
-$B$J$*!"%i%F%s8l7w$N?M$?$A$K08$F$FAw$k%a%C%;!<%8$N$?$a$K!"%G%#%U%)%k%HCM$N(B
-$B@hF,$K(B @code{iso-8859-1} $B$,CV$+$l$F$$$^$9!#(B
+なお、ラテン語圏の人たちに宛てて送るメッセージのために、ディフォルト値の
+先頭に @code{iso-8859-1} が置かれています。
 @end quotation
 
-$B%K%e!<%9%0%k!<%W3,AX$4$H$KM%@h$9$k$Y$-J8;z%;%C%H$,0[$J$k$N$G!"(BGnus $B$G(B
-$B$O(B @code{mm-coding-system-priorities} $B$NCM$r3,AX$K$h$C$F@Z$jBX$($kI,MW$,(B
-$B$"$k$G$7$g$&!#$=$N$?$a$NNc$G$9(B:
+ニュースグループ階層ごとに優先するべき文字セットが異なるので、Gnus で
+は @code{mm-coding-system-priorities} の値を階層によって切り替える必要が
+あるでしょう。そのための例です:
 
-@c $BM%@h$5$l$k$Y$-J8;z%;%C%H$ND{@5$r4?7^$7$^$9!#(Bde$B!"(Bfr $B$*$h$S(B fj $B$O@5$7$$(B
-@c $B$O$:$G$9$,!"$=$l$i0J30$K$D$$$F$OIT3N$+$G$9(B ($B$7$?$,$C$F!"$=$l$i$OC1$J(B
-@c $B$kNc$G$9(B):
+@c 優先されるべき文字セットの訂正を歓迎します。de、fr および fj は正しい
+@c はずですが、それら以外については不確かです (したがって、それらは単な
+@c る例です):
 @lisp
 (add-to-list 'gnus-newsgroup-variables 'mm-coding-system-priorities)
 (setq gnus-parameters
@@ -976,189 +976,189 @@ system $B$NL>A0$,@53N$G$"$k$3$H$r3N$+$a$F$/$@$5$$(B)$B!#Nc$($P(B UTF-8 $B$r
 
 @item mm-content-transfer-encoding-defaults
 @vindex mm-content-transfer-encoding-defaults
-@acronym{MIME} $B$N%?%$%W$K3d$jEv$F$k%(%s%3!<%G%#%s%0$G$9!#$3$NJQ?t$O!"Nc(B
-$B$($PB>$NMW7o$K$h$C$F$h$j0BA4$J%(%s%3!<%G%#%s%0$,6/@)$5$l$J$$$H$-$K!"DL>o(B
-$B;H$o$l$^$9(B ($BEE;R=pL>$5$l$?%a%C%;!<%8$O(B 7bit $B%(%s%3!<%G%#%s%0$rI,MW$H$7$^(B
-$B$9(B)$B!#DL>o$N(B @acronym{MIME} $B%(%s%3!<%G%#%s%0$NB>$K!"(B
-quoted-printable $B$H(B base64 $B$N$&$A$G:G$b8zN(E*$JJ}$r8D!9$N>l9g$K;H$&$Y$-(B
-$B$G$"$k$3$H$r<($9(B @code{qp-or-base64} $B$r;H$&$3$H$b$G$-$^$9(B ($BLu(B
-$BCm(B: @code{qp-or-base64} $B$N<B:]$NF0:n$O!"(Bquoted-printable $B$H(B base64 $B$NN>(B
-$BJ}$G%(%s%3!<%I$7$F$_$F!"%5%$%:$,>.$5$/$J$kJ}$r:NMQ$9$k$3$H$G$9(B)$B!#(B
+@acronym{MIME} のタイプに割り当てるエンコーディングです。この変数は、例
+えば他の要件によってより安全なエンコーディングが強制されないときに、通常
+使われます (電子署名されたメッセージは 7bit エンコーディングを必要としま
+す)。通常の @acronym{MIME} エンコーディングの他に、
+quoted-printable と base64 のうちで最も効率的な方を個々の場合に使うべき
+であることを示す @code{qp-or-base64} を使うこともできます (訳
+注: @code{qp-or-base64} の実際の動作は、quoted-printable と base64 の両
+方でエンコードしてみて、サイズが小さくなる方を採用することです)。
 
-@code{qp-or-base64} $B$K$O$b$&0l$D$N8z2L$,$"$j$^$9!#$=$l(B
-$B$O(B @acronym{MIME} $B$N%Q!<%H$,(B MTA $B$K$h$C$F2u$5$l$J$$$h$&$K$9$k$?$a$K!"D9(B
-$B$$9T$r@^$j>v$_$^$9!#(B@code{quoted-printable} $B$H(B @code{base64} $B$b$=$&$G$9!#(B
+@code{qp-or-base64} にはもう一つの効果があります。それ
+は @acronym{MIME} のパートが MTA によって壊されないようにするために、長
+い行を折り畳みます。@code{quoted-printable} と @code{base64} もそうです。
 
-$B%Q!<%H$,<u?.$7$?$H$-$N$^$^$N@8$NE>Aw$5$l$?%a%C%;!<%8(B ($BNc$($P!"0z?t(B
-$B$K(B 2 $B$rM?$($?(B @code{gnus-summary-mail-forward} $B$K$h$C$F:n$i$l$k$b$N(B) $B$G(B
-$B$"$k$+!"(B@samp{text/*} $B%?%$%W$d(B @samp{message/*} $B$G$O$J$$>l9g$K!"$3$l$,K\(B
-$BJ8$N%(%s%3!<%G%#%0$K1F6A$r5Z$\$9$3$H$KCm0U$7$F$/$@$5$$!#$=$l$i$N>l9g$G$5(B
-$B$(!"(B@acronym{MML} $B$N(B @code{encoding} $B%?%0$r;H$C$F!"%a%C%;!<%8Kh$K$=(B
-$B$l$G;XDj$7$?CM$r$3$NJQ?t$h$jM%@h$5$;$k$3$H$b$G$-$^(B
-$B$9(B (@pxref{MML Definition})$B!#(B
+パートが受信したときのままの生の転送されたメッセージ (例えば、引数
+に 2 を与えた @code{gnus-summary-mail-forward} によって作られるもの) で
+あるか、@samp{text/*} タイプや @samp{message/*} ではない場合に、これが本
+文のエンコーディグに影響を及ぼすことに注意してください。それらの場合でさ
+え、@acronym{MML} の @code{encoding} タグを使って、メッセージ毎にそ
+れで指定した値をこの変数より優先させることもできま
+す (@pxref{MML Definition})。
 
 @item mm-use-ultra-safe-encoding
 @vindex mm-use-ultra-safe-encoding
-$B$3$l$,Hs(B-@code{nil} $B$G$"$k>l9g!"K\J8$K(B 76 $BJ8;z$h$j$bD9$$9T$d(B "From " $B$G(B
-$B;O$^$k9T$,$"$C$?$i!"$=$l$i$N%F%-%9%H$N%Q!<%H$O(B quoted-printable $B$G%(%s%3!<(B
-$B%I$5$l$^$9!#Hs(B-7bit $B%(%s%3!<%G%#%s%0(B (8bit, $B%P%$%J%j!<(B) $B$O0lHL$KG'$a$i$l(B
-$B$F$$$^$;$s!#$3$NJQ?t$r(B @code{nil} $B0J30$NCM$K@_Dj$7$F$*$/$3$H$O!"(B8bit $B$r(B
-$BDL$5$J$$(B MTA $B$+(B MDA $B$,%a%C%;!<%8$r2~JQ$7$F$7$^$&3NN($r2<$2$^$9!#$3$l$OD>(B
-$B@\$K@_Dj$5$l$k$N$G$O$J$/!"B>$N4X?t$K$h$C$F(B ($BNc$($P!"EE;R=pL>$5$l$k%a%C%;!<(B
-$B%8$r%(%s%3!<%I$9$k$H$-$K(B) $BI,MW$K1~$8$FB+G{$5$l$k$Y$-$G$9!#(B
+これが非-@code{nil} である場合、本文に 76 文字よりも長い行や "From " で
+始まる行があったら、それらのテキストのパートは quoted-printable でエンコー
+ドされます。非-7bit エンコーディング (8bit, バイナリー) は一般に認められ
+ていません。この変数を @code{nil} 以外の値に設定しておくことは、8bit を
+通さない MTA か MDA がメッセージを改変してしまう確率を下げます。これは直
+接に設定されるのではなく、他の関数によって (例えば、電子署名されるメッセー
+ジをエンコードするときに) 必要に応じて束縛されるべきです。
 @end table
 
 @node Charset Translation
-@section $BJ8;z%;%C%H$NJQ49(B
+@section 文字セットの変換
 @cindex charsets
 
-@acronym{MML} $B$r(B @acronym{MIME} $B$KJQ49$9$k$H$-$K!"(BEmacs $B$NFbIt$G:n$i$l(B
-$B$?(B @acronym{MIME} $B%Q!<%H$N$=$l$>$l$K$D$$$F!"E,@Z$JJ8;z%;%C%H$rA*$P$J$1$l(B
-$B$P$J$j$^$;$s!#(B
+@acronym{MML} を @acronym{MIME} に変換するときに、Emacs の内部で作られ
+た @acronym{MIME} パートのそれぞれについて、適切な文字セットを選ばなけれ
+ばなりません。
 
 @vindex mail-parse-charset
-@sc{mule} $B5!G=$,L5$$(B Emacs $B$rAv$i$;$F$$$k>l9g$@$C$?$i!"$3$N=hM}$OC1=c$G(B
-$B$9!#%Q!<%H$,$I$s$JHs(B-@acronym{ASCII} (8-bit) $BJ8;z$r4^$s$G$$$F$b!"(B
-@code{mail-parse-charset} $B$GM?$($i$l$k(B @acronym{MIME} $BJ8;z%;%C%H(B ($B%7%s%\(B
-$B%k(B) $B$r;H$($PNI$$$N$G$9!#(B($B$b$C$H$b!"$3$NJQ?t$rD>@\$K@_Dj$7$J$$$G$/$@$5$$!#(B
-$B%G%#%U%)%k%H$NJ8;z%;%C%H$rJQ99$7$?$$>l9g$O!"(B@acronym{MIME} $B%a%C%;!<%8$r(B
-$B=hM}$9$k$?$a$K;H$&%Q%C%1!<%8$N@bL@=q$rD4$Y$F$/$@$5$$!#Nc$($P(B:
-@pxref{Various Message Variables, ,$B$$$m$$$m$J%a%C%;!<%8JQ?t(B, message-ja,
-The Message Manual})$B!#(B@acronym{ASCII} $BJ8;z%;%C%H$7$+L5$1$l$P!"(B
-US-ASCII $B$,(B @acronym{MIME} $BJ8;z%;%C%H$H$7$F;H$o$l$k$N$O$b$A$m$s$G$9!#(B
+@sc{mule} 機能が無い Emacs を走らせている場合だったら、この処理は単純で
+す。パートがどんな非-@acronym{ASCII} (8-bit) 文字を含んでいても、
+@code{mail-parse-charset} で与えられる @acronym{MIME} 文字セット (シンボ
+ル) を使えば良いのです。(もっとも、この変数を直接に設定しないでください。
+ディフォルトの文字セットを変更したい場合は、@acronym{MIME} メッセージを
+処理するために使うパッケージの説明書を調べてください。例えば:
+@pxref{Various Message Variables, ,いろいろなメッセージ変数, message-ja,
+The Message Manual})。@acronym{ASCII} 文字セットしか無ければ、
+US-ASCII が @acronym{MIME} 文字セットとして使われるのはもちろんです。
 
 @cindex MULE
 @cindex UTF-8
 @cindex Unicode
 @vindex mm-mime-mule-charset-alist
-@sc{mule} $B5!G=$rHw$($?(B Emacs $B$rAv$i$;$F$$$k>l9g$O!"$b$N$4$H$OB?>/J#;($K(B
-$B$J$j$^$9!#$3$N>l9g$O!"%Q!<%H$G;H$o$l$F$$$k(B @sc{mule} $BJ8;z%;%C%H$N%j%9%H(B
-$B$r<hF@$7!"(BEmacs $B<+?H$,Ds6!$9$k%F!<%V%k$+!"(BXEmacs $B$N$?$a(B
-$B$N(B @code{mm-mime-mule-charset-alist} $BJQ?t$NCM$K4p$E$$$F!"$=$l$i(B
-$B$N(B @sc{mule} $BJ8;z%;%C%H$r(B @acronym{MIME} $BJ8;z%;%C%H$KJQ49$7$^$9!#7k2L$,(B
-$BC10l$N(B @acronym{MIME} $BJ8;z%;%C%H$@$C$?$i!"$=$l$r;H$C$F%Q!<%H$r%(%s%3!<%I(B
-$B$7$^$9!#$7$+$7!"7k2L$N(B @acronym{MIME} $BJ8;z%;%C%H$N%j%9%H$,Fs$D0J>e$NMWAG(B
-$B$r4^$s$G$$$k>l9g$K$O!"Fs$D$N$3$H$,5/$3$jF@$^$9!#$b$7%Q!<%H$r(B UTF-8 $B$G%((B
-$B%s%3!<%I$9$k$3$H$,2DG=$@$C$?$i!"$=$NJ8;z%;%C%H$r;H$$$^$9!#(B($B$3$N$?$a(B
-$B$K(B Emacs $B$O(B @code{utf-8} coding system $B$r%5%]!<%H$7$F$$$J$1$l$P$J$j$^$;(B
-$B$s!#$^$?!"$=$N%Q!<%H$r9=@.$9$k$9$Y$F$NJ8;z$KBP1~$9$k$b$N$,!"(BUnicode $B$NDj(B
-$B5A$KB8:_$7$F$$$J$1$l$P$J$j$^$;$s!#(B)  $B2?$i$+$NM}M3$K$h$C$F(B UTF-8 $B$rMxMQ$G(B
-$B$-$J$$>l9g!"$=$N%Q!<%H$O!"$=$l$>$l$,C10l$N(B @acronym{MIME} $BJ8;z%;%C%H$G%((B
-$B%s%3!<%I$9$k$3$H$,$G$-$k$h$&$K!"$$$/$D$+$KJ,3d$5$l$^$9!#$b$C$H$b!"%Q!<%H(B
-$B$O9T$N6-3&$G$7$+J,3d$9$k$3$H$,$G$-$J$$$N$G!"C10l$N9T$r%(%s%3!<%I$9$k$?$a(B
-$B$KJ#?t$N(B @acronym{MIME} $BJ8;z%;%C%H$,I,MW$@$H$9$k$H!"$=$N%Q!<%H$r%(%s%3!<(B
-$B%I$9$k$3$H$OIT2DG=$G$9!#(B
+@sc{mule} 機能を備えた Emacs を走らせている場合は、ものごとは多少複雑に
+なります。この場合は、パートで使われている @sc{mule} 文字セットのリスト
+を取得し、Emacs 自身が提供するテーブルか、XEmacs のため
+の @code{mm-mime-mule-charset-alist} 変数の値に基づいて、それら
+の @sc{mule} 文字セットを @acronym{MIME} 文字セットに変換します。結果が
+単一の @acronym{MIME} 文字セットだったら、それを使ってパートをエンコード
+します。しかし、結果の @acronym{MIME} 文字セットのリストが二つ以上の要素
+を含んでいる場合には、二つのことが起こり得ます。もしパートを UTF-8 でエ
+ンコードすることが可能だったら、その文字セットを使います。(このため
+に Emacs は @code{utf-8} coding system をサポートしていなければなりませ
+ん。また、そのパートを構成するすべての文字に対応するものが、Unicode の定
+義に存在していなければなりません。)  何らかの理由によって UTF-8 を利用で
+きない場合、そのパートは、それぞれが単一の @acronym{MIME} 文字セットでエ
+ンコードすることができるように、いくつかに分割されます。もっとも、パート
+は行の境界でしか分割することができないので、単一の行をエンコードするため
+に複数の @acronym{MIME} 文字セットが必要だとすると、そのパートをエンコー
+ドすることは不可能です。
 
-@sc{mule} $B5!G=$rHw$($?(B Emacs $B$rAv$i$;$F$$$k>l9g!"$I$N(B coding system $B$r;H(B
-$B$&$+$NM%@h=g0L$O(B Emacs $B<+?H$+$i7Q>5$5$l$^$9!#$3$l$O!"$b(B
-$B$7(B Emacs $B$,(B UTF-8 $B$rM%@h$9$k$h$&$K@_Dj$5$l$F$$$k$H!"$=$l$,%a%C%;!<%8$N%((B
-$B%s%3!<%I$K;H$o$l$k$H$$$&$3$H$G$9!#$?$@(B
-$B$7(B @code{mm-coding-system-priorities} $BJQ?t$NCM$rJQ$($k$3$H$K$h$C$F!"$3$l(B
-$B$rJQ99$9$k$3$H$O$G$-$^$9(B (@pxref{Encoding Customization})$B!#(B
+@sc{mule} 機能を備えた Emacs を走らせている場合、どの coding system を使
+うかの優先順位は Emacs 自身から継承されます。これは、も
+し Emacs が UTF-8 を優先するように設定されていると、それがメッセージのエ
+ンコードに使われるということです。ただ
+し @code{mm-coding-system-priorities} 変数の値を変えることによって、これ
+を変更することはできます (@pxref{Encoding Customization})。
 
-$B%a%C%;!<%8$r:n@.$9$k$H$-$K(B @acronym{MML} $B$N(B @code{charset} $B%?%0$r@_Dj$9(B
-$B$k$3$H$K$h$C$F!";H$o$l$kJ8;z%;%C%H$r$=$l$K$9$k$3$H$,$G$-$^$9!#(B
+メッセージを作成するときに @acronym{MML} の @code{charset} タグを設定す
+ることによって、使われる文字セットをそれにすることができます。
 
-$BJ8;zNs$N%(%s%3!<%G%#%s%0(B (quoted-printable, 8bit $B$J$I(B) $B$O$3$3$G$N5DO@$H(B
-$BD>8r$9$k35G0$G$9!#$=$l$O(B @code{mm-body-charset-encoding-alist} $BJQ?t(B
-$B$H(B @code{mm-content-transfer-encoding-defaults} $BJQ?t$K$h$C$F@)8f$5$l$^(B
-$B$9(B (@pxref{Encoding Customization})$B!#(B
+文字列のエンコーディング (quoted-printable, 8bit など) はここでの議論と
+直交する概念です。それは @code{mm-body-charset-encoding-alist} 変数
+と @code{mm-content-transfer-encoding-defaults} 変数によって制御されま
+す (@pxref{Encoding Customization})。
 
 @node Conversion
-@section $BJQ49(B
+@section 変換
 
 @findex mime-to-mml
-@code{mime-to-mml} $B4X?t$r;H$C$F(B @acronym{MIME} $B%a%C%;!<%8(B ($B%^%k%A%Q!<%H(B
-$B$G$b2D(B) $B$r(B @acronym{MML} $B$KJQ49$9$k$3$H$,$G$-$^$9!#$3$l$O8=:_$N%P%C%U%!!<(B
-$B$K$"$k(B @acronym{MIME} $B%a%C%;!<%8$K:nMQ$7$F!"(B@acronym{MIME} $B$N6-3&(B
-$B$r(B @acronym{MML} $B$N0uIU$1(B (markup) $B$GCV$-49$($^$9!#%F%-%9%H$G$O$J$$%Q!<(B
-$B%H$NFbMFJ*$O!"$=$N%P%C%U%!!<$KCV$+$l$kBe$o$j$K(B @acronym{MML} $B%?%0$r2p$7(B
-$B$F;2>H$5$l$kJL$N%P%C%U%!!<$KCV$+$l$^$9!#(B
+@code{mime-to-mml} 関数を使って @acronym{MIME} メッセージ (マルチパート
+でも可) を @acronym{MML} に変換することができます。これは現在のバッファー
+にある @acronym{MIME} メッセージに作用して、@acronym{MIME} の境界
+を @acronym{MML} の印付け (markup) で置き換えます。テキストではないパー
+トの内容物は、そのバッファーに置かれる代わりに @acronym{MML} タグを介し
+て参照される別のバッファーに置かれます。
 
 @findex mml-to-mime
-@code{mml-to-mime} $B4X?t$r;H$C$F!"5U$K(B @acronym{MML} $B%a%C%;!<%8(B
-$B$r(B @acronym{MIME} $B$KJQ49$9$k$3$H$,$G$-$^$9!#(B
+@code{mml-to-mime} 関数を使って、逆に @acronym{MML} メッセージ
+を @acronym{MIME} に変換することができます。
 
-$B$3$l$i$N4X?t$,9T$J$&$3$H$O$"$k0UL#$G!VIT2D5U!W(B(lossy) $B$G$9!#(B
-@code{mime-to-mml} $B$r<B9T$7!"<!$K(B @code{mml-to-mime} $B$r<B9T$9$k$H!"85$H(B
-$B$^$C$?$/F1$8%a%C%;!<%8$K$OLa$i$J$$$G$7$g$&!#%X%C%@!<$N=g=x$N$h$&$J$I$&$G(B
-$B$bNI$$$3$H$,0c$C$F$7$^$&$@$1$G$J$/!"$=$l$>$l$N%X%C%@!<$NFbMF$bJQ2=$7$F$7(B
-$B$^$&$+$b$7$l$^$;$s!#Nc$($P!"85$N%a%C%;!<%8$,(B base64 $B$G%F%-%9%H$r%(%s%3!<(B
-$B%I$7$F$"$C$F$b!"(B@code{mml-to-mime} $B$O(B quoted-printable $B$r;H$&$+$b$7$l$J(B
-$B$$!"$H$$$&$h$&$J$3$H$G$9!#(B
+これらの関数が行なうことはある意味で「不可逆」(lossy) です。
+@code{mime-to-mml} を実行し、次に @code{mml-to-mime} を実行すると、元と
+まったく同じメッセージには戻らないでしょう。ヘッダーの順序のようなどうで
+も良いことが違ってしまうだけでなく、それぞれのヘッダーの内容も変化してし
+まうかもしれません。例えば、元のメッセージが base64 でテキストをエンコー
+ドしてあっても、@code{mml-to-mime} は quoted-printable を使うかもしれな
+い、というようなことです。
 
-$B$7$+$7K\<AE*$K$O!"$3$l$iFs$D$O8_$$$K5U4X?t$G$"$k$Y$-$G$9!#7k2L$H$7$F@8@.(B
-$B$5$l$k%a%C%;!<%8$NFbMFJ*$,!"F10l$G$J$$$K$7$F$bEy2A$J$^$^$G$"$k$h$&$J!#(B
+しかし本質的には、これら二つは互いに逆関数であるべきです。結果として生成
+されるメッセージの内容物が、同一でないにしても等価なままであるような。
 
 @node Flowed text
-@section $BN.F0%F%-%9%H(B
+@section 流動テキスト
 @cindex format=flowed
 
-Emacs @acronym{MIME} $B%i%$%V%i%j!<$O!"%a%C%;!<%8$r%(%s%3!<%I$9$k$H$-(B
-$B$O(B @code{use-hard-newlines} $BJQ?t(B (@pxref{Hard and Soft Newlines, ,Hard
-and Soft Newlines, emacs, Emacs Manual}) $B$K=>$$!"%a%C%;!<%8$r%G%3!<%I$9(B
-$B$k$H$-$O(B Content-Type $B%Q%i%a!<%?!<$N!H(Bformat=flowed$B!I$rB:=E$7$^$9!#(B
+Emacs @acronym{MIME} ライブラリーは、メッセージをエンコードするとき
+は @code{use-hard-newlines} 変数 (@pxref{Hard and Soft Newlines, ,Hard
+and Soft Newlines, emacs, Emacs Manual}) に従い、メッセージをデコードす
+るときは Content-Type パラメーターの“format=flowed”を尊重します。
 
-$B%F%-%9%H$r%(%s%3!<%I$9$k$H$-!"%=%U%H2~9TJ8;z$G=*C<$5$l$F$$$k3F9T(B
-$B$O!"(B@code{use-hard-newlines} $B$K4X$o$i$:(B
-$B$K(B @code{fill-flowed-encode-column} $B$G7hDj$5$l$k7e$N8e$m$G@^$j>v$^$l$F!"(B
-$B<*$rB7$($i$l(B (filled $B$5$l(B) $B$^$9!#0zMQ$N0u(B (@samp{^>* ?}) $B$OB:=E$5$l$^$9!#(B
-$B$=$NJQ?t$O!"N.F0%F%-%9%H$r%5%]!<%H$7$J$$%/%i%$%"%s%H$K$*$1$k%F%-%9%H$N8+(B
-$B$(J}$r@)8f$7!"%G%#%U%)%k%H$G$O(B 66$BJ8;z$N8e$m$G@^$j>v$_$^$9!#%P%C%U%!!<$K(B
-$B%O!<%I2~9TJ8;z$,L5$1$l$P!"N.F0(B (flowed) $B%F%-%9%H$N$?$a$N%(%s%3!<%I$O9T$J(B
-$B$$$^$;$s!#(B
+テキストをエンコードするとき、ソフト改行文字で終端されている各行
+は、@code{use-hard-newlines} に関わらず
+に @code{fill-flowed-encode-column} で決定される桁の後ろで折り畳まれて、
+耳を揃えられ (filled され) ます。引用の印 (@samp{^>* ?}) は尊重されます。
+その変数は、流動テキストをサポートしないクライアントにおけるテキストの見
+え方を制御し、ディフォルトでは 66文字の後ろで折り畳みます。バッファーに
+ハード改行文字が無ければ、流動 (flowed) テキストのためのエンコードは行な
+いません。
 
-$B%P%C%U%!!<$K2~9TJ8;z$,$"$k$H$-!"N.F0%F%-%9%H$K%(%s%3!<%I$9$k$3$H$rM-8z$^(B
-$B$?$OL58z$K$9$k$?$a$K(B @code{mml-enable-flowed} $BJQ?t$r%+%9%?%^%$%:$G$-$^$9!#(B
+バッファーに改行文字があるとき、流動テキストにエンコードすることを有効ま
+たは無効にするために @code{mml-enable-flowed} 変数をカスタマイズできます。
 
-$BN.F0(B (flowed) $B%F%-%9%H$r%G%3!<%I$9$k$H$-!"%=%U%H2~9TJ8;z$r;}$D3F9T(B
-$B$O(B @code{fill-flowed-display-column} $B$G7hDj$5$l$k7e$N8e$m$G@^$j>v$^$l$F(B
-$B<*$rB7$($i$l(B (filled $B$5$l(B) $B$^$9!#%G%#%U%)%k%H$G$O(B @code{fill-column} $B$N(B
-$B8e$m$G@^$j>v$_$^$9!#(B
+流動 (flowed) テキストをデコードするとき、ソフト改行文字を持つ各行
+は @code{fill-flowed-display-column} で決定される桁の後ろで折り畳まれて
+耳を揃えられ (filled され) ます。ディフォルトでは @code{fill-column} の
+後ろで折り畳みます。
 
 @table @code
 @item mm-fill-flowed
 @vindex mm-fill-flowed
-$BHs(B-@code{nil} $B$@$C$?$i!"(Bformat=flowed $B$N5-;v$ON.F0E*$KI=<($5$l$^$9!#(B
+非-@code{nil} だったら、format=flowed の記事は流動的に表示されます。
 @end table
 
 @node Interface Functions
-@chapter $B%$%s%?!<%U%'!<%94X?t(B
+@chapter インターフェース関数
 @cindex interface functions
 @cindex mail-parse
 
-@code{mail-parse} $B%i%$%V%i%j!<$O!"<!$N>O$G=R$Y$k<B:]$NDc%l%Y%k$J%i%$%V%i(B
-$B%j!<$rCj>]2=$7$?$b$N$G$9!#(B
+@code{mail-parse} ライブラリーは、次の章で述べる実際の低レベルなライブラ
+リーを抽象化したものです。
 
-$BI8=`$OJQ2=$9$k$N$G!"%W%m%0%i%`$b?7$7$$Cr7?$KE,9g$9$k$?$a$KJQ2=$7$J$1$l$P(B
-$B$J$j$^$;$s!#Nc$($P(B RFC2045 $B$O!"%Q%i%a!<%?!<$N%j%9%H$K$*$$(B
-$B$F(B @acronym{ASCII} $BJ8;z$@$1$r5vMF$9$k(B @code{Content-Type} $B%X%C%@!<$N$?$a(B
-$B$N9=J8$K$D$$$F=R$Y$F$$$^$9!#(BRFC2231 $B$O!"J#?t9T$KEO$C$F7QB3$9$kC10l$N%X%C(B
-$B%@!<$HHs(B-@acronym{ASCII} $BJ8;z$N9=@.$r5,Dj$9$k$?$a$N(B RFC2045 $B$N9=J8$K$D$$(B
-$B$F>\$7$/5-=R$7$F$$$^$9!#(B
+標準は変化するので、プログラムも新しい鋳型に適合するために変化しなければ
+なりません。例えば RFC2045 は、パラメーターのリストにおい
+て @acronym{ASCII} 文字だけを許容する @code{Content-Type} ヘッダーのため
+の構文について述べています。RFC2231 は、複数行に渡って継続する単一のヘッ
+ダーと非-@acronym{ASCII} 文字の構成を規定するための RFC2045 の構文につい
+て詳しく記述しています。
 
-$B$3$l$KBP=h$9$k=>Mh$NJ}K!$O!"C1$K?7$7$$9=J8$r2r@O$9$k$?$a$K%i%$%V%i%j!<$N(B
-$B4X?t$r99?7$9$k$3$H$G$7$?!#$7$+$7$J$,$i!"$3$l$O;~$K$O8m$C$?9T0Y$G$9!#>l9g(B
-$B$K$h$C$F$O!"?7$7$$9=J8$H8E$$9=J8$NN>J}$rM}2r$G$-$k$h$&$K$9$k$3$H$,=EMW$+(B
-$B$b$7$l$J$$$7!"%i%$%V%i%j!<$,0l$D$7$+L5$$>l9g$K$O!"%i%$%V%i%j!<$N8E$$%P!<(B
-$B%8%g%s$H?7$7$$%P!<%8%g%s$N$I$A$i$+$rA*$P$J$1$l$P$J$j$^$;$s!#(B
+これに対処する従来の方法は、単に新しい構文を解析するためにライブラリーの
+関数を更新することでした。しかしながら、これは時には誤った行為です。場合
+によっては、新しい構文と古い構文の両方を理解できるようにすることが重要か
+もしれないし、ライブラリーが一つしか無い場合には、ライブラリーの古いバー
+ジョンと新しいバージョンのどちらかを選ばなければなりません。
 
-Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
-$B$O!"BP1~$9$kI8=`$K=>$C$F87L)$K2r@O$9$k0lO"$NDc%l%Y%k$N%i%$%V%i(B
-$B%j!<(B (@file{rfc2047.el}, @file{rfc2231.el} $B$J$I(B) $B$rDj5A$7$^$9!#$H$O8@$(!"(B
-$B@55,$N%W%m%0%i%`$O!"$3$l$i$N%i%$%V%i%j!<$,D>@\$KDs6!$9$k4X?t$G$O$J$/!"Be(B
-$B$o$j$K(B @code{mail-parse} $B%i%$%V%i%j!<$,Ds6!$9$k4X?t$r;H$&$Y$-$G$9!#$3$N(B
-$B%i%$%V%i%j!<$K$"$k4X?t$O!":G?7$NDc%l%Y%k$N%i%$%V%i%j!<$N!"BP1~$9$k4X?t$X(B
-$B$NC1$J$kJLL>$G$9!#$3$N9=@.$r;H$&$3$H$K$h$C$F!"%W%m%0%i%`$O$=$l$i$,;H$&$3(B
-$B$H$,$G$-$k<sHx0l4S$7$?%$%s%?!<%U%'!<%9$r<j$KF~$l$^$7$?!#$^$?!"%i%$%V%i%j!<(B
-$B$N3+H/<T$O!"?7$7$$I8=`$r07$&%3!<%I$r<+M3$K:n@.$9$k$3$H$,$G$-$^$9!#(B
+Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにしました。これ
+は、対応する標準に従って厳密に解析する一連の低レベルのライブラ
+リー (@file{rfc2047.el}, @file{rfc2231.el} など) を定義します。とは言え、
+正規のプログラムは、これらのライブラリーが直接に提供する関数ではなく、代
+わりに @code{mail-parse} ライブラリーが提供する関数を使うべきです。この
+ライブラリーにある関数は、最新の低レベルのライブラリーの、対応する関数へ
+の単なる別名です。この構成を使うことによって、プログラムはそれらが使うこ
+とができる首尾一貫したインターフェースを手に入れました。また、ライブラリー
+の開発者は、新しい標準を扱うコードを自由に作成することができます。
 
-$B0J2<$N4X?t$,!"$3$N%i%$%V%i%j!<$GDj5A$5$l$F$$$^$9(B:
+以下の関数が、このライブラリーで定義されています:
 
 @table @code
 @item mail-header-parse-content-type
 @findex mail-header-parse-content-type
-@code{Content-Type} $B%X%C%@!<$r2r@O$7$F!"0J2<$N7A<0$G%j%9%H$rJV$7$^$9(B:
+@code{Content-Type} ヘッダーを解析して、以下の形式でリストを返します:
 
 @lisp
 ("type/subtype"
@@ -1167,7 +1167,7 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
  ...)
 @end lisp
 
-$BNc$G$9(B:
+例です:
 
 @example
 (mail-header-parse-content-type
@@ -1177,13 +1177,13 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-parse-content-disposition
 @findex mail-header-parse-content-disposition
-@code{Content-Disposition} $B%X%C%@!<$r2r@O$7$F!">e5-$N4X?t$HF1$87A<0$N%j(B
-$B%9%H$rJV$7$^$9!#(B
+@code{Content-Disposition} ヘッダーを解析して、上記の関数と同じ形式のリ
+ストを返します。
 
 @item mail-content-type-get
 @findex mail-content-type-get
-$B>e5-$N7A<0$N%j%9%H$HB0@-$NFs$D$N%Q%i%a!<%?!<$r<u$1<h$j!"$=$NB0@-$NCM$rJV(B
-$B$7$^$9!#(B
+上記の形式のリストと属性の二つのパラメーターを受け取り、その属性の値を返
+します。
 
 @example
 (mail-content-type-get
@@ -1193,13 +1193,13 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-encode-parameter
 @findex mail-header-encode-parameter
-$B%Q%i%a!<%?!<$K;H$&J8;zNs$r<u$1<h$j!"$=$l$r%(%s%3!<%I$7$?$b$N$rJV$7$^$9!#(B
-$B$3$l$O(B @code{Content-Type} $B$H(B @code{Content-Disposition} $B$N$h$&$J%X%C%@!<(B
-$B$KF~$l$k%Q%i%a!<%?!<$N$?$a$K;H$o$l$^$9!#(B
+パラメーターに使う文字列を受け取り、それをエンコードしたものを返します。
+これは @code{Content-Type} と @code{Content-Disposition} のようなヘッダー
+に入れるパラメーターのために使われます。
 
 @item mail-header-remove-comments
 @findex mail-header-remove-comments
-$B%X%C%@!<$+$i%3%a%s%H$r<h$j=|$$$?$b$N$rJV$7$^$9!#(B
+ヘッダーからコメントを取り除いたものを返します。
 
 @example
 (mail-header-remove-comments
@@ -1209,11 +1209,11 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-remove-whitespace
 @findex mail-header-remove-whitespace
-$B%X%C%@!<$+$i!H(Blinear white space$B!I$r<h$j=|$-$^$9!#%/%)!<%H$5$l(B
-$B$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s%H$OJ]B8$5$l$^$9!#(B
+ヘッダーから“linear white space”を取り除きます。クォートされ
+た ("..." で囲まれた) 文字列の中にある空白文字とコメントは保存されます。
 
-$BLuCm(B:$B!H(Blinear white space$B!I$H$O0l$D0J>e$N6uGrJ8;z$N$3$H$G!"$=$NA0$K2~9T(B
-$BJ8;z$rCV$$$?$b$N$O!"D9$$%X%C%@!<$r@^$j>v$`$H$-$K;H$o$l$^$9!#(B
+訳注:“linear white space”とは一つ以上の空白文字のことで、その前に改行
+文字を置いたものは、長いヘッダーを折り畳むときに使われます。
 
 @example
 (mail-header-remove-whitespace
@@ -1223,7 +1223,7 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-get-comment
 @findex mail-header-get-comment
-$B%X%C%@!<$N:G8e$N%3%a%s%H$rJV$7$^$9!#(B
+ヘッダーの最後のコメントを返します。
 
 @example
 (mail-header-get-comment
@@ -1231,13 +1231,13 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 @result{} "Finnish Landrace"
 @end example
 
-$BLuCm(B: @samp{Finnish Landrace} $B$O(B 1998$BG/(B8$B7n(B23$BF|$K%j%j!<%9$5$l$?(B XEmacs
-21.0-pre11 $B$N%3!<%I%M!<%`$G$9!#$^$"!"$I$&$G$b$$$$$3$H$G$9$,!#(B
+訳注: @samp{Finnish Landrace} は 1998年8月23日にリリースされた XEmacs
+21.0-pre11 のコードネームです。まあ、どうでもいいことですが。
 
 @item mail-header-parse-address
 @findex mail-header-parse-address
-$B%"%I%l%9$r2r@O$7$F!"%a!<%k%"%I%l%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`%j%9%H$r(B
-$BJV$7$^$9!#(B
+アドレスを解析して、メールアドレスとプレーンテキストの名前を含むリストを
+返します。
 
 @example
 (mail-header-parse-address
@@ -1247,8 +1247,8 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-parse-addresses
 @findex mail-header-parse-addresses
-$B%"%I%l%9$N%j%9%H$r4^$s$G$$$kJ8;zNs$r2r@O$7$F!">e$G=R$Y$?$h$&$JMWAG$N%j%9(B
-$B%H$rJV$7$^$9!#(B
+アドレスのリストを含んでいる文字列を解析して、上で述べたような要素のリス
+トを返します。
 
 @example
 (mail-header-parse-addresses
@@ -1259,123 +1259,123 @@ Emacs @acronym{MIME} $B%i%$%V%i%j!<$O0[$J$kJ}?K$G9T$/$3$H$K$7$^$7$?!#$3$l(B
 
 @item mail-header-parse-date
 @findex mail-header-parse-date
-$BF|IU$NJ8;zNs$r2r@O$7$F!"(BEmacs $B7A<0$N;~9o$rJV$7$^$9!#(B
+日付の文字列を解析して、Emacs 形式の時刻を返します。
 
 @item mail-narrow-to-head
 @findex mail-narrow-to-head
-$B%P%C%U%!!<$r%X%C%@!<$N6h0h$K69$a$^$9!#%]%$%s%H$O69$a$i$l$?%P%C%U%!!<$N@h(B
-$BF,$KCV$+$l$^$9!#(B
+バッファーをヘッダーの区域に狭めます。ポイントは狭められたバッファーの先
+頭に置かれます。
 
 @item mail-header-narrow-to-field
 @findex mail-header-narrow-to-field
-$B%P%C%U%!!<$r8=:_0LCV$N(B ($BC10l$N(B) $B%X%C%@!<$K69$a$^$9!#J#?t9T$KEO$C$F7QB3$9(B
-$B$k%X%C%@!<$rM}2r$7$^$9!#(B
+バッファーを現在位置の (単一の) ヘッダーに狭めます。複数行に渡って継続す
+るヘッダーを理解します。
 
 @item mail-header-fold-field
 @findex mail-header-fold-field
-$B8=:_0LCV$N%X%C%@!<$r@^$j>v$_$^$9!#(B
+現在位置のヘッダーを折り畳みます。
 
 @item mail-header-unfold-field
 @findex mail-header-unfold-field
-$B8=:_0LCV$N%X%C%@!<$N@^$j>v$_$r2r=|$7$^$9!#(B
+現在位置のヘッダーの折り畳みを解除します。
 
 @item mail-header-field-value
 @findex mail-header-field-value
-$B8=:_0LCV$N%U%#!<%k%I$NCM$rJV$7$^$9!#(B
+現在位置のフィールドの値を返します。
 
 @item mail-encode-encoded-word-region
 @findex mail-encode-encoded-word-region
-$BNN0h$K$"$k(B @acronym{ASCII} $B0J30$N8l$r%(%s%3!<%I$7$^$9!#Nc$((B
-$B$P(B @samp{Na,Ao(Bve} $B$O(B @samp{=?iso-8859-1?Q?Na=EFve?=} $B$H$7$F%(%s%3!<%I$5$l(B
-$B$^$9!#(B
+領域にある @acronym{ASCII} 以外の語をエンコードします。例え
+ば @samp{Naïve} は @samp{=?iso-8859-1?Q?Na=EFve?=} としてエンコードされ
+ます。
 
 @item mail-encode-encoded-word-buffer
 @findex mail-encode-encoded-word-buffer
-$B8=:_$N%P%C%U%!!<$K$"$k(B @acronym{ASCII} $B0J30$N8l$r%(%s%3!<%I$7$^$9!#$3$N(B
-$B4X?t$O!"%X%C%@!<$N6h0h$K69$a$i$l$?%a%C%;!<%8$G8F$P$l$k$3$H$r0U?^$7$F$$$^(B
-$B$9!#(B
+現在のバッファーにある @acronym{ASCII} 以外の語をエンコードします。この
+関数は、ヘッダーの区域に狭められたメッセージで呼ばれることを意図していま
+す。
 
 @item mail-encode-encoded-word-string
 @findex mail-encode-encoded-word-string
-$BJ8;zNs$K4^$^$l$F$$$k%(%s%3!<%I$9$kI,MW$,$"$k8l$r%(%s%3!<%I$7$F!"7k2L$rJV(B
-$B$7$^$9!#(B
+文字列に含まれているエンコードする必要がある語をエンコードして、結果を返
+します。
 
 @example
 (mail-encode-encoded-word-string
- "This is na,Ao(Bve, baby")
+ "This is naïve, baby")
 @result{} "This is =?iso-8859-1?Q?na=EFve,?= baby"
 @end example
 
 @item mail-decode-encoded-word-region
 @findex mail-decode-encoded-word-region
-$BNN0h$K$"$k%(%s%3!<%I$5$l$?8l$r%G%3!<%I$7$^$9!#(B
+領域にあるエンコードされた語をデコードします。
 
 @item mail-decode-encoded-word-string
 @findex mail-decode-encoded-word-string
-$BJ8;zNs$K4^$^$l$F$$$k%(%s%3!<%I$5$l$?8l$r%G%3!<%I$7$F!"7k2L$rJV$7$^$9!#(B
+文字列に含まれているエンコードされた語をデコードして、結果を返します。
 
 @example
 (mail-decode-encoded-word-string
  "This is =?iso-8859-1?Q?na=EFve,?= baby")
-@result{} "This is na,Ao(Bve, baby"
+@result{} "This is naïve, baby"
 @end example
 @end table
 
-$B8=:_(B @code{mail-parse} $B$O(B @code{ietf-drums}, @code{rfc2047},
-@code{rfc2045} $B$*$h$S(B @code{rfc2231} $B$rLVMe$7$FCj>]2=$7$^$9!#$3$l$i$K$D(B
-$B$$$F!"<!0J9_$N>O$G@bL@$7$^$9!#(B
+現在 @code{mail-parse} は @code{ietf-drums}, @code{rfc2047},
+@code{rfc2045} および @code{rfc2231} を網羅して抽象化します。これらにつ
+いて、次以降の章で説明します。
 
 @node Basic Functions
-@chapter $B4pK\E*$J4X?t(B
+@chapter 基本的な関数
 
-$B$3$N>O$O!"2<0L$N3,AX$K0LCV$7$F$$$F!"2r@O$H=hM}$r9T$J$&$?$a$N4pK\E*$J4X?t(B
-$B$K$D$$$F@bL@$7$^$9!#$3$3$G07$&$3$H$O(B @code{From} $B9T$N2r@O!"%X%C%@!<$N3F(B
-$B9T$K$"$k%3%a%s%H$N:o=|!"%(%s%3!<%I$5$l$?8l$N%G%3!<%I!";~9o%X%C%@!<$N2r@O(B
-$B$J$I$G$9!#>e0L3,AX$N5!G=$O:G=i$N>O(B (@pxref{Decoding and Viewing}) $B$G07$o(B
-$B$l$F$$$^$9!#(B
+この章は、下位の階層に位置していて、解析と処理を行なうための基本的な関数
+について説明します。ここで扱うことは @code{From} 行の解析、ヘッダーの各
+行にあるコメントの削除、エンコードされた語のデコード、時刻ヘッダーの解析
+などです。上位階層の機能は最初の章 (@pxref{Decoding and Viewing}) で扱わ
+れています。
 
 @menu
-* rfc2045::      @code{Content-Type} $B%X%C%@!<$N%(%s%3!<%I(B
-* rfc2231::      @code{Content-Type} $B%X%C%@!<$N2r@O(B
-* ietf-drums::   RFC822bis $B$GDj5A$5$l$F$$$k%a!<%k%X%C%@!<$N=hM}(B
-* rfc2047::      $B%X%C%@!<$K$"$k8l$N%(%s%3!<%I$H%G%3!<%I(B
-* time-date::    $BF|IU$N2r@O$H;~9o$rA`:n$9$k4X?t(B
-* qp::           Quoted-Printable $B$N%(%s%3!<%I$H%G%3!<%I(B
-* base64::       Base64 $B$N%(%s%3!<%I$H%G%3!<%I(B
-* binhex::       Binhex $B$N%G%3!<%I(B
-* uudecode::     Uuencode $B$N%G%3!<%I(B
-* yenc::         Yenc $B$N%G%3!<%I(B
-* rfc1843::      HZ-$B%(%s%3!<%I$5$l$?%F%-%9%H$N%G%3!<%I(B
-* mailcap::      $B%Q!<%H$NI=<($N;EJ}$O(B @file{.mailcap} $B%U%!%$%k$KL@5-$5$l$F$$$k(B
+* rfc2045::      @code{Content-Type} ヘッダーのエンコード
+* rfc2231::      @code{Content-Type} ヘッダーの解析
+* ietf-drums::   RFC822bis で定義されているメールヘッダーの処理
+* rfc2047::      ヘッダーにある語のエンコードとデコード
+* time-date::    日付の解析と時刻を操作する関数
+* qp::           Quoted-Printable のエンコードとデコード
+* base64::       Base64 のエンコードとデコード
+* binhex::       Binhex のデコード
+* uudecode::     Uuencode のデコード
+* yenc::         Yenc のデコード
+* rfc1843::      HZ-エンコードされたテキストのデコード
+* mailcap::      パートの表示の仕方は @file{.mailcap} ファイルに明記されている
 @end menu
 
-$BLuCm(B: RFC822bis == draft-ietf-drums-msg-fmt-09.txt
+訳注: RFC822bis == draft-ietf-drums-msg-fmt-09.txt
 
 @node rfc2045
 @section rfc2045
 
-RFC2045 $B$O!V<gMW$J!W(B@acronym{MIME} $B$NJ88%$G$9!#$J$i$P!"$=$3$K$O$?$/$5$s(B
-$B$N<BAu$,$"$k$@$m$&$HA[A|$9$k$G$7$g$&!#$7$+$7!"$[$H$s$I$N>\:Y$J<BAu$O$=$N(B
-$B8e$N(B RFC $B$K0Q$M$i$l$F$$$F!"$=$3$K$O$"$j$^$;$s!#(B
+RFC2045 は「主要な」@acronym{MIME} の文献です。ならば、そこにはたくさん
+の実装があるだろうと想像するでしょう。しかし、ほとんどの詳細な実装はその
+後の RFC に委ねられていて、そこにはありません。
 
-$B$H8@$&$o$1$G(B @file{rfc2045.el} $B$K$O$?$C$?0l$D$N4X?t$,$"$j$^$9(B:
+と言うわけで @file{rfc2045.el} にはたった一つの関数があります:
 
 @table @code
 @item rfc2045-encode-string
 @findex rfc2045-encode-string
-$B%Q%i%a!<%?!<$HCM$r<u$1<h$j!"(B@samp{PARAM=VALUE} $B$N7A<0$NJ8;zNs$rJV$7$^$9!#(B
-@var{value} $B$K0BA4$G$O$J$$J8;z$,$"$C$?$i%/%)!<%H$5$l(B ("..." $B$G0O$^$l(B) $B$^(B
-$B$9!#(B
+パラメーターと値を受け取り、@samp{PARAM=VALUE} の形式の文字列を返します。
+@var{value} に安全ではない文字があったらクォートされ ("..." で囲まれ) ま
+す。
 @end table
 
 @node rfc2231
 @section rfc2231
 
-RFC2231 $B$O(B @code{Content-Type} $B$H(B @code{Content-Disposition} $B%X%C%@!<$N(B
-$B9=J8$rDj5A$7$^$9!#$=$N>.?h$JL>>N$O!V(B@acronym{MIME} $B%Q%i%a!<%?!<CM$HId9f(B
-$B2=C18l3HD%J8;z%;%C%H!&8@8l$=$7$F7QB3!W$G$9!#(B
+RFC2231 は @code{Content-Type} と @code{Content-Disposition} ヘッダーの
+構文を定義します。その小粋な名称は「@acronym{MIME} パラメーター値と符号
+化単語拡張文字セット・言語そして継続」です。
 
-$B0l8}$G8@$&$H!"$=$l$i$N%X%C%@!<$O$3$s$J$U$&$G$9(B:
+一口で言うと、それらのヘッダーはこんなふうです:
 
 @example
 Content-Type: application/x-stuff;
@@ -1384,14 +1384,14 @@ Content-Type: application/x-stuff;
  title*2="isn't it!"
 @end example
 
-$BIaDL$O$3$s$J$K$R$I$/$J$$$G$9$,!#(B
+普通はこんなにひどくないですが。
 
-$B0J2<$N4X?t$,$3$N%i%$%V%i%j!<$GDj5A$5$l$F$$$^$9(B:
+以下の関数がこのライブラリーで定義されています:
 
 @table @code
 @item rfc2231-parse-string
 @findex rfc2231-parse-string
-@code{Content-Type} $B%X%C%@!<$r2r@O$7$F!"$=$NMWAG$rI=$9%j%9%H$rJV$7$^$9!#(B
+@code{Content-Type} ヘッダーを解析して、その要素を表すリストを返します。
 
 @example
 (rfc2231-parse-string
@@ -1405,165 +1405,165 @@ Content-Type: application/x-stuff;
 
 @item rfc2231-get-value
 @findex rfc2231-get-value
-$B>e5-$N7A<0$N%j%9%H$N0l$D$r<u$1<h$j!";XDj$5$l$?B0@-$NCM$rJV$7$^$9!#(B
+上記の形式のリストの一つを受け取り、指定された属性の値を返します。
 
 @item rfc2231-encode-string
 @findex rfc2231-encode-string
-@code{Content-Type} $B$H(B @code{Content-Disposition} $B$N$h$&$J%X%C%@!<$KF~$l(B
-$B$k%Q%i%a!<%?!<$r%(%s%3!<%I$7$^$9!#(B
+@code{Content-Type} と @code{Content-Disposition} のようなヘッダーに入れ
+るパラメーターをエンコードします。
 @end table
 
 @node ietf-drums
 @section ietf-drums
 
-@dfn{drums} $B$O(B RFC822 $B$NCV$-49$(:n6H$r$7$F$$$k(B IETF $B$N:n6HIt2q$G$9!#(B
+@dfn{drums} は RFC822 の置き換え作業をしている IETF の作業部会です。
 
-$B$3$N%i%$%V%i%j!<$K$h$C$FDs6!$5$l$k4X?t$O<!$NDL$j$G$9(B:
+このライブラリーによって提供される関数は次の通りです:
 
 @table @code
 @item ietf-drums-remove-comments
 @findex ietf-drums-remove-comments
-$B0z?t$+$i%3%a%s%H$r<h$j=|$$$F!"7k2L$rJV$7$^$9!#(B
+引数からコメントを取り除いて、結果を返します。
 
 @item ietf-drums-remove-whitespace
 @findex ietf-drums-remove-whitespace
-$BJ8;zNs$+$i!H(Blinear white space$B!I$r<h$j=|$-!"7k2L$rJV$7$^$9!#%/%)!<%H$5$l(B
-$B$?(B ("..." $B$G0O$^$l$?(B) $BJ8;zNs$NCf$K$"$k6uGrJ8;z$H%3%a%s%H$K$O<j$rIU$1$^$;(B
-$B$s!#(B
+文字列から“linear white space”を取り除き、結果を返します。クォートされ
+た ("..." で囲まれた) 文字列の中にある空白文字とコメントには手を付けませ
+ん。
 
-$BLuCm(B:$B!H(Blinear white space$B!I$H$O0l$D0J>e$N6uGrJ8;z$N$3$H$G!"$=$NA0$K2~9T(B
-$BJ8;z$rCV$$$?$b$N$O!"D9$$%X%C%@!<$r@^$j>v$`$H$-$K;H$o$l$^$9!#(B
+訳注:“linear white space”とは一つ以上の空白文字のことで、その前に改行
+文字を置いたものは、長いヘッダーを折り畳むときに使われます。
 
 @item ietf-drums-get-comment
 @findex ietf-drums-get-comment
-$BJ8;zNs$N:G8eHx$K$"$k%3%a%s%H$rJV$7$^$9!#(B
+文字列の最後尾にあるコメントを返します。
 
 @item ietf-drums-parse-address
 @findex ietf-drums-parse-address
-$B%"%I%l%9$NJ8;zNs$r2r@O$7$F!"%a!<%k%"%I%l%9$H%W%l!<%s%F%-%9%H$NL>A0$r4^$`(B
-$B%j%9%H$rJV$7$^$9!#(B
+アドレスの文字列を解析して、メールアドレスとプレーンテキストの名前を含む
+リストを返します。
 
 @item ietf-drums-parse-addresses
 @findex ietf-drums-parse-addresses
-$B%+%s%^$G6h@Z$i$l$?J#?t$N%"%I%l%9$r4^$s$G$$$kJ8;zNs$r2r@O$7$F!"%a!<%k%"%I(B
-$B%l%9$H%W%l!<%s%F%-%9%H$NBP$r4^$`%j%9%H$rJV$7$^$9!#(B
+カンマで区切られた複数のアドレスを含んでいる文字列を解析して、メールアド
+レスとプレーンテキストの対を含むリストを返します。
 
 @item ietf-drums-parse-date
 @findex ietf-drums-parse-date
-$BF|IU$NJ8;zNs$r2r@O$7$F!"(BEmacs $B7A<0$N;~9o$rJV$7$^$9!#(B
+日付の文字列を解析して、Emacs 形式の時刻を返します。
 
 @item ietf-drums-narrow-to-header
 @findex ietf-drums-narrow-to-header
-$B8=:_$N%P%C%U%!!<$r%X%C%@!<$N6h0h$K69$a$^$9!#(B
+現在のバッファーをヘッダーの区域に狭めます。
 @end table
 
 @node rfc2047
 @section rfc2047
 
-RFC2047 ($B%a%C%;!<%8!&%X%C%@!<$G$NHs(B-@acronym{ASCII} $B%F%-%9%H3HD%(B) $B$O!"%X%C(B
-$B%@!<$K$"$kHs(B-@acronym{ASCII} $B%F%-%9%H$r$I$N$h$&$K%(%s%3!<%I$9$k$+$rDj$a(B
-$B$F$$$^$9!#<B:]$3$l$O>/!9J#;($K$J$k$N$G!"$3$N%i%$%V%i%j!<$,9T$J$&$3$H$rD4(B
-$B@0$9$k$?$a$K!"B?$/$NJQ?t$,I,MW$G$9!#(B
+RFC2047 (メッセージ・ヘッダーでの非-@acronym{ASCII} テキスト拡張) は、ヘッ
+ダーにある非-@acronym{ASCII} テキストをどのようにエンコードするかを定め
+ています。実際これは少々複雑になるので、このライブラリーが行なうことを調
+整するために、多くの変数が必要です。
 
-$B0J2<$NJQ?t$,D4@02DG=$G$9(B:
+以下の変数が調整可能です:
 
 @table @code
 @item rfc2047-header-encoding-alist
 @vindex rfc2047-header-encoding-alist
-$B$3$l$O%X%C%@!<$H%(%s%3!<%G%#%s%0!&%?%$%W$NBP$r<}$a$?O"A[%j%9%H$G$9!#$=$N(B
-$B<g$JL\E*$O!"$"$k<o$N%X%C%@!<$,%(%s%3!<%I$5$l$J$$$h$&$K$9$k$3$H$G$9!#(B
+これはヘッダーとエンコーディング・タイプの対を収めた連想リストです。その
+主な目的は、ある種のヘッダーがエンコードされないようにすることです。
 
-$B80(B ($BLuCm(B: $B3FMWAG$N(B @code{car} $B9`(B) $B$O%X%C%@!<$K9gCW$9$k@55,I=8=(B
-$B$+(B @code{t} $B$N$I$A$i$+$G$9!#(B
+鍵 (訳注: 各要素の @code{car} 項) はヘッダーに合致する正規表現
+か @code{t} のどちらかです。
 
-$BCM(B ($BLuCm(B: $B3FMWAG$N(B @code{cdr} $B9`(B) $B$O(B @code{nil} $B$K$9$k$3$H$,$G$-$F!"$=$N(B
-$B>l9g!"80$KAjEv$9$k%X%C%@!<$O%(%s%3!<%I$5$l$^$;$s!#(B@code{mime} $B$O$=$l$i$r(B
-$B%(%s%3!<%I$9$k$3$H$r0UL#$7$^$9$,!"(B@code{address-mime} $B$N>l9g$O%X%C%@!<$,(B
-$B%"%I%l%9$r4^$s$G$$$k$3$H$rA[Dj$7$FCm0U?<$/%(%s%3!<%I$7$^$9!#(B
+値 (訳注: 各要素の @code{cdr} 項) は @code{nil} にすることができて、その
+場合、鍵に相当するヘッダーはエンコードされません。@code{mime} はそれらを
+エンコードすることを意味しますが、@code{address-mime} の場合はヘッダーが
+アドレスを含んでいることを想定して注意深くエンコードします。
 
 @item rfc2047-charset-encoding-alist
 @vindex rfc2047-charset-encoding-alist
-RFC2047 $B$OFs$D$N%(%s%3!<%G%#%s%0$N7A<0$rDj$a$F$$$^$9!#0l$D$O(B @code{Q}
-(Quoted-Printable $B$N$h$&$J%(%s%3!<%G%#%s%0(B) $B$G!"$b$&0l$D$O(B @code{B}
-(base64) $B$G$9!#$3$NO"A[%j%9%H$O!"$"$kJ8;z%;%C%H$KBP$7$F$I$N%(%s%3!<%G%#(B
-$B%s%0$r;H$&$+$r5,Dj$7$^$9!#(B
+RFC2047 は二つのエンコーディングの形式を定めています。一つは @code{Q}
+(Quoted-Printable のようなエンコーディング) で、もう一つは @code{B}
+(base64) です。この連想リストは、ある文字セットに対してどのエンコーディ
+ングを使うかを規定します。
 
 @item rfc2047-encode-function-alist
 @vindex rfc2047-encode-function-alist
-$B$3$l$O%(%s%3!<%G%#%s%0$H$=$l$r<B;\$9$k$?$a$N4X?t$NBP$r<}$a$?O"A[%j%9%H$G(B
-$B$9!#%(%s%3!<%G%#%s%0$H$O(B @code{Q}, @code{B} $B$*$h$S(B @code{nil} $B$N$3$H$G$9!#(B
+これはエンコーディングとそれを実施するための関数の対を収めた連想リストで
+す。エンコーディングとは @code{Q}, @code{B} および @code{nil} のことです。
 
 @item rfc2047-encoded-word-regexp
 @vindex rfc2047-encoded-word-regexp
-$B%G%3!<%I$r9T$J$&$H$-!"$3$N%i%$%V%i%j!<$O$3$N@55,I=8=$K9gCW$9$k$b$N$rC5$7(B
-$B$^$9!#(B
+デコードを行なうとき、このライブラリーはこの正規表現に合致するものを探し
+ます。
 
 @item rfc2047-encoded-word-regexp-loose
 @vindex rfc2047-encoded-word-regexp-loose
-@code{rfc2047-encoded-word-regexp} $B$N(B Q $B%(%s%3!<%G%#%s%0$N$?$a$N@55,I=8=(B
-$B$r4KK}$K$7$?%P!<%8%g%s$G$9!#(B
+@code{rfc2047-encoded-word-regexp} の Q エンコーディングのための正規表現
+を緩慢にしたバージョンです。
 
 @item rfc2047-encode-encoded-words
 @vindex rfc2047-encode-encoded-words
-$B%(%s%3!<%I:Q$_$N8l(B ($BNc$($P(B @samp{=?us-ascii?q?hello?=}) $B$r:FEY%(%s%3!<%I(B
-$B$9$k$+$I$&$+$r7h$a$k%V!<%kJQ?t$G$9!#(B
-@code{rfc2047-encoded-word-regexp} $B$,$=$N$h$&$J8l$rC5$9$?$a$K;H$o$l$^$9!#(B
+エンコード済みの語 (例えば @samp{=?us-ascii?q?hello?=}) を再度エンコード
+するかどうかを決めるブール変数です。
+@code{rfc2047-encoded-word-regexp} がそのような語を探すために使われます。
 
 @item rfc2047-allow-irregular-q-encoded-words
 @vindex rfc2047-allow-irregular-q-encoded-words
-$B$$$$2C8:$K(B Q $B$G%(%s%3!<%I$5$l$?8l(B ($BNc$((B
-$B$P(B @samp{=?us-ascii?q?hello??=}) $B$r%G%3!<%I$9$Y$-$+$I$&$+$r7h$a$k%V!<%k(B
-$BJQ?t$G$9!#$=$l$,(B @code{nil} $B0J30$NCM$J$i$P!"%(%s%3!<%I$5$l$?8l$rC5$9$?$a(B
-$B$K(B @code{rfc2047-encoded-word-regexp} $B$KBe$o$C(B
-$B$F(B @code{rfc2047-encoded-word-regexp-loose} $B$,;H$o$l$^$9!#(B
+いい加減に Q でエンコードされた語 (例え
+ば @samp{=?us-ascii?q?hello??=}) をデコードすべきかどうかを決めるブール
+変数です。それが @code{nil} 以外の値ならば、エンコードされた語を探すため
+に @code{rfc2047-encoded-word-regexp} に代わっ
+て @code{rfc2047-encoded-word-regexp-loose} が使われます。
 @end table
 
-$B0J>e$OJQ?t$G$7$?!#<!$O4X?t$G$9(B:
+以上は変数でした。次は関数です:
 
 @table @code
 @item rfc2047-narrow-to-field
 @findex rfc2047-narrow-to-field
-$B%P%C%U%!!<$r8=:_$N9T$N%X%C%@!<$K69$a$^$9!#(B
+バッファーを現在の行のヘッダーに狭めます。
 
 @item rfc2047-encode-message-header
 @findex rfc2047-encode-message-header
-$B%a%C%;!<%8$N%X%C%@!<$K69$a$i$l$?%P%C%U%!!<$G;H$o$J$1$l$P$J$j$^$;$s!#(B
-@code{rfc2047-header-encoding-alist} $B$K=>$C$F%(%s%3!<%I$r9T$J$$$^$9!#(B
+メッセージのヘッダーに狭められたバッファーで使わなければなりません。
+@code{rfc2047-header-encoding-alist} に従ってエンコードを行ないます。
 
 @item rfc2047-encode-region
 @findex rfc2047-encode-region
-$B;XDj$5$l$?NN0h$K$"$k$9$Y$F$N%(%s%3!<%I2DG=$J8l$r%(%s%3!<%I$7$^$9!#(B
+指定された領域にあるすべてのエンコード可能な語をエンコードします。
 
 @item rfc2047-encode-string
 @findex rfc2047-encode-string
-$BJ8;zNs$r%(%s%3!<%I$7$F7k2L$rJV$7$^$9!#(B
+文字列をエンコードして結果を返します。
 
 @item rfc2047-decode-region
 @findex rfc2047-decode-region
-$BNN0h$K$"$k%(%s%3!<%I$5$l$?8l$r%G%3!<%I$7$^$9!#(B
+領域にあるエンコードされた語をデコードします。
 
 @item rfc2047-decode-string
 @findex rfc2047-decode-string
-$BJ8;zNs$r%G%3!<%I$7$F7k2L$rJV$7$^$9!#(B
+文字列をデコードして結果を返します。
 
 @item rfc2047-encode-parameter
 @findex rfc2047-encode-parameter
-$B%Q%i%a!<%?!<$r(B RFC2047 $B$U$&$NMM<0$G%(%s%3!<%I$7$^$9!#$3$l$O4X(B
-$B?t(B @code{rfc2231-encode-string} $B$NBeMQ$G$9!#$=$l$,I8=`$J$N$G$9$,!"B?$/$N(B
-$B%a%$%i!<$,%5%]!<%H$7$^$;$s!#(B@xref{rfc2231}.
+パラメーターを RFC2047 ふうの様式でエンコードします。これは関
+数 @code{rfc2231-encode-string} の代用です。それが標準なのですが、多くの
+メイラーがサポートしません。@xref{rfc2231}.
 @end table
 
 @node time-date
 @section time-date
 
-$BK\Ev$O(B @acronym{MIME} $B%i%$%V%i%j!<$N0lIt$G$O$"$j$^$;$s$,!"$3$3$G@bL@$9$k(B
-$B$3$H$OET9g$,NI$$$N$G$9!#$3$l$OF|IU%X%C%@!<$N2r@O$H;~9o$NA`:n$r07$$$^$9!#(B
-($B$b$C$H$b;M<!85N)J}BN$O;H$$$^$;$s!#$4$a$s$J$5$$!#(B)
+本当は @acronym{MIME} ライブラリーの一部ではありませんが、ここで説明する
+ことは都合が良いのです。これは日付ヘッダーの解析と時刻の操作を扱います。
+(もっとも四次元立方体は使いません。ごめんなさい。)
 
-$B$3$l$i$N4X?t$O8^$D$N7A<0(B ($B;~9o$NJ8;zNs!"(BEmacs $B7A<0$N;~9o!"%G%3!<%I$5$l$?(B
-$B;~9o$N%j%9%H!"IC?t!"$*$h$SF|?t(B) $B$N4V$GJQ49$r9T$J$$$^$9!#(B
+これらの関数は五つの形式 (時刻の文字列、Emacs 形式の時刻、デコードされた
+時刻のリスト、秒数、および日数) の間で変換を行ないます。
 
-$B;~9o(B/$BF|IU(B/$BIC?t(B/$BF|?t$NAj8_JQ49$NNc$G$9(B:
+時刻/日付/秒数/日数の相互変換の例です:
 
 @example
 (parse-time-string "Sat Sep 12 12:21:54 1998 +0200")
@@ -1609,149 +1609,149 @@ RFC2047 $B$OFs$D$N%(%s%3!<%G%#%s%0$N7A<0$rDj$a$F$$$^$9!#0l$D$O(B @code{Q}
 @result{} 4314.095589286675
 @end example
 
-$B$"$H!"(B@code{safe-date-to-time} $B$H$$$&$b$N$b$"$j$^$9!#$3$l(B
-$B$O(B @code{date-to-time} $B$HF1$8$3$H$r$7$^$9$,!"F|IU$,9=J8E*$KIT40A4$@$C$?(B
-$B>l9g$K%<%m;~9o$rJV$7$^$9!#(B
+あと、@code{safe-date-to-time} というものもあります。これ
+は @code{date-to-time} と同じことをしますが、日付が構文的に不完全だった
+場合にゼロ時刻を返します。
 
-$B8^$D$N%G!<%?$O0J2<$N$h$&$KI=8=$5$l$^$9(B:
+五つのデータは以下のように表現されます:
 
 @table @var
 @item date
-RFC822 ($B$^$?$ON`;w$N(B) $B7A<0$NF|IU$NJ8;zNs!#Nc(B: @code{"Sat Sep 12 12:21:54
+RFC822 (または類似の) 形式の日付の文字列。例: @code{"Sat Sep 12 12:21:54
 1998 +0200"}
 
 @item time
-Emacs $B$NFbIt7A<0$N;~9o!#Nc(B: @code{(13818 26466 0 0)}
+Emacs の内部形式の時刻。例: @code{(13818 26466 0 0)}
 
 @item seconds
-Emacs $B$NFbIt7A<0$N;~9o$rIbF0>.?t$GI=$7$?$b$N!#Nc(B: @code{905595714.0}
+Emacs の内部形式の時刻を浮動小数で表したもの。例: @code{905595714.0}
 
 @item days
-00000101 $B$r4pE@$H$9$k7P2aF|?t$r@0?t$GI=$7$?$b$N!#Nc(B: @code{729644}
+00000101 を基点とする経過日数を整数で表したもの。例: @code{729644}
 
-$BLuCm(B: 00000101 $B$,2?$r0UL#$9$k$N$+ITL@$G$9$,!"%=!<%9%3!<%I$K$h$l$P%0%l%4(B
-$B%j%*Nr!&5*85A0(B (BC $B$G$O$J$/(B BCE $B$NJ}$N(B) 0001$BG/(B12$B7n(B31$BF|$N$3$H$i$7$$$G$9!#(B
+訳注: 00000101 が何を意味するのか不明ですが、ソースコードによればグレゴ
+リオ歴・紀元前 (BC ではなく BCE の方の) 0001年12月31日のことらしいです。
 
 @item decoded time
-$B%G%3!<%I$5$l$?;~9o$N%j%9%H!#Nc(B: @code{(54 21 12 12 9 1998 6 t 7200)}
+デコードされた時刻のリスト。例: @code{(54 21 12 12 9 1998 6 t 7200)}
 @end table
 
-$B>e5-$N$9$Y$F$NNc$O!"F1$8;~$rI=$7$F$$$^$9!#(B
+上記のすべての例は、同じ時を表しています。
 
-$B4X?t$K$O0J2<$N$h$&$J$b$N$,$"$j$^$9(B:
+関数には以下のようなものがあります:
 
 @table @code
 @item date-to-time
-$BF|IU$r<u$1<h$C$F;~9o$rJV$7$^$9!#(B
+日付を受け取って時刻を返します。
 
 @item float-time
-$B;~9o$r<u$1<h$C$FIC?t$rJV$7$^$9!#(B($B$3$l$OAH$_9~$_4X?t$G$9!#(B)
+時刻を受け取って秒数を返します。(これは組み込み関数です。)
 
 @item seconds-to-time
-$BIC?t$r<u$1<h$C$F;~9o$rJV$7$^$9!#(B
+秒数を受け取って時刻を返します。
 
 @item time-to-days
-$B;~9o$r<u$1<h$C$FF|?t$rJV$7$^$9!#(B
+時刻を受け取って日数を返します。
 
 @item days-to-time
-$BF|?t$r<u$1<h$C$F;~9o$rJV$7$^$9!#(B
+日数を受け取って時刻を返します。
 
 @item date-to-day
-$BF|IU$r<u$1<h$C$FF|?t$rJV$7$^$9!#(B
+日付を受け取って日数を返します。
 
 @item time-to-number-of-days
-$B;~9o$r<u$1<h$C$F!"$=$l$,I=$7$F$$$kF|?t$rJV$7$^$9!#(B
+時刻を受け取って、それが表している日数を返します。
 
 @item safe-date-to-time
-$BF|IU$r<u$1<h$C$F;~9o$rJV$7$^$9!#F|IU$,9=J8E*$K@5$7$/$J$+$C$?$i!V%<%m!W;~(B
-$B9o$rJV$7$^$9!#(B
+日付を受け取って時刻を返します。日付が構文的に正しくなかったら「ゼロ」時
+刻を返します。
 
 @item time-less-p
-$BFs$D$N;~9o$r<u$1<h$C$F!"0l$DL\$,Fs$DL\$h$j>/$J$$(B ($B$9$J$o$AAa$$(B) $B$+$I$&$+(B
-$B$r<($7$^$9!#(B($B$3$l$OAH$_9~$_4X?t$G$9!#(B)
+二つの時刻を受け取って、一つ目が二つ目より少ない (すなわち早い) かどうか
+を示します。(これは組み込み関数です。)
 
 @item time-since
-$B;~9o$r<u$1<h$C$F!"$=$N;~9o$+$i$I$l$[$I;~4V$,7P2a$7$?$+$r<($7$^$9!#(B
+時刻を受け取って、その時刻からどれほど時間が経過したかを示します。
 
 @item time-subtract
-$BFs$D$N;~9o$r<u$1<h$C$F!"0l$DL\$+$iFs$DL\$r8:;;$7$^$9!#$9$J$o$A!"Fs$D$N;~(B
-$B9o$N4V$N;~4V:9$rJV$7$^$9!#(B($B$3$l$OAH$_9~$_4X?t$G$9!#(B)
+二つの時刻を受け取って、一つ目から二つ目を減算します。すなわち、二つの時
+刻の間の時間差を返します。(これは組み込み関数です。)
 
 @item days-between
-$BFs$D$NF|IU$r<u$1<h$C$F!"$=$l$iFs$D$NF|IU$N4V$NF|?t$rJV$7$^$9!#(B
+二つの日付を受け取って、それら二つの日付の間の日数を返します。
 
 @item date-leap-year-p
-$BG/$N?tCM$r<u$1<h$C$F!"$=$l$,$&$k$&G/$+$I$&$+$r<($7$^$9!#(B
+年の数値を受け取って、それがうるう年かどうかを示します。
 
 @item time-to-day-in-year
-$B;~9o$r<u$1<h$C$F!"$=$NG/$N85F|$+$i7P2a$7$?F|?t$rJV$7$^$9!#(B
+時刻を受け取って、その年の元日から経過した日数を返します。
 @end table
 
 @node qp
 @section qp
 
-$B$3$N%i%$%V%i%j!<$O(B Quoted-Printable $B$K$h$k%F%-%9%H$N%G%3!<%I$H%(%s%3!<%I(B
-$B$r07$$$^$9!#(B
+このライブラリーは Quoted-Printable によるテキストのデコードとエンコード
+を扱います。
 
-$BHs>o$K<jC;$+$K@bL@$9$l$P!"(Bqp $B%(%s%3!<%G%#%s%0$O$9$Y$F$N(B 8-bit $BJ8;z(B ($B$HB?(B
-$B$/$N@)8fJ8;z(B) $B$r(B @samp{=EF} $B$N$h$&$J$b$N(B ($B%$%3!<%k5-9f$H!"$=$l$KB3(B
-$B$/(B 16$B?J?t$K%(%s%3!<%I$5$l$?%P%$%H(B) $B$KJQ49$9$k$3$H$G$9!#(B
+非常に手短かに説明すれば、qp エンコーディングはすべての 8-bit 文字 (と多
+くの制御文字) を @samp{=EF} のようなもの (イコール記号と、それに続
+く 16進数にエンコードされたバイト) に変換することです。
 
-$B$3$N%i%$%V%i%j!<$G$O!"0J2<$N4X?t$,Dj5A$5$l$F$$$^$9(B:
+このライブラリーでは、以下の関数が定義されています:
 
 @table @code
 @item quoted-printable-decode-region
 @findex quoted-printable-decode-region
-$B;XDj$5$l$?NN0h$K$"$k$9$Y$F$N%(%s%3!<%I$5$l$?%F%-%9%H$r(B QP-$B%G%3!<%I$7$^$9!#(B
+指定された領域にあるすべてのエンコードされたテキストを QP-デコードします。
 
 @item quoted-printable-decode-string
 @findex quoted-printable-decode-string
-$BJ8;zNs$K4^$^$l$F$$$k(B QP-$B%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$F!"7k2L$rJV(B
-$B$7$^$9!#(B
+文字列に含まれている QP-エンコードされたテキストをデコードして、結果を返
+します。
 
 @item quoted-printable-encode-region
 @findex quoted-printable-encode-region
-$B;XDj$5$l$?NN0h$K$"$k$9$Y$F$N%(%s%3!<%I2DG=$JJ8;z$r(B QP-$B%(%s%3!<%I$7$^$9!#(B
-$B>JN,$G$-$kBh;00z?t(B @var{fold} $B$O!"D9$$9T$r@^$j>v$`$+$I$&$+$r;XDj$7$^$9!#(B
-($B$3$3$G!VD9$$!W$O(B 72$B7e$r1[$($k$b$N$N$3$H$r0UL#$7$^$9!#(B)
+指定された領域にあるすべてのエンコード可能な文字を QP-エンコードします。
+省略できる第三引数 @var{fold} は、長い行を折り畳むかどうかを指定します。
+(ここで「長い」は 72桁を越えるもののことを意味します。)
 
 @item quoted-printable-encode-string
 @findex quoted-printable-encode-string
-$BJ8;zNs$K4^$^$l$F$$$k$9$Y$F$N%(%s%3!<%I2DG=$JJ8;z$r(B QP-$B%(%s%3!<%I$7$F!"7k(B
-$B2L$rJV$7$^$9!#(B
+文字列に含まれているすべてのエンコード可能な文字を QP-エンコードして、結
+果を返します。
 @end table
 
 @node base64
 @section base64
 @cindex base64
 
-Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 33% $B%5%$%:(B
-$B$,A}$($^$9!#%"%k%U%!%Y%C%H$@$1$G%(%s%3!<%I$9$k$N$G!"EAAw$5$l$kESCf$G=P2q(B
-$B$&$+$b$7$l$J$$>c32$KBP$7$F$H$F$bBQ5WNO$,$"$j$^$9!#(B
+Base64 は 3-バイトを 4-バイトにエンコードします。そのため、約 33% サイズ
+が増えます。アルファベットだけでエンコードするので、伝送される途中で出会
+うかもしれない障害に対してとても耐久力があります。
 
-$B0J2<$N4X?t$,$3$N%i%$%V%i%j!<$K$h$C$FDj5A$5$l$F$$$^$9(B:
+以下の関数がこのライブラリーによって定義されています:
 
 @table @code
 @item base64-encode-region
 @findex base64-encode-region
-$BA*Br$5$l$?NN0h$r(B base64 $B$G%(%s%3!<%I$7$F!"%(%s%3!<%I$5$l$?%F%-%9%H$ND9$5(B
-$B$rJV$7$^$9!#>JN,$G$-$kBh;00z?t(B @var{no-line-break} $B$O!"D9$$9T$r$h$jC;$$(B
-$B9T$K@^$j>v$^$J$$$3$H$r;X?^$7$^$9!#(B
+選択された領域を base64 でエンコードして、エンコードされたテキストの長さ
+を返します。省略できる第三引数 @var{no-line-break} は、長い行をより短い
+行に折り畳まないことを指図します。
 
 @item base64-encode-string
 @findex base64-encode-string
-$BJ8;zNs$r(B base64 $B$G%(%s%3!<%I$7$F7k2L$rJV$7$^$9!#(B
+文字列を base64 でエンコードして結果を返します。
 
 @item base64-decode-region
 @findex base64-decode-region
-$BA*Br$5$l$?NN0h$r(B base64 $B$G%G%3!<%I$7$F!"%G%3!<%I$5$l$?%F%-%9%H$ND9$5$rJV(B
-$B$7$^$9!#NN0h$,%G%3!<%I2DG=$G$J$+$C$?$i!"(B@code{nil} $B$rJV$9$@$1$G%P%C%U%!!<(B
-$B$OJQ99$7$^$;$s!#(B
+選択された領域を base64 でデコードして、デコードされたテキストの長さを返
+します。領域がデコード可能でなかったら、@code{nil} を返すだけでバッファー
+は変更しません。
 
 @item base64-decode-string
 @findex base64-decode-string
-$BJ8;zNs$r(B base64 $B$G%G%3!<%I$7$F7k2L$rJV$7$^$9!#J8;zNs$,%G%3!<%I2DG=$G$J$+$C(B
-$B$?$i(B @code{nil} $B$rJV$7$^$9!#(B
+文字列を base64 でデコードして結果を返します。文字列がデコード可能でなかっ
+たら @code{nil} を返します。
 @end table
 
 @node binhex
@@ -1760,15 +1760,15 @@ Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 
 @cindex Apple
 @cindex Macintosh
 
-@code{binhex} $B$O%^%C%-%s%H%C%7%e$N4D6-$K8;$rH/$9$k%(%s%3!<%G%#%s%0$G$9!#(B
-$B0J2<$N4X?t$,$=$l$i$r07$&$?$a$K6!5k$5$l$F$$$^$9(B:
+@code{binhex} はマッキントッシュの環境に源を発するエンコーディングです。
+以下の関数がそれらを扱うために供給されています:
 
 @table @code
 @item binhex-decode-region
 @findex binhex-decode-region
-$BNN0h$K$"$k%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$^$9!#Bh;0%Q%i%a!<%?!<$,M?(B
-$B$($i$l$k$H!"(B@code{binhex} $B$N%X%C%@!<$r%G%3!<%I$7$F%U%!%$%kL>$rJV$9$3$H$@(B
-$B$1$r$7$^$9!#(B
+領域にあるエンコードされたテキストをデコードします。第三パラメーターが与
+えられると、@code{binhex} のヘッダーをデコードしてファイル名を返すことだ
+けをします。
 @end table
 
 @node uudecode
@@ -1776,29 +1776,29 @@ Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 
 @cindex uuencode
 @cindex uudecode
 
-@code{base64} $B$,%a!<%k$N@$3&$r;YG[$7$F$$$k$b$N$N!"$*$=$i(B
-$B$/(B @code{uuencode} $B$O$^$@(B Usenet $B$G;H$o$l$F$$$k$b$N$NCf$G!":G$bIa5Z$7$F(B
-$B$$$k%P%$%J%j!<$N%(%s%3!<%G%#%s%0$G$9!#(B
+@code{base64} がメールの世界を支配しているものの、おそら
+く @code{uuencode} はまだ Usenet で使われているものの中で、最も普及して
+いるバイナリーのエンコーディングです。
 
-$B0J2<$N4X?t$,$3$N%Q%C%1!<%8$K$h$C$F6!5k$5$l$F$$$^$9(B:
+以下の関数がこのパッケージによって供給されています:
 
 @table @code
 @item uudecode-decode-region
 @findex uudecode-decode-region
-$BNN0h$K$"$k%F%-%9%H$r%G%3!<%I$7$^$9!#(B
+領域にあるテキストをデコードします。
 @end table
 
 @node yenc
 @section yenc
 @cindex yenc
 
-@code{yenc} $B$O(B Usenet $B$G%P%$%J%j!<$r%(%s%3!<%I$9$k$?$a$K;H$o$l$^$9!#0J2<(B
-$B$N4X?t$,$3$N%Q%C%1!<%8$K$h$C$F6!5k$5$l$F$$$^$9(B:
+@code{yenc} は Usenet でバイナリーをエンコードするために使われます。以下
+の関数がこのパッケージによって供給されています:
 
 @table @code
 @item yenc-decode-region
 @findex yenc-decode-region
-$BNN0h$K$"$k%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$^$9!#(B
+領域にあるエンコードされたテキストをデコードします。
 @end table
 
 @node rfc1843
@@ -1807,33 +1807,33 @@ Base64 $B$O(B 3-$B%P%$%H$r(B 4-$B%P%$%H$K%(%s%3!<%I$7$^$9!#$=$N$?$a!"Ls(B 
 @cindex HZ
 @cindex Chinese
 
-RFC1843 $B$O%a%C%;!<%8$K$*$1$kCf9q8l$H(B @acronym{ASCII} $BJ8;z$N:.:_J8$r07$$(B
-$B$^$9!#K\<AE*$K$O!"(BRFC1843 $B$O0J2<$N$h$&$K(B @acronym{ASCII} $B$HCf9q8l$r@Z$j(B
-$BBX$($k$b$N$G$9(B:
+RFC1843 はメッセージにおける中国語と @acronym{ASCII} 文字の混在文を扱い
+ます。本質的には、RFC1843 は以下のように @acronym{ASCII} と中国語を切り
+替えるものです:
 
 @example
 This sentence is in @acronym{ASCII}.
 The next sentence is in GB.~@{<:Ky2;S@{#,NpJ)l6HK!#~@}Bye.
 @end example
 
-$B$^$C$?$/C1=c$G!"Cf9q$G$O9-$/;H$o$l$F$$$^$9!#(B
+まったく単純で、中国では広く使われています。
 
-$B$3$N%(%s%3!<%G%#%s%0$r07$&$?$a$K!"0J2<$N4X?t$r;H$&$3$H$,$G$-$^$9(B:
+このエンコーディングを扱うために、以下の関数を使うことができます:
 
 @table @code
 @item rfc1843-decode-region
-$BNN0h$K$"$k(B HZ-$B%(%s%3!<%I$5$l$?%F%-%9%H$r%G%3!<%I$7$^$9!#(B
+領域にある HZ-エンコードされたテキストをデコードします。
 
 @item rfc1843-decode-string
-HZ-$B%(%s%3!<%I$5$l$?J8;zNs$r%G%3!<%I$7$F7k2L$rJV$7$^$9!#(B
+HZ-エンコードされた文字列をデコードして結果を返します。
 @end table
 
 @node mailcap
 @section mailcap
 
-@file{~/.mailcap} $B%U%!%$%k$O$[$H$s$I$N(B @acronym{MIME} $B$KBP1~$7$?%a%C%;!<(B
-$B%8!&%O%s%I%i!<$K$h$C$F2r@O$5$l$^$9!#$=$l$K$O!"3FMWAG$,$I$N$h$&$KI=<($5$l(B
-$B$k$b$N$HA[Dj$5$l$F$$$k$+$r5-=R$7$^$9!#%U%!%$%k$NNc$G$9(B:
+@file{~/.mailcap} ファイルはほとんどの @acronym{MIME} に対応したメッセー
+ジ・ハンドラーによって解析されます。それには、各要素がどのように表示され
+るものと想定されているかを記述します。ファイルの例です:
 
 @example
 image/*; gimp -8 %s
@@ -1841,101 +1841,101 @@ audio/wav; wavplayer %s
 application/msword; catdoc %s ; copiousoutput ; nametemplate=%s.doc
 @end example
 
-$B$3$l$O!"$9$Y$F$N2hA|%U%!%$%k$O(B @code{gimp} $B$GI=<($5$l$k$Y$-$G$"$k$3$H!"(B
-WAVE $B2;6A%U%!%$%k$O(B @code{wavplayer} $B$G:F@8$5$l$k$Y$-$G$"$k$3$H!"$=$7(B
-$B$F(B MS-WORD $B%U%!%$%k$O(B @code{catdoc} $B$K$h$C$F%$%s%i%$%sI=<($5$l$k$Y$-$G$"(B
-$B$k$H8@$C$F$$$^$9!#(B
+これは、すべての画像ファイルは @code{gimp} で表示されるべきであること、
+WAVE 音響ファイルは @code{wavplayer} で再生されるべきであること、そし
+て MS-WORD ファイルは @code{catdoc} によってインライン表示されるべきであ
+ると言っています。
 
-@code{mailcap} $B%i%$%V%i%j!<$O$3$N%U%!%$%k$r2r@O$7$F!"9gCW$9$k%?%$%W$N$?(B
-$B$a$N4X?t$rDs6!$7$^$9!#(B
+@code{mailcap} ライブラリーはこのファイルを解析して、合致するタイプのた
+めの関数を提供します。
 
 @table @code
 @item mailcap-mime-data
 @vindex mailcap-mime-data
-$B$3$NJQ?t$O!"%P%C%/%"%C%W$5$l$?(B ($BLuCm(B: mailcap $B%U%!%$%k$NFbMF$r2r@O$7(B
-$B$F(B Emacs $B$,07$$0W$$7A<0$K$7$?(B) $BI=<(5,B'$r4^$s$G$$$k!"O"A[%j%9%H$NO"A[%j(B
-$B%9%H$G$9!#(B
+この変数は、バックアップされた (訳注: mailcap ファイルの内容を解析し
+て Emacs が扱い易い形式にした) 表示規則を含んでいる、連想リストの連想リ
+ストです。
 
 @item mailcap-user-mime-data
 @vindex mailcap-user-mime-data
-$B%+%9%?%^%$%:2DG=$J%S%e!<%o!<$N%j%9%H$G!"(B@code{mailcap-mime-data} $B$h$jM%(B
-$B@h$7$^$9!#(B
+カスタマイズ可能なビューワーのリストで、@code{mailcap-mime-data} より優
+先します。
 @code{mailcap-mime-data}.
 @end table
 
-$B%$%s%?!<%U%'!<%94X?t(B:
+インターフェース関数:
 
 @table @code
 @item mailcap-parse-mailcaps
 @findex mailcap-parse-mailcaps
-@file{~/.mailcap} $B%U%!%$%k$r2r@O$7$^$9!#(B
+@file{~/.mailcap} ファイルを解析します。
 
 @item mailcap-mime-info
-$B0z?t$H$7$F(B @acronym{MIME} $B%?%$%W$r<u$1<h$j!"9gCW$9$k%S%e!<%o!<$rJV$7$^$9!#(B
+引数として @acronym{MIME} タイプを受け取り、合致するビューワーを返します。
 @end table
 
 @node Standards
-@chapter $BI8=`(B
+@chapter 標準
 
-Emacs @acronym{MIME} $B%i%$%V%i%j!<$O!"(B($B$d$d(B) $BB?$/$N(B RFC$B!"%I%i%U%H$*$h$SI8(B
-$B=`%I%-%e%a%s%H$K=>$C$F!"MM!9$JMWAG$r<h$j07$$$^$9!#$3$N>O$G$O4XO"$9$k$b$N(B
-$B$rNs5s$7$^$9!#$3$l$i$O$9$Y$F(B @uref{http://quimby.gnus.org/notes/} $B$+$i<h(B
-$BF@2DG=$G$9!#(B
+Emacs @acronym{MIME} ライブラリーは、(やや) 多くの RFC、ドラフトおよび標
+準ドキュメントに従って、様々な要素を取り扱います。この章では関連するもの
+を列挙します。これらはすべて @uref{http://quimby.gnus.org/notes/} から取
+得可能です。
 
 @table @dfn
 @item RFC822
 @itemx STD11
-ARPA $B%$%s%?!<%M%C%H%F%-%9%H%a%C%;!<%8$N=q<0$N$?$a$NI8=`!#(B
+ARPA インターネットテキストメッセージの書式のための標準。
 
 @item RFC1036
-USENET $B%a%C%;!<%88r49$N$?$a$NI8=`!#(B
+USENET メッセージ交換のための標準。
 
 @item RFC2045
-$B%$%s%?!<%M%C%H%a%C%;!<%8$NK\J8$N=q<0!#(B
+インターネットメッセージの本文の書式。
 
 @item RFC2046
-$B%a%G%#%"%?%$%W!#(B
+メディアタイプ。
 
 @item RFC2047
-$B%a%C%;!<%8%X%C%@!<$G$NHs(B-@acronym{ASCII} $B%F%-%9%H3HD%!#(B
+メッセージヘッダーでの非-@acronym{ASCII} テキスト拡張。
 
 @item RFC2048
-$BEPO?<jB3!#(B
+登録手続。
 
 @item RFC2049
-$BE,9g4p=`$H;vNc!#(B
+適合基準と事例。
 
 @item RFC2231
-@acronym{MIME} $B%Q%i%a!<%?!<CM$H%(%s%3!<%I$5$l$?C18l$N3HD%(B: $BJ8;z%;%C%H!"(B
-$B8@8l$*$h$S7QB3!#(B
+@acronym{MIME} パラメーター値とエンコードされた単語の拡張: 文字セット、
+言語および継続。
 
 @item RFC1843
-HZ--$BCfJ8$*$h$S(B @acronym{ASCII} $BJ8;z$,G$0U$K:.:_$9$k%U%!%$%k$r8r49$9$k$?(B
-$B$a$N%G!<%?7A<0!#(B
+HZ--中文および @acronym{ASCII} 文字が任意に混在するファイルを交換するた
+めのデータ形式。
 
 @item draft-ietf-drums-msg-fmt-05.txt
-RFC822 $B$N8e7Q$N$?$a$NAp9F!#(B
+RFC822 の後継のための草稿。
 
 @item RFC2112
-@acronym{MIME} Multipart/Related Content-type$B!#(B
+@acronym{MIME} Multipart/Related Content-type。
 
 @item RFC1892
-$B%a!<%k%7%9%F%`$N4IM}%a%C%;!<%8$r%j%]!<%H$9$k$?$a$N(B Multipart/Report
-Content Type$B!#(B
+メールシステムの管理メッセージをリポートするための Multipart/Report
+Content Type。
 
 @item RFC2183
-$B%$%s%?!<%M%C%H%a%C%;!<%8$N>pJsDL?.I=8=(B: Content-Disposition $B%X%C%@!<%U%#!<(B
-$B%k%I!#(B
+インターネットメッセージの情報通信表現: Content-Disposition ヘッダーフィー
+ルド。
 
 @item RFC2646
-$BN.F0%F%-%9%H$N$?$a$N(B text/plain $B=q<0%Q%i%a!<%?!<!#(B
+流動テキストのための text/plain 書式パラメーター。
 @end table
 
 @node GNU Free Documentation License
-@chapter GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
+@chapter GNU フリー文書利用許諾契約書
 
-$BLuCm(B: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
-$BHs8x<0$JF|K\8lLu(B} $B$,$"$j$^$9!#(B
+訳注: @uref{http://www.opensource.jp/fdl/fdl.ja.html.euc-jp,
+非公式な日本語訳} があります。
 
 @include doclicense.texi
 
@@ -1946,6 +1946,5 @@ Content Type$B!#(B
 @bye
 
 @c Local Variables:
-@c coding: iso-2022-7bit
 @c fill-column: 72
 @c End:

@@ -9,175 +9,175 @@
 @c
 
 @node Frequently Asked Questions
-@section $B$h$/?R$M$i$l$k<ALd(B
+@section よく尋ねられる質問
 
 @menu
 * FAQ - Changes::
-* FAQ - Introduction::         Gnus $B$*$h$S$3$N(B FAQ $B$K$D$$$F(B
-* FAQ 1 - Installation FAQ::   Gnus $B$N%$%s%9%H!<%k(B
-* FAQ 2 - Startup / Group buffer:: $B5/F0$K4X$9$k<ALd$H!":G=i$KI=<($9$k%P%C%U%!!<(B
-* FAQ 3 - Getting Messages::   Gnus $B$G%a!<%k$H%K%e!<%9$rFI$a$k$h$&$K$9$k(B
-* FAQ 4 - Reading messages::   $B8zN(NI$/%a%C%;!<%8$rFI$`J}K!(B
-* FAQ 5 - Composing messages:: $B%a%C%;!<%8$N:n@.!"$^$?$O(B Usenet $B$X$NEj9F(B
-* FAQ 6 - Old messages::       $B0\F~!"=q8K$X$NJ]B8!"8!:w!"$*$h$S%a%C%;!<%8$N>C5n(B
-* FAQ 7 - Gnus in a dial-up environment:: $B%*%U%i%$%s$G%a!<%k$H%K%e!<%9$rFI$`(B
-* FAQ 8 - Getting help::       $B$3$N(B FAQ $B$G$OIT=<J,$@$C$?$i(B
-* FAQ 9 - Tuning Gnus::        Gnus $B$rB.$/$9$k$K$O(B
-* FAQ - Glossary::             $B$3$N(B FAQ $B$G;H$o$l$kMQ8l(B
+* FAQ - Introduction::         Gnus およびこの FAQ について
+* FAQ 1 - Installation FAQ::   Gnus のインストール
+* FAQ 2 - Startup / Group buffer:: 起動に関する質問と、最初に表示するバッファー
+* FAQ 3 - Getting Messages::   Gnus でメールとニュースを読めるようにする
+* FAQ 4 - Reading messages::   効率良くメッセージを読む方法
+* FAQ 5 - Composing messages:: メッセージの作成、または Usenet への投稿
+* FAQ 6 - Old messages::       移入、書庫への保存、検索、およびメッセージの消去
+* FAQ 7 - Gnus in a dial-up environment:: オフラインでメールとニュースを読む
+* FAQ 8 - Getting help::       この FAQ では不充分だったら
+* FAQ 9 - Tuning Gnus::        Gnus を速くするには
+* FAQ - Glossary::             この FAQ で使われる用語
 @end menu
 
-@subheading $BMWLs(B
+@subheading 要約
 
-$B$3$l$O?7$7$$(B Gnus $B$N$h$/?R$M$i$l$k<ALd$N%j%9%H$G$9!#(B
+これは新しい Gnus のよく尋ねられる質問のリストです。
 
-$B5!G=$K4X$9$k$3$H$dDs0F$O(B @email{ding@@gnus.org, ding list} $B$KAw$C$F$/$@(B
-$B$5$$!#(B
+機能に関することや提案は @email{ding@@gnus.org, ding list} に送ってくだ
+さい。
 
 @node FAQ - Changes
-@subsection $BJQ99MzNr(B
+@subsection 変更履歴
 
 @itemize @bullet
 @item
-2008-06-15: message-fill-column $B$N@bL@$r<BBV$K9g$o$;$^$7$?!#(B
-x-face-file $B$r2C$($^$7$?!#(Bding $B$H(B gnu.emacs.gnus $B$N0c$$$r$O$C$-$j$5$;$^(B
-$B$7$?!#;_$^$C$F$7$^$C$?%5!<%S%9$X$N;2>H$r:o=|$7$^$7$?!#(B
+2008-06-15: message-fill-column の説明を実態に合わせました。
+x-face-file を加えました。ding と gnu.emacs.gnus の違いをはっきりさせま
+した。止まってしまったサービスへの参照を削除しました。
 
 @item
-2006-04-15: $BAw?.$7=*$o$C$?$H$-$K$=$N%P%C%U%!!<$r:o=|$9$kJ}K!$r2C$($^$7$?!#(B
+2006-04-15: 送信し終わったときにそのバッファーを削除する方法を加えました。
 @end itemize
 
 @node FAQ - Introduction
-@subsection $B=x(B
+@subsection 序
 
-$B$3$l$O(B Gnus $B$N$h$/?R$M$i$l$k<ALd$N%j%9%H$G$9!#(B
+これは Gnus のよく尋ねられる質問のリストです。
 
-Gnus $B$O(B Emacs $B$NMWAG$H$7$F<BAu$5$l$?(B Usenet $B%K%e!<%9%j!<%@!<$*$h$SEE;R%a!<(B
-$B%k$N%f!<%6!<%(!<%8%'%s%H$G$9!#$=$l$O$[$\$3$N==G/4V2?$i$+$N7A$GB8:_$7$F$*(B
-$B$j!"$=$N4|4V$NB?$/$K$*$$$F(B Emacs $B$NI8=`MWAG$H$7$FG[I[$5$l$F$-$^$7$?!#(B
-Gnus 5 $B$O:G?7$N(B ($B$=$7$F:G$b0NBg$J(B) $B:nIJ$G$9!#%*%j%8%J%k$NHG$O(B GNUS $B$H8@(B
-$B$$!"G_ED@/?.$5$s$,=q$-$^$7$?!#(B1994$BG/$N=)$,G&$S4s$k:"!"B`6~$7$F$$$?%i%k%9!&(B
-$B%^%C%0%L!&%$%s%0%V%j%0%C%H%9%s(B (Lars Magne Ingebrigtsen) $B$O(B Gnus $B$r=q$-(B
-$BD>$=$&$H7h?4$7$^$7$?!#(B
+Gnus は Emacs の要素として実装された Usenet ニュースリーダーおよび電子メー
+ルのユーザーエージェントです。それはほぼこの十年間何らかの形で存在してお
+り、その期間の多くにおいて Emacs の標準要素として配布されてきました。
+Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの版は GNUS と言
+い、梅田政信さんが書きました。1994年の秋が忍び寄る頃、退屈していたラルス・
+マッグヌ・イングブリグットスン (Lars Magne Ingebrigtsen) は Gnus を書き
+直そうと決心しました。
 
-$B$=$N:GBg$N6/$_$O!"6K$a$F%+%9%?%^%$%:$KE,$7$F$$$k$H$$$&;v<B$K$"$j$^$9!#$3(B
-$B$N$3$H$r;O$a$FL\$K$9$k$H0z$$$F$7$^$&$+$b$7$l$^$;$s$,!"$=$l$rMxMQ$9$k=`Hw(B
-$B$,$G$-$k$^$G$O!"J#;($J$b$N$N$[$H$s$I$OL5;k$9$k$3$H$,$G$-$^$9!#$=$3$=$3$N(B
-$BNL$N(B ($B$$$m$s$J%a!<%j%s%0%j%9%H$KG[?.$5$l$k(B) $BEE;R%a!<%k$,$d$C$FMh$k$N$J$i(B
-$B$P!"N.DLNL$,B?$$%a!<%j%s%0%j%9%H$rFI$_$?$$$1$l$I$bCY$l$:$K$D$$$F$$$/$3$H(B
-$B$,$G$-$J$$$N$J$i$P!"N.DLNL$,B?$$%K%e!<%9%0%k!<%W$rFI$s$G$$$k$N$J$i$P!"$"(B
-$B$k$$$OC1$KB`6~$7$F$$$k$N$J$i$P!"(BGnus $B$O$"$J$?$,K>$`$b$N$G$9!#(B
+その最大の強みは、極めてカスタマイズに適しているという事実にあります。こ
+のことを始めて目にすると引いてしまうかもしれませんが、それを利用する準備
+ができるまでは、複雑なもののほとんどは無視することができます。そこそこの
+量の (いろんなメーリングリストに配信される) 電子メールがやって来るのなら
+ば、流通量が多いメーリングリストを読みたいけれども遅れずについていくこと
+ができないのならば、流通量が多いニュースグループを読んでいるのならば、あ
+るいは単に退屈しているのならば、Gnus はあなたが望むものです。
 
-$B$3$N(B FAQ $B$O(B 2002$BG/(B3$B7n$^$G(B Justin Sheehy $B$K$h$C$F0];}$5$l$F$$$^$7$?!#H`$O!"(B
-$B$=$l0JA0$K$9$P$i$7$$;E;v$r$7$F$/$l$?(B Steve Baur $B$H(B Per Abrahamsen $B$K46<U(B
-$B$rI=L@$7$F$$$^$9!#;d$?$A$bF1$8$3$H$r$7$^$7$g$&(B: $B$"$j$,$H$&(B Justin!
+この FAQ は 2002年3月まで Justin Sheehy によって維持されていました。彼は、
+それ以前にすばらしい仕事をしてくれた Steve Baur と Per Abrahamsen に感謝
+を表明しています。私たちも同じことをしましょう: ありがとう Justin!
 
-$B$3$NHG$O!"%f%H%l%R%HBg3X!"%*%C%/%9%U%)!<%I!"(BSmart Pages$B!"%*%O%$%*=#N)Bg(B
-$B3X$KJ]B8$5$l$F$$$kHs8x<0$J%O%$%Q!<%F%-%9%HHG$dB>$N(B FAQ $B$N%"!<%+%$%V$KHf(B
-$B$Y$F!"$O$k$+$KNI$$$b$N$G$9!#JL$N%U%)!<%^%C%H$G$=$l$r<j$KF~$l$k$?$a$N>pJs(B
-$B$,M_$7$$$J$i!"0J2<$K$"$k<ALd=8$r8+$F$/$@$5$$!#(B
+この版は、ユトレヒト大学、オックスフォード、Smart Pages、オハイオ州立大
+学に保存されている非公式なハイパーテキスト版や他の FAQ のアーカイブに比
+べて、はるかに良いものです。別のフォーマットでそれを手に入れるための情報
+が欲しいなら、以下にある質問集を見てください。
 
-$B$3$3$K$"$k>pJs$O!"(BGnus $B3+H/%a!<%j%s%0%j%9%H$N1g=u$G%3%s%Q%$%k$5$l$^$7$?!#(B
-$B$I$s$J%(%i!<$"$k$$$O%_%9%W%j%s%H$b(B Gnus $B%A!<%`$,HH$7$?8m$j$G$9!#$9$_$^$;(B
-$B$s!#(B
+ここにある情報は、Gnus 開発メーリングリストの援助でコンパイルされました。
+どんなエラーあるいはミスプリントも Gnus チームが犯した誤りです。すみませ
+ん。
 
-$BLuCm(B: $B$=$7$F$I$s$J8mLu$N@UG$$b(B gnus-doc-ja $B%A!<%`$K$"$j$^$9!#(B
+訳注: そしてどんな誤訳の責任も gnus-doc-ja チームにあります。
 
 @node FAQ 1 - Installation FAQ
-@subsection $B%$%s%9%H!<%k$K4X$9$k(B FAQ
+@subsection インストールに関する FAQ
 
 @menu
-* FAQ 1-1::    Gnus $B$N:G?7HG$O2?$G$9$+(B?
-* FAQ 1-2::    5.10 $B$G$O2?$,?7$7$$$G$9$+(B?
-* FAQ 1-3::    Gnus $B$O$I$3$G!"$I$&$d$C$F<hF@$9$k$3$H$,$G$-$^$9$+(B?
-* FAQ 1-4::    tarball $B$G2?$r$9$l$PNI$$$G$9$+(B?
-* FAQ 1-5::    $B$H$-$I$-L\$K$9$k(B No Gnus $B$H(B Oort Gnus $B$C$F2?$G$9$+(B?
-* FAQ 1-6::    Emacs $B$N$I$NHG$,I,MW$G$9$+(B?
-* FAQ 1-7::    Gnus $B$r(B Emacs $B$H(B XEmacs $B$NN>J}$GAv$i$;$k$K$O(B?
+* FAQ 1-1::    Gnus の最新版は何ですか?
+* FAQ 1-2::    5.10 では何が新しいですか?
+* FAQ 1-3::    Gnus はどこで、どうやって取得することができますか?
+* FAQ 1-4::    tarball で何をすれば良いですか?
+* FAQ 1-5::    ときどき目にする No Gnus と Oort Gnus って何ですか?
+* FAQ 1-6::    Emacs のどの版が必要ですか?
+* FAQ 1-7::    Gnus を Emacs と XEmacs の両方で走らせるには?
 @end menu
 
 @node FAQ 1-1
-@subsubheading $B<ALd(B 1.1
+@subsubheading 質問 1.1
 
-Gnus $B$N:G?7HG$O2?$G$9$+(B?
+Gnus の最新版は何ですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B%8%c!<%s(B: Gnus 5.10 $B$,%j%j!<%9$5$l$^$7$?!#G.$$$&$A$K>$$7>e$,$l(B!@*
-$B%P!<%8%g%sHV9f$NJb$_$,$$$5$5$+>.$5$$$N$KH?$7$F!"(BGnus 5.10 $B$K$O8+F($;$J$$(B
-$B2?%H%s$b$N?7$7$$5!G=$,$"$j$^$9!#8=:_$N%j%j!<%9(B (5.13) $B$O!">/$J$/$H(B
-$B$b(B 5.8 $B7O$N%j%j!<%9$N:G?7HG$HF1$8$/$i$$0BDj$J$O$:$G$9!#(B
+ジャーン: Gnus 5.10 がリリースされました。熱いうちに召し上がれ!@*
+バージョン番号の歩みがいささか小さいのに反して、Gnus 5.10 には見逃せない
+何トンもの新しい機能があります。現在のリリース (5.13) は、少なくと
+も 5.8 系のリリースの最新版と同じくらい安定なはずです。
 
 @node FAQ 1-2
-@subsubheading $B<ALd(B 1.2
+@subsubheading 質問 1.2
 
-5.10 $B$G$O2?$,?7$7$$$G$9$+(B?
+5.10 では何が新しいですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BBh0l$K(B Gnus tarball $B$N@hF,$N%G%#%l%/%H%j!<$K$"$k(B GNUS-NEWS $B%U%!%$%k$KL\(B
-$B$rDL$9$Y$-$G$9!#$=$3$G$O:G$b=EMW$JJQ99$,MeNs$5$l$F$$$^$9!#$3$3$G$OFC$K=E(B
-$BMW(B/$B6=L#?<$$$b$N$NC;$$%j%9%H$r5s$2$k$KN1$a$^$9(B:
+第一に Gnus tarball の先頭のディレクトリーにある GNUS-NEWS ファイルに目
+を通すべきです。そこでは最も重要な変更が羅列されています。ここでは特に重
+要/興味深いものの短いリストを挙げるに留めます:
 
 @itemize @bullet
 @item
-Gnus $B%(!<%8%'%s%H$NBgI}$J=q$-D>$7!#%G%#%U%)%k%H$GM-8z$K$J$C$F$$$^$9!#(B
+Gnus エージェントの大幅な書き直し。ディフォルトで有効になっています。
 
 @item
-$B8+6l$7$/7A@.$5$l$?5-;v$r@vBu$9$k$?$a$NB?$/$N5!G=!#(B
+見苦しく形成された記事を洗濯するための多くの機能。
 
 @item
-Spam $B=|$15!G=!#(B
+Spam 除け機能。
 
 @item
-Message-utils $B$,(B Gnus $B$K4^$^$l$^$7$?!#(B@*
-($BLuCm(B: Holger Schauer $B$5$s$,=q$$$?(B message-utils.el $B$N=t5!G=(B
-$B$,(B message.el $B$K0\F~$5$l$^$7$?!#(B)
+Message-utils が Gnus に含まれました。@*
+(訳注: Holger Schauer さんが書いた message-utils.el の諸機能
+が message.el に移入されました。)
 
 @item
-$B35N,9T$N$?$a$N?7$7$$=qK!;EMM!#Nc$($P(B %B $B$OJ#;($J(B trn $BMM<0$N%9%l%C%I(B
-$BLZ(B (tree) $B$r;XDj$9$k=qK!;EMM$G$9!#(B
+概略行のための新しい書法仕様。例えば %B は複雑な trn 様式のスレッド
+木 (tree) を指定する書法仕様です。
 @end itemize
 
 @node FAQ 1-3
-@subsubheading $B<ALd(B 1.3
+@subsubheading 質問 1.3
 
-Gnus $B$O$I$3$G!"$I$&$d$C$F<hF@$9$k$3$H$,$G$-$^$9$+(B?
+Gnus はどこで、どうやって取得することができますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$O(B Emacs $B$d(B XEmacs $B$N%j%j!<%9$H$OJL$K!"FH<+$K%j%j!<%9$5$l$^$9!#$=$N(B
-$B$?$a(B Emacs $B$KF1:-$5$l$F$$$kHG$d(B XEmacs $B%Q%C%1!<%8$K$"$kHG$O!":G?7$G$O$J(B
-$B$$$+$b$7$l$^$;$s(B ($BNc$($P(B Emacs 21 $B$KF1:-$5$l$F$$$k(B Gnus 5.9 $B$O!";HMQ4|8B(B
-$B$,@Z$l$F$$$^$9(B)$B!#(B
+Gnus は Emacs や XEmacs のリリースとは別に、独自にリリースされます。その
+ため Emacs に同梱されている版や XEmacs パッケージにある版は、最新ではな
+いかもしれません (例えば Emacs 21 に同梱されている Gnus 5.9 は、使用期限
+が切れています)。
 @c
-$B%j%j!<%9$5$l$?:G?7HG(B
-$B$N(B Gnus $B$O!"(B@uref{http://www.gnus.org/dist/gnus.tar.gz} $B$+$i!"$^$?$OF?(B
-$BL>(B ftp $B$G(B @uref{ftp://ftp.gnus.org/pub/gnus/gnus.tar.gz} $B$+$i<j$KF~$l$k(B
-$B$3$H$,$G$-$^$9!#(B
+リリースされた最新版
+の Gnus は、@uref{http://www.gnus.org/dist/gnus.tar.gz} から、または匿
+名 ftp で @uref{ftp://ftp.gnus.org/pub/gnus/gnus.tar.gz} から手に入れる
+ことができます。
 
 @node FAQ 1-4
-@subsubheading $B<ALd(B 1.4
+@subsubheading 質問 1.4
 
-tarball $B$G2?$r$9$l$PNI$$$G$9$+(B?
+tarball で何をすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@samp{tar xvzf gnus.tar.gz} $B$G%"!<%+%$%V$rE83+$7$F!"$"$j$U$l$?(B@*
-@samp{./configure; make; make install} $B$N<j=g$r<B9T$7$F$/$@$5$$!#(B
+@samp{tar xvzf gnus.tar.gz} でアーカイブを展開して、ありふれた@*
+@samp{./configure; make; make install} の手順を実行してください。
 
 @quotation
-MS-Windows $B$G$O(B @uref{http://www.cygwin.com} $B$+$i(B Cygwin $B$N4D6-$b<hF@$7(B
-$B$F$/$@$5$$!#$=$l$K$h$C$F>e=R$N$3$H$r9T$J$&$3$H!"$^$?$O$"$k:-Jq(B
-$B4o(B (packer) ($BNc$($P(B @uref{http://www.winace.com} $B$K$"(B
-$B$k(B Winace) $B$G(B tarball $B$r3+:-$9$k$3$H!"$=$7$F(B tarball $B$K4^$^$l$F$$(B
-$B$k(B Gnus $B$r%$%s%9%H!<%k$9$k$?$a$N%P%C%A%U%!%$%k(B @file{make.bat} $B$r;H$&$3(B
-$B$H$,$G$-$k$h$&$K$J$j$^$9!#(B
+MS-Windows では @uref{http://www.cygwin.com} から Cygwin の環境も取得し
+てください。それによって上述のことを行なうこと、またはある梱包
+器 (packer) (例えば @uref{http://www.winace.com} にあ
+る Winace) で tarball を開梱すること、そして tarball に含まれてい
+る Gnus をインストールするためのバッチファイル @file{make.bat} を使うこ
+とができるようになります。
 @end quotation
 
-Gnus $B$r%7%9%F%`NN0h$K%$%s%9%H!<%k$7$?$/$J$$(B ($B$^$?$O$=$N8"8B$,M?$($i$l$F(B
-$B$$$J$$(B) $B$J$i$P!"%[!<%`%G%#%l%/%H%j!<$K%$%s%9%H!<%k$9$k$3$H$b$G$-$^$9!#$=(B
-$B$N>l9g$O(B @file{~/.xemacs/init.el} $B%U%!%$%k$+(B @file{~/.emacs} $B%U%!%$%k$K(B
-$B0J2<$N9T$r2C$($F$/$@$5$$!#(B
+Gnus をシステム領域にインストールしたくない (またはその権限が与えられて
+いない) ならば、ホームディレクトリーにインストールすることもできます。そ
+の場合は @file{~/.xemacs/init.el} ファイルか @file{~/.emacs} ファイルに
+以下の行を加えてください。
 
 @lisp
 (add-to-list 'load-path "/path/to/gnus/lisp")
@@ -187,197 +187,197 @@ Gnus $B$r%7%9%F%`NN0h$K%$%s%9%H!<%k$7$?$/$J$$(B ($B$^$?$O$=$N8"8B$,M?$($i$l$F
 @end lisp
 
 @noindent
-$B$3$N9T$h$jA0$K!"$I$s$J(B Gnus $B$K4X78$9$k$b$N$b3N<B$KL5$$$h$&$K$7$F$/$@$5$$!#(B
-MS Windows $B$G$O(B "C:/path/to/lisp" $B$N$h$&$K=q$$$F$/$@$5$$(B ($B$=$&!"(B"/" $B$G$9(B)$B!#(B
+この行より前に、どんな Gnus に関係するものも確実に無いようにしてください。
+MS Windows では "C:/path/to/lisp" のように書いてください (そう、"/" です)。
 
 @node FAQ 1-5
-@subsubheading $B<ALd(B 1.5
+@subsubheading 質問 1.5
 
-$B$H$-$I$-L\$K$9$k(B No Gnus $B$H(B Oort Gnus $B$C$F2?$G$9$+(B?
+ときどき目にする No Gnus と Oort Gnus って何ですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Oort Gnus $B$O(B Gnus $B$N3+H/HG$NL>A0$G!"(B2003$BG/$N=)$K(B Gnus 5.10 $B$K$J$j$^$7$?!#(B
-No Gnus $B$O8=9T$N3+H/HG$NL>A0$G!"(BGnus 5.12 $B$+(B Gnus 6 $B$K$J$k$G$7$g$&!#(B($B$J(B
-$B$<(B 5.11 $B$G$O$J$$$N$+$,IT;W5D$G$9$+(B?  $B4q?t$N%P!<%8%g%sHV9f$ODL>o(B Emacs $B$K(B
-$BF1:-$5$l$k(B Gnus $B$NHG$K;H$o$l$k$N$G$9!#(B)
+Oort Gnus は Gnus の開発版の名前で、2003年の秋に Gnus 5.10 になりました。
+No Gnus は現行の開発版の名前で、Gnus 5.12 か Gnus 6 になるでしょう。(な
+ぜ 5.11 ではないのかが不思議ですか?  奇数のバージョン番号は通常 Emacs に
+同梱される Gnus の版に使われるのです。)
 
 @node FAQ 1-6
-@subsubheading $B<ALd(B 1.6
+@subsubheading 質問 1.6
 
-Emacs $B$N$I$NHG$,I,MW$G$9$+(B?
+Emacs のどの版が必要ですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus 5.13 $B$O(B Emacs 23.1 $B0J>e!"$^$?$O(B XEmacs 21.1 $B0J>e$rI,MW$H$7$^$9!#$7(B
-$B$+$7!"$$$/$D$+$N5!G=$O(B Emacs 24 $B$G$7$+F0:n$7$^$;$s!#(B
+Gnus 5.13 は Emacs 23.1 以上、または XEmacs 21.1 以上を必要とします。し
+かし、いくつかの機能は Emacs 24 でしか動作しません。
 
 @node FAQ 1-7
-@subsubheading $B<ALd(B 1.7
+@subsubheading 質問 1.7
 
-Gnus $B$r(B Emacs $B$H(B XEmacs $B$NN>J}$GAv$i$;$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+Gnus を Emacs と XEmacs の両方で走らせるには、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B%P%$%H%3%s%Q%$%k$5$l$?(B Gnus $B$NF1$8%3%T!<$rN><T$G;H$&$3$H$O$G$-$^$;$s!#(B
-Emacs $B$G$O(B Emacs $B$G%3%s%Q%$%k$7$?$b$N$r!"(BXEmacs $B$G$O(B XEmacs $B$G%3%s%Q%$%k(B
-$B$7$?$b$N$r;H$C$F$/$@$5$$!#(B
+バイトコンパイルされた Gnus の同じコピーを両者で使うことはできません。
+Emacs では Emacs でコンパイルしたものを、XEmacs では XEmacs でコンパイル
+したものを使ってください。
 
 @node FAQ 2 - Startup / Group buffer
-@subsection $B5/F0(B / $B%0%k!<%W%P%C%U%!!<(B
+@subsection 起動 / グループバッファー
 
 @menu
-* FAQ 2-1:: $B!!$$$D$b(B Gnus $B$r5/F0$9$k$H(B
+* FAQ 2-1:: 　いつも Gnus を起動すると
               "Gnus auto-save file exists. Do you want to read it?"
-              $B$H$$$&%a%C%;!<%8$r<u$1<h$k$N$G$9$,!"$3$l$O2?$r0UL#$7(B
-              $B$F$$$k$N$G$9$+(B?  $B$^$?!"$I$&$d$C$?$i2sHr$G$-$^$9$+(B?
+              というメッセージを受け取るのですが、これは何を意味し
+              ているのですか?  また、どうやったら回避できますか?
 
-* FAQ 2-2:: $B!!(BGnus $B$O;d$,$I$N%0%k!<%W$r9VFI$9$k$+$r3P$($F$/$l$^$;(B
-              $B$s!#$I$&$7$F$G$9$+(B?
+* FAQ 2-2:: 　Gnus は私がどのグループを講読するかを覚えてくれませ
+              ん。どうしてですか?
 
-* FAQ 2-3:: $B!!%0%k!<%W%P%C%U%!!<$N3F9T$N7A<0$rJQ99$9$k$K$O!"$I$&(B
-              $B$7$?$iNI$$$G$9$+(B?
+* FAQ 2-3:: 　グループバッファーの各行の形式を変更するには、どう
+              したら良いですか?
 
-* FAQ 2-4:: $B!!;d$N%0%k!<%W%P%C%U%!!<$O$A$g$C$H:.$s$G$$$k$N$G$9$,!"(B
-              $B$=$l$i$r3Z$K=d2s$G$-$k$h$&$K!"%+%F%4%j!<$4$H$K$^$H$^(B
-              $B$k$h$&$KJB$YJQ$($kJ}K!$O$"$j$^$9$+(B?
+* FAQ 2-4:: 　私のグループバッファーはちょっと混んでいるのですが、
+              それらを楽に巡回できるように、カテゴリーごとにまとま
+              るように並べ変える方法はありますか?
 
-* FAQ 2-5:: $B!!%0%k!<%W%P%C%U%!!<$r<j$GJB$YJQ$($k$K$O$I$&$7$?$iNI$$(B
-              $B$G$9$+(B? $B%H%T%C%/Fb$N%0%k!<%W$rJB$YJQ$($k$K$O$I$&$7$?(B
-              $B$iNI$$$G$9$+(B?
+* FAQ 2-5:: 　グループバッファーを手で並べ変えるにはどうしたら良い
+              ですか? トピック内のグループを並べ変えるにはどうした
+              ら良いですか?
 @end menu
 
 @node FAQ 2-1
-@subsubheading $B<ALd(B 2.1
+@subsubheading 質問 2.1
 
-$B$$$D$b(B Gnus $B$r5/F0$9$k$H(B "Gnus auto-save file exists. Do you want to
-read it?" $B$H$$$&%a%C%;!<%8$r<u$1<h$k$N$G$9$,!"$3$l$O2?$r0UL#$7$F$$$k$N$G(B
-$B$9$+(B?  $B$^$?!"$I$&$d$C$?$i2sHr$G$-$^$9$+(B?
+いつも Gnus を起動すると "Gnus auto-save file exists. Do you want to
+read it?" というメッセージを受け取るのですが、これは何を意味しているので
+すか?  また、どうやったら回避できますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$3$N%a%C%;!<%8$,0UL#$9$k$N$O!":G8e$K(B Gnus $B$r;H$C$?$H$-$KE,@Z$K=*N;$5$;$J(B
-$B$+$C$?$?$a$K!"%G%#%9%/$K$=$N>pJs(B ($BNc$($P$I$N%a%C%;!<%8$rFI$s$@$+$N(B) $B$r=q(B
-$B$-9~$`$3$H$,$G$-$J$+$C$?$N$G!":#!"$=$l$i$N>pJs$r<+F0J]B8(B (auto-save) $B%U%!(B
-$B%$%k$+$iI|3h$5$;$k$+$I$&$+$r?R$M$i$l$F$$$k$H$$$&$3$H$G$9!#(B
+このメッセージが意味するのは、最後に Gnus を使ったときに適切に終了させな
+かったために、ディスクにその情報 (例えばどのメッセージを読んだかの) を書
+き込むことができなかったので、今、それらの情報を自動保存 (auto-save) ファ
+イルから復活させるかどうかを尋ねられているということです。
 
-$B$3$N%a%C%;!<%8$,H/$;$i$l$k$N$r2sHr$9$k$K$O!"(BGnus $B$r=*N;$5$;$k$H$-$KC1(B
-$B$K(B Emacs $B$r(B kill $B$9$k$N$G$O$J$/!"%0%k!<%W%P%C%U%!!<$G(B @kbd{q} $B$r;H$&$h$&(B
-$B$K$7$F$/$@$5$$!#(B
+このメッセージが発せられるのを回避するには、Gnus を終了させるときに単
+に Emacs を kill するのではなく、グループバッファーで @kbd{q} を使うよう
+にしてください。
 
 @node FAQ 2-2
-@subsubheading $B<ALd(B 2.2
+@subsubheading 質問 2.2
 
-Gnus $B$O;d$,$I$N%0%k!<%W$r9VFI$9$k$+$r3P$($F$/$l$^$;$s!#$I$&$7$F$G$9$+(B?
+Gnus は私がどのグループを講読するかを覚えてくれません。どうしてですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$r5/F0$7$?$H$-$K!">e5-$N<ALd$H2sEz(B (@pxref{FAQ 2-1}) $B$G=R$Y$i$l$F$$(B
-$B$k%a%C%;!<%8$r<u$1<h$j$^$;$s$G$7$?$+(B?  $B$3$l$OF1$8LdBj$NJL$N>I>u$J$N$G!"(B
-$B>e5-$N2sEz$rFI$s$G$/$@$5$$!#(B
+Gnus を起動したときに、上記の質問と回答 (@pxref{FAQ 2-1}) で述べられてい
+るメッセージを受け取りませんでしたか?  これは同じ問題の別の症状なので、
+上記の回答を読んでください。
 
 @node FAQ 2-3
-@subsubheading $B<ALd(B 2.3
+@subsubheading 質問 2.3
 
-$B%0%k!<%W%P%C%U%!!<$N3F9T$N7A<0$rJQ99$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+グループバッファーの各行の形式を変更するには、どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BJQ?t(B @code{gnus-group-line-format} $B$NCM$rD4@0$7$J$1$l$P$J$j$^$;$s!#$=$N(B
-$B$d$jJ}$K$D$$$F$O%^%K%e%"(B
-$B%k(B (@pxref{Group Line Specification, ,$B%0%k!<%W9T$N;EMM(B, gnus-ja, The
-Gnus Manual}) $B$r8+$F$/$@$5$$!#$3$N$?$a$NNc$G$9(B ($B<ALd<T(B
-$B$N(B @file{~/.gnus.el} $B%U%!%$%k$+$i$N?dB,$G$9(B :-):
+変数 @code{gnus-group-line-format} の値を調整しなければなりません。その
+やり方についてはマニュア
+ル (@pxref{Group Line Specification, ,グループ行の仕様, gnus-ja, The
+Gnus Manual}) を見てください。このための例です (質問者
+の @file{~/.gnus.el} ファイルからの推測です :-):
 
 @lisp
 (setq gnus-group-line-format "%P%M%S[%5t]%5y : %(%g%)\n")
 @end lisp
 
 @node FAQ 2-4
-@subsubheading $B<ALd(B 2.4
+@subsubheading 質問 2.4
 
-$B;d$N%0%k!<%W%P%C%U%!!<$O$A$g$C$H:.$s$G$$$k$N$G$9$,!"$=$l$i$r3Z$K=d2s$G$-(B
-$B$k$h$&$K!"%+%F%4%j!<$4$H$K$^$H$^$k$h$&$KJB$YJQ$($kJ}K!$O$"$j$^$9$+(B?
+私のグループバッファーはちょっと混んでいるのですが、それらを楽に巡回でき
+るように、カテゴリーごとにまとまるように並べ変える方法はありますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$O%H%T%C%/%b!<%I$rDs6!$7$^$9!#$=$l$K$h$C$F%0%k!<%W$r$=$NCf$XF~$l$F(B
-$BJB$YJQ$($k$3$H$,$G$-$k$h$&$K$J$j$^$9!#$(!<$H%H%T%C%/$r;H$&$H$$$&$N$O!"Nc(B
-$B$($P(B Linux $B$r07$&$9$Y$F$N%0%k!<%W$O(B linux $B$H$$$&%H%T%C%/$K<}$a!"2;3Z$r07(B
-$B$&$9$Y$F$O(B music $B$H$$$&%H%T%C%/$K<}$a!"%9%3%C%H%i%s%I2;3Z$r07$&$9$Y$F(B
-$B$O(B scottish $B$H$$$&(B music $B$N%5%V%H%T%C%/$K<}$a$k!"$H$$$C$?$3$H$G$9!#(B
+Gnus はトピックモードを提供します。それによってグループをその中へ入れて
+並べ変えることができるようになります。えーとトピックを使うというのは、例
+えば Linux を扱うすべてのグループは linux というトピックに収め、音楽を扱
+うすべては music というトピックに収め、スコットランド音楽を扱うすべて
+は scottish という music のサブトピックに収める、といったことです。
 
-$B%H%T%C%/%b!<%I$KF~$k$K$O!"%0%k!<%W%P%C%U%!!<$GC1$K(B @kbd{t} $B$rC!$$$F$/$@(B
-$B$5$$!#$9$k$H(B @kbd{T n} $B$r;H$C$F8=:_0LCV$G%H%T%C%/$r:n$C$?$j!"$"$k%0%k!<(B
-$B%W$r(B @kbd{T m} $B$r;H$C$F;XDj$7$?%H%T%C%/$K0\$9$3$H$,$G$-$^$9!#$5$i$J$k%3(B
-$B%^%s%I$K$D$$$F$O%^%K%e%"%k$+%a%K%e!<$r8+$F$/$@$5$$!#%0%k!<%W9T$r$h$jNI$/(B
-$B9T2<$2(B (indent) $B$5$;$k$?$a$K$O!"(B@code{gnus-group-line-format} $BJQ?t$N@hF,(B
-$B$K(B @code{%P} $B=qK!;EMM$r4^$^$;$kI,MW$,$"$k$G$7$g$&!#(B
+トピックモードに入るには、グループバッファーで単に @kbd{t} を叩いてくだ
+さい。すると @kbd{T n} を使って現在位置でトピックを作ったり、あるグルー
+プを @kbd{T m} を使って指定したトピックに移すことができます。さらなるコ
+マンドについてはマニュアルかメニューを見てください。グループ行をより良く
+行下げ (indent) させるためには、@code{gnus-group-line-format} 変数の先頭
+に @code{%P} 書法仕様を含ませる必要があるでしょう。
 
 @node FAQ 2-5
-@subsubheading $B<ALd(B 2.5
+@subsubheading 質問 2.5
 
-$B%0%k!<%W%P%C%U%!!<$r<j$GJB$YJQ$($k$K$O$I$&$7$?$iNI$$$G$9$+(B? $B%H%T%C%/Fb$N(B
-$B%0%k!<%W$rJB$YJQ$($k$K$O$I$&$7$?$iNI$$$G$9$+(B?
+グループバッファーを手で並べ変えるにはどうしたら良いですか? トピック内の
+グループを並べ変えるにはどうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B0\F0$5$;$?$$%0%k!<%W$N>e$K%]%$%s%H$r0\F0$7$F(B @kbd{C-k} $B$rC!$-!"<!$K$=$N(B
-$B%0%k!<%W$r0\F0$5$;$kL\E*$N>l=j$K%]%$%s%H$r0\F0$7$F(B @kbd{C-y} $B$rC!$$$F$/(B
-$B$@$5$$!#(B
+移動させたいグループの上にポイントを移動して @kbd{C-k} を叩き、次にその
+グループを移動させる目的の場所にポイントを移動して @kbd{C-y} を叩いてく
+ださい。
 
 @node FAQ 3 - Getting Messages
-@subsection $B%a%C%;!<%8$N<hF@(B
+@subsection メッセージの取得
 
 @menu
-* FAQ 3-1::  $B!!:#$^$5$K(B Gnus $B$r%$%s%9%H!<%k$7$F(B `M-x gnus' $B$G5/F0(B
-               $B$7$?$N$G$9$,!"(B"nntp (news) open error" $B$H$7$+8@$C$F(B
-               $B$/$l$^$;$s!#$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 3-1::  　今まさに Gnus をインストールして `M-x gnus' で起動
+               したのですが、"nntp (news) open error" としか言って
+               くれません。どうしたら良いですか?
 
-* FAQ 3-2::  $B!!(BWindows $B$r;H$C$F$$$k$N$G$9$,(B `~/.gnus.el' $B$N0UL#$,(B
-               $B$o$+$j$^$;$s!#(B
+* FAQ 3-2::  　Windows を使っているのですが `~/.gnus.el' の意味が
+               わかりません。
 
-* FAQ 3-3::  $B!!%K%e!<%9%5!<%P!<$,G'>Z$rMW5a$7$^$9!#%G%#%9%/$K%f!<(B
-               $B%6L>$H%Q%9%o!<%I$rJ]B8$7$F$*$/$K$O!"$I$&$9$l$PNI$$(B
-               $B$G$9$+(B?
+* FAQ 3-3::  　ニュースサーバーが認証を要求します。ディスクにユー
+               ザ名とパスワードを保存しておくには、どうすれば良い
+               ですか?
 
-* FAQ 3-4::  $B!!(BGnus $B$O$&$^$/5/F0$7$?$h$&$J$N$G$9$,!"%0%k!<%W$r9VFI(B
-               $B$9$kJ}K!$,8+$D$1$i$l$^$;$s!#(B
+* FAQ 3-4::  　Gnus はうまく起動したようなのですが、グループを講読
+               する方法が見つけられません。
 
-* FAQ 3-5::  $B!!(BGnus $B$,$9$Y$F$N%0%k!<%W$rI=<($7$F$/$l$^$;$s(B / $B$3$N(B
-               $B%5!<%P!<$X$NEj9F$,5v2D$5$l$^$;$s!#$I$&$7$F$G$9$+(B?
+* FAQ 3-5::  　Gnus がすべてのグループを表示してくれません / この
+               サーバーへの投稿が許可されません。どうしてですか?
 
-* FAQ 3-6::  $B!!J#?t$N%5!<%P!<$+$i%K%e!<%9$r<h$j9~$_$?$$$N$G$9$,!"(B
-               $B$=$l$O2DG=$G$9$+(B?
+* FAQ 3-6::  　複数のサーバーからニュースを取り込みたいのですが、
+               それは可能ですか?
 
-* FAQ 3-7::  $B!!$=$l$+$i!"%m!<%+%k!&%9%W!<%k!&%U%!%$%k$+$i%K%e!<%9(B
-               $B$r<h$j9~$`$3$H$O2DG=$G$9$+(B?
+* FAQ 3-7::  　それから、ローカル・スプール・ファイルからニュース
+               を取り込むことは可能ですか?
 
-* FAQ 3-8::  $B!!%K%e!<%9$rFI$`$N$O$&$^$/$$$-$^$7$?$,!"(BGnus $B$G%a!<%k(B
-               $B$bFI$a$k$h$&$K$7$?$$$N$G$9!#$I$&$9$l$PNI$$$G$9$+(B?
+* FAQ 3-8::  　ニュースを読むのはうまくいきましたが、Gnus でメール
+               も読めるようにしたいのです。どうすれば良いですか?
 
-* FAQ 3-9::  $B!!$=$l$+$i!"(BIMAP $B$G%a!<%k$rFI$a$k$h$&$K$9$k$K$O!"$I$&(B
-               $B$9$l$PNI$$$G$9$+(B?
+* FAQ 3-9::  　それから、IMAP でメールを読めるようにするには、どう
+               すれば良いですか?
 
-* FAQ 3-10:: $B!!?&>l$G(B MS Exchange $B%5!<%P!<$N0l$D$r;H$C$F$$$k$N$G$9(B
-               $B$,!"(BGnus $B$r;H$C$F$=$3$+$i%a!<%k$rFI$`$3$H$O$G$-$^$9(B
-               $B$+(B?
+* FAQ 3-10:: 　職場で MS Exchange サーバーの一つを使っているのです
+               が、Gnus を使ってそこからメールを読むことはできます
+               か?
 
-* FAQ 3-11:: $B!!(BPOP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$(B
-               $B$h$&$K(B Gnus $B$K;X<($9$k$3$H$O$G$-$^$9$+(B?
+* FAQ 3-11:: 　POP3 でメールを取得するサーバーで、メールを消さない
+               ように Gnus に指示することはできますか?
 @end menu
 
 @node FAQ 3-1
-@subsubheading $B<ALd(B 3.1
+@subsubheading 質問 3.1
 
-$B:#$^$5$K(B Gnus $B$r%$%s%9%H!<%k$7$F(B @kbd{M-x gnus} $B$G5/F0$7$?$N$G$9$,!"(B
-"nntp (news) open error" $B$H$7$+8@$C$F$/$l$^$;$s!#$I$&$7$?$iNI$$$G$9$+(B?
+今まさに Gnus をインストールして @kbd{M-x gnus} で起動したのですが、
+"nntp (news) open error" としか言ってくれません。どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$I$3$+$i%K%e!<%9$r<hF@$9$Y$-$+$r(B Gnus $B$K65$($F$"$2$J$1$l$P$J$j$^$;$s!#$d(B
-$B$jJ}$K$D$$$F$OJ88%$rFI$s$G$/$@$5$$!#=i$a$F5/F0$9$k$N$G$"$l$P!"<!$N$h$&$J(B
-$B$b$N$r(B @file{~/.gnus.el} $B%U%!%$%k$K=q$-9~$s$G$_$F$/$@$5$$(B:
+どこからニュースを取得すべきかを Gnus に教えてあげなければなりません。や
+り方については文献を読んでください。初めて起動するのであれば、次のような
+ものを @file{~/.gnus.el} ファイルに書き込んでみてください:
 
 @lisp
 (setq gnus-select-method '(nntp "news.yourprovider.net"))
@@ -386,107 +386,107 @@ Gnus $B$O%H%T%C%/%b!<%I$rDs6!$7$^$9!#$=$l$K$h$C$F%0%k!<%W$r$=$NCf$XF~$l$F(B
 @end lisp
 
 @node FAQ 3-2
-@subsubheading $B<ALd(B 3.2
+@subsubheading 質問 3.2
 
-Windows $B$r;H$C$F$$$k$N$G$9$,(B @file{~/.gnus.el} $B$N0UL#$,$o$+$j$^$;$s!#(B
+Windows を使っているのですが @file{~/.gnus.el} の意味がわかりません。
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@file{~/} $B$H$O(B Gnus $B$H(B Emacs $B$,@_Dj%U%!%$%k$rC5$9>l=j$G$"$k%[!<%`%G%#%l(B
-$B%/%H%j!<$N$3$H$G$9!#$G$b!"<B$O$=$N0UL#$rCN$i$J$/$F$b9=$o$J$$$N$G$9!#(B
-Emacs $B$,$o$+$C$F$$$l$P==J,$G$9$+$i!#(B:-)  @kbd{C-x C-f ~/.gnus.el RET} $B$H(B
-$B%?%$%W$9$l$P(B ($B$=$&!"(BWindows $B$G$b%9%i%C%7%e$G$$$$$N$G$9(B) Emacs $B$O@5$7$$%U%!(B
-$B%$%k$r3+$$$F$/$l$k$G$7$g$&(B ($B$=$l$,?75,%U%!%$%k$G$"$k$?$a$KCf?H$,6u$C$]$G(B
-$B$"$k$3$H$O!"$*$*$$$K$"$jF@$k$G$7$g$&(B)$B!#$7$+$7$A$g$C$HBT$C$F$/$@$5$$!#(B
-Emacs $B$,A*$V%G%#%l%/%H%j!<$O!"$-$C$H$"$J$?$N4uK>DL$j$K$O$J$i$J$$$N$G!"@5(B
-$B$7$$$d$jJ}$G$=$l$r9T$J$$$^$7$g$&!#Bh0l$K!"Nc$($P(B c:\myhome $B$N$h$&$JE,Ev(B
-$B$J%G%#%l%/%H%j!<$r(B ($B%G%#%l%/%H%j!<L>$K6uGr$r4^$a$J$$$G(B) $B:n$C$F$/$@$5$$!#(B
-$B$=$7$F!"$3$N%G%#%l%/%H%j!<$r4D6-JQ?t(B HOME $B$K@_Dj$7$^$7$g$&!#$3$l(B
-$B$r(B Windows 9x $B$+(B Me $B$G9T$J$&$K$O!"(B@file{autoexec.bat} $B%U%!%$%k$K0J2<$N9T(B
-$B$rDI2C$7$F!":F5/F0$7$F$/$@$5$$!#(B
+@file{~/} とは Gnus と Emacs が設定ファイルを探す場所であるホームディレ
+クトリーのことです。でも、実はその意味を知らなくても構わないのです。
+Emacs がわかっていれば十分ですから。:-)  @kbd{C-x C-f ~/.gnus.el RET} と
+タイプすれば (そう、Windows でもスラッシュでいいのです) Emacs は正しいファ
+イルを開いてくれるでしょう (それが新規ファイルであるために中身が空っぽで
+あることは、おおいにあり得るでしょう)。しかしちょっと待ってください。
+Emacs が選ぶディレクトリーは、きっとあなたの希望通りにはならないので、正
+しいやり方でそれを行ないましょう。第一に、例えば c:\myhome のような適当
+なディレクトリーを (ディレクトリー名に空白を含めないで) 作ってください。
+そして、このディレクトリーを環境変数 HOME に設定しましょう。これ
+を Windows 9x か Me で行なうには、@file{autoexec.bat} ファイルに以下の行
+を追加して、再起動してください。
 
 @example
 SET HOME=C:\myhome
 @end example
 
 @noindent
-NT, 2000 $B$*$h$S(B XP $B$G$O!"%7%9%F%`!&%*%W%7%g%s$rF~NO$9$k$?$a(B
-$B$K(B @kbd{Winkey + Pause/Break} $B$rC!$$$F(B ($B$b$7$=$l$,;H$($J$+$C$?$i!V%3%s%H(B
-$B%m!<%k%Q%M%k(B -> $B%7%9%F%`(B -> $B>\:Y!W$rC)$C$F(B) $B$/$@$5$$!#$=$3$G4D6-JQ?t$r@_(B
-$BDj$G$-$k$G$7$g$&!#(BHOME $B$H$$$&L>A0$GCM$,(B C:\myhome $B$N$b$N$r:n$C$F$/$@$5$$!#(B
-$B:F5/F0$OITMW$G$9!#(B
+NT, 2000 および XP では、システム・オプションを入力するため
+に @kbd{Winkey + Pause/Break} を叩いて (もしそれが使えなかったら「コント
+ロールパネル -> システム -> 詳細」を辿って) ください。そこで環境変数を設
+定できるでしょう。HOME という名前で値が C:\myhome のものを作ってください。
+再起動は不要です。
 
-$B$G$O!"(BEmacs $B$K(B @kbd{C-x C-f ~/.gnus.el RET C-x C-s} $B$r;X<($7(B
-$B$F!"(B@file{~/.gnus.el} $B%U%!%$%k$r:n$j$^$7$g$&!#(B
+では、Emacs に @kbd{C-x C-f ~/.gnus.el RET C-x C-s} を指示し
+て、@file{~/.gnus.el} ファイルを作りましょう。
 
 @node FAQ 3-3
-@subsubheading $B<ALd(B 3.3
+@subsubheading 質問 3.3
 
-$B%K%e!<%9%5!<%P!<$,G'>Z$rMW5a$7$^$9!#%G%#%9%/$K%f!<%6!<L>$H%Q%9%o!<%I$rJ](B
-$BB8$7$F$*$/$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+ニュースサーバーが認証を要求します。ディスクにユーザー名とパスワードを保
+存しておくには、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B<!$N$h$&$K!"$=$l$>$l$N%5!<%P!<$K4X$9$k9T$r4^$s$@(B @file{~/.authinfo} $B%U%!(B
-$B%$%k$r:n$C$F$/$@$5$$!#(B
+次のように、それぞれのサーバーに関する行を含んだ @file{~/.authinfo} ファ
+イルを作ってください。
 
 @example
 machine news.yourprovider.net login YourUserName password YourPassword
 @end example
 
 @noindent
-OS $B$,BP1~$7$F$$$k$J$i$P!"$=$N%U%!%$%k$rB>?M$,FI$a$J$$$h$&$K$7$F$*$-$^$7$g(B
-$B$&!#(BUnix $B$G$O%7%'%k>e$G<!$N%3%^%s%I$r<B9T$7$F$/$@$5$$!#(B
+OS が対応しているならば、そのファイルを他人が読めないようにしておきましょ
+う。Unix ではシェル上で次のコマンドを実行してください。
 
 @example
 chmod 600 ~/.authinfo
 @end example
 
 @node FAQ 3-4
-@subsubheading $B<ALd(B 3.4
+@subsubheading 質問 3.4
 
-Gnus $B$O$&$^$/5/F0$7$?$h$&$J$N$G$9$,!"%0%k!<%W$r9VFI$9$kJ}K!$,8+$D$1$i$l(B
-$B$^$;$s!#(B
+Gnus はうまく起動したようなのですが、グループを講読する方法が見つけられ
+ません。
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$=$N%0%k!<%W$NL>A0$,$o$+$C$F$$$k$N$J$i!"%0%k!<%W%P%C%U%!!<$G(B @kbd{U
-name.of.group RET} $B$r;H$C$F$/$@$5$$(B ($B%?%VJd40$r;H$(!"%k!<%/(B ($BLuCm(B: $B%*(B
-$B%S(B=$B%o%s!&%1%N!<%S$N@<$G(B))$B!#$"$k$$$O%0%k!<%W%P%C%U%!!<$G(B @kbd{^} $B$r;H$$$^(B
-$B$7$g$&!#$3$l$O$"$J$?$r%5!<%P!<%P%C%U%!!<$XO"$l$F9T$-$^$9!#$=$N>l9g$O!"L\(B
-$BE*$N%0%k!<%W$,$"$k%5!<%P!<$N>e$K%]%$%s%H(B ($B%+!<%=%k(B) $B$rCV$$(B
-$B$F(B @kbd{RET} $B$rC!$-!"FI$_$?$$%0%k!<%W$K%]%$%s%H$r0\F0$7$F$+$i(B @kbd{u} $B$G(B
-$B$=$N%0%k!<%W$r9VFI$7$^$7$g$&!#(B
+そのグループの名前がわかっているのなら、グループバッファーで @kbd{U
+name.of.group RET} を使ってください (タブ補完を使え、ルーク (訳注: オ
+ビ=ワン・ケノービの声で))。あるいはグループバッファーで @kbd{^} を使いま
+しょう。これはあなたをサーバーバッファーへ連れて行きます。その場合は、目
+的のグループがあるサーバーの上にポイント (カーソル) を置い
+て @kbd{RET} を叩き、読みたいグループにポイントを移動してから @kbd{u} で
+そのグループを講読しましょう。
 
 @node FAQ 3-5
-@subsubheading $B<ALd(B 3.5
+@subsubheading 質問 3.5
 
-Gnus $B$,$9$Y$F$N%0%k!<%W$rI=<($7$F$/$l$^$;$s(B / $B$3$N%5!<%P!<$X$NEj9F$,5v2D(B
-$B$5$l$^$;$s!#$I$&$7$F$G$9$+(B?
+Gnus がすべてのグループを表示してくれません / このサーバーへの投稿が許可
+されません。どうしてですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B%W%m%P%$%@!<$N$$$/$D$+$OF?L>$G$N@\B3$r@)8B$7$F$$$F!"G'>Z$7$F$+$i$G$J$$$H(B
-$B40A4$J%"%/%;%9$r5v$7$^$;$s!#(BGnus $B$KG'>Z$N$?$a$N>pJs(B (authinfo) $B$rAw=P$5(B
-$B$;$k$K$O!"(B@file{~/.authinfo} $B%U%!%$%k$N3:Ev$9$k%5!<%P!<$N9T$N:G8e$K(B
+プロバイダーのいくつかは匿名での接続を制限していて、認証してからでないと
+完全なアクセスを許しません。Gnus に認証のための情報 (authinfo) を送出さ
+せるには、@file{~/.authinfo} ファイルの該当するサーバーの行の最後に
 
 @example
 force yes
 @end example
 
 @noindent
-$B$rDI2C$7$F$/$@$5$$!#(B
+を追加してください。
 
 @node FAQ 3-6
-@subsubheading $B<ALd(B 3.6
+@subsubheading 質問 3.6
 
-$BJ#?t$N%5!<%P!<$+$i%K%e!<%9$r<h$j9~$_$?$$$N$G$9$,!"$=$l$O2DG=$G$9$+(B?
+複数のサーバーからニュースを取り込みたいのですが、それは可能ですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$b$A$m$s!#JQ?t(B @code{gnus-secondary-select-methods} $B$K!"$b$C$HB?$/$N5-;v(B
-$B$N6!5k85$r@_Dj$9$k$3$H$,$G$-$^$9!#0J2<$N$h$&$J$b$N(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KDI2C$7$F$/$@$5$$(B:
+もちろん。変数 @code{gnus-secondary-select-methods} に、もっと多くの記事
+の供給元を設定することができます。以下のようなもの
+を @file{~/.gnus.el} ファイルに追加してください:
 
 @lisp
 (add-to-list 'gnus-secondary-select-methods
@@ -496,32 +496,32 @@ force yes
 @end lisp
 
 @node FAQ 3-7
-@subsubheading $B<ALd(B 3.7
+@subsubheading 質問 3.7
 
-$B$=$l$+$i!"%m!<%+%k!&%9%W!<%k!&%U%!%$%k$+$i%K%e!<%9$r<h$j9~$`$3$H$O2DG=$G(B
-$B$9$+(B?
+それから、ローカル・スプール・ファイルからニュースを取り込むことは可能で
+すか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BLdBj$"$j$^$;$s!#$=$l$O(B @code{nnspool} $B$H$$$&$b$&0l$D$NA*BrJ}K!$G$9!#$3$s(B
-$B$J$U$&$K@_Dj$7$F$/$@$5$$(B:
+問題ありません。それは @code{nnspool} というもう一つの選択方法です。こん
+なふうに設定してください:
 
 @lisp
 (add-to-list 'gnus-secondary-select-methods '(nnspool ""))
 @end lisp
 
 @noindent
-$B$"$k$$$O(B @acronym{NNTP} $B$rBh0l%K%e!<%9%=!<%9$H$7$F;H$&I,MW$,L5$$$N$G$"$l(B
-$B$P!"$3$&$7$F$/$@$5$$(B:
+あるいは @acronym{NNTP} を第一ニュースソースとして使う必要が無いのであれ
+ば、こうしてください:
 
 @lisp
 (setq gnus-select-method '(nnspool ""))
 @end lisp
 
 @noindent
-$B$3$l$G(B Gnus $B$O(B @file{/usr/spool/news} $B$K$"$k%9%W!<%k!&%U%!%$%k$rC5$7$^$9!#(B
-$B2?$+0c$&$3$H$r$d$j$?$$$N$J$i$P!">e5-$N9T$r<!$N$h$&$J$b$N$KJQ99$7$F$/$@$5(B
-$B$$(B:
+これで Gnus は @file{/usr/spool/news} にあるスプール・ファイルを探します。
+何か違うことをやりたいのならば、上記の行を次のようなものに変更してくださ
+い:
 
 @lisp
 (add-to-list 'gnus-secondary-select-methods
@@ -530,64 +530,64 @@ force yes
 @end lisp
 
 @noindent
-$B$3$l$O!"$3$N%5!<%P!<$@$1$N$?$a$K!"%9%W!<%k$,B8:_$9$k%G%#%l%/%H%j!<$r@_Dj(B
-$B$7$^$9!#$5$i$K5-;v$rEj9F$9$k$?$a$K;H$&%W%m%0%i%`$J$I$r@_Dj$9$kI,MW$,$"$k(B
-$B$+$b$7$l$^$;$s!#$=$&$$$&>l9g$K$I$&$7$?$iNI$$$+$K$D$$$F$O!"(BGnus $B$N%^%K%e(B
-$B%"%k$r;2>H$7$F$/$@$5$$!#(B
+これは、このサーバーだけのために、スプールが存在するディレクトリーを設定
+します。さらに記事を投稿するために使うプログラムなどを設定する必要がある
+かもしれません。そういう場合にどうしたら良いかについては、Gnus のマニュ
+アルを参照してください。
 
 @node FAQ 3-8
-@subsubheading $B<ALd(B 3.8
+@subsubheading 質問 3.8
 
-$B%K%e!<%9$rFI$`$N$&$^$/$$$-$^$7$?$,!"(BGnus $B$G%a!<%k$bFI$a$k$h$&$K$7$?$$$N(B
-$B$G$9!#$I$&$9$l$PNI$$$G$9$+(B?
+ニュースを読むのうまくいきましたが、Gnus でメールも読めるようにしたいの
+です。どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$=$l$O>/$7$P$+$jFq$7$$$G$9!#;H$&$3$H$,$G$-$k%a!<%k%=!<%9$O$$$C$Q$$$"$k$7!"(B
-$B%a!<%k$r3JG<$9$kJ}K!$O$?$/$5$s$"$k$7!"Aw?.$9$k$?$a$NJ}K!$bMM!9$J$N$G!#:G(B
-$B$b$"$j$U$l$F$$$k$N$O!"<!$NFs$D$N;vNc$N$h$&$J$b$N$G$7$g$&(B:
+それは少しばかり難しいです。使うことができるメールソースはいっぱいあるし、
+メールを格納する方法はたくさんあるし、送信するための方法も様々なので。最
+もありふれているのは、次の二つの事例のようなものでしょう:
 
 @enumerate
 @item
-@acronym{POP3} $B%5!<%P!<$+$i%a!<%k$rFI$_!"(B@acronym{SMTP} $B%5!<%P!<$KD>@\%a!<(B
-$B%k$rAw?.$7$^$9!#(B
+@acronym{POP3} サーバーからメールを読み、@acronym{SMTP} サーバーに直接メー
+ルを送信します。
 
 @item
-fetchmail $B$N$h$&$J%W%m%0%i%`$G%a!<%k$r<h$j9~$s$G!"(BGnus $B$,FI$`$3$H$K$J$C(B
-$B$F$$$k%G%#%l%/%H%j!<$K3JG<$7$^$9!#30$K9T$/%a!<%k$O(B Sendmail, Postfix $B$^(B
-$B$?$OB>$N(B MTA $B$K$h$C$FAw=P$5$l$^$9!#(B
+fetchmail のようなプログラムでメールを取り込んで、Gnus が読むことになっ
+ているディレクトリーに格納します。外に行くメールは Sendmail, Postfix ま
+たは他の MTA によって送出されます。
 @end enumerate
 
-$B$H$-$K$O!"$3$l$i$rJ;MQ$9$kI,MW$5$($"$j$^$9!#(B
+ときには、これらを併用する必要さえあります。
 
-$B$7$+$7:G=i$K9T$J$&$3$H$O!"$I$NJ}K!$G%a!<%k$r3JG<$9$k$+!"(BGnus $B$NMQ8l$G8@(B
-$B$&$H!"$I$N%P%C%/%(%s%I$r;H$&$+$r(B Gnus $B$K;X<($9$k$3$H$G$9!#(BGnus $B$OB?$/$N(B
-$B0[$J$k%P%C%/%(%s%I$r%5%]!<%H$7$^$9$,!":G$b0lHLE*$K;H$o$l$F$$$k$N(B
-$B$O(B @code{nnml} $B$G$9!#$=$l$O0lDL$N%a!<%k$r0l$D$N%U%!%$%k$K3JG<$7!"$=$N$?(B
-$B$a6K$a$F9bB.$G$9!#$G$b!"$"$J$?$,;H$C$F$$$k%U%!%$%k%7%9%F%`$,$?$/$5$s$N>.(B
-$B$5$J%U%!%$%k$r07$&>e$GLdBj$,$"$k$N$J$i$P!"0l$D$N%0%k!<%W$N$9$Y$F$N%a!<%k(B
-$B$r0l$D$N%U%!%$%k$K<}$a$kJ}K!$r;H$&I,MW$,$"$k$+$b$7$l$^$;$s!#$*$=$i$/$=$&(B
-$B$$$&>l9g$NA*Br;h$,(B @code{nnfolder} $B%P%C%/%(%s%I$G$9!#(B
+しかし最初に行なうことは、どの方法でメールを格納するか、Gnus の用語で言
+うと、どのバックエンドを使うかを Gnus に指示することです。Gnus は多くの
+異なるバックエンドをサポートしますが、最も一般的に使われているの
+は @code{nnml} です。それは一通のメールを一つのファイルに格納し、そのた
+め極めて高速です。でも、あなたが使っているファイルシステムがたくさんの小
+さなファイルを扱う上で問題があるのならば、一つのグループのすべてのメール
+を一つのファイルに収める方法を使う必要があるかもしれません。おそらくそう
+いう場合の選択肢が @code{nnfolder} バックエンドです。
 
 @noindent
-@code{nnml} $B$r;H$&$K$O!"0J2<$r(B @file{~/.gnus.el} $B%U%!%$%k$K2C$($F$/$@$5(B
-$B$$(B:
+@code{nnml} を使うには、以下を @file{~/.gnus.el} ファイルに加えてくださ
+い:
 
 @lisp
 (add-to-list 'gnus-secondary-select-methods '(nnml ""))
 @end lisp
 
 @noindent
-@code{nnfolder} $B$r;H$$$?$$$N$J$i$P!"$"$J$?$NA[A|$7$?DL$j!"$3$&$9$l$PNI$$(B
-$B$G$7$g$&(B:
+@code{nnfolder} を使いたいのならば、あなたの想像した通り、こうすれば良い
+でしょう:
 
 @lisp
 (add-to-list 'gnus-secondary-select-methods '(nnfolder ""))
 @end lisp
 
 @noindent
-$B<!$K!"%a!<%k$r$I$3$+$i<hF@$9$k$+$r(B Gnus $B$KEA$($J$1$l$P$J$j$^$;$s!#$=$l(B
-$B$,(B @acronym{POP3} $B%5!<%P!<$G$"$k$N$J$i!"$3$N$h$&$K@_Dj$7$F$/$@$5$$(B:
+次に、メールをどこから取得するかを Gnus に伝えなければなりません。それ
+が @acronym{POP3} サーバーであるのなら、このように設定してください:
 
 @lisp
 (with-eval-after-load "mail-source"
@@ -597,9 +597,9 @@ fetchmail $B$N$h$&$J%W%m%0%i%`$G%a!<%k$r<h$j9~$s$G!"(BGnus $B$,FI$`$3$H$K$J$C
 @end lisp
 
 @noindent
-$B$b$7$=$3$K%Q%9%o!<%I$r=q$$$F$*$/$N$J$i!"B>?M$,(B @file{~/.gnus.el} $B%U%!%$(B
-$B%k$rFI$a$J$$$h$&$K$7$F$*$$$F$/$@$5$$!#%a!<%k$r%m!<%+%k%^%7%s$NEAE}E*$J%9(B
-$B%W!<%k%U%!%$%k$+$iFI$_$?$$>l9g$O!"0J2<$N$h$&$K@_Dj$7$F$/$@$5$$(B:
+もしそこにパスワードを書いておくのなら、他人が @file{~/.gnus.el} ファイ
+ルを読めないようにしておいてください。メールをローカルマシンの伝統的なス
+プールファイルから読みたい場合は、以下のように設定してください:
 
 @lisp
 (with-eval-after-load "mail-source"
@@ -607,9 +607,9 @@ fetchmail $B$N$h$&$J%W%m%0%i%`$G%a!<%k$r<h$j9~$s$G!"(BGnus $B$,FI$`$3$H$K$J$C
 @end lisp
 
 @noindent
-$B$b$7$=$l$,(B Postfix, Qmail $B$^$?$O(B ($B$=$&$$$&$U$&$K@_Dj$5$l$F$$$k(B)
-fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$N$J$i$P!"(B
-$B$3$s$J$U$&$K$7$^$7$g$&(B:
+もしそれが Postfix, Qmail または (そういうふうに設定されている)
+fetchmail によって使われる、一通/一ファイル形式の Maildir であるのならば、
+こんなふうにしましょう:
 
 @lisp
 (with-eval-after-load "mail-source"
@@ -618,9 +618,9 @@ fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$
 @end lisp
 
 @noindent
-$B$=$7$F:G8e$K!"%a!<%k$r0l$D$N%G%#%l%/%H%j!<$K$"$kJ#?t$N%U%!%$%k$+$iFI$`$h(B
-$B$&$K$7$?$$$N$G$"$l$P(B ($BNc$($P(B procmail $B$,$9$G$KJ,3d$7$F$"$k$H$$$&M}M3$G(B)$B!"(B
-$B@_Dj$O0J2<$N$h$&$K$J$j$^$9(B:
+そして最後に、メールを一つのディレクトリーにある複数のファイルから読むよ
+うにしたいのであれば (例えば procmail がすでに分割してあるという理由で)、
+設定は以下のようになります:
 
 @lisp
 (with-eval-after-load "mail-source"
@@ -630,14 +630,14 @@ fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$
 @end lisp
 
 @noindent
-$B$3$3$G(B @code{:suffix} $B$K;XDj$7$?(B ".prcml" $B$O!"(BGnus $B$K3HD%;R$,(B .prcml $B$N(B
-$B%U%!%$%k$@$1$r;H$&$3$H$r;X<($9$k$?$a$N$b$N$G$9!#(B
+ここで @code{:suffix} に指定した ".prcml" は、Gnus に拡張子が .prcml の
+ファイルだけを使うことを指示するためのものです。
 
-$B$5$"!"8e$O$I$&$d$C$F%a!<%k$rAw?.$9$k$+$r(B Gnus $B$K65$($k$@$1$G$9!#%a!<%k$N(B
-$BAw?.$K(B sendmail $B$r;H$$$?$1$l$P(B ($B$^$?$O!"$"$J$?$N%7%9%F%`$N(B MTA $B$,2?$G$"(B
-$B$l(B sendmail $B$NLr$r1i$8$k$N$J$i$P(B)$B!"2?$b$7$J$/$F$bNI$$$N$G$9!#$G$b!"$b(B
-$B$7(B @acronym{SMTP} $B%5!<%P!<$K%a!<%k$rAw$j$?$$$N$@$C$?$i!"0J2<$N$h$&$J$b$N(B
-$B$,(B @file{~/.gnus.el} $B%U%!%$%k$K=q$+$l$F$$$kI,MW$,$"$j$^$9(B:
+さあ、後はどうやってメールを送信するかを Gnus に教えるだけです。メールの
+送信に sendmail を使いたければ (または、あなたのシステムの MTA が何であ
+れ sendmail の役を演じるのならば)、何もしなくても良いのです。でも、も
+し @acronym{SMTP} サーバーにメールを送りたいのだったら、以下のようなもの
+が @file{~/.gnus.el} ファイルに書かれている必要があります:
 
 @lisp
 (setq send-mail-function 'smtpmail-send-it)
@@ -646,18 +646,18 @@ fetchmail $B$K$h$C$F;H$o$l$k!"0lDL(B/$B0l%U%!%$%k7A<0$N(B Maildir $B$G$"$k$
 @end lisp
 
 @node FAQ 3-9
-@subsubheading $B<ALd(B 3.9
+@subsubheading 質問 3.9
 
-$B$=$l$+$i!"(B@acronym{IMAP} $B$G%a!<%k$rFI$a$k$h$&$K$9$k$K$O!"$I$&$9$l$PNI$$(B
-$B$G$9$+(B?
+それから、@acronym{IMAP} でメールを読めるようにするには、どうすれば良い
+ですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$G(B @acronym{IMAP} $B$r;H$&$K$OFs$D$NJ}K!$,$"$j$^$9!#:G=i$N(B
-$B$O(B @acronym{IMAP} $B$r(B @acronym{POP3} $B$N$h$&$K;H$&$b$N$G!"(B
-Gnus $B$O(B @acronym{IMAP} $B%5!<%P!<$+$i%a!<%k$r<hF@$7$F%G%#%9%/$K3JG<$7$^$9!#(B
-$B$3$l$r$d$j$?$$$N$J$i(B ($BK\Ev$K$=$s$J$3$H$r$7$?$$?M$O$$$J$$$G$7$g$&$1$l$I(B)$B!"(B
-$B0J2<$N@_Dj$r(B @file{~/.gnus.el} $B%U%!%$%k$K2C$($F$/$@$5$$(B:
+Gnus で @acronym{IMAP} を使うには二つの方法があります。最初の
+は @acronym{IMAP} を @acronym{POP3} のように使うもので、
+Gnus は @acronym{IMAP} サーバーからメールを取得してディスクに格納します。
+これをやりたいのなら (本当にそんなことをしたい人はいないでしょうけれど)、
+以下の設定を @file{~/.gnus.el} ファイルに加えてください:
 
 @lisp
 (add-to-list 'mail-sources '(imap :server "mail.mycorp.com"
@@ -670,14 +670,14 @@ Gnus $B$O(B @acronym{IMAP} $B%5!<%P!<$+$i%a!<%k$r<hF@$7$F%G%#%9%/$K3JG<$7$^$9
 @end lisp
 
 @noindent
-@code{:stream} $B$*$h$S(B/$B$^$?$O(B @code{:authentication} $B$N9`$O$$$8$kI,MW$,$"(B
-$B$k$+$b$7$l$^$;$s!#;H$&$3$H$,$G$-$kCM$K$D$$$F$O(B Gnus $B%^%K%e%"(B
-$B%k(B (@pxref{Mail Source Specifiers, ,$B%a!<%k%=!<%9;X<(;R(B, gnus-ja, The
-Gnus Manual}) $B$r;2>H$7$F$/$@$5$$!#(B
+@code{:stream} および/または @code{:authentication} の項はいじる必要があ
+るかもしれません。使うことができる値については Gnus マニュア
+ル (@pxref{Mail Source Specifiers, ,メールソース指示子, gnus-ja, The
+Gnus Manual}) を参照してください。
 
-@acronym{IMAP} $B$r$=$l$,0U?^$5$l$?J}K!$G;H$$$?$$>l9g$O!"0c$&$d$jJ}$K=>$&(B
-$BI,MW$,$"$j$^$9!#$=$&$9$k$K$OA*BrJ}K!$K(B @code{nnimap} $B$r2C$(!"$=$3$G%5!<(B
-$B%P!<$K4X$9$k>pJs$rM?$($F$/$@$5$$(B:
+@acronym{IMAP} をそれが意図された方法で使いたい場合は、違うやり方に従う
+必要があります。そうするには選択方法に @code{nnimap} を加え、そこでサー
+バーに関する情報を与えてください:
 
 @lisp
 (add-to-list 'gnus-secondary-select-methods
@@ -688,178 +688,178 @@ Gnus Manual}) $B$r;2>H$7$F$/$@$5$$!#(B
 @end lisp
 
 @noindent
-$B$5$i$K(B Gnus $B$,@5$7$$$d$jJ}$r?dB,$G$-$J$$>l9g$K$O!"%5!<%P!<$KG'>Z$7$F$b(B
-$B$i$&J}K!$r;XDj$7$J$1$l$P$J$i$J$$$G$7$g$&!#>\$7$$>pJs$O%^%K%e%"(B
-$B%k(B (@pxref{IMAP, ,IMAP, gnus-ja, The Gnus Manual}) $B$r;2>H$7$F$/$@$5$$!#(B
+さらに Gnus が正しいやり方を推測できない場合には、サーバーに認証しても
+らう方法を指定しなければならないでしょう。詳しい情報はマニュア
+ル (@pxref{IMAP, ,IMAP, gnus-ja, The Gnus Manual}) を参照してください。
 
 @node FAQ 3-10
-@subsubheading $B<ALd(B 3.10
+@subsubheading 質問 3.10
 
-$B?&>l$G(B MS Exchange $B%5!<%P!<$N0l$D$r;H$C$F$$$k$N$G$9$,!"(BGnus $B$r;H$C$F$=$3(B
-$B$+$i%a!<%k$rFI$`$3$H$O$G$-$^$9$+(B?
+職場で MS Exchange サーバーの一つを使っているのですが、Gnus を使ってそこ
+からメールを読むことはできますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B%5!<%P!<$K(B @acronym{IMAP} $B$H$$$&?7$7$$1?F07$$r0lB-$O$+$;$F$/$l$k$h$&$K!"(B
-$B4IM}?M$K$*4j$$$7$F$/$@$5$$!#$=$7$F>e5-$N@bL@$K=>$C$F!"I,MW$J$3$H$r9T$J$C(B
-$B$F$/$@$5$$!#(B
+サーバーに @acronym{IMAP} という新しい運動靴を一足はかせてくれるように、
+管理人にお願いしてください。そして上記の説明に従って、必要なことを行なっ
+てください。
 
 @node FAQ 3-11
-@subsubheading $B<ALd(B 3.11
+@subsubheading 質問 3.11
 
-POP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$$h$&$K(B Gnus $B$K;X<($9(B
-$B$k$3$H$O$G$-$^$9$+(B?
+POP3 でメールを取得するサーバーで、メールを消さないように Gnus に指示す
+ることはできますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$O$$!"(B@acronym{POP3} $B%5!<%P!<$,(B @acronym{UIDL} $B$r%5%]!<%H$7$F$$$l$P(B ($B$?(B
-$B$V$s6a$4$m$G$O$[$H$s$I$N%5!<%P!<$,%5%]!<%H$7$F$$$^$9(B)$B!#$=$N$?$a$K(B
-$B$O(B @code{:leave VALUE} $B$H$$$&%Z%"$r!"$=$l$>$l$N%a!<%k%=!<%9$K2C$($F$/$@(B
-$B$5$$!#(BVALUE $B$K$D$$$F$O(B @xref{Mail Source Specifiers}.
+はい、@acronym{POP3} サーバーが @acronym{UIDL} をサポートしていれば (た
+ぶん近ごろではほとんどのサーバーがサポートしています)。そのために
+は @code{:leave VALUE} というペアを、それぞれのメールソースに加えてくだ
+さい。VALUE については @xref{Mail Source Specifiers}.
 
 @node FAQ 4 - Reading messages
-@subsection $B%a%C%;!<%8$rFI$`(B
+@subsection メッセージを読む
 
 @menu
-* FAQ 4-1::  $B!!%0%k!<%W$KF~$k$H!"0JA0$KFI$s$@%a%C%;!<%8$,A4It$J$/(B
-               $B$J$C$F$7$^$C$F$$$^$9!#$b$&0lEYFI$`$K$O!"$I$&$7$?$i(B
-               $BNI$$$G$9$+(B?
+* FAQ 4-1::  　グループに入ると、以前に読んだメッセージが全部なく
+               なってしまっています。もう一度読むには、どうしたら
+               良いですか?
 
-* FAQ 4-2::  $B!!Bg;v$J%a%C%;!<%8$r!"$9$G$KFI$s$@$3$H$,$"$C$F$b!"%0(B
-               $B%k!<%W$KF~$C$?$H$-$O$$$D$G$b8+$($k$h$&$K(B Gnus $B$K;X(B
-               $B<($9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+* FAQ 4-2::  　大事なメッセージを、すでに読んだことがあっても、グ
+               ループに入ったときはいつでも見えるように Gnus に指
+               示するには、どうすれば良いですか?
 
-* FAQ 4-3::  $B!!%a%C%;!<%8$N%X%C%@!<$r8+$k$K$O$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 4-3::  　メッセージのヘッダーを見るにはどうしたら良いですか?
 
-* FAQ 4-4::  $B!!@07A$5$l$F$$$J$$@8$N%a%C%;!<%8$r8+$k$K$O!"$I$&$9$l(B
-               $B$PNI$$$G$9$+(B?
+* FAQ 4-4::  　整形されていない生のメッセージを見るには、どうすれ
+               ば良いですか?
 
-* FAQ 4-5::  $B!!5-;v%P%C%U%!!<$N@hF,$K(B Gnus $B$,%G%#%U%)%k%H$GI=<($9(B
-               $B$k%X%C%@!<$rJQ99$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 4-5::  　記事バッファーの先頭に Gnus がディフォルトで表示す
+               るヘッダーを変更するには、どうしたら良いですか?
 
-* FAQ 4-6::  $B!!(BHTML $B%a!<%k$rIA2h$9$k$N$G$O$J$/!"$=$l$,$"$k>l9g$K$O(B
-               $B%F%-%9%H$N%Q!<%H$r(B Gnus $B$KI=<($7$FM_$7$$$G$9!#$I$&(B
-               $B$9$l$PNI$$$G$9$+(B?
+* FAQ 4-6::  　HTML メールを描画するのではなく、それがある場合には
+               テキストのパートを Gnus に表示して欲しいです。どう
+               すれば良いですか?
 
-* FAQ 4-7::  $B!!(BHTML $B%a!<%k$r(B shr $B0J30$N%V%i%&%6!<$r;H$C$FIA2h$5$;$k(B
-               $B$3$H$O$G$-$^$9$+(B?
+* FAQ 4-7::  　HTML メールを shr 以外のブラウザーを使って描画させる
+               ことはできますか?
 
-* FAQ 4-8::  $B!!8+6l$7$$BN:[$N%a!<%k$r$b$C$HFI$_$d$9$/$9$k$?$a$N2?(B
-               $B$+$,$"$j$^$9$+(B?
+* FAQ 4-8::  　見苦しい体裁のメールをもっと読みやすくするための何
+               かがありますか?
 
-* FAQ 4-9::  $B!!FCDj$NCx<T$,Aw?.$7$?$b$N$d!"I=Bj$KFCDj$N8l$,4^$^$l(B
-               $B$F$$$k%a%C%;!<%8$r!"<+F0E*$KL5;k$9$kJ}K!$O$"$j$^$9(B
-               $B$+(B?  $B$^$?!"$h$j6=L#?<$$$b$N$r2?$i$+$NJ}K!$G6/D4I=<((B
-               $B$5$;$k$3$H$O$G$-$^$9$+(B?
+* FAQ 4-9::  　特定の著者が送信したものや、表題に特定の語が含まれ
+               ているメッセージを、自動的に無視する方法はあります
+               か?  また、より興味深いものを何らかの方法で強調表示
+               させることはできますか?
 
-* FAQ 4-10:: $B!!$$$/$D$+$N(B ($BNc$($P%a!<%k$N(B) $B%0%k!<%W$G!"%9%l%C%II=(B
-               $B<($r$5$;$J$/$9$k$3$H$O$G$-$^$9$+(B?  $B$"$k$$$O!"$$$/$D(B
-               $B$+$N%0%k!<%W$K8GM-$NJQ?t$r@_Dj$9$k$3$H$,$G$-$^$9$+(B?
+* FAQ 4-10:: 　いくつかの (例えばメールの) グループで、スレッド表
+               示をさせなくすることはできますか?  あるいは、いくつ
+               かのグループに固有の変数を設定することができますか?
 
-* FAQ 4-11:: $B!!;d$,=q$$$?%a%C%;!<%8$H%U%)%m!<5-;v$r!"6/D4I=<($5$;(B
-               $B$k$3$H$O$G$-$^$9$+(B?
+* FAQ 4-11:: 　私が書いたメッセージとフォロー記事を、強調表示させ
+               ることはできますか?
 
-* FAQ 4-12:: $B!!FC$K%a!<%k$N%0%k!<%W$G!"(BGnus $B$,%0%k!<%W%P%C%U%!!<$K(B
-               $BI=<($9$k%a%C%;!<%8$N9g7W$N?t$,Hs>o$KBg$-$$$N$G$9!#(B
-               $B$3$l$O%P%0$G$9$+(B?
+* FAQ 4-12:: 　特にメールのグループで、Gnus がグループバッファーに
+               表示するメッセージの合計の数が非常に大きいのです。
+               これはバグですか?
 
-* FAQ 4-13:: $B!!35N,%P%C%U%!!<$H5-;v%P%C%U%!!<$NG[CV$,5$$KF~$i$J$$(B
-               $B$N$G$9$,!"$I$&$d$C$?$iJQ99$G$-$^$9$+(B?  $B$G$-$k$J$i;0(B
-               $BLL$GI=<($5$;$?$$$G$9!#(B
+* FAQ 4-13:: 　概略バッファーと記事バッファーの配置が気に入らない
+               のですが、どうやったら変更できますか?  できるなら三
+               面で表示させたいです。
 
-* FAQ 4-14:: $B!!35N,%P%C%U%!!<$r8+$;$k$d$jJ}$,9%$-$G$O$"$j$^$;$s!#(B
-               $BD4@0$9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+* FAQ 4-14:: 　概略バッファーを見せるやり方が好きではありません。
+               調整するには、どうすれば良いですか?
 
-* FAQ 4-15:: $B!!$d$C$F$-$?%a!<%k$r$$$m$$$m$J%0%k!<%W$K?6$jJ,$1$k$K(B
-               $B$O!"$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 4-15:: 　やってきたメールをいろいろなグループに振り分けるに
+               は、どうしたら良いですか?
 
-* FAQ 4-16::   HTML $B%a!<%k$r8+$k$H$-%3%s%H%i%9%H$r$h$jNI$/$9$k$K(B
-               $B$O!"$I$&$9$l$PNI$$$G$9$+(B?
+* FAQ 4-16::   HTML メールを見るときコントラストをより良くするに
+               は、どうすれば良いですか?
 @end menu
 
 @node FAQ 4-1
-@subsubheading $B<ALd(B 4.1
+@subsubheading 質問 4.1
 
-$B%0%k!<%W$KF~$k$H!"0JA0$KFI$s$@%a%C%;!<%8$,A4It$J$/$J$C$F$7$^$C$F$$$^$9!#(B
-$B$b$&0lEYFI$`$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+グループに入ると、以前に読んだメッセージが全部なくなってしまっています。
+もう一度読むには、どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B%0%k!<%W%P%C%U%!!<$K$*$$$F!"$=$N%0%k!<%W$N>e$K%]%$%s%H$,CV$+$l$F$$$k>uBV(B
-$B$G(B @kbd{RET} $B$r;H$&$H!"L$FI$H2D;k5-;v$N0u(B (ticked) $B$,IU$$$?%a%C%;!<%8$@(B
-$B$1$,8=$l$^$9!#B8:_$9$k$9$Y$F$N%a%C%;!<%8$,I=<($5$l$k$h$&$K$9$k$K$O!"Be$o(B
-$B$j$K(B @kbd{C-u RET} $B$r;H$C$F$/$@$5$$!#$b$7:G?7$N(B 300$BDL$@$1$,=jK>$J$i$P!"(B
-@kbd{C-u 300 RET} $B$r;H$$$^$7$g$&!#(B
+グループバッファーにおいて、そのグループの上にポイントが置かれている状態
+で @kbd{RET} を使うと、未読と可視記事の印 (ticked) が付いたメッセージだ
+けが現れます。存在するすべてのメッセージが表示されるようにするには、代わ
+りに @kbd{C-u RET} を使ってください。もし最新の 300通だけが所望ならば、
+@kbd{C-u 300 RET} を使いましょう。
 
-$B%9%l%C%II=<($rM-8z$K$7$F$$$k$H!"L$FI$N%a%C%;!<%8$@$1$rI=<($9$k$N$O$8$l$C(B
-$B$?$$$+$b$7$l$^$;$s!#%9%l%C%I$,$A$.$l$F$7$^$&$3$H$rKI;_$9$k$N$K==J,$JNL$N(B
-$B8E$$5-;v$r<h$j9~$`$K$O!"0J2<$N@_Dj$rDI2C$9$l$PNI$$$G$7$g$&(B:
+スレッド表示を有効にしていると、未読のメッセージだけを表示するのはじれっ
+たいかもしれません。スレッドがちぎれてしまうことを防止するのに十分な量の
+古い記事を取り込むには、以下の設定を追加すれば良いでしょう:
 
 @lisp
 (setq gnus-fetch-old-headers 'some)
 @end lisp
 
 @noindent
-@code{some} $B$r(B @code{t} $B$KBX$($k$H!"$9$Y$F$N5-;v$rI=<($9$k$h$&$K$J$j$^(B
-$B$9(B ($B7Y9p(B: $B$I$A$i$N@_Dj$b%0%k!<%W$KF~$C$?$H$-$K<h$j9~$`%G!<%?NL$rA}2C$5$;!"(B
-$B%0%k!<%W$KF~$k=hM}$rCY$/$7$F$7$^$$$^$9(B)$B!#(B
+@code{some} を @code{t} に替えると、すべての記事を表示するようになりま
+す (警告: どちらの設定もグループに入ったときに取り込むデータ量を増加させ、
+グループに入る処理を遅くしてしまいます)。
 
-$B$9$G$K(B Gnus 5.10 $B$r;H$C$F$$$k$J$i$P!":G8e$N(B @var{n} $BDL$N%a%C%;!<%8$r<h$j(B
-$B9~$`$?$a$K!"35N,%P%C%U%!!<$G(B @kbd{/o N} $BL?Na$r;H$&$3$H$,$G$-$^$9!#$3$N5!(B
-$BG=$O(B 5.8.8 $B$K$O$"$j$^$;$s!#(B
+すでに Gnus 5.10 を使っているならば、最後の @var{n} 通のメッセージを取り
+込むために、概略バッファーで @kbd{/o N} 命令を使うことができます。この機
+能は 5.8.8 にはありません。
 
-$B$9$Y$F$N8E$$%a%C%;!<%8$OMW$i$J$$$1$l$I$b!":#$^$5$KFI$s$G$$$k%a%C%;!<%8$N(B
-$B?F$rC)$j$?$$$J$i$P(B @kbd{^} $BL?Na$r;H$C$F$/$@$5$$!#:#$^$5$KFI$s$G$$$k%a%C(B
-$B%;!<%8$,B0$7$F$$$k%9%l%C%I$N$9$Y$F$N5-;v$rI=<($7$?$$>l9g$O!"(B
-@samp{A T} $BL?Na$,$"$J$?$NK>$`$b$N$G$9!#(B
+すべての古いメッセージは要らないけれども、今まさに読んでいるメッセージの
+親を辿りたいならば @kbd{^} 命令を使ってください。今まさに読んでいるメッ
+セージが属しているスレッドのすべての記事を表示したい場合は、
+@samp{A T} 命令があなたの望むものです。
 
 @node FAQ 4-2
-@subsubheading $B<ALd(B 4.2
+@subsubheading 質問 4.2
 
-$BBg;v$J%a%C%;!<%8$r!"$9$G$KFI$s$@$3$H$,$"$C$F$b!"%0%k!<%W$KF~$C$?$H$-$O$$(B
-$B$D$G$b8+$($k$h$&$K(B Gnus $B$K;X<($9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+大事なメッセージを、すでに読んだことがあっても、グループに入ったときはい
+つでも見えるように Gnus に指示するには、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BBg;v$J%a%C%;!<%8$K$O2D;k5-;v$N0u(B (ticked) $B$rIU$1$k$3$H$,$G$-$^$9!#$=$l$K(B
-$B$O!"35N,%P%C%U%!!<$G%]%$%s%H$,$=$N5-;v$r;X$7$F$$$k$H$-$K(B @kbd{u} $B$rC!$$(B
-$B$F$/$@$5$$!#2D;k5-;v$N0u$r>C$9L?Na$O(B @kbd{d} ($B$3$l$O2D;k5-;v$N0u$r>C$7$F(B
-$B$+$iL$FI$N0u$rIU$1$^$9(B) $B$^$?$O(B @kbd{M c} ($B$=$N%a%C%;!<%8$KIU$$$F$$$k$9$Y(B
-$B$F$N0u$r>C$7$^$9(B) $B$G$9!#(B
+大事なメッセージには可視記事の印 (ticked) を付けることができます。それに
+は、概略バッファーでポイントがその記事を指しているときに @kbd{u} を叩い
+てください。可視記事の印を消す命令は @kbd{d} (これは可視記事の印を消して
+から未読の印を付けます) または @kbd{M c} (そのメッセージに付いているすべ
+ての印を消します) です。
 
 @node FAQ 4-3
-@subsubheading $B<ALd(B 4.3
+@subsubheading 質問 4.3
 
-$B%a%C%;!<%8$N%X%C%@!<$r8+$k$K$O$I$&$7$?$iNI$$$G$9$+(B?
+メッセージのヘッダーを見るにはどうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@kbd{t} $BL?Na$r;H$&$H$9$Y$F$N%X%C%@!<$rI=<($7!"$b$&0lEY;H$&$H$=$l$i$r1#$7(B
-$B$^$9!#(B
+@kbd{t} 命令を使うとすべてのヘッダーを表示し、もう一度使うとそれらを隠し
+ます。
 
 @node FAQ 4-4
-@subsubheading $B<ALd(B 4.4
+@subsubheading 質問 4.4
 
-$B@07A$5$l$F$$$J$$@8$N%a%C%;!<%8$r8+$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+整形されていない生のメッセージを見るには、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@kbd{C-u g} $BL?Na$r;H$&$H@8$N%a%C%;!<%8$rI=<($7!"(B@kbd{g} $B$GDL>o$NI=<($KLa(B
-$B$j$^$9!#(B
+@kbd{C-u g} 命令を使うと生のメッセージを表示し、@kbd{g} で通常の表示に戻
+ります。
 
 @node FAQ 4-5
-@subsubheading $B<ALd(B 4.5
+@subsubheading 質問 4.5
 
-$B5-;v%P%C%U%!!<$N@hF,$K(B Gnus $B$,%G%#%U%)%k%H$GI=<($9$k%X%C%@!<$rJQ99$9$k$K(B
-$B$O!"$I$&$7$?$iNI$$$G$9$+(B?
+記事バッファーの先頭に Gnus がディフォルトで表示するヘッダーを変更するに
+は、どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BJQ?t(B @code{gnus-visible-headers} $B$,$I$N%X%C%@!<$rI=<($9$k$+$r@)8f$7$^$9!#(B
-$B$=$NCM$O@55,I=8=$G!"$=$l$K9gCW$9$k%X%C%@!<9T$,I=<($5$l$^$9!#$7$?$,$C$F!"(B
-$BCx<T!"I=Bj!"F|IU!"$=$7$F$b$7B8:_$9$k>l9g$O(B Followup-To $B$H(B MUA / NUA $B$rI=(B
-$B<($7$?$$>l9g$K$O!"(B@file{~/.gnus.el} $B%U%!%$%k$G0J2<$N@_Dj$r9T$J$C$F$/$@$5(B
-$B$$(B:
+変数 @code{gnus-visible-headers} がどのヘッダーを表示するかを制御します。
+その値は正規表現で、それに合致するヘッダー行が表示されます。したがって、
+著者、表題、日付、そしてもし存在する場合は Followup-To と MUA / NUA を表
+示したい場合には、@file{~/.gnus.el} ファイルで以下の設定を行なってくださ
+い:
 
 @lisp
 (setq gnus-visible-headers
@@ -868,14 +868,14 @@ POP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$$h$&$K(B Gnus $B$K;X<($9
 @end lisp
 
 @node FAQ 4-6
-@subsubheading $B<ALd(B 4.6
+@subsubheading 質問 4.6
 
-@acronym{HTML} $B%a!<%k$rIA2h$9$k$N$G$O$J$/!"%F%-%9%H$N%Q!<%H$,$"$k>l9g$K(B
-$B$O!"$=$A$i$NJ}$r(B Gnus $B$KI=<($7$FM_$7$$$G$9!#$I$&$9$l$PNI$$$G$9$+(B?
+@acronym{HTML} メールを描画するのではなく、テキストのパートがある場合に
+は、そちらの方を Gnus に表示して欲しいです。どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@file{~/.gnus.el} $B%U%!%$%k$G0J2<$N@_Dj$r9T$J$C$F$/$@$5$$(B:
+@file{~/.gnus.el} ファイルで以下の設定を行なってください:
 
 @lisp
 (with-eval-after-load "mm-decode"
@@ -884,110 +884,110 @@ POP3 $B$G%a!<%k$r<hF@$9$k%5!<%P!<$G!"%a!<%k$r>C$5$J$$$h$&$K(B Gnus $B$K;X<($9
 @end lisp
 
 @noindent
-@acronym{HTML} $B$N%Q!<%H$HF1$8FbMF$N%F%-%9%H$N%Q!<%H$,L5$$>l9g$G$5$((B
-$B$b(B @acronym{HTML} $B$N%Q!<%H$rIA2h$7$FM_$7$/$J$$$N$G$"$l$P!"0J2<$N@_Dj$rDI(B
-$B2C$7$F$/$@$5$$(B:
+@acronym{HTML} のパートと同じ内容のテキストのパートが無い場合でさえ
+も @acronym{HTML} のパートを描画して欲しくないのであれば、以下の設定を追
+加してください:
 
 @lisp
 (setq mm-automatic-display (remove "text/html" mm-automatic-display))
 @end lisp
 
 @node FAQ 4-7
-@subsubheading $B<ALd(B 4.7
+@subsubheading 質問 4.7
 
-@acronym{HTML} $B%a!<%k$r(B w3m $B0J30$N%V%i%&%6!<$r;H$C$FIA2h$5$;$k$3$H$O$G$-(B
-$B$^$9$+(B?
+@acronym{HTML} メールを w3m 以外のブラウザーを使って描画させることはでき
+ますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus 5.10 $B$^$?$O$h$j?7$7$$$b$N$r;H$&>l9g$@$1$G$9$,!"(Bshr, w3m, links,
-lynx $B$*$h$S(B html2text $B$NCf$+$iA*$V$3$H$,$G$-!"$I$l$r;H$&$+$OJQ(B
-$B?t(B @code{mm-text-html-renderer} $B$G;XDj$9$k$3$H$,$G$-$^$9!#$7$?$,$C(B
-$B$F(B links $B$G(B @acronym{HTML} $B%a!<%k$rIA2h$7$?$$$H$-$O!"$3$&$7$F$/$@$5$$(B:
+Gnus 5.10 またはより新しいものを使う場合だけですが、shr, w3m, links,
+lynx および html2text の中から選ぶことができ、どれを使うかは変
+数 @code{mm-text-html-renderer} で指定することができます。したがっ
+て links で @acronym{HTML} メールを描画したいときは、こうしてください:
 
 @lisp
 (setq mm-text-html-renderer 'links)
 @end lisp
 
 @node FAQ 4-8
-@subsubheading $B<ALd(B 4.8
+@subsubheading 質問 4.8
 
-$B8+6l$7$$BN:[$N%a!<%k$r$b$C$HFI$_$d$9$/$9$k$?$a$N2?$+$,$"$j$^$9$+(B?
+見苦しい体裁のメールをもっと読みやすくするための何かがありますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$OF~$C$F$-$?%a!<%k$r!V@vBu!W$9$k$?$a$KJ#?t$N4X?t$rDs6!$7$^$9!#$=$l(B
-$B$i$O%a%K%e!<$N(B Article->Washing $B9`L\$rC)$k$3$H$K$h$C$F8+$D$1$k$3$H$,$G$-(B
-$B$k$G$7$g$&!#:G$b6=L#?<$$$b$N$r5s$2$F$_$^$7$g$&(B:
+Gnus は入ってきたメールを「洗濯」するために複数の関数を提供します。それ
+らはメニューの Article->Washing 項目を辿ることによって見つけることができ
+るでしょう。最も興味深いものを挙げてみましょう:
 
 @table @kbd
 @item W w (Wrap long lines)
-$BD9$$9T$r@^$j>v$_$^$9!#(B
+長い行を折り畳みます。
 
 @item W r (Decode ROT13)
-ROT13 $B$r%G%3!<%I$7$^$9!#(B
+ROT13 をデコードします。
 
 @item W Y f (Outlook Deuglify)
-Outlook $B$r8+6l$7$/$J$/$5$;$^$9!#$3$l$O!"%^%$%/%m%=%U%H$N@=IJ$r;H$C$F$$$k(B
-$BB?$/$N%f!<%6!<$,Aw$C$F$/$k4V$NH4$1$?0zMQIU$-JV?.(B ($BLuCm(B: $B@^$j>v$^$l$?D9$$(B
-$B0zMQ9T$NFs9TL\0J9_$K0zMQId$,A0CV$5$l$J$$$J$I(B) $B$r=$A6$7$^$9!#(B
+Outlook を見苦しくなくさせます。これは、マイクロソフトの製品を使っている
+多くのユーザーが送ってくる間の抜けた引用付き返信 (訳注: 折り畳まれた長い
+引用行の二行目以降に引用符が前置されないなど) を修繕します。
 
-$BB>$N8+6l$7$/$J$/$5$;$k5!G=$K$D$$$F$O(B @kbd{W Y C-h} $B$r;H$&$+%a%K%e!<$rD/(B
-$B$a$F$/$@$5$$!#(BOutlook Deuglify $B$O(B Gnus 5.10 $B0J>e$G;H$&$3$H$,$G$-$^$9!#(B
+他の見苦しくなくさせる機能については @kbd{W Y C-h} を使うかメニューを眺
+めてください。Outlook Deuglify は Gnus 5.10 以上で使うことができます。
 @end table
 
 @node FAQ 4-9
-@subsubheading $B<ALd(B 4.9
+@subsubheading 質問 4.9
 
-$BFCDj$NCx<T$,Aw?.$7$?$b$N$d!"I=Bj$KFCDj$N8l$,4^$^$l$F$$$k%a%C%;!<%8$r!"<+(B
-$BF0E*$KL5;k$9$kJ}K!$O$"$j$^$9$+(B?  $B$^$?!"$h$j6=L#?<$$$b$N$r2?$i$+$NJ}K!$G(B
-$B6/D4I=<($5$;$k$3$H$O$G$-$^$9$+(B?
+特定の著者が送信したものや、表題に特定の語が含まれているメッセージを、自
+動的に無視する方法はありますか?  また、より興味深いものを何らかの方法で
+強調表示させることはできますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$"$J$?$KI,MW$J$N$O%9%3%"IU$1$G$9!#%9%3%"IU$1$H8@$&$N$O!"$=$l$>$l$N%a%C%;!<(B
-$B%8$K@0?t$NCM$r3d$jIU$1$k$?$a$N5,B'$rDj5A$9$k$3$H$G$9!#CM$K4p$E$$$F35N,%P%C(B
-$B%U%!!<$G%a%C%;!<%8$r6/D4I=<($7$?$j(B ($B$=$l$,(B +2000 $B$H$$$C$?9b$$CM$@$C$?$i(B)$B!"(B
-$B<+F0E*$K4{FI$K$7$?$j(B ($B$=$NCM$,Nc$($P(B -800 $B$N$h$&$JDc$$CM$@$C$?$i(B)$B!"$"$k(B
-$B$$$OB>$N$$$/$D$+$N:nMQ$r9T$J$C$?$j$7$^$9!#(B
+あなたに必要なのはスコア付けです。スコア付けと言うのは、それぞれのメッセー
+ジに整数の値を割り付けるための規則を定義することです。値に基づいて概略バッ
+ファーでメッセージを強調表示したり (それが +2000 といった高い値だったら)、
+自動的に既読にしたり (その値が例えば -800 のような低い値だったら)、ある
+いは他のいくつかの作用を行なったりします。
 
-$B%a%C%;!<%8$K%9%3%"$NCM$r3d$jIU$1$k5,B'$r@_Dj$9$k$?$a$N!"4pK\E*$J;0$D$N$d(B
-$B$jJ}$,$"$j$^$9!#(B
+メッセージにスコアの値を割り付ける規則を設定するための、基本的な三つのや
+り方があります。
 
 @enumerate
 @item
-$B:G=i$N:G$b4JC1$J$d$jJ}$O!":#$^$5$KFI$s$G$$$k5-;v$K4p$E$$$F5,B'$r@_Dj$9$k(B
-$B$3$H$G$9!#$$$D$b$?$o$4$H$r=q$$$F$h$3$9$d$D$+$i$N%a%C%;!<%8$rFI$s$G!":#8e(B
-$B$O$=$$$D$+$i$N%a%C%;!<%8$rL5;k$7$h$&$H7h?4$7$?$J$i$P!"(B@kbd{L} $B$rC!$$$F%9(B
-$B%3%"$r2<$2$k5,B'$r@_Dj$7$F$/$@$5$$!#(B
+最初の最も簡単なやり方は、今まさに読んでいる記事に基づいて規則を設定する
+ことです。いつもたわごとを書いてよこすやつからのメッセージを読んで、今後
+はそいつからのメッセージを無視しようと決心したならば、@kbd{L} を叩いてス
+コアを下げる規則を設定してください。
 
-$B$9$k$H(B Gnus $B$O!"%9%3%"$r2<$2$k4p=`$r$I$l$K$9$l$PNI$$$+$r?R$M$F$/$k$G$7$g(B
-$B$&!#(B@kbd{?} $B$rFs2sC!$/$H!"$9$Y$F$N8uJd$r8+$k$3$H$,$G$-$^$9$,!"$3$3$GA*Br(B
-$B$9$Y$-$J$N$OCx<T(B (From $B%X%C%@!<(B) $B$r0UL#$9$k(B @kbd{a} $B$G$9!#(B
+すると Gnus は、スコアを下げる基準をどれにすれば良いかを尋ねてくるでしょ
+う。@kbd{?} を二回叩くと、すべての候補を見ることができますが、ここで選択
+すべきなのは著者 (From ヘッダー) を意味する @kbd{a} です。
 
-$B<!$K(B Gnus $B$O$I$N<oN`$N9gCW$r;H$&$Y$-$+$r?R$M$F$/$k$N$G!"87L)$J9gCW$N$?$a(B
-$B$N(B @kbd{e} $B$rC!$/$+!"$"$k$$$OJ8;z$N0lIt$X$N9gCW$r5a$a$k(B @kbd{s} $B$rC!$$$F(B
-$B$+$i!"8e$G$9$Y$F$r:o=|$7$F$/$@$5$$!#$I$s$JEE;R%a!<%k%"%I%l%9$G$"$C$F$b!"(B
-$B$=$l$r;}$D$9$Y$F$NCx<T$N%9%3%"$r2<$2$k$?$a$K!"$=$NL>A0$,;H$o$l$^$9!#(B
+次に Gnus はどの種類の合致を使うべきかを尋ねてくるので、厳密な合致のため
+の @kbd{e} を叩くか、あるいは文字の一部への合致を求める @kbd{s} を叩いて
+から、後ですべてを削除してください。どんな電子メールアドレスであっても、
+それを持つすべての著者のスコアを下げるために、その名前が使われます。
 
-$B$5$i$K!"$=$N5,B'$r$$$DE,MQ$9$k$Y$-$+!"$^$?$I$l$/$i$$$N;~4VB3$1$k$Y$-$+(B
-$B$r(B Gnus $B$KEA$($kI,MW$,$"$j$^$9!#(B@kbd{p} $B$r$?$?$/$H!"$=$N5,B'$r:#$9$0E,(B
-$BMQ$7$F!"$=$l$r1J5W$K;}B3$5$;$^$9!#(B
+さらに、その規則をいつ適用するべきか、またどれくらいの時間続けるべきか
+を Gnus に伝える必要があります。@kbd{p} をたたくと、その規則を今すぐ適
+用して、それを永久に持続させます。
 
-$B%9%3%"$r2<$2$k$N$G$O$J$/$F>e$2$?$$$N$G$"$l$P!"(B@kbd{L} $B$NBe$o$j(B
-$B$K(B @kbd{I} $B$r;H$C$F$/$@$5$$!#(B
+スコアを下げるのではなくて上げたいのであれば、@kbd{L} の代わり
+に @kbd{I} を使ってください。
 
 @item
-$B5,B'$r<j$G@_Dj$9$k$3$H$b$G$-$^$9!#$=$&$9$k$K$O35N,%P%C%U%!!<(B
-$B$G(B @kbd{V f} $BL?Na$r;H$C$F$/$@$5$$!#$9$k$H%9%3%"%U%!%$%k$NL>A0$r?R$M$i$l(B
-$B$k$G$7$g$&!#0l$D$N%0%k!<%W$@$1$GM-8z$J$N$O(B @file{name.of.group.SCORE} $B$G!"(B
-$B$9$Y$F$N%0%k!<%W$KBP$7$FM-8z$J$N$,(B @file{all.SCORE} $B$G$9!#87L)$J9=J8$K$D(B
-$B$$$F$O(B Gnus $B$N%^%K%e%"%k$r;2>H$7$F$/$@$5$$!#$=$l$O0l$D$NBg$-$J%j%9%H$G!"(B
-$B$=$NMWAG$b$^$?B?$/$N%j%9%H$G$9!#$=$N8e<T$NC10L%j%9%H$NBh0lMWAG$O%9%3%"$N(B
-$BBP>]$G$"$k%X%C%@!<$G!";D$j$O!"2?$K9gCW$9$k$+!"$$$/$i$N%9%3%"$r3d$jEv$F$k(B
-$B$+!"5,B'$r4|8B@Z$l>C5n$9$k$N$O$$$D$+!"$=$7$F$I$&$d$C$F9gCW$5$;$k$+$r<($9(B
-$B$b$&0l$D$N%j%9%H$G$9!#;d$K$H$F$b6=L#$r;}$C$?$J$i$P!"0J2<$N$h$&$J$b$N(B
-$B$r(B @file{all.SCORE} $B%U%!%$%k$K2C$($F$/$@$5$$(B:
+規則を手で設定することもできます。そうするには概略バッファー
+で @kbd{V f} 命令を使ってください。するとスコアファイルの名前を尋ねられ
+るでしょう。一つのグループだけで有効なのは @file{name.of.group.SCORE} で、
+すべてのグループに対して有効なのが @file{all.SCORE} です。厳密な構文につ
+いては Gnus のマニュアルを参照してください。それは一つの大きなリストで、
+その要素もまた多くのリストです。その後者の単位リストの第一要素はスコアの
+対象であるヘッダーで、残りは、何に合致するか、いくらのスコアを割り当てる
+か、規則を期限切れ消去するのはいつか、そしてどうやって合致させるかを示す
+もう一つのリストです。私にとても興味を持ったならば、以下のようなもの
+を @file{all.SCORE} ファイルに加えてください:
 
 @lisp
 (("references" ("hschmi22.userfqdn.rz-online.de" 500 nil s))
@@ -995,16 +995,16 @@ Outlook $B$r8+6l$7$/$J$/$5$;$^$9!#$3$l$O!"%^%$%/%m%=%U%H$N@=IJ$r;H$C$F$$$k(B
 @end lisp
 
 @noindent
-$B$3$l$O;d$,=q$$$?%a%C%;!<%8$N%9%3%"$K(B 999 $B$r2C$($F!"$=$l$KBP$9$k(B ($B$?$V$s(B
-$B4V@\E*$J(B) $B2sEz$N%a%C%;!<%8$N%9%3%"$K(B 500 $B$r2C$($k$G$7$g$&!#$b$A$m$sJ,JL(B
-$B$N$"$k?M$OC/$b!"$3$s$J$3$H$O$7$J$$$G$7$g$&$,!#(B:-)
+これは私が書いたメッセージのスコアに 999 を加えて、それに対する (たぶん
+間接的な) 回答のメッセージのスコアに 500 を加えるでしょう。もちろん分別
+のある人は誰も、こんなことはしないでしょうが。:-)
 
 @item
-$B;0HVL\$NA*Br;h$OE,1~%9%3%"IU$1$G$9!#$3$l$O!"(BGnus $B$,$"$J$?$r4Q;!$7$F!"$"(B
-$B$J$?$,2?$K6=L#$r;}$C$F2?$K88LG$9$k$+$r8+$D$1=P$7!"$=$l$i$rH?1G$7$?5,B'$r(B
-$B@_Dj$7$F$/$l$k$b$N$G$9!#N.DLNL$NB?$$%0%k!<%W$rFI$`$H$-$K!"E,1~%9%3%"IU$1(B
-$B$OBg$-$J=u$1$K$J$k$G$7$g$&!#E,1~%9%3%"IU$1$r$d$C$F$_$?$$$J$i$P!"(B
-@file{~/.gnus.el} $B%U%!%$%k$G0J2<$N@k8@$r9T$J$C$F$/$@$5$$(B:
+三番目の選択肢は適応スコア付けです。これは、Gnus があなたを観察して、あ
+なたが何に興味を持って何に幻滅するかを見つけ出し、それらを反映した規則を
+設定してくれるものです。流通量の多いグループを読むときに、適応スコア付け
+は大きな助けになるでしょう。適応スコア付けをやってみたいならば、
+@file{~/.gnus.el} ファイルで以下の宣言を行なってください:
 
 @lisp
 (setq gnus-use-adaptive-scoring t)
@@ -1012,71 +1012,71 @@ Outlook $B$r8+6l$7$/$J$/$5$;$^$9!#$3$l$O!"%^%$%/%m%=%U%H$N@=IJ$r;H$C$F$$$k(B
 @end enumerate
 
 @node FAQ 4-10
-@subsubheading $B<ALd(B 4.10
+@subsubheading 質問 4.10
 
-$B$$$/$D$+$N(B ($BNc$($P%a!<%k$N(B) $B%0%k!<%W$G!"%9%l%C%II=<($r$5$;$J$/$9$k$3$H$O(B
-$B$G$-$^$9$+(B?  $B$"$k$$$O!"$$$/$D$+$N%0%k!<%W$K8GM-$NJQ?t$r@_Dj$9$k$3$H$,$G(B
-$B$-$^$9$+(B?
+いくつかの (例えばメールの) グループで、スレッド表示をさせなくすることは
+できますか?  あるいは、いくつかのグループに固有の変数を設定することがで
+きますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B%0%k!<%W%P%C%U%!!<$K$$$k$H$-$K!"$=$N%0%k!<%W$K%]%$%s%H$r0\F0$7$F$+(B
-$B$i(B @kbd{G c} $B$rC!$$$F$/$@$5$$!#$9$k$H!"$=$N%0%k!<%W$N$?$a$N%*%W%7%g%s$r(B
-$B@_Dj$9$k$3$H$,$G$-$k%P%C%U%!!<$,3+$-$^$9!#$=$7$F!"$=$N%P%C%U%!!<$N$*$7$^(B
-$B$$$NJ}$G!"$=$N%0%k!<%W$G%m!<%+%k$KJQ?t$r@_Dj$9$k$?$a$N9`L\$r8+$D$1$k$3$H(B
-$B$,$G$-$k$G$7$g$&!#%9%l%C%II=<($r$5$;$J$/$9$k$K$O!"JQ?tL>$H$7(B
-$B$F(B @code{gnus-show-threads} $B$r!"CM$H$7$F(B @code{nil} $B$rF~NO$7$F$/$@$5$$!#(B
-$B:n6H$r=*$($?$i!"$=$N%P%C%U%!!<$N:G=i$NJ}$K$"$k(B [done] $B%\%?%s$rC!$-$^$7$g(B
-$B$&!#(B
+グループバッファーにいるときに、そのグループにポイントを移動してか
+ら @kbd{G c} を叩いてください。すると、そのグループのためのオプションを
+設定することができるバッファーが開きます。そして、そのバッファーのおしま
+いの方で、そのグループでローカルに変数を設定するための項目を見つけること
+ができるでしょう。スレッド表示をさせなくするには、変数名とし
+て @code{gnus-show-threads} を、値として @code{nil} を入力してください。
+作業を終えたら、そのバッファーの最初の方にある [done] ボタンを叩きましょ
+う。
 
 @node FAQ 4-11
-@subsubheading $B<ALd(B 4.11
+@subsubheading 質問 4.11
 
-$B;d$,=q$$$?%a%C%;!<%8$H%U%)%m!<5-;v$r!"6/D4I=<($5$;$k$3$H$O$G$-$^$9$+(B?
+私が書いたメッセージとフォロー記事を、強調表示させることはできますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B!V$G$-$^$9$+(B?$B!W$J$s$F<ALd$O$d$a$F$/$@$5$$!#(BGnus $BB<$G$OEz$($O$$$D(B
-$B$b(B yes $B$J$N$G$9$+$i!#(B:-) $B$3$l$O;0CJ3,$N:n6H$K$J$j$^$9!#$^$:!"$=$l$i$NEj(B
-$B9F$N$?$a$N%U%'!<%9(B ($B35N,9T$,$I$s$J$U$&$K8+$($k$+$N;EMM(B) $B$r:n$j$^$7$g$&!#(B
-$BB3$$$F!"$=$l$i$K$$$/$P$/$+$NFCJL$J%9%3%"$rM?$($^$7$g$&!#:G8e$K!"$=$N?7$7(B
-$B$$%U%'!<%9$r;H$&$h$&$K(B Gnus $B$K;X<($7$^$7$g$&!#(B
+「できますか?」なんて質問はやめてください。Gnus 村では答えはいつ
+も yes なのですから。:-) これは三段階の作業になります。まず、それらの投
+稿のためのフェース (概略行がどんなふうに見えるかの仕様) を作りましょう。
+続いて、それらにいくばくかの特別なスコアを与えましょう。最後に、その新し
+いフェースを使うように Gnus に指示しましょう。
 
 @node FAQ 4-12
-@subsubheading $B<ALd(B 4.12
+@subsubheading 質問 4.12
 
-$BFC$K%a!<%k$N%0%k!<%W$G!"(BGnus $B$,%0%k!<%W%P%C%U%!!<$KI=<($9$k%a%C%;!<%8$N(B
-$B9g7W$N?t$,Hs>o$KBg$-$$$N$G$9!#$3$l$O%P%0$G$9$+(B?
+特にメールのグループで、Gnus がグループバッファーに表示するメッセージの
+合計の数が非常に大きいのです。これはバグですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$$$$$(!"$3$l$O(B Gnus $B$N@_7W>e$NLdBj$G!"$3$l$rD>$9$K$O(B Gnus $B$N%P%C%/%(%s%I(B
-$B$N<gMW$JItJ,$r<BAu$7D>$5$J$1$l$P$J$j$^$;$s!#(BGnus $B$O:GBg$N5-;vHV9f$+$i:G(B
-$B>.$N5-;vHV9f$r8:;;$7$?$b$N$,9g7W$N5-;v?t$G$"$k$H2r<a$7$^$9!#$3$l(B
-$B$O(B Usenet $B$N%0%k!<%W$G$O(B OK $B$J$N$G$9$,!"%a!<%k$N%0%k!<%W$G$?$/$5$s$N%a%C(B
-$B%;!<%8$r>C5n$7$?$j0\F0$9$k$H7W;;$K<:GT$7$^$9!#$3$NIB$r<#NE$9$k$K(B
-$B$O(B @kbd{C-u RET} $B$G$=$N%0%k!<%W$KF~$j(B ($B$3$NL?Na$O(B Gnus $B$K$9$Y$F$N%a%C%;!<(B
-$B%8$r;}$C$FMh$5$;$^$9(B)$B!"(B@kbd{M P b} $B$G$9$Y$F$N%a%C%;!<%8$K0u$rIU$1$F$+$i!"(B
-@kbd{B m name.of.group} $B$G%a%C%;!<%8$rA4It!"$=$l$i$,85$"$C$?%0%k!<%W$K0\(B
-$BF0$7$F$/$@$5$$!#$3$N=hM}$K$h$C$F$=$l$i$O?7$7$$%a%C%;!<%8HV9f$r;}$?$;$i$l(B
-$B$F!"9g7W$N5-;v?t$O:F$S@5$7$/$J$k$G$7$g$&(B ($B$^$?$b$d$=$l$i$r>C$7$?$jJL$N%0(B
-$B%k!<%W$K0\F0$9$k$^$G$O(B)$B!#(B
+いいえ、これは Gnus の設計上の問題で、これを直すには Gnus のバックエンド
+の主要な部分を実装し直さなければなりません。Gnus は最大の記事番号から最
+小の記事番号を減算したものが合計の記事数であると解釈します。これ
+は Usenet のグループでは OK なのですが、メールのグループでたくさんのメッ
+セージを消去したり移動すると計算に失敗します。この病を治療するに
+は @kbd{C-u RET} でそのグループに入り (この命令は Gnus にすべてのメッセー
+ジを持って来させます)、@kbd{M P b} ですべてのメッセージに印を付けてから、
+@kbd{B m name.of.group} でメッセージを全部、それらが元あったグループに移
+動してください。この処理によってそれらは新しいメッセージ番号を持たせられ
+て、合計の記事数は再び正しくなるでしょう (またもやそれらを消したり別のグ
+ループに移動するまでは)。
 
 @node FAQ 4-13
-@subsubheading $B<ALd(B 4.13
+@subsubheading 質問 4.13
 
-$B35N,%P%C%U%!!<$H5-;v%P%C%U%!!<$NG[CV$,5$$KF~$i$J$$$N$G$9$,!"$I$&$d$C$?$i(B
-$BJQ99$G$-$^$9$+(B?  $B$G$-$k$J$i;0LL$GI=<($5$;$?$$$G$9!#(B
+概略バッファーと記事バッファーの配置が気に入らないのですが、どうやったら
+変更できますか?  できるなら三面で表示させたいです。
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@code{gnus-add-configuration} $B4X?t$r8F$V$3$H$K$h$C$F!"%&%#%s%I%&$NG[CV$r(B
-$B@)8f$9$k$3$H$,$G$-$^$9!#9=J8$O$$$5$5$+J#;($G$9$,!"%^%K%e%"%k$GHs>o$KNI$/(B
-$B@bL@$5$l$F$$$^$9(B (@pxref{Window Layout, ,$B%&%#%s%I%&$NG[CV(B, gnus-ja, The
-Gnus Manual})$B!#$$$/$D$+$N$d$5$7$$Nc$r5s$2$F$_$^$7$g$&!#(B
+@code{gnus-add-configuration} 関数を呼ぶことによって、ウィンドウの配置を
+制御することができます。構文はいささか複雑ですが、マニュアルで非常に良く
+説明されています (@pxref{Window Layout, ,ウィンドウの配置, gnus-ja, The
+Gnus Manual})。いくつかのやさしい例を挙げてみましょう。
 
-$B35N,(B 25% $B5-;v(B 75% $B$H$$$&%G%#%U%)%k%H$N3d9g$r!"35N,(B 35% $B5-;v(B 65% $B$N3d9g$K(B
-$BJQ99$7$^$9(B ($B5-;v$N$?$a$N(B 1.0 $B$O!";D$C$?6u$-CO$r<h$k$H$$$&0UL#$G$9(B):
+概略 25% 記事 75% というディフォルトの割合を、概略 35% 記事 65% の割合に
+変更します (記事のための 1.0 は、残った空き地を取るという意味です):
 
 @lisp
 (gnus-add-configuration
@@ -1084,8 +1084,8 @@ Gnus Manual})$B!#$$$/$D$+$N$d$5$7$$Nc$r5s$2$F$_$^$7$g$&!#(B
 @end lisp
 
 @noindent
-$B%0%k!<%W%P%C%U%!!<$,:8!"35N,%P%C%U%!!<$,1&>e!"5-;v%P%C%U%!!<$,1&2<$H$$$&(B
-$B;0LLG[CV$G$9(B:
+グループバッファーが左、概略バッファーが右上、記事バッファーが右下という
+三面配置です:
 
 @lisp
 (gnus-add-configuration
@@ -1106,26 +1106,26 @@ Gnus Manual})$B!#$$$/$D$+$N$d$5$7$$Nc$r5s$2$F$_$^$7$g$&!#(B
 @end lisp
 
 @node FAQ 4-14
-@subsubheading $B<ALd(B 4.14
+@subsubheading 質問 4.14
 
-$B35N,%P%C%U%!!<$r8+$;$k$d$jJ}$,9%$-$G$O$"$j$^$;$s!#D4@0$9$k$K$O!"$I$&$9$l(B
-$B$PNI$$$G$9$+(B?
+概略バッファーを見せるやり方が好きではありません。調整するには、どうすれ
+ば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BJQ?t(B @code{gnus-summary-line-format} $B$r$$$8$/$j2s$9I,MW$,$"$j$^$9!#$=$N(B
-$BCM$OCx<T!"F|IU!"I=Bj$J$I$N$h$&$J$b$N$rI=$9%7%s%\%k$NJ8;zNs$G$9!#;H$&$3$H(B
-$B$,$G$-$k;EMM$N%j%9%H$O(B @pxref{Summary Buffer Lines, ,$B35N,%P%C%U%!!<$N9T(B,
-gnus-ja, The Gnus Manual} $B$H!"$7$P$7$PK:$l$i$l$F$7$^$&(B @pxref{Formatting
-Variables, ,$B=qK!;EMMJQ?t(B, gnus-ja, The Gnus Manual} $B$*$h$S$=$N2<0L$N3F>O(B
-$B$G8+$D$+$k$O$:$G$9!#$=$3$G$O=qK!;EMM$N35N,$r;H$&$3$H$,$G$-$k$h$&$K$7$F$/(B
-$B$l$k!"%+!<%=%k$N0LCV;XDj$d%?%V0LCV$N;XDj$N$h$&$J$b$N$r8+$D$1$k$3$H$,$G$-(B
-$B$k$G$7$g$&!#;DG0$J$,$i(B 5.8.8 $B$G$O%?%V0LCV$r8GDj$5$;$k5!G=$,2u$l$F$$$^$9!#(B
+変数 @code{gnus-summary-line-format} をいじくり回す必要があります。その
+値は著者、日付、表題などのようなものを表すシンボルの文字列です。使うこと
+ができる仕様のリストは @pxref{Summary Buffer Lines, ,概略バッファーの行,
+gnus-ja, The Gnus Manual} と、しばしば忘れられてしまう @pxref{Formatting
+Variables, ,書法仕様変数, gnus-ja, The Gnus Manual} およびその下位の各章
+で見つかるはずです。そこでは書法仕様の概略を使うことができるようにしてく
+れる、カーソルの位置指定やタブ位置の指定のようなものを見つけることができ
+るでしょう。残念ながら 5.8.8 ではタブ位置を固定させる機能が壊れています。
 
-5.10 $B$+$i!"(BGnus $B$OHs>o$K$_$4$H$J?7$7$$=qK!;EMMJQ?t$rDs6!$7$F$$$^$9!#Nc$((B
-$B$P(B %B $B$O%9%l%C%ILZ$rIA$-!"$^$?(B %&user-date $B$O!"$I$&I=<($9$k$+$,5-;v$,H/(B
-$B?.$5$l$F$+$i$N7P2a;~4V$K0MB8$7$F$$$kF|IU$rI=<($7$^$9!#$3$l$i$NN>J}$r;H$C(B
-$B$F$$$kNc$G$9(B:
+5.10 から、Gnus は非常にみごとな新しい書法仕様変数を提供しています。例え
+ば %B はスレッド木を描き、また %&user-date は、どう表示するかが記事が発
+信されてからの経過時間に依存している日付を表示します。これらの両方を使っ
+ている例です:
 
 @lisp
 (setq gnus-summary-line-format
@@ -1133,7 +1133,7 @@ Variables, ,$B=qK!;EMMJQ?t(B, gnus-ja, The Gnus Manual} $B$*$h$S$=$N2<0L$N3F>
 @end lisp
 
 @noindent
-$B7k2L$O$3$s$J$U$&$K$J$j$^$9(B:
+結果はこんなふうになります:
 
 @example
 :O     Re: [Richard Stallman] rfc2047.el          |  13 |Lars Magne Ingebrigt |Sat 23:06
@@ -1151,40 +1151,40 @@ Variables, ,$B=qK!;EMMJQ?t(B, gnus-ja, The Gnus Manual} $B$*$h$S$=$N2<0L$N3F>
 @end example
 
 @node FAQ 4-15
-@subsubheading $B<ALd(B 4.15
+@subsubheading 質問 4.15
 
-$B$d$C$F$-$?%a!<%k$r$$$m$$$m$J%0%k!<%W$K?6$jJ,$1$k$K$O!"$I$&$7$?$iNI$$$G$9(B
-$B$+(B?
+やってきたメールをいろいろなグループに振り分けるには、どうしたら良いです
+か?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$O%a!<%k$rJ,3d$9$k$?$a$NFs$D$N<jCJ$H$7$F!"$d$5$7(B
-$B$$(B @code{nnmail-split-methods} $B$H!"$b$C$H6/NO$JFC5i%a!<%kJ,3d$N5!G=$rDs(B
-$B6!$7$^$9!#$3$3$G$O:G=i$N$b$N$@$1$K$D$$$F=R$Y$^$9$,!"8e<T$K$D$$$F$O%^%K%e(B
-$B%"%k(B (@pxref{Fancy Mail Splitting, ,$BFC5i%a!<%kJ,3d(B, gnus-ja, The Gnus
-Manual}) $B$r;2>H$7$F$/$@$5$$!#(B
+Gnus はメールを分割するための二つの手段として、やさし
+い @code{nnmail-split-methods} と、もっと強力な特級メール分割の機能を提
+供します。ここでは最初のものだけについて述べますが、後者についてはマニュ
+アル (@pxref{Fancy Mail Splitting, ,特級メール分割, gnus-ja, The Gnus
+Manual}) を参照してください。
 
-@code{nnmail-split-methods} $B$NCM$O%j%9%H$G!"$=$l$>$l$NMWAG$OJ,3d$N5,B'$r(B
-$BI=$9%j%9%H$G$9!#$=$l$>$l$N5,B'$O!V9gCW$9$k5-;v$,9T$/$Y$-%0%k!<%W!W$H!V9g(B
-$BCW$9$Y$-@55,I=8=!W$N7A<0$r;}$C$F$$$F!":G=i$K9gCW$7$?5,B'$,>!$A$^$9!#:G8e(B
-$B$N5,B'$O>o$KHFMQ$N5,B'(B ($B@55,I=8=(B @samp{.*}) $B$G$J$1$l$P$J$j$^$;$s!#$=$l$O(B
-$BB>$N$I$s$J5,B'$K$b9gCW$7$J$$5-;v$,9T$/$Y$->l=j$r<($7$^$9!#$b$7$^$@%U%)%k(B
-$B%@!<$,L5$+$C$?$J$i$P!"$=$l$O5-;v$,$=$3$KCeCO$9$k$H$9$0$K:n$i$l$k$G$7$g$&!#(B
-$B%G%#%U%)%k%H$G$O!"%a!<%k$O5,B'$K9gCW$9$k$9$Y$F$N%0%k!<%W$KAw$i$l$^$9!#$=(B
-$B$l$rK>$^$J$$$J$i$P(B ($B$?$V$sK>$^$J$$$G$7$g$&(B)$B!"0J2<$N$b$N(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F$/$@$5$$(B:
+@code{nnmail-split-methods} の値はリストで、それぞれの要素は分割の規則を
+表すリストです。それぞれの規則は「合致する記事が行くべきグループ」と「合
+致すべき正規表現」の形式を持っていて、最初に合致した規則が勝ちます。最後
+の規則は常に汎用の規則 (正規表現 @samp{.*}) でなければなりません。それは
+他のどんな規則にも合致しない記事が行くべき場所を示します。もしまだフォル
+ダーが無かったならば、それは記事がそこに着地するとすぐに作られるでしょう。
+ディフォルトでは、メールは規則に合致するすべてのグループに送られます。そ
+れを望まないならば (たぶん望まないでしょう)、以下のもの
+を @file{~/.gnus.el} ファイルに入れてください:
 
 @lisp
 (setq nnmail-crosspost nil)
 @end lisp
 
-$B$?$C$?0l$D$NNc$O@i$N8@MU$rJB$Y$k$h$j$b>!$j$^$9!#$=$3$G!"$3$3$G$O;d(B
-$B$N(B @code{nnmail-split-methods} $B$r>R2p$7$^$7$g$&!#;d$O!";d$,9VFI$7$F$$$k(B
-$B$$$/$D$+$N%a!<%j%s%0%j%9%H$+$iMh$k$+!";d$rD>@\$KL\;X$7$FMh$?$9$Y$F$N%a!<(B
-$B%k$r_I2a4o$KDL$9$N$G!";d$,FCJL$N%0%k!<%W$NJ#<L$rAw$k$3$H$H!"%G%#%U%)%k%H(B
-$B$N%0%k!<%W$O(B @samp{spam} $B$G$"$k$3$H$KCm0U$7$F$/$@$5$$!#$3$l$i$N5,B'$O!"(B
-$B;d08$F$KFO$$$?(B spam $B$N$*$h$=(B 80% $B$r;&$7$F$/$l$^$9(B ($BEE;R%a!<%k%"%I%l%9(B
-$B$O(B spammers $B$,$=$l$i$r;HMQ$9$k$N$rKI$0$?$a$KJQ99$5$l$^$9(B)$B!#(B
+たった一つの例は千の言葉を並べるよりも勝ります。そこで、ここでは私
+の @code{nnmail-split-methods} を紹介しましょう。私は、私が講読している
+いくつかのメーリングリストから来るか、私を直接に目指して来たすべてのメー
+ルを濾過器に通すので、私が特別のグループの複写を送ることと、ディフォルト
+のグループは @samp{spam} であることに注意してください。これらの規則は、
+私宛てに届いた spam のおよそ 80% を殺してくれます (電子メールアドレス
+は spammers がそれらを使用するのを防ぐために変更されます)。
 
 @lisp
 (setq
@@ -1214,106 +1214,106 @@ Manual}) $B$r;2>H$7$F$/$@$5$$!#(B
 @end lisp
 
 @node FAQ 4-16
-@subsubheading $B<ALd(B 4.16
+@subsubheading 質問 4.16
 
-HTML $B%a!<%k$r8+$k$H$-%3%s%H%i%9%H$r$h$jNI$/$9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+HTML メールを見るときコントラストをより良くするには、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$KAH$_9~$^$l$F$$$k%7%s%W%k$J(B HTML $BIA2h(B
-$B4o(B (@code{mm-text-html-renderer} $B$,(B @code{shr} $B$G$"$k$H$-$K;H$&$b$N(B) $B$O!"(B
-HTML $B%a!<%k$NCf$G;XDj$5$l$F$$$k?'$r;H$$$^$9$,!"9u?'$NGX7J$KBP$7$F%@!<%/(B
-$B%0%l%$$N%F%-%9%H$rI=<($7$F$7$^$&$h$&$J>u67$rHr$1$k$?$a$K!"$=$l$i$N?'$rD4(B
-$B@0$7$^$9!#$7$+$7!"$=$l$G$b$^$@%3%s%H%i%9%H$,Dc2a$.$k$J$i!"JQ(B
-$B?t(B @code{shr-color-visible-distance-min} $B$*$h(B
-$B$S(B @code{shr-color-visible-luminance-min} $B$NCM$rA}$d$7$F$/$@$5$$!#(B
+Gnus に組み込まれているシンプルな HTML 描画
+器 (@code{mm-text-html-renderer} が @code{shr} であるときに使うもの) は、
+HTML メールの中で指定されている色を使いますが、黒色の背景に対してダーク
+グレイのテキストを表示してしまうような状況を避けるために、それらの色を調
+整します。しかし、それでもまだコントラストが低過ぎるなら、変
+数 @code{shr-color-visible-distance-min} およ
+び @code{shr-color-visible-luminance-min} の値を増やしてください。
 
 @node FAQ 5 - Composing messages
-@subsection $B%a%C%;!<%8$N:n@.(B
+@subsection メッセージの作成
 
 @menu
-* FAQ 5-1::  $B!!%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$KCN$C(B
-               $B$F$$$kI,MW$,$"$k4pK\E*$J%3%^%s%I$O2?$G$9$+(B?
+* FAQ 5-1::  　メールを送信したりニュース記事を投稿するために知っ
+               ている必要がある基本的なコマンドは何ですか?
 
-* FAQ 5-2::  $B!!%a!<%k$r:n@.$9$k$H$-!"<+F0E*$K9T$r@^$jJV$9$K$O$I$&(B
-               $B$9$l$PNI$$$G$9$+(B?
+* FAQ 5-2::  　メールを作成するとき、自動的に行を折り返すにはどう
+               すれば良いですか?
 
-* FAQ 5-3::  $B!!(BFrom, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8(B
-               $B@.$7$?$j!"Dj7?$N=pL>(B (signature) $B$r<+F0E*$KA^F~$9$k(B
-               $B$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 5-3::  　From, Organization, Reply-To などのヘッダーを自動生
+               成したり、定型の署名 (signature) を自動的に挿入する
+               には、どうしたら良いですか?
 
-* FAQ 5-4::  $B!!Ej9F$9$k%0%k!<%W$K$h$C$F0[$J$k(B From $B%X%C%@!<$d=pL>(B
-               $B$J$I$r<+F0A^F~$9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+* FAQ 5-4::  　投稿するグループによって異なる From ヘッダーや署名
+               などを自動挿入するには、どうすれば良いですか?
 
-* FAQ 5-5::  $B!!%9%Z%k%A%'%C%+!<$O$"$j$^$9$+(B?  $B$G$-$l$P!"=q$$$?$=$N(B
-               $B>l$G%A%'%C%/$7$F$/$l$k$b$N$,$"$l$PNI$$$N$G$9$,!#(B
+* FAQ 5-5::  　スペルチェッカーはありますか?  できれば、書いたその
+               場でチェックしてくれるものがあれば良いのですが。
 
-* FAQ 5-6::  $B!!Ej9F$9$k%0%k!<%W$K4p$E$$$F!"<-=q(B ($B%9%Z%k%A%'%C%+!<(B
-               $B$N(B) $B$r@Z$jBX$($k$3$H$O$G$-$^$9$+(B?
+* FAQ 5-6::  　投稿するグループに基づいて、辞書 (スペルチェッカー
+               の) を切り替えることはできますか?
 
-* FAQ 5-7::  $B!!A40w$NEE;R%a!<%k%"%I%l%9$r;W$$=P$5$J$/$F$b:Q$`$h$&(B
-               $B$K$9$k$?$a$N!"%"%I%l%9D"$N$h$&$J$b$N$O$"$j$^$9$+(B?
+* FAQ 5-7::  　全員の電子メールアドレスを思い出さなくても済むよう
+               にするための、アドレス帳のようなものはありますか?
 
-* FAQ 5-8::  $B!!5-;v%P%C%U%!!<$N>e$NJ}$G!"$H$-$I$->.$5$J2hA|$rL\$K(B
-               $B$7$^$9!#$"$l$O2?$G$9$+(B?  $B$^$?!"$I$&$7$?$i;d$bEj9F$9(B
-               $B$k$H$-$KIU$1$k$3$H$,$G$-$^$9$+(B?
+* FAQ 5-8::  　記事バッファーの上の方で、ときどき小さな画像を目に
+               します。あれは何ですか?  また、どうしたら私も投稿す
+               るときに付けることができますか?
 
-* FAQ 5-9::  $B!!$H$-$I$-%K%e!<%9%0%k!<%W$G!"(B`f' $B$NBe$o$j$K$&$C$+$j(B
-               `r' $B$rBG$C$F$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K$b$+(B
-               $B$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?$H$-$K!"(BGnus $B$K7Y9p(B
-               $B$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
+* FAQ 5-9::  　ときどきニュースグループで、`f' の代わりにうっかり
+               `r' を打ってしまいます。ニュースグループなのにもか
+               かわらずメールで返信しようとしたときに、Gnus に警告
+               してもらうことはできますか?
 
-* FAQ 5-10:: $B!!(BGnus $B$,(B sender $B%X%C%@!<$r@8@.$7$J$$$h$&$K$9$k$K$O!"(B
-               $B$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 5-10:: 　Gnus が sender ヘッダーを生成しないようにするには、
+               どうしたら良いですか?
 
-* FAQ 5-11:: $B!!Aw?.$7$?%a!<%k$d%K%e!<%9$N95$($r%m!<%+%k$K;D$7$F$*(B
-               $B$-$?$$$N$G$9$,!"$I$&$9$l$PNI$$$G$9$+(B?
+* FAQ 5-11:: 　送信したメールやニュースの控えをローカルに残してお
+               きたいのですが、どうすれば良いですか?
 
-* FAQ 5-12:: $B!!Aw?.$K@.8y$7$?8e$G$=$N%P%C%U%!!<$r(B "Sent mail to..."
-               $B$H$7$F@8$+$7$?$^$^$K$7$F$*$/Be$o$j$K(B kill $B$9$k$K$O(B
-               $B$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 5-12:: 　送信に成功した後でそのバッファーを "Sent mail to..."
+               として生かしたままにしておく代わりに kill するには
+               どうしたら良いですか?
 
-* FAQ 5-13:: $B!!(BMessage-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"$=$l$O(B
-               $B$J$<$G$9$+(B?  $B$^$?!"$I$&$d$C$FD>$7$?$iNI$$$G$9$+(B?
+* FAQ 5-13:: 　Message-ID が不正だと言われてしまうのですが、それは
+               なぜですか?  また、どうやって直したら良いですか?
 @end menu
 
 @node FAQ 5-1
-@subsubheading $B<ALd(B 5.1
+@subsubheading 質問 5.1
 
-$B%a!<%k$rAw?.$7$?$j%K%e!<%95-;v$rEj9F$9$k$?$a$KCN$C$F$$$kI,MW$,$"$k4pK\E*(B
-$B$J%3%^%s%I$O2?$G$9$+(B?
+メールを送信したりニュース記事を投稿するために知っている必要がある基本的
+なコマンドは何ですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B?7$7$$%a!<%k$N:n@.$r;O$a$k$K$O!"%0%k!<%W%P%C%U%!!<$+35N,%P%C%U%!!<$N$I$A(B
-$B$i$+$G(B @kbd{m} $B$rC!$$$F$/$@$5$$!#%K%e!<%95-;v$rEj9F$9$k>l9g$K$O!"%0%k!<(B
-$B%W%P%C%U%!!<$G(B @kbd{a} $B$rC!$$$?8e$K<j$G(B Newsgroups $B%X%C%@!<$K=q$-9~$`$+!"(B
-$BEj9F$9$k%0%k!<%W$N35N,%P%C%U%!!<$G(B @kbd{a} $B$rC!$$$F$/$@$5$$!#(B
+新しいメールの作成を始めるには、グループバッファーか概略バッファーのどち
+らかで @kbd{m} を叩いてください。ニュース記事を投稿する場合には、グルー
+プバッファーで @kbd{a} を叩いた後に手で Newsgroups ヘッダーに書き込むか、
+投稿するグループの概略バッファーで @kbd{a} を叩いてください。
 
-$B%a!<%k$GJV?.$9$k>l9g!"85$N5-;v$r0zMQ$7$J$$$+8e$G<j:n6H$G0zMQ$9$k$D$b$j$J(B
-$B$i$P(B @kbd{r} $B$r!"0zMQJ8$r:G=i$+$i<h$j9~$s$G$7$^$&$N$J$i$P(B @kbd{R} $B$r;H$C(B
-$B$F$/$@$5$$!#%K%e!<%9%0%k!<%W$G%U%)%m!<5-;v$rEj9F$9$k>l9g$G$"$l(B
-$B$P(B @kbd{f} $B$+(B @kbd{F} (@kbd{r} $B$H(B @kbd{R} $B$N4X78$K;w$F$$$^$9(B) $B$r;H$$$^$7$g(B
-$B$&!#(B
+メールで返信する場合、元の記事を引用しないか後で手作業で引用するつもりな
+らば @kbd{r} を、引用文を最初から取り込んでしまうのならば @kbd{R} を使っ
+てください。ニュースグループでフォロー記事を投稿する場合であれ
+ば @kbd{f} か @kbd{F} (@kbd{r} と @kbd{R} の関係に似ています) を使いましょ
+う。
 
-$B?7$?$K%X%C%@!<$rA^F~$9$k$J$i$P(B @samp{--text follows this line--} $B$N>e$K(B
-$B=q$$$F!"K\J8$O$=$N2<$K=q$$$F$/$@$5$$!#=q$->e$,$C$?%a%C%;!<%8$rAw?.$9$k%3(B
-$B%^%s%I$O(B @kbd{C-c C-c} $B$G!"8e$G;E>e$2$k$?$a$K(B @samp{drafts} $B%0%k!<%W$KJ](B
-$BB8$9$k$?$a$N%3%^%s%I$O(B @kbd{C-c C-d} $B$G$9!#8e<T$O(B @kbd{D e} $B$G:F$SJT=8$9(B
-$B$k$3$H$,$G$-$^$9!#(B
+新たにヘッダーを挿入するならば @samp{--text follows this line--} の上に
+書いて、本文はその下に書いてください。書き上がったメッセージを送信するコ
+マンドは @kbd{C-c C-c} で、後で仕上げるために @samp{drafts} グループに保
+存するためのコマンドは @kbd{C-c C-d} です。後者は @kbd{D e} で再び編集す
+ることができます。
 
 @node FAQ 5-2
-@subsubheading $B<ALd(B 5.2
+@subsubheading 質問 5.2
 
-$B%a!<%k$r:n@.$9$k$H$-!"<+F0E*$K9T$r@^$jJV$9$K$O$I$&$9$l$PNI$$$G$9$+(B?
+メールを作成するとき、自動的に行を折り返すにはどうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-No Gnus $B$N>l9g$O<+F0$G9T$r@^$jJV$95!G=$,%G%#%U%)%k%H$G(B ON $B$K$J$j$^$9!#JQ(B
-$B?t(B @code{message-fill-column} $B$r;2>H$7$F$/$@$5$$!#(B
+No Gnus の場合は自動で行を折り返す機能がディフォルトで ON になります。変
+数 @code{message-fill-column} を参照してください。
 
-$BB>$N(B Gnus $B$NHG$G$O!"$3$s$J$b$N$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F$/$@(B
-$B$5$$(B:
+他の Gnus の版では、こんなものを @file{~/.gnus.el} ファイルに入れてくだ
+さい:
 
 @lisp
 (unless (boundp 'message-fill-column)
@@ -1324,20 +1324,20 @@ No Gnus $B$N>l9g$O<+F0$G9T$r@^$jJV$95!G=$,%G%#%U%)%k%H$G(B ON $B$K$J$j$^$9!#J
 @end lisp
 
 @noindent
-$B$$$D$b$NDL$j$K(B @kbd{M-q} $B$r;H$&$3$H$K$h$C$F!"CJMn$r:F@07A$9$k$3$H$,$G$-(B
-$B$^$9!#(B
+いつもの通りに @kbd{M-q} を使うことによって、段落を再整形することができ
+ます。
 
 @node FAQ 5-3
-@subsubheading $B<ALd(B 5.3
+@subsubheading 質問 5.3
 
-From, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8@.$7$?$j!"Dj7?$N=p(B
-$BL>(B (signature) $B$r<+F0E*$KA^F~$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+From, Organization, Reply-To などのヘッダーを自動生成したり、定型の署
+名 (signature) を自動的に挿入するには、どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BB>$N$d$jJ}$b$"$j$^$9$,!"$3$l$N$?$a$K$OEj9FMM<0(B (posting styles) $B$r;H$&$Y(B
-$B$-$G$9(B ($BM}M3$O8e$G=q$-$^$9(B)$B!#$3$NNc$J$i$P!"$=$N9=J8$,L@3N$K$o$+$k$O$:$G(B
-$B$9(B:
+他のやり方もありますが、これのためには投稿様式 (posting styles) を使うべ
+きです (理由は後で書きます)。この例ならば、その構文が明確にわかるはずで
+す:
 
 @lisp
 (setq gnus-posting-styles
@@ -1351,44 +1351,44 @@ From, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8@.$7$?$j!"Dj7?$N=p(B
 @end lisp
 
 @noindent
-@code{".*"} $B$H$$$&@_Dj$O%G%#%U%)%k%H$N$b$N$G$9(B (@ref{FAQ 5-4} $B;2>H(B)$B!#$=(B
-$B$l0J9_$N%j%9%H$NBh0lMWAG$K;H$($kCM(B ($BB0@-L>(B) $B$O(B @code{signature},
+@code{".*"} という設定はディフォルトのものです (@ref{FAQ 5-4} 参照)。そ
+れ以降のリストの第一要素に使える値 (属性名) は @code{signature},
 @code{signature-file}, @code{organization}, @code{address}, @code{name}
-$B$^$?$O(B @code{body} $B$G$9!#B0@-L>$OJ8;zNs$G$b9=$$$^$;$s!#$=$N>l9g!"B0@-L>(B
-$B$O%X%C%@!<L>$H$7$F;H$o$l!"$=$NCM$O5-;v$N%X%C%@!<$KA^F~$5$l$^$9!#$?$@$7CM(B
-$B$,(B @code{nil} $B$@$C$?$i!"$=$NL>A0$N%X%C%@!<$O:o=|$5$l$^$9!#(B
+または @code{body} です。属性名は文字列でも構いません。その場合、属性名
+はヘッダー名として使われ、その値は記事のヘッダーに挿入されます。ただし値
+が @code{nil} だったら、その名前のヘッダーは削除されます。
 
-@code{(eval (foo bar))} $B$N7A<0$r;H$&$3$H$b2DG=$G!"$=$N>l9g(B @code{bar} $B$r(B
-$B0z?t$KM?$($i$l$F4X?t(B @code{foo} $B$,I>2A$5$l!"7k2L$O<N$F$i$l$^$9!#(B
+@code{(eval (foo bar))} の形式を使うことも可能で、その場合 @code{bar} を
+引数に与えられて関数 @code{foo} が評価され、結果は捨てられます。
 
 @node FAQ 5-4
-@subsubheading $B<ALd(B 5.4
+@subsubheading 質問 5.4
 
-$BEj9F$9$k%0%k!<%W$K$h$C$F0[$J$k(B From $B%X%C%@!<$d=pL>$r<+F0A^F~$9$k$K$O!"$I(B
-$B$&$9$l$PNI$$$G$9$+(B?
+投稿するグループによって異なる From ヘッダーや署名を自動挿入するには、ど
+うすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$3$l$3$=$,Ej9FMM<0(B (posting styles) $B$N6/$_$G$9!#A0$N2s(B
-$BEz(B (@pxref{FAQ 5-3}) $B$G$O!"$9$Y$F$N%0%k!<%W$N$?$a$N%G%#%U%)%k%H$r@_Dj$9(B
-$B$k$?$a$K(B @code{".*"} $B$r;H$$$^$7$?!#$3$l$K(B @code{"^gmane"} $B$N$h$&$J@55,I=(B
-$B8=$r;H$&$H!"$=$l0J9_$N@_Dj$r(B gmane $B%K%e!<%9%0%k!<%W$N3,AX$GEj9F$9$k5-;v(B
-$B$@$1$KE,MQ$5$;$k$3$H$,$G$-$^$9!#Be$o$j$K(B @code{".*binaries"} $B$r;H$&$H!"(B
-$BL>A0$J$I$,(B @samp{binary} $B$H$$$&J8;zNs$r4^$s$G$$$k%0%k!<%W$KEj9F$9$k5-;v(B
-$B$@$1$K!"$=$l$i$N@_Dj$,E,MQ$5$l$^$9!#(B
+これこそが投稿様式 (posting styles) の強みです。前の回
+答 (@pxref{FAQ 5-3}) では、すべてのグループのためのディフォルトを設定す
+るために @code{".*"} を使いました。これに @code{"^gmane"} のような正規表
+現を使うと、それ以降の設定を gmane ニュースグループの階層で投稿する記事
+だけに適用させることができます。代わりに @code{".*binaries"} を使うと、
+名前などが @samp{binary} という文字列を含んでいるグループに投稿する記事
+だけに、それらの設定が適用されます。
 
-$B@55,I=8=$NBe$o$j$K4X?t$r;XDj$9$k$3$H$b$G$-!"$=$l$,I>2A$5$l$F??$rJV$9$H$-(B
-$B$@$1!"$=$l$KBP1~$9$k@_Dj$,M-8z$K$J$j$^$9!#$3$l$N6=L#?<$$Fs$D$N8uJd$O!"(B
-$B8=:_$N%0%k!<%W$,%K%e!<%9%0%k!<%W$@$C$?$i(B @code{t} $B$rJV(B
-$B$9(B @code{message-news-p} $B$H!"$=$l$HBP$K$J$k(B @code{message-mail-p} $B$G$9!#(B
+正規表現の代わりに関数を指定することもでき、それが評価されて真を返すとき
+だけ、それに対応する設定が有効になります。これの興味深い二つの候補は、
+現在のグループがニュースグループだったら @code{t} を返
+す @code{message-news-p} と、それと対になる @code{message-mail-p} です。
 
-$B$9$Y$F$N9gCW$9$kMM<0$,E,MQ$5$l$k$3$H$KCm0U$7$F$/$@$5$$!#0J2<$rNc$K$9$l$P!"(B
-@samp{gmane.mail.spam.spamassassin.general} $B$KEj9F$9$k$H(B @code{".*"} $B$G(B
-$B;O$^$k@_Dj$,E,MQ$5$l!"(B@code{message-news-p} $B0J2<$N@_Dj$bE,MQ$5$l!"(B
-@code{"^gmane"} $B$G;O$^$k@_Dj!"$=$l(B
-$B$K(B @code{"^gmane\\.mail\\.spam\\.spamassassin\\.general$"} $B0J2<$N@_Dj$N(B
-$B$9$Y$F$,E,MQ$5$l$k$H$$$&$3$H$G$9!#$3$N$?$a!"0lHLE*$J@_Dj$O@hF,$KCV$-!"FC(B
-$BDj$N>r7o$r;}$D$b$N$O2<$NJ}$KCV$/$N$,NI$$$G$7$g$&!#(B
+すべての合致する様式が適用されることに注意してください。以下を例にすれば、
+@samp{gmane.mail.spam.spamassassin.general} に投稿すると @code{".*"} で
+始まる設定が適用され、@code{message-news-p} 以下の設定も適用され、
+@code{"^gmane"} で始まる設定、それ
+に @code{"^gmane\\.mail\\.spam\\.spamassassin\\.general$"} 以下の設定の
+すべてが適用されるということです。このため、一般的な設定は先頭に置き、特
+定の条件を持つものは下の方に置くのが良いでしょう。
 
 @lisp
 (setq
@@ -1411,61 +1411,61 @@ From, Organization, Reply-To $B$J$I$N%X%C%@!<$r<+F0@8@.$7$?$j!"Dj7?$N=p(B
 @end lisp
 
 @node FAQ 5-5
-@subsubheading $B<ALd(B 5.5
+@subsubheading 質問 5.5
 
-$B%9%Z%k%A%'%C%+!<$O$"$j$^$9$+(B?  $B$G$-$l$P!"=q$$$?$=$N>l$G%A%'%C%/$7$F$/$l(B
-$B$k$b$N$,$"$l$PNI$$$N$G$9$,!#(B
+スペルチェッカーはありますか?  できれば、書いたその場でチェックしてくれ
+るものがあれば良いのですが。
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Emacs $B$G$OC18l$NDV$j$r%A%'%C%/$9$k$?$a$K(B @file{ispell.el} $B$r;H$&$3$H$,$G(B
-$B$-$^$9!#$7$?$,$C$F:G=i$K9T$J$&$N$O!"30It%W%m%0%i(B
-$B%`(B @uref{http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html,
-ispell} $B$^$?$OF1(B @uref{http://aspell.sourceforge.net/, aspell} $B$rE,Ev(B
-$B$J(B path $B$K%$%s%9%H!<%k$7$F$*$/$3$H$G$9!#<!(B
-$B$K(B @uref{http://www.kdstevens.com/~stevens/ispell-page.html,
-ispell.el} $B$H!"=q$$$?$=$N>l$G%9%Z%k%A%'%C%/$r$7$F$/$l(B
-$B$k(B @uref{http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html,
-flyspell.el} $B$rMQ0U$7$F$/$@$5$$!#(B@file{ispell.el} $B$O(B Emacs $B$H$H$b$KG[I[(B
-$B$5$l$F$$$k$@$1$G$O$J$/!"(BXEmacs $B%Q%C%1!<%8%7%9%F%`$K$h$C$F$b<j$KF~$l$k$3(B
-$B$H$,$G$-$^$9!#(B@file{flyspell.el} $B$b(B Emacs $B$KF1:-$5$l$F$$$k$N$H$H$b$K!"%Q%C(B
-$B%1!<%8%7%9%F%`$r2p$7$FF~<j$9$k$3$H$,$G$-(B
-$B$k(B XEmacs $B$N(B @code{text-modes} $B%Q%C%1!<%8$N0lIt$G$9!#$7$?$,$C$F!"$=$l$i(B
-$B$r8DJL$K%$%s%9%H!<%k$9$kI,MW$OL5$$$O$:$G$9!#(B
+Emacs では単語の綴りをチェックするために @file{ispell.el} を使うことがで
+きます。したがって最初に行なうのは、外部プログラ
+ム @uref{http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html,
+ispell} または同 @uref{http://aspell.sourceforge.net/, aspell} を適当
+な path にインストールしておくことです。次
+に @uref{http://www.kdstevens.com/~stevens/ispell-page.html,
+ispell.el} と、書いたその場でスペルチェックをしてくれ
+る @uref{http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html,
+flyspell.el} を用意してください。@file{ispell.el} は Emacs とともに配布
+されているだけではなく、XEmacs パッケージシステムによっても手に入れるこ
+とができます。@file{flyspell.el} も Emacs に同梱されているのとともに、パッ
+ケージシステムを介して入手することができ
+る XEmacs の @code{text-modes} パッケージの一部です。したがって、それら
+を個別にインストールする必要は無いはずです。
 
-@file{ispell.el} $B$O30It%W%m%0%i%`(B @samp{ispell} $B$r;H$&$3$H$rA[Dj$7$F$$$^(B
-$B$9!#(B@samp{aspell} $B$rA*$V$J$i!"(BEmacs $B$N@_Dj%U%!%$%k$G0J2<$N@k8@$r9T$J$C$F(B
-$B$/$@$5$$(B ($BLuCm(B: Emacs 22 $B0J>e$G$O!"(B@file{ispell.el} $B$,$=$l$i$r<+F0H=JL$7(B
-$B$^$9(B):
+@file{ispell.el} は外部プログラム @samp{ispell} を使うことを想定していま
+す。@samp{aspell} を選ぶなら、Emacs の設定ファイルで以下の宣言を行なって
+ください (訳注: Emacs 22 以上では、@file{ispell.el} がそれらを自動判別し
+ます):
 
 @lisp
 (setq ispell-program-name "aspell")
 @end lisp
 
-$BAw=P$9$k%a%C%;!<%8$,%9%Z%k%A%'%C%/$5$l$k$h$&$K$7$?$$$J$i0J2<$N9T$r(B
+送出するメッセージがスペルチェックされるようにしたいなら以下の行を
 
 @lisp
 (add-hook 'message-send-hook 'ispell-message)
 @end lisp
 
-$BC18l$r=q$$$?$=$N>l$G%9%Z%k%A%'%C%/$9$k$3$H$r9%$`$J$i<!$N9T$r(B
+単語を書いたその場でスペルチェックすることを好むなら次の行を
 
 @lisp
 (add-hook 'message-mode-hook (lambda () (flyspell-mode 1)))
 @end lisp
 
 @noindent
-@file{~/.gnus.el} $B%U%!%$%k$KDI2C$7$F$/$@$5$$!#(B
+@file{~/.gnus.el} ファイルに追加してください。
 
 @node FAQ 5-6
-@subsubheading $B<ALd(B 5.6
+@subsubheading 質問 5.6
 
-$BEj9F$9$k%0%k!<%W$K4p$E$$$F!"<-=q(B ($B%9%Z%k%A%'%C%+!<$N(B) $B$r@Z$jBX$($k$3$H$O(B
-$B$G$-$^$9$+(B?
+投稿するグループに基づいて、辞書 (スペルチェッカーの) を切り替えることは
+できますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$O$$!"$G$-$^$9!#$3$s$J$b$N$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F$/$@$5$$(B:
+はい、できます。こんなものを @file{~/.gnus.el} ファイルに入れてください:
 
 @lisp
 (add-hook 'gnus-select-group-hook
@@ -1479,35 +1479,35 @@ flyspell.el} $B$rMQ0U$7$F$/$@$5$$!#(B@file{ispell.el} $B$O(B Emacs $B$H$H$b
 @end lisp
 
 @noindent
-@code{"^de\\."} $B$H(B @code{"deutsch8"} $B$O!"I,MW$K1~$8$FJQ99$7$F$/$@$5$$!#(B
+@code{"^de\\."} と @code{"deutsch8"} は、必要に応じて変更してください。
 
 @node FAQ 5-7
-@subsubheading $B<ALd(B 5.7
+@subsubheading 質問 5.7
 
-$BA40w$NEE;R%a!<%k%"%I%l%9$r;W$$=P$5$J$/$F$b:Q$`$h$&$K$9$k$?$a$N!"%"%I%l%9(B
-$BD"$N$h$&$J$b$N$O$"$j$^$9$+(B?
+全員の電子メールアドレスを思い出さなくても済むようにするための、アドレス
+帳のようなものはありますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$=$N$?$a$NHs>o$K4pK\E*$J2r$O!V%a!<%k$NJLL>!W(B(mail aliases) $B$G$9!#0J2<$N(B
-$B$h$&$KC1=c$JJLL>$N9=J8$r;H$C$F!"(B@file{~/.mailrc} $B%U%!%$%k$K%a!<%k%"%I%l(B
-$B%9$rEPO?$7$F$*$/$3$H$,$G$-$^$9(B:
+そのための非常に基本的な解は「メールの別名」(mail aliases) です。以下の
+ように単純な別名の構文を使って、@file{~/.mailrc} ファイルにメールアドレ
+スを登録しておくことができます:
 
 @example
 alias al        "Al <al@@english-heritage.invalid>"
 @end example
 
 @noindent
-$B$=$&$7$F$*$$$F!"%a%C%;!<%8%P%C%U%!!<$N(B To: $B$^$?$O(B Cc: $B9T$G!"JLL>$KB3$$$F(B
-$B%9%Z!<%9$+6gFIE@$r%?%$%W$9$k$3$H$K$h$C$F!"(BGnus $B$K40A4$J%"%I%l%9$rA^F~$7(B
-$B$F$b$i$&$3$H$,$G$-$^$9!#>\:Y$O(B Message $B%^%K%e%"%k(B (@pxref{Mail Aliases,
-,$B%a!<%k$NJLL>(B, message-ja, The Message Manual}) $B$r;2>H$7$F$/$@$5$$!#(B
+そうしておいて、メッセージバッファーの To: または Cc: 行で、別名に続いて
+スペースか句読点をタイプすることによって、Gnus に完全なアドレスを挿入し
+てもらうことができます。詳細は Message マニュアル (@pxref{Mail Aliases,
+,メールの別名, message-ja, The Message Manual}) を参照してください。
 
-$B$G$b!"$"$J$?$,K\Ev$K;H$$$?$$$N$O(B BBDB (the Insidious Big Brother
-Database) $B$G$7$g$&!#(BXEmacs $B$N%Q%C%1!<%8%7%9%F%`$r;H$&$+!"(B
-@uref{http://bbdb.sourceforge.net/, bbdb $B$N%[!<%`%Z!<%8(B} $B$+$iF~<j$7$F$/(B
-$B$@$5$$!#$=$7$F(B Gnus $B$G(B BBDB $B$rM-8z$K$9$k$?$a$K!"0J2<$N$b$N(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$K=q$-9~$s$G$/$@$5$$(B:
+でも、あなたが本当に使いたいのは BBDB (the Insidious Big Brother
+Database) でしょう。XEmacs のパッケージシステムを使うか、
+@uref{http://bbdb.sourceforge.net/, bbdb のホームページ} から入手してく
+ださい。そして Gnus で BBDB を有効にするために、以下のもの
+を @file{~/.gnus.el} ファイルに書き込んでください:
 
 @lisp
 (require 'bbdb)
@@ -1515,51 +1515,51 @@ Database) $B$G$7$g$&!#(BXEmacs $B$N%Q%C%1!<%8%7%9%F%`$r;H$&$+!"(B
 @end lisp
 
 @noindent
-$B$5$F!"$$$/$D$+$N0lHLE*$J(B BBDB $B$N@_Dj$,I,MW$+$b$7$l$^$;$s!#$=$l$i(B
-$B$O(B @file{~/.emacs} $B%U%!%$%k$KCV$-$^$7$g$&!#Nc$G$9(B:
+さて、いくつかの一般的な BBDB の設定が必要かもしれません。それら
+は @file{~/.emacs} ファイルに置きましょう。例です:
 
 @lisp
 (require 'bbdb)
-;; $BKL%"%a%j%+$K=;$s$G$$$k$N$G$J$1$l$P!"0J2<$K$h$C$FEEOCHV9f$N(B
-;; $B%A%'%C%/$r$d$a$5$;$k$Y$-$G$9!#(B
+;; 北アメリカに住んでいるのでなければ、以下によって電話番号の
+;; チェックをやめさせるべきです。
 (setq bbdb-north-american-phone-numbers-p nil)
-;; $B$"$J$?$NEE;R%a!<%k%"%I%l%9$r(B BBDB $B$K65$($^$7$g$&!#(B
+;; あなたの電子メールアドレスを BBDB に教えましょう。
 (setq bbdb-user-mail-names
       (regexp-opt '("Your.Email@@here.invalid"
                     "Your.other@@mail.there.invalid")))
-;; $B%a!<%k%"%I%l%9$rJd40$9$k$H$-$K!"8uJd$r%(%s%I%l%9$G=P$7$^$9!#(B
+;; メールアドレスを補完するときに、候補をエンドレスで出します。
 ;; cycling while completing email addresses
 (setq bbdb-complete-name-allow-cycling t)
-;; BBDB $B$N%P%C%U%!!<$r%]%C%W%"%C%W$5$;$^$;$s!#(B
+;; BBDB のバッファーをポップアップさせません。
 (setq bbdb-use-pop-up nil)
 @end lisp
 
 @noindent
-$B$3$l$G(B BBDB $B$r;H$&=`Hw$,$G$-$?$O$:$G$9!#(B@kbd{M-x bbdb RET RET} $B$G!"$9$Y(B
-$B$F$NEPO?$7$?9`L\$rI=<($9$k(B BBDB $B$N%P%C%U%!!<$r3+$$$F$/$@$5$$!#?7$?$KEPO?(B
-$B$9$k$K$O(B @kbd{c}$B!"8!:w$K$O(B @kbd{b}$B!"$=$7$FEPO?$7$F$"$k9`L\$K?7$7$$%U%#!<(B
-$B%k%I$r2C$($k$K$O(B @kbd{C-o} $B$r;H$$$^$7$g$&!#Aw?.<T$r(B BBDB $B$KEPO?$9$k$K$O!"(B
-$B35N,%P%C%U%!!<$N$=$N5-;v$N>l=j$GC1$K(B @kbd{:} $B$rC!$/$@$1$G!"$"$J$?$N;E;v(B
-$B$O=*$j$G$9!#0lJ}!"?75,$K%a!<%k$r:n@.$7$F$$$k$H$-$K(B @kbd{TAB} $B$rC!$/$3$H(B
-$B$K$h$C$F!"=g7+$j$K8=$l$k8uJd$NCf$+$i<u<h?M$rA*$V$3$H$,$G$-$^$9!#(B
+これで BBDB を使う準備ができたはずです。@kbd{M-x bbdb RET RET} で、すべ
+ての登録した項目を表示する BBDB のバッファーを開いてください。新たに登録
+するには @kbd{c}、検索には @kbd{b}、そして登録してある項目に新しいフィー
+ルドを加えるには @kbd{C-o} を使いましょう。送信者を BBDB に登録するには、
+概略バッファーのその記事の場所で単に @kbd{:} を叩くだけで、あなたの仕事
+は終りです。一方、新規にメールを作成しているときに @kbd{TAB} を叩くこと
+によって、順繰りに現れる候補の中から受取人を選ぶことができます。
 
 @node FAQ 5-8
-@subsubheading $B<ALd(B 5.8
+@subsubheading 質問 5.8
 
-$B5-;v%P%C%U%!!<$N>e$NJ}$G!"$H$-$I$->.$5$J2hA|$rL\$K$7$^$9!#$"$l$O2?$G$9$+(B?
-$B$^$?!"$I$&$7$?$i;d$bEj9F$9$k$H$-$KIU$1$k$3$H$,$G$-$^$9$+(B?
+記事バッファーの上の方で、ときどき小さな画像を目にします。あれは何ですか?
+また、どうしたら私も投稿するときに付けることができますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$"$N2hA|$O(B X-Face $B$H$$$&$b$N$G$9!#%X%C%@!<9T$G(B 48$B!_(B48 $B2hAG$NGr9u2hA|$,%((B
-$B%s%3!<%I$5$l$F$$$^$9!#$=$l$rAw?.$9$k5-;v$K4^$a$?$$$J$i!"2?$+$N2hA|(B
-$B$r(B X-Face $B$KJQ49$9$kI,MW$,$"$j$^$9!#$=$&$9$k$K$O!"2?$i$+$N2hA|$r2C9)$9$k(B
-$B$?$a$N%W%m%0%i%`(B ($BNc$($P(B Gimp) $B$KE@2P$7$F!"5-;v$K4^$a$?$$2hA|$N%U%!%$%k(B
-$B$r3+$-!"I,MW$JItJ,$r@Z$jH4$$$F!"?'$N?<EY$r(B 1-bit $B$^$G8:$i$7!"(B48$B!_(B48 $B$NBg(B
-$B$-$5$K=L>.$^$?$O3HBg$7$F!"(Bbitmap $B$H$7$F%U%!%$%k$KJ]B8$7$F$/$@$5$$!#<!(B
-$B$K(B @samp{compface} $B%Q%C%1!<%8(B
-$B$r(B @uref{ftp://ftp.cs.indiana.edu:/pub/faces/, $B$3$N%5%$%H(B} $B$+$iF~<j$7$F!"(B
-$B0J2<$r<B9T$9$k$3$H$K$h$C$F<B:]$N(B X-Face $B$r:n$j$^$7$g$&(B:
+あの画像は X-Face というものです。ヘッダー行で 48×48 画素の白黒画像がエ
+ンコードされています。それを送信する記事に含めたいなら、何かの画像
+を X-Face に変換する必要があります。そうするには、何らかの画像を加工する
+ためのプログラム (例えば Gimp) に点火して、記事に含めたい画像のファイル
+を開き、必要な部分を切り抜いて、色の深度を 1-bit まで減らし、48×48 の大
+きさに縮小または拡大して、bitmap としてファイルに保存してください。次
+に @samp{compface} パッケージ
+を @uref{ftp://ftp.cs.indiana.edu:/pub/faces/, このサイト} から入手して、
+以下を実行することによって実際の X-Face を作りましょう:
 
 @example
 cat file.xbm | xbm2ikon | compface > file.face
@@ -1567,13 +1567,13 @@ cat file.face | sed 's/["\\]/\\&/g' > file.face.quoted
 @end example
 
 @noindent
-@samp{compface} $B$r;H$&$3$H$,$G$-$J$/$F$b!"%*%s%i%$%s$N(B X-Face $BJQ494o(B
-$B$,(B @uref{http://www.dairiki.org/xface/} $B$K$"$j$^$9!#(BMS Windows $B$r;H$C$F(B
-$B$$$k$N$J$i$P!"(B $B$+$D(B
-$B$F(B @indicateurl{http://www.xs4all.nl/~walterln/winface/} $B$K$"$C(B
-$B$?(B @samp{WinFace} $B%W%m%0%i%`$r;H$&$3$H$b$G$-$^$9!#8e$O!"Aw?.$9$k5-;v$K(B
-X-Face $B$r4^$a$F$/$l$k$h$&$K(B Gnus $B$K;X<($9$k$@$1$G$9!#$=$l$K(B
-$B$O(B @file{~/.gnus.el} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$rF~$l$F$/$@$5$$(B:
+@samp{compface} を使うことができなくても、オンラインの X-Face 変換器
+が @uref{http://www.dairiki.org/xface/} にあります。MS Windows を使って
+いるのならば、 かつ
+て @indicateurl{http://www.xs4all.nl/~walterln/winface/} にあっ
+た @samp{WinFace} プログラムを使うこともできます。後は、送信する記事に
+X-Face を含めてくれるように Gnus に指示するだけです。それに
+は @file{~/.gnus.el} ファイルに以下のようなものを入れてください:
 
 @lisp
 (setq message-default-headers
@@ -1584,33 +1584,33 @@ X-Face $B$r4^$a$F$/$l$k$h$&$K(B Gnus $B$K;X<($9$k$@$1$G$9!#$=$l$K(B
 @end lisp
 
 @noindent
-$B$?$@$7(B Gnus 5.10 $B$r;H$C$F$$$k$N$G$"$l$P!"C1$K<!$N9`$r(B
+ただし Gnus 5.10 を使っているのであれば、単に次の項を
 
 @example
 (x-face-file "~/.xface")
 @end example
 
 @noindent
-@code{gnus-posting-styles} $B$K2C$($k$@$1$G:Q$_$^$9!#(B
+@code{gnus-posting-styles} に加えるだけで済みます。
 
 @node FAQ 5-9
-@subsubheading $B<ALd(B 5.9
+@subsubheading 質問 5.9
 
-$B$H$-$I$-%K%e!<%9%0%k!<%W$G!"(B@kbd{f} $B$NBe$o$j$K$&$C$+$j(B @kbd{r} $B$rBG$C$F(B
-$B$7$^$$$^$9!#%K%e!<%9%0%k!<%W$J$N$K$b$+$+$o$i$:%a!<%k$GJV?.$7$h$&$H$7$?$H(B
-$B$-$K!"(BGnus $B$K7Y9p$7$F$b$i$&$3$H$O$G$-$^$9$+(B?
+ときどきニュースグループで、@kbd{f} の代わりにうっかり @kbd{r} を打って
+しまいます。ニュースグループなのにもかかわらずメールで返信しようとしたと
+きに、Gnus に警告してもらうことはできますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$b$&(B Gnus 5.10 $B$r;H$C$F$$$k$N$G$"$l$P!"$3$l$r(B @file{~/.gnus.el} $B%U%!%$%k(B
-$B$KF~$l$F$/$@$5$$(B:
+もう Gnus 5.10 を使っているのであれば、これを @file{~/.gnus.el} ファイル
+に入れてください:
 
 @lisp
 (setq gnus-confirm-mail-reply-to-news t)
 @end lisp
 
 @noindent
-$B$^$@(B 5.8.8 $B$d(B 5.9 $B$r;H$C$F$$$k$N$J$i!"Be$o$j$K$3$l$r$I$&$>(B:
+まだ 5.8.8 や 5.9 を使っているのなら、代わりにこれをどうぞ:
 
 @lisp
 (with-eval-after-load "gnus-msg"
@@ -1624,15 +1624,15 @@ X-Face $B$r4^$a$F$/$l$k$h$&$K(B Gnus $B$K;X<($9$k$@$1$G$9!#$=$l$K(B
 @end lisp
 
 @node FAQ 5-10
-@subsubheading $B<ALd(B 5.10
+@subsubheading 質問 5.10
 
-Gnus $B$,(B sender $B%X%C%@!<$r@8@.$7$J$$$h$&$K$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+Gnus が sender ヘッダーを生成しないようにするには、どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus 5.10 $B$O%G%#%U%)%k%H$G(B sender $B%X%C%@!<$r:n$i$J$$$N$G$9$1$l$I$M!#$^$@(B
-$B8E$$(B Gnus $B$r;H$C$F$$$k$N$J$i!"(B@file{~/.gnus.el} $B%U%!%$%k$G$3$l$r;n$7$F$/(B
-$B$@$5$$(B:
+Gnus 5.10 はディフォルトで sender ヘッダーを作らないのですけれどね。まだ
+古い Gnus を使っているのなら、@file{~/.gnus.el} ファイルでこれを試してく
+ださい:
 
 @lisp
 (with-eval-after-load "message"
@@ -1640,17 +1640,17 @@ Gnus 5.10 $B$O%G%#%U%)%k%H$G(B sender $B%X%C%@!<$r:n$i$J$$$N$G$9$1$l$I$M!#$^$
 @end lisp
 
 @node FAQ 5-11
-@subsubheading $B<ALd(B 5.11
+@subsubheading 質問 5.11
 
-$BAw?.$7$?%a!<%k$d%K%e!<%9$N95$($r%m!<%+%k$K;D$7$F$*$-$?$$$N$G$9$,!"$I$&$9(B
-$B$l$PNI$$$G$9$+(B?
+送信したメールやニュースの控えをローカルに残しておきたいのですが、どうす
+れば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$=$l$r9T$J$&$?$a$K$OJQ?t(B @code{gnus-message-archive-group} $B$r@_Dj$7$J$1(B
-$B$l$P$J$j$^$;$s!#$=$l$K$O!"95$($rJ]B8$7$F$*$/%0%k!<%W$NL>A0$rM?$($kJ8;zNs(B
-$B$r@_Dj$9$k$3$H$,$G$-$^$9!#$"$k$$$O0J2<$NNc$N$h$&$K!"I>2A$5$l$k$H%0%k!<%W(B
-$BL>$rJV$94X?t(B ($BLuCm(B: $B$H8@$&$h$j$O(B Lisp $B$N<0(B) $B$r@_Dj$9$k$3$H$b$G$-$^$9!#(B
+それを行なうためには変数 @code{gnus-message-archive-group} を設定しなけ
+ればなりません。それには、控えを保存しておくグループの名前を与える文字列
+を設定することができます。あるいは以下の例のように、評価されるとグループ
+名を返す関数 (訳注: と言うよりは Lisp の式) を設定することもできます。
 
 @lisp
 (setq gnus-message-archive-group
@@ -1660,45 +1660,45 @@ Gnus 5.10 $B$O%G%#%U%)%k%H$G(B sender $B%X%C%@!<$r:n$i$J$$$N$G$9$1$l$I$M!#$^$
 @end lisp
 
 @node FAQ 5-12
-@subsubheading $B<ALd(B 5.12
+@subsubheading 質問 5.12
 
-$BAw?.$K@.8y$7$?8e$G$=$N%P%C%U%!!<$r(B "Sent mail to..." $B$H$7$F@8$+$7$?$^$^(B
-$B$K$7$F$*$/Be$o$j$K(B kill $B$9$k$K$O$I$&$7$?$iNI$$$G$9$+(B?
+送信に成功した後でそのバッファーを "Sent mail to..." として生かしたまま
+にしておく代わりに kill するにはどうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@file{~/.gnus.el} $B%U%!%$%k$K$3$l$r2C$($F$/$@$5$$(B:
+@file{~/.gnus.el} ファイルにこれを加えてください:
 
 @example
 (setq message-kill-buffer-on-exit t)
 @end example
 
 @node FAQ 5-13
-@subsubheading $B<ALd(B 5.13
+@subsubheading 質問 5.13
 
-Message-ID $B$,IT@5$@$H8@$o$l$F$7$^$&$N$G$9$,!"$=$l$O$J$<$G$9$+(B?  $B$^$?!"$I(B
-$B$&$d$C$FD>$7$?$iNI$$$G$9$+(B?
+Message-ID が不正だと言われてしまうのですが、それはなぜですか?  また、ど
+うやって直したら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Message-ID $B$O!"Aw?.$7$?%a%C%;!<%8$,!"$=$l$,$=$l$G$"$k$3$H$r3NG'$9$k$?$a(B
-$B$N$b$N$G$9!#$=$l$,!"$"$k%a%C%;!<%8$K$H$C$F8GM-$G$"$k$h$&$K$9$k$?$a$K!"(B
-Gnus $B$O(B @samp{@@} $B$N8e$KCV$/%^%7%sL>$rCN$kI,MW$,$"$j$^$9!#(BGnus $B$,Av$C$F(B
-$B$$$k%^%7%s$NL>A0$,E,@Z$G$O$J$$$J$i$P(B ($B$[$H$s$I$N8D?M$N%^%7%s$,3:Ev$9$k$G(B
-$B$7$g$&(B)$B!"(BGnus $B$,;H$&L>A0$r0J2<$N$h$&$K(B @file{~/.gnus.el} $B%U%!%$%k$G@_Dj(B
-$B$7$F$/$@$5$$(B:
+Message-ID は、送信したメッセージが、それがそれであることを確認するため
+のものです。それが、あるメッセージにとって固有であるようにするために、
+Gnus は @samp{@@} の後に置くマシン名を知る必要があります。Gnus が走って
+いるマシンの名前が適切ではないならば (ほとんどの個人のマシンが該当するで
+しょう)、Gnus が使う名前を以下のように @file{~/.gnus.el} ファイルで設定
+してください:
 
 @lisp
 (setq message-user-fqdn "yourmachine.yourdomain.tld")
 @end lisp
 
 @noindent
-Gnus 5.9 $B$+$=$l0JA0$N$b$N$r;H$C$F$$$k>l9g$O!"Be$o$j$K$3$l$r;H$C$F$/$@$5(B
-$B$$(B ($B?7$7$$HG$G$bF0:n$7$^$9(B):
+Gnus 5.9 かそれ以前のものを使っている場合は、代わりにこれを使ってくださ
+い (新しい版でも動作します):
 
 @lisp
 (with-eval-after-load "message"
-  (let ((fqdn "yourmachine.yourdomain.tld"));; <-- $BJQ99$7$F$M(B!
+  (let ((fqdn "yourmachine.yourdomain.tld"));; <-- 変更してね!
     (if (boundp 'message-user-fqdn)
         (setq message-user-fqdn fqdn)
       (gnus-message 1 "Redefining `message-make-fqdn'.")
@@ -1708,17 +1708,17 @@ Gnus 5.9 $B$+$=$l0JA0$N$b$N$r;H$C$F$$$k>l9g$O!"Be$o$j$K$3$l$r;H$C$F$/$@$5(B
 @end lisp
 
 @noindent
-@code{"yourmachine.yourdomain.tld"} $B$K2?$rF~$l$k$+$r7h$a$k$3$H$,$G$-$J$$(B
-$B$J$i$P!"J#?t$NA*Br;h$,$"$j$^$9!#$"$J$?(B
-$B$,(B @samp{yourUserName.userfqdn.provider.net} $B$N$h$&$J$b$N$r;H$C$F$bNI$$(B
-$B$+$I$&$+$r%W%m%P%$%@!<$K?R$M$F$_$F$bNI$$$7!"8D?M$G%I%a%$(B
-$B%s(B @samp{yourdomain.tld} $B$rJ]M-$7$F$$$k>l9g(B
-$B$O(B @samp{somethingUnique.yourdomain.tld} $B$N$h$&$J$b$N$r;H$&$3$H$,$G$-$^(B
-$B$9!#$"$k$$$O!"%f!<%6!<$KL5NA$G(B FQDN $B$rDs6!$7$F$/$l$k%5!<%S%9$KEPO?$9$k$N(B
-$B$bNI$$$G$7$g$&!#(B
+@code{"yourmachine.yourdomain.tld"} に何を入れるかを決めることができない
+ならば、複数の選択肢があります。あなた
+が @samp{yourUserName.userfqdn.provider.net} のようなものを使っても良い
+かどうかをプロバイダーに尋ねてみても良いし、個人でドメイ
+ン @samp{yourdomain.tld} を保有している場合
+は @samp{somethingUnique.yourdomain.tld} のようなものを使うことができま
+す。あるいは、ユーザーに無料で FQDN を提供してくれるサービスに登録するの
+も良いでしょう。
 
-$B:G8e$K!"(BGnus $B$K%K%e!<%95-;v$G$O(B Message-ID $B$r$^$C$?$/:n$i$;$J$$(B ($B$=$7$F(B
-$B$=$N;E;v$O%5!<%P!<$KG$$;$k(B) $B$3$H$,$G$-$^$9!#0J2<$N@_Dj$r;H$C$F$/$@$5$$(B:
+最後に、Gnus にニュース記事では Message-ID をまったく作らせない (そして
+その仕事はサーバーに任せる) ことができます。以下の設定を使ってください:
 
 @lisp
 (setq message-required-news-headers
@@ -1726,8 +1726,8 @@ Gnus 5.9 $B$+$=$l0JA0$N$b$N$r;H$C$F$$$k>l9g$O!"Be$o$j$K$3$l$r;H$C$F$/$@$5(B
 @end lisp
 
 @noindent
-$B$5$i$K<!$N@_Dj$K$h$C$F!"%a!<%k$G$b(B Gnus $B$K(B Message-ID $B$r:n$i$;$J$$$3$H$O(B
-$B2DG=$G$9(B:
+さらに次の設定によって、メールでも Gnus に Message-ID を作らせないことは
+可能です:
 
 @lisp
 (setq message-required-mail-headers
@@ -1735,80 +1735,80 @@ Gnus 5.9 $B$+$=$l0JA0$N$b$N$r;H$C$F$$$k>l9g$O!"Be$o$j$K$3$l$r;H$C$F$/$@$5(B
 @end lisp
 
 @noindent
-$B$7$+$7$J$,$i!"%a!<%k%5!<%P!<$N$"$k$b$N$OE,@Z$J(B Message-ID $B$r:n$C$F$/$l$J(B
-$B$$$N$G!"<+J,$G%a!<%k$rAw?.$7$F(B Message-ID $B$rD/$a$F$_$k$3$H$K$h$C$F!"$"$J(B
-$B$?$N%a!<%k%5!<%P!<$,@5$7$/?6$kIq$&$+$I$&$+$r%F%9%H$7$F$/$@$5$$!#(B
+しかしながら、メールサーバーのあるものは適切な Message-ID を作ってくれな
+いので、自分でメールを送信して Message-ID を眺めてみることによって、あな
+たのメールサーバーが正しく振る舞うかどうかをテストしてください。
 
 @node FAQ 6 - Old messages
-@subsection $B8E$$%a%C%;!<%8(B
+@subsection 古いメッセージ
 
 @menu
-* FAQ 6-1:: $B!!(BGnus $B$r;H$C$F$$$J$+$C$?$H$-$N8E$$%a!<%k$r!"(BGnus $B$KJT(B
-              $BF~$5$;$k$K$O$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 6-1:: 　Gnus を使っていなかったときの古いメールを、Gnus に編
+              入させるにはどうしたら良いですか?
 
-* FAQ 6-2:: $B!!6=L#$r;}$C$?5-;v$rJ]B8$9$k$K$O$I$&$9$l$PNI$$$G$9$+(B?
+* FAQ 6-2:: 　興味を持った記事を保存するにはどうすれば良いですか?
 
-* FAQ 6-3:: $B!!;XDj$7$?%a%C%;!<%8$rC5$9$K$O$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 6-3:: 　指定したメッセージを探すにはどうしたら良いですか?
 
-* FAQ 6-4:: $B!!MW$i$J$/$J$C$?8E$$%a!<%k$r:o=|$9$k$K$O$I$&$9$l$PNI$$(B
-              $B$G$9$+(B?
+* FAQ 6-4:: 　要らなくなった古いメールを削除するにはどうすれば良い
+              ですか?
 
-* FAQ 6-5:: $B!!FI$_=*$o$C$?$9$Y$F$N%a%C%;!<%8$r4|8B@Z$l>C5n$7$?$$$N(B
-              $B$G$9$,(B ($B>/$J$/$H$b$$$/$D$+$N%0%k!<%W$G(B)$B!"$I$&$7$?$i(B
-              $BNI$$$G$9$+(B?
+* FAQ 6-5:: 　読み終わったすべてのメッセージを期限切れ消去したいの
+              ですが (少なくともいくつかのグループで)、どうしたら
+              良いですか?
 
-* FAQ 6-6:: $B!!4|8B$,Mh$?%a!<%k$r:o=|$9$k$N$G$O$J$/$F!"B>$N%0%k!<%W(B
-              $B$K0\F0$5$;$?$$$N$G$9$,!#(B
+* FAQ 6-6:: 　期限が来たメールを削除するのではなくて、他のグループ
+              に移動させたいのですが。
 @end menu
 
 @node FAQ 6-1
-@subsubheading $B<ALd(B 6.1
+@subsubheading 質問 6.1
 
-Gnus $B$r;H$C$F$$$J$+$C$?$H$-$N8E$$%a!<%k$r!"(BGnus $B$KJTF~$5$;$k$K$O$I$&$7$?(B
-$B$iNI$$$G$9$+(B?
+Gnus を使っていなかったときの古いメールを、Gnus に編入させるにはどうした
+ら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B:G$b3Z$JJ}K!$O!"8E$$%a!<%k%W%m%0%i%`$K%a%C%;!<%8$r(B @samp{mbox} $B7A<0$K$^(B
-$B$H$a$F$b$i$&$3$H$G$9!#$[$H$s$I$N(B Unix $B$N%a%$%i!<$O$=$l$r$9$k$3$H$,$G$-!"(B
-$B$"$J$?$,(B MS Windows $B$N@$3&$N=P?H$G$"$C$F(B
-$B$b(B @uref{http://mbx2mbox.sourceforge.net/} $B$G!"$=$N$?$a$NF;6q$r8+$D$1$k(B
-$B$3$H$,$G$-$k$G$7$g$&!#(B
+最も楽な方法は、古いメールプログラムにメッセージを @samp{mbox} 形式にま
+とめてもらうことです。ほとんどの Unix のメイラーはそれをすることができ、
+あなたが MS Windows の世界の出身であって
+も @uref{http://mbx2mbox.sourceforge.net/} で、そのための道具を見つける
+ことができるでしょう。
 
-$B$G$O!"$3$N(B @samp{mbox} $B%U%!%$%k$r(B Gnus $B$KJTF~$5$;$^$7$g$&!#$=$l$K$O%0%k!<(B
-$B%W%P%C%U%!!<$G(B @kbd{G f /path/file.mbox RET} $B$r<B9T$7$F!"(B@samp{mbox} $B%U%!(B
-$B%$%k$r07$&$?$a$N(B @code{nndoc} $B%0%k!<%W$r:n$C$F$/$@$5$$!#$=$&$9$l$P!"$"$J(B
-$B$?$N%a!<%k$KFI$_=P$7@lMQ$G%"%/%;%9$G$-$k$h$&$K$J$j$^$9!#$=$N%a%C%;!<%8$r(B
-$BDL>o$N(B Gnus $B$N%a!<%k%0%k!<%W$N3,AX$KJTF~$5$;$?$$$J$i$P!"$?$C$?:#:n$C(B
-$B$?(B @code{nndoc} $B%0%k!<%W$K(B @kbd{C-u RET} $BL?Na$GF~$C$F(B ($B$D$^$j$9$Y$F$N%a%C(B
-$B%;!<%8$,FI$a$k$h$&$K$7$F$*$$$F(B)$B!"$9$Y$F$N%a%C%;!<%8$K(B @kbd{M P b} $B$G0u$r(B
-$BIU$1$F$+$i!"$=$l$i$r$*K>$_$N%0%k!<%W$K(B @kbd{B c name.of.group RET} $B$G%3(B
-$B%T!<$9$k$+!"$^$?$O(B @code{nnmail-split-methods} $B$r;H$C$F$=$l$i$rJ,3d(B ($B:F(B
-$B%9%W!<%k(B) $B$9$k$?$a$K(B @kbd{B r} $B$r;H$C$F$/$@$5$$!#(B
+では、この @samp{mbox} ファイルを Gnus に編入させましょう。それにはグルー
+プバッファーで @kbd{G f /path/file.mbox RET} を実行して、@samp{mbox} ファ
+イルを扱うための @code{nndoc} グループを作ってください。そうすれば、あな
+たのメールに読み出し専用でアクセスできるようになります。そのメッセージを
+通常の Gnus のメールグループの階層に編入させたいならば、たった今作っ
+た @code{nndoc} グループに @kbd{C-u RET} 命令で入って (つまりすべてのメッ
+セージが読めるようにしておいて)、すべてのメッセージに @kbd{M P b} で印を
+付けてから、それらをお望みのグループに @kbd{B c name.of.group RET} でコ
+ピーするか、または @code{nnmail-split-methods} を使ってそれらを分割 (再
+スプール) するために @kbd{B r} を使ってください。
 
 @node FAQ 6-2
-@subsubheading $B<ALd(B 6.2
+@subsubheading 質問 6.2
 
-$B6=L#$r;}$C$?5-;v$rJ]B8$9$k$K$O$I$&$9$l$PNI$$$G$9$+(B?
+興味を持った記事を保存するにはどうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BNc$($P(B @samp{gnu.emacs.gnus} $B$G6=L#?<$$5-;v$K=P$/$o$7$F!"$=$l$rJ]B8$7$h(B
-$B$&$H;W$C$?$H$-$K$O!"J#?t$N2r$,$"$j$^$9!#Bh0l$N:G$b$d$5$7$$J}K!$O!"(B
-@kbd{O f} $BL?Na$r;H$C$F$=$l$r%U%!%$%k$KJ]B8$9$k$3$H$G$9!#$G$b$=$l$O!"(B
-Gnus $B$+$iJ]B8$5$l$?%a%C%;!<%8$r$h$jD>@\$K%"%/%;%9$9$k<jCJ$H$7$F$O!"$H$F(B
-$B$bJXMx$@$H$O8@$($J$$$N$G$O$J$$$G$7$g$&$+(B?  $B$=$l$KF10U$7$F$/$l$k$N$J$i$P!"(B
-Frank Haun @email{pille3003@@fhaun.de} $B$,=q$$$F$/$l$?$3$N%3!<%I$N@Z$lC<(B
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$F$_$F$/$@$5$$(B:
+例えば @samp{gnu.emacs.gnus} で興味深い記事に出くわして、それを保存しよ
+うと思ったときには、複数の解があります。第一の最もやさしい方法は、
+@kbd{O f} 命令を使ってそれをファイルに保存することです。でもそれは、
+Gnus から保存されたメッセージをより直接にアクセスする手段としては、とて
+も便利だとは言えないのではないでしょうか?  それに同意してくれるのならば、
+Frank Haun @email{pille3003@@fhaun.de} が書いてくれたこのコードの切れ端
+を @file{~/.gnus.el} ファイルに入れてみてください:
 
 @lisp
 (defun my-archive-article (&optional n)
-  "$B0l8D0J>e$N5-;v$r!"BP1~$9$k(B `nnml:' $B%0%k!<%W$K%3%T!<$7$^$9!#(B
-$BNc$($P(B `gnus.ding' $B$N5-;v$O(B `nnml:1.gnus.ding' $B%0%k!<%W$K9T$-!"(B
-`nnml:List-gnus.ding' $B$N5-;v$O(B `nnml:1.List-gnus-ding' $B$K9T$-$^$9!#(B
+  "一個以上の記事を、対応する `nnml:' グループにコピーします。
+例えば `gnus.ding' の記事は `nnml:1.gnus.ding' グループに行き、
+`nnml:List-gnus.ding' の記事は `nnml:1.List-gnus-ding' に行きます。
 
-$B0l8D0J>e$N5-;v$rJ]B8$9$k$K$O!"35N,%P%C%U%!!<$G%W%m%;%9(B/$B@\F,0z?t$N(B
-$B=,47$r;H$C$F$/$@$5$$!#(B"
+一個以上の記事を保存するには、概略バッファーでプロセス/接頭引数の
+習慣を使ってください。"
   (interactive "P")
   (let ((archive-name
          (format
@@ -1817,418 +1817,418 @@ Frank Haun @email{pille3003@@fhaun.de} $B$,=q$$$F$/$l$?$3$N%3!<%I$N@Z$lC<(B
     (gnus-summary-copy-article n archive-name)))
 @end lisp
 
-$BLuCm(B: @xref{Process/Prefix, ,$B%W%m%;%9(B/$B@\F,0z?t(B, gnus-ja, The Gnus
+訳注: @xref{Process/Prefix, ,プロセス/接頭引数, gnus-ja, The Gnus
 Manual}.
 
 @noindent
-$B$3$l$K$h$j!"35N,%P%C%U%!!<$G(B @kbd{M-x my-archive-article} $B$r<B9T$9$l$P!"(B
-$B;XDj$7$?5-;v$r(B @code{nnml} $B%0%k!<%W$KJ]B8$9$k$3$H$,$G$-$^$9!#(B
+これにより、概略バッファーで @kbd{M-x my-archive-article} を実行すれば、
+指定した記事を @code{nnml} グループに保存することができます。
 
-$B$b$A$m$s!"0J2<$N@_Dj$K$h$C$F%-%c%C%7%e$r>o$KM-8z$K$9$k$3$H$b$G$-$^$9(B:
+もちろん、以下の設定によってキャッシュを常に有効にすることもできます:
 
 @lisp
 (setq gnus-use-cache t)
 @end lisp
 
 @noindent
-$B$3$l$K$h$C$F!"0];}$7$?$$5-;v$K$O2D;k(B (ticked) $B$+J]N1(B (dormant) $B$N0u$rIU(B
-$B$1$k$@$1$G:Q$`$h$&$K$J$j$^$9!#$^$?!"4{FI(B (read) $B$N0u$rIU$1$k$3$H$K$h$C$F!"(B
-$B$=$l$i$N5-;v$O%-%c%C%7%e$+$i:o=|$5$l$^$9!#(B
+これによって、維持したい記事には可視 (ticked) か保留 (dormant) の印を付
+けるだけで済むようになります。また、既読 (read) の印を付けることによって、
+それらの記事はキャッシュから削除されます。
 
 @node FAQ 6-3
-@subsubheading $B<ALd(B 6.3
+@subsubheading 質問 6.3
 
-$B;XDj$7$?%a%C%;!<%8$rC5$9$K$O$I$&$7$?$iNI$$$G$9$+(B?
+指定したメッセージを探すにはどうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$3$l$K$bJ#?t$NJ}K!$,$"$j$^$9!#(BUsenet $B%0%k!<%W$KEj9F$5$l$?$b$N$K$D$$$F$O!"(B
-$B$*$=$i$/(B @uref{http://groups.google.com, groups.google.com} $B$K?R$M$k$N$,(B
-$B:G$b3Z$J2r7hJ}K!$G$9!#$=$3$G8+$D$+$C$?$J$i$P!"(BGoogle $B$K@8$N5-;v$rI=<($7(B
-$B$F$b$i$C$F(B Message-ID $B$rC5$7!"35N,%P%C%U%!!<$G(B @kbd{M-^ the@@message.id
-RET} $B$r<B9T$7$F$/$@$5$$!#$5$i$K(B Gnus 5.10 $B0J9_$G(B
-$B$O(B @samp{groups.google.com} $B$X$N%$%s%?!<%U%'!<%9$,$"$k$N$G!"%0%k!<%W%P%C(B
-$B%U%!!<$G(B @kbd{G W} $B$r;H$&$3$H$b$G$-$^$9!#(B
+これにも複数の方法があります。Usenet グループに投稿されたものについては、
+おそらく @uref{http://groups.google.com, groups.google.com} に尋ねるのが
+最も楽な解決方法です。そこで見つかったならば、Google に生の記事を表示し
+てもらって Message-ID を探し、概略バッファーで @kbd{M-^ the@@message.id
+RET} を実行してください。さらに Gnus 5.10 以降で
+は @samp{groups.google.com} へのインターフェースがあるので、グループバッ
+ファーで @kbd{G W} を使うこともできます。
 
-$B%a!<%k$H%K%e!<%9$NN>J}$N%0%k!<%W$GF0:n$9$k$b$&0l$D$NJ}K!$O!"C5$7$F$$$k%a%C(B
-$B%;!<%8$,B8:_$9$k%0%k!<%W$KF~$C$F!"(BEmacs $B$NI8=`$NC5:w%3%^%s%I$G$"(B
-$B$k(B @kbd{C-s} $B$r;H$&$3$H$G$9!#$=$l$O2u$l$?%9%l%C%I$K$"$k5-;v$rC5$9$?$a$K(B
-$B$b==J,$K8-$$$b$N$G$9!#K\J8$NCf$GC5$7$?$$$N$J$i$P!"Be$o$j$K(B @kbd{M-s} $B$r(B
-$B;n$7$F$/$@$5$$!#$5$i$KIU$12C$($k$H!"$3$l$bLr$KN)(B
-$B$D(B @code{gnus-summary-limit-to}-* $B%3%^%s%I72$,$"$j$^$9!#(B
+メールとニュースの両方のグループで動作するもう一つの方法は、探しているメッ
+セージが存在するグループに入って、Emacs の標準の探索コマンドであ
+る @kbd{C-s} を使うことです。それは壊れたスレッドにある記事を探すために
+も十分に賢いものです。本文の中で探したいのならば、代わりに @kbd{M-s} を
+試してください。さらに付け加えると、これも役に立
+つ @code{gnus-summary-limit-to}-* コマンド群があります。
 
-$B$b$A$m$s%m!<%+%k$KJ]B8$5$l$F$$$k%a!<%k$r(B @samp{grep} $B$GC5$9$3$H$b$G$-$^(B
-$B$9$,!"Bg$-$J%"!<%+%$%V$,Aj<j$@$HCY$$$7!"8+$D$+$C$?%a!<%k$r(B Gnus $B$GI=<($9(B
-$B$k$o$1$G$O$J$$$N$GITJX$G$b$"$j$^$9!#$=$3$G(B @code{nnir} $B$N=PHV$,$d$C$F$-(B
-$B$^$7$?!#(B@code{nnir} $B$O(B @samp{swish-e}, @samp{swish++} $B$*$h$SB>$N8!:w%(%s(B
-$B%8%s$X$N%U%m%s%H%(%s%I$G$9!#$=$l$i$N8!:w%(%s%8%s$N0l$D$r;H$C$F%a!<%k$K:w(B
-$B0z$rIU$1$F$*$1$P!"(B@code{nnir} $B$N=u$1$r<Z$j$k$3$H$K$h$C$F!":w0z$,IU$1$i$l(B
-$B$?%a!<%k$rC5$7$F!"8!:w$N4p=`$K9gCW$9$k$9$Y$F$N%a!<%k$r4^$`0l;~E*$J%0%k!<(B
-$B%W$r:n$k$3$H$,$G$-$^$9!#$3$l$,%/!<%k$KJ9$3$($k$J$i!"(B
+もちろんローカルに保存されているメールを @samp{grep} で探すこともできま
+すが、大きなアーカイブが相手だと遅いし、見つかったメールを Gnus で表示す
+るわけではないので不便でもあります。そこで @code{nnir} の出番がやってき
+ました。@code{nnir} は @samp{swish-e}, @samp{swish++} および他の検索エン
+ジンへのフロントエンドです。それらの検索エンジンの一つを使ってメールに索
+引を付けておけば、@code{nnir} の助けを借りることによって、索引が付けられ
+たメールを探して、検索の基準に合致するすべてのメールを含む一時的なグルー
+プを作ることができます。これがクールに聞こえるなら、
 @c FIXME Isn't this file in Gnus?
 @ignore
 @c Dead link 2013/7.
 @uref{ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/emacs/}
-$B$^$?$O(B
+または
 @end ignore
-@uref{ftp://ftp.is.informatik.uni-duisburg.de/pub/src/emacs/} $B$+(B
-$B$i(B @file{nnir.el} $B$r;}$C$FMh$^$7$g$&!#;H$$J}$N@bL@$O!"$=$N%U%!%$%k$N;O$a(B
-$B$NJ}$K$"$j$^$9!#(B
+@uref{ftp://ftp.is.informatik.uni-duisburg.de/pub/src/emacs/} か
+ら @file{nnir.el} を持って来ましょう。使い方の説明は、そのファイルの始め
+の方にあります。
 
 @node FAQ 6-4
-@subsubheading $B<ALd(B 6.4
+@subsubheading 質問 6.4
 
-$BMW$i$J$/$J$C$?8E$$%a!<%k$r:o=|$9$k$K$O$I$&$9$l$PNI$$$G$9$+(B?
+要らなくなった古いメールを削除するにはどうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$b$O$dMW$i$J$/$J$C$?%a!<%k$K%]%$%s%H$rCV$$$F(B @kbd{#} $B$G0u$rIU$1$F$+$i!"(B
-$B$=$l$i$r(B @kbd{B DEL} $B$G1J5W$K>C$7$F$7$^$&$3$H$O!"$b$A$m$s$G$-$^$9!#$5$i(B
-$B$K!"$=$l$i$r<B:]$K>C$7$F$7$^$&Be$o$j$K(B @kbd{B m nnml:trash-bin} $B$r;H$C$F(B
-$B%8%c%s%/!&%0%k!<%W(B ($B$=$l$O;~!9>C$5$J$1$l$P$J$j$^$;$s(B) $B$KAw$k$3$H$b$G$-$k(B
-$B$N$G$9$,!"N>J}$H$b(B Gnus $B$,0U?^$9$k$d$jJ}$G$O$"$j$^$;$s!#(B
+もはや要らなくなったメールにポイントを置いて @kbd{#} で印を付けてから、
+それらを @kbd{B DEL} で永久に消してしまうことは、もちろんできます。さら
+に、それらを実際に消してしまう代わりに @kbd{B m nnml:trash-bin} を使って
+ジャンク・グループ (それは時々消さなければなりません) に送ることもできる
+のですが、両方とも Gnus が意図するやり方ではありません。
 
-Gnus $B$G$O!"%K%e!<%9%5!<%P!<$G%K%e!<%95-;v$,4|8B@Z$l>C5n$5$l$k$h$&$K!"%a!<(B
-$B%k$b>C$7$^$9!#$=$&$9$k$?$a$K$O!"35N,%P%C%U%!!<$N$=$N%a!<%k$N>e(B
-$B$G(B @kbd{E} $B$rC!$/$3$H$K$h$C$F!"$=$N%a!<%k$,4|8B@Z$l>C5n2DG=$G$"$k$3$H(B
-$B$r(B ($B!V$3$N%a!<%k$O$b$&MW$i$J$$$h!W$H(B) Gnus $B$KEA$($l$PNI$$$N$G$9!#$9$k$H!"(B
-$B$=$N%0%k!<%W$rH4$1=P$?$H$-$K!"(BGnus $B$O0JA0$K0u$,IU$1$i$l$?$9$Y$F$N%a%C%;!<(B
-$B%8$r8!::$7$F!"==J,$K8E$/$J$C$?(B ($B%G%#%U%)%k%H$G$O0l=54V$h$j8E$/$J$C$?(B) $B%a!<(B
-$B%k$r>C5n$7$^$9!#(B
+Gnus では、ニュースサーバーでニュース記事が期限切れ消去されるように、メー
+ルも消します。そうするためには、概略バッファーのそのメールの上
+で @kbd{E} を叩くことによって、そのメールが期限切れ消去可能であること
+を (「このメールはもう要らないよ」と) Gnus に伝えれば良いのです。すると、
+そのグループを抜け出たときに、Gnus は以前に印が付けられたすべてのメッセー
+ジを検査して、十分に古くなった (ディフォルトでは一週間より古くなった) メー
+ルを消去します。
 
 @node FAQ 6-5
-@subsubheading $B<ALd(B 6.5
+@subsubheading 質問 6.5
 
-$BFI$_=*$o$C$?$9$Y$F$N%a%C%;!<%8$r4|8B@Z$l>C5n$7$?$$$N$G$9$,(B ($B>/$J$/$H$b$$(B
-$B$/$D$+$N%0%k!<%W$G(B)$B!"$I$&$7$?$iNI$$$G$9$+(B?
+読み終わったすべてのメッセージを期限切れ消去したいのですが (少なくともい
+くつかのグループで)、どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BFI$_=*$o$C$?$9$Y$F$N%a%C%;!<%8$,4|8B@Z$l>C5n$5$l$k$h$&$K$7$?$$$J$i(B ($BNc$((B
-$B$P%*%s%i%$%s$N%"!<%+%$%V$,JL$KB8:_$7$F$$$k%a!<%j%s%0%j%9%H$G(B)$B!"(B
-@code{auto-expire} $B$H(B @code{total-expire} $B$H$$$&Fs$D$NA*Br;h$,$"$j$^$9!#(B
-@code{auto-expire} $B$H$$$&$N$O!"0u$,IU$$$F$$$J$$$1$l$I$bFI$`$?$a$KA*Br$5(B
-$B$l$?$3$H$,$"$k$9$Y$F$N5-;v$K4|8B@Z$l>C5n2DG=$N0u$,IU$1$i$l$k$3$H$G!"%a%C(B
-$B%;!<%8$rFI$`$?$S$K(B Gnus $B$,(B @kbd{E} $B$rC!$$$F$/$l$k$h$&$J$b$N$G$9!#(B
-@code{total-expire} $B$O>/$70[$J$k$d$jJ}$K=>$C$F$$$F!"4{FI$N0u$,IU$1$i$l$?(B
-$B$9$Y$F$N5-;v$,4|8B@Z$l>C5n2DG=$K$J$j$^$9!#(B
+読み終わったすべてのメッセージが期限切れ消去されるようにしたいなら (例え
+ばオンラインのアーカイブが別に存在しているメーリングリストで)、
+@code{auto-expire} と @code{total-expire} という二つの選択肢があります。
+@code{auto-expire} というのは、印が付いていないけれども読むために選択さ
+れたことがあるすべての記事に期限切れ消去可能の印が付けられることで、メッ
+セージを読むたびに Gnus が @kbd{E} を叩いてくれるようなものです。
+@code{total-expire} は少し異なるやり方に従っていて、既読の印が付けられた
+すべての記事が期限切れ消去可能になります。
 
-@code{auto-expire} $B$rM-8z$K$9$k$K$O!"$=$N%0%k!<%W$N%0%k!<%W%Q%i%a!<%?!<(B
-$B$K(B @code{auto-expire} $B$r4^$a$F$/$@$5$$(B ($B%0%k!<%W%P%C%U%!!<$G%0%k!<%W%Q%i(B
-$B%a!<%?!<$rJQ99$9$k%0%k!<%W$N>e$K%]%$%s%H$rCV$$$F(B @kbd{G c} $B$rC!$-$^$9(B)$B!#(B
-@code{total-expire} $B$NJ}$O!"%0%k!<%W%Q%i%a!<%?!<(B
-$B$K(B @code{total-expire} $B$r2C$($F$/$@$5$$!#(B
+@code{auto-expire} を有効にするには、そのグループのグループパラメーター
+に @code{auto-expire} を含めてください (グループバッファーでグループパラ
+メーターを変更するグループの上にポイントを置いて @kbd{G c} を叩きます)。
+@code{total-expire} の方は、グループパラメーター
+に @code{total-expire} を加えてください。
 
-$B$I$A$i$N<jCJ$rA*$V$+$O!"C1$K9%$_$NLdBj$G$9!#(B@code{auto-expire} $B$OB.$$$N(B
-$B$G$9$,!"E,1~%9%3%"IU$1$H6&B8$G$-$J$$$N$G!"$3$N5!G=$r;H$$$?$$>l9g(B
-$B$O(B @code{total-expire} $B$r;H$o$J$1$l$P$J$j$^$;$s!#(B
+どちらの手段を選ぶかは、単に好みの問題です。@code{auto-expire} は速いの
+ですが、適応スコア付けと共存できないので、この機能を使いたい場合
+は @code{total-expire} を使わなければなりません。
 
-@code{total-expire} $B$+(B @code{auto-expire} $B$,@_Dj$5$l$F$$$k%0%k!<%W$G!"$"(B
-$B$k%a%C%;!<%8$r4|8B@Z$l>C5n$NBP>]$+$i30$7$?$$>l9g$K$O!"(B@kbd{u} $B$G2D(B
-$B;k(B (ticked) $B$N0u$rIU$1$k$+(B @kbd{?} $B$GJ]N1(B (dormant) $B$N0u$rIU$1$F$/$@$5$$!#(B
-@code{auto-expire} $B$r;H$C$F$$$k>l9g$O!"$5$i$K(B @kbd{d} $B$G4{FI$N0u$rIU$1$k(B
-$B$3$H$,$G$-$^$9!#(B
+@code{total-expire} か @code{auto-expire} が設定されているグループで、あ
+るメッセージを期限切れ消去の対象から外したい場合には、@kbd{u} で可
+視 (ticked) の印を付けるか @kbd{?} で保留 (dormant) の印を付けてください。
+@code{auto-expire} を使っている場合は、さらに @kbd{d} で既読の印を付ける
+ことができます。
 
 @node FAQ 6-6
-@subsubheading $B<ALd(B 6.6
+@subsubheading 質問 6.6
 
-$B4|8B$,Mh$?%a!<%k$r:o=|$9$k$N$G$O$J$/$F!"B>$N%0%k!<%W$K0\F0$5$;$?$$$N$G$9(B
-$B$,!#(B
+期限が来たメールを削除するのではなくて、他のグループに移動させたいのです
+が。
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@file{~/.gnus.el} $B%U%!%$%k$K!"$3$N$h$&$J$b$N$r=q$-9~$s$G$/$@$5$$(B:
+@file{~/.gnus.el} ファイルに、このようなものを書き込んでください:
 
 @lisp
 (setq nnmail-expiry-target "nnml:expired")
 @end lisp
 
 @noindent
-(@code{nnmail-expiry-target} $B$K%0%k!<%W$K$h$C$F0[$J$kCM$r@_Dj$7$?$$>l9g(B
-$B$K$O!"<ALd!V$$$/$D$+$N(B ($BNc$($P%a!<%k$N(B) $B%0%k!<%W$G!"%9%l%C%II=<($r$5$;$J(B
-$B$/$9$k$3$H$O$G$-$^$9$+(B?  $B$"$k$$$O!"$$$/$D$+$N%0%k!<%W$K8GM-$NJQ?t$r@_Dj(B
-$B$9$k$3$H$,$G$-$^$9$+(B?$B!W(B(@pxref{FAQ 4-10}) $B$r;2>H$7$F$/$@$5$$!#(B)
+(@code{nnmail-expiry-target} にグループによって異なる値を設定したい場合
+には、質問「いくつかの (例えばメールの) グループで、スレッド表示をさせな
+くすることはできますか?  あるいは、いくつかのグループに固有の変数を設定
+することができますか?」(@pxref{FAQ 4-10}) を参照してください。)
 
 @node FAQ 7 - Gnus in a dial-up environment
-@subsection $B%@%$%"%k%"%C%W4D6-$G(B Gnus $B$r;H$&(B
+@subsection ダイアルアップ環境で Gnus を使う
 
 @menu
-* FAQ 7-1:: $B!!%M%C%H$K>o;~@\B3$7$F$$$J$$$N$G$9$,!"$I$&$7$?$i@\B3$9(B
-              $B$k;~4V$r:G>.8B$K$G$-$^$9$+(B?
+* FAQ 7-1:: 　ネットに常時接続していないのですが、どうしたら接続す
+              る時間を最小限にできますか?
 
-* FAQ 7-2:: $B!!$J$i$P!"$=$l$N%(!<%8%'%s%H$K4X78$9$k$b$N$O2?$G$9$+(B?
+* FAQ 7-2:: 　ならば、それのエージェントに関係するものは何ですか?
 
-* FAQ 7-3:: $B!!5-;v$NK\J8$b%G%#%9%/$K3JG<$7$?$$$N$G$9$,!"$I$&$9$l$P(B
-              $BNI$$$G$9$+(B?
+* FAQ 7-3:: 　記事の本文もディスクに格納したいのですが、どうすれば
+              良いですか?
 
-* FAQ 7-4:: $B!!%*%U%i%$%s$N$H$-$K(B Gnus $B$K%a!<%k$d%K%e!<%95-;v$rAw?.(B
-              $B$5$;$J$$$h$&$K$9$k$K$O!"$I$&$7$?$iNI$$$G$9$+(B?
+* FAQ 7-4:: 　オフラインのときに Gnus にメールやニュース記事を送信
+              させないようにするには、どうしたら良いですか?
 @end menu
 
 @node FAQ 7-1
-@subsubheading $B<ALd(B 7.1
+@subsubheading 質問 7.1
 
-$B%M%C%H$K>o;~@\B3$7$F$$$J$$$N$G$9$,!"$I$&$7$?$i@\B3$9$k;~4V$r:G>.8B$K$G$-(B
-$B$^$9$+(B?
+ネットに常時接続していないのですが、どうしたら接続する時間を最小限にでき
+ますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$BFs$D$N$d$jJ}$,$"$j$^$9!#0l$D$O(B Gnus $B%(!<%8%'%s%H$r;H$&$3(B
-$B$H(B (@pxref{FAQ 7-2}) $B$G!"$b$&0lJ}$O%K%e!<%95-;v$H%a!<%k$r%m!<%+%k%G%#%9(B
-$B%/$K<h$j9~$`%W%m%0%i%`$r%$%s%9%H!<%k$7$F!"(BGnus $B$K$=$l$i$r%m!<%+%k%^%7%s(B
-$B$+$iFI$s$G$b$i$&J}K!$G$9!#(B
+二つのやり方があります。一つは Gnus エージェントを使うこ
+と (@pxref{FAQ 7-2}) で、もう一方はニュース記事とメールをローカルディス
+クに取り込むプログラムをインストールして、Gnus にそれらをローカルマシン
+から読んでもらう方法です。
 
-$BFs$DL\$N$d$jJ}$G9T$-$?$$$N$J$i!"%K%e!<%95-;v$r<h$j9~$s$G$=$l$i$r(B Gnus $B$K(B
-$BEO$9%W%m%0%i%`!"F1$8$3$H$r%a!<%k$KBP$7$F9T$J$&%W%m%0%i%`!"$*$h$S$"$J$?$,(B
-$B=q$$$?%a!<%k$r(B Gnus $B$+$i<u$1<h$C$F!"%*%s%i%$%s$K$J$C$?$i$=$l$i$rAw?.$9$k(B
-$B%W%m%0%i%`$,I,MW$G$9!#(B
+二つ目のやり方で行きたいのなら、ニュース記事を取り込んでそれらを Gnus に
+渡すプログラム、同じことをメールに対して行なうプログラム、およびあなたが
+書いたメールを Gnus から受け取って、オンラインになったらそれらを送信する
+プログラムが必要です。
 
-$B:G=i$K(B Unix $B%7%9%F%`$K$D$$$F=q$-$^$7$g$&!#%K%e!<%95-;v$r<h$j9~$`$?$a$N:G(B
-$B$b0B0W$J2r$O!"(B@uref{http://www.leafnode.org/,
-Leafnode} $B$d(B @uref{http://infa.abo.fi/~patrik/sn/, sn} $B$N$h$&$K>.5,LO(B
-$B$J(B @acronym{NNTP} $B%5!<%P!<$r;H$&$3$H$G$9!#$b$A$m(B
-$B$s(B @uref{http://www.isc.org/software/inn/, inn} $B$N$h$&$JK\3JE*$J%K%e!<%9(B
-$B%5!<%P!<$r%$%s%9%H!<%k$9$k$3$H$b$G$-$^$9!#%a!<%k$N<h$j9~$_$K;H$&$b$N$G?M(B
-$B5$$,$"$k$N$O(B @uref{http://www.catb.org/~esr/fetchmail/, fetchmail} $B$*$h(B
-$B$S(B @uref{http://pyropus.ca/software/getmail/, getmail} $B$G$9!#$=$l$i$K%a!<(B
-$B%k$r%G%#%9%/$K=q$-9~$`$h$&$K;X<($7$F$/$@$5$$!#(BGnus $B$O$=$3$+$iFI$`$3$H$K(B
-$B$J$j$^$9!#:G8e$G$9$,$*$m$=$+$K$G$-$J$$$N$O%a!<%k$NAw?.$G$9!#$3$l$K$O$"$i(B
-$B$f$k(B MTA$B!"Nc$($P(B @uref{http://www.sendmail.org/, sendmail},
+最初に Unix システムについて書きましょう。ニュース記事を取り込むための最
+も安易な解は、@uref{http://www.leafnode.org/,
+Leafnode} や @uref{http://infa.abo.fi/~patrik/sn/, sn} のように小規模
+な @acronym{NNTP} サーバーを使うことです。もちろ
+ん @uref{http://www.isc.org/software/inn/, inn} のような本格的なニュース
+サーバーをインストールすることもできます。メールの取り込みに使うもので人
+気があるのは @uref{http://www.catb.org/~esr/fetchmail/, fetchmail} およ
+び @uref{http://pyropus.ca/software/getmail/, getmail} です。それらにメー
+ルをディスクに書き込むように指示してください。Gnus はそこから読むことに
+なります。最後ですがおろそかにできないのはメールの送信です。これにはあら
+ゆる MTA、例えば @uref{http://www.sendmail.org/, sendmail},
 @uref{http://www.qmail.org/, postfix}, @uref{http://www.exim.org/,
-exim} $B$^$?$O(B @uref{http://www.qmail.org/, qmail} $B$r;H$&$3$H$,$G$-$^$9!#(B
+exim} または @uref{http://www.qmail.org/, qmail} を使うことができます。
 
-Windows $B>.20$N$?$a$K$O(B @uref{http://www.tglsoft.de/, Hamster} $B$r?d$7$^$9!#(B
-$B$=$l$O>.$5$/$F%U%j!<$J%*!<%W%s%=!<%9$N%W%m%0%i%`$G!"1s3V%5!<%P!<$+$i%a!<(B
-$B%k$H%K%e!<%9$r<h$j9~$s$G!"(B@acronym{NNTP} $B$*$h$S(B @acronym{POP3} $B$^$?(B
-$B$O(B @acronym{IMAP} $B$N$=$l$>$l$r2p$7$F(B Gnus ($B$"$k$$$OB>$N%a!<%k(B/$B%K%e!<%9%j!<(B
-$B%@!<(B) $B$KEO$7$^$9!#$5$i$K$=$l$O(B Gnus $B$,Aw?.$9$k%a!<%k$r<u$1<h$k$?$a(B
-$B$N(B @acronym{SMTP} $B%5!<%P!<$b4^$s$G$$$^$9!#(B
+Windows 小屋のためには @uref{http://www.tglsoft.de/, Hamster} を推します。
+それは小さくてフリーなオープンソースのプログラムで、遠隔サーバーからメー
+ルとニュースを取り込んで、@acronym{NNTP} および @acronym{POP3} また
+は @acronym{IMAP} のそれぞれを介して Gnus (あるいは他のメール/ニュースリー
+ダー) に渡します。さらにそれは Gnus が送信するメールを受け取るため
+の @acronym{SMTP} サーバーも含んでいます。
 
 @node FAQ 7-2
-@subsubheading $B<ALd(B 7.2
+@subsubheading 質問 7.2
 
-$B$J$i$P!"$=$l$N%(!<%8%'%s%H$K4X78$9$k$b$N$O2?$G$9$+(B?
+ならば、それのエージェントに関係するものは何ですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B%(!<%8%'%s%H$O(B Gnus $B$N0lIt$G!"%a!<%k$H%K%e!<%9$r<h$j9~$s$G%G%#%9%/(B
-$B$K3JG<$7!"8e$G%*%U%i%$%s$N$H$-$K$=$l$i$rFI$`$3$H$,$G$-$k$h$&$K$7$^$9!#$=(B
-$B$l$O!"8@$&$J$i$P(B Forte Agent $B$N$h$&$J%*%U%i%$%s!&%K%e!<%9%j!<%@!<$N??;w(B
-$B$r$7$^$9!#$^$@(B 5.8.8 $B$+(B 5.9 $B$r;H$C$F$$$F%(!<%8%'%s%H$r;H$$$?$1$l$P!"0J2<(B
-$B$N9T$r(B @file{~/.gnus.el} $B%U%!%$%k$K=q$-9~$s$G$/$@$5$$(B ($B$3$l$O(B 5.10 $B$+$i(B
-$B%G%#%U%)%k%H$K$J$C$F$$$^$9(B):
+Gnus エージェントは Gnus の一部で、メールとニュースを取り込んでディスク
+に格納し、後でオフラインのときにそれらを読むことができるようにします。そ
+れは、言うならば Forte Agent のようなオフライン・ニュースリーダーの真似
+をします。まだ 5.8.8 か 5.9 を使っていてエージェントを使いたければ、以下
+の行を @file{~/.gnus.el} ファイルに書き込んでください (これは 5.10 から
+ディフォルトになっています):
 
 @lisp
 (setq gnus-agent t)
 @end lisp
 
 @noindent
-$B$=$&$7$?$i!"?t$"$k%0%k!<%W$r%m!<%+%k$K3JG<$9$k$3$H$,$G$-$k%5!<%P!<$rA*$P(B
-$B$J$1$l$P$J$j$^$;$s!#$=$N$?$a$K$O!"%5!<%P!<%P%C%U%!!<$r3+$$$F(B ($B%0%k!<%W%P%C(B
-$B%U%!!<$G(B @kbd{^} $B$r2!$7$F(B) $B$/$@$5$$!#$=$7$F!"A*$s$@%5!<%P!<L>$N>l=j$K%](B
-$B%$%s%H$r0\F0$5$;$^$7$g$&!#:G8e$K(B @kbd{J a} $B$r%?%$%W$7$F!"$=$N%5!<%P!<$r(B
-$B%(!<%8%'%s%H2=$7$F$/$@$5$$!#$b$74V0c$C$F$7$^$C$?$i!"$"$k$$$O5$$,JQ$o$C$?(B
-$B$i!"(B@kbd{J r} $B$r%?%$%W$9$l$P85$KLa$9$3$H$,$G$-$^$9!#=*$o$C$?(B
-$B$i(B @kbd{q} $B$r%?%$%W$7$F!"%0%k!<%W%P%C%U%!!<$KLa$C$F$/$@$5$$!#<!2s%(!<%8%'(B
-$B%s%H2=$5$l$?%5!<%P!<$N%0%k!<%W$KF~$k$H%X%C%@!<$,%G%#%9%/$K3JG<$5$l!"$=$N(B
-$B<!$N2s$K%0%k!<%W%P%C%U%!!<$KF~$k$H!"$=$3(B ($B%G%#%9%/(B) $B$+$iFI$`$h$&$K$J$j$^(B
-$B$9!#(B
+そうしたら、数あるグループをローカルに格納することができるサーバーを選ば
+なければなりません。そのためには、サーバーバッファーを開いて (グループバッ
+ファーで @kbd{^} を押して) ください。そして、選んだサーバー名の場所にポ
+イントを移動させましょう。最後に @kbd{J a} をタイプして、そのサーバーを
+エージェント化してください。もし間違ってしまったら、あるいは気が変わった
+ら、@kbd{J r} をタイプすれば元に戻すことができます。終わった
+ら @kbd{q} をタイプして、グループバッファーに戻ってください。次回エージェ
+ント化されたサーバーのグループに入るとヘッダーがディスクに格納され、その
+次の回にグループバッファーに入ると、そこ (ディスク) から読むようになりま
+す。
 
 @node FAQ 7-3
-@subsubheading $B<ALd(B 7.3
+@subsubheading 質問 7.3
 
-$B5-;v$NK\J8$b%G%#%9%/$K3JG<$7$?$$$N$G$9$,!"$I$&$9$l$PNI$$$G$9$+(B?
+記事の本文もディスクに格納したいのですが、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$"$k=R8l$rK~B-$5$;$k5-;v$NK\J8$r<+F0E*$K<h$j9~$`$h$&$K!"%(!<%8%'%s%H$K;X(B
-$B<($9$k$3$H$,$G$-$^$9!#$=$l$O!"%0%k!<%W%P%C%U%!!<$G(B @kbd{J c} $BL?Na$r;H$&(B
-$B$3$H$K$h$C$F9T$/$3$H$,$G$-$k!"FCJL$J%P%C%U%!!<$G9T$J$$$^$9!#$I$N=R8l$r;H(B
-$B$&$3$H$,$G$-$k$+!"$*$h$S$=$l$r@5$7$/9T$J$&J}K!$K4X$9$k>pJs$K$D$$$F(B
-$B$O(B Gnus $B$N%^%K%e%"%k$r;2>H$7$F$/$@$5$$!#(B
+ある述語を満足させる記事の本文を自動的に取り込むように、エージェントに指
+示することができます。それは、グループバッファーで @kbd{J c} 命令を使う
+ことによって行くことができる、特別なバッファーで行ないます。どの述語を使
+うことができるか、およびそれを正しく行なう方法に関する情報について
+は Gnus のマニュアルを参照してください。
 
-$B$5$i$K!"$I$N5-;v$r%G%#%9%/$K3JG<$9$k$+$r!"<j:n6H$G%(!<%8%'%s%H$K;X<($9$k(B
-$B$3$H$b$G$-$^$9!#$=$l$K$OFs$D$N$d$jJ}$,$"$j$^$9(B:
+さらに、どの記事をディスクに格納するかを、手作業でエージェントに指示する
+こともできます。それには二つのやり方があります:
 
 @enumerate
 @item
-$B35N,%P%C%U%!!<$G!"(B@kbd{#} $BL?Na$r<B9T$7$F%(!<%8%'%s%H$K3JG<$5$l$k$Y$-5-;v(B
-$B$K%W%m%;%90u$rIU$1$F$+$i!"(B@kbd{J s} $B$r%?%$%W$7$F$/$@$5$$!#(B
+概略バッファーで、@kbd{#} 命令を実行してエージェントに格納されるべき記事
+にプロセス印を付けてから、@kbd{J s} をタイプしてください。
 
 @item
-$B35N,%P%C%U%!!<$G!"(B@kbd{@@} $BL?Na$r<B9T$7$FM_$7$$5-;v$K%@%&%s%m!<%I2DG=(B
-$B0u(B (@samp{%}) $B$rIU$1$F$+$i!"(B@kbd{J u} $B$r%?%$%W$7$F$/$@$5$$!#(B
+概略バッファーで、@kbd{@@} 命令を実行して欲しい記事にダウンロード可能
+印 (@samp{%}) を付けてから、@kbd{J u} をタイプしてください。
 @end enumerate
 
-$B$I$s$J0c$$$,$"$k$N$+$C$F(B?  $B$(!<$H!"%@%&%s%m!<%I2DG=0u$,1J5WE*$J$N$KBP$7(B
-$B$F!"%W%m%;%90u$O35N,%P%C%U%!!<$rH4$1=P$?$H$?$s$K>C$5$l$kE@$G$9!#<B:]!"J#(B
-$B?t$N%0%k!<%W$G%@%&%s%m!<%I2DG=0u$r@_Dj$7$F!"$=$l$i$9$Y$F$N5-;v$r(B ($B%0%k!<(B
-$B%W%P%C%U%!!<$G(B @kbd{J s} $BL?Na$r;H$&$3$H$K$h$C$F(B) $B$^$H$a$F<h$j9~$`$3$H$,(B
-$B$G$-$^$9!#M#0l$N7gE@$O!"%(!<%8%'%s%H2=$5$l$F$$$k%5!<%P!<$N!"A*Br$5$l$?$9(B
-$B$Y$F$N%0%k!<%W$N%X%C%@!<$r$b<h$j9~$s$G$7$^$&$3$H$G$9!#%X%C%@!<$NNL$K$b$h(B
-$B$j$^$9$,!":G=i$N<h$j9~$_$K$O2?;~4V$b$+$+$k$+$b$7$l$^$;$s!#(B
+どんな違いがあるのかって?  えーと、ダウンロード可能印が永久的なのに対し
+て、プロセス印は概略バッファーを抜け出たとたんに消される点です。実際、複
+数のグループでダウンロード可能印を設定して、それらすべての記事を (グルー
+プバッファーで @kbd{J s} 命令を使うことによって) まとめて取り込むことが
+できます。唯一の欠点は、エージェント化されているサーバーの、選択されたす
+べてのグループのヘッダーをも取り込んでしまうことです。ヘッダーの量にもよ
+りますが、最初の取り込みには何時間もかかるかもしれません。
 
 @node FAQ 7-4
-@subsubheading $B<ALd(B 7.4
+@subsubheading 質問 7.4
 
-$B%*%U%i%$%s$N$H$-$K(B Gnus $B$K%a!<%k$d%K%e!<%95-;v$rAw?.$5$;$J$$$h$&$K$9$k$K(B
-$B$O!"$I$&$7$?$iNI$$$G$9$+(B?
+オフラインのときに Gnus にメールやニュース記事を送信させないようにするに
+は、どうしたら良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B8=:_$N>uBV$,%*%s%i%$%s(B (plugged) $B$+%*%U%i%$%s(B (unplugged) $B$+$r!"(BGnus $B$K(B
-$B8@$C$F$"$2$J$1$l$P$J$j$^$;$s!#$=$l0J30$N$b$m$b$m$N$3$H$O<+F0E*$K$d$C$F$/(B
-$B$l$^$9!#(Bplugged $B$H(B unplugged $B$N@Z$jBX$($O!"%0%k!<%W%P%C%U%!!<(B
-$B$G(B @kbd{J j} $BL?Na$r<B9T$9$k$3$H$K$h$C$F9T$J$&$3$H$,$G$-$^$9!#(B
-Gnus $B$r(B unplugged $B$N>uBV$G5/F0$7$?$$$J$i!"(B@kbd{M-x gnus} $B$NBe$o$j(B
-$B$K(B @kbd{M-x gnus-unplugged} $B$r;H$C$F$/$@$5$$!#$?$@$7!"$3$l$,F/$/$?$a$K$O(B
-$B%(!<%8%'%s%H$rM-8z$K$7$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F$/$@$5$$!#(B
+現在の状態がオンライン (plugged) かオフライン (unplugged) かを、Gnus に
+言ってあげなければなりません。それ以外のもろもろのことは自動的にやってく
+れます。plugged と unplugged の切り替えは、グループバッファー
+で @kbd{J j} 命令を実行することによって行なうことができます。
+Gnus を unplugged の状態で起動したいなら、@kbd{M-x gnus} の代わり
+に @kbd{M-x gnus-unplugged} を使ってください。ただし、これが働くためには
+エージェントを有効にしなければならないことに注意してください。
 
 @node FAQ 8 - Getting help
-@subsection $B=u$1$rF@$k(B
+@subsection 助けを得る
 
 @menu
-* FAQ 8-1:: $B!!(BEmacs $B$NCf$G>pJs$rC5$7$?$j=u$1$r5a$a$k$K$O!"$I$&$9$l(B
-              $B$PNI$$$G$9$+(B?
+* FAQ 8-1:: 　Emacs の中で情報を探したり助けを求めるには、どうすれ
+              ば良いですか?
 
-* FAQ 8-2:: $B!!(BGnus $B$N%^%K%e%"%k$NCf$G!"$"$k$3$H$,$i(B ($BNc$($PE:IU(B
-              $B%U%!%$%k!"(BPGP$B!"(BMIME...) $B$K4X$9$k>pJs$r!"2?$b8+$D$1$k(B
-              $B$3$H$,$G$-$^$;$s!#$=$l$i$O=q$+$l$F$$$J$$$N$G$9$+(B?
+* FAQ 8-2:: 　Gnus のマニュアルの中で、あることがら (例えば添付
+              ファイル、PGP、MIME...) に関する情報を、何も見つける
+              ことができません。それらは書かれていないのですか?
 
-* FAQ 8-3:: $B!!;d$O$I$N%&%'%V%5%$%H$rCN$C$F$$$J$1$l$P$J$j$^$;$s$+!#(B
+* FAQ 8-3:: 　私はどのウェブサイトを知っていなければなりませんか。
 
-* FAQ 8-4:: $B!!$I$s$J%a!<%j%s%0%j%9%H$H%K%e!<%9%0%k!<%W$,$"$j$^$9(B
-              $B$+!#(B
+* FAQ 8-4:: 　どんなメーリングリストとニュースグループがあります
+              か。
 
-* FAQ 8-5:: $B!!%P%0$O$I$3$KJs9p$9$l$PNI$$$G$9$+(B?
+* FAQ 8-5:: 　バグはどこに報告すれば良いですか?
 
-* FAQ 8-6:: $B!!$=$N>l$GB(:B$KF@$i$l$k=u$1(B (real-time help) $B$,M_$7$$(B
-              $B$N$G$9$,!"$I$3$G8+$D$+$j$^$9$+(B?
+* FAQ 8-6:: 　その場で即座に得られる助け (real-time help) が欲しい
+              のですが、どこで見つかりますか?
 @end menu
 
 @node FAQ 8-1
-@subsubheading $B<ALd(B 8.1
+@subsubheading 質問 8.1
 
-Emacs $B$NCf$G>pJs$rC5$7$?$j=u$1$r5a$a$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+Emacs の中で情報を探したり助けを求めるには、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B:G=i$KN)$A4s$k$Y$->l=j$O(B Gnus $B%^%K%e%"%k$G$9(B (@kbd{C-h i d m Gnus
-RET} $B$G(B Gnus $B%^%K%e%"%k$r3+$$$?$i!"%a%K%e!<$rD/$a2s$9$+(B @kbd{s} $B$G%F%-%9(B
-$B%HA4BN$rC5$7$F$/$@$5$$(B)$B!#0lJ}(B Emacs $B$K$OI8=`$N%X%k%W!&%3%^%s%I$,$"$C$F!"(B
-$B$=$l$K$O(B @kbd{C-h} $B$H$b$&0l$D$N%-!<$r;H$$$^$9(B (@kbd{C-h ? ?} $B$r%?%$%W$9(B
-$B$k$H!"MxMQ2DG=$J%X%k%W!&%3%^%s%I$H$=$l$i$N0UL#$,8=$l$^$9(B)$B!#$5$i(B
-$B$K(B @kbd{M-x apropos-command} $B$GMxMQ2DG=$J$9$Y$F$N%3%^%s%I$r!"(B
-@samp{M-x apropos} $B$GB8:_$9$kJQ?t$rC5$9$3$H$,$G$-$^$9!#(B
+最初に立ち寄るべき場所は Gnus マニュアルです (@kbd{C-h i d m Gnus
+RET} で Gnus マニュアルを開いたら、メニューを眺め回すか @kbd{s} でテキス
+ト全体を探してください)。一方 Emacs には標準のヘルプ・コマンドがあって、
+それには @kbd{C-h} ともう一つのキーを使います (@kbd{C-h ? ?} をタイプす
+ると、利用可能なヘルプ・コマンドとそれらの意味が現れます)。さら
+に @kbd{M-x apropos-command} で利用可能なすべてのコマンドを、
+@samp{M-x apropos} で存在する変数を探すことができます。
 
 @node FAQ 8-2
-@subsubheading $B<ALd(B 8.2
+@subsubheading 質問 8.2
 
-Gnus $B$N%^%K%e%"%k$NCf$G!"$"$k$3$H$,$i(B ($BNc$($PE:IU%U%!%$%k!"(BPGP$B!"(B
-MIME...) $B$K4X$9$k>pJs$r!"2?$b8+$D$1$k$3$H$,$G$-$^$;$s!#$=$l$i$O=q$+$l$F(B
-$B$$$J$$$N$G$9$+(B?
+Gnus のマニュアルの中で、あることがら (例えば添付ファイル、PGP、
+MIME...) に関する情報を、何も見つけることができません。それらは書かれて
+いないのですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B%^%K%e%"%k0J30$K(B message$B!"(Bemacs-mime$B!"(Bsieve$B!"(BEasyPG $B%"%7%9%?%s%H!"(B
-$B$*$h$S(B pgg $B$N%^%K%e%"%k$,$"$j$^$9!#$=$l$i$N%Q%C%1!<%8$O(B Gnus $B$H$H$b$KG[(B
-$BI[$5$l!"(BGnus $B$K$h$C$F;H$o$l$^$9$,!"??$K(B Gnus $B$N3K?4ItJ,$G$O$J$$$N$GJL$N(B
-info $B%U%!%$%k$GJ8=q2=$5$l$F$$$^$9!#$"$J$?$O$=$l$i$N%^%K%e%"%k$bGA$$$F$_(B
-$B$k$Y$-$G$7$g$&!#(B
+Gnus マニュアル以外に message、emacs-mime、sieve、EasyPG アシスタント、
+および pgg のマニュアルがあります。それらのパッケージは Gnus とともに配
+布され、Gnus によって使われますが、真に Gnus の核心部分ではないので別の
+info ファイルで文書化されています。あなたはそれらのマニュアルも覗いてみ
+るべきでしょう。
 
 @node FAQ 8-3
-@subsubheading $B<ALd(B 8.3
+@subsubheading 質問 8.3
 
-$B;d$O$I$N%&%'%V%5%$%H$rCN$C$F$$$J$1$l$P$J$j$^$;$s$+!#(B
+私はどのウェブサイトを知っていなければなりませんか。
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B:G$b=EMW$J$b$N$O(B @uref{http://www.gnus.org, $B8x<0(B Gnus $B%&%'%V%5%$%H(B} $B$G$9!#(B
+最も重要なものは @uref{http://www.gnus.org, 公式 Gnus ウェブサイト} です。
 
-$BB>$K$b6=L#?<$$%5%$%H$,$"$C$?$i65$($F$/$@$5$$!#(B
+他にも興味深いサイトがあったら教えてください。
 
 @node FAQ 8-4
-@subsubheading $B<ALd(B 8.4
+@subsubheading 質問 8.4
 
-$B$I$s$J%a!<%j%s%0%j%9%H$H%K%e!<%9%0%k!<%W$,$"$j$^$9$+!#(B
+どんなメーリングリストとニュースグループがありますか。
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-Gnus $B$N0lHLE*$J<ALd$r<h$j07$&%K%e!<%9%0%k!<%W$H$7(B
-$B$F(B @samp{gnu.emacs.gnus} $B$,$"$j$^(B
-$B$9(B (@uref{http://dir.gmane.org/gmane.emacs.gnus.user,
-gmane.emacs.gnus.user} $B$G$bMxMQ2D(B) $B!#3+H/HG$N(B Gnus $B$KBP$9$k<ALd$,$"$k$N(B
-$B$J$i!"(Bding $B%a!<%j%s%0%j%9%H$G?R$M$kJ}$,NI$$$O$:$G$9!#0J2<$r;2>H$7$F$/$@(B
-$B$5$$!#(B
+Gnus の一般的な質問を取り扱うニュースグループとし
+て @samp{gnu.emacs.gnus} がありま
+す (@uref{http://dir.gmane.org/gmane.emacs.gnus.user,
+gmane.emacs.gnus.user} でも利用可) 。開発版の Gnus に対する質問があるの
+なら、ding メーリングリストで尋ねる方が良いはずです。以下を参照してくだ
+さい。
 
-Big8 ($BLuCm(B: comp, humanities, misc, news, rec, sci, soc, talk $B$NH,Bg%K%e!<(B
-$B%9%0%k!<%W(B) $B$K$H$I$^$C$F$$$?$$$N$J$i$P!"(B
-@samp{news.software.readers} $B$b$^$?!"$$$/$i$+$N(B Gnus $B$N%f!<%6!<$K$h$C$F(B
-$BFI$^$l$F$$$^$9(B ($B$G$b!"E*3N$J=u$1$rF@$k$3$H$,$G$-$k8+9~$_$H$$$&E@$G$O!">e(B
-$B5-$N%0%k!<%W$NJ}$,$O$k$+$KNI$$$G$7$g$&(B)$B!#%I%$%D8l$rOC$9?M8~$1$K(B
-$B$O(B @samp{de.comm.software.gnus} $B$,$"$j$^$9!#(B
+Big8 (訳注: comp, humanities, misc, news, rec, sci, soc, talk の八大ニュー
+スグループ) にとどまっていたいのならば、
+@samp{news.software.readers} もまた、いくらかの Gnus のユーザーによって
+読まれています (でも、的確な助けを得ることができる見込みという点では、上
+記のグループの方がはるかに良いでしょう)。ドイツ語を話す人向けに
+は @samp{de.comm.software.gnus} があります。
 
-ding $B%a!<%j%s%0%j%9%H(B (ding@@gnus.org) $B$O(B Gnus $B$N3+H/$r07$$$^$9!#(Bding $B%j(B
-$B%9%H$O(B news.gmane.org $B$K$"(B
-$B$k(B @uref{http://dir.gmane.org/gmane.emacs.gnus.general,
-gmane.emacs.gnus.general} $B$r(B NNTP $B7PM3$GFI$`$3$H$b$G$-$^$9!#(B
+ding メーリングリスト (ding@@gnus.org) は Gnus の開発を扱います。ding リ
+ストは news.gmane.org にあ
+る @uref{http://dir.gmane.org/gmane.emacs.gnus.general,
+gmane.emacs.gnus.general} を NNTP 経由で読むこともできます。
 
 @node FAQ 8-5
-@subsubheading $B<ALd(B 8.5
+@subsubheading 質問 8.5
 
-$B%P%0$O$I$3$KJs9p$9$l$PNI$$$G$9$+(B?
+バグはどこに報告すれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-@kbd{M-x gnus-bug} $BL?Na$r;H$&$3$H$K$h$C$F(B @email{bugs@@gnus.org, gnus
-bug $B%a!<%j%s%0%j%9%H(B} $B$KAw$k%a%C%;!<%8$r=q$-;O$a$k$3$H$,$G$-$^$9!#$=$l$K(B
-$B$O$"$J$?$r=u$1$d$9$/$9$k$?$a$N!"$"$J$?$N4D6-$K4X$9$k>pJs$,E:IU$5$l$^$9!#(B
-($BLuCm(B: 2005$BG/$NJk$l$N;~E@$G$O!"$3$N%a!<%j%s%0%j%9%H$O$^$H$b$K5!G=$7$F$$(B
-$B$^$;$s!#(B)
+@kbd{M-x gnus-bug} 命令を使うことによって @email{bugs@@gnus.org, gnus
+bug メーリングリスト} に送るメッセージを書き始めることができます。それに
+はあなたを助けやすくするための、あなたの環境に関する情報が添付されます。
+(訳注: 2005年の暮れの時点では、このメーリングリストはまともに機能してい
+ません。)
 
 @node FAQ 8-6
-@subsubheading $B<ALd(B 8.6
+@subsubheading 質問 8.6
 
-$B$=$N>l$GB(:B$KF@$i$l$k=u$1(B (real-time help) $B$,M_$7$$$N$G$9$,!"$I$3$G8+$D(B
-$B$+$j$^$9$+(B?
+その場で即座に得られる助け (real-time help) が欲しいのですが、どこで見つ
+かりますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$"$J$?$N(B @acronym{IRC} $B$r(B @samp{irc.freenode.net} $B$N(B @samp{#mygnus} $B%A%c(B
-$B%s%M%k$K@\B3$7$F$/$@$5$$!#(B
+あなたの @acronym{IRC} を @samp{irc.freenode.net} の @samp{#mygnus} チャ
+ンネルに接続してください。
 
 @node FAQ 9 - Tuning Gnus
-@subsection Gnus $B$r%A%e!<%s$9$k(B
+@subsection Gnus をチューンする
 
 @menu
-* FAQ 9-1:: $B!!(BGnus $B$N5/F0$,K\Ev$KCY$$$N$G$9$,!"$I$&$7$?$iB.$/$9$k(B
-              $B$3$H$,$G$-$^$9$+(B?
+* FAQ 9-1:: 　Gnus の起動が本当に遅いのですが、どうしたら速くする
+              ことができますか?
 
-* FAQ 9-2:: $B!!%0%k!<%W$KF~$k$H$-$NF0:n$rB.$/$9$k$K$O!"$I$&$9$l$PNI(B
-              $B$$$G$9$+(B?
+* FAQ 9-2:: 　グループに入るときの動作を速くするには、どうすれば良
+              いですか?
 
-* FAQ 9-3:: $B!!%a!<%k$NAw?.$,CY$/$J$C$F$7$^$$$^$7$?!#2?$,5/$-$?$N$G(B
-              $B$7$g$&(B?
+* FAQ 9-3:: 　メールの送信が遅くなってしまいました。何が起きたので
+              しょう?
 @end menu
 
 @node FAQ 9-1
-@subsubheading $B<ALd(B 9.1
+@subsubheading 質問 9.1
 
-Gnus $B$N5/F0$,K\Ev$KCY$$$N$G$9$,!"$I$&$7$?$iB.$/$9$k$3$H$,$G$-$^$9$+(B?
+Gnus の起動が本当に遅いのですが、どうしたら速くすることができますか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$3$N860x$O!"(BGnus $B$,(B active $B%U%!%$%k$rFI$`J}K!$K4X78$7$F$$$k$3$H$,$"$jF@(B
-$B$^$9!#(BGnus $B%^%K%e%"%k$N(B @pxref{The Active File, ,$B%"%/%F%#%V%U%!%$%k(B,
-gnus-ja, The Gnus Manual} $B$r;2>H$7$F$/$@$5$$!#$=$3$K$O!"$=$N=hM}$rB.$/$9(B
-$B$k$?$a$K;n$7$F$_$k2ACM$,$"$k$3$H$,$i$,$"$j$^$9!#$b$&0l$D$N0F(B
-$B$O!"(B@file{~/.gnus.el} $B%U%!%$%k$r%P%$%H%3%s%Q%$%k$9$k$3(B
-$B$H(B (@kbd{M-x byte-compile-file RET ~/.gnus.el RET} $B$r<B9T$9$k$3$H(B) $B$G$9!#(B
-$B:G8e$K!"(B@file{~/.gnus.el} $B%U%!%$%k$G(B @code{require} $B$r;H$C$F$$$k$J$i$P!"(B
-$B$=$l$i$r(B @code{with-eval-after-load} $B$GCV$-49$($k$3$H$,$G$-$k$G$7$g$&!#(B
-$B$=$l$OBP>]$N%b%8%e!<%k$r5/F0;~$G$O$J$/!"I,MW$K$J$C$?$H$-$KFI$_9~$`$h$&$K(B
-$B$7$^$9!#$"$J$?$N(B @file{~/.gnus.el} $B%U%!%$%k$K0J2<$N$h$&$J$b$N$,$"$k>l9g(B
-$B$K$O!"(B
+この原因は、Gnus が active ファイルを読む方法に関係していることがあり得
+ます。Gnus マニュアルの @pxref{The Active File, ,アクティブファイル,
+gnus-ja, The Gnus Manual} を参照してください。そこには、その処理を速くす
+るために試してみる価値があることがらがあります。もう一つの案
+は、@file{~/.gnus.el} ファイルをバイトコンパイルするこ
+と (@kbd{M-x byte-compile-file RET ~/.gnus.el RET} を実行すること) です。
+最後に、@file{~/.gnus.el} ファイルで @code{require} を使っているならば、
+それらを @code{with-eval-after-load} で置き換えることができるでしょう。
+それは対象のモジュールを起動時ではなく、必要になったときに読み込むように
+します。あなたの @file{~/.gnus.el} ファイルに以下のようなものがある場合
+には、
 
 @lisp
 (require 'message)
@@ -2236,8 +2236,8 @@ gnus-ja, The Gnus Manual} $B$r;2>H$7$F$/$@$5$$!#$=$3$K$O!"$=$N=hM}$rB.$/$9(B
 @end lisp
 
 @noindent
-Gnus $B$r5/F0$7$?$H$?$s$K(B @file{message.el} $B$,FI$_9~$^$l$^$9!#$3$l$r<!$N$h(B
-$B$&$KCV$-49$($k$H!"(B
+Gnus を起動したとたんに @file{message.el} が読み込まれます。これを次のよ
+うに置き換えると、
 
 @lisp
 (with-eval-after-load "message"
@@ -2245,116 +2245,115 @@ Gnus $B$r5/F0$7$?$H$?$s$K(B @file{message.el} $B$,FI$_9~$^$l$^$9!#$3$l$r<!$N$
 @end lisp
 
 @noindent
-$B$=$l$OI,MW$K$J$C$?$H$-$KFI$_9~$^$l$k$h$&$K$J$j$^$9!#(B
+それは必要になったときに読み込まれるようになります。
 
-$BLuCm(B: $B86E5$NNc$OITE,@Z$G$9!#8=:_$N(B Gnus $B$OB?$/$N<gMW$J%b%8%e!<%k$r5/F0;~(B
-$B$K(B load $B$9$k$h$&$K$J$C$F$$$F!"Nc$($P(B @file{message.el} $B%b%8%e!<%k(B
-$B$O(B @file{~/.gnus.el} $B%U%!%$%k$rFI$_9~$`;~E@$G$9$G$K(B load $B$5$l$F$$$^$9!#(B
-$B$G$9$+$i>/$J$/$H$b(B @file{message.el} $B%b%8%e!<%k$KBP$7$F(B
-$B$O(B @code{require} $B$b(B @code{with-eval-after-load} $B$b;H$&I,MW$,$"$j$^$;$s!#(B
-$B<B32$O$"$j$^$;$s$,2?$N8z2L$b$"$j$^$;$s!#(B
-$BJQ?t(B @code{message-syntax-checks} $B$K9`L\$rDI2C$9$k>e5-$NNc$O!"C1$K0J2<$N(B
-$B$h$&$K=q$1$P==J,$G$9!#(B
+訳注: 原典の例は不適切です。現在の Gnus は多くの主要なモジュールを起動時
+に load するようになっていて、例えば @file{message.el} モジュール
+は @file{~/.gnus.el} ファイルを読み込む時点ですでに load されています。
+ですから少なくとも @file{message.el} モジュールに対して
+は @code{require} も @code{with-eval-after-load} も使う必要がありません。
+実害はありませんが何の効果もありません。
+変数 @code{message-syntax-checks} に項目を追加する上記の例は、単に以下の
+ように書けば十分です。
 
 @lisp
 (add-to-list 'message-syntax-checks '(sender . disabled))
 @end lisp
 
 @node FAQ 9-2
-@subsubheading $B<ALd(B 9.2
+@subsubheading 質問 9.2
 
-$B%0%k!<%W$KF~$k$H$-$NF0:n$rB.$/$9$k$K$O!"$I$&$9$l$PNI$$$G$9$+(B?
+グループに入るときの動作を速くするには、どうすれば良いですか?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B%9%T!<%I$N;&$720$O!"(B@code{nil} $B0J30$NCM$r@_Dj$5$l(B
-$B$?(B @code{gnus-fetch-old-headers} $BJQ?t$G$9!#$G$9$+$i%9%T!<%I$,LdBj$J$N$G(B
-$B$"$l$P!"$=$l$r$d$i$J$$$G$/$@$5$$!#35N,%P%C%U%!!<$N9=C[$rB.$/$9$k$K$O!"(B
+スピードの殺し屋は、@code{nil} 以外の値を設定され
+た @code{gnus-fetch-old-headers} 変数です。ですからスピードが問題なので
+あれば、それをやらないでください。概略バッファーの構築を速くするには、
 
 @lisp
 (gnus-compile)
 @end lisp
 
 @noindent
-$B$r(B @file{~/.gnus.el} $B%U%!%$%k$N:G8e$K=q$-9~$s$G$/$@$5$$!#$3$l$K$h$C(B
-$B$F(B Gnus $B$O(B @code{gnus-summary-line-format} $B$N$h$&$J$b$N$r%P%$%H%3%s%Q%$(B
-$B%k$7$^$9!#(B($BLuCm(B: $B$=$l$r9T$J$&$H(B @file{~/.newsrc.eld} $B%U%!%$%k$K%P%$%J%j!<(B
-$B%3!<%I$,=q$-9~$^$l$k$N$G!"Hs(B-ASCII $B%F%-%9%H$GI=8=$5$l$?%H%T%C%/L>$J$I$H(B
-$B6&B8$G$-$J$/$J$k4m81$,$"$j$^$9!#(B)
+を @file{~/.gnus.el} ファイルの最後に書き込んでください。これによっ
+て Gnus は @code{gnus-summary-line-format} のようなものをバイトコンパイ
+ルします。(訳注: それを行なうと @file{~/.newsrc.eld} ファイルにバイナリー
+コードが書き込まれるので、非-ASCII テキストで表現されたトピック名などと
+共存できなくなる危険があります。)
 
-$B$=$l$+$i!"(B@file{~/.emacs} $B$K0J2<$N$h$&$J$b$N$r=q$-9~$s$G!"(B
-@code{gc-cons-threshold} $B$NCM$rA}$d$7$F$_$F$/$@$5$$!#(B
+それから、@file{~/.emacs} に以下のようなものを書き込んで、
+@code{gc-cons-threshold} の値を増やしてみてください。
 
 @lisp
 (setq gc-cons-threshold 3500000)
 @end lisp
 
 @noindent
-CJK ($BCf9q8l(B/$BF|K\8l(B/$B4Z9q8l(B) $B$NJ8;z$NI}$r5$$K$7$J$$$N$J$i$P!"$^$?$O:G6a(B
-$B$N(B Emacs $B$H$H$b$K(B Gnus 5.10 $B$+$=$l$h$j?7$7$$$b$N$r;H$C$F$$$k$N$J$i$P!"(B
-$B<!$N9T$r(B @file{~/.gnus.el} $B%U%!%$%k$KF~$l$^$7$g$&(B:
+CJK (中国語/日本語/韓国語) の文字の幅を気にしないのならば、または最近
+の Emacs とともに Gnus 5.10 かそれより新しいものを使っているのならば、
+次の行を @file{~/.gnus.el} ファイルに入れましょう:
 
 @lisp
 (setq gnus-use-correct-string-widths nil)
 @end lisp
 
-$BLuCm(B: @xref{Wide Characters, ,Wide Characters, gnus-ja, The Gnus
-Manual}, $B$b;2>H$7$F$/$@$5$$!#(B
+訳注: @xref{Wide Characters, ,Wide Characters, gnus-ja, The Gnus
+Manual}, も参照してください。
 
 @noindent
-($B$3$l$iFs$D$NDs8@$r$7$F$/$l$?(B Jesper harder $B$5$s$K46<U$7$^$9!#(B)
+(これら二つの提言をしてくれた Jesper harder さんに感謝します。)
 
-$B:G8e$K!"$^$@(B 5.8.8 $B$+(B 5.9 $B$r;H$C$F$$$F!"35N,%P%C%U%!!<$r9=C[$9$k>l9g$NB.(B
-$BEY$KLdBj$,$"$k$3$H$r7P83$9$k$N$G$"$l$P!"@dBP$K(B 5.10 $B$K>e$2$k$Y$-$G$9!#$=(B
-$B$3$G$O$=$l$r2~A1$9$k$?$a$N!"JB30$l$?:n6H$,9T$J$o$l$^$7$?!#(B
+最後に、まだ 5.8.8 か 5.9 を使っていて、概略バッファーを構築する場合の速
+度に問題があることを経験するのであれば、絶対に 5.10 に上げるべきです。そ
+こではそれを改善するための、並外れた作業が行なわれました。
 
 @node FAQ 9-3
-@subsubheading $B<ALd(B 9.3
+@subsubheading 質問 9.3
 
-$B%a!<%k$NAw?.$,CY$/$J$C$F$7$^$$$^$7$?!#2?$,5/$-$?$N$G$7$g$&(B?
+メールの送信が遅くなってしまいました。何が起きたのでしょう?
 
-@subsubheading $B2sEz(B
+@subsubheading 回答
 
-$B$=$NM}M3$O!"(B@code{gnus-message-archive-group} $BJQ?t$N@_Dj$K$h$C$F!"Aw?.%a%C(B
-$B%;!<%8$N95$($rJ]B8$9$k>l=j$dJ}K!$rJQ99$7$?$;$$$+$b$7$l$^$;$s!#%"!<%+%$%V(B
-$B%0%k!<%W$NBe$o$j$K(B @code{nnml} $B%0%k!<%W$r;H$C$F$_$F$/$@$5$$!#$=$&$9$l$P(B
-$B@5>o$JB.EY$,La$C$F$/$k$O$:$G$9!#(B
+その理由は、@code{gnus-message-archive-group} 変数の設定によって、送信メッ
+セージの控えを保存する場所や方法を変更したせいかもしれません。アーカイブ
+グループの代わりに @code{nnml} グループを使ってみてください。そうすれば
+正常な速度が戻ってくるはずです。
 
 @node FAQ - Glossary
-@subsection $BMQ8l=8(B
+@subsection 用語集
 
 @table @dfn
 @item ~/.gnus.el
-@file{~/.gnus.el} $B$H$$$&MQ8l$,;H$o$l$k$H$-!"$=$l$O(B Gnus $B$N@_Dj%U%!%$%k$r(B
-$B;X$7$^$9!#$=$l$r(B @file{~/.gnus} $B$H8F$V$+!"$"$k$$$OJLL>$r;XDj$7$F$b9=$$$^(B
-$B$;$s!#(B
+@file{~/.gnus.el} という用語が使われるとき、それは Gnus の設定ファイルを
+指します。それを @file{~/.gnus} と呼ぶか、あるいは別名を指定しても構いま
+せん。
 
 @item Back End
-Gnus $B$NMQ8lBg7O$G$O!"%P%C%/%(%s%I$O(B Gnus $B$N3K?4ItJ,$H<B:]$N%5!<%P!<$N4V(B
-$B$NAX$K0LCV$r@j$a$k2>A[%5!<%P!<$N$3$H$G$9!#<B:]$N%5!<%P!<$H$O!"(B
-@acronym{NNTP} $B%5!<%P!<!"(B@acronym{POP3} $B%5!<%P!<!"(B@acronym{IMAP} $B%5!<%P!<!"(B
-$B$^$?$O!"2?$G$"$l!V%a%C%;!<%8$N<hF@!W$d!V%X%C%@!<$N<hF@!W$r9T$J$&%5!<%P!<(B
-$B$N5!G=$r;}$D4X?t$N$3$H$G$9!#(B
+Gnus の用語大系では、バックエンドは Gnus の核心部分と実際のサーバーの間
+の層に位置を占める仮想サーバーのことです。実際のサーバーとは、
+@acronym{NNTP} サーバー、@acronym{POP3} サーバー、@acronym{IMAP} サーバー、
+または、何であれ「メッセージの取得」や「ヘッダーの取得」を行なうサーバー
+の機能を持つ関数のことです。
 
 @item Emacs
-$B$3$N(B FAQ $B$G;H$o$l$F$$$k(B Emacs $B$H$$$&MQ8l$O!"(BGNU Emacs $B$+(B XEmacs $B$N$I$A$i(B
-$B$+$r;X$7$^$9!#(B
+この FAQ で使われている Emacs という用語は、GNU Emacs か XEmacs のどちら
+かを指します。
 
 @item Message
-$B$3$N(B FAQ $B$G!V%a%C%;!<%8!W$O$=$l$,$I$s$J<oN`$N$b$N$G$b!"%a!<%k!"$^$?(B
-$B$O(B Usenet $B%K%e!<%9%0%k!<%W$+B>$N2?$i$+$NFC@=$N%P%C%/%(%s%I$KAw$i$l$k%K%e!<(B
-$B%95-;v$N$I$A$i$+$r0UL#$7$^$9!#(B
+この FAQ で「メッセージ」はそれがどんな種類のものでも、メール、また
+は Usenet ニュースグループか他の何らかの特製のバックエンドに送られるニュー
+ス記事のどちらかを意味します。
 
 @item MUA
-MUA $B$O(B Mail User Agent $B$NF,;z8l$G!"EE;R%a!<%k$rFI$s$@$j=q$$$?$j$9$k$?$a(B
-$B$N%W%m%0%i%`$N$3$H$G$9!#(B
+MUA は Mail User Agent の頭字語で、電子メールを読んだり書いたりするため
+のプログラムのことです。
 
 @item NUA
-NUA $B$O(B News User Agent $B$NF,;z8l$G!"(BUsenet $B%K%e!<%9$rFI$s$@$j=q$$$?$j$9$k(B
-$B$?$a$N%W%m%0%i%`$N$3$H$G$9!#(B
+NUA は News User Agent の頭字語で、Usenet ニュースを読んだり書いたりする
+ためのプログラムのことです。
 @end table
 
 @c Local Variables:
-@c coding: iso-2022-7bit
 @c fill-column: 72
 @c End:

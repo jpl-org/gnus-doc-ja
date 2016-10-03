@@ -16,8 +16,8 @@
 @end iftex
 
 @copying
-$B$3$N%U%!%$%k$O(B Emacs SASL $B%i%$%V%i%j!<!"%P!<%8%g%s(B @value{VERSION} $B$r@b(B
-$BL@$7$^$9!#(B
+このファイルは Emacs SASL ライブラリー、バージョン @value{VERSION} を説
+明します。
 
 Copyright @copyright{} 2000, 2004--2016 Free Software Foundation, Inc.
 
@@ -29,17 +29,17 @@ Invariant Sections, with the Front-Cover Texts being ``A GNU Manual'',
 and with the Back-Cover Texts as in (a) below.  A copy of the license
 is included in the section entitled ``GNU Free Documentation License''.
 
-$B$3$NJ8=q$r!"%U%j!<%=%U%H%&%'%":bCDH/9T$N(B GNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q(B
-$BBh(B 1.3 $BHG$^$?$O$=$l0J9_$NHG$,Dj$a$k>r7o$N2<$GJ#@=!"G[I[!"$"$k$$$OJQ99$9(B
-$B$k$3$H$r5v2D$7$^$9!#JQ99IT2DItJ,$O;XDj$7$^$;$s!#!H(BA GNU Manual$B!I$OI=I=;f(B
-$B%F%-%9%H!"0J2<$N(B (a) $B$ON"I=;f%F%-%9%H$G$9!#$3$NMxMQ5vBz7@Ls=q$NJ#<L$O(B
-$B!V(BGNU $B%U%j!<J8=qMxMQ5vBz7@Ls=q!W$H$$$&>O$K4^$^$l$F$$$^$9!#(B
+この文書を、フリーソフトウェア財団発行の GNU フリー文書利用許諾契約書
+第 1.3 版またはそれ以降の版が定める条件の下で複製、配布、あるいは変更す
+ることを許可します。変更不可部分は指定しません。“A GNU Manual”は表表紙
+テキスト、以下の (a) は裏表紙テキストです。この利用許諾契約書の複写は
+「GNU フリー文書利用許諾契約書」という章に含まれています。
 
 (a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
 modify this GNU manual.''
 
-(a) FSF $B$NN"I=;f%F%-%9%H(B:$B!V$"$J$?$K$O$3$N(B GNU Manual $B$rJ#@=$7$?$jJQ99$9(B
-$B$k<+M3$,$"$j$^$9!#!W(B
+(a) FSF の裏表紙テキスト:「あなたにはこの GNU Manual を複製したり変更す
+る自由があります。」
 @end quotation
 @end copying
 
@@ -66,59 +66,59 @@ modify this GNU manual.''
 @node Top
 @top Emacs SASL
 
-SASL $B$O0[$J$k%W%m%H%3%k$r;H$&%"%W%j%1!<%7%g%s4V$G!"J#?t$NG'>Z%a%+%K%:%`(B
-$B$r6&M-$9$k$?$a$N6&DL%$%s%?!<%U%'!<%9$G$9!#(B
+SASL は異なるプロトコルを使うアプリケーション間で、複数の認証メカニズム
+を共有するための共通インターフェースです。
 
 @ifnottex
 @insertcopying
 @end ifnottex
 
 @menu
-* Overview::                    Emacs SASL $B%i%$%V%i%j!<$H$O(B
-* How to use::                  $B%"%W%j%1!<%7%g%s$KG'>Z%5%]!<%H$rDI2C$9$k(B
+* Overview::                    Emacs SASL ライブラリーとは
+* How to use::                  アプリケーションに認証サポートを追加する
 * Data types::
-* Back end drivers::            $BFH<+$N%I%i%$%P!<$r=q$/(B
-* GNU Free Documentation License:: $B$3$NJ8=q$NMxMQ5vBz7@Ls=q(B
+* Back end drivers::            独自のドライバーを書く
+* GNU Free Documentation License:: この文書の利用許諾契約書
 * Index::
 * Function Index::
 * Variable Index::
 @end menu
 
 @node Overview
-@chapter $BBgMW(B
+@chapter 大要
 
-@sc{sasl} $B$O(B @dfn{Simple Authentication and Security Layer} $B$NN,$G$9!#I8(B
-$B=`$O(B RFC2222 $B$KJ8=q2=$5$l$F$$$^$9!#$3$l$O!"$5$^$6$^$J%"%W%j%1!<%7%g%s!&(B
-$B%W%m%H%3%k$K!"G'>Z%5%]!<%H$rDI2C$9$k$?$a$N4JC1$J<jCJ$rDs6!$7$^$9!#(B
+@sc{sasl} は @dfn{Simple Authentication and Security Layer} の略です。標
+準は RFC2222 に文書化されています。これは、さまざまなアプリケーション・
+プロトコルに、認証サポートを追加するための簡単な手段を提供します。
 
-$B$3$N%i%$%V%i%j!<$N:G>e0L$N%$%s%?!<%U%'!<%9$O!"(BJava @sc{sasl} Application
-Program Interface $B$K$h$C$F?(H/$5$l$^$7$?!#$=$l$O!"Cj>]2=$7$?0lO"$NG'>Z%a(B
-$B%+%K%:%`$N%I%i%$%P!<$rDj5A$7$^$9!#(B
+このライブラリーの最上位のインターフェースは、Java @sc{sasl} Application
+Program Interface によって触発されました。それは、抽象化した一連の認証メ
+カニズムのドライバーを定義します。
 
-$B%P%C%/%(%s%I$N%I%i%$%P!<$O!"$J$k$Y$/G'>Z%a%+%K%:%`$KL)@\$7$F$$$k$3$H$rL\(B
-$B;X$7$F$$$^$9!#$I$3$K$"$kDI2C$N@_Dj>pJs$K$b!"$3$N<BAu$+$i%"%/%;%9$9$k$3$H(B
-$B$,$G$-$^$9!#(B
+バックエンドのドライバーは、なるべく認証メカニズムに密接していることを目
+指しています。どこにある追加の設定情報にも、この実装からアクセスすること
+ができます。
 
 @node How to use
-@chapter $B;H$$J}(B
+@chapter 使い方
 
-($B$^$@=q$+$l$F$$$^$;$s(B)$B!#(B
+(まだ書かれていません)。
 
-Emacs SASL $B%i%$%V%i%j!<$r;H$&$K$O!"%"%W%j%1!<%7%g%s!&%W%m%0%i%`$N:G=i$G!"(B
-$B0J2<$N<0$rI>2A$7$F$/$@$5$$!#(B
+Emacs SASL ライブラリーを使うには、アプリケーション・プログラムの最初で、
+以下の式を評価してください。
 
 @lisp
 (require 'sasl)
 @end lisp
 
-$B<B9T;~$K$N$_(B sasl.el $B$,B8:_$7$F$$$k$3$H$r8!::$7$?$$$J$i$P!"Be$o$j$KI,MW(B
-$B$J4X?t$N(B autoload $B$N@_Dj$rJB$Y$F$*$$$F$b9=$$$^$;$s!#(B
+実行時にのみ sasl.el が存在していることを検査したいならば、代わりに必要
+な関数の autoload の設定を並べておいても構いません。
 
 @node Data types
-@chapter $B%G!<%?$N7?(B
+@chapter データの型
 
-$B%M%4%7%(!<%H$5$l$?%;%-%e%j%F%#!<AX$NEAAw$K;H$o$l$k;0$D$N%G!<%?$N7?$H$7$F!"(B
-$B%a%+%K%:%`!"%/%i%$%"%s%H!&%Q%i%a!<%?!<!"$*$h$SG'>Z%9%F%C%W$,$"$j$^$9!#(B
+ネゴシエートされたセキュリティー層の伝送に使われる三つのデータの型として、
+メカニズム、クライアント・パラメーター、および認証ステップがあります。
 
 @menu
 * Mechanisms::
@@ -127,19 +127,19 @@ Emacs SASL $B%i%$%V%i%j!<$r;H$&$K$O!"%"%W%j%1!<%7%g%s!&%W%m%0%i%`$N:G=i$G!"(B
 @end menu
 
 @node Mechanisms
-@section $B%a%+%K%:%`(B
+@section メカニズム
 
-$B%a%+%K%:%`(B (@code{sasl-mechanism} $B%*%V%8%'%/%H(B) $B$,!"(B@sc{sasl} $BG'>Z%a%+%K(B
-$B%:%`$N%I%i%$%P!<$N%9%-!<%`$G$9!#(B
+メカニズム (@code{sasl-mechanism} オブジェクト) が、@sc{sasl} 認証メカニ
+ズムのドライバーのスキームです。
 
 @defvar sasl-mechanisms
-$B%a%+%K%:%`L>$N%j%9%H!#(B
+メカニズム名のリスト。
 @end defvar
 
 @defun sasl-find-mechanism mechanisms
-$BE,@Z$J%a%+%K%:%`$r<hF@$7$^$9!#(B@*
-$B$3$N4X?t$O(B @var{mechanisms} $B$H(B @code{sasl-mechanisms} $B$rHf3S$7$F!"E,@Z(B
-$B$J(B @code{sasl-mechanism} $B%*%V%8%'%/%H$rJV$7$^$9!#(B
+適切なメカニズムを取得します。@*
+この関数は @var{mechanisms} と @code{sasl-mechanisms} を比較して、適切
+な @code{sasl-mechanism} オブジェクトを返します。
 
 @lisp
 (let ((sasl-mechanisms '("CRAM-MD5" "DIGEST-MD5")))
@@ -148,21 +148,21 @@ Emacs SASL $B%i%$%V%i%j!<$r;H$&$K$O!"%"%W%j%1!<%7%g%s!&%W%m%0%i%`$N:G=i$G!"(B
 @end defun
 
 @defun sasl-mechanism-name mechanism
-$B%a%+%K%:%`$NL>A0$rJ8;zNs$GJV$7$^$9!#(B
+メカニズムの名前を文字列で返します。
 @end defun
 
-$BG'>Z%a%+%K%:%`$N%I%i%$%P!<(B (@ref{Back end drivers}) $B$r=q$-$?$1$l$P!"(B
-@code{sasl-make-mechanism} $B$r;H$$!"(B@code{sasl-mechanisms} $B$*$h(B
-$B$S(B @code{sasl-mechanism-alist} $B$r@5$7$/JQ99$7$F$/$@$5$$!#(B
+認証メカニズムのドライバー (@ref{Back end drivers}) を書きたければ、
+@code{sasl-make-mechanism} を使い、@code{sasl-mechanisms} およ
+び @code{sasl-mechanism-alist} を正しく変更してください。
 
 @defun sasl-make-mechanism name steps
-@code{sasl-mechanism} $B%*%V%8%'%/%H$r3d$jEv$F$^$9!#(B@*
-$B$3$N4X?t$OFs$D$N%Q%i%a!<%?!<!"$9$J$o$A%a%+%K%:%`$NL>A0!"$*$h$SG'>Z$9$k$?(B
-$B$a$N4X?t$N%j%9%H$r<u$1<h$j$^$9!#(B
+@code{sasl-mechanism} オブジェクトを割り当てます。@*
+この関数は二つのパラメーター、すなわちメカニズムの名前、および認証するた
+めの関数のリストを受け取ります。
 
 @lisp
 (defconst sasl-anonymous-steps
-  '(identity                            ; $B:G=i$O1~EzL5$7(B
+  '(identity                            ; 最初は応答無し
     sasl-anonymous-response))
 
 (put 'sasl-anonymous 'sasl-mechanism
@@ -171,98 +171,98 @@ Emacs SASL $B%i%$%V%i%j!<$r;H$&$K$O!"%"%W%j%1!<%7%g%s!&%W%m%0%i%`$N:G=i$G!"(B
 @end defun
 
 @node Clients
-@section $B%/%i%$%"%s%H(B
+@section クライアント
 
-$B%/%i%$%"%s%H(B (@code{sasl-client} $B%*%V%8%'%/%H(B) $B$O;M$D$N%Q%i%a!<%?!<!"$9(B
-$B$J$o$A%a%+%K%:%`!"%f!<%6!<L>!"%5!<%S%9L>!"$*$h$S%5!<%P!<L>$K$h$C$F=i4|2=(B
-$B$5$l$^$9!#(B
+クライアント (@code{sasl-client} オブジェクト) は四つのパラメーター、す
+なわちメカニズム、ユーザー名、サービス名、およびサーバー名によって初期化
+されます。
 
 @defun sasl-make-client mechanism name service server
-@code{sasl-client} $B%*%V%8%'%/%H$rMQ0U$7$^$9!#(B
+@code{sasl-client} オブジェクトを用意します。
 @end defun
 
 @defun sasl-client-mechanism client
-$B%/%i%$%"%s%H$N%a%+%K%:%`(B (@code{sasl-mechanism} $B%*%V%8%'%/%H(B) $B$rJV$7$^$9!#(B
+クライアントのメカニズム (@code{sasl-mechanism} オブジェクト) を返します。
 @end defun
 
 @defun sasl-client-name client
-$B%/%i%$%"%s%H$NG'>ZL>$rJ8;zNs$GJV$7$^$9!#(B
+クライアントの認証名を文字列で返します。
 @end defun
 
 @defun sasl-client-service client
-$B%/%i%$%"%s%H$N%5!<%S%9L>$rJ8;zNs$GJV$7$^$9!#(B
+クライアントのサービス名を文字列で返します。
 @end defun
 
 @defun sasl-client-server client
-$B%/%i%$%"%s%H$N%5!<%P!<L>$rJ8;zNs$GJV$7$^$9!#(B
+クライアントのサーバー名を文字列で返します。
 @end defun
 
-$BB0@-$N@_Dj$rDI2C$7$?$$>l9g$O!"(B@code{sasl-client-set-property} $B$r;H$C$F$/(B
-$B$@$5$$!#(B
+属性の設定を追加したい場合は、@code{sasl-client-set-property} を使ってく
+ださい。
 
 @defun sasl-client-set-property client property value
-$BM?$($i$l$?B0@-$*$h$S$=$NCM$r%/%i%$%"%s%H$KDI2C$7$^$9!#(B
+与えられた属性およびその値をクライアントに追加します。
 @end defun
 
 @defun sasl-client-property client property
-$B%/%i%$%s%H$NB0@-$NCM$rJV$7$^$9!#(B
+クライントの属性の値を返します。
 @end defun
 
 @defun sasl-client-set-properties client plist
-$B%/%i%$%"%s%H$NB0@-$rGK2uE*$K@_Dj$7$^$9!#(B@*
-$BBhFs0z?t$O?7$7$$%W%m%Q%F%#!<!&%j%9%H(B (plist) $B$G$9!#(B
+クライアントの属性を破壊的に設定します。@*
+第二引数は新しいプロパティー・リスト (plist) です。
 @end defun
 
 @defun sasl-client-properties client
-$B%/%i%$%"%s%H$N@_Dj$N%W%m%Q%F%#!<!&%j%9%H$r!"$^$k$4$HJV$7$^$9!#(B
+クライアントの設定のプロパティー・リストを、まるごと返します。
 @end defun
 
 @node Steps
-@section $B%9%F%C%W(B
+@section ステップ
 
-$B%9%F%C%W(B (@code{sasl-step} $B%*%V%8%'%/%H(B) $B$OG'>Z!V%9%F%C%W!W$NCj>]2=$G$9!#(B
-$B$=$l$O!"1~Ez$NCM$H<!2s$NG'>Z=hM}$NF~$j8}$rJ];}$7$^$9(B ($B8e<T$O%"%/%;%9$G$-(B
-$B$^$;$s(B)$B!#(B
+ステップ (@code{sasl-step} オブジェクト) は認証「ステップ」の抽象化です。
+それは、応答の値と次回の認証処理の入り口を保持します (後者はアクセスでき
+ません)。
 
 @defun sasl-step-data step
-@var{step} $B$,J];}$9$k%G!<%?$rJ8;zNs$GJV$7$^$9!#(B
+@var{step} が保持するデータを文字列で返します。
 @end defun
 
 @defun sasl-step-set-data step data
-@var{step} $B$K(B @var{data} $B$NJ8;zNs$r3JG<$7$^$9!#(B
+@var{step} に @var{data} の文字列を格納します。
 @end defun
 
-$B:G=i$N1~Ez$rF@$k$K$O!"BhFs0z?t$r(B @code{nil} $B$K$7$F4X(B
-$B?t(B @code{sasl-next-step} $B$r8F$P$J$1$l$P$J$j$^$;$s!#(B
+最初の応答を得るには、第二引数を @code{nil} にして関
+数 @code{sasl-next-step} を呼ばなければなりません。
 
 @lisp
 (setq name (sasl-mechanism-name mechanism))
 @end lisp
 
-$B$3$NCJ3,$G!"(BSASL $B$NG'>Z%W%m%H%3%k$N8r49$r3+;O$9$k%3%^%s%I$rAw$k$3$H$,$G(B
-$B$-$^$9!#Nc$G$9!#(B
+この段階で、SASL の認証プロトコルの交換を開始するコマンドを送ることがで
+きます。例です。
 
 @lisp
 (process-send-string
  process
- (if (sasl-step-data step)              ; $B:G=i$N1~Ez(B
+ (if (sasl-step-data step)              ; 最初の応答
      (format "AUTH %s %s\r\n"
              name (base64-encode-string (sasl-step-data step) t))
    (format "AUTH %s\r\n" name)))
 @end lisp
 
-$BG'>Z=hM}$rB3$1$k$?$a$K9T$J$o$J$1$l$P$J$i$J$$$3$H$O!"O"B3$7(B
-$B$F(B @code{sasl-next-step} $B$r8F$V$3$H$G$9!#(B
+認証処理を続けるために行なわなければならないことは、連続し
+て @code{sasl-next-step} を呼ぶことです。
 
 @defun sasl-next-step client step
-$BG'>Z%9%F%C%W$r<B9T$7$^$9!#(B@*
-$B:G=i$O(B @var{step} $B$r(B @code{nil} $B$K@_Dj$7$J$1$l$P$J$j$^$;$s!#(B
+認証ステップを実行します。@*
+最初は @var{step} を @code{nil} に設定しなければなりません。
 @end defun
 
 @node Back end drivers
-@chapter $B%P%C%/%(%s%I!&%I%i%$%P!<(B
+@chapter バックエンド・ドライバー
 
-($B$^$@=q$+$l$F$$$^$;$s(B)$B!#(B
+(まだ書かれていません)。
 
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
@@ -285,6 +285,5 @@ Emacs SASL $B%i%$%V%i%j!<$r;H$&$K$O!"%"%W%j%1!<%7%g%s!&%W%m%0%i%`$N:G=i$G!"(B
 @bye
 
 @c Local Variables:
-@c coding: iso-2022-7bit
 @c fill-column: 72
 @c End:

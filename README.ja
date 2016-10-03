@@ -1,29 +1,29 @@
-Gnus $B$N(B Info $B%^%K%e%"%k$NA4Lu$G$9!#(BEmacs 25.1 $B$KIUB0$9$k(B Gnus v5.13 $B$K(B
-$BBP1~$7$^$9!#(B
+Gnus の Info マニュアルの全訳です。Emacs 25.1 に付属する Gnus v5.13 に
+対応します。
 
-$B%$%s%9%H!<%k(B
+インストール
 ============
 % ./configure
 % make
 % make install
 
-$B<!$N$h$&$K!";H$&(B Emacs $B$H%$%s%9%H!<%k@h$N%G%#%l%/%H%j$r;XDj$G$-$^$9!#(B
+次のように、使う Emacs とインストール先のディレクトリを指定できます。
 
 % ./configure --with-emacs=EMACS --infodir=INFODIR
 
-$B%G%#%U%)%k%HCM$O!"0z?tL5$7$G(B configure $B$r<B9T$9$k$H$G$-$k(B Makefile $B$N(B
-$BCf?H$r8+$F$/$@$5$$!#(BEMACS $B$NCM$r(B /usr/local/bin/emacs $B$N$h$&$K@dBP%Q%9(B
-$BL>$K$9$k$3$H$O$G$-$^$;$s!#$"$i$+$8$a(B PATH $B4D6-JQ?t$r@_Dj$7$F$/$@$5$$!#(B
-$BNc$G$9(B:
+ディフォルト値は、引数無しで configure を実行するとできる Makefile の
+中身を見てください。EMACS の値を /usr/local/bin/emacs のように絶対パス
+名にすることはできません。あらかじめ PATH 環境変数を設定してください。
+例です:
 
 % ./configure --with-emacs=emacs-25.1 --infodir=/usr/local/info
 
-Gnus $B$N%P%C%U%!!<$G(B `C-c C-i' $B$r%?%$%W$9$k$+(B message $B%P%C%U%!!<$G(B
-`M-x message-info' $B$r%?%$%W$7$?$H$-$KF|K\8lHG$N(B Info $B%^%K%e%"%k$rFI$_(B
-$B$?$$$J$i$P!"(B~/.gnus.el $B%U%!%$%k$K0J2<$N(B advice $B$r2C$($k$3$H$,$G$-$^$9(B:
+Gnus のバッファーで `C-c C-i' をタイプするか message バッファーで
+`M-x message-info' をタイプしたときに日本語版の Info マニュアルを読み
+たいならば、~/.gnus.el ファイルに以下の advice を加えることができます:
 
 (defadvice Info-goto-node (around prefer-japanese-edition activate)
-  "$BF|K\8lHG$N(B Gnus $B%^%K%e%"%k$rM%@h$9$k!#(B"
+  "日本語版の Gnus マニュアルを優先する。"
   (if (and (not (eq major-mode 'Info-mode))
 	   (string-match "\\`(\\(emacs-mime\\|epa\\|gnus-coding\
 \\|gnus-faq\\|gnus\\|gnus-news\\|message\\|sasl\\|sieve\\))"
@@ -41,52 +41,52 @@ Gnus $B$N%P%C%U%!!<$G(B `C-c C-i' $B$r%?%$%W$9$k$+(B message $B%P%C%U%!!<$G
 	   ad-do-it)))
     ad-do-it))
 
-Gnus $B$NHG(B
+Gnus の版
 =========
-Emacs $B$NG[I[$K4^$^$l$F$$$k(B Gnus $B$NHG$KBP1~$7$^$9!#(B
+Emacs の配布に含まれている Gnus の版に対応します。
 
-$B%j%j!<%9$5$l$?F|K\8l%^%K%e%"%k$N<hF@>l=j(B
+リリースされた日本語マニュアルの取得場所
 ========================================
 http://www.jpl.org/gnus-doc-ja.html
 
-Emacs vR.S $B$KIUB0$9$k(B Gnus vP.Q $B$KBP1~$9$k(B tarball $B$O(B
-gnus-P.Q@R.S-doc-ja.tar.gz $B$G$9!#(B
+Emacs vR.S に付属する Gnus vP.Q に対応する tarball は
+gnus-P.Q@R.S-doc-ja.tar.gz です。
 
-$B0u:~(B
+印刷
 ====
-PDF $B$d(B PS $B%U%!%$%k$r:n$k$3$H$,$G$-$^$9!#$?$@$7(B dvipdfmx, pbibtex,
-pdvips, ptex, texi2dvi $B$N3F%3%^%s%I$r;H$&$3$H$,$G$-$k4D6-$,@0Hw$5$l$F(B
-$B$$$J$1$l$P$J$j$^$;$s!#(Bconfigure $B$r9T$J$C$?8e$G!"0J2<$r<B9T$7$F$/$@$5$$!#(B
+PDF や PS ファイルを作ることができます。ただし dvipdfmx, pbibtex,
+pdvips, ptex, texi2dvi の各コマンドを使うことができる環境が整備されて
+いなければなりません。configure を行なった後で、以下を実行してください。
 
 % make pdf
 
-$B$^$?$O(B
+または
 
 % make ps
 
-$B:n@.:Q$_$N(B PDF $B%U%!%$%k$,!"$3$N%Q%C%1!<%8$HF1$8>l=j$K$"$j$^$9!#(B
+作成済みの PDF ファイルが、このパッケージと同じ場所にあります。
 
-$B%@%&%s%m!<%I(B
+ダウンロード
 ============
-$B<!$N$h$&$K$7$F!"K]Lu:n6HCf$N%^%K%e%"%k$r<hF@$9$k$3$H$,$G$-$^$9!#(B
+次のようにして、翻訳作業中のマニュアルを取得することができます。
 
-($B=i2s(B)
+(初回)
   git clone https://github.com/jpl-org/gnus-doc-ja.git
-($B<!$+$i(B)
+(次から)
   cd gnus-doc-ja/
   git pull origin master
 
-$BK]Lu:n6H$X$N;22C(B
+翻訳作業への参加
 ================
-$B$I$J$?$G$b4?7^$7$^$9!#:n6H$r9T$J$C$F$$$k>l=j$O(B
-https://github.com/jpl-org$B!"%j%]%8%H%j$NL>A0$O(B gnus-doc-ja $B$G$9!#(B
+どなたでも歓迎します。作業を行なっている場所は
+https://github.com/jpl-org、リポジトリの名前は gnus-doc-ja です。
 
-$B!vCm0U!v(B
-$BMQ8l$dOB1Q:.:_J8$NJ,$+$A=q$-$J$I$K4X$7$F!"B?$/$N0EL[$NN.57$,$"$j$^$9!#(B
-$B$9$G$KK]Lu$5$l$F$$$k$b$N$r$h$/D/$a$F!"$G$-$k8B$j!"=>Mh$N$d$jJ}$K=>$C$F(B
-$B$/$@$5$$!#(B
+＊注意＊
+用語や和英混在文の分かち書きなどに関して、多くの暗黙の流儀があります。
+すでに翻訳されているものをよく眺めて、できる限り、従来のやり方に従って
+ください。
 
-$BO"Mm>l=j(B
+連絡場所
 ========
-semi-gnus-ja $B%a!<%j%s%0%j%9%H(B ($BF|K\8l$N$_(B) $B$^$?$O(B ding $B%a!<%j%s%0%j%9(B
-$B%H$r;H$C$F$/$@$5$$!#(B
+semi-gnus-ja メーリングリスト (日本語のみ) または ding メーリングリス
+トを使ってください。
