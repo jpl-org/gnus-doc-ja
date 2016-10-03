@@ -1326,8 +1326,14 @@ gpg --use-agent --sign < /dev/null > /dev/null
 しメッセージが暗号化されると、@code{Bcc} ヘッダーにあるすべての電子メー
 ルアドレスは、すべての受取人に対して警告なしに明かされてしまいます。これ
 はバグです。
+@vindex mml-secure-safe-bcc-list
+しかし今やメッセージはまさに送信しようとする暗号化メールで @code{Bcc} の
+受取人が見つかると警告を発するようになりました。もしそれら
+の @code{Bcc} アドレスを晒しても安全であると確信するのであれば、変
+数 @code{mml-secure-safe-bcc-list} (電子メールアドレスのリスト) を設定し
+てください。
 @uref{https://debbugs.gnu.org/cgi/bugreport.cgi?bug=18718} を見てくださ
-い。(訳注: Emacs 25.1 で解決しています。)
+い。
 
 @node Various Commands
 @section いろいろな命令
