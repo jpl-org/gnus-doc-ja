@@ -64,15 +64,13 @@
 
 (defun infohack (file)
   (let ((dest-directory default-directory)
-	(max-lisp-eval-depth (max max-lisp-eval-depth 600))
-	coding-system)
+	(max-lisp-eval-depth (max max-lisp-eval-depth 600)))
     ;; Emacs 21.3 doesn't support @documentencoding
     (unless (get 'documentencoding 'texinfo-format)
       (put 'documentencoding 'texinfo-format 
 	   'texinfo-discard-line-with-args))
     (find-file file)
     (setq buffer-read-only nil)
-    (setq coding-system buffer-file-coding-system)
     (infohack-remove-unsupported)
     (infohack-include-files)
     (infohack-replace-unsupported)
@@ -82,7 +80,6 @@
     (setq buffer-file-name 
 	  (expand-file-name (file-name-nondirectory buffer-file-name)
 			    default-directory))
-    (setq buffer-file-coding-system coding-system)
     ;;(if (> (buffer-size) (if (boundp 'Info-split-threshold)
     ;;                         (+ 50000 Info-split-threshold)
     ;;                       100000))
@@ -119,44 +116,15 @@ Both characters must have the same length of multi-byte form."
 
 (require 'bytecomp)
 
-;; Reduce the number of split Info files.
-;;(unless (boundp 'Info-split-threshold)
-;;  (if (featurep 'xemacs)
-;;      (if (load "informat.el" t t)
-;;	  (let* ((fn (symbol-function 'Info-split))
-;;		 (fns (prin1-to-string fn)))
-;;	    (load "informat.elc" t t)
-;;	    (when (and (string-match "\\([\t\n ]+\\)50000\\([\t\n )]+\\)" fns)
-;;		       (condition-case nil
-;;			   (setq fn (byte-compile
-;;				     (read (replace-match "\\1262144\\2"
-;;							  nil nil fns))))
-;;			 (error nil))
-;;		       (fset 'Info-split fn)))))
-;;    (require 'informat)
-;;    (let* ((fn (symbol-function 'Info-split))
-;;	   (fns (prin1-to-string fn)))
-;;      (when (string-match "\\([\t\n ]+\\)50000\\([\t\n ]+\\)" fns)
-;;	(condition-case nil
-;;	    (fset 'Info-split (read (replace-match "\\1262144\\2"
-;;						   nil nil fns)))
-;;	  (error
-;;	   (fset 'Info-split fn)))))))
-
 (defun infohack-texi-format (file &optional addsuffix)
   (let ((auto-save-default nil)
 	(find-file-run-dired nil)
-	(coding-system-for-read (if (featurep 'xemacs)
-				    'iso-2022-7bit
-				  coding-system-for-read))
-	coding-system-for-write
 	(error 0))
     (condition-case err
 	(progn
 	  (find-file file)
 	  (setq buffer-read-only nil)
 	  (buffer-disable-undo (current-buffer))
-	  (setq coding-system-for-write buffer-file-coding-system)
 	  ;; Remove ignored areas.
 	  (goto-char (point-min))
 	  (while (re-search-forward "^@ignore[\t\r ]*$" nil t)
@@ -178,30 +146,7 @@ Both characters must have the same length of multi-byte form."
 	  (texinfo-every-node-update)
 	  (set-buffer-modified-p nil)
 	  (message "texinfo formatting %s..." file)
-	  (let ((si:message (symbol-function 'message))
-		(coding (or (and (string-match "\\`Japanese"
-					       current-language-environment)
-				 (boundp 'locale-coding-system)
-				 locale-coding-system)
-			    'iso-2022-7bit)))
-	    ;; Encode messages to terminal.
-	    (fset
-	     'message
-	     (byte-compile
-	      (if (featurep 'xemacs)
-		  `(lambda (fmt &rest args)
-		     (unless (and (string-equal fmt "%s clean")
-				  (equal (car args) buffer-file-name))
-		       (funcall ,si:message "%s"
-				(encode-coding-string (apply 'format fmt args)
-						      ',coding))))
-		`(lambda (fmt &rest args)
-		   (funcall ,si:message "%s"
-			    (encode-coding-string (apply 'format fmt args)
-						  ',coding))))))
-	    (unwind-protect
-		(texinfo-format-buffer t)
-	      (fset 'message si:message)))
+	  (texinfo-format-buffer t)
 	  (if (buffer-modified-p)
 	      (progn (message "Saving modified %s" (buffer-file-name))
 		     (save-buffer))))

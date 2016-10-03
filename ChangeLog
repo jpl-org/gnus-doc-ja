@@ -1,5 +1,8 @@
 2016-10-03  Katsumi Yamaoka  <yamaoka@jpl.org>
 
+	* infohack.el (infohack, infohack-texi-format):
+	Remove coding system stuff.
+
 	* README.ja, auth-ja.texi, emacs-mime-ja.texi, epa-ja.texi,
 	gnus-coding-ja.texi, gnus-faq-ja.texi, gnus-ja.texi, gnus-news-ja.texi,
 	message-ja.texi, sasl-ja.texi, sieve-ja.texi:
