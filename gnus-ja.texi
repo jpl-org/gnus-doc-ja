@@ -21164,9 +21164,8 @@ nnir 概略バッファーの行のために使われる書法仕様。
 Mairix はローカルに格納されたメールに索引を付けたり単語を検索するための
 道具です。書いたのは Richard Curnow で GPL でライセンスされます。
 Mairix は最もポピュラーな GNU/Linux の配布に付属していますが、
-Windows (と cygwin)、Mac OS X および Solaris のもとでも動作します。ホー
-ムページは @uref{http://www.rpcurnow.force9.co.uk/mairix/index.html} で
-す。
+Windows (と cygwin)、macOS および Solaris のもとでも動作します。ホームペー
+ジは @uref{http://www.rpcurnow.force9.co.uk/mairix/index.html} です。
 
 @code{nnir} バックエンドを介して使うことができる swish++ や namazu のよ
 うな他の検索ツールほどには mairix は融通がきかないかもしれませんが、それ
