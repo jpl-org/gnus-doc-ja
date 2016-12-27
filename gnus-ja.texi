@@ -14394,8 +14394,8 @@ Gnus はあなた自身に災いが及ぶ可能性あっても、あなたが望
 せて、かつ単一のメールソースを指定する @code{mail-source} グループパラメー
 ター (@pxref{Group Parameters}) を設定することによって、メールソースを追
 加することができます。これを使う場合の @code{mail-sources} は、一般には
-単なる @code{(group)} です。そしてグループのための @code{mail-source} パ
-ラメーターはこのようなものになるでしょう:
+単なる @code{((group))} です。そしてグループのため
+の @code{mail-source} パラメーターはこのようなものになるでしょう:
 
 @lisp
 (mail-source . (file :path "home/user/spools/foo.spool"))
