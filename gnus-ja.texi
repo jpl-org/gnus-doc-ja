@@ -9923,6 +9923,12 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セット
 @findex gnus-summary-sort-by-chars
 記事の長さ (文字数) で並べ替えます (@code{gnus-summary-sort-by-chars})。
 
+@item C-c C-s C-m C-m
+@kindex C-c C-s C-m C-m (概略)
+@findex gnus-summary-sort-by-marks
+記事の講読度の印 (readedness marks) で並べ替えま
+す (@code{gnus-summary-sort-by-marks})。
+
 @item C-c C-s C-i
 @kindex C-c C-s C-i (概略)
 @findex gnus-summary-sort-by-score
@@ -13278,7 +13284,8 @@ Message Manual}, を参照してください。
 @kindex D (サーバー)
 @findex gnus-server-deny-server
 現在のサーバーに接続不可の印を付けま
-す (@code{gnus-server-open-all-server})。
+す (@code{gnus-server-open-all-server})。これは事実上そのサーバーを使わ
+ないようにします。
 
 @item M-o
 @kindex M-o (サーバー)
