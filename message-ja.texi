@@ -196,8 +196,8 @@ Message は返答がどこに行くかを決定するために標準の方法を
 @vindex message-dont-reply-to-names
 正規表現  @code{message-dont-reply-to-names} (あるいはこれは正規表現のリ
 スト、または判断するための関数でもよい) に合致するアドレス
-は @code{Cc} ヘッダーから取り除かれます。@code{nil} にすると、あなたの名
-前だけが取り除かれます。
+は @code{Cc} ヘッダーから取り除かれます。@code{nil} にすると、あなたのメー
+ルアドレスだけが取り除かれます。
 
 @vindex message-prune-recipient-rules
 @code{message-prune-recipient-rules} は、広い返答をするときに特定のアド
