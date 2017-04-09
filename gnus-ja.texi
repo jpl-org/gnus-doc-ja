@@ -25930,7 +25930,8 @@ Gnus がデータを格納するほとんどのファイルとディレクトリ
 @cindex characters in file names
 これはファイル名の文字をどのように変換するかを指定する連想リストです。例
 えば、もし @samp{:} があなたのシステムではファイル名の文字としては使えな
-い場合 (あなたは OS/2 利用者ですね)、以下のようにすることができます。
+い場合 (あなたは MS Windows の利用者ですね)、以下のようにすることができ
+ます。
 
 @lisp
 @group
@@ -25939,8 +25940,8 @@ Gnus がデータを格納するほとんどのファイルとディレクトリ
 @end group
 @end lisp
 
-実際には、これは OS/2 と MS Windows (ちぇっ!) システム上でのこの変数のディ
-フォルト値です。
+実際には、MS Windows (ちぇっ!) システム上でのこの変数のディフォルト
+値 (の一部) です。
 
 @item gnus-hidden-properties
 @vindex gnus-hidden-properties
