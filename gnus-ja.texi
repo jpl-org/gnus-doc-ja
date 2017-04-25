@@ -833,7 +833,6 @@ Various
 * Thwarting Email Spam::        頼んでもいない広告メールを避ける簡単な方法
 * Spam Package::                Spam を濾過して処理するためのパッケージ
 * The Gnus Registry::           記事を Message-ID で辿るためのパッケージ
-* The Gnus Cloud::              Gnus の印を同期するためのパッケージ
 * Other modes::                 他のモードとの相互作用
 * Various Various::             本当にいろいろなもの
 
@@ -4936,8 +4935,7 @@ Gnus は変数 @code{gnus-extract-address-components} の値を @code{From} ヘ�
 @vindex gnus-ignored-from-addresses
 @code{gnus-ignored-from-addresses} 変数はいつ @samp{%f} 概略行仕様
 が @code{To}, @code{Newsreader} や @code{From} ヘッダーを返せば良いかを
-決めます。この変数は正規表現、または判断するための関数です。もしこれ
-が @code{From} ヘッダーの内容に合致すると、
+決めます。もしこの正規表現が @code{From} ヘッダーの内容に合致すると、
 @code{To} や @code{Newsreader} ヘッダーの値が代わりに使われます。
 
 それらの @code{From} フィールドが入れ替わっている記事と、普通の記事を区
@@ -9923,12 +9921,6 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セット
 @findex gnus-summary-sort-by-chars
 記事の長さ (文字数) で並べ替えます (@code{gnus-summary-sort-by-chars})。
 
-@item C-c C-s C-m C-m
-@kindex C-c C-s C-m C-m (概略)
-@findex gnus-summary-sort-by-marks
-記事の講読度の印 (readedness marks) で並べ替えま
-す (@code{gnus-summary-sort-by-marks})。
-
 @item C-c C-s C-i
 @kindex C-c C-s C-i (概略)
 @findex gnus-summary-sort-by-score
@@ -13284,8 +13276,7 @@ Message Manual}, を参照してください。
 @kindex D (サーバー)
 @findex gnus-server-deny-server
 現在のサーバーに接続不可の印を付けま
-す (@code{gnus-server-deny-server})。これは事実上そのサーバーを使わない
-ようにします。
+す (@code{gnus-server-deny-server})。
 
 @item M-o
 @kindex M-o (サーバー)
@@ -13627,7 +13618,6 @@ default force yes
       (nntp-address "snews.bar.com"))
 @end lisp
 
-@c FIXME gnutls を支持し、openssl s_client は非推奨とすべきです。
 @findex nntp-open-ssl-stream
 @item nntp-open-ssl-stream
 「安全な」チャンネルを使ってサーバーに接続します。これを使うために
@@ -14402,7 +14392,7 @@ Gnus はあなた自身に災いが及ぶ可能性あっても、あなたが望
 せて、かつ単一のメールソースを指定する @code{mail-source} グループパラメー
 ター (@pxref{Group Parameters}) を設定することによって、メールソースを追
 加することができます。これを使う場合の @code{mail-sources} は、一般には
-単なる @code{((group))} です。そしてグループのため
+単なる @code{(group)} です。そしてグループのため
 の @code{mail-source} パラメーターはこのようなものになるでしょう:
 
 @lisp
@@ -21514,38 +21504,38 @@ Mairix の検索または恒久的なグループをもっと快適に、常に�
 概略モードで:
 
 @table @kbd
-@item $ G G m
-@kindex $ G G m (概略)
+@item $ m
+@kindex $ m (概略)
 @findex nnmairix-widget-search-from-this-article
 現在のメッセージに基づいた mairix の検索またはグループを、グラフィックな
 ウィジェットを使って作ります (@code{nnmairix-widget-search} と同じで
 す) (@code{nnmairix-widget-search-from-this-article})。
 
-@item $ G G g
-@kindex $ G G g (概略)
+@item $ g
+@kindex $ g (概略)
 @findex nnmairix-create-search-group-from-message
 現在のメッセージに基づいた検索条件で新しい検索グループを対話的に作ります。
 グラフィックなウィジェットの代わりにミニバッファーを使います
 が (@code{nnmairix-create-search-group-from-message})。
 
-@item $ G G t
-@kindex $ G G t (概略)
+@item $ t
+@kindex $ t (概略)
 @findex nnmairix-search-thread-this-article
 現在の記事のスレッドを捜しま
 す (@code{nnmairix-search-thread-this-article})。事実上これは現在の記事
 の @samp{m:msgid} で @code{nnmairix-search} を呼んでスレッドを得るための
 ショートカットです。
 
-@item $ G G f
-@kindex $ G G f (概略)
+@item $ f
+@kindex $ f (概略)
 @findex nnmairix-search-from-this-article
 現在の記事の送信者からのすべてのメッセージを探しま
 す (@code{nnmairix-search-from-this-article})。これ
 は @samp{f:From} で @code{nnmairix-search} を呼ぶためのショートカットで
 す。
 
-@item $ G G o
-@kindex $ G G o (概略)
+@item $ o
+@kindex $ o (概略)
 @findex nnmairix-goto-original-article
 (これが使えるのは @code{nnmairix} グループだけです!) この記事に正しい投
 稿様式 (posting styles) とグループパラメーターを適用して返信するために、
@@ -21554,8 +21544,8 @@ Mairix の検索または恒久的なグループをもっと快適に、常に�
 ならレジストリーを使いますが、代替手段として記事ファイルの名前を分析する
 こともできます。
 
-@item $ G G u
-@kindex $ G G u (概略)
+@item $ u
+@kindex $ u (概略)
 @findex nnmairix-remove-tick-mark-original-article
 元の記事から、もしあれば可視記事の印 (tick mark) を取り除きま
 す (@code{nnmairix-remove-tick-mark-original-article}) (@pxref{nnmairix
@@ -21706,9 +21696,9 @@ b d} を使って、その @code{nnmairix} グループを作り直してくだ�
 
 これはこれで良いでしょう---しかしどうやって @code{nnmairix} グループの可
 視印を消したら良いでしょうか? それには二つの選択肢があります:
-@code{nnmairix-remove-tick-mark-original-article} (@kbd{$ G G u} にバイ
-ンドされています) を使って元の記事から可視印を取り除くことができます。も
-う一つの可能なこと
+@code{nnmairix-remove-tick-mark-original-article} (@kbd{$ u} にバインド
+されています) を使って元の記事から可視印を取り除くことができます。もう一
+つの可能なこと
 は @code{nnmairix-propagate-marks-to-nnmairix-groups} を @code{t} に設定
 することです。しかし上記のこのオプションに関するコメントを見てください。
 もしそれが動作するなら可視印は @code{nnmairix} グループにあるはずで、そ
@@ -21864,7 +21854,6 @@ Gnus では通常それらのメッセージはヘッダーに ``(none)'' が表
 * Thwarting Email Spam::        頼んでもいない広告メールを避ける簡単な方法
 * Spam Package::                Spam を濾過して処理するためのパッケージ
 * The Gnus Registry::           記事を Message-ID で辿るためのパッケージ
-* The Gnus Cloud::              Gnus の印を同期するためのパッケージ
 * Other modes::                 他のモードとの相互作用
 * Various Various::             本当にいろいろなもの
 @end menu
@@ -25729,97 +25718,6 @@ Gnus の操作を通じてレジストリーが記録されるファイルです
 貴重であると見なされます。
 @end defvar
 
-@node The Gnus Cloud
-@section Gnus クラウド
-@cindex cloud
-@cindex gnus-cloud
-@cindex synchronization
-@cindex sync
-@cindex synch
-
-Gnus クラウドは印や雑多なファイルとデータを複数のマシン間で同期するため
-の一つの手段です。
-
-すべての印 (どの記事を読んだか、どれが重要か、など) を数台のマシンの間で
-同期させたいという需要が、非常にたびたび生じます。IMAP ではプロトコルに
-組み込まれているので、多くのマシンから nnimap グループを読むことができる
-し、それらは自動的に同期されます。しかし NNTP、nnrss、および他の多くのバッ
-クエンドは印を蓄えないので、それはローカルに行なわなければなりません。
-
-Gnus クラウドは印とあなたが選んだファイルを IMAP サーバーの特別なフォル
-ダーに格納します。それは DropTorrentSyncBoxOakTree(TM) のようなものです。
-
-@menu
-* Gnus Cloud Setup::
-* Gnus Cloud Usage::
-@end menu
-
-@node Gnus Cloud Setup
-@subsection Gnus クラウドの設定
-
-Gnus クラウドの設定には 1分もかかりません。グループバッファーから:
-
-サーバーバッファーに行くために @kbd{^} を押してください。そこで
-は Gnus が知っているすべてのサーバーが見えるでしょ
-う。@xref{Server Buffer}.
-
-そうしたらクラウドで同期させたいどんなサーバーでも、@kbd{i} を押して指定
-してください (それらの印が同期されます)。
-
-そしてクラウドのホストになる単一のサーバーを @kbd{I} を押して指定してく
-ださい (それは IMAP サーバーでなければなりません。すべての同期データを持
-つフォルダーを提供することになります)。これは (カスタマイズの手段を使っ
-て) 変数 @code{gnus-cloud-method} を設定し、初めて
-の CloudSynchronizationDataPack(TM) をアップロードすることを促します。
-
-@node Gnus Cloud Usage
-@subsection Gnus クラウドの使い方
-
-設定した後は、グループバッファーからこれらのショートカットを使うことがで
-きます:
-
-@table @kbd
-@item ~ RET
-@item ~ d
-@findex gnus-cloud-download-all-data
-@cindex cloud, download
-最新の Gnus クラウドのデータをダウンロードします。
-
-@item ~ u
-@item ~ ~
-@findex gnus-cloud-upload-all-data
-@cindex cloud, download
-ローカルな Gnus クラウドのデータをアップロードします。新し
-い CloudSynchronizationDataPack(TM) を作成します。
-@end table
-
-しかし待ってください。もっとあります。もちろん、もっと。たくさん。以下の
-すべてをカスタマイズできます。
-
-@defvar gnus-cloud-synced-files
-すべての CloudSynchronizationDataPack(TM) の部分になるファイル群がありま
-す。それらはアップロードするたびに付いて行くので、大きなファイルをたくさ
-ん同期させるのはやめましょう。100Kb 未満がベストです。
-@end defvar
-
-@defvar gnus-cloud-storage-method
-いくつかの格納方法から選ぶためのものです。EPG の機能を使うことを強く推奨
-します。もし GnuPG がインストールされていて EPG が読み込まれていれば自動
-で適用されます。でも Base64+gzip か Base64 を使ったり、またはエンコード
-しないことも可能です。
-@end defvar
-
-@defvar gnus-cloud-interactive
-これがセットされていると (デフォルトでセット)、Gnus クラウドパッケージは
-いろんな場面であなたに確認を求めます。不満に感じることがなければ、そのま
-まにしておいてください。
-@end defvar
-
-@defvar gnus-cloud-method
-CloudSynchronizationDataPack(TM) を格納する IMAP サーバーの名前です。サー
-バーバッファーから設定するのが最も簡単です (@pxref{Gnus Cloud Setup})。
-@end defvar
-
 @node Other modes
 @section 他のモードとの相互作用
 
@@ -25931,8 +25829,7 @@ Gnus がデータを格納するほとんどのファイルとディレクトリ
 @cindex characters in file names
 これはファイル名の文字をどのように変換するかを指定する連想リストです。例
 えば、もし @samp{:} があなたのシステムではファイル名の文字としては使えな
-い場合 (あなたは MS Windows の利用者ですね)、以下のようにすることができ
-ます。
+い場合 (あなたは OS/2 の利用者ですね)、以下のようにすることができます。
 
 @lisp
 @group
@@ -25941,8 +25838,8 @@ Gnus がデータを格納するほとんどのファイルとディレクトリ
 @end group
 @end lisp
 
-実際には、これは MS Windows (ちぇっ!) システム上でのこの変数のディフォル
-ト値 (の一部) です。
+実際には、これは OS/2 と MS Windows (ちぇっ!) システム上でのこの変数のディ
+フォルト値です。
 
 @item gnus-hidden-properties
 @vindex gnus-hidden-properties
