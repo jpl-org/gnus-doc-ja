@@ -13284,8 +13284,8 @@ Message Manual}, を参照してください。
 @kindex D (サーバー)
 @findex gnus-server-deny-server
 現在のサーバーに接続不可の印を付けま
-す (@code{gnus-server-open-all-server})。これは事実上そのサーバーを使わ
-ないようにします。
+す (@code{gnus-server-deny-server})。これは事実上そのサーバーを使わない
+ようにします。
 
 @item M-o
 @kindex M-o (サーバー)
@@ -25941,8 +25941,8 @@ Gnus がデータを格納するほとんどのファイルとディレクトリ
 @end group
 @end lisp
 
-実際には、MS Windows (ちぇっ!) システム上でのこの変数のディフォルト
-値 (の一部) です。
+実際には、これは MS Windows (ちぇっ!) システム上でのこの変数のディフォル
+ト値 (の一部) です。
 
 @item gnus-hidden-properties
 @vindex gnus-hidden-properties

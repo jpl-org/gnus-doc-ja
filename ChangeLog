@@ -1,3 +1,8 @@
+2017-04-25  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* emacs-mime-ja.texi (MML Definition): Add missing translation.
+	* gnus-ja.texi (Unavailable Servers): Fix function name.
+
 2016-10-03  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* infohack.el (infohack, infohack-texi-format):
