@@ -13627,6 +13627,7 @@ default force yes
       (nntp-address "snews.bar.com"))
 @end lisp
 
+@c FIXME gnutls を支持し、openssl s_client は非推奨とすべきです。
 @findex nntp-open-ssl-stream
 @item nntp-open-ssl-stream
 「安全な」チャンネルを使ってサーバーに接続します。これを使うために
