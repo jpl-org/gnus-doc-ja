@@ -82,7 +82,6 @@ Gnus のすべてのメッセージの作成 (メールとニュースの両方)
 * Interface::         メッセージバッファーの設定
 * Commands::          メッセージモードのバッファーで実行できる命令
 * Variables::         メッセージバッファーのカスタマイズ
-* Compatibility::     メッセージを下位互換にする
 * Appendices::        もっと技術的なこと
 * GNU Free Documentation License:: この文書の利用許諾契約書
 * Index::             変数、関数、概念の索引
@@ -90,7 +89,7 @@ Gnus のすべてのメッセージの作成 (メールとニュースの両方)
 @end menu
 
 Message は Gnus とともに配布されます。このマニュアルに対応する Gnus の版
-は Emacs 25.2 に付属する Gnus v5.13 です。
+は Emacs 26.0.50 に付属する Gnus v5.13 です。
 
 @node Interface
 @chapter インターフェース
@@ -196,8 +195,9 @@ Message は返答がどこに行くかを決定するために標準の方法を
 
 @vindex message-dont-reply-to-names
 正規表現  @code{message-dont-reply-to-names} (あるいはこれは正規表現のリ
-ストでもよい) に合致するアドレスは @code{Cc} ヘッダーから取り除かれます。
-@code{nil} にすると、あなたの名前だけが取り除かれます。
+スト、または判断するための関数でもよい) に合致するアドレス
+は @code{Cc} ヘッダーから取り除かれます。@code{nil} にすると、あなたのメー
+ルアドレスだけが取り除かれます。
 
 @vindex message-prune-recipient-rules
 @code{message-prune-recipient-rules} は、広い返答をするときに特定のアド
@@ -1684,10 +1684,10 @@ Message が Gnus 上で走っている場合、メッセージバッファーは
 
 @item message-alternative-emails
 @vindex message-alternative-emails
-あなたの第二、第三のメールアドレスに合致する正規表現です。元の記事の To、
-Cc または From ヘッダーにあって、この変数に合致する最初のアドレスが、ディ
-フォルトの From の値を置き換えて、出て行くメッセージの From 欄として使わ
-れます。
+あなたの第二、第三のメールアドレスに合致する正規表現、または判断するため
+の関数です。元の記事の To、Cc または From ヘッダーにあって、この変数に合
+致する最初のアドレスが、ディフォルトの From の値を置き換えて、出て行くメッ
+セージの From 欄として使われます。
 
 例えばあなたが john@@home.net および john.doe@@work.com という第二の電子
 メールアドレスを持っていて、それらに宛てて送られてきたメッセージに返信す
@@ -2624,20 +2624,6 @@ Message はこれらのリストを操作するために @code{message-add-actio
 は @code{eval} (評価) される式です。
 
 訳注: たぶん実際のソースコードを見た方が話が早いでしょう。
-
-@node Compatibility
-@chapter 互換性
-@cindex compatibility
-
-メッセージは仮想的にそれ自身の変数だけを使い、古い @code{mail-} 変数のこ
-とは考慮しません。それらの変数を強いて考慮させるには @file{.emacs} ファ
-イルに以下のものを置いてください:
-
-@lisp
-(require 'messcompat)
-@end lisp
-
-これにより多くの message 変数を、対応する mail 変数の値で初期化します。
 
 @node Appendices
 @chapter 付記
