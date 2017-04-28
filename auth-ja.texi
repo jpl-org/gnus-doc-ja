@@ -74,6 +74,7 @@ modify this GNU manual.''
 * Help for users::
 * Multiple GMail accounts with Gnus::
 * Secret Service API::
+* The Unix password store::
 * Help for developers::
 * GnuPG and EasyPG Assistant Configuration::
 * GNU Free Documentation License:: この文書の利用許諾契約書
@@ -178,7 +179,7 @@ password @var{mypassword}
 ;;; (@pxref{Secret Service API})
 (setq auth-sources '("secrets:Login"))
 ;;; パス (@file{~/.password-store}) を使う
-;;; (@pxref{Pass, the Unix password store})
+;;; (@pxref{The Unix password store})
 (setq auth-sources '(password-store))
 @end lisp
 
@@ -417,12 +418,12 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
                      "~/.authinfo.gpg"))
 @end example
 
-@node パス、Unix のパスワード・マネージャー
-@chapter Pass, the Unix password store
+@node The Unix password store
+@chapter Unix パスワード・マネージャー
 
 @uref{http://www.passwordstore.org,,The standard unix password
-+manager} (または単に @code{pass}) は、あなたのパスワードを Unix 哲学に
-基づいて @code{gpg} で保護されたファイルに格納します。
+manager} (または単に @code{pass}) は、あなたのパスワードを Unix 哲学に基
+づいて @code{gpg} で保護されたファイルに格納します。
 
 Emacs の @code{pass} の統合は、パス・プロジェクト自体によって提案された、
 データを検索するためのデータの組織化の最初の取り組みです。これは、個々の
