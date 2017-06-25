@@ -430,7 +430,7 @@ Spammers は @samp{multipart/alternative} メッセージの優先される側�
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
 @acronym{HTML} を描画するために使う関数を選択します。すでに用意してある
-描画プログラムは、@code{gnus-article-html},
+描画プログラムは @code{shr}, @code{gnus-w3m},
 @code{w3m}@footnote{emacs-w3m についての詳細
 は @uref{http://emacs-w3m.namazu.org/} を見てください。}, @code{links},
 @code{lynx}, @code{w3m-standalone} または @code{html2text} のシンボル群
