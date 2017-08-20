@@ -4263,12 +4263,12 @@ XEmacs (@code{mule} 機能付き) では、@code{file-name-coding-system} はフ
 
 例えば中国語で綴られたニュースグループを講読したいのに、
 @code{default-file-name-coding-system} またはこの変数がディフォルト
-で @code{iso-latin-1} に初期化されてしまうのならば、それ
+で @code{iso-latin-1-unix} に初期化されてしまうのならば、それ
 は @code{nnmail-pathname-coding-system} をカスタマイズしなければならない
-最も典型的な場合です。@code{utf-8} coding system はそのための良い候補で
-す。あるいは @code{default-file-name-coding-system} またはこの変数が適切
-な値に初期化されるように、あなたのシステムの言語環境を変更しても良いでしょ
-う。
+最も典型的な場合です。@code{utf-8-unix} coding system はそのための良い候
+補です。あるいは @code{default-file-name-coding-system} またはこの変数が
+適切な値に初期化されるように、あなたのシステムの言語環境を変更しても良い
+でしょう。
 @end table
 
 記事を非-@acronym{ASCII} グループから他のグループにコピーまたは移動する
