@@ -1872,7 +1872,6 @@ WAVE 音響ファイルは @code{wavplayer} で再生されるべきであるこ
 @vindex mailcap-user-mime-data
 カスタマイズ可能なビューワーのリストで、@code{mailcap-mime-data} より優
 先します。
-@code{mailcap-mime-data}.
 @end table
 
 インターフェース関数:
