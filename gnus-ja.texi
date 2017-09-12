@@ -21708,9 +21708,9 @@ b d} を使って、その @code{nnmairix} グループを作り直してくだ�
 
 これはこれで良いでしょう---しかしどうやって @code{nnmairix} グループの可
 視印を消したら良いでしょうか? それには二つの選択肢があります:
-@code{nnmairix-remove-tick-mark-original-article} (@kbd{$ G G u} にバイ
-ンドされています) を使って元の記事から可視印を取り除くことができます。も
-う一つの可能なこと
+@code{nnmairix-remove-tick-mark-original-article} (@kbd{G G u} にバイン
+ドされています) を使って元の記事から可視印を取り除くことができます。もう
+一つの可能なこと
 は @code{nnmairix-propagate-marks-to-nnmairix-groups} を @code{t} に設定
 することです。しかし上記のこのオプションに関するコメントを見てください。
 もしそれが動作するなら可視印は @code{nnmairix} グループにあるはずで、そ
