@@ -430,7 +430,7 @@ Spammers は @samp{multipart/alternative} メッセージの優先される側�
 @item mm-text-html-renderer
 @vindex mm-text-html-renderer
 @acronym{HTML} を描画するために使う関数を選択します。すでに用意してある
-描画プログラムは @code{gnus-article-html}, @code{w3m},
+描画プログラムは @code{shr}, @code{gnus-w3m},
 @code{w3m}@footnote{emacs-w3m についての詳細
 は @uref{http://emacs-w3m.namazu.org/} を見てください。}, @code{links},
 @code{lynx}, @code{w3m-standalone} または @code{html2text} のシンボル群
@@ -688,6 +688,10 @@ Content-Type: text/enriched; charset=iso-2022-jp
 ク ("...") で囲むことができますが、値が空白文字を含む場合以外は囲む必要
 がありません。したがって、@samp{filename=/home/user/#hello$^yes} は完全
 に有効です。
+
+もしメッセージの中で MML について話をしたいなら、それらのタグ
+を ``クオート'' する必要があります。そのためには、始めの 2文字の後に感嘆
+符を含ませてください。すなわち @samp{<#!part ...>} と。
 
 以下のパラメーターは @acronym{MML} で使われるものです。意味を持たないパ
 ラメーターは無視されます。@acronym{MML} パラメーターの名前
@@ -1577,6 +1581,9 @@ RFC2047 は二つのエンコーディングの形式を定めています。一
 (date-to-time "Sat Sep 12 12:21:54 1998 +0200")
 @result{} (13818 19266)
 
+(parse-iso8601-time-string "1998-09-12T12:21:54+0200")
+@result{} (13818 19266)
+
 (float-time '(13818 19266))
 @result{} 905595714.0
 
@@ -1860,6 +1867,11 @@ WAVE 音響ファイルは @code{wavplayer} で再生されるべきであるこ
 この変数は、バックアップされた (訳注: mailcap ファイルの内容を解析し
 て Emacs が扱い易い形式にした) 表示規則を含んでいる、連想リストの連想リ
 ストです。
+
+@item mailcap-user-mime-data
+@vindex mailcap-user-mime-data
+カスタマイズ可能なビューワーのリストで、@code{mailcap-mime-data} より優
+先します。
 @end table
 
 インターフェース関数:

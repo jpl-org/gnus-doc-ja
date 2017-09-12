@@ -74,6 +74,7 @@ modify this GNU manual.''
 * Help for users::
 * Multiple GMail accounts with Gnus::
 * Secret Service API::
+* The Unix password store::
 * Help for developers::
 * GnuPG and EasyPG Assistant Configuration::
 * GNU Free Documentation License:: この文書の利用許諾契約書
@@ -96,9 +97,10 @@ Auth-source ライブラリーは単なるユーザー名やパスワード (い
 外のものも扱うことができます。
 
 同様に auth-source ライブラリーは多くの貯蔵バックエンド、現在は伝統的
-な ``netrc'' バックエンド (この文書の後の方に例があります)、またはシーク
-レットサービス API@ をサポートします。これは EIEIO に基づいたバックエン
-ドで行なわれ、もし必要ならあなた独自のものを書くことができます。
+な ``netrc'' バックエンド (この文書の後の方に例があります)、シークレット
+サービス API、そしてパス、すなわち unix の標準パスワード・マネージャーを
+サポートします。これは EIEIO に基づいたバックエンドで行なわれ、もし必要
+ならあなた独自のものを書くことができます。
 
 @node Help for users
 @chapter 利用者のためのヘルプ
@@ -162,9 +164,9 @@ password @var{mypassword}
 
 @defvar auth-sources
 @code{auth-sources} 変数は、個々のホストとプロトコルのための netrc ファ
-イル、またはシークレットサービス API の収集物がどこに在るか
-を auth-source ライブラリーに知らせます。好みに応じてどうにでもできます
-が、ディフォルトの最も簡潔な設定は次の通りです:
+イル、シークレットサービス API の収集物、またはあなたの保存したパスワー
+ドがどこに在るかを auth-source ライブラリーに知らせます。好みに応じてど
+うにでもできますが、ディフォルトの最も簡潔な設定は次の通りです:
 
 @lisp
 ;;; 旧ディフォルト: :host と :port が必要だったが、もはや不要。
@@ -176,6 +178,9 @@ password @var{mypassword}
 ;;; シークレット API の @var{Login} コレクションを使う
 ;;; (@pxref{Secret Service API})
 (setq auth-sources '("secrets:Login"))
+;;; パス (@file{~/.password-store}) を使う
+;;; (@pxref{The Unix password store})
+(setq auth-sources '(password-store))
 @end lisp
 
 特定のホストかプロトコルのエントリーを複数 @code{auth-sources} に追加す
@@ -413,6 +418,34 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
                      "~/.authinfo.gpg"))
 @end example
 
+@node The Unix password store
+@chapter Unix パスワード・マネージャー
+
+@uref{http://www.passwordstore.org,,The standard unix password
+manager} (または単に @code{pass}) は、あなたのパスワードを Unix 哲学に基
+づいて @code{gpg} で保護されたファイルに格納します。
+
+Emacs の @code{pass} の統合は、パス・プロジェクト自体によって提案された、
+データを検索するためのデータの組織化の最初の取り組みです。これは、個々の
+ホストにおけるユーザーのためのパスワードを含むファイルの名前が、そのホス
+ト名を含まなければならないことを示しています。ファイルは最初の行にパスワー
+ドを、同様に次の行にユーザー名がある @code{username} フィールドを含んで
+いなければなりません。@code{port} フィールドは、複数のサービスのための同
+じホストにおける同じユーザー名の認証データを区別するために使うことができ
+ます。
+
+@code{pass} のユーザーは、パスを扱う他の Emacs パッケージが提供する機能
+に興味があるかもしれません:
+
+@itemize
+@item
+@uref{https://git.zx2c4.com/password-store/tree/contrib/emacs/password-store.el,,password-store}: @code{pass} をラップするライブラリー;
+@item
+@uref{https://github.com/NicolasPetton/pass,,pass}: パスワード・マネージャーとエントリーを編集するためのメジャーモード;
+@item
+@uref{https://github.com/jabranham/helm-pass,,helm-pass}: パスへの helm インターフェース。
+@end itemize
+
 @node Help for developers
 @chapter 開発者のためのヘルプ
 
@@ -528,14 +561,14 @@ Emacs 23 以降では @file{*.gpg} ファイルの暗号を自動的に解くた
 
 手早く使い始めるには、まず以下の設問に対する答を用意してください:
 
-@enumerate
+@itemize
 @item
 GnuPG のバージョン 1 ではなく、バージョン 2 を使っていますか?
 @item
 公開鍵暗号でななく、共通鍵暗号を使っていますか?
 @item
 gpg-agent を使いたいですか?
-@end enumerate
+@end itemize
 
 以下は上記の質疑に対するあなたの回答に基づいた設定です:
 
