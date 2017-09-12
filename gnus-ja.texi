@@ -7542,9 +7542,11 @@ Gnus はたくさんの方法で記事を保存することができます。以
 存するための説明です。異なる手続き (uudecode, unshar) のために
 は @code{gnus-uu} を使うのが良いでしょう (@pxref{Decoding Articles})。
 
-ここに列挙されているコマンドは対象がファイルです。グループに保存したい場
-合は @kbd{B c} (@code{gnus-summary-copy-article}) コマンドを参照してくだ
-さい (@pxref{Mail Group Commands})。
+ここに列挙されているコマンドは対象がファイルです。ディレクトリー
+名 (@samp{/} で終わるもの) を指定すると、その下にあるファイルが対象にな
+ります。グループに保存したい場合
+は @kbd{B c} (@code{gnus-summary-copy-article}) コマンドを参照してくださ
+い (@pxref{Mail Group Commands})。
 
 @vindex gnus-save-all-headers
 @code{gnus-save-all-headers} が @code{nil} でないと、Gnus は記事を保存す
