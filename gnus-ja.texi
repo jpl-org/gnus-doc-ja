@@ -21516,38 +21516,38 @@ Mairix の検索または恒久的なグループをもっと快適に、常に�
 概略モードで:
 
 @table @kbd
-@item $ G G m
-@kindex $ G G m (概略)
+@item G G m
+@kindex G G m (概略)
 @findex nnmairix-widget-search-from-this-article
 現在のメッセージに基づいた mairix の検索またはグループを、グラフィックな
 ウィジェットを使って作ります (@code{nnmairix-widget-search} と同じで
 す) (@code{nnmairix-widget-search-from-this-article})。
 
-@item $ G G g
-@kindex $ G G g (概略)
+@item G G g
+@kindex G G g (概略)
 @findex nnmairix-create-search-group-from-message
 現在のメッセージに基づいた検索条件で新しい検索グループを対話的に作ります。
 グラフィックなウィジェットの代わりにミニバッファーを使います
 が (@code{nnmairix-create-search-group-from-message})。
 
-@item $ G G t
-@kindex $ G G t (概略)
+@item G G t
+@kindex G G t (概略)
 @findex nnmairix-search-thread-this-article
 現在の記事のスレッドを捜しま
 す (@code{nnmairix-search-thread-this-article})。事実上これは現在の記事
 の @samp{m:msgid} で @code{nnmairix-search} を呼んでスレッドを得るための
 ショートカットです。
 
-@item $ G G f
-@kindex $ G G f (概略)
+@item G G f
+@kindex G G f (概略)
 @findex nnmairix-search-from-this-article
 現在の記事の送信者からのすべてのメッセージを探しま
 す (@code{nnmairix-search-from-this-article})。これ
 は @samp{f:From} で @code{nnmairix-search} を呼ぶためのショートカットで
 す。
 
-@item $ G G o
-@kindex $ G G o (概略)
+@item G G o
+@kindex G G o (概略)
 @findex nnmairix-goto-original-article
 (これが使えるのは @code{nnmairix} グループだけです!) この記事に正しい投
 稿様式 (posting styles) とグループパラメーターを適用して返信するために、
@@ -21556,8 +21556,8 @@ Mairix の検索または恒久的なグループをもっと快適に、常に�
 ならレジストリーを使いますが、代替手段として記事ファイルの名前を分析する
 こともできます。
 
-@item $ G G u
-@kindex $ G G u (概略)
+@item G G u
+@kindex G G u (概略)
 @findex nnmairix-remove-tick-mark-original-article
 元の記事から、もしあれば可視記事の印 (tick mark) を取り除きま
 す (@code{nnmairix-remove-tick-mark-original-article}) (@pxref{nnmairix
