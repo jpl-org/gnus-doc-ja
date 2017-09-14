@@ -148,8 +148,8 @@ manual}.  EasyPG は Emacs 23 に含まれていますが、単独でも利用�
 @item 国際化ホスト名 (@acronym{IDNA}) を、@kbd{W i}
 (@code{gnus-summary-idna-message}) を使うことによって、記事の本文中でデ
 コードできるようになりました。この機能を使うには GNU Libidn
-(@url{http://www.gnu.org/software/libidn/}) をインストールしておく必要が
-あります。
+(@url{https://www.gnu.org/software/libidn/}) をインストールしておく必要
+があります。
 @c FIXME: @code{message-use-idna} も書かなくていい?
 
 @item 非-@acronym{ASCII} グループ名の取り扱いが非常に改善されました。完

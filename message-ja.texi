@@ -923,7 +923,7 @@ Message は @code{From}、@code{To} および @code{Cc} ヘッダーにある
 非-@acronym{ASCII} ドメイン名を得るために) メッセージの編集中
 に @kbd{M-x message-idna-to-ascii-rhs RET} をタイプしてください。
 
-この機能を使うには @uref{http://www.gnu.org/software/libidn/, GNU
+この機能を使うには @uref{https://www.gnu.org/software/libidn/, GNU
 Libidn} をインストールしておかなければなりません。
 
 @node Security

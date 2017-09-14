@@ -8713,7 +8713,7 @@ Gnus が記事を表示するディフォルトのやり方を変えたいとき
 IDNA エンコードされたドメイン名は @samp{xn--bar} のように見えます。これ
 を実行した後で文字列がデコードされないままだったら、おそらくそれは不正
 な IDNA 文字列でしょう (@samp{xn--bar} は不正です)。このコマンドを動かす
-ためには、GNU Libidn (@url{http://www.gnu.org/software/libidn/}) をイン
+ためには、GNU Libidn (@url{https://www.gnu.org/software/libidn/}) をイン
 ストールしていなければなりません。
 
 @item W t
@@ -8932,8 +8932,8 @@ html2text (シンプルな @acronym{HTML} コンバーターで、Gnus に含ま
 証を行なうためには、メインテイナーの @acronym{PGP} 公開鍵をあなたのキー
 リングに追加しなければなりません。@footnote{多くのニュースグループ階層の
 メインテイナーの @acronym{PGP} の鍵
-は @uref{ftp://ftp.isc.org/pub/pgpcontrol/README.html} から入手すること
-ができます。}
+は @uref{https://ftp.isc.org/pub/pgpcontrol/README.html} から入手するこ
+とができます。}
 
 @item W s
 @kindex W s (概略)
@@ -12077,8 +12077,8 @@ Gnus はサーバーからその記事を取ってこようとしま
 なメッセージの作り方について
 は @xref{IDNA, ,国際化ドメイン名, message-ja, The Message Manual}, を参
 照してください。これに
-は @uref{http://www.gnu.org/software/libidn/, GNU Libidn} が必要で、この
-変数はそれをインストールしてある場合だけ有効になります。
+は @uref{https://www.gnu.org/software/libidn/, GNU Libidn} が必要で、こ
+の変数はそれをインストールしてある場合だけ有効になります。
 
 @vindex gnus-inhibit-images
 @item gnus-inhibit-images
@@ -13616,8 +13616,8 @@ default force yes
 @findex nntp-open-tls-stream
 @item nntp-open-tls-stream
 「安全な」チャンネルを使ってサーバーに接続します。これを使うために
-は @uref{http://www.gnu.org/software/gnutls/, GnuTLS} をインストールして
-おかなければなりません。それからサーバーを次のように定義します:
+は @uref{https://www.gnu.org/software/gnutls/, GnuTLS} をインストールし
+ておかなければなりません。それからサーバーを次のように定義します:
 
 @lisp
 ;; @r{ポート 563 が "nntps" として @file{/etc/services} で定義済み}

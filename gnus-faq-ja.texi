@@ -151,9 +151,9 @@ Gnus は Emacs や XEmacs のリリースとは別に、独自にリリースさ
 が切れています)。
 @c
 リリースされた最新版
-の Gnus は、@uref{http://www.gnus.org/dist/gnus.tar.gz} から、または匿
-名 ftp で @uref{ftp://ftp.gnus.org/pub/gnus/gnus.tar.gz} から手に入れる
-ことができます。
+の Gnus は、@uref{http://www.gnus.org/dist/gnus.tar.gz} から、また
+は @uref{https://ftp.gnus.org/pub/gnus/gnus.tar.gz} から手に入れることが
+できます。
 
 @node FAQ 1-4
 @subsubheading 質問 1.4
@@ -1558,7 +1558,7 @@ Database) でしょう。XEmacs のパッケージシステムを使うか、
 を開き、必要な部分を切り抜いて、色の深度を 1-bit まで減らし、48×48 の大
 きさに縮小または拡大して、bitmap としてファイルに保存してください。次
 に @samp{compface} パッケージ
-を @uref{ftp://ftp.cs.indiana.edu:/pub/faces/, このサイト} から入手して、
+を @uref{ftp://ftp.cs.indiana.edu/pub/faces/, このサイト} から入手して、
 以下を実行することによって実際の X-Face を作りましょう:
 
 @example
