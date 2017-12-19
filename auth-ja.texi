@@ -97,10 +97,10 @@ Auth-source ライブラリーは単なるユーザー名やパスワード (い
 外のものも扱うことができます。
 
 同様に auth-source ライブラリーは多くの貯蔵バックエンド、現在は伝統的
-な ``netrc'' バックエンド (この文書の後の方に例があります)、シークレット
-サービス API、そしてパス、すなわち unix の標準パスワード・マネージャーを
-サポートします。これは EIEIO に基づいたバックエンドで行なわれ、もし必要
-ならあなた独自のものを書くことができます。
+な ``netrc'' バックエンド (この文書の後の方に例があります)、JSON ファイ
+ル、シークレットサービス API、そしてパス、すなわち unix の標準パスワード・
+マネージャーをサポートします。これは EIEIO に基づいたバックエンドで行な
+われ、もし必要ならあなた独自のものを書くことができます。
 
 @node Help for users
 @chapter 利用者のためのヘルプ
@@ -181,6 +181,9 @@ password @var{mypassword}
 ;;; パス (@file{~/.password-store}) を使う
 ;;; (@pxref{The Unix password store})
 (setq auth-sources '(password-store))
+;;; [@{ "machine": "SERVER", "login": "USER",
+;;; "password": "PASSWORD" @}...] というフォーマットの JSON データ
+(setq auth-sources '("~/.authinfo.json.gpg"))
 @end lisp
 
 特定のホストかプロトコルのエントリーを複数 @code{auth-sources} に追加す
@@ -244,9 +247,19 @@ machine yourmachine.com port scp login testuser password testpass
 @end example
 
 ポートは Tramp の接続方法を意味することに注意してください。もしポートの
-項を使わなければ、最初の方で説明したように、すべての Tramp の方式に合致
-します。Tramp には 88 種類の接続方法があるので、変わった設定がある場合は
-これが必要かもしれません (それらについての以前のコメントを見てください)。
+項を使わなければ、最初の方で説明したように、どんな Tramp の方式にも合い
+ます。Tramp にはおよそ 88 種類の接続方法があるので、変わった設定がある場
+合はこれが必要かもしれません (それらに関する前のコメントを見てください)。
+
+もしあなたがそんな類のものにはまっているのなら、netrc フォーマットを直接
+JSON に翻訳しましょう。そんなエントリーを持つ JSON ファイルの例です:
+
+@example
+[
+ @{ "machine": "yourmachine.com", "port": "http",
+    "login": "testuser", "password": "testpass" @}
+]
+@end example
 
 @node Multiple GMail accounts with Gnus
 @chapter 複数の GMail アカウントを Gnus で扱う
