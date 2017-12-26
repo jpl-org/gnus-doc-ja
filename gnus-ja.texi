@@ -25754,6 +25754,10 @@ Gnus クラウドは印や雑多なファイルとデータを複数のマシン
 
 Gnus クラウドは印とあなたが選んだファイルを IMAP サーバーの特別なフォル
 ダーに格納します。それは DropTorrentSyncBoxOakTree(TM) のようなものです。
+@footnote{「Gnus クラウド」という名前はパロディーです。クラウド・コンピュー
+ティング、すなわち
+@url{https://www.gnu.org/philosophy/words-to-avoid.html#CloudComputing}
+(通常は使わない方が良い誤解を招く用語) とはほとんど関係がありません。}
 
 @menu
 * Gnus Cloud Setup::
