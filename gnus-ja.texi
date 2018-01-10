@@ -3658,7 +3658,7 @@ Note:
 @end quotation
 
 @node Group Topics
-@section Group Topics
+@section トピック
 @cindex topics
 
 もしあなたがたーくさんのグループを読んでいるのであれば、グループをトピッ
@@ -6227,7 +6227,7 @@ Gnus エージェント (@pxref{Agent Basics}) はいくつかの記事を自動
 無かろうが次の記事に移動します。ディフォルトは @code{t} です。
 
 @node Generic Marking Commands
-@subsection Generic Marking Commands
+@subsection 一般的な印を付けるコマンド
 
 記事に可視の印を付けるコマンド (@kbd{!}) が、(印を付けた後で) 次の記事に
 移動することを望む人がいます。次の未読記事に移動してもらいたい人もいます。
@@ -9163,7 +9163,7 @@ Message-ID だったら @code{mid} を、メールアドレスだったら @code
 てください。
 
 @node Article Button Levels
-@subsection Article button levels
+@subsection 記事ボタンのレベル
 @cindex button levels
 
 変数 @code{gnus-button-@var{*}-level} の値が高いほど、より多くのボタンが
@@ -9290,7 +9290,7 @@ Date: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
 照してください。
 
 @node Article Display
-@subsection Article Display
+@subsection 記事に表示するもの
 @cindex picons
 @cindex x-face
 @cindex smileys
@@ -11536,8 +11536,8 @@ Emacs @acronym{MIME} マニュアルで述べられています。
 @ref{MIME Commands} も見てください。
 
 @node HTML
-@section @acronym{HTML}
-@cindex @acronym{HTML}
+@section HTML
+@cindex HTML
 
 Gnus は @acronym{HTML} 記事を素敵に整形して記事バッファーに表示すること
 ができます。たくさんの方法がありますが、それらのうちの 2つがディフォルト
@@ -16629,7 +16629,7 @@ maildir は受信配送のためのロックを必要としないので、あな
 @end table
 
 @node Browsing the Web
-@section Browsing the Web
+@section ウェブの閲覧
 @cindex web
 @cindex browsing the web
 @cindex www
@@ -22269,7 +22269,7 @@ Gnus は通常ほとんどのバッファーで、ポイントを各行のあら
 子です。
 
 @node Wide Characters
-@subsection Wide Characters
+@subsection 幅広文字
 
 多くの地域において、固定幅フォントは同じ幅の文字を持っています。しかしい
 くつかの地域、よく知られている東アジアの国々では、ラテン文字と幅の広い文
