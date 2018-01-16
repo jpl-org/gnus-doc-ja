@@ -1,3 +1,33 @@
+2018-01-16  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	Make `make pdf' work again
+
+	This requires Texinfo the version >=6.3, and either (or both) of LuaTeX
+	>=0.95 (i.e., TeXLive >=2016) or XeTeX >=0.9998 (i.e., TeXLive >=2012).
+
+	* README, README.ja: Update.
+
+	* Makefile.in (DVIPDFMX, PBIBTEX, PDVIPS, PTEX, TEXI2DVI): Remove vars.
+	(MAKEINFO, TEXI2PDF, FORMATINFO, PDFTEX): New variables.
+	(webhack, dvi, .texi.dvi, ps, .texi.ps, distclean): Remove targets.
+	(docltmp, docltmp.texi): New targets for the internal use.
+	(.texi.info, .texi.pdf, semi-clean, clean): Renew.
+
+	* configure.ac (AC_CHECK_TEXINFO): New function.
+	(MAKEINFO, TEXI2PDF): Check existence and version.
+
+	* configure: Regenerate.
+
+	* texinfo-ja.tex: New file.
+	* txi-ja.tex: Renew.
+
+	* auth-ja.texi, emacs-mime-ja.texi, epa-ja.texi, gnus-coding-ja.texi,
+	gnus-ja.texi, message-ja.texi, sasl-ja.texi, sieve-ja.texi:
+	(texinfo-ja.tex): Use it instead of texinfo.tex.
+	(@setfilename): Add .info suffix.
+	(@documentencoding): New.
+	(@usedvipdfmx): Remove.
+
 2017-09-12  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 25.3 is released.
