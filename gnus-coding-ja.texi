@@ -1,14 +1,12 @@
-\input texinfo
+\input texinfo-ja
 
-@setfilename gnus-coding-ja
+@setfilename gnus-coding-ja.info
 @settitle Gnus Coding Style and Maintenance Guide
 @syncodeindex fn cp
 @syncodeindex vr cp
 @syncodeindex pg cp
+@documentencoding UTF-8
 @documentlanguage ja
-@iftex
-@usedvipdfmx
-@end iftex
 
 @dircategory Emacs
 @direntry

@@ -1,16 +1,14 @@
-\input texinfo                  @c -*-texinfo-*-
+\input texinfo-ja               @c -*-texinfo-*-
 
 @include gnus-overrides-ja.texi
 
-@setfilename sieve-ja
+@setfilename sieve-ja.info
 @settitle Emacs Sieve Manual
 @synindex fn cp
 @synindex vr cp
 @synindex pg cp
+@documentencoding UTF-8
 @documentlanguage ja
-@iftex
-@usedvipdfmx
-@end iftex
 
 @copying
 This file documents the Emacs Sieve package.

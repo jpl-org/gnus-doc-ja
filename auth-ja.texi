@@ -1,16 +1,14 @@
-\input texinfo                  @c -*-texinfo-*-
+\input texinfo-ja               @c -*-texinfo-*-
 
 @include gnus-overrides-ja.texi
 
 @c @set VERSION 0.3
 
-@setfilename auth-ja
+@setfilename auth-ja.info
 @c @settitle Emacs auth-source Library @value{VERSION}
 @settitle Emacs auth-source Library 0.3
+@documentencoding UTF-8
 @documentlanguage ja
-@iftex
-@usedvipdfmx
-@end iftex
 
 @copying
 このファイルは Emacs auth-source ライブラリーを説明します。

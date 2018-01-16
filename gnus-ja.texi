@@ -1,16 +1,14 @@
-\input texinfo
+\input texinfo-ja
 
 @include gnus-overrides-ja.texi
 
-@setfilename gnus-ja
+@setfilename gnus-ja.info
 @settitle Gnus Manual
 @syncodeindex fn cp
 @syncodeindex vr cp
 @syncodeindex pg cp
+@documentencoding UTF-8
 @documentlanguage ja
-@iftex
-@usedvipdfmx
-@end iftex
 
 @copying
 Copyright @copyright{} 1995--2018 Free Software Foundation, Inc.
@@ -364,7 +362,7 @@ Gnus を使うことによって Emacs でニュースを (それにメールも
 あらゆる極悪な手段を駆使して手に入れることができます。運試しをしてみよう
 と思うならば、すべてを同時に用いることもできます。
 
-この説明書は Emacs 26.0.50 に付属する Gnus v5.13 に対応します。
+この説明書は Emacs 26.0.91 に付属する Gnus v5.13 に対応します。
 
 @ifnottex
 @insertcopying
@@ -396,7 +394,7 @@ Emacs が文章を編集する人に力を与えるように、Gnus はニュー
 す。
 @c
 @c 以下の行を変更するときは ../Makefile.in を調整してください。
-この説明書は Emacs 26.0.50 に付属する Gnus v5.13 に対応します。
+この説明書は Emacs 26.0.91 に付属する Gnus v5.13 に対応します。
 
 @heading 関連する他のマニュアル
 @itemize
@@ -7015,7 +7013,6 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに
 
 @item T i
 @kindex T i (概略)
-@kindex gnus-summary-raise-thread
 @findex gnus-summary-raise-thread
 現在のスレッド (または副スレッド) のスコアを上げま
 す (@code{gnus-summary-raise-thread})。
@@ -9528,7 +9525,7 @@ Gravatars は @uref{http://www.gravatar.com/} からオンラインで取得し�
 トをセーブ (または他の動作を実行) しようとするときに、たいてい便利です。
 
 @item W M h
-@kindex W M h (Summary)
+@kindex W M h (概略)
 @findex gnus-mime-buttonize-attachments-in-header
 @vindex gnus-mime-display-attachment-buttons-in-header
 @acronym{MIME} パート・ボタンを記事のヘッダーの最後に表示しま
@@ -14378,6 +14375,7 @@ Gnus はあなた自身に災いが及ぶ可能性あっても、あなたが望
 
 @menu
 * Mail Source Specifiers::      メールのソースがどこかを指定する
+* Mail Source Functions::
 * Mail Source Customization::   ものごとに影響するいくつかの変数
 * Fetching Mail::               メールソース指示子を使う
 @end menu

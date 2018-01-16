@@ -1,8 +1,8 @@
-\input texinfo                  @c -*-texinfo-*-
+\input texinfo-ja               @c -*-texinfo-*-
 
 @include gnus-overrides-ja.texi
 
-@setfilename sasl-ja
+@setfilename sasl-ja.info
 @iftex
 @firstparagraphindent insert
 @end iftex
@@ -10,10 +10,8 @@
 @set VERSION 0.2
 @c @settitle Emacs SASL Library @value{VERSION}
 @settitle Emacs SASL Library 0.2
+@documentencoding UTF-8
 @documentlanguage ja
-@iftex
-@usedvipdfmx
-@end iftex
 
 @copying
 このファイルは Emacs SASL ライブラリー、バージョン @value{VERSION} を説

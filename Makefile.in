@@ -1,33 +1,34 @@
 @SET_MAKE@
-DVIPDFMX=@DVIPDFMX@
-EMACS=@EMACS@
-EMACSINFO=$(EMACS) -batch -q -no-site-file -l infohack.el -f batch-makeinfo
 INFO_DEPS=gnus-ja.info message-ja.info emacs-mime-ja.info epa-ja.info\
  sasl-ja.info sieve-ja.info gnus-coding-ja.info auth-ja.info
+EMACS=@EMACS@
+EMACSINFO=$(EMACS) -batch -q -no-site-file -l infohack.el -f batch-makeinfo
 INSTALL=@INSTALL@
 INSTALL_DATA=@INSTALL_DATA@
 INSTALL_INFO=install-info
-PBIBTEX=@PBIBTEX@
-PDVIPS=@PDVIPS@
-PTEX=@PTEX@
+MAKEINFO=@MAKEINFO@
+TEXI2PDF=@TEXI2PDF@
 SHELL=/bin/sh
-TEXI2DVI=@TEXI2DVI@
 prefix=@prefix@
 datarootdir=@datarootdir@
 infodir=@infodir@
-GZIP_PROG = @GZIP_PROG@
+GZIP_PROG=@GZIP_PROG@
 COMPRESS_INSTALL = @COMPRESS_INSTALL@
 
-.SUFFIXES: .pdf .ps .texi
+# Use Emacs to format info files.
+FORMATINFO=$(EMACSINFO) '$<' t
+# Use makeinfo.
+#FORMATINFO=$(MAKEINFO) --no-split -o '$@' '$<'
+
+# Use xetex if it is your taste.
+PDFTEX=luatex
+
+.SUFFIXES: .pdf .texi
 
 all: $(INFO_DEPS)
 
-# please modify this for all the web manual targets
-webhack: clean
-	$(MAKE) pdf MAKEINFO_OPTS="-DWEBHACKDEVEL $(MAKEINFO_OPTS)"
-
 .texi.info:
-	@texi=$<; rm -f $@ $@-[0-9]; $(EMACSINFO) $$texi t
+	rm -f $@-[0-9]; $(FORMATINFO)
 
 install: all
 	$(SHELL) ./mkinstalldirs "$(infodir)"
@@ -54,30 +55,28 @@ install: all
 	  done;\
 	else : ; fi
 
-dvi: gnus-ja.dvi message-ja.dvi emacs-mime-ja.dvi epa-ja.dvi\
- sasl-ja.dvi sieve-ja.dvi gnus-coding-ja.dvi auth-ja.dvi
-
-.texi.dvi:
-	sed -e '/@iflatex/,/@end iflatex/d' $< > gnustmp.texi
-	env TEX=$(PTEX) BIBTEX=$(PBIBTEX) $(TEXI2DVI) -o $@ gnustmp.texi
-	rm -f gnustmp.*
-
 pdf: gnus-ja.pdf message-ja.pdf emacs-mime-ja.pdf epa-ja.pdf\
  sasl-ja.pdf sieve-ja.pdf gnus-coding-ja.pdf auth-ja.pdf
 
+docltmp: docltmp.texi
+
+docltmp.texi:
+	sed -r -e '/^@iflatex/,/^@end iflatex/d'\
+	 -e '/^@(cartouche|end cartouche|dircategory|group|end group)/d'\
+	 doclicense.texi > docltmp.texi
+
 .texi.pdf:
-	i=`basename $@ .pdf`; $(MAKE) $$i.dvi; $(DVIPDFMX) $$i
+	@$(MAKE) docltmp
+	sed -r -e '/^@iflatex/,/^@end iflatex/d'\
+	 -e '/^@(cartouche|end cartouche|dircategory|group|end group)/d'\
+	 -e '/^@setchapternewpage/d'\
+	 -e 's/^@include doclicense\.texi/@include docltmp.texi/g'\
+	 $< > gnustmp.texi
+	env PDFTEX=$(PDFTEX) $(TEXI2PDF) -o $@ gnustmp.texi
 
-ps: gnus-ja.ps message-ja.ps emacs-mime-ja.ps epa-ja.ps\
- sasl-ja.ps sieve-ja.ps gnus-coding-ja.ps auth-ja.ps
+semi-clean:
+	rm -f *.info-[0-9] *.orig *~ docltmp.texi gnustmp.*
 
-.texi.ps:
-	i=`basename $@ .ps`; $(MAKE) $$i.dvi; $(PDVIPS) $$i
-
-clean:
-	rm -f *.dvi *.info *.info-[0-9] *.orig *.pdf *.ps *~\
- gnustmp.* missfont.log
-
-distclean: clean
+clean: semi-clean
+	rm -f Makefile config.* *.info *.pdf
 	rm -fr autom4te.cache
-	rm -f Makefile config.*

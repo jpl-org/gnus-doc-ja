@@ -1,16 +1,14 @@
-\input texinfo
+\input texinfo-ja
 
 @include gnus-overrides-ja.texi
 
-@setfilename emacs-mime-ja
+@setfilename emacs-mime-ja.info
 @settitle Emacs MIME Manual
 @synindex fn cp
 @synindex vr cp
 @synindex pg cp
+@documentencoding UTF-8
 @documentlanguage ja
-@iftex
-@usedvipdfmx
-@end iftex
 
 @copying
 このファイルは Emacs MIME インターフェースの機能を文書化したものです。

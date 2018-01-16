@@ -1,4 +1,4 @@
-Gnus の Info マニュアルの全訳です。Emacs 26.0.50 に付属する Gnus v5.13
+Gnus の Info マニュアルの全訳です。Emacs 26.0.91 に付属する Gnus v5.13
 に対応します。
 
 インストール
@@ -16,7 +16,7 @@ Gnus の Info マニュアルの全訳です。Emacs 26.0.50 に付属する Gnu
 名にすることはできません。あらかじめ PATH 環境変数を設定してください。
 例です:
 
-% ./configure --with-emacs=emacs-26.0.50 --infodir=/usr/local/info
+% ./configure --with-emacs=emacs-26.0.91 --infodir=/usr/local/info
 
 Gnus のバッファーで `C-c C-i' をタイプするか message バッファーで
 `M-x message-info' をタイプしたときに日本語版の Info マニュアルを読み
@@ -54,15 +54,12 @@ gnus-P.Q@R.S-doc-ja.tar.gz です。
 
 印刷
 ====
-PDF や PS ファイルを作ることができます。ただし dvipdfmx, pbibtex,
-pdvips, ptex, texi2dvi の各コマンドを使うことができる環境が整備されて
-いなければなりません。configure を行なった後で、以下を実行してください。
+PS ファイルを作ることができます。ただし Texinfo バージョン 6.3 以上、
+および LuaTeX 0.95 以上 (TeXLive 2016 以上) または XeTeX 0.9998 以上
+(TeXLive 2012 以上) のどちらかまたは両方をインストールしておく必要が
+あります。configure を行なった後で、以下を実行してください。
 
 % make pdf
-
-または
-
-% make ps
 
 作成済みの PDF ファイルが、このパッケージと同じ場所にあります。
 
