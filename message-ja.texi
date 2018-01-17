@@ -1490,6 +1490,9 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 でください。リストを昇るのは @kbd{M-p}、そして選択するのは @kbd{RET} で
 す。
 
+変数 @code{ecomplete-sort-predicate} はどのように @code{ecomplete} の合
+致がソートされるかを制御します。
+
 @node Spelling
 @section Emacs にスペルチェックさせる
 @cindex spelling
