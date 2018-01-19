@@ -1486,9 +1486,9 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 @code{To} と @code{Cc} ヘッダーにテキストを書き込んだときに、
 @code{ecomplete} はそこに格納されている値を調べて、どんな補完候補がある
 かを「エレクトリック」に (訳注: 巧妙なやり方で) 教えてくれるでしょう。そ
-れらの補完候補の一つを探すには、@kbd{M-n} コマンドでリストを下に読み進ん
-でください。リストを昇るのは @kbd{M-p}、そして選択するのは @kbd{RET} で
-す。
+れらの補完候補の一つを探すには、@kbd{@key{DOWN}} または @kbd{M-n} コマン
+ドでリストを下に読み進んでください。リストを昇るの
+は @kbd{@key{UP}} か @kbd{M-p}、そして選択するのは @kbd{RET} です。
 
 変数 @code{ecomplete-sort-predicate} はどのように @code{ecomplete} の合
 致がソートされるかを制御します。
