@@ -477,12 +477,14 @@ GnuPG 2.1 (2.1.5 以降) は Emacs のミニバッファーから直接 Pinentry
 @node Caching Passphrases, Bug Reports, GnuPG version compatibility, Top
 @chapter Caching Passphrases
 
-もし同じファイルを開いて閉じる機会が度々あるのであれば、パスフレーズをタ
-イプするのはわずらわしい仕事でしょう。GnuPG と EasyPG アシスタントはあな
-たのパスフレーズを記憶する機構を提供します。しかしながらその設定は少々込
-み入っています。それは、インストールされている GnuPG @xref{GnuPG version
-compatibility}、暗号方式 (対称鍵か公開鍵か)、そして gpg-agent を使いたい
-かどうかによります。以下にいくつかの設問があります。
+もし同じファイルを開いたり閉じたりするる機会が度々あるのであれば、パスフ
+レーズをタイプするのはわずらわしい仕事でしょう。GnuPG と EasyPG アシスタ
+ントは、一定の時間に限ってあなたのパスフレーズを記憶する機構を提供します。
+これらを使うと、パスフレーズを時々入力するだけで済みます。しかしながらそ
+の設定は少々込み入っています。それは、インストールされている GnuPG
+@xref{GnuPG version compatibility}、暗号方式 (対称鍵か公開鍵か)、そし
+て gpg-agent を使いたいかどうかによります。以下にいくつかの設問がありま
+す。
 
 @enumerate
 @item
