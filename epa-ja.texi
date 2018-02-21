@@ -370,8 +370,8 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 はなく復号されたテキストがバッファーに挿入されます。同様にバッファー
 を @file{foo.gpg} ファイルにセーブすると暗号化されたデータが書かれます。
 
-暗号化されたファイルの名前パターンは @var{epa-file-name-regexp} で制御す
-ることができます。
+暗号化されたファイルの名前パターンは @code{epa-file-name-regexp} で制御
+することができます。
 
 @defvar epa-file-name-regexp
 暗号化されたものとして扱われるファイル名に合致する正規表現です。
