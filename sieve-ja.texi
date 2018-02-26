@@ -163,6 +163,9 @@ Server  : mailserver:sieve
 
 2 scripts on server, press RET on a script name edits it, or
 press RET on <new script> to create a new script.
+(2つのスクリプトがサーバーにあります。編集するにはスクリプト名の
+ 上で @key{RET} を押してください。あるいは新しいスクリプトを作るには
+ <new script> の上で @key{RET} を押してください。)
         <new script>
  ACTIVE .sieve
         template.siv
