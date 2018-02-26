@@ -1973,7 +1973,7 @@ Gnus は @code{gnus-user-format-function-}@samp{X} 関数を呼び出します�
 
 @item p
 @itemx @key{DEL}
-@kindex @key{DEL} @r{(グループ)}
+@kindex DEL @r{(グループ)}
 @kindex p @r{(グループ)}
 @findex gnus-group-prev-unread-group
 一つ前の未読記事のあるグループに移動しま
@@ -2051,7 +2051,7 @@ Gnus は @code{gnus-user-format-function-}@samp{X} 関数を呼び出します�
 
 @table @kbd
 @item @key{SPC}
-@kindex @key{SPC} @r{(グループ)}
+@kindex SPC @r{(グループ)}
 @findex gnus-group-read-group
 現在のグループを選択し、概略バッファーに切り替えて最初の未読記事を表示し
 ます (@code{gnus-group-read-group})。もしそのグループに未読記事が無い、
@@ -2070,7 +2070,7 @@ Gnus は @code{gnus-user-format-function-}@samp{X} 関数を呼び出します�
 得できるし、@kbd{C-u M-g} では古い記事を表示することができます。
 
 @item @key{RET}
-@kindex @key{RET} @r{(グループ)}
+@kindex RET @r{(グループ)}
 @findex gnus-group-select-group
 現在のグループを選択し、概略バッファーに切り替えま
 す (@code{gnus-group-select-group})。@code{gnus-group-read-group} と同じ
@@ -2078,7 +2078,7 @@ Gnus は @code{gnus-user-format-function-}@samp{X} 関数を呼び出します�
 示しない、ということです。
 
 @item M-@key{RET}
-@kindex M-@key{RET} @r{(グループ)}
+@kindex M-RET @r{(グループ)}
 @findex gnus-group-quick-select-group
 これは上記のコマンドと同じ動作をしますが、「ゴタゴタ」は最低限にしようと
 します (@code{gnus-group-quick-select-group})。スコア・kill の処理は行な
@@ -2090,14 +2090,14 @@ Gnus は概略バッファーを作ろうとさえしません。これは概略
 Generation Commands})。
 
 @item M-@key{SPC}
-@kindex M-@key{SPC} @r{(グループ)}
+@kindex M-SPC @r{(グループ)}
 @findex gnus-group-visible-select-group
 これは @kbd{@key{RET}} コマンドと同じ動作をするさらにもう一つのコマンド
 ですが、このコマンドは記事消去と保留記事を隠す処理を行ないませ
 ん (@code{gnus-group-visible-select-group})。
 
 @item C-M-@key{RET}
-@kindex C-M-@key{RET} @r{(グループ)}
+@kindex C-M-RET @r{(グループ)}
 @findex gnus-group-select-group-ephemerally
 最後にこのコマンドは、現在のグループを一度限り、その内容に一切の処理をす
 ることのないように選択しま
@@ -2619,7 +2619,7 @@ Gnus ヘルプグループを作成します (@code{gnus-group-make-help-group})
 @xref{RSS}.
 
 @item G @key{DEL}
-@kindex G @key{DEL} @r{(グループ)}
+@kindex G DEL @r{(グループ)}
 @findex gnus-group-delete-group
 この関数は現在のグループを削除します (@code{gnus-group-delete-group})。
 接頭引数が与えられると、この関数はそのグループ内の全記事を本当に削除し、
@@ -3565,13 +3565,13 @@ kill されたグループをすべて表示します (@code{gnus-group-list-kil
 一つ前のグループに移動します (@code{gnus-group-prev-group})。
 
 @item @key{SPC}
-@kindex @key{SPC} @r{(閲覧)}
+@kindex SPC @r{(閲覧)}
 @findex gnus-browse-read-group
 現在のグループに入り、最初の記事を表示しま
 す (@code{gnus-browse-read-group})。
 
 @item @key{RET}
-@kindex @key{RET} @r{(閲覧)}
+@kindex RET @r{(閲覧)}
 @findex gnus-browse-select-group
 現在のグループに入ります (@code{gnus-browse-select-group})。
 
@@ -3737,15 +3737,15 @@ Gnus
 
 @item T @key{TAB}
 @itemx @key{TAB}
-@kindex T @key{TAB} @r{(トピック)}
-@kindex @key{TAB} @r{(トピック)}
+@kindex T TAB @r{(トピック)}
+@kindex TAB @r{(トピック)}
 @findex gnus-topic-indent
 現在のトピックの「字下げ」を行ない、その前のトピックの副トピックにしま
 す (@code{gnus-topic-indent})。接頭引数を与えると、反対にそのトピックの
 字下げを回復 (un-indent) します。
 
 @item M-@key{TAB}
-@kindex M-@key{TAB} @r{(トピック)}
+@kindex M-TAB @r{(トピック)}
 @findex gnus-topic-unindent
 現在のトピックの「字下げ回復」(un-indent) を行ない、それが現在の親の親の
 副トピックになるようにします (@code{gnus-topic-unindent})。
@@ -3786,7 +3786,7 @@ Gnus
 
 @table @kbd
 @item @key{RET}
-@kindex @key{RET} @r{(トピック)}
+@kindex RET @r{(トピック)}
 @findex gnus-topic-select-group
 @itemx @key{SPC}
 グループを選択するか、あるいはトピックを折りたたみま
@@ -3891,7 +3891,7 @@ Mail})。
 トピックの名前を変更します (@code{gnus-topic-rename})。
 
 @item T @key{DEL}
-@kindex T @key{DEL} @r{(トピック)}
+@kindex T DEL @r{(トピック)}
 @findex gnus-topic-delete
 空のトピックを削除します (@code{gnus-topic-delete})。
 
@@ -5172,7 +5172,7 @@ Summary Buffer} を参照してください。
 
 @table @kbd
 @item @key{SPC}
-@kindex @key{SPC} @r{(概略)}
+@kindex SPC @r{(概略)}
 @findex gnus-summary-next-page
 現在の記事、またはそれが既読だった場合は次の未読記事を選択しま
 す (@code{gnus-summary-next-page})。
@@ -5306,7 +5306,7 @@ Summary Buffer} を参照してください。
 
 @table @kbd
 @item @key{SPC}
-@kindex @key{SPC} @r{(概略)}
+@kindex SPC @r{(概略)}
 @findex gnus-summary-next-page
 @kbd{@key{SPC}} を押すと、現在の記事を一ページ先にスクロールします。記事
 の最後に行き着いた場合は次の記事を選択しま
@@ -5321,17 +5321,17 @@ Summary Buffer} を参照してください。
 によって、手動で記事のページを見ることはできます。
 
 @item @key{DEL}
-@kindex @key{DEL} @r{(概略)}
+@kindex DEL @r{(概略)}
 @findex gnus-summary-prev-page
 現在の記事を一ページ前にスクロールします (@code{gnus-summary-prev-page})。
 
 @item @key{RET}
-@kindex @key{RET} @r{(概略)}
+@kindex RET @r{(概略)}
 @findex gnus-summary-scroll-up
 現在の記事を一行先にスクロールします (@code{gnus-summary-scroll-up})。
 
 @item M-@key{RET}
-@kindex M-@key{RET} @r{(概略)}
+@kindex M-RET @r{(概略)}
 @findex gnus-summary-scroll-down
 現在の記事を一行後ろへスクロールします (@code{gnus-summary-scroll-down})。
 
@@ -10100,7 +10100,7 @@ Gnus はこれをするための概略バッファーマイナーモードを提
 されます。)
 
 @item @key{SPC}
-@kindex @key{SPC} @r{(選択)}
+@kindex SPC @r{(選択)}
 @findex gnus-pick-next-page
 概略バッファーを一ページ次にスクロールします (@code{gnus-pick-next-page})。
 もしバッファーの最後であれば、選択した記事を読み始めます。
@@ -10116,7 +10116,7 @@ Gnus はこれをするための概略バッファーマイナーモードを提
 ために、このキーに数値接頭引数を与えることができます。
 
 @item @key{RET}
-@kindex @key{RET} @r{(選択)}
+@kindex RET @r{(選択)}
 @findex gnus-pick-start-reading
 @vindex gnus-pick-display-summary
 選択された記事を読み始めます (@code{gnus-pick-start-reading})。接頭引数
@@ -10356,7 +10356,7 @@ pick モードでの概略行の様式は標準の様式とは少し違います
 な @file{/dev/null} へ消え去るということです。
 
 @item B @key{DEL}
-@kindex B @key{DEL} @r{(概略)}
+@kindex B DEL @r{(概略)}
 @cindex deleting mail
 @findex gnus-summary-delete-article
 @c @icon{gnus-summary-mail-delete}
@@ -11389,7 +11389,7 @@ Gnus は @acronym{MIME} パートを表示するために、
 @table @kbd
 @findex gnus-article-press-button
 @item @key{RET} @r{(記事)}
-@kindex @key{RET} @r{(記事)}
+@kindex RET @r{(記事)}
 @itemx BUTTON-2 @r{(記事)}
 @acronym{MIME} オブジェクトの表示をトグルで切り替えま
 す (@code{gnus-article-press-button})。そのオブジェクトを内蔵のビューワー
@@ -11400,7 +11400,7 @@ Gnus は @acronym{MIME} パートを表示するために、
 
 @findex gnus-mime-view-part
 @item M-@key{RET} @r{(記事)}
-@kindex M-@key{RET} @r{(記事)}
+@kindex M-RET @r{(記事)}
 @itemx v @r{(記事)}
 手段を尋ね、その手段を使って @acronym{MIME} オブジェクトを表示しま
 す (@code{gnus-mime-view-part})。
@@ -11889,13 +11889,13 @@ ISO8601 形式。つまり ``2010-11-23T22:05:21'' のようなもの。
 
 @table @kbd
 @item @key{SPC}
-@kindex @key{SPC} @r{(記事)}
+@kindex SPC @r{(記事)}
 @findex gnus-article-next-page
 記事を一ページ先にスクロールします。(@code{gnus-article-next-page})。
 @kbd{h @key{SPC} h} とまったく同じです。
 
 @item @key{DEL}
-@kindex @key{DEL} @r{(記事)}
+@kindex DEL @r{(記事)}
 @findex gnus-article-prev-page
 記事を一ページ前にスクロールします (@code{gnus-article-prev-page})。
 @kbd{h @key{DEL} h} とまったく同じです。
@@ -11926,13 +11926,13 @@ Gnus はサーバーからその記事を取ってこようとしま
 す (@code{gnus-article-describe-briefly})。
 
 @item @key{TAB}
-@kindex @key{TAB} @r{(記事)}
+@kindex TAB @r{(記事)}
 @findex gnus-article-next-button
 次のボタンがあればそこに移動します (@code{gnus-article-next-button})。こ
 れは記事にボタンを付ける機能をオンにしているときのみ意味を持ちます。
 
 @item M-@key{TAB}
-@kindex M-@key{TAB} @r{(記事)}
+@kindex M-TAB @r{(記事)}
 @findex gnus-article-prev-button
 一つ前のボタンがあればそこに移動します (@code{gnus-article-prev-button})。
 
@@ -12999,7 +12999,7 @@ Message Manual}, を参照してください。
 サーバーの定義を表示します (@code{gnus-server-show-server})。
 
 @item @key{SPC}
-@kindex @key{SPC} @r{(サーバー)}
+@kindex SPC @r{(サーバー)}
 @findex gnus-server-read-server
 現在のサーバーを眺めます (@code{gnus-server-read-server})。
 

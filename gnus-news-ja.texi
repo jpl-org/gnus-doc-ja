@@ -337,8 +337,8 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 @itemize @bullet
 @item ツールバーが GNOME のアイコンを使うように更新されました。ツールバー
 をカスタマイズすることもできます:
-@kbd{M-x customize-apropos RET -tool-bar$} で始めてください。(Emacs だけ
-です。XEmacs ではできません。)
+@kbd{M-x customize-apropos @key{RET} -tool-bar$} で始めてくださ
+い。(Emacs だけです。XEmacs ではできません。)
 @c FIXME: これをマニュアルに書くべし。
 
 @item ツールバーのアイコンがグループバッファーで正しく活性化 (または不活

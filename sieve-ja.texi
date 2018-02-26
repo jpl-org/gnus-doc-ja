@@ -133,8 +133,8 @@ Sieve モードは専用の略語表 (@code{sieve-mode-abbrev-table}) と構文�
 るためのキー設定もあります。@xref{Managing Sieve}.
 
 @table @kbd
-@item C-c RET
-@kindex C-c @key{RET}
+@item C-c @key{RET}
+@kindex C-c RET
 @findex sieve-manage
 @cindex manage remote sieve script
 「Sieve-管理」プロトコル (Managesieve protocol) を使って、遠隔サーバーに
@@ -151,9 +151,9 @@ Sieve モードは専用の略語表 (@code{sieve-mode-abbrev-table}) と構文�
 @chapter Sieve の管理
 
 「Sieve-管理」は、遠隔サーバーにある Sieve スクリプトを表示するために使
-われる特別なモードです。それは @kbd{M-x sieve-manage RET} で起動し、その
-サーバーにおけるユーザー名と、必要な場合には資格証明書 (credentials) の
-入力を求めます。
+われる特別なモードです。それは @kbd{M-x sieve-manage @key{RET}} で起動し、
+そのサーバーにおけるユーザー名と、必要な場合には資格証明
+書 (credentials) の入力を求めます。
 
 サーバーとの接続に成功すると、「Sieve-管理」バッファーには以下のようなも
 のが表示されます:
@@ -161,15 +161,19 @@ Sieve モードは専用の略語表 (@code{sieve-mode-abbrev-table}) と構文�
 @example
 Server  : mailserver:sieve
 
-2 scripts on server, press RET on a script name edits it, or
-press RET on <new script> to create a new script.
+2 scripts on server, press @key{RET} on a script name edits it, or
+press @key{RET} on <new script> to create a new script.
+(2つのスクリプトがサーバーにあります。編集するにはスクリプト名の
+ 上で @key{RET} を押してください。あるいは新しいスクリプトを作るには
+ <new script> の上で @key{RET} を押してください。)
         <new script>
  ACTIVE .sieve
         template.siv
 @end example
 
-スクリプトの一つが強調表示され、標準のポイント移動コマンド (@kbd{<up>},
-@kbd{<down>} など) でリスト内を移動することができます。
+スクリプトの一つが強調表示され、標準のポイント移動コマン
+ド (@kbd{@key{UP}}, @kbd{@key{DOWN}} など) でリスト内を移動することがで
+きます。
 
 以下のコマンドが「Sieve-管理」バッファーで利用可能です:
 
@@ -194,10 +198,10 @@ press RET on <new script> to create a new script.
 @findex sieve-remove
 現在の強調表示されたスクリプトを取り除きます。
 
-@item RET
+@item @key{RET}
 @item mouse-2
 @item f
-@kindex @key{RET}
+@kindex RET
 @kindex mouse-2
 @kindex f
 @findex sieve-edit-script
@@ -278,8 +282,8 @@ if address ["to", "cc"] "kerberos@@mit.edu" @{
 バーと話すための、低階層の関数群があります。
 
 いくつかの、ユーザーが見ることができる変数があり、それらすべて
-は @code{sieve} グループでカスタマイズすることができます (@kbd{M-x
-customize-group RET sieve RET}):
+は @code{sieve} グループでカスタマイズすることができま
+す (@kbd{M-x customize-group @key{RET} sieve @key{RET}}):
 
 @table @code
 @item sieve-manage-default-port
