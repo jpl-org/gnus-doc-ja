@@ -134,7 +134,7 @@ Sieve モードは専用の略語表 (@code{sieve-mode-abbrev-table}) と構文�
 
 @table @kbd
 @item C-c RET
-@kindex C-c RET
+@kindex C-c @key{RET}
 @findex sieve-manage
 @cindex manage remote sieve script
 「Sieve-管理」プロトコル (Managesieve protocol) を使って、遠隔サーバーに
@@ -197,7 +197,7 @@ press RET on <new script> to create a new script.
 @item RET
 @item mouse-2
 @item f
-@kindex RET
+@kindex @key{RET}
 @kindex mouse-2
 @kindex f
 @findex sieve-edit-script

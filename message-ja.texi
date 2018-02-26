@@ -704,14 +704,12 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 てくれるでしょう。
 
 @item M-x message-insert-importance-high
-@kindex M-x message-insert-importance-high
 @findex message-insert-importance-high
 @cindex Importance
 @samp{high} という値を持つ @samp{Importance} ヘッダーを (必要ならすでに
 存在するものを消去してから) 挿入します。
 
 @item M-x message-insert-importance-low
-@kindex M-x message-insert-importance-low
 @findex message-insert-importance-low
 @cindex Importance
 @samp{low} という値を持つ @samp{Importance} ヘッダーを (必要ならすでに存
@@ -1216,7 +1214,7 @@ pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
 @node Passphrase caching
 @subsection パスフレーズをキャッシュする
 
-@cindex gpg-agent
+@cindex @command{gpg-agent}
 EasyPG を使う場合、Message はデータを暗号化するため内部的
 に GnuPG (the @command{gpg} または @command{gpgsm} command) を呼びます。
 また、ある特定の場合 (例えば暗号の解読や署名を行なう場合) に、
@@ -1375,8 +1373,8 @@ gpg --use-agent --sign < /dev/null > /dev/null
 メッセージの本文において、領域が設定された場所以外のすべての文を消去しま
 す (@code{message-delete-not-region})。
 
-@item M-RET
-@kindex M-RET
+@item M-@key{RET}
+@kindex M-@key{RET}
 @findex message-newline-and-reformat
 四本の空行を挿入します。そして、もしポイントが引用文の中間にあったのなら
 ば、引用文を整形し直します。
@@ -1387,8 +1385,8 @@ gpg --use-agent --sign < /dev/null > /dev/null
 > これは何かの引用文です。 そして、ここにはもっと引用文があります。
 @end example
 
-ポイントが「そして」の前にあるときに @kbd{M-RET} を押すと、以下のように
-なります:
+ポイントが「そして」の前にあるときに @kbd{M-@key{RET}} を押すと、以下の
+ようになります:
 
 @example
 > これは何かの引用文です。
@@ -1406,13 +1404,13 @@ gpg --use-agent --sign < /dev/null > /dev/null
 バッファーの名前を変更します (@code{message-rename-buffer})。接頭引数が
 与えられると、新しいバッファー名の入力を要求します。
 
-@item TAB
-@kindex TAB
+@item @key{TAB}
+@kindex @key{TAB}
 @findex message-tab
 @vindex message-tab-body-function
 @code{message-tab-body-function} が @code{nil} でなかったら、それが指定
 する関数を実行します。さもなければ、
-@code{text-mode-map} か @code{global-map} の @kbd{TAB} キーに割り当てら
+@code{text-mode-map} か @code{global-map} の @key{TAB} キーに割り当てら
 れている命令を使います。
 @end table
 

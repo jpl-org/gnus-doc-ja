@@ -190,21 +190,21 @@ Emacs のソースコード。この項目は @code{mm-uu-emacs-sources-regexp} 
 致するグループでのみ動作します。
 
 @item diff
-@vindex diff
+@findex diff
 @vindex mm-uu-diff-groups-regexp
 パッチ。これは、コミットされたファイルの差分が自動的に送られるグループを
 対象にしたものです。@code{mm-uu-diff-groups-regexp} に合致するグループで
 のみ動作します。
 
 @item verbatim-marks
-@cindex verbatim-marks
+@findex verbatim-marks
 Slrn ふうの verbatim (文章を一言一句そのまま表す) 記号の対。
 
 (訳注: @samp{#v+} と @samp{#v-} の二行で囲まれたテキスト
 を @acronym{MIME} パートに見立てます。)
 
 @item LaTeX
-@cindex LaTeX
+@findex LaTeX
 LaTeX の文献。@code{mm-uu-tex-groups-regexp} に合致する名前のグループで
 のみ動作します。
 @end table
@@ -1132,7 +1132,7 @@ and Soft Newlines, emacs, Emacs Manual}) に従い、メッセージをデコー
 @node Interface Functions
 @chapter インターフェース関数
 @cindex interface functions
-@cindex mail-parse
+@cindex @code{mail-parse}
 
 @code{mail-parse} ライブラリーは、次の章で述べる実際の低レベルなライブラ
 リーを抽象化したものです。
