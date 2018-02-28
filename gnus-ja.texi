@@ -11682,8 +11682,8 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 
 @ifinfo
 @c 印刷されるマニュアルでは、同じセクションに冗長気味なエントリーが現れ
-@c ないようにしますが、'i gnus-treat-foo-bar RET' または 'i foo-bar' を
-@c 行なうことができるように、これらを info に加えます。
+@c ないようにしますが、'i gnus-treat-foo-bar @key{RET}' また
+@c は 'i foo-bar' を行なうことができるように、これらを info に加えます。
 @vindex gnus-treat-buttonize
 @vindex gnus-treat-buttonize-head
 @vindex gnus-treat-capitalize-sentences
