@@ -1374,7 +1374,7 @@ gpg --use-agent --sign < /dev/null > /dev/null
 メッセージの本文において、領域が設定された場所以外のすべての文を消去しま
 す (@code{message-delete-not-region})。
 
-@item M-@key{@key{RET}}
+@item M-@key{RET}
 @kindex M-RET
 @findex message-newline-and-reformat
 四本の空行を挿入します。そして、もしポイントが引用文の中間にあったのなら
@@ -1386,8 +1386,8 @@ gpg --use-agent --sign < /dev/null > /dev/null
 > これは何かの引用文です。 そして、ここにはもっと引用文があります。
 @end example
 
-ポイントが「そして」の前にあるときに @kbd{M-@key{@key{RET}}} を押すと、
-以下のようになります:
+ポイントが「そして」の前にあるときに @kbd{M-@key{RET}} を押すと、以下の
+ようになります:
 
 @example
 > これは何かの引用文です。
