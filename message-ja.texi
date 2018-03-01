@@ -114,8 +114,8 @@ Message は Gnus とともに配布されます。このマニュアルに対応
 @end menu
 
 Message モードのツールバーをカスタマイズすることができます。@kbd{M-x
-customize-apropos RET message-tool-bar} を試してみてください。この機能を
-利用できるのは Emacs だけですが。
+customize-apropos @key{RET} message-tool-bar} を試してみてください。この
+機能を利用できるのは Emacs だけですが。
 
 @node New Mail Message
 @section 新しいメールメッセージ
@@ -704,14 +704,12 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 てくれるでしょう。
 
 @item M-x message-insert-importance-high
-@kindex M-x message-insert-importance-high
 @findex message-insert-importance-high
 @cindex Importance
 @samp{high} という値を持つ @samp{Importance} ヘッダーを (必要ならすでに
 存在するものを消去してから) 挿入します。
 
 @item M-x message-insert-importance-low
-@kindex M-x message-insert-importance-low
 @findex message-insert-importance-low
 @cindex Importance
 @samp{low} という値を持つ @samp{Importance} ヘッダーを (必要ならすでに存
@@ -919,7 +917,7 @@ Message は @code{From}、@code{To} および @code{Cc} ヘッダーにある
 @findex message-idna-to-ascii-rhs
 実験的に @acronym{IDNA} エンコードを行ないたいならば、(エンコードされた
 非-@acronym{ASCII} ドメイン名を得るために) メッセージの編集中
-に @kbd{M-x message-idna-to-ascii-rhs RET} をタイプしてください。
+に @kbd{M-x message-idna-to-ascii-rhs @key{RET}} をタイプしてください。
 
 この機能を使うには @uref{https://www.gnu.org/software/libidn/, GNU
 Libidn} をインストールしておかなければなりません。
@@ -1074,11 +1072,11 @@ GnuPG をインストール
 署名そして特に暗号化はしばしば機密情報を送信するときに使われるので、メー
 ルが本当に署名または暗号化されることを確かめるための何らかの手段を必要と
 するでしょう。上記の署名/暗号化のための命令を実行した後でなら、
-@kbd{C-u C-c RET P} (@code{mml-preview}) を使うことによって生の記事を下
-見することが可能です。そうして、あなたの以前に大切だった人に関する、ある
-いは、この前の夜の変なパーティーで、あのおかしな身なりの人が実際にやった
-ことに関するあなたの長い罵倒が、本当に暗号化されて送信されるであろうこと
-を確認することができます。
+@kbd{C-u C-c @key{RET} P} (@code{mml-preview}) を使うことによって生の記
+事を下見することが可能です。そうして、あなたの以前に大切だった人に関する、
+あるいは、この前の夜の変なパーティーで、あのおかしな身なりの人が実際にやっ
+たことに関するあなたの長い罵倒が、本当に暗号化されて送信されるであろうこ
+とを確認することができます。
 
 @emph{注意!}  @acronym{PGP/MIME} と @acronym{S/MIME} のどちら
 も RFC822 ヘッダーを署名/暗号化しません。それらは @acronym{MIME} パート
@@ -1169,8 +1167,9 @@ OpenSSL 0.9.6 以降のものが動作するはずです。バージョン 0.9.5
 書がどこに格納されているかを教えてあげる必要があります。@acronym{MML} は
 その名にふさわしい @code{smime.el} という OpenSSL への Emacs インターフェー
 スを使いますが、それはこの設定に使うためのための @code{custom} グループ
-を持っています。ですから @kbd{M-x customize-group RET smime RET} を試し
-て、眺めてみてください。
+を持っています。ですか
+ら @kbd{M-x customize-group @key{RET} smime @key{RET}} を試して、眺めて
+みてください。
 
 現在は、CA (または RA) と通信してあなた自身の証明書を生成することはサポー
 トされていません。それに計画もありません。私は Netscape を使って、ネット
@@ -1191,10 +1190,10 @@ $ openssl pkcs12 -in ns.p12 -clcerts -nodes > key+cert.pem
 れの扱いには気を付けてください。暗号化された鍵をファイルに格納する機能は
 サポートされています。その場合は OpenSSL を呼び出す前に Gnus がパスフレー
 ズを尋ねるでしょう。どうやってそれを成し遂げるかについては OpenSSL のド
-キュメントを読んでください。暗号化されていない鍵を使う (例えばそれらが安全
-なストレージにある、またはあなたが安全なシングル・利用者のマシンにい
-る) のであれば、パスフレーズの入力を要求されたとき、単に @kbd{RET} を押
-してください。
+キュメントを読んでください。暗号化されていない鍵を使う (例えばそれらが安
+全なストレージにある、またはあなたが安全なシングル・利用者のマシンにい
+る) のであれば、パスフレーズの入力を要求されたとき、単
+に @kbd{@key{RET}} を押してください。
 
 @node Using OpenPGP
 @subsection OpenPGP を使う
@@ -1216,7 +1215,7 @@ pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
 @node Passphrase caching
 @subsection パスフレーズをキャッシュする
 
-@cindex gpg-agent
+@cindex @command{gpg-agent}
 EasyPG を使う場合、Message はデータを暗号化するため内部的
 に GnuPG (the @command{gpg} または @command{gpgsm} command) を呼びます。
 また、ある特定の場合 (例えば暗号の解読や署名を行なう場合) に、
@@ -1375,7 +1374,7 @@ gpg --use-agent --sign < /dev/null > /dev/null
 メッセージの本文において、領域が設定された場所以外のすべての文を消去しま
 す (@code{message-delete-not-region})。
 
-@item M-RET
+@item M-@key{RET}
 @kindex M-RET
 @findex message-newline-and-reformat
 四本の空行を挿入します。そして、もしポイントが引用文の中間にあったのなら
@@ -1387,8 +1386,8 @@ gpg --use-agent --sign < /dev/null > /dev/null
 > これは何かの引用文です。 そして、ここにはもっと引用文があります。
 @end example
 
-ポイントが「そして」の前にあるときに @kbd{M-RET} を押すと、以下のように
-なります:
+ポイントが「そして」の前にあるときに @kbd{M-@key{RET}} を押すと、以下の
+ようになります:
 
 @example
 > これは何かの引用文です。
@@ -1406,13 +1405,13 @@ gpg --use-agent --sign < /dev/null > /dev/null
 バッファーの名前を変更します (@code{message-rename-buffer})。接頭引数が
 与えられると、新しいバッファー名の入力を要求します。
 
-@item TAB
+@item @key{TAB}
 @kindex TAB
 @findex message-tab
 @vindex message-tab-body-function
 @code{message-tab-body-function} が @code{nil} でなかったら、それが指定
 する関数を実行します。さもなければ、
-@code{text-mode-map} か @code{global-map} の @kbd{TAB} キーに割り当てら
+@code{text-mode-map} か @code{global-map} の @key{TAB} キーに割り当てら
 れている命令を使います。
 @end table
 
@@ -1475,7 +1474,7 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 
 このような行を @file{~/.mailrc} ファイルに追加しておけば、
 @code{To} や @code{Cc} (など) のヘッダーで @samp{lmi} と書い
-て @kbd{SPC} を押すだけで、その別名を伸張してくれるはずです。
+て @kbd{@key{SPC}} を押すだけで、その別名を伸張してくれるはずです。
 
 メッセージを送るときには伸張は行なわれません---すべての伸張は明示的
 に (訳注: 実際に自分でメールを書いているときに) 行なわれなくてはなりませ
@@ -1488,7 +1487,7 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 かを「エレクトリック」に (訳注: 巧妙なやり方で) 教えてくれるでしょう。そ
 れらの補完候補の一つを探すには、@kbd{@key{DOWN}} または @kbd{M-n} コマン
 ドでリストを下に読み進んでください。リストを昇るの
-は @kbd{@key{UP}} か @kbd{M-p}、そして選択するのは @kbd{RET} です。
+は @kbd{@key{UP}} か @kbd{M-p}、そして選択するのは @kbd{@key{RET}} です。
 
 変数 @code{ecomplete-sort-predicate} はどのように @code{ecomplete} の合
 致がソートされるかを制御します。

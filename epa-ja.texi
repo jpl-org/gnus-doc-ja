@@ -290,22 +290,22 @@ M-x dired
 
 @table @kbd
 @item : d
-@kindex @kbd{: d}
+@kindex : d
 @findex epa-dired-do-decrypt
 マークされたファイルを復号します。
 
 @item : v
-@kindex @kbd{: v}
+@kindex : v
 @findex epa-dired-do-verify
 マークされたファイルを検証します。
 
 @item : s
-@kindex @kbd{: s}
+@kindex : s
 @findex epa-dired-do-sign
 マークされたファイルに署名します。
 
 @item : e
-@kindex @kbd{: e}
+@kindex : e
 @findex epa-dired-do-encrypt
 マークされたファイルを暗号化します。
 @end table
@@ -331,27 +331,27 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 
 @table @kbd
 @item C-c C-e C-d and C-c C-e d
-@kindex @kbd{C-c C-e C-d}
-@kindex @kbd{C-c C-e d}
+@kindex C-c C-e C-d
+@kindex C-c C-e d
 @findex epa-mail-decrypt
 現在のバッファーにある OpenPGP 装甲を復号します。
 
 @item C-c C-e C-v and C-c C-e v
-@kindex @kbd{C-c C-e C-v}
-@kindex @kbd{C-c C-e v}
+@kindex C-c C-e C-v
+@kindex C-c C-e v
 @findex epa-mail-verify
 現在のバッファーにある OpenPGP のクリアテキストで署名されたメッセージを
 検証します。
 
 @item C-c C-e C-s and C-c C-e s
-@kindex @kbd{C-c C-e C-s}
-@kindex @kbd{C-c C-e s}
+@kindex C-c C-e C-s
+@kindex C-c C-e s
 @findex epa-mail-sign
 現在のバッファーから署名されたメッセージを作ります。
 
 @item C-c C-e C-e and C-c C-e e
-@kindex @kbd{C-c C-e C-e}
-@kindex @kbd{C-c C-e e}
+@kindex C-c C-e C-e
+@kindex C-c C-e e
 @findex epa-mail-encrypt
 @vindex epa-mail-aliases
 現在のバッファーから暗号化されたメッセージを作ります。ディフォルトではメー
