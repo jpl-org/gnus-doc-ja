@@ -19170,7 +19170,7 @@ Gnus は概略バッファーを作成する前に、現在のグループに適
 @kindex V w @r{(概略)}
 @findex gnus-score-find-favourite-words
 スコアで使われている語のリストを表示しま
-す (@code{gnus-score-find-favourite-words})。
+す (@code{gnus-score-find-favorite-words})。
 
 @item V R
 @kindex V R @r{(概略)}
