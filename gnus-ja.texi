@@ -5512,8 +5512,8 @@ Summary Buffer} を参照してください。
 る際に再びエンコードされます)。接頭引数 4 では、1 の場合と同じ動作になり
 ます。接頭引数がこれら以外の場合には、@code{message-forward-as-mime} の
 値を一時的に反転して、接頭引数が与えられなかった場合と同じ動作を行ないま
-す。ディフォルトでは、デコードされたメッセージが rfc822 形式
-の @acronym{MIME} パートとして生成されます。
+す。ディフォルトでは、転送するメッセージをそのメールに埋め込み (インライ
+ン) します。
 
 @item S m
 @itemx m
@@ -6492,8 +6492,9 @@ Gnus エージェント (@pxref{Agent Basics}) はいくつかの記事を自動
 @item / v
 @kindex / v @r{(概略)}
 @findex gnus-summary-limit-to-score
-概略バッファーをあるスコアと同じか、それより大きなスコアを持つ記事に制限
-します (@code{gnus-summary-limit-to-score})。
+@c 原文が変; see the function definition of `gnus-summary-limit-to-score'.
+概略バッファーを、与えたスコアと同じか、それより大きなスコアを持つ記事に
+制限します (@code{gnus-summary-limit-to-score})。
 
 @item / p
 @kindex / p @r{(概略)}
@@ -9520,9 +9521,6 @@ Gravatars は @uref{http://www.gravatar.com/} からオンラインで取得し�
 このコマンドは @acronym{HTML} 記事からその手の ``web bugs'' を取り除かな
 いでブラウザーに渡すので、このコマンドは信頼できる送信者からのメールでだ
 け使うべきです。
-
-@acronym{HTML} を常にブラウザーで表示したいのであれば、
-@code{mm-text-html-renderer} を @code{nil} に設定してください。
 
 このコマンドは画像を含む @acronym{HTML} コンテンツをブラウザーに渡すため
 に一時ファイルを作り、グループを抜け出るときに (もしあなたが望めば) それ

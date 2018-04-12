@@ -353,10 +353,11 @@ Return-Path:\\|^Supersedes:\\|^NNTP-Posting-Date:\\|^X-Trace:\\|@*
 
 @item message-forward-as-mime
 @vindex message-forward-as-mime
-この変数が @code{t} (ディフォルト) だったら、転送されるメッセージ
+この変数が @code{t} だったら、転送されるメッセージ
 は @acronym{MIME} RFC822 パートとして埋め込まれます。@code{nil} だった場
-合は、以前に @acronym{MIME} に対応していなかった Gnus がしたように、転送
-されるメッセージのコピーが、ただ単に新しいメッセージに埋め込まれます。
+合 (ディフォルト) は、以前に @acronym{MIME} に対応していなかった Gnus が
+したように、転送されるメッセージのコピーが、ただ単に新しいメッセージに埋
+め込まれます。
 
 @item message-forward-before-signature
 @vindex message-forward-before-signature
