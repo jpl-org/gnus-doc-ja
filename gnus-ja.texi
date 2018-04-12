@@ -3060,6 +3060,19 @@ Commands} を参照してください。
 Sieve 言語は RFC 3028 で述べられていま
 す (@pxref{Top, Emacs Sieve, Top, sieve-ja, Emacs Sieve})。
 
+@item match-list
+@cindex match-list
+もしこのパラメーターが @code{t} に設定され、か
+つ @code{nnmail-split-method} が @code{gnus-group-split} に設定されてい
+たら、Gnus は @code{list} 分割の省略形と対比し
+て @code{to-address}、@code{to-list}、@code{extra-aliases} およ
+び @code{split-regexp} が一致するかどうかを調べます。
+RFC2919 の @code{List-ID} に準拠するため、分割の正規表現はメールアドレス
+中の @code{@@} またはドット @code{.} に合致するように変更されます。
+
+メーリングリストのヘッダーに合致する正規表現について
+は @code{nnmail-split-abbrev-alist} を参照してください。
+
 @item (agent parameters)
 エージェントを使うようにしてあると、個々のグループでエージェントの振る舞
 いを制御するどのパラメーターも設定することができます。エージェントパラメー
@@ -15208,6 +15221,9 @@ mode) 構文テーブル (syntax table) に従って、完全に @emph{語} (wor
 び @samp{Resent-Cc} の各フィールドに合致します。
 @item any
 @code{from} と @code{to} を統合したものです。
+@item list
+@samp{List-ID}、@samp{List-Post}、@samp{X-Mailing-List}、@samp{X-BeenThere} お
+び @samp{X-Loop} フィールドに合致します。
 @end table
 
 @vindex nnmail-split-fancy-syntax-table
