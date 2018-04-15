@@ -1876,10 +1876,23 @@ WAVE 音響ファイルは @code{wavplayer} で再生されるべきであるこ
 @table @code
 @item mailcap-parse-mailcaps
 @findex mailcap-parse-mailcaps
+@vindex mailcap-prefer-mailcap-viewers
 @file{~/.mailcap} ファイルを解析します。
 
 @item mailcap-mime-info
 引数として @acronym{MIME} タイプを受け取り、合致するビューワーを返します。
+
+どのビューワーが選択されるかは、変
+数 @code{mailcap-prefer-mailcap-viewers} が制御します。ディフォルト
+の @code{nil} ではない値では、システム共通のものや Emacs が提供するビュー
+ワーの設定より @file{~/.mailcap} の設定を優先します。
+
+もし @code{nil} だったら Emacs が提供するビューワーの設定が優先されます。
+さらに、システム共通のものか個人的な設定であるかとは無関係に、最も明確な
+ビューワーが、より明確でない設定より優先されます。これ
+は @file{~/.mailcap} における @samp{image/*} の設定より
+も @file{/etc/mailcap} における @samp{image/gif} の方が優先されるという
+ことです。
 @end table
 
 @node Standards

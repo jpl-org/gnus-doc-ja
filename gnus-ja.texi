@@ -5706,6 +5706,22 @@ Manual}, にさらなる情報があります。
 す (@code{gnus-summaryyank-message})。この命令は貼り付けたいメッセージバッ
 ファーの入力を促し、プロセス/接頭引数の習慣を理解しま
 す (@pxref{Process/Prefix})。
+
+@item S A
+@kindex S A @r{(概略)}
+@findex gnus-summary-attach-article
+現在の記事を、すでに存在するメッセージ作成バッファーに添付しま
+す (@code{gnus-summary-attach-message})。もしそのようなバッファーが無い
+ときは新しいものを作成します。このコマンドは、どのメッセージバッファーに
+添付したいかを尋ねます。また、プロセス/接頭引数の習慣を理解しま
+す (@pxref{Process/Prefix})。
+
+
++Attach the current article into an already existing Message
++composition buffer (@code{gnus-summary-attach-message}).  If no such
++buffer exists, a new one is created.  This command prompts for what
++message buffer you want to yank into, and understands the
++process/prefix convention (@pxref{Process/Prefix}).
 @end table
 
 @node Canceling and Superseding
