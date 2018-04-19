@@ -24173,9 +24173,9 @@ Spam グループでは、ディフォルトですべてのメッセージが sp
 @code{ham-process-destination} グループパラメーターが示す場所
 か @code{gnus-ham-process-destinations} 変数の中で合致する場所のどちらか
 に移されます。後者はグループ名に合致する正規表現のリストです (@kbd{M-x
-customize-variable @key{@key{RET}} gnus-ham-process-destinations} によっ
-てこの変数をカスタマイズするのが最も簡単です)。変数を手でカスタマイズす
-る方が好きな人のために言っておくと、それぞれのグループ名のリストは普通
+customize-variable @key{RET} gnus-ham-process-destinations} によってこの
+変数をカスタマイズするのが最も簡単です)。変数を手でカスタマイズする方が
+好きな人のために言っておくと、それぞれのグループ名のリストは普通
 の Lisp の list です。@code{ham-process-destination} パラメーターが設定
 されていないと、ham 記事は移動させられません。
 @code{spam-mark-ham-unread-before-move-from-spam-group} パラメーターが設
@@ -24210,7 +24210,7 @@ customize-variable @key{@key{RET}} gnus-ham-process-destinations} によっ
 の @strong{spam} 記事は、@code{spam-process-destination} グループパラメー
 ターが示す場所か @code{gnus-spam-process-destinations} 変数の中で合致す
 る場所のどちらかに移されます。後者はグループ名に合致する正規表現のリスト
-です (@kbd{M-x customize-variable @key{@key{RET}}
+です (@kbd{M-x customize-variable @key{RET}
 gnus-spam-process-destinations} によってこの変数をカスタマイズするのが最
 も簡単です)。変数を手でカスタマイズする方が好きな人のために言っておくと、
 それぞれのグループ名のリストは普通の Lisp の list です。
@@ -28281,10 +28281,10 @@ Gnus はメールとニュースがほとんど同じだとみなします。本
 スクのファイルから読めるのに対して、ニュース記事は一般
 に @acronym{NNTP} プロトコルで取得します。Gnus の内部構造は、それらのた
 めに「フロントエンド」と数々の「バックエンド」から成り立っています。内部
-的には、あなたがグループに入る (そう、@key{@key{RET}} をたたく) と、それ
-によって Gnus のフロントエンドの機能を呼び出します。そうするとフロントエ
-ンドは、バックエンドに「foo グループの記事のリストをくれ」とか「4711 番
-の記事を見せてよ」と「話す」のです。
+的には、あなたがグループに入る (そう、@key{RET} をたたく) と、それによっ
+て Gnus のフロントエンドの機能を呼び出します。そうするとフロントエンドは、
+バックエンドに「foo グループの記事のリストをくれ」とか「4711 番の記事を
+見せてよ」と「話す」のです。
 
 そういうわけで、バックエンドは主にプロトコルか、ファイルの形式とディレク
 トリーの配置のどちらかを定義します。前者は @code{nntp} バックエンド
