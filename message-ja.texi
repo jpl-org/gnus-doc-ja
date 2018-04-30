@@ -326,7 +326,7 @@ Return-Path:\\|^Supersedes:\\|^NNTP-Posting-Date:\\|^X-Trace:\\|@*
 @item message-forward-included-headers
 @vindex message-forward-included-headers
 @code{nil} でなければ、メッセージを転送するとき、この正規表現に合致する
-ヘッダーだけが保持されます。
+ヘッダーだけが保持されます。これは正規表現のリストであっても構いません。
 
 @item message-make-forward-subject-function
 @vindex message-make-forward-subject-function
