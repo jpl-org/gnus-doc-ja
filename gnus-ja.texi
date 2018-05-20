@@ -5443,7 +5443,7 @@ Summary Buffer} を参照してください。
 @findex gnus-summary-wide-reply
 現在の記事を書いた人に対して、広い返答 (wide reply) をしま
 す (@code{gnus-summary-wide-reply})。「広い返答」とはヘッダー
-の @code{To}, @code{From}, (もしくは @code{Reply-to}) と @code{Cc}) のす
+の @code{To}, @code{From}, (もしくは @code{Reply-To}) と @code{Cc}) のす
 べての人に返答をすることです。@code{Mail-Followup-To} があれば、代わりに
 それが使われます。
 
@@ -5468,7 +5468,7 @@ Summary Buffer} を参照してください。
 現在の記事を書いた人に対して、非常に広い返答 (very wide reply) をしま
 す (@code{gnus-summary-very-wide-reply})。「非常に広い返答」とは、プロセ
 ス/接頭引数で指定されたすべての記事のヘッダーの @code{To}, @code{From},
-(もしくは @code{Reply-to}) と @code{Cc}) のすべての人に返答をすることで
+(もしくは @code{Reply-To}) と @code{Cc}) のすべての人に返答をすることで
 す。この命令はプロセス/接頭引数の習慣を使います。
 
 @item S V
@@ -11978,7 +11978,7 @@ Gnus はサーバーからその記事を取ってこようとしま
 ていたならば、その領域にあるテキストだけを yank します。
 
 訳注:「広い返答」とはヘッダーの @code{To}, @code{From}, (もしく
-は @code{Reply-to}) と @code{Cc}) のすべての人に返答をすることです。
+は @code{Reply-To}) と @code{Cc}) のすべての人に返答をすることです。
 @code{Mail-Followup-To} があれば、代わりにそれが使われます。
 
 @item F

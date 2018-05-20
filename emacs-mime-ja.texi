@@ -739,7 +739,7 @@ Translation}.
 パートが読まれた時刻 (RFC822 形式) です (@code{Content-Disposition})。
 
 @item recipients
-パートを誰宛てに暗号化/署名するかを指定します。これは To/CC を基にした自
+パートを誰宛てに暗号化/署名するかを指定します。これは To/Cc を基にした自
 動検出よりも優先されます。
 
 @item sender

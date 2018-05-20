@@ -171,7 +171,7 @@ Message は返答がどこに行くか (@pxref{Responses}) を標準の方法で
 が使われるでしょう。
 
 リストのそれぞれの要素は cons セルです。@sc{car} はヘッダーの名前 (例え
-ば @code{Cc}) で、@sc{cdr} はヘッダーの値 (例え
+ば @code{CC}) で、@sc{cdr} はヘッダーの値 (例え
 ば @samp{larsi@@ifi.uio.no}) です。これらすべてのヘッダーは、送出される
 メールのヘッダーに挿入されます。
 
@@ -181,7 +181,7 @@ Message は返答がどこに行くか (@pxref{Responses}) を標準の方法で
 @findex message-wide-reply
 @code{message-wide-reply} は、現在のバッファーにあるメッセージへの広い返
 答のメッセージバッファーを出現させます。「広い返答」とは @code{To}、
-@code{From} (または @code{Reply-to}) および @code{Cc} ヘッダーに挙げられ
+@code{From} (または @code{Reply-To}) および @code{CC} ヘッダーに挙げられ
 ているすべての人たちに届く返答です。
 
 @vindex message-wide-reply-to-function
@@ -194,7 +194,7 @@ Message は返答がどこに行くかを決定するために標準の方法を
 @vindex message-dont-reply-to-names
 正規表現  @code{message-dont-reply-to-names} (あるいはこれは正規表現のリ
 スト、または判断するための関数でもよい) に合致するアドレス
-は @code{Cc} ヘッダーから取り除かれます。@code{nil} にすると、あなたのメー
+は @code{CC} ヘッダーから取り除かれます。@code{nil} にすると、あなたのメー
 ルアドレスだけが取り除かれます。
 
 @vindex message-prune-recipient-rules
@@ -208,8 +208,8 @@ Message は返答がどこに行くかを決定するために標準の方法を
 と、説明はややこしいのですが、使うのは簡単です。
 
 例えば @samp{foo@@example.org} からメールを受け取ったのだけれど、
-Cc のリストに実は同じ人の @samp{foo@@zot.example.org} が含まれていると、
-広い返答はそれら両方のアドレス宛てに出て行ってしまうでしょう。
+@code{CC} のリストに実は同じ人の @samp{foo@@zot.example.org} が含まれて
+いると、広い返答はそれら両方のアドレス宛てに出て行ってしまうでしょう。
 
 これを避けるには、以下のようなことをすれば良いのです:
 
@@ -490,10 +490,10 @@ The Gnus Manual}) が非-@code{nil} に設定されているグループに対�
 す (その場合にそれが空っぽだったら、そのフィールドが削除されて自動生成さ
 れたもので置き換えられることはありません。これは個々のメッセージについ
 て MFT の生成を禁止させる基本です)。無かった場合は受取人のアドレスのリス
-ト (To: と Cc: ヘッダーにある) を、それらの一つが購読しているメーリング
+ト (To: と CC: ヘッダーにある) を、それらの一つが購読しているメーリング
 リストのアドレスかどうかを調べます。それらのどれもがメーリングリストのア
 ドレスでなかったら、MFT は作られません。それ以外の場合には MFT がヘッダー
-に付け加えられ、その値は To: と Cc: にあるすべてのアドレスに設定されます。
+に付け加えられ、その値は To: と CC: にあるすべてのアドレスに設定されます。
 
 @kindex C-c C-f C-a
 @findex message-generate-unsubscribed-mail-followup-to
@@ -521,7 +521,7 @@ to-address で設定された他の誰かより優先させるために、明示
 
 @table @code
 @item use
-常に MFT を尊重します。フォローアップ記事の To: と Cc: ヘッダーは、元の
+常に MFT を尊重します。フォローアップ記事の To: と CC: ヘッダーは、元の
 記事の MFT ヘッダーから引き出します。これがディフォルトです。
 
 @item nil
@@ -594,17 +594,17 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 @item C-c C-f C-b
 @kindex C-c C-f C-b
 @findex message-goto-bcc
-@code{Bcc} ヘッダーに行きます (@code{message-goto-bcc})。
+@code{BCC} ヘッダーに行きます (@code{message-goto-bcc})。
 
 @item C-c C-f C-w
 @kindex C-c C-f C-w
 @findex message-goto-fcc
-@code{Fcc} ヘッダーに行きます (@code{message-goto-fcc})。
+@code{FCC} ヘッダーに行きます (@code{message-goto-fcc})。
 
 @item C-c C-f C-c
 @kindex C-c C-f C-c
 @findex message-goto-cc
-@code{Cc} ヘッダーに行きます (@code{message-goto-cc})。
+@code{CC} ヘッダーに行きます (@code{message-goto-cc})。
 
 @item C-c C-f C-s
 @kindex C-c C-f C-s
@@ -661,7 +661,7 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 それに現在の @code{user-mail-address} を追加します。
 
 省略可能な引数 @code{include-cc} が @code{nil} ではない場合は、
-@samp{Cc:} ヘッダーにあるアドレスも @samp{Mail-Followup-To:} ヘッダーに
+@samp{CC:} ヘッダーにあるアドレスも @samp{Mail-Followup-To:} ヘッダーに
 置かれます。
 @end table
 
@@ -693,7 +693,7 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 @kindex C-c C-l
 @findex message-to-list-only
 メーリングリスト宛てだけにメッセージを送ります。
-@code{To:} と @code{Cc:} ヘッダーから、そのメーリングリスト以外のアドレ
+@code{To:} と @code{CC:} ヘッダーから、そのメーリングリスト以外のアドレ
 スを削除します。
 
 @item C-c M-n
@@ -744,15 +744,15 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 @item C-c C-f t
 @kindex C-c C-f t
 @findex message-reduce-to-to-cc
-@samp{To} ヘッダーの内容を @samp{Cc} か @samp{Bcc} ヘッダーの内容で置き
-換えます (あるいはもし @samp{Cc} ヘッダーが無かったら、@samp{Bcc} ヘッダー
+@samp{To} ヘッダーの内容を @samp{CC} か @samp{BCC} ヘッダーの内容で置き
+換えます (あるいはもし @samp{CC} ヘッダーが無かったら、@samp{BCC} ヘッダー
 の内容で置き換えます)。
 
 @item C-c C-f w
 @kindex C-c C-f w
 @findex message-insert-wide-reply
 初めはそのメッセージが広い返答のために作られたものでなかった場合でも、広
-い返答をしているように @samp{To} と @samp{Cc} ヘッダーを挿入します。
+い返答をしているように @samp{To} と @samp{CC} ヘッダーを挿入します。
 
 @item C-c C-f a
 @kindex C-c C-f a
@@ -897,7 +897,7 @@ emacs-mime-ja, The Emacs MIME Manual}) を使えば、どんな複雑なマル�
 
 Message は @acronym{IDNA} に準拠した送信エージェントです。利用者
 は @acronym{IDNA} のために一般には何もする必要がありません。
-Message は @code{From}、@code{To} および @code{Cc} ヘッダーにある
+Message は @code{From}、@code{To} および @code{CC} ヘッダーにある
 非-@acronym{ASCII} ドメイン名を自動的にエンコードします。
 
 もっと @acronym{IDNA} が有名になるまでは、Message は実際にドメイン名
@@ -1002,7 +1002,7 @@ GnuPG をインストール
 * Passphrase caching::          パスフレーズをキャッシュする
 * PGP Compatibility::           古い実装との互換性
 * Encrypt-to-self::             自分が作った暗号化メッセージを読む
-* Bcc Warning::                 Bcc があるとき暗号を使ってはだめ
+* BCC Warning::                 BCC があるとき暗号を使ってはだめ
 @end menu
 
 @node Signing and encryption
@@ -1297,8 +1297,8 @@ gpg --use-agent --sign < /dev/null > /dev/null
 @node Encrypt-to-self
 @subsection 自分が作った暗号化メッセージを読む
 
-ディフォルトではメッセージはすべての受取人 (@code{To}, @code{Cc},
-@code{Bcc} ヘッダー) に宛てて暗号化されます。ということは、あなたはあな
+ディフォルトではメッセージはすべての受取人 (@code{To}, @code{CC},
+@code{BCC} ヘッダー) に宛てて暗号化されます。ということは、あなたはあな
 た自身のメッセージを解読できないのです。あなた自身の鍵に宛てても必ず暗号
 化するためには、いくつかのとりうる解があります:
 @enumerate
@@ -1317,17 +1317,17 @@ gpg --use-agent --sign < /dev/null > /dev/null
 (EasyPG で @acronym{S/MIME} を使う場合用) をカスタマイズする。
 @end enumerate
 
-@node Bcc Warning
-@subsection Bcc があるとき暗号を使ってはだめ
+@node BCC Warning
+@subsection BCC があるとき暗号を使ってはだめ
 
-@code{Bcc} ヘッダーはメッセージの受取人を隠すためのものです。しかし、も
-しメッセージが暗号化されると、@code{Bcc} ヘッダーにあるすべての電子メー
+@code{BCC} ヘッダーはメッセージの受取人を隠すためのものです。しかし、も
+しメッセージが暗号化されると、@code{BCC} ヘッダーにあるすべての電子メー
 ルアドレスは、すべての受取人に対して警告なしに明かされてしまいます。これ
 はバグです。
 @vindex mml-secure-safe-bcc-list
-しかし今やメッセージはまさに送信しようとする暗号化メールで @code{Bcc} の
+しかし今やメッセージはまさに送信しようとする暗号化メールで @code{BCC} の
 受取人が見つかると警告を発するようになりました。もしそれら
-の @code{Bcc} アドレスを晒しても安全であると確信するのであれば、変
+の @code{BCC} アドレスを晒しても安全であると確信するのであれば、変
 数 @code{mml-secure-safe-bcc-list} (電子メールアドレスのリスト) を設定し
 てください。
 @uref{https://debbugs.gnu.org/cgi/bugreport.cgi?bug=18718} を見てくださ
@@ -1474,16 +1474,16 @@ alias ding "ding@@ifi.uio.no (ding mailing list)"
 @end example
 
 このような行を @file{~/.mailrc} ファイルに追加しておけば、
-@code{To} や @code{Cc} (など) のヘッダーで @samp{lmi} と書い
+@code{To} や @code{CC} (など) のヘッダーで @samp{lmi} と書い
 て @kbd{@key{SPC}} を押すだけで、その別名を伸張してくれるはずです。
 
 メッセージを送るときには伸張は行なわれません---すべての伸張は明示的
 に (訳注: 実際に自分でメールを書いているときに) 行なわれなくてはなりませ
 ん。
 
-@code{ecomplete} を使っていると、@code{To} と @code{Cc} ヘッダーにあるす
+@code{ecomplete} を使っていると、@code{To} と @code{CC} ヘッダーにあるす
 べてのアドレスが、自動的に @file{~/.ecompleterc} ファイルに格納されます。
-@code{To} と @code{Cc} ヘッダーにテキストを書き込んだときに、
+@code{To} と @code{CC} ヘッダーにテキストを書き込んだときに、
 @code{ecomplete} はそこに格納されている値を調べて、どんな補完候補がある
 かを「エレクトリック」に (訳注: 巧妙なやり方で) 教えてくれるでしょう。そ
 れらの補完候補の一つを探すには、@kbd{@key{DOWN}} または @kbd{M-n} コマン
@@ -1686,7 +1686,7 @@ Message が Gnus 上で走っている場合、メッセージバッファーは
 @item message-alternative-emails
 @vindex message-alternative-emails
 あなたの第二、第三のメールアドレスに合致する正規表現、または判断するため
-の関数です。元の記事の To、Cc または From ヘッダーにあって、この変数に合
+の関数です。元の記事の To、CC または From ヘッダーにあって、この変数に合
 致する最初のアドレスが、ディフォルトの From の値を置き換えて、出て行くメッ
 セージの From 欄として使われます。
 
@@ -1705,7 +1705,7 @@ Message が Gnus 上で走っている場合、メッセージバッファーは
 
 @item message-allow-no-recipients
 @vindex message-allow-no-recipients
-@code{Gcc} と @code{Fcc} 以外に受取人がいなかった場合 (訳注: To, Cc,
+@code{GCC} と @code{FCC} 以外に受取人がいなかった場合 (訳注: To, CC,
 Newsgroups などが空だった場合) に、何をするかを設定します。
 @code{always} だったら送信できますが、@code{never} だったら送信できませ
 ん。@code{ask} (それがディフォルト) だったら、どうするかを尋ねられます。
@@ -1718,7 +1718,7 @@ Newsgroups などが空だった場合) に、何をするかを設定します�
 
 @lisp
 (setq message-hidden-headers
-      '(not "From" "Subject" "To" "Cc" "Newsgroups"))
+      '(not "From" "Subject" "To" "CC" "Newsgroups"))
 @end lisp
 
 それらのヘッダーは、それら以外の部分にバッファーを狭めるこ
@@ -1728,8 +1728,8 @@ Newsgroups などが空だった場合) に、何をするかを設定します�
 @item message-header-synonyms
 @vindex message-header-synonyms
 似た意味を持つヘッダー名のリストのリストです。例えばこのリスト
-が @code{Cc} と @code{To} を要素に持つリストを含んでいると、メッセージが
-すでに受信者に @code{Cc} されている場合、
+が @code{CC} と @code{To} を要素に持つリストを含んでいると、メッセージが
+すでに受信者に @code{CC} されている場合、
 @code{message-carefully-insert-headers} は @code{To} ヘッダーを挿入しま
 せん。
 @end table
@@ -1748,7 +1748,7 @@ Newsgroups などが空だった場合) に、何をするかを設定します�
 @vindex message-ignored-mail-headers
 メールを出す前に取り除かれるヘッダーの正規表現です。
 ディフォルトは@*
-@samp{^[GF]cc:\\|^Resent-Fcc:\\|^Xref:\\|^X-Draft-From:\\|@*
+@samp{^[GF]cc:\\|^Resent-FCC:\\|^Xref:\\|^X-Draft-From:\\|@*
 ^X-Gnus-Agent-Meta-Information:} です。
 
 @item message-default-mail-headers
@@ -2050,7 +2050,7 @@ node) として使います。文字列だったら、その文字列を使い�
 @item empty
 記事が空かどうかを調べます。
 @item existing-newsgroups
-@code{Newsgroups} と @code{Follouup-to} ヘッダーに記入されているニュース
+@code{Newsgroups} と @code{Followup-To} ヘッダーに記入されているニュース
 グループが存在するかどうかを調べます。
 @item from
 @code{From} ヘッダーがまともかどうかを調べます。
@@ -2075,7 +2075,7 @@ node) として使います。文字列だったら、その文字列を使い�
 @item quoting-style
 最後の引用部分に続くテキストがあるかどうかを調べます。
 @item repeated-newsgroups
-@code{Newsgroups} と @code{Followup-to} ヘッダーで、同じグループ名が繰り
+@code{Newsgroups} と @code{Followup-To} ヘッダーで、同じグループ名が繰り
 返し使われているかどうかを調べます。
 @item reply-to
 @code{Reply-To} ヘッダーがまともかどうかを調べます。
@@ -2090,10 +2090,10 @@ node) として使います。文字列だったら、その文字列を使い�
 @item shoot
 @code{Message-ID} ヘッダーのドメイン項がまともかどうかを調べます。
 @item shorten-followup-to
-投稿するグループの数を @code{Followup-to} ヘッダーを付け加えること
+投稿するグループの数を @code{Followup-To} ヘッダーを付け加えること
 によって少なくするかどうかを調べます (訳注: 複数のニュースグルー
-プに投稿する記事に @code{Followup-to} ヘッダーが無い場合に発動され、
-@code{Followup-to} ヘッダーに記入する値の入力を要求します)。
+プに投稿する記事に @code{Followup-To} ヘッダーが無い場合に発動され、
+@code{Followup-To} ヘッダーに記入する値の入力を要求します)。
 @item signature
 署名の長さを調べます。
 @item size
@@ -2106,7 +2106,7 @@ node) として使います。文字列だったら、その文字列を使い�
 一般の利用者がニュース記事の取り消し (cancel) を行なうときにも使いますが、
 その場合は、この検査を通らずに、それ専用の枠組みで実行されます。)
 @item valid-newsgroups
-@code{Newsgroups} と @code{Followup-to} ヘッダーが構文的に正しいかどうか
+@code{Newsgroups} と @code{Followup-To} ヘッダーが構文的に正しいかどうか
 を調べます。
 @end table
 
@@ -2118,7 +2118,7 @@ node) として使います。文字列だったら、その文字列を使い�
 @vindex message-ignored-news-headers
 投稿する前に取り除かれるヘッダーの正規表現です。
 ディフォルトは@*
-@samp{^NNTP-Posting-Host:\\|^Xref:\\|^[BGF]cc:\\|^Resent-Fcc:\\|@*
+@samp{^NNTP-Posting-Host:\\|^Xref:\\|^[BGF]cc:\\|^Resent-FCC:\\|@*
 ^X-Draft-From:\\|^X-Gnus-Agent-Meta-Information:} です。
 
 @item message-default-news-headers
@@ -2503,7 +2503,7 @@ well.\n\n"} です。
 
 @item message-fcc-externalize-attachments
 @vindex message-fcc-externalize-attachments
-@code{nil} だったら、Fcc で保存するメッセージのコピーに通常のパートとし
+@code{nil} だったら、FCC で保存するメッセージのコピーに通常のパートとし
 てファイルを添付します。非-@code{nil} だった場合は、外部パートとしてロー
 カルファイルを添付します (訳注: そのパートをローカルファイルに書き出し
 て、メッセージにはそのファイルの格納場所を示すタグだけを含んでいるパート
@@ -2654,7 +2654,7 @@ Message はこれらのリストを操作するために @code{message-add-actio
 @item wide reply
 「広い返答」(wide reply) は、応答しようとしているメッセージに書かれてい
 た @emph{すべての} 人々へのメールによる応答です。以下のヘッダーから抽出
-したすべてのメールアドレスを連結して、出て行く @code{To}/@code{Cc} ヘッ
+したすべてのメールアドレスを連結して、出て行く @code{To}/@code{CC} ヘッ
 ダーを作ります:
 
 @table @code
@@ -2662,7 +2662,7 @@ Message はこれらのリストを操作するために @code{message-add-actio
 (@code{Reply-To} が無い限りこれが使われますが、ある場合は代わりにそれが
 使われます)。
 
-@item Cc
+@item CC
 
 @item To
 @end table
@@ -2683,7 +2683,7 @@ Message はこれらのリストを操作するために @code{message-add-actio
 @end table
 
 もし @code{Mail-Copies-To} ヘッダーがあったならば、それ
-が @samp{never} でない限り、新しい @code{Cc} ヘッダーの基として使われま
+が @samp{never} でない限り、新しい @code{CC} ヘッダーの基として使われま
 す。
 @end table
 
