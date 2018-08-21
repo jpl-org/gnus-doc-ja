@@ -14064,6 +14064,13 @@ machine imap.gmail.com login <username> password <password> port imap
 @item nnimap-record-commands
 もし @code{nil} でなければ、すべての @acronym{IMAP} コマンド
 を @samp{"*imap log*"} バッファーに記録します。
+
+@item nnimap-use-namespaces
+もし @code{nil} でなければ、nnimap グループ名において IMAP 名前空間の接
+頭辞を省略します。もしあなたのメールボックス
+が @samp{INBOX} や @samp{INBOX.Lists.emacs} のように名付けられているとし
+ても、nnimap グループ名を @samp{INBOX} や @samp{Lists.emacs} のようにし
+たいのであれば、このオプションを有効にしてください。
 @end table
 
 @node Client-Side IMAP Splitting
