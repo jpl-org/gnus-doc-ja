@@ -356,26 +356,37 @@ Secret items は @dfn{collections} にグループ化されます。コレクシ
 
 @defun secrets-create-item collection item password &rest attributes
 この関数はラベル @var{item} とパスワード @var{password} を備えた新し
-い item を @var{collection} の中に作ります。@var{attributes} は生成され
-る item に設定される鍵と値の対です。鍵はコロンで始まるキーワード・シンボ
-ルです。以下に例を示します:
+い item を @var{collection} の中に作ります。ラベ
+ル @var{item} は @var{collection} の中でユニークである必要はありません。
+@var{attributes} は生成される item に設定される鍵と値の対です。鍵はコロ
+ンで始まるキーワード・シンボルです。以下に例を示します:
 
 @example
-;; "session" というセッション、ラベルは "my item" で
-;; secret (パスワード) は "geheim"
+;; セッションは "session" 、ラベルは "my item" で
+;; secret (パスワード) は "geheim" です。
 (secrets-create-item "session" "my item" "geheim"
  :method "sudo" :user "joe" :host "remote-host")
 @end example
+
+@code{:xdg:schema} キーは生成される item の範囲、すなわち item が目的と
+するアプリケーション、を決定します。これ
+は "org.freedesktop.NetworkManager.Mobile"、あるい
+は "org.gnome.OnlineAccounts" のような単なる文字列で、他の必要なキーはこ
+れによって決定されます。もし @code{:xdg:schema} の指定が無い場合は、ディ
+フォルトで "org.freedesktop.Secret.Generic" が使われます。
 @end defun
 
 @defun secrets-get-secret collection item
 @var{collection} の中で @var{item} というラベルが付いてい
-る item の secret を返します。該当する item が無い場合は @code{nil} を返
-します。
+る item の secret を返します。もし @var{item} というラベルの item がいく
+つかある場合、どれが返されるかは決まっていません。該当する item が無い場
+合は @code{nil} を返します。
 @end defun
 
 @defun secrets-delete-item collection item
 この関数は @var{collection} の中の @var{item} という item を取り除きます。
+もし @var{item} というラベルの item がいくつかある場合、どれが取り除かれ
+るかは決まっていません。
 @end defun
 
 Secret item を生成する間に設定されるルックアップ属性は、鍵と値の対でなけ
@@ -385,18 +396,22 @@ Secret item を生成する間に設定されるルックアップ属性は、�
 
 @defun secrets-get-attribute collection item attribute
 @var{collection} の中で @var{item} というラベルが付いている item の、
-鍵 @var{attribute} に対応する値を返します。該当する item が無かった
-り item がこの鍵を持っていない場合、この関数は @code{nil} を返します。
+鍵 @var{attribute} に対応する値を返します。もし @var{item} というラベル
+の item がいくつかある場合、どれが返されるかは決まっていません。該当す
+る item が無かったり item がこの鍵を持っていない場合、この関数
+は @code{nil} を返します。
 @end defun
 
 @defun secrets-get-attributes collection item
 @var{collection} の中で @var{item} というラベルが付いている、item のルッ
-クアップ属性を返します。該当する item が無かったり item が属性を持ってい
-ない場合は @code{nil} を返します。以下に例を示します:
+クアップ属性を返します。もし @var{item} というラベルの item がいくつかあ
+る場合、どれが返されるかは決まっていません。該当する item が無かった
+り item が属性を持っていない場合は @code{nil} を返します。以下に例を示し
+ます:
 
 @example
 (secrets-get-attributes "session" "my item")
-     @result{} ((:user . "joe") (:host ."remote-host"))
+     @result{} ((:user . "joe") (:host . "remote-host"))
 @end example
 @end defun
 
