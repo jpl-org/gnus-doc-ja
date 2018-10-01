@@ -137,8 +137,8 @@ Sieve モードは専用の略語表 (@code{sieve-mode-abbrev-table}) と構文�
 @kindex C-c RET
 @findex sieve-manage
 @cindex manage remote sieve script
-「Sieve-管理」プロトコル (Managesieve protocol) を使って、遠隔サーバーに
-接続します。
+「Sieve-管理」プロトコル (Manage Sieve protocol) を使って、遠隔サーバー
+に接続します。
 
 @item C-c C-l
 @kindex C-c C-l

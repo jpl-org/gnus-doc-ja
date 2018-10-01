@@ -4370,7 +4370,7 @@ method) を持っていなければなりませんが。
 か変な、自然ではない方法で修正したいときに使われるかもしれません。
 
 @item gnus-group-prepared-hook
-@vindex gnus-group-prepare-hook
+@vindex gnus-group-prepared-hook
 グループバッファーが生成された後の一番最後に呼び出されます。例えばポイン
 トをどこかに移動させたいときなどに使えます。
 
