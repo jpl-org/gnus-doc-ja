@@ -21121,6 +21121,19 @@ Notmuch 検索エンジンの実行形式の名前です。ディフォルト
 @samp{notmuch} が返すそれぞれのファイルの名前からグループ名を得る
 ために取り除く接頭辞です (得られる名前は @samp{.} の代わり
 に @samp{/} を使っているものですが)。これは正規表現です。
+
+@item nnir-notmuch-filter-group-names-function
+@samp{notmuch} の ``path:'' 検索キーワードとして使うために、検索するグルー
+プの名前を変換する関数です。ディフォルトは @code{nil} で、``path:'' キー
+ワードは使いません。関数にする場合、これは単一のグループ名を受け取って、
+@samp{notmuch} が認識できる変換された名前を返すように呼び出すことができ
+るものでなければなりません。例えば、多くのメールバックエンドではグループ
+名のドットをスラッシュに変換する必要がありますが、それを成し遂げるにはこ
+のオプションを次のようにしてください:
+
+@example
+(lambda (g) (replace-regexp-in-string "\\." "/" g))
+@end example
 @end table
 
 @node The hyrex Engine
