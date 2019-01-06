@@ -17,7 +17,7 @@
 このファイルは Emacs SASL ライブラリー、バージョン @value{VERSION} を説
 明します。
 
-Copyright @copyright{} 2000, 2004--2018 Free Software Foundation, Inc.
+Copyright @copyright{} 2000, 2004--2019 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
