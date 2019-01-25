@@ -119,6 +119,16 @@ machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @
 る @var{:user} でもあります。@code{login} および @code{account} も使うこ
 とができます。
 
+さらに、このファイルを TLS 接続を設定するときに使うクライアント証明書を
+定義するために使うこともできます。そのフォーマットは次の通りです:
+
+@example
+machine @var{mymachine} port @var{myport} key @var{key} cert @var{cert}
+@end example
+
+@var{key} と @var{cert} はそれぞれ key を含むファイル名と使用する証明書
+です。
+
 シングルまたはダブルクオートで囲むことによって、パスワードや他の要素の中
 で空白文字を使うことができます。
 
