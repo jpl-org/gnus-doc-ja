@@ -731,13 +731,16 @@ Translation}.
 パートの説明書きです (@code{Content-Description})。
 
 @item creation-date
-パートが作成された時刻 (RFC822 形式) です (@code{Content-Disposition})。
+パートが作成された時刻です (@code{Content-Disposition})。RFC 822 または
+その後継の形式を使います。
 
 @item modification-date
-パートが変更された時刻 (RFC822 形式) です (@code{Content-Disposition})。
+パートが変更された時刻 (@code{Content-Disposition})。RFC 822 またはその
+後継の形式を使います。
 
 @item read-date
-パートが読まれた時刻 (RFC822 形式) です (@code{Content-Disposition})。
+パートが読まれた時刻です (@code{Content-Disposition})。RFC 822 またはそ
+の後継の形式を使います。
 
 @item recipients
 パートを誰宛てに暗号化/署名するかを指定します。これは To/CC を基にした自
@@ -766,8 +769,8 @@ Translation}.
 @item format
 テキストを整形するためのパラメーターで、有効な値は @samp{fixed} (ディフォ
 ルト) と @samp{flowed} です。普通はこれを手で設定しません。それは、テキ
-ストの本文が、RFC 2646 で定められた特別な方法で整形されることを必要とす
-るからです。@xref{Flowed text}.
+ストの本文が、RFC2646 で定められた特別な方法で整形されることを必要とする
+からです。@xref{Flowed text}.
 @end table
 
 以下は @samp{application/octet-stream} のためのパラメーターです:
@@ -787,8 +790,8 @@ Translation}.
 び @samp{mailserver} のどれかです。(@code{Content-Type}.)
 
 @item expiration
-ファイルが取得できなくなるかもしれない日時 (RFC822 形式) です。
-(@code{Content-Type}.)
+ファイルが取得できなくなる日付です (@code{Content-Type})。RFC 822 または
+その後継の形式を使います。
 
 @item size
 Octet (8-bit) の単位で表したファイルのサイズです。(@code{Content-Type}.)
@@ -1344,7 +1347,7 @@ Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにし�
 @menu
 * rfc2045::      @code{Content-Type} ヘッダーのエンコード
 * rfc2231::      @code{Content-Type} ヘッダーの解析
-* ietf-drums::   RFC822bis で定義されているメールヘッダーの処理
+* ietf-drums::   RFC 2822 で定義されているメールヘッダーの処理
 * rfc2047::      ヘッダーにある語のエンコードとデコード
 * time-date::    日付の解析と時刻を操作する関数
 * qp::           Quoted-Printable のエンコードとデコード
@@ -1423,7 +1426,8 @@ Content-Type: application/x-stuff;
 @node ietf-drums
 @section ietf-drums
 
-@dfn{drums} は RFC822 の置き換え作業をしている IETF の作業部会です。
+@dfn{drums} は RFC 2822 の作業をした IETF の作業部会でした。RFC 2822 は
+現在ある電子メールの以前の標準であり、RFC 822 の最初の後継でした。
 
 このライブラリーによって提供される関数は次の通りです:
 
@@ -1627,8 +1631,8 @@ RFC2047 は二つのエンコーディングの形式を定めています。一
 
 @table @var
 @item date
-RFC822 (または類似の) 形式の日付の文字列。例: @code{"Sat Sep 12 12:21:54
-1998 +0200"}
+RFC 822 (または類似の) 形式の日付の文字列。
+例: @code{"Sat Sep 12 12:21:54 1998 +0200"}
 
 @item time
 Emacs の内部形式の時刻。例: @code{(13818 26466 0 0)}
@@ -1888,56 +1892,59 @@ WAVE 音響ファイルは @code{wavplayer} で再生されるべきであるこ
 
 Emacs @acronym{MIME} ライブラリーは、(やや) 多くの RFC、ドラフトおよび標
 準ドキュメントに従って、様々な要素を取り扱います。この章では関連するもの
-を列挙します。これらはすべて @uref{http://quimby.gnus.org/notes/} から取
-得可能です。
+を列挙します。これらはすべて @uref{https://www.rfc-editor.org} から取得
+可能です。
 
 @table @dfn
-@item RFC822
-@itemx STD11
-ARPA インターネットテキストメッセージの書式のための標準。
+@item RFC 5322
+インターネット・メッセージの書式
 
-@item RFC1036
-USENET メッセージ交換のための標準。
+@item RFC 5536
+ネットニュース記事の書式
 
-@item RFC2045
-インターネットメッセージの本文の書式。
+@item RFC 2045
+インターネットメッセージの本文の書式
 
-@item RFC2046
-メディアタイプ。
+@item RFC 2046
+メディアタイプ
 
-@item RFC2047
-メッセージヘッダーでの非-@acronym{ASCII} テキスト拡張。
+@item RFC 2047
+メッセージヘッダーでの非-@acronym{ASCII} テキスト拡張
 
-@item RFC2048
-登録手続。
+@item RFC 6838
+メディアタイプの仕様と登録手続
 
-@item RFC2049
-適合基準と事例。
+@item RFC 4289
+登録手続 (RFC 2048 の置き換え)
 
-@item RFC2231
+@item RFC 2049
+適合基準と事例
+
+@item RFC 2231
 @acronym{MIME} パラメーター値とエンコードされた単語の拡張: 文字セット、
 言語および継続。
 
-@item RFC1843
+@item RFC 1843
 HZ--中文および @acronym{ASCII} 文字が任意に混在するファイルを交換するた
 めのデータ形式。
 
 @item draft-ietf-drums-msg-fmt-05.txt
 RFC822 の後継のための草稿。
 
-@item RFC2112
-@acronym{MIME} Multipart/Related Content-type。
+@item RFC 2387
+@acronym{MIME} Multipart/Related Content-type
 
-@item RFC1892
-メールシステムの管理メッセージをリポートするための Multipart/Report
-Content Type。
+@item RFC 6522
+@itemx STD 73
+メールシステムの管理メッセージをリポートするための Multipart/Report メディ
+アタイプ
 
-@item RFC2183
+@item RFC 2183
 インターネットメッセージの情報通信表現: Content-Disposition ヘッダーフィー
-ルド。
+ルド
 
-@item RFC2646
-流動テキストのための text/plain 書式パラメーター。
+@item RFC 3676
+Text/Plain 書式と DelSp パラメーター
 @end table
 
 @node GNU Free Documentation License
