@@ -157,7 +157,7 @@ SHA1 Secure Hash Algorithm.
 このファイルは Gnus に依存しません。
 
 @item ietf-drums.el
-RFC822bis ヘッダーを解析する関数群を提供します。
+RFC 2822 ヘッダーを解析する関数群を提供します。
 @c 2005-10-21 現在...
 このファイルは Gnus に依存しません。
 
