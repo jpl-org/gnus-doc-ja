@@ -769,8 +769,8 @@ Translation}.
 @item format
 テキストを整形するためのパラメーターで、有効な値は @samp{fixed} (ディフォ
 ルト) と @samp{flowed} です。普通はこれを手で設定しません。それは、テキ
-ストの本文が、RFC2646 で定められた特別な方法で整形されることを必要とする
-からです。@xref{Flowed text}.
+ストの本文が、RFC 2646 で定められた特別な方法で整形されることを必要とす
+るからです。@xref{Flowed text}.
 @end table
 
 以下は @samp{application/octet-stream} のためのパラメーターです:
@@ -1927,9 +1927,6 @@ Emacs @acronym{MIME} ライブラリーは、(やや) 多くの RFC、ドラフ�
 @item RFC 1843
 HZ--中文および @acronym{ASCII} 文字が任意に混在するファイルを交換するた
 めのデータ形式。
-
-@item draft-ietf-drums-msg-fmt-05.txt
-RFC822 の後継のための草稿。
 
 @item RFC 2387
 @acronym{MIME} Multipart/Related Content-type
