@@ -1,7 +1,5 @@
 \input texinfo-ja
 
-@include gnus-overrides-ja.texi
-
 @setfilename emacs-mime-ja.info
 @settitle Emacs MIME Manual
 @synindex fn cp

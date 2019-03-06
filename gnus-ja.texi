@@ -1,7 +1,5 @@
 \input texinfo-ja
 
-@include gnus-overrides-ja.texi
-
 @setfilename gnus-ja.info
 @settitle Gnus Manual
 @syncodeindex fn cp
@@ -26775,6 +26773,9 @@ Gnus のアルファ配布に含まれている ChangeLog は、それぞれの�
 * Ma Gnus::                     祝 Gnus 25 周年。
 @end menu
 
+より最近の変更の要約については、通常の Emacs @file{NEWS} ファイルを参照
+してください。
+
 これらのリストは、もちろん @emph{たいていの} 重要な新しい機能に関す
 る @emph{短い} 要約でしかありません。いいえ、実は違います。もっともっと
 たくさんのものがあるのです。そう、事実上私たちは十分に用の無いも
@@ -28173,7 +28174,369 @@ Dired の統合。
 No Gnus の新しい機能:
 @c FIXME: Gnus 5.12?
 
-@include gnus-news-ja.texi
+@itemize @bullet
+@item サポートしている Emacs のバージョン
+
+No Gnus は以下の Emacs のバージョンをサポートします:
+
+@itemize @bullet
+@item Emacs 22 以上
+@item XEmacs 21.4
+@item XEmacs 21.5
+@item SXEmacs
+@end itemize
+
+@item インストールに関する変更
+
+@itemize @bullet
+@item No Gnus を使ったことがあるが、以前の (安定した) 版に戻してしまった
+人たちへの注意。
+
+No Gnus (このリリースにつながる不安定な Gnus の枝) を試してみたものの、
+安定版に戻してしまっている場合、このバージョンへアップグレードするときに
+は注意してください。特に、@file{~/News/marks} ディレクトリーの内容を (も
+しかしたら注意深く選んで) 削除する必要があるでしょう。(訳注: 削除しない
+と、新しい No Gnus を再び使い始めたときに安定版を使っていた時期に更新さ
+れなかった marks ファイルが読み込まれて、@file{~/.newsrc.eld} ファイルの
+既読記事番号などを古いもので上書きしてしまいます。)  削除することによっ
+て、このリリースで nntp のフラグを保存している marks ファイルからではな
+く @file{~/.newsrc.eld} からフラグを読むようになります (訳注: そして新し
+い marks ファイルが作られます)。nntp marks については、次の項目でさらに
+詳しい情報を得ることができます。一般にダウングレードすることは安全ではあ
+りません。
+
+@item Emacs 23 から Emacs 22 に切り替えると非互換性の問題が生じます。
+
+Emacs 23 では、Gnus は記事のドラフトと @file{~/.newsrc.eld} を保存するた
+めに Emacs の新しい内部 coding system である @code{utf-8-emacs} を使いま
+す。これらのファイルは Emacs 22 以下では正しく読み込まれないかもしれませ
+ん。Gnus を異なるバージョンの Emacs にまたがって使いたい場合は、
+@code{mm-auto-save-coding-system} を @code{emacs-mule} に設定すれば良い
+でしょう。
+@c FIXME: 未検証。(それとも誰かテストしましたか?)
+@c http://thread.gmane.org/gmane.emacs.gnus.general/66251/focus=66344 参照。
+
+@item Lisp ファイルがディフォルトで @file{.../site-lisp/gnus/} にインス
+トールされるようになりました。
+
+以前は @file{.../site-lisp/} がディフォルトでした。加えて、新しい
+インストーラーは他にインストールされている、新しい Gnus より
+優先される Gnus を検出して警告を発します。それらを手動で取り
+除いても良いし、@code{make remove-installed-shadows} を使って
+削除することもできます。
+
+@item インストール先のディレクトリ名が空白文字を含むことを許容します。
+@end itemize
+
+@item Gnus に含まれる新しいパッケージとライブラリー
+
+@itemize @bullet
+@item @code{nnimap} の新バージョン
+
+@code{nnimap} はほとんどの互換性を保って再実装されました。新しいインター
+フェースについての説明は Gnus マニュアルを見てください。特
+に @code{nnimap-inbox} とクライアント側での分割方法が変化しています。
+
+@item Gnus は Emacs Lisp @acronym{SASL} ライブラリーを含むようになりまし
+た。
+
+これによって、Emacs の中から @acronym{SASL} の機構を利用するために、すっ
+きりした @acronym{API} を使うことができます。利用者の目に見える利点は、
+以前は無かった @acronym{DIGEST}-@acronym{MD5} と @acronym{NTLM} がサポー
+トされるようになったことです。@xref{Top, ,Emacs SASL, sasl-ja, Emacs
+SASL}.
+
+@item ManageSieve の接続に、ディフォルトで @acronym{SASL} ライブラリーを
+使うようになりました。
+
+これによる主な変更点は、サーバーがサポートしている場合
+に @acronym{DIGEST-MD5} と @acronym{NTLM} をサポートするようになったこと
+です。
+
+@item Gnus は password.el にパスワードをキャッシュする機構を含めました。
+
+パスワードキャッシュはディフォルトで有効です (@code{password-cache} を
+参照)。タイムアウトは 16秒と短いです (@code{password-cache-expiry} を参
+照)。@acronym{PGG} を @acronym{PGP} のバックエンドとして使う場合に、
+@acronym{PGP} のパスフレーズはこの機構で管理されます。ManageSieve 接続の
+パスワードは、利用者にそうするかどうかを尋ねてから、この機構が管理します。
+
+@item Gnus は EasyPG を使います。
+
+EasyPG を使うことができる場合、Gnus は @acronym{PGG} の代わりにそれを使
+います。EasyPG は GNU Privacy Guard へのユーザーインターフェースです。
+@xref{Top, ,EasyPG Assistant user's manual, epa, EasyPG Assistant user's
+manual}.  EasyPG は Emacs 23 に含まれていますが、単独でも利用可能です。
+@end itemize
+
+@item グループモードの変更
+@c ***********************
+
+@itemize @bullet
+@item
+@code{gcc-self} のようなシンボルは @code{gnus-parameters} と同じ、つまり
+他の実在の変数がそうであるような優先度決定規則を持つようになりました。あ
+る条件に最初に合致するものではなく、最後に合致するものが採用されます。
+
+@item
+入ってきたメールを一時蓄えるファイル (@file{Incoming*}) の古いものは、即
+時ではなく何日か後に消去されます。@xref{Mail Source Customization}.
+(Gnus 5.10.10/No Gnus 0.8 の新機能)
+@c このエントリーは "Oort Gnus" 節にもあります。
+@end itemize
+
+@item 概略モードと記事モードの変更
+
+@itemize @bullet
+@item @acronym{HTML} をどう描画するかを決めるのは、現在はたったひとつの
+変数です: @code{mm-text-html-renderer}.
+
+@item 粘着記事バッファーを使えるようになりました。これは、別の記事を選択
+したときに再利用されない記事バッファーです。@xref{Sticky Articles}.
+@c
+@c @item ブックマーク
+@c FIXME: 追加すべし
+
+@item Gnus は @kbd{K H} で @samp{text/html} 記事を WWW ブラウザーで選択
+的に表示することができます。@xref{MIME Commands}.
+@c
+@c gnus-registry-marks
+@c FIXME: 追加すべし
+
+@item 国際化ホスト名 (@acronym{IDNA}) を、@kbd{W i}
+(@code{gnus-summary-idna-message}) を使うことによって、記事の本文中でデ
+コードできるようになりました。この機能を使うには GNU Libidn
+(@url{https://www.gnu.org/software/libidn/}) をインストールしておく必要
+があります。
+@c FIXME: @code{message-use-idna} も書かなくていい?
+
+@item 非-@acronym{ASCII} グループ名の取り扱いが非常に改善されました。完
+全にサポートしているバックエンドは現在 @code{nntp}, @code{nnml}, およ
+び @code{nnrss} です。エージェント、キャッシュ、それに印 (marks) もそれ
+らのバックエンドで機能します。@xref{Non-ASCII Group Names}.
+
+@item Gnus は dns-mode を使って text/dns として送信され
+た @acronym{DNS} マスターファイルを表示します。
+
+@item Gnus は概略バッファーで新しい制限コマンド @kbd{/ r}
+(@code{gnus-summary-limit-to-replied}) と @kbd{/ R}
+(@code{gnus-summary-limit-to-recipient}) をサポートします。
+@xref{Limiting}.
+
+@item @kbd{Y t} (@code{gnus-summary-insert-ticked-articles}) を使って、
+サーバーからすべての可視記事を取り寄せることができるようになりました。
+@xref{Summary Generation Commands}.
+
+@item Gnus は概略バッファーで新しい並べ替えコマンド @kbd{C-c C-s C-t}
+(@code{gnus-summary-sort-by-recipient}) をサポートします。
+@xref{Summary Sorting}.
+
+@item @acronym{S/MIME} が @acronym{LDAP} の利用者証明書の検索に使えるよ
+うになりました。@code{smime-ldap-host-list} でサーバーを設定する必要があ
+ります。
+
+@item Open@acronym{PGP} ヘッダーにある URL をクリックすると、ヘッダーが
+ダウンロードされてあなたの PGP の鍵束に取り込まれます。
+
+@item
+Picon はテキストの対象物の右側に表示できるようになりました。
+@code{gnus-picon-style} を見てください。@xref{Picons}.
+
+@item @acronym{ANSI} @acronym{SGR} 制御シーケンスを @kbd{W A} で変換する
+ことができます。
+
+中国語のニュース階層のグループにおいて、記事をハイライト表示するため
+に @acronym{ANSI} シーケンスが使われま
+す (@code{gnus-article-treat-ansi-sequences})。
+
+@item Gnus は記事に“MIME-Version”ヘッダーがなくても記事を MIME デコー
+ドします。このために @code{gnus-article-loose-mime} のディフォルト値が変
+更されました。
+
+@item @code{gnus-decay-scores} をスコアファイルに合致する正規表現にでき
+ます。例えば @samp{\\.ADAPT\\'} に設定すると、適応スコアファイルだけが減
+衰されるようになります。@xref{Score Decays}.
+
+@item @code{gnus-ignored-from-addresses} を使う場合に、概略行におい
+て @code{To} と @code{Newsgroup} ヘッダーに相当する場所の最初に表示する
+文字列を、@code{gnus-summary-to-prefix} およ
+び @code{gnus-summary-newsgroup-prefix} でカスタマイズすることができます。
+@xref{To From Newsgroups}.
+
+@item @acronym{MIME} パートを外部にある本体で置き換えることができます。
+@code{gnus-mime-replace-part} と @code{gnus-article-replace-part} を見て
+ください。@xref{MIME Commands}, @ref{Using MIME}.
+
+@item
+@code{mm-fill-flowed} オプションで format=flowed なメッセージの取り扱い
+を無効にすることができます。また、@acronym{PGP} の署名が埋め込まれたメッ
+セージを送信するときに、flowed text は無効にされます。@xref{Flowed text,
+,流動テキスト, emacs-mime-ja, The Emacs MIME Manual}.  (Gnus 5.10.7 の新
+機能)
+@c このエントリーは "Oort Gnus" 節にもあります。
+
+@item 新コマンド @kbd{S W} (@code{gnus-article-wide-reply-with-original}) は
+記事バッファーで広い返答をするためのもので、もし領域が設定され
+たテキストがあれば @kbd{R} コマン
+ド (@code{gnus-article-reply-with-original}) と同様にそれを引用します。
+以前は @kbd{R} コマンドに広い返答をさせるために使われた接頭引数が、今で
+は受け付けられないことに注意してください。@xref{Article Keymap}.
+
+@item 記事バッファーで使う新コマンド @kbd{C-h b}
+(@code{gnus-article-describe-bindings}) は、記事コマンドだけでなく記事バッ
+ファーから利用することができる真の簡略コマンドも表示します。
+@end itemize
+
+@item Message モードの変更
+
+@itemize @bullet
+@item すべての送信済みメッセージのディフォルトの保存先が、月ごと
+の nnfolder アーカイブになりました。
+
+@item Gnus は“hashcash”client puzzle anti-spam の機構をサポートします。
+@code{(setq message-generate-hashcash t)} で有効になります。
+@xref{Hashcash}.
+
+@item メッセージバッファに添付ファイルをドラッグ＆ドロップできます。
+@code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見てく
+ださい。@xref{MIME, ,MIME, message-ja, Message Manual}.
+
+@item @code{message-yank-empty-prefix} オプションで、引用文の空行にどん
+な引用符を付けるかを制御することができます。@xref{Insertion Variables,
+,挿入するための変数, message-ja, Message Manual}.
+
+@item Gnus はメッセージバッファーでヘッダーを隠すために、それら以外の部
+分だけが見えるようにバッファーを狭めます。@code{References} はディフォル
+トで表示されません。すべてのヘッダーが見えるようにするに
+は @code{(setq message-hidden-headers nil)} としてください。
+@xref{Message Headers, ,メッセージヘッダー, message-ja, Message Manual}.
+
+@item You can highlight different levels of citations like in the
+article buffer.  See @code{gnus-message-highlight-citation}.
+
+@item 記事バッファーでできるのと同様に、引用された文のレベルの違いに応じ
+たハイライトを行うことができます。
+@code{gnus-message-highlight-citation} を参照してください。
+
+@item Message モードでは @code{auto-fill-mode} がディフォルトで ON にな
+ります。@code{message-fill-column} を参照してください。@xref{Message
+Headers, ,メッセージヘッダー, message-ja, Message Manual}.
+
+@item 署名ファイルを @code{message-signature-directory} 変数で指定するディ
+レクトリーに置くことができます。
+
+@item "○○さん writes:" のような行の形式を、オプショ
+ン @code{message-citation-line-format} で指定することができます。これを
+使うには @code{message-citation-line-function} 変数
+を @code{message-insert-formatted-citation-line} に設定する必要がありま
+す。
+@end itemize
+
+@item サーバー閲覧モードの変更
+
+@itemize @bullet
+@item Gnus の洗練された講読方法がサーバー閲覧バッファーで利用可能です。
+
+変数 @code{gnus-browse-subscribe-newsgroup-method} を使ってください。
+@end itemize
+
+@item バックエンドの変更
+
+@itemize @bullet
+@item nntp バックエンドは記事の印を @file{~/News/marks} に保管します
+
+そのディレクトリーは @code{nntp-marks-directory} という (カスタマイズ可
+能な) 変数で変更することができます。また、nntp で印を使うこと
+を @code{nntp-marks-is-evil} という変数 (バックエンド変数) で無効にする
+ことができます。印を使うことの利点は、@file{~/News/marks} を別のホストに
+インストールされた Gnus にも (rsync, scp などを使って) コピーすることに
+よって、どの記事を読んでどの記事に印を付けたかの情報を、そこでも維持でき
+ることです (訳注: 同じ nntp サーバーに接続する場合に限ります)。
+@file{~/News/marks} のデータは @file{~/.newsrc.eld} にある同じデータより
+優先されます。
+
+@item
+@acronym{RSS} の購読情報を @acronym{OPML} のファイルから取り込み、または
+書き出すことができるようになりました。@xref{RSS}.
+
+@item @acronym{IMAP} の identity (@acronym{RFC} 2971) をサポートします。
+
+ディフォルトでは Gnus はそれ自身に関する情報を送信しませんが、
+@code{nnimap-id} 変数を使ってそれをカスタマイズすることができます。
+
+@item @code{nnrss} バックエンドは多言語テキストをサポートします。
+@code{nnrss} グループでは非-ASCII 文字列を使ったグループ名もサポートされ
+ます。@xref{RSS}.
+
+@item @acronym{POP3} によるメールの取得において、
+@acronym{SSL}/@acronym{TLS} と StartTLS をサポートするようになりました。
+
+@item nnml バックエンドではメッセージを圧縮するために @file{gzip} 以外の
+プログラムも使うことができます。@xref{Mail Spool}.
+
+@item nnml バックエンドではグループを圧縮することができます。
+
+関数 @code{gnus-group-compact-group} (グループバッファー
+の @kbd{G z} キー) および @code{gnus-server-compact-server} (サーバーバッ
+ファーの @kbd{z} キー) で呼び出すこの機能は、グループのすべての記事の番
+号を 1 から順に振り直して、すきまを取り除きます。その結果として、正しい
+全記事数を得ることができます (再びメッセージが削除されるまでは)。
+@c
+@c @item nnmairix.el
+@c FIXME
+@c
+@c @item nnir.el
+@c FIXME
+@end itemize
+
+@item 外見
+@c もしかしたら "その他" から切り離す価値は無い?
+
+@itemize @bullet
+@item ツールバーが GNOME のアイコンを使うように更新されました。ツールバー
+をカスタマイズすることもできます:
+@kbd{M-x customize-apropos @key{RET} -tool-bar$} で始めてくださ
+い。(Emacs だけです。XEmacs ではできません。)
+@c FIXME: これをマニュアルに書くべし。
+
+@item ツールバーのアイコンがグループバッファーで正しく活性化 (または不活
+性化) されるようになりました。変数 @code{gnus-group-update-tool-bar} を
+参照してください。そのディフォルト値は Emacs の版に依存します。
+@c FIXME: これをマニュアルに書くべし。
+
+@item Gnus のバッファーにおける XEmacs の toolbar の位置を変更できるよう
+になりました。@code{gnus-use-toolbar} と @code{message-use-toolbar} を見
+てください。
+@end itemize
+
+@item その他の変更
+
+@itemize @bullet
+@item サーバーバッファーで外部グループのための select-method を変更する
+と、すぐにそのサーバーを使うグループの講読に反映されるようになりました。
+例えば @code{nntp-via-address} を @samp{foo.example.com} か
+ら @samp{bar.example.com} に変更すると、Gnus は次回から中間ホス
+ト @samp{bar.example.com} を経由してニュースサーバーに接続するようになり
+ます。
+
+@item @kbd{W e} で @file{all.SCORE} ファイルをグループバッファーから編集
+することができます。
+
+@item
+@code{gnus-mark-copied-or-moved-articles-as-expirable} を @code{nil} で
+はない値に設定することによって、読み終わった記事を auto-expire が有効に
+なっているグループにコピーするか移動するとき、それらに期限切れ消去可能の
+印を自動的に付けるようにすることができます。ディフォルト値
+は @code{nil} で、記事のコピーと移動の動作は従来通りです。つまり、記事
+を auto-expire が有効になっていないグループにコピーするか移動するときに
+期限切れ消去可能の印が削除される以外は、印は変化しません。@xref{Expiring
+Mail}.
+
+@item NoCeM のサポートは削除されました。
+
+@item Carpal modeは削除されました。
+@end itemize
+@end itemize
 
 @node Ma Gnus
 @subsubsection Ma Gnus

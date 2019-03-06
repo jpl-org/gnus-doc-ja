@@ -1,7 +1,5 @@
 \input texinfo-ja               @c -*-texinfo-*-
 
-@include gnus-overrides-ja.texi
-
 @setfilename sieve-ja.info
 @settitle Emacs Sieve Manual
 @synindex fn cp

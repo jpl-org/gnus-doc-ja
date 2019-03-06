@@ -1,7 +1,5 @@
 \input texinfo-ja               @c -*-texinfo-*-
 
-@include gnus-overrides-ja.texi
-
 @c @set VERSION 0.3
 
 @setfilename auth-ja.info

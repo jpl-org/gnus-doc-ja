@@ -1,5 +1,4 @@
 \input texinfo-ja               @c -*- mode: texinfo -*-
-@include gnus-overrides-ja.texi
 @c %**start of header
 @setfilename epa-ja.info
 @settitle EasyPG Assistant User's Manual

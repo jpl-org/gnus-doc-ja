@@ -1,7 +1,5 @@
 \input texinfo-ja               @c -*-texinfo-*-
 
-@include gnus-overrides-ja.texi
-
 @setfilename sasl-ja.info
 @iftex
 @firstparagraphindent insert
