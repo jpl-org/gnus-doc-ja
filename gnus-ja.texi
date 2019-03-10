@@ -9159,10 +9159,10 @@ Message-ID かメールアドレスに合致する正規表現です。
 
 @item gnus-button-mid-or-mail-heuristic
 @findex gnus-button-mid-or-mail-heuristic
-その引数が Message-ID かメールアドレスであるかを推定する関数です。
-Message-ID だったら @code{mid} を、メールアドレスだったら @code{mail} を、
-不確かだったら @code{ask} を、そして無効な文字列だった
-ら @code{invalid} を返します。
+その引数がメッセージの ID かメールアドレスであるかを推定する関数です。
+メッセージの ID だったら @code{mid} を、メールアドレスだった
+ら @code{mail} を、不確かだったら @code{ask} を、そして無効な文字列だっ
+たら @code{invalid} を返します。
 
 @item gnus-button-mid-or-mail-heuristic-alist
 @vindex gnus-button-mid-or-mail-heuristic-alist
