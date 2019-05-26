@@ -3071,6 +3071,9 @@ RFC2919 の @code{List-ID} に準拠するため、分割の正規表現はメ�
 メーリングリストのヘッダーに合致する正規表現について
 は @code{nnmail-split-abbrev-alist} を参照してください。
 
+グループパラメーターに基づいて自動的に行なわれる分割について
+は @ref{Group Mail Splitting} を参照してください。
+
 @item (agent parameters)
 エージェントを使うようにしてあると、個々のグループでエージェントの振る舞
 いを制御するどのパラメーターも設定することができます。エージェントパラメー
@@ -26670,7 +26673,7 @@ Richard Mlynarik,
 Lantz Moore,
 守岡 知彦,
 Erik Toubro Nielsen,
-Hrvoje Niksic,
+Hrvoje Nikšić,
 Andy Norman,
 Fred Oberhauser,
 C. R. Oldham,

@@ -1248,8 +1248,8 @@ Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにし�
 
 @example
 (mail-header-parse-address
- "Hrvoje Niksic <hniksic@@srce.hr>")
-@result{} ("hniksic@@srce.hr" . "Hrvoje Niksic")
+ "Hrvoje Nikšić <hniksic@@srce.hr>")
+@result{} ("hniksic@@srce.hr" . "Hrvoje Nikšić")
 @end example
 
 @item mail-header-parse-addresses
@@ -1259,8 +1259,8 @@ Emacs @acronym{MIME} ライブラリーは異なる方針で行くことにし�
 
 @example
 (mail-header-parse-addresses
- "Hrvoje Niksic <hniksic@@srce.hr>, Steinar Bang <sb@@metis.no>")
-@result{} (("hniksic@@srce.hr" . "Hrvoje Niksic")
+ "Hrvoje Nikšić <hniksic@@srce.hr>, Steinar Bang <sb@@metis.no>")
+@result{} (("hniksic@@srce.hr" . "Hrvoje Nikšić")
      ("sb@@metis.no" . "Steinar Bang"))
 @end example
 
