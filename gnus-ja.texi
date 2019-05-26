@@ -23812,7 +23812,7 @@ Spam パッケージがどのように働くかを理解するために、必ず
 ださい。読み飛ばし、速読、または斜め読みしてはいけません。
 
 @code{spam.el} シーケンスのイベントの章をちゃんと読みましょう。
-@ref{Extending the Spam package} を参照してください。
+@xref{Extending the Spam package}.
 
 @cindex spam-initialize
 @vindex spam-use-stat
