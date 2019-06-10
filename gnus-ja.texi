@@ -29996,7 +29996,7 @@ description-buffer = *description-line
   nnml-current-directory nnmh-current-directory)
 
 (defvoo nndir-nov-is-evil nil
-  "*これが nil でなかったら NOV ヘッダーを取得しません。"
+  "これが nil でなかったら NOV ヘッダーを取得しません。"
   nnml-nov-is-evil)
 
 (defvoo nndir-current-group ""
