@@ -2110,8 +2110,8 @@ Generation Commands})。
 ん。ディフォルト値は 200 です。グループに (未読と可視の) 記事がこの数以
 上あれば、Gnus はそのグループに入る前に利用者に確認を求めます。利用者は
 サーバーからいくつの記事を取得するかを指定できます。もし利用者が負の
-数 (@var{-n}) を指定すれば、古い方から @var{n} 個の記事を取得します。正
-の数であれば、新しく到着した方から @var{n} 個の記事を取得します。
+数 (@minus{}@var{n}) を指定すれば、古い方から @var{n} 個の記事を取得しま
+す。正の数であれば、新しく到着した方から @var{n} 個の記事を取得します。
 
 @vindex gnus-large-ephemeral-newsgroup
 @code{gnus-large-ephemeral-newsgroup} は @code{gnus-large-newsgroup} と
