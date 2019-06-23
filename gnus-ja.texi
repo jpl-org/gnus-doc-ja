@@ -26271,12 +26271,6 @@ Gnus はすべての @sc{gnus} の起動ファイルを理解します。
 利用者は、問題に苦しむことはないでしょう。もし問題が起こったら、魔法
 の @kbd{M-x gnus-bug} 命令を実行することによって私に知らせてください。
 
-@vindex gnus-bug-create-help-buffer
-@emph{非常に} よくバグ報告を送る習慣があるのなら、あなたの役に立とうとす
-る help バッファーが、しばらくするとうるさく感じるかもしれません。そうな
-らば、それが表示されないようにするために、
-@code{gnus-bug-create-help-buffer} を @code{nil} に設定してください。
-
 @node Conformity
 @subsection 標準への準拠
 
