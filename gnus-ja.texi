@@ -9889,6 +9889,17 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セット
 今のところ @code{nnimap} だけが行ないます。もし記事の部分を見ているとき
 に、そうではなく完全な記事を見る必要があるならば、@kbd{A C} コマン
 ド (@code{gnus-summary-show-complete-article}) がそうします。
+
+@item w
+@itemx A w
+@kindex w @r{(概略)}
+@kindex A w @r{(概略)}
+@cindex web
+@cindex url
+@findex gnus-summary-browse-url
+記事バッファーを走査して @code{browse-url} で閲覧できるリンクを提示しま
+す。ディフォルトでは記事の本文だけを走査しますが、接頭引数を与えると記事
+のヘッダーもスキャンします。
 @end table
 
 @node Summary Sorting
