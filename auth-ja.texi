@@ -291,7 +291,7 @@ machine gmail2 login account2@@gmail.com password "account2 password" port imap
 @chapter シークレットサービス API
 
 @dfn{Secret Service API} はパスワードや他の機密情報を安全に保存するため
-の @uref{http://www.freedesktop.org/wiki/Specifications/secret-storage-spec,,freedesktop.org} に
+の @uref{http://www.freedesktop.org/wiki/Specifications/secret-storage-spec,freedesktop.org} に
 よる標準です。この API は GNOME 鍵リングと KDE ウォレットのようなシステ
 ム・デーモン (それぞれ最近はたいていの GNU/Linux システムに備わって
 る GNOME と KDE のパッケージ) によって実装されます。
@@ -455,30 +455,81 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
 @node The Unix password store
 @chapter Unix パスワード・マネージャー
 
-@uref{http://www.passwordstore.org,,The standard unix password
-manager} (または単に @code{pass}) は、あなたのパスワードを Unix 哲学に基
-づいて @code{gpg} で保護されたファイルに格納します。
+@uref{http://www.passwordstore.org,標準 Unix パスワードマネージャー} (ま
+たは単に @code{pass}) は、あなたのパスワードを Unix 哲学に基づい
+て @code{gpg} で保護されたファイルに格納します。格納する場所 (任意のディ
+レクトリー) は、@code{auth-source-pass-filename} 変数で指定しなければな
+りません。ディフォルトは @file{~/.password-store} です。
 
 Emacs の @code{pass} の統合は、パス・プロジェクト自体によって提案された、
-データを検索するためのデータの組織化の最初の取り組みです。これは、個々の
-ホストにおけるユーザーのためのパスワードを含むファイルの名前が、そのホス
-ト名を含まなければならないことを示しています。ファイルは最初の行にパスワー
-ドを、同様に次の行にユーザー名がある @code{username} フィールドを含んで
-いなければなりません。@code{port} フィールドは、複数のサービスのための同
-じホストにおける同じユーザー名の認証データを区別するために使うことができ
-ます。
+データを検索するためのデータの組織化の取り組みです。特に、ホス
+ト @code{gnu.org} およびポート @code{22} にユーザー @code{rms} のパスワー
+ドを保存するには、次のファイル名のいずれかを使用してください。
 
-@code{pass} のユーザーは、パスを扱う他の Emacs パッケージが提供する機能
-に興味があるかもしれません:
+@table @file
+@item gnu.org.gpg
+ファイル名にユーザー名またはポートがない場合は、どんなユーザー名とポート
+も合致することを意味します。
+
+@item gnu.org/rms.gpg
+合致するユーザー名は、名前がホストと合致するディレクトリ内のファイル名と
+して表すことができます。これはストアに同じホスト上の複数のユーザーのパ
+スワードがある場合に便利です。
+
+@item rms@@gnu.org.gpg
+ユーザー名はアットマーク (@code{@@}) でホストから分離された接頭辞として
+表すこともできます。
+
+@item gnu.org:22.gpg
+合致させるポート (あるいはサービス) はホストの後にのみ記述することができ、
+コロン (@code{:}) で区切ります。区切り文字
+は @code{auth-source-pass-port-separator} 変数で変更可能です。
+
+@item gnu.org:22/rms.gpg
+
+@item rms@@gnu.org:22.gpg
+
+@item a/b/gnu.org.gpg
+エントリーは任意のディレクトリーに格納することができます。
+
+@item a/b/gnu.org/rms.gpg
+
+@item a/b/rms@@gnu.org.gpg
+
+@item a/b/gnu.org:22.gpg
+
+@item a/b/gnu.org:22/rms.gpg
+
+@item a/b/rms@@gnu.org:22.gpg
+@end table
+
+複数のエントリーが合致する場合、最も多くの項目に合致するものが優先されま
+す (ここで「項目」はユーザー名、ポート、またはホストのいずれかです)。た
+とえば、ホスト @code{gnu.org} およびポート @code{22} の @code{rms} ユー
+ザーに合致するエントリを検索しているとき、エント
+リー @file{gnu.org:22/rms.gpg} は @file {gnu.org.gpg} より優先されます。
+
+@code{pass} のユーザーは、Emacs パッケージが提供する機能にも興味があるか
+もしれません:
 
 @itemize
 @item
-@uref{https://git.zx2c4.com/password-store/tree/contrib/emacs/password-store.el,,password-store}: @code{pass} をラップするライブラリー;
+@uref{https://git.zx2c4.com/password-store/tree/contrib/emacs/password-store.el,password-store}: @code{pass} をラップするライブラリー;
 @item
-@uref{https://github.com/NicolasPetton/pass,,pass}: パスワード・マネージャーとエントリーを編集するためのメジャーモード;
+@uref{https://github.com/NicolasPetton/pass,pass}: パスワード・マネージャーとエントリーを編集するためのメジャーモード;
 @item
-@uref{https://github.com/jabranham/helm-pass,,helm-pass}: パスへの helm インターフェース。
+@uref{https://github.com/jabranham/helm-pass,helm-pass}: パスへの helm インターフェース。
 @end itemize
+
+@defvar auth-source-pass-filename
+この変数をディスク上のパスワードストアを特定する文字列に設定してください。
+ディフォルトは @file{~/.password-store} です。
+@end defvar
+
+@defvar auth-source-pass-port-separator
+この変数を、エントリー内のポートからホスト名を区切る文字列に設定してくだ
+さい。ディフォルトは @samp{:} です。
+@end defvar
 
 @node Help for developers
 @chapter 開発者のためのヘルプ
