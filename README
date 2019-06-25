@@ -71,9 +71,12 @@ You can get the manuals of which translating is in progress:
 
 (for the first time)
   git clone https://github.com/jpl-org/gnus-doc-ja.git
+  cd gnus-doc-ja/
+  git checkout emacs-26
+  cd ..
 (subsequent)
   cd gnus-doc-ja/
-  git pull origin master
+  git pull origin emacs-26
 
 Join the translation
 ====================

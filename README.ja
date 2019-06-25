@@ -69,9 +69,12 @@ PS ファイルを作ることができます。ただし Texinfo バージョ�
 
 (初回)
   git clone https://github.com/jpl-org/gnus-doc-ja.git
+  cd gnus-doc-ja/
+  git checkout emacs-26
+  cd ..
 (次から)
   cd gnus-doc-ja/
-  git pull origin master
+  git pull origin emacs-26
 
 翻訳作業への参加
 ================
