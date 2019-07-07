@@ -2677,10 +2677,10 @@ Gmane.org で一時的なグループを講読するためのコマンドです�
 
 @item gnus-read-ephemeral-emacs-bug-group
 @findex gnus-read-ephemeral-emacs-bug-group
-一時的なグループで Emacs のバグリポートを講読します。Gnus はバグの番号を
-尋ねます。ディフォルトは現在位置の番号です。
-@acronym{URL} は @code{gnus-bug-group-download-format-alist} で指定しま
-す。
+一時的なグループで Emacs のバグリポートを講読します。Gnus はバグの番
+号 (複数可) を尋ねます。ディフォルトは現在位置の番号です。
+@acronym{URL} の雛形は @code{gnus-bug-group-download-format-alist} で指
+定します。
 
 @item gnus-read-ephemeral-debian-bug-group
 @findex gnus-read-ephemeral-debian-bug-group
