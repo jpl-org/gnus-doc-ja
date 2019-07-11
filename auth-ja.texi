@@ -108,7 +108,6 @@ machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @
 
 @code{machine} はサーバーです (DNS 名または IP アドレスのどちらか)。
 @code{auth-source-search} 検索における @var{:host} でもあります。
-@code{host} も使うことができます。
 
 @code{port} は接続するポートまたはプロトコルです。
 @code{auth-source-search} 検索における @var{:port} でもあります。
