@@ -15346,6 +15346,10 @@ mode) 構文テーブル (syntax table) に従って、完全に @emph{語} (wor
 れば良いでしょう。さもないとあなたのすべてのメッセージに対する返事が
 “outgoing”グループに入ってしまいます。
 
+@code{nnmail-debug-splitting} を @code{nil} 以外の値にしておくと、実施し
+たすべてのメール分割 の判定結果を @samp{*nnmail split*} バッファーに記録
+します。
+
 @node Group Mail Splitting
 @subsection グループメール分割
 @cindex mail splitting
