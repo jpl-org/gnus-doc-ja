@@ -11812,6 +11812,9 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 @item combined-lapsed
 元の Date ヘッダーと (短い形式の) 経過時間。
 
+@item combined-local-lapsed
+ユーザーのローカル時間帯と (短い形式の) 経過時間。
+
 @item original
 元の Date ヘッダー。
 
