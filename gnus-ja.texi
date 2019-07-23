@@ -23067,12 +23067,12 @@ gnus-x-face)))} です。例を挙げましょう:
 @end lisp
 
 いろいろな画像の形式で利用可能なプロパティーについて
-は @xref{Image Descriptors, ,Image Descriptors, elisp, The GNU Emacs
-Lisp Reference Manual}, を参照してください。今のところ Emacs で
-は @code{pbm} が X-Face 画像に使われ、 @code{png} が Face 画像に使われま
-す。XEmacs では、それが @samp{libcompface} ライブラリーとともに構築され
-ていれば、@code{xface} 画像形式に @code{:face} プロパティーだけが効果を
-及ぼします。
+は @xref{Image Descriptors,,, elisp, The Emacs Lisp Reference Manual}, を
+参照してください。今のところ Emacs では @code{pbm} が X-Face 画像に使わ
+れ、 @code{png} が Face 画像に使われます。XEmacs では、それ
+が @samp{libcompface} ライブラリーとともに構築されていれ
+ば、@code{xface} 画像形式に @code{:face} プロパティーだけが効果を及ぼし
+ます。
 @end table
 
 投稿様式 (posting style) を使うのであれば、
@@ -23332,20 +23332,22 @@ Gravatar はそれぞれの電子メールアドレスに対応して登録さ�
 @item gnus-gravatar-size
 @vindex gnus-gravatar-size
 Gravatars の画素のサイズ。Gravatars は常に正方形なので、サイズの指定には
-単一の数値で十分です。
+単一の数値で十分です。もし @code{nil} ならば @code{gravatar-size} の値が
+ディフォルトとして使われます。
 
 @item gnus-gravatar-properties
 @vindex gnus-gravatar-properties
-Gravatar 画像に適用する属性のリストです。
+Gravatar 画像に適用する属性のリストです (@pxref{Image Descriptors,,,
+elisp, The Emacs Lisp Reference Manual})。
 
 @item gnus-gravatar-too-ugly
 @vindex gnus-gravatar-too-ugly
-表示されるべきではないアバターの、持ち主たちのメールアドレスまたは名前に
-合致する正規表現、または @code{nil}。ディフォルト
-で @code{gnus-article-x-face-too-ugly} の値になります (@pxref{X-Face})。
+表示されるべきではないアバターの持ち主たちのメールアドレスまたは名前に合
+致する正規表現です。@code{nil} であるとすべてのアバターを表示します。ディ
+フォルトは @code{gnus-article-x-face-too-ugly} の値です (@pxref{X-Face})。
 @end table
 
-それらを From フィールドで見たいなら、こうしてください:
+Gravatar を From フィールドで見たいなら、こうしてください:
 
 @lisp
 (setq gnus-treat-from-gravatar 'head)
