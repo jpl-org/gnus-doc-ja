@@ -15480,7 +15480,7 @@ nnml:mail.others:
 @end lisp
 
 @var{auto-update} が @code{nil} でなけれ
-ば @code{gnus-group-split-update} が @code{nnmail-pre-get-new-mail-hook} に
+ば @code{gnus-group-split-update} が @code{gnus-get-top-new-news-hook} に
 追加されるので、二度と @code{nnmail-split-fancy} の更新について心配する
 必要はありません。@var{catch-all} を省略しない場合は (それはオプション
 で @code{nil} と等価で
