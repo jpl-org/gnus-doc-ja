@@ -9898,7 +9898,8 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セット
 @cindex url
 @findex gnus-summary-browse-url
 記事バッファーを走査して @code{browse-url} で閲覧できるリンクを提示しま
-す。接頭引数を与えると代わりに @code{shr-external-browser} で閲覧します。
+す。接頭引数を与えると代わり
+に @code{browse-url-secondary-browser-function} で閲覧します。
 @end table
 
 @node Summary Sorting
