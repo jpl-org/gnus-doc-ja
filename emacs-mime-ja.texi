@@ -1576,26 +1576,27 @@ RFC2047 は二つのエンコーディングの形式を定めています。一
 
 @example
 (parse-time-string "Sat Sep 12 12:21:54 1998 +0200")
-@result{} (54 21 12 12 9 1998 6 -1 7200)
+@result{} (54 21 12 12 9 1998 6 -1 7200 0)
 
-(encode-time (date-to-time "Sat Sep 12 12:21:54 1998 +0200")
-             1000000)
-@result{} (905595714000000 . 1000000)
+(time-convert
+  (date-to-time "Sat Sep 12 12:21:54 1998 +0200")
+  'integer)
+@result{} 905595714
 
 (float-time '(905595714000000 . 1000000))
 @result{} 905595714.0
 
-(encode-time 905595714.0 1000000)
+(time-convert 905595714.0 1000000)
 @result{} (905595714000000 . 1000000)
 
 (time-to-days '(905595714000000 . 1000000))
 @result{} 729644
 
-(encode-time (days-to-time 729644) 1000000)
-@result{} (63041241600000000 . 1000000)
+(time-convert (days-to-time 729644) 'integer)
+@result{} 63041241600
 
-(encode-time (time-since '(905595714000000 . 1000000))
-             1000000)
+(time-convert (time-since '(905595714000000 . 1000000))
+              1000000)
 @result{} (631963244775642171 . 1000000000)
 
 (time-less-p '(905595714000000 . 1000000)
@@ -1662,12 +1663,14 @@ Lisp タイムスタンプ。例: @code{(905595714000000 . 1000000)}
 @item date-to-time
 日付を受け取って時刻を返します。
 
+@item time-convert
+時刻を受け取って指定する形式でタイムスタンプを返します。
+
 @item float-time
 時刻を受け取って秒数を返します。
 
-@item seconds-to-time
-秒数 (および時刻を表現する他の方法、特にデコードされた時刻のリスト) を受
-け取って時刻を返します。
+ @item encode-time
+デコードされた時刻を受け取ってタイムスタンプを返します。
 
 @item time-to-days
 時刻を受け取って日数を返します。
