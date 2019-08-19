@@ -851,7 +851,6 @@ Image Enhancements
 * Smileys::                     幸せな顔をまさにそのように表示する
 * Picons::                      あなたが読んでいるものの絵を表示する方法
 * Gravatars::                   あなたが読んでいる人々のアバターを表示します
-* XVarious::                    XEmacs のための Gnus の変数
 
 Thwarting Email Spam
 
@@ -23066,7 +23065,6 @@ Emacs 22 はします。}ので、Gnus はこれを利用することにしま�
 * Smileys::                     幸せな顔をまさにそのように表示する
 * Picons::                      あなたが読んでいるものの絵を表示する方法
 * Gravatars::                   あなたが読んでいる人々のアバターを表示します
-* XVarious::                    XEmacs のための Gnus の変数
 @end menu
 
 @node X-Face
@@ -23434,22 +23432,6 @@ Gravatar を From フィールドで見たいなら、こうしてください:
 @lisp
 (setq gnus-treat-mail-gravatar 'head)
 @end lisp
-
-@node XVarious
-@subsection さまざまな XEmacs 変数
-
-@table @code
-@item gnus-xmas-glyph-directory
-@vindex gnus-xmas-glyph-directory
-これは Gnus が絵を探す場所です。Gnus は通常このディレクトリーを自動検出
-しますが、もし標準的でないディレクトリー構造を持っている場合は、これを手
-動で設定することができます。
-
-@item gnus-xmas-modeline-glyph
-@vindex gnus-xmas-modeline-glyph
-すべての Gnus のモード行で表示される画像。これはディフォルトではちいさな
-ヌー (gnu) の頭です。
-@end table
 
 @subsubsection ツールバー
 
