@@ -26324,6 +26324,7 @@ RFC 1731 は @acronym{IMAP} の GSSAPI/Kerberos4 の手法について述べて�
 @itemize @bullet
 @item
 Emacs 23.1 とそれ以上。
+@end itemize
 
 この Gnus の版はこれより古いどんな Emacsen でも完全に動作しないでしょう。
 少なくとも信頼できる動作はしないでしょう。古い版の Gnus は古い Emacs の
