@@ -824,7 +824,7 @@ Various
 * Undo::                        いくつかの動作は元に戻すことができる
 * Predicate Specifiers::        述語を設定する
 * Moderation::                  あなたがモデレーターだったらどうするか
-* Image Enhancements::          最新の Emacs/XEmacs は画像を表示できる
+* Image Enhancements::          Emacs の最新バージョンは画像を表示できる
 * Fuzzy Matching::              大きなひずんだ音 (big fuzz) って何?
 * Thwarting Email Spam::        頼んでもいない広告メールを避ける簡単な方法
 * Spam Package::                Spam を濾過して処理するためのパッケージ
@@ -878,7 +878,6 @@ Spam Statistics Package
 
 Appendices
 
-* XEmacs::                      XEmacs でインストールするための要件
 * History::                     どうやって Gnus が今日のようになったか
 * On Writing Manuals::          なぜこれが初心者用の案内でないか
 * Terminology::                 ここにあるような本当に難しい語を使う
@@ -926,7 +925,6 @@ Gnus Reference Guide
 * Ranges::                      たくさんの数を格納する便利な形式
 * Group Info::                  グループ情報の形式
 * Extended Interactive::        シンボル接頭引数など
-* Emacs/XEmacs Code::           Gnus はすべての最新の Emacsen で動作する
 * Various File Formats::        Gnus が使用するファイルの形式
 
 Back End Interface
@@ -1690,7 +1688,6 @@ Maintenance})。
 
 グループモードのツールバーをカスタマイズすることができます。@kbd{M-x
 customize-apropos @key{RET} gnus-group-tool-bar} を試してみてください。
-この機能を利用できるのは Emacs だけですが。
 
 ツールバーのアイコンは、今ではカーソルの位置に応じて正しく有効に、または
 無効にされるので、グループバッファー内での移動は遅くなります。これは変
@@ -4240,9 +4237,7 @@ Gnus
 @item nnmail-pathname-coding-system
 @vindex nnmail-pathname-coding-system
 この変数の値は coding system もしくは @code{nil} でなければなりません。
-ディフォルトは Emacs では @code{nil}、または XEmacs で
-は @code{file-name} という coding system の aliasee (@code{file-name} を
-別名に持つ、ある coding system) です。
+ディフォルトは @code{nil} です。
 
 @code{nnml} バックエンド、@code{nnrss} バックエンド、エージェント、およ
 びキャッシュは、それらのファイルとディレクトリーで非-@acronym{ASCII} グ
@@ -4250,17 +4245,13 @@ Gnus
 ンコードおよびデコードするときに用いられる coding system を指定す
 る @code{file-name-coding-system} の値を上書きします。
 
-XEmacs (@code{mule} 機能付き) では、@code{file-name-coding-system} はファ
-イル名をエンコードおよびデコードするのに用いられる coding system を指定
-する唯一の手段です。一方 Emacs は @code{file-name-coding-system} の値
-が @code{nil} だった場合、または @code{nil} であ
-る @code{nnmail-pathname-coding-system} の値にそれが束縛される場合、
-@code{default-file-name-coding-system} の値を使用します。
+@code{file-name-coding-system} の値が @code{nil} だった場合、また
+は @code{nil} である @code{nnmail-pathname-coding-system} の値にそれが束
+縛される場合、@code{default-file-name-coding-system} の値を使用します。
 
-通常 Emacs における @code{default-file-name-coding-system} または XEmacs
-における @code{nnmail-pathname-coding-system} の値は言語環境に従って初期
-化されるので、その値が非-@acronym{ASCII} グループ名をエンコードおよびデ
-コードするために適切であれば、何もする必要は無いでしょう。
+通常 @code{default-file-name-coding-system} の値は言語環境に従って初期化
+されるので、その値が非-@acronym{ASCII} グループ名をエンコードおよびデコー
+ドするために適切であれば、何もする必要は無いでしょう。
 
 この変数 (または @code{default-file-name-coding-system}) の値は、必ずし
 も @code{gnus-group-name-charset-method-alist} およ
@@ -4631,7 +4622,6 @@ if address "sender" "owner-ding@@hpc.uh.edu" @{
 
 概略モードのツールバーをカスタマイズすることができます。@kbd{M-x
 customize-apropos @key{RET} gnus-summary-tool-bar} を試してみてください。
-この機能を利用できるのは Emacs だけですが。
 
 @kindex v @r{(概略)}
 @cindex keys, reserved for users (Summary)
@@ -12314,10 +12304,9 @@ C-c})、Gnus は投稿にどの方法を使うかをあなたに尋ねます。
 この変数は、どの情報が User-Agent ヘッダーに陳列されるかを制御します。シ
 ンボルのリスト、または文字列です。有効なシンボルは @code{gnus} (Gnus の
 バージョン) および @code{emacs} (Emacs のバージョン) です。Emacs のバー
-ジョンには @code{codename} ((S)XEmacs のコードネーム)、また
-は @code{config} (@code{system-configuration} の値) か @code{type}
-(@code{system-type} の値) のどちらか一方を加えることができます。これを文
-  字列にするときは、正しいフォーマットを使ってください (RFC2616 参照)。
+ジョンには @code{config} (@code{system-configuration} の値) か @code{type}
+(@code{system-type} の値) を加えることができます。これを文字列にするとき
+は、正しいフォーマットを使ってください (RFC2616 参照)。
 @end table
 
 あなたは自分が送るメッセージで、綴りをチェックしたいかもしれません。もし
@@ -16900,8 +16889,8 @@ Language) でロード/セーブするために、以下のコマンドを使う
 @vindex nnrss-file-coding-system
 @code{nnrss} グループのデータ・ファイルを読み書きするときに使われ
 る coding system です。ディフォルト
-は @code{mm-universal-coding-system} の値 (そのディフォルトは Emacs で
-は @code{emacs-mule}、XEmacs では @code{escape-quoted}) です。
+は @code{mm-universal-coding-system} の値 (そのディフォルト
+は @code{emacs-mule}) です。
 
 @item nnrss-ignore-article-fields
 @vindex nnrss-ignore-article-fields
@@ -20755,21 +20744,15 @@ Gnus はこの問題の解決を助けるためにスコアを減衰させる機
 
 @lisp
 (defun gnus-decay-score (score)
-  "Decay SCORE according to `gnus-score-decay-constant'
-and `gnus-score-decay-scale'."
+  "`gnus-score-decay-constant' と `gnus-score-decay-scale' に従って
+SCORE を減衰させます。"
   (let ((n (- score
               (* (if (< score 0) -1 1)
                  (min (abs score)
                       (max gnus-score-decay-constant
                            (* (abs score)
                               gnus-score-decay-scale)))))))
-    (if (and (featurep 'xemacs)
-             ;; XEmacs's floor can handle only the floating point
-             ;; number below the half of the maximum integer.
-             (> (abs n) (lsh -1 -2)))
-        (string-to-number
-         (car (split-string (number-to-string n) "\\.")))
-      (floor n))))
+    (floor n)))
 @end lisp
 
 @vindex gnus-score-decay-scale
@@ -21925,7 +21908,7 @@ Gnus では通常それらのメッセージはヘッダーに ``(none)'' が表
 * Predicate Specifiers::        述語を設定する
 * Moderation::                  あなたがモデレーターだったらどうするか
 * Fetching a Group::            グループを読むためだけに Gnus を起動する
-* Image Enhancements::          最新の Emacs/XEmacs は画像を表示できる
+* Image Enhancements::          Emacs の最新バージョンは画像を表示できる
 * Fuzzy Matching::              大きなひずんだ音 (big fuzz) って何?
 * Thwarting Email Spam::        頼んでもいない広告メールを避ける簡単な方法
 * Spam Package::                Spam を濾過して処理するためのパッケージ
@@ -22246,9 +22229,8 @@ Gnus は利用者定義仕様を拡張した @samp{%u&foo;} のような形式�
 @code{gnus-balloon-face-*} 変数は、文字列か文字列を返す関数を指すシンボ
 ルのどちらかでなければなりません。この属性が設定されているテキストの上を
 マウスが通過すると、吹き出しが現れて文字列を表示します。これの詳しい情報
-は @xref{Tooltips, ,Tooltips, emacs, The Emacs Editor}, (Emacs) また
-は @code{balloon-help-mode} (XEmacs) の説明を参照してください。(技術的な
-理由のために、ギィメ (guillemets) はこの節で
+は @ref{Tooltips, ,Tooltips, emacs, The Emacs Manual} の説明を参照してく
+ださい。(技術的な理由のために、ギィメ (guillemets) はこの節で
 は @samp{《} と @samp{》} で近似されました。)
 
 @quotation
@@ -22342,10 +22324,9 @@ Gnus は通常ほとんどのバッファーで、ポイントを各行のあら
 それを救済するために、あなた
 は @code{gnus-use-correct-string-widths} を @code{t} に設定することがで
 きます。これはバッファーの生成を遅くしますが、より美しい結果を得ることが
-できるでしょう。ディフォルト値は XEmacs では @code{t} ですが Emacs で
-は @code{nil} です。(訳注: 日本語などを Emacs で表示する場合に、書法仕様
-によっては @code{t} にしないと概略バッファーの表示が不揃いになることがあ
-ります。)
+できるでしょう。ディフォルト値は @code{nil} です。(訳注: 日本語など
+を Emacs で表示する場合に、書法仕様によっては @code{t} にしないと概略バッ
+ファーの表示が不揃いになることがあります。)
 
 @node Window Layout
 @section ウィンドウの配置
@@ -22517,10 +22498,9 @@ Emacs の用語になじんでいないのなら、
 れます。ご覧の通り、普通の最上位階層の @code{1.0} の定の代わりに、それぞ
 れの追加の分割が大きさの指定として、フレームパラメーターの連想リストを持
 たなければなりません (@pxref{Frame Parameters, ,Frame Parameters, elisp,
-The GNU Emacs Lisp Reference Manual})。XEmacs では、フレームプロパティー
-リストも使えます---例えば @code{(height 5 width 15 left -1 top 1)} がそ
-のような plist です。@code{gnus-buffer-configuration} で使うことができる
-すべてのキーの一覧は、そのディフォルト値で見つけることができます。
+The GNU Emacs Lisp Reference Manual})。
+@code{gnus-buffer-configuration} で使うことができるすべてのキーの一覧は、
+そのディフォルト値で見つけることができます。
 
 キー @code{message} は @code{gnus-group-mail} およ
 び @code{gnus-summary-mail-other-window} の両方で使われることに注意して
@@ -23056,7 +23036,7 @@ Gnus は利用者がすることを憶えておいて、利用者がすること
 @node Image Enhancements
 @section 画像の拡張
 
-XEmacs それに v21 以上の Emacs は絵やその種のものを表示することができ
+バージョン 21 以上の Emacs は絵やその種のものを表示することができ
 る@footnote{MS ウィンドウズの Emacs 21 は画像をサポートしていません。
 Emacs 22 はします。}ので、Gnus はこれを利用することにしました。
 @menu
@@ -23086,14 +23066,13 @@ Emacs 22 はします。}ので、Gnus はこれを利用することにしま�
 @end iftex
 @c @anchor{X-Face}
 @code{X-Face} ヘッダーを見るには @samp{compface} をサポートしてい
-る Emacs (ほとんどの XEmacs の版がサポート) か、変換または表示のための適
-切なプログラムをインストールしてあることが必要です。あなたの Emacs が自
-前で画像の表示をサポートしているならば、ディフォルトで @code{From} ヘッ
-ダーの前に顔が表示されます。Emacs が自前で @code{X-Face} をサポートして
-いない場合、Gnus は @code{pbmplus} パッケージとその仲間の外部プログラ
-ム (下記参照) を使って @code{X-Face} ヘッダーを変換しようとします。
-@code{X-Face} をサポートするようにコンパイルされている XEmacs は速いです。
-画像をサポートしていない Emacs では、ディフォルトでは表示のための処理
+る Emacs か、変換または表示のための適切なプログラムをインストールしてあ
+ることが必要です。あなたの Emacs が自前で画像の表示をサポートしているな
+らば、ディフォルトで @code{From} ヘッダーの前に顔が表示されます。
+Emacs が自前で @code{X-Face} をサポートしていない場
+合、Gnus は @code{pbmplus} パッケージとその仲間の外部プログラム (下記参
+照) を使って @code{X-Face} ヘッダーを変換しようとします。画像をサポート
+していない Emacs では、ディフォルトでは表示のための処理
 を @code{display} というプログラムに委ねます。
 
 GNU/Linux システムの場合、ImageMagick パッケージに含まれてい
@@ -23124,9 +23103,8 @@ X-Face を表示するためのフェース。このフェースの色が表示�
 @item gnus-face-properties-alist
 @vindex gnus-face-properties-alist
 Face (@pxref{Face}) と X-Face 画像に適用される、画像の形式とプロパティー
-の連想リストです。ディフォルト値は Emacs 用の @code{((pbm . (:face
-gnus-x-face)) (png . nil))} または XEmacs 用の @code{((xface . (:face
-gnus-x-face)))} です。例を挙げましょう:
+の連想リストです。ディフォルト値は @code{((pbm . (:face gnus-x-face))
+(png . nil))} です。例を挙げましょう:
 
 @lisp
 ;; From ヘッダーにおける Face と X-Face の高さを指定します。
@@ -23142,11 +23120,8 @@ gnus-x-face)))} です。例を挙げましょう:
 
 いろいろな画像の形式で利用可能なプロパティーについて
 は @xref{Image Descriptors,,, elisp, The Emacs Lisp Reference Manual}, を
-参照してください。今のところ Emacs では @code{pbm} が X-Face 画像に使わ
-れ、 @code{png} が Face 画像に使われます。XEmacs では、それ
-が @samp{libcompface} ライブラリーとともに構築されていれ
-ば、@code{xface} 画像形式に @code{:face} プロパティーだけが効果を及ぼし
-ます。
+参照してください。今のところ @code{pbm} が X-Face 画像に使わ
+れ、 @code{png} が Face 画像に使われます。
 @end table
 
 投稿様式 (posting style) を使うのであれば、
@@ -23215,10 +23190,6 @@ gnus-x-face)))} です。例を挙げましょう:
 
 @code{Face} ヘッダーを見るには Emacs が PNG 画像を表示できる必要がありま
 す。
-@c Maybe add this:
-@c (if (featurep 'xemacs)
-@c     (featurep 'png)
-@c   (image-type-available-p 'png))
 
 Gnus は外に出すメッセージに Face ヘッダーを簡単に挿入できるようにするた
 めの、便利な関数と変数を少しばかり提供します。
@@ -25958,10 +25929,9 @@ Gnus がデータを格納するほとんどのファイルとディレクトリ
 この変数は @code{gnus-verbose} と @code{gnus-verbose-backends} で制御さ
 れて出力されるメッセージに、時刻 (タイムスタンプ) を付加するかどうかを制
 御します。ディフォルト値は時刻を付加しないことを意味する @code{nil} です。
-@code{log} だったら @file{*Messages*} バッファー (XEmacs で
-は @w{@file{ *Message-Log*}} バッファー) に入るメッセージだけに時刻を付
-加します。もし @code{nil} でも @code{log} でもなければ、ログに入るメッセー
-ジだけでなく、エコーエリアに表示されるものにも時刻を付加します。
+@code{log} だったら @file{*Messages*} バッファーに入るメッセージだけに時
+刻を付加します。もし @code{nil} でも @code{log} でもなければ、ログに入る
+メッセージだけでなく、エコーエリアに表示されるものにも時刻を付加します。
 
 @item nnheader-max-head-length
 @vindex nnheader-max-head-length
@@ -26072,7 +26042,6 @@ ISBN:4102451080 より引用)
 @chapter 付録
 
 @menu
-* XEmacs::                      XEmacs でインストールするための要件
 * History::                     どうやって Gnus が今日のようになったか
 * On Writing Manuals::          なぜこれが初心者用の案内でないか
 * Terminology::                 ここにあるような本当に難しい語を使う
@@ -26082,18 +26051,6 @@ ISBN:4102451080 より引用)
 * Emacs for Heathens::          Emacs の用語の手短かな紹介
 * Frequently Asked Questions::  Gnus の FAQ
 @end menu
-
-@node XEmacs
-@section XEmacs
-@cindex XEmacs
-@cindex installing under XEmacs
-
-XEmacs はパッケージの集合として配布されています。Gnus の XEmacs パッケー
-ジが必要とするものは何であれ、あなたはインストールすべきです。今のところ
-必要なのは @samp{gnus}, @samp{mail-lib}, @samp{xemacs-base},
-@samp{eterm}, @samp{sh-script}, @samp{net-utils}, @samp{os-utils},
-@samp{dired}, @samp{mh-e}, @samp{sieve}, @samp{ps-print}, @samp{pgg},
-@samp{mailcrypt}, @samp{ecrypto} および @samp{sasl} です。
 
 @node History
 @section 歴史
@@ -26202,8 +26159,7 @@ Gnus はこれらの質問に真の解決を提供するわけではありませ
 によって、探検し、発明したいすべての人を招いているのです。
 
 おそらく Gnus は完成することはないのかもしれません。
-@kbd{C-u 100 M-x all-hail-emacs} と @kbd{C-u 100 M-x all-hail-xemacs} で
-す。
+@kbd{C-u 100 M-x all-hail-emacs} です。
 
 @node Compatibility
 @subsection 互換性
@@ -26360,7 +26316,6 @@ RFC 1731 は @acronym{IMAP} の GSSAPI/Kerberos4 の手法について述べて�
 @node Emacsen
 @subsection Emacsen
 @cindex Emacsen
-@cindex XEmacs
 @cindex Mule
 @cindex Emacs
 
@@ -26370,14 +26325,9 @@ RFC 1731 は @acronym{IMAP} の GSSAPI/Kerberos4 の手法について述べて�
 @item
 Emacs 23.1 とそれ以上。
 
-@item
-XEmacs 21.4 とそれ以上。
-@end itemize
-
 この Gnus の版はこれより古いどんな Emacsen でも完全に動作しないでしょう。
 少なくとも信頼できる動作はしないでしょう。古い版の Gnus は古い Emacs の
-版でも動作するでしょう。特に Gnus 5.10.8 は Emacs 20.7 と XEmacs 21.1 で
-も動くはずです。
+版でも動作するでしょう。特に Gnus 5.10.8 は Emacs 20.7 でも動くはずです。
 @c
 @c マージしてはいけないものに関するコメント: v5-10 のこの場所では加えら
 @c れている項を、こちらにも入れてはいけません!
@@ -26927,8 +26877,8 @@ Gnus は「まばら」スレッドを作成することができるようにな
 Gnus は GroupLens の予測を利用することができるようになりました。
 
 @item
-Picons (personal icons) (個人アイコン) が XEmacs で表示できるようになり
-ました (@pxref{Picons})。
+Picons (personal icons) (個人アイコン) が表示できるようになりまし
+た (@pxref{Picons})。
 
 @item
 @code{trn} のような木バッファーを表示できるようになりました (@pxref{Tree
@@ -27514,29 +27464,6 @@ Lisp ファイルがディフォルトで @file{.../site-lisp/gnus/} にイン�
 ともできます。
 
 @item
-MS ウィンドウズで Gnus をコンパイルしてインストールするための、新し
-い @file{make.bat}。
-
-MS ウィンドウズで Gnus をインストールするには @file{make.bat} を使ってく
-ださい。このバッチ・プログラムの第一引数はディレクトリーです。そこ
-で @file{xemacs.exe} と @file{emacs.exe} が順に捜し出されます。コンパイ
-ルしてから Gnus をインストールしたいときは、@file{make.bat} の第二引数
-に @code{/copy} を与えてください。
-
-@file{make.bat} はゼロから書き直されました。XEmacs と Emacs を自動認識し、
-@file{gnus-load.el} を生成し、コンパイル中と info ファイルの生成中にエラー
-が起きたら構築処理の最後に報告します。@code{makeinfo} が利用可能であれば
-それを使い、さもなければ @file{infohack.el} に頼ります。今
-や @file{make.bat} は Gnus を動作させるために必要なすべてのファイルをイ
-ンストールするはずで、大体において Unix システムにおけ
-る @code{configure; make; make install} サイクルの完全な置き換えになりま
-した。
-
-新しい @file{make.bat} によっ
-て @file{make-x.bat} と @file{xemacs.mak} が不要になったので、それらは削
-除されました。
-
-@item
 @file{~/News/overview/} は不要。
 
 以下の変更の結果、もはや @file{~/News/overview/} ディレクトリーは要りま
@@ -28110,7 +28037,7 @@ Manual}) のような、セキュリティーに関連したものも含んで�
 ツールバーがグループ、概略および Message モードで GNOME のアイコンを使う
 ように更新されました。ツールバーはカスタマイズ可能です: @kbd{M-x
 customize-apropos @key{RET} -tool-bar$} から始めてください。これは Gnus
-5.10.10 の新機能です。(Emacs だけです。XEmacs は未対応。)
+5.10.10 の新機能です。
 
 @item
 ツールバーのアイコンが正しく有効に (または無効に) なります。グループバッ
@@ -28183,9 +28110,6 @@ No Gnus は以下の Emacs のバージョンをサポートします:
 
 @itemize @bullet
 @item Emacs 22 以上
-@item XEmacs 21.4
-@item XEmacs 21.5
-@item SXEmacs
 @end itemize
 
 @item インストールに関する変更
@@ -28497,18 +28421,13 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 @itemize @bullet
 @item ツールバーが GNOME のアイコンを使うように更新されました。ツールバー
 をカスタマイズすることもできます:
-@kbd{M-x customize-apropos @key{RET} -tool-bar$} で始めてくださ
-い。(Emacs だけです。XEmacs ではできません。)
+@kbd{M-x customize-apropos @key{RET} -tool-bar$} で始めてください。
 @c FIXME: これをマニュアルに書くべし。
 
 @item ツールバーのアイコンがグループバッファーで正しく活性化 (または不活
 性化) されるようになりました。変数 @code{gnus-group-update-tool-bar} を
 参照してください。そのディフォルト値は Emacs の版に依存します。
 @c FIXME: これをマニュアルに書くべし。
-
-@item Gnus のバッファーにおける XEmacs の toolbar の位置を変更できるよう
-になりました。@code{gnus-use-toolbar} と @code{message-use-toolbar} を見
-てください。
 @end itemize
 
 @item その他の変更
@@ -29188,7 +29107,6 @@ Gnus とそのバックエンドの間のインターフェース (これは完�
 * Ranges::                      たくさんの数を格納する便利な形式
 * Group Info::                  グループ情報の形式
 * Extended Interactive::        シンボル接頭引数など
-* Emacs/XEmacs Code::           Gnus はすべての最新の Emacsen で動作する
 * Various File Formats::        Gnus が使用するファイルの形式
 @end menu
 
@@ -30474,56 +30392,6 @@ Gnus は Emacs 標準の @code{interactive} の仕様を、シンボル接頭引
 @item g
 現在のグループ名---関数 @code{gnus-group-group-name} です。
 @end table
-
-@node Emacs/XEmacs Code
-@subsection Emacs/XEmacs コード
-@cindex XEmacs
-@cindex Emacsen
-
-Gnus は Emacs, XEmacs と Mule で動作するので、そのうちの一つを主環境とす
-ることに決めました。私は Emacs を選びました。私が XEmacs や Mule を好き
-ではないということではなく、それがアルファベット順で最初に来たからです。
-(訳注: 現在 Gnus がサポートしている (X)Emacs については @ref{Emacsen} を
-参照してください。)
-
-これは、Gnus は Emacs で少しの警告も無くバイトコンパイルできるのに対して、
-XEmacs はバイトコンパイルをしている間にギガバイトくらいの警告を出すとい
-うことでもあります (訳注: 現在はそんなことはありません)。私は些細な失敗
-を見つけ出すことに役立てるためにバイトコンパイルの警告を使っているので、
-それはとても助けになります。
-
-さらに、私は首尾一貫して Emacs の関数のインターフェースを使ってきました
-が、それらの関数のために Gnus の別名 (aliases) を使ってきました。例を出
-しましょう: Emacs が関数 @code{run-at-time} を定義している一方で、
-XEmacs は関数 @code{start-itimer} を定義しています。そこで、私
-は Emacs の @code{run-at-time} と同じ引数を受け取
-る @code{gnus-run-at-time} という関数を定義しました (訳注: 現在
-は @code{run-at-time} に統一されています)。Gnus を Emacs で実行している
-ときは、@code{gnus-run-at-time} は単に @code{run-at-time} の別名になって
-います。しかし XEmacs で実行したときは、@code{gnus-run-at-time} は次の関
-数の別名となっています (訳注: 現在こういうものはありません):
-
-@lisp
-(defun gnus-xmas-run-at-time (time repeat function &rest args)
-  (start-itimer
-   "gnus-run-at-time"
-   `(lambda ()
-      (,function ,@@args))
-   time repeat))
-@end lisp
-
-この種のことが多くの関数のために行なわれています。Gnus は XEmacs で実行
-しているときに、元からある Emacs の関数を再定義しません---代わりにそれは、
-Gnus の等価なものに @code{defalias} をすることによって行ないます。その方
-が、よりきれいです。
-
-XEmacs の関数のインターフェースの方が明らかにきれいな場合は、私は代わり
-にそれを使います。例えば、@code{gnus-region-active-p} は XEmacs で
-は @code{region-active-p} の別名であるのに対して、Emacs では関数です。
-
-もちろん XEmacs を私の基本プラットフォームに選んで、関数の割り当てを逆に
-することもできましたが、私はそうしませんでした。XEmacs で Gnus を実行す
-るときの、これらの遠回しな割り当てが強いる性能への打撃は、僅かなはずです。
 
 @node Various File Formats
 @subsection いろいろなファイル様式

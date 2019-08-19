@@ -92,7 +92,6 @@ Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの
 * FAQ 1-4::    tarball で何をすれば良いですか?
 * FAQ 1-5::    ときどき目にする No Gnus と Oort Gnus って何ですか?
 * FAQ 1-6::    Emacs のどの版が必要ですか?
-* FAQ 1-7::    Gnus を Emacs と XEmacs の両方で走らせるには?
 @end menu
 
 @node FAQ 1-1
@@ -145,10 +144,9 @@ Gnus はどこで、どうやって取得することができますか?
 
 @subsubheading 回答
 
-Gnus は Emacs や XEmacs のリリースとは別に、独自にリリースされます。その
-ため Emacs に同梱されている版や XEmacs パッケージにある版は、最新ではな
-いかもしれません (例えば Emacs 21 に同梱されている Gnus 5.9 は、使用期限
-が切れています)。
+Gnus は Emacs のリリースとは別に独自にリリースされます。そのた
+め Emacs に同梱されている版は最新ではないかもしれません (例え
+ば Emacs 21 に同梱されている Gnus 5.9 は古いものです)。
 @c
 リリースされた最新版
 の Gnus は、@uref{http://www.gnus.org/dist/gnus.tar.gz} から、また
@@ -176,14 +174,11 @@ MS-Windows では @uref{http://www.cygwin.com} から Cygwin の環境も取得�
 
 Gnus をシステム領域にインストールしたくない (またはその権限が与えられて
 いない) ならば、ホームディレクトリーにインストールすることもできます。そ
-の場合は @file{~/.xemacs/init.el} ファイルか @file{~/.emacs} ファイルに
-以下の行を加えてください。
+の場合は @file{~/.emacs} ファイルに以下の各行を加えてください:
 
 @lisp
 (add-to-list 'load-path "/path/to/gnus/lisp")
-(if (featurep 'xemacs)
-    (add-to-list 'Info-directory-list "/path/to/gnus/texi/")
-  (add-to-list 'Info-default-directory-list "/path/to/gnus/texi/"))
+(add-to-list 'Info-default-directory-list "/path/to/gnus/texi/")
 @end lisp
 
 @noindent
@@ -209,19 +204,8 @@ Emacs のどの版が必要ですか?
 
 @subsubheading 回答
 
-Gnus 5.13 は Emacs 23.1 以上、または XEmacs 21.1 以上を必要とします。し
-かし、いくつかの機能は Emacs 24 でしか動作しません。
-
-@node FAQ 1-7
-@subsubheading 質問 1.7
-
-Gnus を Emacs と XEmacs の両方で走らせるには、どうすれば良いですか?
-
-@subsubheading 回答
-
-バイトコンパイルされた Gnus の同じコピーを両者で使うことはできません。
-Emacs では Emacs でコンパイルしたものを、XEmacs では XEmacs でコンパイル
-したものを使ってください。
+Gnus 5.13 は Emacs 23.1 以上を必要とします。しかし、いくつかの機能
+は Emacs 24 でしか動作しません。
 
 @node FAQ 2 - Startup / Group buffer
 @subsection 起動 / グループバッファー
@@ -1427,11 +1411,8 @@ ispell} または同 @uref{http://aspell.sourceforge.net/, aspell} を適当
 ispell.el} と、書いたその場でスペルチェックをしてくれ
 る @uref{http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html,
 flyspell.el} を用意してください。@file{ispell.el} は Emacs とともに配布
-されているだけではなく、XEmacs パッケージシステムによっても手に入れるこ
-とができます。@file{flyspell.el} も Emacs に同梱されているのとともに、パッ
-ケージシステムを介して入手することができ
-る XEmacs の @code{text-modes} パッケージの一部です。したがって、それら
-を個別にインストールする必要は無いはずです。
+されています。@file{flyspell.el} も Emacs に同梱されているので、それらを
+個別にインストールする必要は無いはずです。
 
 @file{ispell.el} は外部プログラム @samp{ispell} を使うことを想定していま
 す。@samp{aspell} を選ぶなら、Emacs の設定ファイルで以下の宣言を行なって
@@ -1504,10 +1485,9 @@ alias al        "Al <al@@english-heritage.invalid>"
 ,メールの別名, message-ja, The Message Manual}) を参照してください。
 
 でも、あなたが本当に使いたいのは BBDB (the Insidious Big Brother
-Database) でしょう。XEmacs のパッケージシステムを使うか、
-@uref{http://bbdb.sourceforge.net/, bbdb のホームページ} から入手してく
-ださい。そして Gnus で BBDB を有効にするために、以下のもの
-を @file{~/.gnus.el} ファイルに書き込んでください:
+Database) でしょう。@uref{http://bbdb.sourceforge.net/, bbdb のホームペー
+ジ} から入手してください。そして Gnus で BBDB を有効にするために、以下の
+ものを @file{~/.gnus.el} ファイルに書き込んでください:
 
 @lisp
 (require 'bbdb)
@@ -1815,7 +1795,7 @@ Frank Haun @email{pille3003@@fhaun.de} が書いてくれたこのコードの�
   (let ((archive-name
          (format
           "nnml:1.%s"
-          (mm-replace-in-string gnus-newsgroup-name "^.*:" ""))))
+          (replace-regexp-in-string "^.*:" "" gnus-newsgroup-name))))
     (gnus-summary-copy-article n archive-name)))
 @end lisp
 
@@ -2339,8 +2319,7 @@ Gnus の用語大系では、バックエンドは Gnus の核心部分と実際
 の機能を持つ関数のことです。
 
 @item Emacs
-この FAQ で使われている Emacs という用語は、GNU Emacs か XEmacs のどちら
-かを指します。
+この FAQ で使われている Emacs という用語は、GNU Emacs を指します。
 
 @item Message
 この FAQ で「メッセージ」はそれがどんな種類のものでも、メール、また
