@@ -2878,7 +2878,7 @@ Gmane.org で一時的なグループを講読するためのコマンドです�
 @vindex nnmail-expiry-wait-function
 グループパラメーターに @code{(expiry-wait . 10)} のような要素があれば、
 この値は記事を期限切れ消去するとき
-に @code{nnmail-expiry-wait} と @code{nnmail-expiry-wait-function} の設
+に @code{nnmail-expiry-wait} や @code{nnmail-expiry-wait-function} の設
 定 (@pxref{Expiring Mail}) よりも優先されます。この値は期限切れ消去の日
 数 (整数である必要はない) かもしくは @code{never} か @code{immediate} の
 シンボルを指定できます。
@@ -15643,39 +15643,42 @@ auto-expire の別の利点は、より多くの印を後で読み返すつも�
 
 @vindex nnmail-expiry-wait
 変数 @code{nnmail-expiry-wait} で、期限切れ消去可能な記事をどれくらいの
-期間残しておくかのディフォルトの時間を設定します。Gnus はメッセージが送
-り出されたときではなく、それが @emph{到着} してからの日数を計算します。
-ディフォルトは 7 日間です。
-
-Gnus は記事がどのグループに属しているかに基づいて、それをどのくらい残し
-ておくかをこまめに設定する関数も提供しています。以下の例で
-は @samp{mail.private} グループは一ヶ月、@samp{mail.junk} グループは一日、
-その他全部は六日間に、それぞれ期限を設定します:
+期間残しておくかのディフォルトの時間を設定します。この変数の値は日数 (整
+数である必要はない) か、もしくは期限切れ消去しないことを意味す
+る @code{never} か即時消去を意味する @code{immediate} のうち、どちらか一
+つのシンボルの、いずれかを指定できます。Gnus はメッセージが送り出された
+ときではなく、それが @emph{到着} してからの日数を計算します。ディフォル
+トは 7日間です。
 
 @vindex nnmail-expiry-wait-function
+@code {nnmail-expiry-wait-function} 変数を使うと、記事が存在するグループ
+に基づいて記事の存続期間を微調整することできます。関数に設定すると、その
+戻り値が @code{nil} でなければ @code{nnmail-expiry-wait} の値を上書きし
+ます。そうでなければ代わりに @code{nnmail-expiry-wait} の値が使われます。
+
+例えば @samp{mail.private} グループは一ヶ月、@samp{mail.junk} グループは
+一日、その他全部は六日間に期限を設定するのならば、以下のやり方で可能です:
+
 @lisp
 (setq nnmail-expiry-wait-function
       (lambda (group)
-       (cond ((string= group "mail.private")
+        (cond ((string= group "mail.private")
                31)
-             ((string= group "mail.junk")
+              ((string= group "mail.junk")
                1)
-             ((string= group "important")
-              'never)
-             (t
+              ((string= group "important")
+               'never)
+              (t
                6))))
 @end lisp
 
 この関数に与えられるグループ名には「装飾」すなわち @samp{nnml:} のような
 ものは付きません。
 
-変数 @code{nnmail-expiry-wait} と関
-数 @code{nnmail-expiry-wait-function} は、数値 (整数である必要はありませ
-ん) かシンボルの @code{immediate} か @code{never} のどちらかにすることが
-できます。
-
-期限切れ期間を選択的に変更するために、グループパラメーター
-の @code{expiry-wait} を使うこともできます (@pxref{Group Parameters})。
+変数 @code{nnmail-expiry-wait} また
+は @code{nnmail-expiry-wait-function} の代わりに、@code{expiry-wait} グ
+ループパラメータを使って有効期間を選択的に変更することもできま
+す (@pxref{Group Parameters})。
 
 @vindex nnmail-expiry-target
 記事を期限切れ消去するときに取られる通常の動作は、それらを消去することで
