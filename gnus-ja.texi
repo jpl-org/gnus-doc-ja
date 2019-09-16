@@ -23301,7 +23301,7 @@ Picon データベースの入手とインストールの手順については�
 ださい。
 
 もし Debian GNU/Linux を使っているのなら、@samp{apt-get install
-picons.*} と言えば、Gnus が見つけることができる picon がインストールされ
+picon-.*} と言えば、Gnus が見つけることができる picon がインストールされ
 ます。
 
 Picon の表示ができるようにするためには、picon データベースがあるディレク
