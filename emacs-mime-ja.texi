@@ -398,15 +398,12 @@ Spammers は @samp{multipart/alternative} メッセージの優先される側�
 
 @item mm-inline-large-images
 @vindex mm-inline-large-images
-ウィンドウより大きなインライン画像を表示すると、Emacs はスクロールするこ
-とができません。つまり画像の全体を見ることができないということです。これ
-を避けるために、ライブラリーはそれをインライン表示する前に画像のサイズを
-計って、それがウィンドウに合わない場合は、ライブラリーはそれを外部で (例
-えば @samp{ImageMagick} や @samp{xv} で) 表示します。この変数
-を @code{t} に設定すると、この検査をさせなくして、ライブラリーにすべての
-画像をサイズに関わりなくインラインで表示させます。もしこの変数
-を @code{resize} にすると、Emacs に画像のサイズを変更する能力があれば、
-画像はウィンドウに合うようにサイズが変更されて表示されます。
+この変数は @code{resize} がディフォルトで、それは画像が Emacs ウィンドウ
+より大きい場合は納まるようにサイズを調整するという意味です。もしこれ
+を @code{nil} に設定すると大きい画像は Emacs で表示されませんが、外部
+で (@samp{ImageMagick} や @samp{xv} を使って) 表示することは可能です。
+この変数を @code{t} に設定するとその検査は無効にされ、ライブラリーにはサ
+イズにかかわらずすべての画像をインライン表示させます。
 
 @item mm-inline-large-images-proportion
 @vindex mm-inline-images-max-proportion
