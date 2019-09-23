@@ -22564,7 +22564,7 @@ Gnus はウィンドウの配置を変更しません。常に「正しい」ウ
 るために @code{gnus-tree-minimize-window} をいじるのが良いでしょう。
 
 最後に、@code{gnus-use-atomic-windows} を @code{t} に設定することによっ
-て Gnus のウィンドウ配置を ``atomic'' (@xref{Atomic Windows, , Atomic
+て Gnus のウィンドウ配置を ``atomic'' (@pxref{Atomic Windows, , Atomic
 Windows, elisp, The GNU Emacs Lisp Reference Manual}) にすることができま
 す。これによってポップアップされるバッファー（ヘルプや補完バッファーな
 ど）が Gnus ウィンドウ配置全体の下または横に表示されるので、例えば概略バッ
