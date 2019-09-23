@@ -12625,10 +12625,7 @@ encrypting}) を取り除くような用途に使うことができます。
 属性値は文字列、引数の無い関数 (返り値が使われます)、変数 (その値が使わ
 れます) またはリスト (それは @code{評価} されて、返り値が使われます) で
 あることができます。関数と S式 (sexp) はセットアップされつつあるメッセー
-ジバッファーで呼ばれるか評価されます。現在の記事のヘッダー群は変
-数 @code{message-reply-headers} から得られます。これ
-は @code{mail-header-*} アクセサーを介してアクセスでき
-る @code{mail-header} オブジェクトです。
+ジバッファーで呼ばれるか評価されます。
 
 属性値が文字列である場合、もし @code{match} が正規表現だったら、あるい
 はそれが @code{(header @var{match} @var{regexp})} の形式だった
@@ -12638,7 +12635,6 @@ encrypting}) を取り除くような用途に使うことができます。
 す (@pxref{Replacing Match,,Replacing the Text that Matched, elisp, The
 Emacs Lisp Reference Manual})。
 
-@vindex message-reply-headers
 作成しようとしているメッセージがニュース記事かメールメッセージであるかを
 調べたいときは、関
 数 @code{message-news-p} と @code{message-mail-p} の戻り値を調べてくださ
