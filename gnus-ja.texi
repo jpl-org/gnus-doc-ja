@@ -12626,9 +12626,9 @@ encrypting}) を取り除くような用途に使うことができます。
 れます) またはリスト (それは @code{評価} されて、返り値が使われます) で
 あることができます。関数と S式 (sexp) はセットアップされつつあるメッセー
 ジバッファーで呼ばれるか評価されます。現在の記事のヘッダー群は変
-数 @code{message-reply-headers} から得られます。これは number subject
-from date id references chars lines xref extra の各ヘッダーから成るベク
-トルです。
+数 @code{message-reply-headers} から得られます。これ
+は @code{mail-header-*} アクセサーを介してアクセスでき
+る @code{mail-header} オブジェクトです。
 
 属性値が文字列である場合、もし @code{match} が正規表現だったら、あるい
 はそれが @code{(header @var{match} @var{regexp})} の形式だった
