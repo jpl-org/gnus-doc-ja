@@ -1975,9 +1975,8 @@ Leafnode} や @uref{http://infa.abo.fi/~patrik/sn/, sn} のように小規模
 び @uref{http://pyropus.ca/software/getmail/, getmail} です。それらにメー
 ルをディスクに書き込むように指示してください。Gnus はそこから読むことに
 なります。最後ですがおろそかにできないのはメールの送信です。これにはあら
-ゆる MTA、例えば @uref{http://www.sendmail.org/, sendmail},
-@uref{http://www.qmail.org/, postfix}, @uref{http://www.exim.org/,
-exim} または @uref{http://www.qmail.org/, qmail} を使うことができます。
+ゆる MTA、例えば @uref{http://www.sendmail.org/, sendmail} また
+は @uref{http://www.exim.org/, exim} を使うことができます。
 
 Windows 小屋のためには @uref{http://www.tglsoft.de/, Hamster} を推します。
 それは小さくてフリーなオープンソースのプログラムで、遠隔サーバーからメー

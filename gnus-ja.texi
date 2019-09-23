@@ -16164,10 +16164,9 @@ Emacs がそれをサポートしていれば、それを @samp{.bz2} に設定�
 
 @code{nnmaildir} は各々の Gnus のグループに対応する maildir に、
 maildir フォーマットでメールを格納します。このフォーマット
-は @uref{http://cr.yp.to/proto/maildir.html} およ
-び @uref{http://www.qmail.org/man/man5/maildir.html} で文書化されていま
-す。また @code{nnmaildir} は maildir の中の @file{.nnmaildir/} ディレク
-トリーに追加の情報を格納します。
+は @uref{http://cr.yp.to/proto/maildir.html} で文書化されています。ま
+た @code{nnmaildir} は maildir の中の @file{.nnmaildir/} ディレクトリー
+に追加の情報を格納します。
 
 Maildir フォーマットは、配送と講読を、ロックを必要とせずに同時に行なうこ
 とができるようにするために設計されました。他のバックエンドでは、メールを
