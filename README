@@ -56,8 +56,8 @@ gnus-P.Q@R.S-doc-ja.tar.gz.
 Printing
 ========
 You can also make PDF files.  To do that, you need to have installed
-the packages Texinfo the version >=6.3, and either (or both) of LuaTeX
->=0.95 (i.e., TeXLive >=2016) or XeTeX >=0.9998 (i.e., TeXLive >=2012).
+the packages Texinfo the version >=6.3, and either (or both) of XeTeX
+>=0.9998 (i.e., TeXLive >=2012) or LuaTeX >=0.95 (i.e., TeXLive >=2016).
 Perform the following command after running the configure script:
 
 % make pdf

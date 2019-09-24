@@ -55,8 +55,8 @@ gnus-P.Q@R.S-doc-ja.tar.gz です。
 印刷
 ====
 PS ファイルを作ることができます。ただし Texinfo バージョン 6.3 以上、
-および LuaTeX 0.95 以上 (TeXLive 2016 以上) または XeTeX 0.9998 以上
-(TeXLive 2012 以上) のどちらかまたは両方をインストールしておく必要が
+および XeTeX 0.9998 以上 (TeXLive 2012 以上) または LuaTeX 0.95 以上
+(TeXLive 2016 以上) のどちらかまたは両方をインストールしておく必要が
 あります。configure を行なった後で、以下を実行してください。
 
 % make pdf

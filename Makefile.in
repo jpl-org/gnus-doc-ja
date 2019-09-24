@@ -20,8 +20,8 @@ FORMATINFO=$(EMACSINFO) '$<' t
 # Use makeinfo.
 #FORMATINFO=$(MAKEINFO) --no-split -o '$@' '$<'
 
-# Use xetex if it is your taste.
-PDFTEX=luatex
+# Use luatex if it is your taste.
+PDFTEX=xetex
 
 .SUFFIXES: .pdf .texi
 
