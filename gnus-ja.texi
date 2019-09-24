@@ -2588,6 +2588,9 @@ Gnus ヘルプグループを作成します (@code{gnus-group-make-help-group})
 @code{gnus-useful-groups} にあるグループの一つを作りま
 す (@code{gnus-group-make-useful-group})。
 
+@c FIXME: Gmane.org はもはや動いていません。このファイルにある Gmane へ
+@c の参照をそれぞれ修正しなければなりません。
+
 @item G w
 @kindex G w @r{(グループ)}
 @findex gnus-group-make-web-group
@@ -3190,8 +3193,8 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 ぞれ並べ替えを行なう例です。この例の最初のグループは、news.gmane.org か
 ら取得する Debian のデイリーニュースです。@acronym{RSS} グループ
 は RSS フィードで配信されている Debian のウィークリーニュー
-ス @url{http://packages.debian.org/unstable/newpkg_main.en.rdf} に対応し
-ます。@xref{RSS}.
+ス @url{https://packages.debian.org/unstable/newpkg_main.en.rdf} に対応
+します。@xref{RSS}.
 
 @lisp
 (setq
@@ -8913,10 +8916,11 @@ w3m を使って Gnus に描画させます。
 @uref{http://w3m.sourceforge.net/, w3m} を使います。
 
 @item links
-@uref{http://links.sf.net/, Links} を使います。
+@uref{https://almende.github.io/chap-links-library/, CHAP Links} を使い
+ます。
 
 @item lynx
-@uref{http://lynx.isc.org/, Lynx} を使います。
+@uref{https://lynx.browser.org/, Lynx} を使います。
 
 @item html2text
 html2text (シンプルな @acronym{HTML} コンバーターで、Gnus に含まれていま
@@ -9324,7 +9328,7 @@ Date: 6 weeks, 4 days, 1 hour, 3 minutes, 8 seconds ago
 一方 Picon はあなた自身のシステムに依存し、Gnus はヘッダーに合致するあな
 たの持ち物を探してみます (@pxref{Picons})。
 
-Gravatars は @uref{http://www.gravatar.com/} からオンラインで取得しま
+Gravatars は @uref{https://en.gravatar.com/} からオンラインで取得しま
 す (@pxref{Gravatars})。
 
 これらすべての機能はトグルです。もしすでにそれらが存在していたならば、そ
@@ -13654,7 +13658,7 @@ default force yes
 @findex nntp-open-ssl-stream
 @item nntp-open-ssl-stream
 「安全な」チャンネルを使ってサーバーに接続します。これを使うために
-は @uref{http://www.openssl.org, OpenSSL}
+は @uref{https://www.openssl.org/, OpenSSL}
 @ignore
 @c Defunct URL, ancient package, so don't mention it.
 または @uref{ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL, SSLeay}
@@ -16160,7 +16164,7 @@ Emacs がそれをサポートしていれば、それを @samp{.bz2} に設定�
 
 @code{nnmaildir} は各々の Gnus のグループに対応する maildir に、
 maildir フォーマットでメールを格納します。このフォーマット
-は @uref{http://cr.yp.to/proto/maildir.html} で文書化されています。ま
+は @uref{https://cr.yp.to/proto/maildir.html} で文書化されています。ま
 た @code{nnmaildir} は maildir の中の @file{.nnmaildir/} ディレクトリー
 に追加の情報を格納します。
 
@@ -16825,7 +16829,7 @@ Gnus を使えばブラウザー無しで検索することができます。
 要約するためのフォーマットです。しかし、基本的にリストのようなものなら何
 でも、@acronym{RSS} feed として提供することができます: weblogs,
 changelogs あるいは wiki (例え
-ば @url{http://cliki.net/site/recent-changes}) の最新の変更などが対象に
+ば @url{https://cliki.net/site/recent-changes}) の最新の変更などが対象に
 なります。
 
 @acronym{RSS} はとても規則的で良質なインターフェースを持っているので、
@@ -20535,6 +20539,7 @@ Gnus は @code{rn} の消去ファイルらしきものに出会うと、何と�
 含まれていません。それは Gnus の配布の contrib ディレクトリー、また
 は @uref{http://heim.ifi.uio.no/~larsi/ding-various/gnus-kill-to-score.el} か
 ら入手することができます。
+@c FIXME: 上記の URL はもうありません。
 
 あなたの消去ファイルが非常に複雑なのであれば---それ
 に @code{gnus-kill} 形式以外のものがたくさん含まれているのなら、それらを
@@ -21019,9 +21024,6 @@ Swish++ に追加の引数として与えられる文字列のリスト。ディ
 @subsubsection Swish-e エンジン
 
 FIXME: ここで何かもっと言う。
-
-Swish-e の資料は swish-e ホームページで見つかるでしょ
-う: @uref{http://swish-e.org}
 
 @table @code
 @item nnir-swish-e-program
@@ -23185,7 +23187,7 @@ Face (@pxref{Face}) と X-Face 画像に適用される、画像の形式とプ�
 @findex gnus-article-display-face
 @code{Face} ヘッダーの内容は base64 でエンコードされた PNG の画像でなけ
 ればなりません。正確な仕様について、
-@uref{http://quimby.gnus.org/circus/face/} を参照してください。
+@uref{https://quimby.gnus.org/circus/face/} を参照してください。
 
 変数 @code{gnus-face-properties-alist} は表示される Face 画像の外観に影
 響します。@xref{X-Face}.
@@ -23299,8 +23301,7 @@ Picon とはなんでしょう? Picons ウェブサイトから直接引用し�
 
 @vindex gnus-picon-databases
 Picon データベースの入手とインストールの手順については、ウェブブラウザー
-で @uref{http://www.cs.indiana.edu/picons/ftp/index.html} を訪ねてみてく
-ださい。
+で @uref{https://cs.indiana.edu/ftp/faces/picons/} を訪ねてみてください。
 
 もし Debian GNU/Linux を使っているのなら、@samp{apt-get install
 picon-.*} と言えば、Gnus が見つけることができる picon がインストールされ
@@ -23370,8 +23371,8 @@ Picon のファイル名として試してみる順に並べられた拡張子�
 
 Gravatar はそれぞれの電子メールアドレスに対応して登録された画像です。
 
-あなたのものを @uref{http://www.gravatar.com} にオンラインで置くことがで
-きます。
+あなたのものを @uref{https://en.gravatar.com/} にオンラインで置くことが
+できます。
 
 以下の変数は、それらがどのように表示されるかの制御を提供します。
 
@@ -23767,8 +23768,7 @@ Spam と戦うための斬新な技法は、いくらか負担にはなるが明
 の結果としての hashcash クッキーは @samp{X-Hashcash:} ヘッダーに挿入され
 ます。もっと詳しいこと、そしてこの機能を使うためにインストールする必要が
 ある外部アプリケーションの @code{hashcash} について
-は @uref{http://www.hashcash.org/} を参照してください。さらなる情報
-が @uref{http://www.camram.org/} で見つかるでしょう。
+は @uref{http://www.hashcash.org/} を参照してください。
 
 送信するメッセージのそれぞれについて hashcash を生成させようと思うなら、
 以下のように @code{message-generate-hashcash} (@pxref{Mail Headers,
@@ -24608,7 +24608,7 @@ BBDB に載っていない誰かのメッセージは spam とも ham とも見�
 加えてください。これが加えられると、spam 印が付いた記事のグループ
 が HTTP 経由で Gmane の管理者に報告されます。
 
-Gmane は @uref{http://gmane.org} で見つけることができます。
+Gmane はかつて @uref{http://gmane.org} にありました。
 
 @emph{警告}
 
@@ -26063,9 +26063,9 @@ ISBN:4102451080 より引用)
 Ingebrigtsen) は Gnus を書き直そうと決心しました。
 
 この非道な行為の責任者を調べてみたいのなら、あなたの (いまいましい!) ウェ
-ブブラウザーを @uref{http://quimby.gnus.org/} に向けることができます。こ
-れは新しくて粋な版の Gnus の第一配布場所で、Newsrc をぶっ壊して人々を激
-怒させるサイトとしても知られています。
+ブブラウザーを @uref{https://quimby.gnus.org/} に向けることができます。
+これは新しくて粋な版の Gnus の第一配布場所で、Newsrc をぶっ壊して人々を
+激怒させるサイトとしても知られています。
 
 最初のアルファ版の開発期間に、新しい Gnus は“(ding) Gnus”と呼ばれてい
 ました。@dfn{(ding)} はもちろん、@dfn{ding is not Gnus} の短縮形で、これ
@@ -26123,9 +26123,7 @@ Ingebrigtsen) は Gnus を書き直そうと決心しました。
 
 2004年1月4日に No Gnus が始まりました。
 
-2010年4月19日、Gnus の開発は Git に移行しました。詳細
-は http://git.gnus.org を見てください (可能なら http://www.gnus.org はそ
-の情報で更新されるでしょう。)
+2010年4月19日、Gnus の開発は Git に移行しました。
 
 2012年1月31日、Ma Gnus が始まりました。
 

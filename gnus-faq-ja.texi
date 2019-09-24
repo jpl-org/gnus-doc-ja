@@ -149,7 +149,7 @@ Gnus は Emacs のリリースとは別に独自にリリースされます。�
 ば Emacs 21 に同梱されている Gnus 5.9 は古いものです)。
 @c
 リリースされた最新版
-の Gnus は、@uref{http://www.gnus.org/dist/gnus.tar.gz} から、また
+の Gnus は、@uref{https://www.gnus.org/dist/gnus.tar.gz} から、また
 は @uref{https://ftp.gnus.org/pub/gnus/gnus.tar.gz} から手に入れることが
 できます。
 
@@ -164,12 +164,11 @@ tarball で何をすれば良いですか?
 @samp{./configure; make; make install} の手順を実行してください。
 
 @quotation
-MS-Windows では @uref{http://www.cygwin.com} から Cygwin の環境も取得し
+MS-Windows では @uref{https://www.cygwin.com} から Cygwin の環境も取得し
 てください。それによって上述のことを行なうこと、またはある梱包
-器 (packer) (例えば @uref{http://www.winace.com} にあ
-る Winace) で tarball を開梱すること、そして tarball に含まれてい
-る Gnus をインストールするためのバッチファイル @file{make.bat} を使うこ
-とができるようになります。
+器 (packer) (例えば Winace) で tarball を開梱すること、そして tarball に
+含まれている Gnus をインストールするためのバッチファイル @file{make.bat}
+を使うことができるようになります。
 @end quotation
 
 Gnus をシステム領域にインストールしたくない (またはその権限が与えられて
@@ -1404,15 +1403,13 @@ From, Organization, Reply-To などのヘッダーを自動生成したり、定
 
 Emacs では単語の綴りをチェックするために @file{ispell.el} を使うことがで
 きます。したがって最初に行なうのは、外部プログラ
-ム @uref{http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html,
-ispell} または同 @uref{http://aspell.sourceforge.net/, aspell} を適当
-な path にインストールしておくことです。次
-に @uref{http://www.kdstevens.com/~stevens/ispell-page.html,
-ispell.el} と、書いたその場でスペルチェックをしてくれ
-る @uref{http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html,
-flyspell.el} を用意してください。@file{ispell.el} は Emacs とともに配布
-されています。@file{flyspell.el} も Emacs に同梱されているので、それらを
-個別にインストールする必要は無いはずです。
+ム @uref{https://www.cs.hmc.edu/~geoff/ispell.html, ispell} または
+同 @uref{http://aspell.net, aspell} を適当な path にインストールしておく
+ことです。次に ispell.el と、書いたその場でスペルチェックをしてくれ
+る @uref{https://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html,
+flyspell.el} を用意してください。Ispell.el は Emacs とともに配布されてい
+ます。@file{flyspell.el} も Emacs に同梱されているので、それらを個別にイ
+ンストールする必要は無いはずです。
 
 @file{ispell.el} は外部プログラム @samp{ispell} を使うことを想定していま
 す。@samp{aspell} を選ぶなら、Emacs の設定ファイルで以下の宣言を行なって
@@ -1549,7 +1546,7 @@ cat file.face | sed 's/["\\]/\\&/g' > file.face.quoted
 
 @noindent
 @samp{compface} を使うことができなくても、オンラインの X-Face 変換器
-が @uref{http://www.dairiki.org/xface/} にあります。MS Windows を使って
+が @uref{https://www.dairiki.org/xface/} にあります。MS Windows を使って
 いるのならば、 かつ
 て @indicateurl{http://www.xs4all.nl/~walterln/winface/} にあっ
 た @samp{WinFace} プログラムを使うこともできます。後は、送信する記事に
@@ -1753,8 +1750,8 @@ Gnus を使っていなかったときの古いメールを、Gnus に編入さ�
 最も楽な方法は、古いメールプログラムにメッセージを @samp{mbox} 形式にま
 とめてもらうことです。ほとんどの Unix のメイラーはそれをすることができ、
 あなたが MS Windows の世界の出身であって
-も @uref{http://mbx2mbox.sourceforge.net/} で、そのための道具を見つける
-ことができるでしょう。
+も @uref{https://sourceforge.net/projects/mbx2mbox/} で、そのための道具
+を見つけることができるでしょう。
 
 では、この @samp{mbox} ファイルを Gnus に編入させましょう。それにはグルー
 プバッファーで @kbd{G f /path/file.mbox @key{RET}} を実行し
@@ -1825,9 +1822,9 @@ Manual}.
 @subsubheading 回答
 
 これにも複数の方法があります。Usenet グループに投稿されたものについては、
-おそらく @uref{http://groups.google.com, groups.google.com} に尋ねるのが
-最も楽な解決方法です。そこで見つかったならば、Google に生の記事を表示し
-てもらって Message-ID を探し、概略バッファー
+おそらく @uref{https://groups.google.com, groups.google.com} に尋ねるの
+が最も楽な解決方法です。そこで見つかったならば、Google に生の記事を表示
+してもらって Message-ID を探し、概略バッファー
 で @kbd{M-^ the@@message.id @key{RET}} を実行してください。さら
 に Gnus 5.10 以降では @samp{groups.google.com} へのインターフェースがあ
 るので、グループバッファーで @kbd{G W} を使うこともできます。
@@ -1967,23 +1964,23 @@ Gnus では、ニュースサーバーでニュース記事が期限切れ消去
 
 最初に Unix システムについて書きましょう。ニュース記事を取り込むための最
 も安易な解は、@uref{http://www.leafnode.org/,
-Leafnode} や @uref{http://infa.abo.fi/~patrik/sn/, sn} のように小規模
+Leafnode} や @uref{http://patrik.iki.fi/sn/, sn} のように小規模
 な @acronym{NNTP} サーバーを使うことです。もちろ
-ん @uref{http://www.isc.org/software/inn/, inn} のような本格的なニュース
-サーバーをインストールすることもできます。メールの取り込みに使うもので人
-気があるのは @uref{http://www.catb.org/~esr/fetchmail/, fetchmail} およ
+ん @uref{https://www.isc.org/othersoftware/, inn} のような本格的なニュー
+スサーバーをインストールすることもできます。メールの取り込みに使うもので
+人気があるのは @uref{http://www.fetchmail.info/, fetchmail} およ
 び @uref{http://pyropus.ca/software/getmail/, getmail} です。それらにメー
 ルをディスクに書き込むように指示してください。Gnus はそこから読むことに
 なります。最後ですがおろそかにできないのはメールの送信です。これにはあら
 ゆる MTA、例えば @uref{http://www.sendmail.org/, sendmail} また
 は @uref{http://www.exim.org/, exim} を使うことができます。
 
-Windows 小屋のためには @uref{http://www.tglsoft.de/, Hamster} を推します。
-それは小さくてフリーなオープンソースのプログラムで、遠隔サーバーからメー
-ルとニュースを取り込んで、@acronym{NNTP} および @acronym{POP3} また
-は @acronym{IMAP} のそれぞれを介して Gnus (あるいは他のメール/ニュースリー
-ダー) に渡します。さらにそれは Gnus が送信するメールを受け取るため
-の @acronym{SMTP} サーバーも含んでいます。
+Windows 小屋のためには @uref{http://www.tglsoft.de/freeware_hamster.html,
+Hamster} を推します。それは小さくてフリーなオープンソースのプログラムで、
+遠隔サーバーからメールとニュースを取り込んで、@acronym{NNTP} およ
+び @acronym{POP3} または @acronym{IMAP} のそれぞれを介して Gnus (あるい
+は他のメール/ニュースリーダー) に渡します。さらにそれは Gnus が送信する
+メールを受け取るための @acronym{SMTP} サーバーも含んでいます。
 
 @node FAQ 7-2
 @subsubheading 質問 7.2
@@ -2124,7 +2121,8 @@ info ファイルで文書化されています。あなたはそれらのマニ
 
 @subsubheading 回答
 
-最も重要なものは @uref{http://www.gnus.org, 公式 Gnus ウェブサイト} です。
+最も重要なものは @uref{https://www.gnus.org, 公式 Gnus ウェブサイト} で
+す。
 
 他にも興味深いサイトがあったら教えてください。
 
@@ -2136,9 +2134,7 @@ info ファイルで文書化されています。あなたはそれらのマニ
 @subsubheading 回答
 
 Gnus の一般的な質問を取り扱うニュースグループとし
-て @samp{gnu.emacs.gnus} がありま
-す (@uref{http://dir.gmane.org/gmane.emacs.gnus.user,
-gmane.emacs.gnus.user} でも利用可) 。開発版の Gnus に対する質問があるの
+て @samp{gnu.emacs.gnus} があります。開発版の Gnus に対する質問があるの
 なら、ding メーリングリストで尋ねる方が良いはずです。以下を参照してくだ
 さい。
 
@@ -2149,10 +2145,7 @@ Big8 (訳注: comp, humanities, misc, news, rec, sci, soc, talk の八大ニュ�
 記のグループの方がはるかに良いでしょう)。ドイツ語を話す人向けに
 は @samp{de.comm.software.gnus} があります。
 
-ding メーリングリスト (ding@@gnus.org) は Gnus の開発を扱います。ding リ
-ストは news.gmane.org にあ
-る @uref{http://dir.gmane.org/gmane.emacs.gnus.general,
-gmane.emacs.gnus.general} を NNTP 経由で読むこともできます。
+ding メーリングリスト (ding@@gnus.org) は Gnus の開発を扱います。
 
 @node FAQ 8-5
 @subsubheading 質問 8.5

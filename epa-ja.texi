@@ -319,7 +319,7 @@ EasyPG アシスタントはインライン OpenPGP メッセージの作成を�
 した電子メールを送る伝統的な形式です。
 
 注: インライン OpenPGP は推奨されません。PGP/MIME を使うことを考えるべき
-です。@uref{http://josefsson.org/inline-openpgp-considered-harmful.html,
+です。@uref{https://josefsson.org/inline-openpgp-considered-harmful.html,
 Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 
 @noindent

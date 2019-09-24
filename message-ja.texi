@@ -1136,7 +1136,7 @@ BUG の項を読んでみてください。それでもなお OpenSSL を使い�
 Message (それに @acronym{MML}) で @acronym{S/MIME} をサポートするため
 に OpenSSL を使うことができます。OpenSSL は実際の @acronym{S/MIME} によ
 る署名/暗号化の処理を実行します。
-OpenSSL は @uref{http://www.openssl.org/} で見つかるでしょう。
+OpenSSL は @uref{https://www.openssl.org/} で見つかるでしょう。
 OpenSSL 0.9.6 以降のものが動作するはずです。バージョン 0.9.5a は証明書か
 らメールアドレスを抽出することができません。またそれは @acronym{MIME} の
 セパレータに余計な CR 文字を挿入するので、変なメールを送る人だと思われた
@@ -1289,8 +1289,8 @@ gpg --use-agent --sign < /dev/null > /dev/null
 これは署名と暗号化を二段階で行なわせることによって、PGP version 2 が理解
 できるメッセージを生成します。
 
-(その問題に関するさらなる情報については、
-@uref{http://www.gnupg.org/gph/en/pgp2x.html} を参照してください。)
+(その問題に関するさらなる情報について
+は @uref{https://www.gnupg.org/gph/en/pgp2x.html} を参照してください。)
 
 @node Encrypt-to-self
 @subsection 自分が作った暗号化メッセージを読む

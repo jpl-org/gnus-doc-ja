@@ -290,7 +290,7 @@ machine gmail2 login account2@@gmail.com password "account2 password" port imap
 @chapter シークレットサービス API
 
 @dfn{Secret Service API} はパスワードや他の機密情報を安全に保存するため
-の @uref{http://www.freedesktop.org/wiki/Specifications/secret-storage-spec,freedesktop.org} に
+の @uref{https://www.freedesktop.org/wiki/Specifications/secret-storage-spec/,freedesktop.org} に
 よる標準です。この API は GNOME 鍵リングと KDE ウォレットのようなシステ
 ム・デーモン (それぞれ最近はたいていの GNU/Linux システムに備わって
 る GNOME と KDE のパッケージ) によって実装されます。
@@ -454,7 +454,7 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
 @node The Unix password store
 @chapter Unix パスワード・マネージャー
 
-@uref{http://www.passwordstore.org,標準 Unix パスワードマネージャー} (ま
+@uref{https://www.passwordstore.org,標準 Unix パスワードマネージャー} (ま
 たは単に @code{pass}) は、あなたのパスワードを Unix 哲学に基づい
 て @code{gpg} で保護されたファイルに格納します。格納する場所 (任意のディ
 レクトリー) は、@code{auth-source-pass-filename} 変数で指定しなければな
