@@ -1,6 +1,6 @@
 2019-09-24  Katsumi Yamaoka  <yamaoka@jpl.org>
 
-	* Makefile.in (PDFTEX): Default to xetex rather than luatex.
+	* Makefile.in (PDFTEX): Default to XeTex rather than LuaTex.
 
 2018-04-05  Katsumi Yamaoka  <yamaoka@jpl.org>
 
