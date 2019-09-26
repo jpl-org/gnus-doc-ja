@@ -8758,17 +8758,18 @@ IDNA エンコードされたドメイン名は @samp{xn--bar} のように見�
 
 @item W d
 @kindex W d @r{(概略)}
-@findex gnus-article-treat-dumbquotes
-@vindex gnus-article-dumbquotes-map
+@findex gnus-article-treat-smartquotes
+@vindex gnus-article-smartquotes-map
 @cindex Smartquotes
 @cindex M****s*** sm*rtq**t*s
 @cindex Latin 1
-@code{gnus-article-dumbquotes-map} に応じて、マ■■■ソ■
-■ sm*rtq**t*s を処理します。この関数は文字が sm*rtq**t* かどうかを推測
-するので、対話的にのみ使用されるべきであることに注意してください。
+マイクロソフト Smart Quotes を @code{gnus-article-smartquotes-map}
+((@code{gnus-article-treat-smartquotes})) に従って処理します。この関数は
+文字が Smart Quotes かどうかを推測するので、対話的にのみ使用されるべきで
+あることに注意してください。
 
-Sm*rtq**t*s はもっと多くの引用文字を提供するために、マ■■■ソ■■が勝手
-に文字マップを拡張したものです。もし、アポストロフィ (') や引用記
+Smart Quotes はもっと多くの引用文字を提供するために、マイクロソフトが勝
+手に文字マップを拡張したものです。もし、アポストロフィ (') や引用記
 号 (") などがあるべきところに @code{\222} や @code{\264} のようなものが
 見えてしまったら、洗濯してみてください。
 
@@ -8787,9 +8788,9 @@ Sm*rtq**t*s はもっと多くの引用文字を提供するために、マ■�
 @kindex W Y f @r{(概略)}
 @findex gnus-article-outlook-deuglify-article
 @cindex Outlook Express
-いかれた Outlook (Express) の記事を完全に醜くなくすること (訳
-注: de-ugly-fy) (sm*rtq**t*s を処理、行の折り返しを解除、著者行の修復と
-引用文の整頓) をします。
+いかれた Outlook (Express) の記事を完全に醜くないようにします (訳
+注: de-ugly-fy)。Smart Quote を処理して行の折り返しを解除、著者行の修復
+と引用文の整頓をします。
 (@code{gnus-article-outlook-deuglify-article})。
 
 @item W Y u
