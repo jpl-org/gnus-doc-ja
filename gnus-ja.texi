@@ -726,7 +726,6 @@ Email Based Diary
 
 * The NNDiary Back End::        基本的な設定と使い方
 * The Gnus Diary Library::      NNDiary の上位階層にある実用的なツールキット
-* Sending or Not Sending::      日程メッセージを送るときに注意すること
 
 The NNDiary Back End
 
@@ -17602,7 +17601,6 @@ Gnus Diary バックエンドは、(常に取り消されることが無い) 定
 @menu
 * The NNDiary Back End::        基本的な設定と使い方
 * The Gnus Diary Library::      nndiary の上位階層にある実用的なツールキット
-* Sending or Not Sending::      日程メッセージを送るときに注意すること
 @end menu
 
 @node The NNDiary Back End
@@ -17911,24 +17909,10 @@ Buffer Lines})。@code{gnus-diary} はそれを、日程グループのパラメ
 程グループで @kbd{C-u a} か @kbd{C-u m} を使うことによって、これらのヘッ
 ダーが自動的に挿入されるので (まだ適切な値で満たされていませんが)。
 
-@node Sending or Not Sending
-@subsection 送信するべきか、しないべきか
-
-さて、以上の説明をすべて読んでくれたものとして、以下は @code{nndiary} で
-メールを送信することに関する、二つの最後の注意事項です:
-
-@itemize @bullet
-@item
 @code{nndiary} は @emph{本当の} メールバックエンドです。本当にあなたは本
 当の日程メッセージを本当に送ります。これは、日程メッセージを送ることによっ
 て、誰にでも (彼らが Gnus と @code{nndiary} を使っているのならば) 予定を
 伝えることができることをも意味します。
-@item
-しかしながら @code{nndiary} は @code{request-post} メソッドを持ってもい
-るので、日程グループで @kbd{C-u m} の代わりに @kbd{C-u a} を使うことによっ
-て、メッセージを実際に送信するのではなく、そのグループにローカルに格納す
-ることもできます。これは個人的な予定のためには、とても役に立ちます。
-@end itemize
 
 @node Gnus Unplugged
 @section Gnus の切り離し
