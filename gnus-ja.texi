@@ -14050,9 +14050,21 @@ machine imap.gmail.com login <username> password <password> port imap
 @code{plain} または @code{cram-md5} のどれかを設定してください。
 
 @item nnimap-expunge
-もし @code{nil} でなければ、記事を消去した後でそれらを永久に取り除きます。
-これはサーバーに UID EXPUNGE の機能があれば常に実行されますが、ディフォ
-ルトではサーバーにそのコマンドが無ければ実行しません。
+消去した記事を、いつ永久に取り除くか。もし @code{never} であれば、消去さ
+れた記事には IMAP @code{\\Delete} フラグが付きますが、自動的に永久に取り
+除かれることはありません。もし @code{immediately} であると、消去された記
+事は直ちに永久に取り除かれます (これにはサーバーが UID EXPUNGE コマンド
+をサポートしている必要があります)。もし @code{on-exit} であると、記事は
+消去したときにフラグが付けられ、フラグが付けられたすべての記事はそのグルー
+プを閉じるときに永久に取り除かれます。
+
+この変数は後方互換性のために @code{t} または @code{nil} にすることもでき
+ます。もしサーバーが UID EXPUNGE をサポートしているなら
+ば @code{t} と @code{nil} の両方とも @code{immediately} と等価です。もし
+サーバーが UID EXPUNGE をサポートしていない場
+合 @code{nil} は @code{never} と等価ですが、@code{t} は現在消去済みとし
+てフラグが付けられているすべての記事（つまり消去されたばかりの記事だけ
+でなく）を直ちに永久に取り除きます。
 
 @item nnimap-streaming
 事実上すべての @acronym{IMAP} サーバーはデータの高速ストリーミングをサポー
