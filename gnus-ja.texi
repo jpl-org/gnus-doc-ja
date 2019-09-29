@@ -5216,6 +5216,22 @@ Summary Buffer} を参照してください。
 @findex gnus-summary-prev-article
 前の記事に移動します (@code{gnus-summary-prev-article})。
 
+@item G u
+@itemx ]
+@kindex ] @r{(概略)}
+@kindex G u @r{(概略)}
+@findex gnus-summary-next-unseen-article
+次のまだ読まれたことが無い記事に移動しま
+す (@code{gnus-summary-next-unseen-article})。
+
+@item G U
+@itemx [
+@kindex [ @r{(概略)}
+@kindex G U @r{(概略)}
+@findex gnus-summary-prev-unseen-article
+前のまだ読まれたことが無い記事に移動しま
+す @code{gnus-summary-prev-unseen-article})。
+
 @item G C-n
 @kindex G C-n @r{(概略)}
 @findex gnus-summary-next-same-subject
