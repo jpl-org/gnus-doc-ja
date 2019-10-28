@@ -1173,7 +1173,7 @@ Manual}) を参照してください。
 (setq
  nnmail-split-methods
  '(("duplicates" "^Gnus-Warning:.*duplicate")
-   ("XEmacs-NT" "^\\(To:\\|Cc:\\).*localpart@@xemacs.invalid.*")
+   ("Emacs-devel" "^\\(To:\\|Cc:\\).*localpart@@gnu.invalid.*")
    ("Gnus-Tut" "^\\(To:\\|Cc:\\).*localpart@@socha.invalid.*")
    ("tcsh" "^\\(To:\\|Cc:\\).*localpart@@mx.gw.invalid.*")
    ("BAfH" "^\\(To:\\|Cc:\\).*localpart@@.*uni-muenchen.invalid.*")
