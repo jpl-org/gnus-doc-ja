@@ -2587,9 +2587,6 @@ Gnus ヘルプグループを作成します (@code{gnus-group-make-help-group})
 @code{gnus-useful-groups} にあるグループの一つを作りま
 す (@code{gnus-group-make-useful-group})。
 
-@c FIXME: Gmane.org はもはや動いていません。このファイルにある Gmane へ
-@c の参照をそれぞれ修正しなければなりません。
-
 @item G w
 @kindex G w @r{(グループ)}
 @findex gnus-group-make-web-group
@@ -2600,8 +2597,7 @@ Gnus ヘルプグループを作成します (@code{gnus-group-make-help-group})
 す (@code{gnus-group-make-web-group})。このコマンドに接頭引数を与えると、
 一時的ではなく固定したグループを作成します。プロンプトで検索エンジンの種
 類 (search engine type) と検索文字列を入力します。有効な検索エンジンの種
-類には @code{google}, @code{dejanews}, @code{gmane} があります。
-@xref{Web Searches}.
+類には @code{google} と @code{dejanews} があります。@xref{Web Searches}.
 
 もし、@code{google} 検索エンジンを用いる場合には、
 @samp{shaving group:alt.sysadmin.recovery} のような合致する文字列を用い
@@ -2653,26 +2649,6 @@ Gnus ヘルプグループを作成します (@code{gnus-group-make-help-group})
 らだけではなく、どの Gnus バッファーからも呼ぶことができます。
 
 @table @code
-@item gnus-read-ephemeral-gmane-group
-@findex gnus-read-ephemeral-gmane-group
-@vindex gnus-gmane-group-download-format
-Gmane.org で一時的なグループを講読するためのコマンドです。記事
-は @code{gnus-gmane-group-download-format} によって指定され
-た @acronym{URL} を使って HTTP でダウンロードされます。Gnus はグループ名
-と最初の記事番号および記事数の範囲を尋ねます。
-
-@item gnus-read-ephemeral-gmane-group-url
-@findex gnus-read-ephemeral-gmane-group-url
-このコマンドは @code{gnus-read-ephemeral-gmane-group} に似ていますが、グ
-ループ名と最初の記事番号および記事数の範囲は、与えられ
-た @acronym{URL} を元に決定されます。サポートされている @acronym{URL} の
-形式は、次のとおりです:
-@indicateurl{http://thread.gmane.org/gmane.foo.bar/12300/focus=12399},
-@indicateurl{http://thread.gmane.org/gmane.foo.bar/12345/},
-@indicateurl{http://article.gmane.org/gmane.foo.bar/12345/},
-@indicateurl{http://permalink.gmane.org/gmane.foo.bar/12345/}, およ
-び @indicateurl{http://news.gmane.org/group/gmane.foo.bar/thread=12345}。
-
 @item gnus-read-ephemeral-emacs-bug-group
 @findex gnus-read-ephemeral-emacs-bug-group
 一時的なグループで Emacs のバグリポートを講読します。Gnus はバグの番
@@ -16762,7 +16738,6 @@ Gnus を終了する必要は無いので、保存は @code{cron} やそれに�
 @cindex nnweb
 @cindex Google
 @cindex dejanews
-@cindex gmane
 @cindex Usenet searches
 @cindex searching the Usenet
 
@@ -16809,7 +16784,7 @@ Gnus を使えばブラウザー無しで検索することができます。
 @item nnweb-type
 @vindex nnweb-type
 どの検索エンジンを使うかを指定します。現在サポートされている種類は、
-@code{google}, @code{dejanews} そして @code{gmane} です。
+@code{google} と @code{dejanews} です。
 @code{dejanews} は @code{google} の別名になっていることに注意してくださ
 い。
 
@@ -20831,9 +20806,9 @@ contrib/gnus-namazu の簡潔な比較もまた良し。
 で言うところの @dfn{エンジン}) で動作しますが、すべて同じ基本的な検索イ
 ンターフェースを使います。
 
-@code{nnimap} および @code{gmane} 検索エンジンは設定無しで動くはずです。
-他のエンジンはローカルな索引を必要とします。それは Gnus の外で作り、かつ
-維持しなければなりません。
+@code{nnimap} 検索エンジンは設定無しで動くはずです。他のエンジンはローカ
+ルな索引を必要とします。それは Gnus の外で作り、かつ維持しなければなりま
+せん。
 
 @node Basic Usage
 @subsection 基本的な使い方
@@ -20880,19 +20855,17 @@ contrib/gnus-namazu の簡潔な比較もまた良し。
 
 nnir を設定するには、いくらか準備作業が必要です。まず、使おうと思ってい
 る検索エンジンを設定しましょう。それらのうちのいくつか、例え
-ば @code{imap} と @code{gmane} については特別な設定は要りません。他の、
-例えば @code{namazu} と @code{swish} については後述の設定が必要です。次
-に、サーバーまたはバックエンドと検索エンジンを関連付ける必要があります。
+ば @code{imap} については特別な設定は要りません。他の、例え
+ば @code{namazu} と @code{swish} については後述の設定が必要です。次に、
+サーバーまたはバックエンドと検索エンジンを関連付ける必要があります。
 
-もし単に @code{nnimap} サーバーを検索するために @code{imap} エンジンを、
-そして @code{gmane} を検索するために @code{gmane} エンジンを使いたいので
-あれば、何もする必要はありません。しかしながら検索語の書き方の詳細説明は、
-とにかく読む必要があるでしょう。
+もし単に @code{nnimap} サーバーを検索するために @code{imap} エンジンを使
+いたいのであれば、何もする必要はありません。しかしながら検索語の書き方の
+詳細説明は、とにかく読む必要があるでしょう。
 
 @menu
 * Associating Engines::                 エンジンと関連付ける方法
 * The imap Engine::                     Imap の設定と使い方
-* The gmane Engine::                    Gmane の設定と使い方
 * The swish++ Engine::                  Swish++ の設定と使い方
 * The swish-e Engine::                  Swish-e の設定と使い方
 * The namazu Engine::                   Namazu の設定と使い方
@@ -20923,12 +20896,10 @@ nnir を設定するには、いくらか準備作業が必要です。まず、
 その場合は変数 @code{nnir-method-default-engines} をカスタマイズしてくだ
 さい。これは @code{(backend . engine)} 形式のペアの連想リストです。この
 変数はディフォルトでは @code{nnimap} バックエンドを使うすべてのサーバー
-で @code{imap} エンジンを、そして @code{nntp} サーバーに
-は @code{gmane} エンジンを使うように設定されています。(@code{gmane} 検索
-エンジンは gmane ではない @code{nntp} サーバーを実際に検索しようとしませ
-んから、ご心配なく。)  でも @code{nnimap} バックエンドを使うすべてのサー
-バーのために @code{namazu} を使いたかったのであれば、以下のように変更す
-ることができます:
+で @code{imap} エンジンを使うように設定されています。で
+も @code{nnimap} バックエンドを使うすべてのサーバーのため
+に @code{namazu} を使いたかったのであれば、以下のように変更することがで
+きます:
 
 @lisp
 '((nnimap . namazu)
@@ -20979,38 +20950,6 @@ AND、OR、および NOT をサポートし、演算子の優先順位を制御�
 @lisp
 (setq nnir-imap-default-search-key "Imap")
 @end lisp
-
-@node The gmane Engine
-@subsubsection Gmane エンジン
-
-@code{gmane} エンジンは設定不要です。
-
-@code{gmane} エンジンを使う検索には、簡単な検索語の書き方があります。
-
-@table @samp
-@item ブール演算子
-AND、OR、NOT (または AND NOT) および XOR をサポートし、演算子の優先順位
-を制御するために括弧を使うことができます。例えば「(emacs OR xemacs) AND
-linux」のように。演算子はそれであると認知されるために、すべて大文字で書
-かなければならないことに注意してください。
-
-@item 必須の、または除外すべき語
-+ と @minus{} は語が必須であるか、または除外すべきかを指定します。例え
-ば: 「football @minus{}american」
-
-@item Unicode の取扱い
-検索エンジンはすべてのテキストを utf-8 に変換するので、どんな言語でも検
-索できるはずです。
-
-@item Stopwords
-ありふれた英単語 ('the' や 'a' のようなもの) はディフォルトで無視されま
-す。そのような単語でも + を前置き (例: +the) したり、引用符で囲
-む (例: "the") ことによって検索対象にすることができます。
-@end table
-
-接頭引数を使うことによって、検索を指定した著者による記事に限定することが
-できます。そうすると検索語が入力された後で、合致する著者名 (または名前の
-一部) が尋ねられます。
 
 @node The swish++ Engine
 @subsubsection Swish++ エンジン
@@ -21164,7 +21103,6 @@ Notmuch 検索エンジンの実行形式の名前です。ディフォルト
 
 @example
 (nnimap . imap)
-(nntp . gmane)
 @end example
 
 @item nnir-ignored-newsgroups
