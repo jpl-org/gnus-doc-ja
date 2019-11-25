@@ -102,6 +102,7 @@ Auth-source ライブラリーは単なるユーザー名やパスワード (い
 @chapter 利用者のためのヘルプ
 
 ``Netrc'' ファイルは事実上の標準です。それらはこのようになっています:
+
 @example
 machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @var{myport}
 @end example
@@ -124,7 +125,10 @@ machine @var{mymachine} port @var{myport} key @var{key} cert @var{cert}
 @end example
 
 @var{key} と @var{cert} はそれぞれ key を含むファイル名と使用する証明書
-です。
+です。ネットワーク接続でそれらを自動的に使用するに
+は @code{:client-certificate t} を @code{open-network-stream} に渡す
+か @code{network-stream-use-client-certificates} を @code{t} にカスタマ
+イズしてください。
 
 シングルまたはダブルクオートで囲むことによって、パスワードや他の要素の中
 で空白文字を使うことができます。
