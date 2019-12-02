@@ -816,6 +816,7 @@ Various
 * Symbolic Prefixes::           いくつかの Gnus の関数に選択権を提供する方法
 * Formatting Variables::        バッファーの見栄えを指定することができる
 * Window Layout::               Gnus の各バッファーのウィンドウを設定する
+* Tabbed Interface::            Gnus tab の設定
 * Faces and Fonts::             フェースがどのように見えるかを変更する
 * Mode Lines::                  モード行に情報を表示する
 * Highlighting and Menus::      バッファーを素敵で心地よく見せる
@@ -21848,6 +21849,7 @@ Gnus では通常それらのメッセージはヘッダーに ``(none)'' が表
 * Symbolic Prefixes::           いくつかの Gnus の関数に選択権を提供する方法
 * Formatting Variables::        バッファーの見栄えを指定することができる
 * Window Layout::               Gnus の各バッファーのウィンドウを設定する
+* Tabbed Interface::            Gnus tab の設定
 * Faces and Fonts::             フェースがどのように見えるかを変更する
 * Mode Lines::                  モード行に情報を表示する
 * Highlighting and Menus::      バッファーを素敵で心地よく見せる
@@ -22647,6 +22649,36 @@ Windows, elisp, The GNU Emacs Lisp Reference Manual}) にすることができ�
                (vertical 1.0 (summary 1.0 point)))))
 @end lisp
 @end itemize
+
+@node Tabbed Interface
+@section Tab によるインターフェース
+@cindex tabbed interface
+@cindex tabs
+
+Gnus は専用のタブ上で tab bar を使って色々なバッファーの表示を選択するこ
+とをサポートしています。
+
+グループバッファーを @samp{Gnus} と名付けられた新規の tab で開くには、こ
+れを使ってください:
+
+@lisp
+(push '("\\`\\*Group\\*\\'" .
+        (display-buffer-in-tab
+         (name . "Gnus")))
+      display-buffer-alist)
+@end lisp
+
+すべての概略バッファーを明確に名付けられた別々の tab で読むにはこうです:
+
+@lisp
+(push '("\\`\\*Summary .*\\*\\'" .
+        (display-buffer-in-tab
+         (name . (lambda (buffer _alist)
+                   (setq buffer (buffer-name buffer))
+                   (when (string-match "\\`\\*Summary \\(.*\\)\\*\\'" buffer)
+                     (format "Group %s" (match-string 1 buffer)))))))
+      display-buffer-alist)
+@end lisp
 
 @node Faces and Fonts
 @section フェースとフォント
