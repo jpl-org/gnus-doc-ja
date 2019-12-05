@@ -22664,7 +22664,7 @@ Gnus は専用のタブ上で tab bar を使って色々なバッファーの表
 @lisp
 (push '("\\`\\*Group\\*\\'" .
         (display-buffer-in-tab
-         (name . "Gnus")))
+         (tab-name . "Gnus")))
       display-buffer-alist)
 @end lisp
 
@@ -22673,10 +22673,10 @@ Gnus は専用のタブ上で tab bar を使って色々なバッファーの表
 @lisp
 (push '("\\`\\*Summary .*\\*\\'" .
         (display-buffer-in-tab
-         (name . (lambda (buffer _alist)
-                   (setq buffer (buffer-name buffer))
-                   (when (string-match "\\`\\*Summary \\(.*\\)\\*\\'" buffer)
-                     (format "Group %s" (match-string 1 buffer)))))))
+         (tab-name . (lambda (buffer _alist)
+                       (setq buffer (buffer-name buffer))
+                       (when (string-match "\\`\\*Summary \\(.*\\)\\*\\'" buffer)
+                         (format "Group %s" (match-string 1 buffer)))))))
       display-buffer-alist)
 @end lisp
 
