@@ -1562,12 +1562,6 @@ Gnus の起動にあまりに時間がかかると思ったなら、この変数
 @section 起動変数
 
 @table @code
-@item gnus-load-hook
-@vindex gnus-load-hook
-Gnus (のプログラム) が読み込まれるときに実行されるフックです。何
-度 Gnus を起動しても、Emacs が起動してから終了するまでに普通はこのフック
-は一回しか実行されないことに注意してください。
-
 @item gnus-before-startup-hook
 @vindex gnus-before-startup-hook
 Gnus が起動するとき、最初に呼ばれるフックです。
@@ -27479,7 +27473,7 @@ Lisp ファイルがディフォルトで @file{.../site-lisp/gnus/} にイン�
 @item
 @acronym{TLS} ラッパーが Gnus に同梱されました。
 
-@acronym{TLS}/@acronym{SSL} が、@file{tls.el} と GnuTLS を介し
+@acronym{TLS}/@acronym{SSL} が GnuTLS を介し
 て @acronym{IMAP} と @acronym{NNTP} でサポートされるようになりました。
 
 @item

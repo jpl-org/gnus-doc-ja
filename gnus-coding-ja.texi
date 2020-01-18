@@ -112,16 +112,6 @@ Emacs MIME Manual}.
 @c 2005-10-21 現在...
 このファイルは Gnus に依存しません。
 
-@item tls.el
-GnuTLS で囲むラッパーを介して TLS/SSL をサポートします。
-@c 2005-10-21 現在...
-このファイルは Gnus に依存しません。
-
-@item pgg*.el
-さまざまな PGP の実装のためのインターフェースを提供します。
-@c 2005-10-21 現在...
-これらのファイルは Gnus に依存しません。
-
 @item sha1.el
 SHA1 Secure Hash Algorithm.
 @c 2007-08-25 現在...
