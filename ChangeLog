@@ -1,3 +1,7 @@
+2020-03-25  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* ptexinfmt.el (texinfo-do-itemize): Replace with an improved version.
+
 2019-09-24  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Makefile.in (PDFTEX): Default to XeTex rather than LuaTex.
