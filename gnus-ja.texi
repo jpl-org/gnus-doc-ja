@@ -25234,6 +25234,13 @@ nnml バックエンドは一通のメールにつき一つのファイルで、
 す。すべてのファイルは一つの spam ではないメールとして扱われます。
 @end defun
 
+@defvar spam-stat-process-directory-age
+処理されるファイルの最大経過日数。このフィルターがないと、数千のメッセー
+ジを含む spam-stat の再トレーニングに長い時間がかかる可能性があります。
+ディフォルトは 90 ですが、最初のトレーニングではより大きな値に設定する方
+が良いでしょう。
+@end defvar
+
 普通は @file{~/Mail/mail/spam} のようなディレクトリー (通
 常 @samp{nnml:mail.spam} グループに対応) につい
 て @code{spam-stat-process-spam-directory} を呼ぶことになるでしょう。ま
