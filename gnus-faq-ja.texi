@@ -697,8 +697,8 @@ POP3 でメールを取得するサーバーで、メールを消さないよう
 
 はい、@acronym{POP3} サーバーが @acronym{UIDL} をサポートしていれば (た
 ぶん近ごろではほとんどのサーバーがサポートしています)。そのために
-は @code{:leave VALUE} というペアを、それぞれのメールソースに加えてくだ
-さい。VALUE については @xref{Mail Source Specifiers}.
+は @code{:leave @var{value}} というペアを、それぞれのメールソースに加え
+てください。@var{value} については @xref{Mail Source Specifiers}.
 
 @node FAQ 4 - Reading messages
 @subsection メッセージを読む
