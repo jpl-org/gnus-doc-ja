@@ -8810,6 +8810,9 @@ Smart Quotes はもっと多くの引用文字を提供するために、マイ�
 @findex gnus-article-fill-long-lines
 長い行を折り返します (@code{gnus-article-fill-mode-lines})。
 
+コマンドに数値接頭引数を与えることによって、折り返しの幅を指定することが
+できます。
+
 @item W C
 @kindex W C @r{(概略)}
 @findex gnus-article-capitalize-sentences
