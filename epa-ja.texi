@@ -346,7 +346,8 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 @kindex C-c C-e C-s
 @kindex C-c C-e s
 @findex epa-mail-sign
-現在のバッファーから署名されたメッセージを作ります。
+ディフォルトの鍵を使って現在のバッファーから署名されたメッセージを作りま
+す。接頭引数を与えると鍵を対話的に選ぶことができます。
 
 @item C-c C-e C-e and C-c C-e e
 @kindex C-c C-e C-e
@@ -360,6 +361,9 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 さい。この関数は @code{epa-mail-aliases} リストを使って受取人アドレスを
 書き換えます。そのオプションを特定の受取人を暗号化の対象としないために使
 うこともできます。
+
+接頭引数を与えると、受取人の選択、署名するかどうか、およびどの鍵で署名す
+るかを対話的に指示することができます。
 @end table
 
 @node Encrypting/decrypting gpg files,  , Mail-mode integration, Commands
