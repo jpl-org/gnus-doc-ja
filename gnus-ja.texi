@@ -405,6 +405,7 @@ Emacs が文章を編集する人に力を与えるように、Gnus はニュー
 @end iftex
 
 @menu
+* Don't Panic::              Gnus との初めての 20分
 * Starting Up::              ニュースを見つけるのには苦労が伴うかもしれない
 * Group Buffer::             グループを選択し、購読し、削除する
 * Summary Buffer::           記事を読み、保存し、投稿する
@@ -947,6 +948,139 @@ Emacs for Heathens
 * Emacs Lisp::                  備え付けの Emacs プログラミング言語
 @end detailmenu
 @end menu
+
+@node Don't Panic
+@chapter あわてないで
+@cindex don't panic
+@cindex introduction to Gnus
+
+ようこそ Gnus ニュースリーダーと電子メールクライアントへ。Gnus はほとん
+どのクライアントとは異なります。ある面ではその無限の構成可能性のため、別
+の観点ではその歴史的な起源のためです。現在 Gnus はフル機能の電子メールク
+ライアントですが、生まれは Usenet スタイルのニュースリーダーであり、その
+遺伝子はいまだニュースリーダーの遺伝子です。したがって、ほとんどのメール
+クライアントとは少し異なる振る舞いをします。
+
+ニュースリーダーというものは一般に次のように考えられています:
+
+@enumerate
+@item
+サーバーは、さまざまな主題に関して潜在的に膨大な数のニュースグループを提
+供します。ユーザーはそれらのグループのほんの一部にだけ興味があるかもしれ
+ないし、いくつかのグループに他より関心を持っている場合もあるでしょう。
+@item
+多くのグループには大量の記事があって、ユーザーはそれらすべてを読みたいわ
+けではありません。興味がある記事を前に出して、興味のないものは表に出さな
+いためのメカニズムが必要です。
+@item
+グループがスキャンされてユーザーが操作した後は、新しい記事が来るまではそ
+のグループに関心を持つことはまずありません。
+@end enumerate
+
+これらの考えは Gnus の特定のディフォルトの動作を導きます:
+
+@enumerate
+@item
+関心があるすべてのグループが同じくらいに興味深いわけではないので、グルー
+プにはさまざまな程度の「購読度」があり、それに応じて変化する振る舞いがあ
+ります。
+@item
+記事を採点する、並べ替える、あるいは見なかったことにするためのコマンドや
+ツールはたくさんあります。
+@item
+Gnus は未読の記事や印が付けられた記事があるグループだけを表示します。新
+しい記事がないグループは表示しません。
+@item
+グループに入ると未読または印が付けられた記事のみが表示され、他のすべての
+記事は表示されません。
+@end enumerate
+
+もしこれが厳格すぎると思うなら、自動の Inbox Zero と考えてください。これ
+が Gnus のディフォルトのやり方です。メールクライアントのように機能させ
+る (常に既読グループと既読記事を表示させる) こともできますが、ユーザー側
+で多少の努力が必要です。
+
+あなたを離陸させるには、以下の簡単な紹介で十分なはずです。
+
+@heading The Basics of Servers, Groups, and Articles
+@cindex servers
+@cindex groups
+@cindex articles
+
+The fundamental building blocks of Gnus are @dfn{servers},
+@dfn{groups}, and @dfn{articles}.  Servers can be local or remote.
+Each server maintains a list of groups, and those groups contain
+articles.  Because Gnus presents a unified interface to a wide variety
+of servers, the vocabulary doesn't always quite line up (see @ref{FAQ
+- Glossary}, for a more complete glossary).  Thus a local maildir is
+referred to as a ``server'' (@pxref{Finding the News}) the same as a
+Usenet or IMAP server is; ``groups'' (@pxref{Group Buffer}) might mean
+an NNTP group, IMAP folder, or local mail directory; and an
+``article'' (@pxref{Summary Buffer}) might elsewhere be known as a
+message or an email.  Gnus employs unified terms for all these things.
+
+Servers fall into two general categories: ``news-like'', meaning that
+the articles are part of a public archive and can't be manipulated by
+the user; and ``mail-like'', meaning that the articles are owned by
+the user, who can freely edit them, move them around, and delete
+them.
+
+For news-like servers, which typically offer hundreds or thousands of
+groups, it's important to be able to subscribe to a subset of those
+groups.  For mail-like servers, the user is generally automatically
+subscribed to all groups (though IMAP, for example, also allows
+selective subscription).  To change group subscription, enter the
+Server buffer (with @kbd{^}) and press @kbd{@key{RET}} on the server
+in question.  From here, Gnus provides commands to change or toggle
+your group subscriptions (@pxref{Browse Foreign Server}).
+
+A Gnus installation is basically just a list of one or more servers,
+plus the user's subscribed groups from those servers, plus articles in
+those groups.
+
+Servers can be added and configured in two places: in the user's
+gnus.el startup file, using the @code{gnus-select-method} and
+@code{gnus-secondary-select-methods} options, or within Gnus itself
+using interactive commands in the Server buffer.  @xref{Finding
+the News}, for details.
+
+
+@heading Fetching Mail
+
+New mail has to come from somewhere.  Some servers, such as NNTP or
+IMAP, are themselves responsible for fetching newly-arrived articles.
+Others, such as maildir or mbox servers, only store articles and don't
+fetch them from anywhere.
+
+In the latter case, Gnus provides for @code{mail sources}: places
+where new mail is fetched from.  A mail source might be a local spool,
+or a remote POP server, or some other source of incoming articles.
+Mail sources are usually configured globally, but can be specified
+per-group (@pxref{Mail Sources} for more information).
+
+@xref{Scanning New Messages}, for details on fetching new mail.
+
+@heading Viewing Mail
+
+By default, Gnus's Group buffer only displays groups with unread
+articles.  It is always possible to display all the groups temporarily
+with @kbd{L}, and to configure Gnus to always display some groups
+(@pxref{Listing Groups}).
+
+@xref{Selecting a Group}, for how to enter a group, and @pxref{Summary
+Buffer} for what to do once you're there.
+
+@heading Sending Mail
+
+New message composition can be initiated from the Group buffer
+(@pxref{Misc Group Stuff}).  If you're in a Summary buffer, you can
+compose replies and forward emails in addition to starting new
+messages, see @ref{Summary Mail Commands}, for details.
+
+For information about what happens once you've started composing a
+message, see @ref{Composing Messages}.  For information on setting up
+@acronym{SMTP} servers in particular, see @ref{Mail Variables, ,Mail
+Variables,message,Message manual}.
 
 @node Starting Up
 @chapter Gnus の起動
