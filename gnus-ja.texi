@@ -968,10 +968,12 @@ Emacs for Heathens
 サーバーは、さまざまな主題に関して潜在的に膨大な数のニュースグループを提
 供します。ユーザーはそれらのグループのほんの一部にだけ興味があるかもしれ
 ないし、いくつかのグループに他より関心を持っている場合もあるでしょう。
+
 @item
 多くのグループには大量の記事があって、ユーザーはそれらすべてを読みたいわ
 けではありません。興味がある記事を前に出して、興味のないものは表に出さな
 いためのメカニズムが必要です。
+
 @item
 グループがスキャンされてユーザーが操作した後は、新しい記事が来るまではそ
 のグループに関心を持つことはまずありません。
@@ -984,12 +986,15 @@ Emacs for Heathens
 関心があるすべてのグループが同じくらいに興味深いわけではないので、グルー
 プにはさまざまな程度の「購読度」があり、それに応じて変化する振る舞いがあ
 ります。
+
 @item
 記事を採点する、並べ替える、あるいは見なかったことにするためのコマンドや
 ツールはたくさんあります。
+
 @item
 Gnus は未読の記事や印が付けられた記事があるグループだけを表示します。新
 しい記事がないグループは表示しません。
+
 @item
 グループに入ると未読または印が付けられた記事のみが表示され、他のすべての
 記事は表示されません。
@@ -1002,85 +1007,81 @@ Gnus は未読の記事や印が付けられた記事があるグループだけ
 
 あなたを離陸させるには、以下の簡単な紹介で十分なはずです。
 
-@heading The Basics of Servers, Groups, and Articles
+@heading サーバー、グループ、記事の基本
 @cindex servers
 @cindex groups
 @cindex articles
 
-The fundamental building blocks of Gnus are @dfn{servers},
-@dfn{groups}, and @dfn{articles}.  Servers can be local or remote.
-Each server maintains a list of groups, and those groups contain
-articles.  Because Gnus presents a unified interface to a wide variety
-of servers, the vocabulary doesn't always quite line up (see @ref{FAQ
-- Glossary}, for a more complete glossary).  Thus a local maildir is
-referred to as a ``server'' (@pxref{Finding the News}) the same as a
-Usenet or IMAP server is; ``groups'' (@pxref{Group Buffer}) might mean
-an NNTP group, IMAP folder, or local mail directory; and an
-``article'' (@pxref{Summary Buffer}) might elsewhere be known as a
-message or an email.  Gnus employs unified terms for all these things.
+Gnus の基本的な構成要素
+は @dfn{servers} と @dfn{groups} と @dfn{articles} です。サーバーはロー
+カルでもリモートでも構いません。それぞれのサーバーはグループのリストを保
+持していて、それらのグループには記事があります。Gnus は多種多様なサーバー
+への統一されたインターフェースを提供するため、語彙は必ずしも整頓されてい
+ません (より完全な用語集については @pxref{FAQ - Glossary} を参照してくだ
+さい)。したがってローカルの maildir は Usenet や IMAP サーバーと同じ「サー
+バー」(@pxref{Finding the News}) と呼ばれます。「グルー
+プ」(@pxref{Group Buffer}) は NNTP グループ、IMAP フォルダー、またはロー
+カルメールディレクトリを意味する場合があります。また「記
+事」(@pxref{Summary Buffer}) はメッセージまたは電子メールと呼ばれること
+もあります。Gnus はこれらすべてに統一された用語を採用しています。
 
-Servers fall into two general categories: ``news-like'', meaning that
-the articles are part of a public archive and can't be manipulated by
-the user; and ``mail-like'', meaning that the articles are owned by
-the user, who can freely edit them, move them around, and delete
-them.
+サーバーは 2つの一般的なカテゴリに分類されます。「ニュースふう」: 記事が
+パブリックアーカイブの一部であり、ユーザーが操作できないことを意味します。
+「メールふう」: 記事はユーザーが所有していて、自由に編集、移動、削除でき
+ることを意味します。
 
-For news-like servers, which typically offer hundreds or thousands of
-groups, it's important to be able to subscribe to a subset of those
-groups.  For mail-like servers, the user is generally automatically
-subscribed to all groups (though IMAP, for example, also allows
-selective subscription).  To change group subscription, enter the
-Server buffer (with @kbd{^}) and press @kbd{@key{RET}} on the server
-in question.  From here, Gnus provides commands to change or toggle
-your group subscriptions (@pxref{Browse Foreign Server}).
+通常数百または数千のグループを提供する「ニュースふう」サーバーの場合は、
+それらのグループの一部だけを講読できることが重要です。「メールふう」サー
+バーの場合、ユーザーは通常すべてのグループが自動的に講読可能になりま
+す (ただし、例えば IMAP は選択的な講読もできます)。グループの講読を変更
+するには、サーバーバッファーに (@kbd{^} で) 入って、目的のサーバー
+で @kbd{@key{RET}} を押します。その場所で Gnus はグループの講読を変更ま
+たは切り替えるコマンドを提供します (@pxref{Browse Foreign Server})。
 
-A Gnus installation is basically just a list of one or more servers,
-plus the user's subscribed groups from those servers, plus articles in
-those groups.
+基本的に Gnus の実装は、1つ以上のサーバーのリスト、それらのサーバーから
+ユーザーが講読するグループ、およびそれらのグループの記事です。
 
-Servers can be added and configured in two places: in the user's
-gnus.el startup file, using the @code{gnus-select-method} and
-@code{gnus-secondary-select-methods} options, or within Gnus itself
-using interactive commands in the Server buffer.  @xref{Finding
-the News}, for details.
+サーバーは 2つの場所で追加と構成ができます: gnus.el 起動ファイルの中
+で @code{gnus-select-method} と @code{gnus-secondary-select-methods} オ
+プションを使うことによって、または Gnus 自身のサーバーバッファーで対話的
+なコマンドを使うことによって。詳細は @xref{Finding the News}.
 
+@heading メールの取得
 
-@heading Fetching Mail
+新しいメールはどこからかやって来なければなりません。NNTP や IMAP のよう
+ないくつかのサーバーは、それ自体が新着記事の取得を担当します。
+maildir や mbox サーバーなどの他のものは記事を保存するだけで、どこからも
+取得しません。
 
-New mail has to come from somewhere.  Some servers, such as NNTP or
-IMAP, are themselves responsible for fetching newly-arrived articles.
-Others, such as maildir or mbox servers, only store articles and don't
-fetch them from anywhere.
+後者の場合 Gnus は @code{mail sources}、すなわち新しいメールを取得する場
+所を提供します。メールソースは、ローカルスプール、リモート POP サーバー、
+またはその他の新着記事のソースです。メールソースは通常グローバルに設定し
+ますが、グループごとに指定することもできます (より詳しく
+は @pxref{Mail Sources})。
 
-In the latter case, Gnus provides for @code{mail sources}: places
-where new mail is fetched from.  A mail source might be a local spool,
-or a remote POP server, or some other source of incoming articles.
-Mail sources are usually configured globally, but can be specified
-per-group (@pxref{Mail Sources} for more information).
+新しいメールの取得に関する詳細は @xref{Scanning New Messages}.
 
-@xref{Scanning New Messages}, for details on fetching new mail.
+@heading メールの閲覧
 
-@heading Viewing Mail
+Gnus のグループバッファーは、ディフォルトでは未読記事のあるグループだけ
+を表示します。一時的にすべてのグループを表示することが @kbd{L} でできま
+すし、いくつかのグループは常に表示するように Gnus を構成することも可能で
+す (@pxref{Listing Groups})。
 
-By default, Gnus's Group buffer only displays groups with unread
-articles.  It is always possible to display all the groups temporarily
-with @kbd{L}, and to configure Gnus to always display some groups
-(@pxref{Listing Groups}).
+グループへの入り方は @xref{Selecting a Group}.
+そこに行ったら何をすべきかについては @xref{Summary Buffer}.
 
-@xref{Selecting a Group}, for how to enter a group, and @pxref{Summary
-Buffer} for what to do once you're there.
+@heading メールの送信
 
-@heading Sending Mail
+新しいメッセージの作成をグループバッファーから始めることができま
+す (@pxref{Misc Group Stuff})。概略バッファーにいる場合は、新しいメッセー
+ジを始めるだけでなく、返信や電子メールを転送することができます。詳しく
+は @xref{Summary Mail Commands}.
 
-New message composition can be initiated from the Group buffer
-(@pxref{Misc Group Stuff}).  If you're in a Summary buffer, you can
-compose replies and forward emails in addition to starting new
-messages, see @ref{Summary Mail Commands}, for details.
-
-For information about what happens once you've started composing a
-message, see @ref{Composing Messages}.  For information on setting up
-@acronym{SMTP} servers in particular, see @ref{Mail Variables, ,Mail
-Variables,message,Message manual}.
+メッセージの作成を始めるとどうなるかについて
+は @xref{Composing Messages} を参照してください。特に @acronym{SMTP} サー
+バーの設定について
+は @xref{Mail Variables, ,メール変数,message-ja,Message manual}.
 
 @node Starting Up
 @chapter Gnus の起動
