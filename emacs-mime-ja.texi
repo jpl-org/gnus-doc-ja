@@ -496,6 +496,12 @@ Mailcap (@pxref{mailcap}) を介して添付ファイルの表示を始めると
 始める場合とは違います)。とにかく、必ずどんな外部プログラムも使わないよ
 うにしたいのであれば、この変数を @code{nil} か @code{ask} に設定してくだ
 さい。
+
+@item mm-inline-font-lock
+@vindex mm-inline-font-lock
+もし @code{nil} 以外であれば font-lock に対応したパート (例えばパッチや
+コードの断片) が font-lock されます。これは font-lock を有効/無効にする
+独自の方法を持つ呼び出し元によって強制される場合があります。
 @end table
 
 @node Files and Directories
