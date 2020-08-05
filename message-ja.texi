@@ -879,6 +879,18 @@ Message は @acronym{MIME} に対応した送信用のエージェントです�
 ます。@code{nil} だったらオプションを尋ねません。@code{t} にすると、オプ
 ションを指定するかどうかを尋ねます。
 
+@vindex message-screenshot-command
+@findex message-insert-screenshot
+@cindex screenshots
+@kindex C-c C-p
+もしシステムがサポートしていれば、スクリーンショットをメッセージバッファー
+に直接挿入することもできます。
+@kbd{C-c C-p} (@code{message-insert-screenshot}) コマンドは画像を MML パー
+ツとしてバッファーに挿入し、その場所に画像のテキストプロパティーを付加し
+ます。変数 @code{message-screenshot-command} で、スクリーンショットを撮
+るために使う外部コマンドを指定します。ディフォルト
+は @code{"import png:-"} で、これは ImageMagick のコマンドです。
+
 さらに @acronym{MML} 言語 (@pxref{Composing, ,MIME メッセージの作成,
 emacs-mime-ja, The Emacs MIME Manual}) を使えば、どんな複雑なマルチパー
 トでも自由に作ることができます。
