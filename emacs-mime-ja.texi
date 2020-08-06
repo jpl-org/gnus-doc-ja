@@ -724,8 +724,16 @@ Content-Type: text/enriched; charset=iso-2022-jp
 
 @item encoding
 有効な値は @samp{7bit}, @samp{8bit}, @samp{quoted-printable} およ
-び @samp{base64} です (@code{Content-Transfer-Encoding})。@xref{Charset
-Translation}.
+び @samp{base64} です。@xref{Charset Translation}.  このパラメーターはパー
+トを送信するときに使う @code{Content-Transfer-Encoding} を示すもので、通
+常は自動的に決定されます。
+
+@item data-encoding
+このパラメーターはデータで使われているエンコーディングを示すもので、その
+データは使われる前にデコードされます。有効な値
+は @samp{quoted-printable} と @samp{base64} です。これはメッセージバッ
+ファーで @samp{"<#part>...<#/part>"} タグの内側に直接挿入したバイナリー
+データ (たとえば画像) を含んでいるパートがある場合に便利です。
 
 @item description
 パートの説明書きです (@code{Content-Description})。

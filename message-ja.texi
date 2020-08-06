@@ -109,6 +109,7 @@ Message は Gnus とともに配布されます。このマニュアルに対応
 * Resending::            メールメッセージを再送する
 * Bouncing::             弾かれたメールメッセージを再送する
 * Mailing Lists::        メーリングリストにメールを送る
+* System Mailer Setup::  メッセージをシステムメイラーとして使う
 @end menu
 
 Message モードのツールバーをカスタマイズすることができます。@kbd{M-x
@@ -532,6 +533,26 @@ to-address で設定された他の誰かより優先させるために、明示
 MFT を尊重することは良いネチケット (netiquette) であると考えられています。
 どこにフォローアップする必要があるかを、メッセージを投稿した人はあなたよ
 りよく知っているはずですから。
+
+@node System Mailer Setup
+@section システムメイラーの設定
+@cindex mailto:
+
+他のプログラムで @samp{mailto:} リンクをクリックすると Emacs が開くよう
+に、Emacs をシステムメーラーとして設定することができます。
+
+それがどのように行われるかはシステムによって異なりますが、一般
+には @acronym{MIME} タイプのディフォルトアプリケーションを設定する方法が
+あって、この場合の適切なタイプは @samp{x-scheme-handler/mailto;} です。
+
+起動するアプリケーションは @samp{"emacs -f message-mailto %u"} でなけれ
+ばなりません。それが Emacs を起動して、@code{message-mailto} コマンドを
+実行します。それは与えられた @acronym{URL} を解析して、指定されたパラメー
+ターでメッセージバッファーを設定します。
+
+たとえば @samp{mailto:larsi@@gnus.org?subject=This+is+a+test} が開くメッ
+セージバッファーでは、@samp{To:} ヘッダーに @samp{"larsi@@gnus.org"} が
+記入され、@samp{Subject:} ヘッダーは @samp{"This is a test"} になります。
 
 @node Commands
 @chapter 命令
