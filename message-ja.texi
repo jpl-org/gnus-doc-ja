@@ -1030,6 +1030,7 @@ GnuPG をインストール
 * Signing and encryption::      署名と暗号化のコマンド
 * Using S/MIME::                S/MIME を使う
 * Using OpenPGP::               OpenPGP を使う
+* OpenPGP Header::              メッセージに OpenPGP ヘッダーを付加する
 * Passphrase caching::          パスフレーズをキャッシュする
 * PGP Compatibility::           古い実装との互換性
 * Encrypt-to-self::             自分が作った暗号化メッセージを読む
@@ -1243,6 +1244,29 @@ pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
 きます。変数 @code{mml-default-encrypt-method} およ
 び @code{mml-default-sign-method} でどの種類を使うかを決定し、
 @acronym{PGP/MIME} がデフィフォルトです。
+
+@node OpenPGP Header
+@subsection OpenPGP ヘッダー
+
+@samp{OpenPGP} ヘッダーを、送信者の OpenPGP 鍵に関する情報を提供するため
+に使うことができます。これは、標準ではないが長く使われてき
+た @samp{X-PGP-Key} ヘッダー (など) を、正式で現代的にしたものです。詳し
+くは、これを見てください:
+@uref{https://tools.ietf.org/html/draft-josefsson-openpgp-mailnews-header}
+
+@vindex message-openpgp-header
+これをメッセージで使うには、このように設定してから
+
+@lisp
+(add-hook 'message-send-hook 'message-add-openpgp-header)
+@end lisp
+
+@noindent
+自分の PGP 設定に合わせて @code{message-openpgp-header} 変数をカスタマイ
+ズしてください。変数はリストで、その内わけは
+鍵の ID、鍵の URL か ASCII 装甲された鍵、そして保護のやり
+方 (@samp{"unprotected"}、@samp{"sign"}、@samp{"encrypt"} また
+は @samp{"signencrypt"} のうちどれか一つ) です。
 
 @node Passphrase caching
 @subsection パスフレーズをキャッシュする
