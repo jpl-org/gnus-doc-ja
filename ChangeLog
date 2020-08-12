@@ -1,3 +1,8 @@
+2020-08-12  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 27.1 is released
+	from the emacs-27 branch.
+
 2020-03-25  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* ptexinfmt.el (texinfo-do-itemize): Replace with an improved version.
