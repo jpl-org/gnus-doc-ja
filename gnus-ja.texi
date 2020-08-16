@@ -10812,14 +10812,14 @@ Gnus の info の節 (node) に移動します (@code{gnus-info-find-node})。
 @subsection 記事を探す
 
 @table @kbd
-@item M-s
-@kindex M-s @r{(概略)}
+@item M-s M-s
+@kindex M-s M-s @r{(概略)}
 @findex gnus-summary-search-article-forward
 それ以降のすべての (生の) 記事を正規表現で検索しま
 す (@code{gnus-summary-search-article-forward})。
 
-@item M-r
-@kindex M-r @r{(概略)}
+@item M-s M-r
+@kindex M-s M-r @r{(概略)}
 @findex gnus-summary-search-article-backward
 それ以前のすべての (生の) 記事を正規表現で検索しま
 す (@code{gnus-summary-search-article-backward})。
