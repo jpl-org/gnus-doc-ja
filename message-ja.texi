@@ -1258,7 +1258,7 @@ pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
 これをメッセージで使うには、このように設定してから
 
 @lisp
-(add-hook 'message-send-hook 'message-add-openpgp-header)
+(add-hook 'message-header-setup-hook 'message-add-openpgp-header)
 @end lisp
 
 @noindent
