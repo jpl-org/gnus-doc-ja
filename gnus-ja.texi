@@ -831,6 +831,7 @@ Various
 * Spam Package::                Spam を濾過して処理するためのパッケージ
 * The Gnus Registry::           記事を Message-ID で辿るためのパッケージ
 * The Gnus Cloud::              Gnus の印を同期するためのパッケージ
+* D-Bus Integration::           システムスリープ時に Gnus サーバーを閉じる
 * Other modes::                 他のモードとの相互作用
 * Various Various::             本当にいろいろなもの
 
@@ -21991,6 +21992,7 @@ Gnus では通常それらのメッセージはヘッダーに ``(none)'' が表
 * Spam Package::                Spam を濾過して処理するためのパッケージ
 * The Gnus Registry::           記事を Message-ID で辿るためのパッケージ
 * The Gnus Cloud::              Gnus の印を同期するためのパッケージ
+* D-Bus Integration::           システムスリープ時に Gnus サーバーを閉じる
 * Other modes::                 他のモードとの相互作用
 * Various Various::             本当にいろいろなもの
 @end menu
@@ -25963,6 +25965,27 @@ Gnus クラウドの設定には 1分もかかりません。グループバッ�
 CloudSynchronizationDataPack(TM) を格納する IMAP サーバーの名前です。サー
 バーバッファーから設定するのが最も簡単です (@pxref{Gnus Cloud Setup})。
 @end defvar
+
+@node D-Bus Integration
+@section D-Bus の統合
+@cindex dbus
+@cindex D-Bus
+@cindex gnus-dbus
+@cindex system sleep
+@cindex closing servers automatically
+@cindex hung connections
+
+ラップトップ、あるいはスリープまたは休止機能があるシステムを使っていると、
+長時間実行しているサーバー接続が「ハング」してしまい、システムが再開した
+後でユーザーが手動で接続をいったん閉じて開き直す必要が生じることがありま
+す。D-Bus をサポートするようにコンパイルされたシステ
+ム (@code{(featurep 'dbusbind)} の値で確認) では、Gnus がシステムがスリー
+プ状態になる前に D-Bus の信号を捕捉して、すべてのサーバー接続を自動的に
+閉じることができます。有効にするに
+は @code{gnus-dbus-close-on-sleep} を @code{nil} 以外の値にしてください。
+
+Emacs の D-Bus に関する詳細
+は @xref{Top,,, dbus, D-Bus integration in Emacs}.
 
 @node Other modes
 @section 他のモードとの相互作用
