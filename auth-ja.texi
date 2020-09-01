@@ -238,6 +238,10 @@ machine YOURMACHINE login YOU password SMTPPASSWORD port 433
 machine YOURMACHINE login YOU password GENERALPASSWORD
 @end example
 
+あるマシンが使う特定の SMTP 認証方法を指定するには @code{smtp-auth} キー
+ワードを使ってください。使うことができる方法について
+は @xref{Authentication,, Authentication, smtpmail, Emacs SMTP Library}.
+
 url-auth 認証 (HTTP/HTTPS) のためには、これを netrc ファイルに置いておく
 必要があります:
 
