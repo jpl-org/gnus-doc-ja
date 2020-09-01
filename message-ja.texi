@@ -2318,7 +2318,10 @@ Yank されたメッセージを字下げするための空白の数です。
 ディフォルトです) であれば、ファイル @code{message-signature-file} が代
 わりに挿入されます。もし関数であれば、関数の結果が代わりに使われます。も
 し式であれば、式の結果が変わりに使われます。この変数が @code{nil} だった
-ら、署名はまったく挿入されません。
+ら、署名はまったく挿入されません。ただし、必要に応じて手作業
+で @code{message-signature-file} を挿入することもできます。それに
+は @kbd{C-c C-w} (@code{message-insert-signature}) コマンドを使ってくだ
+さい。
 
 @item message-signature-file
 @vindex message-signature-file
