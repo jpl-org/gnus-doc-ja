@@ -4858,6 +4858,12 @@ Gnus は変数 @code{gnus-extract-address-components} の値を @code{From} ヘ�
 名前 (@code{From} 欄より)。これは @code{a} と同じように動作します。
 @item L
 記事の行数。
+@item Z
+記事の検索スコア値 (RSV)。nnselect グループにない場合は nil。
+@item G
+記事の元のグループ名。nnselect グループにない場合は nil。
+@item g
+記事の元のグループ名の短縮形。nnselect グループにない場合は nil。
 @item c
 記事の文字数。この名前指定子は (nnfolder のような) いくつかの選択方法を
 サポートしません。
