@@ -643,7 +643,7 @@ Select Methods
 * Getting Mail::                個人的なメールを Gnus で読む
 * Browsing the Web::            大量のウェブの資源からメッセージを取得する
 * Other Sources::               ディレクトリー、ファイルを読む
-* Combined Groups::             複数のグループを一つのグループに合併させる
+* Virtual Groups::              複数のソースの記事を合併させる
 * Email Based Diary::           日程をメールで管理する
 * Gnus Unplugged::              ニュースとメールをオフラインで読む
 
@@ -719,9 +719,10 @@ Document Groups
 
 * Document Server Internals::   あなた独自の文書種別を追加する方法
 
-Combined Groups
+Virtual Groups
 
-* Virtual Groups::              たくさんのグループの記事を合併する
+* Selection Groups::            数々の場所からの記事
+* Combined Groups::             複数のグループを合併させる
 
 Email Based Diary
 
@@ -10135,13 +10136,20 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セット
 @findex gnus-summary-refer-thread
 @kindex A T @r{(概略)}
 現在の記事があるスレッドの、全部の記事を表示しま
-す (@code{gnus-summary-refer-thread})。この命令は動作するために現在のグ
-ループのすべてのヘッダーを取得しなければならないので、普通は少し時間がか
-かります。これをしばしば行なうのであれば、
+す (@code{gnus-summary-refer-thread})。ディフォルトでは、このコマンドは
+現在のグループでのみ記事を検索します。一部のバックエンド (現在
+は @code{nnimap} のみ) は、スレッド内の記事を直接検索する方法を知ってい
+ます。他の場合には、現在のグループの各ヘッダーを取り込んで検査しなければ
+ならないので、普通は時間がかかります。これをしばしば行なうのであれば、
 @code{gnus-fetch-old-headers} を @code{invisible} に設定することを考えた
 ほうが良いでしょう (@pxref{Filling In Threads})。これは普通は視覚的な効
 果はありませんが、この命令の動作をかなり速くします。もちろんグループに入
 るのはいくらか遅くなりますが。
+
+@vindex gnus-refer-thread-use-search
+もし @code{gnus-refer-thread-use-search} が nil でなければ、スレッドを直
+接検索する方法を知っているバックエンドは、現在のグループだけでなく、同じ
+サーバー上のすべてのグループも検索します。
 
 @vindex gnus-refer-thread-limit
 変数 @code{gnus-refer-thread-limit} はこの命令を実行するときにどのくらい
@@ -10149,6 +10157,15 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セット
 ダーを取得するかを指定します。ディフォルトは 200 です。もし @code{t} で
 あれば、取得可能なすべてのヘッダーを取得します。@code{A T} 命令に数値接
 頭引数を与えると、代わりにそれが使われます。
+
+@vindex gnus-refer-thread-limit-to-thread
+ほとんどの場合 @code{gnus-refer-thread} は見つけた記事を現在の概略バッ
+ファーに追加します。(@code{gnus-refer-thread-use-search} が真で、最初の
+参照が仮想ではないグループの概略バッファーから始まる場合、これはできない
+かもしれません。その場合は、スレッド検索の結果を持つ仮想グループの、新し
+い概略バッファーが作成されます。)
+@code{gnus-refer-thread-limit-to-thread} が nil でない場合、概略バッファー
+はスレッド内の記事に限定されます。
 
 @item M-^ @r{(概略)}
 @findex gnus-summary-refer-article
@@ -13031,7 +13048,7 @@ Message Manual}, を参照してください。
 * Getting Mail::                個人的なメールを Gnus で読む
 * Browsing the Web::            大量のウェブの資源からメッセージを取得する
 * Other Sources::               ディレクトリー、ファイルを読む
-* Combined Groups::             複数のグループを一つのグループに合併させる
+* Virtual Groups::              複数の記事とグループを組み合わせる
 * Email Based Diary::           日程をメールで管理する
 * Gnus Unplugged::              ニュースとメールをオフラインで読む
 @end menu
@@ -14183,8 +14200,8 @@ machine imap.gmail.com login <username> password <password> port imap
 ば @code{t} と @code{nil} の両方とも @code{immediately} と等価です。もし
 サーバーが UID EXPUNGE をサポートしていない場
 合 @code{nil} は @code{never} と等価ですが、@code{t} は現在消去済みとし
-てフラグが付けられているすべての記事（つまり消去されたばかりの記事だけ
-でなく）を直ちに永久に取り除きます。
+てフラグが付けられているすべての記事 (つまり消去されたばかりの記事だけ
+でなく) を直ちに永久に取り除きます。
 
 @item nnimap-streaming
 事実上すべての @acronym{IMAP} サーバーはデータの高速ストリーミングをサポー
@@ -17576,18 +17593,129 @@ To: alt-religion-emacs@@GATEWAY
         (nnml "")))
 @end lisp
 
-@node Combined Groups
-@section 合併グループ
+@node Virtual Groups
+@section 仮想グループ
 
-Gnus は、すべてのグループの種類を混合して、大きなグループに合併させるこ
-とができます。
+Gnus は、多くのソースからの記事を組み合わせたり、複数のグループ全体を仮
+想グループに合併させることができます。
 
 @menu
-* Virtual Groups::              たくさんのグループの記事を合併する
+* Selection Groups::            数々の場所からの記事を合併させる
+* Combined Groups::             複数のグループを合併させる
 @end menu
 
-@node Virtual Groups
-@subsection 仮想グループ
+@node Selection Groups
+@subsection 選択グループ
+@cindex nnselect
+@cindex select groups
+@cindex selecting articles
+
+Gnus は収集したメッセージで構成される仮想グループを作成するため
+の @dfn{nnselect} メソッドを提供します。それらのメッセージが複数のサーバー
+とバックエンドにまたがるグループからのものである場合でさえ動作するもので
+す。ほとんどの場合、それらの仮想グループは他のグループと同じように動作し、
+メッセージはスレッド化、印の付加、移動、削除、コピーなどが可能です。グルー
+プは一時的または永続的です。グループは @code{gnus-group-make-group} によっ
+て作られるか、または @code{gnus-group-browse-foreign-server} によって外
+部グループとして閲覧されるものになります。
+
+nnselect グループを使う上での要点は、そこに含めるメッセージを指定するこ
+とです。それぞれの nnselect グループはグループパラメー
+ター @code{nnselect-specs} を持ちます。それは関
+数 @code{nnselect-function} と (もしあれ
+ば) 引数 @code{nnselect-args} の 2つの要素を持つ連想リスト (alist) です。
+
+関数 @code{nnselect-function} はベクトルを返さなければなりません。このベ
+クトルのそれぞれの要素は、1つのメッセージに対応する 3つの要素のベクトル
+です。 3つの要素は完全なグループ名、メッセージ番号、および付加的なソート
+に使うことができるスコアです。スコアの値は任意で、直接 nnselect メソッド
+で使われるものではないので、たとえばすべて 100 に設定することができます。
+
+例です:
+
+@lisp
+(nnselect-specs
+ (nnselect-function . identity)
+ (nnselect-args
+  . [["nnimap+work:mail" 595 100]
+     ["nnimap+home:sent" 223 100]
+     ["nntp+news.gmane.org:gmane.emacs.gnus.general" 23666 100]]))
+@end lisp
+
+関数は @code{identity} で、引数は仮想グループに含めるメッセージそのもの
+のリストです。
+
+あるいは、検索結果からグループを作成することもできます:
+
+@lisp
+(nnselect-specs
+ (nnselect-function . nnir-run-query)
+ (nnselect-args
+  (nnir-query-spec
+   (query . "FLAGGED")
+   (criteria . ""))
+  (nnir-group-spec
+   ("nnimap:home")
+   ("nnimap:work"))))
+@end lisp
+
+これは、"home" と "work" という 2つの IMAP サーバー上のすべてのグループ
+からの、すべてのフラグ付きメッセージを含むグループを作ります。
+
+そして最後の例です。これは、検索を実行し、特定のグループから最近受信した
+すべてのメッセージを見つける関数です:
+
+@lisp
+(defun my-recent-email (args)
+  (let ((query-spec
+         (list
+          (cons 'query
+                (format-time-string "SENTSINCE %d-%b-%Y"
+                                    (time-subtract (current-time)
+                                                   (days-to-time (car args)))))
+          (cons 'criteria "")))
+        (group-spec (cadr args)))
+    (nnir-run-query (cons 'nnir-specs
+                          (list (cons 'nnir-query-spec query-spec)
+                                (cons 'nnir-group-spec group-spec))))))
+@end lisp
+
+すると以下の @code{nnselect-specs} は:
+
+@lisp
+(nnselect-specs
+ (nnselect-function . my-recent-email)
+ (nnselect-args . (7 (("nnimap:home") ("nnimap:work")))))
+@end lisp
+
+過去 7日間に受信した home サーバーと work サーバー上のすべてのメッセージ
+で構成されるグループを提供します。
+
+@code{nnselect-function} を実行して nnselect グループが選択するものを更
+新しようとすると、完了するまでに時間がかかるかもしれません。そのた
+め @code{gnus-group-get-new-news} を実行しても、ディフォルトで
+は nnselect グループは更新されない場合があります。関数の実行に時間がかか
+りすぎない場合は、@code{nnselect-rescan} の @code{nil} ではないグループ
+パラメータは自動更新を可能にします。
+@code{gnus-group-get-new-news-this-group} を通じて手動で更新することは、
+常に可能です。
+
+nnir インターフェース (@pxref {nnir}) には、さまざまなバックエンドを検索
+するためのエンジンが含まれています。
+
+それぞれの検索エンジンの細部は異なりますが、nnir 検索の結果は常
+に nnselect メソッドで使われる種類のベクトルであり、それらは通
+常 nnselectグループを使って表示されます。実際のところ、標準の検索関数で
+ある @code{gnus-group-read-ephemeral-search-group} は、
+@code{nnselect-specs} として適切な nnir 検索を持つ、一時的な nnselect グ
+ループを作成するだけです。当初 nnirには、検索エンジンと、検索結果
+を Gnus に接続するための接着剤の両方が含まれていました。時を経て、この接
+着剤は nnselect メソッドに進化しました。それらの 2つは nnselect が完全に
+機能するバックエンドになるという夢を追い求めることができるよう、ほぼ平和
+裏に袂を分かちましたが、時おり出現する競合がまだ残っているかもしれません。
+
+@node Combined Groups
+@subsection 合併グループ
 @cindex nnvirtual
 @cindex virtual groups
 @cindex merging groups
@@ -20901,13 +21029,22 @@ Gnus は一日に一回スコアを減衰させようとします。例えば Gn
 @chapter 検索
 @cindex searching
 
-FIXME: Gnus の検索機能に関する短い概要を追加。nnir, nnmairix,
-contrib/gnus-namazu の簡潔な比較もまた良し。
+FIXME: nnir, nnmairix, contrib/gnus-namazu の簡潔な比較を載せるのが良い。
 
-この章は、ある語に合致する記事をグループおよびサーバーで検索してそれらの
-記事を取得するための道具について説明します。Gnus はそれらの合致パターン
-を概略バッファーの記事たちを通して検索する、より単純な機構を提供します。
-@xref{Searching for Articles}.
+Gnus には特定の基準 (特定の著者、特定の主題など) に一致する記事を検索
+するさまざまな方法があります。最も簡単な方法は、グループに入ってから制限
+コマンドを使って目的の記事に概略バッファーを「制限」す
+る (@xref{Limiting})、または概略バッファー内のメッセージを検索す
+る (@xref{Searching for Articles}) のいずれかです。
+
+制限コマンドと概略バッファー検索は、サーバーから既に取り込まれた記事の一
+群に対して機能しますが、それらのコマンドはサーバーに追加された記事を検索
+しません。したがってこれらの方法は単純ですが、目的の記事が複数のグループ
+にまたがる場合、またはグループが大きすぎてすべての記事を取り込むことが実
+用的でない場合は不十分です。多くのバックエンド (imap, notmuch、namazu な
+ど) は、サーバー上で直接記事を検索する独自の機能を提供していて、Gnus は
+これらの方法を利用することができます。この章では、検索語に一致する記事の
+グループとサーバーを検索するためのツールについて説明します。
 
 @menu
 * nnir::                     いろんなエンジンで検索する
@@ -20936,30 +21073,25 @@ contrib/gnus-namazu の簡潔な比較もまた良し。
 ンターフェースを使います。
 
 @code{nnimap} 検索エンジンは設定無しで動くはずです。他のエンジンはローカ
-ルな索引を必要とします。それは Gnus の外で作り、かつ維持しなければなりま
-せん。
+ルな索引を必要とする場合があります。それらは Gnus の外で作り、かつ維持し
+なければなりません。
 
 @node Basic Usage
 @subsection 基本的な使い方
 
-グループバッファーで @kbd{G G} をタイプすると、
-@code{gnus-group-make-nnir-group} を呼ぶことによって現在行のグループを検
-索します。これは検索語の入力を促して、それに合致する記事を含む一時的な
-@code{nnir} グループを作り、それらの記事がある概略バッファーを表示します。
-そうしたら、後はいつものコマンドを使って記事を読んだり、移動したり、削除
-したりすれば良いのです。
+グループバッファーで @kbd{G G} をタイプする
+と @code{gnus-group-make-search-group} を呼ぶことによって現在行のグルー
+プを検索します。これは検索語の入力を促して、それに合致する記事を含む一時
+的な @code{nnselect} グループを作り、それらの記事がある概略バッファーを
+表示します。そうしたら、後はいつものコマンドを使って記事を読んだり、移動
+したり、削除したりすれば良いのです。
 
-このように作られた @code{nnir} グループは一時的 (@code{ephemeral}) なグ
-ループなので、既読、移動および削除は別として、いくつかの変更は永続しませ
-ん。つまり元の記事に手を加えることはできません。しかし代わりの手がありま
-す。@kbd{A W} (@code{gnus-warp-to-article}) で、現在行の記事の元の記事
-に @emph{ワープ} (ジャンプ) できるのです。さらに良いのは概略バッファー
-で @kbd{A T} にディフォルトで割り当てられている関
-数 @code{gnus-summary-refer-thread} で、それはその魔法を行なう前、最初に
-元のグループにワープして、そのスレッドにあるすべての記事を含めます。そこ
-から記事を読み、移動し、また削除できるだけでなく、それらをコピーしたり、
-印を変更したり、その他何でもできます。ああ、頭がおかしくなりそう (原
-典: ``Go nuts'')。
+このように作られた @code{nnselect} グループは一時
+的 (@code{ephemeral}) なグループなので、そのグループを出ると消失します。
+ただしグループで行われた変更は、記事が作成された実際のグループに永続的に
+反映されます。元のグループで検索して見つかった記事を表示するときに便利で
+しょう。@kbd{A W} (つまり @code{gnus-warp-to-article}) で、現在行の記事
+の元の記事に @emph{ワープ} (ジャンプ) することができます。
 
 現在行のグループだけでなく、他のグループも検索したいですって?  問題あり
 ません。単に検索したいグループにプロセス印を付けてください。さらにもっ
@@ -20967,17 +21099,17 @@ contrib/gnus-namazu の簡潔な比較もまた良し。
 その見出しの下のすべてのグループを検索してくれるでしょう。
 
 まだ足りないんですか?  よろしい、サーバーバッファー
-で @code{gnus-group-make-nnir-group} (現在は @kbd{G} に割り当てられてい
-る) を使えば、現在行のサーバーにあるすべてのグループを検索できます。多す
-ぎますか?  検索する際に spam グループのようなグループを無視したいという
-ことですね?  であれば @code{nnir-ignored-newsgroups} をカスタマイズして
-ください。
+で @code{gnus-group-make-search-group} (現在は @kbd{G} に割り当てられて
+いる) を使えば、現在行のサーバーにあるすべてのグループを検索できます。多
+すぎますか?  検索する際に spam グループのようなグループを無視したいとい
+うことですね?  であれば @code{nnir-ignored-newsgroups} をカスタマイズし
+てください。
 
 さらにもう一つ。個々の検索エンジンは特別な検索機能を持っているかもしれま
-せん。それらの特別な検索機能は、@code{gnus-group-make-nnir-group} に接頭
-引数を与えることによって利用できます。もし複数のグループを異なる検索エン
-ジンで検索するのであれば、それぞれのエンジン毎に別れて特別な検索機能を使
-うかどうかを尋ねられるでしょう。
+せん。それらの特別な検索機能は、@code{gnus-group-make-search-group} に接
+頭引数を与えることによって利用できます。もし複数のグループを異なる検索エ
+ンジンで検索するのであれば、それぞれのエンジン毎に別れて特別な検索機能を
+使うかどうかを尋ねられるでしょう。
 
 @node Setting up nnir
 @subsection nnir の設定方法
@@ -21031,8 +21163,7 @@ nnir を設定するには、いくらか準備作業が必要です。まず、
 きます:
 
 @lisp
-'((nnimap . namazu)
-  (nntp . gmane))
+'((nnimap . namazu))
 @end lisp
 
 @node The imap Engine
@@ -21237,32 +21368,6 @@ Notmuch 検索エンジンの実行形式の名前です。ディフォルト
 @item nnir-ignored-newsgroups
 一つのサーバーにあるすべてのグループを検索するときに、active ファイルに
 ある読み飛ばすべきニュースグループに合致する正規表現。
-
-@item nnir-summary-line-format
-nnir 概略バッファーの行のために使われる書法仕様。
-@code{gnus-summary-line-format} のすべての書法仕様指示子とともに nnir 概
-略バッファー独自の以下の三つの指示子を使うことができます:
-
-@example
-%Z    検索結果のスコアの値 (整数)
-%G    記事があった元の完全なグループ名 (文字列)
-%g    記事があった元の短縮形のグループ名 (文字列)
-@end example
-
-もし @code{nil} だったら (それがディフォルト)、
-@code{gnus-summary-line-format} を使います。
-
-@item nnir-retrieve-headers-override-function
-もし @code{nil} でなければ、Gnus に組み込まれている関数を使わずに記事の
-ヘッダーを取得するための関数。この関数は引数として記事のリストとグループ
-を取り、取得したヘッダーで @code{nntp-server-buffer} を満たします。そし
-て、取得したヘッダーの形式を示すために @code{nov} また
-は @code{headers} を返さなければなりません。ヘッダーの取得に失敗したとき
-は @code{nil} を返します。
-
-もしこの変数が @code{nil} だったら、または用意した関数が検索結果とし
-て @code{nil} を返したら、代わりに @code{gnus-retrieve-headers} が呼ばれ
-ます。
 @end table
 
 @node nnmairix
@@ -22645,8 +22750,8 @@ Gnus はウィンドウの配置を変更しません。常に「正しい」ウ
 最後に、@code{gnus-use-atomic-windows} を @code{t} に設定することによっ
 て Gnus のウィンドウ配置を ``atomic'' (@pxref{Atomic Windows, , Atomic
 Windows, elisp, The GNU Emacs Lisp Reference Manual}) にすることができま
-す。これによってポップアップされるバッファー（ヘルプや補完バッファーな
-ど）が Gnus ウィンドウ配置全体の下または横に表示されるので、例えば概略バッ
+す。これによってポップアップされるバッファー (ヘルプや補完バッファーな
+ど) が Gnus ウィンドウ配置全体の下または横に表示されるので、例えば概略バッ
 ファーと記事バッファーの間で押しつぶされることはありません。
 
 @subsection ウィンドウ配置の名称
@@ -25956,9 +26061,9 @@ Gnus クラウドの設定には 1分もかかりません。グループバッ�
 @end defvar
 
 @defvar gnus-cloud-interactive
-これがセットされていると (デフォルトでセット)、Gnus クラウドパッケージは
-いろんな場面であなたに確認を求めます。不満に感じることがなければ、そのま
-まにしておいてください。
+これがセットされていると (ディフォルトでセット)、Gnus クラウドパッケージ
+はいろんな場面であなたに確認を求めます。不満に感じることがなければ、その
+ままにしておいてください。
 @end defvar
 
 @defvar gnus-cloud-method
