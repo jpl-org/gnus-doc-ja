@@ -845,7 +845,6 @@ Formatting Variables
 * Formatting Fonts::            仕様を多彩で素敵に見せる
 * Positioning Point::           操作の後でポイントを移動する
 * Tabulation::                  出力の整列
-* Wide Characters::             幅が広い文字を扱う
 
 Image Enhancements
 
@@ -22274,7 +22273,6 @@ Gnus がこれを実装しているやり方に興味があるなら、
 * Formatting Fonts::            仕様を多彩で素敵に見せる
 * Positioning Point::           操作の後でポイントを移動する
 * Tabulation::                  出力の整列
-* Wide Characters::             幅が広い文字を扱う
 @end menu
 
 現在のところ Gnus は以下の書法仕様変数を使います:
@@ -22527,25 +22525,6 @@ Gnus は通常ほとんどのバッファーで、ポイントを各行のあら
 込みます。ですが、もし挿入するテキストの末端が 50桁より後ろになる場合は、
 50桁より後ろになる過剰なテキストは削除されます。これは厳密 (hard) な整列
 子です。
-
-@node Wide Characters
-@subsection 幅広文字
-
-多くの地域において、固定幅フォントは同じ幅の文字を持っています。しかしい
-くつかの地域、よく知られている東アジアの国々では、ラテン文字と幅の広い文
-字が混在して使われています。
-
-整形において、Gnus は文字列が 10個の文字の幅だとしたら、スクリーンで
-も 10個分のラテン文字の幅になると仮定しますが、それは問題です。かの国々
-では、それは正しくありません。
-
-@vindex gnus-use-correct-string-widths
-それを救済するために、あなた
-は @code{gnus-use-correct-string-widths} を @code{t} に設定することがで
-きます。これはバッファーの生成を遅くしますが、より美しい結果を得ることが
-できるでしょう。ディフォルト値は @code{nil} です。(訳注: 日本語など
-を Emacs で表示する場合に、書法仕様によっては @code{t} にしないと概略バッ
-ファーの表示が不揃いになることがあります。)
 
 @node Window Layout
 @section ウィンドウの配置
