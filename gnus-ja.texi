@@ -20073,6 +20073,36 @@ Date (日付) ヘッダーには三つのなんとなくばかげている合致
 @end enumerate
 
 @cindex score file atoms
+@item score-fn
+このエントリーの値は、括弧で囲まれた 1つまたはそれ以上のユーザーが定義し
+た関数名です。それぞれの関数は順番に呼び出されます。戻り値は整数でなけれ
+ばなりません。
+
+@example
+(score-fn (custom-scoring))
+@end example
+
+ユーザー定義関数は、
+キー @code{number subject from date id refs chars lines xref extra} に、
+その関数を実行する前の記事のスコアが続く連想リストを引数として呼び出され
+ます。
+
+次の (多少工夫された) 例は、記事の日付の年も件名で言及されている場合に、
+記事のスコアを 10 増やすユーザー定義関数の使用方法を示しています。
+
+@example
+(defun custom-scoring (article-alist score)
+  (let ((subject (cdr (assoc 'subject article-alist)))
+        (date (cdr (assoc 'date article-alist))))
+    (if (string-match (number-to-string
+                       (nth 5 (parse-time-string date)))
+                      subject)
+        10)))
+@end example
+
+@code{score-fn} エントリーは永続的なので、直接 @code{SCORE} ファイルで追
+加または変更することしかできません。
+
 @item mark
 このエントリーの値は数値でなければなりません。この数値より低いスコアのど
 んな記事にも既読の印が付きます。
