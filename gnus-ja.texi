@@ -11749,6 +11749,11 @@ Gnus は @code{w3m} を利用するその組み込み機能を使います。
 追跡するために誰も web bugs (訳注: インターネットユーザを追跡するための
 ツール) の類を使えないようにします。
 
+@vindex gnus-global-groups
+特定のプライベートグループをパブリックグループであるかのように扱いたい場
+合は、そのグループの名前を @code{gnus-global-groups} リストに追加してく
+ださい。
+
 @code{gnus-inhibit-images} も参照してください (@pxref{Misc Article})。
 
 @item gnus-html-cache-directory
