@@ -1734,12 +1734,6 @@ Maintenance})。
 @item gnus-no-groups-message
 @vindex gnus-no-groups-message
 グループが一つも存在しないときに Gnus が表示するメッセージです。
-
-@item gnus-use-backend-marks
-@vindex gnus-use-backend-marks
-もし @code{nil} でなかったら Gnus は記事の印を @file{.newsrc.eld} ファイ
-ルとバックエンドの両方に格納します。これはグループの操作をいくらか遅くし
-ます。
 @end table
 
 @node Group Buffer
