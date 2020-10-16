@@ -19198,6 +19198,11 @@ Plugged のときに、ローカルに格納されている @acronym{NOV} と記
 です。ディフォルトでは非-@code{nil} で、エージェントをキャッシュとして使
 います。
 
+@item gnus-agent-eagerly-store-articles
+@vindex gnus-agent-eagerly-store-articles
+もし @code{nil} でなければ (それがディフォルト)、エージェント化されたグ
+ループで読まれたすべての記事をエージェントキャッシュに保存します。
+
 @item gnus-agent-go-online
 @vindex gnus-agent-go-online
 @code{gnus-agent-go-online} が @code{nil} だったら、エージェントはオフラ
