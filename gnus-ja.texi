@@ -23531,10 +23531,10 @@ Gnus は外に出すメッセージに Face ヘッダーを簡単に挿入でき
 @item smiley-style
 @vindex smiley-style
 スマイリーの形式を指定します。あらかじめ定義されている形式
-は @code{low-color} (13×14 画素で 3 色の小さい画像)、@code{medium}
-(16×16 画素でもっとカラフルな画像) および @code{grayscale} (14×14 画素
-のグレースケール画像) です。ディフォルトはディフォルト face の高さに依存
-します。
+は @code{emoji} (絵文字を使う)、@code{low-color} (13×14 画素で 3 色の小
+さい画像)、@code{medium} (16×16 画素でもっとカラフルな画像) およ
+び @code{grayscale} (14×14 画素のグレースケール画像) です。ディフォルト
+はディフォルト face の高さに依存します。
 
 @item smiley-data-directory
 @vindex smiley-data-directory
