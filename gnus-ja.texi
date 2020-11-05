@@ -798,18 +798,10 @@ Advanced Scoring
 
 Searching
 
-* nnir::                        いろんなエンジンで検索する
+* Search Engines::              検索エンジンの選択と設定
+* Creating Search Groups::      検索グループを作る
+* Search Queries::              Gnus に組み込まれている検索構文
 * nnmairix::                    Mairix で検索する
-
-nnir
-
-* What is nnir?::               @code{nnir} は何をするか?
-* Basic Usage::                 簡単な検索のしかた
-* Setting up nnir::             @code{nnir} の設定方法
-
-Setting up nnir
-
-* Associating Engines::         エンジンと関連付ける方法
 
 Various
 
@@ -1022,7 +1014,7 @@ Gnus の基本的な構成要素
 さい)。したがってローカルの maildir は Usenet や IMAP サーバーと同じ「サー
 バー」(@pxref{Finding the News}) と呼ばれます。「グルー
 プ」(@pxref{Group Buffer}) は NNTP グループ、IMAP フォルダー、またはロー
-カルメールディレクトリを意味する場合があります。また「記
+カルメールディレクトリーを意味する場合があります。また「記
 事」(@pxref{Summary Buffer}) はメッセージまたは電子メールと呼ばれること
 もあります。Gnus はこれらすべてに統一された用語を採用しています。
 
@@ -11703,7 +11695,7 @@ Gnus は @acronym{HTML} 記事を素敵に整形して記事バッファーに�
 ができます。たくさんの方法がありますが、それらのうちの 2つがディフォルト
 の手段であると言えます。
 
-もし Emacs が libxml2 を使うように作られていれば、Gnus は純粋に Elisp で
+もし Emacs が libxml2 を使うように作られていれば、Gnus は純粋に ELisp で
 書かれていて Emacs に組み込まれている Simple HTML Renderer @code{shr} を
 使います。@footnote{@code{shr} は @acronym{HTML} 記事が指定する色を表示
 しますが、それらを読むことができるように調整しようとします。もっとコント
@@ -17653,12 +17645,11 @@ nnselect グループを使う上での要点は、そこに含めるメッセ�
 
 @lisp
 (nnselect-specs
- (nnselect-function . nnir-run-query)
+ (nnselect-function . gnus-search-run-query)
  (nnselect-args
-  (nnir-query-spec
-   (query . "FLAGGED")
-   (criteria . ""))
-  (nnir-group-spec
+  (search-query-spec
+   (query . "mark:flag"))
+  (search-group-spec
    ("nnimap:home")
    ("nnimap:work"))))
 @end lisp
@@ -17679,9 +17670,8 @@ nnselect グループを使う上での要点は、そこに含めるメッセ�
                                                    (days-to-time (car args)))))
           (cons 'criteria "")))
         (group-spec (cadr args)))
-    (nnir-run-query (cons 'nnir-specs
-                          (list (cons 'nnir-query-spec query-spec)
-                                (cons 'nnir-group-spec group-spec))))))
+    (gnus-search-run-query (list (cons 'search-query-spec query-spec)
+                                 (cons 'search-group-spec group-spec)))))
 @end lisp
 
 すると以下の @code{nnselect-specs} は:
@@ -17704,19 +17694,13 @@ nnselect グループを使う上での要点は、そこに含めるメッセ�
 @code{gnus-group-get-new-news-this-group} を通じて手動で更新することは、
 常に可能です。
 
-nnir インターフェース (@pxref {nnir}) には、さまざまなバックエンドを検索
-するためのエンジンが含まれています。
-
-それぞれの検索エンジンの細部は異なりますが、nnir 検索の結果は常
-に nnselect メソッドで使われる種類のベクトルであり、それらは通
+Gnus には、さまざまなバックエンドを検索するためのエンジンが含まれていま
+す。それぞれの検索エンジンの細部は異なりますが、検索の結果は常
+に nnselect メソッドで使われる種類のベクトルであり、問い合わせの結果は通
 常 nnselectグループを使って表示されます。実際のところ、標準の検索関数で
-ある @code{gnus-group-read-ephemeral-search-group} は、
-@code{nnselect-specs} として適切な nnir 検索を持つ、一時的な nnselect グ
-ループを作成するだけです。当初 nnirには、検索エンジンと、検索結果
-を Gnus に接続するための接着剤の両方が含まれていました。時を経て、この接
-着剤は nnselect メソッドに進化しました。それらの 2つは nnselect が完全に
-機能するバックエンドになるという夢を追い求めることができるよう、ほぼ平和
-裏に袂を分かちましたが、時おり出現する競合がまだ残っているかもしれません。
+ある @code{gnus-group-read-ephemeral-search-group} は、適切な検索の問い
+合わせとしての @code{nnselect-specs} を持つ、一時的な nnselect グループ
+を作成するだけです。
 
 @node Combined Groups
 @subsection 合併グループ
@@ -21097,55 +21081,168 @@ Gnus は一日に一回スコアを減衰させようとします。例えば Gn
 @chapter 検索
 @cindex searching
 
-FIXME: nnir, nnmairix, contrib/gnus-namazu の簡潔な比較を載せるのが良い。
-
 Gnus には特定の基準 (特定の著者、特定の主題など) に一致する記事を検索
 するさまざまな方法があります。最も簡単な方法は、グループに入ってから制限
 コマンドを使って目的の記事に概略バッファーを「制限」す
 る (@pxref{Limiting})、または概略バッファー内のメッセージを検索す
 る (@pxref{Searching for Articles}) のいずれかです。
 
-制限コマンドと概略バッファー検索は、サーバーから既に取り込まれた記事の一
-群に対して機能しますが、それらのコマンドはサーバーに追加された記事を検索
-しません。したがってこれらの方法は単純ですが、目的の記事が複数のグループ
-にまたがる場合、またはグループが大きすぎてすべての記事を取り込むことが実
-用的でない場合は不十分です。多くのバックエンド (imap, notmuch、namazu な
-ど) は、サーバー上で直接記事を検索する独自の機能を提供していて、Gnus は
-これらの方法を利用することができます。この章では、検索語に一致する記事の
-グループとサーバーを検索するためのツールについて説明します。
+制限コマンドと概略バッファー検索は、サーバーから既に取り込まれた記事に対
+して機能しますが、それらのコマンドはサーバーに追加された記事を検索しませ
+ん。したがってこれらの方法は単純ですが、目的の記事が複数のグループにまた
+がる場合、またはグループが大きすぎてすべての記事を取り込むことが実用的で
+ない場合は不十分です。
+
+関連する検索エンジンを使用して、バックエンドをより徹底的に検索することが
+できます。一部のバックエンドには独自の検索エンジンが付属しています: 例え
+ば IMAP サーバーは独自の検索を実行します。他のバックエンド、たとえばロー
+カルに実装された @code{nnmaildir} では、ユーザーが何らかの検索インデック
+スを手動で構築する必要があるかもしれません。バックエンドとエンジンのディ
+フォルトの関連付けは @code{gnus-search-default-engines} で定義でき、エン
+ジンはバックエンドごとに定義することもできます (@pxref{Search Engines})。
+
+いったん検索エンジンを設定すると、1つまたはそれ以上のバックエンドに由来
+する複数のグループ内のメッセージを検索し、その結果は 1つのグループ内に表
+示することができます。検索結果を保持する (訳注: 複数の) グループ
+は nnselect バックエンドで作成され、それらは一時的または永続的のいずれも
+可能です (@pxref{Creating Search Groups})。
+
+@vindex gnus-search-use-parsed-queries
+検索の問い合わせは、検索するグループを担当するエンジンの構文を使用するか、
+Gnus の一般化された検索構文を使用するかの 2つの方法のいずれかで指定でき
+ます。一般化された構文を使用するには、オプショ
+ン @code{gnus-search-use-parsed-queries} を nil 以外の値に設定します。こ
+の構文の利点は、異なるエンジンによってインデックス付けされた複数のバック
+エンドがある場合、検索しているバックエンドを覚えておく必要がないことで
+す --- 異なるエンジンによってインデックス付けされた複数のグループに対し
+て同じクエリを発行することも可能です、それも同時に。また、相対的な日付の
+解析や他の Emacs パッケージへの結合など、他にもいくつかの便利な機能があ
+ります。Gnus の問い合わせ言語の詳細については、@xref{Search Queries}.
 
 @menu
-* nnir::                     いろんなエンジンで検索する
-* nnmairix::                 Mairix で検索する
+* Search Engines::             検索エンジンの選択と設定
+* Creating Search Groups::     どうやって、どこで
+* Search Queries::             Gnus に組み込まれている検索構文
+* nnmairix::                   Mairix で検索する
 @end menu
 
-@node nnir
-@section nnir
-@cindex nnir
+@node Search Engines
+@section 検索エンジン
+@cindex search engines
+@cindex configuring search
 
-この項は @code{nnir} を使って Gnus の記事を検索するやり方を説明します。
+特定のサーバーからメッセージを検索するには、そのサーバーに検索エンジンが
+関連付けられている必要があります。IMAP サーバーは独自の検索を実行しま
+す (理論的には別のエンジンを使用して IMAP の貯蔵物を検索することが可能で
+すが、お勧めはしません) が、それ以外の場合はすべて、ユーザーが使用するエ
+ンジンを手動で指定する必要があります。これは、サーバーの種類ごと、または
+サーバーごとの 2つの異なるレベルで実行することができます。
 
-@menu
-* What is nnir?::               @code{nnir} は何をするか?
-* Basic Usage::                 簡単な検索のしかた
-* Setting up nnir::             @code{nnir} の設定方法
-@end menu
+@vindex gnus-search-default-engines
+オプション @code{gnus-search-default-engines} は、サーバータイプごとに検
+索エンジンを割り当てます。その値はサーバータイ
+プ (例: @code{nnmaildir} または @code{nnml}) を示すシンボルを検索エンジ
+ンクラスを示すシンボルに割り当てる連想リストです。組み込まれている検索エ
+ンジンのシンボルは次の通りです。
 
-@node What is nnir?
-@subsection nnir とは?
+@itemize
+@item
+@code{gnus-search-imap}
 
-@code{nnir} はメールとニュースの倉庫を検索するための数ある道具へ
-の Gnus のインターフェースです。異なるバックエン
-ド (例えば @code{nnimap} と @code{nntp}) は異なる道具 (@code{nnir} 用語
-で言うところの @dfn{エンジン}) で動作しますが、すべて同じ基本的な検索イ
-ンターフェースを使います。
+@item
+@code{gnus-search-find-grep}
 
-@code{nnimap} 検索エンジンは設定無しで動くはずです。他のエンジンはローカ
-ルな索引を必要とする場合があります。それらは Gnus の外で作り、かつ維持し
-なければなりません。
+@item
+@code{gnus-search-notmuch}
 
-@node Basic Usage
-@subsection 基本的な使い方
+@item
+@code{gnus-search-swish-e}
+
+@item
+@code{gnus-search-swish++}
+
+@item
+@code{gnus-search-mairix}
+
+@item
+@code{gnus-search-namazu}
+@end itemize
+
+より細かくする必要がある場合は、検索エンジン
+を @code{gnus-search-engine} キーを使ってサーバー定義 (@file{.gnus.el}
+構成ファイル、または Gnus のサーバーバッファーにあるもの) の中で指定する
+ことができます。それは次のようになるでしょう。
+
+@example
+'(nnmaildir "My Mail"
+   (directory "/home/user/.mail")
+   (gnus-search-engine gnus-search-notmuch
+     (config-file "/home/user/.mail/.notmuch_config")))
+@end example
+
+notmuch、namazu、mairix などの検索エンジンは、動作が似ています。それらは
+ローカルで実行可能なファイルを使ってメッセージ貯蔵物のインデックスを作成
+して、それらのメッセージに対してコマンドライン検索問い合わせを実行し、一
+致するメッセージの絶対ファイル名のリストを返します。
+
+これらのエンジンには、いくつかの共通の設定パラメーターがあります。一般的
+なパラメータは次のとおりです。
+
+@table @code
+@item program
+実行形式の名前。ディフォルトは @command{notmuch} や @command{namazu} な
+どの素のプログラム名です。
+
+@item config-file
+このエンジンのための設定ファイルの絶対ファイル名。
+
+@item remove-prefix
+検索クエリによって返されるファイル名から削除されるディレクトリーの部分。
+この絶対パスには、メッセージ貯蔵庫のトップレベルまでのすべてが含まれてい
+る必要があります。
+
+@item switches
+検索プログラムに与える追加のコマンドライン引数。このパラメータの値は、文
+字列のリストである必要があり、引数ごとに 1つの文字列です。
+@end table
+
+上記のオプションは、そのタイプのすべてのエンジンに設定されているカスタマ
+イズオプションを使うか、またはサーバー設定ファイルでエンジンごとに設定す
+るか、の 2つの方法のいずれかで設定することができます。
+
+カスタマイズオプション
+は @code{gnus-search-@var{engine}-@var{parameter}} というパターンで形成
+されます。例えば、標準ではない notmuch プログラムを使うに
+は @code{gnus-search-notmuch-program} を @file{/usr/local/bin/notmuch} に
+設定します。これはすべての notmuch エンジンに当てはまります。このような
+オプションを使うエンジンは ``notmuch''、``namazu''、``mairix''、
+``swish-e'' および ``swish++'' です。
+
+または、上記の @code{nnmaildir} の例のように、オプションを Gnus のサーバー
+定義に直接設定することもできます。サーバーオプション
+は @code{gnus-search-engine} sexp の一部であって、オプションのシンボルと
+値は cons セルではなく、2つの要素で構成するリストであることに注意してく
+ださい。
+
+namazu エンジンと swish-e エンジンには、それぞれインデックスファイルを保
+存する場所を指定する 1つの追加オプションがあります。namazu のため
+の @code{index-directory} は、単一のディレクトリーパスである必要がありま
+す。swish-e の場合の @code{index-files} は、文字列のリストでなければなり
+ません。
+
+すべてのインデックス付き検索エンジンには、新しく到着したメッセージを含め
+るために検索インデックスを更新する独自の方法があります。Gnus は現在、こ
+のための便利なインターフェースを提供していないので、更新を自分で管理する
+必要がありますが、これは将来変更される可能性があります。
+
+最後に、すべての検索エンジンは @code{raw-queries-p} オプションを受け入れ
+ます。これは、このタイプのエンジン (またはこの特定のエンジン) が常に生の、
+解析されない問い合わせを使うべきであることを示していま
+す (@pxref{Search Queries})。
+
+@node Creating Search Groups
+@section 検索グループを作る
+@cindex creating search groups
 
 グループバッファーで @kbd{G G} をタイプする
 と @code{gnus-group-read-ephemeral-search-group} を呼ぶことによって現在
@@ -21174,286 +21271,123 @@ Gnus には特定の基準 (特定の著者、特定の主題など) に一致�
 
 現在行のグループだけでなく、他のグループも検索したいですって?  問題あり
 ません。単に検索したいグループにプロセス印を付けてください。さらにもっ
-と?  それならトピックの見出しにカーソルを置いて nnir 検索を実行すれば、
-その見出しの下のすべてのグループを検索してくれるでしょう。
+と?  それならトピックの見出しにカーソルを置いて検索を開始すれば、その見
+出しの下のすべてのグループを検索してくれるでしょう。
 
+@vindex gnus-search-ignored-newsgroups
 まだ足りないんですか?  よろしい、サーバーバッファー
-で @code{gnus-group-read-ephemeral-search-group} (現在は @kbd{G} に割り
-当てられています) を使えば、現在行のサーバーにあるすべてのグループを検索
-できます。多すぎますか?  検索する際に spam グループのようなグループを無
-視したいということですね?  であれば @code{nnir-ignored-newsgroups} をカ
-スタマイズしてください。
+で @code{gnus-group-read-ephemeral-search-group} (ここでは @kbd{G} に割
+り当てられています) を使えば、現在行のサーバーにあるすべてのグループを検
+索できます。多すぎますか?  検索する際に spam グループのようなグループを
+無視したいということですね?  であれば @code{nnir-ignored-newsgroups} を
+カスタマイズしてください。この正規表現に合致しないグループは検索されなく
+なります。
 
-さらにもう一つ。個々の検索エンジンは特別な検索機能を持っているかもしれま
-せん。それらの特別な検索機能
-は @code{gnus-group-read-ephemeral-search-group} に接頭引数を与えること
-によって利用できます。もし複数のグループを異なる検索エンジンで検索するの
-であれば、それぞれのエンジン毎に別れて特別な検索機能を使うかどうかを尋ね
-られるでしょう。
+@node Search Queries
+@section 検索構文
+@cindex search queries
+@cindex search syntax
 
-@node Setting up nnir
-@subsection nnir の設定方法
+Gnus は、サポートされているすべての検索エンジンで使うことができるオプショ
+ンの統合検索構文を提供します。これは、さまざまな検索構文を覚えておく必要
+がないので便利です。異なるエンジンによってインデックス付けされた複数のグ
+ループにマークを付けて、それらに対して 1回の検索を発行することもできます。
 
-nnir を設定するには、いくらか準備作業が必要です。まず、使おうと思ってい
-る検索エンジンを設定しましょう。それらのうちのいくつか、例え
-ば @code{imap} については特別な設定は要りません。他の、例え
-ば @code{namazu} と @code{swish} については後述の設定が必要です。次に、
-サーバーまたはバックエンドと検索エンジンを関連付ける必要があります。
+@vindex gnus-search-use-parsed-queries
+これを有効にするにはオプショ
+ン @code{gnus-search-use-parsed-queries} を @code{nil} 以外に設定してく
+ださい --- ディフォルトでは @code{nil} です。@code{nil} 以外であっても、
+エンジンのクラスまたは単一のエンジン (@pxref{Search Engines}) に解析をや
+めさせることが可能ですし、どんな検索コマンドに対してでも接頭引数を与える
+ことによって単一の検索をやめさせることができます。
 
-もし単に @code{nnimap} サーバーを検索するために @code{imap} エンジンを使
-いたいのであれば、何もする必要はありません。しかしながら検索語の書き方の
-詳細説明は、とにかく読む必要があるでしょう。
+検索構文はかなり単純です: キーと値はコロンで区切り、複数の単語の値は引用
+符で囲んでください。``and'' は暗黙的です。``or'' は明示的です。
+``not'' (またはキーの前に ``-'' を付けること) は後続の式を否定し、括弧を
+使って副論理節をグループ化することができます。例えば:
 
-@menu
-* Associating Engines::                 エンジンと関連付ける方法
-* The imap Engine::                     Imap の設定と使い方
-* The swish++ Engine::                  Swish++ の設定と使い方
-* The swish-e Engine::                  Swish-e の設定と使い方
-* The namazu Engine::                   Namazu の設定と使い方
-* The notmuch Engine::                  Notmuch の設定と使い方
-* The hyrex Engine::                    Hyrex の設定と使い方
-* Customizations::                      カスタマイズできる設定
-@end menu
+@example
+(from:john or from:peter) subject:"lunch tomorrow" since:3d
+@end example
 
-@node Associating Engines
-@subsubsection エンジンとの関連付け
+構文はさまざまなエンジンで受け入れられるように作成されているため、有効か
+どうかに関係なく、ほとんどの入力を問題なく受け入れます。一部の用語は、一
+部のエンジンにのみ意味があります。他のエンジンはそれらを静かに無視します。
 
-グループを検索するときに @code{nnir} はどの検索エンジンを使うかを知って
-いる必要があります。サーバー変数 @code{nnir-search-engine} をエンジンの
-名前に設定することによって、所定のサーバーが特定のエンジンを使うように設
-定してください。例えば @code{home} という名前のサーバーを検索するため
-に @code{namazu} エンジンを使うには以下のようにします:
+キーの補完は @key{TAB} で提供されますが、解析中に展開される短縮キーを使
+用して問い合わせを入力することもできます。キーがあいまいな点まで省略され
+ている場合 (例えば ``s:'' は ``subject:'' または  ``since:'' である可能
+性があります) はエラーが発生します。
 
-@lisp
-(setq gnus-secondary-select-methods
-      '((nnml "home"
-              (nnimap-address "localhost")
-              (nnir-search-engine namazu))))
-@end lisp
-
-あるいは、一つのバックエンドがまかなうすべてのサーバーのために、特定の一
-つのエンジンを使う必要があるかもしれません。例えば @code{nnimap} バック
-エンドを使うすべてのサーバーで @code{imap} エンジンを使いたい場合です。
-その場合は変数 @code{nnir-method-default-engines} をカスタマイズしてくだ
-さい。これは @code{(backend . engine)} 形式のペアの連想リストです。この
-変数はディフォルトでは @code{nnimap} バックエンドを使うすべてのサーバー
-で @code{imap} エンジンを使うように設定されています。で
-も @code{nnimap} バックエンドを使うすべてのサーバーのため
-に @code{namazu} を使いたかったのであれば、以下のように変更することがで
-きます:
-
-@lisp
-'((nnimap . namazu))
-@end lisp
-
-@node The imap Engine
-@subsubsection Imap エンジン
-
-@code{imap} エンジンは設定不要です。
-
-@code{imap} エンジンを使う検索には、簡単な検索語の書き方があります。検索
-は常に大文字と小文字を区別せず、以下の機能を持っています (Google 検索の
-検索語の書き方に倣っています)。
+サポートされているキーには、通常のすべてのメールヘッダー (``from''、
+``subject''、``cc'' など) が含まれます。その他のキーは次のとおりです:
 
 @table @samp
-@item ブール演算子
-AND、OR、および NOT をサポートし、演算子の優先順位を制御するために括弧を
-使うことができます。例えば「(emacs OR xemacs) AND linux」のように。演算
-子はそれであると認知されるために、すべて大文字で書かなければならないこと
-に注意してください。さらに、語に先立つ @minus{} 記号は「NOT 語」と等価で
-す。
-
-@item 自動 AND 検索
-もし複数の語を指定すると、それらはすべての要素に合致することを意図し
-た AND 検索として扱われます。
-
-@item 熟語検索
-もし検索語を 2重引用符で囲むと、それはひとまとまりの文字列として扱われま
-す。
+@item body
+メッセージの本文。
+@item recipient
+@samp{to or cc or bcc} と等価。
+@item address
+@samp{from or recipient} と等価。
+@item id
+@samp{message-id} キーと @samp{id} キーはこれと等価。
+@item mark
+@samp{flag}、@samp{seen}、@samp{read}、@samp{replied}、または Gnus が一
+文字で表現するどんな印も、例えば @samp{mark:R} を @samp{read} として許容
+します。
+@item tag
+IMAP では @samp{keyword}、notmuch では @samp{tag} として解釈されます。
+@item attachment
+添付ファイルの名前に合致します。
+@item before
+日付より前; 日付の解析は下記参照。
+@item after
+日付より後; @samp{since} も使えます。
+@item thread
+メッセージのスレッド全体 (個々のメッセージではない) を返します。
+@item raw
+この特定の検索を解析しない。
+@item limit
+結果をこの数のメッセージに制限します。複数のグループを検索する場合は並べ
+替えの前に制限が行なわれるので、望ましくない結果を生じる可能性があります。
+@item grep
+mairix などの「ローカルインデックス」エンジンにのみ適用されます。grep コ
+マンドがあるシステムでは、この項の値を grep 正規表現として使用して、結果
+をさらに濾過します。
 @end table
 
-ディフォルトではメッセージ全体が検索されます。接頭引数を使うことによって、
-検索をメッセージの指定する部分だけに制限することができ、そうすると検索語
-が入力された後で、メッセージの部分を (補完付きで) 尋ねられます。選択肢に
-は ``Whole message'' (メッセージ全体)、``Subject''、``From''、およ
-び ``To'' があります。それ以外はどんな入力もヘッダー名であると解釈されま
-す。例えばこの問いに @kbd{Message-ID} とタイプして応えると、検索
-は Message-ID ヘッダーだけに制限されます。
+@vindex gnus-search-contact-tables
+ELisp ベースの連絡先管理パッケージ (例: BBDB または EBDB) の補完テーブル
+を変数 @code{gnus-search-contact-tables} に追加すると、
+@samp{from} や @samp{to} などのキーの連絡先名とアドレスの自動補完が可能
+になります。
 
-最終的に ``Imap'' を選ぶと、それは生の @acronym{IMAP} 検索と解釈されます。
-そのような検索のフォーマットは RFC3501 で見つかるはずです。
+@subsection 日付の値の解析
 
-もしディフォルトのメッセージ全体検索が好みでないのであれ
-ば @code{nnir-imap-default-search-key} をカスタマイズしてください。ディ
-フォルトで @acronym{IMAP} 検索を使いたい場合は、こうしてください:
+@vindex gnus-search-date-keys
+日付タイプのキー (@code{gnus-search-date-keys} を参照) は、さまざまな値
+を受け入れます。第一に @code{parse-time-string} が解析できるものはすべて
+許容します。値が無い日付は、その最新のものとして解釈されます。例え
+ば ``march 03'' は最新の 3月3日です。``3d'' (3日前) などの相対的な仕様も
+使用することができます。この形式は w、m、および y も受け入れます。
 
-@lisp
-(setq nnir-imap-default-search-key "Imap")
-@end lisp
-
-@node The swish++ Engine
-@subsubsection Swish++ エンジン
-
-FIXME: ここで何かもっと言う。
-
-Swish++ の資料は sourceforge の swish++ のページで見つかるでしょ
-う: @uref{http://swishplusplus.sourceforge.net}
-
-@table @code
-@item nnir-swish++-program
-Swish++ の実行形式の名前。ディフォルトは @code{search} です。
-
-@item nnir-swish++-additional-switches
-Swish++ に追加の引数として与えられる文字列のリスト。ディフォルト
-は @code{nil} です。
-
-@item nnir-swish++-remove-prefix
-グループ名を得るために swish++ が返すそれぞれのファイル名から取り除く接
-頭語。これはディフォルトでは @code{$HOME/Mail} です。
-@end table
-
-@node The swish-e Engine
-@subsubsection Swish-e エンジン
-
-FIXME: ここで何かもっと言う。
-
-@table @code
-@item nnir-swish-e-program
-Swish-e 検索プログラムの名前。ディフォルトは @code{swish-e} です。
-
-@item nnir-swish-e-additional-switches
-Swish-e に追加の引数として与えられる文字列のリスト。ディフォルト
-は @code{nil} です。
-
-@item nnir-swish-e-remove-prefix
-グループ名を得るために swish-e が返すそれぞれのファイル名から取り除く接
-頭語。これはディフォルトでは @code{$HOME/Mail} です。
-@end table
-
-@node The namazu Engine
-@subsubsection Namazu エンジン
-
-Namazu を使うには索引ファイルを作って維持する必要があります。すべての索
-引ファイルは一つのディレクトリーに置いてあるはずで、その所在
-を @code{nnir-namazu-index-directory} 変数を設定することによって nnir に
-伝えなければなりません。
-
-正しく働かせるには @code{nnir-namazu-remove-prefix} 変数も正しくなければ
-なりません。これは、正しいグループ名を得るために Namazu が返すそれぞれの
-ファイル名から取り除く接頭語です (@samp{.} は @samp{/} に置き代わります
-が)。
-
-例えば Namazu が @samp{/home/john/Mail/mail/misc/42} のようなファイル名
-を返すとしましょう。この例では次の設定を使ってください:
-
-@lisp
-(setq nnir-namazu-remove-prefix "/home/john/Mail/")
-@end lisp
-
-最後のスラッシュに注意してください。ディレクトリーからこの接頭語を取り除
-くと @samp{mail/misc/42} になります。@code{nnir} は正しいグループ
-名 @samp{mail.misc} を導くために @samp{/42} を取り除い
-て @samp{/} を @samp{.} で置き換えるべきであることは承知しています。
-
-他のオプションは @code{nnir-namazu-additional-switches} を設定することに
-よって namazu 検索コマンドに渡されます。とりわけ、出力の形式を変更してし
-まうどんなオプションも namazu に渡さないことが重要です。使っても良いオプ
-ションは @option{--sort}、@option{--ascending}、@option{--early} およ
-び @option{--late} です。さらなる有効なオプションについては Namazu の説
-明書を参照してください。
-
-メールは @command{mknmz} プログラムで最初に索引付けされなければなりませ
-ん。設定ファイルを作るためには namazu の説明書を読んでください。ここに例
-があります:
-
-@cartouche
-@example
- package conf;  # この行は消さないこと!
-
- # 索引付けされないパス。'^' または '$' アンカーを使わないこと。
- $EXCLUDE_PATH = "spam|sent";
-
- # 検索すべきヘッダー・フィールド。大文字/小文字の区別は無い。
- $REMAIN_HEADER = "from|date|message-id|subject";
-
- # 検索できるフィールド。大文字/小文字の区別は無い。
- $SEARCH_FIELD = "from|date|message-id|subject";
-
- # 最も長い語の長さ。
- $WORD_LENG_MAX = 128;
-
- # 最も長いフィールドの長さ。
- $MAX_FIELD_LENGTH = 256;
-@end example
-@end cartouche
-
-例えばメールが @samp{~/Mail/mail/}、@samp{~/Mail/lists/} およ
-び @samp{~/Mail/archive/} ディレクトリーに格納されるのであれば、それらに
-索引付けをするためには @code{nnir-namazu-index-directory} に設定されてい
-る索引ディレクトリーに行って、以下のコマンドを発行します。
+永続的な検索グループを作成する場合、検索は解析されずに保存され、グループ
+が更新されるたびに再解析されます。したがって、次のようなクエリを持つ永続
+的な検索グループには
 
 @example
-mknmz --mailnews ~/Mail/archive/ ~/Mail/mail/ ~/Mail/lists/
+from:"my boss" mark:flag since:1w
 @end example
 
-最大の検索効率を得るためには、このコマンドを定期的に (例えば 4時間毎
-に) 実行する cron ジョブを走らせる必要があるでしょう。
-
-@node The notmuch Engine
-@subsubsection Notmuch エンジン
-
-@table @code
-@item nnir-notmuch-program
-Notmuch 検索エンジンの実行形式の名前です。ディフォルト
-は @samp{notmuch} です。
-
-@item nnir-notmuch-additional-switches
-@samp{notmuch} に追加の引数として与える文字列のリストです。
-
-@item nnir-notmuch-remove-prefix
-@samp{notmuch} が返すそれぞれのファイルの名前からグループ名を得る
-ために取り除く接頭辞です (得られる名前は @samp{.} の代わり
-に @samp{/} を使っているものですが)。これは正規表現です。
-
-@item nnir-notmuch-filter-group-names-function
-@samp{notmuch} の ``path:'' 検索キーワードとして使うために、検索するグルー
-プの名前を変換する関数です。ディフォルトは @code{nil} で、``path:'' キー
-ワードは使いません。関数にする場合、これは単一のグループ名を受け取って、
-@samp{notmuch} が認識できる変換された名前を返すように呼び出すことができ
-るものでなければなりません。例えば、多くのメールバックエンドではグループ
-名のドットをスラッシュに変換する必要がありますが、それを成し遂げるにはこ
-のオプションを次のようにしてください:
-
-@example
-(lambda (g) (replace-regexp-in-string "\\." "/" g))
-@end example
-@end table
-
-@node The hyrex Engine
-@subsubsection Hyrex エンジン
-このエンジンはもはや使われていません。
-
-@node Customizations
-@subsubsection カスタマイズ
-
-@table @code
-@item nnir-method-default-engines
-サーバーのバックエンドと検索エンジンのペアよりなる連想リスト。ディフォル
-トの関連付けは次の通りです:
-
-@example
-(nnimap . imap)
-@end example
-
-@item nnir-ignored-newsgroups
-一つのサーバーにあるすべてのグループを検索するときに、active ファイルに
-ある読み飛ばすべきニュースグループに合致する正規表現。
-@end table
+常に過去 7日間のメッセージのみが含まれます。
 
 @node nnmairix
 @section nnmairix
 
 (訳注: Mairix は @acronym{ASCII} 文字しかサポートしません。)
+
+mairix は @code{nnselect} とともに永続的な検索グループを含む通常の検索エ
+ンジンとして使用できるので、この項は現在ではほとんど廃れています。
 
 @cindex mairix
 @cindex nnmairix
@@ -24392,10 +24326,10 @@ Spam の検査に @code{spam-autodetect} の手段を使う場合は、異なる
 @cindex spam
 
 @vindex gnus-spam-process-newsgroups
-Spam と ham プロセッサーには、グループバッファを抜け出るときに行なう動作
-に関して特別な性質があります。Spam プロセッサーは spam メッセージに作用
-し、ham プロセッサーは ham メッセージに作用するということです。現在のと
-ころ、これらのプロセッサーの主な役割は、
+Spam と ham プロセッサーには、グループバッファーを抜け出るときに行なう動
+作に関して特別な性質があります。Spam プロセッサーは spam メッセージに作
+用し、ham プロセッサーは ham メッセージに作用するということです。現在の
+ところ、これらのプロセッサーの主な役割は、
 Bogofilter (@pxref{Bogofilter}) や Spam 統計パッケージのような辞書に基づ
 いた spam バックエンドの辞書を更新することです (@pxref{Spam Statistics
 Filtering})。
@@ -25792,7 +25726,7 @@ nnml、nnmaildir などのどのバックエンドにあっても、そのフラ
 任意のデータを記録する
 
 レジストリーは記事のためのどんなデータでも記憶しておくことができます。簡
-単な Elisp インターフェースですが。組み込まれている逆引き機能を有効にし
+単な ELisp インターフェースですが。組み込まれている逆引き機能を有効にし
 ておくと、特定の条件に合うすべての記事をすばやく見つけることができます。
 @end enumerate
 
@@ -28457,7 +28391,7 @@ Emacs 23 では、Gnus は記事のドラフトと @file{~/.newsrc.eld} を保�
 除いても良いし、@code{make remove-installed-shadows} を使って
 削除することもできます。
 
-@item インストール先のディレクトリ名が空白文字を含むことを許容します。
+@item インストール先のディレクトリー名が空白文字を含むことを許容します。
 @end itemize
 
 @item Gnus に含まれる新しいパッケージとライブラリー
@@ -28629,7 +28563,7 @@ Picon はテキストの対象物の右側に表示できるようになりま�
 @code{(setq message-generate-hashcash t)} で有効になります。
 @xref{Hashcash}.
 
-@item メッセージバッファに添付ファイルをドラッグ＆ドロップできます。
+@item メッセージバッファーに添付ファイルをドラッグ＆ドロップできます。
 @code{mml-dnd-protocol-alist} と @code{mml-dnd-attach-options} を見てく
 ださい。@xref{MIME, ,MIME, message-ja, Message Manual}.
 
