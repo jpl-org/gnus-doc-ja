@@ -5226,6 +5226,19 @@ Gnus が次のグループ移動することを確認するためにキー入力
 
 この変数は、スレッド表示を行なっているときはあまり役に立たないでしょう。
 
+@item gnus-paging-select-next
+@vindex gnus-paging-select-next
+Control whether to select the next/previous article when paging (with
+commands like @kbd{SPC} or @kbd{DEL}).  If non-@code{nil}, select the
+next article when reaching the end of the article (or the previous
+article when paging backwards).
+ページングするときに (@kbd{SPC} や @kbd{DEL} などのコマンドで) 次または
+前の記事を選択するかどうかを制御します。@code{nil} 以外の場合は、記事の
+最後に到達したときに次の記事を選択します (または、逆方向にページングする
+場合は前の記事を選択します)。
+
+もし @code{nil} だったら記事の末尾や先頭で何もしません。
+
 @item gnus-summary-check-current
 @vindex gnus-summary-check-current
 これが @code{nil} ではない場合、すべての『未読』移動命令は、現在の記事が
