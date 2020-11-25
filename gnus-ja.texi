@@ -5826,13 +5826,6 @@ Manual}, にさらなる情報があります。
 ときは新しいものを作成します。このコマンドは、どのメッセージバッファーに
 添付したいかを尋ねます。また、プロセス/接頭引数の習慣を理解しま
 す (@pxref{Process/Prefix})。
-
-
-+Attach the current article into an already existing Message
-+composition buffer (@code{gnus-summary-attach-message}).  If no such
-+buffer exists, a new one is created.  This command prompts for what
-+message buffer you want to yank into, and understands the
-+process/prefix convention (@pxref{Process/Prefix}).
 @end table
 
 @node Canceling and Superseding
