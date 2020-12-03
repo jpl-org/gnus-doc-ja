@@ -14253,6 +14253,14 @@ Mail})。ただし @code{default} というシンボルである場合は例外�
 ことです。ディフルトは @samp{(%Deleted %Seen)} です。
 @end table
 
+@vindex nnimap-split-download-body
+ディフォルトでは nnimap バックエンドはメッセージヘッダーのみを取得します。
+オプション @code{nnimap-split-download-body} (これは通常のカスタマイズ
+のオプションであって、サーバー変数ではありません) は、メッセージの本文も
+取得するように指示します。これは @acronym{IMAP} の速度を低下させるのでディ
+フォルトでは設定されていませんし、ユーザーのための適切な判断ではありませ
+ん。
+
 以下は、クライアント側で ``特級'' メール分割を行なう @code{nnimap} バッ
 クエンドの完全な例です:
 
@@ -24224,13 +24232,7 @@ IMAP の利用者への注意: spam バックエンドとし
 て @code{spam-check-bogofilter}、@code{spam-check-ifile} およ
 び @code{spam-check-stat} を使う場合は、さらに変
 数 @code{nnimap-split-download-body} を @code{t} に設定しなければなりま
-せん。これらの spam バックエンドがメッセージの本文を「走査」(scan) する
-ことができれば、非常に有用です。ディフォルトでは nnimap バックエンドはメッ
-セージヘッダーだけを取り込みますが、@code{nnimap-split-download-body} で
-メッセージの本文も取り込むことを指示することができます。それ
-は @acronym{IMAP} を遅くしてしまうので、ディフォルトでは設定されません。
-そして、利用者に代わってそれを行なうことは、適切な判断ではありません。
-@xref{Client-Side IMAP Splitting}.
+せん。@xref{Client-Side IMAP Splitting}.
 
 @code{spam-use-*} 変数を使って、@code{spam-split} が使う一つ以上
 の spam バックエンドを設定しなければなりません。@xref{Spam Back Ends}.
