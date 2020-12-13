@@ -25822,6 +25822,16 @@ nnml、nnmaildir などのどのバックエンドにあっても、そのフラ
 てしまうと、新しいエントリーの追加を受け付けなくなります。
 @end defvar
 
+@defvar gnus-registry-register-all
+もしこのオプションが nil でなかったら、レジストリーはすべてのメッセージ
+を表示されている通りに登録します。これは、レジストリーはすべてのメッセー
+ジがどこにあるかを知っている必要があるので、親への分割と Message-ID の参
+照を正しく機能させるために重要ですが、Gnus が行なうグループを開くことと
+保存が遅くなる可能性があります。もしこのオプションが nil である場合、エ
+ントリーは手動で作成、つまり例えばメッセージのカスタムフラグまたはキーワー
+ドを保存しなければなりません。
+@end defvar
+
 @defvar gnus-registry-prune-factor
 除去に際してレジストリーをどのくらい減らすかを、このオプション (0 か
 ら 1 までの浮動小数) で制御します。一定数のエントリーを削除する代わりに、
@@ -25907,6 +25917,10 @@ Gnus の操作を通じてレジストリーが記録されるファイルです
       "mail")
 @end lisp
 
+@code{gnus-registry-register-all} が nil でない (ディフォルト) の場合、
+レジストリーはすべてのメッセージに対して分割を実行します。nil だったら分
+割は明示的に登録したメッセージの子に対してのみ発生します。
+
 さらに、以下の変数をカスタマイズする必要があるでしょう。
 
 @defvar gnus-registry-track-extra
@@ -25986,7 +26000,8 @@ Gnus の操作を通じてレジストリーが記録されるファイルです
 
 @defun gnus-registry-get-id-key (id key)
 @code{id} を持つメッセージのために @code{key} についてのデータを取得しま
-す。
+す。もしオプション @code{gnus-registry-register-all} が nil でなかったら、
+この関数は @code{id} のエントリーが存在しない場合は、それも作成します。
 @end defun
 
 @defvar gnus-registry-extra-entries-precious
