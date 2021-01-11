@@ -19866,7 +19866,7 @@ Gnus は、より一般的なスコアファイルを、より特定のスコア
 プから順に) スコア付けを行なうならば、次の値を使えば良いでしょう。
 
 @example
-(list (lambda (group) ("all.SCORE"))
+(list (lambda (group) (list "all.SCORE"))
       'gnus-score-find-hierarchical)
 @end example
 
