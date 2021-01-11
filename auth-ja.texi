@@ -117,6 +117,17 @@ machine @var{mymachine} login @var{myloginname} password @var{mypassword} port @
 る @var{:user} でもあります。@code{login} および @code{account} も使うこ
 とができます。
 
+通常、合致するエントリーは出現する順序で使われるので、ファイルの最初に最
+も具体的なエントリーを置いておくと良いでしょう。例えば：
+
+@example
+machine example.com login foobar password geheimnis port smtp
+machine example.com login foobar password hemmelig
+@end example
+
+ここでは @code{smtp} サービスには、あるパスワードを使い、他のすべてのサー
+ビスでは別のパスワードを使っています。
+
 さらに、このファイルを TLS 接続を設定するときに使うクライアント証明書を
 定義するために使うこともできます。そのフォーマットは次の通りです:
 
