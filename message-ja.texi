@@ -331,8 +331,8 @@ Return-Path:\\|^Supersedes:\\|^NNTP-Posting-Date:\\|^X-Trace:\\|@*
 @vindex message-forward-included-mime-headers
 @code{nil} でなければ、メッセージを @acronym{MIME} として転送するときに、
 この正規表現に一致するヘッダーが保持されます。ただしその場合、
-@acronym{MML} は使われなくなります。されません。これは正規表現のリストに
-することもできます。
+@acronym{MML} は使われなくなります。これは正規表現のリストにすることもで
+きます。
 
 @item message-make-forward-subject-function
 @vindex message-make-forward-subject-function
