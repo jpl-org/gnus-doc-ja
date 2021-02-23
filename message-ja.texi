@@ -544,6 +544,7 @@ MFT を尊重することは良いネチケット (netiquette) であると考�
 @node System Mailer Setup
 @section システムメイラーの設定
 @cindex mailto:
+@cindex System Mailer
 
 他のプログラムで @samp{mailto:} リンクをクリックすると Emacs が開くよう
 に、Emacs をシステムメーラーとして設定することができます。
@@ -552,10 +553,12 @@ MFT を尊重することは良いネチケット (netiquette) であると考�
 には @acronym{MIME} タイプのディフォルトアプリケーションを設定する方法が
 あって、この場合の適切なタイプは @samp{x-scheme-handler/mailto;} です。
 
-起動するアプリケーションは @samp{"emacs -f message-mailto %u"} でなけれ
-ばなりません。それが Emacs を起動して、@code{message-mailto} コマンドを
-実行します。それは与えられた @acronym{URL} を解析して、指定されたパラメー
-ターでメッセージバッファーを設定します。
+起動するアプリケーションは @w{@samp{emacs -f message-mailto %u}} でなけ
+ればなりません。それが Emacs を起動して、@code{message-mailto} コマンド
+を実行します。それは与えられた @acronym{URL} を解析して、指定されたパラ
+メーターでメッセージバッファーを設定します。もし emacsclient を使いたい
+のであれば、アプリケーションとし
+て @w{@samp{emacsclient -e '(message-mailto "%u")'}} を使ってください。
 
 たとえば @samp{mailto:larsi@@gnus.org?subject=This+is+a+test} が開くメッ
 セージバッファーでは、@samp{To:} ヘッダーに @samp{"larsi@@gnus.org"} が
