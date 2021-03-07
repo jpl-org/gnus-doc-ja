@@ -16011,7 +16011,6 @@ Gnus は表示する記事を洗濯するために多すぎるほどの関数を
 
 @item nnmail-ignore-broken-references
 @findex nnmail-ignore-broken-references
-@c @findex nnmail-fix-eudora-headers
 @cindex Eudora
 @cindex Pegasus
 いくつかの MUA (例えば Eudora と Pegasus) は壊れた @code{References} ヘッ
@@ -16101,9 +16100,8 @@ Quoted Readable エンコードをデコードします (訳注: 実際に行な
 くでしょう。これは決して不合理ではないかもしれませんが、あなたの望むこと
 ではないかもしれません。
 
-@code{mail-sources} と @code{nnmail-spool-file} を @code{nil} に設定すれ
-ば、どのバックエンドも入ってくるメールを読もうとしなくなって、それは助け
-になるはずです。
+@code{mail-sources} を @code{nil} に設定すれば、どのバックエンドも入って
+くるメールを読もうとしなくなるので、役に立つはずです。
 
 @vindex nnbabyl-get-new-mail
 @vindex nnmbox-get-new-mail
