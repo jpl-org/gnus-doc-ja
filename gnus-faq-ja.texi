@@ -144,14 +144,7 @@ Gnus はどこで、どうやって取得することができますか?
 
 @subsubheading 回答
 
-Gnus は Emacs のリリースとは別に独自にリリースされます。そのた
-め Emacs に同梱されている版は最新ではないかもしれません (例え
-ば Emacs 21 に同梱されている Gnus 5.9 は古いものです)。
-@c
-リリースされた最新版
-の Gnus は、@uref{https://www.gnus.org/dist/gnus.tar.gz} から、また
-は @uref{https://ftp.gnus.org/pub/gnus/gnus.tar.gz} から手に入れることが
-できます。
+Gnus は Emacs に含まれています。
 
 @node FAQ 1-4
 @subsubheading 質問 1.4

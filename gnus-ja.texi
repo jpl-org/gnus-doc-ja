@@ -818,7 +818,7 @@ Various
 * Undo::                        いくつかの動作は元に戻すことができる
 * Predicate Specifiers::        述語を設定する
 * Moderation::                  あなたがモデレーターだったらどうするか
-* Image Enhancements::          Emacs の最新バージョンは画像を表示できる
+* Image Enhancements::          Emacs は画像を表示できる
 * Fuzzy Matching::              大きなひずんだ音 (big fuzz) って何?
 * Thwarting Email Spam::        頼んでもいない広告メールを避ける簡単な方法
 * Spam Package::                Spam を濾過して処理するためのパッケージ
@@ -22139,7 +22139,7 @@ Gnus では通常それらのメッセージはヘッダーに ``(none)'' が表
 * Predicate Specifiers::        述語を設定する
 * Moderation::                  あなたがモデレーターだったらどうするか
 * Fetching a Group::            グループを読むためだけに Gnus を起動する
-* Image Enhancements::          Emacs の最新バージョンは画像を表示できる
+* Image Enhancements::          Emacs は画像を表示できる
 * Fuzzy Matching::              大きなひずんだ音 (big fuzz) って何?
 * Thwarting Email Spam::        頼んでもいない広告メールを避ける簡単な方法
 * Spam Package::                Spam を濾過して処理するためのパッケージ
@@ -23285,9 +23285,7 @@ Gnus は利用者がすることを憶えておいて、利用者がすること
 @node Image Enhancements
 @section 画像の拡張
 
-バージョン 21 以上の Emacs は絵やその種のものを表示することができ
-る@footnote{MS ウィンドウズの Emacs 21 は画像をサポートしていません。
-Emacs 22 はします。}ので、Gnus はこれを利用することにしました。
+Emacs は画像などを表示できるので、Gnus はそれを利用しています。
 @menu
 * X-Face::                      ファンキーでちっちゃな白黒の絵を表示する
 * Face::                        よりファンキーでちっちゃなカラーの絵を表示する
