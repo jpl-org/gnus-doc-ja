@@ -1956,12 +1956,12 @@ Gnus では、ニュースサーバーでニュース記事が期限切れ消去
 プログラムが必要です。
 
 最初に Unix システムについて書きましょう。ニュース記事を取り込むための最
-も安易な解は、@uref{http://www.leafnode.org/,
+も安易な解は、@uref{https://www.leafnode.org/,
 Leafnode} や @uref{http://patrik.iki.fi/sn/, sn} のように小規模
 な @acronym{NNTP} サーバーを使うことです。もちろ
 ん @uref{https://www.isc.org/othersoftware/, inn} のような本格的なニュー
 スサーバーをインストールすることもできます。メールの取り込みに使うもので
-人気があるのは @uref{http://www.fetchmail.info/, fetchmail} およ
+人気があるのは @uref{https://www.fetchmail.info/, fetchmail} およ
 び @uref{http://pyropus.ca/software/getmail/, getmail} です。それらにメー
 ルをディスクに書き込むように指示してください。Gnus はそこから読むことに
 なります。最後ですがおろそかにできないのはメールの送信です。これにはあら
