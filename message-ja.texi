@@ -1797,6 +1797,96 @@ Newsgroups などが空だった場合) に、何をするかを設定します�
 すでに受信者に @code{CC} されている場合、
 @code{message-carefully-insert-headers} は @code{To} ヘッダーを挿入しま
 せん。
+
+@item message-syntax-checks
+@vindex message-syntax-checks
+出て行くメッセージの、どの構文の検査をすべきではないかを制御します。例え
+ば、長い署名の検査を禁止するには、このリストに
+
+@lisp
+(signature . disabled)
+@end lisp
+
+を加えてください。
+
+有効な検査は以下の通りです (訳注: これらの検査の一部はメールでも行なわれ
+ます):
+
+@table @code
+@item approved
+@cindex approved
+記事に @code{Approved} ヘッダーがあるかどうかを調べます。それは司会者の
+ような人だけが含めるはずのものです。
+@item continuation-headers
+空白で始まらない継続したヘッダー行があるかどうかを調べます。
+@item control-chars
+使ってはいけない文字を調べます。
+@item empty
+記事が空かどうかを調べます。
+@item existing-newsgroups
+@code{Newsgroups} と @code{Followup-To} ヘッダーに記入されているニュース
+グループが存在するかどうかを調べます。
+@item from
+@code{From} ヘッダーがまともかどうかを調べます。
+@item illegible-text
+本文に印字できない文字があるかどうかを調べます。
+@item invisible-text
+バッファーに見えないテキストがあるかどうかを調べます。
+@item long-header-lines
+長すぎるヘッダー行を調べます。
+@item long-lines
+@cindex long lines
+本文の中の長すぎる行を調べます。
+@item message-id
+@code{Message-ID} が構文的にまともかどうかを調べます。
+@item multiple-headers
+複数の同じヘッダーの存在を調べます。
+@item new-text
+メッセージに新しい文があるかどうか (訳注: 引用ばかりでないかどうか) を調
+べます。
+@item newsgroups
+空でない @code{Newsgroups} ヘッダーがあるかどうかを調べます。
+@item quoting-style
+最後の引用部分に続くテキストがあるかどうかを調べます。
+@item repeated-newsgroups
+@code{Newsgroups} と @code{Followup-To} ヘッダーで、同じグループ名が繰り
+返し使われているかどうかを調べます。
+@item reply-to
+@code{Reply-To} ヘッダーがまともかどうかを調べます。
+@item sender
+@cindex Sender
+@code{From} ヘッダーが変だったら、新しい @code{Sender} ヘッダーを挿入し
+ます。
+@item sendsys
+@cindex sendsys
+@samp{Sendsys:} か @samp{Version:} ヘッダーがあるかどうかを調べます (訳
+注: いずれもニュースの管理人だけが使うものです)。
+@item shoot
+@code{Message-ID} ヘッダーのドメイン項がまともかどうかを調べます。
+@item shorten-followup-to
+投稿するグループの数を @code{Followup-To} ヘッダーを付け加えること
+によって少なくするかどうかを調べます (訳注: 複数のニュースグルー
+プに投稿する記事に @code{Followup-To} ヘッダーが無い場合に発動され、
+@code{Followup-To} ヘッダーに記入する値の入力を要求します)。
+@item signature
+署名の長さを調べます。
+@item size
+サイズが大きすぎないかどうかを調べます。
+@item subject
+空でない @code{Subject} ヘッダーがあるかどうかを調べます。
+@item subject-cmsg
+ニュースのコントロールメッセージのような表題があるかどうかを調べます。
+(訳注: 表題が @samp{cmsg} で始まるもので、ニュースの管理人だけが使います。
+一般の利用者がニュース記事の取り消し (cancel) を行なうときにも使いますが、
+その場合は、この検査を通らずに、それ専用の枠組みで実行されます。)
+@item valid-newsgroups
+@code{Newsgroups} と @code{Followup-To} ヘッダーが構文的に正しいかどうか
+を調べます。
+@end table
+
+ディフォルトでは、これらすべての条件が調べられます。ただ
+し @code{message-insert-canlock} が @code{nil} だったらディフォルトでは
+検査が行なわれない @code{sender} を除きます。@xref{Canceling News}.
 @end table
 
 @node Mail Headers
@@ -2089,96 +2179,6 @@ node) として使います。文字列だったら、その文字列を使い�
 出て行くニュース記事をカスタマイズするための他の変数:
 
 @table @code
-@item message-syntax-checks
-@vindex message-syntax-checks
-出て行くメッセージの、どの構文の検査をすべきではないかを制御します。例え
-ば、長い署名の検査を禁止するには、このリストに
-
-@lisp
-(signature . disabled)
-@end lisp
-
-を加えてください。
-
-有効な検査は以下の通りです (訳注: これらの検査の一部はメールでも行なわれ
-ます):
-
-@table @code
-@item approved
-@cindex approved
-記事に @code{Approved} ヘッダーがあるかどうかを調べます。それは司会者の
-ような人だけが含めるはずのものです。
-@item continuation-headers
-空白で始まらない継続したヘッダー行があるかどうかを調べます。
-@item control-chars
-使ってはいけない文字を調べます。
-@item empty
-記事が空かどうかを調べます。
-@item existing-newsgroups
-@code{Newsgroups} と @code{Followup-To} ヘッダーに記入されているニュース
-グループが存在するかどうかを調べます。
-@item from
-@code{From} ヘッダーがまともかどうかを調べます。
-@item illegible-text
-本文に印字できない文字があるかどうかを調べます。
-@item invisible-text
-バッファーに見えないテキストがあるかどうかを調べます。
-@item long-header-lines
-長すぎるヘッダー行を調べます。
-@item long-lines
-@cindex long lines
-本文の中の長すぎる行を調べます。
-@item message-id
-@code{Message-ID} が構文的にまともかどうかを調べます。
-@item multiple-headers
-複数の同じヘッダーの存在を調べます。
-@item new-text
-メッセージに新しい文があるかどうか (訳注: 引用ばかりでないかどうか) を調
-べます。
-@item newsgroups
-空でない @code{Newsgroups} ヘッダーがあるかどうかを調べます。
-@item quoting-style
-最後の引用部分に続くテキストがあるかどうかを調べます。
-@item repeated-newsgroups
-@code{Newsgroups} と @code{Followup-To} ヘッダーで、同じグループ名が繰り
-返し使われているかどうかを調べます。
-@item reply-to
-@code{Reply-To} ヘッダーがまともかどうかを調べます。
-@item sender
-@cindex Sender
-@code{From} ヘッダーが変だったら、新しい @code{Sender} ヘッダーを挿入し
-ます。
-@item sendsys
-@cindex sendsys
-@samp{Sendsys:} か @samp{Version:} ヘッダーがあるかどうかを調べます (訳
-注: いずれもニュースの管理人だけが使うものです)。
-@item shoot
-@code{Message-ID} ヘッダーのドメイン項がまともかどうかを調べます。
-@item shorten-followup-to
-投稿するグループの数を @code{Followup-To} ヘッダーを付け加えること
-によって少なくするかどうかを調べます (訳注: 複数のニュースグルー
-プに投稿する記事に @code{Followup-To} ヘッダーが無い場合に発動され、
-@code{Followup-To} ヘッダーに記入する値の入力を要求します)。
-@item signature
-署名の長さを調べます。
-@item size
-サイズが大きすぎないかどうかを調べます。
-@item subject
-空でない @code{Subject} ヘッダーがあるかどうかを調べます。
-@item subject-cmsg
-ニュースのコントロールメッセージのような表題があるかどうかを調べます。
-(訳注: 表題が @samp{cmsg} で始まるもので、ニュースの管理人だけが使います。
-一般の利用者がニュース記事の取り消し (cancel) を行なうときにも使いますが、
-その場合は、この検査を通らずに、それ専用の枠組みで実行されます。)
-@item valid-newsgroups
-@code{Newsgroups} と @code{Followup-To} ヘッダーが構文的に正しいかどうか
-を調べます。
-@end table
-
-ディフォルトでは、これらすべての条件が調べられます。ただ
-し @code{message-insert-canlock} が @code{nil} だったらディフォルトでは
-検査が行なわれない @code{sender} を除きます。@xref{Canceling News}.
-
 @item message-ignored-news-headers
 @vindex message-ignored-news-headers
 投稿する前に取り除かれるヘッダーの正規表現です。
