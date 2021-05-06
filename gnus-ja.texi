@@ -14245,6 +14245,17 @@ machine imap.gmail.com login <username> password <password> port imap
 が @samp{INBOX} や @samp{INBOX.Lists.emacs} のように名付けられているとし
 ても、nnimap グループ名を @samp{INBOX} や @samp{Lists.emacs} のようにし
 たいのであれば、このオプションを有効にしてください。
+
+@item nnimap-keepalive-intervals
+ディフォルトでは、nnimap は接続を維持するために
+時々 @samp{NOOP} (keepalive) コマンドをサーバーに送信します。このオプショ
+ンは、それが発生する頻度を管理します。これは秒を表す 2つの整数の cons で、
+1つ目は keepalive チェックを実行する頻度、2つ目はユーザーがどのくらいの
+期間にわたって非アクティブ状態だったら実際にコマンドを送信するかを指定す
+る秒数です。ディフォルトの @code{(900 . 300)} は、15分ごとにチェックを実
+行し、ユーザーが 5分間非アクティブだったら keepalive コマンドを送信する
+ことを意味します。完全に keepalive コマンドを完全に無効にするに
+は @code{nil} に設定してください。
 @end table
 
 @node Client-Side IMAP Splitting
