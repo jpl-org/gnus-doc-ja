@@ -105,6 +105,8 @@ EasyPG アシスタント・コマンドは @samp{epa-} で始まります。例
 @item 領域のクリアテキスト署名を作るには @kbd{M-x epa-sign-region}
 
 @item ファイルを暗号化するには @kbd{M-x epa-encrypt-file}
+
+@item キーサーバーにキーを問い合わせるには @kbd{M-xepa-search-keys}
 @end itemize
 
 EasyPG アシスタントは Emacs の他の機能性に統合することができるいくつかの
@@ -123,6 +125,7 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 * Dired integration::                   Dired の統合
 * Mail-mode integration::               Mail モードの統合
 * Encrypting/decrypting gpg files::     gpg ファイルの暗号化と復号
+* Querying a key server::               キーサーバーへの問い合わせ
 @end menu
 
 @node Key management, Cryptographic operations on regions, Commands, Commands
@@ -445,6 +448,20 @@ Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこ
 @code{nil} 以外の値だったら開いている暗号化されたファイルの自動セーブを
 禁止します。ディフォルト値は @code{t} です。
 @end defvar
+
+@node Querying a key server,  , Mail-mode integration, Commands
+@section Querying a key server
+
+@code{epa-search-keys} コマンドを使って、@acronym{GPG} キーサーバーに問
+い合わせることができます。その際 Emacs は合致するものを一覧できるバッファー
+をポップアップし、そこで個人のキーリングにキーを取り込む (および追加す
+る) ことができます。
+
+そのキーの検索結果を表示するバッファーでは、@kbd{f} コマンドを使ってキー
+を取り込むようにマークしてから @kbd{x} を使ってキーを取り込んで (および
+キーリングに組み込んで) ください。
+
+変数 @code{epa-keyserver} で、どのサーバーに問い合わせるかを指示します。
 
 @node GnuPG version compatibility, Caching Passphrases, Commands, Top
 @chapter GnuPG のバージョンの互換性
