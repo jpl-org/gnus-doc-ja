@@ -5104,6 +5104,17 @@ overview (@acronym{NOV}) ファイルを作る際にいつ追加のヘッダー�
 Newsgroups:full
 @end example
 
+それができない場合は、@samp{XOVER} を使ってヘッダーの取り込みを無効にし
+なければなりません:
+
+@lisp
+(setq nntp-nov-is-evil t
+      gnus-nov-is-evil t)
+@end lisp
+
+ただし、これは @acronym{NNTP} グループに入ることを、非常に、非常に遅くし
+てしまうので、お勧めはしません。
+
 @node Summary Buffer Mode Line
 @subsection 概略バッファーのモード行
 
