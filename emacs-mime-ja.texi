@@ -1899,6 +1899,10 @@ WAVE 音響ファイルは @code{wavplayer} で再生されるべきであるこ
 インターフェース関数:
 
 @table @code
+@item mailcap-view-file
+@findex mailcap-view-file
+ファイル名を入力すると、そのファイルの形式に適したビューワーを起動します。
+
 @item mailcap-parse-mailcaps
 @findex mailcap-parse-mailcaps
 @vindex mailcap-prefer-mailcap-viewers
