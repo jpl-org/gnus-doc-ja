@@ -2542,7 +2542,9 @@ Gnus は通常、@code{gnus-activate-level} かそれより小さいレベルの
 @itemx M m
 @kindex M m @r{(グループ)}
 @findex gnus-group-mark-group
-現在のグループに印を付ける (@code{gnus-group-mark-group})。
+現在のグループに印を付ける (@code{gnus-group-mark-group})。@*
+もし @code{gnus-process-mark-toggle} が @code{nil} でないならば、現在の
+グループのプロセス印をトグルします。
 
 @item M-#
 @kindex M-# @r{(グループ)}
@@ -3968,7 +3970,9 @@ Gnus
 @findex gnus-topic-mark-topic
 現在のトピックにあるグループすべてにプロセス印を付けま
 す (@code{gnus-topic-mark-topic})。接頭引数が与えられない場合、このコマ
-ンドは副トピックに対して再帰的に働きます。
+ンドは副トピックに対して再帰的に働きます。@*
+もし @code{gnus-process-mark-toggle} が @code{nil} でないならば、現在の
+グループのプロセス印をトグルします。
 
 @item T M-#
 @kindex T M-# @r{(トピック)}
@@ -6438,7 +6442,9 @@ Gnus エージェント (@pxref{Agent Basics}) はいくつかの記事を自動
 @kindex M P p @r{(概略)}
 @findex gnus-summary-mark-as-processable
 現在の記事にプロセス印を付けま
-す (@code{gnus-summary-mark-as-processable})。
+す (@code{gnus-summary-mark-as-processable})。@*
+もし @code{gnus-process-mark-toggle} が @code{nil} でないならば、現在の
+グループのプロセス印をトグルします。
 
 @item M P u
 @itemx M-#
@@ -10294,7 +10300,8 @@ Gnus はこれをするための概略バッファーマイナーモードを提
 スレッドの最初の記事で使われるとスレッド全体を選択します。そうでなければ、
 その記事だけを選択します。もし数値接頭引数を与えられると、その番号のスレッ
 ドか記事に移動して、それを選択します。(普通は行番号が概略行の最初に表示
-されます。)
+されます。) もし @code{gnus-process-mark-toggle} が @code{nil} でないな
+らば、現在のグループのプロセス印をトグルします。
 
 @item @key{SPC}
 @kindex SPC @r{(選択)}
