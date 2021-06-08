@@ -2542,38 +2542,42 @@ Gnus は通常、@code{gnus-activate-level} かそれより小さいレベルの
 @itemx M m
 @kindex M m @r{(グループ)}
 @findex gnus-group-mark-group
-現在のグループに印を付ける (@code{gnus-group-mark-group})。@*
-もし @code{gnus-process-mark-toggle} が @code{nil} でないならば、現在の
-グループのプロセス印をトグルします。
+現在のグループのプロセス印をトグルしま
+す (@code{gnus-group-mark-group})。@*
+@code{gnus-process-mark-toggle} が @code{nil} である場合は、現在のグルー
+プにプロセス印を付けます。
 
 @item M-#
 @kindex M-# @r{(グループ)}
 @itemx M u
 @kindex M u @r{(グループ)}
 @findex gnus-group-unmark-group
-現在のグループから印を削除する (@code{gnus-group-unmark-group})。
+現在のグループからプロセス印を削除しま
+す (@code{gnus-group-unmark-group})。
 
 @item M U
 @kindex M U @r{(グループ)}
 @findex gnus-group-unmark-all-groups
-すべてのグループから印を削除する (@code{gnus-group-unmark-all-groups})。
+すべてのグループからプロセス印を削除しま
+す (@code{gnus-group-unmark-all-groups})。
 
 @item M w
 @kindex M w @r{(グループ)}
 @findex gnus-group-mark-region
-ポイントとマークの間のすべてのグループに印を付け
-る (@code{gnus-group-mark-region})。
+領域内のすべてのグループにプロセス印を付けま
+す (@code{gnus-group-mark-region})。
 
 @item M b
 @kindex M b @r{(グループ)}
 @findex gnus-group-mark-buffer
-バッファー内のすべてのグループに印を付ける (@code{gnus-group-mark-buffer})。
+バッファー内のすべてのグループに印を付けま
+す (@code{gnus-group-mark-buffer})。
 
 @item M r
 @kindex M r @r{(グループ)}
 @findex gnus-group-mark-regexp
-ある正規表現に合致するすべてのグループに印を付け
-る (@code{gnus-group-mark-regexp})。
+ある正規表現に合致するすべてのグループに印を付けま
+す (@code{gnus-group-mark-regexp})。
 @end table
 
 @ref{Process/Prefix} も参照してください。
@@ -3962,24 +3966,24 @@ Gnus
 @item T H
 @kindex T H @r{(トピック)}
 @findex gnus-topic-toggle-display-empty-topics
-空のトピックの表示・非表示を切り替えま
+空のトピックの表示・非表示をトグルしま
 す (@code{gnus-topic-toggle-display-empty-topics})。
 
 @item T #
 @kindex T # @r{(トピック)}
 @findex gnus-topic-mark-topic
-現在のトピックにあるグループすべてにプロセス印を付けま
-す (@code{gnus-topic-mark-topic})。接頭引数が与えられない場合、このコマ
-ンドは副トピックに対して再帰的に働きます。@*
-もし @code{gnus-process-mark-toggle} が @code{nil} でないならば、現在の
-グループのプロセス印をトグルします。
+現在のトピックにあるグループすべてのプロセス印をトグルしま
+す (@code{gnus-topic-mark-topic})。接頭引数を与えなければ、このコマンド
+は副トピックに対して再帰的に働きます。@*
+@code{gnus-process-mark-toggle} が @code{nil} である場合は、現在のトピッ
+クにプロセス印を付けます。
 
 @item T M-#
 @kindex T M-# @r{(トピック)}
 @findex gnus-topic-unmark-topic
 現在のトピックにあるすべてのグループからプロセス印を消しま
-す (@code{gnus-topic-unmark-topic})。接頭引数が与えられない場合、このコ
-マンドは副トピックに対して再帰的に働きます。
+す (@code{gnus-topic-unmark-topic})。接頭引数を与えなければ、このコマン
+ドは副トピックに対して再帰的に働きます。
 
 @item C-c C-x
 @kindex C-c C-x @r{(トピック)}
@@ -6441,10 +6445,10 @@ Gnus エージェント (@pxref{Agent Basics}) はいくつかの記事を自動
 @kindex # @r{(概略)}
 @kindex M P p @r{(概略)}
 @findex gnus-summary-mark-as-processable
-現在の記事にプロセス印を付けま
+現在の記事のプロセス印をトグルしま
 す (@code{gnus-summary-mark-as-processable})。@*
-もし @code{gnus-process-mark-toggle} が @code{nil} でないならば、現在の
-グループのプロセス印をトグルします。
+@code{gnus-process-mark-toggle} が @code{nil} である場合は、現在の記事に
+プロセス印を付けます。
 
 @item M P u
 @itemx M-#
@@ -10294,14 +10298,14 @@ Gnus はこれをするための概略バッファーマイナーモードを提
 @item .
 @kindex . @r{(選択)}
 @findex gnus-pick-article-or-thread
-現在の行の記事かスレッドを選択しま
-す (@code{gnus-pickd-article-or-thread})。変
-数 @code{gnus-thread-hide-subtree} が非-@code{nil} だったら、このキーが
-スレッドの最初の記事で使われるとスレッド全体を選択します。そうでなければ、
-その記事だけを選択します。もし数値接頭引数を与えられると、その番号のスレッ
-ドか記事に移動して、それを選択します。(普通は行番号が概略行の最初に表示
-されます。) もし @code{gnus-process-mark-toggle} が @code{nil} でないな
-らば、現在のグループのプロセス印をトグルします。
+現在の行の記事かスレッドを選択、またはすでに選択されている場合は選択を解
+除します (@code{gnus-pickd-article-or-thread})。変
+数 @code{gnus-thread-hide-subtree} が @code{nil} でないならば、このキー
+がスレッドの最初の記事で使われるとスレッド全体を選択します。そうでなけれ
+ば、その記事だけを選択します。もし数値接頭引数を与えられると、その番号の
+スレッドか記事に移動して、それを選択します。(普通は行番号が概略行の最初
+に表示されます。) @code{gnus-process-mark-toggle} が @code{nil} である場
+合は、記事またはスレッドを選択します。
 
 @item @key{SPC}
 @kindex SPC @r{(選択)}
