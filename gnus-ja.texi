@@ -2552,7 +2552,7 @@ Gnus は通常、@code{gnus-activate-level} かそれより小さいレベルの
 @itemx M u
 @kindex M u @r{(グループ)}
 @findex gnus-group-unmark-group
-現在のグループからプロセス印を削除しま
+現在のグループから、もしプロセス印があれば、削除しま
 す (@code{gnus-group-unmark-group})。
 
 @item M U
