@@ -4052,6 +4052,8 @@ Gnus が知っているトピック化されたグループをすべて表示し
 レベル。
 @item g
 トピック中のグループの数。
+@item G
+トピックとすべての副トピックにあるグループの数。
 @item a
 トピック中の未読記事の数。
 @item A
@@ -7318,6 +7320,7 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに
 @findex gnus-thread-sort-by-author
 @findex gnus-thread-sort-by-recipient
 @findex gnus-thread-sort-by-number
+@findex gnus-thread-sort-by-newsgroups
 @findex gnus-thread-sort-by-random
 @vindex gnus-thread-sort-functions
 @findex gnus-thread-sort-by-most-recent-number
@@ -7335,6 +7338,7 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに
 @code{gnus-thread-sort-by-score},
 @code{gnus-thread-sort-by-most-recent-number},
 @code{gnus-thread-sort-by-most-recent-date},
+@code{gnus-thread-sort-by-newsgroups},
 @code{gnus-thread-sort-by-random} およ
 び @code{gnus-thread-sort-by-total-score} です。
 
@@ -7393,6 +7397,7 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに
 @findex gnus-article-sort-by-score
 @findex gnus-article-sort-by-subject
 @findex gnus-article-sort-by-author
+@findex gnus-article-sort-by-newsgroups
 @findex gnus-article-sort-by-random
 @findex gnus-article-sort-by-number
 @findex gnus-article-sort-by-most-recent-number
@@ -7403,6 +7408,7 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに
 は @code{gnus-article-sort-by-number},
 @code{gnus-article-sort-by-author},
 @code{gnus-article-sort-by-subject}, @code{gnus-article-sort-by-date},
+@code{gnus-article-sort-by-newsgroups},
 @code{gnus-article-sort-by-random} およ
 び @code{gnus-article-sort-by-score} です。
 
@@ -10125,6 +10131,17 @@ Gnus 固有ではないけれど、役に立つかもしれない文字セット
 @kindex C-c C-s C-i @r{(概略)}
 @findex gnus-summary-sort-by-score
 スコアによって並べ替えます (@code{gnus-summary-sort-by-score})。
+
+@item C-c C-s C-u
+@kindex C-c C-s C-u @r{(概略)}
+@findex gnus-summary-sort-by-newsgroups
+ニュースグループで並べ替えます (@code{gnus-summary-sort-by-newsgroups})。
+
+@item C-c C-s C-x
+@kindex C-c C-s C-x @r{(概略}
+@findex gnus-summary-sort-by-extra
+入力したヘッダーで並べ替えます (@code{gnus-summary-sort-by-extra})。
+そのヘッダーのために定義された並べ替え関数が無い場合はエラーになります。
 
 @item C-c C-s C-r
 @kindex C-c C-s C-r @r{(概略)}
