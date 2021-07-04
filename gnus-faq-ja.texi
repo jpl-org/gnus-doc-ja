@@ -2161,7 +2161,7 @@ bug メーリングリスト} に送るメッセージを書き始めること�
 
 @subsubheading 回答
 
-あなたの @acronym{IRC} を @samp{chat.freenode.net} の @samp{#gnus} チャ
+あなたの @acronym{IRC} を @samp{irc.libera.chat} の @samp{#gnus} チャ
 ンネルに接続してください。
 
 @node FAQ 9 - Tuning Gnus
