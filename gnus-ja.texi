@@ -2292,18 +2292,18 @@ Generation Commands})。
 @itemx u
 @kindex S t @r{(グループ)}
 @kindex u @r{(グループ)}
-@findex gnus-group-unsubscribe-current-group
-@c @icon{gnus-group-unsubscribe}
-現在のグループを購読する/しないを切り替えま
-す (@code{gnus-group-unsubscribe-current-group})。
+@findex gnus-group-toggle-subscription
+@c @icon{gnus-group-toggle-subscription}
+現在位置のグループを購読する/しないを切り替えま
+す (@code{gnus-group-toggle-subscription})。
 
 @item S s
 @itemx U
 @kindex S s @r{(グループ)}
 @kindex U @r{(グループ)}
-@findex gnus-group-unsubscribe-group
-グループを購読するかどうかを確認し、購読します。すでに購読するようになっ
-ている場合には、購読を止めます (@code{gnus-group-unsubscribe-group})。
+@findex gnus-group-toggle-subscription
+グループを指定して、それを購読する/しないを切り替えま
+す (@code{gnus-group-toggle-subscription})。
 
 @item S k
 @itemx C-k
@@ -3683,12 +3683,11 @@ kill されたグループをすべて表示します (@code{gnus-group-list-kil
 
 @item u
 @kindex u @r{(閲覧)}
-@findex gnus-browse-unsubscribe-current-group
+@findex gnus-browse-toggle-subscription
 @vindex gnus-browse-subscribe-newsgroup-method
-現在のグループを非購読にします。と言うよりは (訳注: このコマンドはトグル
-なので)、この場合は購読することになるのでしょうけれ
-ど (@code{gnus-browse-unsubscribe-current-group})。新しいグループをグルー
-プバッファーに編入する方法を、変
+現在のグループを購読する/しないを切り替えま
+す (@code{gnus-browse-toggle-subscription})。新しいグループをグループバッ
+ファーに編入する方法を、変
 数 @code{gnus-browse-subscribe-newsgroup-method} を使って制御することが
 できます。利用できるオプションについては: @xref{Subscription Methods}.
 
