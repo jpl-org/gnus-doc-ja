@@ -681,8 +681,8 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 @item C-c C-f C-a
 @kindex C-c C-f C-a
 @findex message-generate-unsubscribed-mail-followup-to
-講読していないメーリングリストに投稿する場合に見合っ
-た @samp{Mail-Followup-To:} ヘッダーを挿入します。講読していないメーリン
+購読していないメーリングリストに投稿する場合に見合っ
+た @samp{Mail-Followup-To:} ヘッダーを挿入します。購読していないメーリン
 グリストに元記事を投稿するときは、@samp{Mail-Followup-To:} ヘッダーに手
 で記入しなければなりません。内容は、普通はメーリングリストのアドレスとあ
 なた自身のアドレスです。この関数はそのようなヘッダーを自動的に挿入します。
