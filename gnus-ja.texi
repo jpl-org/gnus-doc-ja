@@ -2292,10 +2292,10 @@ Generation Commands})。
 @itemx u
 @kindex S t @r{(グループ)}
 @kindex u @r{(グループ)}
-@findex gnus-group-toggle-subscription
-@c @icon{gnus-group-toggle-subscription}
+@findex gnus-group-toggle-subscription-at-point
+@c @icon{gnus-group-toggle-subscription-at-point}
 現在位置のグループを購読する/しないを切り替えま
-す (@code{gnus-group-toggle-subscription})。
+す (@code{gnus-group-toggle-subscription-at-point})。
 
 @item S s
 @itemx U
