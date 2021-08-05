@@ -14249,7 +14249,9 @@ machine imap.gmail.com login <username> password <password> port imap
 合、これを @code{anonymous} に設定する必要があります。もしこの変数を設定
 しないと標準のログイン手順が使われます。特定のログイン手順を指定したいな
 ら、この変数を @code{login} (伝統的な @acronym{IMAP} のログイン手順)、
-@code{plain} または @code{cram-md5} のどれかを設定してください。
+@code{plain}、@code{cram-md5}、または @code{xoauth2} のどれかを設定して
+ください。(最後のものは @file{oauth2.el} ライブラリーを使う必要がありま
+す。)
 
 @item nnimap-expunge
 消去した記事を、いつ永久に取り除くか。もし @code{never} であれば、消去さ
