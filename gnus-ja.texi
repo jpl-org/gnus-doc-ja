@@ -4072,6 +4072,25 @@ Gnus が知っているトピック化されたグループをすべて表示し
 @code{gnus-topic-display-empty-topics} はトピックの中に未読記事が無い場
 合でもそのトピックを表示するようにします。ディフォルトは @code{t} です。
 
+@vindex gnus-topic-display-predicate
+変数 @code{gnus-topic-display-predicate} に、トピックを表示するかどうか
+を指定する関数を設定することができます。関数は 1つのパラメーター (トピッ
+クの名前) で呼び出され、トピックを表示する場合は @code{nil} ではない値を
+返さなければなりません。
+
+例えば、勤務時間外に仕事があることを思い出したくない場合は、仕事に関連す
+るすべてのグループを @samp{"Work"} というトピックにまとめておいて、次の
+ような設定を行なうことができます:
+
+@lisp
+(setq gnus-topic-display-predicate
+      (lambda (name)
+        (or (not (equal name "Work"))
+            (< 090000
+               (string-to-number (format-time-string "%H%M%S"))
+               170000))))
+@end lisp
+
 @node Topic Sorting
 @subsection トピックの並べ替え
 @cindex topic sorting
