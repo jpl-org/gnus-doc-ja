@@ -9116,6 +9116,13 @@ html2text (シンプルな @acronym{HTML} コンバーターで、Gnus に含ま
 す) を使います。
 @end table
 
+@item W D F
+@kindex W D F @r{(概略)}
+@findex gnus-article-toggle-fonts
+@acronym{HTML} 記事のフォントをプロポーショナルにするかどうかを切り替え
+ます。これは現在の記事バッファーにおける @code{shr-use-fonts} 変数を一時
+的に変更します。
+
 @item W b
 @kindex W b @r{(概略)}
 @findex gnus-article-add-buttons
