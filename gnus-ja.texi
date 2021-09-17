@@ -21533,8 +21533,8 @@ mairix は @code{nnselect} とともに永続的な検索グループを含む�
 Mairix はローカルに格納されたメールに索引を付けたり単語を検索するための
 道具です。書いたのは Richard Curnow で GPL でライセンスされます。
 Mairix は最もポピュラーな GNU/Linux の配布に付属していますが Windows (た
-だし cygwin を併用)、macOS および Solaris のもとでも動作します。ホームペー
-ジは @uref{http://www.rpcurnow.force9.co.uk/mairix/index.html} です。
+だし cygwin を併用)、macOS および Solaris のもとでも動作します。ウェブサ
+イトは @uref{http://www.rpcurnow.force9.co.uk/mairix/index.html} です。
 
 @code{nnir} バックエンドを介して使うことができる swish++ や namazu のよ
 うな他の検索ツールほどには mairix は融通がきかないかもしれませんが、それ

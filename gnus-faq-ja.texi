@@ -1475,9 +1475,9 @@ alias al        "Al <al@@english-heritage.invalid>"
 ,メールの別名, message-ja, The Message Manual}) を参照してください。
 
 でも、あなたが本当に使いたいのは BBDB (the Insidious Big Brother
-Database) でしょう。@uref{http://bbdb.sourceforge.net/, bbdb のホームペー
-ジ} から入手してください。そして Gnus で BBDB を有効にするために、以下の
-ものを @file{~/.gnus.el} ファイルに書き込んでください:
+Database) でしょう。@uref{http://bbdb.sourceforge.net/, bbdb のウェブサ
+イト} から入手してください。そして Gnus で BBDB を有効にするために、以下
+のものを @file{~/.gnus.el} ファイルに書き込んでください:
 
 @lisp
 (require 'bbdb)
@@ -1590,7 +1590,7 @@ X-Face を含めてくれるように Gnus に指示するだけです。それ�
       "Request confirmation when replying to news."
       (interactive)
       (when (or (not (gnus-news-group-p gnus-newsgroup-name))
-                (y-or-n-p "Really reply by mail to article author? "))
+                (y-or-n-p "Really reply by mail to article author?"))
         ad-do-it))))
 @end lisp
 
