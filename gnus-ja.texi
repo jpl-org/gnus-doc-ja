@@ -13628,13 +13628,12 @@ Gnus が接続を拒否されたすべてのサーバーの、すべての印を
 @findex nntp-send-authinfo
 @vindex nntp-authinfo-file
 この関数は @acronym{NNTP} サーバーに @samp{AUTHINFO} を送るために使われ
-ます。ディフォルトの関数は @code{nntp-send-authinfo} で、適切な記載事項
-を探すために @file{~/.authinfo} (もしくは @code{nntp-authinfo-file} 変数
-に設定した何でも) を調べます。もし一つも見つからなかったら、ログイン名と
-パスワードの入力を要求します。@file{~/.authinfo} ファイルの様式
-は @code{ftp} のための @file{~/.netrc} ファイルと (ほとんど) 同じです。
-それは @code{ftp} のマニュアルページで定義されていますが、ここに顕著な実
-例があります:
+ます。ディフォルトの関数は @code{nntp-send-authinfo} で、該当するエント
+リーを探すために @file{~/.authinfo} を調べます。もし一つも見つからなかっ
+たら、ログイン名とパスワードの入力を要求します。@file{~/.authinfo} ファ
+イルの様式は @code{ftp} のための @file{~/.netrc} ファイルと (ほとん
+ど) 同じです。それは @code{ftp} のマニュアルページで定義されていますが、
+ここに重要な事実があります:
 
 @enumerate
 @item
