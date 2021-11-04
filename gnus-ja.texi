@@ -9572,6 +9572,13 @@ Gravatars は @uref{https://en.gravatar.com/} からオンラインで取得し�
 メールヘッダーぜんぶ (つまり @code{Cc}、@code{To}) をアバター化しま
 す (@code{gnus-treat-from-gravatar})。
 
+@item W D e
+@kindex W D e @r{(概略)}
+@findex gnus-article-emojize-symbols
+一部のシンボルには絵文字ではない表現と絵文字表現の両方があります。このコ
+マンドは Gnus に絵文字の表現を選択させま
+す (@code{gnus-article-emojize-symbols})。
+
 @item W D D
 @kindex W D D @r{(概略)}
 @findex gnus-article-remove-images
@@ -11945,6 +11952,7 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 @vindex gnus-treat-capitalize-sentences
 @vindex gnus-treat-overstrike
 @vindex gnus-treat-strip-cr
+@vindex gnus-treat-emojize-symbols
 @vindex gnus-treat-strip-headers-in-body
 @vindex gnus-treat-strip-leading-blank-lines
 @vindex gnus-treat-strip-multiple-blank-lines
@@ -11998,6 +12006,7 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 @item gnus-treat-capitalize-sentences (t, integer)
 @item gnus-treat-overstrike (t, integer)
 @item gnus-treat-strip-cr (t, integer)
+@item gnus-treat-emojize-symbols (t, integer)
 @item gnus-treat-strip-headers-in-body (t, integer)
 @item gnus-treat-strip-leading-blank-lines (t, first, integer)
 @item gnus-treat-strip-multiple-blank-lines (t, integer)
