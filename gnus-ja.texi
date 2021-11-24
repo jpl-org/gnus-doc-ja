@@ -1010,13 +1010,13 @@ Gnus の基本的な構成要素
 カルでもリモートでも構いません。それぞれのサーバーはグループのリストを保
 持していて、それらのグループには記事があります。Gnus は多種多様なサーバー
 への統一されたインターフェースを提供するため、語彙は必ずしも整頓されてい
-ません (より完全な用語集については @pxref{FAQ - Glossary} を参照してくだ
-さい)。したがってローカルの maildir は Usenet や IMAP サーバーと同じ「サー
-バー」(@pxref{Finding the News}) と呼ばれます。「グルー
-プ」(@pxref{Group Buffer}) は NNTP グループ、IMAP フォルダー、またはロー
-カルメールディレクトリーを意味する場合があります。また「記
-事」(@pxref{Summary Buffer}) はメッセージまたは電子メールと呼ばれること
-もあります。Gnus はこれらすべてに統一された用語を採用しています。
+ません (より完全な用語集については @pxref{FAQ - Glossary})。したがってロー
+カルの maildir は Usenet や IMAP サーバーと同じ「サーバー
+」(@pxref{Finding the News}) と呼ばれます。「グループ
+」(@pxref{Group Buffer}) は NNTP グループ、IMAP フォルダー、またはローカ
+ルメールディレクトリーを意味する場合があります。また「記事
+」(@pxref{Summary Buffer}) はメッセージまたは電子メールと呼ばれることも
+あります。Gnus はこれらすべてに統一された用語を採用しています。
 
 サーバーは 2つの一般的なカテゴリに分類されます。「ニュースふう」: 記事が
 パブリックアーカイブの一部であり、ユーザーが操作できないことを意味します。
@@ -28455,7 +28455,7 @@ gnus-agent-cache nil)} は旧式の動作に戻します。
 @item
 Dired の統合。
 
-@code{gnus-dired-minor-mode} (@ref{Other modes} 参照) は dired のバッファー
+@code{gnus-dired-minor-mode} (@pxref{Other modes}) は dired のバッファー
 で、添付ファイルを送信する、mailcap の適切な項目を使ってファイルを開く、
 それに mailcap の項目を使ってファイルを印刷するためのキーを割り当てます。
 
