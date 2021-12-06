@@ -15178,11 +15178,6 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが
 ルを消去するときに確認を求めます。この変数
 は @code{mail-source-delete-incoming} が正の数である場合だけ使われます。
 
-@item mail-source-ignore-errors
-@vindex mail-source-ignore-errors
-非-@code{nil} だったら、メールソースからメールを読むときのエラーを無視し
-ます。
-
 @item mail-source-directory
 @vindex mail-source-directory
 入ってきたメールソースのファイルが (もしあれば) 格納されるディレクトリー
