@@ -4416,7 +4416,7 @@ Gnus
     (gnus-group-jump-to-group "nndraft:drafts")))
 @end lisp
 
-Emacs でユーザー用に予約されているキーとキーバインドについては、
+Emacs でユーザー用に予約されているキーとキー・バインドについては、
 @xref{Keymaps, Keymaps, ,emacs, The Emacs Editor}.
 
 @item ^

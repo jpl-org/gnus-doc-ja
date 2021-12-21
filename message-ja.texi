@@ -617,8 +617,8 @@ Message は普通はうまく動作しますが、ときどき間違えもしま
 @item C-c C-f C-o
 @kindex C-c C-f C-o
 @findex message-goto-from
-@code{From} ヘッダーに行きます (@code{message-goto-from})。(キーバインド
-中の“o”は創作者 (Originator) に由来しています。)
+@code{From} ヘッダーに行きます (@code{message-goto-from})。(キー・バイン
+ド中の“o”は創作者 (Originator) に由来しています。)
 
 @item C-c C-f C-b
 @kindex C-c C-f C-b
