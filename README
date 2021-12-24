@@ -1,5 +1,5 @@
 These are the complete Japanese translations of the Gnus Info manuals,
-corresponding to Gnus v5.13 bundled with Emacs 28.0.60.
+corresponding to Gnus v5.13 bundled with Emacs 28.0.90.
 
 Installation
 ============
@@ -17,7 +17,7 @@ configure script without argument.  The value for EMACS doesn't allow
 to have directory components like /usr/local/bin/emacs, so you have to
 specify the PATH environment variable if it is needed.  For example:
 
-% ./configure --with-emacs=emacs-28.0.60 --infodir=/usr/local/info
+% ./configure --with-emacs=emacs-28.0.90 --infodir=/usr/local/info
 
 If you prefer to read those Japanese Info manuals when typing `C-cC-i'
 in Gnus buffers or typing `M-x message-info' in message buffers, you
