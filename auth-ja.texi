@@ -376,6 +376,11 @@ Secret items は @dfn{collections} にグループ化されます。コレクシ
 なるときはいつでも、文字列 @code{"session"} または @code{nil} のどちらか
 で引くことができます。
 
+ただし、すべてのシークレットサービスプロバイダーが、この臨時
+の @code{"session"} コレクションを作成するわけではありません (たとえ
+ば KeePassXC のように)。使用する前に、まずこのコレクションが存在すること
+を確認する必要があります。
+
 @defun secrets-list-items collection
 @var{collection} のすべての item のラベルをリストで返します。
 @end defun
@@ -388,7 +393,7 @@ Secret items は @dfn{collections} にグループ化されます。コレクシ
 ンで始まるキーワード・シンボルです。以下に例を示します:
 
 @example
-;; セッションは "session" 、ラベルは "my item" で
+;; コレクションは "session" 、ラベルは "my item" で
 ;; secret (パスワード) は "geheim" です。
 (secrets-create-item "session" "my item" "geheim"
  :method "sudo" :user "joe" :host "remote-host")
