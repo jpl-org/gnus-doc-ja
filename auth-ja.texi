@@ -312,7 +312,8 @@ machine gmail2 login account2@@gmail.com password "account2 password" port imap
 の @uref{https://www.freedesktop.org/wiki/Specifications/secret-storage-spec/,freedesktop.org} に
 よる標準です。この API は GNOME 鍵リングと KDE ウォレットのようなシステ
 ム・デーモン (それぞれ最近はたいていの GNU/Linux システムに備わって
-る GNOME と KDE のパッケージ) によって実装されます。
+る GNOME と KDE のパッケージ) によって実装されます。そして KeePassXC で
+もテスト済みです。
 
 auth-source ライブラリーはシークレットサービス API を通してつな
 ぐ @file{secrets.el} ライブラリーを使います。そのライブラリーを他のパッ
@@ -366,20 +367,18 @@ Secret items は @dfn{collections} にグループ化されます。コレクシ
 常これは Emacs の中からは行なわれません。@code{"login"} のような標準のコ
 レクションを削除しないでください。
 
-特別なコレクション @code{"session"} は対応するクライアント (我々の場合
-は Emacs) が走っている期間存在します。これは Emacs がシークレットサービ
-スのインターフェースを使う際に自動的に作られ、Emacs が終了するときに削除
-されます。その故に臨時に secret items を保存したり取り出すために使うこと
-ができます。Secret items を Emacs より永く生かしておくべきではない場合、
-@code{"session"} コレクションは永続させるコレクションより有利です。コレ
-クション session は以下の関数においてコレクションのパラメーターが必要に
-なるときはいつでも、文字列 @code{"session"} または @code{nil} のどちらか
-で引くことができます。
+GNOME キーリングには @code{"session"} と呼ばれる特別なコレクションがあっ
+て、ユーザーがログインしている期間に渡って存在します。そのデータはディス
+クに保存されず、ユーザーがログアウトすると消えます。したがって、秘密のア
+イテムを一時的に保存および取得するために使うことができます。秘密のアイテ
+ムが永久に有効であってはならない場合、@code{"session"} コレクションは永
+続的なコレクションよりも優れています。@code{"session"} コレクションは、
+コレクションパラメータが必要な場合はいつでも、文字列 @code{"session"} ま
+たは @code{nil} のいずれかを指定してアクセスすることができます。
 
-ただし、すべてのシークレットサービスプロバイダーが、この臨時
-の @code{"session"} コレクションを作成するわけではありません (たとえ
-ば KeePassXC のように)。使用する前に、まずこのコレクションが存在すること
-を確認する必要があります。
+ただし、他のシークレットサービスプロバイダーは、この臨時
+の @code{"session"} コレクションを作成しません。使用する前に、まずこのコ
+レクションが存在することを確認する必要があります。
 
 @defun secrets-list-items collection
 @var{collection} のすべての item のラベルをリストで返します。
