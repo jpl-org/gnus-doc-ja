@@ -9,7 +9,7 @@
 @documentlanguage ja
 
 @copying
-Copyright @copyright{} 1995--2020 Free Software Foundation, Inc.
+Copyright @copyright{} 1995--2022 Free Software Foundation, Inc.
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
