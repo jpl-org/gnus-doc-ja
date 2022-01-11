@@ -588,10 +588,7 @@ auth-source ライブラリーには、外部で使うための関数は少し�
                                            :create t))))
     (if found
         (list (plist-get found :user)
-              (let ((secret (plist-get found :secret)))
-                (if (functionp secret)
-                    (funcall secret)
-                  secret))
+              (auth-info-password found)
               (plist-get found :save-function))
       nil)))
 @end example
@@ -612,7 +609,7 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 
 @example
 (when (functionp (nth 2 credentials))
-   (funcall (nth 2 credentials)))
+  (funcall (nth 2 credentials)))
 @end example
 
 これは @code{:save-function} の有無に関わらす動作するでしょう。
@@ -643,6 +640,15 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 @defun auth-source-forget+ &rest spec &allow-other-keys
 この関数は @var{spec} に合致するすべてのキャッシュされたデータを忘れ (訳
 注: 無効にし) ます。忘れたデータの数を返します。
+@end defun
+
+@defun auth-source-pick-first-password &rest spec
+この関数は @code{auth-source-search} を @var{spec} に適用して、最初に見
+つかったレコードのパスワードを返します。
+@end defun
+
+@defun auth-info-password auth-info
+この関数は @var{auth-info} レコードからパスワード文字列を抽出します。
 @end defun
 
 @node GnuPG and EasyPG Assistant Configuration
