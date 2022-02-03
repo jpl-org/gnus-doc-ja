@@ -89,9 +89,8 @@ Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの
 * FAQ 1-1::    Gnus の最新版は何ですか?
 * FAQ 1-2::    5.10 では何が新しいですか?
 * FAQ 1-3::    Gnus はどこで、どうやって取得することができますか?
-* FAQ 1-4::    tarball で何をすれば良いですか?
-* FAQ 1-5::    ときどき目にする No Gnus と Oort Gnus って何ですか?
-* FAQ 1-6::    Emacs のどの版が必要ですか?
+* FAQ 1-4::    ときどき目にする No Gnus と Oort Gnus って何ですか?
+* FAQ 1-5::    Emacs のどの版が必要ですか?
 @end menu
 
 @node FAQ 1-1
@@ -149,37 +148,6 @@ Gnus は Emacs に含まれています。
 @node FAQ 1-4
 @subsubheading 質問 1.4
 
-tarball で何をすれば良いですか?
-
-@subsubheading 回答
-
-@samp{tar xvzf gnus.tar.gz} でアーカイブを展開して、ありふれた@*
-@samp{./configure; make; make install} の手順を実行してください。
-
-@quotation
-MS-Windows では @uref{https://www.cygwin.com} から Cygwin の環境も取得し
-てください。それによって上述のことを行なうこと、またはある梱包
-器 (packer) (例えば Winace) で tarball を開梱すること、そして tarball に
-含まれている Gnus をインストールするためのバッチファイル @file{make.bat}
-を使うことができるようになります。
-@end quotation
-
-Gnus をシステム領域にインストールしたくない (またはその権限が与えられて
-いない) ならば、ホームディレクトリーにインストールすることもできます。そ
-の場合は @file{~/.emacs} ファイルに以下の各行を加えてください:
-
-@lisp
-(add-to-list 'load-path "/path/to/gnus/lisp")
-(add-to-list 'Info-default-directory-list "/path/to/gnus/texi/")
-@end lisp
-
-@noindent
-この行より前に、どんな Gnus に関係するものも確実に無いようにしてください。
-MS Windows では "C:/path/to/lisp" のように書いてください (そう、"/" です)。
-
-@node FAQ 1-5
-@subsubheading 質問 1.5
-
 ときどき目にする No Gnus と Oort Gnus って何ですか?
 
 @subsubheading 回答
@@ -189,8 +157,8 @@ No Gnus は現行の開発版の名前で、Gnus 5.12 か Gnus 6 になるでし
 ぜ 5.11 ではないのかが不思議ですか?  奇数のバージョン番号は通常 Emacs に
 同梱される Gnus の版に使われるのです。)
 
-@node FAQ 1-6
-@subsubheading 質問 1.6
+@node FAQ 1-5
+@subsubheading 質問 1.5
 
 Emacs のどの版が必要ですか?
 
