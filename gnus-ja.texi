@@ -17810,9 +17810,9 @@ nnselect グループを使う上での要点は、そこに含めるメッセ�
 ディフォルトでは、選択されたものを圧縮したバージョンが他のグループの情報
 とともに newsrc に (永続グループ用に) 保存されます。これが望ましくない場
 合 (たとえば選択範囲が非常に長くて圧縮が十分になされない場合) は、
-@code{nnselect-always-regenerate} の @code{nil} ではないグループパラメー
-ターを使うと、リストは保存されなくなる代わりに、必要になるたびにリストが
-再生成されるようになります。もっと柔軟性が必要な場合
+@code{nnselect-always-regenerate} をグループパラメーターにし
+て @code{nil} ではない値を使うと、リストは保存されなくなる代わりに、必要
+になるたびにリストが再生成されるようになります。もっと柔軟性が必要な場合
 は @code{nnselect-get-artlist-override-function} およ
 び @code{nnselect-store-artlist-override-function} を、記事のリストを取
 得して保存する関数に設定することができます。
