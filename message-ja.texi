@@ -85,7 +85,7 @@ Gnus のすべてのメッセージの作成 (メールとニュースの両方)
 @end menu
 
 Message は Gnus とともに配布されます。このマニュアルに対応する Gnus の版
-は Emacs 28.0.90 に付属する Gnus v5.13 です。
+は Gnus v5.13 です。
 
 @node Interface
 @chapter インターフェース
