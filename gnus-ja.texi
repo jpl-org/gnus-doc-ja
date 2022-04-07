@@ -21292,6 +21292,9 @@ Gnus の一般化された検索構文を使用するかの 2つの方法のい�
 
 @item
 @code{gnus-search-namazu}
+
+@item
+@code{gnus-search-mu}
 @end itemize
 
 より細かくする必要がある場合は、検索エンジン
@@ -21306,10 +21309,10 @@ Gnus の一般化された検索構文を使用するかの 2つの方法のい�
      (config-file "/home/user/.mail/.notmuch_config")))
 @end example
 
-notmuch、namazu、mairix などの検索エンジンは、動作が似ています。それらは
-ローカルで実行可能なファイルを使ってメッセージ貯蔵物のインデックスを作成
-して、それらのメッセージに対してコマンドライン検索問い合わせを実行し、一
-致するメッセージの絶対ファイル名のリストを返します。
+notmuch、namazu、mairix および mu などの検索エンジンは、動作が似ています。
+それらはローカルで実行可能なファイルを使ってメッセージ貯蔵物のインデック
+スを作成して、それらのメッセージに対してコマンドライン検索問い合わせを実
+行し、一致するメッセージの絶対ファイル名のリストを返します。
 
 これらのエンジンには、いくつかの共通の設定パラメーターがあります。一般的
 なパラメータは次のとおりです。
@@ -21343,7 +21346,7 @@ notmuch、namazu、mairix などの検索エンジンは、動作が似ていま
 されます。例えば、標準ではない notmuch プログラムを使うに
 は @code{gnus-search-notmuch-program} を @file{/usr/local/bin/notmuch} に
 設定します。これはすべての notmuch エンジンに当てはまります。このような
-オプションを使うエンジンは ``notmuch''、``namazu''、``mairix''、
+オプションを使うエンジンは ``notmuch''、``namazu''、``mairix''、``mu''、
 ``swish-e'' および ``swish++'' です。
 
 または、上記の @code{nnmaildir} の例のように、オプションを Gnus のサーバー
