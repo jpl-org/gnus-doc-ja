@@ -200,7 +200,7 @@ password @var{mypassword}
 (setq auth-sources '("secrets:Login"))
 ;;; パス (@file{~/.password-store}) を使う
 ;;; (@pxref{The Unix password store})
-(setq auth-sources '(password-store))
+(auth-source-pass-enable)
 ;;; [@{ "machine": "SERVER", "login": "USER",
 ;;; "password": "PASSWORD" @}...] というフォーマットの JSON データ
 (setq auth-sources '("~/.authinfo.json.gpg"))
