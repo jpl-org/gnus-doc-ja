@@ -23764,32 +23764,15 @@ Gravatar を From フィールドで見たいなら、こうしてください:
 @subsubsection ツール・バー
 
 @table @code
-@item gnus-use-tool-bar
-@vindex gnus-use-tool-bar
-この変数はツール・バーを表示する位置を指定します。@code{nil} だったらツー
-ル・バーを表示しません。非-@code{nil} の場合、それは @code{default},
-@code{top}, @code{bottom}, @code{right} または @code{left} の中の一つの
-シンボルでなければなりません。@code{default} だったらディフォルトのツー
-ル・バーを使い、他のものだったらその名前が示す場所にツール・バーを表示し
-ます。ディフォルトは @code{default} です。
-
-@item gnus-tool-bar-thickness
-@vindex gnus-tool-bar-thickness
-高さと幅のコンス (cons) で、ツール・バーの厚さを指定します。高さは上辺か
-下辺に表示するツール・バーで使われ、幅は右端か左端に表示するツール・バー
-で使われます。ディフォルトはディフォルトのツール・バーの値です。
-
 @item gnus-group-tool-bar
 @vindex gnus-group-tool-bar
-グループバッファー内のツール・バーです。
+グループバッファー用ツール・バーの指定です。リスト、またはその値がリスト
+である変数シンボルです。
 
 @item gnus-summary-tool-bar
 @vindex gnus-summary-tool-bar
-概略バッファー内のツール・バーです。
-
-@item gnus-summary-mail-tool-bar
-@vindex gnus-summary-mail-tool-bar
-メールグループの概略バッファー内のツール・バーです。
+概略バッファー用のツール・バーの指定です。リスト、またはその値がリストで
+ある変数シンボルです。
 @end table
 
 @iftex
