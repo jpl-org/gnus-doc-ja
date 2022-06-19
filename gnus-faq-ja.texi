@@ -2202,45 +2202,15 @@ Gnus を起動したとたんに @file{message.el} が読み込まれます。�
 @subsubheading 回答
 
 スピードの殺し屋は、@code{nil} 以外の値を設定され
-た @code{gnus-fetch-old-headers} 変数です。ですからスピードが問題なので
-あれば、それをやらないでください。概略バッファーの構築を速くするには、
+た @code{gnus-fetch-old-headers} 変数です。ですからスピードが重要なので
+あれば、それをやらないでください。
 
-@lisp
-(gnus-compile)
-@end lisp
-
-@noindent
-を @file{~/.gnus.el} ファイルの最後に書き込んでください。これによっ
-て Gnus は @code{gnus-summary-line-format} のようなものをバイトコンパイ
-ルします。(訳注: それを行なうと @file{~/.newsrc.eld} ファイルにバイナリー
-コードが書き込まれるので、非-ASCII テキストで表現されたトピック名などと
-共存できなくなる危険があります。)
-
-それから、@file{~/.emacs} に以下のようなものを書き込んで、
-@code{gc-cons-threshold} の値を増やしてみてください。
+@file{~/.emacs} に以下のようなものを書き込むことによっ
+て @code{gc-cons-threshold} の値を増やすことができます。
 
 @lisp
 (setq gc-cons-threshold 3500000)
 @end lisp
-
-@noindent
-CJK (中国語/日本語/韓国語) の文字の幅を気にしないのならば、または最近
-の Emacs とともに Gnus 5.10 かそれより新しいものを使っているのならば、
-次の行を @file{~/.gnus.el} ファイルに入れましょう:
-
-@lisp
-(setq gnus-use-correct-string-widths nil)
-@end lisp
-
-訳注: @xref{Wide Characters, ,Wide Characters, gnus-ja, The Gnus
-Manual}, も参照してください。
-
-@noindent
-(これら二つの提言をしてくれた Jesper harder さんに感謝します。)
-
-最後に、まだ 5.8.8 か 5.9 を使っていて、概略バッファーを構築する場合の速
-度に問題があることを経験するのであれば、絶対に 5.10 に上げるべきです。そ
-こではそれを改善するための、並外れた作業が行なわれました。
 
 @node FAQ 9-3
 @subsubheading 質問 9.3
