@@ -887,7 +887,6 @@ History
 * Why?::                        Gnus の目的は何?
 * Compatibility::               Gnus は @sc{gnus} とどれくらい互換性があるの?
 * Conformity::                  Gnus はすべての標準を満たそうとする
-* Emacsen::                     Gnus は少数の現代的な Emacs で実行できる
 * Gnus Development::            Gnus が開発されている方法
 * Contributors::                たくさんの人々
 * New Features::                Gnus の新しいことに関する手がかり
@@ -26458,7 +26457,6 @@ Newsrc をぶっ壊して人々を激怒させるサイトとしても知られ�
 * Why?::                        Gnus の目的は何?
 * Compatibility::               Gnus は @sc{gnus} とどれくらい互換性があるの?
 * Conformity::                  Gnus はすべての標準を満たそうとする
-* Emacsen::                     Gnus は少数の現代的な Emacs で実行できる
 * Gnus Development::            Gnus が開発されている方法
 * Contributors::                たくさんの人々
 * New Features::                Gnus の新しいことに関する手がかり
@@ -26687,26 +26685,6 @@ RFC 1731 は @acronym{IMAP} の GSSAPI/Kerberos4 の手法について述べて�
 上に書かれている文章に関することで、Gnus がそれを満たしていないような動
 作をしていることに気付いたら、ためらわずに Gnus タワーと私たちに知らせて
 ください。
-
-@node Emacsen
-@subsection Emacsen
-@cindex Emacsen
-@cindex Mule
-@cindex Emacs
-
-このバージョンの Gnus は以下のもので動作します:
-
-@itemize @bullet
-@item
-Emacs 23.1 とそれ以上。
-@end itemize
-
-この Gnus の版はこれより古いどんな Emacsen でも完全に動作しないでしょう。
-少なくとも信頼できる動作はしないでしょう。古い版の Gnus は古い Emacs の
-版でも動作するでしょう。特に Gnus 5.10.8 は Emacs 20.7 でも動くはずです。
-@c
-@c マージしてはいけないものに関するコメント: v5-10 のこの場所では加えら
-@c れている項を、こちらにも入れてはいけません!
 
 @node Gnus Development
 @subsection Gnus の開発
