@@ -15168,9 +15168,7 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが
 数以上に古いファイルを消去します (消去は新着メールを受け取るときだけ行な
 われます)。@code{mail-source-delete-incoming} を @code{nil} にしておいて、
 @code{mail-source-delete-old-incoming} をフックで呼ぶか、または対話的に
-呼ぶこともできます。@code{mail-source-delete-incoming} のディフォルト値
-は、アルファ版の Gnus では @code{10}、リリースされた版の Gnus で
-は @code{2} です。
+呼ぶこともできます。
 
 @item mail-source-delete-old-incoming-confirm
 @vindex mail-source-delete-old-incoming-confirm
