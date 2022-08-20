@@ -200,7 +200,7 @@ password @var{mypassword}
 (setq auth-sources '("secrets:Login"))
 ;;; パス (@file{~/.password-store}) を使う
 ;;; (@pxref{The Unix password store})
-(auth-source-pass-enable)
+(setq auth-sources '(password-store))
 ;;; [@{ "machine": "SERVER", "login": "USER",
 ;;; "password": "PASSWORD" @}...] というフォーマットの JSON データ
 (setq auth-sources '("~/.authinfo.json.gpg"))
@@ -312,8 +312,7 @@ machine gmail2 login account2@@gmail.com password "account2 password" port imap
 の @uref{https://www.freedesktop.org/wiki/Specifications/secret-storage-spec/,freedesktop.org} に
 よる標準です。この API は GNOME 鍵リングと KDE ウォレットのようなシステ
 ム・デーモン (それぞれ最近はたいていの GNU/Linux システムに備わって
-る GNOME と KDE のパッケージ) によって実装されます。そして KeePassXC で
-もテスト済みです。
+る GNOME と KDE のパッケージ) によって実装されます。
 
 auth-source ライブラリーはシークレットサービス API を通してつな
 ぐ @file{secrets.el} ライブラリーを使います。そのライブラリーを他のパッ
@@ -367,18 +366,15 @@ Secret items は @dfn{collections} にグループ化されます。コレクシ
 常これは Emacs の中からは行なわれません。@code{"login"} のような標準のコ
 レクションを削除しないでください。
 
-GNOME キーリングには @code{"session"} と呼ばれる特別なコレクションがあっ
-て、ユーザーがログインしている期間に渡って存在します。そのデータはディス
-クに保存されず、ユーザーがログアウトすると消えます。したがって、秘密のア
-イテムを一時的に保存および取得するために使うことができます。秘密のアイテ
-ムが永久に有効であってはならない場合、@code{"session"} コレクションは永
-続的なコレクションよりも優れています。@code{"session"} コレクションは、
-コレクションパラメータが必要な場合はいつでも、文字列 @code{"session"} ま
-たは @code{nil} のいずれかを指定してアクセスすることができます。
-
-ただし、他のシークレットサービスプロバイダーは、この臨時
-の @code{"session"} コレクションを作成しません。使用する前に、まずこのコ
-レクションが存在することを確認する必要があります。
+特別なコレクション @code{"session"} は、対応するクライアントセッションの
+存続期間 (この場合は Emacs の存続期間) に渡って存在します。それは Emacs
+がシークレットサービスインターフェイスを使用するときに自動的に作成され、
+Emacs が終了されるときに削除されます。そのため、一時的に secret items を
+保管および検索するために使用することができます。Secret items が Emacs よ
+りも長く存続してはならない場合、@code{"session"} コレクションは永続的な
+コレクションよりも優れています。Session コレクション は、次の関数でコレ
+クションパラメータ が必要なときはいつでも、文字列 @code{"session"} また
+は @code{nil} のいずれかで指定できます。
 
 @defun secrets-list-items collection
 @var{collection} のすべての item のラベルをリストで返します。
@@ -392,7 +388,7 @@ GNOME キーリングには @code{"session"} と呼ばれる特別なコレク�
 ンで始まるキーワード・シンボルです。以下に例を示します:
 
 @example
-;; コレクションは "session" 、ラベルは "my item" で
+;; セッションは "session" 、ラベルは "my item" で
 ;; secret (パスワード) は "geheim" です。
 (secrets-create-item "session" "my item" "geheim"
  :method "sudo" :user "joe" :host "remote-host")
@@ -588,7 +584,10 @@ auth-source ライブラリーには、外部で使うための関数は少し�
                                            :create t))))
     (if found
         (list (plist-get found :user)
-              (auth-info-password found)
+              (let ((secret (plist-get found :secret)))
+                (if (functionp secret)
+                    (funcall secret)
+                  secret))
               (plist-get found :save-function))
       nil)))
 @end example
@@ -640,15 +639,6 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 @defun auth-source-forget+ &rest spec &allow-other-keys
 この関数は @var{spec} に合致するすべてのキャッシュされたデータを忘れ (訳
 注: 無効にし) ます。忘れたデータの数を返します。
-@end defun
-
-@defun auth-source-pick-first-password &rest spec
-この関数は @code{auth-source-search} を @var{spec} に適用して、最初に見
-つかったレコードのパスワードを返します。
-@end defun
-
-@defun auth-info-password auth-info
-この関数は @var{auth-info} レコードからパスワード文字列を抽出します。
 @end defun
 
 @node GnuPG and EasyPG Assistant Configuration

@@ -479,8 +479,7 @@ The Gnus Manual}.
 
 @item mm-external-terminal-program
 @vindex mm-external-terminal-program
-一般に次のような文字列のリストです: @samp{("xterm" "-e")} あるい
-は @samp{("gnome-terminal" "--")}
+外部の端末を起動するために使用されるプログラムです。
 
 @item mm-enable-external
 @vindex mm-enable-external
