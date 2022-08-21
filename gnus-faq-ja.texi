@@ -117,9 +117,7 @@ Gnus は Emacs に含まれています。
 @subsubheading 回答
 
 Oort Gnus は Gnus の開発版の名前で、2003年の秋に Gnus 5.10 になりました。
-No Gnus は開発版の名前で、Gnus 5.12 になりました。(なぜ 5.11 ではないの
-かが不思議ですか?  奇数のバージョン番号は通常 Emacs に同梱される Gnus の
-版に使われるのです。)
+No Gnus は開発版の名前で、Gnus 5.12 になりました。
 
 @node FAQ 2 - Startup / Group buffer
 @subsection 起動 / グループバッファー
