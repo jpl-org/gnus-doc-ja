@@ -87,9 +87,8 @@ Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの
 
 @menu
 * FAQ 1-1::    Gnus の最新版は何ですか?
-* FAQ 1-2::    5.10 では何が新しいですか?
-* FAQ 1-3::    Gnus はどこで、どうやって取得することができますか?
-* FAQ 1-4::    ときどき目にする No Gnus と Oort Gnus って何ですか?
+* FAQ 1-2::    Gnus はどこで、どうやって取得することができますか?
+* FAQ 1-3::    ときどき目にする No Gnus と Oort Gnus って何ですか?
 @end menu
 
 @node FAQ 1-1
@@ -99,44 +98,10 @@ Gnus の最新版は何ですか?
 
 @subsubheading 回答
 
-ジャーン: Gnus 5.10 がリリースされました。熱いうちに召し上がれ!@*
-バージョン番号の歩みがいささか小さいのに反して、Gnus 5.10 には見逃せない
-何トンもの新しい機能があります。現在のリリース (5.13) は、少なくと
-も 5.8 系のリリースの最新版と同じくらい安定なはずです。
+最新版の Gnus は Emacs に含まれています。
 
 @node FAQ 1-2
 @subsubheading 質問 1.2
-
-5.10 では何が新しいですか?
-
-@subsubheading 回答
-
-第一に Gnus tarball の先頭のディレクトリーにある GNUS-NEWS ファイルに目
-を通すべきです。そこでは最も重要な変更が羅列されています。ここでは特に重
-要/興味深いものの短いリストを挙げるに留めます:
-
-@itemize @bullet
-@item
-Gnus エージェントの大幅な書き直し。ディフォルトで有効になっています。
-
-@item
-見苦しく形成された記事を洗濯するための多くの機能。
-
-@item
-Spam 除け機能。
-
-@item
-Message-utils が Gnus に含まれました。@*
-(訳注: Holger Schauer さんが書いた message-utils.el の諸機能
-が message.el に移入されました。)
-
-@item
-概略行のための新しい書法仕様。例えば %B は複雑な trn 様式のスレッド
-木 (tree) を指定する書法仕様です。
-@end itemize
-
-@node FAQ 1-3
-@subsubheading 質問 1.3
 
 Gnus はどこで、どうやって取得することができますか?
 
@@ -144,17 +109,17 @@ Gnus はどこで、どうやって取得することができますか?
 
 Gnus は Emacs に含まれています。
 
-@node FAQ 1-4
-@subsubheading 質問 1.4
+@node FAQ 1-3
+@subsubheading 質問 1.3
 
 ときどき目にする No Gnus と Oort Gnus って何ですか?
 
 @subsubheading 回答
 
 Oort Gnus は Gnus の開発版の名前で、2003年の秋に Gnus 5.10 になりました。
-No Gnus は現行の開発版の名前で、Gnus 5.12 か Gnus 6 になるでしょう。(な
-ぜ 5.11 ではないのかが不思議ですか?  奇数のバージョン番号は通常 Emacs に
-同梱される Gnus の版に使われるのです。)
+No Gnus は開発版の名前で、Gnus 5.12 になりました。(なぜ 5.11 ではないの
+かが不思議ですか?  奇数のバージョン番号は通常 Emacs に同梱される Gnus の
+版に使われるのです。)
 
 @node FAQ 2 - Startup / Group buffer
 @subsection 起動 / グループバッファー
