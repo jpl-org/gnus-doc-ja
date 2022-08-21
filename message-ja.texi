@@ -1144,7 +1144,7 @@ GnuPG をインストール
 たは @uref{https://www.openssl.org/, OpenSSL} のような外部の実装を必要と
 します。@acronym{S/MIME} の実装へのディフォルトの Emacs インターフェース
 は EasyPG (@pxref{Top,,EasyPG Assistant User's Manual, epa-ja, EasyPG
-Assistant User's Manual}) です。それは Emacs 23 以降で含まれており、
+Assistant User's Manual}) です。それは Emacs に含まれており、
 @acronym{GnuPG} が提供するコマンドライン・ツール @command{gpgsm} に依拠
 します。そのツールは証明書の管理 (取消しと期限切れ消去を含む) を行なう手
 段を提供します。ただし OpenSSL を使う場合、そのような操作は手動で行なわ

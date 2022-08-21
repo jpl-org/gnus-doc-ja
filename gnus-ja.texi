@@ -21566,8 +21566,8 @@ Mairix はローカルなメールを検索します---つまり mairix はメ�
 を立ち上げることによって @code{nnimap} を介してアクセスすることができま
 す。これはいくつかの mbox ファイルにアクセスするためにしてはかなり大がか
 りな作業になるので、もう MH か Maildir に変えてしまいましょう。それで
-も mbox を使うことに本当に本当に情熱を持っているのなら、Emacs 23 に付属
-している @file{mairix.el} パッケージを研究する必要があるでしょう。
+も mbox を使うことに本当に本当に情熱を持っているのなら、Emacs に付属して
+いる @file{mairix.el} パッケージを研究する必要があるでしょう。
 
 @node What nnmairix does
 @subsection nnmairix は実際に何をするのか?

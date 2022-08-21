@@ -649,14 +649,8 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 暗号化されていないファイルより先に、まずは GnuPG で暗号化され
 た @file{.gpg} を読み込もうとします。
 
-Emacs 23 以降では @file{*.gpg} ファイルの暗号を自動的に解くためのオプショ
-ン @code{auto-encryption-mode} があります。ディフォルトで有効です。もし
-何らかの理由で Emacs の初期の版を使っている場合は、以下が必要です:
-
-@lisp
-(require 'epa-file)
-(epa-file-enable)
-@end lisp
+@code{auto-encryption-mode} は自動的に @file{*.gpg} ファイルを復号するた
+めのオプションです。ディフォルトで有効になっています。
 
 あなたの GnuPG のパスワードがキャッシュされるようにしたいなら、
 @code{gpg-agent} または EasyPG アシスアントを設定してくださ
