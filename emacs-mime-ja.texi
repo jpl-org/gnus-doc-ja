@@ -426,9 +426,9 @@ Spammers は @samp{multipart/alternative} メッセージの優先される側�
 描画プログラムは @code{shr}, @code{gnus-w3m},
 @code{w3m}@footnote{emacs-w3m についての詳細
 は @uref{http://emacs-w3m.namazu.org/} を見てください。}, @code{links},
-@code{lynx}, @code{w3m-standalone} または @code{html2text} のシンボル群
-のうちの一つを指定することによって選択します。さらに関数 (引数とし
-て @acronym{MIME} ハンドルが与えられて呼ばれる) を設定することもできます。
+@code{lynx} または @code{w3m-standalone} のシンボル群のうちの一つを指定
+することによって選択します。さらに関数 (引数として @acronym{MIME} ハンド
+ルが与えられて呼ばれる) を設定することもできます。
 
 @item mm-html-inhibit-images
 @vindex mm-html-inhibit-images

@@ -9105,10 +9105,6 @@ w3m を使って Gnus に描画させます。
 
 @item lynx
 @uref{https://lynx.browser.org/, Lynx} を使います。
-
-@item html2text
-html2text (シンプルな @acronym{HTML} コンバーターで、Gnus に含まれていま
-す) を使います。
 @end table
 
 @item W D F

@@ -776,10 +776,9 @@ N 通の記事を取り込むためには、概略バッファーで @kbd{/o N} 
 
 @subsubheading 回答
 
-@samp{shr}、@samp{w3m}、@samp{links}、@samp{lynx} およ
-び @samp{html2text} の中から選択することができます。どれを使うかは変
-数 @code{mm-text-html-renderer} で指定するので、もし links でメールを描
-画したいならば、こうしてください:
+@samp{shr}, @samp{w3m}, @samp{links} および @samp{lynx} の中から選択する
+ことができます。どれを使うかは変数 @code{mm-text-html-renderer} で指定す
+るので、もし links でメールを描画したいならば、こうしてください:
 
 @lisp
 (setq mm-text-html-renderer 'links)
