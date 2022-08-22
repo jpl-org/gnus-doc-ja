@@ -4738,7 +4738,8 @@ if address "sender" "owner-ding@@hpc.uh.edu" @{
 好きなだけたくさんの概略バッファーを開いておくことができます。
 
 概略モードのツールバーをカスタマイズすることができます。@kbd{M-x
-customize-apropos @key{RET} gnus-summary-tool-bar} を試してみてください。
+customize-apropos @key{RET} gnus-summary-tool-bar} の結果を参照してくだ
+さい。
 
 @kindex v @r{(概略)}
 @cindex keys, reserved for users (Summary)
@@ -17073,11 +17074,6 @@ changelogs あるいは wiki (例え
 Gnus がグループを最新の状態に保っておくために必要な情報を得ることが可能
 です。
 
-注: @code{utf-8} coding system をサポートする Emacs を使うのが良いでしょ
-う。@acronym{RSS} は非-@acronym{ASCII} テキストをエンコードするために、
-ディフォルトで UTF-8 を使うからです。それはまた、非-@acronym{ASCII} グルー
-プ名にもディフォルトで使われます。
-
 @kindex G R @r{(グループ)}
 Feed を購読するには、グループバッファーから @kbd{G R} を使ってくださ
 い---feed の所在、タイトルおよび説明の入力を求められるでしょう。タイトル
@@ -17126,7 +17122,7 @@ Language) でロード/セーブするために、以下のコマンドを使う
 @code{nnrss} グループのデータ・ファイルを読み書きするときに使われ
 る coding system です。ディフォルト
 は @code{mm-universal-coding-system} の値 (そのディフォルト
-は @code{emacs-mule}) です。
+は @code{utf-8-emacs}) です。
 
 @item nnrss-ignore-article-fields
 @vindex nnrss-ignore-article-fields
