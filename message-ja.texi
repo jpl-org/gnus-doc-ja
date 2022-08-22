@@ -1245,9 +1245,8 @@ OpenPGP を使うには @uref{https://www.gnupg.org/, GNU Privacy Guard} のよ
 うな外部のソフトウェアが必要です。OpenPGP より以前の実装であ
 る PGP 2.x と PGP 5.x もサポートします。ディフォルトの PGP への Emacs イ
 ンターフェースは EasyPG (@pxref{Top,,EasyPG Assistant User's Manual,
-epa-ja, EasyPG Assistant User's Manual}) ですが、PGG (@pxref{Top, ,PGG,
-pgg-ja, PGG Manual}) と Mailcrypt もサポートします。
-@xref{PGP Compatibility}.
+epa-ja, EasyPG Assistant User's Manual}) ですが Mailcrypt もサポートしま
+す。@xref{PGP Compatibility}.
 
 前に述べたように OpenPGP で暗号化されるメッセージは 2つの異なる標準、つ
 まり @acronym{PGP} または @acronym{PGP/MIME} でフォーマットすることがで
@@ -1336,10 +1335,8 @@ gpg --use-agent --sign < /dev/null > /dev/null
 もしあなたが古い PGP 2.x の鍵を GnuPG に輸入してあって、PGP 2.x を使って
 いる仲間に署名されかつ暗号化されたメッセージを送りたいとすると、受信者は
 あなたが送信したものを理解できないことを発見することになるでしょう。一つ
-の解は、代わりに PGP 2.x を使うこと (たとえば@: もし @code{pgg} を使って
-いるのであれば、@code{pgg-default-scheme} を @code{pgp} に設定するこ
-と) です。さらに PGP 2.x を使っている仲間に、GnuPG に乗り換えることを説
-得しても良いでしょう。
+の解は、代わりに PGP 2.x を使うことです。さらに PGP 2.x を使っている仲間
+に、GnuPG に乗り換えることを説得しても良いでしょう。
 @vindex mml-signencrypt-style-alist
 最後の代替手段として、署名と暗号化の動作を二段階 (分離署名してからメッセー
 ジを暗号化する) にすることができます。この振る舞いを変更したいのであれば、

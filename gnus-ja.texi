@@ -11324,8 +11324,8 @@ Gnus は署名されたメッセージを検証したり、暗号化されたメ
 @acronym{PGP} と @acronym{PGP/MIME} のメッセージを扱うには、OpenPGP の実
 装である GnuPG のようなものをインストールしなければなりません。Emacs に
 含まれている GnuPG へのインターフェースは EasyPG というもの (@pxref{Top,
-,EasyPG, epa, EasyPG Assistant user's manual}) ですが、PGG (@pxref{Top,
-,PGG, pgg-ja, PGG Manual}) および Mailcrypt もサポートします。
+,EasyPG, epa, EasyPG Assistant user's manual}) ですが、Mailcrypt もサポー
+トします。
 
 @item
 @acronym{S/MIME} のメッセージを扱うには、OpenSSL をインストールする必要
@@ -11365,17 +11365,16 @@ Gnus は署名されたメッセージを検証したり、暗号化されたメ
 @item mml1991-use
 @vindex mml1991-use
 @acronym{PGP} のメッセージのための、OpenPGP の実装への elisp インターフェー
-スを示すシンボルです。ディフォルトは @code{epg} ですが、後方互換のため
-に @code{pgg} および @code{mailcrypt} もサポートします。ディフォルトでは、
-Gnus はこの順番で最初に見つかるインターフェースを使います。
+スを示すシンボルです。ディフォルトは @code{epg} ですが、推奨はしないもの
+の @code{mailcrypt} もサポートします。ディフォルトでは、Gnus はこの順番
+で最初に見つかるインターフェースを使います。
 
 @item mml2015-use
 @vindex mml2015-use
 @acronym{PGP/MIME} のメッセージのための、OpenPGP の実装への elisp インター
-フェースを示すシンボルです。ディフォルトは @code{epg} ですが、後方互換の
-ために @code{pgg}、@code{mailcrypt} および @code{gpg} もサポートします。
-ディフォルトでは、Gnus はこの順番で最初に見つかるインターフェースを使い
-ます。
+フェースを示すシンボルです。ディフォルトは @code{epg} ですが、推奨はしな
+いものの @code{mailcrypt} もサポートします。ディフォルトでは、Gnus はこ
+の順番で最初に見つかるインターフェースを使います。
 @end table
 
 ディフォルトではセキュリティーの情報を表示するボタンが現れません。それら
