@@ -1,7 +1,7 @@
 @c \input texinfo @c -*-texinfo-*-
 @c Uncomment 1st line before texing this file alone.
 @c %**start of header
-@c Copyright (C) 1995, 2001-2022 Free Software Foundation, Inc.
+@c Copyright (C) 1995--2022 Free Software Foundation, Inc.
 @c
 @c @setfilename gnus-faq-ja
 @c @settitle Frequently Asked Questions
@@ -12,7 +12,6 @@
 @section よく尋ねられる質問
 
 @menu
-* FAQ - Changes::
 * FAQ - Introduction::         Gnus およびこの FAQ について
 * FAQ 1 - Installation FAQ::   Gnus のインストール
 * FAQ 2 - Startup / Group buffer:: 起動に関する質問と、最初に表示するバッファー
@@ -33,31 +32,18 @@
 機能に関することや提案は @email{ding@@gnus.org, ding list} に送ってくだ
 さい。
 
-@node FAQ - Changes
-@subsection 変更履歴
-
-@itemize @bullet
-@item
-2008-06-15: message-fill-column の説明を実態に合わせました。
-x-face-file を加えました。ding と gnu.emacs.gnus の違いをはっきりさせま
-した。止まってしまったサービスへの参照を削除しました。
-
-@item
-2006-04-15: 送信し終わったときにそのバッファーを削除する方法を加えました。
-@end itemize
-
 @node FAQ - Introduction
 @subsection 序
 
 これは Gnus のよく尋ねられる質問のリストです。
 
 Gnus は Emacs の要素として実装された Usenet ニュースリーダーおよび電子メー
-ルのユーザーエージェントです。それはほぼこの十年間何らかの形で存在してお
-り、その期間の多くにおいて Emacs の標準要素として配布されてきました。
-Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの版は GNUS と言
-い、梅田政信さんが書きました。1994年の秋が忍び寄る頃、退屈していたラルス・
-マッグヌ・イングブリグットスン (Lars Magne Ingebrigtsen) は Gnus を書き
-直そうと決心しました。
+ルのユーザーエージェントです。それは 1990年代の初期から何らかの形で存在
+しており、その期間の多くにおいて Emacs の標準要素として配布されてきまし
+た。Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの版
+は GNUS と言い、梅田政信さんが書きました。1994年の秋が忍び寄る頃、退屈し
+ていたラルス・マッグヌ・イングブリグットス
+ン (Lars Magne Ingebrigtsen) は Gnus を書き直そうと決心しました。
 
 その最大の強みは、極めてカスタマイズに適しているという事実にあります。こ
 のことを始めて目にすると引いてしまうかもしれませんが、それを利用する準備
@@ -70,11 +56,6 @@ Gnus 5 は最新の (そして最も偉大な) 作品です。オリジナルの
 この FAQ は 2002年3月まで Justin Sheehy によって維持されていました。彼は、
 それ以前にすばらしい仕事をしてくれた Steve Baur と Per Abrahamsen に感謝
 を表明しています。私たちも同じことをしましょう: ありがとう Justin!
-
-この版は、ユトレヒト大学、オックスフォード、Smart Pages、オハイオ州立大
-学に保存されている非公式なハイパーテキスト版や他の FAQ のアーカイブに比
-べて、はるかに良いものです。別のフォーマットでそれを手に入れるための情報
-が欲しいなら、以下にある質問集を見てください。
 
 ここにある情報は、Gnus 開発メーリングリストの援助でコンパイルされました。
 どんなエラーあるいはミスプリントも Gnus チームが犯した誤りです。すみませ
@@ -700,9 +681,8 @@ POP3 でメールを取得するサーバーで、メールを消さないよう
 す (警告: どちらの設定もグループに入ったときに取り込むデータ量を増加させ、
 グループに入る処理を遅くしてしまいます)。
 
-すでに Gnus 5.10 を使っているならば、最後の @var{n} 通のメッセージを取り
-込むために、概略バッファーで @kbd{/o N} 命令を使うことができます。この機
-能は 5.8.8 にはありません。
+N 通の記事を取り込むためには、概略バッファーで @kbd{/o N} 命令を使ってく
+ださい。
 
 すべての古いメッセージは要らないけれども、今まさに読んでいるメッセージの
 親を辿りたいならば @kbd{^} 命令を使ってください。今まさに読んでいるメッ
@@ -796,10 +776,10 @@ POP3 でメールを取得するサーバーで、メールを消さないよう
 
 @subsubheading 回答
 
-Gnus 5.10 またはより新しいものを使う場合だけですが、shr, w3m, links,
-lynx および html2text の中から選ぶことができ、どれを使うかは変
-数 @code{mm-text-html-renderer} で指定することができます。したがっ
-て links で @acronym{HTML} メールを描画したいときは、こうしてください:
+@samp{shr}、@samp{w3m}、@samp{links}、@samp{lynx} およ
+び @samp{html2text} の中から選択することができます。どれを使うかは変
+数 @code{mm-text-html-renderer} で指定するので、もし links でメールを描
+画したいならば、こうしてください:
 
 @lisp
 (setq mm-text-html-renderer 'links)
@@ -829,7 +809,7 @@ Outlook を見苦しくなくさせます。これは、マイクロソフトの
 引用行の二行目以降に引用符が前置されないなど) を修繕します。
 
 他の見苦しくなくさせる機能については @kbd{W Y C-h} を使うかメニューを眺
-めてください。Outlook Deuglify は Gnus 5.10 以上で使うことができます。
+めてください。
 @end table
 
 @node FAQ 4-9
@@ -1018,10 +998,10 @@ Variables, ,書法仕様変数, gnus-ja, The Gnus Manual} およびその下位�
 れる、カーソルの位置指定やタブ位置の指定のようなものを見つけることができ
 るでしょう。残念ながら 5.8.8 ではタブ位置を固定させる機能が壊れています。
 
-5.10 から、Gnus は非常にみごとな新しい書法仕様変数を提供しています。例え
-ば %B はスレッド木を描き、また %&user-date は、どう表示するかが記事が発
-信されてからの経過時間に依存している日付を表示します。これらの両方を使っ
-ている例です:
+Gnus は非常にみごとな新しい書法仕様変数を提供しています。例えば %B はス
+レッド木を描き、また %&user-date は、どう表示するかが記事が発信されてか
+らの経過時間に依存している日付を表示します。これらの両方を使っている例で
+す:
 
 @lisp
 (setq gnus-summary-line-format
@@ -1314,15 +1294,12 @@ From, Organization, Reply-To などのヘッダーを自動生成したり、定
 
 @subsubheading 回答
 
-Emacs では単語の綴りをチェックするために @file{ispell.el} を使うことがで
-きます。したがって最初に行なうのは、外部プログラ
-ム @uref{https://www.cs.hmc.edu/~geoff/ispell.html, ispell} または
-同 @uref{http://aspell.net, aspell} を適当な path にインストールしておく
-ことです。次に ispell.el と、書いたその場でスペルチェックをしてくれ
-る @uref{https://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html,
-flyspell.el} を用意してください。Ispell.el は Emacs とともに配布されてい
-ます。@file{flyspell.el} も Emacs に同梱されているので、それらを個別にイ
-ンストールする必要は無いはずです。
+Emacs では単語の綴りをチェックするために @file{ispell.el} を、書いたその
+場でスペルチェックをするためには @file{flyspell.el} を使うことができます。
+したがって最初に行なうのは、@uref{https://hunspell.github.io/, hunspell}、
+@uref{https://www.cs.hmc.edu/~geoff/ispell.html, ispell} また
+は @uref{http://aspell.net, aspell} を適当な path にインストールしておく
+ことです。
 
 @file{ispell.el} は外部プログラム @samp{ispell} を使うことを想定していま
 す。@samp{aspell} を選ぶなら、Emacs の設定ファイルで以下の宣言を行なって
@@ -1475,14 +1452,14 @@ X-Face を含めてくれるように Gnus に指示するだけです。それ�
 @end lisp
 
 @noindent
-ただし Gnus 5.10 を使っているのであれば、単に次の項を
+あるいは、単に次の項を
 
 @example
 (x-face-file "~/.xface")
 @end example
 
 @noindent
-@code{gnus-posting-styles} に加えるだけで済みます。
+@code{gnus-posting-styles} に加えてください。
 
 @node FAQ 5-9
 @subsubheading 質問 5.9
@@ -1500,20 +1477,6 @@ X-Face を含めてくれるように Gnus に指示するだけです。それ�
 (setq gnus-confirm-mail-reply-to-news t)
 @end lisp
 
-@noindent
-まだ 5.8.8 や 5.9 を使っているのなら、代わりにこれをどうぞ:
-
-@lisp
-(with-eval-after-load "gnus-msg"
-  (unless (boundp 'gnus-confirm-mail-reply-to-news)
-    (defadvice gnus-summary-reply (around reply-in-news activate)
-      "Request confirmation when replying to news."
-      (interactive)
-      (when (or (not (gnus-news-group-p gnus-newsgroup-name))
-                (y-or-n-p "Really reply by mail to article author?"))
-        ad-do-it))))
-@end lisp
-
 @node FAQ 5-10
 @subsubheading 質問 5.10
 
@@ -1521,14 +1484,7 @@ Gnus が sender ヘッダーを生成しないようにするには、どうし�
 
 @subsubheading 回答
 
-Gnus 5.10 はディフォルトで sender ヘッダーを作らないのですけれどね。まだ
-古い Gnus を使っているのなら、@file{~/.gnus.el} ファイルでこれを試してく
-ださい:
-
-@lisp
-(with-eval-after-load "message"
-  (add-to-list 'message-syntax-checks '(sender . disabled)))
-@end lisp
+ディフォルトでは Gnus は sender ヘッダーを作りません。
 
 @node FAQ 5-11
 @subsubheading 質問 5.11
@@ -1714,7 +1670,8 @@ Manual}.
 
 @noindent
 これにより、概略バッファーで @kbd{M-x my-archive-article} を実行すれば、
-指定した記事を @code{nnml} グループに保存することができます。
+指定した記事を @code{nnml} グループに保存することができます (nnml を好み
+のバックエンドに変えてください)。
 
 もちろん、以下の設定によってキャッシュを常に有効にすることもできます:
 
@@ -1739,33 +1696,15 @@ Manual}.
 が最も楽な解決方法です。そこで見つかったならば、Google に生の記事を表示
 してもらって Message-ID を探し、概略バッファー
 で @kbd{M-^ the@@message.id @key{RET}} を実行してください。さら
-に Gnus 5.10 以降では @samp{groups.google.com} へのインターフェースがあ
-るので、グループバッファーで @kbd{G W} を使うこともできます。
+に @samp{groups.google.com} へのインターフェースがあるので、グループバッ
+ファーで @kbd{G W} を使うこともできます。
 
 メールとニュースの両方のグループで動作するもう一つの方法は、探しているメッ
 セージが存在するグループに入って、Emacs の標準の探索コマンドであ
 る @kbd{C-s} を使うことです。それは壊れたスレッドにある記事を探すために
 も十分に賢いものです。本文の中で探したいのならば、代わりに @kbd{M-s} を
 試してください。さらに付け加えると、これも役に立
-つ @code{gnus-summary-limit-to}-* コマンド群があります。
-
-もちろんローカルに保存されているメールを @samp{grep} で探すこともできま
-すが、大きなアーカイブが相手だと遅いし、見つかったメールを Gnus で表示す
-るわけではないので不便でもあります。そこで @code{nnir} の出番がやってき
-ました。@code{nnir} は @samp{swish-e}, @samp{swish++} および他の検索エン
-ジンへのフロントエンドです。それらの検索エンジンの一つを使ってメールに索
-引を付けておけば、@code{nnir} の助けを借りることによって、索引が付けられ
-たメールを探して、検索の基準に合致するすべてのメールを含む一時的なグルー
-プを作ることができます。これがクールに聞こえるなら、
-@c FIXME Isn't this file in Gnus?
-@ignore
-@c Dead link 2013/7.
-@uref{ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/emacs/}
-または
-@end ignore
-@uref{ftp://ftp.is.informatik.uni-duisburg.de/pub/src/emacs/} か
-ら @file{nnir.el} を持って来ましょう。使い方の説明は、そのファイルの始め
-の方にあります。
+つ gnus-summary-limit-to-foo 関数群があります。
 
 @node FAQ 6-4
 @subsubheading 質問 6.4
@@ -1905,20 +1844,18 @@ Hamster} を推します。それは小さくてフリーなオープンソー�
 Gnus エージェントは Gnus の一部で、メールとニュースを取り込んでディスク
 に格納し、後でオフラインのときにそれらを読むことができるようにします。そ
 れは、言うならば Forte Agent のようなオフライン・ニュースリーダーの真似
-をします。まだ 5.8.8 か 5.9 を使っていてエージェントを使いたければ、以下
-の行を @file{~/.gnus.el} ファイルに書き込んでください (これは 5.10 から
-ディフォルトになっています):
+をします。ディフォルトで有効になっています。
 
 @lisp
 (setq gnus-agent t)
 @end lisp
 
 @noindent
-そうしたら、数あるグループをローカルに格納することができるサーバーを選ば
-なければなりません。そのためには、サーバーバッファーを開いて (グループバッ
-ファーで @kbd{^} を押して) ください。そして、選んだサーバー名の場所にポ
-イントを移動させましょう。最後に @kbd{J a} をタイプして、そのサーバーを
-エージェント化してください。もし間違ってしまったら、あるいは気が変わった
+数あるグループをローカルに格納することができるサーバーを選ぶ必要がありま
+す。そのためには、サーバーバッファーを開いて (グループバッファー
+で @kbd{^} を押して) ください。そして、選んだサーバー名の場所にポイント
+を移動させましょう。最後に @kbd{J a} をタイプして、そのサーバーをエージェ
+ント化してください。もし間違ってしまったら、あるいは気が変わった
 ら、@kbd{J r} をタイプすれば元に戻すことができます。終わった
 ら @kbd{q} をタイプして、グループバッファーに戻ってください。次回エージェ
 ント化されたサーバーのグループに入るとヘッダーがディスクに格納され、その
@@ -2192,9 +2129,6 @@ Gnus の用語大系では、バックエンドは Gnus の核心部分と実際
 @acronym{NNTP} サーバー、@acronym{POP3} サーバー、@acronym{IMAP} サーバー、
 または、何であれ「メッセージの取得」や「ヘッダーの取得」を行なうサーバー
 の機能を持つ関数のことです。
-
-@item Emacs
-この FAQ で使われている Emacs という用語は、GNU Emacs を指します。
 
 @item Message
 この FAQ で「メッセージ」はそれがどんな種類のものでも、メール、また
