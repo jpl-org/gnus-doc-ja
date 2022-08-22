@@ -389,7 +389,7 @@ GNOME キーリングには @code{"session"} と呼ばれる特別なコレク�
 い item を @var{collection} の中に作ります。ラベ
 ル @var{item} は @var{collection} の中でユニークである必要はありません。
 @var{attributes} は生成される item に設定される鍵と値の対です。鍵はコロ
-ンで始まるキーワード・シンボルです。以下に例を示します:
+ンで始まるキーワード・シンボルで、その値は文字列です。以下に例を示します:
 
 @example
 ;; コレクションは "session" 、ラベルは "my item" で
@@ -473,6 +473,9 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
                      "secrets:Login"
                      "~/.authinfo.gpg"))
 @end example
+
+文字列ではない auth-source 仕様の属性値 (ポート番号な
+ど) は、@file{secrets.el} の関数を呼び出す前に文字列にされます。
 
 @node The Unix password store
 @chapter Unix パスワード・マネージャー
