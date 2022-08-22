@@ -886,8 +886,6 @@ History
 * Gnus Versions::               どんなバージョンの Gnus がリリースされているか
 * Why?::                        Gnus の目的は何?
 * Conformity::                  Gnus はすべての標準を満たそうとする
-* Emacsen::                     Gnus はいくつかの現代的な Emacs で実行できる
-* Gnus Development::            Gnus が開発されている方法
 * Contributors::                たくさんの人々
 * New Features::                Gnus の新しいことに関する手がかり
 
@@ -1009,8 +1007,8 @@ Gnus の基本的な構成要素
 カルでもリモートでも構いません。それぞれのサーバーはグループのリストを保
 持していて、それらのグループには記事があります。Gnus は多種多様なサーバー
 への統一されたインターフェースを提供するため、語彙は必ずしも整頓されてい
-ません (より完全な用語集については @ref{FAQ - Glossary} を見てください)。
-したがってローカルの maildir は Usenet や IMAP サーバーと同じ「サーバー
+ません (より完全な用語集については @pxref{FAQ - Glossary})。したがってロー
+カルの maildir は Usenet や IMAP サーバーと同じ「サーバー
 」(@pxref{Finding the News}) と呼ばれます。「グループ
 」(@pxref{Group Buffer}) は NNTP グループ、IMAP フォルダー、またはローカ
 ルメールディレクトリーを意味する場合があります。また「記事
@@ -1796,11 +1794,11 @@ Maintenance})。
 * Group Highlighting::          グループバッファーにきれいに色を付ける
 @end menu
 
-グループモードのツールバーをカスタマイズすることができます。@kbd{M-x
+グループモードのツール・バーをカスタマイズすることができます。@kbd{M-x
 customize-apropos @key{RET} gnus-group-tool-bar} を試してみてください。
 
-ツールバーのアイコンは、今ではカーソルの位置に応じて正しく有効に、または
-無効にされるので、グループバッファー内での移動は遅くなります。これは変
+ツール・バーのアイコンは、今ではカーソルの位置に応じて正しく有効に、また
+は無効にされるので、グループバッファー内での移動は遅くなります。これは変
 数 @code{gnus-group-update-tool-bar} で禁止することができます。そのディ
 フォルト値は Emacs のバージョンに依存しています。
 
@@ -4737,7 +4735,7 @@ if address "sender" "owner-ding@@hpc.uh.edu" @{
 
 好きなだけたくさんの概略バッファーを開いておくことができます。
 
-概略モードのツールバーをカスタマイズすることができます。@kbd{M-x
+概略モードのツール・バーをカスタマイズすることができます。@kbd{M-x
 customize-apropos @key{RET} gnus-summary-tool-bar} の結果を参照してくだ
 さい。
 
@@ -9560,6 +9558,13 @@ Gravatars は @uref{https://en.gravatar.com/} からオンラインで取得し�
 メールヘッダーぜんぶ (つまり @code{Cc}、@code{To}) をアバター化しま
 す (@code{gnus-treat-from-gravatar})。
 
+@item W D e
+@kindex W D e @r{(概略)}
+@findex gnus-article-emojize-symbols
+一部のシンボルには絵文字ではない表現と絵文字表現の両方があります。このコ
+マンドは Gnus に絵文字の表現を選択させま
+す (@code{gnus-article-emojize-symbols})。
+
 @item W D D
 @kindex W D D @r{(概略)}
 @findex gnus-article-remove-images
@@ -11932,6 +11937,7 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 @vindex gnus-treat-capitalize-sentences
 @vindex gnus-treat-overstrike
 @vindex gnus-treat-strip-cr
+@vindex gnus-treat-emojize-symbols
 @vindex gnus-treat-strip-headers-in-body
 @vindex gnus-treat-strip-leading-blank-lines
 @vindex gnus-treat-strip-multiple-blank-lines
@@ -11984,6 +11990,7 @@ HTML を描画するときの幅です。ディフォルトは 70 です。
 @item gnus-treat-capitalize-sentences (t, integer)
 @item gnus-treat-overstrike (t, integer)
 @item gnus-treat-strip-cr (t, integer)
+@item gnus-treat-emojize-symbols (t, integer)
 @item gnus-treat-strip-headers-in-body (t, integer)
 @item gnus-treat-strip-leading-blank-lines (t, first, integer)
 @item gnus-treat-strip-multiple-blank-lines (t, integer)
@@ -15143,20 +15150,13 @@ UNDELETED} はおそらくたいていの人には最良の選択でしょうが
 数以上に古いファイルを消去します (消去は新着メールを受け取るときだけ行な
 われます)。@code{mail-source-delete-incoming} を @code{nil} にしておいて、
 @code{mail-source-delete-old-incoming} をフックで呼ぶか、または対話的に
-呼ぶこともできます。@code{mail-source-delete-incoming} のディフォルト値
-は、アルファ版の Gnus では @code{10} で、リリースされた Gnus で
-は @code{2} です。@xref{Gnus Development}.
+呼ぶこともできます。
 
 @item mail-source-delete-old-incoming-confirm
 @vindex mail-source-delete-old-incoming-confirm
 非-@code{nil} だったら、古い incoming (メールの到着時に使われた) ファイ
 ルを消去するときに確認を求めます。この変数
 は @code{mail-source-delete-incoming} が正の数である場合だけ使われます。
-
-@item mail-source-ignore-errors
-@vindex mail-source-ignore-errors
-@code{nil} でない場合、メールソースからメールを読むときのエラーを無視し
-ます。
 
 @item mail-source-directory
 @vindex mail-source-directory
@@ -17224,17 +17224,17 @@ Gnus はただ単にニュースやメールを読む以上のことができま
 れをニュースグループとして扱うことができます。もちろん、ファイルは数字の
 ファイル名をもっていなければなりません。
 
-素晴らしい Emacs のパッケージの中でも最も素晴らしい @code{ange-ftp} (と
-その後継の @code{efs}) について触れるのに、ここは良い機会でしょう。私
-が @code{nndir} を書いたときは、これ (ディレクトリーを読むバックエン
-ド) についてはあまり考えていませんでした。とんでもないことだね。
+素晴らしい Emacs のパッケージの中でも最も素晴らしい @code{ange-ftp} につ
+いて触れるのに、ここは良い機会でしょう。私が @code{nndir} を書いたときは、
+これ (ディレクトリーを読むバックエンド) についてはあまり考えていませんで
+した。とんでもないことだね。
 
 @code{ange-ftp} はこの情況を劇的に変化させました。例えばディレクトリー名
 として @code{ange-ftp} の様式
 で @file{/ftp.hpc.uh.edu:/pub/emacs/ding-list/} というファイル名をディレ
-クトリー名として入力したとすると、@code{ange-ftp} あるいは @code{efs} は
-実に「シナ」の向こうのディレクトリーをニュースグループとして読めるように
-なるのです。おーい、分散ニュースだぞーっ!
+クトリー名として入力したとすると、@code{ange-ftp} は実に「シナ」の向こう
+のディレクトリーをニュースグループとして読めるようになるのです。おーい、
+分散ニュースだぞーっ!
 
 @quotation
 (訳注:「シナ」(原典 @samp{sina}) は China のことか?)
@@ -17752,7 +17752,7 @@ nnselect グループを使う上での要点は、そこに含めるメッセ�
          (list
           (cons 'query
                 (format-time-string "SENTSINCE %d-%b-%Y"
-                                    (time-subtract (current-time)
+                                    (time-subtract nil
                                                    (days-to-time (car args)))))
           (cons 'criteria "")))
         (group-spec (cadr args)))
@@ -17779,6 +17779,16 @@ nnselect グループを使う上での要点は、そこに含めるメッセ�
 パラメータは自動更新を可能にします。
 @code{gnus-group-get-new-news-this-group} を通じて手動で更新することは、
 常に可能です。
+
+ディフォルトでは、選択されたものを圧縮したバージョンが他のグループの情報
+とともに newsrc に (永続グループ用に) 保存されます。これが望ましくない場
+合 (たとえば選択範囲が非常に長くて圧縮が十分になされない場合) は、
+@code{nnselect-always-regenerate} をグループパラメーターにし
+て @code{nil} ではない値を使うと、リストは保存されなくなる代わりに、必要
+になるたびにリストが再生成されるようになります。もっと柔軟性が必要な場合
+は @code{nnselect-get-artlist-override-function} およ
+び @code{nnselect-store-artlist-override-function} を、記事のリストを取
+得して保存する関数に設定することができます。
 
 Gnus には、さまざまなバックエンドを検索するためのエンジンが含まれていま
 す。それぞれの検索エンジンの細部は異なりますが、検索の結果は常
@@ -21255,6 +21265,9 @@ Gnus の一般化された検索構文を使用するかの 2つの方法のい�
 
 @item
 @code{gnus-search-namazu}
+
+@item
+@code{gnus-search-mu}
 @end itemize
 
 より細かくする必要がある場合は、検索エンジン
@@ -21269,10 +21282,10 @@ Gnus の一般化された検索構文を使用するかの 2つの方法のい�
      (config-file "/home/user/.mail/.notmuch_config")))
 @end example
 
-notmuch、namazu および mairix などの検索エンジンは、動作が似ています。そ
-れらはローカルで実行可能なファイルを使ってメッセージ貯蔵物のインデックス
-を作成して、それらのメッセージに対してコマンドライン検索問い合わせを実行
-し、一致するメッセージの絶対ファイル名のリストを返します。
+notmuch、namazu、mairix および mu などの検索エンジンは、動作が似ています。
+それらはローカルで実行可能なファイルを使ってメッセージ貯蔵物のインデック
+スを作成して、それらのメッセージに対してコマンドライン検索問い合わせを実
+行し、一致するメッセージの絶対ファイル名のリストを返します。
 
 これらのエンジンには、いくつかの共通の設定パラメーターがあります。一般的
 なパラメータは次のとおりです。
@@ -21288,7 +21301,9 @@ notmuch、namazu および mairix などの検索エンジンは、動作が似�
 @item remove-prefix
 検索の問い合わせによって返されるファイル名から削除されるディレクトリーの
 部分。この絶対パスには、メッセージ貯蔵庫のトップレベルまでのすべてが含ま
-れている必要があります。
+れている必要があります。これは実際のメッセージの場所へのパスであって、検
+索エンジンのインデックスではないことに注意してください (Mairix の場合は、
+そのシンボリックリンクのディレクトリーでもありません)。
 
 @item switches
 検索プログラムに与える追加のコマンドライン引数。このパラメータの値は、文
@@ -21304,7 +21319,7 @@ notmuch、namazu および mairix などの検索エンジンは、動作が似�
 されます。例えば、標準ではない notmuch プログラムを使うに
 は @code{gnus-search-notmuch-program} を @file{/usr/local/bin/notmuch} に
 設定します。これはすべての notmuch エンジンに当てはまります。このような
-オプションを使うエンジンは ``notmuch''、``namazu''、``mairix''、
+オプションを使うエンジンは ``notmuch''、``namazu''、``mairix''、``mu''、
 ``swish-e'' および ``swish++'' です。
 
 または、上記の @code{nnmaildir} の例のように、オプションを Gnus のサーバー
@@ -21347,6 +21362,13 @@ namazu エンジンと swish-e エンジンには、それぞれインデック�
 る @emph{永続的} (@emph{persistent}) なグループを作成したい場合
 は @code{gnus-group-make-search-group} (@kbd{G g} にバインド) を呼び出し
 てください。
+
+永続 (@code{persistent}) グループとは違って、一時
+的 (@code{ephemeral}) グループはディフォルトでは終了時の記事の期限切れの
+処理を実行しません。一時的 (@code{ephemeral}) 検索グループで期限切れの処
+理を起こさせたい場合は、変数 @code{nnselect-allow-ephemeral-expiry} をカ
+スタマイズしてください。すべての場合において、期限切れの処理は基になるグ
+ループの期限切れパラメーターを使います。
 
 そうすると、一時的な検索ではなく、あなたが望むようにその結果がとてもすて
 きな、永続的な検索を実行したいでしょう?  問題ありません。一時的な概略バッ
@@ -23712,35 +23734,18 @@ Gravatar を From フィールドで見たいなら、こうしてください:
 (setq gnus-treat-mail-gravatar 'head)
 @end lisp
 
-@subsubsection ツールバー
+@subsubsection ツール・バー
 
 @table @code
-@item gnus-use-toolbar
-@vindex gnus-use-toolbar
-この変数でツールバーを表示する位置を指定します。もし @code{nil} だったら
-ツーツバーを表示しません。@code{nil} でない場合に取り得る値
-は @code{default}、@code{top}、@code{bottom}、@code{right} また
-は @code{left} のどれかです。@code{default} はディフォルトのツールバーを
-使い、他はその名前が示す場所にツールバーを表示します。ディフォルト
-は @code{default} です。
+@item gnus-group-tool-bar
+@vindex gnus-group-tool-bar
+グループバッファー用ツール・バーの指定です。リスト、またはその値がリスト
+である変数シンボルです。
 
-@item gnus-toolbar-thickness
-@vindex gnus-toolbar-thickness
-ツールバーの大きさを指定する、高さと幅の cons です。高さは上辺または下辺
-に表示するツールバーのため、幅は右辺または左辺に表示するツールバーのため
-に使います。ディフォルト値はディフォルトのツールバーのものになります。
-
-@item gnus-group-toolbar
-@vindex gnus-group-toolbar
-グループバッファーのツールバーです。
-
-@item gnus-summary-toolbar
-@vindex gnus-summary-toolbar
-概略バッファーのツールバーです。
-
-@item gnus-summary-mail-toolbar
-@vindex gnus-summary-mail-toolbar
-メールグループの概略バッファーのツールバーです。
+@item gnus-summary-tool-bar
+@vindex gnus-summary-tool-bar
+概略バッファー用のツール・バーの指定です。リスト、またはその値がリストで
+ある変数シンボルです。
 @end table
 
 @iftex
@@ -26265,8 +26270,8 @@ Gnus がデータを格納するほとんどのファイルとディレクトリ
 がヘッダーと本文の間の区切り行の捜索を諦める前に読み込む絶対最大長を指定
 します。この変数が @code{nil} であれば、読み込み上限はありません。も
 し @code{t} であれば、バックエンドは記事を部分部分で読み込もうとはせず、
-記事全体を読み込みます。これは @code{ange-ftp} や @code{efs} のあるバー
-ジョンで意味を持ちます。
+記事全体を読み込みます。これは @code{ange-ftp} のあるバージョンで意味を
+持ちます。
 
 @item nnheader-head-chop-length
 @vindex nnheader-head-chop-length
@@ -26406,8 +26411,6 @@ Newsrc をぶっ壊して人々を激怒させるサイトとしても知られ�
 * Gnus Versions::               どんなバージョンの Gnus がリリースされているか
 * Why?::                        Gnus の目的は何?
 * Conformity::                  Gnus はすべての標準を満たそうとする
-* Emacsen::                     Gnus はいくつかの現代的な Emacs で実行できる
-* Gnus Development::            Gnus が開発されている方法
 * Contributors::                たくさんの人々
 * New Features::                Gnus の新しいことに関する手がかり
 @end menu
@@ -26564,77 +26567,6 @@ RFC 1731 は @acronym{IMAP} の GSSAPI/Kerberos4 の手法について述べて�
 上に書かれている文章に関することで、Gnus がそれを満たしていないような動
 作をしていることに気付いたら、ためらわずに Gnus タワーと私たちに知らせて
 ください。
-
-@node Emacsen
-@subsection Emacsen
-@cindex Emacsen
-@cindex Mule
-@cindex Emacs
-
-このバージョンの Gnus は以下のもので動作します:
-
-@itemize @bullet
-@item
-Emacs 23.1 とそれ以上。
-@end itemize
-
-この Gnus の版はこれより古いどんな Emacsen でも完全に動作しないでしょう。
-少なくとも信頼できる動作はしないでしょう。古い版の Gnus は古い Emacs の
-版でも動作するでしょう。特に Gnus 5.10.8 は Emacs 20.7 でも動くはずです。
-@c
-@c マージしてはいけないものに関するコメント: v5-10 のこの場所では加えら
-@c れている項を、こちらにも入れてはいけません!
-
-@node Gnus Development
-@subsection Gnus の開発
-
-Gnus は二つのサイクルで開発されています。最初のサイクルでは開発メーリン
-グリスト @samp{ding@@gnus.org} でたくさんの議論を行ないます。そこでは人々
-が変更や新しい機能の提案をしたり、パッチや新しいバックエンドを投稿します。
-この段階は「アルファ」段階と呼ばれています。というのは、この段階でリリー
-スされた Gnusae は「アルファリリース」もしくは (他の団体ではより良く使わ
-れる)「スナップショット」と呼ばれるものだからです。この段階では Gnus は
-不安定で、一般の利用者によって使われるべきではないと考えられています。
-Gnus のアルファリリースは“Oort Gnus”や“No Gnus”のような名前になって
-います。@xref{Gnus Versions}.
-
-のらくらと 10--100 くらいのアルファリリースをした後で、Gnus は「凍結」さ
-れたと宣言され、バグ修正のみが適用されます。Gnus は接頭語を失い、その代
-わりに“Gnus 5.10.1”のように呼ばれます。これらは普通の人が使うことがで
-きるものと考えられ、主に @samp{gnu.emacs.gnus} ニュースグループで議論さ
-れています。このニュースグループは @samp{info-gnus-english@@gnu.org} メー
-リングリストにミラーされていて、それは @samp{gmane.emacs.gnus.user} とし
-て Gmane にも載っています。これらのリリースは最終的に Emacs に統合されま
-す。
-
-@cindex Incoming*
-@vindex mail-source-delete-incoming
-アルファ版の Gnus とリリースされた版の Gnus ではいくつかの変数、特
-に @code{mail-source-delete-incoming}、のディフォルトが異なります。これ
-はメールを扱っている際に、アルファリリースがしゃっくりをしてメールを失な
-うことを避けるためです。@xref{Mail Source Customization}.
-
-ding メーリングリストと Gnus ニュースグループにおける議論は、純粋に公衆
-の関心によって分離されているわけではありません。アルファ Gnus リリース
-が (ときどき) するかもしれない恐ろしいことを公衆の場で書くのは、皆を恐れ
-させるというのも真実ですが、もっと重要なことは、導入された新しい実験的な
-機能について話すことが、一般の利用者を混乱させるかもしれないということで
-す。新しい機能は頻繁に導入され、いじくられ、不十分であると判断され、そう
-すると捨てられるか、完全に書き換えられるかのどちらかです。メーリングリス
-トを読んでいる人は普通はこの速い変更に付いていきますが、ニュースグループ
-の人もそうであると見なすことはできません。
-
-したがってアルファ版の問題やそれに関する質問があるなら、それらは ding メー
-リングリスト @samp{ding@@gnus.org} に向けてください。このリスト
-は Gmane に @samp{gmane.emacs.gnus.general} としてもあります。
-
-@cindex Incoming*
-@vindex mail-source-delete-incoming
-いくつかの変数、特に @code{mail-source-delete-incoming} のディフォルト値
-はアルファ Gnus とリリースされた Gnus で異なっています。これはアルファ版
-がメールを扱っているときに、もし、しゃっくりをしても、メールが失われてし
-まうことを防ぐためです。
-@xref{Mail Source Customization}.
 
 @node Contributors
 @subsection 貢献者
@@ -28287,13 +28219,13 @@ Manual}) のような、セキュリティーに関連したものも含んで�
 てください。
 
 @item
-ツールバーがグループ、概略および Message モードで GNOME のアイコンを使う
-ように更新されました。ツールバーはカスタマイズ可能です: @kbd{M-x
+ツール・バーがグループ、概略および Message モードで GNOME のアイコンを使
+うように更新されました。ツール・バーはカスタマイズ可能です: @kbd{M-x
 customize-apropos @key{RET} -tool-bar$} から始めてください。これは Gnus
 5.10.10 の新機能です。
 
 @item
-ツールバーのアイコンが正しく有効に (または無効に) なります。グループバッ
+ツール・バーのアイコンが正しく有効に (または無効に) なります。グループバッ
 ファーで変数 @code{gnus-group-update-tool-bar} を参照してください。その
 ディフォルト値は Emacs のバージョンに依存しています。これは Gnus 5.10.9
 の新機能です。
@@ -28334,7 +28266,7 @@ gnus-agent-cache nil)} は旧式の動作に戻します。
 @item
 Dired の統合。
 
-@code{gnus-dired-minor-mode} (@ref{Other modes} 参照) は dired のバッファー
+@code{gnus-dired-minor-mode} (@pxref{Other modes}) は dired のバッファー
 で、添付ファイルを送信する、mailcap の適切な項目を使ってファイルを開く、
 それに mailcap の項目を使ってファイルを印刷するためのキーを割り当てます。
 
@@ -28672,13 +28604,13 @@ Headers, ,メッセージヘッダー, message-ja, Message Manual}.
 @c もしかしたら "その他" から切り離す価値は無い?
 
 @itemize @bullet
-@item ツールバーが GNOME のアイコンを使うように更新されました。ツールバー
-をカスタマイズすることもできます:
+@item ツール・バーが GNOME のアイコンを使うように更新されました。ツール・
+バーをカスタマイズすることもできます:
 @kbd{M-x customize-apropos @key{RET} -tool-bar$} で始めてください。
 @c FIXME: これをマニュアルに書くべし。
 
-@item ツールバーのアイコンがグループバッファーで正しく活性化 (または不活
-性化) されるようになりました。
+@item ツール・バーのアイコンがグループバッファーで正しく活性化 (または不
+活性化) されるようになりました。
 変数 @code{gnus-group-update-tool-bar} を参照してください。そのディフォ
 ルト値は Emacs の版に依存します。
 @c FIXME: これをマニュアルに書くべし。
