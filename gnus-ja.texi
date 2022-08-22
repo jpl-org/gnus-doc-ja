@@ -9093,8 +9093,7 @@ w3m を使って Gnus に描画させます。
 @uref{http://w3m.sourceforge.net/, w3m} を使います。
 
 @item links
-@uref{https://almende.github.io/chap-links-library/, CHAP Links} を使い
-ます。
+@uref{http://links.twibright.com/, Links} を使います。
 
 @item lynx
 @uref{https://lynx.browser.org/, Lynx} を使います。
