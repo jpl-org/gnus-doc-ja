@@ -8388,13 +8388,6 @@ Gnus はファイル名に基づいて型を推測していることに注意し
 @vindex gnus-uu-pre-uudecode-hook
 メッセージを @code{uudecode} に送る前に実行されるフックです。
 
-@item gnus-uu-view-with-metamail
-@vindex gnus-uu-view-with-metamail
-@cindex metamail
-@code{nil} でないと、@code{gnus-uu} は規則変数で定義された表示命令を無視
-して、ファイル名に基づいた @acronym{MIME} Content-Type をでっちあげます。
-その結果は表示のために @code{metamail} にかけられます。
-
 @item gnus-uu-save-in-digest
 @vindex gnus-uu-save-in-digest
 @code{nil} でないと、デコードせずに保存することを指示されたときに、
