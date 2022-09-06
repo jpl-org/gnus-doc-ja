@@ -30096,7 +30096,6 @@ description-buffer = *description-line
 (defvoo nndir-get-new-mail nil nil nnml-get-new-mail nnmh-get-new-mail)
 
 (defvoo nndir-status-string "" nil nnmh-status-string)
-(defconst nndir-version "nndir 1.0")
 
 ;;; @r{インターフェース用の関数。}
 
