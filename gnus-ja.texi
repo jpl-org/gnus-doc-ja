@@ -7826,7 +7826,7 @@ Prefixes}) が与えられると、パイプへの出力に完全なヘッダー
 @findex gnus-summary-muttprint
 @vindex gnus-summary-muttprint-program
 現在の記事を muttprint に保存します。つまり、外部プログラ
-ム @uref{http://muttprint.sourceforge.net/, Muttprint} を使って記事を印
+ム @uref{https://muttprint.sourceforge.net/, Muttprint} を使って記事を印
 刷するということです。プログラム名と使用するオプションは、変
 数 @code{gnus-summary-muttprint-program} で指定されます。
 (@code{gnus-summary-muttprint})。
@@ -9088,7 +9088,7 @@ w3m を使って Gnus に描画させます。
 @uref{http://emacs-w3m.namazu.org/, emacs-w3m} を使います。
 
 @item w3m-standalone
-@uref{http://w3m.sourceforge.net/, w3m} を使います。
+@uref{https://w3m.sourceforge.net/, w3m} を使います。
 
 @item links
 @uref{http://links.twibright.com/, Links} を使います。
@@ -13368,7 +13368,7 @@ Message Manual}, を参照してください。
 @cindex firewall
 あなたが防壁 (firewall) の中にいて、防壁マシンを通して @acronym{NNTP} サー
 バーに接続するしかないのであれば、防壁マシンに @code{rlogin} して、そこ
-から @uref{http://netcat.sourceforge.net/, netcat} で @acronym{NNTP} サー
+から @uref{https://netcat.sourceforge.net/, netcat} で @acronym{NNTP} サー
 バーに接続するように Gnus に指示することができます。こんなことをするのは
 いささかばかげているのですが、でも仮想サーバーの定義はおそらくこのような
 ものになるはずです:
@@ -23409,7 +23409,7 @@ Emacs が自前で @code{X-Face} をサポートしていない場
 GNU/Linux システムの場合、ImageMagick パッケージに含まれてい
 る @code{display} プログラムを使います。外部プログラムとして
 は @code{netpbm}、@code{libgr-progs} および @code{compface} のような名前
-のものを探します。Windows では @url{http://gnuwin32.sourceforge.net} に
+のものを探します。Windows では @url{https://gnuwin32.sourceforge.net} に
 ある @code{netpbm} および @code{compface} パッケージを使っても良いです。
 @code{PATH} 環境変数に @code{bin} ディレクトリーを追加する必要があります。
 @c 実際には以下の DLL とバイナリーだけが必要と思われます: compface1.dll

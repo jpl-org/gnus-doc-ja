@@ -346,8 +346,8 @@ API の関数には以下のものがあります:
 
 Emacs Sieve パッケージは、少ないけれども増大することが望まれる RFC 群お
 よび草稿文書の、すべてまたは一部分を実装します。この章では関連するものを
-列挙します。それらはすべて @uref{http://quimby.gnus.org/notes/} から入手
-することができます。
+列挙します。それらはすべて @uref{https://quimby.gnus.org/notes/} から入
+手することができます。
 
 @table @dfn
 @item RFC3028

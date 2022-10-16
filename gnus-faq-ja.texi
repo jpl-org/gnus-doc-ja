@@ -1370,7 +1370,7 @@ alias al        "Al <al@@english-heritage.invalid>"
 ,メールの別名, message-ja, The Message Manual}) を参照してください。
 
 でも、あなたが本当に使いたいのは BBDB (the Insidious Big Brother
-Database) でしょう。@uref{http://bbdb.sourceforge.net/, bbdb のウェブサ
+Database) でしょう。@uref{https://bbdb.sourceforge.net/, bbdb のウェブサ
 イト} から入手してください。そして Gnus で BBDB を有効にするために、以下
 のものを @file{~/.gnus.el} ファイルに書き込んでください:
 
@@ -1814,12 +1814,12 @@ Gnus では、ニュースサーバーでニュース記事が期限切れ消去
 
 最初に Unix システムについて書きましょう。ニュース記事を取り込むための最
 も安易な解は、@uref{https://www.leafnode.org/,
-Leafnode} や @uref{http://patrik.iki.fi/sn/, sn} のように小規模
+Leafnode} や @uref{https://patrik.iki.fi/sn/, sn} のように小規模
 な @acronym{NNTP} サーバーを使うことです。もちろ
 ん @uref{https://www.isc.org/othersoftware/, inn} のような本格的なニュー
 スサーバーをインストールすることもできます。メールの取り込みに使うもので
 人気があるのは @uref{https://www.fetchmail.info/, fetchmail} およ
-び @uref{http://pyropus.ca/software/getmail/, getmail} です。それらにメー
+び @uref{https://pyropus.ca/software/getmail/, getmail} です。それらにメー
 ルをディスクに書き込むように指示してください。Gnus はそこから読むことに
 なります。最後ですがおろそかにできないのはメールの送信です。これにはあら
 ゆる MTA、例えば @uref{http://www.sendmail.org/, sendmail} また
