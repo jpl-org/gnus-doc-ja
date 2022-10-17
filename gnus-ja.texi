@@ -26449,9 +26449,16 @@ Newsrc をぶっ壊して人々を激怒させるサイトとしても知られ�
 
 2004年1月4日に No Gnus が始まりました。
 
+2007年7月、GNU Emacs 22.1 に Gnus 5.11 が同梱されました。
+
+2009年7月、No Gnus が GNU Emacs 23.1 とともに Gnus 5.13 としてリリースさ
+れました。
+
 2010年4月19日、Gnus の開発は Git に移行しました。
 
 2012年1月31日、Ma Gnus が始まりました。
+
+それ以来 Gnus は Emacs と一緒にしかリリースされていません。
 
 接頭語を持った版の Gnus---“(ding) Gnus”,“September Gnus”,“Red
 Gnus”,“Quassia Gnus”,“Pterodactyl Gnus”,“Oort Gnus”,“No
@@ -28649,9 +28656,10 @@ Mail}.
 @subsubsection Ma Gnus
 @cindex Ma Gnus
 
-ここにはたくさんの文章がかかれるでしょう。本当の綴りは「真 Gnus」です。
+本当の綴りは「真Gnus」です。Ma Gnus は 2012年に始まった開発版の Gnus の
+コード名でした。最近では Gnus は Emacs と一緒にのみリリースされています。
 
-真 Gnus の新しい機能:
+真Gnus の新しい機能:
 
 @itemize @bullet
 @item インストールに関する変更
@@ -28688,6 +28696,8 @@ Mail}.
 び @code{gnus-gcc-post-body-encode-hook} が、送信したメッセージ
 を @code{Gcc} コピーする際、そのボディーをエンコードする前後に実行されま
 す。@xref{Archived Messages}.
+
+最近の変更については、Emacs の @file{NEWS} ファイルを参照してください。
 @end itemize
 @end itemize
 @iftex
