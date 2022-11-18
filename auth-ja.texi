@@ -533,6 +533,9 @@ Emacs の @code{pass} の統合は、パス・プロジェクト自体によっ�
 とえば、ホスト @code{gnu.org} およびポート @code{22} の @code{rms} ユー
 ザーに合致するエントリを検索しているとき、エント
 リー @file{gnu.org:22/rms.gpg} は @file {gnu.org.gpg} より優先されます。
+ただし、
+オプション @code{auth-source-pass-extra-parameters} が @code{t} に設定さ
+れている場合は、そのような処理は行ないません。
 
 @code{pass} のユーザーは、Emacs パッケージが提供する機能にも興味があるか
 もしれません:
@@ -554,6 +557,22 @@ Emacs の @code{pass} の統合は、パス・プロジェクト自体によっ�
 @defvar auth-source-pass-port-separator
 この変数を、エントリー内のポートからホスト名を区切る文字列に設定してくだ
 さい。ディフォルトは @samp{:} です。
+@end defvar
+
+@defvar auth-source-pass-extra-query-keywords
+これは利用可能なキーワードの選択肢
+を @code{:max} と @code{:require} を含むように拡張して、それらの多くに問
+い合わせパラメーターのリストを引数として受け入れるように指示します。検索
+するときは、@code{:user} パラメーターが指定されているかどうかにかかわら
+ず、@samp{gnu.org/rms.gpg} 形式よりも @samp{rms@@gnu.org.gpg} 形式のユー
+ザー名を優先します。
+
+一般に、ファイル名のフィールド数を優先するような、このバックエンドが伝統
+的に示す特異性を好む場合は、このオプションを @code{nil} に設定してみてく
+ださい。しかし、他の認証元バックエンドに関連する検索の結果を予測する際に
+問題が発生した場合、または複数のバックエンドに一様に問い合わせることを期
+待するコードに遭遇した場合は、@code{t} (ディフォルト) に戻してみてくださ
+い。
 @end defvar
 
 @node Help for developers
