@@ -405,21 +405,22 @@ Emacs が文章を編集する人に力を与えるように、Gnus はニュー
 @end iftex
 
 @menu
-* Don't Panic::              Gnus との初めての 20分
-* Starting Up::              ニュースを見つけるのには苦労が伴うかもしれない
-* Group Buffer::             グループを選択し、購読し、削除する
-* Summary Buffer::           記事を読み、保存し、投稿する
-* Article Buffer::           記事を表示し、扱う
-* Composing Messages::       メールとニュースを送るための情報
-* Select Methods::           Gnus はすべてのメッセージをいろいろな選択方法で読む
-* Scoring::                  記事に値を付ける
-* Searching::                メールとニュースの検索エンジン
-* Various::                  一般的な設定
-* The End::                  さらば、そしてさようなら
-* Appendices::               用語、Emacs 入門、@acronym{FAQ}、歴史、内部構造
+* Don't Panic::                 Your first 20 minutes with Gnus.
+* Don't Panic::                 Gnus との初めての 20分
+* Starting Up::                 ニュースを見つけるのには苦労が伴うかもしれない
+* Group Buffer::                グループを選択し、購読し、削除する
+* Summary Buffer::              記事を読み、保存し、投稿する
+* Article Buffer::              記事を表示し、扱う
+* Composing Messages::          メールとニュースを送るための情報
+* Select Methods::              Gnus はすべてのメッセージをいろいろな選択方法で読む
+* Scoring::                     記事に値を付ける
+* Searching::                   メールとニュースの検索エンジン
+* Various::                     一般的な設定
+* The End::                     さらば、そしてさようなら
+* Appendices::                  用語、Emacs 入門、@acronym{FAQ}、歴史、内部構造
 * GNU Free Documentation License:: この文書の利用許諾契約書
-* Index::                    変数、関数、概念の索引
-* Key Index::                キー索引
+* Index::                       変数、関数、概念の索引
+* Key Index::                   キー索引
 
 @c Doesn't work right in html.
 @c FIXME Do this in a more standard way.
@@ -591,14 +592,15 @@ Decoding Variables
 Article Treatment
 
 * Article Highlighting::        記事をフルーツサラダのようにしたい
-* Article Fontisizing::         強調された文を素敵にする
+* Article Fontifying::          強調された文を素敵にする
 * Article Hiding::              特定の情報は消し去りたいとも思う
 * Article Washing::             人生をもっとよくするたくさんの気の利いた関数
 * Article Header::              ヘッダーをいろいろ変形させる
 * Article Buttons::             URL や Message-ID やアドレスなどをクリックする
 * Article Button Levels::       ボタンの見え方を制御する
 * Article Date::                ぐずぐず言うな、世界時だ!
-* Article Display::             X-Face, Picons, Smileys, Gravatars を表示する
+* Article Display::             いろんなものをを表示する:
+                                X-Face, Picons, Gravatars, Smileys
 * Article Signature::           署名って何?
 * Article Miscellanea::         他のいろいろなもの
 
@@ -643,7 +645,7 @@ Select Methods
 * Getting Mail::                個人的なメールを Gnus で読む
 * Browsing the Web::            大量のウェブの資源からメッセージを取得する
 * Other Sources::               ディレクトリー、ファイルを読む
-* Virtual Groups::              複数のソースの記事を合併させる
+* Virtual Groups::              記事とグループを合併させる
 * Email Based Diary::           日程をメールで管理する
 * Gnus Unplugged::              ニュースとメールをオフラインで読む
 
@@ -667,6 +669,13 @@ Getting News
 * Direct Functions::            サーバーに直接接続する
 * Indirect Functions::          サーバーに間接的に接続する
 * Common Variables::            いくつかの接続用の関数が参照する変数
+
+Using IMAP
+
+* Connecting to an IMAP Server::  @acronym{IMAP} を始める
+* Customizing the IMAP Connection::  @acronym{IMAP} 接続のための変数
+* Client-Side IMAP Splitting::  メールを正しいメールボックスに格納する
+* Support for IMAP Extensions::  サーバーから拡張情報とラベルを取得する
 
 Getting Mail
 
@@ -698,6 +707,10 @@ Choosing a Mail Back End
 * Mail Spool::                  あなたのメールを私的なスプールに溜める?
 * MH Spool::                    mhspool のようなバックエンド
 * Maildir::                     もう一つの１ファイル/１メッセージ形式
+* nnmaildir Group Parameters::
+* Article Identification::
+* NOV Data::
+* Article Marks::
 * Mail Folders::                それぞれのグループに対して一つのファイルを持つ
 * Comparing Mail Back Ends::    得失の深い洞察
 
@@ -799,9 +812,22 @@ Advanced Scoring
 Searching
 
 * Search Engines::              検索エンジンの選択と設定
-* Creating Search Groups::      検索グループを作る
+* Creating Search Groups::      どこでどうやって
 * Search Queries::              Gnus に組み込まれている検索構文
 * nnmairix::                    Mairix で検索する
+* nnir::
+
+nnmairix
+
+* About mairix::                メール検索エンジン mairix について
+* nnmairix requirements::       nnmairix を使うために必用なもの
+* What nnmairix does::          nnmairix は実際に何をするか?
+* Setting up mairix::           インストールした mairix の設定
+* Configuring nnmairix::        バックエンドの設定
+* nnmairix keyboard shortcuts::  利用可能なキーボード・ショートカット
+* Propagating marks::           nnmairix グループの印はどうやって伝搬するか
+* nnmairix tips and tricks::    いくつかのヒント、秘策、および例
+* nnmairix caveats::            知っておいた方が良い諸々のこと
 
 Various
 
@@ -864,11 +890,38 @@ Spam Package
 * Extending the Spam package::
 * Spam Statistics Package::
 
+Spam Back Ends
+
+* Blacklists and Whitelists::
+* BBDB Whitelists::
+* Gmane Spam Reporting::
+* Anti-spam Hashcash Payments::
+* Blackholes::
+* Regular Expressions Header Matching::
+* Bogofilter::
+* SpamAssassin back end::
+* ifile spam filtering::
+* Spam Statistics Filtering::
+* SpamOracle::
+
 Spam Statistics Package
 
 * Creating a spam-stat dictionary::
 * Splitting mail using spam-stat::
 * Low-level interface to the spam-stat dictionary::
+
+The Gnus Registry
+
+* Gnus Registry Setup::
+* Registry Article Refer Method::
+* Fancy splitting to parent::
+* Store custom flags and keywords::
+* Store arbitrary data::
+
+The Gnus Cloud
+
+* Gnus Cloud Setup::
+* Gnus Cloud Usage::
 
 Appendices
 
@@ -1008,7 +1061,7 @@ Gnus の基本的な構成要素
 持していて、それらのグループには記事があります。Gnus は多種多様なサーバー
 への統一されたインターフェースを提供するため、語彙は必ずしも整頓されてい
 ません (より完全な用語集については @pxref{FAQ - Glossary})。したがってロー
-カルの maildir は Usenet や IMAP サーバーと同じ「サーバー
+カルの Maildir は Usenet や IMAP サーバーと同じ「サーバー
 」(@pxref{Finding the News}) と呼ばれます。「グループ
 」(@pxref{Group Buffer}) は NNTP グループ、IMAP フォルダー、またはローカ
 ルメールディレクトリーを意味する場合があります。また「記事
@@ -1040,7 +1093,7 @@ Gnus の基本的な構成要素
 
 新しいメールはどこからかやって来なければなりません。NNTP や IMAP のよう
 ないくつかのサーバーは、それ自体が新着記事の取得を担当します。
-maildir や mbox サーバーなどの他のものは記事を保存するだけで、どこからも
+Maildir や mbox サーバーなどの他のものは記事を保存するだけで、どこからも
 取得しません。
 
 後者の場合 Gnus は @code{mail sources}、すなわち新しいメールを取得する場
@@ -1101,16 +1154,16 @@ for Heathens} を読んでください。
 章 (@ref{Terminology}) を参照してください。
 
 @menu
-* Finding the News::      ニュースを取得する方法を選ぶ
-* The Server is Down::    そんなとき、どうすればメールを読めるか
-* Child Gnusae::          同時に二つ以上の Gnus を作動させることができる
-* Fetching a Group::      グループを読むためだけに Gnus を起動する
-* New Groups::            Gnus が新しいグループに対して何をするか
-* Changing Servers::      あるサーバーから別のサーバーへ移る必要があるかもしれない
-* Startup Files::         やっかいなスタートアップファイル---@file{.newsrc}
-* Auto Save::             クラッシュからの回復
-* The Active File::       遅い回線からのファイルの取得には時間がかかる
-* Startup Variables::     変更したいと思うかもしれない変数
+* Finding the News::            ニュースを取得する方法を選ぶ
+* The Server is Down::          そんなとき、どうすればメールを読めるか
+* Child Gnusae::                同時に二つ以上の Gnus を作動させることができる
+* Fetching a Group::            グループを読むためだけに Gnus を起動する
+* New Groups::                  Gnus が新しいグループに対して何をするか
+* Changing Servers::            あるサーバーから別のサーバーへ移る必要があるかもしれない
+* Startup Files::               やっかいなスタートアップファイル---@file{.newsrc}
+* Auto Save::                   クラッシュからの回復
+* The Active File::             遅い回線からのファイルの取得には時間がかかる
+* Startup Variables::           変更したいと思うかもしれない変数
 @end menu
 
 @node Finding the News
@@ -8481,7 +8534,7 @@ Gnus はファイル名に基づいて型を推測していることに注意し
 
 @menu
 * Article Highlighting::        記事をフルーツサラダのようにしたい
-* Article Fontisizing::         強調された文を素敵にする
+* Article Fontifying::          強調された文を素敵にする
 * Article Hiding::              特定の情報は消し去りたいとも思う
 * Article Washing::             人生をもっとよくするたくさんの気の利いた関数
 * Article Header::              ヘッダーをいろいろ変形させる
@@ -8593,7 +8646,7 @@ MTA がクオートした可能性があります。ディフォルト値は @co
 記事を自動的にハイライトする方法については @ref{Customizing Articles} を
 参照してください。
 
-@node Article Fontisizing
+@node Article Fontifying
 @subsection 記事中の文の強調表示
 @cindex emphasis
 @cindex article emphasis
@@ -21220,10 +21273,11 @@ Gnus の一般化された検索構文を使用するかの 2つの方法のい�
 @xref{Search Queries}.
 
 @menu
-* Search Engines::             検索エンジンの選択と設定
-* Creating Search Groups::     どうやって、どこで
-* Search Queries::             Gnus に組み込まれている検索構文
-* nnmairix::                   Mairix で検索する
+* Search Engines::              検索エンジンの選択と設定
+* Creating Search Groups::      どうやって、どこで
+* Search Queries::              Gnus に組み込まれている検索構文
+* nnmairix::                    Mairix で検索する
+* nnir::
 @end menu
 
 @node Search Engines
@@ -21514,7 +21568,7 @@ mairix は @code{nnselect} とともに永続的な検索グループを含む�
 * What nnmairix does::          nnmairix は実際に何をするのか?
 * Setting up mairix::           mairix の設定
 * Configuring nnmairix::        nnmairix バックエンドの設定
-* nnmairix keyboard shortcuts:: 利用できるショートカットキー
+* nnmairix keyboard shortcuts::  利用できるショートカットキー
 * Propagating marks::           nnmairix グループの印を伝搬させる方法
 * nnmairix tips and tricks::    ヒント、こつ、およびいくつかの例
 * nnmairix caveats::            さらに知っておく必要があること
@@ -26027,7 +26081,7 @@ Gnus の操作を通じてレジストリーが記録されるファイルです
 うショートカット・キーが用意されています。
 @end defvar
 
-@defun gnus-registry-mark-article
+@defun gnus-registry-set-article-mark
 独自のレジストリーの印を記事に付加するために使う関数です。補完のために、
 利用できる印を提示します。
 @end defun
