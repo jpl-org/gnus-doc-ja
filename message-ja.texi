@@ -930,7 +930,7 @@ emacs-mime-ja, The Emacs MIME Manual}) を使えば、どんな複雑なマル�
 @section 国際化ドメイン名
 @cindex IDNA
 @cindex internationalized domain names
-@cindex non-ascii domain names
+@cindex non-ASCII domain names
 
 @acronym{IDNA} は非-@acronym{ASCII} ドメイン名を可読
 な @acronym{ASCII} 文字列にエンコードするための標準の手段です。詳細
