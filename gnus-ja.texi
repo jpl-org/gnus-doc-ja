@@ -2921,8 +2921,6 @@ Gnus ヘルプグループを作成します (@code{gnus-group-make-help-group})
 もしこのグループパラメーターが設定されていると、概略バッファーに入ったと
 きに @code{gnus-mailing-list-mode} が有効になります。
 
-@code{gnus-parameter-to-list-alist} も参照してください。
-
 @anchor{subscribed}
 @item subscribed
 @cindex subscribed
