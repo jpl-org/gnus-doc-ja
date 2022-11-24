@@ -1,6 +1,6 @@
 @SET_MAKE@
 INFO_DEPS=gnus-ja.info message-ja.info emacs-mime-ja.info epa-ja.info\
- sasl-ja.info sieve-ja.info gnus-coding-ja.info auth-ja.info
+ sasl-ja.info sieve-ja.info auth-ja.info
 EMACS=@EMACS@
 EMACSINFO=$(EMACS) -batch -q -no-site-file -l infohack.el -f batch-makeinfo
 INSTALL=@INSTALL@
@@ -56,7 +56,7 @@ install: all
 	else : ; fi
 
 pdf: gnus-ja.pdf message-ja.pdf emacs-mime-ja.pdf epa-ja.pdf\
- sasl-ja.pdf sieve-ja.pdf gnus-coding-ja.pdf auth-ja.pdf
+ sasl-ja.pdf sieve-ja.pdf auth-ja.pdf
 
 docltmp: docltmp.texi
 
