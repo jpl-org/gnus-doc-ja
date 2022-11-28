@@ -16547,9 +16547,7 @@ Gnus のグループとして現われる maildir に配送されたメールを
 @code{mail-sources} と @code{nnmaildir} グループの両方で同じ maildir を
 使っては @emph{いけません}。その結果は運良く有益になるかもしれませんが、
 そんな意図では設計されていませんし、将来は違う結果をもたらす可能性があり
-ます。あなたの分割規則が新しいグループを作るようになっている場合は、
-@code{create-directory} サーバーパラメーターを設定することを忘れないでく
-ださい。
+ます。
 @end table
 
 @node nnmaildir Group Parameters
