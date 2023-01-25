@@ -11875,17 +11875,6 @@ Gnus は @code{w3m} を利用するその組み込み機能を使います。
 
 @code{gnus-inhibit-images} も参照してください (@pxref{Misc Article})。
 
-@item gnus-html-cache-directory
-@vindex gnus-html-cache-directory
-Gnus は @code{gnus-blocked-images} がどう設定されているかに応じて画像を
-ダウンロードしてキャッシュしますが、それらの画像はこのディレクトリーに保
-存されます。
-
-@item gnus-html-cache-size
-@vindex gnus-html-cache-size
-そのディレクトリーで、@code{gnus-html-cache-size} で指定されたバイト数を
-越える古いファイルは消去されます。ディフォルトは 500MB です。
-
 @item gnus-html-frame-width
 @vindex gnus-html-frame-width
 HTML を描画するときの幅です。ディフォルトは 70 です。
