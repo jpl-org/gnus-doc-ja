@@ -3795,14 +3795,6 @@ Gnus を終了するときは @code{gnus-exit-gnus-hook} が呼び出され、�
 に Gnus を終了するときの最後とし
 て @code{gnus-after-exiting-gnus-hook} が呼び出されます。
 
-Note:
-
-@quotation
-ミス Lisa Cannifax は英語の授業中、後ろに座っている少年が彼女のプラスティッ
-クの椅子の背越しに、鉛筆で繰り返し線を描くのにつられて、足がしびれて重く
-なり、意識が朦朧としてきました。
-@end quotation
-
 @node Group Topics
 @section トピック
 @cindex topics
