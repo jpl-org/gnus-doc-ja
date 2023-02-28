@@ -14251,13 +14251,23 @@ machine imap.gmail.com login <username> password <password> port imap
 @end example
 
 @table @code
+@vindex nnimap-address
 @item nnimap-address
 サーバーのアドレスです。@samp{imap.gmail.com} のようなもの。
 
+@vindex nnimap-user
+@item nnimap-user
+@acronym{IMAP} サーバーへの認証に使うユーザー名です。これ
+は @file{~/.authinfo} ファイルの @samp{login} トークンの値に相当します。
+同じ @acronym{IMAP} サーバーから複数のアカウントにアクセスする場合に、
+この変数を設定してください。
+
+@vindex nnimap-server-port
 @item nnimap-server-port
 サーバーのポートが標準とは異なるなら、ここで設定できます。代表的なポート
 は @code{"imap"} あるいは @code{"imaps"} でしょう。
 
+@vindex nnimap-stream
 @item nnimap-stream
 @code{nnimap} がどうやってサーバーに接続するかを指定します。使える値は:
 
@@ -14288,6 +14298,7 @@ machine imap.gmail.com login <username> password <password> port imap
 え @acronym{STARTTLS} が利用可能でも使いません。
 @end table
 
+@vindex nnimap-authenticator
 @item nnimap-authenticator
 いくつかの @acronym{IMAP} サーバーは匿名ログインを許容しています。その場
 合、これを @code{anonymous} に設定する必要があります。もしこの変数を設定
@@ -14297,6 +14308,7 @@ machine imap.gmail.com login <username> password <password> port imap
 ください。(最後のものは @file{oauth2.el} ライブラリーを使う必要がありま
 す。)
 
+@vindex nnimap-expunge
 @item nnimap-expunge
 消去した記事を、いつ永久に取り除くか。もし @code{never} であれば、消去さ
 れた記事には IMAP @code{\\Delete} フラグが付きますが、自動的に永久に取り
@@ -14314,21 +14326,25 @@ machine imap.gmail.com login <username> password <password> port imap
 てフラグが付けられているすべての記事 (つまり消去されたばかりの記事だけ
 でなく) を直ちに永久に取り除きます。
 
+@vindex nnimap-streaming
 @item nnimap-streaming
 事実上すべての @acronym{IMAP} サーバーはデータの高速ストリーミングをサポー
 トしています。もしサーバーへの接続に問題があるのなら、これ
 を @code{nil} に設定してみてください。
 
+@vindex nnimap-fetch-partial-articles
 @item nnimap-fetch-partial-articles
 もし @code{nil} 以外の値だったら、サーバーから記事の部分を取り込みます。
 もし文字列が設定されていたら、それは正規表現であると解釈され、そのタイプ
 が合致する部分が取り込まれます。例えば @samp{"text/"} 場合はすべてのテキ
 スト型の部分を取り込みますが、残りはサーバーに置いたままになります。
 
+@vindex nnimap-record-commands
 @item nnimap-record-commands
 もし @code{nil} でなければ、すべての @acronym{IMAP} コマンド
 を @samp{"*imap log*"} バッファーに記録します。
 
+@vindex nnimap-use-namespaces
 @item nnimap-use-namespaces
 もし @code{nil} でなければ、nnimap グループ名において IMAP 名前空間の接
 頭辞を省略します。もしあなたのメールボックス
@@ -14336,6 +14352,7 @@ machine imap.gmail.com login <username> password <password> port imap
 ても、nnimap グループ名を @samp{INBOX} や @samp{Lists.emacs} のようにし
 たいのであれば、このオプションを有効にしてください。
 
+@vindex nnimap-keepalive-intervals
 @item nnimap-keepalive-intervals
 ディフォルトでは、nnimap は接続を維持するために
 時々 @samp{NOOP} (keepalive) コマンドをサーバーに送信します。このオプショ
