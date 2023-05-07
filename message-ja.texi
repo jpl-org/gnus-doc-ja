@@ -1957,13 +1957,10 @@ ISP が @acronym{POP}-before-@acronym{SMTP} の認証を要求する場合に有
 す。@xref{POP before SMTP, , POP before SMTP, gnus-ja, The Gnus Manual}.
 
 @cindex X-Message-SMTP-Method
-もし複数の @acronym{SMTP} 設定を使うことができて、あるメッセージは一つ
-のメールサーバーを経由し、他のメッセージは別のものを通して出したい場合は、
-@samp{X-Message-SMTP-Method} ヘッダーを使うことができます。以下はサポー
-トされている値です:
-
-@table @samp
-@item smtpmail
+もし @acronym{SMTP} の設定が複雑で、あるメッセージは一つのメールサーバー
+を経由し、他のメッセージは別のものを通して出したい場合は、@samp{smtp} キー
+ワードとそれに続くサーバーの情報によってディフォルト値を変更するため
+に @samp{X-Message-SMTP-Method} ヘッダーを使うことができます:
 
 @example
 X-Message-SMTP-Method: smtp smtp.fsf.org 587
@@ -1979,15 +1976,18 @@ X-Message-SMTP-Method: smtp smtp.fsf.org 587 other-user
 ザー名として使います。これは、同じサーバーに複数の @acronym{SMTP} アカウ
 ントを持っている場合に役立ちます。
 
-@item sendmail
+このヘッダーは @samp{mailer} キーワードを使うことによって代わりの MTA を
+指定するために使うこともできます。ここ
+で @samp{mailer} は @code{message-send-mail-with-'mailer'} 関数に対応す
+る MTA の名前です。例えば:
 
 @example
 X-Message-SMTP-Method: sendmail
 @end example
 
-これはローカルにインストールされている sendmail や exim などを経由してメッ
-セージを送ります。
-@end table
+これはローカルにインストールされている sendmail プログラムを経由してメッ
+セージを送ります。認められている @samp{mailer} の値は、sendmail、qmail、
+mh、および mailclient です。
 
 @item message-mh-deletable-headers
 @vindex message-mh-deletable-headers
