@@ -716,7 +716,6 @@ Choosing a Mail Back End
 
 Browsing the Web
 
-* Archiving Mail::
 * Web Searches::                文字列に合致する記事からグループを作る
 * RSS::                         RDF Site Summary を読む
 
@@ -16978,7 +16977,6 @@ Gnus はこれらのソースへのインターフェースを提供するバッ
 備えつつあります。
 
 @menu
-* Archiving Mail::
 * Web Searches::                文字列に合致する記事からグループを作る
 * RSS::                         RDF Site Summary を読む
 @end menu
@@ -16993,29 +16991,6 @@ Gnus はこれらのソースへのインターフェースを提供するバッ
 そういう場合に、Gnus Agent (@pxref{Gnus Unplugged}) に記事のダウンロード
 を任せて、ローカルディスクから好きなときに読むようにすることは、大いに意
 義があります。これで World Wide Wait とはおさらばです。
-
-@node Archiving Mail
-@subsection メールの保存
-@cindex archiving mail
-@cindex backup of mail
-
-いくつかのバックエンド、特に @code{nnml}, @code{nnfolder} およ
-び @code{nnmaildir} は、今ではそれぞれのグループの記事の印を本当に保持す
-るようになりました (訳注: そうなったのはだいぶ前ですが)。これらのサーバー
-で、グループの印を保ちつつ保存したり元に戻すのはかなり簡単です。
-
-(でも、グループレベルとグループパラメーターをも保持するには、今までとお
-り @file{.newsrc.eld} の神に、舞いと生贄を捧げなければなりませんが。)
-
-@code{nnml}, @code{nnfolder} または @code{nnmaildir} サーバーにまるごと
-保存するには、サーバーのディレクトリーを再帰的にコピーしてください。
-Gnus を終了する必要は無いので、保存は @code{cron} やそれに類するものが行
-なうことができます。データを復帰させるにはディレクトリー木 (tree) を元に
-戻すことによって行ない、そのディレクトリーを指し示すように Gnus のサーバー
-の定義に追加しましょう。@ref{Article Backlog},
-@ref{Asynchronous Fetching} およびその他のものはデータを上書きして邪魔を
-するかもしれないので、データを復帰させる前に Gnus を終了する必要があるか
-もしれません。
 
 @node Web Searches
 @subsection ウェブ検索
