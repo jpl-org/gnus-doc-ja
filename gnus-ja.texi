@@ -14311,20 +14311,20 @@ machine imap.gmail.com login <username> password <password> port imap
 @vindex nnimap-expunge
 @item nnimap-expunge
 消去した記事を、いつ永久に取り除くか。もし @code{never} であれば、消去さ
-れた記事には IMAP @code{\\Delete} フラグが付きますが、自動的に永久に取り
-除かれることはありません。もし @code{immediately} であると、消去された記
-事は直ちに永久に取り除かれます (これにはサーバーが UID EXPUNGE コマンド
-をサポートしている必要があります)。もし @code{on-exit} であると、記事は
-消去したときにフラグが付けられ、フラグが付けられたすべての記事はそのグルー
-プを閉じるときに永久に取り除かれます。
+れた記事には @acronym{IMAP} @code{\\Delete} フラグが付きますが、自動的に
+永久に取り除かれることはありません。もし @code{immediately} であると、消
+去された記事は直ちに永久に取り除かれます (これにはサーバー
+が @code{UID EXPUNGE} コマンドをサポートしている必要があります)。も
+し @code{on-exit} であると、記事は消去したときにフラグが付けられ、フラグ
+が付けられたすべての記事はそのグループを閉じるときに永久に取り除かれます。
 
 この変数は後方互換性のために @code{t} または @code{nil} にすることもでき
-ます。もしサーバーが UID EXPUNGE をサポートしているなら
+ます。もしサーバーが @code{UID EXPUNGE} をサポートしているなら
 ば @code{t} と @code{nil} の両方とも @code{immediately} と等価です。もし
-サーバーが UID EXPUNGE をサポートしていない場
-合 @code{nil} は @code{never} と等価ですが、@code{t} は現在消去済みとし
-てフラグが付けられているすべての記事 (つまり消去されたばかりの記事だけ
-でなく) を直ちに永久に取り除きます。
+サーバーが @code{UID EXPUNGE} をサポートしていないなら
+ば @code{nil} は @code{never} と等価ですが、@code{t} は現在消去済みとし
+てフラグが付けられている @emph{すべて} の記事 (つまり消去されたばかりの
+記事だけでなく) を直ちに永久に取り除きます。
 
 @vindex nnimap-streaming
 @item nnimap-streaming
