@@ -58,6 +58,7 @@ modify this GNU manual.''
 @ifnottex
 @node Top
 @top Emacs auth-source
+
 このマニュアルは Emacs auth-source ライブラリーを説明します。
 
 利用者の便宜のために、複数のアプリケーションで、(Emacs またはファイルに
@@ -685,7 +686,7 @@ Emacs に同梱されている EasyPG アシスタントは、暗号化された
 を自動的に処理します。
 @xref{Top, , Top, epa-ja, EasyPG Assistant User's Manual}.
 これは @acronym{GnuPG、GNU Privacy Guard} への Emacs ユーザーインターフェー
-スです。@xref{Top, , Top, gnupg, Using the GNU Privacy Guard}.
+スです。@xref{Top, , Top, gnupg, Using the GNU Privacy Guard}.@*
 これらをすぐに始めるに
 は @xref{Quick start, , Quick Start, epa-ja, EasyPG Assistant User's Manual}.
 

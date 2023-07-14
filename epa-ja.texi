@@ -119,8 +119,8 @@ EasyPG アシスタントは @acronym{GnuPG, GNU Privacy Guard} の Emacs フロ
 
 EasyPG アシスタントは Emacs や GnuPG の設定を何もしなくても使うことがで
 きます。例えば対称鍵暗号を使ってファイルを自動的に暗号化したり復号化でき
-ます。@ref{Encrypting/decrypting gpg files} を参照してください。もっと
-も EasyPG アシスタントの機能の完全なセットを使うには、少なくとも最少限
+ます。@ref{Encrypting/decrypting gpg files} を参照してください。ただ
+し EasyPG アシスタントの機能の完全なセットを使うには、少なくとも最少限
 の GnuPG の適切な設定が必要です。
 
 John Michael Ashley の GNU プライバシー・ハンドブックはオンライン
@@ -165,6 +165,7 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 @cindex key management
 @cindex key ring, browsing
 @cindex browse key ring
+
 おそらく EasyPG アシスタントを使う最初の一歩は鍵リングを眺めることでしょ
 う。@kbd{M-x epa-list-keys} はコマンドラインから使
 う @samp{gpg--list-keys} に相当しています。
@@ -431,6 +432,7 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 @cindex decrypting gpg files
 @cindex gpg files, encrypting and decrypting
 @cindex automatic file encryption and decryption
+
 ディフォルトでは名前が @file{.gpg} で終わるファイルは暗号化されたものと
 して扱われます。即ちそのようなファイルを開くと、暗号化されたままのもので
 はなく復号されたテキストがバッファーに挿入されます。同様にバッファー
@@ -614,9 +616,6 @@ GnuPG スイーツの重要な構成要素は Pinentry です。これによっ�
 ログラムを Pinentry として提供します。通常はオペレーティングシステムによっ
 て、これらのどれがデフォルトで使用されるかが決まります。
 
-Note that the selection of a concrete Pinentry program determines only
-@emph{how} GnuPG queries for passphrases and not @emph{how often}.
-For the latter question see @ref{Caching Passphrases}.
 具体的な Pinentry プログラムの選択によって、@emph{どのくらいの頻度} では
 なく、@emph{どのように} GnuPG がパスフレーズを要求するかのみが決定される
 ことに注意してください。後者の質問について
