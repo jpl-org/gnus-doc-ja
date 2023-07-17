@@ -53,7 +53,7 @@ modify this GNU manual.
 @contents
 
 @node Top
-@top EasyPG Assistant user's manual
+@top EasyPG Assistant User's manual
 @cindex easypg assistant
 @cindex gnu privacy guard
 @cindex gnupg
@@ -83,6 +83,7 @@ EasyPG アシスタントは Emacs のためのオールインワン GnuPG イ�
 * Quick start::
 * Commands::
 * GnuPG version compatibility::
+* GnuPG Pinentry::
 * Caching Passphrases::
 * Bug Reports::
 * GNU Free Documentation License:: この文書の利用許諾契約書
@@ -96,7 +97,8 @@ EasyPG アシスタントは Emacs のためのオールインワン GnuPG イ�
 @chapter 概要
 @cindex features of easypg assistant
 
-EasyPG は以下の機能を提供します。
+EasyPG アシスタントは @acronym{GnuPG, GNU Privacy Guard} の Emacs フロン
+トエンド・アプリケーションです。以下の機能を提供します:
 
 @itemize @bullet
 @item 鍵の管理
@@ -110,6 +112,22 @@ EasyPG は以下の機能を提供します。
 @node Quick start
 @chapter とりあえず始める
 @cindex introduction to easypg assistant
+@cindex gnupg documentation
+@cindex documentation on gnupg
+@cindex configuration of gnupg
+@cindex introduction to gnupg
+
+EasyPG アシスタントは Emacs や GnuPG の設定を何もしなくても使うことがで
+きます。例えば対称鍵暗号を使ってファイルを自動的に暗号化したり復号化でき
+ます。@ref{Encrypting/decrypting gpg files} を参照してください。ただ
+し EasyPG アシスタントの機能の完全なセットを使うには、少なくとも最少限
+の GnuPG の適切な設定が必要です。
+
+John Michael Ashley の GNU プライバシー・ハンドブックはオンライン
+で @uref{https://gnupg.org/documentation/guides.html, the GnuPG user guides} の
+一部として入手可能で、GnuPG の使いかたと設定の入門方法を提供しています。
+それとは対照的に、GnuPG マニュアル (@pxref{Top, , Top, gnupg, Using the
+GNU Privacy Guard}) はより詳しいリファレンス マニュアルのようなものです。
 
 EasyPG アシスタント・コマンドは @samp{epa-} で始まります。例えば、
 
@@ -250,13 +268,13 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 ドは装甲の前後にある元のテキストを改変しません。
 @end deffn
 
+@cindex verify region
 @deffn Command epa-verify-region start end
 @var{start} と @var{end} の間の現在の領域を検証します。検証結果はミニバッ
 ファーかポップアップされるウィンドウに送ります。領域を署名されたテキスト
 で置き換えます。
 @end deffn
 
-@cindex verify region
 @deffn Command epa-verify-cleartext-in-region
 @var{start} と @var{end} の間の現在の領域にある OpenPGP のクリアテキスト・
 ブロックを検証します。@code{epa-verify-region}との違い
@@ -420,6 +438,42 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 はなく復号されたテキストがバッファーに挿入されます。同様にバッファー
 を @file{foo.gpg} ファイルにセーブすると暗号化されたデータが書かれます。
 
+初めてバッファーを暗号化ファイルに保存しようとすると、EasyPG アシスタン
+トはバッファー @file{*Keys*} にある鍵のリストを表示して、そこで暗号化す
+る対象の受信者を選択することができます。バッファーの形式の説明について
+は @xref{Key management}.  この受信者を選択する手順は、この章で後述する
+変数 @code{epa-file-encrypt-to} および @code{epa-file-select-keys} をカ
+スタマイズすることによって効率化することができます。
+
+@cindex symmetric encryption, passphrase entry for
+この段階で受信者を選択しない場合、EasyPG アシスタントは対称鍵暗号を使い
+ます。その結果、バッファーを保存するたびにパスフレーズを 2回入力しなけれ
+ばならないし、ファイルを読み取るときにも頻繁にパスフレーズの入力が必要に
+なります。それは、GnuPG エージェントは、少なくともしばらくの間ファイル読
+み取り用にパスフレーズをキャッシュしますが、バッファーの保存用にはキャッ
+シュしないからです。より多くの情報は @xref{Caching Passphrases}.
+
+@cindex public key encryption, passphrase entry for
+自分で鍵の対を作った場合@footnote{共有する予定のないファイルを暗号化およ
+び復号するときは、鍵の対を作る際に受信者として電子メールアドレスを使用す
+る必要はありません。@code{backup} や @code{account database} など、鍵の
+対の使途に関する情報を提供する自由形式の文字列を使うこともできます。}、
+それは受信者として選択することができ、EasyPG アシスタントはそのファイル
+に公開鍵暗号を使用します。GnuPG は公開鍵を使って暗号化を実行するので、バッ
+ファー保存の場合はパスフレーズの入力を求められませんが、GnuPG エージェン
+トのキャッシュ設定に応じて、ファイル読み取りの場合はパスフレーズの入力を
+求められることがあります。
+
+@cindex tempory files created by easypg assistant
+上述のように、ファイルを暗号化および復号するために EasyPG アシスタントは
+ある特定の状況の下では、処理するファイルのプレーンテキスト・コンテンツを
+含む一時的な中間ファイルを使います。EasyPG アシスタントは、関
+数 @code{temporary-file-directory} (@pxref{Unique File Names, ,
+Generating Unique File Names, elisp, GNU Emacs Lisp Reference Manual}) が
+返すディレクトリーの下にそれらを作成します。プレーンテキストの痕跡を残し
+たくないのであれば、少なくともそのディレクトリーでは暗号化されたファイル
+システムを使用してください。
+
 暗号化されたファイルの名前パターンは @code{epa-file-name-regexp} で制御
 することができます。
 
@@ -456,11 +510,11 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 鍵を選択するための対話窓をポップアップするかどうかを制御します。
 @end defvar
 
-頻繁に開くファイルについては、どの暗号方式を使うべきかを @pxref{File
-Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこと
-は良い考えかもしれません。この目的にはローカル変
-数 @code{epa-file-encrypt-to} を使ってください。
 @vindex epa-file-encrypt-to
+頻繁に開くファイルについては、どの暗号方式を使うべきかをファイル変
+数 (@pxref{File Variables, , Local Variables in Files, emacs, The Emacs
+Editor}) を介して Emacs に伝えておくことは良い考えかもしれません。この目
+的にはローカル変数 @code{epa-file-encrypt-to} を使ってください。
 
 例えば ELisp ファイルを電子メールアドレス @samp{ueno@@unixuser.org} に対
 応する公開鍵暗号で暗号化したいのであれば、そのファイルの先頭に以下の行を
@@ -486,6 +540,11 @@ Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこ
 @defvar epa-file-cache-passphrase-for-symmetric-encryption
 @code{nil} 以外の値だったら対称鍵暗号のためのパスフレーズをキャッシュし
 ます。ディフォルト値は @code{nil} です。
+
+安全上の理由から、このオプションはディフォルトでオフになっていて、使うこ
+とを推奨しません。代わりに、多くの場合同じ仕事をより安全な方法で行なうこ
+とができる GnuPG エージェントを使うことを考慮してください。詳細について
+は、@xref{Caching Passphrases}.
 @end defvar
 
 @defvar epa-file-inhibit-auto-save
@@ -515,10 +574,17 @@ Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこ
 @cindex version compatibility with gnupg
 @cindex compatibility with gnupg
 
-2016年2月現在 GnuPG には 3つの活動的な枝があります; 2.1、2.0、およ
-び 1.4 です。それはすべて基本的なユースケースでは Emacs とともに完璧に動
-作するものの、Emacs から使うと目に見えるかもしれない互換性のない特徴があ
-ります。
+2023年6月現在 GnuPG には 3つの活動的な枝があります; 2.4、2.2、およ
+び 1.4 です。GnuPG バージョン 2.4.1 以降
+は @uref{https://dev.gnupg.org/T6481, GnuPG bug T6481} の影響を受けてい
+て、Emacs ではほとんど使えません。少なくとも GnuPG バージョン 2.4.1 では、
+そのバグに対するパッチが存在していて、オペレーティングシステムまたはディ
+ストリビューションがすでに提供している可能性があります。GnuPG 1.4 はレガ
+シーバージョンとみなされます。
+
+それに加えて、上記のブランチはすべて、基本的なユースケースでは Emacs で
+問題なく動作するはずです。ただし、Emacs から使うと目に見えるかもしれない
+互換性のない特徴があります。
 
 @itemize
 @item
@@ -526,22 +592,94 @@ GnuPG 2.1 の鍵を格納するためのフォーマットは 1.4 と異なり�
 は GnuPG 2.1 で作成された鍵が 1.4 では見えないかもしれないということです。
 
 @item
-GnuPG 2.1 は gpg-agent と通信するために固定アドレスの Unix ドメインソケッ
-トを使います。GnuPG 2.0 と 1.4 で使われている @code{GPG_AGENT_INFO} 環境
-変数は無視します。このことは、もしあなたのシステムに GnuPG 2.1 と 1.4 の
-両方があるとすると、GnuPG 1.4 由来の gpg コマンドは 2.1 が提供す
-る gpg-agent を (少なくともそのままでは) 使えないことを意味します。
+GnuPG 2.1 は @command{gpg-agent} と通信するために固定アドレスの Unix ド
+メインソケットを使います。GnuPG 2.0 と 1.4 で使われてい
+る @code{GPG_AGENT_INFO} 環境変数は無視します。このことは、もしあなたの
+システムに GnuPG 2.1 と 1.4 の両方があるとすると、GnuPG 1.4 由来
+の gpg コマンドは 2.1 が提供する @command{gpg-agent} を (少なくともその
+ままでは) 使えないことを意味します。
 
 @item
 GnuPG 2.1 (2.1.5 以降) は Emacs のミニバッファーから直接 Pinentry を入力
-することができます。@footnote{この機能を活かすに
-は @file{~/.gnupg/gpg-agent.conf} に @samp{allow-emacs-pinentry} を加え
-てから @samp{gpgconf --reload gpg-agent} を行なうことによって、設定
-を gpg-agent に再読み込みさせてください。}  これは Emacs を遠隔で、また
-は文字端末で使うときに役に立つでしょう。この機能は他のバージョンにはあり
-ません。さらに言うと 2.0 では (2.0.29 の時点では) グラフィカルな入力要求
-を行なうことを無効にする手立てがありません。
+することができます。@xref{GnuPG Pinentry}.
 @end itemize
+
+@node GnuPG Pinentry
+@chapter GnuPG Pinentry
+@cindex gnupg pinentry
+@cindex pinentry provided by gnupg
+
+GnuPG スイーツの重要な構成要素は Pinentry です。これによって GnuPG が要
+求するパスフレーズを安全に入力することができます。GnuPG は淡泊な TTY の
+みの @command{pinentry-tty} から色々なデスクトップ環境用の華美なグラフィ
+カル・ダイアログ、例えば @command{pinentry-gnome3} に至るまで、様々なプ
+ログラムを Pinentry として提供します。通常はオペレーティングシステムによっ
+て、これらのどれがデフォルトで使用されるかが決まります。
+
+具体的な Pinentry プログラムの選択によって、@emph{どのくらいの頻度} では
+なく、@emph{どのように} GnuPG がパスフレーズを要求するかのみが決定される
+ことに注意してください。後者の質問について
+は @ref{Caching Passphrases} を参照してください。
+
+@cindex pinentry, emacs as
+いくつかの設定を行うと、Emacs は Pinentry の役割を果たすこともできます。
+GnuPG 2.1.5 以降で利用できる最も自然な選択は、Emacs によってトリガーされ
+るリクエストの Pinentry として Emacs 自体を使用することです。たとえば、
+名前が @file{.gpg} で終わるファイルを自動復号化を使用して開く場合、その
+リクエストのパスフレーズも Emacs に入力する必要があるでしょう。
+
+@cindex loopback pinentry
+このいわゆる @dfn{loopback Pinentry} には、Emacs をリモートまたはテキス
+ト専用端末から使用する場合にも機能するという追加の利点があります。有効に
+するには:
+
+@enumerate
+@item
+@vindex allow-loopback-pinentry
+オプション @code{allow-loopback-pinentry} が @command{gpg-agent} に設定
+されていることを確認してください。これはディフォルトであるべきです。
+@xref{Agent Options, , Option Summary, gnupg, Using the GNU Privacy Guard}.
+
+@item
+@vindex epg-pinentry-mode
+Emacs で変数 @code{epg-pinentry-mode} を @code{loopback} にカスタマイズ
+してください。
+@end enumerate
+
+Emacs を Pinentry として使用するために利用できるオプションは他にもありま
+す。@command{pinentry-emacs} または @command{gpg-agent} のオプションであ
+る @code{allow-emacs-pinentry} と呼ばれる Pinentry が見つかるかもしれま
+せん。ただし、これらは安全でないか半ば廃れている (semi-obsolete) と考え
+られていて、オペレーティングシステムやディストリビューションによってはサ
+ポートされていない可能性があります。たとえば、Debian GNU/Linux は、上記
+のループバック Pinentry のみをサポートします。
+
+@ignore
+誰かがこれらを要求した場合に備えて:
+
+すべての GnuPG リクエストに Emacs を使う:
+
+オペレーティングシステムの手段によって @command{pinentry-emacs} をディフォ
+ルトの Pinentry にします。GNU ELPA からパッケー
+ジ @file{pinentry.el} をインストールし、@kbd{M-x pinentry-start} を実行
+して Emacs Pinentry サービスを開始します。@emph{All}GnuPG パスフレーズリ
+クエストにより、実行中の Emacs にミニバッファープロンプトが表示されます。
+Emacs または Emacs Pinentry サービスが実行されていない場合、パスフレーズ
+要求は失敗します。
+
+他の Pinentry を控え (fallback) として、Emacs をすべての GnuPG リクエス
+トに 使う:
+
+他の Pinentry が Emacs をサポートしていることを確認してください。例え
+ば @command{pinentry-curses} は大丈夫です。@command{gpg-agent} のオプショ
+ンである @code{allow-emacs-pinentry} を設定してください。プロセスを呼び
+出すときのための環境変数 @code{INSIDE_EMACS} を設定してください。パッケー
+ジ @file{pinentry.el} をインストールしてください。稼働中
+の Emacs で、@kbd{M-x pinentry-start} が実行済みであるならば、GnuPG のパ
+スフレーズ要求のすべてに対して、稼働中の Emacs のミニバッファーにプロン
+プトが現れるはずです。Emacs または Emacs Pinentry サービスが実行されてい
+ない場合、GnuPG は代わりに他の Pinentry を使用します。
+@end ignore
 
 @node Caching Passphrases
 @chapter Caching Passphrases
@@ -560,29 +698,28 @@ GnuPG 2.1 (2.1.5 以降) は Emacs のミニバッファーから直接 Pinentry
 
 @enumerate
 @item
-GnuPG バージョン 1.4 の代わりに 2.1 または 2.0 を使いますか?
+GnuPG バージョン 1.4 の代わりに 2.0 かそれ以降のものを使いますか?
 @item
 公開鍵暗号ではなく対称鍵暗号を使いますか?
 @item
-gpg-agent を使いたいですか?
+GnuPG Agent を使いたいですか?
 @end enumerate
 
 あなたの回答に対応する設定は次の通りです。
 
 @multitable {111} {222} {333} {configuration configuration configuration}
 @item @b{1} @tab @b{2} @tab @b{3} @tab Configuration
-@item Yes @tab Yes @tab Yes @tab gpg-agent を使えるようにしてください。
-@item Yes @tab Yes @tab No @tab gpg-agent 無しではできません。
-@item Yes @tab No @tab Yes @tab gpg-agent を使えるようにしてください。
-@item Yes @tab No @tab No @tab gpg-agent 無しではできません。
-@item No @tab Yes @tab Yes @tab Elisp のパスフレーズ・キャッシュを使ってください。
-@item No @tab Yes @tab No @tab Elisp のパスフレーズ・キャッシュを使ってください。
-@item No @tab No @tab Yes @tab gpg-agent を使えるようにしてください。
-@item No @tab No @tab No @tab gpg-agent 無しではできません。
+@item Yes   @tab Yes   @tab Must  @tab GnuPG Agent を使えるようにしてください。
+@item Yes   @tab No    @tab Must  @tab GnuPG Agent を使えるようにしてください。
+@item No    @tab Yes   @tab Yes   @tab Elisp のパスフレーズ・キャッシュを使ってください。
+@item No    @tab Yes   @tab No    @tab Elisp のパスフレーズ・キャッシュを使ってください。
+@item No    @tab No    @tab Yes   @tab GnuPG Agent を使えるようにしてください。
+@item No    @tab No    @tab No    @tab GnuPG Agent 無しではできません。
 @end multitable
 
-gpg-agent を使えるようにするには GnuPG マニュアルの以下の説明に従ってく
-ださい。@xref{Invoking GPG-AGENT, , Invoking GPG-AGENT, gnupg}.
+GnuPG Agent を使えるようにするに
+は @ref{Invoking GPG-AGENT, , , gnupg, Using the GNU Privacy Guard} の説
+明に従ってください。
 
 Elisp のパスフレーズ・キャッシュを使うに
 は @code{epa-file-cache-passphrase-for-symmetric-encryption} 変数
