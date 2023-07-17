@@ -54,6 +54,9 @@ modify this GNU manual.
 
 @node Top
 @top EasyPG Assistant user's manual
+@cindex easypg assistant
+@cindex gnu privacy guard
+@cindex gnupg
 
 EasyPG アシスタントは GNU Privacy Guard (GnuPG, @pxref{Top, , Top,
 gnupg, Using the GNU Privacy Guard}) への Emacs ユーザーインターフェース
@@ -67,6 +70,14 @@ EasyPG アシスタントは Emacs のためのオールインワン GnuPG イ�
 @insertcopying
 @end ifnottex
 
+@c 残念ながら、このマニュアルのノード名は大文字と小文字の区別にあまり一
+@c 貫性がありません。しかしノード名では大文字と小文字が区別されるので、
+@c 外部参照を壊さないようにするためには、変更しないほうがよいでしょう。
+@c Structure titles はより緩和されているので、一貫して title-case (ある
+@c ルールに基づいて単語毎に先頭を大文字にする、またはしないやり方) に更
+@c 新しました。
+@c Fixme: Structure title(s) って何?
+
 @menu
 * Overview::
 * Quick start::
@@ -75,6 +86,7 @@ EasyPG アシスタントは Emacs のためのオールインワン GnuPG イ�
 * Caching Passphrases::
 * Bug Reports::
 * GNU Free Documentation License:: この文書の利用許諾契約書
+* Concept Index::
 * Key Index::
 * Function Index::
 * Variable Index::
@@ -82,6 +94,7 @@ EasyPG アシスタントは Emacs のためのオールインワン GnuPG イ�
 
 @node Overview
 @chapter 概要
+@cindex features of easypg assistant
 
 EasyPG は以下の機能を提供します。
 
@@ -96,6 +109,7 @@ EasyPG は以下の機能を提供します。
 
 @node Quick start
 @chapter とりあえず始める
+@cindex introduction to easypg assistant
 
 EasyPG アシスタント・コマンドは @samp{epa-} で始まります。例えば、
 
@@ -130,6 +144,10 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 
 @node Key management
 @section 鍵の管理
+@cindex key management
+
+@cindex key ring, browsing
+@cindex browse key ring
 おそらく EasyPG アシスタントを使う最初の一歩は鍵リングを眺めることでしょ
 う。@kbd{M-x epa-list-keys} はコマンドラインから使
 う @samp{gpg--list-keys} に相当しています。
@@ -168,6 +186,7 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
         Fingerprint: 9003 D76B 73B7 4A8A E588  10AF 4447 461B 2A9B EA2D
 @end example
 
+@cindex private key ring, browsing
 @noindent
 秘密鍵リングを眺めるには @kbd{M-x epa-list-secret-keys} を使ってください。
 
@@ -183,12 +202,14 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 以下は鍵の管理に関する他のコマンドです。それらのいくつかはファイルを対象
 に入出力を行ない、他は現在設定されている領域が対象になります。
 
+@cindex insert keys
 @deffn Command epa-insert-keys keys
 カーソルの後ろに選択された @var{keys} を挿入します。挿入する前に鍵を選択
 することを促されます。ディフォルトでは鍵を OpenPGP の装甲フォーマットで
 エンコードします。
 @end deffn
 
+@cindex import keys
 @deffn Command epa-import-keys file
 鍵を @var{file} から鍵リングに取り込みます。
 @end deffn
@@ -204,6 +225,7 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 逐一 @code{epa-import-keys-region} が処理することです。
 @end deffn
 
+@cindex delete keys
 @deffn Command epa-delete-keys allow-secret
 選択された鍵を取り除きます。@var{allow-secret} が @code{nil} でなかった
 ら秘密鍵も取り除きます。
@@ -211,7 +233,10 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 
 @node Cryptographic operations on regions
 @section 領域の暗号や署名の操作
+@cindex cryptographic operations on regions
+@cindex region operations, cryptographic
 
+@cindex decrypt region
 @deffn Command epa-decrypt-region start end
 @var{start} と @var{end} の間の現在の領域を復号します。復号されたテキス
 トで領域を置き換えます。
@@ -231,6 +256,7 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 で置き換えます。
 @end deffn
 
+@cindex verify region
 @deffn Command epa-verify-cleartext-in-region
 @var{start} と @var{end} の間の現在の領域にある OpenPGP のクリアテキスト・
 ブロックを検証します。@code{epa-verify-region}との違い
@@ -240,12 +266,14 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 を改変しません。
 @end deffn
 
+@cindex sign region
 @deffn Command epa-sign-region start end signers type
 @var{start} と @var{end} の間の現在の領域に署名します。ディフォルトでは
 クリアテキストの署名を作ります。接頭引数を与えると署名に使う鍵と署名のタ
 イプを選択することを促されます。
 @end deffn
 
+@cindex encrypt region
 @deffn Command epa-encrypt-region start end recipients sign signers
 @var{start} と @var{end} の間の現在の領域を暗号化します。受取人を選択す
 ることを促されます。接頭引数を与えると暗号化する前にテキストに署名するか
@@ -255,27 +283,36 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 
 @node Cryptographic operations on files
 @section ファイルの暗号や署名の操作
+@cindex cryptographic operations on files
+@cindex file operations, cryptographic
 
+@cindex decrypt file
 @deffn Command epa-decrypt-file file &optional output
 @var{file} を復号します。もし複合した結果を格納するファイルの名前
 を @var{output} で指定しないと、それを入力することを求めます。
 @end deffn
 
+@cindex verify file
 @deffn Command epa-verify-file file
 @var{file} を検証します。
 @end deffn
 
+@cindex sign file
 @deffn Command epa-sign-file file signers type
 @var{file} に署名します。接頭引数を与えると署名に使う鍵と署名のタイプを
 選択することを促されます。
 @end deffn
 
+@cindex encrypt file
 @deffn Command epa-encrypt-file file recipients
 @var{file} を暗号化します。受取人を選択することを促されます。
 @end deffn
 
 @node Dired integration
 @section Dired の統合
+@cindex dired integration
+@cindex directory operations
+@cindex multiple file operations
 
 EasyPG アシスタントは GNU Emacs の dired モードを拡張して、ファイルの暗
 号や署名の操作ができるようにします。例えば次のようなことができます。
@@ -314,6 +351,8 @@ M-x dired
 
 @node Mail-mode integration
 @section Mail モードの統合
+@cindex mail-mode integration
+@cindex sending signed/encrypted mails
 
 EasyPG アシスタントはインライン OpenPGP メッセージの作成を支援するために
 マイナーモード @code{epa-mail-mode} を提供します。インライン OpenPGP メッ
@@ -371,6 +410,11 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 
 @node Encrypting/decrypting gpg files
 @section gpg ファイルの暗号化と復号
+@cindex encrypting gpg files
+@cindex decrypting gpg files
+@cindex gpg files, encrypting and decrypting
+@cindex automatic file encryption and decryption
+
 ディフォルトでは名前が @file{.gpg} で終わるファイルは暗号化されたものと
 して扱われます。即ちそのようなファイルを開くと、暗号化されたままのもので
 はなく復号されたテキストがバッファーに挿入されます。同様にバッファー
@@ -451,6 +495,8 @@ Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこ
 
 @node Querying a key server
 @section Querying a key server
+@cindex query key server
+@cindex key server, querying
 
 @code{epa-search-keys} コマンドを使って、@acronym{GPG} キーサーバーに問
 い合わせることができます。その際 Emacs は合致するものを一覧できるバッファー
@@ -465,6 +511,9 @@ Variables, , , emacs, the Emacs Manual} を介して Emacs に伝えておくこ
 
 @node GnuPG version compatibility
 @chapter GnuPG のバージョンの互換性
+@cindex gnupg version compatibility
+@cindex version compatibility with gnupg
+@cindex compatibility with gnupg
 
 2016年2月現在 GnuPG には 3つの活動的な枝があります; 2.1、2.0、およ
 び 1.4 です。それはすべて基本的なユースケースでは Emacs とともに完璧に動
@@ -496,6 +545,9 @@ GnuPG 2.1 (2.1.5 以降) は Emacs のミニバッファーから直接 Pinentry
 
 @node Caching Passphrases
 @chapter Caching Passphrases
+@cindex caching passphrases
+@cindex entering passphrases
+@cindex passphrases, entering and caching
 
 もし同じファイルを開いたり閉じたりするる機会が度々あるのであれば、パスフ
 レーズをタイプするのはわずらわしい仕事でしょう。GnuPG と EasyPG アシスタ
@@ -539,6 +591,8 @@ Elisp のパスフレーズ・キャッシュを使うに
 
 @node Bug Reports
 @chapter バグリポート
+@cindex bug reports
+@cindex reporting bugs
 
 EasyPG アシスタントのバグと諸問題は Emacs 開発チームが活発に対処していま
 す。新機能の要望と提案もおおいに歓迎します。@kbd{M-x report-emacs-bug}
@@ -561,6 +615,10 @@ EasyPG アシスタントのバグと諸問題は Emacs 開発チームが活発
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
 @include doclicense.texi
+
+@node Concept Index
+@unnumbered Concept Index
+@printindex cp
 
 @node Key Index
 @unnumbered Key Index
