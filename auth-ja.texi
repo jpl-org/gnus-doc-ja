@@ -58,6 +58,7 @@ modify this GNU manual.''
 @ifnottex
 @node Top
 @top Emacs auth-source
+
 このマニュアルは Emacs auth-source ライブラリーを説明します。
 
 利用者の便宜のために、複数のアプリケーションで、(Emacs またはファイルに
@@ -569,7 +570,7 @@ Emacs の @code{pass} の統合は、パス・プロジェクト自体によっ�
 
 一般に、ファイル名のフィールド数を優先したり、サブドメインのラベルと照合
 するなど、このバックエンドが伝統的に示す特異性を好む場合は、このオプショ
-ンを @code{nil} (デフォルト) に設定してください。しかし、他の認証元バッ
+ンを @code{nil} (ディフォルト) に設定してください。しかし、他の認証元バッ
 クエンドに関連する検索の結果を予測する際に問題が発生した場合、または複数
 のバックエンドに一様に問い合わせることを期待するコードに遭遇した場合は、
 @code{t} に切り替えてください。
@@ -681,44 +682,13 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 暗号化されていないファイルより先に、まずは GnuPG で暗号化され
 た @file{.gpg} を読み込もうとします。
 
-@code{auto-encryption-mode} は自動的に @file{*.gpg} ファイルを復号するた
-めのオプションです。ディフォルトで有効になっています。
-
-あなたの GnuPG のパスワードがキャッシュされるようにしたいなら、
-@code{gpg-agent} または EasyPG アシスアントを設定してくださ
-い (@pxref{Caching Passphrases, , Caching Passphrases, epa})。
-
-手早く使い始めるには、まず以下の設問に対する答を用意してください:
-
-@itemize
-@item
-GnuPG のバージョン 1 ではなく、バージョン 2 を使っていますか?
-@item
-公開鍵暗号でななく、共通鍵暗号を使っていますか?
-@item
-gpg-agent を使いたいですか?
-@end itemize
-
-以下は上記の質疑に対するあなたの回答に基づいた設定です:
-
-@multitable {111} {222} {333} {configuration configuration configuration}
-@item @b{1} @tab @b{2} @tab @b{3} @tab Configuration
-@item Yes @tab Yes @tab Yes @tab gpg-agent を設定してください。
-@item Yes @tab Yes @tab No @tab gpg-agent 無しではできません。
-@item Yes @tab No @tab Yes @tab gpg-agent を設定してください。
-@item Yes @tab No @tab No @tab gpg-agent 無しではできません。
-@item No @tab Yes @tab Yes @tab ELisp 版のパスワード・キャッシュを設定してください。
-@item No @tab Yes @tab No @tab ELisp 版のパスワード・キャッシュを設定してください。
-@item No @tab No @tab Yes @tab gpg-agent を設定してください。
-@item No @tab No @tab No @tab gpg-agent 無しではできません。
-@end multitable
-
-gpg-agent を設定するには GnuPG マニュアル (@pxref{Invoking GPG-AGENT, ,
-Invoking GPG-AGENT, gnupg}) の説明に従ってください。
-
-ELisp 版のパスワード・キャッシュを使う場合
-は @code{epa-file-cache-passphrase-for-symmetric-encryption} を設定して
-ください。
+Emacs に同梱されている EasyPG アシスタントは、暗号化されたファイルの復号
+を自動的に処理します。
+@xref{Top, , Top, epa-ja, EasyPG Assistant User's Manual}.
+これは @acronym{GnuPG、GNU Privacy Guard} への Emacs ユーザーインターフェー
+スです。@xref{Top, , Top, gnupg, Using the GNU Privacy Guard}.@*
+これらをすぐに始めるに
+は @xref{Quick start, , Quick Start, epa-ja, EasyPG Assistant User's Manual}.
 
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
