@@ -163,9 +163,9 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 @node Key management
 @section 鍵の管理
 @cindex key management
+
 @cindex key ring, browsing
 @cindex browse key ring
-
 おそらく EasyPG アシスタントを使う最初の一歩は鍵リングを眺めることでしょ
 う。@kbd{M-x epa-list-keys} はコマンドラインから使
 う @samp{gpg--list-keys} に相当しています。
@@ -691,10 +691,10 @@ Emacs または Emacs Pinentry サービスが実行されていない場合、�
 レーズをタイプするのはわずらわしい仕事でしょう。GnuPG と EasyPG アシスタ
 ントは、一定の時間に限ってあなたのパスフレーズを記憶する機構を提供します。
 これらを使うと、パスフレーズを時々入力するだけで済みます。しかしながらそ
-の設定は少々込み入っています。それは、インストールされてい
-る GnuPG (@pxref{GnuPG version compatibility})、暗号方式 (対称鍵か公開鍵
-か)、そして GnuPG Agent を使いたいかどうかによります。以下にいくつかの設
-問があります。
+の設定は少々込み入っています。それは、インストールされている GnuPG
+@xref{GnuPG version compatibility}、暗号方式 (対称鍵か公開鍵か)、そし
+て gpg-agent を使いたいかどうかによります。以下にいくつかの設問がありま
+す。
 
 @enumerate
 @item
@@ -732,9 +732,8 @@ Elisp のパスフレーズ・キャッシュを使うに
 @cindex reporting bugs
 
 EasyPG アシスタントのバグと諸問題は Emacs 開発チームが活発に対処していま
-す。新機能の要望と提案もおおいに歓迎します。
-@kbd{M-x report-emacs-bug} を使ってください。
-@xref{Bugs, , Reporting Bugs, emacs, The Emacs Editor}.
+す。新機能の要望と提案もおおいに歓迎します。@kbd{M-x report-emacs-bug}
+(@pxref{Bugs, ,Bugs, emacs, Reporting Bugs}) を使ってください。
 
 バグリポートを書くときは、その問題を再現するための操作を十分過ぎると思う
 ほど詳細に説明してください。さらにそのバグを修正するために必要な情報を以
