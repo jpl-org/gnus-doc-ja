@@ -25048,8 +25048,8 @@ Gmane への spam の報告に付加される User-Agent に現れるメール�
 @cindex spam
 
 @defvar spam-use-bogofilter
-Eric Raymond の迅速な Bogofilter を @code{spam-split} に使用したい場合は、
-この変数をセットしてください。
+Eric S. Raymond の迅速な Bogofilter を @code{spam-split} に使用したい場
+合は、この変数をセットしてください。
 
 Spam 記事に @samp{$} 印を関連付ける最小限度の世話だけで、Bogofilter トレー
 ニングはすべてかなり自動的になります。Spam とそうでないものそれぞれの種
@@ -25079,7 +25079,7 @@ Bogofilter の spam 度スコアを得ます (@code{spam-bogofilter-score})。
 @end table
 
 @defvar spam-use-bogofilter-headers
-メッセージヘッダーだけを調べるために Eric Raymond の迅速
+メッセージヘッダーだけを調べるために Eric S. Raymond の迅速
 な Bogofilter を @code{spam-split} に使用したい場合は、この変数をセット
 してください。これは @code{spam-use-bogofilter} と同じように動作しますが、
 あらかじめ @code{X-Bogosity} ヘッダーがメッセージに存在しなければなりま
