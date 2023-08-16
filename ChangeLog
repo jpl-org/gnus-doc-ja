@@ -1,3 +1,8 @@
+2023-08-01  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 29.1 is released
+	from the emacs-29 branch.
+
 2022-11-24  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Makefile.in (INFO_DEPS, pdf): Remove gnus-coding-ja.
