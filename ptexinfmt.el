@@ -1075,14 +1075,16 @@ insert the text with the @insertcopying command."
 which are indicated by the @copying ... @end copying command."
     (insert (concat "\n" texinfo-copying-text)))
 
-  (defadvice texinfo-format-scan (before expand-@copying-section activate)
-    "Extract @copying and replace @insertcopying with it."
-    (goto-char (point-min))
-    (when (search-forward "@copying" nil t)
-      (texinfo-copying))
-    (while (search-forward "@insertcopying" nil t)
-      (delete-region (match-beginning 0) (match-end 0))
-      (texinfo-insertcopying))))
+  (advice-add
+   'texinfo-format-scan :before
+   (lambda (&rest _)
+     (goto-char (point-min))
+     (when (search-forward "@copying" nil t)
+       (texinfo-copying))
+     (while (search-forward "@insertcopying" nil t)
+       (delete-region (match-beginning 0) (match-end 0))
+       (texinfo-insertcopying)))
+   '((name . expand-@copying-section))))
 
 
 ;; @comma
