@@ -24130,8 +24130,8 @@ Spam と戦うための一つの技法は、いくらか負担にはなるが明
 で、@var{string} は文字列 (通常はメールアドレスかニュースグループ名) と
 して使われます。
 
-@item hashcash-path
-@vindex hashcash-path
+@item hashcash-program
+@vindex hashcash-program
 @code{hashcash} バイナリーがインストールされている場所です。この変数
 は @code{executable-find} によって自動的に設定されるはずですが、それ
 が @code{nil} だった (ありがちなのは @code{hashcash} バイナリーが実
