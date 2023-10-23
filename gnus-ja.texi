@@ -3182,9 +3182,9 @@ if address "sender" "sieve-admin@@extundo.com" @{
 @end example
 
 複数の電子メールアドレスのためのテストを生成するには、@code{(sieve
-address "sender" ("name@@one.org" else@@two.org"))} のようなグループパラ
-メーターを使ってください。Sieve スクリプト (@pxref{Sieve Commands}) を生
-成すると、以下のような Sieve コードが作られます:
+address "sender" ("name@@one.org" "else@@two.org"))} のようなグループパ
+ラメーターを使ってください。Sieve スクリプト (@pxref{Sieve Commands}) を
+生成すると、以下のような Sieve コードが作られます:
 
 @example
 if address "sender" ["name@@one.org", "else@@two.org"] @{
@@ -3331,9 +3331,9 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 @code{gnus-parameters} を介することによって、グループによって異なる並べ
 替えを定義することができます。これは、@acronym{NNTP} グループでは最新の
 ニュースが先頭になるように日付で、@acronym{RSS} グループでは表題で、それ
-ぞれ並べ替えを行なう例です。この例の最初のグループは、news.gmane.org か
-ら取得する Debian のデイリーニュースです。@acronym{RSS} グループ
-は RSS フィードで配信されている Debian のウィークリーニュー
+ぞれ並べ替えを行なう例です。この例の最初のグループは、news.gmane.io から
+取得する Debian のデイリーニュースです。@acronym{RSS} グループは RSS フィー
+ドで配信されている Debian のウィークリーニュー
 ス @url{https://packages.debian.org/unstable/newpkg_main.en.rdf} に対応
 します。@xref{RSS}.
 
@@ -4352,7 +4352,7 @@ Gnus
 
 @lisp
 (nntp "gmane"
-      (nntp-address "news.gmane.org")
+      (nntp-address "news.gmane.io")
       (nntp-end-of-line "\n")
       (nntp-open-connection-function
        nntp-open-via-rlogin-and-telnet)
@@ -7087,8 +7087,8 @@ Gnus は @code{Subject} 欄を調べることによってスレッドを集め�
 @cindex Gmane, gnus-fetch-old-headers
 この機能は性能に深刻な影響を与え得ます。すべてのローカルにキャッシュされ
 たヘッダーを無視するからです。記事を期限切れ消去しないサー
-バー (例えば news.gmane.org) の、あるグループのためにそれを @code{t} に
-設定すると、概略の生成がとても遅くなってしまいます。
+バー (例えば news.gmane.io) の、あるグループのためにそれを @code{t} に設
+定すると、概略の生成がとても遅くなってしまいます。
 
 @item gnus-fetch-old-ephemeral-headers
 @vindex gnus-fetch-old-ephemeral-headers
@@ -17744,7 +17744,7 @@ nnselect グループを使う上での要点は、そこに含めるメッセ�
  (nnselect-args
   . [["nnimap+work:mail" 595 100]
      ["nnimap+home:sent" 223 100]
-     ["nntp+news.gmane.org:gmane.emacs.gnus.general" 23666 100]]))
+     ["nntp+news.gmane.io:gmane.emacs.gnus.general" 23666 100]]))
 @end lisp
 
 関数は @code{identity} で、引数は仮想グループに含めるメッセージそのもの
@@ -24772,10 +24772,10 @@ From Reiner Steib <reiner.steib@@gmx.de>.
     (spam-process (gnus-group-spam-exit-processor-report-gmane)))
 @end lisp
 
-加えて、私は news.gmane.org からではなくローカルニュースサー
+加えて、私は news.gmane.io からではなくローカルニュースサー
 バー (leafnode) を通して記事を読んでいるので、
 @code{(setq spam-report-gmane-use-article-number nil)} を使っています。
-つまり、記事番号が news.gmane.org におけるものと異なるので、正しい記事番
+つまり、記事番号が news.gmane.io におけるものと異なるので、正しい記事番
 号を見つけるために @code{spam-report.el} に @code{X-Report-Spam} ヘッダー
 を検査させなければなりません。
 
@@ -28890,15 +28890,15 @@ Gnus はいつも一つの方法 (とバックエンド) を、ニュースを�
 同時に任意の数の外部グループをアクセスできる状態にすることもできます。こ
 れらはニュースを取得するための、基本ではなく、二次のでもないバックエンド
 を使うグループです。外部グループ
-は @samp{nntp+news.gmane.org:gmane.emacs.gnus.devel} のような名前になり
-ます。
+は @samp{nntp+news.gmane.io:gmane.emacs.gnus.devel} のような名前になりま
+す。
 
 @item 二次の (secondary)
 @cindex secondary
 二次のバックエンドは、基本と外部の間くらいに位置するバックエンドですが、
 ほとんど基本と同じように動作するものです。しかしそれら
-も @samp{nntp+news.gmane.org:gmane.emacs.gnus.devel} のような名前になり
-ます。
+も @samp{nntp+news.gmane.io:gmane.emacs.gnus.devel} のような名前になりま
+す。
 
 @item 記事 (article)
 @cindex article
