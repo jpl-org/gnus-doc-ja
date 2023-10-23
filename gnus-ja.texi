@@ -25972,11 +25972,11 @@ Gnus の操作を通じてレジストリーが記録されるファイルです
 (setq gnus-refer-article-method
       '(current
         (nnregistry)
-        (nnweb "gmane" (nnweb-type gmane))))
+        (nnweb "google" (nnweb-type google))))
 @end example
 
 上記の例は、最初は現在のグループの中で、あるいはレジストリーを使って、そ
-してそれらすべてが失敗したら Gmane を使って記事を探すことを Gnus に指示
+してそれらすべてが失敗したら Google を使って記事を探すことを Gnus に指示
 します。
 
 @node Fancy splitting to parent
