@@ -24932,7 +24932,7 @@ BBDB に載っていない誰かのメッセージは spam とも ham とも見�
 加えてください。これが加えられると、spam 印が付いた記事のグループ
 が HTTP 経由で Gmane の管理者に報告されます。
 
-Gmane はかつて @uref{http://gmane.org} にありました。
+Gmane は @uref{https://gmane.io} にあります。
 
 @emph{警告}
 
@@ -28373,7 +28373,8 @@ Emacs 23 では、Gnus は記事のドラフトと @file{~/.newsrc.eld} を保�
 @code{mm-auto-save-coding-system} を @code{emacs-mule} に設定すれば良い
 でしょう。
 @c FIXME: 未検証。(それとも誰かテストしましたか?)
-@c http://thread.gmane.org/gmane.emacs.gnus.general/66251/focus=66344 参照。
+@c cf. http://thread.gmane.org/gmane.emacs.gnus.general/66251/focus=66344
+@c     ↑[無効なリンク]
 
 @item Lisp ファイルがディフォルトで @file{.../site-lisp/gnus/} にインス
 トールされるようになりました。
