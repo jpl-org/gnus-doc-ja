@@ -14919,8 +14919,8 @@ fetchmail %u@@%s -P %p %t
      "nohup ssh -f -L 1234:pop.server:110 remote.host sleep 3600 &")
 @end lisp
 
-(訳注: 原典
-は @url{http://article.gmane.org/gmane.emacs.gnus.general/81249}。)
+(訳注: 原典は nntp サーバー news.gmane.io の gmane.emacs.gnus.general グ
+ループに保存されている 81249 番の記事にあります。)
 
 @item :postscript
 メールを取得した後で実行されるスクリプトです。構文は @code{:program} キー
