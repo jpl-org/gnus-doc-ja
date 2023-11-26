@@ -646,6 +646,9 @@ Emacs で変数 @code{epg-pinentry-mode} を @code{loopback} にカスタマイ�
 してください。
 @end enumerate
 
+Loopback Pinentry は @command{gpgsm} では機能しないので、EasyPG はこの設
+定を無視することに注意してください。
+
 Emacs を Pinentry として使用するために利用できるオプションは他にもありま
 す。@command{pinentry-emacs} または @command{gpg-agent} のオプションであ
 る @code{allow-emacs-pinentry} と呼ばれる Pinentry が見つかるかもしれま
