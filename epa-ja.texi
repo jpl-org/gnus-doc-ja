@@ -464,7 +464,7 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 トのキャッシュ設定に応じて、ファイル読み取りの場合はパスフレーズの入力を
 求められることがあります。
 
-@cindex tempory files created by easypg assistant
+@cindex temporary files created by easypg assistant
 上述のように、ファイルを暗号化および復号するために EasyPG アシスタントは
 ある特定の状況の下では、処理するファイルのプレーンテキスト・コンテンツを
 含む一時的な中間ファイルを使います。EasyPG アシスタントは、関
