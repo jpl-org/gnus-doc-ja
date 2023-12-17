@@ -6092,12 +6092,6 @@ Gnus は @code{Cancel-Lock} ヘッダー (@pxref{Canceling News,
 することを忘れないでくださいね。:-)
 @end table
 
-@kbd{C-c C-j} で記事を遅延させると Message モードは自動的に現在時刻
-で @code{"Date"} ヘッダーを付加します。おそらく多くの場合、代わりにその
-メッセージを送信した時刻を @code{"Date"} ヘッダーに反映させたいでしょう。
-そのためには @code{message-draft-headers} から @code{Date} を削除してく
-ださい。
-
 @node Marking Articles
 @section 記事に印を付ける
 @cindex article marking
