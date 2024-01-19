@@ -1,3 +1,8 @@
+2024-01-19  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 29.2 is released
+	from the emacs-29 branch.
+
 2023-08-30  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* ptexinfmt.el (texinfo-format-scan): Use advice-add instead of
