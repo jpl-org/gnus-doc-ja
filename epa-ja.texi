@@ -299,6 +299,14 @@ EasyPG アシスタントは Emacs の他の機能性に統合することがで
 す。
 @end deffn
 
+@defvar epa-keys-select-method
+この変数は @code{epa-select-keys} で鍵の選択に使う方法を指定します。ディ
+フォルト値 @code{buffer} を指定すると、鍵を選択できる特別なバッファーが
+ポップアップします。値を @code{minibuffer} にする
+と、@code{epa-select-keys} は代わりにミニバッファ内で鍵の入力を求めます。
+鍵はカンマで区切って入力しなければなりません。
+@end defvar
+
 @node Cryptographic operations on files
 @section ファイルの暗号や署名の操作
 @cindex cryptographic operations on files
