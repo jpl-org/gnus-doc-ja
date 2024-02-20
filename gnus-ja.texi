@@ -26232,10 +26232,13 @@ Emacs の D-Bus に関する詳細
 @table @kbd
 @item C-c C-m C-a
 @findex gnus-dired-attach
+@vindex gnus-dired-attach-at-end
 @cindex attachments, selection via dired
 Dired で印を付けたものを添付ファイルとして送信しま
-す (@code{gnus-dired-attach})。どの message バッファーに添付するかを尋ね
-られます。
+す (@code{gnus-dired-attach})。この関数はどの message バッファーに添付す
+るかを尋ねて、ディフォルトではそのバッファーの末尾にファイルを添付します。
+代わりに現在の位置に添付させたいなら @code{gnus-dired-attach-at-end} を
+カスタマイズしてください。
 
 @item C-c C-m C-l
 @findex gnus-dired-find-file-mailcap
