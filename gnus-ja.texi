@@ -718,6 +718,7 @@ Browsing the Web
 
 * Web Searches::                文字列に合致する記事からグループを作る
 * RSS::                         RDF Site Summary を読む
+* Atom::                        Atom 配信フォーマットの web フィードを読む
 
 Other Sources
 
@@ -978,6 +979,7 @@ Back End Interface
 * Writing New Back Ends::       古いバックエンドの拡張
 * Hooking New Back Ends Into Gnus::  Gnus 側でしなければならないこと
 * Mail-like Back Ends::         メール風バックエンドのための助言
+* Web Feed Back Ends::          Web フィードのバックエンドを手軽に定義する
 
 Various File Formats
 
@@ -16976,6 +16978,7 @@ Gnus はこれらのソースへのインターフェースを提供するバッ
 @menu
 * Web Searches::                文字列に合致する記事からグループを作る
 * RSS::                         RDF Site Summary を読む
+* Atom::                        Atom 配信フォーマットの web フィードを読む
 @end menu
 
 これらのウェブソースの一番の問題は、長期間は動作しない可能性が高いことで
@@ -17222,6 +17225,40 @@ The Emacs MIME Manual}) に加えていたとしても、特に @code{nnrss} グ
  'gnus-parameters
  '("\\`nnrss:" (mm-discouraged-alternatives nil)))
 @end lisp
+
+@node Atom
+@subsection Atom
+@cindex nnatom
+@cindex Atom
+
+いくつかの web サイトでは Atom 配信フォーマッ
+ト (Atom Syndication Format) の web フィードを提供しています。Atom は機
+能が RDF Site Summary (@pxref{RSS}) に似ている web フィードのフォーマッ
+トです。
+
+@code{nnatom} バックエンドを使うと、HTTP フィードやローカル Atom フィー
+ドを、例えば @code{gnus-secondary-select-methods} に Gnus サーバーとして
+追加したり、@file{*Group*} バッファーで "B" を押すことによって外部サーバー
+として追加することができます (@pxref{Finding the News})。それぞれのサー
+バーのアドレスはフィードの場所です (もっとも、そのアドレス
+は <http://> や <https://> では始まりませんが)。各サーバーにはフィードの
+エントリーが置かれている単一のグループがあります。
+
+@code{nnatom} の機能は次の通りです:
+
+@itemize @bullet
+@item
+サーバーのデータはサーバーごとに @file{gnus-directory} の @file{atom} サ
+ブディレクトリに保存されます。
+@item
+フィード内各エントリのサマリーとコンテンツの両方について、記事のパートが
+生成されます。すべての MIME タイプのコンテンツは、(それらの MIME タイプ
+がサポートされていて、フィードが MIME タイプを明示している限り) Gnus に
+よって正しく表示されるはずです 。
+@item
+記事の変更と公開された日付は追跡され、もし変化があったら記事が更新されま
+す。
+@end itemize
 
 @node Other Sources
 @section その他のグループ源
@@ -29543,6 +29580,7 @@ Gnus には @file{nnheader.el}、@file{nnmail.el} および @file{nnoo.el} の
 * Writing New Back Ends::       古いバックエンドの拡張
 * Hooking New Back Ends Into Gnus::  Gnus 側でしなければならないこと
 * Mail-like Back Ends::         メールバックエンドのための助言
+* Web Feed Back Ends::          Web フィードのバックエンドを手軽に定義する
 @end menu
 
 @node Required Back End Functions
@@ -30282,6 +30320,42 @@ description-buffer = *description-line
 (("a-group" (1 . 10))
  ("some-group" (34 . 39)))
 @end example
+
+@node Web Feed Back Ends
+@subsubsection Web フィードのバックエンド
+
+新しいタイプの web フィード (RSS、Atom) またはその他のタイプのフィードの
+バックエンドを作成したい場合のために、そのようなバックエンドを作成するこ
+とができる「抽象」バックエンド (@code{nnfeed}) があります。Gnus に関する
+最小限の知識が必要です。
+
+@code{nnfeed} は、サーバー変数に格納された関数を使って、フィードの情報を
+解析する汎用パーサーを定義します (ただし、実際には @code{nnfeed} 自体は
+そのような関数を定義しません)。
+
+フィードから解析されたデータはサーバー変数に保存されます (そし
+て @option{gnus-directory} の、バックエンド名に対応する名前のサブディレ
+クトリに、フィードごとに保存されます)。
+
+フィードから解析されたデータを使う Gnus バックエンドインターフェースも定
+義されます。
+
+したがって新しいバックエンドは、@code{nnfeed} を継承し、フィードのタイプ
+のための (かなり) 汎用的な解析関数を定義して、必要なサーバー変数を設定す
+るだけで済みます。
+
+@code{nnfeed} は元々 Atom 配信フォーマットの web フィー
+ド (@pxref{Atom}) をサポートするために作成されましたが、非常に汎用的で
+す (これを書いている時点では、サポートされているすべての機能を有効に使う
+ことが可能な標準 web フィードは存在しません)。単一のフィードに含まれる複
+数のグループをサポートします。これにより、フィード全体を事前に読み込むこ
+とができない (または読み込むべきではない) 状況を許容し、解析されたデータ
+から記事を実際に印刷する非常に高度なカスタマイズを (適度に強力なディフォ
+ルトのメソッドを提供しながら) 可能にします。
+
+実装の詳細については @file{nnfeed.el} の色々な @code{nnfeed-*} サーバー
+変数のドキュメントと冒頭の Commentary、および他のコメントを参照してくだ
+さい。
 
 @node Score File Syntax
 @subsection スコアファイルの構文
