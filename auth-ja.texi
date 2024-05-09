@@ -535,8 +535,8 @@ Emacs の @code{pass} の統合は、パス・プロジェクト自体によっ�
 ザーに合致するエントリを検索しているとき、エント
 リー @file{gnu.org:22/rms.gpg} は @file {gnu.org.gpg} より優先されます。
 ただし、
-オプション @code{auth-source-pass-extra-parameters} が @code{t} に設定さ
-れている場合は、そのような処理は行ないません。
+オプション @code{auth-source-pass-extra-query-keywords} が @code{t} に設
+定されている場合は、そのような処理は行ないません。
 
 @code{pass} のユーザーは、Emacs パッケージが提供する機能にも興味があるか
 もしれません:
