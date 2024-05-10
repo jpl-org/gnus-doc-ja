@@ -7224,6 +7224,21 @@ Gnus はスレッドを補完するのに役立つかどうかを考慮せずに
 訳注: 取得した記事の @code{Message-ID} 欄から、@samp{@@} の前に付加され
 た @samp{cygnus.} で始まる文字列を取り除きます。
 @end quotation
+
+もう 1つの例: Proton Mail ブリッジはメッセージヘッダー
+の @code{References} に偽のメッセージ ID を追加するのですが、そのために
+スレッドが混乱する可能性があります。それらの偽の ID を削除するには
+
+@lisp
+(setq gnus-alter-header-function 'fix-protonmail-references)
+
+(defun fix-protonmail-references (header)
+  (setf (mail-header-references header)
+        (mapconcat
+         #'(lambda (x) (if (string-search "protonmail.internalid" x) "" x))
+         (gnus-split-references (mail-header-references header)) " "))
+  header)
+@end lisp
 @end table
 
 @node Thread Commands
