@@ -814,6 +814,9 @@ Octet (8-bit) の単位で表したファイルのサイズです。(@code{Conte
 @table @samp
 @item keyfile
 署名する人の鍵と証明書を含んでいるファイルです。
+
+@item chainfile
+メッセージに含めるための、追加の証明書が入っているファイルです。
 @end table
 
 以下は @samp{encrypt=smime} のためのパラメーターです:
