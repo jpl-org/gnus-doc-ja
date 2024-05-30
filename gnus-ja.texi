@@ -19768,6 +19768,9 @@ Gnus には内緒でスコアファイルをいじり回して、その効果を
 @item 日付 (date)
 
 @table @kbd
+@item r
+正規表現 (regexp) の合致です。
+
 @item b
 日付の前 (before) です。
 
@@ -19776,6 +19779,12 @@ Gnus には内緒でスコアファイルをいじり回して、その効果を
 
 @item n
 その日付です。
+
+@item <
+それ未満の日数です。
+
+@item >
+それを越える日数です。
 @end table
 
 @item 数値 (number)
