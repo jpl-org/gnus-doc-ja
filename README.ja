@@ -15,7 +15,7 @@ Gnus の Info マニュアルの全訳です。Gnus v5.13 に対応します。
 名にすることはできません。あらかじめ PATH 環境変数を設定してください。
 例です:
 
-% ./configure --with-emacs=emacs-29.3 --infodir=/usr/local/info
+% ./configure --with-emacs=emacs-29.4 --infodir=/usr/local/info
 
 Gnus のバッファーで `C-c C-i' をタイプするか message バッファーで
 `M-x message-info' をタイプしたときに日本語版の Info マニュアルを読み
