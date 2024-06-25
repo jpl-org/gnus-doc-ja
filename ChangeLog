@@ -37,6 +37,11 @@
 	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 28.1 is released
 	from the emacs-28 branch.
 
+2021-03-25  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 27.2 is released
+	from the emacs-27 branch.
+
 2020-08-12  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 27.1 is released
@@ -49,6 +54,16 @@
 2019-09-24  Katsumi Yamaoka  <yamaoka@jpl.org>
 
 	* Makefile.in (PDFTEX): Default to XeTex rather than LuaTex.
+
+2019-08-29  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 26.3 is released
+	from the emacs-26 branch.
+
+2019-04-14  Katsumi Yamaoka  <yamaoka@jpl.org>
+
+	* Gnus-Doc-Ja: The version for Gnus v5.13/Emacs 26.2 is released
+	from the emacs-26 branch.
 
 2018-04-05  Katsumi Yamaoka  <yamaoka@jpl.org>
 
