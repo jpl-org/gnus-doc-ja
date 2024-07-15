@@ -2583,6 +2583,21 @@ well.\n\n"} です。
 @item message-confirm-send
 @vindex message-confirm-send
 @code{nil} でなかったら、Gnus はメッセージを送信するときに確認を求めます。
+
+@item message-server-alist
+@vindex message-server-alist
+メッセージにまだ @code{X-Message-SMTP-Method} ヘッダーが無い場合に、新し
+いメッセージを送信する前に挿入する @code{X-Message-SMTP-Method} ヘッダー
+を生成するための規則を記述する連想リストです。各要素
+は @w{@code{(@var{cond} . @var{method})}} の形式でなければなりません。
+もし @var{cond} が文字列だった場合、それは @code{From} ヘッダーと比較さ
+れ、等しい場合は対応する @var{method} が、SMTP のメソッドとしてメッセー
+ジヘッダーに文字列として挿入されます。もし @var{cond} が関数だったら、そ
+れは引数なしでメッセージバッファー内で呼び出され、その関数
+が @code{nil} 以外の値を返した場合に限って、対応す
+る @var{method} が SMTP のメソッドとしてメッセージヘッダーに挿入されます。
+@var{method} が @code{nil} であった場合は、関数 @code{cond} が返す値が代
+わりに使われます。
 @end table
 
 @node Message Buffers
