@@ -11279,7 +11279,7 @@ Gnus にクロスポストを正しく扱えなくさせる原因の一つは、
 ての記事に @code{Xref} 行を記録することによって The Right Thing (正しい
 こと) をしようとしますが、記事を削除したり単に読まないで既読の印を付ける
 と、Gnus がこれらの記事の @code{Xref} 行をのぞきまわる機会が無くなってし
-まうので、相互参照 (cross reference) の機構を使えなくなってしまいます。
+まうので、相互参照 (cross-reference) の機構を使えなくなってしまいます。
 
 @cindex LIST overview.fmt
 @cindex overview.fmt
