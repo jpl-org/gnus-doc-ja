@@ -19526,8 +19526,9 @@ Gnus エージェントは、よくある他のオフラインニュースリー
 @table @dfn
 @item Plugged のときに記事を読んだら、それはエージェントに入るのですか?
 
-@strong{いいえ}。この動作をお望みなら @code{gnus-select-article-hook} に
-関数 @code{gnus-agent-fetch-selected-article} を加えてください。
+はいそうです。@code{gnus-agent-eagerly-store-articles} のディフォルト値
+がそうなっていますから。別のやり方は @code{gnus-select-article-hook} に
+関数 @code{gnus-agent-fetch-selected-article} を加えることです。
 
 @item Plugged のときに記事を読んで、エージェントに記事が存在している場合、
 もう一回ダウンロードされるのですか?
