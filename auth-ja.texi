@@ -95,9 +95,9 @@ Auth-source ライブラリーは単なるユーザー名やパスワード (い
 
 同様に auth-source ライブラリーは多くの貯蔵バックエンド、現在は伝統的
 な ``netrc'' バックエンド (この文書の後の方に例があります)、JSON ファイ
-ル、シークレットサービス API、そしてパス、すなわち unix の標準パスワード・
-マネージャーをサポートします。これは EIEIO に基づいたバックエンドで行な
-われ、もし必要ならあなた独自のものを書くことができます。
+ル、シークレットサービス API、そして @samp{pass}、すなわち unix の標準パ
+スワード・マネージャーをサポートします。これは EIEIO に基づいたバックエ
+ンドで行なわれ、もし必要ならあなた独自のものを書くことができます。
 
 @node Help for users
 @chapter 利用者のためのヘルプ
@@ -482,7 +482,7 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
 @chapter Unix パスワード・マネージャー
 
 @uref{https://www.passwordstore.org,標準 Unix パスワードマネージャー} (ま
-たは単に @code{pass}) は、あなたのパスワードを Unix 哲学に基づい
+たは単に @samp{pass}) は、あなたのパスワードを Unix 哲学に基づい
 て @code{gpg} で保護されたファイルに格納します。格納する場所 (任意のディ
 レクトリー) は、@code{auth-source-pass-filename} 変数で指定しなければな
 りません。ディフォルトは @file{~/.password-store} です。
@@ -538,12 +538,13 @@ Emacs の @code{pass} の統合は、パス・プロジェクト自体によっ�
 オプション @code{auth-source-pass-extra-query-keywords} が @code{t} に設
 定されている場合は、そのような処理は行ないません。
 
-@code{pass} のユーザーは、Emacs パッケージが提供する機能にも興味があるか
+@samp{pass} のユーザーは、Emacs パッケージが提供する機能にも興味があるか
 もしれません:
 
 @itemize
 @item
-@uref{https://git.zx2c4.com/password-store/tree/contrib/emacs/password-store.el,password-store}: @code{pass} をラップするライブラリー;
+@uref{https://git.zx2c4.com/password-store/tree/contrib/emacs/password-store.el,password-store}:
+@samp{pass} をラップするライブラリー;
 @item
 @uref{https://github.com/NicolasPetton/pass,pass}: パスワード・マネージャーとエントリーを編集するためのメジャーモード;
 @item
@@ -592,7 +593,7 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 
 @defun auth-source-search &rest spec &key type max host user port secret require create delete &allow-other-keys
 この関数は @var{spec} に従って認証バックエンドを探し (または変更し) ます。
-詳細はその関数の doc-string を見てください。
+詳細はその関数の docstring を見てください。
 @c TODO more details.
 @end defun
 
