@@ -408,7 +408,8 @@ Inline OpenPGP in E-mail is bad@comma{} Mm'kay?} を参照してください。
 @kindex C-c C-e v
 @findex epa-mail-verify
 現在のバッファーにある OpenPGP のクリアテキストで署名されたメッセージを
-検証します。
+検証します。もし何らかの理由で検証が失敗する場合、このコマンドはエラーを
+発します。
 
 @item C-c C-e C-s and C-c C-e s
 @kindex C-c C-e C-s
