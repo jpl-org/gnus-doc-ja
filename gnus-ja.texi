@@ -14116,6 +14116,8 @@ default force yes
 @vindex nntp-address
 @acronym{NNTP} サーバーのアドレスです。
 
+@cindex nntps
+@cindex snews
 @item nntp-port-number
 @vindex nntp-port-number
 接続する @acronym{NNTP} サーバーのポート番号です。ディフォルト
