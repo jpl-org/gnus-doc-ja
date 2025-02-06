@@ -1796,6 +1796,12 @@ Newsgroups などが空だった場合) に、何をするかを設定します�
 @code{message-carefully-insert-headers} は @code{To} ヘッダーを挿入しま
 せん。
 
+@item message-header-use-obsolete-in-reply-to
+@vindex message-header-use-obsolete-in-reply-to
+@code{nil} ではない場合、旧式の @code{In-Reply-To} ヘッダーを使います。
+それは @code{Message-ID} に続く括弧内に元のメールの詳細を収めた形式です
+が、ディフォルトは @code{nil} です。
+
 @item message-syntax-checks
 @vindex message-syntax-checks
 出て行くメッセージの、どの構文の検査をすべきではないかを制御します。例え
