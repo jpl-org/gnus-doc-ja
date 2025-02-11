@@ -301,12 +301,7 @@ lock パスワード (最初にこの機能を使うときに自動的に生成�
 
 @vindex message-ignored-supersedes-headers
 @code{message-ignored-supersedes-headers} に合致するヘッダーは新しいメッ
-セージバッファーを出現させる前に取り除かれます。ディフォルトは@*
-@samp{^Path:\\|^Date\\|^NNTP-Posting-Host:\\|^Xref:\\|^Lines:\\|@*
-^Received:\\|^X-From-Line:\\|^X-Trace:\\|^X-Complaints-To:\\|@*
-Return-Path:\\|^Supersedes:\\|^NNTP-Posting-Date:\\|^X-Trace:\\|@*
-^X-Complaints-To:\\|^Cancel-Lock:\\|^Cancel-Key:\\|^X-Hashcash:\\|@*
-^X-Payment:\\|^Approved:} です。
+セージバッファーを出現させる前に取り除かれます。
 
 @node Forwarding
 @section 転送
