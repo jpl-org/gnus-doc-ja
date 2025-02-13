@@ -1692,19 +1692,20 @@ Message が Gnus 上で走っている場合、メッセージバッファーは
 
 @item message-subject-re-regexp
 @vindex message-subject-re-regexp
+@vindex mail-re-regexps
 @cindex Aw
 @cindex Sv
 @cindex Re
 メッセージへの応答には @samp{Re: } で始まる表題があります。これは英単語
 の “response” の略では @emph{ありません}。これはラテン語の “res” に
-由来し、「〜に関して (in the matter of 〜)」と言う意味です。無教養な馬鹿
-者どもはこの事実をとり損ねて、代わりに忌まわし
-い @samp{Aw: } (antwort) や @samp{Sv: } (svar) を使うように、彼らのソフ
-トウェアを「国際化」しました。それは無意味だし邪悪です。しかし、あなたは
-これらの邪悪な道具を使う利用者と応対しなければならないかもしれません。そ
-ういう場合には、この変数をそれらの接頭語に合致する正規表現に設定すること
-ができます。私ですか?  私は規格に従わないメールはただ捨て去っているだけ
-です。
+由来し、「〜に関して (in the matter of 〜)」と言う意味です。程度が低
+い (standards-challenged) ある企業はこの事実をとり損ねて、代わりに忌まわ
+しい @samp{Aw: } (antwort) や @samp{Sv: } (svar) を使うように、彼らのソ
+フトウェアを「国際化」しました。それは無意味だし邪悪です。しかし、あなた
+はこれらの邪悪な道具を使う利用者と応対しなければならないかもしれません。
+そういう場合には、この変数をそれらの接頭語に合致する正規表現に設定するこ
+とができます。私ですか?  私は規格に従わないメールはただ捨て去っているだ
+けです。
 
 これは、返事をするときにそれらのヘッダーに対処するための値の例です:
 
@@ -1728,6 +1729,16 @@ Message が Gnus 上で走っている場合、メッセージバッファーは
        "*[ \t]*"
        ))
 @end lisp
+
+ただし @code{message-subject-re-regexp} のディフォルト値は
+@code{mail-re-regexps} に基づいて初期化されているので、これを行なう必要
+はありません。それ (@code{mail-re-regexps}) はそのような既知の「国際化」
+のほとんどを網羅していて、カスタマイズするのもずっと簡単です。
+@code{mail-re-regexps} をカスタマイズする
+と @code{message-subject-re-regexp} もそれに合うように更新されます。
+
+なお、正規表現は @samp{Subject} ヘッダーの内容に対して大文字小文字の区別
+なく合致することに注意してください。
 
 @item message-subject-trailing-was-query
 @vindex message-subject-trailing-was-query
