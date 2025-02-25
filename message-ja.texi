@@ -1920,13 +1920,6 @@ Newsgroups などが空だった場合) に、何をするかを設定します�
 @vindex message-default-mail-headers
 この文字列はメールとして初期化されたすべてのメッセージバッファーの、ヘッ
 ダーの最後尾に挿入されます。
-
-@item message-generate-hashcash
-@vindex message-generate-hashcash
-メッセージのための @samp{X-Hashcash} ヘッダーを計算して付加すべきかどう
-かを指示する変数です。@xref{Hashcash, ,Hashcash, gnus-ja, The Gnus
-Manual}.  @code{opportunistic} にすると、ユーザーを待たせない場合に限り、
-ヘッダーを作ります。
 @end table
 
 @node Mail Variables

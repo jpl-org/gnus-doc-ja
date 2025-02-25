@@ -877,7 +877,6 @@ Thwarting Email Spam
 * The problem of spam::         背景、そして解決
 * Anti-Spam Basics::            たくさんの spam を減らす簡単な方法
 * SpamAssassin::                Spam 対策ツールの使い方
-* Hashcash::                    CPU 時間を費やして spam 退治する
 
 Spam Package
 
@@ -895,7 +894,6 @@ Spam Back Ends
 * Blacklists and Whitelists::
 * BBDB Whitelists::
 * Gmane Spam Reporting::
-* Anti-spam Hashcash Payments::
 * Blackholes::
 * Regular Expressions Header Matching::
 * Bogofilter::
@@ -23907,7 +23905,6 @@ Gnus はスコア付け、スレッドの形成、およびスレッドの比較
 * The problem of spam::         背景、そして解決
 * Anti-Spam Basics::            たくさんの spam を減らす簡単な方法
 * SpamAssassin::                Spam 対策ツールの使い方
-* Hashcash::                    CPU 時間を費やして spam 退治する
 @end menu
 
 @node The problem of spam
@@ -24134,80 +24131,6 @@ Nnimap バックエンドの場合、ディフォルトでは記事のボディ�
   (gnus-summary-save-in-pipe "razor-report -f -d" t)
   (gnus-summary-mark-as-expirable 1))
 @end lisp
-
-@node Hashcash
-@subsection Hashcash
-@cindex hashcash
-
-Spam と戦うための一つの技法は、いくらか負担にはなるが明らかに独特なこと
-を、送信するメッセージに対して送信者が行なうことを求めることです。これは
-インターネット標準の一部ではないので、世界中のすべての人がこの技法を使う
-ことは当てにできないという明らかな欠点がありますが、小規模な集団では役に
-立つでしょう。
-
-前章の道具類は実際にうまく働きますが、それらは新しい形式の spam が現れる
-たびにしょっちゅう更新かつ整備されることによってのみ動作します。このこと
-は、小さなパーセンテージの spam がいつも素通りしてしまうことを意味します。
-それはまた、どこかでだれかがそれらの道具を更新するために、たくさん
-の spam を読まなければならないことをも意味します。Hashcash はそれを回避
-しますが、代わりにあなたが電子メールで連絡するすべての人たちに、なるべく
-その仕組みをサポートしてもらいたいのです。あなたは実際的 (pragmatic) か
-独断的 (dogmatic) かの観点で、二つの取り組みを考えることができます。それ
-らのやり方には、それら自体の利点もあれば不利な点もありますが、現実の世の
-中ではしばしばあるように、それらを連係させたものはどちらか一方より強力で
-す。
-
-@cindex X-Hashcash
-「いくらか負担にはなる」とは CPU 時間を消費することで、もっと具体的には
-一定数のビットまでハッシュの衝突 (hash collision) を計算することです。そ
-の結果としての hashcash クッキーは @samp{X-Hashcash:} ヘッダーに挿入され
-ます。もっと詳しいこと、そしてこの機能を使うためにインストールする必要が
-ある外部アプリケーションの @code{hashcash} について
-は @uref{http://www.hashcash.org/} を参照してください。
-
-送信するメッセージのそれぞれについて hashcash を生成させようと思うなら、
-以下のように @code{message-generate-hashcash} (@pxref{Mail Headers,
-,メールヘッダー, message-ja, The Message Manual}) をカスタマイズしてくだ
-さい:
-
-@lisp
-(setq message-generate-hashcash t)
-@end lisp
-
-いくつかの追加の変数の設定もしなければなりません:
-
-@table @code
-@item hashcash-default-payment
-@vindex hashcash-default-payment
-この変数はハッシュの衝突を成すディフォルトのビット数を示します。ディフォ
-ルトは 20 です。提唱されている有効な値は 17 から 29 までの数です。
-
-@item hashcash-payment-alist
-@vindex hashcash-payment-alist
-何人かの受取人は、あなたにディフォルトより多くの CPU 時間を費やすことを
-要求するかもしれません。この変数は @samp{(@var{addr} @var{amount})} の形
-式の要素のリストで、@var{addr} は受取人 (メールアドレスかニュースグルー
-プ)、@var{amount} は衝突で必要とされるビット数です。これはま
-た @samp{(@var{addr} @var{string} @var{amount})} の要素を持つことも可能
-で、@var{string} は文字列 (通常はメールアドレスかニュースグループ名) と
-して使われます。
-
-@item hashcash-program
-@vindex hashcash-program
-@code{hashcash} バイナリーがインストールされている場所です。この変数
-は @code{executable-find} によって自動的に設定されるはずですが、それ
-が @code{nil} だった (ありがちなのは @code{hashcash} バイナリーが実
-行 path 中に無い) 場合は、hashcash payments をチェックするときに警告され、
-hashcash payments を生成するときはエラーになるでしょう。
-@end table
-
-Gnus は hashcash クッキーを認証することができますが、手でカスタマイズし
-たメール濾過スクリプトで行なうこともできます。メッセージ中の hashcash クッ
-キーを認証するには、@code{hashcash.el} ライブラリー
-の @code{mail-check-payment} 関数を使ってください。入ってきたメール
-の hashcash クッキーを確認し、それによってメールを濾過するために、
-@code{spam-use-hashcash} バックエンドで @code{spam.el} を使うこともでき
-ます (@pxref{Anti-spam Hashcash Payments})。
 
 @node Spam Package
 @section Spam パッケージ
@@ -24857,7 +24780,6 @@ Incoming Mail}, @pxref{Detecting Spam in Groups}) と spam および ham プ
 * Blacklists and Whitelists::
 * BBDB Whitelists::
 * Gmane Spam Reporting::
-* Anti-spam Hashcash Payments::
 * Blackholes::
 * Regular Expressions Header Matching::
 * Bogofilter::
@@ -25018,21 +24940,6 @@ Gmane はかつて @uref{http://gmane.org} にありました。
 Gmane への spam の報告に付加される User-Agent に現れるメールアドレスです。
 これは、誤った報告が行なわれたときに、Gmane の管理者があなたに連絡できる
 ようにするためのものです。ディフォルトは @code{user-mail-address} です。
-@end defvar
-
-@node Anti-spam Hashcash Payments
-@subsubsection 非-spam Hashcash 印
-@cindex spam filtering
-@cindex hashcash, spam filtering
-@cindex spam
-
-@defvar spam-use-hashcash
-@code{spam-use-whitelist} (@pxref{Blacklists and Whitelists}) に似ていま
-すが、送信者のアドレスの代わりに、潔白なメッセージの証しとし
-て hashcash の印 (tokens) を使います。Hashcash 印が無いメッセージは次
-の spam-分割 (spam-split) 規則 (による検査工程) に送られます。これ
-は hashcash 印が見当たらないメッセージは spam とも ham とも見なされない
-ことを意味する、明示的な濾過器です。
 @end defvar
 
 @node Blackholes
@@ -25547,8 +25454,7 @@ Blackbox が入ってくるメールが spam かどうかを検査できるの�
 
 この関数は、入ってくるメールが spam かどうかの検査だけを行なうことができ
 るバックエンドになります。それはメッセージを登録または登録解除することが
-できません。@code{spam-use-blackholes} と @code{spam-use-hashcash} がそ
-のようなバックエンドです。
+できません。@code{spam-use-blackholes} はそのようなバックエンドです。
 
 @item
 @code{spam-install-statistical-checkonly-backend}
