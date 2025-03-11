@@ -3271,7 +3271,7 @@ nntp+news.gnus.org:gmane.text.docbook.apps
 
 @lisp
 (gnus-summary-prepared-hook
-  (lambda nil (local-set-key "d" (local-key-binding "n"))))
+  (lambda nil (keymap-local-set "d" (local-key-binding "n"))))
 @end lisp
 
 そのグループに入ったときに @kbd{d} キーは記事に期限切れ消去の印を付けな
@@ -4449,7 +4449,7 @@ Gnus
 当てても構いませんが、接頭キーとして使う方が良いでしょう。例です:
 
 @lisp
-(define-key gnus-group-mode-map (kbd "v j d")
+(keymap-set gnus-group-mode-map "v j d"
   (lambda ()
     (interactive)
     (gnus-group-jump-to-group "nndraft:drafts")))
@@ -4788,7 +4788,7 @@ customize-apropos @key{RET} gnus-summary-tool-bar} の結果を参照してく�
 
 @lisp
 ;; 副スレッドのスコアを下げる。
-(define-key gnus-summary-mode-map (kbd "v -") "LrS")
+(keymap-set gnus-summary-mode-map "v -" "LrS")
 @end lisp
 
 @menu
@@ -6486,7 +6486,7 @@ Gnus エージェント (@pxref{Agent Basics}) はいくつかの記事を自動
 @lisp
 (add-hook 'gnus-summary-mode-hook 'my-alter-summary-map)
 (defun my-alter-summary-map ()
-  (local-set-key "!" 'gnus-summary-put-mark-as-ticked-next))
+  (keymap-local-set "!" 'gnus-summary-put-mark-as-ticked-next))
 @end lisp
 
 @noindent
@@ -6494,7 +6494,7 @@ Gnus エージェント (@pxref{Agent Basics}) はいくつかの記事を自動
 
 @lisp
 (defun my-alter-summary-map ()
-  (local-set-key "!" "MM!n"))
+  (keymap-local-set "!" "MM!n"))
 @end lisp
 
 @node Setting Process Marks
@@ -17213,8 +17213,7 @@ Language) でロード/セーブするために、以下のコマンドを使う
       (gnus-summary-scroll-up arg))))
 
 (with-eval-after-load "gnus"
-  (define-key gnus-summary-mode-map
-    (kbd "<RET>") 'browse-nnrss-url))
+  (keymap-set gnus-summary-mode-map "RET" 'browse-nnrss-url))
 (add-to-list 'nnmail-extra-headers nnrss-url-field)
 @end lisp
 
@@ -22129,7 +22128,7 @@ b d} を使って、その @code{nnmairix} グループを作り直してくだ�
   (nnmairix-update-groups "mairixsearch" t t)
   (gnus-group-list-groups))
 
-(define-key gnus-group-mode-map "g" 'my-check-mail-mairix-update)
+(keymap-set gnus-group-mode-map "g" 'my-check-mail-mairix-update)
 @end lisp
 
 @samp{"mairixsearch"} の代わりにあなたの @code{nnmairix} サーバーの名前
@@ -28068,8 +28067,7 @@ X-Faces ヘッダーの挿入が簡単になりました。@xref{X-Face}.
 
 この下の行は、メッセージを再送するときに BBDB を使えるようにします:
 @lisp
-(define-key message-minibuffer-local-map [(tab)]
-  'bbdb-complete-name)
+(keymap-set message-minibuffer-local-map "TAB" 'bbdb-complete-name)
 @end lisp
 
 @item
