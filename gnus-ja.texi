@@ -442,7 +442,6 @@ Starting Gnus
 * Finding the News::            ニュースを取得する方法を選ぶ
 * The Server is Down::          そんなとき、どうすればメールを読めるか
 * Child Gnusae::                同時に二つ以上の Gnus を作動させることができる
-* Fetching a Group::            グループを読むためだけに Gnus を起動する
 * New Groups::                  Gnus が新しいグループに対して何をするか
 * Changing Servers::            あるサーバーから別のサーバーへ移る必要があるかもしれない
 * Startup Files::               やっかいなスタートアップファイル---@file{.newsrc}
@@ -664,7 +663,7 @@ Getting News
 * NNTP::                        @acronym{NNTP} サーバーからニュースを読む
 * News Spool::                  ローカルスプールからニュースを読む
 
-@acronym{NNTP}
+NNTP
 
 * Direct Functions::            サーバーに直接接続する
 * Indirect Functions::          サーバーに間接的に接続する
@@ -734,7 +733,7 @@ Document Groups
 
 Virtual Groups
 
-* Selection Groups::            数々の場所からの記事
+* Selection Groups::            数々のグループからの記事を合併させる
 * Combined Groups::             複数のグループを合併させる
 
 Email Based Diary
@@ -841,9 +840,11 @@ Various
 * Mode Lines::                  モード行に情報を表示する
 * Highlighting and Menus::      バッファーを素敵で心地よく見せる
 * Daemons::                     Gnus はあなたの裏で仕事をすることができる
+* Notifications::               デスクトップ通知を設定する
 * Undo::                        いくつかの動作は元に戻すことができる
 * Predicate Specifiers::        述語を設定する
 * Moderation::                  あなたがモデレーターだったらどうするか
+* Fetching a Group::            グループを読むためだけに Gnus を起動する
 * Image Enhancements::          Emacs は画像を表示できる
 * Fuzzy Matching::              大きなひずんだ音 (big fuzz) って何?
 * Thwarting Email Spam::        頼んでもいない広告メールを避ける簡単な方法
@@ -22313,6 +22314,7 @@ Gnus では通常それらのメッセージはヘッダーに ``(none)'' が表
 * Mode Lines::                  モード行に情報を表示する
 * Highlighting and Menus::      バッファーを素敵で心地よく見せる
 * Daemons::                     Gnus はあなたの裏で仕事をすることができる
+* Notifications::               デスクトップ通知を設定する
 * Undo::                        いくつかの動作は元に戻すことができる
 * Predicate Specifiers::        述語を設定する
 * Moderation::                  あなたがモデレーターだったらどうするか
@@ -23354,6 +23356,37 @@ Gnus はさまざまな「ハンドラー」(処理を行なわせるための�
 すべてのニュースとメールを二秒毎に調べまわす関数を付け加えたりすることは、
 どんな立派なシステムからも確実に追い出される方法です。お行儀良くしましょ
 う。
+
+@node Notifications
+@section 通知
+@cindex notifications, desktop
+@cindex desktop notifications
+
+Gnus が提供する @code{gnus-notifications} を使うと、@code{gnus-demon} ハ
+ンドラーと組み合わせて、新しいニュースやメールが届いたときにデスクトップ
+通知によって知らせることができます。以下はあなたの @file{~/.gnus.el} ファ
+イルに入れることができる基本的な設定です
+
+@lisp
+(require 'gnus-notifications)
+(add-hook 'gnus-after-getting-new-news-hook #'gnus-notifications)
+(gnus-demon-add-handler #'gnus-demon-scan-news 15 3) ; 15分毎
+@end lisp
+
+@noindent
+上記のものは @code{gnus-after-getting-new-news-hook} フック (ニュースや
+メールを @code{gnus-demon-scan-news} の処理によって取得した後で起動する
+フック) が実行されるときに、新着の通知を発行します。デーモンハンドラー
+は (Emacs が 3分間アイドル状態になった後) 15分毎にニュースをスキャンする
+ように設定されています。
+
+@quotation
+重要: @code{gnus-notifications} は、レベル
+が @var{gnus-notifications-minimum-level} (ディフォルトは 1) と等しいか
+低いグループの通知のみを発行するので、通知するグループのレベル
+を @code{1} に設定するか、@var{gnus-notifications-minimum-level} の値を
+必要に応じて調整してください。
+@end quotation
 
 @node Undo
 @section やり直し
