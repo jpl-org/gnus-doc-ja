@@ -20811,6 +20811,31 @@ Gnus を再起動して、@kbd{M-x nnml-generate-nov-databases} コマンド
 もしれません。これは改行文字にも合致してしまうので、えーと、未知のものま
 で引きずり出してしまうもしれません。代わりに @code{[^abcd\n]*} を使いま
 しょう。
+
+@item 他のヘッダーでスコア付けするときの継続行
+@item Continuation lines when scoring on other headers
+@code{head} または @code{All} 合致キーと正規表現合致を使って他のヘッダー
+でスコア付けする場合、正規表現はヘッダーの継続行を考慮する必要があります。
+例えば @code{To} フィールドの特定のアドレスを含むメッセージに合致させる
+この素朴な試みは:
+
+@lisp
+("head" "^To: .*\\bspwhitton@@spwhitton\\.name\\b" r)
+@end lisp
+
+以下のような @code{To} ヘッダーを持つメッセージに合致させることはできま
+せん:
+
+@example
+To: A long description of the Emacs devel list <emacs-devel@@gnu.org>,
+ spwhitton@@spwhitton.name, 12345@@debbugs.gnu.org
+@end example
+
+この問題は、この形式の正規表現で取り扱うことができます:
+
+@lisp
+("head" "^To: .*\\(?:\n[\s\t].*\\)*\\bspwhitton@@spwhitton\\.name\\b" r)
+@end lisp
 @end table
 
 @node Reverse Scoring
