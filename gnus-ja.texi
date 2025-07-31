@@ -15082,8 +15082,8 @@ Maildir メールソースの例をふたつ:
 サーバーでの認証にどの認証法を使うか。これに
 は @code{imap-authenticator-alist} で定義されているシンボルの一つを設定
 します。現状では @samp{gssapi}, @samp{kerberos4}, @samp{digest-md5},
-@samp{cram-md5}, @samp{anonymous} またはディフォルトの @samp{login} にな
-ります。
+@samp{cram-md5}, @samp{plain}, @samp{anonymous} またはディフォルト
+の @samp{login} になります。
 
 @item :program
 :stream に @samp{shell} が設定されているときは、この値が変
@@ -26631,7 +26631,7 @@ Gnus はエンコードとデコードの両方をサポートします。
 @item S/MIME---RFC 2633
 RFC 2633 は @acronym{S/MIME} の形式について述べています。
 
-@item IMAP---RFC 1730/2060, RFC 2195, RFC 2086, RFC 2359, RFC 2595, RFC 1731
+@item IMAP---RFC 1730/2060, RFC 2195/4616, RFC 2086, RFC 2359, RFC 2595, RFC 1731
 RFC 1730 は @acronym{IMAP} バージョン 4 で、RFC 2060 (@acronym{IMAP}
 4 改定 1) で多少更新されています。
 RFC 2195 は @acronym{IMAP} の CRAM-MD5 認証について述べています。
@@ -26641,6 +26641,7 @@ RFC 2595 は @acronym{IMAP} における適切な @acronym{TLS} の統
 合 (STARTTLS) について述べています。
 RFC 1731 は @acronym{IMAP} の GSSAPI/Kerberos4 の手法について述べていま
 す。
+RFC 4616 は @acronym{IMAP} の AUTH=PLAIN 認証について述べています。
 @end table
 
 上に書かれている文章に関することで、Gnus がそれを満たしていないような動
