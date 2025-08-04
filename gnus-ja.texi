@@ -13839,12 +13839,12 @@ default force yes
 非-@code{nil} で @acronym{NNTP} サーバーがコマンドをエコーバックしないこ
 とを意味します。報告によると、ある種の @acronym{NNTPS} サーバーはコマン
 ドをエコーバックしないそうです。したがって、例え
-ば @code{nntp-open-connection-function} を @code{nntp-open-ssl-stream} に
+ば @code{nntp-open-connection-function} を @code{nntp-open-tls-stream} に
 設定してあるそのようなサーバーのための選択方法の中で、この変数を
 非-@code{nil} に設定する必要があるでしょう。ディフォルト値
 は @code{nil} です。この変数の値 @code{nil} は、
-@code{nntp-open-connection-functions-never-echo-commands} 変数でくつがえ
-されることに注意してください。
+@code{nntp-open-connection-functions-never-echo-commands} 変数で上書きさ
+れることに注意してください。
 
 @item nntp-open-connection-functions-never-echo-commands
 @vindex nntp-open-connection-functions-never-echo-commands
@@ -13896,16 +13896,22 @@ default force yes
 @item nntp-open-network-stream
 これはディフォルトで、単純に遠隔システムのポートもしくは別のものに接続し
 ます。もし Emacs とサーバーの両方がサポートしていれば、その接続は自動的
-に暗号化された @acronym{STARTTLS} 接続に昇格されます。
+に暗号化された @acronym{STARTTLS} 接続に昇格されます。もし悪意のある仲介
+者が @acronym{STARTTLS} の使用をブロックする可能性を避けたいのであれば、
+代わりに @code{nntp-open-tls-stream} を使ってください。
 
-@item network-only
-上記に同じ。ただし自動で @acronym{STARTTLS} への昇格は行ないません。
+@item nntp-open-plain-stream
+@itemx network-only
+上記に同じ。ただし自動で @acronym{STARTTLS} への昇格は行ないません。あな
+たのトラフィックが誰かに読まれても構わない場合にのみこれを使ってください。
 
 @findex nntp-open-tls-stream
 @item nntp-open-tls-stream
-「安全な」チャンネルを使ってサーバーに接続します。これを使うために
-は @uref{https://www.gnu.org/software/gnutls/, GnuTLS} をインストールし
-ておかなければなりません。それからサーバーを次のように定義します:
+「安全な」チャンネルを使ってサーバーに接続します。これを使うためには、あ
+なたの Emacs が @uref{https://www.gnu.org/software/gnutls/, GnuTLS} を使
+うようにコンパイルされていなければなりません。
+
+そしてサーバーを次のように定義します:
 
 @lisp
 ;; @r{ポート 563 が "nntps" として @file{/etc/services} で定義済み}
@@ -13917,27 +13923,9 @@ default force yes
       (nntp-address "snews.bar.com"))
 @end lisp
 
-@c FIXME gnutls を支持し、openssl s_client は非推奨とすべきです。
 @findex nntp-open-ssl-stream
 @item nntp-open-ssl-stream
-「安全な」チャンネルを使ってサーバーに接続します。これを使うために
-は @uref{https://www.openssl.org/, OpenSSL}
-@ignore
-@c Defunct URL, ancient package, so don't mention it.
-または @uref{ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL, SSLeay}
-@end ignore
-をインストールしておかなければなりません。それからサーバーを次のように定
-義します:
-
-@lisp
-;; @r{ポート 563 が "snews" として @file{/etc/services} で定義済みで}
-;; @r{あっても、@samp{openssl s_client -port} でその名前は使えません。}
-;;
-(nntp "snews.bar.com"
-      (nntp-open-connection-function nntp-open-ssl-stream)
-      (nntp-port-number 563)
-      (nntp-address "snews.bar.com"))
-@end lisp
+これは @code{nntp-open-tls-stream} の古い名前で、完全にそれと等価です。
 
 @findex nntp-open-netcat-stream
 @item nntp-open-netcat-stream
@@ -14265,7 +14253,7 @@ machine imap.gmail.com login <username> password <password> port imap
         (nnimap-inbox "INBOX")
         (nnimap-split-methods default)
         (nnimap-expunge t)
-        (nnimap-stream ssl))
+        (nnimap-stream tls))
 @end example
 
 @table @code
@@ -14291,11 +14279,12 @@ machine imap.gmail.com login <username> password <password> port imap
 
 @table @code
 @item undecided
-これがディフォルトです。最初に @code{ssl} 設定を、次に @code{network} 設
+これがディフォルトです。最初に @code{tls} 設定を、次に @code{network} 設
 定を試します。
 
-@item ssl
-標準の @acronym{TLS}/@acronym{SSL} 接続を使います。
+@item tls
+標準の @acronym{TLS}/@acronym{SSL} 接続を使います。@code{ssl} は等価では
+ありますが、これを設定する方法としては推奨されません。
 
 @item network
 暗号化されないので安全ではない、ストレートなソケット接続です。しかし、も
