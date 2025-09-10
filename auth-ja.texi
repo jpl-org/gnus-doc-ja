@@ -511,8 +511,8 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 
 @item gnu.org:22.gpg
 合致させるポート (あるいはサービス) はホストの後にのみ記述することができ、
-コロン (@code{:}) で区切ります。区切り文字
-は @code{auth-source-pass-port-separator} 変数で変更可能です。
+コロン (@code{:}) で区切ります。区切り文字はユーザーオプショ
+ン @code{auth-source-pass-port-separator} で変更可能です。
 
 @item gnu.org:22/rms.gpg
 
