@@ -146,9 +146,9 @@ machine @var{mymachine} port @var{myport} key @var{key} cert @var{cert}
 で空白文字を使うことができます。
 
 ダブルクオートで囲むことによって、パスワードや他の要素の中で、アポストロ
-フィー (’) を使うことができます。例えばこんなふうに: @code{"he'llo"}@*
+フィー (’) を使うことができます。例えばこんなふうに: @t{"he'llo"}@*
 同様にアポストロフィーで囲むことによって、パスワードや他の要素の中で、ダ
-ブルクオートを使うことができます。例えばこんなふうに: @code{'he"llo'}@*
+ブルクオートを使うことができます。例えばこんなふうに: @t{'he"llo'}@*
 両方を混ぜて使うことはできません(つまりパスワードなどの要素は、アポスト
 ロフィーとダブルクオートの両方を持つことはできません)。
 
@@ -167,7 +167,7 @@ password @var{mypassword}
 うに auth-source ライブラリーはそれらの両方を受け入れるために、この混乱
 を助長しています。
 
-もし検索で問題があるのなら @code{auth-source-debug} を @code{'trivia} に
+もし検索で問題があるのなら @code{auth-source-debug} を @code{trivia} に
 設定して、ライブラリーがどのホスト、ポートおよびユーザーをチェックしてい
 るかを @file{*Messages*} バッファーで見てください。同様に他のどんな問題
 についても、何がチェックされているかを調べるのが、あなたの第一歩です。第
@@ -280,14 +280,33 @@ machine yourmachine.com port scp login testuser password testpass
 @xref{Password handling, Password handling,, tramp, Tramp}.
 
 もしあなたがそんな類のものにはまっているのなら、netrc フォーマットを直接
-JSON に翻訳しましょう。そんなエントリーを持つ JSON ファイルの例です:
+JSON に翻訳しましょう。それには、次のようなエントリーを持っていて拡張子
+が @file{.json} のファイルを、単に指定すれば良いのです:
 
 @example
 [
  @{ "machine": "yourmachine.com", "port": "http",
-    "login": "testuser", "password": "testpass" @}
+   "login": "testuser", "password": "testpass" @}
 ]
 @end example
+
+また、これは @file{.plist} という拡張子のファイルに納めるプロパティーリ
+ストに変換することもできます。その形式の説明は @file{plstore.el} ライブ
+ラリーにあります:
+
+@example
+(("foo" :host "yourmachine.com" :port "http"
+        :user "testuser" :password "testpass"))
+@end example
+
+@vindex auth-source-ignore-empty-file
+@code{auth-sources} では、基礎データのファイルが存在しないか空だった場合、
+ファイルベースのデータストアは無視されます。これは、そのようなファイルに
+新しい秘密が格納されている場合に関連していて、@code{auth-sources} の最初
+の使用可能なエントリーがターゲットとして選択されます。もし、存在しない、
+または空のファイルも選択させたいなら、ユーザーオショ
+ン @code{auth-source-ignore-empty-file} を @code {nil} に設定してくださ
+い。
 
 @node Multiple GMail accounts with Gnus
 @chapter 複数の GMail アカウントを Gnus で扱う
@@ -344,13 +363,13 @@ Secret items は @dfn{collections} にグループ化されます。コレクシ
 は @samp{wallet} と呼ばれますが同じもので、secrets の集合です。コレクショ
 ンは個人の持ち物で保護されていて、持ち主だけがそれらを開くことができます。
 
-もっとも一般的なコレクションは @code{"login"} と呼ばれます。
+もっとも一般的なコレクションは @t{"login"} と呼ばれます。
 
-コレクションは別名を持つことができます。一般に @code{"default"} という別
-名が使われるので、クライアントは開くコレクションの明示的な名前を知ってい
-る必要がありません。他の別名はまだサポートされていません。別名はどこから
-でもアクセスできるので、適切であることを確信している場合に限って別
-名 @code{"default"} を設定してください。
+コレクションは別名を持つことができます。一般に @t{"default"} という別名
+が使われるので、クライアントは開くコレクションの明示的な名前を知っている
+必要がありません。他の別名はまだサポートされていません。別名はどこからで
+もアクセスできるので、適切であることを確信している場合に限って別
+名 @t{"default"} を設定してください。
 
 @defun secrets-list-collections
 この関数はすべてのコレクション名をリストで返します。
@@ -358,31 +377,31 @@ Secret items は @dfn{collections} にグループ化されます。コレクシ
 
 @defun secrets-set-alias collection alias
 @var{alias} を @var{collection} という名のコレクションの別名として設定し
-ます。今のところ別名 @code{"default"} だけがサポートされています。
+ます。今のところ別名 @t{"default"} だけがサポートされています。
 @end defun
 
 @defun secrets-get-alias alias
 @var{alias} に相当するコレクション名を返します。今のところ別
-名 @code{"default"} だけがサポートされています。
+名 @t{"default"} だけがサポートされています。
 @end defun
 
 コレクションは関数 @code{secrets-create-collection} およ
 び @code{secrets-delete-collection} で作ったり削除することができます。通
-常これは Emacs の中からは行なわれません。@code{"login"} のような標準のコ
-レクションを削除しないでください。
+常これは Emacs の中からは行なわれません。@t{"login"} のような標準のコレ
+クションを削除しないでください。
 
-GNOME キーリングには @code{"session"} と呼ばれる特別なコレクションがあっ
-て、ユーザーがログインしている期間に渡って存在します。そのデータはディス
-クに保存されず、ユーザーがログアウトすると消えます。したがって、秘密のア
-イテムを一時的に保存および取得するために使うことができます。秘密のアイテ
-ムが永久に有効であってはならない場合、@code{"session"} コレクションは永
-続的なコレクションよりも優れています。@code{"session"} コレクションは、
-コレクションパラメータが必要な場合はいつでも、文字列 @code{"session"} ま
-たは @code{nil} のいずれかを指定してアクセスすることができます。
+GNOME キーリングには @t{"session"} と呼ばれる特別なコレクションがあって、
+ユーザーがログインしている期間に渡って存在します。そのデータはディスクに
+保存されず、ユーザーがログアウトすると消えます。したがって、秘密のアイテ
+ムを一時的に保存および取得するために使うことができます。秘密のアイテムが
+永久に有効であってはならない場合、@t{"session"} コレクションは永続的なコ
+レクションよりも優れています。@t{"session"} コレクションは、コレクション
+パラメータが必要な場合はいつでも、文字列 @t{"session"} また
+は @code{nil}のいずれかを指定してアクセスすることができます。
 
 ただし、他のシークレットサービスプロバイダーは、この臨時
-の @code{"session"} コレクションを作成しません。使用する前に、まずこのコ
-レクションが存在することを確認する必要があります。
+の @t{"session"} コレクションを作成しません。使用する前に、まずこのコレ
+クションが存在することを確認する必要があります。
 
 @defun secrets-list-items collection
 @var{collection} のすべての item のラベルをリストで返します。
@@ -460,13 +479,13 @@ Secret item を生成する間に設定されるルックアップ属性は、�
 @end example
 @end defun
 
-auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
+auth-source ライブラリーは @t{"secrets:@var{collection}"} に合致す
 る source を検索するとき、@file{secrets.el} ライブラリーに加えて次のよう
-にシークレットサービス API を使います。例えば @code{"session"} コレクショ
-ンを Emacs が走っている間だけ開くために @code{"secrets:session"} を使う
-ことができます。あるいは @code{"Login"} コレクションを開くために
-は @code{"secrets:Login"} が使えます。特別な場合とし
-て @code{auth-sources} の中では別名 @code{"default"} を示すため
+にシークレットサービス API を使います。例えば @t{"session"} コレクション
+を Emacs が走っている間だけ開くために @t{"secrets:session"} を使うことが
+できます。あるいは @t{"Login"} コレクションを開くために
+は @t{"secrets:Login"} が使えます。特別な場合とし
+て @code{auth-sources} の中では別名 @t{"default"} を示すため
 に @code{default} というシンボル (文字列ではない) を使うことができます。
 ここに 3つのコレクションを検索し、無かったら @file{~/.authinfo.gpg} を使
 うように @code{auth-sources} を設定するためのわざとらしい例があります。
@@ -587,9 +606,10 @@ auth-source ライブラリーは、何らかの動作を行なった結果の�
 できます。
 
 @defopt auth-source-debug
-この変数を @code{'trivia} にすると、@file{*Messages*} バッファーへのたく
-さんの出力を見ることができます。あるいはこれに @code{message} に似た関数
-を設定して、あなた独自のやり方で記録を採ることもできます。
+このユーザーオプションを @code{trivia} にすると、@file{*Messages*} バッ
+ファーへのたくさんの出力を見ることができます。あるいはこれ
+に @code{message} に似た関数を設定して、あなた独自のやり方で記録を採るこ
+ともできます。
 @end defopt
 
 auth-source ライブラリーには、外部で使うための関数は少ししかありません。
@@ -621,6 +641,7 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 @end example
 
 @c 以下の訳文の質が悪いのは原文の出来の酷さのため。
+@vindex auth-source-creation-defaults
 この呼び出しはその結果にユーザー名とパスワード (式中の @code{secret}) が
 含まれることを求めています。さらに、もしその項目がまだ無かったら作る必要
 もあります。その項目を作る際にユーザーとやり取りする場合は、式中にある質
@@ -645,9 +666,9 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 報 (ただしこれが新た作られたものであるのなら) をセーブします。
 
 最初にそれが呼ばれた後、@code{:save-function} が再度走ることはありません
-(しかしもし @code{auth-source-debug} を @code{'trivia} に設定してあるな
-らば、そのことを多少記録します。これすなわち、それは鬱陶しい同じ質問が繰
-り返されることはないということです。
+(しかしもし @code{auth-source-debug} を @code{trivia} に設定してあるなら
+ば、そのことを多少記録します。これすなわち、それは鬱陶しい同じ質問が繰り
+返されることはないということです。
 
 したがって @code{:create t} を設定した API ユーザーの責任は、もし存在す
 るならば @code{:save-function} を呼ぶことです。
