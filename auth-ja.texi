@@ -174,37 +174,39 @@ password @var{mypassword}
 二のステップはもちろんそれについての blog を書いて、コメントで回答を待つ
 ことです。
 
-変数 @code{auth-sources} をカスタマイズすることができます。もし古いバー
-ジョンの Emacs を使っているか、何かの理由のために auth-source ライブラリー
-が読み込まれない場合、次のものが必要になるでしょう。
+ユーザーオプション @code{auth-sources} をカスタマイズすることができます。
+もし古いバージョンの Emacs を使っているか、何かの理由のため
+に auth-source ライブラリーが読み込まれない場合、次のものが必要になるで
+しょう。
 
 @lisp
 (require 'auth-source)             ;; おそらく不要
 (customize-variable 'auth-sources) ;; 任意、一回だけ行なってください
 @end lisp
 
-@defvar auth-sources
-@code{auth-sources} 変数は、個々のホストとプロトコルのための netrc ファ
-イル、シークレットサービス API の収集物、またはあなたの保存したパスワー
-ドがどこに在るかを auth-source ライブラリーに知らせます。好みに応じてど
-うにでもできますが、ディフォルトの最も簡潔な設定は次の通りです:
+@defopt auth-sources
+ユーザーオプション @code{auth-sources} は、個々のホストとプロトコルのた
+めの netrc ファイル、シークレットサービス API の収集物、またはあなたの保
+存したパスワードがどこに在るかを auth-source ライブラリーに知らせます。
+好みに応じてどうにでもできますが、ディフォルトの最も簡潔な設定は次の通り
+です:
 
 @lisp
 ;;; 旧ディフォルト: :host と :port が必要だったが、もはや不要。
-(setq auth-sources '((:source "~/.authinfo.gpg" :host t :port t)))
+(setopt auth-sources '((:source "~/.authinfo.gpg" :host t :port t)))
 ;;; ほぼ等価だが、より短い (後述の fallback についての記述を参照)。
-(setq auth-sources '((:source "~/.authinfo.gpg")))
-;;; さらに短い @emph{ディフォルト}:
-(setq auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
+(setopt auth-sources '((:source "~/.authinfo.gpg")))
+;;; さらに短い:
+(setopt auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
 ;;; シークレット API の @var{Login} コレクションを使う
 ;;; (@pxref{Secret Service API})
-(setq auth-sources '("secrets:Login"))
+(setopt auth-sources '("secrets:Login"))
 ;;; パス (@file{~/.password-store}) を使う
 ;;; (@pxref{The Unix password store})
 (auth-source-pass-enable)
 ;;; [@{ "machine": "SERVER", "login": "USER",
 ;;; "password": "PASSWORD" @}...] というフォーマットの JSON データ
-(setq auth-sources '("~/.authinfo.json.gpg"))
+(setopt auth-sources '("~/.authinfo.json.gpg"))
 @end lisp
 
 特定のホストかプロトコルのエントリーを複数 @code{auth-sources} に追加す
@@ -216,12 +218,12 @@ password @var{mypassword}
 これは、混在する 2つのソースを使う例です:
 
 @lisp
-(setq auth-sources '((:source (:secrets default)
-                      :host "myserver" :user "joe")
-                     "~/.authinfo.gpg"))
+(setopt auth-sources '((:source (:secrets default)
+                        :host "myserver" :user "joe")
+                       "~/.authinfo.gpg"))
 @end lisp
 
-@end defvar
+@end defopt
 
 もし @code{auth-sources} をカスタマイズしないと、ディフォルトで生活する
 ことになるでしょう。そのディフォルトとは、どんなホストやポートについても
@@ -275,6 +277,7 @@ machine yourmachine.com port scp login testuser password testpass
 項を使わなければ、最初の方で説明したように、どんな Tramp の方式にも合い
 ます。Tramp にはおよそ 88 種類の接続方法があるので、変わった設定がある場
 合はこれが必要かもしれません (それらに関する前のコメントを見てください)。
+@xref{Password handling, Password handling,, tramp, Tramp}.
 
 もしあなたがそんな類のものにはまっているのなら、netrc フォーマットを直接
 JSON に翻訳しましょう。そんなエントリーを持つ JSON ファイルの例です:
@@ -294,9 +297,9 @@ JSON に翻訳しましょう。そんなエントリーを持つ JSON ファイ
 
 @example
 (setq gnus-secondary-select-methods '((nnimap "gmail"
-                                         (nnimap-address "imap.gmail.com"))
+                                       (nnimap-address "imap.gmail.com"))
                                       (nnimap "gmail2"
-                                         (nnimap-address "imap.gmail.com"))))
+                                       (nnimap-address "imap.gmail.com"))))
 @end example
 
 そうすると netrc は次のようになるでしょう:
@@ -469,10 +472,10 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
 うように @code{auth-sources} を設定するためのわざとらしい例があります。
 
 @example
-(setq auth-sources '(default
-                     "secrets:session"
-                     "secrets:Login"
-                     "~/.authinfo.gpg"))
+(setopt auth-sources '(default
+                       "secrets:session"
+                       "secrets:Login"
+                       "~/.authinfo.gpg"))
 @end example
 
 文字列ではない auth-source 仕様の属性値 (ポート番号な
@@ -484,8 +487,8 @@ auth-source ライブラリーは @code{"secrets:COLLECTION"} に合致す
 @uref{https://www.passwordstore.org,標準 Unix パスワードマネージャー} (ま
 たは単に @samp{pass}) は、あなたのパスワードを Unix 哲学に基づい
 て @code{gpg} で保護されたファイルに格納します。格納する場所 (任意のディ
-レクトリー) は、@code{auth-source-pass-filename} 変数で指定しなければな
-りません。ディフォルトは @file{~/.password-store} です。
+レクトリー) は、ユーザーオプション @code{auth-source-pass-filename} で指
+定しなければなりません。ディフォルトは @file{~/.password-store} です。
 
 Emacs の @samp{pass} の統合は、パス・プロジェクト自体によって提案された、
 データを検索するためのデータの組織化の取り組みです。特に、ホス
@@ -508,8 +511,8 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 
 @item gnu.org:22.gpg
 合致させるポート (あるいはサービス) はホストの後にのみ記述することができ、
-コロン (@code{:}) で区切ります。区切り文字
-は @code{auth-source-pass-port-separator} 変数で変更可能です。
+コロン (@code{:}) で区切ります。区切り文字はユーザーオプショ
+ン @code{auth-source-pass-port-separator} で変更可能です。
 
 @item gnu.org:22/rms.gpg
 
@@ -551,17 +554,17 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 @uref{https://github.com/jabranham/helm-pass,helm-pass}: パスへの helm インターフェース。
 @end itemize
 
-@defvar auth-source-pass-filename
-この変数をディスク上のパスワードストアを特定する文字列に設定してください。
-ディフォルトは @file{~/.password-store} です。
-@end defvar
+@defopt auth-source-pass-filename
+このユーザーオプションをディスク上のパスワードストアを特定する文字列に設
+定してください。ディフォルトは @file{~/.password-store} です。
+@end defopt
 
-@defvar auth-source-pass-port-separator
-この変数を、エントリー内のポートからホスト名を区切る文字列に設定してくだ
-さい。ディフォルトは @samp{:} です。
-@end defvar
+@defopt auth-source-pass-port-separator
+このユーザーオプションを、エントリー内のポートからホスト名を区切る文字列
+に設定してください。ディフォルトは @samp{:} です。
+@end defopt
 
-@defvar auth-source-pass-extra-query-keywords
+@defopt auth-source-pass-extra-query-keywords
 これは利用可能なキーワードの選択肢
 を @code{:max} と @code{:require} を含むように拡張して、それらの多くに問
 い合わせパラメーターのリストを引数として受け入れるように指示します。検索
@@ -575,7 +578,7 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 クエンドに関連する検索の結果を予測する際に問題が発生した場合、または複数
 のバックエンドに一様に問い合わせることを期待するコードに遭遇した場合は、
 @code{t} に切り替えてください。
-@end defvar
+@end defopt
 
 @node Help for developers
 @chapter 開発者のためのヘルプ
@@ -583,11 +586,11 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 auth-source ライブラリーは、何らかの動作を行なった結果の記録を採ることが
 できます。
 
-@defvar auth-source-debug
+@defopt auth-source-debug
 この変数を @code{'trivia} にすると、@file{*Messages*} バッファーへのたく
 さんの出力を見ることができます。あるいはこれに @code{message} に似た関数
 を設定して、あなた独自のやり方で記録を採ることもできます。
-@end defvar
+@end defopt
 
 auth-source ライブラリーには、外部で使うための関数は少ししかありません。
 
@@ -678,7 +681,7 @@ auth-source ライブラリーには、外部で使うための関数は少し�
 @node GnuPG and EasyPG Assistant Configuration
 @appendix GnuPG および EasyPG アシスタントの設定
 
-もし変数 @code{auth-sources} が @file{~/.authinfo} より前
+もしユーザーオプション @code{auth-sources} が @file{~/.authinfo} より前
 に @file{~/.authinfo.gpg} を含んでいるならば、auth-source ライブラリーは
 暗号化されていないファイルより先に、まずは GnuPG で暗号化され
 た @file{.gpg} を読み込もうとします。
