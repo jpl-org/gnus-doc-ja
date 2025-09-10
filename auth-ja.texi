@@ -587,9 +587,10 @@ auth-source ライブラリーは、何らかの動作を行なった結果の�
 できます。
 
 @defopt auth-source-debug
-この変数を @code{'trivia} にすると、@file{*Messages*} バッファーへのたく
-さんの出力を見ることができます。あるいはこれに @code{message} に似た関数
-を設定して、あなた独自のやり方で記録を採ることもできます。
+このユーザーオプションを @code{trivia} にすると、@file{*Messages*} バッ
+ファーへのたくさんの出力を見ることができます。あるいはこれ
+に @code{message} に似た関数を設定して、あなた独自のやり方で記録を採るこ
+ともできます。
 @end defopt
 
 auth-source ライブラリーには、外部で使うための関数は少ししかありません。
