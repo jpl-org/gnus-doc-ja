@@ -299,14 +299,14 @@ JSON に翻訳しましょう。それには、次のようなエントリーを
         :user "testuser" :password "testpass"))
 @end example
 
-@vindex auth-source-ignore-empty-file
-@code{auth-sources} では、基礎データのファイルが存在しないか空だった場合、
-ファイルベースのデータストアは無視されます。これは、そのようなファイルに
-新しい秘密が格納されている場合に関連していて、@code{auth-sources} の最初
-の使用可能なエントリーがターゲットとして選択されます。もし、存在しない、
-または空のファイルも選択させたいなら、ユーザーオショ
-ン @code{auth-source-ignore-empty-file} を @code {nil} に設定してくださ
-い。
+@vindex auth-source-ignore-non-existing-file
+@code{auth-sources} では、基礎データのファイルが存在しない場合、ファイル
+ベースのデータストアは無視されます。これは、そのようなファイルに新しい秘
+密が格納されている場合に関連していて、@code{auth-sources} の最初の使用可
+能なエントリーがターゲットとして選択されます。もし、存在しないファイルも
+選択させたいなら、ユーザーオショ
+ン @code{auth-source-ignore-non-existing-file} を @code {nil} に設定して
+ください。 
 
 @node Multiple GMail accounts with Gnus
 @chapter 複数の GMail アカウントを Gnus で扱う
