@@ -29567,7 +29567,7 @@ Gnus には @file{nnheader.el}、@file{nnmail.el} および @file{nnoo.el} の
 @subsubsection 必須バックエンド関数
 
 @table @code
-@item (nnchoke-retrieve-headers ARTICLES &optional GROUP SERVER FETCH-OLD)
+@item (nnchoke-retrieve-headers @var{articles} &optional @var{group} @var{server} @var{fetch-old})
 
 @var{articles} は記事番号の範囲か、@code{Message-ID} のリストのどちらか
 です。現在のバックエンドは、どちらも完全にサポートしているわけではありま
@@ -29636,7 +29636,7 @@ field      = <text except TAB>
 これらの欄に何が含まれるべきかをきちんと調べたいのならば、
 @ref{Headers} を参照してください。
 
-@item (nnchoke-open-server SERVER &optional DEFINITIONS)
+@item (nnchoke-open-server @var{server} &optional @var{definitions})
 
 ここでの @var{server} は仮想サーバー名です。@var{definitions} はこの仮想
 サーバーを定義する @code{(VARIABLE VALUE)} の組のリストです。
@@ -29648,7 +29648,7 @@ field      = <text except TAB>
 すでにそのサーバーと接続されていた場合には、この関数は @code{nil} ではな
 い値を返さなければなりません。このとき、返される結果のデータはありません。
 
-@item (nnchoke-close-server &optional SERVER)
+@item (nnchoke-close-server &optional @var{server})
 
 @var{server} との接続を閉じて、これに関連するすべてのリソースを開放しま
 す。もし何らかの理由でサーバーを閉じることができない場合は、
@@ -29665,7 +29665,7 @@ field      = <text except TAB>
 
 返される結果のデータはありません。
 
-@item (nnchoke-server-opened &optional SERVER)
+@item (nnchoke-server-opened &optional @var{server})
 
 @var{server} が現在の仮想サーバーで、かつその物理サーバーへの接続が生き
 ている場合、この関数は @code{nil} ではない値を返さなければなりません。ど
@@ -29674,13 +29674,13 @@ field      = <text except TAB>
 
 返される結果のデータはありません。
 
-@item (nnchoke-status-message &optional SERVER)
+@item (nnchoke-status-message &optional @var{server})
 
 この関数は @var{server} からの最後のエラーメッセージを返します。
 
 返される結果のデータはありません。
 
-@item (nnchoke-request-article ARTICLE &optional GROUP SERVER TO-BUFFER)
+@item (nnchoke-request-article @var{article} &optional @var{group} @var{server} @var{to-buffer})
 
 この関数の結果のデータは、@var{article} で指定された記事でなければなりま
 せん。@code{Message-ID} か番号のいずれかを指定することができます。
@@ -29699,7 +29699,7 @@ field      = <text except TAB>
 当のグループと記事番号を知ることができるようになるでしょう。これが不可能
 な場合は、記事の取得に成功したときに @code{t} を返さなければなりません。
 
-@item (nnchoke-request-group GROUP &optional SERVER FAST INFO)
+@item (nnchoke-request-group @var{group} &optional @var{server} @var{fast} @var{info})
 
 @var{group} のデータを取得します。この関数には @var{group} を現在のグルー
 プにするという副作用もあります。
@@ -29731,14 +29731,14 @@ error        = [ "4" / "5" ] 2<number> " " <Error message>
 info         = "211 " 3* [ <number> " " ] <string>
 @end example
 
-@item (nnchoke-close-group GROUP &optional SERVER)
+@item (nnchoke-close-group @var{group} &optional @var{server})
 
 @var{group} を閉じて、それに関連するすべてのリソースを開放します。ほとん
 どのバックエンドは何もすることが無いでしょう。
 
 返される結果のデータはありません。
 
-@item (nnchoke-request-list &optional SERVER)
+@item (nnchoke-request-list &optional @var{server})
 
 @var{server} 上で利用可能なすべてのグループのリストを返します。本当
 に @emph{全部} という意味です。
@@ -29766,7 +29766,7 @@ flags       = "n" / "y" / "m" / "x" / "j" / "=" name
 名 (@samp{=other-group}) なのか、それらのどれでもない (@samp{y}) のかを
 示します。
 
-@item (nnchoke-request-post &optional SERVER)
+@item (nnchoke-request-post &optional @var{server})
 
 この関数は、現在のバッファーを投稿しなければなりません。投稿が成功したか
 どうかを返しても構いませんが、必須ではありません。例えば、投稿が非同期に
@@ -29781,7 +29781,7 @@ flags       = "n" / "y" / "m" / "x" / "j" / "=" name
 @subsubsection 任意バックエンド関数
 
 @table @code
-@item (nnchoke-retrieve-groups GROUPS &optional SERVER)
+@item (nnchoke-retrieve-groups @var{groups} &optional @var{server})
 
 @var{groups} はグループのリストです。また、この関数はそれら全部のグルー
 プのデータを要求しなければなりません。どうやってそれを行なうかは Gnus の
@@ -29798,7 +29798,7 @@ flags       = "n" / "y" / "m" / "x" / "j" / "=" name
 group-buffer = *active-line / *group-status
 @end example
 
-@item (nnchoke-request-update-info GROUP INFO &optional SERVER)
+@item (nnchoke-request-update-info @var{group} @var{info} &optional @var{server})
 
 Gnus のグループ情報 (@pxref{Group Info}) が、バックエンドのそれを改変す
 るために渡されます。これはバックエンドが (仮想グループや imap グループの
@@ -29809,7 +29809,7 @@ Gnus のグループ情報 (@pxref{Group Info}) が、バックエンドのそ�
 
 この関数が返す結果のデータはありません。
 
-@item (nnchoke-request-type GROUP &optional ARTICLE)
+@item (nnchoke-request-type @var{group} &optional @var{article})
 
 利用者が「ニュースを送信する」命令 (例えば、概略バッファーで @kbd{F}) を
 実行したときに、Gnus は利用者がフォローアップしようとしている記事がニュー
@@ -29823,7 +29823,7 @@ Gnus のグループ情報 (@pxref{Group Info}) が、バックエンドのそ�
 
 この関数が返す結果のデータはありません。
 
-@item (nnchoke-request-set-mark GROUP ACTION &optional SERVER)
+@item (nnchoke-request-set-mark @var{group} @var{action} &optional @var{server})
 
 記事の印を設定/消去/追加します。通常 Gnus は記事の印 (既読、可視、期限切
 れ消去など) を内部で扱い、@file{~/.newsrc.eld} に保存します。しかし、い
@@ -29833,7 +29833,7 @@ Gnus のグループ情報 (@pxref{Group Info}) が、バックエンドのそ�
 @var{action} は印を設定する要求のリストで、以下の様式を持ちます:
 
 @example
-(RANGE ACTION MARK)
+(@code{range} @code{action} @code{mark})
 @end example
 
 @var{range} は印を付けたい記事の範囲です。@var{action} は @code{add} ま
@@ -29862,7 +29862,7 @@ Gnus のグループ情報 (@pxref{Group Info}) が、バックエンドのそ�
 
 この関数が返す結果のデータはありません。
 
-@item (nnchoke-request-update-mark GROUP ARTICLE MARK)
+@item (nnchoke-request-update-mark @var{group} @var{article} @var{mark})
 
 バックエンドが嫌う印を利用者が設定しようとしたら、この関数がその印を変更
 することができます。この関数が返したどんなものでも、
@@ -29877,7 +29877,7 @@ Gnus は @var{article} への印として元の @var{mark} の代わりに使い
 
 この関数が返す結果のデータはありません。
 
-@item (nnchoke-request-scan &optional GROUP SERVER)
+@item (nnchoke-request-scan &optional @var{group} @var{server})
 
 バックエンドが新着記事を検査する要求を (Gnus か他の何かによって) 行なう
 ときはいつでも、あれやこれやとこの関数が呼び出されるでしょう。この関数が
@@ -29889,7 +29889,7 @@ Gnus は @var{article} への印として元の @var{mark} の代わりに使い
 
 この関数が返す結果のデータはありません。
 
-@item (nnchoke-request-group-description GROUP &optional SERVER)
+@item (nnchoke-request-group-description @var{group} &optional @var{server})
 
 この関数が返す結果のデータは、@var{group} の説明でなければなりません。
 
@@ -29899,7 +29899,7 @@ name             = <string>
 description      = <text>
 @end example
 
-@item (nnchoke-request-list-newsgroups &optional SERVER)
+@item (nnchoke-request-list-newsgroups &optional @var{server})
 
 この関数が返す結果のデータは、サーバー上で利用できるすべてのグループの説
 明でなければなりません。
@@ -29908,7 +29908,7 @@ description      = <text>
 description-buffer = *description-line
 @end example
 
-@item (nnchoke-request-newgroups DATE &optional SERVER)
+@item (nnchoke-request-newgroups @var{date} &optional @var{server})
 
 この関数から返される結果のデータは、@samp{date} 以降に作成されたすべての
 グループでなければなりません。@samp{date} は人間が読める普通の日付の形
@@ -29925,14 +29925,14 @@ description-buffer = *description-line
 グループはサーバーによって作られているので、いかにもたくさんのグループが
 ありそうです。
 
-@item (nnchoke-request-create-group GROUP &optional SERVER)
+@item (nnchoke-request-create-group @var{group} &optional @var{server})
 
 この関数は @var{group} という名前の空のグループを作成しなければなりませ
 ん。
 
 返されるデータはありません。
 
-@item (nnchoke-request-expire-articles ARTICLES &optional GROUP SERVER FORCE)
+@item (nnchoke-request-expire-articles @var{articles} &optional @var{group} @var{server} @var{force})
 
 この関数は、@var{articles} の範囲のすべての記事に対して期限切れ消去の処
 理を行ないます (現在 @var{articles} は記事番号の単純なリストです)。記事
@@ -29945,7 +29945,7 @@ description-buffer = *description-line
 
 返される結果のデータはありません。
 
-@item (nnchoke-request-move-article ARTICLE GROUP SERVER ACCEPT-FORM &optional LAST)
+@item (nnchoke-request-move-article @var{article} @var{group} @var{server} @var{accept-form} &optional @var{last})
 
 この関数は @var{group} にある記事 @var{article} (番号) を、
 @var{accept-form} を呼び出すことによって移動しなければなりません。
@@ -29970,7 +29970,7 @@ description-buffer = *description-line
 訳注: 移動先のグループは @var{accept-form} の中で指定します。そこで使わ
 れるのが、次の @code{nnchoke-request-accept-article} です。
 
-@item (nnchoke-request-accept-article GROUP &optional SERVER LAST)
+@item (nnchoke-request-accept-article @var{group} &optional @var{server} @var{last})
 
 この関数は、現在のバッファーの中身を @var{group} に挿入します。
 @var{last} が @code{nil} だったら、この関数へのさらなる呼び出しが直ちに
@@ -29984,14 +29984,14 @@ description-buffer = *description-line
 
 返されるデータはありません。
 
-@item (nnchoke-request-replace-article ARTICLE GROUP BUFFER)
+@item (nnchoke-request-replace-article @var{article} @var{group} @var{buffer})
 
 この関数は @var{group} から記事 @var{article} (番号) を削除して、代わり
 に @var{buffer} の中身をそこに挿入しなければなりません。
 
 返されるデータはありません。
 
-@item (nnchoke-request-delete-group GROUP FORCE &optional SERVER)
+@item (nnchoke-request-delete-group @var{group} @var{force} &optional @var{server})
 
 この関数は @var{group} を消去しなければなりません。もし @var{force} が設
 定されていたら、そのグループ内のすべての記事を本当に消去して、そしてその
@@ -30000,7 +30000,7 @@ description-buffer = *description-line
 
 返されるデータはありません。
 
-@item (nnchoke-request-rename-group GROUP NEW-NAME &optional SERVER)
+@item (nnchoke-request-rename-group @var{group} @var{new-name} &optional @var{server})
 
 この関数はグループ名を @var{group} から @var{new-name} に変更しなければ
 なりません。@var{group} 内にあるすべての記事は、@var{new-name} に移動し
