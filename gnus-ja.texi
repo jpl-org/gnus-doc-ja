@@ -29798,6 +29798,18 @@ flags       = "n" / "y" / "m" / "x" / "j" / "=" name
 group-buffer = *active-line / *group-status
 @end example
 
+@item (nnchoke-retrieve-group-data-early @var{server} &optional @var{infos})
+
+これは @var{server} からの早期非同期取得を開始して、@var{infos} (現在の
+グループ情報構造リスト) を更新するためのものです。戻り値は、対応す
+る @code{nnchoke-finish-retrieve-group-infos} のトークンです。
+
+@item (nnchoke-finish-retrieve-group-infos @var{server} @var{infos} @var{data})
+
+これは @code{nnchoke-retrieve-group-data-early} の非同期取得を終了するた
+めに後で呼び出されます。そのトークンは @var{data} として渡さ
+れ、@var{infos} を更新するはずです。。
+
 @item (nnchoke-request-update-info @var{group} @var{info} &optional @var{server})
 
 Gnus のグループ情報 (@pxref{Group Info}) が、バックエンドのそれを改変す
