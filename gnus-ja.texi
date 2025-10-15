@@ -29808,7 +29808,7 @@ group-buffer = *active-line / *group-status
 
 これは @code{nnchoke-retrieve-group-data-early} の非同期取得を終了するた
 めに後で呼び出されます。そのトークンは @var{data} として渡さ
-れ、@var{infos} を更新するはずです。。
+れ、@var{infos} を更新するはずです。
 
 @item (nnchoke-request-update-info @var{group} @var{info} &optional @var{server})
 
