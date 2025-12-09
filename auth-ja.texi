@@ -301,13 +301,14 @@ JSON に翻訳しましょう。それには、次のようなエントリーを
 @end example
 
 @vindex auth-source-ignore-non-existing-file
-@code{auth-sources} では、基礎データのファイルが存在しない場合、ファイル
-ベースのデータストアは無視されます。これは、そのようなファイルに新しい秘
-密が格納されている場合に関連していて、@code{auth-sources} の最初の使用可
-能なエントリーがターゲットとして選択されます。もし、存在しないファイルも
-選択させたいなら、ユーザーオショ
-ン @code{auth-source-ignore-non-existing-file} を @code {nil} に設定して
-ください。 
+ファイルベースのデータストアを指す @code{auth-sources} 内のエントリーは、
+基礎となるデータファイルが存在しない場合には無視されます。これは、新しい
+秘密をファイルに保存する必要がある場合に重要です; @code{auth-sources} の
+最初の使用可能なエントリーがターゲットとして選択されます。代わりに、存在
+しないファイルを指すエントリーを選択したい場合は、ユーザーオプショ
+ン @code{auth-source-ignore-non-existing-file} を @code{nil} に設定して
+ください。@code{auth-sources} のデフォルト値を使用すると、新しい秘密
+が @file{~/.authinfo} に平文で保存されてしまうことに注意してください。
 
 @node Multiple GMail accounts with Gnus
 @chapter 複数の GMail アカウントを Gnus で扱う
