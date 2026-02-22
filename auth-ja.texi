@@ -1,10 +1,9 @@
 \input texinfo-ja               @c -*-texinfo-*-
 
-@c @set VERSION 0.3
+@set VERSION 0.3
 
 @setfilename auth-ja.info
-@c @settitle Emacs auth-source Library @value{VERSION}
-@settitle Emacs auth-source Library 0.3
+@settitle Emacs auth-source Library @value{VERSION}
 @documentencoding UTF-8
 @documentlanguage ja
 

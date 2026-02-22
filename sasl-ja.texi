@@ -6,8 +6,7 @@
 @end iftex
 
 @set VERSION 0.2
-@c @settitle Emacs SASL Library @value{VERSION}
-@settitle Emacs SASL Library 0.2
+@settitle Emacs SASL Library @value{VERSION}
 @documentencoding UTF-8
 @documentlanguage ja
 
