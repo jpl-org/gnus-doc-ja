@@ -1981,6 +1981,15 @@ X-Message-SMTP-Method: smtp smtp.fsf.org 587 other-user
 ザー名として使います。これは、同じサーバーに複数の @acronym{SMTP} アカウ
 ントを持っている場合に役立ちます。
 
+通常 SMTP サーバーへの接続は、ポートが 465 以外であれ
+ば @code{smtpmail-stream-type} の値に従います (ポートが 465 の場合
+は TLS 接続が必要です)。特定のストリームタイプを決め打ちするには、そ
+の変数の可能な値の一つを次のように指定してください。
+
+@example
+X-Message-SMTP-Method: smtp smtp.fsf.org 587 other-user starttls
+@end example
+
 このヘッダーは @samp{mailer} キーワードを使うことによって代わりの MTA を
 指定するために使うこともできます。ここ
 で @samp{mailer} は @code{message-send-mail-with-'mailer'} 関数に対応す
