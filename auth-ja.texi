@@ -71,6 +71,7 @@ modify this GNU manual.''
 * Multiple GMail accounts with Gnus::
 * Secret Service API::
 * The Unix password store::
+* The macOS keychain store::
 * Help for developers::
 * GnuPG and EasyPG Assistant Configuration::
 * GNU Free Documentation License:: この文書の利用許諾契約書
@@ -203,6 +204,9 @@ password @var{mypassword}
 ;;; パス (@file{~/.password-store}) を使う
 ;;; (@pxref{The Unix password store})
 (auth-source-pass-enable)
+;;; macOS キーチェーンを使う
+;;; (@pxref{The macOS keychain store})
+(setopt auth-sources '(macos-keychain-internet))
 ;;; [@{ "machine": "SERVER", "login": "USER",
 ;;; "password": "PASSWORD" @}...] というフォーマットの JSON データ
 (setopt auth-sources '("~/.authinfo.json.gpg"))
@@ -397,7 +401,7 @@ GNOME キーリングには @t{"session"} と呼ばれる特別なコレクシ�
 ムを一時的に保存および取得するために使うことができます。秘密のアイテムが
 永久に有効であってはならない場合、@t{"session"} コレクションは永続的なコ
 レクションよりも優れています。@t{"session"} コレクションは、コレクション
-パラメータが必要な場合はいつでも、文字列 @t{"session"} また
+パラメーターが必要な場合はいつでも、文字列 @t{"session"} また
 は @code{nil}のいずれかを指定してアクセスすることができます。
 
 ただし、他のシークレットサービスプロバイダーは、この臨時
@@ -498,7 +502,7 @@ auth-source ライブラリーは @t{"secrets:@var{collection}"} に合致す
                        "~/.authinfo.gpg"))
 @end example
 
-文字列ではない auth-source 仕様の属性値 (ポート番号な
+文字列ではない @code{auth-sources} 仕様の属性値 (ポート番号な
 ど) は、@file{secrets.el} の関数を呼び出す前に文字列にされます。
 
 @node The Unix password store
@@ -575,8 +579,8 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 @end itemize
 
 @defopt auth-source-pass-filename
-このユーザーオプションをディスク上のパスワードストアを特定する文字列に設
-定してください。ディフォルトは @file{~/.password-store} です。
+このユーザーオプションをディスク上のパスワードファイルを特定する文字列に
+設定してください。ディフォルトは @file{~/.password-store} です。
 @end defopt
 
 @defopt auth-source-pass-port-separator
@@ -599,6 +603,62 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 のバックエンドに一様に問い合わせることを期待するコードに遭遇した場合は、
 @code{t} に切り替えてください。
 @end defopt
+
+@node The macOS keychain store
+@chapter macOS キーチェーン
+
+macOS オペレーティングシステムには ``キーチェーン'' というパスワードを保
+持する仕組みがあります。キーチェーンを auth-source のバックエンドとして
+使用するには、@code{auth-sources} ユーザーオプション
+に @code{macos-keychain-internet} を追加してください。
+
+今のところバックエンドはキーチェーンからの読み出しだけを行なうので、パス
+ワードは @code{security} コマンドライン・ユーティリティーを使って格納し
+ておかなければなりません。例えば @file{.authinfo} ファイルにあ
+る @code{host mail.example.com loginuser@@example.com port 587 password
+s3kr3t!} のようなエントリーを置き換えるには、下記のコマンドを使ってくだ
+さい:
+
+@example
+security add-internet-password -s mail.example.com \
+  -a user@@example.com -P 587 -w
+@end example
+
+すると、ユーティリティーはそのコマンドラインでパスワードを入力することを
+求めてきます。その後、次のフォームを評価すると、入力したばかりのパスワー
+ドが返ってくるでしょう。
+
+@lisp
+(let ((auth-sources '(macos-keychain-internet))
+       (auth-source-do-cache nil))
+    (auth-source-pick-first-password :host "mail.example.com"
+                                     :port 587))
+@end lisp
+
+次の表は、auth-source に問い合わせるパラメーターと、下地とな
+る @code{security find-internet-password} 呼び出しの、対応するオプション
+を列挙したものです。パスワードエントリーの作成にも同じパラメーターを使い
+ます。
+
+@table @code
+@item :user
+@code{-a}
+
+@item :host
+@code{-s}
+
+@item :port
+整数が与えられる場合は: @code{-P}
+あるいは: @code{-r}; @code{security} ツールの要求に応じて、引数は 4文字
+に短縮されることに注意してください。
+
+@item :label
+@code{-l}
+
+注: ラベルを指定せずにパスワードエントリーを作成する場合、
+@code{security} ツールはラベルの値をホストパラメーター (@code{-s}) と同
+じに設定します。
+@end table
 
 @node Help for developers
 @chapter 開発者のためのヘルプ
