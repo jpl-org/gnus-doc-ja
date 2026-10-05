@@ -607,17 +607,30 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 @node The macOS keychain store
 @chapter macOS キーチェーン
 
-macOS オペレーティングシステムには ``キーチェーン'' というパスワードを保
-持する仕組みがあります。キーチェーンを auth-source のバックエンドとして
-使用するには、@code{auth-sources} ユーザーオプション
-に @code{macos-keychain-internet} を追加してください。
+macOS オペレーティングシステムには ``キーチェーン'' というインターネット
+パスワード (internet) とアプリケーションパスワード (generic) の両方を保
+存できる仕組みがあります。キーチェーンには @code{security} コマンドライ
+ン・ユーティリティ (オペレーティングシステムの一部) を介してアクセスする
+ことができます。
 
-今のところバックエンドはキーチェーンからの読み出しだけを行なうので、パス
-ワードは @code{security} コマンドライン・ユーティリティーを使って格納し
-ておかなければなりません。例えば @file{.authinfo} ファイルにあ
-る @code{host mail.example.com loginuser@@example.com port 587 password
-s3kr3t!} のようなエントリーを置き換えるには、下記のコマンドを使ってくだ
-さい:
+キーチェーンを auth-source のバックエンドとして使用するには、
+@code{macos-keychain-internet} と @code{macos-keychain-generic} の一方ま
+たは両方を @code{auth-sources} ユーザーオプションに追加してください。以
+下は両方のキーチェーンを検索して、もし見つからなけれ
+ば @file{~/.authinfo.gpg} を調べるようにする設定の例です。
+
+@lisp
+(setopt auth-sources '(macos-keychain-internet
+                       macos-keychain-generic
+                       "~/.authinfo.gpg"))
+@end lisp
+
+今のところバックエンドはパスワードの追加に対応していないので、パスワード
+は @code{security} コマンドライン・ユーティリティーを使って格納しなけれ
+ばなりません。例えば @file{.authinfo} ファイルにある @code{host
+mail.example.com loginuser@@example.com port 587 password s3kr3t!} のよ
+うなインターネットキーチェーンを使うエントリーを置き換えるには、下記のコ
+マンドを使ってください:
 
 @example
 security add-internet-password -s mail.example.com \
@@ -635,29 +648,52 @@ security add-internet-password -s mail.example.com \
                                      :port 587))
 @end lisp
 
+パスワードを汎用 (generic) キーチェーンの側に格納したいときは、次のコマ
+ンドを使ってください。
+
+@example
+security add-generic-password -l mail.example.com \
+  -a user@@example.com -w
+@end example
+
+その後で以下のフォームを評価すれば、そのパスワードが返ってくるでしょう:
+
+@lisp
+(let ((auth-sources '(macos-keychain-generic))
+       (auth-source-do-cache nil))
+    (auth-source-pick-first-password :label "mail.example.com"
+                                     :user "user@@example.com"))
+@end lisp
+
 次の表は、auth-source に問い合わせるパラメーターと、下地とな
-る @code{security find-internet-password} 呼び出しの、対応するオプション
+る @code{security find-internet-password} およ
+び @code{security find-generic-password} 呼び出しの、対応するオプション
 を列挙したものです。パスワードエントリーの作成にも同じパラメーターを使い
 ます。
 
 @table @code
 @item :user
-@code{-a}
+両方のバックエンドで: @code{-a}
 
 @item :host
-@code{-s}
+インターネットバックエンドでは: @code{-s}
+
+汎用 (geberic) バックエンドでは: @code{-c} (4文字以内)
 
 @item :port
-整数が与えられる場合は: @code{-P}
-あるいは: @code{-r}; @code{security} ツールの要求に応じて、引数は 4文字
-に短縮されることに注意してください。
+インターネットバックエンドで整数の場合は: @code{-P}
+
+インターネットバックエンドで文字列の場合は: @code{-r} (4文字以内)
+
+汎用 (geberic) バックエンドでは: @code{-s}
 
 @item :label
-@code{-l}
+両方のバックエンドで: @code{-l}
 
 注: ラベルを指定せずにパスワードエントリーを作成する場合、
-@code{security} ツールはラベルの値をホストパラメーター (@code{-s}) と同
-じに設定します。
+@code{security} ツールはラベルの値を次のように設定します; インターネット
+パスワードではホストパラメーター (@code{-s}) と同じ; 汎用 (geberic) パス
+ワードではサービス名パラメーター (@code{-s}) の値。
 @end table
 
 @node Help for developers
