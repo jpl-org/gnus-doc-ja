@@ -310,7 +310,7 @@ JSON に翻訳しましょう。それには、次のようなエントリーを
 最初の使用可能なエントリーがターゲットとして選択されます。代わりに、存在
 しないファイルを指すエントリーを選択したい場合は、ユーザーオプショ
 ン @code{auth-source-ignore-non-existing-file} を @code{nil} に設定して
-ください。@code{auth-sources} のデフォルト値を使用すると、新しい秘密
+ください。@code{auth-sources} のディフォルト値を使用すると、新しい秘密
 が @file{~/.authinfo} に平文で保存されてしまうことに注意してください。
 
 @node Multiple GMail accounts with Gnus
@@ -607,39 +607,52 @@ Emacs の @samp{pass} の統合は、パス・プロジェクト自体によっ�
 @node The macOS keychain store
 @chapter macOS キーチェーン
 
-macOS オペレーティングシステムには ``キーチェーン'' というインターネット
-パスワード (internet) とアプリケーションパスワード (generic) の両方を保
-存できる仕組みがあります。キーチェーンには @code{security} コマンドライ
-ン・ユーティリティ (オペレーティングシステムの一部) を介してアクセスする
-ことができます。
+macOS オペレーティングシステムには、インターネットパスワードとアプリケー
+ションパスワード (generic) の両方を保存できるパスワードストアがあります。
+汎用 (generic) パスワードとインターネットパスワードは両方と
+も @emph{keychains} に保存され、ディフォルトでは @code{login} というキー
+チェーンが使われます。MacOS にはキーチェーンを管理するため
+の @code{security} コマンドラインユーティリティー
+と @code{Keychain Access.app} グラフィカルアプリケーションが含まれていま
+す。
 
-キーチェーンを auth-source のバックエンドとして使用するには、
-@code{macos-keychain-internet} と @code{macos-keychain-generic} の一方ま
-たは両方を @code{auth-sources} ユーザーオプションに追加してください。以
-下は両方のキーチェーンを検索して、もし見つからなけれ
-ば @file{~/.authinfo.gpg} を調べるようにする設定の例です。
+ディフォルトのキーチェーンを auth-source のバックエンドとして使うには、
+シンボル @code{macos-keychain-internet} およ
+び @code{macos-keychain-generic} の一方または両方
+を @code{auth-sources} ユーザーオプションに追加してください。別のキーチェー
+ンを使用するには、バックエンドとキーチェーンに名前を付ける文字列をコロ
+ン (@code{:}) で区切って追加します。(コロンとキーチェーンを含まないバッ
+クエンド名を指定する文字列では、ディフォルトの @code{login} キーチェーン
+が使われます。)
+
+例えば @code{login} キーチェーンでインターネットパスワードと汎
+用 (generic) パスワードの両方を検索し、続いて @code{emacs.keychain} とい
+うキーチェーンでインターネットパスワードを検索し、それらで見つからない場
+合は @file{~/.authinfo.gpg} ファイルで探す設定は以下のようになります:
 
 @lisp
 (setopt auth-sources '(macos-keychain-internet
                        macos-keychain-generic
+                       "macos-keychain-internet:emacs.keychain"
                        "~/.authinfo.gpg"))
 @end lisp
 
 今のところバックエンドはパスワードの追加に対応していないので、パスワード
-は @code{security} コマンドライン・ユーティリティーを使って格納しなけれ
-ばなりません。例えば @file{.authinfo} ファイルにある @code{host
-mail.example.com loginuser@@example.com port 587 password s3kr3t!} のよ
-うなインターネットキーチェーンを使うエントリーを置き換えるには、下記のコ
-マンドを使ってください:
+は @code{security} コマンドラインユーティリティーを使って格納しなければ
+なりません。
+
+例えば、次のようなプレーンテキストの @file{.authinfo} エントリー
+@code{host mail.example.com login user@@example.com port 587 password
+s3kr3t!} を、ディフォルトのキーチェーンのインターネットパスワードに置き
+換えるには、次のコマンドを使ってください:
 
 @example
 security add-internet-password -s mail.example.com \
-  -a user@@example.com -P 587 -w
+  -a user@@example.com -P 587 -w "s3kr3t!"
 @end example
 
-すると、ユーティリティーはそのコマンドラインでパスワードを入力することを
-求めてきます。その後、次のフォームを評価すると、入力したばかりのパスワー
-ドが返ってくるでしょう。
+その後、次のフォームを評価すると、入力したばかりのパスワードが返ってくる
+はずです:
 
 @lisp
 (let ((auth-sources '(macos-keychain-internet))
@@ -648,12 +661,12 @@ security add-internet-password -s mail.example.com \
                                      :port 587))
 @end lisp
 
-パスワードを汎用 (generic) キーチェーンの側に格納したいときは、次のコマ
-ンドを使ってください。
+汎用 (generic) パスワードをディフォルトのキーチェーンに保存するには、次
+のコマンドを使ってください:
 
 @example
 security add-generic-password -l mail.example.com \
-  -a user@@example.com -w
+  -a user@@example.com -w "s3kr3t!"
 @end example
 
 その後で以下のフォームを評価すれば、そのパスワードが返ってくるでしょう:
@@ -665,11 +678,33 @@ security add-generic-password -l mail.example.com \
                                      :user "user@@example.com"))
 @end lisp
 
+ディフォルトの @code{login} キーチェーンの代わり
+に @code{emacs.keychain} キーチェーンを作成して使用するには、次のコマン
+ドを使ってください:
+
+@example
+security create-keychain emacs.keychain
+security unlock-keychain emacs.keychain
+security add-internet-password -a "example@@example.com" \
+  -s "example.com" -l "my-server" -w "s3kr1t" emacs.keychain
+@end example
+
+次に、新しいキーチェーンに保存されているインターネットパスワードを取得す
+るために、
+@code{''macos-keychain-internet:emacs.keychain''} を @code{auth-sources} に
+追加してください:
+
+@lisp
+(let ((auth-sources '("macos-keychain-internet:emacs.keychain"))
+       (auth-source-do-cache nil))
+    (auth-source-pick-first-password :label "my-server"))
+@end lisp
+
 次の表は、auth-source に問い合わせるパラメーターと、下地とな
 る @code{security find-internet-password} およ
 び @code{security find-generic-password} 呼び出しの、対応するオプション
-を列挙したものです。パスワードエントリーの作成にも同じパラメーターを使い
-ます。
+を列挙したものです。それぞれのタイプのパスワードエントリーの作成にも同じ
+パラメーターを使います。
 
 @table @code
 @item :user
