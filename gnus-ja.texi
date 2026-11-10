@@ -4921,7 +4921,7 @@ Gnus は変数 @code{gnus-extract-address-components} の値を @code{From} ヘ�
 @item c
 記事の文字数。この名前指定子はいくつかの選択方法 (例えば .nov ファイルが
 無い、つまり @code{nnfolder-nov-is-evil} か @code{gnus-nov-is-evil} の一
-方または両方が @code{nil} である場合の nnfolder) をサポートしません。
+方または両方が @code{nil} ではない場合の nnfolder) をサポートしません。
 @item k
 整形された記事の文字数; 例えば @samp{1.2k} や @samp{0.4M}。
 @item I
